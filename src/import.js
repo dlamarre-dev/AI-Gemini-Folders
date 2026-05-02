@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 await mergeImportData(importedData);
 
-                statusMsg.textContent = chrome.i18n.getMessage("alertImportSuccess") || "Import successful! Your data has been merged successfully.";
+                statusMsg.textContent = chrome.i18n.getMessage("alertImportSuccess") || "Import successful! Your folders and prompts have been merged successfully.";
                 statusMsg.style.color = "green";
                 fileInput.value = ""; // Cleanup
 

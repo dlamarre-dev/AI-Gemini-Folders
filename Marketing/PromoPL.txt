@@ -1,48 +1,61 @@
-Codziennie używasz Google Gemini do pracy, programowania, badań lub tworzenia, ale ciągle gubisz ważne monity (prompty) w niekończącej się historii?
+Używasz Google Gemini codziennie — do pracy, kodu, pisania lub badań — ale ciągle przepisujesz te same prompty, a Twoje najlepsze rozmowy znikają w nieskończonej historii?
 Foldery Gemini (Gemini Folders) to rozszerzenie, którego potrzebujesz.
 
-Zmień sposób korzystania z Gemini w prawdziwie ustrukturyzowaną przestrzeń roboczą, grupując najlepsze konwersacje według projektów, tematów lub kategorii. Koniec z marnowaniem czasu na przewijanie w poszukiwaniu starego czatu!
+W wersji 4.0 Foldery Gemini stają się Twoim prawdziwym centrum sterowania Gemini: organizuj rozmowy w folderach, buduj bibliotekę wielokrotnego użytku promptów i wstrzykuj je bezpośrednio do Gemini jednym kliknięciem — bez kopiowania i wklejania.
 
-💡 Dlaczego to lepsze niż zwykłe zakładki (bookmarks)?
-W przeciwieństwie do klasycznych zakładek, które w końcu zaśmiecają przeglądarkę, Foldery Gemini oferują dedykowany, odizolowany interfejs zarządzania nakładany bezpośrednio na okno Gemini.
-A co w podróży? Rozszerzenie zawiera teraz cichy mobilny "most": opcję, która tworzy pojedynczy folder lustrzany w zakładkach, aby umożliwić przeglądanie konwersacji na telefonie!
+✨ NOWOŚĆ w v4.0 — TRYB PROMPTÓW
 
-🌟 GŁÓWNE FUNKCJE
-⚡ Szybki Zapis (Prawy Przycisk i Skróty): Zapisz konwersację za pomocą prostego kliknięcia prawym przyciskiem myszy lub użyj skrótu klawiaturowego (Ctrl+Shift+S lub Cmd+Shift+S na Macu), aby natychmiast wysłać ją do folderu "⚡ Szybki zapis"!
-☑️ Wybór Wielokrotny (Bulk Actions): Wybierz wiele konwersacji za pomocą pól wyboru, aby przenieść je lub usunąć jednym kliknięciem.
-📑 Grupy Kart (Tab Groups): Otwórz cały folder jednym kliknięciem w natywnej, kolorowej grupie kart Chrome.
-😃 Niestandardowe Emojis: Rozpocznij nazwę folderu od emoji (np. "💻 Kod"), aby zastąpić domyślną ikonę folderu.
-🖱️ Drag & Drop (Przeciągnij i Upuść): Intuicyjnie zreorganizuj swoją przestrzeń roboczą.
-📱 Synchronizacja Mobilna: Uzyskaj dostęp do swoich konwersacji w podróży! Prosty przełącznik generuje inteligentny folder w zakładkach Chrome, idealnie odtwarzając drzewo folderów i niestandardową kolejność sortowania na smartfonie.
-🗜️ Ultrawydajna Kompresja: Automatycznie kompresuje dane (LZString), aby zmaksymalizować natywną pamięć masową Chrome i bezpiecznie zapisywać setki czatów.
-📊 Śledzenie Pamięci: Wizualny pasek postępu pokazuje dostępne miejsce w chmurze w czasie rzeczywistym.
-📁 Niestandardowe Foldery i Przypinanie: Kategoryzuj swoje konwersacje i przypinaj (📌) ulubione na samej górze listy dzięki inteligentnemu sortowaniu.
-⇅ Niestandardowe Sortowanie: Sortuj foldery i konwersacje w locie (Najnowsze, Najstarsze, Od A do Z) z bezpośrednim odzwierciedleniem w synchronizacji mobilnej.
-🤖 Inteligentne Wykrywanie i Wyszukiwanie: Automatyczne wstępne wypełnianie dokładnego tytułu konwersacji i błyskawiczny pasek wyszukiwania.
-☁️ Synchronizacja w Chmurze i Kopia Zapasowa: Znajdź swoją organizację na wszystkich komputerach i eksportuj dane do formatu JSON.
-🎨 Design "Material 3" i Wielojęzyczność: Ultrakompaktowy interfejs z całkowicie nowymi, niestandardowymi oknami dialogowymi, który idealnie dostosowuje się do trybu ciemnego i obsługuje teraz 16 języków!
+📝 Osobista biblioteka promptów: Przełącz się na tryb promptów jednym kliknięciem przełącznika w nagłówku. Zapisuj najlepsze prompty z tytułem i pełnym tekstem, a potem znajdź je błyskawicznie dzięki wyszukiwaniu i sortowaniu (najnowsze, najstarsze, A-Z).
+▶ Wstrzyknięcie jednym kliknięciem: Koniec z kopiowaniem i wklejaniem. Kliknij przycisk odtwarzania (▶) przy dowolnym zapisanym prompcie, aby wstrzyknąć go bezpośrednio w pole tekstowe Gemini. Rozszerzenie wykrywa, czy jesteś na stronie Gemini, i powiadamia Cię, jeśli nie.
+✏️ Edycja w miejscu: Kliknij prompt, aby go rozwinąć i edytować tekst bezpośrednio. Zmiany zapisują się automatycznie po krótkiej chwili, a kolejność sortowania aktualizuje się odpowiednio.
+💎 Niestandardowy link Gem: Skonfiguruj link do swojego ulubionego Gem i aktywuj go kliknięciem. Gdy jest aktywny, przycisk „Nowa rozmowa" otwiera Twój Gem zamiast domyślnego czatu.
+☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
+📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
+
+🌟 FUNKCJE FOLDERÓW
+
+⚡ Szybkie Zapisywanie (Prawy przycisk i Skróty): Zapisz rozmowę prawym przyciskiem myszy lub skrótem klawiszowym (Ctrl+Shift+S lub Cmd+Shift+S na Mac), aby natychmiast wysłać ją do „⚡ Szybkich Zapisów" — z wizualnym alertem, jeśli już jest zapisana!
+☑️ Wielokrotny Wybór (Akcje zbiorcze): Zaznacz kilka rozmów za pomocą pól wyboru, aby przenieść je lub usunąć jednym kliknięciem.
+📑 Integracja z Grupami kart: Otwórz cały folder jednym kliknięciem jako natywną, kolorową Grupę kart Chrome.
+😃 Niestandardowe emoji: Zacznij nazwę folderu od emoji (np. „💻 Kod"), aby zastąpić domyślną ikonę.
+🖱️ Przeciągnij i Upuść: Reorganizuj swoje miejsce pracy, przeciągając rozmowy między folderami.
+📱 Synchronizacja Mobilna: Przełącznik generuje lustrzany folder w zakładkach Chrome, doskonale odwzorowując strukturę folderów i kolejność sortowania na telefonie.
+🗜️ Ultraefektywna kompresja: Automatycznie kompresuje Twoje dane (LZString), aby zmaksymalizować natywne przechowywanie Chrome i zapisać setki rozmów.
+📊 Wskaźnik miejsca: Wizualny pasek postępu pokazuje dostępne miejsce w chmurze w czasie rzeczywistym.
+📁 Foldery na miarę i Przypinanie: Klasyfikuj rozmowy według projektów, tematów lub kategorii. Przypnij (📌) ulubione foldery na górze.
+⇅ Niestandardowe sortowanie: Sortuj foldery i rozmowy na bieżąco (Najnowsze, Najstarsze, A-Z) z natychmiastowym odzwierciedleniem w synchronizacji mobilnej.
+🤖 Inteligentne wykrywanie i Wyszukiwanie: Automatyczne uzupełnianie dokładnego tytułu rozmowy i pasek wyszukiwania w czasie rzeczywistym.
+☁️ Synchronizacja w chmurze i Kopia zapasowa: Dostęp do swojej organizacji na wszystkich urządzeniach i eksport danych w formacie JSON.
+🎨 Design Material 3 i Wielojęzyczność: Ultrakompaktowy interfejs z w pełni niestandardowymi oknami dialogowymi, automatycznym trybem ciemnym i obsługą 27 języków!
 
 🛠️ JAK TO DZIAŁA?
-Otwórz ważną konwersację na gemini.google.com.
-Ekspresowy zapis: Użyj Ctrl+Shift+S lub kliknij prawym przyciskiem myszy na stronie > "Zapisz w Folderach Gemini".
-Przez rozszerzenie: Kliknij ikonę, wybierz folder i zapisz!
-Dla smartfonów: Zaznacz ikonę 📱 w stopce, aby wysłać foldery na telefon.
-Zaznacz pola wyboru dla akcji grupowych, otwórz foldery w kartach (📑) i użyj przeciągania i upuszczania, aby zreorganizować!
+
+Tryb Folderów:
+Otwórz rozmowę na gemini.google.com.
+Szybki zapis: Ctrl+Shift+S (lub Cmd+Shift+S na Mac), lub prawy przycisk > „Zapisz w Folderach Gemini".
+Przez rozszerzenie: Kliknij ikonę, wybierz folder, zapisz.
+Mobilny: Aktywuj 📱 w stopce, aby synchronizować foldery z telefonem.
+Używaj pól wyboru do akcji zbiorczych, otwieraj foldery jako Grupy kart (📑), przeciągaj, aby reorganizować!
+
+Tryb Promptów:
+Kliknij 📝 na przełączniku w prawym górnym rogu rozszerzenia.
+Kliknij ➕ Dodaj Prompt, wpisz tytuł i tekst, zapisz.
+Aby użyć promptu: rozwiń go i kliknij ▶ — zostaje wstrzyknięty bezpośrednio do Gemini, gotowy do wysłania.
+Skonfiguruj 💎, aby wskazywał Twój niestandardowy Gem.
+Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jest zawsze pod ręką.
 
 🔒 PRYWATNOŚĆ I BEZPIECZEŃSTWO
-Zaprojektowane z myślą o prywatności w sercu swojego działania. Żąda dostępu tylko do Gemini i odczytuje aktywną kartę tylko w momencie zapisu. Wymaga uprawnień "Zakładki" (bookmarks) wyłącznie w celu wygenerowania folderu synchronizacji mobilnej (jeśli to włączysz). Zlokalizowana pamięć masowa przez Chrome Sync: żadnych serwerów stron trzecich, żadnej telemetrii.
+Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do gemini.google.com i odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez Chrome Sync: bez serwerów zewnętrznych, bez telemetrii.
 
 🤝 PROJEKT OPEN SOURCE
-Foldery Gemini to projekt open source rozwijany z pasją. Przejrzystość i poszanowanie Twojej prywatności to nasze priorytety. Jesteś programistą czy po prostu ciekawskim użytkownikiem? Przyjdź i sprawdź nasz kod, śledź historię aktualizacji lub wesprzyj projekt (link do kliknięcia bezpośrednio w rozszerzeniu) na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Foldery Gemini to projekt open source tworzony z pasją. Przejrzystość i poszanowanie Twojej prywatności to nasze priorytety. Jesteś programistą lub po prostu ciekawskim? Przejrzyj kod, śledź historię zmian lub wnieś wkład na GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 AKTUALIZACJE:
-Wersja 3.5 (Solidne podstawy i ulepszone doświadczenie): Poważna aktualizacja pod maską dla profesjonalnej stabilności! Dodaliśmy wizualne ostrzeżenie, jeśli spróbujesz zapisać duplikat za pomocą skrótu klawiaturowego. Co więcej, koniec z fałszywymi duplikatami związanymi ze zmianami adresów URL Gemini, a Twoja baza danych jest teraz zabezpieczona przed uszkodzeniem dzięki naszej nowej architekturze bezpieczeństwa.
-Wersja 3.4.1 (Wieloplatformowa moc i stabilność): Witajcie użytkownicy Firefoksa! Z powodzeniem przenieśliśmy rozszerzenie do Mozilli, używając zupełnie nowego, zautomatyzowanego systemu budowania i zachowując ścisłą zgodność z wymogami bezpieczeństwa. Ponadto wdrożyliśmy niezniszczalny system blokowania, aby trwale naprawić irytujący błąd powielania folderów zakładek podczas synchronizacji mobilnej.
-Wersja 3.3 (Premium i Design Międzynarodowy): Nowe okna dialogowe Material 3 w 100% na wymiar (żegnajcie natywne alerty!), synchronizacja mobilna oparta na Twojej kolejności sortowania, dopracowany interfejs i globalna ekspansja z dodaniem 10 nowych języków!
-Wersja 3.2 (Mobile & Open Source): Sprytna synchronizacja mobilna za pośrednictwem zakładek Chrome, inteligentne sortowanie przypiętych folderów, ultrakompaktowa stopka i oficjalne przejście na Open Source ze zintegrowanym linkiem do GitHuba!
-Wersja 3.1 (Poprawki UX): Stabilizacja przeciągania i upuszczania (Drag & Drop), pola wyboru dostosowane do trybu ciemnego, inteligentne blokowanie interfejsu podczas działań grupowowych i idealne wyrównanie na komputerach Mac!
-Wersja 3.0 (Aktualizacja Produktywności): Dodano skróty klawiaturowe, wybór wielokrotny (pola wyboru), grupy kart, niestandardowe emotikony, kompresję danych i pasek pamięci!
-Wersja 2.1 (Aktualizacja Globalna): 🌍 Foldery Gemini są teraz w pełni zlokalizowane w języku hiszpańskim, portugalskim (Brazylia), niemieckim i japońskim, oprócz francuskiego i angielskiego!
-Wersja 2.0.2 (Poprawki UX): Inteligentne zapamiętywanie otwartych/zamkniętych folderów, wskazówki wizualne (📁/🗂️) dla pełnych i pustych folderów oraz drobne poprawki.
-Wersja 2.0.1: Naprawiono problem z pobieraniem tytułu w niektórych przeglądarkach.
-Wersja 2.0: Poważna przebudowa dodająca przeciąganie i upuszczanie (Drag & Drop), menu kontekstowe, niestandardowe sortowanie, przypinanie i nowy projekt Material 3.
+Wersja 4.0 (Biblioteka Promptów): Najbardziej ambitna aktualizacja! Foldery Gemini otrzymują zupełnie nowy tryb promptów: zapisuj najlepsze prompty, edytuj je w miejscu i wstrzykuj bezpośrednio do Gemini jednym kliknięciem. Dodano: animowany przełącznik trybów, wyszukiwanie i sortowanie w trybie promptów, przycisk niestandardowego Gem i niezależną synchronizację promptów. Przypinanie najważniejszych podpowiedzi na górze biblioteki.
+Wersja 3.5 (Solidne Podstawy i Ulepszone Doświadczenie): Duża aktualizacja „pod maską" dla profesjonalnej niezawodności! Wizualny alert dla duplikatów. Koniec fałszywych duplikatów z powodu zmian URL Gemini, baza danych chroniona przed uszkodzeniami.
+Wersja 3.4.1 (Moc Wieloplatformowa i Stabilność): Pomyślnie przeniesione na Mozilla Firefox. Ostateczna naprawa błędu duplikatów folderów zakładek przy synchronizacji mobilnej.
+Wersja 3.3 (Premium Design i Internacjonalizacja): Nowe w pełni niestandardowe okna dialogowe Material 3, mobilna synchronizacja według kolejności sortowania i 10 nowych języków!
+Wersja 3.2 (Mobilna i Open Source): Mobilna synchronizacja przez zakładki Chrome, inteligentne sortowanie przypiętych folderów, ultrakompaktowa stopka i launch open source.
+Wersja 3.1 (Ulepszenia UX): Stabilizacja Drag & Drop, pola wyboru w trybie ciemnym, inteligentna blokada interfejsu podczas akcji zbiorczych.
+Wersja 3.0 (Aktualizacja Produktywności): Skróty klawiszowe, wielokrotny wybór, grupy kart, niestandardowe emoji, kompresja danych i pasek miejsca.
+Wersja 2.0: Pełna przebudowa z Drag & Drop, menu kontekstowym, niestandardowym sortowaniem, przypinaniem i designem Material 3.

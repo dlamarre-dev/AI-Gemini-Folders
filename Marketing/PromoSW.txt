@@ -1,0 +1,61 @@
+Je, unatumia Google Gemini kila siku — kwa kazi, msimbo, uandishi, au utafiti — lakini unajikuta ukiandika tena vidokezo vile vile, huku mazungumzo yako bora yakipotea katika historia isiyo na mwisho?
+Folda za Gemini (Gemini Folders) ni kiendelezi unachohitaji.
+
+Na toleo la 4.0, Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga mazungumzo katika folda, jenga maktaba ya vidokezo vinavyoweza kutumika tena, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja — bila kunakili na kubandika.
+
+✨ KIPYA KATIKA v4.0 — HALI YA KIDOKEZO
+
+📝 Maktaba ya Kidokezo ya Kibinafsi: Badilika kwenda Hali ya Kidokezo kwa kubofya mara moja kwenye kitufe cha kubadilisha kilichoko kwenye kichwa. Hifadhi vidokezo vyako bora pamoja na kichwa na maandishi kamili, kisha vipate mara moja kwa kutumia utafutaji na upangaji (mpya zaidi, kongwe zaidi, A-Z).
+▶ Kuingiza kwa Kubofya Mara Moja: Hakuna tena kunakili na kubandika. Bofya kitufe cha kucheza (▶) kwenye kidokezo chochote kilichohifadhiwa ili kukiingiza moja kwa moja kwenye uwanja wa kuandika wa Gemini. Kiendelezi hugundua kama uko kwenye ukurasa wa Gemini na kukuarifu ikiwa la.
+✏️ Kuhariri Mahali Pake: Bofya kidokezo ili kukipanua na kuhariri maandishi moja kwa moja. Mabadiliko huhifadhiwa kiotomatiki baada ya muda mfupi na mpangilio wa kusortia husasishwa ipasavyo.
+💎 Kiungo Maalum cha Gem: Sanidi kiungo kwenda Gem unayoipenda na kiwashe/kizime kwa kubofya. Kinapowashwa, kitufe cha "Mazungumzo Mapya" kinafungua Gem yako badala ya gumzo la kawaida.
+☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
+📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
+
+🌟 VIPENGELE VYA FOLDA
+
+⚡ Hifadhi ya Haraka (Kubofya Kulia & Njia za Mkato): Hifadhi mazungumzo ya sasa kwa kubofya kulia rahisi, au tumia njia ya mkato ya kibodi (Ctrl+Shift+S au Cmd+Shift+S kwenye Mac) kutuma mara moja kwenye "⚡ Hifadhi ya Haraka" — pamoja na arifa ya kuona ikiwa tayari imehifadhiwa!
+☑️ Kuchagua Vingi (Vitendo vya Wingi): Chagua mazungumzo mengi kwa kutumia masanduku ya kuchagua ili kuyahamisha au kuyafuta kwa kubofya mara moja.
+📑 Ujumuishaji wa Kikundi cha Vichupo: Fungua folda nzima kwa kubofya mara moja kama Kikundi cha Vichupo cha Chrome chenye rangi.
+😃 Emoji Maalum za Folda: Anza jina la folda yako na emoji (mfano: "💻 Msimbo") ili kubadilisha ikoni ya kawaida ya folda.
+🖱️ Buruta na Uweke: Panga upya nafasi yako ya kazi kwa kuburuta mazungumzo kati ya folda.
+📱 Usawazishaji wa Simu: Kitufe cha kubadilisha huunda folda inayoakisi katika alamisho za Chrome yako, ikizalisha upya muundo wako wa folda na mpangilio maalum wa kusortia kwenye simu yako.
+🗜️ Mfinyazo wa Ufanisi wa Juu: Hufinyaza data yako kiotomatiki (LZString) ili kuongeza hifadhi ya asili ya Chrome na kuhifadhi mazungumzo mamia.
+📊 Kifuatiliaji cha Hifadhi: Mwambaa wa maendeleo wa kuona unaonyesha hifadhi yako ya wingu inayopatikana kwa wakati halisi.
+📁 Folda Maalum na Vibandiko: Panga mazungumzo yako kwa miradi, mada au makundi. Bandika (📌) folda zako unaozipenda juu ya orodha.
+⇅ Upangaji Maalum: Panga folda na mazungumzo kwa haraka (Mpya Zaidi, Kongwe Zaidi, A-Z) pamoja na mabadiliko yanayoonyeshwa mara moja katika usawazishaji wako wa simu.
+🤖 Ugunduzi Mzuri na Utafutaji: Kujaza awali kiotomatiki kwa kichwa halisi cha mazungumzo yako na mwambaa wa utafutaji wa wakati halisi.
+☁️ Usawazishaji wa Wingu na Hifadhinakala: Fikia upangaji wako kwenye vifaa vyako vyote na hamisha data yako kama JSON.
+🎨 Muundo wa Material 3 na Lugha Nyingi: Kiolesura cha kompakt sana chenye sanduku za mazungumzo maalum kabisa, hali ya giza kiotomatiki na msaada kwa lugha 27!
+
+🛠️ INAVYOFANYA KAZI?
+
+Hali ya Folda:
+Fungua mazungumzo kwenye gemini.google.com.
+Hifadhi ya haraka: Ctrl+Shift+S (au Cmd+Shift+S kwenye Mac), au bofya kulia > "Hifadhi kwenye Folda za Gemini".
+Kupitia kiendelezi: Bofya ikoni, chagua folda, na hifadhi.
+Simu: Weka alama 📱 kwenye kijachini ili kusawazisha folda zako na simu yako.
+Tumia masanduku ya kuchagua kwa vitendo vya wingi, fungua folda kama Vikundi vya Vichupo (📑), buruta na uweke ili kupanga upya!
+
+Hali ya Kidokezo:
+Bofya 📝 kwenye kitufe cha kubadilisha upande wa juu kulia wa kiendelezi.
+Bofya ➕ Ongeza Kidokezo, ingiza kichwa na maandishi yako, na hifadhi.
+Kutumia kidokezo: kipanua na ubofye ▶ — kinaingizwa moja kwa moja kwenye Gemini, tayari kutumwa.
+Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi kufikiwa.
+Sanidi 💎 ili kuelekeza kwenye Gem yako maalum.
+
+🔒 FARAGHA NA USALAMA
+Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa gemini.google.com na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
+
+🤝 MRADI WA CHANZO WAZI
+Folda za Gemini ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 MASASISHO:
+Toleo la 4.0 (Maktaba ya Vidokezo): Sasishwa lenye tamaa zaidi hadi sasa! Folda za Gemini inapata Hali ya Vidokezo mpya kabisa: hifadhi vidokezo vyako bora, viharirie mahali pake, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja. Kitufe cha kubadilisha hali chenye mwendo, utafutaji na upangaji katika Hali ya Vidokezo, kitufe maalum cha Gem na usawazishaji wa vidokezo usiotegemea vimeongezwa. Bandika vidokezo muhimu juu ya maktaba yako.
+Toleo la 3.5 (Misingi Imara na Uzoefu Ulioboreshwa): Sasisha kubwa chini ya kofia kwa uthabiti wa kiwango cha kitaaluma! Arifa ya kuona kwa hifadhi zilizorudiwa kupitia njia ya mkato ya kibodi. Hakuna rudiaji za uongo kutoka kwa mabadiliko ya URL ya Gemini, na hifadhidata inalindwa dhidi ya uharibifu na usanifu wetu mpya wa usalama.
+Toleo la 3.4.1 (Nguvu ya Majukwaa Mengi na Uthabiti): Ilipigwa kwenye Mozilla Firefox kwa mafanikio na mfumo wa ujenzi wa kiotomatiki na utiifu mkali wa usalama. Urekebishaji wa mwisho wa hitilafu ya folda ya alamisho iliyorudiwa wakati wa usawazishaji wa simu.
+Toleo la 3.3 (Muundo wa Hali ya Juu na Kimataifa): Sanduku mpya za mazungumzo za Material 3 maalum 100%, usawazishaji wa simu unaoakisi mpangilio wako wa kusortia na upanuzi wa kimataifa na lugha 10 mpya!
+Toleo la 3.2 (Simu na Chanzo Wazi): Usawazishaji mzuri wa simu kupitia alamisho za Chrome, upangaji wa akili wa folda zilizobandikwa, kijachini cha kompakt sana na uzinduzi rasmi wa chanzo wazi na kiungo cha GitHub kilichounganishwa.
+Toleo la 3.1 (Maboresho ya UX): Uthabiti wa Buruta na Uweke, masanduku ya kuchagua ya hali ya giza, kufunga kiolesura kwa akili wakati wa vitendo vya wingi.
+Toleo la 3.0 (Sasisha la Tija): Njia za mkato za kibodi, kuchagua vingi, vikundi vya vichupo, emoji maalum, mfinyazo wa data na mwambaa wa hifadhi.
+Toleo la 2.0: Muundo mkubwa upya wenye Buruta na Uweke, menyu ya muktadha, upangaji maalum, kubandika na muundo wa Material 3.

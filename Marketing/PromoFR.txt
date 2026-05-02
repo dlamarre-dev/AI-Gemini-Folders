@@ -1,48 +1,61 @@
-Vous utilisez Google Gemini au quotidien pour le travail, le code, la recherche ou la création, mais vous perdez constamment vos prompts importants dans un historique infini ?
-Dossiers Gemini est l'extension qu'il vous faut.
+Vous utilisez Google Gemini au quotidien, pour le travail, le code, la rédaction ou la recherche, mais vous retapez toujours les mêmes prompts, et vos meilleures conversations disparaissent dans un historique sans fin ?
+Dossiers Gemini (Gemini Folders) est l'extension qu'il vous faut.
 
-Transformez votre utilisation de Gemini en un véritable espace de travail structuré en regroupant vos meilleures conversations par projets, thématiques ou catégories. Fini le temps perdu à scroller pour retrouver un ancien chat !
+Avec la version 4.0, Dossiers Gemini devient votre véritable cockpit Gemini : organisez vos conversations en dossiers, construisez une bibliothèque de prompts réutilisables, et injectez-les en un clic directement dans Gemini, sans copier-coller.
 
-💡 Pourquoi est-ce mieux que de simples favoris (bookmarks) ?
-Contrairement aux favoris classiques qui finissent par encombrer votre navigateur, Dossiers Gemini vous offre une interface de gestion dédiée, isolée et superposée directement sur votre fenêtre Gemini.
-Et pour vos déplacements ? L'extension intègre désormais un "pont" mobile silencieux : une option qui crée un unique dossier miroir dans vos favoris pour vous permettre de consulter vos conversations sur votre téléphone !
+✨ NOUVEAUTÉ v4.0 — MODE PROMPTS
 
-🌟 FONCTIONNALITÉS PRINCIPALES
-⚡ Sauvegarde Rapide (Clic Droit & Raccourcis) : Sauvegardez la conversation via un simple clic droit, ou utilisez le raccourci clavier (Ctrl+Shift+S ou Cmd+Shift+S sur Mac) pour l'envoyer instantanément dans "⚡ Sauvegardes Rapides" !
+📝 Bibliothèque de prompts personnelle : Passez en mode Prompt d'un simple clic sur le bouton de bascule dans l'en-tête. Sauvegardez vos meilleurs prompts avec un titre et un texte complet, retrouvez-les instantanément grâce à la recherche et au tri (plus récents, plus anciens, A-Z).
+▶ Injection en un clic : Plus besoin de copier-coller. Cliquez sur le bouton lecture (▶) de n'importe quel prompt pour l'injecter directement dans le champ de saisie de Gemini. L'extension détecte si vous êtes bien sur une page Gemini et vous avertit sinon.
+✏️ Édition en place : Cliquez sur un prompt pour le déplier et modifiez son texte directement. Les changements se sauvegardent automatiquement et le tri se met à jour en conséquence.
+💎 Gem personnalisé : Configurez un lien vers votre Gem favori et activez-le d'un clic. Quand il est actif, le bouton "Nouvelle conversation" ouvre votre Gem plutôt que le chat par défaut.
+📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
+☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
+
+🌟 FONCTIONNALITÉS DOSSIERS
+
+⚡ Sauvegarde Rapide (Clic Droit & Raccourcis) : Sauvegardez la conversation via un simple clic droit, ou utilisez le raccourci clavier (Ctrl+Shift+S ou Cmd+Shift+S sur Mac) pour l'envoyer instantanément dans "⚡ Sauvegardes Rapides" — avec une alerte visuelle si elle est déjà sauvegardée !
 ☑️ Sélection Multiple (Bulk Actions) : Sélectionnez plusieurs conversations avec des cases à cocher pour les déplacer ou les supprimer en un seul clic.
 📑 Groupes d'onglets (Tab Groups) : Ouvrez tout un dossier en un clic dans un groupe d'onglets Chrome natif et coloré.
-😃 Émojis personnalisés : Commencez le nom de votre dossier par un émoji (ex: "💻 Code") pour remplacer l'icône de dossier par défaut.
-🖱️ Drag & Drop (Glisser-Déposer) : Réorganisez votre espace de travail intuitivement.
-📱 Synchronisation Mobile : Accédez à vos conversations en déplacement ! Un simple interrupteur génère un dossier intelligent dans vos favoris Chrome, reproduisant parfaitement votre arborescence et votre ordre de tri personnalisé sur votre smartphone.
-🗜️ Compression ultra-efficace : Compresse automatiquement vos données (LZString) pour maximiser le stockage natif de Chrome et sauvegarder des centaines de chats.
-📊 Traqueur de stockage : Une barre de progression visuelle vous indique votre espace cloud disponible en temps réel.
-📁 Dossiers sur mesure & Épingles : Classez vos conversations et épinglez (📌) vos favoris en haut de la liste avec un tri intelligent.
-⇅ Tri Personnalisé : Triez vos dossiers et conversations à la volée (Plus récents, Plus anciens, De A à Z) avec répercussion directe sur la synchronisation mobile.
-🤖 Détection Intelligente & Recherche : Pré-remplissage automatique du titre exact de votre conversation et barre de recherche instantanée.
-☁️ Synchronisation Cloud & Backup : Retrouvez votre organisation sur tous vos ordinateurs et exportez vos données en JSON.
-🎨 Design "Material 3" & Multilingue : Interface ultra-compacte dotée de toutes nouvelles boîtes de dialogue sur mesure, qui s'adapte parfaitement au mode sombre et prend désormais en charge 16 langues mondiales !
+😃 Émojis personnalisés : Commencez le nom de votre dossier par un émoji (ex : "💻 Code") pour remplacer l'icône par défaut.
+🖱️ Drag & Drop : Réorganisez votre espace de travail en glissant-déposant vos conversations d'un dossier à l'autre.
+📱 Synchronisation Mobile : Un interrupteur génère un dossier miroir dans vos favoris Chrome, reproduisant parfaitement votre arborescence et votre ordre de tri sur votre téléphone.
+🗜️ Compression ultra-efficace : Compresse automatiquement vos données (LZString) pour maximiser le stockage natif de Chrome et sauvegarder des centaines de conversations.
+📊 Traqueur de stockage : Une barre de progression visuelle indique votre espace cloud disponible en temps réel.
+📁 Dossiers sur mesure & Épingles : Classez vos conversations par projets, thèmes ou catégories. Épinglez (📌) vos dossiers favoris en haut de la liste.
+⇅ Tri personnalisé : Triez dossiers et conversations à la volée (Plus récents, Plus anciens, A-Z) avec répercussion directe sur la synchronisation mobile.
+🤖 Détection intelligente & Recherche : Pré-remplissage automatique du titre exact de votre conversation et barre de recherche instantanée.
+☁️ Synchronisation Cloud & Backup : Retrouvez votre organisation sur tous vos appareils et exportez vos données en JSON.
+🎨 Design Material 3 & Multilingue : Interface ultra-compacte avec boîtes de dialogue entièrement sur mesure, mode sombre automatique et prise en charge de 27 langues !
 
 🛠️ COMMENT ÇA MARCHE ?
-Ouvrez une conversation importante sur gemini.google.com.
-Sauvegarde express : Utilisez Ctrl+Shift+S, ou faites un clic droit sur la page > "Sauvegarder dans Dossiers Gemini".
-Via l'extension : Cliquez sur l'icône, choisissez un dossier et sauvegardez !
-Pour le Mobile : Cochez l'icône 📱 dans le pied de page pour envoyer vos dossiers vers votre téléphone.
-Cochez les cases pour des actions groupées, ouvrez vos dossiers en onglets (📑), et utilisez le glisser-déposer pour réorganiser !
+
+Mode Dossiers :
+Ouvrez une conversation sur gemini.google.com.
+Sauvegarde express : Ctrl+Shift+S (ou Cmd+Shift+S sur Mac), ou clic droit > "Sauvegarder dans Dossiers Gemini".
+Via l'extension : Cliquez sur l'icône, choisissez un dossier et sauvegardez.
+Mobile : Cochez 📱 dans le pied de page pour synchroniser vos dossiers sur votre téléphone.
+Cochez les cases pour des actions groupées, ouvrez des dossiers en onglets (📑), glissez-déposez pour réorganiser !
+
+Mode Prompts :
+Cliquez sur 📝 dans le bouton de bascule en haut à droite de l'extension.
+Cliquez sur ➕ Ajouter un prompt, entrez un titre et votre texte, sauvegardez.
+Pour utiliser un prompt : dépliez-le et cliquez ▶ — il s'injecte directement dans Gemini, prêt à envoyer.
+Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et reste accessible d'un regard.
+Configurez 💎 pour pointer vers votre Gem personnalisé.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ
-Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à Gemini et ne lit l'onglet actif qu'au moment de la sauvegarde. Elle requiert la permission "Favoris" (bookmarks) uniquement pour générer votre dossier de synchronisation mobile (si vous l'activez). Stockage localisé via Chrome Sync : aucun serveur tiers, aucune télémétrie.
+Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à gemini.google.com et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
 
 🤝 PROJET OPEN SOURCE
-Dossiers Gemini est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Venez consulter notre code, suivre l'historique des mises à jour ou contribuer au projet (lien cliquable directement dans l'extension) sur GitHub : https://github.com/dlamarre-dev/GeminiFolders
+Dossiers Gemini est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Consultez le code, suivez l'historique ou contribuez sur GitHub : https://github.com/dlamarre-dev/GeminiFolders
 
 📢 MISES À JOUR :
-Version 3.5 (Fondations Solides & Expérience Améliorée) : Une mise à jour majeure sous le capot pour une robustesse de niveau professionnel ! Nous avons ajouté une alerte visuelle si vous tentez de sauvegarder un doublon via raccourci clavier. De plus, fini les faux doublons liés aux changements d'URL de Gemini, et votre base de données est désormais blindée contre les corruptions grâce à notre nouvelle architecture de sécurité.
-Version 3.4.1 (Puissance Multiplateforme & Stabilité) : Bonjour aux utilisateurs de Firefox ! Nous avons porté avec succès l'extension sur Mozilla avec un tout nouveau système de compilation automatisé et une stricte conformité en matière de sécurité. De plus, nous avons déployé un système de verrouillage indestructible pour corriger définitivement l'agaçant bogue des dossiers de favoris en double lors de la synchronisation mobile.
-Version 3.3 (Design Premium & International) : Nouvelles boîtes de dialogue Material 3 100% sur mesure (adieu les alertes natives !), synchronisation mobile calquée sur votre ordre de tri, interface épurée et expansion mondiale avec l'ajout de 10 nouvelles langues !
-Version 3.2 (Mobile & Open Source) : Synchronisation mobile astucieuse via les favoris Chrome, tri intelligent de vos dossiers épinglés, pied de page ultra-compact et passage officiel en Open Source avec lien GitHub intégré !
-Version 3.1 (Améliorations UX) : Stabilisation du Drag & Drop, cases à cocher adaptées au mode sombre, verrouillage intelligent de l'interface lors des actions groupées et alignement parfait sur Mac !
-Version 3.0 (Mise à jour Productivité) : Ajout des raccourcis clavier, sélection multiple (cases à cocher), groupes d'onglets, émojis personnalisés, compression des données et barre de stockage !
-Version 2.1 (Mise à jour mondiale) : 🌍 Dossiers Gemini est désormais entièrement localisé en espagnol, portugais brésilien, allemand et japonais, en plus du français et de l'anglais !
-Version 2.0.2 (Améliorations UX) : Mémorisation intelligente des dossiers ouverts/fermés, repères visuels (📁/🗂️) pour les dossiers pleins et vides, et correctifs mineurs.
-Version 2.0.1 : Correction d'un problème de récupération du titre sur certains navigateurs.
-Version 2.0 : Refonte majeure ajoutant le Drag & Drop, le menu contextuel, le tri personnalisé, l'épinglage et le nouveau design Material 3.
+Version 4.0 (Bibliothèque de Prompts) : La mise à jour la plus ambitieuse à ce jour ! Dossiers Gemini se dote d'un tout nouveau mode Prompts : sauvegardez vos meilleurs prompts, éditez-les en place, et injectez-les directement dans Gemini en un clic. Épinglez vos prompts essentiels en tête de liste. Ajout du bouton de bascule animé entre les modes, de la recherche et du tri dans le mode Prompts, du bouton Gem personnalisé, et de la synchronisation indépendante des prompts.
+Version 3.5 (Fondations Solides & Expérience Améliorée) : Une mise à jour majeure sous le capot pour une robustesse de niveau professionnel ! Alerte visuelle en cas de doublon via raccourci clavier. Fin des faux doublons liés aux changements d'URL de Gemini, et base de données blindée contre les corruptions grâce à notre nouvelle architecture de sécurité.
+Version 3.4.1 (Puissance Multiplateforme & Stabilité) : Portage réussi sur Mozilla Firefox avec un système de compilation automatisé et une stricte conformité sécurité. Correction définitive du bogue des dossiers de favoris en double lors de la synchronisation mobile.
+Version 3.3 (Design Premium & International) : Nouvelles boîtes de dialogue Material 3 100% sur mesure, synchronisation mobile calquée sur votre ordre de tri et expansion mondiale avec 10 nouvelles langues !
+Version 3.2 (Mobile & Open Source) : Synchronisation mobile via les favoris Chrome, tri intelligent des dossiers épinglés, pied de page ultra-compact et passage en Open Source avec lien GitHub intégré.
+Version 3.1 (Améliorations UX) : Stabilisation du Drag & Drop, cases à cocher adaptées au mode sombre, verrouillage intelligent de l'interface lors des actions groupées.
+Version 3.0 (Mise à jour Productivité) : Raccourcis clavier, sélection multiple, groupes d'onglets, émojis personnalisés, compression des données et barre de stockage.
+Version 2.0 : Refonte majeure avec Drag & Drop, menu contextuel, tri personnalisé, épinglage et design Material 3.

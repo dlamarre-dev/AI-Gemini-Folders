@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "Folder Gemini"
+  },
+  "extDesc": {
+    "message": "Susun percakapan Gemini Anda ke dalam folder khusus."
+  },
+  "appTitle": {
+    "message": "Folder Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Cari percakapan..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Cari prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Nama folder (mis. Proyek Kode)"
+  },
+  "chatPlaceholder": {
+    "message": "Judul percakapan"
+  },
+  "saveBtn": {
+    "message": "Simpan"
+  },
+  "statusSaved": {
+    "message": "Percakapan tersimpan!"
+  },
+  "noResults": {
+    "message": "Tidak ada hasil 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Ekspor"
+  },
+  "importBtn": {
+    "message": "📂 Impor"
+  },
+  "alertNotGemini": {
+    "message": "Harap gunakan ekstensi ini di halaman Gemini."
+  },
+  "defaultFolder": {
+    "message": "Umum"
+  },
+  "defaultTitle": {
+    "message": "Percakapan baru"
+  },
+  "promptRename": {
+    "message": "Nama percakapan baru:"
+  },
+  "alertEmptyExport": {
+    "message": "Folder dan prompt Anda kosong, tidak ada yang bisa diekspor!"
+  },
+  "alertImportSuccess": {
+    "message": "Impor berhasil! Folder dan prompt Anda telah berhasil digabungkan."
+  },
+  "alertImportError": {
+    "message": "Kesalahan impor. Pastikan itu adalah file JSON yang valid yang dibuat oleh ekstensi ini."
+  },
+  "btnRename": {
+    "message": "Ubah Nama"
+  },
+  "btnDelete": {
+    "message": "Hapus"
+  },
+  "btnNewFolder": {
+    "message": "➕ Folder"
+  },
+  "promptNewFolder": {
+    "message": "Folder baru:"
+  },
+  "btnDeleteFolder": {
+    "message": "Hapus Folder"
+  },
+  "confirmDeleteFolder": {
+    "message": "Folder ini berisi percakapan. Apakah Anda yakin ingin menghapusnya?"
+  },
+  "btnPin": {
+    "message": "Sematkan"
+  },
+  "btnUnpin": {
+    "message": "Lepas Sematan"
+  },
+  "sortNewest": {
+    "message": "Terbaru"
+  },
+  "sortOldest": {
+    "message": "Terlama"
+  },
+  "sortAlpha": {
+    "message": "A ke Z"
+  },
+  "ctxMenuSave": {
+    "message": "Simpan ke Folder Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Tidak ada folder - Buka ekstensi)"
+  },
+  "btnToggleAdd": {
+    "message": "Tambah percakapan"
+  },
+  "btnCancel": {
+    "message": "Tutup"
+  },
+  "btnRenameFolder": {
+    "message": "Ubah Nama Folder"
+  },
+  "promptRenameFolder": {
+    "message": "Nama baru:"
+  },
+  "errorFolderExists": {
+    "message": "Folder dengan nama ini sudah ada."
+  },
+  "storageCalc": {
+    "message": "Menghitung ruang..."
+  },
+  "storageInfo": {
+    "message": "Penyimpanan: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Simpan percakapan"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Simpanan Cepat"
+  },
+  "toastSaved": {
+    "message": "✅ Tersimpan ke Folder Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Buka di Grup Tab"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Apakah Anda benar-benar ingin membuka {count} tab sekaligus?"
+  },
+  "errorTabGroup": {
+    "message": "Kesalahan: Tidak dapat membuat grup tab. Apakah Anda sudah menerima izin baru?"
+  },
+  "bulkSelected": {
+    "message": "{count} dipilih"
+  },
+  "bulkMove": {
+    "message": "Pindahkan ke..."
+  },
+  "bulkDelete": {
+    "message": "Hapus"
+  },
+  "confirmBulkDelete": {
+    "message": "Apakah Anda yakin ingin menghapus {count} percakapan ini?"
+  },
+  "bulkCancel": {
+    "message": "Batalkan pilihan"
+  },
+  "masterFolderName": {
+    "message": "Folder Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Membuat folder tersinkronisasi di bookmark Chrome Anda untuk mengakses percakapan di ponsel."
+  },
+  "reviewTitle": {
+    "message": "⭐ Apakah Anda menyukai Folder Gemini?"
+  },
+  "reviewMessage": {
+    "message": "Dukungan Anda sangat membantu proyek open source ini!"
+  },
+  "reviewRateBtn": {
+    "message": "Beri 5 bintang"
+  },
+  "reviewLaterBtn": {
+    "message": "Mungkin nanti"
+  },
+  "reviewNoBtn": {
+    "message": "Tidak, terima kasih"
+  },
+  "modalBtnCancel": {
+    "message": "Batal"
+  },
+  "modalBtnConfirm": {
+    "message": "Konfirmasi"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tips: Mulai dengan emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Sudah tersimpan!"
+  },
+  "folderModeTitle": {
+    "message": "Mode Folder"
+  },
+  "promptModeTitle": {
+    "message": "Mode Prompt"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt tidak boleh kosong!"
+  },
+  "promptSaved": {
+    "message": "Prompt tersimpan!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Prompt dengan judul ini sudah ada. Timpa?"
+  },
+  "promptNoSavedYet": {
+    "message": "Belum ada prompt yang tersimpan."
+  },
+  "promptAddBtn": {
+    "message": "Tambah Prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Salin"
+  },
+  "promptDeleteTitle": {
+    "message": "Hapus"
+  },
+  "promptSetGemLink": {
+    "message": "Atur tautan Gem khusus:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Tautan tidak valid. Harus dimulai dengan https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Percakapan Baru"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Judul Prompt"
+  },
+  "promptTextPlaceholder": {
+    "message": "Tulis prompt Anda di sini..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Aktifkan Gem khusus"
+  },
+  "setGemBtnTooltip": {
+    "message": "Atur tautan Gem khusus"
+  },
+  "syncPromptsTooltip": {
+    "message": "Sinkronkan prompt"
+  },
+  "promptRenamePrompt": {
+    "message": "Nama prompt baru:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Hapus prompt ini?"
+  },
+  "promptInsertBtn": {
+    "message": "Masukkan ke Gemini"
+  },
+  "promptPinTitle": {
+    "message": "Sematkan"
+  }
+}

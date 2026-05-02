@@ -1,62 +1,248 @@
 {
-  "extName": { "message": "Gemini フォルダ" },
-  "extDesc": { "message": "Gemini の会話をカスタムフォルダに整理します。" },
-  "appTitle": { "message": "Gemini フォルダ" },
-  "searchPlaceholder": { "message": "🔍 会話を検索..." },
-  "folderPlaceholder": { "message": "フォルダ名 (例: プロジェクト)" },
-  "chatPlaceholder": { "message": "会話のタイトル" },
-  "saveBtn": { "message": "保存" },
-  "statusSaved": { "message": "会話を保存しました！" },
-  "noResults": { "message": "結果が見つかりません 🕵️" },
-  "exportBtn": { "message": "💾 エクスポート" },
-  "importBtn": { "message": "📂 インポート" },
-  "alertNotGemini": { "message": "この拡張機能は Gemini のページで使用してください。" },
-  "defaultFolder": { "message": "一般" },
-  "defaultTitle": { "message": "新しい会話" },
-  "promptRename": { "message": "新しい会話の名前：" },
-  "alertEmptyExport": { "message": "フォルダが空です。エクスポートするものがありません！" },
-  "alertImportSuccess": { "message": "インポート成功！データが正常に統合されました。" },
-  "alertImportError": { "message": "インポートエラー。この拡張機能の有効な JSON ファイルであることを確認してください。" },
-  "btnRename": { "message": "名前を変更" },
-  "btnDelete": { "message": "削除" },
-  "btnNewFolder": { "message": "➕ フォルダ" },
-  "promptNewFolder": { "message": "新しいフォルダ：" },
-  "btnDeleteFolder": { "message": "フォルダを削除" },
-  "confirmDeleteFolder": { "message": "このフォルダには会話が含まれています。本当に削除しますか？" },
-  "btnPin": { "message": "ピン留め" },
-  "btnUnpin": { "message": "ピン留め解除" },
-  "sortNewest": { "message": "新しい順" },
-  "sortOldest": { "message": "古い順" },
-  "sortAlpha": { "message": "名前順" },
-  "ctxMenuSave": { "message": "Gemini フォルダに保存" },
-  "ctxMenuNoFolder": { "message": "(フォルダなし - 拡張機能を開く)" },
-  "btnToggleAdd": { "message": "会話を追加" },
-  "btnCancel": { "message": "閉じる" },
-  "btnRenameFolder": { "message": "フォルダ名を変更" },
-  "promptRenameFolder": { "message": "新しい名前：" },
-  "errorFolderExists": { "message": "この名前のフォルダはすでに存在します。" },
-  "storageCalc": { "message": "容量を計算中..." },
-  "storageInfo": { "message": "ストレージ：{used} KB / {max} KB ({pct}%)" },
-  "cmdQuickSave": { "message": "会話を保存" },
-  "quickSaveFolder": { "message": "⚡ クイック保存" },
-  "toastSaved": { "message": "✅ Gemini フォルダに保存しました！" },
-  "btnOpenGroup": { "message": "タブグループで開く" },
-  "confirmOpenManyTabs": { "message": "本当に {count} 個のタブを同時に開きますか？" },
-  "errorTabGroup": { "message": "エラー：タブグループを作成できません。新しい権限を承認しましたか？" },
-  "bulkSelected": { "message": "{count} 件選択中" },
-  "bulkMove": { "message": "移動先..." },
-  "bulkDelete": { "message": "削除" },
-  "confirmBulkDelete": { "message": "これら {count} 件の会話を本当に削除しますか？" },
-  "bulkCancel": { "message": "選択をキャンセル" },
-  "masterFolderName": { "message": "Gemini フォルダ (Sync)" },
-  "syncBookmarksTooltip": { "message": "Chromeのブックマークに同期されたフォルダを作成し、スマートフォンから会話にアクセスできるようにします。" },
-  "reviewTitle": { "message": "⭐ Gemini フォルダ をお楽しみですか？" },
-  "reviewMessage": { "message": "皆様のサポートがこのオープンソースプロジェクトの大きな力になります！" },
-  "reviewRateBtn": { "message": "5つ星で評価" },
-  "reviewLaterBtn": { "message": "後で" },
-  "reviewNoBtn": { "message": "いいえ、結構です" },
-  "modalBtnCancel": { "message": "キャンセル" },
-  "modalBtnConfirm": { "message": "確認" },
-  "emojiTipPlaceholder": { "message": "ヒント：絵文字で開始（Win+. / ⌘⌃スペース）" },
-  "toastAlreadySaved": { "message": "⚠️ 保存済みです！" }
+  "extName": {
+    "message": "Gemini フォルダ"
+  },
+  "extDesc": {
+    "message": "Gemini の会話をカスタムフォルダに整理します。"
+  },
+  "appTitle": {
+    "message": "Gemini フォルダ"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 会話を検索..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 プロンプトを検索..."
+  },
+  "folderPlaceholder": {
+    "message": "フォルダ名 (例: プロジェクト)"
+  },
+  "chatPlaceholder": {
+    "message": "会話のタイトル"
+  },
+  "saveBtn": {
+    "message": "保存"
+  },
+  "statusSaved": {
+    "message": "会話を保存しました！"
+  },
+  "noResults": {
+    "message": "結果が見つかりません 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 エクスポート"
+  },
+  "importBtn": {
+    "message": "📂 インポート"
+  },
+  "alertNotGemini": {
+    "message": "この拡張機能は Gemini のページで使用してください。"
+  },
+  "defaultFolder": {
+    "message": "一般"
+  },
+  "defaultTitle": {
+    "message": "新しい会話"
+  },
+  "promptRename": {
+    "message": "新しい会話の名前："
+  },
+  "alertEmptyExport": {
+    "message": "フォルダが空です。エクスポートするものがありません！"
+  },
+  "alertImportSuccess": {
+    "message": "インポート成功！データが正常に統合されました。"
+  },
+  "alertImportError": {
+    "message": "インポートエラー。この拡張機能の有効な JSON ファイルであることを確認してください。"
+  },
+  "btnRename": {
+    "message": "名前を変更"
+  },
+  "btnDelete": {
+    "message": "削除"
+  },
+  "btnNewFolder": {
+    "message": "➕ フォルダ"
+  },
+  "promptNewFolder": {
+    "message": "新しいフォルダ："
+  },
+  "btnDeleteFolder": {
+    "message": "フォルダを削除"
+  },
+  "confirmDeleteFolder": {
+    "message": "このフォルダには会話が含まれています。本当に削除しますか？"
+  },
+  "btnPin": {
+    "message": "ピン留め"
+  },
+  "btnUnpin": {
+    "message": "ピン留め解除"
+  },
+  "sortNewest": {
+    "message": "新しい順"
+  },
+  "sortOldest": {
+    "message": "古い順"
+  },
+  "sortAlpha": {
+    "message": "名前順"
+  },
+  "ctxMenuSave": {
+    "message": "Gemini フォルダに保存"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(フォルダなし - 拡張機能を開く)"
+  },
+  "btnToggleAdd": {
+    "message": "会話を追加"
+  },
+  "btnCancel": {
+    "message": "閉じる"
+  },
+  "btnRenameFolder": {
+    "message": "フォルダ名を変更"
+  },
+  "promptRenameFolder": {
+    "message": "新しい名前："
+  },
+  "errorFolderExists": {
+    "message": "この名前のフォルダはすでに存在します。"
+  },
+  "storageCalc": {
+    "message": "容量を計算中..."
+  },
+  "storageInfo": {
+    "message": "ストレージ：{used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "会話を保存"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ クイック保存"
+  },
+  "toastSaved": {
+    "message": "✅ Gemini フォルダに保存しました！"
+  },
+  "btnOpenGroup": {
+    "message": "タブグループで開く"
+  },
+  "confirmOpenManyTabs": {
+    "message": "本当に {count} 個のタブを同時に開きますか？"
+  },
+  "errorTabGroup": {
+    "message": "エラー：タブグループを作成できません。新しい権限を承認しましたか？"
+  },
+  "bulkSelected": {
+    "message": "{count} 件選択中"
+  },
+  "bulkMove": {
+    "message": "移動先..."
+  },
+  "bulkDelete": {
+    "message": "削除"
+  },
+  "confirmBulkDelete": {
+    "message": "これら {count} 件の会話を本当に削除しますか？"
+  },
+  "bulkCancel": {
+    "message": "選択をキャンセル"
+  },
+  "masterFolderName": {
+    "message": "Gemini フォルダ (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Chromeのブックマークに同期されたフォルダを作成し、スマートフォンから会話にアクセスできるようにします。"
+  },
+  "reviewTitle": {
+    "message": "⭐ Gemini フォルダ をお楽しみですか？"
+  },
+  "reviewMessage": {
+    "message": "皆様のサポートがこのオープンソースプロジェクトの大きな力になります！"
+  },
+  "reviewRateBtn": {
+    "message": "5つ星で評価"
+  },
+  "reviewLaterBtn": {
+    "message": "後で"
+  },
+  "reviewNoBtn": {
+    "message": "いいえ、結構です"
+  },
+  "modalBtnCancel": {
+    "message": "キャンセル"
+  },
+  "modalBtnConfirm": {
+    "message": "確認"
+  },
+  "emojiTipPlaceholder": {
+    "message": "ヒント：絵文字で開始（Win+. / ⌘⌃スペース）"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ 保存済みです！"
+  },
+  "folderModeTitle": {
+    "message": "フォルダモード"
+  },
+  "promptModeTitle": {
+    "message": "プロンプトモード"
+  },
+  "promptCannotBeEmpty": {
+    "message": "プロンプトは空にできません！"
+  },
+  "promptSaved": {
+    "message": "プロンプトを保存しました！"
+  },
+  "promptDuplicateWarning": {
+    "message": "このタイトルのプロンプトがすでに存在します。上書きしますか？"
+  },
+  "promptNoSavedYet": {
+    "message": "まだプロンプトが保存されていません。"
+  },
+  "promptAddBtn": {
+    "message": "プロンプトを追加"
+  },
+  "promptCopyTitle": {
+    "message": "コピー"
+  },
+  "promptDeleteTitle": {
+    "message": "削除"
+  },
+  "promptSetGemLink": {
+    "message": "カスタム Gem リンクを設定："
+  },
+  "promptInvalidGemLink": {
+    "message": "無効なリンクです。https://gemini.google.com/ で始まる必要があります。"
+  },
+  "newConversationBtn": {
+    "message": "新しい会話"
+  },
+  "promptTitlePlaceholder": {
+    "message": "プロンプトのタイトル"
+  },
+  "promptTextPlaceholder": {
+    "message": "プロンプトをここに入力..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "カスタム Gem を有効にする"
+  },
+  "setGemBtnTooltip": {
+    "message": "カスタム Gem リンクを設定"
+  },
+  "syncPromptsTooltip": {
+    "message": "プロンプトを同期"
+  },
+  "promptRenamePrompt": {
+    "message": "プロンプトの新しい名前："
+  },
+  "confirmDeletePrompt": {
+    "message": "このプロンプトを削除しますか？"
+  },
+  "promptInsertBtn": {
+    "message": "Gemini に挿入"
+  },
+  "promptPinTitle": {
+    "message": "固定"
+  }
 }

@@ -1,0 +1,61 @@
+Apakah Anda menggunakan Google Gemini setiap hari — untuk pekerjaan, kode, penulisan, atau riset — tetapi terus mengetik ulang prompt yang sama, sementara percakapan terbaik Anda menghilang dalam riwayat yang tak ada habisnya?
+Folder Gemini (Gemini Folders) adalah ekstensi yang Anda butuhkan.
+
+Dengan versi 4.0, Folder Gemini menjadi kokpit Gemini Anda yang sesungguhnya: susun percakapan ke dalam folder, bangun perpustakaan prompt yang dapat digunakan kembali, dan suntikkan langsung ke Gemini dengan satu klik — tanpa salin-tempel.
+
+✨ BARU DI v4.0 — MODE PROMPT
+
+📝 Perpustakaan Prompt Pribadi: Beralih ke Mode Prompt dengan satu klik pada tombol sakelar di header. Simpan prompt terbaik Anda dengan judul dan teks lengkap, lalu temukan seketika dengan pencarian dan pengurutan (terbaru, terlama, A-Z).
+▶ Injeksi Satu Klik: Tidak perlu lagi salin-tempel. Klik tombol putar (▶) pada prompt mana pun untuk menyuntikkannya langsung ke kolom input Gemini. Ekstensi mendeteksi apakah Anda berada di halaman Gemini dan memberi tahu jika tidak.
+✏️ Pengeditan di Tempat: Klik prompt untuk meluaskannya dan edit teks langsung. Perubahan otomatis tersimpan setelah jeda singkat dan urutan pengurutan diperbarui sesuai.
+💎 Tautan Gem Khusus: Konfigurasikan tautan ke Gem favorit Anda dan aktifkan/nonaktifkan dengan klik. Saat aktif, tombol "Percakapan Baru" membuka Gem Anda, bukan obrolan default.
+☁️ Sinkronisasi Prompt: Aktifkan sinkronisasi cloud untuk perpustakaan prompt Anda secara independen dari folder Anda.
+📌 Prompt yang Disematkan: Sematkan prompt penting Anda dengan satu klik agar tetap di bagian atas perpustakaan, dipisahkan dari yang lain oleh pemisah visual.
+
+🌟 FITUR FOLDER
+
+⚡ Simpan Cepat (Klik Kanan & Pintasan): Simpan percakapan saat ini dengan klik kanan sederhana, atau gunakan pintasan keyboard (Ctrl+Shift+S atau Cmd+Shift+S di Mac) untuk langsung mengirimkannya ke "⚡ Simpanan Cepat" — dengan peringatan visual jika sudah tersimpan!
+☑️ Pilihan Ganda (Tindakan Massal): Pilih beberapa percakapan menggunakan kotak centang untuk memindahkan atau menghapusnya dalam satu klik.
+📑 Integrasi Grup Tab: Buka seluruh folder dalam satu klik sebagai Grup Tab Chrome asli dengan kode warna.
+😃 Emoji Folder Khusus: Mulai nama folder dengan emoji (mis. "💻 Kode") untuk mengganti ikon folder default.
+🖱️ Seret & Lepas: Susun ulang ruang kerja Anda dengan menyeret percakapan antar folder.
+📱 Sinkronisasi Mobile: Sakelar menghasilkan folder cermin di bookmark Chrome Anda, mereproduksi struktur folder dan urutan pengurutan kustom Anda di ponsel dengan sempurna.
+🗜️ Kompresi Ultra-Efisien: Otomatis mengompresi data Anda (LZString) untuk memaksimalkan penyimpanan asli Chrome dan menyimpan ratusan percakapan.
+📊 Pelacak Penyimpanan: Bilah kemajuan visual yang elegan menampilkan penyimpanan cloud yang tersedia secara real time.
+📁 Folder & Pin Kustom: Susun percakapan berdasarkan proyek, tema, atau kategori. Sematkan (📌) folder favorit Anda di bagian atas.
+⇅ Pengurutan Kustom: Urutkan folder dan percakapan secara langsung (Terbaru, Terlama, A-Z) dengan perubahan yang langsung tercermin dalam sinkronisasi mobile Anda.
+🤖 Deteksi Cerdas & Pencarian: Pengisian otomatis judul percakapan yang tepat dan bilah pencarian real time.
+☁️ Sinkronisasi Cloud & Cadangan: Akses organisasi Anda di semua perangkat dan ekspor data sebagai JSON.
+🎨 Desain Material 3 & Multibahasa: Antarmuka ultra-kompak dengan dialog modal yang sepenuhnya kustom, mode gelap otomatis, dan dukungan 27 bahasa!
+
+🛠️ CARA KERJANYA?
+
+Mode Folder:
+Buka percakapan di gemini.google.com.
+Simpan cepat: Ctrl+Shift+S (atau Cmd+Shift+S di Mac), atau klik kanan > "Simpan ke Folder Gemini".
+Via ekstensi: Klik ikon, pilih folder, dan simpan.
+Mobile: Centang 📱 di footer untuk menyinkronkan folder Anda ke ponsel.
+Gunakan kotak centang untuk tindakan massal, buka folder sebagai Grup Tab (📑), seret dan lepas untuk menyusun ulang!
+
+Mode Prompt:
+Klik 📝 pada tombol sakelar di kanan atas ekstensi.
+Klik ➕ Tambah Prompt, masukkan judul dan teks Anda, lalu simpan.
+Untuk menggunakan prompt: luaskan dan klik ▶ — langsung disuntikkan ke Gemini, siap dikirim.
+Untuk menyematkan prompt: klik 📍 — naik ke bagian atas daftar dan tetap mudah dijangkau.
+Konfigurasikan 💎 untuk mengarah ke Gem kustom Anda.
+
+🔒 PRIVASI & KEAMANAN
+Dibangun dengan privasi sebagai inti. Hanya meminta akses ke gemini.google.com dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui Chrome Sync: tidak ada server pihak ketiga, tidak ada telemetri.
+
+🤝 PROYEK OPEN SOURCE
+Folder Gemini adalah proyek open source yang dibangun dengan penuh semangat. Transparansi dan penghormatan terhadap privasi Anda adalah prioritas utama kami. Apakah Anda pengembang atau sekadar penasaran? Jelajahi kode, ikuti catatan perubahan, atau berkontribusi di GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 PEMBARUAN:
+Versi 4.0 (Perpustakaan Prompt): Pembaruan paling ambisius sejauh ini! Folder Gemini mendapatkan Mode Prompt yang sepenuhnya baru: simpan prompt terbaik Anda, edit secara langsung, dan suntikkan langsung ke Gemini dengan satu klik. Ditambahkan tombol sakelar mode animasi, pencarian dan pengurutan di Mode Prompt, tombol Gem kustom, dan sinkronisasi prompt independen. Sematkan prompt penting Anda ke bagian atas perpustakaan.
+Versi 3.5 (Fondasi Kokoh & Pengalaman yang Ditingkatkan): Pembaruan besar di balik layar untuk ketangguhan tingkat profesional! Peringatan visual untuk duplikasi via pintasan keyboard. Tidak ada lagi duplikat palsu dari perubahan URL Gemini, dan database terlindungi dari korupsi dengan arsitektur keamanan baru kami.
+Versi 3.4.1 (Kekuatan Multiplatform & Stabilitas): Berhasil diporting ke Mozilla Firefox dengan sistem build otomatis dan kepatuhan keamanan yang ketat. Perbaikan definitif untuk bug folder bookmark duplikat selama sinkronisasi mobile.
+Versi 3.3 (Desain Premium & Internasional): Dialog Material 3 kustom 100% baru, sinkronisasi mobile yang mencerminkan urutan pengurutan Anda, dan ekspansi global dengan 10 bahasa baru!
+Versi 3.2 (Mobile & Open Source): Sinkronisasi mobile cerdas via bookmark Chrome, pengurutan cerdas folder yang disematkan, footer ultra-kompak, dan peluncuran open source resmi dengan tautan GitHub terintegrasi.
+Versi 3.1 (Peningkatan UX): Stabilisasi Seret & Lepas, kotak centang mode gelap, kunci antarmuka cerdas selama tindakan massal.
+Versi 3.0 (Pembaruan Produktivitas): Pintasan keyboard, pilihan ganda, grup tab, emoji kustom, kompresi data, dan bilah penyimpanan.
+Versi 2.0: Desain ulang besar dengan Seret & Lepas, menu konteks, pengurutan kustom, penyematan, dan desain Material 3.

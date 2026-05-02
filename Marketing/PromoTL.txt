@@ -1,0 +1,61 @@
+Ginagamit mo ba ang Google Gemini araw-araw — para sa trabaho, code, pagsusulat, o pananaliksik — ngunit paulit-ulit kang nagta-type ng parehong mga prompt, habang nawawala ang iyong mga pinakamahusay na pag-uusap sa walang katapusang kasaysayan?
+Ang Mga Folder ng Gemini (Gemini Folders) ang extension na kailangan mo.
+
+Sa bersyon 4.0, ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockpit: ayusin ang mga pag-uusap sa mga folder, bumuo ng library ng mga reusable na prompt, at i-inject ang mga ito nang direkta sa Gemini sa isang click — hindi na kailangang mag-copy-paste.
+
+✨ BAGO SA v4.0 — PROMPT MODE
+
+📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).
+▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng Gemini. Nde-detect ng extension kung nasa Gemini page ka at inaabisuhan ka kung wala.
+✏️ Inline na Pag-edit: I-click ang isang prompt para palawakin ito at i-edit ang teksto nang direkta. Awtomatikong nase-save ang mga pagbabago pagkatapos ng maikling pause at ina-update ang sort order.
+💎 Custom Gem Link: Mag-configure ng link sa iyong paboritong Gem at i-toggle ito on/off sa isang click. Kapag aktibo, ang button na "Bagong Pag-uusap" ay nagbubukas ng iyong Gem sa halip na ang default na chat.
+☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
+📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
+
+🌟 MGA FEATURE NG FOLDER
+
+⚡ Mabilis na Pag-save (Right-Click at Shortcuts): I-save ang kasalukuyang pag-uusap sa pamamagitan ng simpleng right-click, o gamitin ang keyboard shortcut (Ctrl+Shift+S o Cmd+Shift+S sa Mac) para agad itong ipadala sa "⚡ Mabilis na Pag-save" — na may visual na alerto kung nai-save na ito!
+☑️ Multi-Select (Bulk Actions): Pumili ng maraming pag-uusap gamit ang mga checkbox para ilipat o tanggalin ang mga ito sa isang click.
+📑 Tab Groups Integration: Buksan ang isang buong folder sa isang click bilang isang native, color-coded na Chrome Tab Group.
+😃 Custom Folder Emoji: Simulan ang pangalan ng iyong folder ng emoji (hal. "💻 Code") para palitan ang default na folder icon.
+🖱️ Drag at Drop: Muling ayusin ang iyong workspace sa pamamagitan ng pag-drag ng mga pag-uusap sa pagitan ng mga folder.
+📱 Mobile Sync: Ang isang toggle ay gumagawa ng mirror folder sa iyong mga Chrome bookmark, na perpektong nire-reproduce ang iyong folder structure at custom sort order sa iyong telepono.
+🗜️ Ultra-Efficient Compression: Awtomatikong kino-compress ang iyong data (LZString) para ma-maximize ang native storage ng Chrome at ma-save ang daan-daang pag-uusap.
+📊 Storage Tracker: Ang isang eleganteng visual progress bar ay nagpapakita ng iyong available na cloud storage sa real time.
+📁 Custom Folder at Pins: Ayusin ang iyong mga pag-uusap ayon sa mga proyekto, tema, o kategorya. I-pin (📌) ang iyong mga paboritong folder sa itaas.
+⇅ Custom Sorting: Mag-sort ng mga folder at pag-uusap on the fly (Pinakabago, Pinakamatanda, A-Z) na agad na makikita sa iyong mobile sync.
+🤖 Smart Detection at Search: Awtomatikong pre-fill ng eksaktong pamagat ng iyong pag-uusap at real-time na search bar.
+☁️ Cloud Sync at Backup: I-access ang iyong organisasyon sa lahat ng iyong device at i-export ang iyong data bilang JSON.
+🎨 Material 3 Design at Multilingual: Ultra-compact na interface na may ganap na custom na modal dialog, awtomatikong dark mode, at suporta para sa 27 na wika!
+
+🛠️ PAANO ITO GUMAGANA?
+
+Folder Mode:
+Magbukas ng pag-uusap sa gemini.google.com.
+Mabilis na pag-save: Ctrl+Shift+S (o Cmd+Shift+S sa Mac), o right-click > "I-save sa Mga Folder ng Gemini".
+Sa pamamagitan ng extension: I-click ang icon, pumili ng folder, at i-save.
+Mobile: Lagyan ng tsek ang 📱 sa footer para i-sync ang iyong mga folder sa iyong telepono.
+Gumamit ng mga checkbox para sa bulk actions, buksan ang mga folder bilang Tab Groups (📑), mag-drag at drop para muling ayusin!
+
+Prompt Mode:
+I-click ang 📝 sa toggle button sa kanang itaas ng extension.
+I-click ang ➕ Magdagdag ng Prompt, maglagay ng pamagat at teksto, at i-save.
+Para gamitin ang isang prompt: palawakin ito at i-click ang ▶ — direktang ini-inject sa Gemini, handa nang ipadala.
+Para i-pin ang isang prompt: i-click ang 📍 — lilipat ito sa tuktok ng listahan at mananatiling madaling ma-access.
+I-configure ang 💎 para ituro sa iyong custom na Gem.
+
+🔒 PRIVACY AT SEGURIDAD
+Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa gemini.google.com at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.
+
+🤝 OPEN SOURCE NA PROYEKTO
+Ang Mga Folder ng Gemini ay isang open source na proyektong ginawa nang may pagmamahal. Ang transparency at paggalang sa iyong privacy ang aming mga pangunahing priyoridad. Ikaw ba ay isang developer o basta lang curious? I-browse ang code, sundan ang changelog, o mag-contribute sa GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 MGA UPDATE:
+Bersyon 4.0 (Prompt Library): Ang pinaka-ambisyosong update hanggang ngayon! Ang Mga Folder ng Gemini ay nakakakuha ng isang bagong Prompt Mode: i-save ang iyong mga pinakamahusay na prompt, i-edit ang mga ito inline, at i-inject ang mga ito nang direkta sa Gemini sa isang click. Nadagdag ang animated mode toggle, paghahanap at pag-sort sa Prompt Mode, custom Gem button, at independyenteng prompt sync. I-pin ang iyong mga mahahalagang prompt sa tuktok ng iyong library.
+Bersyon 3.5 (Matibay na Pundasyon at Pinahusay na Karanasan): Isang malaking under-the-hood na update para sa professional-grade na katatagan! Visual na alerto para sa mga duplicate na pag-save sa pamamagitan ng keyboard shortcut. Wala nang mga pekeng duplicate mula sa mga pagbabago ng Gemini URL, at isang database na protektado laban sa katiwalian gamit ang aming bagong security architecture.
+Bersyon 3.4.1 (Multiplatform Power at Stability): Matagumpay na na-port sa Mozilla Firefox na may automated build system at mahigpit na security compliance. Tiyak na pag-aayos sa bug ng duplicate na bookmark folder sa panahon ng mobile sync.
+Bersyon 3.3 (Premium Design at International): Mga bagong 100% custom na Material 3 dialog, mobile sync na sumasalamin sa iyong sort order, at global expansion na may 10 bagong wika!
+Bersyon 3.2 (Mobile at Open Source): Matalinong mobile sync sa pamamagitan ng mga Chrome bookmark, matalinong pag-sort ng mga naka-pin na folder, ultra-compact na footer, at opisyal na open source launch na may integrated na GitHub link.
+Bersyon 3.1 (Mga Pagpapabuti ng UX): Stabilisasyon ng Drag at Drop, mga checkbox sa dark mode, matalinong interface lock sa panahon ng mga bulk action.
+Bersyon 3.0 (Productivity Update): Mga keyboard shortcut, multi-select, tab groups, custom emoji, data compression, at storage bar.
+Bersyon 2.0: Malaking redesign na may Drag at Drop, context menu, custom sorting, pinning, at Material 3 design.

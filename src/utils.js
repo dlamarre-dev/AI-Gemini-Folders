@@ -1,75 +1,136 @@
 // utils.js
 
 function loadData(defaults, callback) {
-  chrome.storage.sync.get(null, (result) => {
-    let finalData = Object.assign({}, defaults);
+  chrome.storage.sync.get(null, (syncResult) => {
+    chrome.storage.local.get(null, (localResult) => {
+      let finalData = Object.assign({}, defaults);
+      const combinedResult = { ...localResult, ...syncResult };
 
-    if (result) {
-      for (let key in result) {
-        if (key !== 'folders' && key !== 'foldersDataCompressed') {
-          finalData[key] = result[key];
-        }
-      }
-
-      const rawFoldersData = result.foldersDataCompressed || result.folders;
-
-      if (rawFoldersData) {
-        if (typeof rawFoldersData === 'string') {
-          try {
-            const decompressed = LZString.decompressFromUTF16(rawFoldersData);
-            if (decompressed === null) throw new Error("LZString returned null.");
-
-            finalData.folders = JSON.parse(decompressed);
-
-            if (typeof finalData.folders !== 'object' || finalData.folders === null) {
-                throw new Error("Parsed JSON is not an object");
-            }
-          } catch (error) {
-            console.error("🚨 Critical error upon decompression:", error);
-            finalData.folders = defaults.folders || {};
+      if (combinedResult) {
+        for (let key in combinedResult) {
+          if (key !== 'folders' && key !== 'foldersDataCompressed' && key !== 'prompts' && key !== 'promptsDataCompressed') {
+            finalData[key] = syncResult[key] !== undefined ? syncResult[key] : localResult[key];
           }
-        } else {
-          finalData.folders = rawFoldersData;
+        }
+
+        // 1. Folders
+        const rawFoldersData = syncResult.foldersDataCompressed || syncResult.folders;
+        if (rawFoldersData) {
+          if (typeof rawFoldersData === 'string') {
+            try {
+              const decompressed = LZString.decompressFromUTF16(rawFoldersData);
+              if (decompressed === null) throw new Error("LZString returned null.");
+              finalData.folders = JSON.parse(decompressed);
+            } catch (error) {
+              console.error("🚨 Folders decompression error:", error);
+              finalData.folders = defaults.folders || {};
+            }
+          } else {
+            finalData.folders = rawFoldersData;
+          }
+        }
+
+        // 2. Prompts
+        const syncPromptsEnabled = syncResult.syncPromptsEnabled === true;
+        let rawPromptsData = null;
+        if (syncPromptsEnabled && (syncResult.promptsDataCompressed || syncResult.prompts)) {
+            rawPromptsData = syncResult.promptsDataCompressed || syncResult.prompts;
+        } else if (localResult.promptsDataCompressed || localResult.prompts) {
+            rawPromptsData = localResult.promptsDataCompressed || localResult.prompts;
+        }
+
+        if (rawPromptsData) {
+          if (typeof rawPromptsData === 'string') {
+            try {
+              const decompressed = LZString.decompressFromUTF16(rawPromptsData);
+              if (decompressed === null) throw new Error("LZString returned null.");
+              finalData.prompts = JSON.parse(decompressed);
+            } catch (error) {
+              console.error("🚨 Prompts decompression error:", error);
+              finalData.prompts = defaults.prompts || {};
+            }
+          } else {
+            finalData.prompts = rawPromptsData;
+          }
         }
       }
-    }
-
-    callback(finalData);
+      callback(finalData);
+    });
   });
 }
 
 function saveData(dataToSave, callback) {
-  const finalSave = { ...dataToSave };
+  chrome.storage.sync.get(['syncPromptsEnabled'], (syncState) => {
+    const isPromptsSyncEnabled = dataToSave.syncPromptsEnabled !== undefined ? dataToSave.syncPromptsEnabled : syncState.syncPromptsEnabled;
+    const finalSaveSync = { ...dataToSave };
+    const finalSaveLocal = {};
 
-  if (finalSave.folders) {
-    finalSave.foldersDataCompressed = LZString.compressToUTF16(JSON.stringify(finalSave.folders));
-    delete finalSave.folders;
-    chrome.storage.sync.remove('folders');
-  }
+    if (finalSaveSync.folders) {
+      finalSaveSync.foldersDataCompressed = LZString.compressToUTF16(JSON.stringify(finalSaveSync.folders));
+      delete finalSaveSync.folders;
+      chrome.storage.sync.remove('folders');
+    }
 
-  chrome.storage.sync.set(finalSave, () => {
-      chrome.storage.sync.get(['syncBookmarksEnabled', 'foldersDataCompressed', 'pinnedFolders', 'sortPref'], (syncData) => {
-        if (syncData.syncBookmarksEnabled && syncData.foldersDataCompressed) {
-          try {
-            const folders = JSON.parse(LZString.decompressFromUTF16(syncData.foldersDataCompressed));
-            const pinned = syncData.pinnedFolders || []; // Safety fallback if it's empty
-            const sortPref = syncData.sortPref || 'dateAsc'; // Fallback
-            syncToBookmarksTree(folders, pinned, sortPref);
-          } catch (e) {
-            console.error("Bookmark sync skipped — decompression error:", e);
+    if (finalSaveSync.prompts) {
+      const compressedPrompts = LZString.compressToUTF16(JSON.stringify(finalSaveSync.prompts));
+      delete finalSaveSync.prompts;
+      chrome.storage.sync.remove('prompts');
+      chrome.storage.local.remove('prompts');
+
+      if (isPromptsSyncEnabled) {
+        finalSaveSync.promptsDataCompressed = compressedPrompts;
+        chrome.storage.local.remove('promptsDataCompressed');
+      } else {
+        finalSaveLocal.promptsDataCompressed = compressedPrompts;
+        chrome.storage.sync.remove('promptsDataCompressed');
+      }
+    }
+
+    chrome.storage.local.set(finalSaveLocal, () => {
+      chrome.storage.sync.set(finalSaveSync, () => {
+        if (chrome.runtime.lastError && chrome.runtime.lastError.message.includes("QUOTA")) {
+          if (isPromptsSyncEnabled && dataToSave.prompts) {
+            console.warn("Quota exceeded on sync. Reverting prompts to local.");
+            const compressedPrompts = LZString.compressToUTF16(JSON.stringify(dataToSave.prompts));
+            chrome.storage.local.set({ promptsDataCompressed: compressedPrompts }, () => {
+              chrome.storage.sync.set({ syncPromptsEnabled: false }, () => {
+                chrome.storage.sync.remove('promptsDataCompressed');
+                alert("Not enough space to sync prompts. They have been saved locally instead. Sync disabled.");
+                finishSave(callback);
+              });
+            });
+            return;
+          } else {
+            alert("Storage Error: " + chrome.runtime.lastError.message);
           }
         }
+        finishSave(callback);
       });
-
-      // Increment save counter
-      chrome.storage.local.get(['usageStats'], (data) => {
-        let stats = data.usageStats || { saves: 0, opens: 0 };
-        stats.saves += 1;
-        chrome.storage.local.set({ usageStats: stats });
-      });
-
-      if (callback) callback();
     });
+  });
+}
+
+function finishSave(callback) {
+  chrome.storage.sync.get(['syncBookmarksEnabled', 'foldersDataCompressed', 'pinnedFolders', 'sortPref'], (syncData) => {
+    if (syncData.syncBookmarksEnabled && syncData.foldersDataCompressed) {
+      try {
+        const folders = JSON.parse(LZString.decompressFromUTF16(syncData.foldersDataCompressed));
+        const pinned = syncData.pinnedFolders || [];
+        const sortPref = syncData.sortPref || 'dateAsc';
+        syncToBookmarksTree(folders, pinned, sortPref);
+      } catch (e) {
+        console.error("Bookmark sync skipped — decompression error:", e);
+      }
+    }
+  });
+
+  chrome.storage.local.get(['usageStats'], (data) => {
+    let stats = data.usageStats || { saves: 0, opens: 0 };
+    stats.saves += 1;
+    chrome.storage.local.set({ usageStats: stats });
+  });
+
+  if (callback) callback();
 }
 
 // --- BOOKMARKS SYNCHRONIZATION (MOBILE) ---
@@ -225,18 +286,23 @@ function mergeImportData(importedData) {
       return reject(new Error("Invalid Format"));
     }
 
-    loadData({ folders: {}, pinnedFolders: [] }, (data) => {
+    loadData({ folders: {}, pinnedFolders: [], prompts: {} }, (data) => {
       let currentFolders = data.folders || {};
       let currentPinned = data.pinnedFolders || [];
+      let currentPrompts = data.prompts || {};
 
       // --- BACKWARD COMPATIBILITY MANAGEMENT ---
       let foldersToImport = {};
       let pinsToImport = [];
+      let promptsToImport = {};
 
       if (importedData.folders) {
         foldersToImport = importedData.folders;
         if (Array.isArray(importedData.pinnedFolders)) {
           pinsToImport = importedData.pinnedFolders;
+        }
+        if (importedData.prompts) {
+          promptsToImport = importedData.prompts;
         }
       } else {
         foldersToImport = importedData;
@@ -261,8 +327,22 @@ function mergeImportData(importedData) {
         }
       });
 
+      // 3. Merge prompts
+      for (const [promptTitle, promptData] of Object.entries(promptsToImport)) {
+        if (!currentPrompts[promptTitle]) {
+          currentPrompts[promptTitle] = promptData;
+        } else {
+          // If a prompt with same title exists, we might keep the newest or just append a suffix.
+          // Simplest is to keep existing to avoid overwrites, or overwrite. Let's overwrite with imported if we want,
+          // but avoiding overwrite is safer. For now let's just keep the existing one if title matches to prevent accidental data loss.
+          if (currentPrompts[promptTitle].text !== promptData.text) {
+             currentPrompts[promptTitle + " (Imported)"] = promptData;
+          }
+        }
+      }
+
       // Final save
-      saveData({ folders: currentFolders, pinnedFolders: currentPinned }, () => {
+      saveData({ folders: currentFolders, pinnedFolders: currentPinned, prompts: currentPrompts }, () => {
         resolve(); // Termine la promesse avec succès
       });
     });

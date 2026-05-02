@@ -1,0 +1,14 @@
+{
+  "name": "gemini-folders-screenshots",
+  "version": "1.0.0",
+  "description": "Automated screenshot generation for Gemini Folders store listings",
+  "main": "take-screenshots.js",
+  "scripts": {
+    "screenshot": "node take-screenshots.js",
+    "screenshot:folder": "node take-screenshots.js --mode folder",
+    "screenshot:prompt": "node take-screenshots.js --mode prompt"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

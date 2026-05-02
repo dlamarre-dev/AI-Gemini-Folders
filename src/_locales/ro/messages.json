@@ -1,62 +1,248 @@
 {
-  "extName": { "message": "Foldere Gemini" },
-  "extDesc": { "message": "Organizați-vă conversațiile Gemini în foldere personalizate." },
-  "appTitle": { "message": "Foldere Gemini" },
-  "searchPlaceholder": { "message": "🔍 Căutați o conversație..." },
-  "folderPlaceholder": { "message": "Nume folder (ex: Proiecte Cod)" },
-  "chatPlaceholder": { "message": "Titlul conversației" },
-  "saveBtn": { "message": "Salvează" },
-  "statusSaved": { "message": "Conversație salvată!" },
-  "noResults": { "message": "Niciun rezultat găsit 🕵️" },
-  "exportBtn": { "message": "💾 Exportă" },
-  "importBtn": { "message": "📂 Importă" },
-  "alertNotGemini": { "message": "Vă rugăm să utilizați această extensie pe o pagină Gemini." },
-  "defaultFolder": { "message": "General" },
-  "defaultTitle": { "message": "Conversație nouă" },
-  "promptRename": { "message": "Nume nou pentru conversație:" },
-  "alertEmptyExport": { "message": "Folderele sunt goale, nimic de exportat!" },
-  "alertImportSuccess": { "message": "Import reușit! Datele au fost îmbinate cu succes." },
-  "alertImportError": { "message": "Eroare la import. Asigurați-vă că este un fișier JSON valid generat de această extensie." },
-  "btnRename": { "message": "Redenumește" },
-  "btnDelete": { "message": "Șterge" },
-  "btnNewFolder": { "message": "➕ Folder" },
-  "promptNewFolder": { "message": "Folder nou:" },
-  "btnDeleteFolder": { "message": "Șterge folderul" },
-  "confirmDeleteFolder": { "message": "Acest folder conține conversații. Sigur doriți să-l ștergeți?" },
-  "btnPin": { "message": "Fixează" },
-  "btnUnpin": { "message": "Anulează fixarea" },
-  "sortNewest": { "message": "Cele mai noi" },
-  "sortOldest": { "message": "Cele mai vechi" },
-  "sortAlpha": { "message": "De la A la Z" },
-  "ctxMenuSave": { "message": "Salvează în Foldere Gemini" },
-  "ctxMenuNoFolder": { "message": "(Niciun folder - Deschideți extensia)" },
-  "btnToggleAdd": { "message": "Adaugă conversație" },
-  "btnCancel": { "message": "Închide" },
-  "btnRenameFolder": { "message": "Redenumește folderul" },
-  "promptRenameFolder": { "message": "Nume nou:" },
-  "errorFolderExists": { "message": "Un folder cu acest nume există deja." },
-  "storageCalc": { "message": "Calculare spațiu..." },
-  "storageInfo": { "message": "Stocare: {used} KB / {max} KB ({pct}%)" },
-  "cmdQuickSave": { "message": "Salvează conversația" },
-  "quickSaveFolder": { "message": "⚡ Salvări Rapide" },
-  "toastSaved": { "message": "✅ Salvat în Foldere Gemini!" },
-  "btnOpenGroup": { "message": "Deschide într-un grup de file" },
-  "confirmOpenManyTabs": { "message": "Sigur doriți să deschideți {count} file în același timp?" },
-  "errorTabGroup": { "message": "Eroare: Nu s-a putut crea grupul de file. Ați acceptat noile permisiuni?" },
-  "bulkSelected": { "message": "{count} selectate" },
-  "bulkMove": { "message": "Mută în..." },
-  "bulkDelete": { "message": "Șterge" },
-  "confirmBulkDelete": { "message": "Sigur doriți să ștergeți aceste {count} conversații?" },
-  "bulkCancel": { "message": "Anulează selecția" },
-  "masterFolderName": { "message": "Foldere Gemini (Sync)" },
-  "syncBookmarksTooltip": { "message": "Creează un folder sincronizat în marcajele Chrome pentru a accesa conversațiile pe telefon." },
-  "reviewTitle": { "message": "⭐ Vă plac Folderele Gemini?" },
-  "reviewMessage": { "message": "Sprijinul dvs. ajută enorm acest proiect open source!" },
-  "reviewRateBtn": { "message": "Evaluează cu 5 stele" },
-  "reviewLaterBtn": { "message": "Mai târziu" },
-  "reviewNoBtn": { "message": "Nu, mulțumesc" },
-  "modalBtnCancel": { "message": "Anulează" },
-  "modalBtnConfirm": { "message": "Confirmă" },
-  "emojiTipPlaceholder": { "message": "Sfat: Începeți cu un emoji (Win+. / ⌘⌃Spațiu)" },
-  "toastAlreadySaved": { "message": "⚠️ Deja salvat!" }
+  "extName": {
+    "message": "Foldere Gemini"
+  },
+  "extDesc": {
+    "message": "Organizați-vă conversațiile Gemini în foldere personalizate."
+  },
+  "appTitle": {
+    "message": "Foldere Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Căutați o conversație..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Căutați un prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Nume folder (ex: Proiecte Cod)"
+  },
+  "chatPlaceholder": {
+    "message": "Titlul conversației"
+  },
+  "saveBtn": {
+    "message": "Salvează"
+  },
+  "statusSaved": {
+    "message": "Conversație salvată!"
+  },
+  "noResults": {
+    "message": "Niciun rezultat găsit 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Exportă"
+  },
+  "importBtn": {
+    "message": "📂 Importă"
+  },
+  "alertNotGemini": {
+    "message": "Vă rugăm să utilizați această extensie pe o pagină Gemini."
+  },
+  "defaultFolder": {
+    "message": "General"
+  },
+  "defaultTitle": {
+    "message": "Conversație nouă"
+  },
+  "promptRename": {
+    "message": "Nume nou pentru conversație:"
+  },
+  "alertEmptyExport": {
+    "message": "Folderele sunt goale, nimic de exportat!"
+  },
+  "alertImportSuccess": {
+    "message": "Import reușit! Datele au fost îmbinate cu succes."
+  },
+  "alertImportError": {
+    "message": "Eroare la import. Asigurați-vă că este un fișier JSON valid generat de această extensie."
+  },
+  "btnRename": {
+    "message": "Redenumește"
+  },
+  "btnDelete": {
+    "message": "Șterge"
+  },
+  "btnNewFolder": {
+    "message": "➕ Folder"
+  },
+  "promptNewFolder": {
+    "message": "Folder nou:"
+  },
+  "btnDeleteFolder": {
+    "message": "Șterge folderul"
+  },
+  "confirmDeleteFolder": {
+    "message": "Acest folder conține conversații. Sigur doriți să-l ștergeți?"
+  },
+  "btnPin": {
+    "message": "Fixează"
+  },
+  "btnUnpin": {
+    "message": "Anulează fixarea"
+  },
+  "sortNewest": {
+    "message": "Cele mai noi"
+  },
+  "sortOldest": {
+    "message": "Cele mai vechi"
+  },
+  "sortAlpha": {
+    "message": "De la A la Z"
+  },
+  "ctxMenuSave": {
+    "message": "Salvează în Foldere Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Niciun folder - Deschideți extensia)"
+  },
+  "btnToggleAdd": {
+    "message": "Adaugă conversație"
+  },
+  "btnCancel": {
+    "message": "Închide"
+  },
+  "btnRenameFolder": {
+    "message": "Redenumește folderul"
+  },
+  "promptRenameFolder": {
+    "message": "Nume nou:"
+  },
+  "errorFolderExists": {
+    "message": "Un folder cu acest nume există deja."
+  },
+  "storageCalc": {
+    "message": "Calculare spațiu..."
+  },
+  "storageInfo": {
+    "message": "Stocare: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Salvează conversația"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Salvări Rapide"
+  },
+  "toastSaved": {
+    "message": "✅ Salvat în Foldere Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Deschide într-un grup de file"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Sigur doriți să deschideți {count} file în același timp?"
+  },
+  "errorTabGroup": {
+    "message": "Eroare: Nu s-a putut crea grupul de file. Ați acceptat noile permisiuni?"
+  },
+  "bulkSelected": {
+    "message": "{count} selectate"
+  },
+  "bulkMove": {
+    "message": "Mută în..."
+  },
+  "bulkDelete": {
+    "message": "Șterge"
+  },
+  "confirmBulkDelete": {
+    "message": "Sigur doriți să ștergeți aceste {count} conversații?"
+  },
+  "bulkCancel": {
+    "message": "Anulează selecția"
+  },
+  "masterFolderName": {
+    "message": "Foldere Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Creează un folder sincronizat în marcajele Chrome pentru a accesa conversațiile pe telefon."
+  },
+  "reviewTitle": {
+    "message": "⭐ Vă plac Folderele Gemini?"
+  },
+  "reviewMessage": {
+    "message": "Sprijinul dvs. ajută enorm acest proiect open source!"
+  },
+  "reviewRateBtn": {
+    "message": "Evaluează cu 5 stele"
+  },
+  "reviewLaterBtn": {
+    "message": "Mai târziu"
+  },
+  "reviewNoBtn": {
+    "message": "Nu, mulțumesc"
+  },
+  "modalBtnCancel": {
+    "message": "Anulează"
+  },
+  "modalBtnConfirm": {
+    "message": "Confirmă"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Sfat: Începeți cu un emoji (Win+. / ⌘⌃Spațiu)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Deja salvat!"
+  },
+  "folderModeTitle": {
+    "message": "Mod dosare"
+  },
+  "promptModeTitle": {
+    "message": "Mod prompt-uri"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Promptul nu poate fi gol!"
+  },
+  "promptSaved": {
+    "message": "Prompt salvat!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Un prompt cu acest titlu există deja. Suprascrieți?"
+  },
+  "promptNoSavedYet": {
+    "message": "Nu există prompturi salvate încă."
+  },
+  "promptAddBtn": {
+    "message": "Adaugă prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Copiază"
+  },
+  "promptDeleteTitle": {
+    "message": "Șterge"
+  },
+  "promptSetGemLink": {
+    "message": "Setați link Gem personalizat:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Link invalid. Trebuie să înceapă cu https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Conversație nouă"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Titlul promptului"
+  },
+  "promptTextPlaceholder": {
+    "message": "Scrieți promptul dvs. aici..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Activați Gem personalizat"
+  },
+  "setGemBtnTooltip": {
+    "message": "Setați link-ul Gem personalizat"
+  },
+  "syncPromptsTooltip": {
+    "message": "Sincronizați prompturile"
+  },
+  "promptRenamePrompt": {
+    "message": "Noul nume al promptului:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Ștergeți acest prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Inserați în Gemini"
+  },
+  "promptPinTitle": {
+    "message": "Fixează"
+  }
 }

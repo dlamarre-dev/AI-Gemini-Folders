@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "مجلدات Gemini"
+  },
+  "extDesc": {
+    "message": "نظّم محادثات Gemini في مجلدات مخصصة."
+  },
+  "appTitle": {
+    "message": "مجلدات Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 بحث في المحادثات..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 بحث في الأوامر..."
+  },
+  "folderPlaceholder": {
+    "message": "اسم المجلد (مثال: مشاريع الكود)"
+  },
+  "chatPlaceholder": {
+    "message": "عنوان المحادثة"
+  },
+  "saveBtn": {
+    "message": "حفظ"
+  },
+  "statusSaved": {
+    "message": "تم حفظ المحادثة!"
+  },
+  "noResults": {
+    "message": "لا توجد نتائج 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 تصدير"
+  },
+  "importBtn": {
+    "message": "📂 استيراد"
+  },
+  "alertNotGemini": {
+    "message": "يرجى استخدام هذا الامتداد على صفحة Gemini."
+  },
+  "defaultFolder": {
+    "message": "عام"
+  },
+  "defaultTitle": {
+    "message": "محادثة جديدة"
+  },
+  "promptRename": {
+    "message": "اسم المحادثة الجديد:"
+  },
+  "alertEmptyExport": {
+    "message": "مجلداتك وأوامرك فارغة، لا يوجد شيء للتصدير!"
+  },
+  "alertImportSuccess": {
+    "message": "تم الاستيراد بنجاح! تم دمج مجلداتك وأوامرك بنجاح."
+  },
+  "alertImportError": {
+    "message": "خطأ في الاستيراد. تأكد من أنه ملف JSON صالح تم إنشاؤه بواسطة هذا الامتداد."
+  },
+  "btnRename": {
+    "message": "إعادة التسمية"
+  },
+  "btnDelete": {
+    "message": "حذف"
+  },
+  "btnNewFolder": {
+    "message": "➕ مجلد"
+  },
+  "promptNewFolder": {
+    "message": "مجلد جديد:"
+  },
+  "btnDeleteFolder": {
+    "message": "حذف المجلد"
+  },
+  "confirmDeleteFolder": {
+    "message": "يحتوي هذا المجلد على محادثات. هل أنت متأكد من حذفه؟"
+  },
+  "btnPin": {
+    "message": "تثبيت"
+  },
+  "btnUnpin": {
+    "message": "إلغاء التثبيت"
+  },
+  "sortNewest": {
+    "message": "الأحدث"
+  },
+  "sortOldest": {
+    "message": "الأقدم"
+  },
+  "sortAlpha": {
+    "message": "من أ إلى ي"
+  },
+  "ctxMenuSave": {
+    "message": "حفظ في مجلدات Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(لا توجد مجلدات - افتح الامتداد)"
+  },
+  "btnToggleAdd": {
+    "message": "إضافة محادثة"
+  },
+  "btnCancel": {
+    "message": "إغلاق"
+  },
+  "btnRenameFolder": {
+    "message": "إعادة تسمية المجلد"
+  },
+  "promptRenameFolder": {
+    "message": "الاسم الجديد:"
+  },
+  "errorFolderExists": {
+    "message": "يوجد مجلد بهذا الاسم بالفعل."
+  },
+  "storageCalc": {
+    "message": "جارٍ حساب المساحة..."
+  },
+  "storageInfo": {
+    "message": "التخزين: {used} كيلوبايت / {max} كيلوبايت ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "حفظ المحادثة"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ الحفظ السريع"
+  },
+  "toastSaved": {
+    "message": "✅ تم الحفظ في مجلدات Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "فتح في مجموعة علامات تبويب"
+  },
+  "confirmOpenManyTabs": {
+    "message": "هل تريد فعلاً فتح {count} علامة تبويب في نفس الوقت؟"
+  },
+  "errorTabGroup": {
+    "message": "خطأ: تعذّر إنشاء مجموعة علامات التبويب. هل قبلت الأذونات الجديدة؟"
+  },
+  "bulkSelected": {
+    "message": "تم تحديد {count}"
+  },
+  "bulkMove": {
+    "message": "نقل إلى..."
+  },
+  "bulkDelete": {
+    "message": "حذف"
+  },
+  "confirmBulkDelete": {
+    "message": "هل أنت متأكد من حذف {count} محادثة؟"
+  },
+  "bulkCancel": {
+    "message": "إلغاء التحديد"
+  },
+  "masterFolderName": {
+    "message": "مجلدات Gemini (مزامنة)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "ينشئ مجلداً متزامناً في إشاراتك المرجعية في Chrome للوصول إلى محادثاتك من هاتفك."
+  },
+  "reviewTitle": {
+    "message": "⭐ هل تستمتع بمجلدات Gemini؟"
+  },
+  "reviewMessage": {
+    "message": "دعمك يساعد هذا المشروع مفتوح المصدر كثيراً!"
+  },
+  "reviewRateBtn": {
+    "message": "تقييم 5 نجوم"
+  },
+  "reviewLaterBtn": {
+    "message": "ربما لاحقاً"
+  },
+  "reviewNoBtn": {
+    "message": "لا، شكراً"
+  },
+  "modalBtnCancel": {
+    "message": "إلغاء"
+  },
+  "modalBtnConfirm": {
+    "message": "تأكيد"
+  },
+  "emojiTipPlaceholder": {
+    "message": "نصيحة: ابدأ بـ إيموجي (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ تم الحفظ مسبقاً!"
+  },
+  "folderModeTitle": {
+    "message": "وضع المجلدات"
+  },
+  "promptModeTitle": {
+    "message": "وضع الأوامر"
+  },
+  "promptCannotBeEmpty": {
+    "message": "لا يمكن أن يكون الأمر فارغاً!"
+  },
+  "promptSaved": {
+    "message": "تم حفظ الأمر!"
+  },
+  "promptDuplicateWarning": {
+    "message": "يوجد أمر بهذا العنوان بالفعل. هل تريد الكتابة فوقه؟"
+  },
+  "promptNoSavedYet": {
+    "message": "لا توجد أوامر محفوظة بعد."
+  },
+  "promptAddBtn": {
+    "message": "إضافة أمر"
+  },
+  "promptCopyTitle": {
+    "message": "نسخ"
+  },
+  "promptDeleteTitle": {
+    "message": "حذف"
+  },
+  "promptSetGemLink": {
+    "message": "تعيين رابط Gem مخصص:"
+  },
+  "promptInvalidGemLink": {
+    "message": "رابط غير صالح. يجب أن يبدأ بـ https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "محادثة جديدة"
+  },
+  "promptTitlePlaceholder": {
+    "message": "عنوان الأمر"
+  },
+  "promptTextPlaceholder": {
+    "message": "اكتب أمرك هنا..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "تفعيل Gem المخصص"
+  },
+  "setGemBtnTooltip": {
+    "message": "تعيين رابط Gem مخصص"
+  },
+  "syncPromptsTooltip": {
+    "message": "مزامنة الأوامر"
+  },
+  "promptRenamePrompt": {
+    "message": "اسم الأمر الجديد:"
+  },
+  "confirmDeletePrompt": {
+    "message": "حذف هذا الأمر؟"
+  },
+  "promptInsertBtn": {
+    "message": "إدراج في Gemini"
+  },
+  "promptPinTitle": {
+    "message": "تثبيت"
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "Gemini Mappen"
+  },
+  "extDesc": {
+    "message": "Organiseer uw Gemini-gesprekken in aangepaste mappen."
+  },
+  "appTitle": {
+    "message": "Gemini Mappen"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Zoek een gesprek..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Zoek een prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Mapnaam (bijv. Codeprojecten)"
+  },
+  "chatPlaceholder": {
+    "message": "Gesprekstitel"
+  },
+  "saveBtn": {
+    "message": "Opslaan"
+  },
+  "statusSaved": {
+    "message": "Gesprek opgeslagen!"
+  },
+  "noResults": {
+    "message": "Geen resultaten gevonden 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Exporteren"
+  },
+  "importBtn": {
+    "message": "📂 Importeren"
+  },
+  "alertNotGemini": {
+    "message": "Gebruik deze extensie op een Gemini-pagina."
+  },
+  "defaultFolder": {
+    "message": "Algemeen"
+  },
+  "defaultTitle": {
+    "message": "Nieuw gesprek"
+  },
+  "promptRename": {
+    "message": "Nieuwe gespreksnaam:"
+  },
+  "alertEmptyExport": {
+    "message": "Uw mappen en prompts zijn leeg, niets om te exporteren!"
+  },
+  "alertImportSuccess": {
+    "message": "Import geslaagd! Uw mappen en prompts zijn succesvol samengevoegd."
+  },
+  "alertImportError": {
+    "message": "Importfout. Zorg ervoor dat het een geldig JSON-bestand is dat door deze extensie is aangemaakt."
+  },
+  "btnRename": {
+    "message": "Hernoemen"
+  },
+  "btnDelete": {
+    "message": "Verwijderen"
+  },
+  "btnNewFolder": {
+    "message": "➕ Map"
+  },
+  "promptNewFolder": {
+    "message": "Nieuwe map:"
+  },
+  "btnDeleteFolder": {
+    "message": "Map verwijderen"
+  },
+  "confirmDeleteFolder": {
+    "message": "Deze map bevat gesprekken. Weet u zeker dat u hem wilt verwijderen?"
+  },
+  "btnPin": {
+    "message": "Vastzetten"
+  },
+  "btnUnpin": {
+    "message": "Losmaken"
+  },
+  "sortNewest": {
+    "message": "Nieuwste"
+  },
+  "sortOldest": {
+    "message": "Oudste"
+  },
+  "sortAlpha": {
+    "message": "A tot Z"
+  },
+  "ctxMenuSave": {
+    "message": "Opslaan in Gemini Mappen"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Geen mappen - Open extensie)"
+  },
+  "btnToggleAdd": {
+    "message": "Gesprek toevoegen"
+  },
+  "btnCancel": {
+    "message": "Sluiten"
+  },
+  "btnRenameFolder": {
+    "message": "Map hernoemen"
+  },
+  "promptRenameFolder": {
+    "message": "Nieuwe naam:"
+  },
+  "errorFolderExists": {
+    "message": "Er bestaat al een map met deze naam."
+  },
+  "storageCalc": {
+    "message": "Ruimte berekenen..."
+  },
+  "storageInfo": {
+    "message": "Opslag: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Gesprek opslaan"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Snelle opslag"
+  },
+  "toastSaved": {
+    "message": "✅ Opgeslagen in Gemini Mappen!"
+  },
+  "btnOpenGroup": {
+    "message": "Openen in tabgroep"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Wilt u echt {count} tabbladen tegelijk openen?"
+  },
+  "errorTabGroup": {
+    "message": "Fout: Kan de tabgroep niet aanmaken. Hebt u de nieuwe machtigingen geaccepteerd?"
+  },
+  "bulkSelected": {
+    "message": "{count} geselecteerd"
+  },
+  "bulkMove": {
+    "message": "Verplaatsen naar..."
+  },
+  "bulkDelete": {
+    "message": "Verwijderen"
+  },
+  "confirmBulkDelete": {
+    "message": "Weet u zeker dat u deze {count} gesprekken wilt verwijderen?"
+  },
+  "bulkCancel": {
+    "message": "Selectie annuleren"
+  },
+  "masterFolderName": {
+    "message": "Gemini Mappen (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Maakt een gesynchroniseerde map aan in uw Chrome-bladwijzers voor toegang tot uw gesprekken op uw telefoon."
+  },
+  "reviewTitle": {
+    "message": "⭐ Bevalt Gemini Mappen u?"
+  },
+  "reviewMessage": {
+    "message": "Uw steun helpt dit open-sourceproject enorm!"
+  },
+  "reviewRateBtn": {
+    "message": "5 sterren geven"
+  },
+  "reviewLaterBtn": {
+    "message": "Misschien later"
+  },
+  "reviewNoBtn": {
+    "message": "Nee, bedankt"
+  },
+  "modalBtnCancel": {
+    "message": "Annuleren"
+  },
+  "modalBtnConfirm": {
+    "message": "Bevestigen"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tip: Begin met een emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Al opgeslagen!"
+  },
+  "folderModeTitle": {
+    "message": "Mappenmodus"
+  },
+  "promptModeTitle": {
+    "message": "Promptmodus"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt mag niet leeg zijn!"
+  },
+  "promptSaved": {
+    "message": "Prompt opgeslagen!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Er bestaat al een prompt met deze titel. Overschrijven?"
+  },
+  "promptNoSavedYet": {
+    "message": "Nog geen prompts opgeslagen."
+  },
+  "promptAddBtn": {
+    "message": "Prompt toevoegen"
+  },
+  "promptCopyTitle": {
+    "message": "Kopiëren"
+  },
+  "promptDeleteTitle": {
+    "message": "Verwijderen"
+  },
+  "promptSetGemLink": {
+    "message": "Aangepaste Gem-link instellen:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Ongeldige link. Deze moet beginnen met https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Nieuw gesprek"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Prompttitel"
+  },
+  "promptTextPlaceholder": {
+    "message": "Schrijf hier uw prompt..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Aangepaste Gem inschakelen"
+  },
+  "setGemBtnTooltip": {
+    "message": "Aangepaste Gem-link instellen"
+  },
+  "syncPromptsTooltip": {
+    "message": "Prompts synchroniseren"
+  },
+  "promptRenamePrompt": {
+    "message": "Nieuwe promptnaam:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Deze prompt verwijderen?"
+  },
+  "promptInsertBtn": {
+    "message": "Invoegen in Gemini"
+  },
+  "promptPinTitle": {
+    "message": "Vastzetten"
+  }
+}

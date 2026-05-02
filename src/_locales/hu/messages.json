@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "Gemini Mappák"
+  },
+  "extDesc": {
+    "message": "Rendszerezze Gemini-beszélgetéseit egyéni mappákba."
+  },
+  "appTitle": {
+    "message": "Gemini Mappák"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Beszélgetés keresése..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Prompt keresése..."
+  },
+  "folderPlaceholder": {
+    "message": "Mappa neve (pl. Kódprojektek)"
+  },
+  "chatPlaceholder": {
+    "message": "Beszélgetés címe"
+  },
+  "saveBtn": {
+    "message": "Mentés"
+  },
+  "statusSaved": {
+    "message": "Beszélgetés mentve!"
+  },
+  "noResults": {
+    "message": "Nincs találat 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Exportálás"
+  },
+  "importBtn": {
+    "message": "📂 Importálás"
+  },
+  "alertNotGemini": {
+    "message": "Kérjük, használja ezt a bővítményt egy Gemini-oldalon."
+  },
+  "defaultFolder": {
+    "message": "Általános"
+  },
+  "defaultTitle": {
+    "message": "Új beszélgetés"
+  },
+  "promptRename": {
+    "message": "Új beszélgetésnév:"
+  },
+  "alertEmptyExport": {
+    "message": "A mappák és promptok üresek, nincs mit exportálni!"
+  },
+  "alertImportSuccess": {
+    "message": "Importálás sikeres! A mappák és promptok sikeresen egyesítve."
+  },
+  "alertImportError": {
+    "message": "Importálási hiba. Győződjön meg róla, hogy érvényes JSON-fájlról van szó, amelyet ez a bővítmény generált."
+  },
+  "btnRename": {
+    "message": "Átnevezés"
+  },
+  "btnDelete": {
+    "message": "Törlés"
+  },
+  "btnNewFolder": {
+    "message": "➕ Mappa"
+  },
+  "promptNewFolder": {
+    "message": "Új mappa:"
+  },
+  "btnDeleteFolder": {
+    "message": "Mappa törlése"
+  },
+  "confirmDeleteFolder": {
+    "message": "Ez a mappa beszélgetéseket tartalmaz. Biztosan törölni szeretné?"
+  },
+  "btnPin": {
+    "message": "Rögzítés"
+  },
+  "btnUnpin": {
+    "message": "Rögzítés feloldása"
+  },
+  "sortNewest": {
+    "message": "Legújabb"
+  },
+  "sortOldest": {
+    "message": "Legrégebbi"
+  },
+  "sortAlpha": {
+    "message": "A-tól Z-ig"
+  },
+  "ctxMenuSave": {
+    "message": "Mentés a Gemini Mappákba"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Nincs mappa – Bővítmény megnyitása)"
+  },
+  "btnToggleAdd": {
+    "message": "Beszélgetés hozzáadása"
+  },
+  "btnCancel": {
+    "message": "Bezárás"
+  },
+  "btnRenameFolder": {
+    "message": "Mappa átnevezése"
+  },
+  "promptRenameFolder": {
+    "message": "Új név:"
+  },
+  "errorFolderExists": {
+    "message": "Már létezik ilyen nevű mappa."
+  },
+  "storageCalc": {
+    "message": "Tárhely kiszámítása..."
+  },
+  "storageInfo": {
+    "message": "Tárhely: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Beszélgetés mentése"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Gyorsmentések"
+  },
+  "toastSaved": {
+    "message": "✅ Mentve a Gemini Mappákba!"
+  },
+  "btnOpenGroup": {
+    "message": "Megnyitás lapcsoportban"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Valóban meg szeretne nyitni {count} lapot egyszerre?"
+  },
+  "errorTabGroup": {
+    "message": "Hiba: Nem sikerült létrehozni a lapcsoportot. Elfogadta az új engedélyeket?"
+  },
+  "bulkSelected": {
+    "message": "{count} kijelölve"
+  },
+  "bulkMove": {
+    "message": "Áthelyezés ide..."
+  },
+  "bulkDelete": {
+    "message": "Törlés"
+  },
+  "confirmBulkDelete": {
+    "message": "Biztosan törölni szeretné ezt a(z) {count} beszélgetést?"
+  },
+  "bulkCancel": {
+    "message": "Kijelölés megszüntetése"
+  },
+  "masterFolderName": {
+    "message": "Gemini Mappák (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Szinkronizált mappát hoz létre a Chrome-könyvjelzőkben, hogy telefonján is elérhesse a beszélgetéseit."
+  },
+  "reviewTitle": {
+    "message": "⭐ Tetszik a Gemini Mappák?"
+  },
+  "reviewMessage": {
+    "message": "Támogatása nagymértékben segíti ezt a nyílt forráskódú projektet!"
+  },
+  "reviewRateBtn": {
+    "message": "5 csillagos értékelés"
+  },
+  "reviewLaterBtn": {
+    "message": "Talán később"
+  },
+  "reviewNoBtn": {
+    "message": "Nem, köszönöm"
+  },
+  "modalBtnCancel": {
+    "message": "Mégse"
+  },
+  "modalBtnConfirm": {
+    "message": "Megerősítés"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tipp: Kezdje emojival (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Már mentve!"
+  },
+  "folderModeTitle": {
+    "message": "Mappaüzemmód"
+  },
+  "promptModeTitle": {
+    "message": "Promptüzemmód"
+  },
+  "promptCannotBeEmpty": {
+    "message": "A prompt nem lehet üres!"
+  },
+  "promptSaved": {
+    "message": "Prompt mentve!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Már létezik ilyen nevű prompt. Felülírja?"
+  },
+  "promptNoSavedYet": {
+    "message": "Még nincs mentett prompt."
+  },
+  "promptAddBtn": {
+    "message": "Prompt hozzáadása"
+  },
+  "promptCopyTitle": {
+    "message": "Másolás"
+  },
+  "promptDeleteTitle": {
+    "message": "Törlés"
+  },
+  "promptSetGemLink": {
+    "message": "Egyéni Gem-hivatkozás beállítása:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Érvénytelen hivatkozás. A https://gemini.google.com/ címmel kell kezdődnie"
+  },
+  "newConversationBtn": {
+    "message": "Új beszélgetés"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Prompt neve"
+  },
+  "promptTextPlaceholder": {
+    "message": "Írja ide a promptot..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Egyéni Gem engedélyezése"
+  },
+  "setGemBtnTooltip": {
+    "message": "Egyéni Gem-hivatkozás beállítása"
+  },
+  "syncPromptsTooltip": {
+    "message": "Promptok szinkronizálása"
+  },
+  "promptRenamePrompt": {
+    "message": "Új promptnév:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Törli ezt a promptot?"
+  },
+  "promptInsertBtn": {
+    "message": "Beillesztés a Geminibe"
+  },
+  "promptPinTitle": {
+    "message": "Rögzítés"
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "โฟลเดอร์ Gemini"
+  },
+  "extDesc": {
+    "message": "จัดระเบียบการสนทนา Gemini ของคุณในโฟลเดอร์ที่กำหนดเอง"
+  },
+  "appTitle": {
+    "message": "โฟลเดอร์ Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 ค้นหาการสนทนา..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 ค้นหาพรอมต์..."
+  },
+  "folderPlaceholder": {
+    "message": "ชื่อโฟลเดอร์ (เช่น โปรเจกต์โค้ด)"
+  },
+  "chatPlaceholder": {
+    "message": "ชื่อการสนทนา"
+  },
+  "saveBtn": {
+    "message": "บันทึก"
+  },
+  "statusSaved": {
+    "message": "บันทึกการสนทนาแล้ว!"
+  },
+  "noResults": {
+    "message": "ไม่พบผลลัพธ์ 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 ส่งออก"
+  },
+  "importBtn": {
+    "message": "📂 นำเข้า"
+  },
+  "alertNotGemini": {
+    "message": "โปรดใช้ส่วนขยายนี้บนหน้า Gemini"
+  },
+  "defaultFolder": {
+    "message": "ทั่วไป"
+  },
+  "defaultTitle": {
+    "message": "การสนทนาใหม่"
+  },
+  "promptRename": {
+    "message": "ชื่อการสนทนาใหม่:"
+  },
+  "alertEmptyExport": {
+    "message": "โฟลเดอร์และพรอมต์ของคุณว่างเปล่า ไม่มีอะไรให้ส่งออก!"
+  },
+  "alertImportSuccess": {
+    "message": "นำเข้าสำเร็จ! โฟลเดอร์และพรอมต์ของคุณถูกรวมเข้าด้วยกันเรียบร้อยแล้ว"
+  },
+  "alertImportError": {
+    "message": "เกิดข้อผิดพลาดในการนำเข้า ตรวจสอบให้แน่ใจว่าเป็นไฟล์ JSON ที่ถูกต้องที่สร้างโดยส่วนขยายนี้"
+  },
+  "btnRename": {
+    "message": "เปลี่ยนชื่อ"
+  },
+  "btnDelete": {
+    "message": "ลบ"
+  },
+  "btnNewFolder": {
+    "message": "➕ โฟลเดอร์"
+  },
+  "promptNewFolder": {
+    "message": "โฟลเดอร์ใหม่:"
+  },
+  "btnDeleteFolder": {
+    "message": "ลบโฟลเดอร์"
+  },
+  "confirmDeleteFolder": {
+    "message": "โฟลเดอร์นี้มีการสนทนาอยู่ คุณแน่ใจหรือไม่ว่าต้องการลบ?"
+  },
+  "btnPin": {
+    "message": "ปักหมุด"
+  },
+  "btnUnpin": {
+    "message": "เลิกปักหมุด"
+  },
+  "sortNewest": {
+    "message": "ใหม่ที่สุด"
+  },
+  "sortOldest": {
+    "message": "เก่าที่สุด"
+  },
+  "sortAlpha": {
+    "message": "A ถึง Z"
+  },
+  "ctxMenuSave": {
+    "message": "บันทึกไปยังโฟลเดอร์ Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(ไม่มีโฟลเดอร์ - เปิดส่วนขยาย)"
+  },
+  "btnToggleAdd": {
+    "message": "เพิ่มการสนทนา"
+  },
+  "btnCancel": {
+    "message": "ปิด"
+  },
+  "btnRenameFolder": {
+    "message": "เปลี่ยนชื่อโฟลเดอร์"
+  },
+  "promptRenameFolder": {
+    "message": "ชื่อใหม่:"
+  },
+  "errorFolderExists": {
+    "message": "มีโฟลเดอร์ที่ใช้ชื่อนี้อยู่แล้ว"
+  },
+  "storageCalc": {
+    "message": "กำลังคำนวณพื้นที่..."
+  },
+  "storageInfo": {
+    "message": "พื้นที่เก็บข้อมูล: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "บันทึกการสนทนา"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ บันทึกด่วน"
+  },
+  "toastSaved": {
+    "message": "✅ บันทึกไปยังโฟลเดอร์ Gemini แล้ว!"
+  },
+  "btnOpenGroup": {
+    "message": "เปิดในกลุ่มแท็บ"
+  },
+  "confirmOpenManyTabs": {
+    "message": "คุณต้องการเปิด {count} แท็บพร้อมกันจริงหรือ?"
+  },
+  "errorTabGroup": {
+    "message": "ข้อผิดพลาด: ไม่สามารถสร้างกลุ่มแท็บได้ คุณยอมรับสิทธิ์ใหม่แล้วหรือยัง?"
+  },
+  "bulkSelected": {
+    "message": "เลือก {count} รายการ"
+  },
+  "bulkMove": {
+    "message": "ย้ายไปที่..."
+  },
+  "bulkDelete": {
+    "message": "ลบ"
+  },
+  "confirmBulkDelete": {
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบการสนทนา {count} รายการนี้?"
+  },
+  "bulkCancel": {
+    "message": "ยกเลิกการเลือก"
+  },
+  "masterFolderName": {
+    "message": "โฟลเดอร์ Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "สร้างโฟลเดอร์ที่ซิงค์ในบุ๊กมาร์ก Chrome เพื่อเข้าถึงการสนทนาบนโทรศัพท์ของคุณ"
+  },
+  "reviewTitle": {
+    "message": "⭐ คุณชอบโฟลเดอร์ Gemini หรือไม่?"
+  },
+  "reviewMessage": {
+    "message": "การสนับสนุนของคุณช่วยโปรเจกต์โอเพ่นซอร์สนี้เป็นอย่างมาก!"
+  },
+  "reviewRateBtn": {
+    "message": "ให้คะแนน 5 ดาว"
+  },
+  "reviewLaterBtn": {
+    "message": "บางทีภายหลัง"
+  },
+  "reviewNoBtn": {
+    "message": "ไม่ ขอบคุณ"
+  },
+  "modalBtnCancel": {
+    "message": "ยกเลิก"
+  },
+  "modalBtnConfirm": {
+    "message": "ยืนยัน"
+  },
+  "emojiTipPlaceholder": {
+    "message": "เคล็ดลับ: เริ่มด้วยอีโมจิ (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ บันทึกแล้ว!"
+  },
+  "folderModeTitle": {
+    "message": "โหมดโฟลเดอร์"
+  },
+  "promptModeTitle": {
+    "message": "โหมดพรอมต์"
+  },
+  "promptCannotBeEmpty": {
+    "message": "พรอมต์ต้องไม่ว่างเปล่า!"
+  },
+  "promptSaved": {
+    "message": "บันทึกพรอมต์แล้ว!"
+  },
+  "promptDuplicateWarning": {
+    "message": "มีพรอมต์ที่ใช้ชื่อนี้อยู่แล้ว ต้องการเขียนทับหรือไม่?"
+  },
+  "promptNoSavedYet": {
+    "message": "ยังไม่มีพรอมต์ที่บันทึกไว้"
+  },
+  "promptAddBtn": {
+    "message": "เพิ่มพรอมต์"
+  },
+  "promptCopyTitle": {
+    "message": "คัดลอก"
+  },
+  "promptDeleteTitle": {
+    "message": "ลบ"
+  },
+  "promptSetGemLink": {
+    "message": "ตั้งค่าลิงก์ Gem ที่กำหนดเอง:"
+  },
+  "promptInvalidGemLink": {
+    "message": "ลิงก์ไม่ถูกต้อง ต้องเริ่มต้นด้วย https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "การสนทนาใหม่"
+  },
+  "promptTitlePlaceholder": {
+    "message": "ชื่อพรอมต์"
+  },
+  "promptTextPlaceholder": {
+    "message": "เขียนพรอมต์ของคุณที่นี่..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "เปิดใช้งาน Gem ที่กำหนดเอง"
+  },
+  "setGemBtnTooltip": {
+    "message": "ตั้งค่าลิงก์ Gem ที่กำหนดเอง"
+  },
+  "syncPromptsTooltip": {
+    "message": "ซิงค์พรอมต์"
+  },
+  "promptRenamePrompt": {
+    "message": "ชื่อพรอมต์ใหม่:"
+  },
+  "confirmDeletePrompt": {
+    "message": "ลบพรอมต์นี้?"
+  },
+  "promptInsertBtn": {
+    "message": "แทรกใน Gemini"
+  },
+  "promptPinTitle": {
+    "message": "ปักหมุด"
+  }
+}

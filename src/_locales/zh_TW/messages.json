@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "Gemini 資料夾"
+  },
+  "extDesc": {
+    "message": "將您的 Gemini 對話整理到自訂資料夾中。"
+  },
+  "appTitle": {
+    "message": "Gemini 資料夾"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 搜尋對話..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 搜尋提示詞..."
+  },
+  "folderPlaceholder": {
+    "message": "資料夾名稱（例如：程式碼專案）"
+  },
+  "chatPlaceholder": {
+    "message": "對話標題"
+  },
+  "saveBtn": {
+    "message": "儲存"
+  },
+  "statusSaved": {
+    "message": "對話已儲存！"
+  },
+  "noResults": {
+    "message": "找不到結果 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 匯出"
+  },
+  "importBtn": {
+    "message": "📂 匯入"
+  },
+  "alertNotGemini": {
+    "message": "請在 Gemini 頁面上使用此擴充功能。"
+  },
+  "defaultFolder": {
+    "message": "一般"
+  },
+  "defaultTitle": {
+    "message": "新對話"
+  },
+  "promptRename": {
+    "message": "新對話名稱："
+  },
+  "alertEmptyExport": {
+    "message": "您的資料夾和提示詞是空的，沒有可匯出的內容！"
+  },
+  "alertImportSuccess": {
+    "message": "匯入成功！您的資料夾和提示詞已成功合併。"
+  },
+  "alertImportError": {
+    "message": "匯入錯誤。請確認這是由此擴充功能產生的有效 JSON 檔案。"
+  },
+  "btnRename": {
+    "message": "重新命名"
+  },
+  "btnDelete": {
+    "message": "刪除"
+  },
+  "btnNewFolder": {
+    "message": "➕ 資料夾"
+  },
+  "promptNewFolder": {
+    "message": "新資料夾："
+  },
+  "btnDeleteFolder": {
+    "message": "刪除資料夾"
+  },
+  "confirmDeleteFolder": {
+    "message": "此資料夾包含對話。您確定要刪除它嗎？"
+  },
+  "btnPin": {
+    "message": "釘選"
+  },
+  "btnUnpin": {
+    "message": "取消釘選"
+  },
+  "sortNewest": {
+    "message": "最新"
+  },
+  "sortOldest": {
+    "message": "最舊"
+  },
+  "sortAlpha": {
+    "message": "A 到 Z"
+  },
+  "ctxMenuSave": {
+    "message": "儲存到 Gemini 資料夾"
+  },
+  "ctxMenuNoFolder": {
+    "message": "（無資料夾 - 開啟擴充功能）"
+  },
+  "btnToggleAdd": {
+    "message": "新增對話"
+  },
+  "btnCancel": {
+    "message": "關閉"
+  },
+  "btnRenameFolder": {
+    "message": "重新命名資料夾"
+  },
+  "promptRenameFolder": {
+    "message": "新名稱："
+  },
+  "errorFolderExists": {
+    "message": "已存在相同名稱的資料夾。"
+  },
+  "storageCalc": {
+    "message": "計算空間中..."
+  },
+  "storageInfo": {
+    "message": "儲存空間：{used} KB / {max} KB（{pct}%）"
+  },
+  "cmdQuickSave": {
+    "message": "儲存對話"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ 快速儲存"
+  },
+  "toastSaved": {
+    "message": "✅ 已儲存到 Gemini 資料夾！"
+  },
+  "btnOpenGroup": {
+    "message": "在分頁群組中開啟"
+  },
+  "confirmOpenManyTabs": {
+    "message": "您真的要同時開啟 {count} 個分頁嗎？"
+  },
+  "errorTabGroup": {
+    "message": "錯誤：無法建立分頁群組。您是否已接受新的權限？"
+  },
+  "bulkSelected": {
+    "message": "已選取 {count} 個"
+  },
+  "bulkMove": {
+    "message": "移動到..."
+  },
+  "bulkDelete": {
+    "message": "刪除"
+  },
+  "confirmBulkDelete": {
+    "message": "您確定要刪除這 {count} 個對話嗎？"
+  },
+  "bulkCancel": {
+    "message": "取消選取"
+  },
+  "masterFolderName": {
+    "message": "Gemini 資料夾 (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "在您的 Chrome 書籤中建立同步資料夾，以便在手機上存取您的對話。"
+  },
+  "reviewTitle": {
+    "message": "⭐ 您喜歡 Gemini 資料夾嗎？"
+  },
+  "reviewMessage": {
+    "message": "您的支持對這個開源專案非常有幫助！"
+  },
+  "reviewRateBtn": {
+    "message": "給 5 顆星"
+  },
+  "reviewLaterBtn": {
+    "message": "也許稍後"
+  },
+  "reviewNoBtn": {
+    "message": "不，謝謝"
+  },
+  "modalBtnCancel": {
+    "message": "取消"
+  },
+  "modalBtnConfirm": {
+    "message": "確認"
+  },
+  "emojiTipPlaceholder": {
+    "message": "提示：以表情符號開頭（Win+. / ⌘⌃Space）"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ 已儲存過！"
+  },
+  "folderModeTitle": {
+    "message": "資料夾模式"
+  },
+  "promptModeTitle": {
+    "message": "提示詞模式"
+  },
+  "promptCannotBeEmpty": {
+    "message": "提示詞不能為空！"
+  },
+  "promptSaved": {
+    "message": "提示詞已儲存！"
+  },
+  "promptDuplicateWarning": {
+    "message": "已存在相同標題的提示詞。要覆蓋嗎？"
+  },
+  "promptNoSavedYet": {
+    "message": "尚未儲存任何提示詞。"
+  },
+  "promptAddBtn": {
+    "message": "新增提示詞"
+  },
+  "promptCopyTitle": {
+    "message": "複製"
+  },
+  "promptDeleteTitle": {
+    "message": "刪除"
+  },
+  "promptSetGemLink": {
+    "message": "設定自訂 Gem 連結："
+  },
+  "promptInvalidGemLink": {
+    "message": "無效連結。必須以 https://gemini.google.com/ 開頭"
+  },
+  "newConversationBtn": {
+    "message": "新對話"
+  },
+  "promptTitlePlaceholder": {
+    "message": "提示詞標題"
+  },
+  "promptTextPlaceholder": {
+    "message": "在這裡輸入您的提示詞..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "啟用自訂 Gem"
+  },
+  "setGemBtnTooltip": {
+    "message": "設定自訂 Gem 連結"
+  },
+  "syncPromptsTooltip": {
+    "message": "同步提示詞"
+  },
+  "promptRenamePrompt": {
+    "message": "新提示詞名稱："
+  },
+  "confirmDeletePrompt": {
+    "message": "要刪除此提示詞嗎？"
+  },
+  "promptInsertBtn": {
+    "message": "插入到 Gemini"
+  },
+  "promptPinTitle": {
+    "message": "釘選"
+  }
+}

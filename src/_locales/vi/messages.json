@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "Thư mục Gemini"
+  },
+  "extDesc": {
+    "message": "Tổ chức các cuộc trò chuyện Gemini của bạn vào các thư mục tùy chỉnh."
+  },
+  "appTitle": {
+    "message": "Thư mục Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Tìm kiếm cuộc trò chuyện..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Tìm kiếm prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Tên thư mục (vd: Dự án code)"
+  },
+  "chatPlaceholder": {
+    "message": "Tiêu đề cuộc trò chuyện"
+  },
+  "saveBtn": {
+    "message": "Lưu"
+  },
+  "statusSaved": {
+    "message": "Đã lưu cuộc trò chuyện!"
+  },
+  "noResults": {
+    "message": "Không tìm thấy kết quả 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Xuất"
+  },
+  "importBtn": {
+    "message": "📂 Nhập"
+  },
+  "alertNotGemini": {
+    "message": "Vui lòng sử dụng tiện ích này trên trang Gemini."
+  },
+  "defaultFolder": {
+    "message": "Chung"
+  },
+  "defaultTitle": {
+    "message": "Cuộc trò chuyện mới"
+  },
+  "promptRename": {
+    "message": "Tên cuộc trò chuyện mới:"
+  },
+  "alertEmptyExport": {
+    "message": "Thư mục và prompt của bạn trống, không có gì để xuất!"
+  },
+  "alertImportSuccess": {
+    "message": "Nhập thành công! Thư mục và prompt của bạn đã được hợp nhất thành công."
+  },
+  "alertImportError": {
+    "message": "Lỗi nhập. Đảm bảo đó là tệp JSON hợp lệ được tạo bởi tiện ích này."
+  },
+  "btnRename": {
+    "message": "Đổi tên"
+  },
+  "btnDelete": {
+    "message": "Xóa"
+  },
+  "btnNewFolder": {
+    "message": "➕ Thư mục"
+  },
+  "promptNewFolder": {
+    "message": "Thư mục mới:"
+  },
+  "btnDeleteFolder": {
+    "message": "Xóa thư mục"
+  },
+  "confirmDeleteFolder": {
+    "message": "Thư mục này có cuộc trò chuyện. Bạn có chắc muốn xóa không?"
+  },
+  "btnPin": {
+    "message": "Ghim"
+  },
+  "btnUnpin": {
+    "message": "Bỏ ghim"
+  },
+  "sortNewest": {
+    "message": "Mới nhất"
+  },
+  "sortOldest": {
+    "message": "Cũ nhất"
+  },
+  "sortAlpha": {
+    "message": "A đến Z"
+  },
+  "ctxMenuSave": {
+    "message": "Lưu vào Thư mục Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Không có thư mục - Mở tiện ích)"
+  },
+  "btnToggleAdd": {
+    "message": "Thêm cuộc trò chuyện"
+  },
+  "btnCancel": {
+    "message": "Đóng"
+  },
+  "btnRenameFolder": {
+    "message": "Đổi tên thư mục"
+  },
+  "promptRenameFolder": {
+    "message": "Tên mới:"
+  },
+  "errorFolderExists": {
+    "message": "Đã tồn tại thư mục với tên này."
+  },
+  "storageCalc": {
+    "message": "Đang tính dung lượng..."
+  },
+  "storageInfo": {
+    "message": "Bộ nhớ: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Lưu cuộc trò chuyện"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Lưu nhanh"
+  },
+  "toastSaved": {
+    "message": "✅ Đã lưu vào Thư mục Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Mở trong Nhóm tab"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Bạn có thực sự muốn mở {count} tab cùng lúc không?"
+  },
+  "errorTabGroup": {
+    "message": "Lỗi: Không thể tạo nhóm tab. Bạn đã chấp nhận quyền mới chưa?"
+  },
+  "bulkSelected": {
+    "message": "Đã chọn {count}"
+  },
+  "bulkMove": {
+    "message": "Chuyển đến..."
+  },
+  "bulkDelete": {
+    "message": "Xóa"
+  },
+  "confirmBulkDelete": {
+    "message": "Bạn có chắc muốn xóa {count} cuộc trò chuyện này không?"
+  },
+  "bulkCancel": {
+    "message": "Hủy chọn"
+  },
+  "masterFolderName": {
+    "message": "Thư mục Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Tạo thư mục đồng bộ trong dấu trang Chrome để truy cập cuộc trò chuyện trên điện thoại."
+  },
+  "reviewTitle": {
+    "message": "⭐ Bạn có thích Thư mục Gemini không?"
+  },
+  "reviewMessage": {
+    "message": "Sự ủng hộ của bạn giúp ích rất nhiều cho dự án mã nguồn mở này!"
+  },
+  "reviewRateBtn": {
+    "message": "Đánh giá 5 sao"
+  },
+  "reviewLaterBtn": {
+    "message": "Có thể sau"
+  },
+  "reviewNoBtn": {
+    "message": "Không, cảm ơn"
+  },
+  "modalBtnCancel": {
+    "message": "Hủy"
+  },
+  "modalBtnConfirm": {
+    "message": "Xác nhận"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Mẹo: Bắt đầu bằng emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Đã lưu trước đó!"
+  },
+  "folderModeTitle": {
+    "message": "Chế độ thư mục"
+  },
+  "promptModeTitle": {
+    "message": "Chế độ prompt"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt không được để trống!"
+  },
+  "promptSaved": {
+    "message": "Đã lưu prompt!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Đã tồn tại prompt với tiêu đề này. Ghi đè?"
+  },
+  "promptNoSavedYet": {
+    "message": "Chưa có prompt nào được lưu."
+  },
+  "promptAddBtn": {
+    "message": "Thêm prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Sao chép"
+  },
+  "promptDeleteTitle": {
+    "message": "Xóa"
+  },
+  "promptSetGemLink": {
+    "message": "Đặt liên kết Gem tùy chỉnh:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Liên kết không hợp lệ. Phải bắt đầu bằng https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Cuộc trò chuyện mới"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Tiêu đề prompt"
+  },
+  "promptTextPlaceholder": {
+    "message": "Viết prompt của bạn ở đây..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Bật Gem tùy chỉnh"
+  },
+  "setGemBtnTooltip": {
+    "message": "Đặt liên kết Gem tùy chỉnh"
+  },
+  "syncPromptsTooltip": {
+    "message": "Đồng bộ prompt"
+  },
+  "promptRenamePrompt": {
+    "message": "Tên prompt mới:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Xóa prompt này?"
+  },
+  "promptInsertBtn": {
+    "message": "Chèn vào Gemini"
+  },
+  "promptPinTitle": {
+    "message": "Ghim"
+  }
+}

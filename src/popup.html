@@ -5,7 +5,14 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h3><img src="icon.svg" alt="logo"> <span id="appTitle"></span></h3>
+  <h3 style="display: flex; justify-content: space-between; align-items: center; margin-top: 0;">
+    <span><img src="icon.svg" alt="logo" style="vertical-align: middle;"> <span id="appTitle"></span></span>
+    <div id="modeToggle" class="mode-toggle">
+      <div class="mode-toggle-pill"></div>
+      <button id="modeFolderBtn" class="mode-toggle-btn mode-toggle-btn--active">📁</button>
+      <button id="modePromptBtn" class="mode-toggle-btn">📝</button>
+    </div>
+  </h3>
 
   <div id="reviewBanner" style="display: none; background-color: var(--hover-bg); padding: 12px; margin: 10px 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
     <p style="margin: 0 0 10px 0; font-size: 13px; color: var(--text-color);">
@@ -18,6 +25,7 @@
       <button id="btnReviewNo" style="background: transparent; border: none; color: #888; padding: 4px 10px; font-size: 12px; cursor: pointer; text-decoration: underline;">No thanks</button>
     </div>
   </div>
+  <div id="folderModeContainer">
   <div style="display: flex; gap: 8px; margin-bottom: 10px; position: relative; align-items: center;"> <input type="text" id="searchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;"> <div class="dropdown-container" style="height: 32px;"> <button id="sortToggleBtn" class="secondary-btn" title="Trier" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">⇅</button> <div id="sortMenu" class="custom-dropdown">
         <div class="dropdown-item" data-value="dateDesc" id="sortNewest"></div>
         <div class="dropdown-item" data-value="dateAsc" id="sortOldest"></div>
@@ -45,11 +53,50 @@
       <button id="bulkDeleteBtn" title="Supprimer" style="background: var(--delete-color); color: white; border: none; padding: 4px 8px; border-radius: 6px; cursor: pointer;">🗑️</button>
       <button id="bulkCancelBtn" class="secondary-btn" style="padding: 4px 8px; height: 28px;">✕</button>
     </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="promptModeContainer" style="display: none;">
+    <div style="display: flex; gap: 8px; margin-bottom: 10px; position: relative; align-items: center;">
+      <input type="text" id="promptSearchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;">
+      <div class="dropdown-container" style="height: 32px;">
+        <button id="promptSortToggleBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">⇅</button>
+        <div id="promptSortMenu" class="custom-dropdown">
+          <div class="dropdown-item" data-value="dateDesc" id="promptSortNewest"></div>
+          <div class="dropdown-item" data-value="dateAsc" id="promptSortOldest"></div>
+          <div class="dropdown-item" data-value="alphaAsc" id="promptSortAlpha"></div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 8px; margin-bottom: 10px; align-items: center;">
+      <button id="toggleAddPromptPanelBtn" class="main-btn" style="margin: 0; padding: 0 10px; height: 32px; font-size: 13px; flex-grow: 1;"></button>
+      <button id="newGeminiConvBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">💬</button>
+      <button id="gemBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">💎</button>
+    </div>
+
+    <div id="addPromptPanel" style="display: none; background: var(--folder-bg); padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); margin-bottom: 10px;">
+      <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+        <input type="text" id="promptTitle" placeholder="" style="flex-grow: 1; margin-bottom: 0; height: 32px;">
+        <button id="savePromptBtn" class="main-btn" style="margin: 0; padding: 0 10px; height: 32px; font-size: 13px;"></button>
+      </div>
+      <textarea id="promptText" placeholder="" style="width: 100%; height: 80px; margin-bottom: 0; resize: vertical; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--input-bg); color: var(--text-color); font-family: inherit; box-sizing: border-box;"></textarea>
+    </div>
+
+
+
+    <div id="promptStatus"></div>
+    <hr style="margin-top: 0; margin-bottom: 10px;">
+    <div id="promptList"></div>
   </div>
   <div class="footer-actions" style="align-items: center;">
     <label id="syncBookmarksLabel" style="display: flex; align-items: center; gap: 4px; cursor: pointer; margin: 0;" title="Mobile sync">
       <input type="checkbox" id="syncBookmarksToggle" class="chat-checkbox" style="margin: 0; cursor: pointer;">
-      <span style="font-size: 14px;"> 📱</span>
+      <span style="font-size: 14px;">📱</span>
+    </label>
+    <label id="syncPromptsLabel" style="display: none; align-items: center; gap: 4px; cursor: pointer; margin: 0;">
+      <input type="checkbox" id="syncPromptsToggle" class="chat-checkbox" style="margin: 0; cursor: pointer;">
+      <span style="font-size: 14px;">☁️</span>
     </label>
     <button id="exportBtn" class="secondary-btn"></button>
 

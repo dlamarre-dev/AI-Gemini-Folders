@@ -1,48 +1,61 @@
-¿Utilizas Google Gemini a diario para el trabajo, el código, la investigación o la creación, pero pierdes constantemente tus prompts importantes en un historial infinito?
-Carpetas Gemini es la extensión que necesitas.
+¿Usas Google Gemini a diario — para trabajo, código, redacción o investigación — pero sigues reescribiendo los mismos prompts mientras tus mejores conversaciones desaparecen en un historial interminable?
+Carpetas de Gemini (Gemini Folders) es la extensión que necesitas.
 
-Transforma tu uso de Gemini en un verdadero espacio de trabajo estructurado agrupando tus mejores conversaciones por proyectos, temas o categorías. ¡Se acabó el tiempo perdido haciendo scroll para encontrar un chat antiguo!
+Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de Gemini: organiza tus conversaciones en carpetas, construye una biblioteca de prompts reutilizables e inyéctalos directamente en Gemini con un solo clic, sin copiar ni pegar.
 
-💡 ¿Por qué es mejor que los simples marcadores (bookmarks)?
-A diferencia de los marcadores clásicos que acaban saturando tu navegador, Carpetas Gemini te ofrece una interfaz de gestión dedicada, aislada y superpuesta directamente en tu ventana de Gemini.
-¿Y para tus desplazamientos? La extensión ahora integra un "puente" móvil silencioso: ¡una opción que crea una única carpeta espejo en tus marcadores para que puedas consultar tus conversaciones en tu teléfono!
+✨ NOVEDAD en v4.0 — MODO PROMPTS
 
-🌟 CARACTERÍSTICAS PRINCIPALES
-⚡ Guardado Rápido (Clic derecho y Atajos): ¡Guarda la conversación a través de un simple clic derecho, o usa el atajo de teclado (Ctrl+Shift+S o Cmd+Shift+S en Mac) para enviarla instantáneamente a "⚡ Guardados Rápidos"!
-☑️ Selección Múltiple (Bulk Actions): Selecciona varias conversaciones con casillas de verificación para moverlas o eliminarlas en un solo clic.
-📑 Grupos de pestañas (Tab Groups): Abre toda una carpeta con un clic en un grupo de pestañas de Chrome nativo y colorido.
-😃 Emojis personalizados: Empieza el nombre de tu carpeta con un emoji (ej: "💻 Código") para reemplazar el icono de carpeta por defecto.
-🖱️ Drag & Drop (Arrastrar y Soltar): Reorganiza tu espacio de trabajo de forma intuitiva.
-📱 Sincronización Móvil: ¡Accede a tus conversaciones en movimiento! Un simple interruptor genera una carpeta inteligente en tus marcadores de Chrome, reproduciendo perfectamente tu árbol de carpetas y tu orden de clasificación personalizado en tu smartphone.
-🗜️ Compresión ultraeficiente: Comprime automáticamente tus datos (LZString) para maximiser el almacenamiento nativo de Chrome y guardar cientos de chats.
-📊 Rastreador de almacenamiento: Una barra de progreso visual te indica tu espacio en la nube disponible en tiempo real.
-📁 Carpetas a medida y Pines: Clasifica tus conversaciones y fija (📌) tus favoritos en la parte superior de la lista con una clasificación inteligente.
-⇅ Clasificación Personalizada: Ordena tus carpetas y conversaciones sobre la marcha (Más recientes, Más antiguos, De la A a la Z) con repercusión directa en la sincronización móvil.
-🤖 Detección Inteligente y Búsqueda: Relleno previo automático del título exacto de tu conversación y barra de búsqueda instantánea.
-☁️ Sincronización en la Nube y Backup: Encuentra tu organización en todos tus ordenadores y exporta tus datos en JSON.
-🎨 Diseño "Material 3" y Multilingüe: Interfaz ultracompacta dotada de cuadros de diálogo totalmente nuevos a medida, que se adapta perfectamente al modo oscuro y ahora soporta 16 idiomas mundiales.
+📝 Biblioteca personal de prompts: Cambia al modo Prompt con un solo clic en el botón de alternancia del encabezado. Guarda tus mejores prompts con un título y texto completo, y encuéntralos al instante con búsqueda y ordenación (más recientes, más antiguos, A-Z).
+▶ Inyección con un clic: Se acabó copiar y pegar. Haz clic en el botón de reproducción (▶) de cualquier prompt guardado para inyectarlo directamente en el campo de texto de Gemini. La extensión detecta si estás en una página de Gemini y te avisa si no es así.
+✏️ Edición en línea: Haz clic en un prompt para desplegarlo y editar el texto directamente. Los cambios se guardan automáticamente tras una breve pausa y el orden se actualiza en consecuencia.
+💎 Enlace Gem personalizado: Configura un enlace a tu Gem favorito y actívalo con un clic. Cuando está activo, el botón "Nueva conversación" abre tu Gem en lugar del chat por defecto.
+☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
+📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
+
+🌟 FUNCIONES DE CARPETAS
+
+⚡ Guardado Rápido (Clic derecho y Atajos): Guarda la conversación con un simple clic derecho, o usa el atajo de teclado (Ctrl+Shift+S o Cmd+Shift+S en Mac) para enviarla al instante a "⚡ Guardados Rápidos" — ¡con alerta visual si ya está guardada!
+☑️ Selección Múltiple (Acciones en lote): Selecciona varias conversaciones con casillas de verificación para moverlas o eliminarlas de un solo clic.
+📑 Integración con Grupos de Pestañas: Abre toda una carpeta de un clic en un Grupo de Pestañas nativo y con código de colores de Chrome.
+😃 Emojis personalizados: Comienza el nombre de tu carpeta con un emoji (p. ej., "💻 Código") para reemplazar el icono predeterminado.
+🖱️ Arrastrar y Soltar: Reorganiza tu espacio de trabajo arrastrando conversaciones entre carpetas.
+📱 Sincronización Móvil: Un interruptor genera una carpeta espejo en tus marcadores de Chrome, reproduciendo perfectamente tu estructura y orden de clasificación en el teléfono.
+🗜️ Compresión ultraeficiente: Comprime automáticamente tus datos (LZString) para maximizar el almacenamiento nativo de Chrome y guardar cientos de conversaciones.
+📊 Monitor de almacenamiento: Una barra de progreso visual muestra tu almacenamiento en la nube disponible en tiempo real.
+📁 Carpetas personalizadas y Anclajes: Clasifica tus conversaciones por proyectos, temas o categorías. Ancla (📌) tus carpetas favoritas en la parte superior.
+⇅ Ordenación personalizada: Ordena carpetas y conversaciones al vuelo (Más recientes, Más antiguos, A-Z) con cambios reflejados al instante en la sincronización móvil.
+🤖 Detección inteligente y Búsqueda: Relleno automático del título exacto de tu conversación y barra de búsqueda en tiempo real.
+☁️ Sincronización en la nube y Copia de seguridad: Accede a tu organización desde todos tus dispositivos y exporta tus datos en JSON.
+🎨 Diseño Material 3 y Multilingüe: Interfaz ultracompacta con diálogos totalmente personalizados, modo oscuro automático y soporte para 27 idiomas.
 
 🛠️ ¿CÓMO FUNCIONA?
-Abre una conversación importante en gemini.google.com.
-Guardado exprés: Usa Ctrl+Shift+S, o haz clic derecho en la página > "Guardar en Carpetas Gemini".
-A través de la extensión: ¡Haz clic en el icono, elige una carpeta y guarda!
-Para el Móvil: Marca el icono 📱 en el pie de página para enviar tus carpetas a tu teléfono.
-¡Marca las casillas para acciones grupales, abre tus carpetas en pestañas (📑) y utiliza arrastrar y soltar para reorganizar!
+
+Modo Carpetas:
+Abre una conversación en gemini.google.com.
+Guardado rápido: Ctrl+Shift+S (o Cmd+Shift+S en Mac), o clic derecho > "Guardar en Carpetas de Gemini".
+Desde la extensión: Haz clic en el icono, elige una carpeta y guarda.
+Móvil: Activa 📱 en el pie de página para sincronizar tus carpetas con el teléfono.
+¡Usa las casillas para acciones en lote, abre carpetas como Grupos de Pestañas (📑) y arrastra para reorganizar!
+
+Modo Prompts:
+Haz clic en 📝 en el botón de alternancia en la esquina superior derecha de la extensión.
+Haz clic en ➕ Añadir Prompt, escribe un título y tu texto, y guarda.
+Para usar un prompt: despliégalo y haz clic en ▶ — se inyecta directamente en Gemini, listo para enviar.
+Configura 💎 para apuntar a tu Gem personalizado.
+Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siempre está a mano.
 
 🔒 PRIVACIDAD Y SEGURIDAD
-Diseñada con la privacidad en el centro de su funcionamiento. Solo solicita acceso a Gemini y no lee la pestaña activa hasta el momento de guardar. Requiere el permiso "Marcadores" (bookmarks) únicamente para generar tu carpeta de sincronización móvil (si la activas). Almacenamiento localizado a través de Chrome Sync: sin servidores de terceros, sin telemetría.
+Diseñada con la privacidad en el centro. Solo solicita acceso a gemini.google.com y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
 
-🤝 PROYECTO DE CÓDIGO ABIERTO
-Carpetas Gemini es un proyecto de código abierto desarrollado con pasión. La transparencia y el respeto por tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente curioso? Ven a consultar nuestro código, sigue el historial de actualizaciones o contribuye al proyecto (enlace en el que se puede hacer clic directamente en la extensión) en GitHub: https://github.com/dlamarre-dev/GeminiFolders
+🤝 PROYECTO OPEN SOURCE
+Carpetas de Gemini es un proyecto open source desarrollado con pasión. La transparencia y el respeto a tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente tienes curiosidad? Consulta el código, sigue el historial de cambios o contribuye en GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 ACTUALIZACIONES:
-Versión 3.5 (Cimientos sólidos y experiencia mejorada): ¡Una gran actualización interna para una robustez de nivel profesional! Hemos añadido una alerta visual si intentas guardar un duplicado mediante un atajo de teclado. Además, se acabaron los falsos duplicados vinculados a los cambios de URL de Gemini, y tu base de datos está ahora blindada contra la corrupción gracias a nuestra nueva arquitectura de seguridad.
-Versión 3.4.1 (Poder y estabilidad multiplataforma): ¡Hola, usuarios de Firefox! Hemos portado con éxito la extensión a Mozilla con un nuevo sistema de compilación automatizado y un estricto cumplimiento de seguridad. Además, hemos implementado un sistema de bloqueo indestructible para solucionar de forma permanente el molesto error de las carpetas de marcadores duplicadas durante la sincronización móvil.
-Versión 3.3 (Diseño Premium e Internacional): ¡Nuevos cuadros de diálogo Material 3 100% a medida (adiós a las alertas nativas!), sincronización móvil calcada de tu orden de clasificación, interfaz depurada y expansión mundial con la adición de 10 nuevos idiomas!
-Versión 3.2 (Móvil y Código Abierto): ¡Sincronización móvil inteligente a través de los marcadores de Chrome, clasificación inteligente de tus carpetas fijadas, pie de página ultracompacto y paso oficial a Código Abierto con enlace de GitHub integrado!
-Versión 3.1 (Mejoras UX): ¡Estabilización del Drag & Drop, casillas de verificación adaptadas al modo oscuro, bloqueo inteligente de la interfaz durante las acciones grupales y alineación perfecta en Mac!
-Versión 3.0 (Actualización de Productividad): ¡Adición de atajos de teclado, selección múltiple (casillas de verificación), grupos de pestañas, emojis personalizados, compresión de datos y barra de almacenamiento!
-Versión 2.1 (Actualización mundial): 🌍 ¡Carpetas Gemini ahora está completamente localizado en español, portugués brasileño, alemán y japonés, además de francés e inglés!
-Versión 2.0.2 (Mejoras UX): Memorización inteligente de carpetas abiertas/cerradas, marcas visuales (📁/🗂️) para carpetas llenas y vacías, y correcciones menores.
-Versión 2.0.1: Corrección de un problema de recuperación del título en ciertos navegadores.
-Versión 2.0: Gran rediseño que añade Drag & Drop, el menú contextual, la clasificación personalizada, la fijación y el nuevo diseño Material 3.
+Versión 4.0 (Biblioteca de Prompts): ¡La actualización más ambiciosa hasta ahora! Carpetas de Gemini estrena un nuevo modo Prompts: guarda tus mejores prompts, edítalos en línea e inyéctalos en Gemini con un clic. Se añade alternancia de modos animada, búsqueda y ordenación en el modo Prompts, botón Gem personalizado y sincronización independiente de prompts. Fija tus prompts esenciales en la parte superior de la biblioteca.
+Versión 3.5 (Bases Sólidas y Experiencia Mejorada): ¡Gran actualización interna para una robustez de nivel profesional! Alerta visual ante guardados duplicados. Fin de los falsos duplicados por cambios de URL de Gemini y base de datos protegida contra corrupciones.
+Versión 3.4.1 (Potencia Multiplataforma y Estabilidad): Portado con éxito a Mozilla Firefox. Corrección definitiva del error de carpetas de marcadores duplicadas en la sincronización móvil.
+Versión 3.3 (Diseño Premium e Internacional): Nuevos diálogos Material 3 completamente personalizados, sincronización móvil según tu orden de clasificación y expansión con 10 nuevos idiomas.
+Versión 3.2 (Móvil y Open Source): Sincronización móvil vía marcadores de Chrome, ordenación inteligente de carpetas ancladas, pie de página ultracompacto y lanzamiento open source.
+Versión 3.1 (Mejoras UX): Estabilización del Drag & Drop, casillas en modo oscuro, bloqueo inteligente de la interfaz en acciones en lote.
+Versión 3.0 (Actualización de Productividad): Atajos de teclado, selección múltiple, grupos de pestañas, emojis personalizados, compresión de datos y barra de almacenamiento.
+Versión 2.0: Rediseño mayor con Drag & Drop, menú contextual, ordenación personalizada, anclaje y diseño Material 3.

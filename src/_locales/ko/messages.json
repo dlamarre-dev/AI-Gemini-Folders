@@ -1,62 +1,248 @@
 {
-  "extName": { "message": "Gemini 폴더" },
-  "extDesc": { "message": "Gemini 대화를 맞춤형 폴더에 정리하세요." },
-  "appTitle": { "message": "Gemini 폴더" },
-  "searchPlaceholder": { "message": "🔍 대화 검색..." },
-  "folderPlaceholder": { "message": "폴더 이름 (예: 코딩 프로젝트)" },
-  "chatPlaceholder": { "message": "대화 제목" },
-  "saveBtn": { "message": "저장" },
-  "statusSaved": { "message": "대화가 저장되었습니다!" },
-  "noResults": { "message": "결과를 찾을 수 없습니다 🕵️" },
-  "exportBtn": { "message": "💾 내보내기" },
-  "importBtn": { "message": "📂 가져오기" },
-  "alertNotGemini": { "message": "Gemini 페이지에서 이 확장 프로그램을 사용해 주세요." },
-  "defaultFolder": { "message": "일반" },
-  "defaultTitle": { "message": "새 대화" },
-  "promptRename": { "message": "새 대화 이름:" },
-  "alertEmptyExport": { "message": "폴더가 비어 있어 내보낼 항목이 없습니다!" },
-  "alertImportSuccess": { "message": "가져오기 성공! 데이터가 성공적으로 병합되었습니다." },
-  "alertImportError": { "message": "가져오기 오류. 이 확장 프로그램에서 생성된 유효한 JSON 파일인지 확인하세요." },
-  "btnRename": { "message": "이름 바꾸기" },
-  "btnDelete": { "message": "삭제" },
-  "btnNewFolder": { "message": "➕ 폴더" },
-  "promptNewFolder": { "message": "새 폴더:" },
-  "btnDeleteFolder": { "message": "폴더 삭제" },
-  "confirmDeleteFolder": { "message": "이 폴더에는 대화가 포함되어 있습니다. 정말 삭제하시겠습니까?" },
-  "btnPin": { "message": "고정" },
-  "btnUnpin": { "message": "고정 해제" },
-  "sortNewest": { "message": "최신순" },
-  "sortOldest": { "message": "오래된순" },
-  "sortAlpha": { "message": "가나다순" },
-  "ctxMenuSave": { "message": "Gemini 폴더에 저장" },
-  "ctxMenuNoFolder": { "message": "(폴더 없음 - 확장 프로그램 열기)" },
-  "btnToggleAdd": { "message": "대화 추가" },
-  "btnCancel": { "message": "닫기" },
-  "btnRenameFolder": { "message": "폴더 이름 바꾸기" },
-  "promptRenameFolder": { "message": "새 이름:" },
-  "errorFolderExists": { "message": "이 이름의 폴더가 이미 존재합니다." },
-  "storageCalc": { "message": "공간 계산 중..." },
-  "storageInfo": { "message": "저장소: {used} KB / {max} KB ({pct}%)" },
-  "cmdQuickSave": { "message": "대화 저장" },
-  "quickSaveFolder": { "message": "⚡ 빠른 저장" },
-  "toastSaved": { "message": "✅ Gemini 폴더에 저장되었습니다!" },
-  "btnOpenGroup": { "message": "탭 그룹에서 열기" },
-  "confirmOpenManyTabs": { "message": "정말 {count}개의 탭을 동시에 여시겠습니까?" },
-  "errorTabGroup": { "message": "오류: 탭 그룹을 생성할 수 없습니다. 새 권한을 수락하셨나요?" },
-  "bulkSelected": { "message": "{count}개 선택됨" },
-  "bulkMove": { "message": "이동..." },
-  "bulkDelete": { "message": "삭제" },
-  "confirmBulkDelete": { "message": "정말 {count}개의 대화를 삭제하시겠습니까?" },
-  "bulkCancel": { "message": "선택 취소" },
-  "masterFolderName": { "message": "Gemini 폴더 (동기화)" },
-  "syncBookmarksTooltip": { "message": "휴대전화에서 대화에 액세스할 수 있도록 Chrome 북마크에 동기화된 폴더를 만듭니다." },
-  "reviewTitle": { "message": "⭐ Gemini 폴더가 마음에 드시나요?" },
-  "reviewMessage": { "message": "여러분의 지원은 이 오픈 소스 프로젝트에 큰 도움이 됩니다!" },
-  "reviewRateBtn": { "message": "별 5개 평가하기" },
-  "reviewLaterBtn": { "message": "나중에" },
-  "reviewNoBtn": { "message": "괜찮습니다" },
-  "modalBtnCancel": { "message": "취소" },
-  "modalBtnConfirm": { "message": "확인" },
-  "emojiTipPlaceholder": { "message": "팁: 이모지로 시작 (Win+. / ⌘⌃스페이스)" },
-  "toastAlreadySaved": { "message": "⚠️ 이미 저장되었습니다!" }
+  "extName": {
+    "message": "Gemini 폴더"
+  },
+  "extDesc": {
+    "message": "Gemini 대화를 맞춤형 폴더에 정리하세요."
+  },
+  "appTitle": {
+    "message": "Gemini 폴더"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 대화 검색..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 프롬프트 검색..."
+  },
+  "folderPlaceholder": {
+    "message": "폴더 이름 (예: 코딩 프로젝트)"
+  },
+  "chatPlaceholder": {
+    "message": "대화 제목"
+  },
+  "saveBtn": {
+    "message": "저장"
+  },
+  "statusSaved": {
+    "message": "대화가 저장되었습니다!"
+  },
+  "noResults": {
+    "message": "결과를 찾을 수 없습니다 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 내보내기"
+  },
+  "importBtn": {
+    "message": "📂 가져오기"
+  },
+  "alertNotGemini": {
+    "message": "Gemini 페이지에서 이 확장 프로그램을 사용해 주세요."
+  },
+  "defaultFolder": {
+    "message": "일반"
+  },
+  "defaultTitle": {
+    "message": "새 대화"
+  },
+  "promptRename": {
+    "message": "새 대화 이름:"
+  },
+  "alertEmptyExport": {
+    "message": "폴더가 비어 있어 내보낼 항목이 없습니다!"
+  },
+  "alertImportSuccess": {
+    "message": "가져오기 성공! 데이터가 성공적으로 병합되었습니다."
+  },
+  "alertImportError": {
+    "message": "가져오기 오류. 이 확장 프로그램에서 생성된 유효한 JSON 파일인지 확인하세요."
+  },
+  "btnRename": {
+    "message": "이름 바꾸기"
+  },
+  "btnDelete": {
+    "message": "삭제"
+  },
+  "btnNewFolder": {
+    "message": "➕ 폴더"
+  },
+  "promptNewFolder": {
+    "message": "새 폴더:"
+  },
+  "btnDeleteFolder": {
+    "message": "폴더 삭제"
+  },
+  "confirmDeleteFolder": {
+    "message": "이 폴더에는 대화가 포함되어 있습니다. 정말 삭제하시겠습니까?"
+  },
+  "btnPin": {
+    "message": "고정"
+  },
+  "btnUnpin": {
+    "message": "고정 해제"
+  },
+  "sortNewest": {
+    "message": "최신순"
+  },
+  "sortOldest": {
+    "message": "오래된순"
+  },
+  "sortAlpha": {
+    "message": "가나다순"
+  },
+  "ctxMenuSave": {
+    "message": "Gemini 폴더에 저장"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(폴더 없음 - 확장 프로그램 열기)"
+  },
+  "btnToggleAdd": {
+    "message": "대화 추가"
+  },
+  "btnCancel": {
+    "message": "닫기"
+  },
+  "btnRenameFolder": {
+    "message": "폴더 이름 바꾸기"
+  },
+  "promptRenameFolder": {
+    "message": "새 이름:"
+  },
+  "errorFolderExists": {
+    "message": "이 이름의 폴더가 이미 존재합니다."
+  },
+  "storageCalc": {
+    "message": "공간 계산 중..."
+  },
+  "storageInfo": {
+    "message": "저장소: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "대화 저장"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ 빠른 저장"
+  },
+  "toastSaved": {
+    "message": "✅ Gemini 폴더에 저장되었습니다!"
+  },
+  "btnOpenGroup": {
+    "message": "탭 그룹에서 열기"
+  },
+  "confirmOpenManyTabs": {
+    "message": "정말 {count}개의 탭을 동시에 여시겠습니까?"
+  },
+  "errorTabGroup": {
+    "message": "오류: 탭 그룹을 생성할 수 없습니다. 새 권한을 수락하셨나요?"
+  },
+  "bulkSelected": {
+    "message": "{count}개 선택됨"
+  },
+  "bulkMove": {
+    "message": "이동..."
+  },
+  "bulkDelete": {
+    "message": "삭제"
+  },
+  "confirmBulkDelete": {
+    "message": "정말 {count}개의 대화를 삭제하시겠습니까?"
+  },
+  "bulkCancel": {
+    "message": "선택 취소"
+  },
+  "masterFolderName": {
+    "message": "Gemini 폴더 (동기화)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "휴대전화에서 대화에 액세스할 수 있도록 Chrome 북마크에 동기화된 폴더를 만듭니다."
+  },
+  "reviewTitle": {
+    "message": "⭐ Gemini 폴더가 마음에 드시나요?"
+  },
+  "reviewMessage": {
+    "message": "여러분의 지원은 이 오픈 소스 프로젝트에 큰 도움이 됩니다!"
+  },
+  "reviewRateBtn": {
+    "message": "별 5개 평가하기"
+  },
+  "reviewLaterBtn": {
+    "message": "나중에"
+  },
+  "reviewNoBtn": {
+    "message": "괜찮습니다"
+  },
+  "modalBtnCancel": {
+    "message": "취소"
+  },
+  "modalBtnConfirm": {
+    "message": "확인"
+  },
+  "emojiTipPlaceholder": {
+    "message": "팁: 이모지로 시작 (Win+. / ⌘⌃스페이스)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ 이미 저장되었습니다!"
+  },
+  "folderModeTitle": {
+    "message": "폴더 모드"
+  },
+  "promptModeTitle": {
+    "message": "프롬프트 모드"
+  },
+  "promptCannotBeEmpty": {
+    "message": "프롬프트는 비워 둘 수 없습니다!"
+  },
+  "promptSaved": {
+    "message": "프롬프트가 저장되었습니다!"
+  },
+  "promptDuplicateWarning": {
+    "message": "이 제목의 프롬프트가 이미 있습니다. 덮어쓰시겠습니까?"
+  },
+  "promptNoSavedYet": {
+    "message": "아직 저장된 프롬프트가 없습니다."
+  },
+  "promptAddBtn": {
+    "message": "프롬프트 추가"
+  },
+  "promptCopyTitle": {
+    "message": "복사"
+  },
+  "promptDeleteTitle": {
+    "message": "삭제"
+  },
+  "promptSetGemLink": {
+    "message": "맞춤 Gem 링크 설정:"
+  },
+  "promptInvalidGemLink": {
+    "message": "잘못된 링크입니다. https://gemini.google.com/ 으로 시작해야 합니다."
+  },
+  "newConversationBtn": {
+    "message": "새 대화"
+  },
+  "promptTitlePlaceholder": {
+    "message": "프롬프트 제목"
+  },
+  "promptTextPlaceholder": {
+    "message": "여기에 프롬프트를 입력하세요..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "사용자 정의 Gem 사용"
+  },
+  "setGemBtnTooltip": {
+    "message": "사용자 정의 Gem 링크 설정"
+  },
+  "syncPromptsTooltip": {
+    "message": "프롬프트 동기화"
+  },
+  "promptRenamePrompt": {
+    "message": "새 프롬프트 이름:"
+  },
+  "confirmDeletePrompt": {
+    "message": "이 프롬프트를 삭제할까요?"
+  },
+  "promptInsertBtn": {
+    "message": "Gemini에 삽입"
+  },
+  "promptPinTitle": {
+    "message": "고정"
+  }
 }

@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "Mga Folder ng Gemini"
+  },
+  "extDesc": {
+    "message": "Ayusin ang iyong mga pag-uusap sa Gemini sa mga custom na folder."
+  },
+  "appTitle": {
+    "message": "Mga Folder ng Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Maghanap ng pag-uusap..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Maghanap ng prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Pangalan ng folder (hal. Mga Proyekto sa Code)"
+  },
+  "chatPlaceholder": {
+    "message": "Pamagat ng pag-uusap"
+  },
+  "saveBtn": {
+    "message": "I-save"
+  },
+  "statusSaved": {
+    "message": "Nai-save ang pag-uusap!"
+  },
+  "noResults": {
+    "message": "Walang nahanap na resulta 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 I-export"
+  },
+  "importBtn": {
+    "message": "📂 I-import"
+  },
+  "alertNotGemini": {
+    "message": "Gamitin ang extension na ito sa isang pahina ng Gemini."
+  },
+  "defaultFolder": {
+    "message": "Pangkalahatan"
+  },
+  "defaultTitle": {
+    "message": "Bagong pag-uusap"
+  },
+  "promptRename": {
+    "message": "Bagong pangalan ng pag-uusap:"
+  },
+  "alertEmptyExport": {
+    "message": "Ang iyong mga folder at prompt ay walang laman, walang i-export!"
+  },
+  "alertImportSuccess": {
+    "message": "Matagumpay na na-import! Ang iyong mga folder at prompt ay matagumpay na pinagsama."
+  },
+  "alertImportError": {
+    "message": "Error sa pag-import. Siguraduhing ito ay isang wastong JSON file na ginawa ng extension na ito."
+  },
+  "btnRename": {
+    "message": "Palitan ang pangalan"
+  },
+  "btnDelete": {
+    "message": "Tanggalin"
+  },
+  "btnNewFolder": {
+    "message": "➕ Folder"
+  },
+  "promptNewFolder": {
+    "message": "Bagong folder:"
+  },
+  "btnDeleteFolder": {
+    "message": "Tanggalin ang folder"
+  },
+  "confirmDeleteFolder": {
+    "message": "Ang folder na ito ay may mga pag-uusap. Sigurado ka bang gusto mo itong tanggalin?"
+  },
+  "btnPin": {
+    "message": "I-pin"
+  },
+  "btnUnpin": {
+    "message": "I-unpin"
+  },
+  "sortNewest": {
+    "message": "Pinakabago"
+  },
+  "sortOldest": {
+    "message": "Pinakamatanda"
+  },
+  "sortAlpha": {
+    "message": "A hanggang Z"
+  },
+  "ctxMenuSave": {
+    "message": "I-save sa Mga Folder ng Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Walang folder - Buksan ang extension)"
+  },
+  "btnToggleAdd": {
+    "message": "Magdagdag ng pag-uusap"
+  },
+  "btnCancel": {
+    "message": "Isara"
+  },
+  "btnRenameFolder": {
+    "message": "Palitan ang pangalan ng folder"
+  },
+  "promptRenameFolder": {
+    "message": "Bagong pangalan:"
+  },
+  "errorFolderExists": {
+    "message": "May folder na na may pangalang ito."
+  },
+  "storageCalc": {
+    "message": "Kinakalkula ang espasyo..."
+  },
+  "storageInfo": {
+    "message": "Storage: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "I-save ang pag-uusap"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Mabilis na Pag-save"
+  },
+  "toastSaved": {
+    "message": "✅ Nai-save sa Mga Folder ng Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Buksan sa Tab Group"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Talagang gusto mo bang magbukas ng {count} tab nang sabay-sabay?"
+  },
+  "errorTabGroup": {
+    "message": "Error: Hindi malikha ang tab group. Tinanggap mo na ba ang mga bagong pahintulot?"
+  },
+  "bulkSelected": {
+    "message": "{count} napili"
+  },
+  "bulkMove": {
+    "message": "Ilipat sa..."
+  },
+  "bulkDelete": {
+    "message": "Tanggalin"
+  },
+  "confirmBulkDelete": {
+    "message": "Sigurado ka bang gusto mong tanggalin ang {count} pag-uusap na ito?"
+  },
+  "bulkCancel": {
+    "message": "Kanselahin ang seleksyon"
+  },
+  "masterFolderName": {
+    "message": "Mga Folder ng Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Gumagawa ng naka-sync na folder sa iyong mga Chrome bookmark para ma-access ang iyong mga pag-uusap sa iyong telepono."
+  },
+  "reviewTitle": {
+    "message": "⭐ Nag-eenjoy ka ba sa Mga Folder ng Gemini?"
+  },
+  "reviewMessage": {
+    "message": "Ang iyong suporta ay nakakatulong nang malaki sa open-source na proyektong ito!"
+  },
+  "reviewRateBtn": {
+    "message": "Mag-rate ng 5 bituin"
+  },
+  "reviewLaterBtn": {
+    "message": "Marahil mamaya"
+  },
+  "reviewNoBtn": {
+    "message": "Hindi, salamat"
+  },
+  "modalBtnCancel": {
+    "message": "Kanselahin"
+  },
+  "modalBtnConfirm": {
+    "message": "Kumpirmahin"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tip: Magsimula sa emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Nai-save na!"
+  },
+  "folderModeTitle": {
+    "message": "Folder Mode"
+  },
+  "promptModeTitle": {
+    "message": "Prompt Mode"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Hindi pwedeng walang laman ang prompt!"
+  },
+  "promptSaved": {
+    "message": "Nai-save ang prompt!"
+  },
+  "promptDuplicateWarning": {
+    "message": "May prompt na na may pamagat na ito. I-overwrite?"
+  },
+  "promptNoSavedYet": {
+    "message": "Wala pang naka-save na prompt."
+  },
+  "promptAddBtn": {
+    "message": "Magdagdag ng Prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Kopyahin"
+  },
+  "promptDeleteTitle": {
+    "message": "Tanggalin"
+  },
+  "promptSetGemLink": {
+    "message": "Itakda ang custom Gem link:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Hindi wastong link. Dapat magsimula sa https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Bagong Pag-uusap"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Pamagat ng Prompt"
+  },
+  "promptTextPlaceholder": {
+    "message": "Isulat ang iyong prompt dito..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "I-enable ang custom Gem"
+  },
+  "setGemBtnTooltip": {
+    "message": "Itakda ang custom Gem link"
+  },
+  "syncPromptsTooltip": {
+    "message": "I-sync ang mga prompt"
+  },
+  "promptRenamePrompt": {
+    "message": "Bagong pangalan ng prompt:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Tanggalin ang prompt na ito?"
+  },
+  "promptInsertBtn": {
+    "message": "Ilagay sa Gemini"
+  },
+  "promptPinTitle": {
+    "message": "I-pin"
+  }
+}

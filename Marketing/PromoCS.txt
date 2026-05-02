@@ -1,48 +1,61 @@
-Používáte Google Gemini denně k práci, programování, výzkumu nebo tvorbě, ale neustále ztrácíte své důležité výzvy (prompty) v nekonečné historii?
+Používáte Google Gemini každý den — pro práci, kód, psaní nebo výzkum — ale stále dokola píšete stejné výzvy a vaše nejlepší konverzace mizí v nekonečné historii?
 Složky Gemini (Gemini Folders) je rozšíření, které potřebujete.
 
-Proměňte své používání Gemini ve skutečně strukturovaný pracovní prostor seskupením nejlepších konverzací podle projektů, témat nebo kategorií. Konec ztrácení času rolováním při hledání starého chatu!
+S verzí 4.0 se Složky Gemini stávají vaším skutečným kokpitem pro Gemini: organizujte konverzace do složek, vybudujte knihovnu opakovaně použitelných výzev a vkládejte je přímo do Gemini jedním kliknutím — bez kopírování a vkládání.
 
-💡 Proč je to lepší než obyčejné záložky (bookmarks)?
-Na rozdíl od klasických záložek, které nakonec zahltí váš prohlížeč, vám Složky Gemini nabízejí vyhrazené, izolované rozhraní pro správu překrývající přímo okno Gemini.
-A co na cestách? Rozšíření nyní obsahuje tichý mobilní „most“: možnost, která vytvoří jedinou zrcadlovou složku ve vašich záložkách, abyste si mohli prohlížet konverzace na svém telefonu!
+✨ NOVINKA v4.0 — REŽIM VÝZEV
 
-🌟 HLAVNÍ FUNKCE
-⚡ Rychlé uložení (Pravé tlačítko a zkratky): Uložte konverzaci pouhým kliknutím pravým tlačítkem nebo použijte klávesovou zkratku (Ctrl+Shift+S nebo Cmd+Shift+S na Macu) a odešlete ji okamžitě do „⚡ Rychlé uložení“!
-☑️ Vícenásobný výběr (Bulk Actions): Vyberte více konverzací pomocí zaškrtávacích políček a přesuňte je nebo je smažte jedním kliknutím.
-📑 Skupiny karet (Tab Groups): Otevřete celou složku jedním kliknutím v nativní, barevné skupině karet Chrome.
-😃 Vlastní Emojis: Začněte název složky emojim (např. „💻 Kód“), abyste nahradili výchozí ikonu složky.
-🖱️ Drag & Drop (Přetáhnout a pustit): Intuitivně přeorganizujte svůj pracovní prostor.
-📱 Mobilní synchronizace: Získejte přístup ke svým konverzacím i na cestách! Jednoduchý přepínač vygeneruje chytrou složku ve vašich záložkách Chrome, která na vašem smartphonu dokonale replikuje strukturu vašich složek a vaše vlastní pořadí řazení.
-🗜️ Ultra-efektivní komprese: Automaticky komprimuje vaše data (LZString), aby se maximalizovalo nativní úložiště Chrome a bezpečně se uložily stovky chatů.
-📊 Sledování úložiště: Vizuální ukazatel průběhu vám v reálném čase ukazuje dostupné místo v cloudu.
-📁 Vlastní složky a Připínání: Roztřiďte své konverzace a připněte (📌) své oblíbené položky na začátek seznamu s chytrým řazením.
-⇅ Vlastní řazení: Seřaďte své složky a konverzace za běhu (Nejnovější, Nejstarší, Od A do Z) s přímým dopadem na mobilní synchronizaci.
-🤖 Chytrá detekce a vyhledávání: Automatické předvyplnění přesného názvu vaší konverzace a okamžitý vyhledávací panel.
-☁️ Cloud synchronizace a záloha: Najděte svou organizaci na všech svých počítačích a exportujte svá data ve formátu JSON.
-🎨 Design „Material 3“ a vícejazyčnost: Ultrakompaktní rozhraní vybavené zcela novými dialogovými okny na míru, které se dokonale přizpůsobí tmavému režimu a nyní podporuje 16 světových jazyků!
+📝 Osobní knihovna výzev: Přepněte do režimu výzev jedním kliknutím na přepínač v záhlaví. Ukládejte nejlepší výzvy s názvem a úplným textem a okamžitě je najděte díky vyhledávání a řazení (nejnovější, nejstarší, A-Z).
+▶ Vložení jedním kliknutím: Konec kopírování a vkládání. Klikněte na tlačítko přehrávání (▶) u uložené výzvy a vloží se přímo do vstupního pole Gemini. Rozšíření zjistí, zda jste na stránce Gemini, a pokud ne, upozorní vás.
+✏️ Úprava na místě: Klikněte na výzvu, rozbalte ji a přímo upravte text. Změny se automaticky uloží po krátkém okamžiku a pořadí řazení se odpovídajícím způsobem aktualizuje.
+💎 Vlastní odkaz Gem: Nastavte odkaz na váš oblíbený Gem a aktivujte ho kliknutím. Když je aktivní, tlačítko „Nová konverzace" otevře váš Gem místo výchozího chatu.
+☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
+📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
+
+🌟 FUNKCE SLOŽEK
+
+⚡ Rychlé uložení (Pravý klik a Zkratky): Uložte konverzaci jednoduchým pravým kliknutím nebo klávesovými zkratkami (Ctrl+Shift+S nebo Cmd+Shift+S na Macu) a okamžitě ji odešlete do „⚡ Rychlých uložení" — s vizuálním upozorněním, pokud je již uložena!
+☑️ Vícenásobný výběr (Hromadné akce): Pomocí zaškrtávacích políček vyberte více konverzací a přesuňte nebo odstraňte je jedním kliknutím.
+📑 Integrace skupin karet: Otevřete celou složku jedním kliknutím jako nativní barevnou skupinu karet Chrome.
+😃 Vlastní emoji: Začněte název složky emojí (např. „💻 Kód") a výchozí ikona se nahradí.
+🖱️ Přetažení: Přeorganizujte pracovní prostor přetažením konverzací mezi složkami.
+📱 Mobilní synchronizace: Přepínač vytvoří zrcadlovou složku v záložkách Chrome, která dokonale reprodukuje strukturu složek a pořadí řazení v telefonu.
+🗜️ Ultraefektivní komprese: Automaticky komprimuje data (LZString), čímž maximalizuje nativní úložiště Chrome a umožňuje uložit stovky konverzací.
+📊 Sledovač úložiště: Vizuální lišta průběhu zobrazuje dostupné cloudové úložiště v reálném čase.
+📁 Vlastní složky a Připnutí: Třiďte konverzace podle projektů, témat nebo kategorií. Připněte (📌) oblíbené složky na vrchol.
+⇅ Vlastní řazení: Řaďte složky a konverzace okamžitě (Nejnovější, Nejstarší, A-Z) s okamžitým odrazem v mobilní synchronizaci.
+🤖 Inteligentní detekce a Vyhledávání: Automatické vyplnění přesného názvu konverzace a panel vyhledávání v reálném čase.
+☁️ Cloudová synchronizace a Záloha: Přístup k organizaci na všech zařízeních a export dat v JSON.
+🎨 Dizajn Material 3 a Vícejazyčnost: Ultrakompaktní rozhraní s plně vlastními dialogovými okny, automatickým tmavým režimem a podporou 27 jazyků!
 
 🛠️ JAK TO FUNGUJE?
-Otevřete důležitou konverzaci na gemini.google.com.
-Expresní uložení: Použijte Ctrl+Shift+S nebo klikněte pravým tlačítkem na stránku > „Uložit do Složek Gemini“.
-Přes rozšíření: Klikněte na ikonu, vyberte složku a uložte!
-Pro mobil: Zaškrtněte ikonu 📱 v zápatí a odešlete své složky do telefonu.
-Zaškrtněte políčka pro hromadné akce, otevřete své složky na kartách (📑) a k přeorganizování použijte přetažení!
+
+Režim složek:
+Otevřete konverzaci na gemini.google.com.
+Rychlé uložení: Ctrl+Shift+S (nebo Cmd+Shift+S na Macu), nebo pravý klik > „Uložit do Složek Gemini".
+Přes rozšíření: Klikněte na ikonu, vyberte složku, uložte.
+Mobilní: Aktivujte 📱 v zápatí a synchronizujte složky s telefonem.
+Používejte zaškrtávací políčka pro hromadné akce, otevírejte složky jako skupiny karet (📑), přetahujte pro reorganizaci!
+
+Režim výzev:
+Klikněte na 📝 na přepínači v pravém horním rohu rozšíření.
+Klikněte na ➕ Přidat výzvu, zadejte název a text, uložte.
+Chcete-li použít výzvu: rozbalte ji a klikněte na ▶ — vloží se přímo do Gemini, připravena k odeslání.
+Nakonfigurujte 💎, aby ukazoval na váš vlastní Gem.
+Připnout výzvu: klikněte na 📍 — přesune se na začátek seznamu a je vždy po ruce.
 
 🔒 SOUKROMÍ A BEZPEČNOST
-Navrženo se soukromím v srdci svého fungování. Vyžaduje pouze přístup k Gemini a aktivní kartu čte pouze v okamžiku ukládání. Vyžaduje oprávnění „Záložky“ (bookmarks) výhradně ke generování vaší mobilní synchronizační složky (pokud ji aktivujete). Lokalizované úložiště přes Chrome Sync: žádné servery třetích stran, žádná telemetrie.
+Navrženo se soukromím v centru. Vyžaduje přístup pouze k gemini.google.com a čte aktivní kartu pouze při ukládání konverzace nebo vkládání výzvy. Oprávnění „Záložky" se používá pouze pokud aktivujete mobilní synchronizaci. Ukládání přes Chrome Sync: žádné servery třetích stran, žádná telemetrie.
 
 🤝 OPEN SOURCE PROJEKT
-Složky Gemini je open source projekt vyvíjený s vášní. Transparentnost a respekt k vašemu soukromí jsou naší prioritou. Jste vývojář nebo jen zvědavý? Přijďte se podívat na náš kód, sledujte historii aktualizací nebo přispějte do projektu (klikací odkaz přímo v rozšíření) na GitHubu: https://github.com/dlamarre-dev/GeminiFolders
+Složky Gemini jsou open source projekt vyvíjený s vášní. Transparentnost a respekt k vašemu soukromí jsou naše priority. Jste vývojář nebo jen zvědavý? Prohlédněte si kód, sledujte historii změn nebo přispějte na GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 AKTUALIZACE:
-Verze 3.5 (Pevné základy a vylepšený zážitek): Zásadní aktualizace pod kapotou pro profesionální robustnost! Přidali jsme vizuální upozornění, pokud se pokusíte uložit duplikát pomocí klávesové zkratky. Navíc už žádné falešné duplikáty spojené se změnami URL adres Gemini a vaše databáze je nyní chráněna proti poškození díky naší nové bezpečnostní architektuře.
-Verze 3.4.1 (Meziplatformní výkon a stabilita): Zdravíme uživatele Firefoxu! Úspěšně jsme portovali rozšíření pro Mozillu s využitím zbrusu nového automatizovaného systému sestavování a za dodržení přísných bezpečnostních předpisů. Navíc jsme nasadili nezničitelný systém uzamykání, abychom trvale opravili otravnou chybu s duplikováním složek záložek během mobilní synchronizace.
-Verze 3.3 (Prémiový a mezinárodní design): Nová dialogová okna Material 3 vytvořená 100% na míru (sbohem nativní upozornění!), mobilní synchronizace přizpůsobená vašemu pořadí řazení, čistší rozhraní a celosvětová expanze s přidáním 10 nových jazyků!
-Verze 3.2 (Mobilní & Open Source): Chytrá mobilní synchronizace prostřednictvím záložek Chrome, inteligentní řazení připnutých složek, ultrakompaktní zápatí a oficiální přechod na Open Source s integrovaným odkazem na GitHub!
-Verze 3.1 (Vylepšení UX): Stabilizace Drag & Drop, zaškrtávací políčka přizpůsobená tmavému režimu, inteligentní zamykání rozhraní během hromadných akcí a dokonalé zarovnání na Macu!
-Verze 3.0 (Aktualizace produktivity): Přidány klávesové zkratky, vícenásobný výběr (zaškrtávací políčka), skupiny karet, vlastní emotikony, komprese dat a panel úložiště!
-Verze 2.1 (Globální aktualizace): 🌍 Složky Gemini jsou nyní kromě francouzštiny a angličtiny plně lokalizovány do španělštiny, brazilské portugalštiny, němčiny a japonštiny!
-Verze 2.0.2 (Vylepšení UX): Inteligentní ukládání otevřených/zavřených složek do paměti, vizuální značky (📁/🗂️) pro plné a prázdné složky a drobné opravy.
-Verze 2.0.1: Opraven problém se získáváním názvu v některých prohlížečích.
-Verze 2.0: Zásadní přepracování s přidáním funkce Drag & Drop, kontextového menu, vlastního řazení, připínání a nového designu Material 3.
+Verze 4.0 (Knihovna výzev): Nejambicióznější aktualizace dosud! Složky Gemini získávají zcela nový režim výzev: ukládejte nejlepší výzvy, upravujte je na místě a vkládejte je přímo do Gemini jedním kliknutím. Přidáno: animovaný přepínač režimů, vyhledávání a řazení v režimu výzev, tlačítko vlastního Gem a nezávislá synchronizace výzev. Připnutí nejdůležitějších výzev na vrchol knihovny.
+Verze 3.5 (Pevné základy a vylepšená zkušenost): Velká interní aktualizace pro profesionální robustnost! Vizuální upozornění při duplicitním uložení. Konec falešným duplikátům ze změn URL Gemini, databáze chráněná před poškozením.
+Verze 3.4.1 (Multisystémová síla a stabilita): Úspěšný přenos na Mozilla Firefox. Definitivní oprava chyby s duplikátními složkami záložek při mobilní synchronizaci.
+Verze 3.3 (Prémiový design a mezinárodní rozšíření): Nové plně vlastní dialogy Material 3, mobilní synchronizace podle pořadí řazení a 10 nových jazyků!
+Verze 3.2 (Mobilní a Open Source): Mobilní synchronizace přes záložky Chrome, inteligentní řazení připnutých složek, ultrakompaktní zápatí a spuštění open source.
+Verze 3.1 (Vylepšení UX): Stabilizace Drag & Drop, zaškrtávací políčka v tmavém režimu, inteligentní uzamčení rozhraní při hromadných akcích.
+Verze 3.0 (Aktualizace produktivity): Klávesové zkratky, vícenásobný výběr, skupiny karet, vlastní emoji, komprese dat a lišta úložiště.
+Verze 2.0: Zásadní redesign s Drag & Drop, kontextovým menu, vlastním řazením, připnutím a designem Material 3.

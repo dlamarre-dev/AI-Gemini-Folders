@@ -1,48 +1,61 @@
-Do you use Google Gemini daily for work, coding, research, or creation, but constantly lose your important prompts in an endless history?
+Do you use Google Gemini every day — for work, code, writing, or research — but keep retyping the same prompts, while your best conversations vanish into an endless history?
 Gemini Folders is the extension you need.
 
-Transform your use of Gemini into a true structured workspace by grouping your best conversations by projects, themes, or categories. No more time wasted scrolling to find an old chat!
+With version 4.0, Gemini Folders becomes your true Gemini cockpit: organize your conversations into folders, build a library of reusable prompts, and inject them directly into Gemini with a single click — no copy-pasting required.
 
-💡 Why is it better than simple bookmarks?
-Unlike classic bookmarks that end up cluttering your browser, Gemini Folders offers you a dedicated, isolated management interface overlaid directly on your Gemini window.
-And for when you're on the go? The extension now includes a silent mobile "bridge": an option that creates a single mirror folder in your bookmarks to let you access your conversations on your phone!
+✨ NEW IN v4.0 — PROMPT MODE
 
-🌟 MAIN FEATURES
-⚡ Quick Save (Right Click & Shortcuts): Save the conversation via a simple right-click, or use the keyboard shortcut (Ctrl+Shift+S or Cmd+Shift+S on Mac) to send it instantly to "⚡ Quick Saves"!
-☑️ Bulk Actions (Multi-Select): Select multiple conversations with checkboxes to move or delete them in a single click.
-📑 Tab Groups: Open an entire folder in one click in a native, colorful Chrome tab group.
-😃 Custom Emojis: Start your folder name with an emoji (e.g., "💻 Code") to replace the default folder icon.
-🖱️ Drag & Drop: Reorganize your workspace intuitively.
-📱 Mobile Sync: Access your conversations on the go! A simple switch generates a smart folder in your Chrome bookmarks, perfectly replicating your folder tree and custom sort order on your smartphone.
-🗜️ Ultra-efficient Compression: Automatically compresses your data (LZString) to maximize Chrome's native storage and save hundreds of chats.
-📊 Storage Tracker: A visual progress bar shows your available cloud space in real-time.
-📁 Custom Folders & Pins: Categorize your conversations and pin (📌) your favorites to the top of the list with smart sorting.
-⇅ Custom Sorting: Sort your folders and conversations on the fly (Newest, Oldest, A to Z) with direct reflection on the mobile sync.
-🤖 Smart Detection & Search: Automatic pre-filling of your exact conversation title and instant search bar.
-☁️ Cloud Sync & Backup: Find your organization across all your computers and export your data in JSON.
-🎨 "Material 3" Design & Multilingual: Ultra-compact interface with all-new custom dialog boxes, which adapts perfectly to dark mode and now supports 16 global languages!
+📝 Personal Prompt Library: Switch to Prompt Mode with a single click on the toggle in the header. Save your best prompts with a title and full text, then find them instantly with search and sort (newest, oldest, A-Z).
+▶ One-Click Injection: No more copy-pasting. Click the play button (▶) on any saved prompt to inject it directly into Gemini's input field. The extension detects whether you're on a Gemini page and notifies you if not.
+✏️ Inline Editing: Click a prompt to expand it and edit the text directly. Changes auto-save after a short pause and the sort order updates accordingly.
+💎 Custom Gem Link: Configure a link to your favorite Gem and toggle it on/off with a click. When active, the "New Conversation" button opens your Gem instead of the default chat.
+☁️ Prompt Sync: Enable cloud sync for your prompt library independently from your folders.
+📌 Pinned Prompts: Pin your essential prompts with one click to keep them at the top of your library, separated from the rest by a visual divider.
 
-🛠️ HOW IT WORKS?
-Open an important conversation on gemini.google.com.
-Express save: Use Ctrl+Shift+S, or right-click on the page > "Save to Gemini Folders".
-Via the extension: Click on the icon, choose a folder, and save!
-For Mobile: Check the 📱 icon in the footer to send your folders to your phone.
-Check the boxes for bulk actions, open your folders in tabs (📑), and use drag and drop to reorganize!
+🌟 FOLDER FEATURES
+
+⚡ Quick Save (Right-Click & Shortcuts): Save the current conversation with a simple right-click, or use the keyboard shortcut (Ctrl+Shift+S or Cmd+Shift+S on Mac) to instantly send it to "⚡ Quick Saves" — with a visual alert if it's already saved!
+☑️ Multi-Select (Bulk Actions): Select multiple conversations using checkboxes to move or delete them in one click.
+📑 Tab Groups Integration: Open an entire folder in a single click as a native, color-coded Chrome Tab Group.
+😃 Custom Folder Emojis: Start your folder name with an emoji (e.g., "💻 Code") to replace the default folder icon.
+🖱️ Drag & Drop: Reorganize your workspace by dragging conversations between folders.
+📱 Mobile Sync: A toggle generates a mirror folder in your Chrome bookmarks, perfectly reproducing your folder structure and custom sort order on your phone.
+🗜️ Ultra-Efficient Compression: Automatically compresses your data (LZString) to maximize Chrome's native storage and save hundreds of conversations.
+📊 Storage Tracker: A sleek visual progress bar shows your available cloud storage in real time.
+📁 Custom Folders & Pins: Organize your conversations by projects, themes, or categories. Pin (📌) your favorite folders to the top.
+⇅ Custom Sorting: Sort folders and conversations on the fly (Newest, Oldest, A-Z) with changes instantly reflected in your mobile sync.
+🤖 Smart Detection & Search: Automatic pre-fill of your conversation's exact title and a real-time search bar.
+☁️ Cloud Sync & Backup: Access your organization on all your devices and export your data as JSON.
+🎨 Material 3 Design & Multilingual: Ultra-compact interface with fully custom modal dialogs, automatic dark mode, and support for 27 languages!
+
+🛠️ HOW DOES IT WORK?
+
+Folder Mode:
+Open a conversation on gemini.google.com.
+Quick save: Ctrl+Shift+S (or Cmd+Shift+S on Mac), or right-click > "Save to Gemini Folders".
+Via the extension: Click the icon, choose a folder, and save.
+Mobile: Check 📱 in the footer to sync your folders to your phone.
+Use checkboxes for bulk actions, open folders as Tab Groups (📑), drag and drop to reorganize!
+
+Prompt Mode:
+Click 📝 on the toggle button in the top right of the extension.
+Click ➕ Add Prompt, enter a title and your text, and save.
+To use a prompt: expand it and click ▶ — it injects directly into Gemini, ready to send.
+Configure 💎 to point to your custom Gem.
+To pin a prompt: click 📍 — it moves to the top of the list and stays within easy reach.
 
 🔒 PRIVACY & SECURITY
-Designed with privacy at the heart of its operation. It only requests access to Gemini and only reads the active tab at the moment of saving. It requires the "Bookmarks" permission only to generate your mobile sync folder (if you enable it). Localized storage via Chrome Sync: no third-party servers, no telemetry.
+Built with privacy at its core. It only requests access to gemini.google.com and only reads the active tab when saving a conversation or injecting a prompt. The "Bookmarks" permission is only used if you enable mobile sync. Storage via Chrome Sync: no third-party servers, no telemetry.
 
 🤝 OPEN SOURCE PROJECT
-Gemini Folders is an open-source project developed with passion. Transparency and respect for your privacy are our priorities. Are you a developer or simply curious? Come check out our code, follow the update history, or contribute to the project (clickable link directly in the extension) on GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Gemini Folders is an open source project built with passion. Transparency and respect for your privacy are our top priorities. Are you a developer or just curious? Browse the code, follow the changelog, or contribute on GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 UPDATES:
-Version 3.5 (Solid Foundations & Improved Experience): A major under-the-hood update for professional-grade robustness! We added a visual alert if you try to save a duplicate via a keyboard shortcut. Plus, no more false duplicates linked to Gemini URL changes, and your database is now bulletproofed against corruption thanks to our new security architecture.
-Version 3.4.1 (Cross-Platform Power & Stability): Hello Firefox users! We've successfully ported the extension to Mozilla with a brand-new automated build system and strict security compliance. Plus, we've deployed an indestructible lock system to permanently fix the annoying duplicate bookmark folder bug during mobile sync.
-Version 3.3 (Premium & International Design): New 100% custom Material 3 dialog boxes (goodbye native alerts!), mobile sync mapped to your sort order, refined interface, and global expansion with the addition of 10 new languages!
-Version 3.2 (Mobile & Open Source): Clever mobile sync via Chrome bookmarks, smart sorting of your pinned folders, ultra-compact footer, and official transition to Open Source with integrated GitHub link!
-Version 3.1 (UX Improvements): Stabilization of Drag & Drop, checkboxes adapted to dark mode, smart locking of the interface during bulk actions, and perfect alignment on Mac!
-Version 3.0 (Productivity Update): Added keyboard shortcuts, multiple selection (checkboxes), tab groups, custom emojis, data compression, and storage bar!
-Version 2.1 (Global Update): 🌍 Gemini Folders is now fully localized in Spanish, Brazilian Portuguese, German, and Japanese, in addition to French and English!
-Version 2.0.2 (UX Improvements): Smart memorization of open/closed folders, visual cues (📁/🗂️) for full and empty folders, and minor fixes.
-Version 2.0.1: Fixed a title retrieval issue on certain browsers.
-Version 2.0: Major overhaul adding Drag & Drop, context menu, custom sorting, pinning, and new Material 3 design.
+Version 4.0 (Prompt Library): The most ambitious update yet! Gemini Folders gets a brand-new Prompt Mode: save your best prompts, edit them inline, and inject them directly into Gemini with one click. Added animated mode toggle, search and sort in Prompt Mode, custom Gem button, and independent prompt sync. Pin your essential prompts to the top of your library.
+Version 3.5 (Solid Foundations & Improved Experience): A major under-the-hood update for professional-grade robustness! Visual alert for duplicate saves via keyboard shortcut. No more false duplicates from Gemini URL changes, and a database shielded against corruption with our new security architecture.
+Version 3.4.1 (Multiplatform Power & Stability): Successfully ported to Mozilla Firefox with an automated build system and strict security compliance. Definitive fix for the duplicate bookmark folder bug during mobile sync.
+Version 3.3 (Premium Design & International): New 100% custom Material 3 dialogs, mobile sync mirroring your sort order, and global expansion with 10 new languages!
+Version 3.2 (Mobile & Open Source): Smart mobile sync via Chrome bookmarks, intelligent sorting of pinned folders, ultra-compact footer, and official open source launch with integrated GitHub link.
+Version 3.1 (UX Improvements): Drag & Drop stabilization, dark mode checkboxes, smart interface lock during bulk actions.
+Version 3.0 (Productivity Update): Keyboard shortcuts, multi-select, tab groups, custom emojis, data compression, and storage bar.
+Version 2.0: Major redesign with Drag & Drop, context menu, custom sorting, pinning, and Material 3 design.

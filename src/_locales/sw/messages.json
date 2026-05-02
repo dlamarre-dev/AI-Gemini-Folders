@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "Folda za Gemini"
+  },
+  "extDesc": {
+    "message": "Panga mazungumzo yako ya Gemini katika folda maalum."
+  },
+  "appTitle": {
+    "message": "Folda za Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Tafuta mazungumzo..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Tafuta kidokezo..."
+  },
+  "folderPlaceholder": {
+    "message": "Jina la folda (mfano: Miradi ya Msimbo)"
+  },
+  "chatPlaceholder": {
+    "message": "Kichwa cha mazungumzo"
+  },
+  "saveBtn": {
+    "message": "Hifadhi"
+  },
+  "statusSaved": {
+    "message": "Mazungumzo yamehifadhiwa!"
+  },
+  "noResults": {
+    "message": "Hakuna matokeo 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Hamisha"
+  },
+  "importBtn": {
+    "message": "📂 Ingiza"
+  },
+  "alertNotGemini": {
+    "message": "Tafadhali tumia kiendelezi hiki kwenye ukurasa wa Gemini."
+  },
+  "defaultFolder": {
+    "message": "Jumla"
+  },
+  "defaultTitle": {
+    "message": "Mazungumzo mapya"
+  },
+  "promptRename": {
+    "message": "Jina jipya la mazungumzo:"
+  },
+  "alertEmptyExport": {
+    "message": "Folda na vidokezo vyako viko wazi, hakuna cha kuhamisha!"
+  },
+  "alertImportSuccess": {
+    "message": "Uingizaji umefanikiwa! Folda na vidokezo vyako vimeunganishwa."
+  },
+  "alertImportError": {
+    "message": "Hitilafu ya uingizaji. Hakikisha ni faili halali ya JSON iliyoundwa na kiendelezi hiki."
+  },
+  "btnRename": {
+    "message": "Badilisha jina"
+  },
+  "btnDelete": {
+    "message": "Futa"
+  },
+  "btnNewFolder": {
+    "message": "➕ Folda"
+  },
+  "promptNewFolder": {
+    "message": "Folda mpya:"
+  },
+  "btnDeleteFolder": {
+    "message": "Futa folda"
+  },
+  "confirmDeleteFolder": {
+    "message": "Folda hii ina mazungumzo. Je, una uhakika unataka kuifuta?"
+  },
+  "btnPin": {
+    "message": "Bandika"
+  },
+  "btnUnpin": {
+    "message": "Ondoa ubandikaji"
+  },
+  "sortNewest": {
+    "message": "Mpya zaidi"
+  },
+  "sortOldest": {
+    "message": "Kongwe zaidi"
+  },
+  "sortAlpha": {
+    "message": "A hadi Z"
+  },
+  "ctxMenuSave": {
+    "message": "Hifadhi kwenye Folda za Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Hakuna folda - Fungua kiendelezi)"
+  },
+  "btnToggleAdd": {
+    "message": "Ongeza mazungumzo"
+  },
+  "btnCancel": {
+    "message": "Funga"
+  },
+  "btnRenameFolder": {
+    "message": "Badilisha jina la folda"
+  },
+  "promptRenameFolder": {
+    "message": "Jina jipya:"
+  },
+  "errorFolderExists": {
+    "message": "Folda yenye jina hili tayari ipo."
+  },
+  "storageCalc": {
+    "message": "Inahesabu nafasi..."
+  },
+  "storageInfo": {
+    "message": "Hifadhi: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Hifadhi mazungumzo"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Hifadhi ya Haraka"
+  },
+  "toastSaved": {
+    "message": "✅ Imehifadhiwa kwenye Folda za Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Fungua katika Kikundi cha Vichupo"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Je, unataka kweli kufungua vichupo {count} wakati mmoja?"
+  },
+  "errorTabGroup": {
+    "message": "Hitilafu: Haiwezekani kuunda kikundi cha vichupo. Je, umekubali ruhusa mpya?"
+  },
+  "bulkSelected": {
+    "message": "{count} zimechaguliwa"
+  },
+  "bulkMove": {
+    "message": "Hamia kwenye..."
+  },
+  "bulkDelete": {
+    "message": "Futa"
+  },
+  "confirmBulkDelete": {
+    "message": "Je, una uhakika unataka kufuta mazungumzo haya {count}?"
+  },
+  "bulkCancel": {
+    "message": "Ghairi uteuzi"
+  },
+  "masterFolderName": {
+    "message": "Folda za Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Inaunda folda iliyosawazishwa katika alamisho za Chrome ili ufikie mazungumzo yako kwenye simu yako."
+  },
+  "reviewTitle": {
+    "message": "⭐ Je, unafurahia Folda za Gemini?"
+  },
+  "reviewMessage": {
+    "message": "Msaada wako unasaidia sana mradi huu wa chanzo wazi!"
+  },
+  "reviewRateBtn": {
+    "message": "Toa nyota 5"
+  },
+  "reviewLaterBtn": {
+    "message": "Labda baadaye"
+  },
+  "reviewNoBtn": {
+    "message": "Hapana, asante"
+  },
+  "modalBtnCancel": {
+    "message": "Ghairi"
+  },
+  "modalBtnConfirm": {
+    "message": "Thibitisha"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Kidokezo: Anza na emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Tayari imehifadhiwa!"
+  },
+  "folderModeTitle": {
+    "message": "Hali ya Folda"
+  },
+  "promptModeTitle": {
+    "message": "Hali ya Kidokezo"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Kidokezo hakiwezi kuwa wazi!"
+  },
+  "promptSaved": {
+    "message": "Kidokezo kimehifadhiwa!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Kidokezo chenye kichwa hiki tayari kipo. Kubadilisha?"
+  },
+  "promptNoSavedYet": {
+    "message": "Hakuna vidokezo vilivyohifadhiwa bado."
+  },
+  "promptAddBtn": {
+    "message": "Ongeza Kidokezo"
+  },
+  "promptCopyTitle": {
+    "message": "Nakili"
+  },
+  "promptDeleteTitle": {
+    "message": "Futa"
+  },
+  "promptSetGemLink": {
+    "message": "Weka kiungo maalum cha Gem:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Kiungo si sahihi. Lazima kianze na https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Mazungumzo Mapya"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Kichwa cha Kidokezo"
+  },
+  "promptTextPlaceholder": {
+    "message": "Andika kidokezo chako hapa..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Wezesha Gem maalum"
+  },
+  "setGemBtnTooltip": {
+    "message": "Weka kiungo maalum cha Gem"
+  },
+  "syncPromptsTooltip": {
+    "message": "Sawazisha vidokezo"
+  },
+  "promptRenamePrompt": {
+    "message": "Jina jipya la kidokezo:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Futa kidokezo hiki?"
+  },
+  "promptInsertBtn": {
+    "message": "Ingiza kwenye Gemini"
+  },
+  "promptPinTitle": {
+    "message": "Bandika"
+  }
+}
