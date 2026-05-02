@@ -31,13 +31,11 @@
       }
 
       /* ── Background ──────────────────────────────────────────────────────── */
-      body { background: #202124; }
+      html, body { background-color: #202124; }
 
-      /* ── Glass panels : folders ──────────────────────────────────────────── */
+/* ── Glass panels : folders ──────────────────────────────────────────── */
       .folder {
         background: rgba(20,25,45,0.45);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
         border: 1px solid rgba(255,255,255,0.10);
         border-top-color: rgba(255,255,255,0.18);
         box-shadow: 0 4px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
@@ -60,8 +58,6 @@
       /* ── Glass panels : prompts ──────────────────────────────────────────── */
       .prompt-item {
         background: rgba(20,25,45,0.45);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
         border: 1px solid rgba(255,255,255,0.10);
         border-top-color: rgba(255,255,255,0.18);
         box-shadow: 0 4px 24px rgba(0,0,0,0.35);
@@ -79,8 +75,6 @@
       #addConversationPanel,
       #addPromptPanel {
         background: rgba(20,25,45,0.50) !important;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
         border-color: rgba(255,255,255,0.10) !important;
       }
 
@@ -88,8 +82,6 @@
       input, select {
         background-color: rgba(255,255,255,0.06);
         border-color: rgba(255,255,255,0.12);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
       }
       input::placeholder { color: rgba(255,255,255,0.38); }
       input:focus, select:focus {
@@ -102,8 +94,6 @@
       .main-btn {
         background: rgba(100,148,240,0.80);
         border: 1px solid rgba(138,180,248,0.35);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
         box-shadow: 0 2px 12px rgba(80,120,255,0.20);
       }
       .main-btn:hover {
@@ -113,8 +103,6 @@
       .secondary-btn {
         background: rgba(255,255,255,0.07);
         border-color: rgba(255,255,255,0.12);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
         color: rgba(255,255,255,0.85);
       }
       .secondary-btn:hover {
@@ -131,8 +119,6 @@
       .mode-toggle {
         background: rgba(255,255,255,0.07);
         border-color: rgba(255,255,255,0.12);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
       }
 
       /* ── Dropdown ────────────────────────────────────────────────────────── */
@@ -178,10 +164,14 @@
     }
 
     /* --- Base --- */
+    html {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+    }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       width: 360px;
-      /* RÉDUIT : on passe le padding supérieur à 8px (au lieu de 16px partout) */
       padding: 8px 16px 16px 16px;
       margin: 0;
       background-color: var(--bg-color);
