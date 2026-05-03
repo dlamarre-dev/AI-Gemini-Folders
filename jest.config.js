@@ -3,4 +3,8 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/tests/setup.js'],
   testMatch: ['<rootDir>/tests/**/*.test.js'],
   clearMocks: true,
+  collectCoverageFrom: [
+    'src/**/*.js',
+    '!src/lz-string.min.js',
+  ],
 };

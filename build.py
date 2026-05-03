@@ -178,7 +178,7 @@ def build_firefox(version):
                 modified = False
                 for key, val in messages.items():
                     if "message" in val:
-                        # Remplacement de Chrome par Firefox
+                        # Replace "Chrome" with "Firefox" in user-facing strings
                         if "Chrome" in val["message"]:
                             val["message"] = val["message"].replace("Chrome", "Firefox")
                             modified = True
