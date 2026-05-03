@@ -292,7 +292,7 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
 
         const link = document.createElement('a');
         link.className = 'chat-link';
-        link.href = chat.url;
+        link.href = isSafeUrl(chat.url) ? chat.url : 'about:blank';
         link.target = '_blank';
         link.title = chat.title;
         link.textContent = chat.title;
