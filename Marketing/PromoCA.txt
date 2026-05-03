@@ -50,6 +50,7 @@ Construït amb la privacitat com a prioritat. Només sol·licita accés a gemini
 Gemini Carpetes és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 ACTUALITZACIONS:
+Versió 4.1 (Expansió global i enfortiment): 16 nous idiomes porten Gemini Carpetes a 43 localitzacions arreu del món — idiomes nòrdics, els estats bàltics i cobertura europea i del sud-est asiàtic ampliada. Corregida una condició de cursa que podia perdre silenciosament un desat en clics ràpids. Injecció de prompts modernitzada amb InputEvent, substituint l'execCommand obsolet. Pipeline d'importació endurit contra URL malicioses en fitxers de còpia de seguretat.
 Versió 4.0 (Biblioteca de prompts): L'actualització més ambiciosa fins ara! Mode prompts completament nou: desa els teus millors prompts, edita'ls en línia i injecta'ls directament a Gemini amb un sol clic.
 Versió 3.5 (Bases sòlides i experiència millorada): Gran actualització interna per a una robustesa professional! Alerta visual per a desat duplicat via drecera de teclat.
 Versió 3.4.1 (Potència multiplataforma i estabilitat): Portat amb èxit a Mozilla Firefox amb un sistema de compilació automatitzat.

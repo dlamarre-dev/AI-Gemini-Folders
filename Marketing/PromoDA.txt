@@ -51,6 +51,7 @@ Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til gemini.googl
 Gemini Mapper er et open source-projekt bygget med passion. Gennemsigtighed og respekt for dit privatliv er vores højeste prioriteter. Er du en udvikler eller bare nysgerrig? Gennemse koden, følg ændringsloggen eller bidrag på GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 OPDATERINGER:
+Version 4.1 (Global udvidelse og hærdning): 16 nye sprog bringer Gemini Mapper til 43 oversættelser verden over — nordiske sprog, de baltiske stater og udvidet europæisk og sydøstasiatisk dækning. Rettet en race condition, der stille kunne miste en gem ved hurtige klik. Prompt-indsætning moderniseret med InputEvent, som erstatter den forældede execCommand. Import-pipeline hærdet mod ondsindede URL'er i sikkerhedskopifiler.
 Version 4.0 (Promptbibliotek): Den mest ambitiøse opdatering hidtil! Gemini Mapper får en helt ny Promptvisning: gem dine bedste prompts, rediger dem inline og indsæt dem direkte i Gemini med ét klik. Tilføjet animeret tilstandsskifter, søgning og sortering i Promptvisning, tilpasset Gem-knap og uafhængig promptsynkronisering.
 Version 3.5 (Solide grundlag og forbedret oplevelse): En stor intern opdatering for professionel robusthed! Visuel advarsel om duplikatgem via tastaturgenvejen.
 Version 3.4.1 (Multiplattformsstyrke og stabilitet): Portet til Mozilla Firefox med et automatiseret byggesystem.
