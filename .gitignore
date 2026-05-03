@@ -9,3 +9,10 @@ Thumbs.db
 .claude/
 
 node_modules/
+
+__pycache__/
+*.pyc
+*.pyo
+
+.idea/
+*.iml
