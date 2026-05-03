@@ -270,6 +270,14 @@ function extractGeminiTitleLogic(defaultFallback) {
   return defaultFallback;
 }
 
+function isSafeUrl(url) {
+  try {
+    return /^https?:$/.test(new URL(url).protocol);
+  } catch {
+    return false;
+  }
+}
+
 function normalizeUrl(rawUrl) {
   try {
     const urlObj = new URL(rawUrl);
@@ -312,7 +320,7 @@ function mergeImportData(importedData) {
       for (const [folderName, chats] of Object.entries(foldersToImport)) {
         if (!currentFolders[folderName]) currentFolders[folderName] = [];
         chats.forEach(importedChat => {
-          if (importedChat.title && importedChat.url) {
+          if (importedChat.title && importedChat.url && isSafeUrl(importedChat.url)) {
             const cleanTargetUrl = normalizeUrl(importedChat.url);
             const isDuplicate = currentFolders[folderName].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
             if (!isDuplicate) currentFolders[folderName].push(importedChat);
