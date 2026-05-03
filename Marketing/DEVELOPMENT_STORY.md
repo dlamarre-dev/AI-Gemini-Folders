@@ -106,6 +106,20 @@ The AI wrote most of the code in this project. I decided what the code needed to
 
 ---
 
+## A Note on the Tools
+
+The earlier phases of this project were built by copy-pasting code snippets back and forth with Gemini in a browser tab. That workflow is fine for a self-contained feature, but it has a fundamental ceiling: context. As the codebase grew, each conversation started somewhat fresh, with partial memory of the architecture decisions made three sessions ago. I spent increasing amounts of time re-explaining the project and re-uploading files before getting to the actual work. It became laborious in a way that had nothing to do with the complexity of what I was building.
+
+Switching to Claude Code changed that dynamic entirely. Having a tool that reads the files itself, tracks changes across a session, and understands the project as a whole rather than a partially decontextualized snippet felt like the difference between working with a contractor who shows up on site regularly and one who comes from time to time needing having forgotten some of the details and needing to be briefed again. The tool is powerful and flexible in ways I am still discovering.
+
+I briefly tried Antigravity for a few iterations. The experience was decent, but the IDE it uses pulled me away from PyCharm where I have muscle memory. That friction was enough to bring me back. For someone without strong IDE habits, it might be the right call.
+
+The pain point with Claude Code and Claude Pro is the usage limits, specifically the five-hour window cap. In practice I burn through it in under an hour of actual work time when I am focused. Having to stop mid-session when I am on a roll is genuinely disruptive. The weekly limit is not generous, but reasonable for a hobbyist project like this one; the short-window limit is the one that stings.
+
+I deliberately stayed on Sonnet 4.6 rather than switching to Opus 4.7. Opus is more capable but more token-hungry, and I wanted to keep costs reasonable for what is, after all, a free extension. I have started learning how to structure sessions and prompts to get more out of the available context window, but I am early in that process. There is probably an article in that too.
+
+---
+
 ## Claude's Perspective
 
 *The following section is written from the point of view of Claude Code, the AI assistant that contributed to v4.0.1 of this project.*
