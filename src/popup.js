@@ -1,4 +1,8 @@
 // popup.js
+function parseSVG(svgString) {
+  return new DOMParser().parseFromString(svgString, 'image/svg+xml').documentElement;
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   // RTL support — set dir="rtl" on body (not html) to avoid scroll-origin issues
   const uiLang = chrome.i18n.getUILanguage();
@@ -222,7 +226,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   function displayPrompts() {
       const searchQuery = (document.getElementById('promptSearchInput')?.value || '').toLowerCase().trim();
       loadData({ prompts: {}, openPrompts: [], promptSortPref: 'dateDesc' }, (data) => {
-          promptListDiv.innerHTML = '';
+          promptListDiv.replaceChildren();
           const prompts = data.prompts;
           const openPrompts = data.openPrompts;
           const sortPref = data.promptSortPref;
@@ -244,7 +248,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           });
           
           if (titles.length === 0) {
-              promptListDiv.innerHTML = `<div style="text-align: center; color: var(--muted-text); font-size: 13px;">${chrome.i18n.getMessage("promptNoSavedYet") || 'No prompts saved yet.'}</div>`;
+              const emptyMsg = document.createElement('div');
+              emptyMsg.style.cssText = 'text-align: center; color: var(--muted-text); font-size: 13px;';
+              emptyMsg.textContent = chrome.i18n.getMessage("promptNoSavedYet") || 'No prompts saved yet.';
+              promptListDiv.replaceChildren(emptyMsg);
               return;
           }
 
@@ -291,7 +298,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               const sendSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
               const sendBtn = document.createElement('button');
               sendBtn.className = 'action-btn prompt-insert-btn';
-              sendBtn.innerHTML = sendSVG;
+              sendBtn.replaceChildren(parseSVG(sendSVG));
               sendBtn.title = chrome.i18n.getMessage("promptInsertBtn") || 'Insert into Gemini';
               sendBtn.addEventListener('click', async (e) => {
                   e.stopPropagation();
@@ -323,7 +330,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   });
                   if (results?.[0]?.result) {
                       sendBtn.textContent = '✅';
-                      setTimeout(() => { sendBtn.innerHTML = sendSVG; }, 1500);
+                      setTimeout(() => { sendBtn.replaceChildren(parseSVG(sendSVG)); }, 1500);
                   } else {
                       window.showCustomModal({
                           title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
@@ -335,13 +342,13 @@ document.addEventListener('DOMContentLoaded', async () => {
               const copySVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>`;
               const copyBtn = document.createElement('button');
               copyBtn.className = 'action-btn';
-              copyBtn.innerHTML = copySVG;
+              copyBtn.replaceChildren(parseSVG(copySVG));
               copyBtn.title = chrome.i18n.getMessage("promptCopyTitle") || 'Copy';
               copyBtn.addEventListener('click', (e) => {
                   e.stopPropagation();
                   navigator.clipboard.writeText(textArea.value);
                   copyBtn.textContent = '✅';
-                  setTimeout(() => { copyBtn.innerHTML = copySVG; }, 1500);
+                  setTimeout(() => { copyBtn.replaceChildren(parseSVG(copySVG)); }, 1500);
               });
 
               const renameBtn = document.createElement('button');
