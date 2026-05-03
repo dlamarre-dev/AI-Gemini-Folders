@@ -1,0 +1,60 @@
+Käytätkö Google Geminiä päivittäin – töihin, koodaukseen, kirjoittamiseen tai tutkimukseen – mutta kirjoitatko samat promptit uudelleen ja uudelleen, kun parhaat keskustelusi katoavat loputtomaan historiaasi?
+Gemini Kansiot (Gemini Folders) on lisäosa, jota tarvitset.
+
+Version 4.0 myötä Gemini Kansiot on todellinen Gemini-ohjaamo: organisoi keskustelut kansioihin, rakenna uudelleenkäytettävien promptien kirjasto ja injektoi ne suoraan Geminiin yhdellä napsautuksella – ei kopiointia tai liittämistä.
+
+✨ UUTTA V4.0:SSA – PROMPTTILA
+
+📝 Henkilökohtainen promptikirjasto: Vaihda Prompttilaan napsauttamalla otsikon kytkintä. Tallenna parhaat promptisi otsikolla ja tekstillä, löydä ne välittömästi hakemalla ja lajittelemalla (uusimmat, vanhimmat, A–Ö).
+▶ Injektio yhdellä napsautuksella: Napsauta tallennetun promptin toistopainiketta (▶) injektoidaksesi sen suoraan Geminin syöttökenttään. Laajennus ilmoittaa, jos et ole Gemini-sivulla.
+✏️ Inline-muokkaus: Napsauta laajentaaksesi promptin ja muokkaa tekstiä suoraan. Muutokset tallentuvat automaattisesti lyhyen tauon jälkeen.
+💎 Mukautettu Gem-linkki: Määritä linkki suosikki-Geemisi ja ota se käyttöön tai poista käytöstä yhdellä napsautuksella. Kun se on aktiivinen, «Uusi keskustelu» -painike avaa Geemisi oletuschattin sijaan.
+☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
+📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
+
+🌟 KANSIO-OMINAISUUDET
+
+⚡ Pikatallennus (Hiiren oikea painike ja pikakuvakkeet): Tallenna nykyinen keskustelu yksinkertaisella hiiren oikealla painikkeella tai käytä pikanäppäintä (Ctrl+Shift+S tai Cmd+Shift+S Macissa) lähettääksesi sen «⚡ Pikatallennus» -kansioon – visuaalisella ilmoituksella, jos se on jo tallennettu!
+☑️ Monivalinta (Joukotoiminnot): Valitse useita keskusteluja valintaruutujen avulla siirtääksesi tai poistaaksesi ne yhdellä napsautuksella.
+📑 Välilehtiryhmäintegraatio: Avaa kokonainen kansio yhdellä napsautuksella natiivin, värikoodatun Chrome-välilehtiryhmänä.
+😃 Mukautetut kansion emojit: Aloita kansion nimi emojilla (esim. «💻 Koodi») korvataksesi oletuskansion kuvakkeen.
+🖱️ Raahaa ja pudota: Siirrä keskusteluja intuitiivisesti kansioiden välillä.
+📱 Mobiilisynkronointi: Kytkimellä luodaan peilimappe Chrome-kirjanmerkkeihin, joka toistaa täydellisesti kansiosi rakenteen ja lajittelujärjestyksen puhelimessa.
+🗜️ Erittäin tehokas pakkaus: Pakkaa tiedot automaattisesti (LZString) maksimoidaksesi Chromen sisäisen tallennuskapasiteetin.
+📊 Tallennustilan seuranta: Visuaalinen edistymispalkki näyttää käytettävissä olevan pilvitallennuksen reaaliajassa.
+📁 Mukautetut kansiot ja kiinnitetyt suosikit: Järjestä keskustelut projektien, teemojen tai kategorioiden mukaan. Kiinnitä (📌) suosikkiosi ylös.
+⇅ Mukautettu lajittelu: Lajittele kansiot ja keskustelut (Uusimmat, Vanhimmat, A–Ö) muutosten heijastuessa välittömästi mobiilisynkronointiin.
+🤖 Älykäs tunnistus ja haku: Automaattinen keskustelun tarkan otsikon esitäyttö ja reaaliaikainen hakupalkki.
+☁️ Pilvisynkronointi ja varmuuskopiointi: Pääsy järjestelyyn kaikilla laitteilla ja tietojen vienti JSON-muodossa.
+🎨 Material 3 -muotoilu ja monikielinen: Erittäin kompakti käyttöliittymä täysin mukautetuilla modaali-dialogeilla, automaattinen tumma tila ja tuki 27 kielelle!
+
+🛠️ MITEN SE TOIMII?
+
+Kansiotila:
+Avaa keskustelu osoitteessa gemini.google.com.
+Pikatallennus: Ctrl+Shift+S (tai Cmd+Shift+S Macissa) tai hiiren oikea painike > «Tallenna Gemini Kansioihin».
+Lisäosan kautta: Napsauta kuvaketta, valitse kansio ja tallenna.
+Mobiili: Merkitse 📱 alatunnisteessa synkronoidaksesi kansiot puhelimeesi.
+Käytä valintaruutuja joukotoimintoja varten, avaa kansiot välilehtiryhmien (📑) avulla, raahaa ja pudota järjestelläksesi uudelleen!
+
+Prompttila:
+Napsauta 📝 lisäosan oikeassa yläkulmassa olevaa kytkintä.
+Napsauta ➕ Lisää prompt, syötä otsikko ja teksti ja tallenna.
+Promptin käyttäminen: laajenna se ja napsauta ▶ – se injektoidaan suoraan Geminiin, valmiina lähetettäväksi.
+Määritä 💎 osoittamaan Geemiisi.
+Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy helposti saatavilla.
+
+🔒 YKSITYISYYS JA TURVALLISUUS
+Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain gemini.google.com:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.
+
+🤝 AVOIN LÄHDEKOODIN PROJEKTI
+Gemini Kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvyys ja yksityisyytesi kunnioittaminen ovat korkeimpia prioriteettiamme. Oletko kehittäjä tai vain utelias? Selaa koodia, seuraa muutoslokia tai osallistu GitHubissa: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 PÄIVITYKSET:
+Versio 4.0 (Promptikirjasto): Kunnianhimoisin päivitys tähän mennessä! Gemini Kansiot saa upouuden Prompttilan: tallenna parhaat promptisi, muokkaa niitä inlinen ja injektoi ne suoraan Geminiin yhdellä napsautuksella. Lisätty animoitu tilakytkин, haku ja lajittelu Prompttilassa, mukautettu Gem-painike ja itsenäinen promptisynkronointi.
+Versio 3.5 (Vahvat perusteet ja parannettu kokemus): Suuri sisäinen päivitys ammattimaiseen luotettavuuteen! Visuaalinen ilmoitus kaksoistallennetusta pikanäppäimellä.
+Versio 3.4.1 (Monialustavoima ja vakaus): Portattu Mozilla Firefoxiin automaattisella rakennusjärjestelmällä.
+Versio 3.3 (Premium-muotoilu ja kansainvälinen): Uudet 100 % mukautetut Material 3 -dialogit, mobiilisynkronointi ja 10 uutta kieltä!
+Versio 3.2 (Mobiili ja avoin lähdekoodi): Älykäs mobiilisynkronointi Chrome-kirjanmerkkien kautta ja virallinen avoimen lähdekoodin julkaisu.
+Versio 3.0 (Tuottavuuspäivitys): Pikanäppäimet, monivalinta, välilehtiryhmät, mukautetut emojit, tietojen pakkaus ja tallennuspalkki.
+Versio 2.0: Suuri uudelleensuunnittelu Raahaa ja pudota -toiminnolla, kontekstivalikolla, mukautetulla lajittelulla, kiinnittämisellä ja Material 3 -muotoilulla.
