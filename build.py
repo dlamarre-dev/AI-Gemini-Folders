@@ -3,6 +3,10 @@ import shutil
 import json
 import zipfile
 import re
+import subprocess
+
+GREEN = "\033[32m"
+RESET = "\033[0m"
 
 # --- CONFIGURATION ---
 SRC_DIR = "src"
@@ -11,6 +15,82 @@ MARKETING_DIR = "Marketing"
 MANIFEST_PATH = os.path.join(SRC_DIR, "manifest.json")
 FIREFOX_GECKO_ID = "geminifolders@dlamarre-dev.github.io"
 FIREFOX_ONLY_FILES = ["import.html", "import.js"]
+
+
+def sync_package_version(version):
+    """Keeps package.json and package-lock.json in sync with manifest.json version."""
+    pkg_path = "package.json"
+    lock_path = "package-lock.json"
+
+    if not os.path.exists(pkg_path):
+        return
+
+    with open(pkg_path, "r", encoding="utf-8") as f:
+        pkg = json.load(f)
+
+    if pkg.get("version") == version:
+        return
+
+    pkg["version"] = version
+    with open(pkg_path, "w", encoding="utf-8") as f:
+        json.dump(pkg, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+    if os.path.exists(lock_path):
+        with open(lock_path, "r", encoding="utf-8") as f:
+            lock = json.load(f)
+        lock["version"] = version
+        if "" in lock.get("packages", {}):
+            lock["packages"][""]["version"] = version
+        with open(lock_path, "w", encoding="utf-8") as f:
+            json.dump(lock, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+
+    print(f"[sync] package.json updated to v{version}\n")
+
+
+def run_tests():
+    """Runs the Jest test suite before the build.
+
+    Installs node_modules via npm if they are missing.
+    Returns True if all tests pass.
+    If tests fail, prompts the user and returns True only if they choose to continue.
+    """
+    if not os.path.isdir("node_modules"):
+        print("📦 node_modules not found — running npm install...")
+        install = subprocess.run("npm install", shell=True)
+        if install.returncode != 0:
+            print("\n❌ npm install failed.")
+            answer = input("   Continue with the build anyway? [y/N] ").strip().lower()
+            return answer in ("y", "yes")
+        print()
+
+    print("🧪 Running test suite...")
+    try:
+        result = subprocess.run(
+            "npx jest --no-coverage --no-colors",
+            shell=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+    except Exception as e:
+        print(f"\n⚠️  Could not execute tests: {e}")
+        answer = input("   Continue with the build anyway? [y/N] ").strip().lower()
+        return answer in ("y", "yes")
+
+    output = (result.stdout + result.stderr).strip()
+    if output:
+        print(GREEN + output + RESET)
+
+    if result.returncode == 0:
+        print("✅ All tests passed.\n")
+        return True
+
+    print("\n⚠️  Some tests failed.")
+    answer = input("   Continue with the build anyway? [y/N] ").strip().lower()
+    return answer in ("y", "yes")
 
 
 def clean_dist():
@@ -175,6 +255,12 @@ def main():
         version = manifest.get("version", "unknown")
 
     print(f"📦 Detected version: {version}\n")
+
+    sync_package_version(version)
+
+    if not run_tests():
+        print("🛑 Build cancelled.")
+        return
 
     clean_dist()
     build_chrome(version)

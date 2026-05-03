@@ -7,3 +7,5 @@ build/
 .DS_Store
 Thumbs.db
 .claude/
+
+node_modules/

@@ -535,3 +535,16 @@ async function openFolderInTabGroup(folderName, chats) {
 }
 
 window.displayFolders = displayFolders;
+
+if (typeof module !== 'undefined') {
+  module.exports = {
+    displayFolders,
+    renameChat,
+    deleteChat,
+    moveChat,
+    togglePin,
+    renameFolder,
+    openFolderInTabGroup,
+  };
+}
+

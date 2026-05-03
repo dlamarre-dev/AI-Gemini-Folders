@@ -354,3 +354,16 @@ function mergeImportData(importedData) {
     });
   });
 }
+
+if (typeof module !== 'undefined') {
+  module.exports = {
+    loadData,
+    saveData,
+    finishSave,
+    syncToBookmarksTree,
+    extractGeminiTitleLogic,
+    isSafeUrl,
+    normalizeUrl,
+    mergeImportData,
+  };
+}
