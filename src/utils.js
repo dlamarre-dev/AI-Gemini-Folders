@@ -134,7 +134,6 @@ function finishSave(callback) {
 }
 
 // --- BOOKMARKS SYNCHRONIZATION (MOBILE) ---
-// 🔒 Verrou global pour empêcher la "Race Condition"
 let isSyncingToBookmarks = false;
 
 async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateAsc') {
@@ -151,15 +150,14 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
     // 2. Look for all folders
     const results = await new Promise(r => chrome.bookmarks.search({ title: MASTER_FOLDER_NAME }, r));
 
-    // 3. Delete all (Purge absolue de tous les doublons existants)
+    // 3. Remove all existing master trees to eliminate stale duplicates
     for (const node of results) {
-      // Security check
       if (!node.url && node.title === MASTER_FOLDER_NAME) {
         await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
       }
     }
 
-    // Let a bit of time to avoid racing condition
+    // Brief delay to let bookmark removals propagate before rebuilding the tree
     await new Promise(r => setTimeout(r, 50));
 
     // 4. Master folder creation
@@ -236,6 +234,8 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
   }
 }
 
+// Injected into the Gemini page via executeScript. Tries four DOM strategies in order,
+// falling back to defaultFallback if none yield a usable title.
 function extractGeminiTitleLogic(defaultFallback) {
   // Plan A: Official title at the top of the page
   const topTitle = document.querySelector('[data-test-id="conversation-title"]');
@@ -340,9 +340,7 @@ function mergeImportData(importedData) {
         if (!currentPrompts[promptTitle]) {
           currentPrompts[promptTitle] = promptData;
         } else {
-          // If a prompt with same title exists, we might keep the newest or just append a suffix.
-          // Simplest is to keep existing to avoid overwrites, or overwrite. Let's overwrite with imported if we want,
-          // but avoiding overwrite is safer. For now let's just keep the existing one if title matches to prevent accidental data loss.
+          // Title conflict: keep the existing prompt and suffix-import the incoming one to avoid silent data loss
           if (currentPrompts[promptTitle].text !== promptData.text) {
              currentPrompts[promptTitle + " (Imported)"] = promptData;
           }
@@ -351,7 +349,7 @@ function mergeImportData(importedData) {
 
       // Final save
       saveData({ folders: currentFolders, pinnedFolders: currentPinned, prompts: currentPrompts }, () => {
-        resolve(); // Termine la promesse avec succès
+        resolve();
       });
     });
   });

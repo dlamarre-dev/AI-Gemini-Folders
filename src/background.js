@@ -1,7 +1,12 @@
+// background.js — Service worker: context menu, keyboard shortcut (quick-save), and bookmark sync triggers.
+
 if (typeof importScripts === 'function') {
   importScripts('lz-string.min.js', 'utils.js');
 }
-// 1. Function to rebuild the context menu
+
+// --- CONTEXT MENU ---
+
+// 1. Rebuild the context menu from current folder data
 function updateContextMenu() {
   chrome.contextMenus.removeAll(() => {
     // Create the main parent menu with translation
@@ -34,12 +39,10 @@ function updateContextMenu() {
 
         let menuTitle = folder;
         if (match) {
-          const customIcon = match[1]; // The emoji
+          const customIcon = match[1];
           const displayName = folder.replace(emojiRegex, '');
-          // One space only between emoji and - name
           menuTitle = `${customIcon} ${displayName}`;
         } else {
-          // Default behaviour
           menuTitle = `📁 ${folder}`;
         }
 
