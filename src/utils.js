@@ -87,21 +87,33 @@ function saveData(dataToSave, callback) {
     }
 
     chrome.storage.local.set(finalSaveLocal, () => {
+      if (chrome.runtime.lastError) {
+        console.error("Local storage write failed:", chrome.runtime.lastError);
+        alert("Storage Error (local): " + chrome.runtime.lastError.message);
+        if (callback) callback();
+        return;
+      }
+
       chrome.storage.sync.set(finalSaveSync, () => {
-        if (chrome.runtime.lastError && chrome.runtime.lastError.message.includes("QUOTA")) {
-          if (isPromptsSyncEnabled && dataToSave.prompts) {
-            console.warn("Quota exceeded on sync. Reverting prompts to local.");
-            const compressedPrompts = LZString.compressToUTF16(JSON.stringify(dataToSave.prompts));
-            chrome.storage.local.set({ promptsDataCompressed: compressedPrompts }, () => {
-              chrome.storage.sync.set({ syncPromptsEnabled: false }, () => {
-                chrome.storage.sync.remove('promptsDataCompressed');
-                alert("Not enough space to sync prompts. They have been saved locally instead. Sync disabled.");
-                finishSave(callback);
+        if (chrome.runtime.lastError) {
+          if (chrome.runtime.lastError.message.includes("QUOTA")) {
+            if (isPromptsSyncEnabled && dataToSave.prompts) {
+              console.warn("Quota exceeded on sync. Reverting prompts to local.");
+              const compressedPrompts = LZString.compressToUTF16(JSON.stringify(dataToSave.prompts));
+              chrome.storage.local.set({ promptsDataCompressed: compressedPrompts }, () => {
+                chrome.storage.sync.set({ syncPromptsEnabled: false }, () => {
+                  chrome.storage.sync.remove('promptsDataCompressed');
+                  alert("Not enough space to sync prompts. They have been saved locally instead. Sync disabled.");
+                  finishSave(callback);
+                });
               });
-            });
-            return;
+              return;
+            } else {
+              alert("Storage Error: " + chrome.runtime.lastError.message);
+            }
           } else {
-            alert("Storage Error: " + chrome.runtime.lastError.message);
+            console.error("Sync storage write failed:", chrome.runtime.lastError);
+            alert("Storage Error (sync): " + chrome.runtime.lastError.message);
           }
         }
         finishSave(callback);
