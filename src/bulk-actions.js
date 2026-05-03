@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bulkMoveSelect.appendChild(defaultOption);
 
         Object.keys(data.folders).sort().forEach(folder => {
-          // Détection d'émoji pour ajouter le dossier par défaut si besoin
+          // Prepend default folder icon if the name has no custom leading emoji
           const emojiRegex = /^((?:\p{Emoji_Presentation}|\p{Extended_Pictographic})\uFE0F?)\s*/u;
           const hasCustomEmoji = emojiRegex.test(folder);
           const iconPrefix = hasCustomEmoji ? '' : '📁 ';
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bulkCancelBtn.addEventListener('click', () => {
     window.selectedChats = [];
     if (window.displayFolders) {
-      window.displayFolders(null, searchInput.value.toLowerCase()); // Redessine pour décocher
+      window.displayFolders(null, searchInput.value.toLowerCase());
     }
     updateBulkActionBar();
   });
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       saveData({ folders: folders }, () => {
-        window.selectedChats = []; // Vider la sélection
+        window.selectedChats = [];
         if (window.displayFolders) {
           window.displayFolders(null, searchInput.value.toLowerCase());
         }

@@ -122,8 +122,8 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
       let displayName = folderName;
 
       if (match) {
-        customIcon = match[1]; // Emoji found
-        displayName = folderName.replace(emojiRegex, ''); // Name without emoji
+        customIcon = match[1];
+        displayName = folderName.replace(emojiRegex, '');
       }
 
       const isEmpty = chats.length === 0;
@@ -253,7 +253,7 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
         checkbox.className = 'chat-checkbox';
         checkbox.dataset.folder = folderName;
         checkbox.dataset.url = chat.url;
-        // Keep checkbox if redraw
+        // Restore checked state after a re-render
         if (window.selectedChats && window.selectedChats.some(c => c.url === chat.url)) checkbox.checked = true;
 
         checkbox.addEventListener('change', (e) => {
@@ -278,7 +278,6 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
           chatItem.classList.add('dragging');
           document.body.classList.add('is-dragging');
           folderDiv.classList.add('is-source-folder');
-          // Use chat.url instead of index
           const dataToTransfer = JSON.stringify({ sourceFolder: folderName, chatUrl: chat.url });
           e.dataTransfer.setData('text/plain', dataToTransfer);
           e.dataTransfer.effectAllowed = 'move';
@@ -309,7 +308,6 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
         editBtn.title = chrome.i18n.getMessage("btnRename");
         editBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          // Pass chat.url
           renameChat(folderName, chat.url, chat.title);
         });
 
@@ -319,7 +317,6 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
         delBtn.title = chrome.i18n.getMessage("btnDelete");
         delBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          // Pass chat.url
           deleteChat(folderName, chat.url);
         });
 
@@ -382,7 +379,7 @@ function moveChat(sourceFolder, targetFolder, chatUrl) {
     let folders = data.folders;
 
     const realIndex = folders[sourceFolder].findIndex(c => c.url === chatUrl);
-    if (realIndex === -1) return; // Security
+    if (realIndex === -1) return;
 
     // Remove conversation from source folder
     const chatToMove = folders[sourceFolder].splice(realIndex, 1)[0];
@@ -411,12 +408,10 @@ function moveChat(sourceFolder, targetFolder, chatUrl) {
       openFolders.push(targetFolder);
     }
 
-    // --- Save 'folders' AND the new state of 'openFolders' ---
     saveData({ folders: folders, openFolders: openFolders }, () => {
       const searchInput = document.getElementById('searchInput');
       displayFolders(openFolders, searchInput ? searchInput.value.toLowerCase() : "");
     });
-    // --------------------------------------------------------------------------------
   });
 }
 

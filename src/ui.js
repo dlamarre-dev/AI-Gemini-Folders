@@ -3,7 +3,7 @@
 function updateStorageBar() {
   chrome.storage.sync.getBytesInUse(null, (bytesInUse) => {
     if (chrome.runtime.lastError) {
-      console.error("❌ [StorageBar] Erreur de l'API :", chrome.runtime.lastError);
+      console.error("[StorageBar] API error:", chrome.runtime.lastError);
       return;
     }
 
