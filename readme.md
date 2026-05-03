@@ -28,7 +28,7 @@
 * 🔍 **Instant Search:** Find any conversation quickly with a real-time search bar.
 * ☁️ **Cloud Sync:** Uses native `storage.sync` to keep your folders synchronized across all devices connected to your browser profile.
 * 💾 **Import / Export:** Easily backup and restore your folder structure (including pinned folders) via JSON files.
-* 🌍 **Multilingual & Adaptive:** Automatically detects your browser language (now supporting **16 languages** worldwide!) and matches your system's Dark/Light mode.
+* 🌍 **Multilingual & Adaptive:** Automatically detects your browser language (now supporting **27 languages** worldwide!) and matches your system's Dark/Light mode.
 * 🤝 **Open Source & Modular:** Fully transparent, refactored code with a clean, modular architecture (separated UI, data logic, and styling) making it easier than ever for the community to contribute. A dynamic GitHub version link is integrated right into the extension's footer.
 
 ### 📝 Prompt Manager
@@ -51,11 +51,14 @@ You can install the official, auto-updating version directly from your browser's
 ### Option 2: Developer Mode (Manual Installation)
 If you want to test the code locally or contribute to the project, this extension uses a Python build pipeline to generate browser-specific versions:
 
+**Prerequisites:** [Python 3](https://www.python.org/) and [Node.js](https://nodejs.org/) (used by the automated test suite that runs before each build).
+
 1. Clone or download this repository.
-2. Ensure you have Python installed, then run the build script from the root directory:
+2. Run the build script from the root directory:
    ```bash
    python build.py
    ```
+   On first run, npm dependencies are installed automatically. The test suite runs before every build — if any tests fail, you will be prompted to continue or cancel.
 3. **For Chrome:** * Navigate to `chrome://extensions/`.
    * Enable **Developer mode** (top right).
    * Click **Load unpacked** and select the generated `dist/chrome/` directory.
