@@ -1,0 +1,60 @@
+Adakah anda menggunakan Google Gemini setiap hari – untuk kerja, pengekodan, penulisan atau penyelidikan – tetapi terus menaip semula prompt yang sama, manakala perbualan terbaik anda hilang dalam sejarah yang tidak berkesudahan?
+Gemini Folder (Gemini Folders) adalah sambungan yang anda perlukan.
+
+Dengan versi 4.0, Gemini Folder menjadi cockpit Gemini sebenar anda: susun perbualan dalam folder, bina perpustakaan prompt yang boleh digunakan semula dan masukkannya terus ke Gemini dengan satu klik – tanpa salin dan tampal.
+
+✨ BAHARU DALAM V4.0 – MOD PROMPT
+
+📝 Perpustakaan prompt peribadi: Tukar ke Mod Prompt dengan satu klik pada suis di pengepala. Simpan prompt terbaik anda dengan tajuk dan teks, carinya serta-merta dengan carian dan pengisihan (terbaharu, terlama, A–Z).
+▶ Penyisipan satu klik: Klik butang main (▶) pada mana-mana prompt tersimpan untuk menyisipkannya terus ke medan input Gemini.
+✏️ Penyuntingan terus: Klik untuk mengembangkan prompt dan sunting teks terus. Perubahan disimpan secara automatik selepas jeda singkat.
+💎 Pautan Gem tersuai: Konfigurasi pautan ke Gem kegemaran anda dan hidupkan/matikan dengan satu klik.
+☁️ Penyegerakan prompt: Dayakan penyegerakan awan untuk perpustakaan prompt secara bebas daripada folder.
+📌 Prompt tersemat: Semat prompt penting di bahagian atas perpustakaan.
+
+🌟 CIRI-CIRI FOLDER
+
+⚡ Simpan Pantas (Klik kanan & pintasan): Simpan perbualan semasa dengan klik kanan mudah, atau gunakan pintasan papan kekunci (Ctrl+Shift+S atau Cmd+Shift+S pada Mac) untuk menghantarnya ke «⚡ Simpan Pantas» – dengan amaran visual jika sudah disimpan!
+☑️ Pilihan berbilang (Tindakan pukal): Pilih berbilang perbualan menggunakan kotak semak untuk memindah atau memadamnya dengan satu klik.
+📑 Integrasi kumpulan tab: Buka keseluruhan folder dengan satu klik sebagai kumpulan tab Chrome asli.
+😃 Emoji folder tersuai: Mulakan nama folder dengan emoji (cth. «💻 Kod») untuk menggantikan ikon folder lalai.
+🖱️ Seret dan lepas: Pindahkan perbualan antara folder.
+📱 Penyegerakan mudah alih: Mencerminkan struktur folder anda dalam penanda buku Chrome untuk akses dari telefon.
+🗜️ Pemampatan sangat cekap: Memampatkan data secara automatik (LZString) untuk memaksimumkan storan Chrome.
+📊 Penjejak storan: Bar kemajuan visual menunjukkan storan awan yang tersedia dalam masa nyata.
+📁 Folder tersuai & kegemaran tersemat: Susun perbualan mengikut projek, tema atau kategori.
+⇅ Pengisihan tersuai: Isih folder dan perbualan (Terbaharu, Terlama, A–Z) dengan perubahan yang segera ditunjukkan dalam penyegerakan mudah alih.
+🤖 Pengesanan pintar & carian: Pra-pengisian automatik tajuk tepat perbualan dan bar carian masa nyata.
+☁️ Penyegerakan awan & sandaran: Akses ke organisasi anda pada semua peranti dan eksport data sebagai JSON.
+🎨 Reka bentuk Material 3 & berbilang bahasa: Antara muka ultra-padat dengan dialog modal sepenuhnya tersuai, mod gelap automatik dan sokongan untuk 27 bahasa!
+
+🛠️ BAGAIMANA IA BERFUNGSI?
+
+Mod Folder:
+Buka perbualan di gemini.google.com.
+Simpan Pantas: Ctrl+Shift+S (atau Cmd+Shift+S pada Mac), atau klik kanan > «Simpan ke Gemini Folder».
+Melalui sambungan: Klik ikon, pilih folder dan simpan.
+Mudah alih: Tandakan 📱 di pengaki untuk menyegerakkan folder ke telefon anda.
+
+Mod Prompt:
+Klik 📝 pada suis di bahagian kanan atas sambungan.
+Klik ➕ Tambah prompt, masukkan tajuk dan teks, dan simpan.
+Untuk menggunakan prompt: kembangkan dan klik ▶ – ia disisipkan terus ke Gemini.
+Konfigurasi 💎 untuk menghala ke Gem anda.
+Untuk menyemat prompt: klik 📍 – ia berpindah ke bahagian atas senarai.
+
+🔒 PRIVASI & KESELAMATAN
+Dibina dengan mengutamakan privasi. Hanya meminta akses ke gemini.google.com dan membaca tab aktif hanya semasa menyimpan perbualan atau menyisipkan prompt. Kebenaran «Penanda buku» hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui Chrome Sync: tiada pelayan pihak ketiga, tiada telemetri.
+
+🤝 PROJEK SUMBER TERBUKA
+Gemini Folder ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelusan dan penghormatan terhadap privasi anda adalah keutamaan tertinggi kami. Anda pembangun atau sekadar ingin tahu? Semak kod, ikuti log perubahan atau sumbang di GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 KEMAS KINI:
+Versi 4.1 (Pengembangan Global & Penguatan): 16 bahasa baharu membawa Gemini Folder kepada 43 lokalisasi di seluruh dunia — bahasa-bahasa Nordik, negara-negara Baltik dan liputan Eropah dan Asia Tenggara yang diperluaskan. Diperbaiki race condition yang boleh menghilangkan penyimpanan secara senyap semasa klik pantas. Suntikan prompt dimodernkan dengan InputEvent, menggantikan execCommand yang lapuk. Pipeline import diperkukuh terhadap URL berbahaya dalam fail sandaran.
+Versi 4.0 (Perpustakaan Prompt): Kemas kini paling bercita-cita tinggi setakat ini! Gemini Folder mendapat Mod Prompt baharu sepenuhnya: simpan prompt terbaik, sunting terus dan sisipkan ke Gemini dengan satu klik.
+Versi 3.5 (Asas kukuh & pengalaman dipertingkat): Kemas kini dalaman besar untuk keteguhan profesional!
+Versi 3.4.1 (Kuasa berbilang platform & kestabilan): Berjaya dipindahkan ke Mozilla Firefox dengan sistem binaan automatik.
+Versi 3.3 (Reka bentuk premium & antarabangsa): Dialog Material 3 baharu, penyegerakan mudah alih dan 10 bahasa baharu!
+Versi 3.2 (Mudah alih & sumber terbuka): Penyegerakan mudah alih pintar melalui penanda buku Chrome dan pelancaran sumber terbuka rasmi.
+Versi 3.0 (Kemas kini produktiviti): Pintasan papan kekunci, pilihan berbilang, kumpulan tab, emoji tersuai, pemampatan data dan bar storan.
+Versi 2.0: Reka bentuk semula besar dengan Seret dan lepas, menu konteks, pengisihan tersuai, pengesetan dan reka bentuk Material 3.

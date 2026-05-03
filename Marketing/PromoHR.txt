@@ -1,0 +1,60 @@
+Koristiš li Google Gemini svaki dan – za posao, kodiranje, pisanje ili istraživanje – ali neprestano iznova tipkaš iste upite, dok ti se najbolji razgovori gube u beskonačnoj povijesti?
+Gemini Mape (Gemini Folders) je dodatak koji ti treba.
+
+S verzijom 4.0 Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgovore u mape, izgradite knjižnicu upita za višekratnu upotrebu i ubacuj ih izravno u Gemini jednim klikom – bez kopiranja i lijepljenja.
+
+✨ NOVOST U V4.0 – NAČIN UPITA
+
+📝 Osobna knjižnica upita: Prebaci na Način upita jednim klikom na prekidač u zaglavlju. Spremi najbolje upite s naslovom i tekstom, pronađi ih odmah pretraživanjem i sortiranjem (najnovije, najstarije, A–Ž).
+▶ Ubacivanje jednim klikom: Klikni gumb za reprodukciju (▶) na spremljenome upitu kako bi ga ubacio izravno u polje za unos Gemini.
+✏️ Uređivanje na licu mjesta: Klikni za proširenje upita i uredi tekst izravno. Promjene se automatski spremaju nakon kratke pauze.
+💎 Prilagođena Gem veza: Konfiguriraj vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
+☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
+📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
+
+🌟 ZNAČAJKE MAPA
+
+⚡ Brzo spremi (Desni klik i prečaci): Spremi trenutni razgovor jednostavnim desnim klikom ili koristi prečac na tipkovnici (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo spremi» – s vizualnim upozorenjem ako je već spremljeno!
+☑️ Višestruki odabir (Masovne radnje): Odaberi više razgovora s potvrdnim okvirima za premještanje ili brisanje jednim klikom.
+📑 Integracija grupa kartica: Otvori cijelu mapu jednim klikom kao izvornu, bojama kodiranu grupu kartica Chrome.
+😃 Prilagođeni emoji mape: Počni naziv mape s emojijem (npr. «💻 Kod»), da zamijeniš zadanu ikonu mape.
+🖱️ Povuci i ispusti: Premještaj razgovore između mapa.
+📱 Mobilna sinkronizacija: Zrcali strukturu mapa u Chrome oznakama za pristup s telefona.
+🗜️ Iznimno učinkovita kompresija: Automatski komprimira podatke (LZString) za maksimiziranje pohrane Chrome.
+📊 Praćenje pohrane: Vizualna traka napretka prikazuje raspoloživu pohranu u oblaku u stvarnom vremenu.
+📁 Prilagođene mape i prikvačeni favoriti: Organiziraj razgovore prema projektima, temama ili kategorijama.
+⇅ Prilagođeno sortiranje: Sortiraj mape i razgovore (Najnovije, Najstarije, A–Ž) s promjenama koje se odmah odražavaju u mobilnoj sinkronizaciji.
+🤖 Pametno prepoznavanje i pretraživanje: Automatsko predispunjavanje točnog naslova razgovora i traka za pretraživanje u stvarnom vremenu.
+☁️ Sinkronizacija u oblaku i sigurnosne kopije: Pristup organizaciji na svim uređajima i izvoz podataka kao JSON.
+🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloški okvirima, automatski tamni način i podrška za 27 jezika!
+
+🛠️ KAKO TO FUNKCIONIRA?
+
+Način mapa:
+Otvori razgovor na gemini.google.com.
+Brzo spremi: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Spremi u Gemini Mape».
+Putem dodatka: Klikni ikonu, odaberi mapu i spremi.
+Mobilno: Označi 📱 u podnožju za sinkronizaciju mapa s telefonom.
+
+Način upita:
+Klikni 📝 na prekidaču gore desno u dodatku.
+Klikni ➕ Dodaj upit, unesi naslov i tekst i spremi.
+Za korištenje upita: proširi ga i klikni ▶ – ubacuje se izravno u Gemini.
+Konfiguriraj 💎 da ukazuje na tvoj Gem.
+Za prikvačivanje upita: klikni 📍 – premješta se na vrh popisa.
+
+🔒 PRIVATNOST I SIGURNOST
+Izgrađeno s prioritetom privatnosti. Traži pristup samo gemini.google.com i čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem Chrome Sync: bez poslužitelja trećih strana, bez telemetrije.
+
+🤝 PROJEKT OTVORENOG KODA
+Gemini Mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti naši su najviši prioriteti. Jesi li programer ili si jednostavno radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 AŽURIRANJA:
+Verzija 4.1 (Globalna ekspanzija i ojačavanje): 16 novih jezika dovodi Gemini Mape na 43 lokalizacije diljem svijeta — nordički jezici, baltičke države i proširena europska i jugoistočnoazijska pokrivenost. Ispravljen race condition koji je mogao tiho izgubiti spremanje pri brzim klikovima. Umetanje upita modernizirano s InputEvent, zamjenjujući zastarjeli execCommand. Import pipeline ojačan protiv zlonamjernih URL-ova u backup datotekama.
+Verzija 4.0 (Knjižnica upita): Najna mbicioznije ažuriranje do sada! Gemini Mape dobivaju potpuno novi Način upita: spremi najbolje upite, uredi ih na licu mjesta i ubaci ih izravno u Gemini jednim klikom.
+Verzija 3.5 (Čvrsti temelji i poboljšano iskustvo): Veliko interno ažuriranje za profesionalnu pouzdanost!
+Verzija 3.4.1 (Višeplatformska snaga i stabilnost): Uspješno preneseno na Mozilla Firefox s automatiziranim sustavom izgradnje.
+Verzija 3.3 (Premium dizajn i međunarodni): Novi dialozi Material 3, mobilna sinkronizacija i 10 novih jezika!
+Verzija 3.2 (Mobilno i otvoreni kod): Pametna mobilna sinkronizacija putem Chrome oznaka i službeno lansiranje otvorenog koda.
+Verzija 3.0 (Ažuriranje produktivnosti): Prečaci na tipkovnici, višestruki odabir, grupe kartica, prilagođeni emojiji, kompresija podataka i traka pohrane.
+Verzija 2.0: Veliko redizajniranje s Povuci i ispusti, kontekstnim izbornikom, prilagođenim sortiranjem, prikvačivanjem i dizajnom Material 3.

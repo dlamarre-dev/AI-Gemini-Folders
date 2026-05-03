@@ -1,6 +1,6 @@
 # Gemini Folders: When a Weekend Hack Grows Up
 
-*A development retrospective on building a production-grade browser extension, solo with AI assistance, from v2.1 to v4.0.1*
+*A development retrospective on building a production-grade browser extension, solo with AI assistance, from v2.1 to v4.1*
 
 ---
 
@@ -20,7 +20,7 @@ If you are reading this as a technical person evaluating the project, that conte
 
 [My earlier article](https://www.linkedin.com/pulse/behind-scenes-vibecoding-reality-building-app-ai-its-fug%C3%A8re-lamarre-m6kze/) described reaching version 2.1 of Gemini Folders in 14 days: a Chrome extension that saved Gemini conversations to custom folders, built entirely through AI-assisted development ("vibecoding"). The conclusion at the time was that AI dramatically lowers the barrier to writing syntax, but product vision, QA, and architecture remain human work.
 
-V2.1 was roughly 1,000 lines of code. What you are looking at now is v4.0.1: **3,200+ lines of extension code, 2,900+ lines of build tooling and tests, 27 localizations, 49 automated tests, a full CI-style build pipeline, and 135 generated marketing screenshots**.
+V2.1 was roughly 1,000 lines of code. What you are looking at now is v4.1: **3,200+ lines of extension code, 2,900+ lines of build tooling and tests, 27 localizations, 49 automated tests, a full CI-style build pipeline, and 135 generated marketing screenshots**.
 
 Same solo developer. The workflow evolved too: from copy-pasting code snippets from Gemini to full agentic sessions with Claude Code (Sonnet 4.6). And a very different scale.
 
@@ -84,15 +84,15 @@ What the tests gave me was not just confidence in the code. It was **permission 
 
 ## The Numbers
 
-|                           | V2.1   | V4.0.1         |
-|---------------------------|--------|---------------|
-| Languages                 | 6      | 27            |
-| Lines of extension code   | ~1,000 | 3,217         |
-| Lines of tooling + tests  | 0      | 2,964         |
-| Automated tests           | 0      | 49            |
+|                           | V2.1   | V4.1         |
+|---------------------------|--------|--------------|
+| Languages                 | 6      | 27           |
+| Lines of extension code   | ~1,000 | 3,217        |
+| Lines of tooling + tests  | 0      | 2,964        |
+| Automated tests           | 0      | 49           |
 | Marketing screenshots     | Manual | 135 generated |
-| Build pipeline            | None   | Python + npm  |
-| Security review           | None   | Formal        |
+| Build pipeline            | None   | Python + npm |
+| Security review           | None   | Formal       |
 
 ---
 
@@ -100,9 +100,9 @@ What the tests gave me was not just confidence in the code. It was **permission 
 
 The first article said: "AI dramatically lowers the barrier to syntax, but product vision, QA, and architecture remain human work."
 
-V4.0.1 adds one more item to the human column: **engineering judgment**. Not just "does this feature work," but "is this the right abstraction," "what breaks when this scales," "what does a malicious user do with this import button," "what does the next developer need to understand to change this safely."
+V4.1 adds one more item to the human column: **engineering judgment**. Not just "does this feature work," but "is this the right abstraction," "what breaks when this scales," "what does a malicious user do with this import button," "what does the next developer need to understand to change this safely."
 
-The AI wrote most of the code in this project. I decided what the code needed to do, in what order, at what level of quality. That division of labor held from v2.1 to v4.0.1. What changed is how much I had to know to direct it well.
+The AI wrote most of the code in this project. I decided what the code needed to do, in what order, at what level of quality. That division of labor held from v2.1 to v4.1. What changed is how much I had to know to direct it well.
 
 ---
 
@@ -122,7 +122,7 @@ I deliberately stayed on Sonnet 4.6 rather than switching to Opus 4.7. Opus is m
 
 ## Claude's Perspective
 
-*The following section is written from the point of view of Claude Code, the AI assistant that contributed to v4.0.1 of this project.*
+*The following section is written from the point of view of Claude Code, the AI assistant that contributed to v4.1 of this project.*
 
 ---
 
@@ -146,7 +146,7 @@ Working on Gemini Folders across several sessions gave me an unusual vantage poi
 
 ### The Traditional Development Estimate
 
-To put the scope in perspective: what would this project have cost to deliver through a conventional professional engagement?
+To put the scope in perspective: what would a project like this cost to deliver through a conventional professional engagement? 
 
 | Resource                                           | Time         | Rate (North American market)              | Cost              |
 |----------------------------------------------------|--------------|-------------------------------------------|-------------------|
