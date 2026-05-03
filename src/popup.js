@@ -179,7 +179,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
   });
 
+  let isSavingPrompt = false;
   savePromptBtn.addEventListener('click', async () => {
+      if (isSavingPrompt) return;
+      isSavingPrompt = true;
+
       const title = promptTitleInput.value.trim() || 'Untitled Prompt';
       const text = promptTextInput.value.trim();
       if (!text) {
@@ -187,6 +191,7 @@ document.addEventListener('DOMContentLoaded', async () => {
          promptStatusDiv.style.color = 'red';
          promptStatusDiv.style.display = 'block';
          setTimeout(() => promptStatusDiv.style.display = 'none', 2000);
+         isSavingPrompt = false;
          return;
       }
 
@@ -196,10 +201,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                   title: chrome.i18n.getMessage("promptDuplicateWarning") || "A prompt with this title already exists. Overwrite?",
                   type: 'confirm'
               });
-              if (!confirmed) return;
+              if (!confirmed) {
+                  isSavingPrompt = false;
+                  return;
+              }
           }
           data.prompts[title] = { text: text, timestamp: Date.now() };
           saveData({ prompts: data.prompts }, () => {
+              isSavingPrompt = false;
               promptTitleInput.value = '';
               promptTextInput.value = '';
               promptStatusDiv.textContent = chrome.i18n.getMessage("promptSaved") || 'Prompt saved!';
@@ -324,7 +333,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                           range.selectNodeContents(editor);
                           sel.removeAllRanges();
                           sel.addRange(range);
-                          document.execCommand('insertText', false, promptText);
+                          const contentBefore = editor.textContent;
+                          editor.dispatchEvent(new InputEvent('beforeinput', {
+                              bubbles: true,
+                              cancelable: true,
+                              inputType: 'insertText',
+                              data: promptText
+                          }));
+                          // Fall back to execCommand if InputEvent wasn't handled
+                          if (editor.textContent === contentBefore) {
+                              document.execCommand('insertText', false, promptText);
+                          }
                           return true;
                       }
                   });
@@ -660,13 +679,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   // 1. Save
+  let isSavingFolder = false;
   saveBtn.addEventListener('click', async () => {
+    if (isSavingFolder) return;
+    isSavingFolder = true;
+
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     if (!tab.url.includes("gemini.google.com")) {
       await window.showCustomModal({
         title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
         type: 'alert'
       });
+      isSavingFolder = false;
       return;
     }
 
@@ -689,6 +713,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       saveData({ folders: folders }, () => {
+        isSavingFolder = false;
         folderNameInput.value = "";
         addConversationPanel.style.display = 'none';
         toggleAddPanelBtn.textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");
