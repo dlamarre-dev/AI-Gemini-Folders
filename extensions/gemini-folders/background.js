@@ -1,7 +1,7 @@
 // background.js — Service worker: context menu, keyboard shortcut (quick-save), and bookmark sync triggers.
 
 if (typeof importScripts === 'function') {
-  importScripts('lz-string.min.js', 'utils.js');
+  importScripts('lz-string.min.js', 'utils.js', 'site-config.js');
 }
 
 // --- CONTEXT MENU ---

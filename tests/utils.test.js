@@ -1,11 +1,13 @@
 const {
   isSafeUrl,
   normalizeUrl,
-  extractGeminiTitleLogic,
   loadData,
   saveData,
   mergeImportData,
 } = require('../src/utils');
+
+// extractGeminiTitleLogic now lives in the GF extension overlay
+const { extractGeminiTitleLogic } = require('../extensions/gemini-folders/site-config');
 
 // ---------------------------------------------------------------------------
 // isSafeUrl
