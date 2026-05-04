@@ -289,6 +289,20 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
           folderDiv.classList.remove('is-source-folder');
         });
 
+        // Allow extensions to decorate chat items with site-specific colors and logos.
+        // AI Folders defines window.getChatSiteInfo; Gemini Folders leaves it undefined.
+        const siteInfo = window.getChatSiteInfo?.(chat);
+        if (siteInfo) {
+          chatItem.style.setProperty('--site-color', siteInfo.color);
+          chatItem.classList.add(`site-${siteInfo.key}`);
+          if (siteInfo.logoSvg) {
+            const logo = document.createElement('span');
+            logo.className = 'chat-site-logo';
+            logo.innerHTML = siteInfo.logoSvg;
+            chatItem.appendChild(logo);
+          }
+        }
+
         const link = document.createElement('a');
         link.className = 'chat-link';
         link.href = isSafeUrl(chat.url) ? chat.url : 'about:blank';

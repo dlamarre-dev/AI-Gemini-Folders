@@ -246,39 +246,14 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
   }
 }
 
-// Injected into the Gemini page via executeScript. Tries four DOM strategies in order,
-// falling back to defaultFallback if none yield a usable title.
-function extractGeminiTitleLogic(defaultFallback) {
-  // Plan A: Official title at the top of the page
-  const topTitle = document.querySelector('[data-test-id="conversation-title"]');
-  if (topTitle && topTitle.textContent) {
-    let text = topTitle.textContent.trim();
-    if (text.length > 0) return text;
+// Generic title extractor: runs a list of strategy functions in order, injected
+// into the target page via executeScript. Each strategy returns a string or null.
+// Site-specific implementations live in extensions/<name>/site-config.js.
+function extractTitleLogic(strategies, defaultFallback) {
+  for (const strategy of strategies) {
+    const result = strategy();
+    if (result && result.trim().length > 0) return result.trim();
   }
-
-  // Plan B: Sidebar menu (if Plan A fails or UI changes)
-  const currentPath = window.location.pathname;
-  if (currentPath && currentPath.includes("/app/")) {
-    const links = document.querySelectorAll(`a[href="${currentPath}"]`);
-    for (let link of links) {
-      let text = link.textContent.trim();
-      if (text && text.length > 1) return text.split('\n')[0].trim();
-    }
-  }
-
-  // Plan C: Tab title
-  let docTitle = document.title || "";
-  let cleanTitle = docTitle.split(' - ')[0].trim();
-  const ignoreList = ["gemini", "google gemini", "discussions", "chats", "nouvelle conversation", "new conversation", "new chat", ""];
-  if (!ignoreList.includes(cleanTitle.toLowerCase())) return cleanTitle;
-
-  // Plan D: User's first message
-  const firstMsg = document.querySelector('[data-message-author-role="user"], user-query, message-content, .query-text');
-  if (firstMsg && firstMsg.textContent) {
-    let excerpt = firstMsg.textContent.trim();
-    return excerpt.length > 40 ? excerpt.substring(0, 40) + "..." : excerpt;
-  }
-
   return defaultFallback;
 }
 
@@ -373,7 +348,7 @@ if (typeof module !== 'undefined') {
     saveData,
     finishSave,
     syncToBookmarksTree,
-    extractGeminiTitleLogic,
+    extractTitleLogic,
     isSafeUrl,
     normalizeUrl,
     mergeImportData,
