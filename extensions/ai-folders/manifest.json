@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "version": "1.0",
+  "description": "__MSG_extDesc__",
+  "default_locale": "en",
+  "permissions": ["activeTab", "storage", "scripting", "contextMenus", "tabGroups", "bookmarks"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "__MSG_extName__",
+    "default_icon": "icon48.png"
+  },
+  "commands": {
+    "quick-save": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "__MSG_cmdQuickSave__"
+    }
+  },
+  "host_permissions": [
+    "*://gemini.google.com/*",
+    "*://claude.ai/*",
+    "*://chatgpt.com/*",
+    "*://copilot.microsoft.com/*",
+    "*://perplexity.ai/*",
+    "*://*.perplexity.ai/*"
+  ]
+}
