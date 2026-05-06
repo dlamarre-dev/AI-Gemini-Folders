@@ -21,12 +21,21 @@ const path = require('path');
 const fs   = require('fs');
 const os   = require('os');
 
-const SAMPLE_DATA = require('./sample-data');
+// ─── Extension target (must be parsed before constants) ──────────────────────
+
+const _argv      = process.argv.slice(2);
+const EXTENSION  = _argv.includes('--extension')
+  ? _argv[_argv.indexOf('--extension') + 1]
+  : 'gemini-folders';
+
+const SAMPLE_DATA = EXTENSION === 'ai-folders'
+  ? require('./sample-data-af')
+  : require('./sample-data');
 
 // ─── Configuration ────────────────────────────────────────────────────────────
 
-const EXT_PATH = path.resolve(__dirname, '../src');
-const OUT_DIR  = path.resolve(__dirname, '../Marketing/screenshots');
+const EXT_PATH = path.resolve(__dirname, `../dist/${EXTENSION}/chrome`);
+const OUT_DIR  = path.resolve(__dirname, `../Marketing/${EXTENSION}/screenshots`);
 
 const LOCALES = [
   { id: 'en',    chrome: 'en-US'  },
@@ -799,7 +808,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   const folderNames = Object.keys(localeData.folders);
 
   // Extension icon embedded as base64
-  const iconPath = path.resolve(__dirname, '../src/icon48.png');
+  const iconPath = path.resolve(__dirname, `../dist/${EXTENSION}/chrome/icon48.png`);
   const iconB64  = fs.existsSync(iconPath) ? fs.readFileSync(iconPath).toString('base64') : null;
   const iconImg  = iconB64
     ? `<img src="data:image/png;base64,${iconB64}" width="16" height="16" style="flex-shrink:0;">`
@@ -1388,7 +1397,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function run() {
-  const args      = process.argv.slice(2);
+  const args      = _argv;
   const modeArg   = args.includes('--mode')   ? args[args.indexOf('--mode') + 1]   : 'both';
   const localeArg = args.includes('--locale') ? args[args.indexOf('--locale') + 1] : null;
 
@@ -1402,7 +1411,7 @@ async function run() {
   }
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  console.log(`\nGemini Folders Screenshot Generator`);
+  console.log(`\n${EXTENSION} Screenshot Generator`);
   console.log(`Mode: ${modeArg}  |  Output → ${OUT_DIR}\n`);
 
   // Headless browser for composition (no extension needed)
