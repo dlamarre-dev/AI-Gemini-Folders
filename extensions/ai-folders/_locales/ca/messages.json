@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "Carpetes IA"
+  },
+  "extDesc": {
+    "message": "Organitzeu les vostres converses d'IA en carpetes personalitzades. Compatible amb Gemini, Claude, ChatGPT, Copilot i Perplexity."
+  },
+  "appTitle": {
+    "message": "Carpetes IA"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Cerca una conversa..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Cerca un prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Nom de la carpeta (p. ex. Projectes de codi)"
+  },
+  "chatPlaceholder": {
+    "message": "Títol de la conversa"
+  },
+  "saveBtn": {
+    "message": "Desa"
+  },
+  "statusSaved": {
+    "message": "Conversa desada!"
+  },
+  "noResults": {
+    "message": "Cap resultat 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Exporta"
+  },
+  "importBtn": {
+    "message": "📂 Importa"
+  },
+  "defaultFolder": {
+    "message": "General"
+  },
+  "defaultTitle": {
+    "message": "Nova conversa"
+  },
+  "promptRename": {
+    "message": "Nou nom de la conversa:"
+  },
+  "alertEmptyExport": {
+    "message": "Les teves carpetes i prompts estan buits, res per exportar!"
+  },
+  "alertImportSuccess": {
+    "message": "Importació correcta! Les teves carpetes i prompts s'han combinat."
+  },
+  "alertImportError": {
+    "message": "Error d'importació. Assegura't que és un fitxer JSON vàlid generat per aquesta extensió."
+  },
+  "btnRename": {
+    "message": "Reanomena"
+  },
+  "btnDelete": {
+    "message": "Elimina"
+  },
+  "btnNewFolder": {
+    "message": "➕ Carpeta"
+  },
+  "promptNewFolder": {
+    "message": "Nova carpeta:"
+  },
+  "btnDeleteFolder": {
+    "message": "Elimina la carpeta"
+  },
+  "confirmDeleteFolder": {
+    "message": "Aquesta carpeta conté converses. Estàs segur que vols eliminar-la?"
+  },
+  "btnPin": {
+    "message": "Fixa"
+  },
+  "btnUnpin": {
+    "message": "Desfixa"
+  },
+  "sortNewest": {
+    "message": "Més recents"
+  },
+  "sortOldest": {
+    "message": "Més antigues"
+  },
+  "sortAlpha": {
+    "message": "A fins a Z"
+  },
+  "ctxMenuSave": {
+    "message": "Desa a Carpetes IA"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Cap carpeta – Obre l'extensió)"
+  },
+  "btnToggleAdd": {
+    "message": "Afegeix una conversa"
+  },
+  "btnCancel": {
+    "message": "Tanca"
+  },
+  "btnRenameFolder": {
+    "message": "Reanomena la carpeta"
+  },
+  "promptRenameFolder": {
+    "message": "Nou nom:"
+  },
+  "errorFolderExists": {
+    "message": "Ja existeix una carpeta amb aquest nom."
+  },
+  "storageCalc": {
+    "message": "Calculant espai..."
+  },
+  "storageInfo": {
+    "message": "Emmagatzematge: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Desa la conversa"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Desat ràpid"
+  },
+  "toastSaved": {
+    "message": "✅ Desat a Carpetes IA!"
+  },
+  "btnOpenGroup": {
+    "message": "Obre en grup de pestanyes"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Realment vols obrir {count} pestanyes alhora?"
+  },
+  "errorTabGroup": {
+    "message": "Error: no es pot crear el grup de pestanyes. Has acceptat els nous permisos?"
+  },
+  "bulkSelected": {
+    "message": "{count} seleccionades"
+  },
+  "bulkMove": {
+    "message": "Mou a..."
+  },
+  "bulkDelete": {
+    "message": "Elimina"
+  },
+  "confirmBulkDelete": {
+    "message": "Estàs segur que vols eliminar aquestes {count} converses?"
+  },
+  "bulkCancel": {
+    "message": "Cancel·la la selecció"
+  },
+  "masterFolderName": {
+    "message": "Carpetes IA (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Crea una carpeta sincronitzada als marcadors de Chrome per accedir a les converses al telèfon."
+  },
+  "modalBtnCancel": {
+    "message": "Cancel·la"
+  },
+  "modalBtnConfirm": {
+    "message": "Confirma"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Consell: comença amb un emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Ja desat!"
+  },
+  "folderModeTitle": {
+    "message": "Mode carpetes"
+  },
+  "promptModeTitle": {
+    "message": "Mode prompts"
+  },
+  "promptCannotBeEmpty": {
+    "message": "El prompt no pot estar buit!"
+  },
+  "promptSaved": {
+    "message": "Prompt desat!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Ja existeix un prompt amb aquest títol. Vols sobreescriure'l?"
+  },
+  "promptNoSavedYet": {
+    "message": "Encara no hi ha prompts desats."
+  },
+  "promptAddBtn": {
+    "message": "Afegeix un prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Copia"
+  },
+  "promptDeleteTitle": {
+    "message": "Elimina"
+  },
+  "newConversationBtn": {
+    "message": "Nova conversa"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Títol del prompt"
+  },
+  "promptTextPlaceholder": {
+    "message": "Escriu el teu prompt aquí..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Sincronitza els prompts"
+  },
+  "promptRenamePrompt": {
+    "message": "Nou nom del prompt:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Elimina aquest prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Insereix al xat"
+  },
+  "promptPinTitle": {
+    "message": "Fixa"
+  },
+  "newConv_gemini": {
+    "message": "Nova conversa a Gemini"
+  },
+  "newConv_claude": {
+    "message": "Nova conversa a Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Nova conversa a ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Nova conversa a Copilot"
+  },
+  "newConv_perplexity": {
+    "message": "Nova conversa a Perplexity"
+  },
+  "newConv_local": {
+    "message": "Nova conversa LLM local (manteniu premut per configurar l'URL)"
+  },
+  "setLocalUrl": {
+    "message": "Establiu l'URL del LLM local:"
+  },
+  "alertNotSupported": {
+    "message": "Utilitzeu aquesta extensió en un lloc d'IA compatible (Gemini, Claude, ChatGPT, Copilot o Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "No s'ha pogut trobar el camp de text en aquesta pàgina. Proveu de fer clic a l'editor primer i després useu el botó d'inserció."
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "AI mape"
+  },
+  "extDesc": {
+    "message": "Organizirajte AI razgovore u prilagođene mape. Podržava Gemini, Claude, ChatGPT, Copilot i Perplexity."
+  },
+  "appTitle": {
+    "message": "AI mape"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Pretraži razgovor..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Pretraži upit..."
+  },
+  "folderPlaceholder": {
+    "message": "Naziv mape (npr. Kodni projekti)"
+  },
+  "chatPlaceholder": {
+    "message": "Naslov razgovora"
+  },
+  "saveBtn": {
+    "message": "Spremi"
+  },
+  "statusSaved": {
+    "message": "Razgovor je spremljen!"
+  },
+  "noResults": {
+    "message": "Nema rezultata 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Izvezi"
+  },
+  "importBtn": {
+    "message": "📂 Uvezi"
+  },
+  "defaultFolder": {
+    "message": "Opće"
+  },
+  "defaultTitle": {
+    "message": "Novi razgovor"
+  },
+  "promptRename": {
+    "message": "Novi naziv razgovora:"
+  },
+  "alertEmptyExport": {
+    "message": "Tvoje mape i upiti su prazni, nema ničega za izvoz!"
+  },
+  "alertImportSuccess": {
+    "message": "Uvoz uspješan! Tvoje mape i upiti su spojeni."
+  },
+  "alertImportError": {
+    "message": "Greška pri uvozu. Provjeri da je ovo valjana JSON datoteka generirana ovim dodatkom."
+  },
+  "btnRename": {
+    "message": "Preimenuj"
+  },
+  "btnDelete": {
+    "message": "Izbriši"
+  },
+  "btnNewFolder": {
+    "message": "➕ Mapa"
+  },
+  "promptNewFolder": {
+    "message": "Nova mapa:"
+  },
+  "btnDeleteFolder": {
+    "message": "Izbriši mapu"
+  },
+  "confirmDeleteFolder": {
+    "message": "Ova mapa sadrži razgovore. Jesi li siguran da je želiš izbrisati?"
+  },
+  "btnPin": {
+    "message": "Prikvači"
+  },
+  "btnUnpin": {
+    "message": "Otkvači"
+  },
+  "sortNewest": {
+    "message": "Najnovije"
+  },
+  "sortOldest": {
+    "message": "Najstarije"
+  },
+  "sortAlpha": {
+    "message": "A do Ž"
+  },
+  "ctxMenuSave": {
+    "message": "Spremi u AI mape"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Nema mapa – Otvori dodatak)"
+  },
+  "btnToggleAdd": {
+    "message": "Dodaj razgovor"
+  },
+  "btnCancel": {
+    "message": "Zatvori"
+  },
+  "btnRenameFolder": {
+    "message": "Preimenuj mapu"
+  },
+  "promptRenameFolder": {
+    "message": "Novi naziv:"
+  },
+  "errorFolderExists": {
+    "message": "Mapa s ovim nazivom već postoji."
+  },
+  "storageCalc": {
+    "message": "Izračunavanje prostora..."
+  },
+  "storageInfo": {
+    "message": "Pohrana: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Spremi razgovor"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Brzo spremi"
+  },
+  "toastSaved": {
+    "message": "✅ Spremljeno u AI mape!"
+  },
+  "btnOpenGroup": {
+    "message": "Otvori u grupi kartica"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Zaista želiš otvoriti {count} kartica istovremeno?"
+  },
+  "errorTabGroup": {
+    "message": "Greška: ne može se stvoriti grupa kartica. Jesi li prihvatio nova dopuštenja?"
+  },
+  "bulkSelected": {
+    "message": "{count} odabrano"
+  },
+  "bulkMove": {
+    "message": "Premjesti u..."
+  },
+  "bulkDelete": {
+    "message": "Izbriši"
+  },
+  "confirmBulkDelete": {
+    "message": "Jesi li siguran da želiš izbrisati ovih {count} razgovora?"
+  },
+  "bulkCancel": {
+    "message": "Otkaži odabir"
+  },
+  "masterFolderName": {
+    "message": "AI mape (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Stvara sinkroniziranu mapu u Chrome oznakama za pristup razgovorima s telefona."
+  },
+  "modalBtnCancel": {
+    "message": "Otkaži"
+  },
+  "modalBtnConfirm": {
+    "message": "Potvrdi"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Savjet: Počni s emojijem (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Već spremljeno!"
+  },
+  "folderModeTitle": {
+    "message": "Način mapa"
+  },
+  "promptModeTitle": {
+    "message": "Način upita"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Upit ne može biti prazan!"
+  },
+  "promptSaved": {
+    "message": "Upit je spremljen!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Upit s ovim naslovom već postoji. Prepiši?"
+  },
+  "promptNoSavedYet": {
+    "message": "Još nema spremljenih upita."
+  },
+  "promptAddBtn": {
+    "message": "Dodaj upit"
+  },
+  "promptCopyTitle": {
+    "message": "Kopiraj"
+  },
+  "promptDeleteTitle": {
+    "message": "Izbriši"
+  },
+  "newConversationBtn": {
+    "message": "Novi razgovor"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Naslov upita"
+  },
+  "promptTextPlaceholder": {
+    "message": "Napiši ovdje svoj upit..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Sinkroniziraj upite"
+  },
+  "promptRenamePrompt": {
+    "message": "Novi naziv upita:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Izbriši ovaj upit?"
+  },
+  "promptInsertBtn": {
+    "message": "Umetni u chat"
+  },
+  "promptPinTitle": {
+    "message": "Prikvači"
+  },
+  "newConv_gemini": {
+    "message": "Novi razgovor na Gemini"
+  },
+  "newConv_claude": {
+    "message": "Novi razgovor na Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Novi razgovor na ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Novi razgovor na Copilot"
+  },
+  "newConv_perplexity": {
+    "message": "Novi razgovor na Perplexity"
+  },
+  "newConv_local": {
+    "message": "Novi lokalni LLM razgovor (držite za konfiguraciju URL-a)"
+  },
+  "setLocalUrl": {
+    "message": "Postavi URL lokalnog LLM-a:"
+  },
+  "alertNotSupported": {
+    "message": "Koristite ovo proširenje na podržanoj AI stranici (Gemini, Claude, ChatGPT, Copilot ili Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Pokušajte kliknuti u uređivač, a zatim koristite gumb za umetanje."
+  }
+}

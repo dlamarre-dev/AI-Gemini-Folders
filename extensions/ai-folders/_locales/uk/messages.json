@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "AI-папки"
+  },
+  "extDesc": {
+    "message": "Організуйте розмови зі штучним інтелектом у власних папках. Підтримує Gemini, Claude, ChatGPT, Copilot і Perplexity."
+  },
+  "appTitle": {
+    "message": "AI-папки"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Пошук розмови..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Пошук промпту..."
+  },
+  "folderPlaceholder": {
+    "message": "Назва теки (напр. Проєкти коду)"
+  },
+  "chatPlaceholder": {
+    "message": "Назва розмови"
+  },
+  "saveBtn": {
+    "message": "Зберегти"
+  },
+  "statusSaved": {
+    "message": "Розмову збережено!"
+  },
+  "noResults": {
+    "message": "Нічого не знайдено 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Експорт"
+  },
+  "importBtn": {
+    "message": "📂 Імпорт"
+  },
+  "defaultFolder": {
+    "message": "Загальне"
+  },
+  "defaultTitle": {
+    "message": "Нова розмова"
+  },
+  "promptRename": {
+    "message": "Нова назва розмови:"
+  },
+  "alertEmptyExport": {
+    "message": "Ваші теки та промпти порожні, нічого для експорту!"
+  },
+  "alertImportSuccess": {
+    "message": "Імпорт успішний! Ваші теки та промпти об'єднано."
+  },
+  "alertImportError": {
+    "message": "Помилка імпорту. Переконайтеся, що це дійсний файл JSON, створений цим розширенням."
+  },
+  "btnRename": {
+    "message": "Перейменувати"
+  },
+  "btnDelete": {
+    "message": "Видалити"
+  },
+  "btnNewFolder": {
+    "message": "➕ Тека"
+  },
+  "promptNewFolder": {
+    "message": "Нова тека:"
+  },
+  "btnDeleteFolder": {
+    "message": "Видалити теку"
+  },
+  "confirmDeleteFolder": {
+    "message": "Ця тека містить розмови. Ви впевнені, що хочете видалити її?"
+  },
+  "btnPin": {
+    "message": "Закріпити"
+  },
+  "btnUnpin": {
+    "message": "Відкріпити"
+  },
+  "sortNewest": {
+    "message": "Найновіші"
+  },
+  "sortOldest": {
+    "message": "Найстаріші"
+  },
+  "sortAlpha": {
+    "message": "А до Я"
+  },
+  "ctxMenuSave": {
+    "message": "Зберегти в AI-папки"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Немає тек – Відкрийте розширення)"
+  },
+  "btnToggleAdd": {
+    "message": "Додати розмову"
+  },
+  "btnCancel": {
+    "message": "Закрити"
+  },
+  "btnRenameFolder": {
+    "message": "Перейменувати теку"
+  },
+  "promptRenameFolder": {
+    "message": "Нова назва:"
+  },
+  "errorFolderExists": {
+    "message": "Тека з такою назвою вже існує."
+  },
+  "storageCalc": {
+    "message": "Обчислення місця..."
+  },
+  "storageInfo": {
+    "message": "Сховище: {used} КБ / {max} КБ ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Зберегти розмову"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Швидке збереження"
+  },
+  "toastSaved": {
+    "message": "✅ Збережено в AI-папки!"
+  },
+  "btnOpenGroup": {
+    "message": "Відкрити у групі вкладок"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Ви дійсно хочете відкрити {count} вкладок одночасно?"
+  },
+  "errorTabGroup": {
+    "message": "Помилка: не вдається створити групу вкладок. Ви прийняли нові дозволи?"
+  },
+  "bulkSelected": {
+    "message": "{count} вибрано"
+  },
+  "bulkMove": {
+    "message": "Перемістити до..."
+  },
+  "bulkDelete": {
+    "message": "Видалити"
+  },
+  "confirmBulkDelete": {
+    "message": "Ви впевнені, що хочете видалити {count} розмов?"
+  },
+  "bulkCancel": {
+    "message": "Скасувати вибір"
+  },
+  "masterFolderName": {
+    "message": "AI-папки (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Створює синхронізовану теку в закладках Chrome для доступу до розмов з телефону."
+  },
+  "modalBtnCancel": {
+    "message": "Скасувати"
+  },
+  "modalBtnConfirm": {
+    "message": "Підтвердити"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Порада: починайте з емодзі (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Вже збережено!"
+  },
+  "folderModeTitle": {
+    "message": "Режим тек"
+  },
+  "promptModeTitle": {
+    "message": "Режим промптів"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Промпт не може бути порожнім!"
+  },
+  "promptSaved": {
+    "message": "Промпт збережено!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Промпт із такою назвою вже існує. Перезаписати?"
+  },
+  "promptNoSavedYet": {
+    "message": "Промптів ще не збережено."
+  },
+  "promptAddBtn": {
+    "message": "Додати промпт"
+  },
+  "promptCopyTitle": {
+    "message": "Копіювати"
+  },
+  "promptDeleteTitle": {
+    "message": "Видалити"
+  },
+  "newConversationBtn": {
+    "message": "Нова розмова"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Назва промпту"
+  },
+  "promptTextPlaceholder": {
+    "message": "Напишіть свій промпт тут..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Синхронізувати промпти"
+  },
+  "promptRenamePrompt": {
+    "message": "Нова назва промпту:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Видалити цей промпт?"
+  },
+  "promptInsertBtn": {
+    "message": "Вставити в чат"
+  },
+  "promptPinTitle": {
+    "message": "Закріпити"
+  },
+  "newConv_gemini": {
+    "message": "Нова розмова в Gemini"
+  },
+  "newConv_claude": {
+    "message": "Нова розмова в Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Нова розмова в ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Нова розмова в Copilot"
+  },
+  "newConv_perplexity": {
+    "message": "Нова розмова в Perplexity"
+  },
+  "newConv_local": {
+    "message": "Нова розмова з локальною LLM (утримуйте для налаштування URL)"
+  },
+  "setLocalUrl": {
+    "message": "Вкажіть URL локальної LLM:"
+  },
+  "alertNotSupported": {
+    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot або Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Не вдалося знайти поле введення тексту на цій сторінці. Спочатку натисніть на редактор, а потім скористайтеся кнопкою вставки."
+  }
+}

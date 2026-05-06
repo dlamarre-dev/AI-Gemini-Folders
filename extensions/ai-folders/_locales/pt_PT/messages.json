@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "Pastas IA"
+  },
+  "extDesc": {
+    "message": "Organize as suas conversas de IA em pastas personalizadas. Compatível com Gemini, Claude, ChatGPT, Copilot e Perplexity."
+  },
+  "appTitle": {
+    "message": "Pastas IA"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Pesquisar uma conversa..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Pesquisar um prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Nome da pasta (ex: Projetos Código)"
+  },
+  "chatPlaceholder": {
+    "message": "Título da conversa"
+  },
+  "saveBtn": {
+    "message": "Guardar"
+  },
+  "statusSaved": {
+    "message": "Conversa guardada!"
+  },
+  "noResults": {
+    "message": "Nenhum resultado encontrado 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Exportar"
+  },
+  "importBtn": {
+    "message": "📂 Importar"
+  },
+  "defaultFolder": {
+    "message": "Geral"
+  },
+  "defaultTitle": {
+    "message": "Nova conversa"
+  },
+  "promptRename": {
+    "message": "Novo nome da conversa:"
+  },
+  "alertEmptyExport": {
+    "message": "As suas pastas estão vazias, nada a exportar!"
+  },
+  "alertImportSuccess": {
+    "message": "Importação bem-sucedida! Os seus dados foram unidos com sucesso."
+  },
+  "alertImportError": {
+    "message": "Erro de importação. Certifique-se de que é um ficheiro JSON válido gerado por esta extensão."
+  },
+  "btnRename": {
+    "message": "Mudar o nome"
+  },
+  "btnDelete": {
+    "message": "Eliminar"
+  },
+  "btnNewFolder": {
+    "message": "➕ Pasta"
+  },
+  "promptNewFolder": {
+    "message": "Nova pasta:"
+  },
+  "btnDeleteFolder": {
+    "message": "Eliminar pasta"
+  },
+  "confirmDeleteFolder": {
+    "message": "Esta pasta contém conversas. Tem a certeza que a quer eliminar?"
+  },
+  "btnPin": {
+    "message": "Fixar"
+  },
+  "btnUnpin": {
+    "message": "Desafixar"
+  },
+  "sortNewest": {
+    "message": "Mais recentes"
+  },
+  "sortOldest": {
+    "message": "Mais antigas"
+  },
+  "sortAlpha": {
+    "message": "De A a Z"
+  },
+  "ctxMenuSave": {
+    "message": "Guardar nas Pastas IA"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Nenhuma pasta - Abra a extensão)"
+  },
+  "btnToggleAdd": {
+    "message": "Adicionar uma conversa"
+  },
+  "btnCancel": {
+    "message": "Fechar"
+  },
+  "btnRenameFolder": {
+    "message": "Mudar o nome da pasta"
+  },
+  "promptRenameFolder": {
+    "message": "Novo nome:"
+  },
+  "errorFolderExists": {
+    "message": "Já existe uma pasta com este nome."
+  },
+  "storageCalc": {
+    "message": "A calcular espaço..."
+  },
+  "storageInfo": {
+    "message": "Armazenamento: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Guardar a conversa"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Guardados Rápidos"
+  },
+  "toastSaved": {
+    "message": "✅ Guardado nas Pastas IA!"
+  },
+  "btnOpenGroup": {
+    "message": "Abrir num grupo de separadores"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Tem a certeza que deseja abrir {count} separadores em simultâneo?"
+  },
+  "errorTabGroup": {
+    "message": "Erro: Não foi possível criar o grupo de separadores. Aceitou as novas permissões?"
+  },
+  "bulkSelected": {
+    "message": "{count} selecionadas"
+  },
+  "bulkMove": {
+    "message": "Mover para..."
+  },
+  "bulkDelete": {
+    "message": "Eliminar"
+  },
+  "confirmBulkDelete": {
+    "message": "Tem a certeza que deseja eliminar estas {count} conversas?"
+  },
+  "bulkCancel": {
+    "message": "Cancelar seleção"
+  },
+  "masterFolderName": {
+    "message": "Pastas IA (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Cria uma pasta sincronizada nos marcadores do Chrome para aceder às suas conversas no telemóvel."
+  },
+  "modalBtnCancel": {
+    "message": "Cancelar"
+  },
+  "modalBtnConfirm": {
+    "message": "Confirmar"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Dica: Inicie com um emoji (Win+. / ⌘⌃Espaço)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Já guardado!"
+  },
+  "folderModeTitle": {
+    "message": "Modo pastas"
+  },
+  "promptModeTitle": {
+    "message": "Modo prompts"
+  },
+  "promptCannotBeEmpty": {
+    "message": "O prompt não pode estar vazio!"
+  },
+  "promptSaved": {
+    "message": "Prompt guardado!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Já existe um prompt com este título. Substituir?"
+  },
+  "promptNoSavedYet": {
+    "message": "Nenhum prompt guardado ainda."
+  },
+  "promptAddBtn": {
+    "message": "Adicionar prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Copiar"
+  },
+  "promptDeleteTitle": {
+    "message": "Eliminar"
+  },
+  "newConversationBtn": {
+    "message": "Nova conversa"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Título do prompt"
+  },
+  "promptTextPlaceholder": {
+    "message": "Escreva o seu prompt aqui..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Sincronizar prompts"
+  },
+  "promptRenamePrompt": {
+    "message": "Novo nome do prompt:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Eliminar este prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Inserir no chat"
+  },
+  "promptPinTitle": {
+    "message": "Fixar"
+  },
+  "newConv_gemini": {
+    "message": "Nova conversa no Gemini"
+  },
+  "newConv_claude": {
+    "message": "Nova conversa no Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Nova conversa no ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Nova conversa no Copilot"
+  },
+  "newConv_perplexity": {
+    "message": "Nova conversa no Perplexity"
+  },
+  "newConv_local": {
+    "message": "Nova conversa com LLM local (mantenha premido para configurar URL)"
+  },
+  "setLocalUrl": {
+    "message": "Definir URL do LLM local:"
+  },
+  "alertNotSupported": {
+    "message": "Utilize esta extensão num site de IA suportado (Gemini, Claude, ChatGPT, Copilot ou Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Não foi possível encontrar o campo de texto nesta página. Tente clicar no editor primeiro e utilize o botão de inserção."
+  }
+}
