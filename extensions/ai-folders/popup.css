@@ -743,10 +743,9 @@
     /* AI Folders — site-specific styles                                      */
     /* ══════════════════════════════════════════════════════════════════════ */
 
-    /* Site color stripe on chat items */
-    .chat-item[class*="site-"] {
-      border-left: 3px solid var(--site-color, var(--border-color));
-      padding-left: 5px !important;
+    /* Color the conversation title text with the site's brand color */
+    .chat-item[class*="site-"] .chat-link {
+      color: var(--site-color, var(--accent-color));
     }
 
     /* Site logo badge — sits between the checkbox and the chat title, like a favicon */
