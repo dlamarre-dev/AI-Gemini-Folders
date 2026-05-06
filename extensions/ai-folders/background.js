@@ -15,13 +15,27 @@ const SUPPORTED_URL_PATTERNS = [
 
 // --- CONTEXT MENU ---
 
-function updateContextMenu() {
+// Returns SUPPORTED_URL_PATTERNS plus a pattern for the user's configured local LLM URL if any.
+async function getUrlPatterns() {
+  const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
+  if (!localLlmUrl) return SUPPORTED_URL_PATTERNS;
+  try {
+    const { protocol, hostname, port } = new URL(localLlmUrl);
+    const portPart = port ? `:${port}` : '';
+    return [...SUPPORTED_URL_PATTERNS, `${protocol}//${hostname}${portPart}/*`];
+  } catch (_) {
+    return SUPPORTED_URL_PATTERNS;
+  }
+}
+
+async function updateContextMenu() {
+  const patterns = await getUrlPatterns();
   chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({
       id: "ai-folders-parent",
       title: chrome.i18n.getMessage("ctxMenuSave"),
       contexts: ["page"],
-      documentUrlPatterns: SUPPORTED_URL_PATTERNS
+      documentUrlPatterns: patterns
     });
 
     loadData({ folders: {} }, (data) => {
@@ -59,7 +73,7 @@ function updateContextMenu() {
 chrome.runtime.onInstalled.addListener(updateContextMenu);
 chrome.runtime.onStartup.addListener(updateContextMenu);
 chrome.storage.onChanged.addListener((changes, namespace) => {
-  if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed)) {
+  if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed || changes.localLlmUrl)) {
     updateContextMenu();
   }
 });
@@ -67,9 +81,10 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (info.parentMenuItemId !== "ai-folders-parent") return;
   try {
-    const siteKey = getSiteByUrl(tab.url);
+    const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
+    const siteKey = getSiteByUrl(tab.url, localLlmUrl);
     const targetFolder = info.menuItemId.replace("folder_", "");
-    const fallbackTitle = chrome.i18n.getMessage("defaultTitle") || "New conversation";
+    const fallbackTitle = tab.title || chrome.i18n.getMessage("defaultTitle") || "New conversation";
 
     let finalTitle = fallbackTitle;
     if (siteKey && siteKey !== 'local') {
@@ -101,18 +116,29 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 
 // --- QUICK SAVE (keyboard shortcut) ---
 
+const showToast = (msg, bgColor) => {
+  const toast = document.createElement('div');
+  toast.textContent = msg;
+  toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:white; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
+  document.body.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2500);
+};
+
 chrome.commands.onCommand.addListener(async (command) => {
   if (command !== "quick-save") return;
   try {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    const siteKey = getSiteByUrl(tab?.url);
+    const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
+    const siteKey = getSiteByUrl(tab?.url, localLlmUrl);
     if (!siteKey) return;
 
     const targetFolder = chrome.i18n.getMessage("quickSaveFolder") || "⚡ Quick Saves";
-    const fallbackTitle = chrome.i18n.getMessage("defaultTitle") || "New conversation";
+    const fallbackTitle = tab?.title || chrome.i18n.getMessage("defaultTitle") || "New conversation";
     const toastMsg = chrome.i18n.getMessage("toastSaved") || "✅ Saved!";
     const siteColor = SITES[siteKey]?.color || "#1a73e8";
 
+    // For local LLM: use the browser tab title directly — no script injection needed or wanted.
+    // For all other sites: extract title via executeScript.
     let finalTitle = fallbackTitle;
     if (siteKey !== 'local') {
       const results = await chrome.scripting.executeScript({
@@ -139,26 +165,14 @@ chrome.commands.onCommand.addListener(async (command) => {
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
         args: [toastMsg, siteColor],
-        func: (msg, bgColor) => {
-          const toast = document.createElement('div');
-          toast.textContent = msg;
-          toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:white; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
-          document.body.appendChild(toast);
-          setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2500);
-        }
+        func: showToast
       });
     } else {
       const alreadySavedMsg = chrome.i18n.getMessage("toastAlreadySaved") || "⚠️ Already saved!";
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
         args: [alreadySavedMsg, "#d93025"],
-        func: (msg, bgColor) => {
-          const toast = document.createElement('div');
-          toast.textContent = msg;
-          toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:white; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
-          document.body.appendChild(toast);
-          setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2500);
-        }
+        func: showToast
       });
     }
   } catch (error) {

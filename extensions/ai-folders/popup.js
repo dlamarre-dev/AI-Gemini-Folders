@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         sendBtn.addEventListener('click', async (e) => {
           e.stopPropagation();
           const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-          const siteKey = getSiteByUrl(tab?.url);
+          const siteKey = getSiteByUrl(tab?.url, localLlmUrl);
           const editorSelectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
 
           if (!siteKey || !editorSelectors) {
@@ -658,20 +658,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Smart title pre-filling based on active tab
   let [currentTab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  const currentSiteKey = getSiteByUrl(currentTab?.url);
+  const currentSiteKey = getSiteByUrl(currentTab?.url, localLlmUrl);
 
-  if (currentTab && currentSiteKey && currentSiteKey !== 'local') {
-    chrome.scripting.executeScript({
-      target: { tabId: currentTab.id },
-      args: [currentSiteKey, null],
-      func: extractAITitleLogic
-    }, (injectionResults) => {
-      if (injectionResults?.[0]?.result) {
-        chatTitleInput.value = injectionResults[0].result;
-      } else {
-        chatTitleInput.value = chrome.i18n.getMessage("defaultTitle") || "New conversation";
-      }
-    });
+  if (currentTab && currentSiteKey) {
+    if (currentSiteKey === 'local') {
+      // No script injection for local LLM — use the browser tab title directly
+      chatTitleInput.value = currentTab.title || chrome.i18n.getMessage("defaultTitle") || "New conversation";
+    } else {
+      chrome.scripting.executeScript({
+        target: { tabId: currentTab.id },
+        args: [currentSiteKey, null],
+        func: extractAITitleLogic
+      }, (injectionResults) => {
+        if (injectionResults?.[0]?.result) {
+          chatTitleInput.value = injectionResults[0].result;
+        } else {
+          chatTitleInput.value = chrome.i18n.getMessage("defaultTitle") || "New conversation";
+        }
+      });
+    }
   }
 
   // Initialize display
@@ -690,7 +695,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     isSavingFolder = true;
 
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    const siteKey = getSiteByUrl(tab?.url);
+    const siteKey = getSiteByUrl(tab?.url, localLlmUrl);
     if (!siteKey) {
       await window.showCustomModal({
         title: chrome.i18n.getMessage("alertNotSupported") || "Please use this extension on a supported AI site.",
