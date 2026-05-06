@@ -5,6 +5,37 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
+  <!-- Shared SVG gradient pool — must be first in body so all url(#id) refs resolve -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- Gemini: purple→blue→cyan radial gradient -->
+      <radialGradient id="gm0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(16.1326 5.4553 -43.70045 129.2322 1.588 6.503)">
+        <stop offset=".067" stop-color="#9168C0"/>
+        <stop offset=".343" stop-color="#5684D1"/>
+        <stop offset=".672" stop-color="#1BA1E3"/>
+      </radialGradient>
+      <!-- Copilot: six brand gradients -->
+      <radialGradient id="cp0" cx="85.44%" cy="100.653%" fx="85.44%" fy="100.653%" r="105.116%" gradientTransform="scale(-.8553 -1) rotate(50.927 2.041 -1.946)">
+        <stop offset="9.6%" stop-color="#00AEFF"/><stop offset="77.3%" stop-color="#2253CE"/><stop offset="100%" stop-color="#0736C4"/>
+      </radialGradient>
+      <radialGradient id="cp1" cx="18.143%" cy="32.928%" fx="18.143%" fy="32.928%" r="95.612%" gradientTransform="scale(.8897 1) rotate(52.069 .193 .352)">
+        <stop offset="0%" stop-color="#FFB657"/><stop offset="63.4%" stop-color="#FF5F3D"/><stop offset="92.3%" stop-color="#C02B3C"/>
+      </radialGradient>
+      <radialGradient id="cp4" cx="82.987%" cy="-9.792%" fx="82.987%" fy="-9.792%" r="140.622%" gradientTransform="scale(-1 -.9441) rotate(-70.872 .142 1.17)">
+        <stop offset="6.6%" stop-color="#8C48FF"/><stop offset="50%" stop-color="#F2598A"/><stop offset="89.6%" stop-color="#FFB152"/>
+      </radialGradient>
+      <linearGradient id="cp2" x1="39.465%" x2="46.884%" y1="12.117%" y2="103.774%">
+        <stop offset="15.6%" stop-color="#0D91E1"/><stop offset="48.7%" stop-color="#52B471"/><stop offset="65.2%" stop-color="#98BD42"/><stop offset="93.7%" stop-color="#FFC800"/>
+      </linearGradient>
+      <linearGradient id="cp3" x1="45.949%" x2="50%" y1="0%" y2="100%">
+        <stop offset="0%" stop-color="#3DCBFF"/><stop offset="24.7%" stop-color="#0588F7" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="cp5" x1="83.507%" x2="83.453%" y1="-6.106%" y2="21.131%">
+        <stop offset="5.8%" stop-color="#F8ADFA"/><stop offset="70.8%" stop-color="#A86EDD" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
   <h3 style="display: flex; justify-content: space-between; align-items: center; margin-top: 0;">
     <span id="appTitle"></span>
     <div id="modeToggle" class="mode-toggle">
