@@ -1,0 +1,61 @@
+Naudoji Google Gemini kiekvieną dieną – darbui, kodavimui, rašymui ar tyrimams – bet vis iš naujo rašai tuos pačius promptus, o geriausi pokalbiai dingsta begalinėje istorijoje?
+AI aplankai (AI aplankai) – plėtinys, kurio reikia.
+
+Su versija 4.0 AI aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbius aplankuose, kurkite pakartotinai naudojamų promptų biblioteką ir įterpk juos tiesiai į Gemini vienu paspaudimu – jokio kopijavimo ir įklijavimo.
+
+✨ NAUJIENA V4.0 – PROMPTŲ REŽIMAS
+
+📝 Asmeninė promptų biblioteka: Perjunk į Promptų režimą paspausdamas antraštės perjungiklį. Išsaugok geriausius promptus su pavadinimu ir tekstu, rask juos iš karto naudodamas paiešką ir rikiavimą (naujausi, seniausi, A–Ž).
+▶ Įterpimas vienu paspaudimu: Spustelėk paleidimo mygtuką (▶) ant išsaugoto prompto, kad jis būtų įterptas tiesiai į Gemini įvesties lauką.
+✏️ Tiesioginis redagavimas: Spustelėk norėdamas išplėsti promptą ir redaguok tekstą tiesiogiai. Pakeitimai automatiškai išsaugomi po trumpos pauzės.
+🔀 Naujo pokalbio mygtukai: Pradėkite naują pokalbį ChatGPT, Claude, Copilot, Gemini arba Perplexity tiesiogiai iš raginimų režimo — vienas mygtukas kiekvienai paslaugai.
+☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
+📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
+
+🌟 APLANKŲ FUNKCIJOS
+
+⚡ Greitas išsaugojimas (Dešinysis spustelėjimas ir spartieji klavišai): Išsaugok dabartinį pokalbį paprastu dešiniuoju spustelėjimu arba naudok sparčiąją klavišų kombinaciją (Ctrl+Shift+S arba Cmd+Shift+S „Mac") norėdamas jį siųsti į «⚡ Greitas išsaugojimas» – su vizualiniu įspėjimu, jei jis jau išsaugotas!
+☑️ Kelių elementų pasirinkimas (Masiniai veiksmai): Pažymėk kelis pokalbius žymimaisiais laukeliais, kad juos perkeltum arba ištrintum vienu paspaudimu.
+📑 Skirtukų grupės integracija: Atidaryti visą aplanką vienu spustelėjimu kaip natyvią, spalvinę „Chrome" skirtukų grupę.
+😃 Tinkintos aplanko emocijos: Pradėk aplanko pavadinimą nuo emocijų (pvz. «💻 Kodas»), kad pakeistum numatytąją aplanko piktogramą.
+🖱️ Vilkimas ir nuleidimas: Perkėlk pokalbius tarp aplankų.
+📱 Mobiliojo ryšio sinchronizavimas: Atspindi aplankų struktūrą „Chrome" žymėse, kad galėtum pasiekti iš telefono.
+🗜️ Itin efektyvus suspaudimas: Automatiškai suspaudžia duomenis (LZString), kad maksimaliai išnaudotų „Chrome" saugyklą.
+📊 Saugyklos stebėjimo priemonė: Vaizdinis eigos rodiklis realiuoju laiku rodo turimą debesijos saugyklą.
+📁 Tinkinami aplankai ir prisegti mėgstami: Tvarkyk pokalbius pagal projektus, temas ar kategorijas.
+⇅ Tinkinamas rikiavimas: Rikiuok aplankus ir pokalbius (Naujausi, Seniausi, A–Ž) su pakeitimais, kurie iš karto atsispindi mobiliojo ryšio sinchronizavime.
+🤖 Išmanus aptikimas ir paieška: Automatinis tikslaus pokalbio pavadinimo pildymas ir realiojo laiko paieškos juosta.
+☁️ Debesies sinchronizavimas ir atsarginės kopijos: Prieiga prie organizavimo visuose įrenginiuose ir duomenų eksportavimas JSON formatu.
+🎨 „Material 3" dizainas ir daugiakalbis: Itin kompaktiškas sąsaja su visiškai tinkintais modaliniais dialogo langais, automatinis tamsus režimas ir 27 kalbų palaikymas!
+
+🛠️ KAIP TAI VEIKIA?
+
+Aplankų režimas:
+Atidaryk pokalbį adresu the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Greitas išsaugojimas: Ctrl+Shift+S (arba Cmd+Shift+S „Mac"), arba dešinysis spustelėjimas > «Išsaugoti Gemini Aplankuose».
+Per plėtinį: Spustelėk piktogramą, pasirink aplanką ir išsaugok.
+Mobilusis: Pažymėk 📱 poraštėje, kad sinchronizuotum aplankus su telefonu.
+
+Promptų režimas:
+Spustelėk 📝 ant perjungiklio plėtinio viršutiniame dešiniajame kampe.
+Spustelėk ➕ Pridėti promptą, įveskite pavadinimą ir tekstą, išsaugok.
+Norėdamas naudoti promptą: išplėsk jį ir spustelėk ▶ – jis įterpiamas tiesiai į Gemini.
+Sukonfigūruok 💎 norėdamas nukreipti į savo Gem.
+Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo viršų.
+
+🔒 PRIVATUMAS IR SAUGUMAS
+Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.
+
+🤝 ATVIROJO KODO PROJEKTAS
+AI aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pagarba jūsų privatumui yra mūsų aukščiausi prioritetai. Esi kūrėjas ar tiesiog smalsus? Naršyk kodą, sek pakeitimų žurnalą arba prisidėk prie „GitHub": https://github.com/dlamarre-dev/GeminiFolders
+
+📢 ATNAUJINIMAI:
+Versija 4.1 (Globalus plėtimas ir stiprinimas): 16 naujų kalbų pakelia Gemini Aplankus iki 43 lokalizacijų visame pasaulyje — Šiaurės šalių kalbos, Baltijos valstybės ir išplėsta Europos bei Pietryčių Azijos aprėptis. Ištaisyta race condition, kuri esant greitus paspaudimus galėjo tyliai prarasti išsaugojimą. Prompt įterpimas modernizuotas naudojant InputEvent, pakeičiant pasenusį execCommand. Importo srautas apsaugotas nuo kenkėjiškų URL atsarginių kopijų failuose.
+Versija 4.0 (Promptų biblioteka): Pats ambicingiausias atnaujinimas iki šiol! AI aplankai gauna visiškai naują Promptų režimą: išsaugok geriausius promptus, redaguok juos tiesiogiai ir įterpk tiesiai į Gemini vienu paspaudimu.
+Versija 3.5 (Tvirti pagrindai ir patobulinta patirtis): Didelis vidinis atnaujinimas profesionaliam patikimumui!
+Versija 3.4.1 (Daugiaplatformė galia ir stabilumas): Sėkmingai perkelta į „Mozilla Firefox" su automatizuota kūrimo sistema.
+Versija 3.3 (Aukščiausios klasės dizainas ir tarptautinis): Nauji „Material 3" dialogai, mobiliojo ryšio sinchronizavimas ir 10 naujų kalbų!
+Versija 3.2 (Mobilusis ir atvirasis kodas): Išmanusis mobiliojo ryšio sinchronizavimas per „Chrome" žymes ir oficiali atvirojo kodo versija.
+Versija 3.0 (Produktyvumo atnaujinimas): Spartieji klavišai, kelių elementų pasirinkimas, skirtukų grupės, tinkintos emocijos, duomenų suspaudimas ir saugyklos juosta.
+Versija 2.0: Didelis pertvarkymas su Vilkimu ir nuleidimu, kontekstiniu meniu, tinkinamu rikiavimo, prisegimo ir „Material 3" dizainu.
+Versija 1.0: Pirmasis leidimas! Tvarkykite pokalbius iš Gemini, Claude, ChatGPT, Copilot ir Perplexity bendrose aplankuose. Pilna raginimų biblioteka su vieno paspaudimo įterpimu, sparčiojo įrašymo spartieji klavišai, vilkimas ir numetimas, mobilioji sinchronizacija, masiniai veiksmai, skirtukų grupės ir palaikymas 43 kalbų.

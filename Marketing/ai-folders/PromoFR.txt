@@ -1,0 +1,63 @@
+Vos conversations IA sont éparpillées sur cinq sites différents. Vous retapez toujours les mêmes prompts. Vos meilleures discussions disparaissent dans des historiques sans fin sur Gemini, Claude, ChatGPT, Copilot et Perplexity.
+Dossiers IA est l'extension qu'il vous faut.
+
+Avec la version 4.0, Dossiers IA devient votre véritable cockpit Gemini : organisez vos conversations en dossiers, construisez une bibliothèque de prompts réutilisables, et injectez-les en un clic directement dans Gemini, sans copier-coller.
+
+✨ NOUVEAUTÉ v4.0 — MODE PROMPTS
+
+📝 Bibliothèque de prompts personnelle : Passez en mode Prompt d'un simple clic sur le bouton de bascule dans l'en-tête. Sauvegardez vos meilleurs prompts avec un titre et un texte complet, retrouvez-les instantanément grâce à la recherche et au tri (plus récents, plus anciens, A-Z).
+▶ Injection en un clic : Plus besoin de copier-coller. Cliquez sur le bouton lecture (▶) de n'importe quel prompt pour l'injecter directement dans le champ de saisie de Gemini. L'extension détecte si vous êtes bien sur une page Gemini et vous avertit sinon.
+✏️ Édition en place : Cliquez sur un prompt pour le déplier et modifiez son texte directement. Les changements se sauvegardent automatiquement et le tri se met à jour en conséquence.
+🔀 Boutons Nouvelle Conversation : Lancez une nouvelle discussion sur ChatGPT, Claude, Copilot, Gemini ou Perplexity directement depuis le Mode Prompts — un bouton par service.
+📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
+☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
+
+🌟 FONCTIONNALITÉS DOSSIERS
+
+⚡ Sauvegarde Rapide (Clic Droit & Raccourcis) : Sauvegardez la conversation via un simple clic droit, ou utilisez le raccourci clavier (Ctrl+Shift+S ou Cmd+Shift+S sur Mac) pour l'envoyer instantanément dans "⚡ Sauvegardes Rapides" — avec une alerte visuelle si elle est déjà sauvegardée !
+☑️ Sélection Multiple (Bulk Actions) : Sélectionnez plusieurs conversations avec des cases à cocher pour les déplacer ou les supprimer en un seul clic.
+📑 Groupes d'onglets (Tab Groups) : Ouvrez tout un dossier en un clic dans un groupe d'onglets Chrome natif et coloré.
+😃 Émojis personnalisés : Commencez le nom de votre dossier par un émoji (ex : "💻 Code") pour remplacer l'icône par défaut.
+🖱️ Drag & Drop : Réorganisez votre espace de travail en glissant-déposant vos conversations d'un dossier à l'autre.
+📱 Synchronisation Mobile : Un interrupteur génère un dossier miroir dans vos favoris Chrome, reproduisant parfaitement votre arborescence et votre ordre de tri sur votre téléphone.
+🗜️ Compression ultra-efficace : Compresse automatiquement vos données (LZString) pour maximiser le stockage natif de Chrome et sauvegarder des centaines de conversations.
+📊 Traqueur de stockage : Une barre de progression visuelle indique votre espace cloud disponible en temps réel.
+📁 Dossiers sur mesure & Épingles : Classez vos conversations par projets, thèmes ou catégories. Épinglez (📌) vos dossiers favoris en haut de la liste.
+⇅ Tri personnalisé : Triez dossiers et conversations à la volée (Plus récents, Plus anciens, A-Z) avec répercussion directe sur la synchronisation mobile.
+🤖 Détection intelligente & Recherche : Pré-remplissage automatique du titre exact de votre conversation et barre de recherche instantanée.
+☁️ Synchronisation Cloud & Backup : Retrouvez votre organisation sur tous vos appareils et exportez vos données en JSON.
+🎨 Design Material 3 & Multilingue : Interface ultra-compacte avec boîtes de dialogue entièrement sur mesure, mode sombre automatique et prise en charge de 27 langues !
+
+🛠️ COMMENT ÇA MARCHE ?
+
+Mode Dossiers :
+Ouvrez une conversation sur the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Sauvegarde express : Ctrl+Shift+S (ou Cmd+Shift+S sur Mac), ou clic droit > "Sauvegarder dans Dossiers IA".
+Via l'extension : Cliquez sur l'icône, choisissez un dossier et sauvegardez.
+Mobile : Cochez 📱 dans le pied de page pour synchroniser vos dossiers sur votre téléphone.
+Cochez les cases pour des actions groupées, ouvrez des dossiers en onglets (📑), glissez-déposez pour réorganiser !
+
+Mode Prompts :
+Cliquez sur 📝 dans le bouton de bascule en haut à droite de l'extension.
+Cliquez sur ➕ Ajouter un prompt, entrez un titre et votre texte, sauvegardez.
+Pour utiliser un prompt : dépliez-le et cliquez ▶ — il s'injecte directement dans Gemini, prêt à envoyer.
+Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et reste accessible d'un regard.
+Configurez 💎 pour pointer vers votre Gem personnalisé.
+
+🔒 CONFIDENTIALITÉ & SÉCURITÉ
+Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
+
+🤝 PROJET OPEN SOURCE
+Dossiers IA est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Consultez le code, suivez l'historique ou contribuez sur GitHub : https://github.com/dlamarre-dev/GeminiFolders
+
+📢 MISES À JOUR :
+Version 4.1 (Expansion mondiale et renforcement) : 16 nouvelles langues portent Gemini Dossiers à 43 localisations dans le monde — langues nordiques, pays baltes et couverture européenne et sud-est asiatique élargie. Correction d'une condition de course pouvant perdre silencieusement une sauvegarde en cas de clics rapides. Injection de prompts modernisée avec InputEvent, en remplacement du execCommand obsolète. Pipeline d'importation renforcé contre les URL malveillantes dans les fichiers de sauvegarde.
+Version 4.0 (Bibliothèque de Prompts) : La mise à jour la plus ambitieuse à ce jour ! Dossiers IA se dote d'un tout nouveau mode Prompts : sauvegardez vos meilleurs prompts, éditez-les en place, et injectez-les directement dans Gemini en un clic. Épinglez vos prompts essentiels en tête de liste. Ajout du bouton de bascule animé entre les modes, de la recherche et du tri dans le mode Prompts, du bouton Gem personnalisé, et de la synchronisation indépendante des prompts.
+Version 3.5 (Fondations Solides & Expérience Améliorée) : Une mise à jour majeure sous le capot pour une robustesse de niveau professionnel ! Alerte visuelle en cas de doublon via raccourci clavier. Fin des faux doublons liés aux changements d'URL de Gemini, et base de données blindée contre les corruptions grâce à notre nouvelle architecture de sécurité.
+Version 3.4.1 (Puissance Multiplateforme & Stabilité) : Portage réussi sur Mozilla Firefox avec un système de compilation automatisé et une stricte conformité sécurité. Correction définitive du bogue des dossiers de favoris en double lors de la synchronisation mobile.
+Version 3.3 (Design Premium & International) : Nouvelles boîtes de dialogue Material 3 100% sur mesure, synchronisation mobile calquée sur votre ordre de tri et expansion mondiale avec 10 nouvelles langues !
+Version 3.2 (Mobile & Open Source) : Synchronisation mobile via les favoris Chrome, tri intelligent des dossiers épinglés, pied de page ultra-compact et passage en Open Source avec lien GitHub intégré.
+Version 3.1 (Améliorations UX) : Stabilisation du Drag & Drop, cases à cocher adaptées au mode sombre, verrouillage intelligent de l'interface lors des actions groupées.
+Version 3.0 (Mise à jour Productivité) : Raccourcis clavier, sélection multiple, groupes d'onglets, émojis personnalisés, compression des données et barre de stockage.
+Version 2.0 : Refonte majeure avec Drag & Drop, menu contextuel, tri personnalisé, épinglage et design Material 3.
+Version 1.0 : Première publication ! Organisez vos conversations depuis Gemini, Claude, ChatGPT, Copilot et Perplexity dans des dossiers partagés. Bibliothèque de prompts complète avec injection en un clic, raccourcis de sauvegarde rapide, glisser-déposer, synchronisation mobile, actions groupées, groupes d'onglets et prise en charge de 43 langues. Support des LLM locaux avec URL configurable (localhost et adresses LAN).

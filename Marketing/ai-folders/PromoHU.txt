@@ -1,0 +1,63 @@
+Naponta használja a Google Geminit — munkához, kódoláshoz, íráshoz vagy kutatáshoz —, mégis újra és újra ugyanazokat a promptokat gépeli, miközben legjobb beszélgetései eltűnnek a végtelen előzményekben?
+AI mappák (AI mappák) a bővítmény, amelyre szüksége van.
+
+4.1-es verzió (Globális bővítés és megerősítés): 16 új nyelv 43 világszintű lokalizációra emeli a AI mappákat — északi nyelvek, balti államok és bővített európai és délkelet-ázsiai lefedettség. Javítva egy versenyhelyzet, amely gyors kattintások esetén csendben eldobhatott egy mentést. A prompt-injektálás modernizálva InputEvent segítségével, felváltva az elavult execCommand-ot. Az import-folyamat megerősítve a biztonsági mentési fájlokban lévő rosszindulatú URL-ek ellen.
+A 4.0-s verzióval a AI mappák valódi Gemini-kokpitjévé válik: rendszerezze a beszélgetéseket mappákba, építsen fel újrafelhasználható promptokból álló könyvtárat, és egyetlen kattintással illessze be őket közvetlenül a Geminibe — másolás-beillesztés nélkül.
+
+✨ ÚJDONSÁGOK a v4.0-ban — PROMPTÜZEMMÓD
+
+📝 Személyes promptkönyvtár: Váltson Promptüzemmódba egyetlen kattintással a fejlécben lévő kapcsolón. Mentse el legjobb promptjait cím és teljes szöveg megadásával, majd keresse meg őket azonnal kereséssel és rendezéssel (legújabb, legrégebbi, A–Z).
+▶ Egyetlen kattintásos beillesztés: Nincs több másolás-beillesztés. Kattintson a lejátszás gombra (▶) bármely mentett promptnál, hogy közvetlenül a Gemini beviteli mezőjébe illessze be. A bővítmény észleli, hogy Gemini-oldalon van-e, és értesíti, ha nem.
+✏️ Helyszíni szerkesztés: Kattintson egy promptra a kibontáshoz és a szöveg közvetlen szerkesztéséhez. A módosítások rövid szünet után automatikusan mentődnek, a rendezési sorrend frissül.
+🔀 Új Beszélgetés Gombok: Indítson új beszélgetést a ChatGPT-n, Claude-on, Copiloton, Geminin vagy a Perplexityn közvetlenül a Prompt módból — egy gomb szolgáltatásonként.
+☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
+📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
+
+🌟 MAPPAFUNKCIÓK
+
+⚡ Gyorsmentés (Jobb kattintás és billentyűparancsok): Mentse az aktuális beszélgetést egyszerű jobb kattintással, vagy használja a billentyűparancsot (Ctrl+Shift+S vagy Mac-en Cmd+Shift+S), hogy azonnal a „⚡ Gyorsmentések" közé küldje — vizuális figyelmeztetéssel, ha már mentve van!
+☑️ Többes kijelölés (Tömeges műveletek): Jelöljön ki több beszélgetést jelölőnégyzetekkel, hogy egyetlen kattintással mozgassa vagy törölje őket.
+📑 Lapcsoportok integrációja: Nyissa meg az egész mappát egyetlen kattintással natív, színkódolt Chrome-lapcsoportként.
+😃 Egyéni mappaemojik: Kezdje a mappa nevét emojival (pl. „💻 Kód"), hogy lecserélje az alapértelmezett mappaicont.
+🖱️ Húzás és ejtés: Rendezze át munkaterületét a beszélgetések mappák közötti húzásával.
+📱 Mobilszinkronizálás: Egy kapcsoló tükrözött mappát hoz létre a Chrome-könyvjelzőkben, amely tökéletesen reprodukálja a mappastruktúrát és az egyéni rendezési sorrendet telefonján.
+🗜️ Rendkívül hatékony tömörítés: Automatikusan tömöríti az adatokat (LZString) a Chrome natív tárhelyének maximalizálásához és több száz beszélgetés mentéséhez.
+📊 Tárhelyfigyelő: Egy letisztult vizuális folyamatjelző valós időben mutatja az elérhető felhőtárhelyet.
+📁 Egyéni mappák és rögzítések: Rendszerezze a beszélgetéseket projektek, témák vagy kategóriák szerint. Rögzítse (📌) kedvenc mappáit a lista tetejére.
+⇅ Egyéni rendezés: Rendezze a mappákat és a beszélgetéseket menet közben (Legújabb, Legrégebbi, A–Z), a változások azonnal tükröződnek a mobilszinkronizálásban.
+🤖 Intelligens felismerés és keresés: A beszélgetés pontos címének automatikus előkitöltése és valós idejű keresősáv.
+☁️ Felhőszinkronizálás és biztonsági mentés: Érje el rendszerezését minden eszközén, és exportálja adatait JSON formátumban.
+🎨 Material 3 dizájn és többnyelvűség: Ultrakompakt felület teljesen egyéni modális párbeszédpanelekkel, automatikus sötét móddal és 27 nyelv támogatásával!
+
+🛠️ HOGYAN MŰKÖDIK?
+
+Mappaüzemmód:
+Nyisson meg egy beszélgetést a the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) oldalon.
+Gyorsmentés: Ctrl+Shift+S (vagy Mac-en Cmd+Shift+S), vagy jobb kattintás > „Mentés a AI mappákba".
+A bővítményen keresztül: Kattintson az ikonra, válasszon mappát, és mentse el.
+Mobil: Jelölje be a 📱 ikont a láblécben a mappák telefonra szinkronizálásához.
+Használja a jelölőnégyzeteket tömeges műveletekhez, nyissa meg a mappákat lapcsoportként (📑), húzza-ejtse az átrendezéshez!
+
+Promptüzemmód:
+Kattintson a 📝 gombra a bővítmény jobb felső sarkában lévő kapcsolón.
+Kattintson a ➕ Prompt hozzáadása gombra, adjon meg egy nevet és szöveget, majd mentse el.
+Prompt használatához: bontsa ki, és kattintson a ▶ gombra — közvetlenül a Geminibe illeszti be, küldésre készen.
+Prompt rögzítéséhez: kattintson a 📍 gombra — a lista tetejére kerül, és könnyen elérhető marad.
+Konfigurálja a 💎 ikont, hogy az egyéni Gemjére mutasson.
+
+🔒 ADATVÉDELEM ÉS BIZTONSÁG
+Az adatvédelmet alapelvként kezelve fejlesztve. Csak a the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.
+
+🤝 NYÍLT FORRÁSKÓDÚ PROJEKT
+A AI mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az átláthatóság és az adatvédelem tiszteletben tartása a legfontosabb prioritásaink. Fejlesztő, vagy csak kíváncsi? Böngéssze a kódot, kövesse a változásnaplót, vagy járuljon hozzá a GitHubon: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 FRISSÍTÉSEK:
+4.0-s verzió (Promptkönyvtár): A valaha volt legambiciózusabb frissítés! A AI mappák egy vadonatúj Promptüzemmódot kap: mentse el legjobb promptjait, szerkessze helyszínen, és illessze be közvetlenül a Geminibe egyetlen kattintással. Animált üzemmódkapcsoló, keresés és rendezés Promptüzemmódban, egyéni Gem-gomb és független prompt-szinkronizálás hozzáadva. Rögzítse lényeges promptjait a könyvtár tetejére.
+3.5-ös verzió (Szilárd alapok és jobb élmény): Jelentős motorháztető alatti frissítés a professzionális szintű megbízhatóságért! Vizuális figyelmeztetés a billentyűparancson keresztüli dupla mentésekhez. Nincs több hamis duplikáció a Gemini URL-változásaiból, az adatbázis védett a sérülés ellen az új biztonsági architektúrával.
+3.4.1-es verzió (Többplatformos erő és stabilitás): Sikeresen portolva a Mozilla Firefoxra automatizált build-rendszerrel és szigorú biztonsági megfeleléssel. Véglegesen javítva a mobilszinkronizálás közbeni duplikált könyvjelzőmappa hiba.
+3.3-as verzió (Prémium dizájn és nemzetköziesítés): Új, 100%-ban egyéni Material 3-párbeszédpanelek, a rendezési sorrendet tükröző mobilszinkronizálás és globális terjeszkedés 10 új nyelvvel!
+3.2-es verzió (Mobil és nyílt forráskód): Intelligens mobilszinkronizálás Chrome-könyvjelzőkön keresztül, rögzített mappák intelligens rendezése, ultrakompakt lábléc és hivatalos nyílt forráskódú megjelenés integrált GitHub-hivatkozással.
+3.1-es verzió (UX-javítások): Húzás és ejtés stabilizálása, sötét módú jelölőnégyzetek, intelligens felületzár tömeges műveletek során.
+3.0-s verzió (Termelékenységi frissítés): Billentyűparancsok, többes kijelölés, lapcsoportok, egyéni emojik, adattömörítés és tárhelysáv.
+2.0-s verzió: Nagyszabású újratervezés húzással és ejtéssel, helyi menüvel, egyéni rendezéssel, rögzítéssel és Material 3 dizájnnal.
+1.0-s verzió: Első kiadás! Rendszerezze a Gemini, Claude, ChatGPT, Copilot és Perplexity beszélgetéseit közös mappákban. Teljes prompt-könyvtár egy kattintásos beillesztéssel, gyors mentési parancsikonok, húzás és ejtés, mobilszinkronizáció, tömeges műveletek, lapcsoportok és 43 nyelv támogatása.

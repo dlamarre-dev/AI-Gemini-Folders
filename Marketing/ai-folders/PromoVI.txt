@@ -1,0 +1,63 @@
+Bạn sử dụng Google Gemini mỗi ngày — để làm việc, viết code, viết lách hay nghiên cứu — nhưng cứ phải gõ lại cùng một prompt, trong khi những cuộc trò chuyện hay nhất lại biến mất vào lịch sử vô tận?
+Thư mục AI (Thư mục AI) chính là tiện ích bạn cần.
+
+Với phiên bản 4.0, Thư mục AI trở thành buồng lái Gemini thực sự của bạn: tổ chức cuộc trò chuyện vào thư mục, xây dựng thư viện prompt tái sử dụng được, và chèn chúng trực tiếp vào Gemini chỉ với một cú nhấp — không cần sao chép dán.
+
+✨ MỚI TRONG v4.0 — CHẾ ĐỘ PROMPT
+
+📝 Thư viện Prompt cá nhân: Chuyển sang Chế độ Prompt chỉ với một cú nhấp vào nút chuyển đổi ở tiêu đề. Lưu các prompt tốt nhất của bạn với tiêu đề và toàn bộ nội dung, sau đó tìm lại ngay lập tức với tính năng tìm kiếm và sắp xếp (mới nhất, cũ nhất, A-Z).
+▶ Chèn một cú nhấp: Không cần sao chép dán nữa. Nhấn nút phát (▶) trên bất kỳ prompt đã lưu nào để chèn trực tiếp vào ô nhập của Gemini. Tiện ích phát hiện bạn có đang ở trang Gemini hay không và thông báo nếu chưa.
+✏️ Chỉnh sửa tại chỗ: Nhấp vào prompt để mở rộng và chỉnh sửa văn bản trực tiếp. Thay đổi được tự động lưu sau một khoảng dừng ngắn và thứ tự sắp xếp cập nhật theo.
+🔀 Nút Cuộc trò chuyện Mới: Bắt đầu cuộc trò chuyện mới trên ChatGPT, Claude, Copilot, Gemini hoặc Perplexity trực tiếp từ Chế độ Prompt — một nút mỗi dịch vụ.
+☁️ Đồng bộ Prompt: Bật đồng bộ đám mây cho thư viện prompt độc lập với thư mục.
+📌 Ghim Prompt: Ghim các prompt thiết yếu bằng một cú nhấp để giữ chúng ở đầu thư viện, ngăn cách với phần còn lại bằng đường phân cách trực quan.
+
+🌟 TÍNH NĂNG THƯ MỤC
+
+⚡ Lưu nhanh (Chuột phải & Phím tắt): Lưu cuộc trò chuyện hiện tại bằng cú nhấp chuột phải đơn giản, hoặc dùng phím tắt (Ctrl+Shift+S hoặc Cmd+Shift+S trên Mac) để gửi ngay vào "⚡ Lưu nhanh" — kèm cảnh báo trực quan nếu đã lưu trước đó!
+☑️ Chọn nhiều (Thao tác hàng loạt): Chọn nhiều cuộc trò chuyện bằng hộp kiểm để di chuyển hoặc xóa chỉ với một cú nhấp.
+📑 Tích hợp Nhóm tab: Mở toàn bộ thư mục chỉ với một cú nhấp dưới dạng Nhóm tab Chrome gốc có màu sắc.
+😃 Emoji thư mục tùy chỉnh: Bắt đầu tên thư mục bằng emoji (vd: "💻 Code") để thay thế biểu tượng thư mục mặc định.
+🖱️ Kéo & Thả: Sắp xếp lại không gian làm việc bằng cách kéo cuộc trò chuyện giữa các thư mục.
+📱 Đồng bộ di động: Một nút chuyển đổi tạo thư mục gương trong dấu trang Chrome, tái tạo hoàn hảo cấu trúc thư mục và thứ tự sắp xếp tùy chỉnh trên điện thoại.
+🗜️ Nén siêu hiệu quả: Tự động nén dữ liệu (LZString) để tối đa hóa bộ nhớ gốc của Chrome và lưu hàng trăm cuộc trò chuyện.
+📊 Theo dõi bộ nhớ: Thanh tiến trình trực quan hiển thị dung lượng đám mây khả dụng theo thời gian thực.
+📁 Thư mục & Ghim tùy chỉnh: Tổ chức cuộc trò chuyện theo dự án, chủ đề hoặc danh mục. Ghim (📌) thư mục yêu thích lên đầu danh sách.
+⇅ Sắp xếp tùy chỉnh: Sắp xếp thư mục và cuộc trò chuyện ngay lập tức (Mới nhất, Cũ nhất, A-Z) với thay đổi phản ánh ngay trong đồng bộ di động.
+🤖 Phát hiện thông minh & Tìm kiếm: Tự động điền tiêu đề chính xác của cuộc trò chuyện và thanh tìm kiếm thời gian thực.
+☁️ Đồng bộ & Sao lưu đám mây: Truy cập tổ chức của bạn trên mọi thiết bị và xuất dữ liệu dưới dạng JSON.
+🎨 Material 3 Design & Đa ngôn ngữ: Giao diện siêu nhỏ gọn với hộp thoại modal tùy chỉnh hoàn toàn, chế độ tối tự động và hỗ trợ 27 ngôn ngữ!
+
+🛠️ CÁCH HOẠT ĐỘNG?
+
+Chế độ thư mục:
+Mở cuộc trò chuyện trên the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Lưu nhanh: Ctrl+Shift+S (hoặc Cmd+Shift+S trên Mac), hoặc nhấp chuột phải > "Lưu vào Thư mục AI".
+Qua tiện ích: Nhấp biểu tượng, chọn thư mục và lưu.
+Di động: Tích 📱 ở chân trang để đồng bộ thư mục lên điện thoại.
+Dùng hộp kiểm cho thao tác hàng loạt, mở thư mục dưới dạng Nhóm tab (📑), kéo thả để sắp xếp lại!
+
+Chế độ Prompt:
+Nhấp 📝 trên nút chuyển đổi ở góc trên bên phải tiện ích.
+Nhấp ➕ Thêm Prompt, nhập tiêu đề và nội dung, lưu lại.
+Để dùng prompt: mở rộng và nhấp ▶ — chèn trực tiếp vào Gemini, sẵn sàng gửi.
+Nhấp 📍 để ghim prompt — nó di chuyển lên đầu danh sách và luôn dễ truy cập.
+Cấu hình 💎 để trỏ đến Gem tùy chỉnh của bạn.
+
+🔒 QUYỀN RIÊNG TƯ & BẢO MẬT
+Được xây dựng với quyền riêng tư là ưu tiên hàng đầu. Chỉ yêu cầu quyền truy cập vào the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) và chỉ đọc tab đang hoạt động khi lưu cuộc trò chuyện hoặc chèn prompt. Quyền "Dấu trang" chỉ được dùng nếu bạn bật đồng bộ di động. Lưu trữ qua Chrome Sync: không có máy chủ bên thứ ba, không theo dõi.
+
+🤝 DỰ ÁN MÃ NGUỒN MỞ
+Thư mục AI là dự án mã nguồn mở được xây dựng với niềm đam mê. Sự minh bạch và tôn trọng quyền riêng tư của bạn là ưu tiên hàng đầu của chúng tôi. Bạn là lập trình viên hay chỉ tò mò? Xem code, theo dõi nhật ký thay đổi hoặc đóng góp trên GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 CẬP NHẬT:
+Phiên bản 4.1 (Mở rộng toàn cầu & Tăng cường bảo mật): 16 ngôn ngữ mới đưa Gemini Thư mục lên 43 bản địa hóa trên toàn thế giới — các ngôn ngữ Bắc Âu, các quốc gia Baltic và phạm vi phủ sóng châu Âu và Đông Nam Á mở rộng. Sửa lỗi race condition có thể làm mất thao tác lưu khi nhấp nhanh. Hiện đại hóa việc chèn prompt bằng InputEvent, thay thế execCommand lỗi thời. Tăng cường pipeline nhập khẩu chống URL độc hại trong tệp sao lưu.
+Phiên bản 4.0 (Thư viện Prompt): Cập nhật tham vọng nhất từ trước đến nay! Thư mục AI có thêm Chế độ Prompt hoàn toàn mới: lưu các prompt tốt nhất, chỉnh sửa tại chỗ và chèn trực tiếp vào Gemini chỉ với một cú nhấp. Thêm nút chuyển đổi chế độ có hoạt ảnh, tìm kiếm và sắp xếp trong Chế độ Prompt, nút Gem tùy chỉnh và đồng bộ prompt độc lập. Ghim các prompt thiết yếu lên đầu thư viện.
+Phiên bản 3.5 (Nền tảng vững chắc & Trải nghiệm cải tiến): Cập nhật lớn bên trong để đạt độ bền vững cấp chuyên nghiệp! Cảnh báo trực quan khi lưu trùng qua phím tắt. Không còn trùng lặp giả từ thay đổi URL Gemini, cơ sở dữ liệu được bảo vệ khỏi hỏng dữ liệu với kiến trúc bảo mật mới.
+Phiên bản 3.4.1 (Đa nền tảng & Ổn định): Chuyển thành công sang Mozilla Firefox với hệ thống build tự động và tuân thủ bảo mật nghiêm ngặt. Sửa dứt điểm lỗi thư mục dấu trang trùng lặp khi đồng bộ di động.
+Phiên bản 3.3 (Thiết kế cao cấp & Quốc tế hóa): Hộp thoại Material 3 tùy chỉnh 100% mới, đồng bộ di động phản ánh thứ tự sắp xếp và mở rộng toàn cầu với 10 ngôn ngữ mới!
+Phiên bản 3.2 (Di động & Mã nguồn mở): Đồng bộ di động thông minh qua dấu trang Chrome, sắp xếp thông minh thư mục đã ghim, chân trang siêu nhỏ gọn và ra mắt mã nguồn mở chính thức với liên kết GitHub tích hợp.
+Phiên bản 3.1 (Cải tiến UX): Ổn định Kéo & Thả, hộp kiểm chế độ tối, khóa giao diện thông minh trong thao tác hàng loạt.
+Phiên bản 3.0 (Cập nhật năng suất): Phím tắt bàn phím, chọn nhiều, nhóm tab, emoji tùy chỉnh, nén dữ liệu và thanh bộ nhớ.
+Phiên bản 2.0: Thiết kế lại lớn với Kéo & Thả, menu ngữ cảnh, sắp xếp tùy chỉnh, ghim và thiết kế Material 3.
+Phiên bản 1.0: Ra mắt lần đầu! Tổ chức các cuộc trò chuyện từ Gemini, Claude, ChatGPT, Copilot và Perplexity vào các thư mục chung. Thư viện prompt đầy đủ với chèn một cú nhấp, phím tắt lưu nhanh, kéo và thả, đồng bộ di động, hành động hàng loạt, nhóm tab và hỗ trợ 43 ngôn ngữ. Hỗ trợ LLM cục bộ với URL có thể cấu hình (localhost và địa chỉ LAN).
