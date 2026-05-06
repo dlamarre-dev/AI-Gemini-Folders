@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "Φάκελοι AI"
+  },
+  "extDesc": {
+    "message": "Οργανώστε τις AI συνομιλίες σας σε προσαρμοσμένους φακέλους. Υποστηρίζει Gemini, Claude, ChatGPT, Copilot και Perplexity."
+  },
+  "appTitle": {
+    "message": "Φάκελοι AI"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Αναζήτηση συνομιλίας..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Αναζήτηση prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Όνομα φακέλου (π.χ. Έργα κώδικα)"
+  },
+  "chatPlaceholder": {
+    "message": "Τίτλος συνομιλίας"
+  },
+  "saveBtn": {
+    "message": "Αποθήκευση"
+  },
+  "statusSaved": {
+    "message": "Η συνομιλία αποθηκεύτηκε!"
+  },
+  "noResults": {
+    "message": "Δεν βρέθηκαν αποτελέσματα 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Εξαγωγή"
+  },
+  "importBtn": {
+    "message": "📂 Εισαγωγή"
+  },
+  "defaultFolder": {
+    "message": "Γενικά"
+  },
+  "defaultTitle": {
+    "message": "Νέα συνομιλία"
+  },
+  "promptRename": {
+    "message": "Νέο όνομα συνομιλίας:"
+  },
+  "alertEmptyExport": {
+    "message": "Οι φάκελοι και τα prompt σας είναι άδεια, τίποτα για εξαγωγή!"
+  },
+  "alertImportSuccess": {
+    "message": "Η εισαγωγή ολοκληρώθηκε! Οι φάκελοι και τα prompt σας συγχωνεύτηκαν."
+  },
+  "alertImportError": {
+    "message": "Σφάλμα εισαγωγής. Βεβαιωθείτε ότι είναι έγκυρο αρχείο JSON που δημιουργήθηκε από αυτήν την επέκταση."
+  },
+  "btnRename": {
+    "message": "Μετονομασία"
+  },
+  "btnDelete": {
+    "message": "Διαγραφή"
+  },
+  "btnNewFolder": {
+    "message": "➕ Φάκελος"
+  },
+  "promptNewFolder": {
+    "message": "Νέος φάκελος:"
+  },
+  "btnDeleteFolder": {
+    "message": "Διαγραφή φακέλου"
+  },
+  "confirmDeleteFolder": {
+    "message": "Αυτός ο φάκελος περιέχει συνομιλίες. Είστε σίγουροι ότι θέλετε να τον διαγράψετε;"
+  },
+  "btnPin": {
+    "message": "Καρφίτσωμα"
+  },
+  "btnUnpin": {
+    "message": "Αφαίρεση καρφιτσώματος"
+  },
+  "sortNewest": {
+    "message": "Νεότερα"
+  },
+  "sortOldest": {
+    "message": "Παλαιότερα"
+  },
+  "sortAlpha": {
+    "message": "Α έως Ω"
+  },
+  "ctxMenuSave": {
+    "message": "Αποθήκευση στο Φάκελοι AI"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Χωρίς φακέλους – Άνοιγμα επέκτασης)"
+  },
+  "btnToggleAdd": {
+    "message": "Προσθήκη συνομιλίας"
+  },
+  "btnCancel": {
+    "message": "Κλείσιμο"
+  },
+  "btnRenameFolder": {
+    "message": "Μετονομασία φακέλου"
+  },
+  "promptRenameFolder": {
+    "message": "Νέο όνομα:"
+  },
+  "errorFolderExists": {
+    "message": "Υπάρχει ήδη φάκελος με αυτό το όνομα."
+  },
+  "storageCalc": {
+    "message": "Υπολογισμός χώρου..."
+  },
+  "storageInfo": {
+    "message": "Αποθήκευση: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Αποθήκευση συνομιλίας"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Γρήγορη αποθήκευση"
+  },
+  "toastSaved": {
+    "message": "✅ Αποθηκεύτηκε στο Φάκελοι AI!"
+  },
+  "btnOpenGroup": {
+    "message": "Άνοιγμα σε ομάδα καρτελών"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Θέλετε πραγματικά να ανοίξετε {count} καρτέλες ταυτόχρονα;"
+  },
+  "errorTabGroup": {
+    "message": "Σφάλμα: δεν είναι δυνατή η δημιουργία της ομάδας καρτελών. Έχετε αποδεχτεί τα νέα δικαιώματα;"
+  },
+  "bulkSelected": {
+    "message": "{count} επιλέχθηκαν"
+  },
+  "bulkMove": {
+    "message": "Μετακίνηση σε..."
+  },
+  "bulkDelete": {
+    "message": "Διαγραφή"
+  },
+  "confirmBulkDelete": {
+    "message": "Είστε σίγουροι ότι θέλετε να διαγράψετε αυτές τις {count} συνομιλίες;"
+  },
+  "bulkCancel": {
+    "message": "Ακύρωση επιλογής"
+  },
+  "masterFolderName": {
+    "message": "Φάκελοι AI (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Δημιουργεί συγχρονισμένο φάκελο στους σελιδοδείκτες Chrome για πρόσβαση σε συνομιλίες από το τηλέφωνο."
+  },
+  "modalBtnCancel": {
+    "message": "Ακύρωση"
+  },
+  "modalBtnConfirm": {
+    "message": "Επιβεβαίωση"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Συμβουλή: ξεκινήστε με emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Ήδη αποθηκευμένο!"
+  },
+  "folderModeTitle": {
+    "message": "Λειτουργία φακέλων"
+  },
+  "promptModeTitle": {
+    "message": "Λειτουργία prompt"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Το prompt δεν μπορεί να είναι κενό!"
+  },
+  "promptSaved": {
+    "message": "Το prompt αποθηκεύτηκε!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Υπάρχει ήδη prompt με αυτόν τον τίτλο. Αντικατάσταση;"
+  },
+  "promptNoSavedYet": {
+    "message": "Δεν υπάρχουν αποθηκευμένα prompt ακόμα."
+  },
+  "promptAddBtn": {
+    "message": "Προσθήκη prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Αντιγραφή"
+  },
+  "promptDeleteTitle": {
+    "message": "Διαγραφή"
+  },
+  "newConversationBtn": {
+    "message": "Νέα συνομιλία"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Τίτλος prompt"
+  },
+  "promptTextPlaceholder": {
+    "message": "Γράψτε το prompt σας εδώ..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Συγχρονισμός prompt"
+  },
+  "promptRenamePrompt": {
+    "message": "Νέο όνομα prompt:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Διαγραφή αυτού του prompt;"
+  },
+  "promptInsertBtn": {
+    "message": "Εισαγωγή στη συνομιλία"
+  },
+  "promptPinTitle": {
+    "message": "Καρφίτσωμα"
+  },
+  "newConv_gemini": {
+    "message": "Νέα συνομιλία Gemini"
+  },
+  "newConv_claude": {
+    "message": "Νέα συνομιλία Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Νέα συνομιλία ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Νέα συνομιλία Copilot"
+  },
+  "newConv_perplexity": {
+    "message": "Νέα συνομιλία Perplexity"
+  },
+  "newConv_local": {
+    "message": "Νέα τοπική LLM συνομιλία (κρατήστε πατημένο για ρύθμιση URL)"
+  },
+  "setLocalUrl": {
+    "message": "Ορισμός URL τοπικού LLM:"
+  },
+  "alertNotSupported": {
+    "message": "Χρησιμοποιήστε αυτήν την επέκταση σε υποστηριζόμενο AI ιστότοπο (Gemini, Claude, ChatGPT, Copilot ή Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Δεν ήταν δυνατή η εύρεση του πεδίου κειμένου σε αυτή τη σελίδα. Κάντε κλικ στον επεξεργαστή πρώτα και μετά χρησιμοποιήστε το κουμπί εισαγωγής."
+  }
+}

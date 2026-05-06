@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "AI папки"
+  },
+  "extDesc": {
+    "message": "Организирайте AI разговорите си в персонализирани папки. Поддържа Gemini, Claude, ChatGPT, Copilot и Perplexity."
+  },
+  "appTitle": {
+    "message": "AI папки"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Търсене на разговор..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Търсене на промпт..."
+  },
+  "folderPlaceholder": {
+    "message": "Име на папка (напр. Кодови проекти)"
+  },
+  "chatPlaceholder": {
+    "message": "Заглавие на разговора"
+  },
+  "saveBtn": {
+    "message": "Запази"
+  },
+  "statusSaved": {
+    "message": "Разговорът е запазен!"
+  },
+  "noResults": {
+    "message": "Няма резултати 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Експортирай"
+  },
+  "importBtn": {
+    "message": "📂 Импортирай"
+  },
+  "defaultFolder": {
+    "message": "Общи"
+  },
+  "defaultTitle": {
+    "message": "Нов разговор"
+  },
+  "promptRename": {
+    "message": "Ново име на разговора:"
+  },
+  "alertEmptyExport": {
+    "message": "Вашите папки и промпти са празни, няма какво да се експортира!"
+  },
+  "alertImportSuccess": {
+    "message": "Импортирането е успешно! Вашите папки и промпти са обединени."
+  },
+  "alertImportError": {
+    "message": "Грешка при импортиране. Уверете се, че е валиден JSON файл, генериран от това разширение."
+  },
+  "btnRename": {
+    "message": "Преименувай"
+  },
+  "btnDelete": {
+    "message": "Изтрий"
+  },
+  "btnNewFolder": {
+    "message": "➕ Папка"
+  },
+  "promptNewFolder": {
+    "message": "Нова папка:"
+  },
+  "btnDeleteFolder": {
+    "message": "Изтрий папка"
+  },
+  "confirmDeleteFolder": {
+    "message": "Тази папка съдържа разговори. Сигурни ли сте, че искате да я изтриете?"
+  },
+  "btnPin": {
+    "message": "Закачи"
+  },
+  "btnUnpin": {
+    "message": "Откачи"
+  },
+  "sortNewest": {
+    "message": "Най-нови"
+  },
+  "sortOldest": {
+    "message": "Най-стари"
+  },
+  "sortAlpha": {
+    "message": "А до Я"
+  },
+  "ctxMenuSave": {
+    "message": "Запази в AI папки"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Няма папки – Отвори разширението)"
+  },
+  "btnToggleAdd": {
+    "message": "Добави разговор"
+  },
+  "btnCancel": {
+    "message": "Затвори"
+  },
+  "btnRenameFolder": {
+    "message": "Преименувай папка"
+  },
+  "promptRenameFolder": {
+    "message": "Ново име:"
+  },
+  "errorFolderExists": {
+    "message": "Папка с това име вече съществува."
+  },
+  "storageCalc": {
+    "message": "Изчисляване на пространството..."
+  },
+  "storageInfo": {
+    "message": "Хранилище: {used} КБ / {max} КБ ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Запази разговор"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Бързо запазване"
+  },
+  "toastSaved": {
+    "message": "✅ Запазено в AI папки!"
+  },
+  "btnOpenGroup": {
+    "message": "Отвори в група с раздели"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Наистина ли искате да отворите {count} раздела едновременно?"
+  },
+  "errorTabGroup": {
+    "message": "Грешка: Не може да се създаде група с раздели. Приели ли сте новите разрешения?"
+  },
+  "bulkSelected": {
+    "message": "{count} избрани"
+  },
+  "bulkMove": {
+    "message": "Премести в..."
+  },
+  "bulkDelete": {
+    "message": "Изтрий"
+  },
+  "confirmBulkDelete": {
+    "message": "Сигурни ли сте, че искате да изтриете тези {count} разговора?"
+  },
+  "bulkCancel": {
+    "message": "Отмени избора"
+  },
+  "masterFolderName": {
+    "message": "AI папки (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Създава синхронизирана папка в отметките на Chrome за достъп до разговори от телефона."
+  },
+  "modalBtnCancel": {
+    "message": "Отмени"
+  },
+  "modalBtnConfirm": {
+    "message": "Потвърди"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Съвет: Започнете с emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Вече е запазено!"
+  },
+  "folderModeTitle": {
+    "message": "Режим папки"
+  },
+  "promptModeTitle": {
+    "message": "Режим промпти"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Промптът не може да е празен!"
+  },
+  "promptSaved": {
+    "message": "Промптът е запазен!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Промпт с това заглавие вече съществува. Презаписване?"
+  },
+  "promptNoSavedYet": {
+    "message": "Все още няма запазени промпти."
+  },
+  "promptAddBtn": {
+    "message": "Добави промпт"
+  },
+  "promptCopyTitle": {
+    "message": "Копирай"
+  },
+  "promptDeleteTitle": {
+    "message": "Изтрий"
+  },
+  "newConversationBtn": {
+    "message": "Нов разговор"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Заглавие на промпта"
+  },
+  "promptTextPlaceholder": {
+    "message": "Напишете промпта си тук..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Синхронизирайте промпти"
+  },
+  "promptRenamePrompt": {
+    "message": "Ново име на промпта:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Изтриване на този промпт?"
+  },
+  "promptInsertBtn": {
+    "message": "Вмъкни в чата"
+  },
+  "promptPinTitle": {
+    "message": "Закачи"
+  },
+  "newConv_gemini": {
+    "message": "Нов разговор в Gemini"
+  },
+  "newConv_claude": {
+    "message": "Нов разговор в Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Нов разговор в ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Нов разговор в Copilot"
+  },
+  "newConv_perplexity": {
+    "message": "Нов разговор в Perplexity"
+  },
+  "newConv_local": {
+    "message": "Нов локален LLM разговор (задръжте за конфигуриране на URL)"
+  },
+  "setLocalUrl": {
+    "message": "Задайте URL на локален LLM:"
+  },
+  "alertNotSupported": {
+    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot или Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Не може да се намери текстовото поле на тази страница. Опитайте да кликнете в редактора първо, след което използвайте бутона за вмъкване."
+  }
+}

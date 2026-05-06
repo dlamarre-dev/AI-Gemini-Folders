@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "AI-папки"
+  },
+  "extDesc": {
+    "message": "Организуйте беседы с ИИ в пользовательских папках. Поддерживает Gemini, Claude, ChatGPT, Copilot и Perplexity."
+  },
+  "appTitle": {
+    "message": "AI-папки"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Поиск беседы..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Поиск промпта..."
+  },
+  "folderPlaceholder": {
+    "message": "Имя папки (например: Проекты Код)"
+  },
+  "chatPlaceholder": {
+    "message": "Название беседы"
+  },
+  "saveBtn": {
+    "message": "Сохранить"
+  },
+  "statusSaved": {
+    "message": "Беседа сохранена!"
+  },
+  "noResults": {
+    "message": "Ничего не найдено 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Экспорт"
+  },
+  "importBtn": {
+    "message": "📂 Импорт"
+  },
+  "defaultFolder": {
+    "message": "Общее"
+  },
+  "defaultTitle": {
+    "message": "Новая беседа"
+  },
+  "promptRename": {
+    "message": "Новое имя беседы:"
+  },
+  "alertEmptyExport": {
+    "message": "Ваши папки пусты, нечего экспортировать!"
+  },
+  "alertImportSuccess": {
+    "message": "Импорт завершен! Ваши данные успешно объединены."
+  },
+  "alertImportError": {
+    "message": "Ошибка импорта. Убедитесь, что это действительный файл JSON, созданный этим расширением."
+  },
+  "btnRename": {
+    "message": "Переименовать"
+  },
+  "btnDelete": {
+    "message": "Удалить"
+  },
+  "btnNewFolder": {
+    "message": "➕ Папка"
+  },
+  "promptNewFolder": {
+    "message": "Новая папка:"
+  },
+  "btnDeleteFolder": {
+    "message": "Удалить папку"
+  },
+  "confirmDeleteFolder": {
+    "message": "Эта папка содержит беседы. Вы уверены, что хотите ее удалить?"
+  },
+  "btnPin": {
+    "message": "Закрепить"
+  },
+  "btnUnpin": {
+    "message": "Открепить"
+  },
+  "sortNewest": {
+    "message": "Сначала новые"
+  },
+  "sortOldest": {
+    "message": "Сначала старые"
+  },
+  "sortAlpha": {
+    "message": "От А до Я"
+  },
+  "ctxMenuSave": {
+    "message": "Сохранить в AI-папки"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Нет папок - Откройте расширение)"
+  },
+  "btnToggleAdd": {
+    "message": "Добавить беседу"
+  },
+  "btnCancel": {
+    "message": "Закрыть"
+  },
+  "btnRenameFolder": {
+    "message": "Переименовать папку"
+  },
+  "promptRenameFolder": {
+    "message": "Новое имя:"
+  },
+  "errorFolderExists": {
+    "message": "Папка с таким именем уже существует."
+  },
+  "storageCalc": {
+    "message": "Вычисление места..."
+  },
+  "storageInfo": {
+    "message": "Хранилище: {used} КБ / {max} КБ ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Сохранить беседу"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Быстрые сохранения"
+  },
+  "toastSaved": {
+    "message": "✅ Сохранено в AI-папки!"
+  },
+  "btnOpenGroup": {
+    "message": "Открыть в группе вкладок"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Вы уверены, что хотите открыть {count} вкладок одновременно?"
+  },
+  "errorTabGroup": {
+    "message": "Ошибка: Не удалось создать группу вкладок. Вы приняли новые разрешения?"
+  },
+  "bulkSelected": {
+    "message": "Выбрано: {count}"
+  },
+  "bulkMove": {
+    "message": "Переместить в..."
+  },
+  "bulkDelete": {
+    "message": "Удалить"
+  },
+  "confirmBulkDelete": {
+    "message": "Вы уверены, что хотите удалить эти {count} бесед?"
+  },
+  "bulkCancel": {
+    "message": "Отменить выбор"
+  },
+  "masterFolderName": {
+    "message": "AI-папки (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Создает синхронизированную папку в закладках Chrome для доступа к беседам на телефоне."
+  },
+  "modalBtnCancel": {
+    "message": "Отмена"
+  },
+  "modalBtnConfirm": {
+    "message": "ОК"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Подсказка: Начните с эмодзи (Win+. / ⌘⌃Пробел)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Уже сохранено!"
+  },
+  "folderModeTitle": {
+    "message": "Режим папок"
+  },
+  "promptModeTitle": {
+    "message": "Режим подсказок"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Промпт не может быть пустым!"
+  },
+  "promptSaved": {
+    "message": "Промпт сохранён!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Промпт с таким названием уже существует. Перезаписать?"
+  },
+  "promptNoSavedYet": {
+    "message": "Пока нет сохранённых промптов."
+  },
+  "promptAddBtn": {
+    "message": "Добавить промпт"
+  },
+  "promptCopyTitle": {
+    "message": "Копировать"
+  },
+  "promptDeleteTitle": {
+    "message": "Удалить"
+  },
+  "newConversationBtn": {
+    "message": "Новая беседа"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Название промпта"
+  },
+  "promptTextPlaceholder": {
+    "message": "Введите промпт здесь..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Синхронизировать промпты"
+  },
+  "promptRenamePrompt": {
+    "message": "Новое название промпта:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Удалить этот запрос?"
+  },
+  "promptInsertBtn": {
+    "message": "Вставить в чат"
+  },
+  "promptPinTitle": {
+    "message": "Закрепить"
+  },
+  "newConv_gemini": {
+    "message": "Новый разговор в Gemini"
+  },
+  "newConv_claude": {
+    "message": "Новый разговор в Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Новый разговор в ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Новый разговор в Copilot"
+  },
+  "newConv_perplexity": {
+    "message": "Новый разговор в Perplexity"
+  },
+  "newConv_local": {
+    "message": "Новый разговор с локальной LLM (удерживайте для настройки URL)"
+  },
+  "setLocalUrl": {
+    "message": "Задать URL локальной LLM:"
+  },
+  "alertNotSupported": {
+    "message": "Пожалуйста, используйте это расширение на поддерживаемом AI-сайте (Gemini, Claude, ChatGPT, Copilot или Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Не удалось найти поле ввода на этой странице. Сначала нажмите в редактор, затем используйте кнопку вставки."
+  }
+}

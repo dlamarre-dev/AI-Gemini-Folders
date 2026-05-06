@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "โฟลเดอร์ AI"
+  },
+  "extDesc": {
+    "message": "จัดระเบียบบทสนทนา AI ของคุณในโฟลเดอร์แบบกำหนดเอง รองรับ Gemini, Claude, ChatGPT, Copilot และ Perplexity"
+  },
+  "appTitle": {
+    "message": "โฟลเดอร์ AI"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 ค้นหาการสนทนา..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 ค้นหาพรอมต์..."
+  },
+  "folderPlaceholder": {
+    "message": "ชื่อโฟลเดอร์ (เช่น โปรเจกต์โค้ด)"
+  },
+  "chatPlaceholder": {
+    "message": "ชื่อการสนทนา"
+  },
+  "saveBtn": {
+    "message": "บันทึก"
+  },
+  "statusSaved": {
+    "message": "บันทึกการสนทนาแล้ว!"
+  },
+  "noResults": {
+    "message": "ไม่พบผลลัพธ์ 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 ส่งออก"
+  },
+  "importBtn": {
+    "message": "📂 นำเข้า"
+  },
+  "defaultFolder": {
+    "message": "ทั่วไป"
+  },
+  "defaultTitle": {
+    "message": "การสนทนาใหม่"
+  },
+  "promptRename": {
+    "message": "ชื่อการสนทนาใหม่:"
+  },
+  "alertEmptyExport": {
+    "message": "โฟลเดอร์และพรอมต์ของคุณว่างเปล่า ไม่มีอะไรให้ส่งออก!"
+  },
+  "alertImportSuccess": {
+    "message": "นำเข้าสำเร็จ! โฟลเดอร์และพรอมต์ของคุณถูกรวมเข้าด้วยกันเรียบร้อยแล้ว"
+  },
+  "alertImportError": {
+    "message": "เกิดข้อผิดพลาดในการนำเข้า ตรวจสอบให้แน่ใจว่าเป็นไฟล์ JSON ที่ถูกต้องที่สร้างโดยส่วนขยายนี้"
+  },
+  "btnRename": {
+    "message": "เปลี่ยนชื่อ"
+  },
+  "btnDelete": {
+    "message": "ลบ"
+  },
+  "btnNewFolder": {
+    "message": "➕ โฟลเดอร์"
+  },
+  "promptNewFolder": {
+    "message": "โฟลเดอร์ใหม่:"
+  },
+  "btnDeleteFolder": {
+    "message": "ลบโฟลเดอร์"
+  },
+  "confirmDeleteFolder": {
+    "message": "โฟลเดอร์นี้มีการสนทนาอยู่ คุณแน่ใจหรือไม่ว่าต้องการลบ?"
+  },
+  "btnPin": {
+    "message": "ปักหมุด"
+  },
+  "btnUnpin": {
+    "message": "เลิกปักหมุด"
+  },
+  "sortNewest": {
+    "message": "ใหม่ที่สุด"
+  },
+  "sortOldest": {
+    "message": "เก่าที่สุด"
+  },
+  "sortAlpha": {
+    "message": "A ถึง Z"
+  },
+  "ctxMenuSave": {
+    "message": "บันทึกไปยังโฟลเดอร์ AI"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(ไม่มีโฟลเดอร์ - เปิดส่วนขยาย)"
+  },
+  "btnToggleAdd": {
+    "message": "เพิ่มการสนทนา"
+  },
+  "btnCancel": {
+    "message": "ปิด"
+  },
+  "btnRenameFolder": {
+    "message": "เปลี่ยนชื่อโฟลเดอร์"
+  },
+  "promptRenameFolder": {
+    "message": "ชื่อใหม่:"
+  },
+  "errorFolderExists": {
+    "message": "มีโฟลเดอร์ที่ใช้ชื่อนี้อยู่แล้ว"
+  },
+  "storageCalc": {
+    "message": "กำลังคำนวณพื้นที่..."
+  },
+  "storageInfo": {
+    "message": "พื้นที่เก็บข้อมูล: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "บันทึกการสนทนา"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ บันทึกด่วน"
+  },
+  "toastSaved": {
+    "message": "✅ บันทึกไปยังโฟลเดอร์ AI แล้ว!"
+  },
+  "btnOpenGroup": {
+    "message": "เปิดในกลุ่มแท็บ"
+  },
+  "confirmOpenManyTabs": {
+    "message": "คุณต้องการเปิด {count} แท็บพร้อมกันจริงหรือ?"
+  },
+  "errorTabGroup": {
+    "message": "ข้อผิดพลาด: ไม่สามารถสร้างกลุ่มแท็บได้ คุณยอมรับสิทธิ์ใหม่แล้วหรือยัง?"
+  },
+  "bulkSelected": {
+    "message": "เลือก {count} รายการ"
+  },
+  "bulkMove": {
+    "message": "ย้ายไปที่..."
+  },
+  "bulkDelete": {
+    "message": "ลบ"
+  },
+  "confirmBulkDelete": {
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบการสนทนา {count} รายการนี้?"
+  },
+  "bulkCancel": {
+    "message": "ยกเลิกการเลือก"
+  },
+  "masterFolderName": {
+    "message": "โฟลเดอร์ AI (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "สร้างโฟลเดอร์ที่ซิงค์ในบุ๊กมาร์ก Chrome เพื่อเข้าถึงการสนทนาบนโทรศัพท์ของคุณ"
+  },
+  "modalBtnCancel": {
+    "message": "ยกเลิก"
+  },
+  "modalBtnConfirm": {
+    "message": "ยืนยัน"
+  },
+  "emojiTipPlaceholder": {
+    "message": "เคล็ดลับ: เริ่มด้วยอีโมจิ (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ บันทึกแล้ว!"
+  },
+  "folderModeTitle": {
+    "message": "โหมดโฟลเดอร์"
+  },
+  "promptModeTitle": {
+    "message": "โหมดพรอมต์"
+  },
+  "promptCannotBeEmpty": {
+    "message": "พรอมต์ต้องไม่ว่างเปล่า!"
+  },
+  "promptSaved": {
+    "message": "บันทึกพรอมต์แล้ว!"
+  },
+  "promptDuplicateWarning": {
+    "message": "มีพรอมต์ที่ใช้ชื่อนี้อยู่แล้ว ต้องการเขียนทับหรือไม่?"
+  },
+  "promptNoSavedYet": {
+    "message": "ยังไม่มีพรอมต์ที่บันทึกไว้"
+  },
+  "promptAddBtn": {
+    "message": "เพิ่มพรอมต์"
+  },
+  "promptCopyTitle": {
+    "message": "คัดลอก"
+  },
+  "promptDeleteTitle": {
+    "message": "ลบ"
+  },
+  "newConversationBtn": {
+    "message": "การสนทนาใหม่"
+  },
+  "promptTitlePlaceholder": {
+    "message": "ชื่อพรอมต์"
+  },
+  "promptTextPlaceholder": {
+    "message": "เขียนพรอมต์ของคุณที่นี่..."
+  },
+  "syncPromptsTooltip": {
+    "message": "ซิงค์พรอมต์"
+  },
+  "promptRenamePrompt": {
+    "message": "ชื่อพรอมต์ใหม่:"
+  },
+  "confirmDeletePrompt": {
+    "message": "ลบพรอมต์นี้?"
+  },
+  "promptInsertBtn": {
+    "message": "แทรกในแชท"
+  },
+  "promptPinTitle": {
+    "message": "ปักหมุด"
+  },
+  "newConv_gemini": {
+    "message": "บทสนทนา Gemini ใหม่"
+  },
+  "newConv_claude": {
+    "message": "บทสนทนา Claude ใหม่"
+  },
+  "newConv_chatgpt": {
+    "message": "บทสนทนา ChatGPT ใหม่"
+  },
+  "newConv_copilot": {
+    "message": "บทสนทนา Copilot ใหม่"
+  },
+  "newConv_perplexity": {
+    "message": "บทสนทนา Perplexity ใหม่"
+  },
+  "newConv_local": {
+    "message": "บทสนทนา LLM ในเครื่องใหม่ (กดค้างเพื่อตั้งค่า URL)"
+  },
+  "setLocalUrl": {
+    "message": "ตั้งค่า URL ของ LLM ในเครื่อง:"
+  },
+  "alertNotSupported": {
+    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot หรือ Perplexity)"
+  },
+  "alertEditorNotFound": {
+    "message": "ไม่พบช่องป้อนข้อความในหน้านี้ ลองคลิกที่ตัวแก้ไขก่อน แล้วจึงใช้ปุ่มแทรก"
+  }
+}
