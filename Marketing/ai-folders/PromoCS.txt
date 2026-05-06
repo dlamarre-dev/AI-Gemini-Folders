@@ -1,0 +1,63 @@
+Používáte Google Gemini každý den — pro práci, kód, psaní nebo výzkum — ale stále dokola píšete stejné výzvy a vaše nejlepší konverzace mizí v nekonečné historii?
+AI složky (AI složky) je rozšíření, které potřebujete.
+
+S verzí 4.0 se AI složky stávají vaším skutečným kokpitem pro Gemini: organizujte konverzace do složek, vybudujte knihovnu opakovaně použitelných výzev a vkládejte je přímo do Gemini jedním kliknutím — bez kopírování a vkládání.
+
+✨ NOVINKA v4.0 — REŽIM VÝZEV
+
+📝 Osobní knihovna výzev: Přepněte do režimu výzev jedním kliknutím na přepínač v záhlaví. Ukládejte nejlepší výzvy s názvem a úplným textem a okamžitě je najděte díky vyhledávání a řazení (nejnovější, nejstarší, A-Z).
+▶ Vložení jedním kliknutím: Konec kopírování a vkládání. Klikněte na tlačítko přehrávání (▶) u uložené výzvy a vloží se přímo do vstupního pole Gemini. Rozšíření zjistí, zda jste na stránce Gemini, a pokud ne, upozorní vás.
+✏️ Úprava na místě: Klikněte na výzvu, rozbalte ji a přímo upravte text. Změny se automaticky uloží po krátkém okamžiku a pořadí řazení se odpovídajícím způsobem aktualizuje.
+🔀 Tlačítka nové konverzace: Spusťte novou konverzaci na ChatGPT, Claude, Copilot, Gemini nebo Perplexity přímo z režimu promptů — jedno tlačítko na službu.
+☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
+📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
+
+🌟 FUNKCE SLOŽEK
+
+⚡ Rychlé uložení (Pravý klik a Zkratky): Uložte konverzaci jednoduchým pravým kliknutím nebo klávesovými zkratkami (Ctrl+Shift+S nebo Cmd+Shift+S na Macu) a okamžitě ji odešlete do „⚡ Rychlých uložení" — s vizuálním upozorněním, pokud je již uložena!
+☑️ Vícenásobný výběr (Hromadné akce): Pomocí zaškrtávacích políček vyberte více konverzací a přesuňte nebo odstraňte je jedním kliknutím.
+📑 Integrace skupin karet: Otevřete celou složku jedním kliknutím jako nativní barevnou skupinu karet Chrome.
+😃 Vlastní emoji: Začněte název složky emojí (např. „💻 Kód") a výchozí ikona se nahradí.
+🖱️ Přetažení: Přeorganizujte pracovní prostor přetažením konverzací mezi složkami.
+📱 Mobilní synchronizace: Přepínač vytvoří zrcadlovou složku v záložkách Chrome, která dokonale reprodukuje strukturu složek a pořadí řazení v telefonu.
+🗜️ Ultraefektivní komprese: Automaticky komprimuje data (LZString), čímž maximalizuje nativní úložiště Chrome a umožňuje uložit stovky konverzací.
+📊 Sledovač úložiště: Vizuální lišta průběhu zobrazuje dostupné cloudové úložiště v reálném čase.
+📁 Vlastní složky a Připnutí: Třiďte konverzace podle projektů, témat nebo kategorií. Připněte (📌) oblíbené složky na vrchol.
+⇅ Vlastní řazení: Řaďte složky a konverzace okamžitě (Nejnovější, Nejstarší, A-Z) s okamžitým odrazem v mobilní synchronizaci.
+🤖 Inteligentní detekce a Vyhledávání: Automatické vyplnění přesného názvu konverzace a panel vyhledávání v reálném čase.
+☁️ Cloudová synchronizace a Záloha: Přístup k organizaci na všech zařízeních a export dat v JSON.
+🎨 Dizajn Material 3 a Vícejazyčnost: Ultrakompaktní rozhraní s plně vlastními dialogovými okny, automatickým tmavým režimem a podporou 27 jazyků!
+
+🛠️ JAK TO FUNGUJE?
+
+Režim složek:
+Otevřete konverzaci na the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Rychlé uložení: Ctrl+Shift+S (nebo Cmd+Shift+S na Macu), nebo pravý klik > „Uložit do Složek Gemini".
+Přes rozšíření: Klikněte na ikonu, vyberte složku, uložte.
+Mobilní: Aktivujte 📱 v zápatí a synchronizujte složky s telefonem.
+Používejte zaškrtávací políčka pro hromadné akce, otevírejte složky jako skupiny karet (📑), přetahujte pro reorganizaci!
+
+Režim výzev:
+Klikněte na 📝 na přepínači v pravém horním rohu rozšíření.
+Klikněte na ➕ Přidat výzvu, zadejte název a text, uložte.
+Chcete-li použít výzvu: rozbalte ji a klikněte na ▶ — vloží se přímo do Gemini, připravena k odeslání.
+Nakonfigurujte 💎, aby ukazoval na váš vlastní Gem.
+Připnout výzvu: klikněte na 📍 — přesune se na začátek seznamu a je vždy po ruce.
+
+🔒 SOUKROMÍ A BEZPEČNOST
+Navrženo se soukromím v centru. Vyžaduje přístup pouze k the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) a čte aktivní kartu pouze při ukládání konverzace nebo vkládání výzvy. Oprávnění „Záložky" se používá pouze pokud aktivujete mobilní synchronizaci. Ukládání přes Chrome Sync: žádné servery třetích stran, žádná telemetrie.
+
+🤝 OPEN SOURCE PROJEKT
+AI složky jsou open source projekt vyvíjený s vášní. Transparentnost a respekt k vašemu soukromí jsou naše priority. Jste vývojář nebo jen zvědavý? Prohlédněte si kód, sledujte historii změn nebo přispějte na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 AKTUALIZACE:
+Verze 4.1 (Globální expanze a zpevnění): 16 nových jazyků přivádí Gemini Složky na 43 lokalizací po celém světě — severské jazyky, pobaltské státy a rozšířené evropské a jihovýchodoasijské pokrytí. Opravena race condition, která mohla při rychlých kliknutích tiše zahodit uložení. Vkládání výzev modernizováno pomocí InputEvent, nahrazení zastaralého execCommand. Importní kanál zabezpečen proti škodlivým URL v záložních souborech.
+Verze 4.0 (Knihovna výzev): Nejambicióznější aktualizace dosud! AI složky získávají zcela nový režim výzev: ukládejte nejlepší výzvy, upravujte je na místě a vkládejte je přímo do Gemini jedním kliknutím. Přidáno: animovaný přepínač režimů, vyhledávání a řazení v režimu výzev, tlačítko vlastního Gem a nezávislá synchronizace výzev. Připnutí nejdůležitějších výzev na vrchol knihovny.
+Verze 3.5 (Pevné základy a vylepšená zkušenost): Velká interní aktualizace pro profesionální robustnost! Vizuální upozornění při duplicitním uložení. Konec falešným duplikátům ze změn URL Gemini, databáze chráněná před poškozením.
+Verze 3.4.1 (Multisystémová síla a stabilita): Úspěšný přenos na Mozilla Firefox. Definitivní oprava chyby s duplikátními složkami záložek při mobilní synchronizaci.
+Verze 3.3 (Prémiový design a mezinárodní rozšíření): Nové plně vlastní dialogy Material 3, mobilní synchronizace podle pořadí řazení a 10 nových jazyků!
+Verze 3.2 (Mobilní a Open Source): Mobilní synchronizace přes záložky Chrome, inteligentní řazení připnutých složek, ultrakompaktní zápatí a spuštění open source.
+Verze 3.1 (Vylepšení UX): Stabilizace Drag & Drop, zaškrtávací políčka v tmavém režimu, inteligentní uzamčení rozhraní při hromadných akcích.
+Verze 3.0 (Aktualizace produktivity): Klávesové zkratky, vícenásobný výběr, skupiny karet, vlastní emoji, komprese dat a lišta úložiště.
+Verze 2.0: Zásadní redesign s Drag & Drop, kontextovým menu, vlastním řazením, připnutím a designem Material 3.
+Verze 1.0: První vydání! Uspořádejte konverzace z Gemini, Claude, ChatGPT, Copilot a Perplexity do sdílených složek. Kompletní knihovna promptů s vkládáním jedním kliknutím, zkratky rychlého ukládání, přetahování, mobilní synchronizace, hromadné akce, skupiny karet a podpora 43 jazyků. Podpora lokálních LLM s konfigurovatelnou URL (localhost a LAN adresy).

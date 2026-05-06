@@ -1,0 +1,61 @@
+Vai izmanto Google Gemini katru dienu – darbam, kodēšanai, rakstīšanai vai pētīšanai – bet turpini rakstīt tos pašus uzdevumus no jauna, kamēr labākās sarunas pazūd bezgalīgajā vēsturē?
+AI mapes (AI mapes) ir paplašinājums, kas tev nepieciešams.
+
+Ar versiju 4.0 AI mapes kļūst par tavu īsto Gemini cockpit: organizē sarunas mapēs, veido atkārtoti lietojamu uzvedņu bibliotēku un ievietojiet tās tieši Gemini ar vienu klikšķi – bez kopēšanas un ielīmēšanas.
+
+✨ JAUNUMS V4.0 – UZVEDŅU REŽĪMS
+
+📝 Personīgā uzvedņu bibliotēka: Pārslēdzies uz Uzvedņu režīmu ar vienu klikšķi uz galvenes slēdža. Saglabā labākās uzvednes ar virsrakstu un tekstu, atrod tās uzreiz ar meklēšanu un kārtošanu (jaunākās, vecākās, A–Z).
+▶ Ievietošana ar vienu klikšķi: Noklikšķini uz atskaņošanas pogas (▶) uz saglabātas uzvednes, lai to ievietotu tieši Gemini ievades laukā.
+✏️ Tiešā rediģēšana: Noklikšķini, lai izvērstu uzvedni, un rediģē tekstu tieši. Izmaiņas tiek saglabātas automātiski pēc īsas pauzes.
+🔀 Jaunas sarunas pogas: Sāciet jaunu sarunu ChatGPT, Claude, Copilot, Gemini vai Perplexity tieši no uzvedņu režīma — viena poga katram pakalpojumam.
+☁️ Uzvedņu sinhronizācija: Iespējo mākoņa sinhronizāciju uzvedņu bibliotēkai neatkarīgi no mapēm.
+📌 Piespraustas uzvednes: Piespreudz svarīgas uzvednes bibliotēkas augšdaļā.
+
+🌟 MAPJU FUNKCIJAS
+
+⚡ Ātrā saglabāšana (Labais klikšķis un saīsnes): Saglabā pašreizējo sarunu ar vienkāršu labo klikšķi vai izmanto tastatūras saīsni (Ctrl+Shift+S vai Cmd+Shift+S Mac datorā), lai to nosūtītu uz «⚡ Ātrā saglabāšana» – ar vizuālu brīdinājumu, ja tā jau ir saglabāta!
+☑️ Vairāku elementu atlase (Masveida darbības): Atlasi vairākas sarunas, izmantojot izvēles rūtiņas, lai tās pārvietotu vai dzēstu ar vienu klikšķi.
+📑 Cilņu grupas integrācija: Atver visu mapi ar vienu klikšķi kā vietējo, krāsaino Chrome cilņu grupu.
+😃 Pielāgoti mapes emodzi: Sāc mapes nosaukumu ar emodzi (piem. «💻 Kods»), lai aizstātu noklusējuma mapes ikonu.
+🖱️ Vilkt un nomest: Pārvieto sarunas starp mapēm.
+📱 Mobilā sinhronizācija: Spoguļo mapju struktūru Chrome grāmatzīmēs piekļuvei no tālruņa.
+🗜️ Ārkārtīgi efektīva saspiešana: Automātiski saspiež datus (LZString), lai maksimizētu Chrome glabātuvi.
+📊 Krātuves izsekotājs: Vizuāls norises rādītājs reālajā laikā parāda pieejamo mākoņa glabātuvi.
+📁 Pielāgotas mapes un piespraustas izlases: Organizē sarunas pēc projektiem, tēmām vai kategorijām.
+⇅ Pielāgota kārtošana: Kārtoj mapes un sarunas (Jaunākās, Vecākās, A–Z) ar izmaiņām, kas tūlīt atspoguļojas mobilajā sinhronizācijā.
+🤖 Viedā noteikšana un meklēšana: Automātiska sarunas precīzā virsraksta aizpildīšana un reāllaika meklēšanas josla.
+☁️ Mākoņa sinhronizācija un dublēšana: Piekļuve organizācijai visās ierīcēs un datu eksportēšana JSON formātā.
+🎨 Material 3 dizains un daudzvalodu: Īpaši kompakts interfeiss ar pilnībā pielāgotiem modālo dialogu logiem, automātisks tumšais režīms un atbalsts 27 valodām!
+
+🛠️ KĀ TAS DARBOJAS?
+
+Mapju režīms:
+Atver sarunu vietnē the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Ātrā saglabāšana: Ctrl+Shift+S (vai Cmd+Shift+S Mac datorā), vai labais klikšķis > «Saglabāt Gemini Mapēs».
+Caur paplašinājumu: Noklikšķini uz ikonas, izvēlies mapi un saglabā.
+Mobilais: Atzīmē 📱 kājenē, lai sinhronizētu mapes ar tālruni.
+
+Uzvedņu režīms:
+Noklikšķini uz 📝 uz slēdža paplašinājuma augšējā labajā stūrī.
+Noklikšķini ➕ Pievienot uzvedni, ievadi virsrakstu un tekstu un saglabā.
+Uzvednes izmantošanai: izvērst to un noklikšķini ▶ – tā tiek ievietota tieši Gemini.
+Konfigurē 💎, lai norādītu uz savu Gem.
+Uzvednes piespraudīšanai: noklikšķini 📍 – tā tiek pārvietota saraksta augšgalā.
+
+🔒 PRIVĀTUMS UN DROŠĪBA
+Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot Chrome Sync: nav trešo pušu serveru, nav telemetrijas.
+
+🤝 ATVĒRTĀ PIRMKODA PROJEKTS
+AI mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība un cieņa pret tavu privātumu ir mūsu augstākās prioritātes. Vai esi izstrādātājs vai vienkārši ziņkārīgs? Pārlūkojiet kodu, sekojiet izmaiņu žurnālam vai piedalieties GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 ATJAUNINĀJUMI:
+Versija 4.1 (Globālā paplašināšanās un nostiprināšana): 16 jaunas valodas ceļ AI mapes līdz 43 lokalizācijām visā pasaulē — ziemeļvalstu valodas, Baltijas valstis un paplašināts Eiropas un Dienvidaustrumāzijas pārklājums. Novērsts sacensību nosacījums, kas strauju klikšķu gadījumā varēja klusi pazaudēt saglabājumu. Uzvednes ievietošana modernizēta ar InputEvent, aizstājot novecojušo execCommand. Importa cauruļvads nocietināts pret ļaunprātīgiem URL rezerves failos.
+Versija 4.0 (Uzvedņu bibliotēka): Līdz šim vērienīgākais atjauninājums! AI mapes iegūst pilnīgi jaunu Uzvedņu režīmu: saglabā labākās uzvednes, rediģē tās tiešsaistē un ievietoj tieši Gemini ar vienu klikšķi.
+Versija 3.5 (Stabili pamati un uzlabota pieredze): Liels iekšējs atjauninājums profesionālai uzticamībai!
+Versija 3.4.1 (Daudzplatformu jauda un stabilitāte): Veiksmīgi portēts uz Mozilla Firefox ar automatizētu būvēšanas sistēmu.
+Versija 3.3 (Premium dizains un starptautisks): Jauni Material 3 dialogi, mobilā sinhronizācija un 10 jaunas valodas!
+Versija 3.2 (Mobilais un atvērtais pirmkods): Viedā mobilā sinhronizācija, izmantojot Chrome grāmatzīmes, un oficiālā atvērtā pirmkoda palaišana.
+Versija 3.0 (Produktivitātes atjauninājums): Tastatūras saīsnes, vairāku elementu atlase, cilņu grupas, pielāgoti emodzi, datu saspiešana un krātuves josla.
+Versija 2.0: Liela pārveidošana ar Vilkt un nomest, konteksta izvēlni, pielāgotu kārtošanu, piespraudīšanu un Material 3 dizainu.
+Versija 1.0: Pirmais laidiens! Kārtojiet sarunas no Gemini, Claude, ChatGPT, Copilot un Perplexity koplietotās mapēs. Pilna uzvedņu bibliotēka ar viena klikšķa ievietošanu, ātrās saglabāšanas īsinājumtaustiņi, vilkšana un nomešana, mobilo ierīču sinhronizācija, lielapjoma darbības, ciļņu grupas un atbalsts 43 valodām.

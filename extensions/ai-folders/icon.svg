@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <!-- Background: diagonal gradient covering the five brand colors -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#4285F4"/>
+      <stop offset="30%"  stop-color="#10a37f"/>
+      <stop offset="60%"  stop-color="#D97757"/>
+      <stop offset="100%" stop-color="#22B8CD"/>
+    </linearGradient>
+    <!-- Soft inner glow for the stars -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rounded-square background -->
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+
+  <!-- Top-right star (Gemini-style smooth 4-pointed star) -->
+  <path filter="url(#glow)"
+    d="M88 16 C88 26 93 31 104 34 C93 37 88 42 88 52 C88 42 83 37 72 34 C83 31 88 26 88 16 Z"
+    fill="white" opacity="0.95"/>
+
+  <!-- Bottom-left star (identical shape, mirrored position) -->
+  <path filter="url(#glow)"
+    d="M40 76 C40 86 45 91 56 94 C45 97 40 102 40 112 C40 102 35 97 24 94 C35 91 40 86 40 76 Z"
+    fill="white" opacity="0.95"/>
+</svg>

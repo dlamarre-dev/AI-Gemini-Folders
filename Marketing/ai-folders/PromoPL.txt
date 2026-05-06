@@ -1,0 +1,65 @@
+Twoje rozmowy z AI są rozrzucone po pięciu różnych stronach. Ciągle przepisujesz te same prompty. Twoje najlepsze czaty znikają w nieskończonych historiach na Gemini, Claude, ChatGPT, Copilot i Perplexity.
+Foldery AI to rozszerzenie, którego potrzebujesz.
+
+W wersji 4.0 Foldery AI stają się Twoim prawdziwym centrum sterowania Gemini: organizuj rozmowy w folderach, buduj bibliotekę wielokrotnego użytku promptów i wstrzykuj je bezpośrednio do Gemini jednym kliknięciem — bez kopiowania i wklejania.
+
+✨ NOWOŚĆ w v4.0 — TRYB PROMPTÓW
+
+📝 Osobista biblioteka promptów: Przełącz się na tryb promptów jednym kliknięciem przełącznika w nagłówku. Zapisuj najlepsze prompty z tytułem i pełnym tekstem, a potem znajdź je błyskawicznie dzięki wyszukiwaniu i sortowaniu (najnowsze, najstarsze, A-Z).
+▶ Wstrzyknięcie jednym kliknięciem: Koniec z kopiowaniem i wklejaniem. Kliknij przycisk odtwarzania (▶) przy dowolnym zapisanym prompcie, aby wstrzyknąć go bezpośrednio w pole tekstowe Gemini. Rozszerzenie wykrywa, czy jesteś na stronie Gemini, i powiadamia Cię, jeśli nie.
+✏️ Edycja w miejscu: Kliknij prompt, aby go rozwinąć i edytować tekst bezpośrednio. Zmiany zapisują się automatycznie po krótkiej chwili, a kolejność sortowania aktualizuje się odpowiednio.
+🔀 Przyciski Nowej Rozmowy: Rozpocznij nową rozmowę na ChatGPT, Claude, Copilot, Gemini lub Perplexity bezpośrednio z Trybu Promptów — jeden przycisk na serwis.
+☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
+📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
+
+🌟 FUNKCJE FOLDERÓW
+
+⚡ Szybkie Zapisywanie (Prawy przycisk i Skróty): Zapisz rozmowę prawym przyciskiem myszy lub skrótem klawiszowym (Ctrl+Shift+S lub Cmd+Shift+S na Mac), aby natychmiast wysłać ją do „⚡ Szybkich Zapisów" — z wizualnym alertem, jeśli już jest zapisana!
+☑️ Wielokrotny Wybór (Akcje zbiorcze): Zaznacz kilka rozmów za pomocą pól wyboru, aby przenieść je lub usunąć jednym kliknięciem.
+📑 Integracja z Grupami kart: Otwórz cały folder jednym kliknięciem jako natywną, kolorową Grupę kart Chrome.
+😃 Niestandardowe emoji: Zacznij nazwę folderu od emoji (np. „💻 Kod"), aby zastąpić domyślną ikonę.
+🖱️ Przeciągnij i Upuść: Reorganizuj swoje miejsce pracy, przeciągając rozmowy między folderami.
+📱 Synchronizacja Mobilna: Przełącznik generuje lustrzany folder w zakładkach Chrome, doskonale odwzorowując strukturę folderów i kolejność sortowania na telefonie.
+🗜️ Ultraefektywna kompresja: Automatycznie kompresuje Twoje dane (LZString), aby zmaksymalizować natywne przechowywanie Chrome i zapisać setki rozmów.
+📊 Wskaźnik miejsca: Wizualny pasek postępu pokazuje dostępne miejsce w chmurze w czasie rzeczywistym.
+📁 Foldery na miarę i Przypinanie: Klasyfikuj rozmowy według projektów, tematów lub kategorii. Przypnij (📌) ulubione foldery na górze.
+⇅ Niestandardowe sortowanie: Sortuj foldery i rozmowy na bieżąco (Najnowsze, Najstarsze, A-Z) z natychmiastowym odzwierciedleniem w synchronizacji mobilnej.
+🤖 Inteligentne wykrywanie i Wyszukiwanie: Automatyczne uzupełnianie dokładnego tytułu rozmowy i pasek wyszukiwania w czasie rzeczywistym.
+☁️ Synchronizacja w chmurze i Kopia zapasowa: Dostęp do swojej organizacji na wszystkich urządzeniach i eksport danych w formacie JSON.
+🎨 Design Material 3 i Wielojęzyczność: Ultrakompaktowy interfejs z w pełni niestandardowymi oknami dialogowymi, automatycznym trybem ciemnym i obsługą 27 języków!
+
+🛠️ JAK TO DZIAŁA?
+
+Tryb Folderów:
+Otwórz rozmowę na the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Szybki zapis: Ctrl+Shift+S (lub Cmd+Shift+S na Mac), lub prawy przycisk > „Zapisz w Folderach Gemini".
+Przez rozszerzenie: Kliknij ikonę, wybierz folder, zapisz.
+Mobilny: Aktywuj 📱 w stopce, aby synchronizować foldery z telefonem.
+Używaj pól wyboru do akcji zbiorczych, otwieraj foldery jako Grupy kart (📑), przeciągaj, aby reorganizować!
+
+Tryb Promptów:
+Kliknij 📝 na przełączniku w prawym górnym rogu rozszerzenia.
+Kliknij ➕ Dodaj Prompt, wpisz tytuł i tekst, zapisz.
+Aby użyć promptu: rozwiń go i kliknij ▶ — zostaje wstrzyknięty bezpośrednio do Gemini, gotowy do wysłania.
+Skonfiguruj 💎, aby wskazywał Twój niestandardowy Gem.
+Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jest zawsze pod ręką.
+
+🔒 PRYWATNOŚĆ I BEZPIECZEŃSTWO
+Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) i odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez Chrome Sync: bez serwerów zewnętrznych, bez telemetrii.
+
+🤝 PROJEKT OPEN SOURCE
+Foldery AI to projekt open source tworzony z pasją. Przejrzystość i poszanowanie Twojej prywatności to nasze priorytety. Jesteś programistą lub po prostu ciekawskim? Przejrzyj kod, śledź historię zmian lub wnieś wkład na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 AKTUALIZACJE:
+Wersja 4.1 (Globalna ekspansja i wzmocnienie): 16 nowych języków wprowadza Gemini Foldery do 43 lokalizacji na całym świecie — języki nordyckie, kraje bałtyckie oraz rozszerzone pokrycie europejskie i południowoazjatyckie. Naprawiono wyścig, który mógł po cichu pominąć zapis przy szybkich kliknięciach. Wstrzykiwanie promptów unowocześnione za pomocą InputEvent, zastępując przestarzałe execCommand. Pipeline importu zabezpieczony przed złośliwymi adresami URL w plikach kopii zapasowych.
+Wersja 4.0 (Biblioteka Promptów): Najbardziej ambitna aktualizacja! Foldery AI otrzymują zupełnie nowy tryb promptów: zapisuj najlepsze prompty, edytuj je w miejscu i wstrzykuj bezpośrednio do Gemini jednym kliknięciem. Dodano: animowany przełącznik trybów, wyszukiwanie i sortowanie w trybie promptów, przycisk niestandardowego Gem i niezależną synchronizację promptów. Przypinanie najważniejszych podpowiedzi na górze biblioteki.
+Wersja 3.5 (Solidne Podstawy i Ulepszone Doświadczenie): Duża aktualizacja „pod maską" dla profesjonalnej niezawodności! Wizualny alert dla duplikatów. Koniec fałszywych duplikatów z powodu zmian URL Gemini, baza danych chroniona przed uszkodzeniami.
+Wersja 3.4.1 (Moc Wieloplatformowa i Stabilność): Pomyślnie przeniesione na Mozilla Firefox. Ostateczna naprawa błędu duplikatów folderów zakładek przy synchronizacji mobilnej.
+Wersja 3.3 (Premium Design i Internacjonalizacja): Nowe w pełni niestandardowe okna dialogowe Material 3, mobilna synchronizacja według kolejności sortowania i 10 nowych języków!
+Wersja 3.2 (Mobilna i Open Source): Mobilna synchronizacja przez zakładki Chrome, inteligentne sortowanie przypiętych folderów, ultrakompaktowa stopka i launch open source.
+Wersja 3.1 (Ulepszenia UX): Stabilizacja Drag & Drop, pola wyboru w trybie ciemnym, inteligentna blokada interfejsu podczas akcji zbiorczych.
+Wersja 3.0 (Aktualizacja Produktywności): Skróty klawiszowe, wielokrotny wybór, grupy kart, niestandardowe emoji, kompresja danych i pasek miejsca.
+Wersja 2.0: Pełna przebudowa z Drag & Drop, menu kontekstowym, niestandardowym sortowaniem, przypinaniem i designem Material 3.
+
+📢 VERSION:
+Wersja 1.0: Pierwsze wydanie! Organizuj rozmowy z Gemini, Claude, ChatGPT, Copilot i Perplexity we wspólnych folderach. Pełna biblioteka promptów z wstawianiem jednym kliknięciem, skróty szybkiego zapisu, przeciąganie i upuszczanie, synchronizacja mobilna, akcje zbiorcze, grupy kart i obsługa 43 języków. Obsługa lokalnych LLM z konfigurowalnym URL (localhost i adresy LAN).

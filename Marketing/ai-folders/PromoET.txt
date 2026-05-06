@@ -1,0 +1,61 @@
+Kasutad Google Gemini iga päev – töö, koodi kirjutamise, kirjutamise või uurimise jaoks – kuid kirjutad samu prompte uuesti ja uuesti, samal ajal kui sinu parimad vestlused kaovad lõpmatutesse ajaloohoidlatesse?
+AI kaustad (AI kaustad) on laiendus, mida vajad.
+
+Versiooniga 4.0 saab AI kaustadest sinu tõeline Gemini cockpit: korralda vestlused kaustadesse, loo korduvkasutatavate promptide kogu ja lisa need otse Geminisse ühe klikiga – kopeerimine ja kleepimine pole vajalik.
+
+✨ UUS V4.0-S – PROMPTI REŽIIM
+
+📝 Isiklik promptide kogu: Lülitu Prompti režiimile, klõpsates päise lülitit. Salvesta oma parimad promptid pealkirja ja tekstiga, leia need koheselt otsingu ja sortimisega (uusimad, vanimad, A–Z).
+▶ Lisa ühe klikiga: Klõpsa salvestatud prompti esitamisnuppu (▶), et lisada see otse Gemini sisestusväljale.
+✏️ Otsene redigeerimine: Klõpsa prompti laiendamiseks ja redigeeri teksti otse. Muudatused salvestatakse automaatselt lühikese pausi järel.
+🔀 Uue vestluse nupud: Alustage uut vestlust ChatGPT-s, Claudes, Copilotis, Geminis või Perplexitys otse viipade režiimist — üks nupp teenuse kohta.
+☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
+📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
+
+🌟 KAUSTADE FUNKTSIOONID
+
+⚡ Kiirsalvestus (Paremklõps ja otseteed): Salvesta praegune vestlus lihtsa paremklõpsuga või kasuta klaviatuuri otseteed (Ctrl+Shift+S või Cmd+Shift+S Macis), et saata see «⚡ Kiirsalvestus» kausta – visuaalse teavitusega, kui see on juba salvestatud!
+☑️ Mitmikvalik (Hulktegevused): Vali mitu vestlust märkeruutude abil, et liigutada või kustutada need ühe klikiga.
+📑 Vahekaardi grupi integratsioon: Ava terve kaust ühe klikiga natiivsena, värvikodeeritud Chrome'i vahekaardi grupina.
+😃 Kohandatud kausta emojid: Alusta kausta nime emojiga (nt «💻 Kood»), et asendada vaikimisi kausta ikoon.
+🖱️ Lohista ja kukuta: Liiguta vestlusi kaustade vahel.
+📱 Mobiilsünkroonimine: Peegeldab sinu kaustade struktuuri Chrome'i järjehoidjates telefonis juurdepääsuks.
+🗜️ Ülitõhus pakkimine: Pakkib andmed automaatselt (LZString), et maksimeerida Chrome'i salvestusruumi.
+📊 Salvestusruumi jälgija: Visuaalne edenemisriba näitab saadaolevat pilvsalvestusruumi reaalajas.
+📁 Kohandatud kaustad ja kinnitatud lemmikud: Korralda vestlused projektide, teemade või kategooriate järgi.
+⇅ Kohandatud sortimine: Sordi kaustad ja vestlused (Uusimad, Vanimad, A–Z) muudatustega, mis kajastuvad kohe mobiilsünkroonimises.
+🤖 Nutikas tuvastamine ja otsing: Vestluse täpse pealkirja automaatne eeltäitmine ja reaalajas otsinguriiba.
+☁️ Pilvsünkroonimine ja varundamine: Juurdepääs oma korraldusse kõigis seadmetes ja andmete eksport JSON-ina.
+🎨 Material 3 disain ja mitmekeelne: Ülimalt kompaktne liides täiesti kohandatud modaaldialoogi akendega, automaatne tume režiim ja tugi 27 keelele!
+
+🛠️ KUIDAS SEE TÖÖTAB?
+
+Kaustade režiim:
+Ava vestlus aadressil the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Kiirsalvestus: Ctrl+Shift+S (või Cmd+Shift+S Macis) või paremklõps > «Salvesta AI kaustadesse».
+Laienduse kaudu: Klõpsa ikooni, vali kaust ja salvesta.
+Mobiil: Märgi 📱 jaluses kaustade sünkroonimiseks telefoniga.
+
+Prompti režiim:
+Klõpsa 📝 laienduse paremas ülanurgas asuval lülitil.
+Klõpsa ➕ Lisa prompt, sisesta pealkiri ja tekst ning salvesta.
+Prompti kasutamiseks: laienda see ja klõpsa ▶ – see lisatakse otse Geminisse.
+Seadista 💎 osutama oma Helmele.
+Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
+
+🔒 PRIVAATSUS JA TURVALISUS
+Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity)-ile ja loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.
+
+🤝 AVATUD LÄHTEKOODIGA PROJEKT
+AI kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 UUENDUSED:
+Versioon 4.1 (Globaalne laienemine ja karastamine): 16 uut keelt viib AI kaustad 43 lokalisatsioonini üle maailma — põhjamaised keeled, Balti riigid ning laiendatud Euroopa ja Kagu-Aasia katvus. Parandati race condition, mis võis kiirklõpsude korral salvestuse vaikselt kaotada. Prompti sisestamine moderniseeriti InputEvent-iga, asendades aegunud execCommand-i. Impordipipe hardeeriti varufailide pahatahtlike URL-ide vastu.
+Versioon 4.0 (Promptide kogu): Seni ambitsioonikam uuendus! AI kaustad saab täiesti uue Prompti režiimi: salvesta oma parimad promptid, redigeeri neid otse ja lisa need otse Geminisse ühe klikiga.
+Versioon 3.5 (Kindlad alused ja parem kogemus): Suur sisemine uuendus professionaalse töökindluse jaoks!
+Versioon 3.4.1 (Mitme platvormi jõud ja stabiilsus): Edukalt porditud Mozilla Firefoxile automaatse ehitussüsteemiga.
+Versioon 3.3 (Esmaklassiline disain ja rahvusvaheline): Uued Material 3 dialoogid, mobiilsünkroonimine ja 10 uut keelt!
+Versioon 3.2 (Mobiil ja avatud lähtekood): Nutikas mobiilsünkroonimine Chrome'i järjehoidjate kaudu ja ametlik avatud lähtekoodiga käivitamine.
+Versioon 3.0 (Tootlikkuse uuendus): Klaviatuuri otseteed, mitmikvalik, vahekaardi grupid, kohandatud emojid, andmete pakkimine ja salvestusriba.
+Versioon 2.0: Suuremahuline ümberkujundamine funktsioonidega Lohista ja kukuta, kontekstimenüü, kohandatud sortimine, kinnitamine ja Material 3 disain.
+Versioon 1.0: Esimene väljalase! Korraldage Gemini, Claude, ChatGPT, Copilot ja Perplexity vestlused jagatud kaustadesse. Täielik viipade teek ühe klõpsuga lisamisega, kiirsalvestuse otseteed, lohistamine, mobiilsünkroniseerimine, hulgioperatsioonid, vahelehtede rühmad ja tugi 43 keelele.

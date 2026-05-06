@@ -1,0 +1,63 @@
+Google Gemini'yi her gün kullanıyor musunuz — iş, kod, yazım veya araştırma için — ama aynı istemleri sürekli yeniden mi yazıyorsunuz? En iyi konuşmalarınız bitmek bilmez bir geçmişin içinde mi kayboluyor?
+AI Klasörleri (AI Klasörleri) tam aradığınız uzantı.
+
+Sürüm 4.0 ile AI Klasörleri, gerçek Gemini kokpitiniz haline geliyor: konuşmalarınızı klasörlere düzenleyin, yeniden kullanılabilir istemlerden oluşan bir kütüphane oluşturun ve tek tıklamayla Gemini'ye doğrudan enjekte edin — kopyala-yapıştır yok.
+
+✨ v4.0'IN YENİLİKLERİ — İSTEM MODU
+
+📝 Kişisel İstem Kütüphanesi: Üst bilgideki geçiş düğmesine tek tıkla İstem Modu'na geçin. En iyi istemlerinizi başlık ve tam metinle kaydedin, arama ve sıralama (en yeni, en eski, A-Z) ile anında bulun.
+▶ Tek Tıkla Enjeksiyon: Artık kopyala-yapıştır yok. Kayıtlı herhangi bir istemin oynat düğmesine (▶) tıklayın, Gemini'nin giriş alanına doğrudan enjekte edin. Uzantı, Gemini sayfasında olup olmadığınızı algılar ve değilseniz sizi uyarır.
+✏️ Yerinde Düzenleme: İstemi genişletmek için tıklayın ve metni doğrudan düzenleyin. Değişiklikler kısa bir duraklamadan sonra otomatik kaydedilir ve sıralama buna göre güncellenir.
+🔀 Yeni Konuşma Düğmeleri: Prompt Modundan doğrudan ChatGPT, Claude, Copilot, Gemini veya Perplexity'de yeni bir konuşma başlatın — her hizmet için bir düğme.
+☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
+📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
+
+🌟 KLASÖR ÖZELLİKLERİ
+
+⚡ Hızlı Kayıt (Sağ Tık & Kısayollar): Basit bir sağ tıklamayla mevcut konuşmayı kaydedin veya klavye kısayolunu (Ctrl+Shift+S ya da Mac'te Cmd+Shift+S) kullanarak anında "⚡ Hızlı Kayıtlar"a gönderin — zaten kaydedilmişse görsel uyarıyla!
+☑️ Çoklu Seçim (Toplu İşlemler): Birden fazla konuşmayı onay kutularıyla seçin, tek tıkla taşıyın veya silin.
+📑 Sekme Grupları Entegrasyonu: Tüm bir klasörü tek tıklamayla yerel, renk kodlu Chrome Sekme Grubu olarak açın.
+😃 Özel Klasör Emojileri: Klasör adınıza emoji ile başlayın (ör. "💻 Kod") ve varsayılan klasör simgesini değiştirin.
+🖱️ Sürükle & Bırak: Konuşmaları klasörler arasında sürükleyerek çalışma alanınızı yeniden düzenleyin.
+📱 Mobil Senkronizasyon: Bir geçiş düğmesi, Chrome yer imlerinizde yansıma klasörü oluşturur ve klasör yapınızı ile özel sıralama düzeninizi telefonunuzda mükemmel şekilde yeniden üretir.
+🗜️ Ultra Verimli Sıkıştırma: Verilerinizi otomatik olarak sıkıştırır (LZString), Chrome'un yerel depolamasını en üst düzeye çıkarır ve yüzlerce konuşma kaydeder.
+📊 Depolama İzleyici: Şık bir görsel ilerleme çubuğu, kullanılabilir bulut depolama alanınızı gerçek zamanlı gösterir.
+📁 Özel Klasörler & Sabitler: Konuşmalarınızı projelere, temalara veya kategorilere göre düzenleyin. Favori klasörlerinizi (📌) listenin en üstüne sabitleyin.
+⇅ Özel Sıralama: Klasörleri ve konuşmaları anında sıralayın (En Yeni, En Eski, A-Z); değişiklikler mobil senkronizasyonunuza anında yansır.
+🤖 Akıllı Algılama & Arama: Konuşmanızın tam başlığının otomatik doldurulması ve gerçek zamanlı arama çubuğu.
+☁️ Bulut Senkronizasyonu & Yedekleme: Tüm cihazlarınızda düzeninize erişin ve verilerinizi JSON olarak dışa aktarın.
+🎨 Material 3 Tasarım & Çok Dilli: Ultra kompakt arayüz, tamamen özel modal iletişim kutuları, otomatik karanlık mod ve 27 dil desteği!
+
+🛠️ NASIL ÇALIŞIR?
+
+Klasör Modu:
+the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity)'da bir konuşma açın.
+Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "AI Klasörleri'e Kaydet".
+Uzantı üzerinden: Simgeye tıklayın, bir klasör seçin ve kaydedin.
+Mobil: Telefonunuzda klasörlerinizi senkronize etmek için alt bilgideki 📱 işaretini işaretleyin.
+Toplu işlemler için onay kutularını kullanın, klasörleri Sekme Grupları (📑) olarak açın, yeniden düzenlemek için sürükleyip bırakın!
+
+İstem Modu:
+Uzantının sağ üstündeki geçiş düğmesinde 📝'a tıklayın.
+➕ İstem Ekle'ye tıklayın, bir başlık ve metin girin, kaydedin.
+Bir istemi kullanmak için: genişletin ve ▶'ye tıklayın — doğrudan Gemini'ye enjekte edilir, göndermeye hazır.
+Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar ve kolayca erişilebilir kalır.
+Özel Gem'inize işaret etmesi için 💎'yi yapılandırın.
+
+🔒 GİZLİLİK & GÜVENLİK
+Gizlilik öncelikli tasarım. Yalnızca the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity)'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.
+
+🤝 AÇIK KAYNAK PROJE
+AI Klasörleri, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 GÜNCELLEMELER:
+Sürüm 4.1 (Küresel Genişleme ve Güçlendirme): 16 yeni dil, AI Klasörleri'i dünya genelinde 43 yerelleştirmeye taşıyor — İskandinav dilleri, Baltık devletleri ve genişletilmiş Avrupa ve Güneydoğu Asya kapsamı. Hızlı tıklamalarda bir kaydetme işleminin sessizce kaybolmasına yol açabilecek yarış durumu düzeltildi. Kullanımdan kaldırılan execCommand'ın yerini InputEvent ile modern prompt enjeksiyonu aldı. Yedek dosyalardaki kötü amaçlı URL'lere karşı içe aktarma boru hattı güçlendirildi.
+Sürüm 4.0 (İstem Kütüphanesi): Şimdiye kadarki en iddialı güncelleme! AI Klasörleri, yepyeni bir İstem Modu kazanıyor: en iyi istemlerinizi kaydedin, yerinde düzenleyin ve tek tıklamayla doğrudan Gemini'ye enjekte edin. Animasyonlu mod geçiş düğmesi, İstem Modu'nda arama ve sıralama, özel Gem düğmesi ve bağımsız istem senkronizasyonu eklendi. Temel istemlerinizi kütüphanenizin en üstüne sabitleyin.
+Sürüm 3.5 (Sağlam Temeller & İyileştirilmiş Deneyim): Profesyonel düzeyde sağlamlık için kaputun altında büyük bir güncelleme! Klavye kısayoluyla yinelenen kayıtlar için görsel uyarı. Gemini URL değişikliklerinden kaynaklanan sahte yinelemeler artık yok ve yeni güvenlik mimarimiz sayesinde veri tabanı bozulmaya karşı korumalı.
+Sürüm 3.4.1 (Çok Platformlu Güç & Kararlılık): Otomatik derleme sistemi ve katı güvenlik uyumluluğuyla Mozilla Firefox'a başarıyla taşındı. Mobil senkronizasyon sırasında yinelenen yer imi klasörü hatasının kesin düzeltmesi.
+Sürüm 3.3 (Premium Tasarım & Uluslararasılaşma): Yeni %100 özel Material 3 iletişim kutuları, sıralama düzeninizi yansıtan mobil senkronizasyon ve 10 yeni dille küresel genişleme!
+Sürüm 3.2 (Mobil & Açık Kaynak): Chrome yer imleri üzerinden akıllı mobil senkronizasyon, sabitlenmiş klasörlerin akıllı sıralaması, ultra kompakt alt bilgi ve entegre GitHub bağlantısıyla resmi açık kaynak lansmanı.
+Sürüm 3.1 (UX İyileştirmeleri): Sürükle & Bırak kararlılaştırması, karanlık mod onay kutuları, toplu işlemler sırasında akıllı arayüz kilidi.
+Sürüm 3.0 (Verimlilik Güncellemesi): Klavye kısayolları, çoklu seçim, sekme grupları, özel emojiler, veri sıkıştırma ve depolama çubuğu.
+Sürüm 2.0: Sürükle & Bırak, bağlam menüsü, özel sıralama, sabitleme ve Material 3 tasarımıyla büyük yeniden tasarım.
+Sürüm 1.0: İlk yayın! Gemini, Claude, ChatGPT, Copilot ve Perplexity sohbetlerini paylaşılan klasörlerde düzenleyin. Tek tıkla ekleme özellikli tam prompt kütüphanesi, hızlı kaydetme kısayolları, sürükle ve bırak, mobil senkronizasyon, toplu işlemler, sekme grupları ve 43 dil desteği. Yapılandırılabilir URL (localhost ve LAN adresleri) ile yerel LLM desteği.

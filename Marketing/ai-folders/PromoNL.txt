@@ -1,0 +1,63 @@
+Gebruikt u Google Gemini elke dag — voor werk, code, schrijven of onderzoek — maar typt u steeds dezelfde prompts opnieuw, terwijl uw beste gesprekken verdwijnen in een eindeloze geschiedenis?
+AI-mappen (AI-mappen) is de extensie die u nodig heeft.
+
+Met versie 4.0 wordt AI-mappen uw echte Gemini-cockpit: organiseer gesprekken in mappen, bouw een bibliotheek van herbruikbare prompts en voeg ze met één klik direct in Gemini in — geen kopiëren en plakken vereist.
+
+✨ NIEUW IN v4.0 — PROMPTMODUS
+
+📝 Persoonlijke promptbibliotheek: Schakel over naar Promptmodus met één klik op de schakelaar in de koptekst. Sla uw beste prompts op met een titel en volledige tekst en vind ze direct terug met zoeken en sorteren (nieuwste, oudste, A-Z).
+▶ Invoegen met één klik: Geen kopiëren en plakken meer. Klik op de afspeelknop (▶) van een opgeslagen prompt om deze direct in het invoerveld van Gemini in te voegen. De extensie detecteert of u op een Gemini-pagina bent en waarschuwt u indien niet.
+✏️ Inline bewerken: Klik op een prompt om deze uit te vouwen en de tekst direct te bewerken. Wijzigingen worden automatisch opgeslagen na een korte pauze en de sorteervolgorde wordt dienovereenkomstig bijgewerkt.
+🔀 Knoppen Nieuw Gesprek: Start een nieuw gesprek op ChatGPT, Claude, Copilot, Gemini of Perplexity direct vanuit de Promptmodus — één knop per dienst.
+☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
+📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
+
+🌟 MAPFUNCTIES
+
+⚡ Snel opslaan (rechtsklikken & sneltoetsen): Sla het huidige gesprek op met een eenvoudig rechtsklikken, of gebruik de sneltoets (Ctrl+Shift+S of Cmd+Shift+S op Mac) om het direct naar "⚡ Snelle opslag" te sturen — met een visuele melding als het al is opgeslagen!
+☑️ Meerdere selecteren (bulkacties): Selecteer meerdere gesprekken via selectievakjes om ze met één klik te verplaatsen of verwijderen.
+📑 Tabgroepintegratie: Open een volledige map met één klik als een native, kleurgecodeerde Chrome-tabgroep.
+😃 Aangepaste map-emoji's: Begin uw mapnaam met een emoji (bijv. "💻 Code") om het standaard mappictogram te vervangen.
+🖱️ Slepen en neerzetten: Herorganiseer uw werkruimte door gesprekken tussen mappen te slepen.
+📱 Mobiele synchronisatie: Een schakelaar maakt een spiegelmap aan in uw Chrome-bladwijzers, waarmee uw mapstructuur en aangepaste sorteervolgorde perfect op uw telefoon worden gereproduceerd.
+🗜️ Ultraëfficiënte compressie: Comprimeert uw gegevens automatisch (LZString) om de native opslag van Chrome te maximaliseren en honderden gesprekken op te slaan.
+📊 Opslagmeter: Een strakke visuele voortgangsbalk toont uw beschikbare cloudopslag in realtime.
+📁 Aangepaste mappen en pins: Organiseer uw gesprekken per project, thema of categorie. Zet (📌) uw favoriete mappen bovenaan vast.
+⇅ Aangepast sorteren: Sorteer mappen en gesprekken direct (Nieuwste, Oudste, A-Z) met wijzigingen die direct zichtbaar zijn in uw mobiele synchronisatie.
+🤖 Slimme detectie en zoeken: Automatisch vooraf invullen van de exacte titel van uw gesprek en een realtime zoekbalk.
+☁️ Cloudsynchronisatie en back-up: Toegang tot uw organisatie op al uw apparaten en exporteer uw gegevens als JSON.
+🎨 Material 3-ontwerp en meertalig: Ultracompact interface met volledig aangepaste modaldialoogvensters, automatische donkere modus en ondersteuning voor 27 talen!
+
+🛠️ HOE WERKT HET?
+
+Mappenmodus:
+Open een gesprek op the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Snel opslaan: Ctrl+Shift+S (of Cmd+Shift+S op Mac), of rechtsklikken > "Opslaan in AI-mappen".
+Via de extensie: Klik op het pictogram, kies een map en sla op.
+Mobiel: Vink 📱 aan in de voettekst om uw mappen op uw telefoon te synchroniseren.
+Gebruik selectievakjes voor bulkacties, open mappen als tabgroepen (📑), sleep en zet neer om te reorganiseren!
+
+Promptmodus:
+Klik op 📝 op de schakelaarknop rechtsboven in de extensie.
+Klik op ➕ Prompt toevoegen, voer een titel en uw tekst in en sla op.
+Een prompt gebruiken: vouw hem uit en klik op ▶ — wordt direct ingevoegd in Gemini, klaar om te verzenden.
+Een prompt vastzetten: klik op 📍 — hij verplaatst naar boven en blijft gemakkelijk bereikbaar.
+Stel 💎 in om naar uw aangepaste Gem te wijzen.
+
+🔒 PRIVACY EN BEVEILIGING
+Gebouwd met privacy als kern. Vraagt alleen toegang tot the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) en leest het actieve tabblad alleen bij het opslaan van een gesprek of het invoegen van een prompt. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via Chrome Sync: geen servers van derden, geen telemetrie.
+
+🤝 OPEN-SOURCEPROJECT
+AI-mappen is een open-sourceproject gebouwd met passie. Transparantie en respect voor uw privacy zijn onze topprioriteiten. Bent u een ontwikkelaar of gewoon nieuwsgierig? Bekijk de code, volg het wijzigingenlogboek of draag bij op GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 UPDATES:
+Versie 4.1 (Globale uitbreiding en versterking): 16 nieuwe talen brengen AI-mappen naar 43 lokalisaties wereldwijd — Scandinavische talen, de Baltische staten en uitgebreide Europese en Zuidoost-Aziatische dekking. Een race condition opgelost die bij snelle klikken stilletjes een opslaan kon weggooien. Promptinjectie gemoderniseerd met InputEvent ter vervanging van de verouderde execCommand. Importpipeline gehardend tegen kwaadaardige URL's in back-upbestanden.
+Versie 4.0 (Promptbibliotheek): De meest ambitieuze update tot nu toe! AI-mappen krijgt een gloednieuwe Promptmodus: sla uw beste prompts op, bewerk ze inline en voeg ze met één klik direct in Gemini in. Geanimeerde modusschakelaar, zoeken en sorteren in Promptmodus, aangepaste Gem-knop en onafhankelijke promptsynchronisatie toegevoegd. Zet essentiële prompts bovenaan uw bibliotheek vast.
+Versie 3.5 (Solide fundament & verbeterde ervaring): Een grote update onder de motorkap voor professionele robuustheid! Visuele melding voor dubbele opslag via sneltoets. Geen valse duplicaten meer door Gemini URL-wijzigingen, en een database beschermd tegen beschadiging met onze nieuwe beveiligingsarchitectuur.
+Versie 3.4.1 (Multiplatform kracht & stabiliteit): Succesvol overgezet naar Mozilla Firefox met een geautomatiseerd buildsysteem en strikte beveiligingsnaleving. Definitieve oplossing voor de bug met dubbele bladwijzermappen tijdens mobiele synchronisatie.
+Versie 3.3 (Premium ontwerp & internationalisering): Nieuwe 100% aangepaste Material 3-dialoogvensters, mobiele synchronisatie die uw sorteervolgorde weerspiegelt en wereldwijde uitbreiding met 10 nieuwe talen!
+Versie 3.2 (Mobiel & open source): Slimme mobiele synchronisatie via Chrome-bladwijzers, intelligente sortering van vastgezette mappen, ultracompacte voettekst en officiële open-sourcelaunch met geïntegreerde GitHub-link.
+Versie 3.1 (UX-verbeteringen): Stabilisatie van slepen en neerzetten, selectievakjes in donkere modus, slimme interfacevergrendeling tijdens bulkacties.
+Versie 3.0 (Productiviteitsupdate): Sneltoetsen, meerdere selecteren, tabgroepen, aangepaste emoji's, gegevenscompressie en opslagbalk.
+Versie 2.0: Groot herontwerp met slepen en neerzetten, contextmenu, aangepast sorteren, vastzetten en Material 3-ontwerp.
+Versie 1.0: Eerste uitgave! Organiseer gesprekken van Gemini, Claude, ChatGPT, Copilot en Perplexity in gedeelde mappen. Volledige promptbibliotheek met één-klik-invoegen, snelopslagsnelkoppelingen, slepen en neerzetten, mobiele synchronisatie, bulkacties, tabgroepen en ondersteuning voor 43 talen. Lokale LLM-ondersteuning met configureerbare URL (localhost en LAN-adressen).
