@@ -1,12 +1,12 @@
-Je, unatumia Google Gemini kila siku — kwa kazi, msimbo, uandishi, au utafiti — lakini unajikuta ukiandika tena vidokezo vile vile, huku mazungumzo yako bora yakipotea katika historia isiyo na mwisho?
-Folda za AI (Folda za AI) ni kiendelezi unachohitaji.
+Mazungumzo yako ya AI yametawanyika kwenye tovuti tano tofauti. Unaendelea kuandika tena maagizo yale yale. Mazungumzo yako bora yanayopotea katika historia zisizo na mwisho kwenye Gemini, Claude, ChatGPT, Copilot, na Perplexity.
+Folda za AI ni kiendelezi unachohitaji.
 
-Na toleo la 4.0, Folda za AI inakuwa cockpit yako ya kweli ya Gemini: panga mazungumzo katika folda, jenga maktaba ya vidokezo vinavyoweza kutumika tena, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja — bila kunakili na kubandika.
+Folda za AI ni kokpit yako ya AI iliyounganishwa: panga mazungumzo kutoka kwa zana zako zote za AI katika folda zilizoshirikiwa, jenga maktaba ya maagizo yanayoweza kutumika tena, na uweke maagizo moja kwa moja katika AI yoyote inayounga mkono — bila kuhitaji kunakili na kubandika.
 
-✨ KIPYA KATIKA v4.0 — HALI YA KIDOKEZO
+✨ HALI YA KIDOKEZO
 
 📝 Maktaba ya Kidokezo ya Kibinafsi: Badilika kwenda Hali ya Kidokezo kwa kubofya mara moja kwenye kitufe cha kubadilisha kilichoko kwenye kichwa. Hifadhi vidokezo vyako bora pamoja na kichwa na maandishi kamili, kisha vipate mara moja kwa kutumia utafutaji na upangaji (mpya zaidi, kongwe zaidi, A-Z).
-▶ Kuingiza kwa Kubofya Mara Moja: Hakuna tena kunakili na kubandika. Bofya kitufe cha kucheza (▶) kwenye kidokezo chochote kilichohifadhiwa ili kukiingiza moja kwa moja kwenye uwanja wa kuandika wa Gemini. Kiendelezi hugundua kama uko kwenye ukurasa wa Gemini na kukuarifu ikiwa la.
+▶ Kuingiza kwa Kubofya Mara Moja: Hakuna tena kunakili na kubandika. Bofya kitufe cha kucheza (▶) kwenye kidokezo chochote kilichohifadhiwa ili kukiingiza moja kwa moja kwenye uwanja wa kuandika wa AI inayotumika.
 ✏️ Kuhariri Mahali Pake: Bofya kidokezo ili kukipanua na kuhariri maandishi moja kwa moja. Mabadiliko huhifadhiwa kiotomatiki baada ya muda mfupi na mpangilio wa kusortia husasishwa ipasavyo.
 🔀 Vitufe vya Mazungumzo Mapya: Anza mazungumzo mapya kwenye ChatGPT, Claude, Copilot, Gemini, au Perplexity moja kwa moja kutoka Hali ya Maagizo.
 ☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
@@ -26,12 +26,17 @@ Na toleo la 4.0, Folda za AI inakuwa cockpit yako ya kweli ya Gemini: panga mazu
 ⇅ Upangaji Maalum: Panga folda na mazungumzo kwa haraka (Mpya Zaidi, Kongwe Zaidi, A-Z) pamoja na mabadiliko yanayoonyeshwa mara moja katika usawazishaji wako wa simu.
 🤖 Ugunduzi Mzuri na Utafutaji: Kujaza awali kiotomatiki kwa kichwa halisi cha mazungumzo yako na mwambaa wa utafutaji wa wakati halisi.
 ☁️ Usawazishaji wa Wingu na Hifadhinakala: Fikia upangaji wako kwenye vifaa vyako vyote na hamisha data yako kama JSON.
-🎨 Muundo wa Material 3 na Lugha Nyingi: Kiolesura cha kompakt sana chenye sanduku za mazungumzo maalum kabisa, hali ya giza kiotomatiki na msaada kwa lugha 27!
+🎨 Muundo wa Material 3 na Lugha Nyingi: Kiolesura cha kompakt sana chenye sanduku za mazungumzo maalum kabisa, hali ya giza kiotomatiki na msaada kwa lugha 43!
+
+
+🏠 MSAADA WA LLM WA NDANI
+
+Unaendesha mfano wa AI wa ndani (Ollama, LM Studio, Jan, au mwingine)? Sanidi Folda za AI na URL yako ya ndani — inasaidia localhost na anwani za LAN (192.168.x.x, majina ya seva maalum). Kuhifadhi haraka na kuhifadhi kupitia menyu ya muktadha pia hufanya kazi kwenye UI za ndani.
 
 🛠️ INAVYOFANYA KAZI?
 
 Hali ya Folda:
-Fungua mazungumzo kwenye the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Fungua mazungumzo kwenye Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Hifadhi ya haraka: Ctrl+Shift+S (au Cmd+Shift+S kwenye Mac), au bofya kulia > "Hifadhi kwenye Folda za AI".
 Kupitia kiendelezi: Bofya ikoni, chagua folda, na hifadhi.
 Simu: Weka alama 📱 kwenye kijachini ili kusawazisha folda zako na simu yako.
@@ -40,24 +45,14 @@ Tumia masanduku ya kuchagua kwa vitendo vya wingi, fungua folda kama Vikundi vya
 Hali ya Kidokezo:
 Bofya 📝 kwenye kitufe cha kubadilisha upande wa juu kulia wa kiendelezi.
 Bofya ➕ Ongeza Kidokezo, ingiza kichwa na maandishi yako, na hifadhi.
-Kutumia kidokezo: kipanua na ubofye ▶ — kinaingizwa moja kwa moja kwenye Gemini, tayari kutumwa.
+Kutumia kidokezo: kipanua na ubofye ▶ — kinaingizwa moja kwa moja kwenye AI inayotumika, tayari kutumwa.
 Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi kufikiwa.
-Sanidi 💎 ili kuelekeza kwenye Gem yako maalum.
 
 🔒 FARAGHA NA USALAMA
-Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
+Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa Gemini, Claude, ChatGPT, Copilot, Perplexity na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
 
 🤝 MRADI WA CHANZO WAZI
 Folda za AI ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 MASASISHO:
-Toleo 4.1 (Upanuzi wa Kimataifa na Ugumu): Lugha 16 mpya zinaongeza Gemini Folda hadi lokalizesheni 43 duniani kote — lugha za Nordiki, nchi za Baltic na chanjo iliyopanuliwa ya Ulaya na Asia ya Kusini-mashariki. Kurekebisha hali ya mbio ambayo ingeweza kupoteza kimya kimya uhifadhi wakati wa kubonyeza haraka. Uingizaji wa prompt umeboreshwa kwa InputEvent, ukibadilisha execCommand iliyopitwa na wakati. Mfumo wa uingizaji umeimarishwa dhidi ya URL hasidi katika faili za nakala rudufu.
-Toleo la 4.0 (Maktaba ya Vidokezo): Sasishwa lenye tamaa zaidi hadi sasa! Folda za AI inapata Hali ya Vidokezo mpya kabisa: hifadhi vidokezo vyako bora, viharirie mahali pake, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja. Kitufe cha kubadilisha hali chenye mwendo, utafutaji na upangaji katika Hali ya Vidokezo, kitufe maalum cha Gem na usawazishaji wa vidokezo usiotegemea vimeongezwa. Bandika vidokezo muhimu juu ya maktaba yako.
-Toleo la 3.5 (Misingi Imara na Uzoefu Ulioboreshwa): Sasisha kubwa chini ya kofia kwa uthabiti wa kiwango cha kitaaluma! Arifa ya kuona kwa hifadhi zilizorudiwa kupitia njia ya mkato ya kibodi. Hakuna rudiaji za uongo kutoka kwa mabadiliko ya URL ya Gemini, na hifadhidata inalindwa dhidi ya uharibifu na usanifu wetu mpya wa usalama.
-Toleo la 3.4.1 (Nguvu ya Majukwaa Mengi na Uthabiti): Ilipigwa kwenye Mozilla Firefox kwa mafanikio na mfumo wa ujenzi wa kiotomatiki na utiifu mkali wa usalama. Urekebishaji wa mwisho wa hitilafu ya folda ya alamisho iliyorudiwa wakati wa usawazishaji wa simu.
-Toleo la 3.3 (Muundo wa Hali ya Juu na Kimataifa): Sanduku mpya za mazungumzo za Material 3 maalum 100%, usawazishaji wa simu unaoakisi mpangilio wako wa kusortia na upanuzi wa kimataifa na lugha 10 mpya!
-Toleo la 3.2 (Simu na Chanzo Wazi): Usawazishaji mzuri wa simu kupitia alamisho za Chrome, upangaji wa akili wa folda zilizobandikwa, kijachini cha kompakt sana na uzinduzi rasmi wa chanzo wazi na kiungo cha GitHub kilichounganishwa.
-Toleo la 3.1 (Maboresho ya UX): Uthabiti wa Buruta na Uweke, masanduku ya kuchagua ya hali ya giza, kufunga kiolesura kwa akili wakati wa vitendo vya wingi.
-Toleo la 3.0 (Sasisha la Tija): Njia za mkato za kibodi, kuchagua vingi, vikundi vya vichupo, emoji maalum, mfinyazo wa data na mwambaa wa hifadhi.
-Toleo la 2.0: Muundo mkubwa upya wenye Buruta na Uweke, menyu ya muktadha, upangaji maalum, kubandika na muundo wa Material 3.
 Toleo 1.0: Chapisho la kwanza! Panga mazungumzo kutoka Gemini, Claude, ChatGPT, Copilot na Perplexity katika folda zilizoshirikiwa. Maktaba kamili ya maagizo na sindano ya kubonyeza mara moja, njia za mkato za kuhifadhi haraka, buruta na uacha, usawazishaji wa simu, vitendo vya wingi, vikundi vya kichupo na usaidizi wa lugha 43.

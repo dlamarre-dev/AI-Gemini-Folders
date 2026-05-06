@@ -1,12 +1,12 @@
-Ginagamit mo ba ang Google Gemini araw-araw — para sa trabaho, code, pagsusulat, o pananaliksik — ngunit paulit-ulit kang nagta-type ng parehong mga prompt, habang nawawala ang iyong mga pinakamahusay na pag-uusap sa walang katapusang kasaysayan?
-Ang Mga AI Folder (Mga AI Folder) ang extension na kailangan mo.
+Ang iyong mga AI na pag-uusap ay nakakalat sa limang magkakaibang site. Patuloy kang nagta-type ng parehong mga prompt. Ang iyong mga pinakamahusay na chat ay nawawala sa walang katapusang mga kasaysayan sa Gemini, Claude, ChatGPT, Copilot, at Perplexity.
+Mga AI Folder ang extension na kailangan mo.
 
-Sa bersyon 4.0, ang Mga AI Folder ay nagiging iyong tunay na Gemini cockpit: ayusin ang mga pag-uusap sa mga folder, bumuo ng library ng mga reusable na prompt, at i-inject ang mga ito nang direkta sa Gemini sa isang click — hindi na kailangang mag-copy-paste.
+Mga AI Folder ang iyong pinagsamang AI cockpit: ayusin ang mga pag-uusap mula sa lahat ng iyong mga AI tool sa mga ibinabahaging folder, bumuo ng library ng mga prompt na magagamit muli, at mag-inject ng mga prompt nang direkta sa anumang sinusuportahang AI — hindi na kailangang mag-copy-paste.
 
-✨ BAGO SA v4.0 — PROMPT MODE
+✨ PROMPT MODE
 
 📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).
-▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng Gemini. Nde-detect ng extension kung nasa Gemini page ka at inaabisuhan ka kung wala.
+▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng aktibong AI.
 ✏️ Inline na Pag-edit: I-click ang isang prompt para palawakin ito at i-edit ang teksto nang direkta. Awtomatikong nase-save ang mga pagbabago pagkatapos ng maikling pause at ina-update ang sort order.
 🔀 Mga Pindutan ng Bagong Pag-uusap: Magsimula ng bagong pag-uusap sa ChatGPT, Claude, Copilot, Gemini, o Perplexity nang direkta mula sa Prompt Mode.
 ☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
@@ -26,12 +26,17 @@ Sa bersyon 4.0, ang Mga AI Folder ay nagiging iyong tunay na Gemini cockpit: ayu
 ⇅ Custom Sorting: Mag-sort ng mga folder at pag-uusap on the fly (Pinakabago, Pinakamatanda, A-Z) na agad na makikita sa iyong mobile sync.
 🤖 Smart Detection at Search: Awtomatikong pre-fill ng eksaktong pamagat ng iyong pag-uusap at real-time na search bar.
 ☁️ Cloud Sync at Backup: I-access ang iyong organisasyon sa lahat ng iyong device at i-export ang iyong data bilang JSON.
-🎨 Material 3 Design at Multilingual: Ultra-compact na interface na may ganap na custom na modal dialog, awtomatikong dark mode, at suporta para sa 27 na wika!
+🎨 Material 3 Design at Multilingual: Ultra-compact na interface na may ganap na custom na modal dialog, awtomatikong dark mode, at suporta para sa 43 na wika!
+
+
+🏠 SUPORTA SA LOKAL NA LLM
+
+Nagpapatakbo ng lokal na AI model (Ollama, LM Studio, Jan, o iba pa)? I-configure ang Mga AI Folder gamit ang iyong lokal na URL — sinusuportahan ang localhost at mga LAN address (192.168.x.x, mga custom na hostname). Gumagana rin ang mabilis na pag-save at pag-save sa pamamagitan ng context menu sa mga lokal na UI.
 
 🛠️ PAANO ITO GUMAGANA?
 
 Folder Mode:
-Magbukas ng pag-uusap sa the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Magbukas ng pag-uusap sa Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Mabilis na pag-save: Ctrl+Shift+S (o Cmd+Shift+S sa Mac), o right-click > "I-save sa Mga AI Folder".
 Sa pamamagitan ng extension: I-click ang icon, pumili ng folder, at i-save.
 Mobile: Lagyan ng tsek ang 📱 sa footer para i-sync ang iyong mga folder sa iyong telepono.
@@ -40,24 +45,14 @@ Gumamit ng mga checkbox para sa bulk actions, buksan ang mga folder bilang Tab G
 Prompt Mode:
 I-click ang 📝 sa toggle button sa kanang itaas ng extension.
 I-click ang ➕ Magdagdag ng Prompt, maglagay ng pamagat at teksto, at i-save.
-Para gamitin ang isang prompt: palawakin ito at i-click ang ▶ — direktang ini-inject sa Gemini, handa nang ipadala.
+Para gamitin ang isang prompt: palawakin ito at i-click ang ▶ — direktang ini-inject sa aktibong AI, handa nang ipadala.
 Para i-pin ang isang prompt: i-click ang 📍 — lilipat ito sa tuktok ng listahan at mananatiling madaling ma-access.
-I-configure ang 💎 para ituro sa iyong custom na Gem.
 
 🔒 PRIVACY AT SEGURIDAD
-Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.
+Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa Gemini, Claude, ChatGPT, Copilot, Perplexity at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.
 
 🤝 OPEN SOURCE NA PROYEKTO
 Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal. Ang transparency at paggalang sa iyong privacy ang aming mga pangunahing priyoridad. Ikaw ba ay isang developer o basta lang curious? I-browse ang code, sundan ang changelog, o mag-contribute sa GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 MGA UPDATE:
-Bersyon 4.1 (Global na Pagpapalawak at Pagpapatibay): 16 bagong wika ang nagdadala sa Mga AI Folder sa 43 na lokalisasyon sa buong mundo — mga wikang Nordic, ang mga bansang Baltic at pinalawak na saklaw ng Europa at Timog-silangang Asya. Naayos ang isang race condition na maaaring tahimik na mawala ang isang save sa mabilis na pag-click. Na-modernize ang prompt injection gamit ang InputEvent, pinapalitan ang deprecated execCommand. Na-harden ang import pipeline laban sa mga malisyosong URL sa mga backup na file.
-Bersyon 4.0 (Prompt Library): Ang pinaka-ambisyosong update hanggang ngayon! Ang Mga AI Folder ay nakakakuha ng isang bagong Prompt Mode: i-save ang iyong mga pinakamahusay na prompt, i-edit ang mga ito inline, at i-inject ang mga ito nang direkta sa Gemini sa isang click. Nadagdag ang animated mode toggle, paghahanap at pag-sort sa Prompt Mode, custom Gem button, at independyenteng prompt sync. I-pin ang iyong mga mahahalagang prompt sa tuktok ng iyong library.
-Bersyon 3.5 (Matibay na Pundasyon at Pinahusay na Karanasan): Isang malaking under-the-hood na update para sa professional-grade na katatagan! Visual na alerto para sa mga duplicate na pag-save sa pamamagitan ng keyboard shortcut. Wala nang mga pekeng duplicate mula sa mga pagbabago ng Gemini URL, at isang database na protektado laban sa katiwalian gamit ang aming bagong security architecture.
-Bersyon 3.4.1 (Multiplatform Power at Stability): Matagumpay na na-port sa Mozilla Firefox na may automated build system at mahigpit na security compliance. Tiyak na pag-aayos sa bug ng duplicate na bookmark folder sa panahon ng mobile sync.
-Bersyon 3.3 (Premium Design at International): Mga bagong 100% custom na Material 3 dialog, mobile sync na sumasalamin sa iyong sort order, at global expansion na may 10 bagong wika!
-Bersyon 3.2 (Mobile at Open Source): Matalinong mobile sync sa pamamagitan ng mga Chrome bookmark, matalinong pag-sort ng mga naka-pin na folder, ultra-compact na footer, at opisyal na open source launch na may integrated na GitHub link.
-Bersyon 3.1 (Mga Pagpapabuti ng UX): Stabilisasyon ng Drag at Drop, mga checkbox sa dark mode, matalinong interface lock sa panahon ng mga bulk action.
-Bersyon 3.0 (Productivity Update): Mga keyboard shortcut, multi-select, tab groups, custom emoji, data compression, at storage bar.
-Bersyon 2.0: Malaking redesign na may Drag at Drop, context menu, custom sorting, pinning, at Material 3 design.
 Bersyon 1.0: Unang inilabas! Ayusin ang mga pag-uusap mula sa Gemini, Claude, ChatGPT, Copilot, at Perplexity sa mga ibinabahaging folder. Kumpletong prompt library na may one-click injection, mga shortcut ng mabilis na pag-save, drag at drop, mobile sync, bulk actions, tab groups, at suporta para sa 43 na wika.

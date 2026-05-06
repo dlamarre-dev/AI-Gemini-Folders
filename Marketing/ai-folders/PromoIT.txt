@@ -1,12 +1,12 @@
 Le tue conversazioni AI sono sparse su cinque siti diversi. Continui a riscrivere gli stessi prompt. Le tue migliori chat scompaiono in cronologie infinite su Gemini, Claude, ChatGPT, Copilot e Perplexity.
 Cartelle IA è l'estensione di cui hai bisogno.
 
-Con la versione 4.0, Cartelle IA diventa il tuo vero cockpit per Gemini: organizza le conversazioni in cartelle, costruisci una libreria di prompt riutilizzabili e iniettali direttamente in Gemini con un solo clic, senza copia e incolla.
+Cartelle IA è il tuo cockpit AI unificato: organizza conversazioni da tutti i tuoi strumenti AI in cartelle condivise, crea una libreria di prompt riutilizzabili e inietta prompt direttamente in qualsiasi AI supportata — senza bisogno di copiare e incollare.
 
-✨ NOVITÀ in v4.0 — MODALITÀ PROMPT
+✨ MODALITÀ PROMPT
 
 📝 Libreria di prompt personale: Passa alla modalità Prompt con un solo clic sull'interruttore nell'intestazione. Salva i tuoi migliori prompt con un titolo e il testo completo, poi trovali subito con ricerca e ordinamento (più recenti, più vecchi, A-Z).
-▶ Iniezione con un clic: Niente più copia e incolla. Clicca il pulsante di riproduzione (▶) su qualsiasi prompt salvato per iniettarlo direttamente nel campo di input di Gemini. L'estensione rileva se sei su una pagina Gemini e ti avvisa se non lo sei.
+▶ Iniezione con un clic: Niente più copia e incolla. Clicca il pulsante di riproduzione (▶) su qualsiasi prompt salvato per iniettarlo direttamente nel campo di input dell'IA attiva.
 ✏️ Modifica in linea: Clicca un prompt per espanderlo e modifica il testo direttamente. Le modifiche si salvano automaticamente dopo una breve pausa e l'ordinamento si aggiorna di conseguenza.
 🔀 Pulsanti Nuova Conversazione: Avvia una nuova conversazione su ChatGPT, Claude, Copilot, Gemini o Perplexity direttamente dalla Modalità Prompt — un pulsante per servizio.
 ☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
@@ -26,12 +26,17 @@ Con la versione 4.0, Cartelle IA diventa il tuo vero cockpit per Gemini: organiz
 ⇅ Ordinamento personalizzato: Ordina cartelle e conversazioni al volo (Più recenti, Più vecchie, A-Z) con ripercussione immediata sulla sincronizzazione mobile.
 🤖 Rilevamento intelligente e Ricerca: Compilazione automatica del titolo esatto della conversazione e barra di ricerca in tempo reale.
 ☁️ Sincronizzazione Cloud e Backup: Accedi alla tua organizzazione su tutti i dispositivi ed esporta i dati in JSON.
-🎨 Design Material 3 e Multilingue: Interfaccia ultra-compatta con finestre di dialogo completamente personalizzate, modalità scura automatica e supporto per 27 lingue!
+🎨 Design Material 3 e Multilingue: Interfaccia ultra-compatta con finestre di dialogo completamente personalizzate, modalità scura automatica e supporto per 43 lingue!
+
+
+🏠 SUPPORTO LLM LOCALE
+
+Stai usando un modello AI locale (Ollama, LM Studio, Jan o altro)? Configura Cartelle IA con il tuo URL locale — supporta localhost e indirizzi LAN (192.168.x.x, hostname personalizzati). Il salvataggio rapido e dal menu contestuale funzionano anche nelle interfacce locali.
 
 🛠️ COME FUNZIONA?
 
 Modalità Cartelle:
-Apri una conversazione su the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Apri una conversazione su Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Salvataggio rapido: Ctrl+Shift+S (o Cmd+Shift+S su Mac), o clic destro > "Salva in Cartelle IA".
 Tramite l'estensione: Clicca l'icona, scegli una cartella e salva.
 Mobile: Attiva 📱 nel piè di pagina per sincronizzare le cartelle con il telefono.
@@ -40,24 +45,14 @@ Usa le caselle per azioni in blocco, apri le cartelle come Gruppi di schede (�
 Modalità Prompt:
 Clicca 📝 sull'interruttore in alto a destra nell'estensione.
 Clicca ➕ Aggiungi Prompt, inserisci un titolo e il tuo testo, salva.
-Per usare un prompt: espandilo e clicca ▶ — viene iniettato direttamente in Gemini, pronto per l'invio.
-Configura 💎 per puntare al tuo Gem personalizzato.
+Per usare un prompt: espandilo e clicca ▶ — viene iniettato direttamente nell'IA attiva, pronto per l'invio.
 Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta sempre a portata di mano.
 
 🔒 PRIVACY E SICUREZZA
-Progettata con la privacy al centro. Richiede accesso solo a the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
+Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, ChatGPT, Copilot, Perplexity e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
 
 🤝 PROGETTO OPEN SOURCE
 Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 AGGIORNAMENTI:
-Versione 4.1 (Espansione globale e rafforzamento): 16 nuove lingue portano Gemini Cartelle a 43 localizzazioni in tutto il mondo — lingue nordiche, gli stati baltici e copertura europea e del Sud-Est asiatico ampliata. Corretta una race condition che poteva eliminare silenziosamente un salvataggio con clic rapidi. Iniezione di prompt modernizzata con InputEvent, sostituendo il deprecato execCommand. Pipeline di importazione rafforzata contro URL dannosi nei file di backup.
-Versione 4.0 (Libreria di Prompt): L'aggiornamento più ambizioso finora! Cartelle IA ottiene una nuovissima modalità Prompt: salva i tuoi migliori prompt, modificali in linea e iniettali direttamente in Gemini con un clic. Aggiunto: interruttore animato tra modalità, ricerca e ordinamento in modalità Prompt, pulsante Gem personalizzato e sincronizzazione indipendente dei prompt. Fissa i prompt essenziali in cima alla libreria.
-Versione 3.5 (Fondamenta Solide ed Esperienza Migliorata): Grande aggiornamento interno per robustezza professionale. Avviso visivo per duplicati. Nessun falso duplicato da cambi URL di Gemini e database protetto dalle corruzioni.
-Versione 3.4.1 (Potenza Multipiattaforma e Stabilità): Portato con successo su Mozilla Firefox. Correzione definitiva del bug delle cartelle segnalibri duplicate durante la sincronizzazione mobile.
-Versione 3.3 (Design Premium e Internazionale): Nuove finestre Material 3 completamente personalizzate, sincronizzazione mobile basata sull'ordinamento e 10 nuove lingue!
-Versione 3.2 (Mobile e Open Source): Sincronizzazione mobile via segnalibri Chrome, ordinamento intelligente delle cartelle bloccate, piè di pagina ultra-compatto e lancio open source.
-Versione 3.1 (Miglioramenti UX): Stabilizzazione del Drag & Drop, caselle modalità scura, blocco interfaccia durante azioni in blocco.
-Versione 3.0 (Aggiornamento Produttività): Scorciatoie da tastiera, selezione multipla, gruppi di schede, emoji personalizzate, compressione dati e barra dello spazio.
-Versione 2.0: Rifacimento completo con Drag & Drop, menu contestuale, ordinamento personalizzato, blocco e design Material 3.
 Versione 1.0: Prima pubblicazione! Organizza conversazioni da Gemini, Claude, ChatGPT, Copilot e Perplexity in cartelle condivise. Libreria prompt completa con iniezione in un clic, scorciatoie di salvataggio rapido, drag & drop, sincronizzazione mobile, azioni in blocco, gruppi di schede e supporto per 43 lingue. Supporto LLM locale con URL configurabile (localhost e indirizzi LAN).

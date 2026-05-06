@@ -7,7 +7,7 @@ Run: python generate_af_promos.py
 """
 import json, os, re
 
-GF_PROMO_DIR  = "Marketing"
+GF_PROMO_DIR  = "Marketing/gemini-folders"
 AF_PROMO_DIR  = "Marketing/ai-folders"
 AF_LOCALES    = "extensions/ai-folders/_locales"
 GF_LOCALES    = "extensions/gemini-folders/_locales"
@@ -135,8 +135,8 @@ VERSION_SECTION_PATTERN = re.compile(
     r'ACTUALIZACIONES|UPDATES|更新|更新情報|업데이트|अपडेट|ACTUALIZĂRI|AKTUALIZACE|AKTUALIZÁCIE|'
     r'GÜNCELLEMELER|PEMBARUAN|更新日誌|CẬP NHẬT|আপডেট|UPDATES|MASASISHO|MGA UPDATE|อัปเดต|'
     r'التحديثات|FRISSÍTÉSEK|OPPDATERINGER|UPPDATERINGAR|PÄIVITYKSET|ACTUALITZACIONS|OPDATERINGER|'
-    r'ОНОВЛЕННЯ|ΕΝΗΜΕΡΏΣΕΙΣ|עדכונים|UUENDUSED|ATNAUJINIMAI|ATJAUNINĀJUMI|KEMAS KINI|АКТУАЛИЗАЦИИ|'
-    r'POSODOBITVE|АЖУРИРАЊА|АЖУРИРАЊА|AŽURIRANJA|ОБНОВЛЕНИЯ)[^\n]*\n)([\s\S]*)',
+    r'ОНОВЛЕННЯ|ΕΝΗΜΕΡΩΣΕΙΣ|ΕΝΗΜΕΡΏΣΕΙΣ|עדכונים|UUENDUSED|ATNAUJINIMAI|ATJAUNINĀJUMI|KEMAS KINI|АКТУАЛИЗАЦИИ|'
+    r'POSODOBITVE|АЖУРИРАЊА|AŽURIRANJA|ОБНОВЛЕНИЯ|アップデート|AKTUALIZACJE|การอัปเดต)[^\n]*\n)([\s\S]*)',
     re.IGNORECASE
 )
 
@@ -155,6 +155,388 @@ INTRO_REPLACEMENTS = {
     "ja":    "AIとの会話は5つの異なるサイトに散らばっています。同じプロンプトを何度も打ち直しています。Gemini、Claude、ChatGPT、Copilot、Perplexityの最高の会話が無限の履歴の中に消えていきます。\n{af_name}はあなたが必要とする拡張機能です。",
     "ko":    "AI 대화가 다섯 개의 다른 사이트에 흩어져 있습니다. 같은 프롬프트를 반복해서 입력하고 있습니다. Gemini, Claude, ChatGPT, Copilot, Perplexity에서의 최고의 대화가 끝없는 기록 속으로 사라집니다.\n{af_name}이 필요한 확장 프로그램입니다.",
     "hi":    "आपकी AI बातचीत पाँच अलग-अलग साइटों पर बिखरी हुई है। आप बार-बार वही प्रॉम्प्ट टाइप करते रहते हैं। Gemini, Claude, ChatGPT, Copilot और Perplexity पर आपकी सबसे अच्छी बातचीत अनंत इतिहास में खो जाती है।\n{af_name} वह एक्सटेंशन है जिसकी आपको ज़रूरत है।",
+    "ro":    "Conversațiile dvs. de IA sunt răspândite pe cinci site-uri diferite. Continuați să retastați aceleași instrucțiuni. Cele mai bune conversații ale dvs. dispar în istorici nesfârșite pe Gemini, Claude, ChatGPT, Copilot și Perplexity.\n{af_name} este extensia de care aveți nevoie.",
+    "cs":    "Vaše AI konverzace jsou rozptýleny po pěti různých stránkách. Neustále přepisujete stejné prompty. Vaše nejlepší chaty mizí v nekonečných historiích na Gemini, Claude, ChatGPT, Copilot a Perplexity.\n{af_name} je rozšíření, které potřebujete.",
+    "sk":    "Vaše AI konverzácie sú rozptýlené po piatich rôznych stránkach. Neustále prepisujete tie isté výzvy. Vaše najlepšie chaty miznú v nekonečných históriách na Gemini, Claude, ChatGPT, Copilot a Perplexity.\n{af_name} je rozšírenie, ktoré potrebujete.",
+    "tr":    "AI sohbetleriniz beş farklı siteye dağılmış durumda. Aynı promptları tekrar tekrar yazıyorsunuz. En iyi sohbetleriniz Gemini, Claude, ChatGPT, Copilot ve Perplexity'deki sonsuz geçmişlerde kayboluyor.\n{af_name} ihtiyacınız olan uzantıdır.",
+    "id":    "Percakapan AI Anda tersebar di lima situs yang berbeda. Anda terus mengetik ulang prompt yang sama. Obrolan terbaik Anda menghilang dalam riwayat tak berujung di Gemini, Claude, ChatGPT, Copilot, dan Perplexity.\n{af_name} adalah ekstensi yang Anda butuhkan.",
+    "zh_TW": "您的 AI 對話分散在五個不同的網站上。您一遍又一遍地重新輸入相同的提示詞。您在 Gemini、Claude、ChatGPT、Copilot 和 Perplexity 上的最佳對話消失在無盡的歷史記錄中。\n{af_name} 正是您需要的擴充功能。",
+    "vi":    "Các cuộc trò chuyện AI của bạn bị phân tán trên năm trang web khác nhau. Bạn cứ phải nhập lại những prompt giống nhau. Những cuộc trò chuyện hay nhất của bạn biến mất vào lịch sử vô tận trên Gemini, Claude, ChatGPT, Copilot và Perplexity.\n{af_name} là tiện ích mở rộng bạn cần.",
+    "bn":    "আপনার AI কথোপকথনগুলি পাঁচটি ভিন্ন সাইটে ছড়িয়ে আছে। আপনি বারবার একই প্রম্পটগুলি টাইপ করতে থাকেন। Gemini, Claude, ChatGPT, Copilot এবং Perplexity-তে আপনার সেরা চ্যাটগুলি অন্তহীন ইতিহাসে হারিয়ে যায়।\n{af_name} হল সেই এক্সটেনশন যা আপনার দরকার।",
+    "nl":    "Uw AI-gesprekken zijn verspreid over vijf verschillende sites. U blijft dezelfde prompts opnieuw typen. Uw beste chats verdwijnen in eindeloze historiek op Gemini, Claude, ChatGPT, Copilot en Perplexity.\n{af_name} is de extensie die u nodig heeft.",
+    "sw":    "Mazungumzo yako ya AI yametawanyika kwenye tovuti tano tofauti. Unaendelea kuandika tena maagizo yale yale. Mazungumzo yako bora yanayopotea katika historia zisizo na mwisho kwenye Gemini, Claude, ChatGPT, Copilot, na Perplexity.\n{af_name} ni kiendelezi unachohitaji.",
+    "tl":    "Ang iyong mga AI na pag-uusap ay nakakalat sa limang magkakaibang site. Patuloy kang nagta-type ng parehong mga prompt. Ang iyong mga pinakamahusay na chat ay nawawala sa walang katapusang mga kasaysayan sa Gemini, Claude, ChatGPT, Copilot, at Perplexity.\n{af_name} ang extension na kailangan mo.",
+    "th":    "การสนทนา AI ของคุณกระจายอยู่ในห้าเว็บไซต์ที่แตกต่างกัน คุณพิมพ์พรอมต์เดิมซ้ำแล้วซ้ำเล่า การสนทนาที่ดีที่สุดของคุณหายไปในประวัติที่ไม่มีที่สิ้นสุดบน Gemini, Claude, ChatGPT, Copilot และ Perplexity\n{af_name} คือส่วนขยายที่คุณต้องการ",
+    "ar":    "محادثاتك مع الذكاء الاصطناعي مبعثرة عبر خمسة مواقع مختلفة. لا تزال تُعيد كتابة نفس التعليمات مراراً وتكراراً. أفضل محادثاتك تختفي في سجلات لا نهاية لها على Gemini وClaude وChatGPT وCopilot وPerplexity.\n{af_name} هو الامتداد الذي تحتاجه.",
+    "hu":    "AI-beszélgetései öt különböző oldalon szórványosan szétszórva vannak. Folyamatosan újra begépeli ugyanazokat a promptokat. Legjobb csevegései végtelen előzményekbe vesznek el a Geminiben, a Claude-ban, a ChatGPT-ben, a Copilotban és a Perplexityben.\n{af_name} a bővítmény, amelyre szüksége van.",
+    "nb":    "AI-samtalene dine er spredt over fem forskjellige nettsteder. Du skriver stadig inn de samme promptene på nytt. De beste samtalene dine forsvinner inn i uendelige historikker på Gemini, Claude, ChatGPT, Copilot og Perplexity.\n{af_name} er utvidelsen du trenger.",
+    "sv":    "Dina AI-konversationer är utspridda över fem olika sidor. Du skriver ständigt om samma promptar. Dina bästa chattar försvinner i oändliga historiker på Gemini, Claude, ChatGPT, Copilot och Perplexity.\n{af_name} är tillägget du behöver.",
+    "fi":    "AI-keskustelusi ovat hajallaan viidellä eri sivustolla. Kirjoitat jatkuvasti samat kehotteet uudelleen. Parhaat keskustelusi katoavat loputtomiin historioihin Geminissä, Claudessa, ChatGPT:ssä, Copilotissa ja Perplexityssä.\n{af_name} on laajennus, jota tarvitset.",
+    "ca":    "Les vostres converses d'IA estan escampades per cinc llocs diferents. Seguiu reescrivint els mateixos prompts. Les vostres millors xats desapareixen en historials interminables de Gemini, Claude, ChatGPT, Copilot i Perplexity.\n{af_name} és l'extensió que necessiteu.",
+    "da":    "Dine AI-samtaler er spredt ud over fem forskellige sider. Du bliver ved med at skrive de samme prompts igen. Dine bedste chats forsvinder i endeløse historikker på Gemini, Claude, ChatGPT, Copilot og Perplexity.\n{af_name} er den udvidelse, du har brug for.",
+    "uk":    "Ваші розмови з ІІ розкидані по п'яти різних сайтах. Ви знову і знову вводите одні й ті самі підказки. Найкращі розмови зникають у нескінченних журналах Gemini, Claude, ChatGPT, Copilot та Perplexity.\n{af_name} — розширення, яке вам потрібне.",
+    "el":    "Οι συνομιλίες AI σας είναι διασκορπισμένες σε πέντε διαφορετικά sites. Συνεχίζετε να επαναπληκτρολογείτε τα ίδια prompts. Οι καλύτερες συνομιλίες σας εξαφανίζονται σε ατελείωτες ιστορικές καταγραφές στο Gemini, Claude, ChatGPT, Copilot και Perplexity.\n{af_name} είναι η επέκταση που χρειάζεστε.",
+    "he":    "שיחות ה-AI שלך מפוזרות על פני חמישה אתרים שונים. אתה ממשיך להקליד שוב ושוב את אותן הנחיות. השיחות הטובות שלך נעלמות בהיסטוריות אינסופיות ב-Gemini, Claude, ChatGPT, Copilot ו-Perplexity.\n{af_name} היא התוסף שאתה צריך.",
+    "et":    "Teie AI-vestlused on hajutatud viiele erinevale saidile. Te kirjutate ikka samu käsklusi uuesti. Teie parimad vestlused kaovad lõpututesse ajalugudesse Geminis, Claude'is, ChatGPT-s, Copilotis ja Perplexitys.\n{af_name} on laiendus, mida vajate.",
+    "lt":    "Jūsų AI pokalbiai išsibarstyti per penkis skirtingus puslapius. Jūs nuolat iš naujo įvedate tuos pačius raginimus. Geriausi jūsų pokalbiai dingsta begalinėse istorijose Gemini, Claude, ChatGPT, Copilot ir Perplexity platformose.\n{af_name} yra plėtinys, kurio jums reikia.",
+    "lv":    "Jūsu AI sarunas ir izkaisītas pa piecām dažādām vietnēm. Jūs nemitīgi pārtipat vienas un tās pašas uzvednes. Jūsu labākās sarunas pazūd bezgalīgās vēsturēs Gemini, Claude, ChatGPT, Copilot un Perplexity platformās.\n{af_name} ir paplašinājums, kas jums nepieciešams.",
+    "ms":    "Perbualan AI anda tersebar di lima laman yang berbeza. Anda terus menaip semula arahan yang sama. Perbualan terbaik anda hilang dalam sejarah tanpa henti di Gemini, Claude, ChatGPT, Copilot, dan Perplexity.\n{af_name} ialah sambungan yang anda perlukan.",
+    "bg":    "Вашите AI разговори са разпръснати из пет различни сайта. Продължавате да въвеждате едни и същи подсказки отново и отново. Най-добрите ви чатове изчезват в безкрайните истории на Gemini, Claude, ChatGPT, Copilot и Perplexity.\n{af_name} е разширението, от което се нуждаете.",
+    "sl":    "Vaši AI pogovori so razpršeni po petih različnih spletnih mestih. Vedno znova vnašate iste pozive. Vaši najboljši klepeti izginejo v neskončnih zgodovinah na Gemini, Claude, ChatGPT, Copilot in Perplexity.\n{af_name} je razširitev, ki jo potrebujete.",
+    "sr":    "Ваши AI разговори су расути по пет различитих сајтова. Стално поново уносите исте упите. Ваши најбољи четови нестају у бесконачним историјама на Gemini, Claude, ChatGPT, Copilot и Perplexity.\n{af_name} је проширење које вам треба.",
+    "hr":    "Vaši AI razgovori su rasuti po pet različitih stranica. Stalno ponovo unosite iste upite. Vaši najbolji chatovi nestaju u beskonačnim povijestima na Geminiju, Claudeu, ChatGPT-u, Copilotu i Perplexityju.\n{af_name} je proširenje koje vam treba.",
+}
+
+
+# ── 2nd paragraph: unified AI cockpit (replaces GF "Gemini cockpit" sentence) ─
+COCKPIT_REPLACEMENTS = {
+    "fr":    "{af_name} est votre cockpit IA unifié : organisez des conversations de tous vos outils IA dans des dossiers partagés, constituez une bibliothèque de prompts réutilisables et injectez des prompts directement dans n'importe quelle IA prise en charge — sans copier-coller.",
+    "de":    "{af_name} ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ihrer KI-Tools in gemeinsamen Ordnern, erstellen Sie eine Bibliothek wiederverwendbarer Prompts und injizieren Sie Prompts direkt in jede unterstützte KI — ganz ohne Kopieren und Einfügen.",
+    "es":    "{af_name} es tu cockpit de IA unificado: organiza conversaciones de todas tus herramientas de IA en carpetas compartidas, crea una biblioteca de prompts reutilizables e inyecta prompts directamente en cualquier IA compatible — sin necesidad de copiar y pegar.",
+    "it":    "{af_name} è il tuo cockpit AI unificato: organizza conversazioni da tutti i tuoi strumenti AI in cartelle condivise, crea una libreria di prompt riutilizzabili e inietta prompt direttamente in qualsiasi AI supportata — senza bisogno di copiare e incollare.",
+    "pt_BR": "{af_name} é o seu cockpit de IA unificado: organize conversas de todas as suas ferramentas de IA em pastas compartilhadas, crie uma biblioteca de prompts reutilizáveis e injete prompts diretamente em qualquer IA compatível — sem precisar copiar e colar.",
+    "pt_PT": "{af_name} é o seu cockpit de IA unificado: organize conversas de todas as suas ferramentas de IA em pastas partilhadas, crie uma biblioteca de prompts reutilizáveis e injete prompts diretamente em qualquer IA suportada — sem precisar de copiar e colar.",
+    "pl":    "{af_name} to Twoje zunifikowane centrum AI: organizuj rozmowy ze wszystkich narzędzi AI w wspólnych folderach, buduj bibliotekę wielokrotnie używanych promptów i wstrzykuj prompty bezpośrednio do dowolnej obsługiwanej AI — bez kopiowania i wklejania.",
+    "ru":    "{af_name} — ваш единый ИИ-кокпит: организуйте разговоры со всех ваших ИИ-инструментов в общих папках, создавайте библиотеку многоразовых промптов и вставляйте их прямо в любой поддерживаемый ИИ — без копирования и вставки.",
+    "zh_CN": "{af_name} 是您的统一 AI 驾驶舱：将来自所有 AI 工具的对话整理到共享文件夹中，构建可重复使用的提示词库，并将提示词直接注入任意受支持的 AI — 无需复制粘贴。",
+    "ja":    "{af_name} はあなたの統合 AI コックピットです：すべての AI ツールの会話を共有フォルダに整理し、再利用可能なプロンプトライブラリを構築し、プロンプトをサポートされている任意の AI に直接注入できます — コピー＆ペースト不要。",
+    "ko":    "{af_name}은 통합 AI 콕핏입니다: 모든 AI 도구의 대화를 공유 폴더에 정리하고, 재사용 가능한 프롬프트 라이브러리를 구축하고, 지원되는 모든 AI에 직접 프롬프트를 주입하세요 — 복사-붙여넣기 없이.",
+    "hi":    "{af_name} आपका एकीकृत AI कॉकपिट है: सभी AI टूल्स से बातचीत को साझा फ़ोल्डर में व्यवस्थित करें, पुन: उपयोग योग्य प्रॉम्प्ट लाइब्रेरी बनाएं, और किसी भी समर्थित AI में सीधे प्रॉम्प्ट इंजेक्ट करें — बिना कॉपी-पेस्ट के।",
+    "ro":    "{af_name} este cockpit-ul dvs. AI unificat: organizați conversații din toate instrumentele dvs. AI în dosare partajate, construiți o bibliotecă de prompturi reutilizabile și injectați prompturi direct în orice AI acceptat — fără a fi nevoie să copiați și să lipiți.",
+    "cs":    "{af_name} je váš sjednocený AI kokpit: organizujte konverzace ze všech vašich AI nástrojů do sdílených složek, vytvořte knihovnu znovu použitelných promptů a vkládejte prompty přímo do libovolné podporované AI — bez kopírování a vkládání.",
+    "sk":    "{af_name} je váš zjednotený AI kokpit: organizujte konverzácie zo všetkých vašich AI nástrojov do zdieľaných priečinkov, vytvorte knižnicu opakovane použiteľných promptov a vkladajte prompty priamo do ľubovoľnej podporovanej AI — bez kopírovania a vkladania.",
+    "tr":    "{af_name}, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düzenleyin, yeniden kullanılabilir bir prompt kütüphanesi oluşturun ve promptları desteklenen herhangi bir AI'ye doğrudan enjekte edin — kopyala yapıştır gerekmez.",
+    "id":    "{af_name} adalah kokpit AI terpadu Anda: atur percakapan dari semua alat AI Anda dalam folder bersama, bangun perpustakaan prompt yang dapat digunakan kembali, dan suntikkan prompt langsung ke AI yang didukung — tanpa perlu menyalin dan menempel.",
+    "zh_TW": "{af_name} 是您的統一 AI 駕駛艙：將來自所有 AI 工具的對話整理到共享資料夾中，建立可重複使用的提示詞庫，並將提示詞直接插入任何受支援的 AI — 無需複製貼上。",
+    "vi":    "{af_name} là trung tâm AI thống nhất của bạn: sắp xếp các cuộc trò chuyện từ tất cả các công cụ AI vào các thư mục chung, xây dựng thư viện prompt có thể tái sử dụng, và chèn prompt trực tiếp vào bất kỳ AI nào được hỗ trợ — không cần sao chép và dán.",
+    "bn":    "{af_name} হল আপনার একীভূত AI ককপিট: সমস্ত AI টুল থেকে কথোপকথন শেয়ার ফোল্ডারে সংগঠিত করুন, পুনর্ব্যবহারযোগ্য প্রম্পট লাইব্রেরি তৈরি করুন এবং সরাসরি যেকোনো সমর্থিত AI-তে প্রম্পট ইনজেক্ট করুন — কপি-পেস্ট ছাড়াই।",
+    "nl":    "{af_name} is uw uniforme AI-cockpit: organiseer gesprekken van al uw AI-tools in gedeelde mappen, bouw een herbruikbare promptbibliotheek en injecteer prompts rechtstreeks in elke ondersteunde AI — zonder kopiëren en plakken.",
+    "sw":    "{af_name} ni kokpit yako ya AI iliyounganishwa: panga mazungumzo kutoka kwa zana zako zote za AI katika folda zilizoshirikiwa, jenga maktaba ya maagizo yanayoweza kutumika tena, na uweke maagizo moja kwa moja katika AI yoyote inayounga mkono — bila kuhitaji kunakili na kubandika.",
+    "tl":    "{af_name} ang iyong pinagsamang AI cockpit: ayusin ang mga pag-uusap mula sa lahat ng iyong mga AI tool sa mga ibinabahaging folder, bumuo ng library ng mga prompt na magagamit muli, at mag-inject ng mga prompt nang direkta sa anumang sinusuportahang AI — hindi na kailangang mag-copy-paste.",
+    "th":    "{af_name} คือห้องควบคุม AI รวมของคุณ: จัดระเบียบการสนทนาจากเครื่องมือ AI ทั้งหมดของคุณในโฟลเดอร์ที่ใช้ร่วมกัน สร้างคลังพรอมต์ที่นำมาใช้ซ้ำได้ และแทรกพรอมต์โดยตรงไปยัง AI ที่รองรับ — ไม่ต้องคัดลอกวาง",
+    "ar":    "{af_name} هو مركز التحكم الموحد للذكاء الاصطناعي: نظّم المحادثات من جميع أدوات الذكاء الاصطناعي في مجلدات مشتركة، وابنِ مكتبة من التعليمات القابلة لإعادة الاستخدام، وأدرج التعليمات مباشرةً في أي ذكاء اصطناعي مدعوم — دون الحاجة إلى النسخ واللصق.",
+    "hu":    "{af_name} az Ön egységes AI-irányítóközpontja: szervezze az összes AI-eszközéből származó beszélgetéseket közös mappákba, hozzon létre újra felhasználható prompt-könyvtárat, és illesszen be promptokat közvetlenül bármely támogatott AI-ba — másolás-beillesztés nélkül.",
+    "nb":    "{af_name} er din samlede AI-kontrollpanel: organiser samtaler fra alle AI-verktøyene dine i delte mapper, bygg et bibliotek av gjenbrukbare prompter, og injiser prompter direkte i en hvilken som helst støttet AI — uten kopiering og innliming.",
+    "sv":    "{af_name} är din enhetliga AI-kontrollpanel: organisera konversationer från alla dina AI-verktyg i delade mappar, bygg ett bibliotek med återanvändbara promptar och injicera promptar direkt i valfri AI som stöds — utan att behöva kopiera och klistra in.",
+    "fi":    "{af_name} on yhtenäinen AI-ohjauskeskuksesi: järjestä kaikista AI-työkaluistasi käydyt keskustelut jaetuiksi kansioiksi, rakenna uudelleenkäytettävien kehotteiden kirjasto ja lisää kehotteet suoraan mihin tahansa tuettuun AI:hin — ilman kopiointia ja liittämistä.",
+    "ca":    "{af_name} és el vostre cockpit d'IA unificat: organitzeu converses de totes les vostres eines d'IA en carpetes compartides, creeu una biblioteca de prompts reutilitzables i injecteu prompts directament a qualsevol IA compatible — sense necessitat de copiar i enganxar.",
+    "da":    "{af_name} er dit samlede AI-kontrolpanel: organiser samtaler fra alle dine AI-værktøjer i delte mapper, opbyg et bibliotek af genbrugbare prompter, og injicér prompter direkte i enhver understøttet AI — uden at kopiere og indsætte.",
+    "uk":    "{af_name} — ваш єдиний ШІ-кокпіт: організуйте розмови з усіх ваших ШІ-інструментів у спільних папках, створіть бібліотеку повторно використовуваних підказок і вставляйте їх безпосередньо в будь-який підтримуваний ШІ — без копіювання та вставки.",
+    "el":    "{af_name} είναι το ενοποιημένο AI cockpit σας: οργανώστε συνομιλίες από όλα τα AI εργαλεία σας σε κοινόχρηστους φακέλους, δημιουργήστε μια βιβλιοθήκη επαναχρησιμοποιήσιμων prompts και εισάγετε prompts απευθείας σε οποιοδήποτε υποστηριζόμενο AI — χωρίς αντιγραφή και επικόλληση.",
+    "he":    "{af_name} הוא לוח הבקרה המאוחד שלך ל-AI: ארגן שיחות מכל כלי ה-AI שלך בתיקיות משותפות, בנה ספריית הנחיות לשימוש חוזר, והזרק הנחיות ישירות לכל AI נתמך — ללא צורך בהעתקה והדבקה.",
+    "et":    "{af_name} on teie ühtne AI-juhtimiskeskus: korraldage kõigi AI-tööriistade vestlused jagatud kaustadesse, looge korduvkasutatavate käskluste teek ja lisage käsklused otse mistahes toetatud AI-sse — ilma kopeerimise ja kleepimiseta.",
+    "lt":    "{af_name} yra jūsų vieninga AI valdymo centras: tvarkykite visų AI įrankių pokalbius bendrose aplankuose, kurkite daugkartinio naudojimo raginimų biblioteką ir įterpkite raginimus tiesiogiai į bet kurią palaikomą AI — be kopijavimo ir įklijavimo.",
+    "lv":    "{af_name} ir jūsu vienotais AI vadības panelis: kārtojiet sarunas no visiem AI rīkiem koplietotās mapēs, veidojiet atkārtoti izmantojamu uzvedņu bibliotēku un ievietojiet uzvednes tieši jebkurā atbalstītajā AI — bez kopēšanas un ielīmēšanas.",
+    "ms":    "{af_name} ialah kokpit AI bersatu anda: susun perbualan dari semua alat AI anda dalam folder berkongsi, bina perpustakaan arahan yang boleh digunakan semula, dan suntik arahan terus ke mana-mana AI yang disokong — tanpa perlu menyalin dan menampal.",
+    "bg":    "{af_name} е вашето обединено AI табло за управление: организирайте разговори от всички ваши AI инструменти в споделени папки, изградете библиотека от подсказки за многократна употреба и вмъквайте подсказки директно в произволен поддържан AI — без копиране и поставяне.",
+    "sl":    "{af_name} je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vseh vaših AI-orodij v skupne mape, zgradite knjižnico promptov za večkratno uporabo in vstavljajte prompte neposredno v kateri koli podprti AI — brez kopiranja in lepljenja.",
+    "sr":    "{af_name} је ваш јединствени AI кокпит: организујте разговоре из свих ваших AI алата у дељене фасцикле, изградите библиотеку упита за вишеструку употребу и убацујте упите директно у било који подржани AI — без копирања и лепљења.",
+    "hr":    "{af_name} je vaš objedinjeni AI kokpit: organizirajte razgovore iz svih vaših AI alata u dijeljene mape, izgradite knjižnicu upita za višekratnu upotrebu i ubacujte upite izravno u bilo koji podržani AI — bez kopiranja i lijepljenja.",
+}
+
+
+# ── Local LLM Support section (inserted before 🛠️ how-to section) ───────────
+LOCAL_LLM_SECTION = {
+    "fr":    "🏠 SUPPORT LLM LOCAL\n\nVous utilisez un modèle IA local (Ollama, LM Studio, Jan ou autre) ? Configurez {af_name} avec votre URL locale — prend en charge localhost et les adresses LAN (192.168.x.x, noms d'hôtes personnalisés). La sauvegarde rapide et via le menu contextuel fonctionnent aussi sur les interfaces locales.",
+    "de":    "🏠 LOKALER LLM-SUPPORT\n\nVerwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie {af_name} mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung und Kontextmenü-Speicherung funktionieren auch auf lokalen Benutzeroberflächen.",
+    "es":    "🏠 SOPORTE DE LLM LOCAL\n\n¿Usas un modelo de IA local (Ollama, LM Studio, Jan u otro)? Configura {af_name} con tu URL local — compatible con localhost y direcciones LAN (192.168.x.x, nombres de host personalizados). El guardado rápido y el guardado por menú contextual también funcionan en interfaces locales.",
+    "it":    "🏠 SUPPORTO LLM LOCALE\n\nStai usando un modello AI locale (Ollama, LM Studio, Jan o altro)? Configura {af_name} con il tuo URL locale — supporta localhost e indirizzi LAN (192.168.x.x, hostname personalizzati). Il salvataggio rapido e dal menu contestuale funzionano anche nelle interfacce locali.",
+    "pt_BR": "🏠 SUPORTE A LLM LOCAL\n\nEstá usando um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure o {af_name} com sua URL local — suporta localhost e endereços LAN (192.168.x.x, hostnames personalizados). O salvamento rápido e pelo menu de contexto também funcionam em interfaces locais.",
+    "pt_PT": "🏠 SUPORTE A LLM LOCAL\n\nEstá a usar um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure o {af_name} com o seu URL local — suporta localhost e endereços LAN (192.168.x.x, nomes de anfitrião personalizados). O guardamento rápido e pelo menu de contexto também funcionam em interfaces locais.",
+    "pl":    "🏠 WSPARCIE LOKALNEGO LLM\n\nUżywasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj {af_name} ze swoim lokalnym adresem URL — obsługuje localhost i adresy LAN (192.168.x.x, niestandardowe nazwy hostów). Szybkie zapisywanie i zapisywanie z menu kontekstowego działają również w lokalnych interfejsach.",
+    "ru":    "🏠 ПОДДЕРЖКА ЛОКАЛЬНОГО LLM\n\nИспользуете локальную ИИ-модель (Ollama, LM Studio, Jan или другую)? Настройте {af_name} с вашим локальным URL — поддерживаются localhost и LAN-адреса (192.168.x.x, пользовательские имена хостов). Быстрое сохранение и сохранение через контекстное меню работают и в локальных интерфейсах.",
+    "zh_CN": "🏠 本地 LLM 支持\n\n正在运行本地 AI 模型（Ollama、LM Studio、Jan 或其他）？使用本地 URL 配置 {af_name} — 支持 localhost 和 LAN 地址（192.168.x.x、自定义主机名）。快速保存和右键菜单保存也适用于本地界面。",
+    "ja":    "🏠 ローカル LLM サポート\n\nローカル AI モデル（Ollama、LM Studio、Jan など）を使用していますか？ {af_name} をローカル URL で設定できます — localhost と LAN アドレス（192.168.x.x、カスタムホスト名）に対応。クイック保存とコンテキストメニュー保存もローカル UI で動作します。",
+    "ko":    "🏠 로컬 LLM 지원\n\n로컬 AI 모델(Ollama, LM Studio, Jan 등)을 사용 중이신가요? 로컬 URL로 {af_name}을 구성하세요 — localhost와 LAN 주소(192.168.x.x, 사용자 지정 호스트 이름)를 지원합니다. 빠른 저장과 컨텍스트 메뉴 저장도 로컬 UI에서 작동합니다.",
+    "hi":    "🏠 लोकल LLM सपोर्ट\n\nलोकल AI मॉडल (Ollama, LM Studio, Jan या अन्य) चला रहे हैं? {af_name} को अपने लोकल URL के साथ कॉन्फ़िगर करें — localhost और LAN एड्रेस (192.168.x.x, कस्टम होस्टनाम) सपोर्ट करता है। क्विक-सेव और कॉन्टेक्स्ट-मेनू सेव लोकल UI पर भी काम करते हैं।",
+    "ro":    "🏠 SUPORT LLM LOCAL\n\nFolosiți un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați {af_name} cu URL-ul local — acceptă localhost și adrese LAN (192.168.x.x, nume de gazdă personalizate). Salvarea rapidă și din meniul contextual funcționează și pe interfețe locale.",
+    "cs":    "🏠 PODPORA LOKÁLNÍHO LLM\n\nPoužíváte lokální AI model (Ollama, LM Studio, Jan nebo jiný)? Nakonfigurujte {af_name} s místní URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastní názvy hostitelů). Rychlé ukládání a ukládání přes kontextové menu fungují i na lokálních rozhraních.",
+    "sk":    "🏠 PODPORA LOKÁLNEHO LLM\n\nPoužívate lokálny model AI (Ollama, LM Studio, Jan alebo iný)? Nakonfigurujte {af_name} s miestnou URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastné názvy hostiteľov). Rýchle ukladanie a ukladanie cez kontextové menu fungujú aj na lokálnych rozhraniach.",
+    "tr":    "🏠 YEREL LLM DESTEĞİ\n\nYerel bir AI modeli (Ollama, LM Studio, Jan veya başka) mı kullanıyorsunuz? {af_name}'ı yerel URL'nizle yapılandırın — localhost ve LAN adreslerini destekler (192.168.x.x, özel ana bilgisayar adları). Hızlı kaydetme ve bağlam menüsü kaydetme yerel arayüzlerde de çalışır.",
+    "id":    "🏠 DUKUNGAN LLM LOKAL\n\nMenjalankan model AI lokal (Ollama, LM Studio, Jan, atau lainnya)? Konfigurasikan {af_name} dengan URL lokal Anda — mendukung localhost dan alamat LAN (192.168.x.x, nama host khusus). Simpan cepat dan simpan melalui menu konteks juga berfungsi pada UI lokal.",
+    "zh_TW": "🏠 本地 LLM 支援\n\n正在執行本地 AI 模型（Ollama、LM Studio、Jan 或其他）？使用本地 URL 設定 {af_name} — 支援 localhost 和 LAN 位址（192.168.x.x、自訂主機名稱）。快速儲存和右鍵選單儲存也適用於本地介面。",
+    "vi":    "🏠 HỖ TRỢ LLM CỤC BỘ\n\nĐang chạy mô hình AI cục bộ (Ollama, LM Studio, Jan hoặc khác)? Cấu hình {af_name} với URL cục bộ của bạn — hỗ trợ localhost và địa chỉ LAN (192.168.x.x, tên máy chủ tùy chỉnh). Lưu nhanh và lưu qua menu ngữ cảnh cũng hoạt động trên giao diện cục bộ.",
+    "bn":    "🏠 লোকাল LLM সাপোর্ট\n\nলোকাল AI মডেল (Ollama, LM Studio, Jan বা অন্য) চালাচ্ছেন? {af_name} আপনার লোকাল URL দিয়ে কনফিগার করুন — localhost এবং LAN ঠিকানা (192.168.x.x, কাস্টম হোস্টনাম) সাপোর্ট করে। কুইক-সেভ এবং কনটেক্সট-মেনু সেভ লোকাল UI-তেও কাজ করে।",
+    "nl":    "🏠 LOKALE LLM-ONDERSTEUNING\n\nGebruikt u een lokaal AI-model (Ollama, LM Studio, Jan of een ander)? Configureer {af_name} met uw lokale URL — ondersteunt localhost en LAN-adressen (192.168.x.x, aangepaste hostnamen). Snel opslaan en opslaan via contextmenu werken ook op lokale interfaces.",
+    "sw":    "🏠 MSAADA WA LLM WA NDANI\n\nUnaendesha mfano wa AI wa ndani (Ollama, LM Studio, Jan, au mwingine)? Sanidi {af_name} na URL yako ya ndani — inasaidia localhost na anwani za LAN (192.168.x.x, majina ya seva maalum). Kuhifadhi haraka na kuhifadhi kupitia menyu ya muktadha pia hufanya kazi kwenye UI za ndani.",
+    "tl":    "🏠 SUPORTA SA LOKAL NA LLM\n\nNagpapatakbo ng lokal na AI model (Ollama, LM Studio, Jan, o iba pa)? I-configure ang {af_name} gamit ang iyong lokal na URL — sinusuportahan ang localhost at mga LAN address (192.168.x.x, mga custom na hostname). Gumagana rin ang mabilis na pag-save at pag-save sa pamamagitan ng context menu sa mga lokal na UI.",
+    "th":    "🏠 รองรับ LLM ในเครื่อง\n\nกำลังรัน AI model ในเครื่อง (Ollama, LM Studio, Jan หรืออื่นๆ)? ตั้งค่า {af_name} ด้วย URL ในเครื่องของคุณ — รองรับ localhost และที่อยู่ LAN (192.168.x.x, hostname แบบกำหนดเอง) การบันทึกด่วนและการบันทึกผ่านเมนูคลิกขวาก็ทำงานบน UI ในเครื่องด้วย",
+    "ar":    "🏠 دعم LLM المحلي\n\nهل تشغّل نموذج ذكاء اصطناعي محليًا (Ollama أو LM Studio أو Jan أو غيره)؟ قم بتكوين {af_name} بعنوان URL المحلي الخاص بك — يدعم localhost وعناوين LAN (192.168.x.x وأسماء المضيف المخصصة). يعمل الحفظ السريع والحفظ عبر قائمة النقر الأيمن على الواجهات المحلية أيضًا.",
+    "hu":    "🏠 HELYI LLM TÁMOGATÁS\n\nHelyi AI modellt futtat (Ollama, LM Studio, Jan vagy más)? Konfigurálja a(z) {af_name}-t a helyi URL-jével — támogatja a localhostot és a LAN-címeket (192.168.x.x, egyéni állomásneveket). A gyors mentés és a helyi menüs mentés is működik a helyi felületeken.",
+    "nb":    "🏠 STØTTE FOR LOKAL LLM\n\nKjører du en lokal AI-modell (Ollama, LM Studio, Jan eller annen)? Konfigurer {af_name} med din lokale URL — støtter localhost og LAN-adresser (192.168.x.x, egendefinerte vertsnavn). Hurtiglagring og kontekstmenylagring fungerer også på lokale brukergrensesnitt.",
+    "sv":    "🏠 STÖD FÖR LOKAL LLM\n\nKör du en lokal AI-modell (Ollama, LM Studio, Jan eller annan)? Konfigurera {af_name} med din lokala URL — stöder localhost och LAN-adresser (192.168.x.x, anpassade värdnamn). Snabbspara och kontextmenyspara fungerar även på lokala gränssnitt.",
+    "fi":    "🏠 PAIKALLISEN LLM:N TUKI\n\nKäytätkö paikallista AI-mallia (Ollama, LM Studio, Jan tai muu)? Määritä {af_name} paikallisella URL-osoitteellasi — tukee localhostia ja LAN-osoitteita (192.168.x.x, mukautetut isäntänimet). Pikatallennus ja kontekstivalikosta tallennus toimivat myös paikallisissa käyttöliittymissä.",
+    "ca":    "🏠 SUPORT PER A LLM LOCAL\n\nEsteu executant un model d'IA local (Ollama, LM Studio, Jan o un altre)? Configureu {af_name} amb el vostre URL local — admet localhost i adreces LAN (192.168.x.x, noms d'host personalitzats). El desament ràpid i des del menú contextual també funcionen en interfícies locals.",
+    "da":    "🏠 UNDERSTØTTELSE AF LOKAL LLM\n\nKører du en lokal AI-model (Ollama, LM Studio, Jan eller en anden)? Konfigurer {af_name} med din lokale URL — understøtter localhost og LAN-adresser (192.168.x.x, brugerdefinerede værtsnavne). Hurtig lagring og genvejsmenu-lagring fungerer også på lokale brugergrænseflader.",
+    "uk":    "🏠 ПІДТРИМКА ЛОКАЛЬНОГО LLM\n\nЗапускаєте локальну ШІ-модель (Ollama, LM Studio, Jan або іншу)? Налаштуйте {af_name} з вашою локальною URL-адресою — підтримує localhost та LAN-адреси (192.168.x.x, власні імена хостів). Швидке збереження та збереження через контекстне меню також працюють на локальних інтерфейсах.",
+    "el":    "🏠 ΥΠΟΣΤΗΡΙΞΗ ΤΟΠΙΚΟΥ LLM\n\nΤρέχετε ένα τοπικό μοντέλο AI (Ollama, LM Studio, Jan ή άλλο); Ρυθμίστε το {af_name} με το τοπικό σας URL — υποστηρίζει localhost και διευθύνσεις LAN (192.168.x.x, προσαρμοσμένα ονόματα κεντρικών υπολογιστών). Η γρήγορη αποθήκευση και μέσω μενού περιβάλλοντος λειτουργούν επίσης σε τοπικές διεπαφές.",
+    "he":    "🏠 תמיכה ב-LLM מקומי\n\nמפעיל מודל AI מקומי (Ollama, LM Studio, Jan או אחר)? הגדר את {af_name} עם כתובת ה-URL המקומית שלך — תומך ב-localhost ובכתובות LAN (192.168.x.x, שמות מארח מותאמים אישית). שמירה מהירה ושמירה דרך תפריט ההקשר פועלות גם בממשקים מקומיים.",
+    "et":    "🏠 KOHALIKU LLM TUGI\n\nKas kasutate kohalikku AI-mudelit (Ollama, LM Studio, Jan või muu)? Seadistage {af_name} oma kohaliku URL-iga — toetab localhosti ja LAN-aadresse (192.168.x.x, kohandatud hostinimed). Kiirsalvestamine ja kontekstimenüüst salvestamine töötavad ka kohalikes liidestes.",
+    "lt":    "🏠 VIETINIO LLM PALAIKYMAS\n\nAr naudojate vietinį AI modelį (Ollama, LM Studio, Jan ar kitą)? Sukonfigūruokite {af_name} naudodami vietinį URL — palaiko localhost ir LAN adresus (192.168.x.x, pasirinktiniai prieglobos pavadinimai). Greitas išsaugojimas ir per kontekstinį meniu taip pat veikia vietinėse sąsajose.",
+    "lv":    "🏠 VIETĒJĀ LLM ATBALSTS\n\nVai izmantojat vietējo AI modeli (Ollama, LM Studio, Jan vai citu)? Konfigurējiet {af_name} ar savu vietējo URL — atbalsta localhost un LAN adreses (192.168.x.x, pielāgoti resursdatoru nosaukumi). Ātrā saglabāšana un saglabāšana konteksta izvēlnē darbojas arī vietējās saskarnēs.",
+    "ms":    "🏠 SOKONGAN LLM TEMPATAN\n\nMenjalankan model AI tempatan (Ollama, LM Studio, Jan, atau lain-lain)? Konfigurasikan {af_name} dengan URL tempatan anda — menyokong localhost dan alamat LAN (192.168.x.x, nama hos tersuai). Simpan pantas dan simpan menu konteks juga berfungsi pada antara muka tempatan.",
+    "bg":    "🏠 ПОДДРЪЖКА НА ЛОКАЛЕН LLM\n\nИзползвате локален AI модел (Ollama, LM Studio, Jan или друг)? Конфигурирайте {af_name} с вашия локален URL — поддържа localhost и LAN адреси (192.168.x.x, персонализирани имена на хостове). Бързото запазване и запазването чрез контекстно меню работят и на локални интерфейси.",
+    "sl":    "🏠 PODPORA ZA LOKALNI LLM\n\nUporabljate lokalni model AI (Ollama, LM Studio, Jan ali drugega)? Konfigurirajte {af_name} z lokalnim URL-jem — podpira localhost in LAN naslove (192.168.x.x, prilagojeni nazivi gostiteljev). Hitro shranjevanje in shranjevanje prek kontekstnega menija delujeta tudi na lokalnih vmesnikih.",
+    "sr":    "🏠 PODRŠKA ZA LOKALNI LLM\n\nKoristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite {af_name} sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.",
+    "hr":    "🏠 PODRŠKA ZA LOKALNI LLM\n\nKoristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte {af_name} s vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođeni nazivi domaćina). Brzo spremanje i spremanje putem kontekstnog izbornika rade i na lokalnim sučeljima.",
+}
+
+
+# ── Per-language injection fixes (▶ bullet + how-to inject line) ─────────────
+# Each entry: [(old_fragment, new_fragment), ...]  — applied via str.replace()
+INJECTION_FIXES = {
+    "fr": [
+        ("dans le champ de saisie de Gemini. L'extension détecte si vous êtes bien sur une page Gemini et vous avertit sinon.",
+         "dans le champ de saisie de l'IA active."),
+        ("il s'injecte directement dans Gemini, prêt à envoyer.",
+         "il s'injecte directement dans l'IA active, prêt à envoyer."),
+    ],
+    "de": [
+        ("in das Eingabefeld von Gemini zu injizieren. Die Erweiterung prüft, ob Sie sich auf einer Gemini-Seite befinden, und benachrichtigt Sie andernfalls.",
+         "in das Eingabefeld der aktiven KI zu injizieren."),
+        ("er wird direkt in Gemini injiziert, bereit zum Senden.",
+         "er wird direkt in die aktive KI injiziert, bereit zum Senden."),
+    ],
+    "es": [
+        ("en el campo de texto de Gemini. La extensión detecta si estás en una página de Gemini y te avisa si no es así.",
+         "en el campo de texto de la IA activa."),
+        ("se inyecta directamente en Gemini, listo para enviar.",
+         "se inyecta directamente en la IA activa, listo para enviar."),
+    ],
+    "it": [
+        ("nel campo di input di Gemini. L'estensione rileva se sei su una pagina Gemini e ti avvisa se non lo sei.",
+         "nel campo di input dell'IA attiva."),
+        ("viene iniettato direttamente in Gemini, pronto per l'invio.",
+         "viene iniettato direttamente nell'IA attiva, pronto per l'invio."),
+    ],
+    "pt_BR": [
+        ("no campo de texto do Gemini. A extensão detecta se você está em uma página do Gemini e avisa caso contrário.",
+         "no campo de texto da IA ativa."),
+        ("ele é injetado diretamente no Gemini, pronto para enviar.",
+         "ele é injetado diretamente na IA ativa, pronto para enviar."),
+    ],
+    "pt_PT": [
+        ("no campo de texto do Gemini. A extensão deteta se está numa página do Gemini e avisa-o caso contrário.",
+         "no campo de texto da IA ativa."),
+        ("é injetado diretamente no Gemini, pronto para enviar.",
+         "é injetado diretamente na IA ativa, pronto para enviar."),
+    ],
+    "pl": [
+        ("w pole tekstowe Gemini. Rozszerzenie wykrywa, czy jesteś na stronie Gemini, i powiadamia Cię, jeśli nie.",
+         "w pole tekstowe aktywnej AI."),
+        ("zostaje wstrzyknięty bezpośrednio do Gemini, gotowy do wysłania.",
+         "zostaje wstrzyknięty bezpośrednio do aktywnej AI, gotowy do wysłania."),
+    ],
+    "ru": [
+        ("в поле ввода Gemini. Расширение определяет, находитесь ли вы на странице Gemini, и уведомляет вас, если нет.",
+         "в поле ввода активного ИИ."),
+        ("он вставляется прямо в Gemini, готов к отправке.",
+         "он вставляется прямо в активный ИИ, готов к отправке."),
+    ],
+    "zh_CN": [
+        ("将其注入 Gemini 输入框。扩展程序会检测您是否在 Gemini 页面上，否则会发出通知。",
+         "将其注入活跃 AI 的输入框。"),
+        ("直接注入 Gemini，随时可发送。",
+         "直接注入活跃的 AI，随时可发送。"),
+    ],
+    "ja": [
+        ("Gemini の入力欄に直接注入されます。拡張機能が Gemini のページかどうかを検出し、そうでない場合は通知します。",
+         "アクティブな AI の入力欄に直接注入されます。"),
+        ("Gemini に直接注入され、送信準備完了。",
+         "アクティブな AI に直接注入され、送信準備完了。"),
+    ],
+    "ko": [
+        ("Gemini 입력창에 직접 주입됩니다. Gemini 페이지에 있는지 확인하고 그렇지 않으면 알림을 표시합니다.",
+         "활성 AI 입력창에 직접 주입됩니다."),
+        ("Gemini에 직접 주입되어 바로 전송 가능합니다.",
+         "활성 AI에 직접 주입되어 바로 전송 가능합니다."),
+    ],
+    "hi": [
+        ("Gemini के इनपुट फ़ील्ड में इंजेक्ट हो जाएगा। एक्सटेंशन जांचता है कि आप Gemini पेज पर हैं या नहीं, और सूचित करता है।",
+         "सक्रिय AI के इनपुट फ़ील्ड में इंजेक्ट हो जाएगा।"),
+        ("सीधे Gemini में इंजेक्ट होता है, भेजने के लिए तैयार।",
+         "सीधे सक्रिय AI में इंजेक्ट होता है, भेजने के लिए तैयार।"),
+    ],
+    "ro": [
+        ("în câmpul de introducere al Gemini. Extensia detectează dacă vă aflați pe o pagină Gemini și vă notifică dacă nu este cazul.",
+         "în câmpul de introducere al oricărui AI acceptat."),
+        ("se injectează direct în Gemini, gata de trimis.",
+         "se injectează direct în AI-ul activ, gata de trimis."),
+    ],
+    "cs": [
+        ("do vstupního pole Gemini. Rozšíření zjistí, zda jste na stránce Gemini, a pokud ne, upozorní vás.",
+         "do vstupního pole aktivní AI."),
+        ("vloží se přímo do Gemini, připravena k odeslání.",
+         "vloží se přímo do aktivní AI, připravena k odeslání."),
+    ],
+    "sk": [
+        ("do vstupného poľa Gemini. Rozšírenie zistí, či ste na stránke Gemini, a ak nie, upozorní vás.",
+         "do vstupného poľa aktívnej AI."),
+        ("vloží sa priamo do Gemini, pripravená na odoslanie.",
+         "vloží sa priamo do aktívnej AI, pripravená na odoslanie."),
+    ],
+    "tr": [
+        ("Gemini'nin giriş alanına doğrudan enjekte edin. Uzantı, Gemini sayfasında olup olmadığınızı algılar ve değilseniz sizi uyarır.",
+         "doğrudan aktif AI'nin giriş alanına enjekte edin."),
+        ("doğrudan Gemini'ye enjekte edilir, göndermeye hazır.",
+         "doğrudan aktif AI'ye enjekte edilir, göndermeye hazır."),
+    ],
+    "id": [
+        ("ke kolom input Gemini. Ekstensi mendeteksi apakah Anda berada di halaman Gemini dan memberi tahu jika tidak.",
+         "ke kolom input AI aktif."),
+        ("langsung disuntikkan ke Gemini, siap dikirim.",
+         "langsung disuntikkan ke AI aktif, siap dikirim."),
+    ],
+    "zh_TW": [
+        ("直接注入 Gemini 的輸入欄。擴充功能會偵測您是否在 Gemini 頁面上，若不在則通知您。",
+         "直接注入活躍 AI 的輸入欄。"),
+        ("直接注入 Gemini，準備傳送。",
+         "直接注入活躍的 AI，準備傳送。"),
+    ],
+    "vi": [
+        ("vào ô nhập của Gemini. Tiện ích phát hiện bạn có đang ở trang Gemini hay không và thông báo nếu chưa.",
+         "vào ô nhập của AI đang hoạt động."),
+        ("chèn trực tiếp vào Gemini, sẵn sàng gửi.",
+         "chèn trực tiếp vào AI đang hoạt động, sẵn sàng gửi."),
+    ],
+    "bn": [
+        ("Gemini-এর ইনপুট ফিল্ডে প্রবেশ করান। এক্সটেনশন সনাক্ত করে আপনি Gemini পৃষ্ঠায় আছেন কিনা এবং না থাকলে জানায়।",
+         "সক্রিয় AI-এর ইনপুট ফিল্ডে প্রবেশ করান।"),
+        ("সরাসরি Gemini-তে প্রবেশ করে, পাঠানোর জন্য প্রস্তুত।",
+         "সরাসরি সক্রিয় AI-তে প্রবেশ করে, পাঠানোর জন্য প্রস্তুত।"),
+    ],
+    "nl": [
+        ("in het invoerveld van Gemini in te voegen. De extensie detecteert of u op een Gemini-pagina bent en waarschuwt u indien niet.",
+         "rechtstreeks in het invoerveld van de actieve AI in te voegen."),
+        ("wordt direct ingevoegd in Gemini, klaar om te verzenden.",
+         "wordt direct ingevoegd in de actieve AI, klaar om te verzenden."),
+    ],
+    "sw": [
+        ("kwenye uwanja wa kuandika wa Gemini. Kiendelezi hugundua kama uko kwenye ukurasa wa Gemini na kukuarifu ikiwa la.",
+         "kwenye uwanja wa kuandika wa AI inayotumika."),
+        ("kinaingizwa moja kwa moja kwenye Gemini, tayari kutumwa.",
+         "kinaingizwa moja kwa moja kwenye AI inayotumika, tayari kutumwa."),
+    ],
+    "tl": [
+        ("sa input field ng Gemini. Nde-detect ng extension kung nasa Gemini page ka at inaabisuhan ka kung wala.",
+         "sa input field ng aktibong AI."),
+        ("direktang ini-inject sa Gemini, handa nang ipadala.",
+         "direktang ini-inject sa aktibong AI, handa nang ipadala."),
+    ],
+    "th": [
+        ("ในช่องป้อนข้อมูลของ Gemini ส่วนขยายตรวจสอบว่าคุณอยู่ในหน้า Gemini หรือไม่ และแจ้งเตือนหากไม่ใช่",
+         "ในช่องป้อนข้อมูลของ AI ที่ใช้งานอยู่"),
+        ("จะแทรกโดยตรงใน Gemini พร้อมส่ง",
+         "จะแทรกโดยตรงใน AI ที่ใช้งานอยู่ พร้อมส่ง"),
+    ],
+    "ar": [
+        ("في حقل الإدخال في Gemini. يكتشف الامتداد ما إذا كنت على صفحة Gemini ويُخطرك إذا لم تكن كذلك.",
+         "في حقل إدخال أي ذكاء اصطناعي مدعوم."),
+        ("يُدرج مباشرةً في Gemini، جاهز للإرسال.",
+         "يُدرج مباشرةً في الذكاء الاصطناعي النشط، جاهز للإرسال."),
+    ],
+    "hu": [
+        ("a Gemini beviteli mezőjébe illessze be. A bővítmény észleli, hogy Gemini-oldalon van-e, és értesíti, ha nem.",
+         "az aktív AI beviteli mezőjébe illessze be."),
+        ("közvetlenül a Geminibe illeszti be, küldésre készen.",
+         "közvetlenül az aktív AI-ba illeszti be, küldésre készen."),
+    ],
+    "nb": [
+        ("i Geminis inndatafelt. Tillegget varsler deg hvis du ikke er på en Gemini-side.",
+         "i inndatafeltet til den aktive AI-en."),
+        ("den settes direkte inn i Gemini, klar til å sende.",
+         "den settes direkte inn i den aktive AI-en, klar til å sende."),
+    ],
+    "sv": [
+        ("i Geminis inmatningsfält. Tillägget meddelar dig om du inte är på en Gemini-sida.",
+         "i indatafältet för den aktiva AI:n."),
+        ("den injiceras direkt i Gemini, redo att skicka.",
+         "den injiceras direkt i den aktiva AI:n, redo att skicka."),
+    ],
+    "fi": [
+        ("Geminin syöttökenttään. Laajennus ilmoittaa, jos et ole Gemini-sivulla.",
+         "aktiivisen AI:n syöttökenttään."),
+        ("se injektoidaan suoraan Geminiin, valmiina lähetettäväksi.",
+         "se injektoidaan suoraan aktiiviseen AI:hin, valmiina lähetettäväksi."),
+    ],
+    "ca": [
+        ("al camp d'entrada de Gemini.",
+         "al camp d'entrada de la IA activa."),
+        ("s'injecta directament a Gemini.",
+         "s'injecta directament a la IA activa."),
+    ],
+    "da": [
+        ("i Geminis inputfelt. Udvidelsen giver besked, hvis du ikke er på en Gemini-side.",
+         "i inputfeltet på den aktive AI."),
+        ("den indsættes direkte i Gemini, klar til at sende.",
+         "den indsættes direkte i den aktive AI, klar til at sende."),
+    ],
+    "uk": [
+        ("в поле введення Gemini.",
+         "в поле введення активного ШІ."),
+        ("він вставляється безпосередньо в Gemini.",
+         "він вставляється безпосередньо в активний ШІ."),
+    ],
+    "el": [
+        ("στο πεδίο εισόδου του Gemini.",
+         "στο πεδίο εισόδου του ενεργού AI."),
+        ("εισάγεται απευθείας στο Gemini.",
+         "εισάγεται απευθείας στον ενεργό AI."),
+    ],
+    "he": [
+        ("לשדה הקלט של Gemini.",
+         "לשדה הקלט של ה-AI הפעיל."),
+        ("הוא מוזן ישירות ל-Gemini, מוכן לשליחה.",
+         "הוא מוזן ישירות ל-AI הפעיל, מוכן לשליחה."),
+    ],
+    "et": [
+        ("Gemini sisestusväljale.",
+         "aktiivse AI sisestusväljale."),
+        ("see lisatakse otse Geminisse.",
+         "see lisatakse otse aktiivsesse AI-sse."),
+    ],
+    "lt": [
+        ("Gemini įvesties lauką.",
+         "aktyvaus AI įvesties lauką."),
+        ("jis įterpiamas tiesiai į Gemini.",
+         "jis įterpiamas tiesiai į aktyvų AI."),
+    ],
+    "lv": [
+        ("Gemini ievades laukā.",
+         "aktīvā AI ievades laukā."),
+        ("tā tiek ievietota tieši Gemini.",
+         "tā tiek ievietota tieši aktīvajā AI."),
+    ],
+    "ms": [
+        ("ke medan input Gemini.",
+         "ke medan input AI aktif."),
+        ("ia disisipkan terus ke Gemini.",
+         "ia disisipkan terus ke AI aktif."),
+    ],
+    "bg": [
+        ("в полето за въвеждане на Gemini.",
+         "в полето за въвеждане на активния AI."),
+        ("вмъква се директно в Gemini.",
+         "вмъква се директно в активния AI."),
+    ],
+    "sl": [
+        ("v vnosno polje Gemini.",
+         "v vnosno polje aktivnega AI."),
+        ("vstavi se neposredno v Gemini.",
+         "vstavi se neposredno v aktivni AI."),
+    ],
+    "sr": [
+        ("u polje za unos Gemini.",
+         "u polje za unos aktivnog AI-ja."),
+        ("ubacuje se direktno u Gemini.",
+         "ubacuje se direktno u aktivni AI."),
+    ],
+    "hr": [
+        ("u polje za unos Gemini.",
+         "u polje za unos aktivnog AI-ja."),
+        ("ubacuje se izravno u Gemini.",
+         "ubacuje se izravno u aktivni AI."),
+    ],
 }
 
 
@@ -181,13 +563,21 @@ def transform(text, lang, af_name, gf_name):
     # Always replace the English brand name fallback
     text = text.replace('Gemini Folders', af_name)
 
-    # 2. Replace intro paragraph with multi-site version
+    # 2. Replace intro paragraph (first paragraph) with multi-site version
     if lang in INTRO_REPLACEMENTS:
         intro = INTRO_REPLACEMENTS[lang].format(af_name=af_name)
-        # Replace up to the second paragraph (the "cockpit" line)
         first_blank = text.find('\n\n')
         if first_blank != -1:
             text = intro + '\n\n' + text[first_blank + 2:]
+
+    # 2b. Replace the 2nd paragraph (GF "Gemini cockpit" line) with AF unified cockpit
+    if lang in COCKPIT_REPLACEMENTS:
+        cockpit = COCKPIT_REPLACEMENTS[lang].format(af_name=af_name)
+        first_blank = text.find('\n\n')
+        if first_blank != -1:
+            second_blank = text.find('\n\n', first_blank + 2)
+            if second_blank != -1:
+                text = text[:first_blank + 2] + cockpit + text[second_blank:]
 
     # 3. Replace the Gem button bullet with new-conv buttons bullet
     if lang in GEM_REPLACEMENTS:
@@ -196,26 +586,46 @@ def transform(text, lang, af_name, gf_name):
         if match:
             text = text[:match.start()] + new_bullet + text[match.end():]
 
-    # 4. Replace version history section
+    # 4. Replace version history section (keep only V1 release note)
     if lang in V1_NOTES:
-        # Find the 📢 updates section header and replace everything after it
         match = VERSION_SECTION_PATTERN.search(text)
         if match:
-            text = text[:match.start(1)] + match.group(1) + V1_NOTES[lang] + '\n'
+            # match.start(1) is right after the header line — replace all old history
+            text = text[:match.start(1)] + V1_NOTES[lang] + '\n'
         else:
-            # Fallback: append version note at the end if section not found
             text = text.rstrip() + '\n\n📢 VERSION:\n' + V1_NOTES[lang] + '\n'
 
-    # 5. Replace gemini.google.com references with multi-site reference
+    # 5. Replace gemini.google.com references with site list
     text = re.sub(
         r'gemini\.google\.com',
-        'the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity)',
+        'Gemini, Claude, ChatGPT, Copilot, Perplexity',
         text
     )
 
     # 6. Replace "Save to Gemini Folders" / equivalent in How-To section
     text = text.replace(f'"Save to {gf_name}"', f'"Save to {af_name}"') if gf_name else text
     text = text.replace('"Save to Gemini Folders"', f'"Save to {af_name}"')
+
+    # 7. Strip version prefix from the ✨ section heading (handles "WORD WORD v4.0 —", "v4.0 WORD—", "4.0 WORD—")
+    text = re.sub(r'(✨\s+)[^\n]*?v?4\.0[^\n—–\-]*[—–\-]+\s*', r'\1', text)
+
+    # 8. Remove any line containing the 💎 Gem configure instruction in how-to
+    text = re.sub(r'^[^\n]*💎[^\n]*\n?', '', text, flags=re.MULTILINE)
+
+    # 9. Fix language count: GF said "27 languages", AF supports 43
+    text = re.sub(r'(?<!\d)27(?!\d)', '43', text)
+
+    # 10. Insert LOCAL LLM SUPPORT section before 🛠️ how-to section
+    if lang in LOCAL_LLM_SECTION:
+        section = LOCAL_LLM_SECTION[lang].format(af_name=af_name)
+        idx = text.find('\n🛠️')
+        if idx != -1:
+            text = text[:idx] + '\n\n' + section + text[idx:]
+
+    # 11. Fix injection lines: replace Gemini-specific fragments with active-AI equivalents
+    if lang in INJECTION_FIXES:
+        for old, new in INJECTION_FIXES[lang]:
+            text = text.replace(old, new)
 
     return text
 

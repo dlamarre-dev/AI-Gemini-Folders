@@ -1,12 +1,12 @@
 Tus conversaciones de IA están dispersas en cinco sitios distintos. Sigues reescribiendo los mismos prompts. Tus mejores chats desaparecen en historiales interminables de Gemini, Claude, ChatGPT, Copilot y Perplexity.
 Carpetas IA es la extensión que necesitas.
 
-Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de Gemini: organiza tus conversaciones en carpetas, construye una biblioteca de prompts reutilizables e inyéctalos directamente en Gemini con un solo clic, sin copiar ni pegar.
+Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus herramientas de IA en carpetas compartidas, crea una biblioteca de prompts reutilizables e inyecta prompts directamente en cualquier IA compatible — sin necesidad de copiar y pegar.
 
-✨ NOVEDAD en v4.0 — MODO PROMPTS
+✨ MODO PROMPTS
 
 📝 Biblioteca personal de prompts: Cambia al modo Prompt con un solo clic en el botón de alternancia del encabezado. Guarda tus mejores prompts con un título y texto completo, y encuéntralos al instante con búsqueda y ordenación (más recientes, más antiguos, A-Z).
-▶ Inyección con un clic: Se acabó copiar y pegar. Haz clic en el botón de reproducción (▶) de cualquier prompt guardado para inyectarlo directamente en el campo de texto de Gemini. La extensión detecta si estás en una página de Gemini y te avisa si no es así.
+▶ Inyección con un clic: Se acabó copiar y pegar. Haz clic en el botón de reproducción (▶) de cualquier prompt guardado para inyectarlo directamente en el campo de texto de la IA activa.
 ✏️ Edición en línea: Haz clic en un prompt para desplegarlo y editar el texto directamente. Los cambios se guardan automáticamente tras una breve pausa y el orden se actualiza en consecuencia.
 🔀 Botones de Nueva Conversación: Inicia una nueva conversación en ChatGPT, Claude, Copilot, Gemini o Perplexity directamente desde el Modo Prompt — un botón por servicio.
 ☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
@@ -26,12 +26,17 @@ Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de 
 ⇅ Ordenación personalizada: Ordena carpetas y conversaciones al vuelo (Más recientes, Más antiguos, A-Z) con cambios reflejados al instante en la sincronización móvil.
 🤖 Detección inteligente y Búsqueda: Relleno automático del título exacto de tu conversación y barra de búsqueda en tiempo real.
 ☁️ Sincronización en la nube y Copia de seguridad: Accede a tu organización desde todos tus dispositivos y exporta tus datos en JSON.
-🎨 Diseño Material 3 y Multilingüe: Interfaz ultracompacta con diálogos totalmente personalizados, modo oscuro automático y soporte para 27 idiomas.
+🎨 Diseño Material 3 y Multilingüe: Interfaz ultracompacta con diálogos totalmente personalizados, modo oscuro automático y soporte para 43 idiomas.
+
+
+🏠 SOPORTE DE LLM LOCAL
+
+¿Usas un modelo de IA local (Ollama, LM Studio, Jan u otro)? Configura Carpetas IA con tu URL local — compatible con localhost y direcciones LAN (192.168.x.x, nombres de host personalizados). El guardado rápido y el guardado por menú contextual también funcionan en interfaces locales.
 
 🛠️ ¿CÓMO FUNCIONA?
 
 Modo Carpetas:
-Abre una conversación en the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Abre una conversación en Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Guardado rápido: Ctrl+Shift+S (o Cmd+Shift+S en Mac), o clic derecho > "Guardar en Carpetas de Gemini".
 Desde la extensión: Haz clic en el icono, elige una carpeta y guarda.
 Móvil: Activa 📱 en el pie de página para sincronizar tus carpetas con el teléfono.
@@ -40,24 +45,14 @@ Móvil: Activa 📱 en el pie de página para sincronizar tus carpetas con el te
 Modo Prompts:
 Haz clic en 📝 en el botón de alternancia en la esquina superior derecha de la extensión.
 Haz clic en ➕ Añadir Prompt, escribe un título y tu texto, y guarda.
-Para usar un prompt: despliégalo y haz clic en ▶ — se inyecta directamente en Gemini, listo para enviar.
-Configura 💎 para apuntar a tu Gem personalizado.
+Para usar un prompt: despliégalo y haz clic en ▶ — se inyecta directamente en la IA activa, listo para enviar.
 Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siempre está a mano.
 
 🔒 PRIVACIDAD Y SEGURIDAD
-Diseñada con la privacidad en el centro. Solo solicita acceso a the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
+Diseñada con la privacidad en el centro. Solo solicita acceso a Gemini, Claude, ChatGPT, Copilot, Perplexity y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
 
 🤝 PROYECTO OPEN SOURCE
 Carpetas de Gemini es un proyecto open source desarrollado con pasión. La transparencia y el respeto a tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente tienes curiosidad? Consulta el código, sigue el historial de cambios o contribuye en GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 ACTUALIZACIONES:
-Versión 4.1 (Expansión global y refuerzo): 16 nuevos idiomas llevan Gemini Carpetas a 43 localizaciones en todo el mundo — idiomas nórdicos, los estados bálticos y mayor cobertura europea y del sudeste asiático. Corregida una condición de carrera que podía perder silenciosamente un guardado en clics rápidos. Inyección de prompts modernizada con InputEvent, reemplazando el execCommand obsoleto. Flujo de importación reforzado contra URLs maliciosas en archivos de copia de seguridad.
-Versión 4.0 (Biblioteca de Prompts): ¡La actualización más ambiciosa hasta ahora! Carpetas de Gemini estrena un nuevo modo Prompts: guarda tus mejores prompts, edítalos en línea e inyéctalos en Gemini con un clic. Se añade alternancia de modos animada, búsqueda y ordenación en el modo Prompts, botón Gem personalizado y sincronización independiente de prompts. Fija tus prompts esenciales en la parte superior de la biblioteca.
-Versión 3.5 (Bases Sólidas y Experiencia Mejorada): ¡Gran actualización interna para una robustez de nivel profesional! Alerta visual ante guardados duplicados. Fin de los falsos duplicados por cambios de URL de Gemini y base de datos protegida contra corrupciones.
-Versión 3.4.1 (Potencia Multiplataforma y Estabilidad): Portado con éxito a Mozilla Firefox. Corrección definitiva del error de carpetas de marcadores duplicadas en la sincronización móvil.
-Versión 3.3 (Diseño Premium e Internacional): Nuevos diálogos Material 3 completamente personalizados, sincronización móvil según tu orden de clasificación y expansión con 10 nuevos idiomas.
-Versión 3.2 (Móvil y Open Source): Sincronización móvil vía marcadores de Chrome, ordenación inteligente de carpetas ancladas, pie de página ultracompacto y lanzamiento open source.
-Versión 3.1 (Mejoras UX): Estabilización del Drag & Drop, casillas en modo oscuro, bloqueo inteligente de la interfaz en acciones en lote.
-Versión 3.0 (Actualización de Productividad): Atajos de teclado, selección múltiple, grupos de pestañas, emojis personalizados, compresión de datos y barra de almacenamiento.
-Versión 2.0: Rediseño mayor con Drag & Drop, menú contextual, ordenación personalizada, anclaje y diseño Material 3.
 Versión 1.0: ¡Publicación inicial! Organiza conversaciones de Gemini, Claude, ChatGPT, Copilot y Perplexity en carpetas compartidas. Biblioteca de prompts completa con inyección en un clic, atajos de guardado rápido, arrastrar y soltar, sincronización móvil, acciones en masa, grupos de pestañas y soporte para 43 idiomas. Compatibilidad con LLM locales con URL configurable (localhost y direcciones LAN).

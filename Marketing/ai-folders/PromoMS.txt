@@ -1,12 +1,12 @@
-Adakah anda menggunakan Google Gemini setiap hari – untuk kerja, pengekodan, penulisan atau penyelidikan – tetapi terus menaip semula prompt yang sama, manakala perbualan terbaik anda hilang dalam sejarah yang tidak berkesudahan?
-Folder AI (Folder AIs) adalah sambungan yang anda perlukan.
+Perbualan AI anda tersebar di lima laman yang berbeza. Anda terus menaip semula arahan yang sama. Perbualan terbaik anda hilang dalam sejarah tanpa henti di Gemini, Claude, ChatGPT, Copilot, dan Perplexity.
+Folder AI ialah sambungan yang anda perlukan.
 
-Dengan versi 4.0, Folder AI menjadi cockpit Gemini sebenar anda: susun perbualan dalam folder, bina perpustakaan prompt yang boleh digunakan semula dan masukkannya terus ke Gemini dengan satu klik – tanpa salin dan tampal.
+Folder AI ialah kokpit AI bersatu anda: susun perbualan dari semua alat AI anda dalam folder berkongsi, bina perpustakaan arahan yang boleh digunakan semula, dan suntik arahan terus ke mana-mana AI yang disokong — tanpa perlu menyalin dan menampal.
 
-✨ BAHARU DALAM V4.0 – MOD PROMPT
+✨ MOD PROMPT
 
 📝 Perpustakaan prompt peribadi: Tukar ke Mod Prompt dengan satu klik pada suis di pengepala. Simpan prompt terbaik anda dengan tajuk dan teks, carinya serta-merta dengan carian dan pengisihan (terbaharu, terlama, A–Z).
-▶ Penyisipan satu klik: Klik butang main (▶) pada mana-mana prompt tersimpan untuk menyisipkannya terus ke medan input Gemini.
+▶ Penyisipan satu klik: Klik butang main (▶) pada mana-mana prompt tersimpan untuk menyisipkannya terus ke medan input AI aktif.
 ✏️ Penyuntingan terus: Klik untuk mengembangkan prompt dan sunting teks terus. Perubahan disimpan secara automatik selepas jeda singkat.
 🔀 Butang Perbualan Baru: Mulakan perbualan baru di ChatGPT, Claude, Copilot, Gemini atau Perplexity terus dari Mod Arahan — satu butang setiap perkhidmatan.
 ☁️ Penyegerakan prompt: Dayakan penyegerakan awan untuk perpustakaan prompt secara bebas daripada folder.
@@ -26,12 +26,17 @@ Dengan versi 4.0, Folder AI menjadi cockpit Gemini sebenar anda: susun perbualan
 ⇅ Pengisihan tersuai: Isih folder dan perbualan (Terbaharu, Terlama, A–Z) dengan perubahan yang segera ditunjukkan dalam penyegerakan mudah alih.
 🤖 Pengesanan pintar & carian: Pra-pengisian automatik tajuk tepat perbualan dan bar carian masa nyata.
 ☁️ Penyegerakan awan & sandaran: Akses ke organisasi anda pada semua peranti dan eksport data sebagai JSON.
-🎨 Reka bentuk Material 3 & berbilang bahasa: Antara muka ultra-padat dengan dialog modal sepenuhnya tersuai, mod gelap automatik dan sokongan untuk 27 bahasa!
+🎨 Reka bentuk Material 3 & berbilang bahasa: Antara muka ultra-padat dengan dialog modal sepenuhnya tersuai, mod gelap automatik dan sokongan untuk 43 bahasa!
+
+
+🏠 SOKONGAN LLM TEMPATAN
+
+Menjalankan model AI tempatan (Ollama, LM Studio, Jan, atau lain-lain)? Konfigurasikan Folder AI dengan URL tempatan anda — menyokong localhost dan alamat LAN (192.168.x.x, nama hos tersuai). Simpan pantas dan simpan menu konteks juga berfungsi pada antara muka tempatan.
 
 🛠️ BAGAIMANA IA BERFUNGSI?
 
 Mod Folder:
-Buka perbualan di the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Buka perbualan di Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Simpan Pantas: Ctrl+Shift+S (atau Cmd+Shift+S pada Mac), atau klik kanan > «Simpan ke Folder AI».
 Melalui sambungan: Klik ikon, pilih folder dan simpan.
 Mudah alih: Tandakan 📱 di pengaki untuk menyegerakkan folder ke telefon anda.
@@ -39,23 +44,14 @@ Mudah alih: Tandakan 📱 di pengaki untuk menyegerakkan folder ke telefon anda.
 Mod Prompt:
 Klik 📝 pada suis di bahagian kanan atas sambungan.
 Klik ➕ Tambah prompt, masukkan tajuk dan teks, dan simpan.
-Untuk menggunakan prompt: kembangkan dan klik ▶ – ia disisipkan terus ke Gemini.
-Konfigurasi 💎 untuk menghala ke Gem anda.
+Untuk menggunakan prompt: kembangkan dan klik ▶ – ia disisipkan terus ke AI aktif.
 Untuk menyemat prompt: klik 📍 – ia berpindah ke bahagian atas senarai.
 
 🔒 PRIVASI & KESELAMATAN
-Dibina dengan mengutamakan privasi. Hanya meminta akses ke the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) dan membaca tab aktif hanya semasa menyimpan perbualan atau menyisipkan prompt. Kebenaran «Penanda buku» hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui Chrome Sync: tiada pelayan pihak ketiga, tiada telemetri.
+Dibina dengan mengutamakan privasi. Hanya meminta akses ke Gemini, Claude, ChatGPT, Copilot, Perplexity dan membaca tab aktif hanya semasa menyimpan perbualan atau menyisipkan prompt. Kebenaran «Penanda buku» hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui Chrome Sync: tiada pelayan pihak ketiga, tiada telemetri.
 
 🤝 PROJEK SUMBER TERBUKA
 Folder AI ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelusan dan penghormatan terhadap privasi anda adalah keutamaan tertinggi kami. Anda pembangun atau sekadar ingin tahu? Semak kod, ikuti log perubahan atau sumbang di GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 KEMAS KINI:
-Versi 4.1 (Pengembangan Global & Penguatan): 16 bahasa baharu membawa Folder AI kepada 43 lokalisasi di seluruh dunia — bahasa-bahasa Nordik, negara-negara Baltik dan liputan Eropah dan Asia Tenggara yang diperluaskan. Diperbaiki race condition yang boleh menghilangkan penyimpanan secara senyap semasa klik pantas. Suntikan prompt dimodernkan dengan InputEvent, menggantikan execCommand yang lapuk. Pipeline import diperkukuh terhadap URL berbahaya dalam fail sandaran.
-Versi 4.0 (Perpustakaan Prompt): Kemas kini paling bercita-cita tinggi setakat ini! Folder AI mendapat Mod Prompt baharu sepenuhnya: simpan prompt terbaik, sunting terus dan sisipkan ke Gemini dengan satu klik.
-Versi 3.5 (Asas kukuh & pengalaman dipertingkat): Kemas kini dalaman besar untuk keteguhan profesional!
-Versi 3.4.1 (Kuasa berbilang platform & kestabilan): Berjaya dipindahkan ke Mozilla Firefox dengan sistem binaan automatik.
-Versi 3.3 (Reka bentuk premium & antarabangsa): Dialog Material 3 baharu, penyegerakan mudah alih dan 10 bahasa baharu!
-Versi 3.2 (Mudah alih & sumber terbuka): Penyegerakan mudah alih pintar melalui penanda buku Chrome dan pelancaran sumber terbuka rasmi.
-Versi 3.0 (Kemas kini produktiviti): Pintasan papan kekunci, pilihan berbilang, kumpulan tab, emoji tersuai, pemampatan data dan bar storan.
-Versi 2.0: Reka bentuk semula besar dengan Seret dan lepas, menu konteks, pengisihan tersuai, pengesetan dan reka bentuk Material 3.
 Versi 1.0: Keluaran pertama! Susun perbualan dari Gemini, Claude, ChatGPT, Copilot dan Perplexity dalam folder berkongsi. Pustaka arahan lengkap dengan suntikan satu klik, pintasan simpan pantas, seret dan lepas, penyegerakan mudah alih, tindakan pukal, kumpulan tab dan sokongan untuk 43 bahasa.

@@ -1,12 +1,12 @@
 Ihre KI-Gespräche sind über fünf verschiedene Sites verstreut. Sie tippen immer wieder dieselben Prompts. Ihre besten Chats verschwinden in endlosen Verläufen auf Gemini, Claude, ChatGPT, Copilot und Perplexity.
 AI-Ordner ist die Erweiterung, die Sie brauchen.
 
-Mit Version 4.0 wird AI-Ordner zu Ihrem echten Gemini-Cockpit: Organisieren Sie Gespräche in Ordnern, bauen Sie eine Bibliothek wiederverwendbarer Prompts auf und injizieren Sie diese mit einem Klick direkt in Gemini — ganz ohne Kopieren und Einfügen. Wichtige Prompts oben anpinnen.
+AI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ihrer KI-Tools in gemeinsamen Ordnern, erstellen Sie eine Bibliothek wiederverwendbarer Prompts und injizieren Sie Prompts direkt in jede unterstützte KI — ganz ohne Kopieren und Einfügen.
 
-✨ NEU IN v4.0 — PROMPT-MODUS
+✨ PROMPT-MODUS
 
 📝 Persönliche Prompt-Bibliothek: Wechseln Sie mit einem Klick auf den Umschalter in der Kopfzeile in den Prompt-Modus. Speichern Sie Ihre besten Prompts mit Titel und vollständigem Text und finden Sie sie sofort per Suche und Sortierung (Neueste, Älteste, A-Z).
-▶ Injection mit einem Klick: Kein Kopieren und Einfügen mehr. Klicken Sie auf die Wiedergabetaste (▶) eines Prompts, um ihn direkt in das Eingabefeld von Gemini zu injizieren. Die Erweiterung prüft, ob Sie sich auf einer Gemini-Seite befinden, und benachrichtigt Sie andernfalls.
+▶ Injection mit einem Klick: Kein Kopieren und Einfügen mehr. Klicken Sie auf die Wiedergabetaste (▶) eines Prompts, um ihn direkt in das Eingabefeld der aktiven KI zu injizieren.
 ✏️ Direktbearbeitung: Klicken Sie auf einen Prompt, um ihn aufzuklappen und den Text direkt zu bearbeiten. Änderungen werden automatisch gespeichert und die Sortierung aktualisiert sich entsprechend.
 🔀 Neue-Konversation-Schaltflächen: Starten Sie direkt aus dem Prompt-Modus eine neue Unterhaltung auf ChatGPT, Claude, Copilot, Gemini oder Perplexity — ein Knopf pro Dienst.
 ☁️ Prompt-Synchronisierung: Aktivieren Sie die Cloud-Sync für Ihre Prompt-Bibliothek, unabhängig von Ihren Ordnern.
@@ -26,12 +26,17 @@ Mit Version 4.0 wird AI-Ordner zu Ihrem echten Gemini-Cockpit: Organisieren Sie 
 ⇅ Benutzerdefinierte Sortierung: Sortieren Sie Ordner und Gespräche nach Belieben (Neueste, Älteste, A-Z) mit sofortiger Auswirkung auf die mobile Sync.
 🤖 Intelligente Erkennung & Suche: Automatische Vorausfüllung des Gesprächstitels und Echtzeit-Suchleiste.
 ☁️ Cloud-Synchronisierung & Backup: Behalten Sie Ihre Organisation auf allen Geräten und exportieren Sie Daten als JSON.
-🎨 Material 3 Design & Mehrsprachig: Ultra-kompakte Oberfläche mit vollständig angepassten Dialogen, automatischem Dunkelmodus und Unterstützung für 27 Sprachen!
+🎨 Material 3 Design & Mehrsprachig: Ultra-kompakte Oberfläche mit vollständig angepassten Dialogen, automatischem Dunkelmodus und Unterstützung für 43 Sprachen!
+
+
+🏠 LOKALER LLM-SUPPORT
+
+Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie AI-Ordner mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung und Kontextmenü-Speicherung funktionieren auch auf lokalen Benutzeroberflächen.
 
 🛠️ WIE FUNKTIONIERT ES?
 
 Ordner-Modus:
-Öffnen Sie ein Gespräch auf the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Öffnen Sie ein Gespräch auf Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Schnellspeicherung: Ctrl+Shift+S (oder Cmd+Shift+S auf Mac), oder Rechtsklick > „In AI-Ordner speichern".
 Über die Erweiterung: Symbol anklicken, Ordner wählen, speichern.
 Mobil: 📱 in der Fußzeile aktivieren, um Ordner auf dem Smartphone zu synchronisieren.
@@ -40,24 +45,14 @@ Checkboxen für Massenaktionen, Ordner als Tabs öffnen (📑), per Drag & Drop 
 Prompt-Modus:
 Auf 📝 im Umschalter oben rechts in der Erweiterung klicken.
 ➕ Prompt hinzufügen anklicken, Titel und Text eingeben, speichern.
-Prompt verwenden: aufklappen und ▶ klicken — er wird direkt in Gemini injiziert, bereit zum Senden.
-💎 konfigurieren, um auf Ihren benutzerdefinierten Gem zu verweisen.
+Prompt verwenden: aufklappen und ▶ klicken — er wird direkt in die aktive KI injiziert, bereit zum Senden.
 Prompt anpinnen: auf 📍 klicken — er rückt an die erste Stelle und bleibt immer griffbereit.
 
 🔒 DATENSCHUTZ & SICHERHEIT
-Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
+Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf Gemini, Claude, ChatGPT, Copilot, Perplexity an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
 
 🤝 OPEN-SOURCE-PROJEKT
 AI-Ordner ist ein leidenschaftlich entwickeltes Open-Source-Projekt. Transparenz und Datenschutz haben höchste Priorität. Entwickler oder einfach neugierig? Code einsehen, Änderungsprotokoll verfolgen oder auf GitHub beitragen: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 UPDATES:
-Version 4.1 (Globale Erweiterung & Härtung): 16 neue Sprachen bringen Gemini Ordner auf 43 weltweite Lokalisierungen — nordische Sprachen, die baltischen Staaten und erweiterte europäische sowie südostasiatische Abdeckung. Behobene Race-Condition, die bei schnellen Klicks eine Speicherung lautlos verwerfen konnte. Modernisierte Prompt-Injektion mit InputEvent als Ersatz für das veraltete execCommand. Import-Pipeline gegen bösartige URLs in Sicherungsdateien gehärtet.
-Version 4.0 (Prompt-Bibliothek): Das ehrgeizigste Update bisher! AI-Ordner erhält einen brandneuen Prompt-Modus: Prompts speichern, direkt bearbeiten und mit einem Klick in Gemini injizieren. Neu: animierter Modus-Umschalter, Suche und Sortierung im Prompt-Modus, benutzerdefinierter Gem-Button und unabhängige Prompt-Synchronisierung. Wichtige Prompts oben anpinnen.
-Version 3.5 (Solide Grundlagen & Verbesserte Erfahrung): Großes Update unter der Haube für professionelle Robustheit. Visuelle Warnung bei Duplikaten. Keine Falsch-Duplikate mehr durch URL-Änderungen, Datenbank gegen Beschädigungen geschützt.
-Version 3.4.1 (Multiplattform & Stabilität): Erfolgreich auf Mozilla Firefox portiert. Endgültige Behebung des Fehlers mit doppelten Lesezeichenordnern bei der mobilen Synchronisierung.
-Version 3.3 (Premium Design & International): Neue Material 3 Dialoge, mobile Sync nach Sortierreihenfolge und 10 neue Sprachen!
-Version 3.2 (Mobil & Open Source): Mobile Sync via Chrome-Lesezeichen, intelligente Sortierung gepinnter Ordner, ultra-kompakte Fußzeile und Open-Source-Launch.
-Version 3.1 (UX-Verbesserungen): Drag & Drop-Stabilisierung, Dunkelmodus-Checkboxen, intelligente Interface-Sperre bei Massenaktionen.
-Version 3.0 (Produktivitäts-Update): Tastaturkürzel, Mehrfachauswahl, Tab-Gruppen, Emojis, Datenkomprimierung und Speicherleiste.
-Version 2.0: Grundlegende Überarbeitung mit Drag & Drop, Kontextmenü, Sortierung, Pinning und Material 3 Design.
 Version 1.0: Erstveröffentlichung! Organisieren Sie Gespräche von Gemini, Claude, ChatGPT, Copilot und Perplexity in gemeinsamen Ordnern. Vollständige Prompt-Bibliothek mit Ein-Klick-Injektion, Schnellspeicher-Shortcuts, Drag & Drop, Mobile-Sync, Massenaktionen, Tab-Gruppen und Unterstützung für 43 Sprachen. Lokaler LLM-Support mit konfigurierbarer URL (localhost und LAN-Adressen).

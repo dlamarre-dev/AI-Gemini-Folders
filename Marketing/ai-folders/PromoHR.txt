@@ -1,12 +1,12 @@
-Koristiš li Google Gemini svaki dan – za posao, kodiranje, pisanje ili istraživanje – ali neprestano iznova tipkaš iste upite, dok ti se najbolji razgovori gube u beskonačnoj povijesti?
-AI mape (AI mape) je dodatak koji ti treba.
+Vaši AI razgovori su rasuti po pet različitih stranica. Stalno ponovo unosite iste upite. Vaši najbolji chatovi nestaju u beskonačnim povijestima na Geminiju, Claudeu, ChatGPT-u, Copilotu i Perplexityju.
+AI mape je proširenje koje vam treba.
 
-S verzijom 4.0 AI mape postaju tvoj pravi Gemini cockpit: organiziraj razgovore u mape, izgradite knjižnicu upita za višekratnu upotrebu i ubacuj ih izravno u Gemini jednim klikom – bez kopiranja i lijepljenja.
+AI mape je vaš objedinjeni AI kokpit: organizirajte razgovore iz svih vaših AI alata u dijeljene mape, izgradite knjižnicu upita za višekratnu upotrebu i ubacujte upite izravno u bilo koji podržani AI — bez kopiranja i lijepljenja.
 
-✨ NOVOST U V4.0 – NAČIN UPITA
+✨ NAČIN UPITA
 
 📝 Osobna knjižnica upita: Prebaci na Način upita jednim klikom na prekidač u zaglavlju. Spremi najbolje upite s naslovom i tekstom, pronađi ih odmah pretraživanjem i sortiranjem (najnovije, najstarije, A–Ž).
-▶ Ubacivanje jednim klikom: Klikni gumb za reprodukciju (▶) na spremljenome upitu kako bi ga ubacio izravno u polje za unos Gemini.
+▶ Ubacivanje jednim klikom: Klikni gumb za reprodukciju (▶) na spremljenome upitu kako bi ga ubacio izravno u polje za unos aktivnog AI-ja.
 ✏️ Uređivanje na licu mjesta: Klikni za proširenje upita i uredi tekst izravno. Promjene se automatski spremaju nakon kratke pauze.
 🔀 Gumbi za novi razgovor: Pokrenite novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity izravno iz načina upita — jedan gumb po usluzi.
 ☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
@@ -26,12 +26,17 @@ S verzijom 4.0 AI mape postaju tvoj pravi Gemini cockpit: organiziraj razgovore 
 ⇅ Prilagođeno sortiranje: Sortiraj mape i razgovore (Najnovije, Najstarije, A–Ž) s promjenama koje se odmah odražavaju u mobilnoj sinkronizaciji.
 🤖 Pametno prepoznavanje i pretraživanje: Automatsko predispunjavanje točnog naslova razgovora i traka za pretraživanje u stvarnom vremenu.
 ☁️ Sinkronizacija u oblaku i sigurnosne kopije: Pristup organizaciji na svim uređajima i izvoz podataka kao JSON.
-🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloški okvirima, automatski tamni način i podrška za 27 jezika!
+🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloški okvirima, automatski tamni način i podrška za 43 jezika!
+
+
+🏠 PODRŠKA ZA LOKALNI LLM
+
+Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte AI mape s vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođeni nazivi domaćina). Brzo spremanje i spremanje putem kontekstnog izbornika rade i na lokalnim sučeljima.
 
 🛠️ KAKO TO FUNKCIONIRA?
 
 Način mapa:
-Otvori razgovor na the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Otvori razgovor na Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Brzo spremi: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Spremi u AI mape».
 Putem dodatka: Klikni ikonu, odaberi mapu i spremi.
 Mobilno: Označi 📱 u podnožju za sinkronizaciju mapa s telefonom.
@@ -39,23 +44,14 @@ Mobilno: Označi 📱 u podnožju za sinkronizaciju mapa s telefonom.
 Način upita:
 Klikni 📝 na prekidaču gore desno u dodatku.
 Klikni ➕ Dodaj upit, unesi naslov i tekst i spremi.
-Za korištenje upita: proširi ga i klikni ▶ – ubacuje se izravno u Gemini.
-Konfiguriraj 💎 da ukazuje na tvoj Gem.
+Za korištenje upita: proširi ga i klikni ▶ – ubacuje se izravno u aktivni AI.
 Za prikvačivanje upita: klikni 📍 – premješta se na vrh popisa.
 
 🔒 PRIVATNOST I SIGURNOST
-Izgrađeno s prioritetom privatnosti. Traži pristup samo the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) i čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem Chrome Sync: bez poslužitelja trećih strana, bez telemetrije.
+Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem Chrome Sync: bez poslužitelja trećih strana, bez telemetrije.
 
 🤝 PROJEKT OTVORENOG KODA
 AI mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti naši su najviši prioriteti. Jesi li programer ili si jednostavno radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 AŽURIRANJA:
-Verzija 4.1 (Globalna ekspanzija i ojačavanje): 16 novih jezika dovodi AI mape na 43 lokalizacije diljem svijeta — nordički jezici, baltičke države i proširena europska i jugoistočnoazijska pokrivenost. Ispravljen race condition koji je mogao tiho izgubiti spremanje pri brzim klikovima. Umetanje upita modernizirano s InputEvent, zamjenjujući zastarjeli execCommand. Import pipeline ojačan protiv zlonamjernih URL-ova u backup datotekama.
-Verzija 4.0 (Knjižnica upita): Najna mbicioznije ažuriranje do sada! AI mape dobivaju potpuno novi Način upita: spremi najbolje upite, uredi ih na licu mjesta i ubaci ih izravno u Gemini jednim klikom.
-Verzija 3.5 (Čvrsti temelji i poboljšano iskustvo): Veliko interno ažuriranje za profesionalnu pouzdanost!
-Verzija 3.4.1 (Višeplatformska snaga i stabilnost): Uspješno preneseno na Mozilla Firefox s automatiziranim sustavom izgradnje.
-Verzija 3.3 (Premium dizajn i međunarodni): Novi dialozi Material 3, mobilna sinkronizacija i 10 novih jezika!
-Verzija 3.2 (Mobilno i otvoreni kod): Pametna mobilna sinkronizacija putem Chrome oznaka i službeno lansiranje otvorenog koda.
-Verzija 3.0 (Ažuriranje produktivnosti): Prečaci na tipkovnici, višestruki odabir, grupe kartica, prilagođeni emojiji, kompresija podataka i traka pohrane.
-Verzija 2.0: Veliko redizajniranje s Povuci i ispusti, kontekstnim izbornikom, prilagođenim sortiranjem, prikvačivanjem i dizajnom Material 3.
 Verzija 1.0: Prvo izdanje! Organizirajte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u dijeljene mape. Potpuna biblioteka upita s umetanjem jednim klikom, prečaci za brzo spremanje, povuci i ispusti, mobilna sinkronizacija, skupne radnje, grupe kartica i podrška za 43 jezika.

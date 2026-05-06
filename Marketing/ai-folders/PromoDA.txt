@@ -1,12 +1,12 @@
-Bruger du Google Gemini hver dag – til arbejde, kodning, skrivning eller forskning – men skriver du de samme prompts igen og igen, mens dine bedste samtaler forsvinder i en uendelig historik?
-AI-mapper (AI-mapper) er udvidelsen, du har brug for.
+Dine AI-samtaler er spredt ud over fem forskellige sider. Du bliver ved med at skrive de samme prompts igen. Dine bedste chats forsvinder i endeløse historikker på Gemini, Claude, ChatGPT, Copilot og Perplexity.
+AI-mapper er den udvidelse, du har brug for.
 
-Med version 4.0 bliver AI-mapper dit sande Gemini-cockpit: organiser samtaler i mapper, byg et bibliotek med genbrugelige prompts og indsæt dem direkte i Gemini med ét klik – ingen kopiering og indsætning.
+AI-mapper er dit samlede AI-kontrolpanel: organiser samtaler fra alle dine AI-værktøjer i delte mapper, opbyg et bibliotek af genbrugbare prompter, og injicér prompter direkte i enhver understøttet AI — uden at kopiere og indsætte.
 
-✨ NYHED I V4.0 – PROMPTVISNING
+✨ PROMPTVISNING
 
 📝 Personligt promptbibliotek: Skift til Promptvisning med ét klik på justeringsknappen i overskriften. Gem dine bedste prompts med titel og tekst, find dem øjeblikkeligt med søgning og sortering (nyeste, ældste, A–Å).
-▶ Indsætning med ét klik: Klik på afspilningsknappen (▶) på en gemt prompt for at indsætte den direkte i Geminis inputfelt. Udvidelsen giver besked, hvis du ikke er på en Gemini-side.
+▶ Indsætning med ét klik: Klik på afspilningsknappen (▶) på en gemt prompt for at indsætte den direkte i inputfeltet på den aktive AI.
 ✏️ Inline-redigering: Klik for at udvide en prompt og rediger teksten direkte. Ændringer gemmes automatisk efter en kort pause.
 🔀 Knapper til ny samtale: Start en ny samtale på ChatGPT, Claude, Copilot, Gemini eller Perplexity direkte fra Prompt-tilstand — én knap pr. service.
 ☁️ Promptsynkronisering: Aktivér skysynkronisering for promptbiblioteket uafhængigt af mapper.
@@ -26,12 +26,17 @@ Med version 4.0 bliver AI-mapper dit sande Gemini-cockpit: organiser samtaler i 
 ⇅ Tilpasset sortering: Sorter mapper og samtaler (Nyeste, Ældste, A–Å) med ændringer, der straks afspejles i mobilsynkroniseringen.
 🤖 Smart registrering og søgning: Automatisk forudfyldning af samtalens nøjagtige titel og en realtidssøgebjælke.
 ☁️ Skysynkronisering og sikkerhedskopiering: Adgang til din organisation på alle enheder og eksport af data som JSON.
-🎨 Material 3-design og flersproget: Ultrakompakt interface med fuldt tilpassede modaldialogbokse, automatisk mørk tilstand og understøttelse af 27 sprog!
+🎨 Material 3-design og flersproget: Ultrakompakt interface med fuldt tilpassede modaldialogbokse, automatisk mørk tilstand og understøttelse af 43 sprog!
+
+
+🏠 UNDERSTØTTELSE AF LOKAL LLM
+
+Kører du en lokal AI-model (Ollama, LM Studio, Jan eller en anden)? Konfigurer AI-mapper med din lokale URL — understøtter localhost og LAN-adresser (192.168.x.x, brugerdefinerede værtsnavne). Hurtig lagring og genvejsmenu-lagring fungerer også på lokale brugergrænseflader.
 
 🛠️ HVORDAN VIRKER DET?
 
 Mappevisning:
-Åbn en samtale på the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Åbn en samtale på Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Hurtiggem: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller højreklik > «Gem i AI-mapper».
 Via udvidelsen: Klik på ikonet, vælg en mappe og gem.
 Mobil: Markér 📱 i sidefoden for at synkronisere dine mapper til din telefon.
@@ -40,23 +45,14 @@ Brug afkrydsningsfelter til massehandlinger, åbn mapper som fanegrupper (📑),
 Promptvisning:
 Klik på 📝 på justeringsknappen øverst til højre i udvidelsen.
 Klik ➕ Tilføj prompt, indtast titel og tekst og gem.
-Brug af en prompt: udvid den og klik ▶ – den indsættes direkte i Gemini, klar til at sende.
-Konfigurer 💎 til at pege mod din Gem.
+Brug af en prompt: udvid den og klik ▶ – den indsættes direkte i den aktive AI, klar til at sende.
 Fastgørelse af en prompt: klik 📍 – den flyttes øverst på listen og er altid let at finde.
 
 🔒 PRIVATLIV OG SIKKERHED
-Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
+Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til Gemini, Claude, ChatGPT, Copilot, Perplexity og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
 
 🤝 OPEN SOURCE-PROJEKT
 AI-mapper er et open source-projekt bygget med passion. Gennemsigtighed og respekt for dit privatliv er vores højeste prioriteter. Er du en udvikler eller bare nysgerrig? Gennemse koden, følg ændringsloggen eller bidrag på GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 OPDATERINGER:
-Version 4.1 (Global udvidelse og hærdning): 16 nye sprog bringer AI-mapper til 43 oversættelser verden over — nordiske sprog, de baltiske stater og udvidet europæisk og sydøstasiatisk dækning. Rettet en race condition, der stille kunne miste en gem ved hurtige klik. Prompt-indsætning moderniseret med InputEvent, som erstatter den forældede execCommand. Import-pipeline hærdet mod ondsindede URL'er i sikkerhedskopifiler.
-Version 4.0 (Promptbibliotek): Den mest ambitiøse opdatering hidtil! AI-mapper får en helt ny Promptvisning: gem dine bedste prompts, rediger dem inline og indsæt dem direkte i Gemini med ét klik. Tilføjet animeret tilstandsskifter, søgning og sortering i Promptvisning, tilpasset Gem-knap og uafhængig promptsynkronisering.
-Version 3.5 (Solide grundlag og forbedret oplevelse): En stor intern opdatering for professionel robusthed! Visuel advarsel om duplikatgem via tastaturgenvejen.
-Version 3.4.1 (Multiplattformsstyrke og stabilitet): Portet til Mozilla Firefox med et automatiseret byggesystem.
-Version 3.3 (Premium-design og international): Nye 100 % tilpassede Material 3-dialogbokse, mobilsynkronisering og 10 nye sprog!
-Version 3.2 (Mobil og open source): Smart mobilsynkronisering via Chrome-bogmærker og officiel open source-lancering.
-Version 3.0 (Produktivitetsopdatering): Tastaturgenveje, flervalg, fanegrupper, tilpassede emojis, datakomprimering og lagringslinje.
-Version 2.0: Større redesign med træk og slip, kontekstmenu, tilpasset sortering, fastgørelse og Material 3-design.
 Version 1.0: Første udgivelse! Organiser samtaler fra Gemini, Claude, ChatGPT, Copilot og Perplexity i delte mapper. Komplet prompt-bibliotek med ét-klik-injektion, genveje til hurtig lagring, træk og slip, mobilsynkronisering, massehandlinger, fanegrupper og understøttelse af 43 sprog.

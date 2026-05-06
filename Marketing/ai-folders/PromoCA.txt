@@ -1,12 +1,12 @@
-Fas servir Google Gemini cada dia – per a feina, programació, escriptura o recerca – però continues reescrivint els mateixos prompts mentre les teves millors converses desapareixen en un historial interminable?
-Carpetes IA (Carpetes IA) és l'extensió que necessites.
+Les vostres converses d'IA estan escampades per cinc llocs diferents. Seguiu reescrivint els mateixos prompts. Les vostres millors xats desapareixen en historials interminables de Gemini, Claude, ChatGPT, Copilot i Perplexity.
+Carpetes IA és l'extensió que necessiteu.
 
-Amb la versió 4.0, Carpetes IA és el teu veritable cockpit de Gemini: organitza les converses en carpetes, crea una biblioteca de prompts reutilitzables i injecta'ls directament a Gemini amb un sol clic, sense copiar ni enganxar.
+Carpetes IA és el vostre cockpit d'IA unificat: organitzeu converses de totes les vostres eines d'IA en carpetes compartides, creeu una biblioteca de prompts reutilitzables i injecteu prompts directament a qualsevol IA compatible — sense necessitat de copiar i enganxar.
 
-✨ NOVETAT A V4.0 – MODE PROMPTS
+✨ MODE PROMPTS
 
 📝 Biblioteca de prompts personal: Canvia al Mode prompts amb un clic al commutador de la capçalera. Desa els teus millors prompts amb títol i text, i troba'ls al moment amb cerca i ordenació (més recents, més antics, A–Z).
-▶ Injecció amb un sol clic: Fes clic al botó de reproducció (▶) en qualsevol prompt desat per inserir-lo directament al camp d'entrada de Gemini.
+▶ Injecció amb un sol clic: Fes clic al botó de reproducció (▶) en qualsevol prompt desat per inserir-lo directament al camp d'entrada de la IA activa.
 ✏️ Edició en línia: Fes clic per expandir un prompt i edita el text directament. Els canvis es desen automàticament després d'una breu pausa.
 🔀 Botons de Nova Conversa: Inicieu una nova conversa a ChatGPT, Claude, Copilot, Gemini o Perplexity directament des del Mode Prompt — un botó per servei.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
@@ -26,12 +26,17 @@ Amb la versió 4.0, Carpetes IA és el teu veritable cockpit de Gemini: organitz
 ⇅ Ordenació personalitzada: Ordena carpetes i converses (Més recents, Més antigues, A–Z) amb canvis que es reflecteixen immediatament a la sincronització mòbil.
 🤖 Detecció intel·ligent i cerca: Emplenament previ automàtic del títol exact de la conversa i una barra de cerca en temps real.
 ☁️ Sincronització al núvol i còpia de seguretat: Accés a l'organització a tots els dispositius i exportació de dades en JSON.
-🎨 Disseny Material 3 i multilingüe: Interfície ultracompacta amb diàlegs modals completament personalitzats, mode fosc automàtic i suport per a 27 idiomes!
+🎨 Disseny Material 3 i multilingüe: Interfície ultracompacta amb diàlegs modals completament personalitzats, mode fosc automàtic i suport per a 43 idiomes!
+
+
+🏠 SUPORT PER A LLM LOCAL
+
+Esteu executant un model d'IA local (Ollama, LM Studio, Jan o un altre)? Configureu Carpetes IA amb el vostre URL local — admet localhost i adreces LAN (192.168.x.x, noms d'host personalitzats). El desament ràpid i des del menú contextual també funcionen en interfícies locals.
 
 🛠️ COM FUNCIONA?
 
 Mode carpetes:
-Obre una conversa a the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Obre una conversa a Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Desat ràpid: Ctrl+Maj+S (o Cmd+Maj+S al Mac), o clic dret > «Desa a Carpetes IA».
 Mitjançant l'extensió: Fes clic a la icona, tria una carpeta i desa.
 Mòbil: Marca 📱 al peu de pàgina per sincronitzar les teves carpetes al telèfon.
@@ -39,23 +44,14 @@ Mòbil: Marca 📱 al peu de pàgina per sincronitzar les teves carpetes al tel�
 Mode prompts:
 Fes clic a 📝 al commutador a la part superior dreta de l'extensió.
 Fes clic a ➕ Afegeix un prompt, introdueix un títol i el teu text, i desa.
-Per utilitzar un prompt: expandeix-lo i fes clic a ▶ – s'injecta directament a Gemini.
-Configura 💎 per apuntar al teu Gem.
+Per utilitzar un prompt: expandeix-lo i fes clic a ▶ – s'injecta directament a la IA activa.
 Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
 
 🔒 PRIVACITAT I SEGURETAT
-Construït amb la privacitat com a prioritat. Només sol·licita accés a the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
+Construït amb la privacitat com a prioritat. Només sol·licita accés a Gemini, Claude, ChatGPT, Copilot, Perplexity i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
 
 🤝 PROJECTE DE CODI OBERT
 Carpetes IA és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 ACTUALITZACIONS:
-Versió 4.1 (Expansió global i enfortiment): 16 nous idiomes porten Carpetes IA a 43 localitzacions arreu del món — idiomes nòrdics, els estats bàltics i cobertura europea i del sud-est asiàtic ampliada. Corregida una condició de cursa que podia perdre silenciosament un desat en clics ràpids. Injecció de prompts modernitzada amb InputEvent, substituint l'execCommand obsolet. Pipeline d'importació endurit contra URL malicioses en fitxers de còpia de seguretat.
-Versió 4.0 (Biblioteca de prompts): L'actualització més ambiciosa fins ara! Mode prompts completament nou: desa els teus millors prompts, edita'ls en línia i injecta'ls directament a Gemini amb un sol clic.
-Versió 3.5 (Bases sòlides i experiència millorada): Gran actualització interna per a una robustesa professional! Alerta visual per a desat duplicat via drecera de teclat.
-Versió 3.4.1 (Potència multiplataforma i estabilitat): Portat amb èxit a Mozilla Firefox amb un sistema de compilació automatitzat.
-Versió 3.3 (Disseny premium i internacional): Nous diàlegs Material 3, sincronització mòbil i 10 idiomes nous!
-Versió 3.2 (Mòbil i codi obert): Sincronització mòbil intel·ligent via marcadors de Chrome i llançament oficial de codi obert.
-Versió 3.0 (Actualització de productivitat): Dreceres de teclat, selecció múltiple, grups de pestanyes, emojis personalitzats, compressió de dades i barra d'emmagatzematge.
-Versió 2.0: Redisseny important amb Arrossega i deixa anar, menú contextual, ordenació personalitzada, fixació i disseny Material 3.
 Versió 1.0: Primera publicació! Organitzeu converses de Gemini, Claude, ChatGPT, Copilot i Perplexity en carpetes compartides. Biblioteca de prompts completa amb injecció d'un clic, dreceres de desament ràpid, arrossegar i deixar anar, sincronització mòbil, accions en bloc, grups de pestanyes i suport per a 43 idiomes.

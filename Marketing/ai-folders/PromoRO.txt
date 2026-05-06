@@ -1,12 +1,12 @@
-Folosiți Google Gemini zilnic — pentru muncă, cod, scriere sau cercetare — dar tot reintroduceți aceleași prompturi, iar cele mai bune conversații dispar într-un istoric fără sfârșit?
-Dosare IA (Dosare IA) este extensia de care aveți nevoie.
+Conversațiile dvs. de IA sunt răspândite pe cinci site-uri diferite. Continuați să retastați aceleași instrucțiuni. Cele mai bune conversații ale dvs. dispar în istorici nesfârșite pe Gemini, Claude, ChatGPT, Copilot și Perplexity.
+Dosare IA este extensia de care aveți nevoie.
 
-Cu versiunea 4.0, Dosare IA devine adevăratul dvs. cockpit Gemini: organizați conversațiile în foldere, construiți o bibliotecă de prompturi reutilizabile și injectați-le direct în Gemini cu un singur clic — fără copiere și lipire.
+Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate instrumentele dvs. AI în dosare partajate, construiți o bibliotecă de prompturi reutilizabile și injectați prompturi direct în orice AI acceptat — fără a fi nevoie să copiați și să lipiți.
 
-✨ NOU în v4.0 — MODUL PROMPTURI
+✨ MODUL PROMPTURI
 
 📝 Bibliotecă personală de prompturi: Comutați la modul Prompturi cu un singur clic pe butonul de comutare din antet. Salvați cele mai bune prompturi cu titlu și text complet, apoi găsiți-le instantaneu cu căutare și sortare (cele mai noi, cele mai vechi, A-Z).
-▶ Injectare cu un clic: Nu mai este nevoie de copiere și lipire. Faceți clic pe butonul de redare (▶) al oricărui prompt salvat pentru a-l injecta direct în câmpul de introducere al Gemini. Extensia detectează dacă vă aflați pe o pagină Gemini și vă notifică dacă nu este cazul.
+▶ Injectare cu un clic: Nu mai este nevoie de copiere și lipire. Faceți clic pe butonul de redare (▶) al oricărui prompt salvat pentru a-l injecta direct în câmpul de introducere al oricărui AI acceptat.
 ✏️ Editare în loc: Faceți clic pe un prompt pentru a-l extinde și edita textul direct. Modificările se salvează automat după o scurtă pauză, iar ordinea de sortare se actualizează corespunzător.
 🔀 Butoane Conversație Nouă: Lansați o conversație nouă pe ChatGPT, Claude, Copilot, Gemini sau Perplexity direct din Modul Prompt — un buton per serviciu.
 ☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
@@ -26,12 +26,17 @@ Cu versiunea 4.0, Dosare IA devine adevăratul dvs. cockpit Gemini: organizați 
 ⇅ Sortare personalizată: Sortați folderele și conversațiile din mers (Cele mai noi, Cele mai vechi, A-Z) cu reflectare instantanee în sincronizarea mobilă.
 🤖 Detectare inteligentă și Căutare: Completare automată a titlului exact al conversației și bară de căutare în timp real.
 ☁️ Sincronizare Cloud și Backup: Accesați organizarea pe toate dispozitivele și exportați datele în JSON.
-🎨 Design Material 3 și Multilingv: Interfață ultra-compactă cu ferestre de dialog complet personalizate, mod întunecat automat și suport pentru 27 limbi!
+🎨 Design Material 3 și Multilingv: Interfață ultra-compactă cu ferestre de dialog complet personalizate, mod întunecat automat și suport pentru 43 limbi!
+
+
+🏠 SUPORT LLM LOCAL
+
+Folosiți un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dosare IA cu URL-ul local — acceptă localhost și adrese LAN (192.168.x.x, nume de gazdă personalizate). Salvarea rapidă și din meniul contextual funcționează și pe interfețe locale.
 
 🛠️ CUM FUNCȚIONEAZĂ?
 
 Modul Foldere:
-Deschideți o conversație pe the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity).
+Deschideți o conversație pe Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Salvare rapidă: Ctrl+Shift+S (sau Cmd+Shift+S pe Mac), sau clic dreapta > „Salvați în Dosare IA".
 Prin extensie: Faceți clic pe pictogramă, alegeți un folder, salvați.
 Mobil: Activați 📱 din subsol pentru a sincroniza folderele cu telefonul.
@@ -40,24 +45,14 @@ Folosiți casetele de bifare pentru acțiuni în bloc, deschideți foldere ca Fi
 Modul Prompturi:
 Faceți clic pe 📝 de pe butonul de comutare din colțul din dreapta sus al extensiei.
 Faceți clic pe ➕ Adăugați Prompt, introduceți un titlu și textul dvs., salvați.
-Pentru a utiliza un prompt: extindeți-l și faceți clic pe ▶ — se injectează direct în Gemini, gata de trimis.
-Configurați 💎 pentru a indica Gem-ul dvs. personalizat.
+Pentru a utiliza un prompt: extindeți-l și faceți clic pe ▶ — se injectează direct în AI-ul activ, gata de trimis.
 Pentru a fixa un prompt: faceți clic pe 📍 — se mută în fruntea listei și rămâne mereu la îndemână.
 
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
-Concepută cu confidențialitatea în centru. Solicită acces doar la the supported AI sites (Gemini, Claude, ChatGPT, Copilot, Perplexity) și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.
+Concepută cu confidențialitatea în centru. Solicită acces doar la Gemini, Claude, ChatGPT, Copilot, Perplexity și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.
 
 🤝 PROIECT OPEN SOURCE
 Dosare IA este un proiect open source dezvoltat cu pasiune. Transparența și respectul față de confidențialitatea dvs. sunt prioritățile noastre. Sunteți dezvoltator sau pur și simplu curios? Consultați codul, urmăriți istoricul modificărilor sau contribuiți pe GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 ACTUALIZĂRI:
-Versiunea 4.1 (Expansiune globală și consolidare): 16 limbi noi aduc Gemini Foldere la 43 de localizări în întreaga lume — limbi nordice, statele baltice și acoperire europeană și din Asia de Sud-Est extinsă. Corectată o condiție de cursă care putea pierde silențios o salvare la clicuri rapide. Injecția de prompturi modernizată cu InputEvent, înlocuind execCommand deprecat. Pipeline-ul de import întărit împotriva URL-urilor malițioase din fișierele de rezervă.
-Versiunea 4.0 (Biblioteca de Prompturi): Cea mai ambițioasă actualizare de până acum! Dosare IA primește un mod Prompturi complet nou: salvați cele mai bune prompturi, editați-le în loc și injectați-le direct în Gemini cu un clic. Adăugat: comutator de moduri animat, căutare și sortare în modul Prompturi, buton Gem personalizat și sincronizare independentă a prompturilor.
-Versiunea 3.5 (Fundații Solide și Experiență Îmbunătățită): O actualizare majoră internă pentru robustețe profesională! Alertă vizuală pentru salvări duplicate. Fără false duplicate din cauza schimbărilor URL Gemini, baza de date protejată împotriva corupțiilor.
-Versiunea 3.4.1 (Putere Multiplatformă și Stabilitate): Portat cu succes pe Mozilla Firefox. Remediere definitivă a bug-ului folderelor de marcaje duplicate la sincronizarea mobilă.
-Versiunea 3.3 (Design Premium și Internațional): Noi ferestre de dialog Material 3 complet personalizate, sincronizare mobilă conform ordinii de sortare și 10 limbi noi!
-Versiunea 3.2 (Mobil și Open Source): Sincronizare mobilă prin marcaje Chrome, sortare inteligentă a folderelor fixate, subsol ultra-compact și lansare open source.
-Versiunea 3.1 (Îmbunătățiri UX): Stabilizarea Drag & Drop, casete de bifare în modul întunecat, blocare inteligentă a interfeței în acțiunile în bloc.
-Versiunea 3.0 (Actualizare Productivitate): Comenzi rapide de la tastatură, selecție multiplă, grupuri de file, emoji personalizate, compresie date și bară de stocare.
-Versiunea 2.0: Reproiectare majoră cu Drag & Drop, meniu contextual, sortare personalizată, fixare și design Material 3.
 Versiunea 1.0: Prima lansare! Organizați conversații din Gemini, Claude, ChatGPT, Copilot și Perplexity în dosare partajate. Bibliotecă completă de prompturi cu injectare în un clic, comenzi rapide de salvare, glisare și plasare, sincronizare mobilă, acțiuni în masă, grupuri de file și suport pentru 43 de limbi. Suport LLM local cu URL configurabil (localhost și adrese LAN).
