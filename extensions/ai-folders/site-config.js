@@ -76,8 +76,15 @@ Object.values(SITES).forEach(site => {
   });
 });
 
-function getSiteByUrl(url) {
+// localUrl: the user-configured local LLM URL (optional). When provided,
+// any URL sharing the same origin (scheme+host+port) is matched as 'local'.
+function getSiteByUrl(url, localUrl) {
   if (!url) return null;
+  if (localUrl) {
+    try {
+      if (new URL(url).origin === new URL(localUrl).origin) return 'local';
+    } catch (_) {}
+  }
   for (const [key, site] of Object.entries(SITES)) {
     if (site.domain && url.includes(site.domain)) return key;
   }
