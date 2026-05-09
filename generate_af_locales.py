@@ -35,7 +35,7 @@ AF = {
         "extName":            "AI Folders",
         "extDesc":            "نظّم محادثات الذكاء الاصطناعي في مجلدات مخصصة. يدعم Gemini وClaude وChatGPT وCopilot وPerplexity.",
         "promptInsertBtn":    "أدرج في المحادثة",
-        "alertNotSupported":  "يُرجى استخدام هذا الامتداد على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو Perplexity).",
+        "alertNotSupported":  "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو Perplexity).",
         "alertEditorNotFound":"تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج.",
         "setLocalUrl":        "تعيين عنوان URL للنموذج المحلي:",
         "newConv_gemini":     "محادثة Gemini جديدة",

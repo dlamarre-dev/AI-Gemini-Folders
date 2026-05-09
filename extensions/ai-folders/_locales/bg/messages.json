@@ -30,10 +30,10 @@
     "message": "Няма резултати 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Експортирай"
+    "message": "💾 Експорт"
   },
   "importBtn": {
-    "message": "📂 Импортирай"
+    "message": "📂 Импорт"
   },
   "defaultFolder": {
     "message": "Общи"
@@ -126,13 +126,13 @@
     "message": "Отвори в група с раздели"
   },
   "confirmOpenManyTabs": {
-    "message": "Наистина ли искате да отворите {count} раздела едновременно?"
+    "message": "Наистина ли искате да отворите избраните раздели ({count}) едновременно?"
   },
   "errorTabGroup": {
     "message": "Грешка: Не може да се създаде група с раздели. Приели ли сте новите разрешения?"
   },
   "bulkSelected": {
-    "message": "{count} избрани"
+    "message": "Избрани: {count}"
   },
   "bulkMove": {
     "message": "Премести в..."
@@ -141,7 +141,7 @@
     "message": "Изтрий"
   },
   "confirmBulkDelete": {
-    "message": "Сигурни ли сте, че искате да изтриете тези {count} разговора?"
+    "message": "Сигурни ли сте, че искате да изтриете избраните разговори ({count})?"
   },
   "bulkCancel": {
     "message": "Отмени избора"
