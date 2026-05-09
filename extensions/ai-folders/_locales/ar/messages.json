@@ -12,7 +12,7 @@
     "message": "🔍 بحث في المحادثات..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 بحث في الأوامر..."
+    "message": "🔍 بحث في المطالبات..."
   },
   "folderPlaceholder": {
     "message": "اسم المجلد (مثال: مشاريع الكود)"
@@ -45,13 +45,13 @@
     "message": "اسم المحادثة الجديد:"
   },
   "alertEmptyExport": {
-    "message": "مجلداتك وأوامرك فارغة، لا يوجد شيء للتصدير!"
+    "message": "مجلداتك ومطالباتك فارغة، لا يوجد شيء للتصدير!"
   },
   "alertImportSuccess": {
-    "message": "تم الاستيراد بنجاح! تم دمج مجلداتك وأوامرك بنجاح."
+    "message": "تم الاستيراد بنجاح! تم دمج مجلداتك ومطالباتك بنجاح."
   },
   "alertImportError": {
-    "message": "خطأ في الاستيراد. تأكد من أنه ملف JSON صالح تم إنشاؤه بواسطة هذا الامتداد."
+    "message": "خطأ في الاستيراد. تأكد من أنه ملف JSON صالح تم إنشاؤه بواسطة هذه الإضافة."
   },
   "btnRename": {
     "message": "إعادة التسمية"
@@ -75,7 +75,7 @@
     "message": "تثبيت"
   },
   "btnUnpin": {
-    "message": "إلغاء التثبيت"
+    "message": "فك التثبيت"
   },
   "sortNewest": {
     "message": "الأحدث"
@@ -90,7 +90,7 @@
     "message": "حفظ في AI Folders"
   },
   "ctxMenuNoFolder": {
-    "message": "(لا توجد مجلدات - افتح الامتداد)"
+    "message": "(لا توجد مجلدات - افتح الإضافة)"
   },
   "btnToggleAdd": {
     "message": "إضافة محادثة"
@@ -111,7 +111,7 @@
     "message": "جارٍ حساب المساحة..."
   },
   "storageInfo": {
-    "message": "التخزين: {used} كيلوبايت / {max} كيلوبايت ({pct}%)"
+    "message": "المساحة: {used} / {max} ك.ب ({pct}%)"
   },
   "cmdQuickSave": {
     "message": "حفظ المحادثة"
@@ -126,13 +126,13 @@
     "message": "فتح في مجموعة علامات تبويب"
   },
   "confirmOpenManyTabs": {
-    "message": "هل تريد فعلاً فتح {count} علامة تبويب في نفس الوقت؟"
+    "message": "هل تريد فعلاً فتح علامات التبويب المحددة (العدد: {count}) في نفس الوقت؟"
   },
   "errorTabGroup": {
     "message": "خطأ: تعذّر إنشاء مجموعة علامات التبويب. هل قبلت الأذونات الجديدة؟"
   },
   "bulkSelected": {
-    "message": "تم تحديد {count}"
+    "message": "العناصر المحددة: {count}"
   },
   "bulkMove": {
     "message": "نقل إلى..."
@@ -141,7 +141,7 @@
     "message": "حذف"
   },
   "confirmBulkDelete": {
-    "message": "هل أنت متأكد من حذف {count} محادثة؟"
+    "message": "هل أنت متأكد من حذف المحادثات المحددة (العدد: {count})؟"
   },
   "bulkCancel": {
     "message": "إلغاء التحديد"
@@ -168,22 +168,22 @@
     "message": "وضع المجلدات"
   },
   "promptModeTitle": {
-    "message": "وضع الأوامر"
+    "message": "وضع المطالبات"
   },
   "promptCannotBeEmpty": {
-    "message": "لا يمكن أن يكون الأمر فارغاً!"
+    "message": "لا يمكن أن تكون المطالبة فارغة!"
   },
   "promptSaved": {
-    "message": "تم حفظ الأمر!"
+    "message": "تم حفظ المطالبة!"
   },
   "promptDuplicateWarning": {
-    "message": "يوجد أمر بهذا العنوان بالفعل. هل تريد الكتابة فوقه؟"
+    "message": "توجد مطالبة بهذا العنوان بالفعل. هل تريد الكتابة فوقها؟"
   },
   "promptNoSavedYet": {
-    "message": "لا توجد أوامر محفوظة بعد."
+    "message": "لا توجد مطالبات محفوظة بعد."
   },
   "promptAddBtn": {
-    "message": "إضافة أمر"
+    "message": "إضافة مطالبة"
   },
   "promptCopyTitle": {
     "message": "نسخ"
@@ -195,19 +195,19 @@
     "message": "محادثة جديدة"
   },
   "promptTitlePlaceholder": {
-    "message": "عنوان الأمر"
+    "message": "عنوان المطالبة"
   },
   "promptTextPlaceholder": {
-    "message": "اكتب أمرك هنا..."
+    "message": "اكتب مطالبتك هنا..."
   },
   "syncPromptsTooltip": {
-    "message": "مزامنة الأوامر"
+    "message": "مزامنة المطالبات"
   },
   "promptRenamePrompt": {
-    "message": "اسم الأمر الجديد:"
+    "message": "اسم المطالبة الجديد:"
   },
   "confirmDeletePrompt": {
-    "message": "حذف هذا الأمر؟"
+    "message": "حذف هذه المطالبة؟"
   },
   "promptInsertBtn": {
     "message": "أدرج في المحادثة"
@@ -237,7 +237,7 @@
     "message": "تعيين عنوان URL للنموذج المحلي:"
   },
   "alertNotSupported": {
-    "message": "يُرجى استخدام هذا الامتداد على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو Perplexity)."
+    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."
