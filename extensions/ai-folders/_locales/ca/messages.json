@@ -30,10 +30,10 @@
     "message": "Cap resultat 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exporta"
+    "message": "💾 Exportar"
   },
   "importBtn": {
-    "message": "📂 Importa"
+    "message": "📂 Importar"
   },
   "defaultFolder": {
     "message": "General"
@@ -126,13 +126,13 @@
     "message": "Obre en grup de pestanyes"
   },
   "confirmOpenManyTabs": {
-    "message": "Realment vols obrir {count} pestanyes alhora?"
+    "message": "Realment vols obrir les pestanyes seleccionades ({count}) alhora?"
   },
   "errorTabGroup": {
     "message": "Error: no es pot crear el grup de pestanyes. Has acceptat els nous permisos?"
   },
   "bulkSelected": {
-    "message": "{count} seleccionades"
+    "message": "Elements seleccionats: {count}"
   },
   "bulkMove": {
     "message": "Mou a..."
@@ -141,7 +141,7 @@
     "message": "Elimina"
   },
   "confirmBulkDelete": {
-    "message": "Estàs segur que vols eliminar aquestes {count} converses?"
+    "message": "Estàs segur que vols eliminar les converses seleccionades ({count})?"
   },
   "bulkCancel": {
     "message": "Cancel·la la selecció"

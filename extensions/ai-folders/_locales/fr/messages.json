@@ -126,13 +126,13 @@
     "message": "Ouvrir dans un groupe d'onglets"
   },
   "confirmOpenManyTabs": {
-    "message": "Voulez-vous vraiment ouvrir {count} onglets en même temps ?"
+    "message": "Voulez-vous vraiment ouvrir les onglets sélectionnés ({count}) en même temps ?"
   },
   "errorTabGroup": {
     "message": "Erreur : Impossible de créer le groupe d'onglets. Avez-vous accepté les nouvelles permissions ?"
   },
   "bulkSelected": {
-    "message": "{count} sélectionné(s)"
+    "message": "Sélection : {count}"
   },
   "bulkMove": {
     "message": "Déplacer vers..."
@@ -141,7 +141,7 @@
     "message": "Supprimer"
   },
   "confirmBulkDelete": {
-    "message": "Voulez-vous vraiment supprimer ces {count} conversations ?"
+    "message": "Voulez-vous vraiment supprimer les conversations sélectionnées ({count}) ?"
   },
   "bulkCancel": {
     "message": "Annuler la sélection"

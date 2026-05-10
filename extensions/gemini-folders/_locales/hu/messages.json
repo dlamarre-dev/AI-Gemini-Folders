@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Gemini Mappák"
+    "message": "Gemini-mappák"
   },
   "extDesc": {
     "message": "Rendszerezze Gemini-beszélgetéseit egyéni mappákba."
   },
   "appTitle": {
-    "message": "Gemini Mappák"
+    "message": "Gemini-mappák"
   },
   "searchPlaceholder": {
     "message": "🔍 Beszélgetés keresése..."
@@ -30,10 +30,10 @@
     "message": "Nincs találat 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exportálás"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importálás"
+    "message": "📂 Import"
   },
   "alertNotGemini": {
     "message": "Kérjük, használja ezt a bővítményt egy Gemini-oldalon."
@@ -78,7 +78,7 @@
     "message": "Rögzítés"
   },
   "btnUnpin": {
-    "message": "Rögzítés feloldása"
+    "message": "Feloldás"
   },
   "sortNewest": {
     "message": "Legújabb"
@@ -90,7 +90,7 @@
     "message": "A-tól Z-ig"
   },
   "ctxMenuSave": {
-    "message": "Mentés a Gemini Mappákba"
+    "message": "Mentés a Gemini-mappákba"
   },
   "ctxMenuNoFolder": {
     "message": "(Nincs mappa – Bővítmény megnyitása)"
@@ -123,7 +123,7 @@
     "message": "⚡ Gyorsmentések"
   },
   "toastSaved": {
-    "message": "✅ Mentve a Gemini Mappákba!"
+    "message": "✅ Mentve a Gemini-mappákba!"
   },
   "btnOpenGroup": {
     "message": "Megnyitás lapcsoportban"
@@ -144,19 +144,19 @@
     "message": "Törlés"
   },
   "confirmBulkDelete": {
-    "message": "Biztosan törölni szeretné ezt a(z) {count} beszélgetést?"
+    "message": "Biztosan törölni szeretné a kijelölt {count} beszélgetést?"
   },
   "bulkCancel": {
     "message": "Kijelölés megszüntetése"
   },
   "masterFolderName": {
-    "message": "Gemini Mappák (Sync)"
+    "message": "Gemini-mappák (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Szinkronizált mappát hoz létre a Chrome-könyvjelzőkben, hogy telefonján is elérhesse a beszélgetéseit."
   },
   "reviewTitle": {
-    "message": "⭐ Tetszik a Gemini Mappák?"
+    "message": "⭐ Tetszik a Gemini-mappák?"
   },
   "reviewMessage": {
     "message": "Támogatása nagymértékben segíti ezt a nyílt forráskódú projektet!"

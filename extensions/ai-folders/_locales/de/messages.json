@@ -30,10 +30,10 @@
     "message": "Keine Ergebnisse gefunden 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exportieren"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importieren"
+    "message": "📂 Import"
   },
   "defaultFolder": {
     "message": "Allgemein"
@@ -126,7 +126,7 @@
     "message": "In Tab-Gruppe öffnen"
   },
   "confirmOpenManyTabs": {
-    "message": "Möchten Sie wirklich {count} Tabs gleichzeitig öffnen?"
+    "message": "Möchten Sie wirklich die ausgewählten Tabs (Anzahl: {count}) gleichzeitig öffnen?"
   },
   "errorTabGroup": {
     "message": "Fehler: Tab-Gruppe konnte nicht erstellt werden. Haben Sie die neuen Berechtigungen akzeptiert?"
@@ -141,7 +141,7 @@
     "message": "Löschen"
   },
   "confirmBulkDelete": {
-    "message": "Möchten Sie diese {count} Unterhaltungen wirklich löschen?"
+    "message": "Möchten Sie die ausgewählten Unterhaltungen (Anzahl: {count}) wirklich löschen?"
   },
   "bulkCancel": {
     "message": "Auswahl aufheben"

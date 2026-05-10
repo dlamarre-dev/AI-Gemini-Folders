@@ -30,10 +30,10 @@
     "message": "Nebyly nalezeny žádné výsledky 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exportovat"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importovat"
+    "message": "📂 Import"
   },
   "defaultFolder": {
     "message": "Obecné"
@@ -126,7 +126,7 @@
     "message": "Otevřít ve skupině karet"
   },
   "confirmOpenManyTabs": {
-    "message": "Opravdu chcete otevřít {count} karet současně?"
+    "message": "Opravdu chcete otevřít vybrané karty (počet: {count}) současně?"
   },
   "errorTabGroup": {
     "message": "Chyba: Nelze vytvořit skupinu karet. Přijali jste nová oprávnění?"
@@ -141,7 +141,7 @@
     "message": "Smazat"
   },
   "confirmBulkDelete": {
-    "message": "Opravdu chcete smazat těchto {count} konverzací?"
+    "message": "Opravdu chcete smazat vybrané konverzace (počet: {count})?"
   },
   "bulkCancel": {
     "message": "Zrušit výběr"

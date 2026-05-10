@@ -69,7 +69,7 @@
     "message": "מחק תיקייה"
   },
   "confirmDeleteFolder": {
-    "message": "תיקייה זו מכילה שיחות. האם אתה בטוח שברצונך למחוק אותה?"
+    "message": "תיקייה זו מכילה שיחות. האם למחוק אותה?"
   },
   "btnPin": {
     "message": "נעץ"
@@ -87,7 +87,7 @@
     "message": "א עד ת"
   },
   "ctxMenuSave": {
-    "message": "שמור ב-תיקיות AI"
+    "message": "שמור בתיקיות AI"
   },
   "ctxMenuNoFolder": {
     "message": "(אין תיקיות – פתח את התוסף)"
@@ -111,7 +111,7 @@
     "message": "מחשב מקום..."
   },
   "storageInfo": {
-    "message": "אחסון: {used} KB / {max} KB ({pct}%)"
+    "message": "אחסון: {used} מתוך {max} ק\"ב ({pct}%)"
   },
   "cmdQuickSave": {
     "message": "שמור שיחה"
@@ -120,19 +120,19 @@
     "message": "⚡ שמירה מהירה"
   },
   "toastSaved": {
-    "message": "✅ נשמר ב-תיקיות AI!"
+    "message": "✅ נשמר בתיקיות AI!"
   },
   "btnOpenGroup": {
     "message": "פתח בקבוצת כרטיסיות"
   },
   "confirmOpenManyTabs": {
-    "message": "האם אתה בטוח שברצונך לפתוח {count} כרטיסיות בו-זמנית?"
+    "message": "האם לפתוח את הכרטיסיות שנבחרו (כמות: {count}) בו-זמנית?"
   },
   "errorTabGroup": {
     "message": "שגיאה: לא ניתן ליצור את קבוצת הכרטיסיות. האם אישרת את ההרשאות החדשות?"
   },
   "bulkSelected": {
-    "message": "{count} נבחרו"
+    "message": "פריטים שנבחרו: {count}"
   },
   "bulkMove": {
     "message": "העבר אל..."
@@ -141,7 +141,7 @@
     "message": "מחק"
   },
   "confirmBulkDelete": {
-    "message": "האם אתה בטוח שברצונך למחוק {count} שיחות אלה?"
+    "message": "האם למחוק את השיחות שנבחרו (כמות: {count})?"
   },
   "bulkCancel": {
     "message": "בטל בחירה"

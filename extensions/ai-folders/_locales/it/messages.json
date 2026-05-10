@@ -75,7 +75,7 @@
     "message": "Fissa"
   },
   "btnUnpin": {
-    "message": "Rimuovi"
+    "message": "Stacca"
   },
   "sortNewest": {
     "message": "Più recenti"
@@ -126,13 +126,13 @@
     "message": "Apri in un gruppo di schede"
   },
   "confirmOpenManyTabs": {
-    "message": "Vuoi davvero aprire {count} schede contemporaneamente?"
+    "message": "Vuoi davvero aprire le schede selezionate ({count}) contemporaneamente?"
   },
   "errorTabGroup": {
     "message": "Errore: Impossibile creare il gruppo di schede. Hai accettato i nuovi permessi?"
   },
   "bulkSelected": {
-    "message": "{count} selezionati"
+    "message": "Selezionati: {count}"
   },
   "bulkMove": {
     "message": "Sposta in..."
@@ -141,7 +141,7 @@
     "message": "Elimina"
   },
   "confirmBulkDelete": {
-    "message": "Vuoi davvero eliminare queste {count} conversazioni?"
+    "message": "Vuoi davvero eliminare le conversazioni selezionate ({count})?"
   },
   "bulkCancel": {
     "message": "Annulla selezione"

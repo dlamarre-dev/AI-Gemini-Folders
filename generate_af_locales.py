@@ -136,6 +136,8 @@ AF = {
         "alertNotSupported":  "Χρησιμοποιήστε αυτήν την επέκταση σε υποστηριζόμενο AI ιστότοπο (Gemini, Claude, ChatGPT, Copilot ή Perplexity).",
         "alertEditorNotFound":"Δεν ήταν δυνατή η εύρεση του πεδίου κειμένου σε αυτή τη σελίδα. Κάντε κλικ στον επεξεργαστή πρώτα και μετά χρησιμοποιήστε το κουμπί εισαγωγής.",
         "setLocalUrl":        "Ορισμός URL τοπικού LLM:",
+        "ctxMenuSave":        "Αποθήκευση στους Φακέλους AI",
+        "toastSaved":         "✅ Αποθηκεύτηκε στους Φακέλους AI!",
         "newConv_gemini":     "Νέα συνομιλία Gemini",
         "newConv_claude":     "Νέα συνομιλία Claude",
         "newConv_chatgpt":    "Νέα συνομιλία ChatGPT",
@@ -178,6 +180,8 @@ AF = {
         "alertNotSupported":  "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot tai Perplexity).",
         "alertEditorNotFound":"Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta.",
         "setLocalUrl":        "Aseta paikallisen LLM:n URL:",
+        "ctxMenuSave":        "Tallenna AI-kansioihin",
+        "toastSaved":         "✅ Tallennettu AI-kansioihin!",
         "newConv_gemini":     "Uusi Gemini-keskustelu",
         "newConv_claude":     "Uusi Claude-keskustelu",
         "newConv_chatgpt":    "Uusi ChatGPT-keskustelu",
@@ -248,6 +252,8 @@ AF = {
         "alertNotSupported":  "Ezt a bővítményt egy támogatott AI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot vagy Perplexity).",
         "alertEditorNotFound":"Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot.",
         "setLocalUrl":        "Helyi LLM URL beállítása:",
+        "ctxMenuSave":        "Mentés az AI-mappákba",
+        "toastSaved":         "✅ Mentve az AI-mappákba!",
         "newConv_gemini":     "Új Gemini-beszélgetés",
         "newConv_claude":     "Új Claude-beszélgetés",
         "newConv_chatgpt":    "Új ChatGPT-beszélgetés",
@@ -646,7 +652,10 @@ def transform(lang, gf_msgs, af_overrides):
         elif key == "promptInsertBtn":
             entry["message"] = af_overrides["promptInsertBtn"]
         elif key in ("ctxMenuSave", "toastSaved", "masterFolderName"):
-            entry["message"] = val["message"].replace(gf_name, af_name)
+            if key in af_overrides:
+                entry["message"] = af_overrides[key]
+            else:
+                entry["message"] = val["message"].replace(gf_name, af_name)
         # all other shared keys pass through unchanged
 
         out[key] = entry

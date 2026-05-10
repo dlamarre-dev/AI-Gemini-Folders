@@ -30,10 +30,10 @@
     "message": "Nema rezultata 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Izvezi"
+    "message": "💾 Izvoz"
   },
   "importBtn": {
-    "message": "📂 Uvezi"
+    "message": "📂 Uvoz"
   },
   "defaultFolder": {
     "message": "Opće"
@@ -69,7 +69,7 @@
     "message": "Izbriši mapu"
   },
   "confirmDeleteFolder": {
-    "message": "Ova mapa sadrži razgovore. Jesi li siguran da je želiš izbrisati?"
+    "message": "Ova mapa sadrži razgovore. Želiš li je zaista izbrisati?"
   },
   "btnPin": {
     "message": "Prikvači"
@@ -126,13 +126,13 @@
     "message": "Otvori u grupi kartica"
   },
   "confirmOpenManyTabs": {
-    "message": "Zaista želiš otvoriti {count} kartica istovremeno?"
+    "message": "Želiš li zaista otvoriti odabrane kartice (broj: {count}) istovremeno?"
   },
   "errorTabGroup": {
     "message": "Greška: ne može se stvoriti grupa kartica. Jesi li prihvatio nova dopuštenja?"
   },
   "bulkSelected": {
-    "message": "{count} odabrano"
+    "message": "Odabrano: {count}"
   },
   "bulkMove": {
     "message": "Premjesti u..."
@@ -141,7 +141,7 @@
     "message": "Izbriši"
   },
   "confirmBulkDelete": {
-    "message": "Jesi li siguran da želiš izbrisati ovih {count} razgovora?"
+    "message": "Želiš li zaista izbrisati odabrane razgovore (broj: {count})?"
   },
   "bulkCancel": {
     "message": "Otkaži odabir"

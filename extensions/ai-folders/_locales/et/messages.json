@@ -30,10 +30,10 @@
     "message": "Tulemusi ei leitud 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Ekspordi"
+    "message": "💾 Eksport"
   },
   "importBtn": {
-    "message": "📂 Impordi"
+    "message": "📂 Import"
   },
   "defaultFolder": {
     "message": "Üldine"
@@ -126,7 +126,7 @@
     "message": "Ava vahekaardi grupis"
   },
   "confirmOpenManyTabs": {
-    "message": "Kas soovid tõesti avada {count} vahekaarti korraga?"
+    "message": "Kas soovid tõesti avada valitud vahekaardid (arv: {count}) korraga?"
   },
   "errorTabGroup": {
     "message": "Viga: vahekaardi gruppi ei saa luua. Kas oled uued õigused aktsepteerinud?"
@@ -141,7 +141,7 @@
     "message": "Kustuta"
   },
   "confirmBulkDelete": {
-    "message": "Kas oled kindel, et soovid need {count} vestlust kustutada?"
+    "message": "Kas oled kindel, et soovid valitud vestlused (arv: {count}) kustutada?"
   },
   "bulkCancel": {
     "message": "Tühista valik"

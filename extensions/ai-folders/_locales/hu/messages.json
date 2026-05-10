@@ -30,10 +30,10 @@
     "message": "Nincs találat 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exportálás"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importálás"
+    "message": "📂 Import"
   },
   "defaultFolder": {
     "message": "Általános"
@@ -75,7 +75,7 @@
     "message": "Rögzítés"
   },
   "btnUnpin": {
-    "message": "Rögzítés feloldása"
+    "message": "Feloldás"
   },
   "sortNewest": {
     "message": "Legújabb"
@@ -87,7 +87,7 @@
     "message": "A-tól Z-ig"
   },
   "ctxMenuSave": {
-    "message": "Mentés a AI mappákba"
+    "message": "Mentés az AI-mappákba"
   },
   "ctxMenuNoFolder": {
     "message": "(Nincs mappa – Bővítmény megnyitása)"
@@ -120,7 +120,7 @@
     "message": "⚡ Gyorsmentések"
   },
   "toastSaved": {
-    "message": "✅ Mentve a AI mappákba!"
+    "message": "✅ Mentve az AI-mappákba!"
   },
   "btnOpenGroup": {
     "message": "Megnyitás lapcsoportban"
@@ -141,7 +141,7 @@
     "message": "Törlés"
   },
   "confirmBulkDelete": {
-    "message": "Biztosan törölni szeretné ezt a(z) {count} beszélgetést?"
+    "message": "Biztosan törölni szeretné a kijelölt {count} beszélgetést?"
   },
   "bulkCancel": {
     "message": "Kijelölés megszüntetése"

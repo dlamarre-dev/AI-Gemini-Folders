@@ -30,10 +30,10 @@
     "message": "Rezultatų nerasta 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Eksportuoti"
+    "message": "💾 Eksportas"
   },
   "importBtn": {
-    "message": "📂 Importuoti"
+    "message": "📂 Importas"
   },
   "defaultFolder": {
     "message": "Bendra"
@@ -126,7 +126,7 @@
     "message": "Atidaryti skirtukų grupėje"
   },
   "confirmOpenManyTabs": {
-    "message": "Ar tikrai nori atidaryti {count} skirtukų vienu metu?"
+    "message": "Ar tikrai nori vienu metu atidaryti pasirinktus skirtukus (kiekis: {count})?"
   },
   "errorTabGroup": {
     "message": "Klaida: nepavyksta sukurti skirtukų grupės. Ar priėmei naujus leidimus?"
@@ -141,7 +141,7 @@
     "message": "Ištrinti"
   },
   "confirmBulkDelete": {
-    "message": "Ar tikrai nori ištrinti šiuos {count} pokalbių?"
+    "message": "Ar tikrai nori ištrinti pasirinktus pokalbius (kiekis: {count})?"
   },
   "bulkCancel": {
     "message": "Atšaukti pasirinkimą"

@@ -129,13 +129,13 @@
     "message": "Abrir en grupo de pestañas"
   },
   "confirmOpenManyTabs": {
-    "message": "¿Realmente quieres abrir {count} pestañas al mismo tiempo?"
+    "message": "¿Realmente quieres abrir las pestañas seleccionadas ({count}) al mismo tiempo?"
   },
   "errorTabGroup": {
     "message": "Error: No se pudo crear el grupo de pestañas. ¿Has aceptado los nuevos permisos?"
   },
   "bulkSelected": {
-    "message": "{count} seleccionado(s)"
+    "message": "Seleccionados: {count}"
   },
   "bulkMove": {
     "message": "Mover a..."
@@ -144,7 +144,7 @@
     "message": "Eliminar"
   },
   "confirmBulkDelete": {
-    "message": "¿Realmente quieres eliminar estas {count} conversaciones?"
+    "message": "¿Seguro que quieres eliminar las conversaciones seleccionadas ({count})?"
   },
   "bulkCancel": {
     "message": "Cancelar selección"

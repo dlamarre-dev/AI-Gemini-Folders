@@ -141,7 +141,7 @@
     "message": "削除"
   },
   "confirmBulkDelete": {
-    "message": "これら {count} 件の会話を本当に削除しますか？"
+    "message": "選択した {count} 件の会話を本当に削除しますか？"
   },
   "bulkCancel": {
     "message": "選択をキャンセル"
