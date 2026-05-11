@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Φάκελοι AI"
+    "message": "Φάκελοι ΤΝ"
   },
   "extDesc": {
     "message": "Οργανώστε τις AI συνομιλίες σας σε προσαρμοσμένους φακέλους. Υποστηρίζει Gemini, Claude, ChatGPT, Copilot και Perplexity."
   },
   "appTitle": {
-    "message": "Φάκελοι AI"
+    "message": "Φάκελοι ΤΝ"
   },
   "searchPlaceholder": {
     "message": "🔍 Αναζήτηση συνομιλίας..."
@@ -87,7 +87,7 @@
     "message": "Α έως Ω"
   },
   "ctxMenuSave": {
-    "message": "Αποθήκευση στους Φακέλους AI"
+    "message": "Αποθήκευση στους Φακέλους ΤΝ"
   },
   "ctxMenuNoFolder": {
     "message": "(Χωρίς φακέλους – Άνοιγμα επέκτασης)"
@@ -120,7 +120,7 @@
     "message": "⚡ Γρήγορη αποθήκευση"
   },
   "toastSaved": {
-    "message": "✅ Αποθηκεύτηκε στους Φακέλους AI!"
+    "message": "✅ Αποθηκεύτηκε στους Φακέλους ΤΝ!"
   },
   "btnOpenGroup": {
     "message": "Άνοιγμα σε ομάδα καρτελών"
@@ -147,7 +147,7 @@
     "message": "Ακύρωση επιλογής"
   },
   "masterFolderName": {
-    "message": "Φάκελοι AI (Sync)"
+    "message": "Φάκελοι ΤΝ (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Δημιουργεί συγχρονισμένο φάκελο στους σελιδοδείκτες Chrome για πρόσβαση σε συνομιλίες από το τηλέφωνο."

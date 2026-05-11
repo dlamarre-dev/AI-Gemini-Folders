@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "AI mape"
+    "message": "UI mape"
   },
   "extDesc": {
     "message": "Organizirajte AI razgovore u prilagođene mape. Podržava Gemini, Claude, ChatGPT, Copilot i Perplexity."
   },
   "appTitle": {
-    "message": "AI mape"
+    "message": "UI mape"
   },
   "searchPlaceholder": {
     "message": "🔍 Pretraži razgovor..."
@@ -87,7 +87,7 @@
     "message": "A do Ž"
   },
   "ctxMenuSave": {
-    "message": "Spremi u AI mape"
+    "message": "Spremi u UI mape"
   },
   "ctxMenuNoFolder": {
     "message": "(Nema mapa – Otvori dodatak)"
@@ -120,7 +120,7 @@
     "message": "⚡ Brzo spremi"
   },
   "toastSaved": {
-    "message": "✅ Spremljeno u AI mape!"
+    "message": "✅ Spremljeno u UI mape!"
   },
   "btnOpenGroup": {
     "message": "Otvori u grupi kartica"
@@ -147,7 +147,7 @@
     "message": "Otkaži odabir"
   },
   "masterFolderName": {
-    "message": "AI mape (Sync)"
+    "message": "UI mape (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Stvara sinkroniziranu mapu u Chrome oznakama za pristup razgovorima s telefona."

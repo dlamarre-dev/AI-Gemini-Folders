@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "AI-Ordner"
+    "message": "KI-Ordner"
   },
   "extDesc": {
     "message": "Organisieren Sie Ihre KI-Gespräche in benutzerdefinierten Ordnern. Unterstützt Gemini, Claude, ChatGPT, Copilot und Perplexity."
   },
   "appTitle": {
-    "message": "AI-Ordner"
+    "message": "KI-Ordner"
   },
   "searchPlaceholder": {
     "message": "🔍 Unterhaltung suchen..."
@@ -87,7 +87,7 @@
     "message": "Von A bis Z"
   },
   "ctxMenuSave": {
-    "message": "In AI-Ordner speichern"
+    "message": "In KI-Ordner speichern"
   },
   "ctxMenuNoFolder": {
     "message": "(Kein Ordner - Erweiterung öffnen)"
@@ -120,7 +120,7 @@
     "message": "⚡ Schnellspeicherungen"
   },
   "toastSaved": {
-    "message": "✅ In AI-Ordner gespeichert!"
+    "message": "✅ In KI-Ordner gespeichert!"
   },
   "btnOpenGroup": {
     "message": "In Tab-Gruppe öffnen"
@@ -147,7 +147,7 @@
     "message": "Auswahl aufheben"
   },
   "masterFolderName": {
-    "message": "AI-Ordner (Sync)"
+    "message": "KI-Ordner (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Erstellt einen synchronisierten Ordner in Ihren Chrome-Lesezeichen, um auf Ihrem Telefon auf Ihre Unterhaltungen zuzugreifen."

@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "AI mappák"
+    "message": "MI mappák"
   },
   "extDesc": {
-    "message": "Rendszerezze AI-beszélgetéseit egyéni mappákban. Támogatja a Gemini-t, Claude-ot, ChatGPT-t, Copilot-ot és Perplexity-t."
+    "message": "Rendszerezze MI-beszélgetéseit egyéni mappákban. Támogatja a Gemini-t, Claude-ot, ChatGPT-t, Copilot-ot és Perplexity-t."
   },
   "appTitle": {
-    "message": "AI mappák"
+    "message": "MI mappák"
   },
   "searchPlaceholder": {
     "message": "🔍 Beszélgetés keresése..."
@@ -87,7 +87,7 @@
     "message": "A-tól Z-ig"
   },
   "ctxMenuSave": {
-    "message": "Mentés az AI-mappákba"
+    "message": "Mentés a MI-mappákba"
   },
   "ctxMenuNoFolder": {
     "message": "(Nincs mappa – Bővítmény megnyitása)"
@@ -120,7 +120,7 @@
     "message": "⚡ Gyorsmentések"
   },
   "toastSaved": {
-    "message": "✅ Mentve az AI-mappákba!"
+    "message": "✅ Mentve a MI-mappákba!"
   },
   "btnOpenGroup": {
     "message": "Megnyitás lapcsoportban"
@@ -147,7 +147,7 @@
     "message": "Kijelölés megszüntetése"
   },
   "masterFolderName": {
-    "message": "AI mappák (Sync)"
+    "message": "MI mappák (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Szinkronizált mappát hoz létre a Chrome-könyvjelzőkben, hogy telefonján is elérhesse a beszélgetéseit."
@@ -237,7 +237,7 @@
     "message": "Helyi LLM URL beállítása:"
   },
   "alertNotSupported": {
-    "message": "Ezt a bővítményt egy támogatott AI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot vagy Perplexity)."
+    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot vagy Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."

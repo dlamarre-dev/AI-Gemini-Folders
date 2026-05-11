@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "AI папки"
+    "message": "ИИ папки"
   },
   "extDesc": {
     "message": "Организирайте AI разговорите си в персонализирани папки. Поддържа Gemini, Claude, ChatGPT, Copilot и Perplexity."
   },
   "appTitle": {
-    "message": "AI папки"
+    "message": "ИИ папки"
   },
   "searchPlaceholder": {
     "message": "🔍 Търсене на разговор..."
@@ -87,7 +87,7 @@
     "message": "А до Я"
   },
   "ctxMenuSave": {
-    "message": "Запази в AI папки"
+    "message": "Запази в ИИ папки"
   },
   "ctxMenuNoFolder": {
     "message": "(Няма папки – Отвори разширението)"
@@ -120,7 +120,7 @@
     "message": "⚡ Бързо запазване"
   },
   "toastSaved": {
-    "message": "✅ Запазено в AI папки!"
+    "message": "✅ Запазено в ИИ папки!"
   },
   "btnOpenGroup": {
     "message": "Отвори в група с раздели"
@@ -147,7 +147,7 @@
     "message": "Отмени избора"
   },
   "masterFolderName": {
-    "message": "AI папки (Sync)"
+    "message": "ИИ папки (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Създава синхронизирана папка в отметките на Chrome за достъп до разговори от телефона."

@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "AI фасцикле"
+    "message": "ВИ фасцикле"
   },
   "extDesc": {
-    "message": "Организујте АИ разговоре у прилагођене фасцикле. Подржава Gemini, Claude, ChatGPT, Copilot и Perplexity."
+    "message": "Организујте ВИ разговоре у прилагођене фасцикле. Подржава Gemini, Claude, ChatGPT, Copilot и Perplexity."
   },
   "appTitle": {
-    "message": "AI фасцикле"
+    "message": "ВИ фасцикле"
   },
   "searchPlaceholder": {
     "message": "🔍 Pretraži razgovor..."
@@ -87,7 +87,7 @@
     "message": "A do Ž"
   },
   "ctxMenuSave": {
-    "message": "Sačuvaj u Gemini Foldere"
+    "message": "Sačuvaj u ВИ фасцикле"
   },
   "ctxMenuNoFolder": {
     "message": "(Nema foldera – Otvori proširenje)"
@@ -120,7 +120,7 @@
     "message": "⚡ Brzo čuvanje"
   },
   "toastSaved": {
-    "message": "✅ Sačuvano u Gemini Foldere!"
+    "message": "✅ Sačuvano u ВИ фасцикле!"
   },
   "btnOpenGroup": {
     "message": "Otvori u grupi kartica"
@@ -147,7 +147,7 @@
     "message": "Otkaži odabir"
   },
   "masterFolderName": {
-    "message": "AI фасцикле (Sync)"
+    "message": "ВИ фасцикле (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Kreira sinhronizovani folder u Chrome obeleživačima za pristup razgovorima s telefona."
@@ -237,7 +237,7 @@
     "message": "Подесите URL локалног LLM-а:"
   },
   "alertNotSupported": {
-    "message": "Користите ово проширење на подржаном АИ сајту (Gemini, Claude, ChatGPT, Copilot или Perplexity)."
+    "message": "Користите ово проширење на подржаном ВИ сајту (Gemini, Claude, ChatGPT, Copilot или Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Није могуће пронаћи поље за унос текста на овој страници. Прво кликните у уређивач, а затим користите дугме за убацивање."
