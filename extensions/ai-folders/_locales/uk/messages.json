@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "AI-папки"
+    "message": "Теки ШІ"
   },
   "extDesc": {
-    "message": "Організуйте розмови зі штучним інтелектом у власних папках. Підтримує Gemini, Claude, ChatGPT, Copilot і Perplexity."
+    "message": "Організуйте розмови зі штучним інтелектом у власних теках. Підтримує Gemini, Claude, ChatGPT, Copilot і Perplexity."
   },
   "appTitle": {
-    "message": "AI-папки"
+    "message": "Теки ШІ"
   },
   "searchPlaceholder": {
     "message": "🔍 Пошук розмови..."
@@ -87,7 +87,7 @@
     "message": "А до Я"
   },
   "ctxMenuSave": {
-    "message": "Зберегти в AI-папки"
+    "message": "Зберегти в Теки ШІ"
   },
   "ctxMenuNoFolder": {
     "message": "(Немає тек – Відкрийте розширення)"
@@ -120,7 +120,7 @@
     "message": "⚡ Швидке збереження"
   },
   "toastSaved": {
-    "message": "✅ Збережено в AI-папки!"
+    "message": "✅ Збережено в Теки ШІ!"
   },
   "btnOpenGroup": {
     "message": "Відкрити у групі вкладок"
@@ -147,7 +147,7 @@
     "message": "Скасувати вибір"
   },
   "masterFolderName": {
-    "message": "AI-папки (Sync)"
+    "message": "Теки ШІ (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Створює синхронізовану теку в закладках Chrome для доступу до розмов з телефону."

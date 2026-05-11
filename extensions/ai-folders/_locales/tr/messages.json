@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "AI Klasörleri"
+    "message": "YZ Klasörleri"
   },
   "extDesc": {
     "message": "AI sohbetlerinizi özel klasörlerde düzenleyin. Gemini, Claude, ChatGPT, Copilot ve Perplexity'yi destekler."
   },
   "appTitle": {
-    "message": "AI Klasörleri"
+    "message": "YZ Klasörleri"
   },
   "searchPlaceholder": {
     "message": "🔍 Konuşma ara..."
@@ -87,7 +87,7 @@
     "message": "A'dan Z'ye"
   },
   "ctxMenuSave": {
-    "message": "AI Klasörleri'ne Kaydet"
+    "message": "YZ Klasörleri'ne Kaydet"
   },
   "ctxMenuNoFolder": {
     "message": "(Klasör yok - Uzantıyı aç)"
@@ -120,7 +120,7 @@
     "message": "⚡ Hızlı Kayıtlar"
   },
   "toastSaved": {
-    "message": "✅ AI Klasörleri'ne kaydedildi!"
+    "message": "✅ YZ Klasörleri'ne kaydedildi!"
   },
   "btnOpenGroup": {
     "message": "Sekme Grubunda Aç"
@@ -147,7 +147,7 @@
     "message": "Seçimi iptal et"
   },
   "masterFolderName": {
-    "message": "AI Klasörleri (Sync)"
+    "message": "YZ Klasörleri (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Telefonunuzdan konuşmalarınıza erişmek için Chrome yer imlerinizde senkronize edilmiş bir klasör oluşturur."

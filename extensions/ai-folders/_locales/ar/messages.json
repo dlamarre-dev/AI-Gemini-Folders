@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "AI Folders"
+    "message": "مجلدات AI"
   },
   "extDesc": {
     "message": "نظّم محادثات الذكاء الاصطناعي في مجلدات مخصصة. يدعم Gemini وClaude وChatGPT وCopilot وPerplexity."
   },
   "appTitle": {
-    "message": "AI Folders"
+    "message": "مجلدات AI"
   },
   "searchPlaceholder": {
     "message": "🔍 بحث في المحادثات..."
@@ -87,7 +87,7 @@
     "message": "من أ إلى ي"
   },
   "ctxMenuSave": {
-    "message": "حفظ في AI Folders"
+    "message": "حفظ في مجلدات AI"
   },
   "ctxMenuNoFolder": {
     "message": "(لا توجد مجلدات - افتح الإضافة)"
@@ -120,7 +120,7 @@
     "message": "⚡ الحفظ السريع"
   },
   "toastSaved": {
-    "message": "✅ تم الحفظ في AI Folders!"
+    "message": "✅ تم الحفظ في مجلدات AI!"
   },
   "btnOpenGroup": {
     "message": "فتح في مجموعة علامات تبويب"
@@ -147,7 +147,7 @@
     "message": "إلغاء التحديد"
   },
   "masterFolderName": {
-    "message": "AI Folders (مزامنة)"
+    "message": "مجلدات AI (مزامنة)"
   },
   "syncBookmarksTooltip": {
     "message": "ينشئ مجلداً متزامناً في إشاراتك المرجعية في Chrome للوصول إلى محادثاتك من هاتفك."

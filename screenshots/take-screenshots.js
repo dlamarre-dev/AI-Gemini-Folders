@@ -1265,7 +1265,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
               </div>
               <span style="font-size:13px;font-weight:600;color:#ececec;">ChatGPT</span>
             </div>
-            <div class="msg-ai-body">Here's a clean refactored version using async/await and proper error handling…</div>
+            <div class="msg-ai-body">${localeData.aiReply}</div>
           </div>
         </div>
         <div class="gemini-input" style="background:#2f2f2f;border-radius:16px;margin:0 16px 16px;">
