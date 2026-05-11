@@ -30,10 +30,10 @@
     "message": "Inga resultat 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exportera"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importera"
+    "message": "📂 Import"
   },
   "defaultFolder": {
     "message": "Allmänt"
@@ -126,13 +126,13 @@
     "message": "Öppna i flikgrupp"
   },
   "confirmOpenManyTabs": {
-    "message": "Vill du verkligen öppna {count} flikar samtidigt?"
+    "message": "Vill du verkligen öppna de markerade flikarna (antal: {count}) samtidigt?"
   },
   "errorTabGroup": {
     "message": "Fel: Kan inte skapa flikgruppen. Har du godkänt de nya behörigheterna?"
   },
   "bulkSelected": {
-    "message": "{count} markerade"
+    "message": "Markerade: {count}"
   },
   "bulkMove": {
     "message": "Flytta till..."
@@ -141,7 +141,7 @@
     "message": "Ta bort"
   },
   "confirmBulkDelete": {
-    "message": "Är du säker på att du vill ta bort dessa {count} konversationer?"
+    "message": "Är du säker på att du vill ta bort de markerade konversationerna (antal: {count})?"
   },
   "bulkCancel": {
     "message": "Avbryt markering"

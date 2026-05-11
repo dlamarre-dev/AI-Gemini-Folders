@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Gemini Mappen"
+    "message": "Gemini-mappen"
   },
   "extDesc": {
     "message": "Organiseer uw Gemini-gesprekken in aangepaste mappen."
   },
   "appTitle": {
-    "message": "Gemini Mappen"
+    "message": "Gemini-mappen"
   },
   "searchPlaceholder": {
     "message": "🔍 Zoek een gesprek..."
@@ -30,10 +30,10 @@
     "message": "Geen resultaten gevonden 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exporteren"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importeren"
+    "message": "📂 Import"
   },
   "alertNotGemini": {
     "message": "Gebruik deze extensie op een Gemini-pagina."
@@ -90,7 +90,7 @@
     "message": "A tot Z"
   },
   "ctxMenuSave": {
-    "message": "Opslaan in Gemini Mappen"
+    "message": "Opslaan in Gemini-mappen"
   },
   "ctxMenuNoFolder": {
     "message": "(Geen mappen - Open extensie)"
@@ -123,19 +123,19 @@
     "message": "⚡ Snelle opslag"
   },
   "toastSaved": {
-    "message": "✅ Opgeslagen in Gemini Mappen!"
+    "message": "✅ Opgeslagen in Gemini-mappen!"
   },
   "btnOpenGroup": {
     "message": "Openen in tabgroep"
   },
   "confirmOpenManyTabs": {
-    "message": "Wilt u echt {count} tabbladen tegelijk openen?"
+    "message": "Wilt u echt de geselecteerde tabbladen (aantal: {count}) tegelijk openen?"
   },
   "errorTabGroup": {
     "message": "Fout: Kan de tabgroep niet aanmaken. Hebt u de nieuwe machtigingen geaccepteerd?"
   },
   "bulkSelected": {
-    "message": "{count} geselecteerd"
+    "message": "Geselecteerd: {count}"
   },
   "bulkMove": {
     "message": "Verplaatsen naar..."
@@ -144,19 +144,19 @@
     "message": "Verwijderen"
   },
   "confirmBulkDelete": {
-    "message": "Weet u zeker dat u deze {count} gesprekken wilt verwijderen?"
+    "message": "Weet u zeker dat u de geselecteerde gesprekken (aantal: {count}) wilt verwijderen?"
   },
   "bulkCancel": {
     "message": "Selectie annuleren"
   },
   "masterFolderName": {
-    "message": "Gemini Mappen (Sync)"
+    "message": "Gemini-mappen (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Maakt een gesynchroniseerde map aan in uw Chrome-bladwijzers voor toegang tot uw gesprekken op uw telefoon."
   },
   "reviewTitle": {
-    "message": "⭐ Bevalt Gemini Mappen u?"
+    "message": "⭐ Bevalt Gemini-mappen u?"
   },
   "reviewMessage": {
     "message": "Uw steun helpt dit open-sourceproject enorm!"

@@ -30,10 +30,10 @@
     "message": "Nenhum resultado encontrado 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exportar"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importar"
+    "message": "📂 Import"
   },
   "alertNotGemini": {
     "message": "Por favor, use esta extensão em uma página do Gemini."
@@ -129,13 +129,13 @@
     "message": "Abrir em grupo de guias"
   },
   "confirmOpenManyTabs": {
-    "message": "Você realmente deseja abrir {count} guias ao mesmo tempo?"
+    "message": "Você realmente deseja abrir as guias selecionadas ({count}) ao mesmo tempo?"
   },
   "errorTabGroup": {
     "message": "Erro: Não foi possível criar o grupo de guias. Você aceitou as novas permissões?"
   },
   "bulkSelected": {
-    "message": "{count} selecionado(s)"
+    "message": "Seleção: {count}"
   },
   "bulkMove": {
     "message": "Mover para..."
@@ -144,7 +144,7 @@
     "message": "Excluir"
   },
   "confirmBulkDelete": {
-    "message": "Tem certeza de que deseja excluir estas {count} conversas?"
+    "message": "Tem certeza de que deseja excluir as conversas selecionadas ({count})?"
   },
   "bulkCancel": {
     "message": "Cancelar seleção"

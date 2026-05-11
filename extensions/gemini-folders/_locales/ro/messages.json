@@ -30,10 +30,10 @@
     "message": "Niciun rezultat găsit 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exportă"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importă"
+    "message": "📂 Import"
   },
   "alertNotGemini": {
     "message": "Vă rugăm să utilizați această extensie pe o pagină Gemini."
@@ -78,7 +78,7 @@
     "message": "Fixează"
   },
   "btnUnpin": {
-    "message": "Anulează fixarea"
+    "message": "Detașează"
   },
   "sortNewest": {
     "message": "Cele mai noi"
@@ -129,13 +129,13 @@
     "message": "Deschide într-un grup de file"
   },
   "confirmOpenManyTabs": {
-    "message": "Sigur doriți să deschideți {count} file în același timp?"
+    "message": "Sigur doriți să deschideți filele selectate (număr: {count}) în același timp?"
   },
   "errorTabGroup": {
     "message": "Eroare: Nu s-a putut crea grupul de file. Ați acceptat noile permisiuni?"
   },
   "bulkSelected": {
-    "message": "{count} selectate"
+    "message": "Selecție: {count}"
   },
   "bulkMove": {
     "message": "Mută în..."
@@ -144,7 +144,7 @@
     "message": "Șterge"
   },
   "confirmBulkDelete": {
-    "message": "Sigur doriți să ștergeți aceste {count} conversații?"
+    "message": "Sigur doriți să ștergeți conversațiile selectate (număr: {count})?"
   },
   "bulkCancel": {
     "message": "Anulează selecția"
@@ -183,7 +183,7 @@
     "message": "⚠️ Deja salvat!"
   },
   "folderModeTitle": {
-    "message": "Mod dosare"
+    "message": "Mod foldere"
   },
   "promptModeTitle": {
     "message": "Mod prompt-uri"

@@ -75,7 +75,7 @@
     "message": "Sabitle"
   },
   "btnUnpin": {
-    "message": "Sabitlemeyi Kaldır"
+    "message": "Ayır"
   },
   "sortNewest": {
     "message": "En Yeni"
@@ -87,7 +87,7 @@
     "message": "A'dan Z'ye"
   },
   "ctxMenuSave": {
-    "message": "AI Klasörleri'e Kaydet"
+    "message": "AI Klasörleri'ne Kaydet"
   },
   "ctxMenuNoFolder": {
     "message": "(Klasör yok - Uzantıyı aç)"
@@ -120,7 +120,7 @@
     "message": "⚡ Hızlı Kayıtlar"
   },
   "toastSaved": {
-    "message": "✅ AI Klasörleri'e kaydedildi!"
+    "message": "✅ AI Klasörleri'ne kaydedildi!"
   },
   "btnOpenGroup": {
     "message": "Sekme Grubunda Aç"

@@ -30,10 +30,10 @@
     "message": "Ni rezultatov 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Izvozi"
+    "message": "💾 Izvoz"
   },
   "importBtn": {
-    "message": "📂 Uvozi"
+    "message": "📂 Uvoz"
   },
   "defaultFolder": {
     "message": "Splošno"
@@ -69,7 +69,7 @@
     "message": "Izbriši mapo"
   },
   "confirmDeleteFolder": {
-    "message": "Ta mapa vsebuje pogovore. Ste prepričani, da jo želite izbrisati?"
+    "message": "Ta mapa vsebuje pogovore. Ali jo res želiš izbrisati?"
   },
   "btnPin": {
     "message": "Pripni"
@@ -126,13 +126,13 @@
     "message": "Odpri v skupini zavihkov"
   },
   "confirmOpenManyTabs": {
-    "message": "Ali res želiš odpreti {count} zavihkov hkrati?"
+    "message": "Ali res želiš hkrati odpreti izbrane zavihke (število: {count})?"
   },
   "errorTabGroup": {
-    "message": "Napaka: ni mogoče ustvariti skupine zavihkov. Ali ste sprejeli nova dovoljenja?"
+    "message": "Napaka: ni mogoče ustvariti skupine zavihkov. Ali so odobrena nova dovoljenja?"
   },
   "bulkSelected": {
-    "message": "{count} izbrano"
+    "message": "Izbrano: {count}"
   },
   "bulkMove": {
     "message": "Premakni v..."
@@ -141,7 +141,7 @@
     "message": "Izbriši"
   },
   "confirmBulkDelete": {
-    "message": "Ali res želiš izbrisati teh {count} pogovorov?"
+    "message": "Ali res želiš izbrisati izbrane pogovore (število: {count})?"
   },
   "bulkCancel": {
     "message": "Prekliči izbiro"

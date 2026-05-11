@@ -30,10 +30,10 @@
     "message": "Nenhum resultado encontrado 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exportar"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importar"
+    "message": "📂 Import"
   },
   "alertNotGemini": {
     "message": "Por favor, utilize esta extensão numa página Gemini."
@@ -129,13 +129,13 @@
     "message": "Abrir num grupo de separadores"
   },
   "confirmOpenManyTabs": {
-    "message": "Tem a certeza que deseja abrir {count} separadores em simultâneo?"
+    "message": "Tem a certeza que deseja abrir os separadores selecionados ({count}) em simultâneo?"
   },
   "errorTabGroup": {
     "message": "Erro: Não foi possível criar o grupo de separadores. Aceitou as novas permissões?"
   },
   "bulkSelected": {
-    "message": "{count} selecionadas"
+    "message": "Seleção: {count}"
   },
   "bulkMove": {
     "message": "Mover para..."
@@ -144,7 +144,7 @@
     "message": "Eliminar"
   },
   "confirmBulkDelete": {
-    "message": "Tem a certeza que deseja eliminar estas {count} conversas?"
+    "message": "Tem a certeza que deseja eliminar as conversas selecionadas ({count})?"
   },
   "bulkCancel": {
     "message": "Cancelar seleção"

@@ -12,7 +12,7 @@
     "message": "🔍 搜索对话..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 搜索提示..."
+    "message": "🔍 搜索提示词..."
   },
   "folderPlaceholder": {
     "message": "文件夹名称 (例如: 代码项目)"
@@ -177,7 +177,7 @@
     "message": "确认"
   },
   "emojiTipPlaceholder": {
-    "message": "提示：以表情符号开头 (Win+. / ⌘⌃空格键)"
+    "message": "提示词：以表情符号开头 (Win+. / ⌘⌃空格键)"
   },
   "toastAlreadySaved": {
     "message": "⚠️ 已保存！"
@@ -219,10 +219,10 @@
     "message": "新对话"
   },
   "promptTitlePlaceholder": {
-    "message": "提示标题"
+    "message": "提示词标题"
   },
   "promptTextPlaceholder": {
-    "message": "在此输入提示..."
+    "message": "在此输入提示词..."
   },
   "enableCustomGemTooltip": {
     "message": "启用自定义 Gem"
@@ -231,10 +231,10 @@
     "message": "设置自定义 Gem 链接"
   },
   "syncPromptsTooltip": {
-    "message": "同步提示"
+    "message": "同步提示词"
   },
   "promptRenamePrompt": {
-    "message": "新提示名称:"
+    "message": "新提示词名称:"
   },
   "confirmDeletePrompt": {
     "message": "删除此提示词？"

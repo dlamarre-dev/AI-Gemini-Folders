@@ -30,10 +30,10 @@
     "message": "Ingen resultater 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Eksporter"
+    "message": "💾 Eksport"
   },
   "importBtn": {
-    "message": "📂 Importer"
+    "message": "📂 Import"
   },
   "defaultFolder": {
     "message": "Generelt"
@@ -126,13 +126,13 @@
     "message": "Åpne i fanegruppe"
   },
   "confirmOpenManyTabs": {
-    "message": "Vil du virkelig åpne {count} faner samtidig?"
+    "message": "Vil du virkelig åpne de valgte fanene (antall: {count}) samtidig?"
   },
   "errorTabGroup": {
     "message": "Feil: Kan ikke opprette fanegruppen. Har du godtatt de nye tillatelsene?"
   },
   "bulkSelected": {
-    "message": "{count} valgt"
+    "message": "Valgt: {count}"
   },
   "bulkMove": {
     "message": "Flytt til..."
@@ -141,7 +141,7 @@
     "message": "Slett"
   },
   "confirmBulkDelete": {
-    "message": "Er du sikker på at du vil slette disse {count} samtalene?"
+    "message": "Er du sikker på at du vil slette de valgte samtalene (antall: {count})?"
   },
   "bulkCancel": {
     "message": "Avbryt valg"

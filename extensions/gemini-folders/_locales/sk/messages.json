@@ -30,10 +30,10 @@
     "message": "Nenašli sa žiadne výsledky 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Exportovať"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 Importovať"
+    "message": "📂 Import"
   },
   "alertNotGemini": {
     "message": "Použite prosím toto rozšírenie na stránke Gemini."
@@ -129,7 +129,7 @@
     "message": "Otvoriť v skupine kariet"
   },
   "confirmOpenManyTabs": {
-    "message": "Naozaj chcete otvoriť {count} kariet súčasne?"
+    "message": "Naozaj chcete otvoriť vybrané karty (počet: {count}) súčasne?"
   },
   "errorTabGroup": {
     "message": "Chyba: Nedá sa vytvoriť skupina kariet. Prijali ste nové povolenia?"
@@ -144,7 +144,7 @@
     "message": "Vymazať"
   },
   "confirmBulkDelete": {
-    "message": "Naozaj chcete vymazať týchto {count} konverzácií?"
+    "message": "Naozaj chcete vymazať vybrané konverzácie (počet: {count})?"
   },
   "bulkCancel": {
     "message": "Zrušiť výber"
@@ -189,19 +189,19 @@
     "message": "Režim promptov"
   },
   "promptCannotBeEmpty": {
-    "message": "Výzva nemôže byť prázdna!"
+    "message": "Prompt nemôže byť prázdny!"
   },
   "promptSaved": {
-    "message": "Výzva uložená!"
+    "message": "Prompt uložený!"
   },
   "promptDuplicateWarning": {
-    "message": "Výzva s týmto názvom už existuje. Prepísať?"
+    "message": "Prompt s týmto názvom už existuje. Prepísať?"
   },
   "promptNoSavedYet": {
-    "message": "Zatiaľ žiadne uložené výzvy."
+    "message": "Zatiaľ neboli uložené žiadne prompty."
   },
   "promptAddBtn": {
-    "message": "Pridať výzvu"
+    "message": "Pridať prompt"
   },
   "promptCopyTitle": {
     "message": "Kopírovať"

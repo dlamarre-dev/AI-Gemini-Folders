@@ -30,10 +30,10 @@
     "message": "Nema rezultata 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Izvezi"
+    "message": "💾 Izvoz"
   },
   "importBtn": {
-    "message": "📂 Uvezi"
+    "message": "📂 Uvoz"
   },
   "defaultFolder": {
     "message": "Opšte"
@@ -69,7 +69,7 @@
     "message": "Obriši folder"
   },
   "confirmDeleteFolder": {
-    "message": "Ovaj folder sadrži razgovore. Da li ste sigurni da želite da ga obrišete?"
+    "message": "Ovaj folder sadrži razgovore. Da li zaista želiš da ga obrišeš?"
   },
   "btnPin": {
     "message": "Zakači"
@@ -126,13 +126,13 @@
     "message": "Otvori u grupi kartica"
   },
   "confirmOpenManyTabs": {
-    "message": "Da li zaista želiš da otvoriš {count} kartica istovremeno?"
+    "message": "Da li zaista želiš da otvoriš izabrane kartice (broj: {count}) istovremeno?"
   },
   "errorTabGroup": {
-    "message": "Greška: ne može da se kreira grupa kartica. Da li ste prihvatili nova ovlašćenja?"
+    "message": "Greška: ne može da se kreira grupa kartica. Da li su prihvaćena nova ovlašćenja?"
   },
   "bulkSelected": {
-    "message": "{count} odabrano"
+    "message": "Odabrano: {count}"
   },
   "bulkMove": {
     "message": "Premesti u..."
@@ -141,7 +141,7 @@
     "message": "Obriši"
   },
   "confirmBulkDelete": {
-    "message": "Da li ste sigurni da želite da obrišete ovih {count} razgovora?"
+    "message": "Da li zaista želiš da obrišeš izabrane razgovore (broj: {count})?"
   },
   "bulkCancel": {
     "message": "Otkaži odabir"

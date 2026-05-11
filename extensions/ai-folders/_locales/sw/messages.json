@@ -75,7 +75,7 @@
     "message": "Bandika"
   },
   "btnUnpin": {
-    "message": "Ondoa ubandikaji"
+    "message": "Bandua"
   },
   "sortNewest": {
     "message": "Mpya zaidi"
@@ -126,13 +126,13 @@
     "message": "Fungua katika Kikundi cha Vichupo"
   },
   "confirmOpenManyTabs": {
-    "message": "Je, unataka kweli kufungua vichupo {count} wakati mmoja?"
+    "message": "Je, unataka kweli kufungua vichupo vilivyochaguliwa (idadi: {count}) wakati mmoja?"
   },
   "errorTabGroup": {
     "message": "Hitilafu: Haiwezekani kuunda kikundi cha vichupo. Je, umekubali ruhusa mpya?"
   },
   "bulkSelected": {
-    "message": "{count} zimechaguliwa"
+    "message": "Uteuzi: {count}"
   },
   "bulkMove": {
     "message": "Hamia kwenye..."
@@ -141,7 +141,7 @@
     "message": "Futa"
   },
   "confirmBulkDelete": {
-    "message": "Je, una uhakika unataka kufuta mazungumzo haya {count}?"
+    "message": "Je, una uhakika unataka kufuta mazungumzo yaliyochaguliwa (idadi: {count})?"
   },
   "bulkCancel": {
     "message": "Ghairi uteuzi"

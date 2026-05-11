@@ -30,10 +30,10 @@
     "message": "Walang nahanap na resulta 🕵️"
   },
   "exportBtn": {
-    "message": "💾 I-export"
+    "message": "💾 Export"
   },
   "importBtn": {
-    "message": "📂 I-import"
+    "message": "📂 Import"
   },
   "alertNotGemini": {
     "message": "Gamitin ang extension na ito sa isang pahina ng Gemini."
@@ -129,13 +129,13 @@
     "message": "Buksan sa Tab Group"
   },
   "confirmOpenManyTabs": {
-    "message": "Talagang gusto mo bang magbukas ng {count} tab nang sabay-sabay?"
+    "message": "Talagang gusto mo bang magbukas ng mga napiling tab (bilang: {count}) nang sabay-sabay?"
   },
   "errorTabGroup": {
     "message": "Error: Hindi malikha ang tab group. Tinanggap mo na ba ang mga bagong pahintulot?"
   },
   "bulkSelected": {
-    "message": "{count} napili"
+    "message": "Napili: {count}"
   },
   "bulkMove": {
     "message": "Ilipat sa..."
@@ -144,7 +144,7 @@
     "message": "Tanggalin"
   },
   "confirmBulkDelete": {
-    "message": "Sigurado ka bang gusto mong tanggalin ang {count} pag-uusap na ito?"
+    "message": "Sigurado ka bang gusto mong tanggalin ang mga napiling pag-uusap (bilang: {count})?"
   },
   "bulkCancel": {
     "message": "Kanselahin ang seleksyon"

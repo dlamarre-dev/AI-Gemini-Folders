@@ -30,10 +30,10 @@
     "message": "Rezultātu nav 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Eksportēt"
+    "message": "💾 Eksports"
   },
   "importBtn": {
-    "message": "📂 Importēt"
+    "message": "📂 Imports"
   },
   "defaultFolder": {
     "message": "Vispārīgi"
@@ -126,13 +126,13 @@
     "message": "Atvērt cilņu grupā"
   },
   "confirmOpenManyTabs": {
-    "message": "Vai tiešām vēlies atvērt {count} cilnes vienlaikus?"
+    "message": "Vai tiešām vēlies vienlaikus atvērt atlasītās cilnes (skaits: {count})?"
   },
   "errorTabGroup": {
     "message": "Kļūda: nevar izveidot cilņu grupu. Vai esi pieņēmis jaunās atļaujas?"
   },
   "bulkSelected": {
-    "message": "{count} atlasīts"
+    "message": "Atlasīts: {count}"
   },
   "bulkMove": {
     "message": "Pārvietot uz..."
@@ -141,7 +141,7 @@
     "message": "Dzēst"
   },
   "confirmBulkDelete": {
-    "message": "Vai tiešām vēlies dzēst šīs {count} sarunas?"
+    "message": "Vai tiešām vēlies dzēst atlasītās sarunas (skaits: {count})?"
   },
   "bulkCancel": {
     "message": "Atcelt atlasi"

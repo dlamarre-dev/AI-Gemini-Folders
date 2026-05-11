@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Gemini Klasörler"
+    "message": "Gemini Klasörleri"
   },
   "extDesc": {
     "message": "Gemini konuşmalarınızı özel klasörlere düzenleyin."
   },
   "appTitle": {
-    "message": "Gemini Klasörler"
+    "message": "Gemini Klasörleri"
   },
   "searchPlaceholder": {
     "message": "🔍 Konuşma ara..."
@@ -78,7 +78,7 @@
     "message": "Sabitle"
   },
   "btnUnpin": {
-    "message": "Sabitlemeyi Kaldır"
+    "message": "Ayır"
   },
   "sortNewest": {
     "message": "En Yeni"
@@ -90,7 +90,7 @@
     "message": "A'dan Z'ye"
   },
   "ctxMenuSave": {
-    "message": "Gemini Klasörler'e Kaydet"
+    "message": "Gemini Klasörleri'ne Kaydet"
   },
   "ctxMenuNoFolder": {
     "message": "(Klasör yok - Uzantıyı aç)"
@@ -123,7 +123,7 @@
     "message": "⚡ Hızlı Kayıtlar"
   },
   "toastSaved": {
-    "message": "✅ Gemini Klasörler'e kaydedildi!"
+    "message": "✅ Gemini Klasörleri'ne kaydedildi!"
   },
   "btnOpenGroup": {
     "message": "Sekme Grubunda Aç"
@@ -150,13 +150,13 @@
     "message": "Seçimi iptal et"
   },
   "masterFolderName": {
-    "message": "Gemini Klasörler (Sync)"
+    "message": "Gemini Klasörleri (Sync)"
   },
   "syncBookmarksTooltip": {
     "message": "Telefonunuzdan konuşmalarınıza erişmek için Chrome yer imlerinizde senkronize edilmiş bir klasör oluşturur."
   },
   "reviewTitle": {
-    "message": "⭐ Gemini Klasörler'i beğeniyor musunuz?"
+    "message": "⭐ Gemini Klasörleri'ni beğeniyor musunuz?"
   },
   "reviewMessage": {
     "message": "Desteğiniz bu açık kaynaklı projeye çok yardımcı oluyor!"

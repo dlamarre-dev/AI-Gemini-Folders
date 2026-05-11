@@ -30,10 +30,10 @@
     "message": "Brak wyników 🕵️"
   },
   "exportBtn": {
-    "message": "💾 Eksportuj"
+    "message": "💾 Eksport"
   },
   "importBtn": {
-    "message": "📂 Importuj"
+    "message": "📂 Import"
   },
   "defaultFolder": {
     "message": "Ogólne"
@@ -126,7 +126,7 @@
     "message": "Otwórz w grupie kart"
   },
   "confirmOpenManyTabs": {
-    "message": "Czy na pewno chcesz otworzyć {count} kart jednocześnie?"
+    "message": "Czy na pewno chcesz otworzyć wybrane karty (liczba: {count}) jednocześnie?"
   },
   "errorTabGroup": {
     "message": "Błąd: Nie można utworzyć grupy kart. Czy zaakceptowałeś nowe uprawnienia?"
@@ -141,7 +141,7 @@
     "message": "Usuń"
   },
   "confirmBulkDelete": {
-    "message": "Czy na pewno chcesz usunąć te {count} konwersacji?"
+    "message": "Czy na pewno chcesz usunąć wybrane konwersacje (liczba: {count})?"
   },
   "bulkCancel": {
     "message": "Anuluj wybór"
@@ -171,19 +171,19 @@
     "message": "Tryb promptów"
   },
   "promptCannotBeEmpty": {
-    "message": "Podpowiedź nie może być pusta!"
+    "message": "Prompt nie może być pusty!"
   },
   "promptSaved": {
-    "message": "Podpowiedź zapisana!"
+    "message": "Prompt zapisany!"
   },
   "promptDuplicateWarning": {
-    "message": "Podpowiedź z tym tytułem już istnieje. Zastąpić?"
+    "message": "Prompt o tym tytule już istnieje. Zastąpić?"
   },
   "promptNoSavedYet": {
-    "message": "Nie zapisano jeszcze żadnych podpowiedzi."
+    "message": "Nie zapisano jeszcze żadnych promptów."
   },
   "promptAddBtn": {
-    "message": "Dodaj podpowiedź"
+    "message": "Dodaj prompt"
   },
   "promptCopyTitle": {
     "message": "Kopiuj"
