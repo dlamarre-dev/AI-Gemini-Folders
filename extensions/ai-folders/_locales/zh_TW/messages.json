@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "無法在此頁面找到文字輸入框。請先點擊編輯器，再使用插入按鈕。"
+  },
+  "reviewTitle": {
+    "message": "⭐ 您喜歡 AI 資料夾嗎？"
+  },
+  "reviewMessage": {
+    "message": "您的支持對這個開源專案非常有幫助！"
+  },
+  "reviewRateBtn": {
+    "message": "給 5 顆星"
+  },
+  "reviewLaterBtn": {
+    "message": "也許稍後"
+  },
+  "reviewNoBtn": {
+    "message": "不，謝謝"
   }
 }

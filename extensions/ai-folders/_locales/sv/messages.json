@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Det gick inte att hitta textfältet på den här sidan. Försök att klicka i redigeraren först och använd sedan infogaknappen."
+  },
+  "reviewTitle": {
+    "message": "⭐ Gillar du AI-mappar?"
+  },
+  "reviewMessage": {
+    "message": "Ditt stöd hjälper det här öppen källkod-projektet enormt!"
+  },
+  "reviewRateBtn": {
+    "message": "Betygsätt 5 stjärnor"
+  },
+  "reviewLaterBtn": {
+    "message": "Kanske senare"
+  },
+  "reviewNoBtn": {
+    "message": "Nej tack"
   }
 }

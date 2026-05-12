@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- REVIEW BANNER ---
   const reviewBanner = document.getElementById('reviewBanner');
   if (reviewBanner) {
-    document.getElementById('reviewTitleTxt').textContent = chrome.i18n.getMessage("reviewTitle") || "⭐ Are you enjoying Gemini Folders?";
+    document.getElementById('reviewTitleTxt').textContent = chrome.i18n.getMessage("reviewTitle");
     document.getElementById('reviewMessageTxt').textContent = chrome.i18n.getMessage("reviewMessage") || "Your support helps this open-source project immensely!";
     const btnReviewRate = document.getElementById('btnReviewRate');
     btnReviewRate.textContent = chrome.i18n.getMessage("reviewRateBtn") || "Rate 5 stars";

@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."
+  },
+  "reviewTitle": {
+    "message": "⭐ Tetszik a MI mappák?"
+  },
+  "reviewMessage": {
+    "message": "Támogatása nagymértékben segíti ezt a nyílt forráskódú projektet!"
+  },
+  "reviewRateBtn": {
+    "message": "5 csillagos értékelés"
+  },
+  "reviewLaterBtn": {
+    "message": "Talán később"
+  },
+  "reviewNoBtn": {
+    "message": "Nem, köszönöm"
   }
 }

@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "এই পৃষ্ঠায় টেক্সট ইনপুট খুঁজে পাওয়া যায়নি। প্রথমে এডিটরে ক্লিক করুন, তারপর ইনসার্ট বাটন ব্যবহার করুন।"
+  },
+  "reviewTitle": {
+    "message": "⭐ আপনি কি AI ফোল্ডার উপভোগ করছেন?"
+  },
+  "reviewMessage": {
+    "message": "আপনার সমর্থন এই ওপেন-সোর্স প্রকল্পকে অনেক সাহায্য করে!"
+  },
+  "reviewRateBtn": {
+    "message": "৫ স্টার দিন"
+  },
+  "reviewLaterBtn": {
+    "message": "হয়তো পরে"
+  },
+  "reviewNoBtn": {
+    "message": "না, ধন্যবাদ"
   }
 }

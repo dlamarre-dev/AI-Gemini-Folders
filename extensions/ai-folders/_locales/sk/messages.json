@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Na tejto stránke sa nepodarilo nájsť textové pole. Najprv kliknite do editora a potom použite tlačidlo vložiť."
+  },
+  "reviewTitle": {
+    "message": "⭐ Páčia sa vám AI priečinky?"
+  },
+  "reviewMessage": {
+    "message": "Vaša podpora tomuto open source projektu nesmierne pomáha!"
+  },
+  "reviewRateBtn": {
+    "message": "Ohodnotiť 5 hviezdičkami"
+  },
+  "reviewLaterBtn": {
+    "message": "Neskôr"
+  },
+  "reviewNoBtn": {
+    "message": "Nie, ďakujem"
   }
 }

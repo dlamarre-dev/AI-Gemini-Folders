@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Das Texteingabefeld auf dieser Seite konnte nicht gefunden werden. Klicken Sie zuerst in den Editor und verwenden Sie dann die Einfügen-Schaltfläche."
+  },
+  "reviewTitle": {
+    "message": "⭐ Gefällt Ihnen KI-Ordner?"
+  },
+  "reviewMessage": {
+    "message": "Ihre Unterstützung hilft diesem Open-Source-Projekt enorm!"
+  },
+  "reviewRateBtn": {
+    "message": "5 Sterne vergeben"
+  },
+  "reviewLaterBtn": {
+    "message": "Später"
+  },
+  "reviewNoBtn": {
+    "message": "Nein danke"
   }
 }
