@@ -1,4 +1,9 @@
-# 📁 Gemini Folders & AI Folders — Browser Extensions
+# -*- coding: utf-8 -*-
+import os
+ROOT = os.path.dirname(os.path.abspath(__file__))
+
+readme = """\
+# \U0001f4c1 Gemini Folders & AI Folders — Browser Extensions
 
 ![AI Folders Hero Image](Marketing/ai-folders/screenshots/Promo_1_en.png)
 
@@ -6,7 +11,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ---
 
-## 🤖 AI Folders *(New — Phase 7)*
+## \U0001f916 AI Folders *(New — Phase 7)*
 
 **AI Folders** is the multi-platform evolution: it works across **ChatGPT, Claude, Perplexity, Copilot, Gemini**, and local LLMs — all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
 
@@ -25,7 +30,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ---
 
-## 📁 Gemini Folders *(Original)*
+## \U0001f4c1 Gemini Folders *(Original)*
 
 **Gemini Folders** is the original extension, purpose-built for **Google Gemini**. Lighter footprint, same core experience.
 
@@ -36,49 +41,49 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ## ✨ Features (both extensions)
 
-### 📁 Folder Manager
+### \U0001f4c1 Folder Manager
 
-* 📱 **Mobile Sync (Bookmarks Bridge):** Access your conversations on the go! Toggle mobile sync to create a smart, one-way synced folder in your browser bookmarks, mirroring your layout and **custom sort order** on your phone.
+* \U0001f4f1 **Mobile Sync (Bookmarks Bridge):** Access your conversations on the go! Toggle mobile sync to create a smart, one-way synced folder in your browser bookmarks, mirroring your layout and **custom sort order** on your phone.
 * ⚡ **Quick Save (Context Menu & Shortcuts):** Save the current conversation to any folder via right-click, or use the global keyboard shortcut (`Ctrl+Shift+S` on Chrome, `Alt+Shift+S` on Firefox) to send it instantly to a “⚡ Quick Saves” folder. Visual toast alerts confirm saves and flag duplicates.
-* 🛡️ **Bulletproof Database & Smart Deduplication:** Secure fallback architecture guards against corruption. Smart URL normalization prevents false duplicates even when AI platforms change their URL parameters.
+* \U0001f6e1️ **Bulletproof Database & Smart Deduplication:** Secure fallback architecture guards against corruption. Smart URL normalization prevents false duplicates even when AI platforms change their URL parameters.
 * ☑️ **Bulk Actions (Multi-Select):** Select multiple conversations at once via checkboxes to move or delete them in batches.
-* 📑 **Tab Groups Integration:** Open an entire folder in one click — conversations open in native, color-coded browser Tab Groups (where supported).
-* 😃 **Custom Folder Emojis:** Start a folder name with an emoji (e.g., “💻 Code”) and it becomes the folder icon automatically.
+* \U0001f4d1 **Tab Groups Integration:** Open an entire folder in one click — conversations open in native, color-coded browser Tab Groups (where supported).
+* \U0001f603 **Custom Folder Emojis:** Start a folder name with an emoji (e.g., “\U0001f4bb Code”) and it becomes the folder icon automatically.
 * ⇅ **Custom Sorting:** Sort folders and conversations by Newest, Oldest, or A-Z on the fly, with changes reflected instantly in mobile sync.
-* 🖱️ **Drag & Drop:** Move conversations between folders intuitively.
-* 🗜️ **Ultra-Efficient Compression:** LZString compression maximizes browser sync storage so you can save hundreds of conversations securely.
-* 📊 **Storage Tracker:** A visual progress bar shows available cloud storage in real-time with detailed tooltips.
-* 🎨 **Modern Material UI:** Custom Material 3 modal dialogs, ultra-compact footer, collapsible Add panel, and clean hover effects.
-* 📌 **Pin Favorites:** Pin important folders to the top for instant access.
-* 🤖 **Smart Title Detection:** Automatically reads the AI interface to extract the exact conversation title in the background.
-* 🔍 **Instant Search:** Real-time search bar across all saved conversations.
+* \U0001f5b1️ **Drag & Drop:** Move conversations between folders intuitively.
+* \U0001f5dc️ **Ultra-Efficient Compression:** LZString compression maximizes browser sync storage so you can save hundreds of conversations securely.
+* \U0001f4ca **Storage Tracker:** A visual progress bar shows available cloud storage in real-time with detailed tooltips.
+* \U0001f3a8 **Modern Material UI:** Custom Material 3 modal dialogs, ultra-compact footer, collapsible Add panel, and clean hover effects.
+* \U0001f4cc **Pin Favorites:** Pin important folders to the top for instant access.
+* \U0001f916 **Smart Title Detection:** Automatically reads the AI interface to extract the exact conversation title in the background.
+* \U0001f50d **Instant Search:** Real-time search bar across all saved conversations.
 * ☁️ **Cloud Sync:** `storage.sync` keeps everything synchronized across all devices on your browser profile.
-* 💾 **Import / Export:** Backup and restore your folder structure (including pins) via JSON.
-* 🌍 **Multilingual & Adaptive:** Supports **43 languages** and automatically matches your system’s Dark/Light mode.
-* 🤝 **Open Source & Modular:** Clean, modular architecture (separated UI, data logic, styling) for easy community contributions.
+* \U0001f4be **Import / Export:** Backup and restore your folder structure (including pins) via JSON.
+* \U0001f30d **Multilingual & Adaptive:** Supports **43 languages** and automatically matches your system’s Dark/Light mode.
+* \U0001f91d **Open Source & Modular:** Clean, modular architecture (separated UI, data logic, styling) for easy community contributions.
 
-### 📝 Prompt Manager
+### \U0001f4dd Prompt Manager
 
-* 📝 **Prompt Library:** Switch to Prompt Mode via the pill toggle. Save reusable prompts with a title and full text, find them instantly with search and sort.
+* \U0001f4dd **Prompt Library:** Switch to Prompt Mode via the pill toggle. Save reusable prompts with a title and full text, find them instantly with search and sort.
 * ▶ **One-Click Injection:** Hit the play button on any saved prompt to inject it directly into the active AI tab’s input field — works across all supported platforms in AI Folders.
 * ✏️ **Inline Editing:** Click a prompt to expand and edit it directly. Changes auto-save after a short pause.
-* 💎 **Custom Gem / AI Link:** Configure a custom URL (Gemini Gem or any AI) and toggle it with the 💎 button to make the “New Conversation” button open it.
-* 📌 **Pin Important Prompts:** Pinned prompts stay at the top above a visual divider, independent of sort order.
+* \U0001f48e **Custom Gem / AI Link:** Configure a custom URL (Gemini Gem or any AI) and toggle it with the \U0001f48e button to make the “New Conversation” button open it.
+* \U0001f4cc **Pin Important Prompts:** Pinned prompts stay at the top above a visual divider, independent of sort order.
 * ☁️ **Prompt Sync:** Enable cloud sync for your prompt library independently from folders.
 
 ---
 
-## 🚀 Installation
+## \U0001f680 Installation
 
 ### Option 1: Official Stores (Recommended)
 
 **AI Folders:**
-👉 **[Install for Google Chrome](https://chromewebstore.google.com/detail/ai-folders/TODO)**
-👉 **[Install for Mozilla Firefox](https://addons.mozilla.org/firefox/addon/ai_folders/)**
+\U0001f449 **[Install for Google Chrome](https://chromewebstore.google.com/detail/ai-folders/TODO)**
+\U0001f449 **[Install for Mozilla Firefox](https://addons.mozilla.org/firefox/addon/ai_folders/)**
 
 **Gemini Folders:**
-👉 **[Install for Google Chrome](https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik)**
-👉 **[Install for Mozilla Firefox](https://addons.mozilla.org/firefox/addon/gemini_folders/)**
+\U0001f449 **[Install for Google Chrome](https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik)**
+\U0001f449 **[Install for Mozilla Firefox](https://addons.mozilla.org/firefox/addon/gemini_folders/)**
 
 ### Option 2: Developer Mode (Manual Installation)
 
@@ -101,25 +106,25 @@ This project uses a Python build pipeline to generate browser-specific versions.
 
 ---
 
-## 🛠️ Usage
+## \U0001f6e0️ Usage
 
 ### Folder Mode
 1. Open a conversation on any supported AI platform.
 2. **Quick save:** `Ctrl+Shift+S` (Chrome) / `Alt+Shift+S` (Firefox) to save to Quick Saves, or right-click → hover over the save menu.
 3. **Via the extension:** Click the toolbar icon. The title is auto-detected. Expand the add panel (➕), select or create a folder, and hit **Save**.
-4. **Mobile sync:** Click `📱` in the footer to mirror your folders in browser bookmarks.
-5. Drag & drop items, use checkboxes for bulk actions, open folders as Tab Groups, or pin favorites with 📌.
+4. **Mobile sync:** Click `\U0001f4f1` in the footer to mirror your folders in browser bookmarks.
+5. Drag & drop items, use checkboxes for bulk actions, open folders as Tab Groups, or pin favorites with \U0001f4cc.
 
 ### Prompt Mode
-1. Click the **📝** side of the pill toggle to switch to Prompt Mode.
+1. Click the **\U0001f4dd** side of the pill toggle to switch to Prompt Mode.
 2. **Save a prompt:** Click **➕ Add Prompt**, enter a title and text, hit **Save**.
 3. **Use a prompt:** Click any saved prompt to expand it, then hit **▶** to inject it into the active AI tab.
-4. **Set up a custom AI link:** Click 💎, paste a URL, and confirm. Use **💬** to open a new conversation.
-5. Pin prompts with 📍, search and sort freely — all changes sync automatically.
+4. **Set up a custom AI link:** Click \U0001f48e, paste a URL, and confirm. Use **\U0001f4ac** to open a new conversation.
+5. Pin prompts with \U0001f4cd, search and sort freely — all changes sync automatically.
 
 ---
 
-## 🔒 Privacy & Security
+## \U0001f512 Privacy & Security
 
 Both extensions are built with privacy in mind.
 
@@ -131,7 +136,7 @@ Both extensions are built with privacy in mind.
 
 ---
 
-## 💻 Built With
+## \U0001f4bb Built With
 
 * HTML5 / CSS3
 * Vanilla JavaScript (Modular Architecture: UI, Logic, Bulk Actions, Site Config)
@@ -139,3 +144,8 @@ Both extensions are built with privacy in mind.
 * Service Workers / Event Pages (Background Scripts)
 * LZ-String (Data Compression)
 * Python (Cross-browser Build Automation)
+"""
+
+with open(os.path.join(ROOT, 'README.md'), 'w', encoding='utf-8') as f:
+    f.write(readme)
+print('Done')
