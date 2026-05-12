@@ -78,6 +78,22 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   }
 });
 
+// --- TOAST ---
+
+const showToast = (msg, bgColor) => {
+  const r = parseInt(bgColor.slice(1,3), 16) || 0;
+  const g = parseInt(bgColor.slice(3,5), 16) || 0;
+  const b = parseInt(bgColor.slice(5,7), 16) || 0;
+  const textColor = (0.299*r + 0.587*g + 0.114*b) / 255 > 0.6 ? '#000000' : '#ffffff';
+  const toast = document.createElement('div');
+  toast.textContent = msg;
+  toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:${textColor}; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
+  document.body.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2500);
+};
+
+// --- CONTEXT MENU ---
+
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (info.parentMenuItemId !== "ai-folders-parent") return;
   try {
@@ -85,6 +101,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     const siteKey = getSiteByUrl(tab.url, localLlmUrl);
     const targetFolder = info.menuItemId.replace("folder_", "");
     const fallbackTitle = tab.title || chrome.i18n.getMessage("defaultTitle") || "New conversation";
+    const siteColor = SITES[siteKey]?.color || "#1a73e8";
 
     let finalTitle = fallbackTitle;
     if (siteKey && siteKey !== 'local') {
@@ -102,27 +119,30 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 
     const cleanTargetUrl = normalizeUrl(tab.url);
     const isDuplicate = folders[targetFolder].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
+
     if (!isDuplicate) {
       const chatEntry = { title: finalTitle, url: tab.url, timestamp: Date.now() };
       if (siteKey) chatEntry.site = siteKey;
       folders[targetFolder].push(chatEntry);
       await new Promise(resolve => saveData({ folders }, resolve));
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        args: [chrome.i18n.getMessage("toastSaved") || "✅ Saved!", siteColor],
+        func: showToast
+      });
+    } else {
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        args: [chrome.i18n.getMessage("toastAlreadySaved") || "⚠️ Already saved!", "#d93025"],
+        func: showToast
+      });
     }
   } catch (error) {
     console.error("Error during context menu save:", error);
   }
 });
 
-
 // --- QUICK SAVE (keyboard shortcut) ---
-
-const showToast = (msg, bgColor) => {
-  const toast = document.createElement('div');
-  toast.textContent = msg;
-  toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:white; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
-  document.body.appendChild(toast);
-  setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2500);
-};
 
 chrome.commands.onCommand.addListener(async (command) => {
   if (command !== "quick-save") return;
