@@ -194,7 +194,8 @@ def build_firefox(ext_name, version):
     }
     if "background" in manifest and "service_worker" in manifest["background"]:
         sw = manifest["background"].pop("service_worker")
-        manifest["background"]["scripts"] = ["lz-string.min.js", "utils.js", sw]
+        extra = ["site-config.js"] if os.path.exists(os.path.join(dest, "site-config.js")) else []
+        manifest["background"]["scripts"] = ["lz-string.min.js", "utils.js"] + extra + [sw]
 
     if "commands" in manifest:
         for cmd_info in manifest["commands"].values():
