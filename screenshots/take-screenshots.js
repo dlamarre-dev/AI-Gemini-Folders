@@ -871,10 +871,14 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   // Gemini star SVG — smooth 4-pointed star matching the real logo
   const geminiStar = (size, id) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1C7DFF"/><stop offset="100%" stop-color="#8A5CF7"/></linearGradient></defs><path d="M12 2 C11.5 7.5 7.5 11.5 2 12 C7.5 12.5 11.5 16.5 12 22 C12.5 16.5 16.5 12.5 22 12 C16.5 11.5 12.5 7.5 12 2 Z" fill="url(#${id})"/></svg>`;
 
+  // ChatGPT official logo path (white)
+  const CHATGPT_PATH = 'M22.28 9.82a5.98 5.98 0 00-.52-4.91 6.05 6.05 0 00-6.51-2.9A6.07 6.07 0 004.98 4.18a5.98 5.98 0 00-4 2.9 6.05 6.05 0 00.74 7.1 5.98 5.98 0 00.51 4.91 6.05 6.05 0 006.51 2.9A6.07 6.07 0 0013.26 24a6.06 6.06 0 005.77-4.21 5.99 5.99 0 004-2.9 6.06 6.06 0 00-.75-7.07zm-9.02 12.61a4.48 4.48 0 01-2.88-1.04l.14-.08 4.78-2.76a.79.79 0 00.39-.68V11.2l2.02 1.17a.07.07 0 01.04.05v5.58a4.5 4.5 0 01-4.49 4.43zm-9.66-4.13a4.47 4.47 0 01-.53-3.01l.14.08 4.78 2.76a.77.77 0 00.78 0l5.84-3.37v2.33a.08.08 0 01-.03.06L9.74 19.95a4.5 4.5 0 01-6.14-1.65zM2.34 7.9a4.49 4.49 0 012.37-1.97V11.6a.77.77 0 00.39.68l5.81 3.35-2.02 1.17a.08.08 0 01-.07 0L4.03 14.1A4.5 4.5 0 012.34 7.9zm16.6 3.86l-5.81-3.36 2.02-1.17a.08.08 0 01.07 0l4.83 2.79a4.49 4.49 0 01-.68 8.1V12.44a.79.79 0 00-.43-.68zm2.01-3.02l-.14-.09-4.77-2.78a.78.78 0 00-.79 0L9.41 9.23V6.9a.07.07 0 01.03-.06l4.83-2.79a4.5 4.5 0 016.68 4.66zM8.31 12.86l-2.02-1.16a.08.08 0 01-.04-.06V6.07a4.5 4.5 0 017.38-3.45l-.14.08-4.78 2.76a.79.79 0 00-.4.68zm1.1-2.37l2.6-1.5 2.61 1.5v3l-2.6 1.5-2.61-1.5z';
+  const chatGptSvg = (size, opacity = 1) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" style="opacity:${opacity};flex-shrink:0;"><path fill="white" d="${CHATGPT_PATH}"/></svg>`;
+
   // AI Folders: show ChatGPT page instead of Gemini
   const isAF         = EXTENSION === 'ai-folders';
   const tabFavicon   = isAF
-    ? `<svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="4" fill="#10a37f"/><text x="8" y="11.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="white">GP</text></svg>`
+    ? `<svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="4" fill="white"/><g transform="translate(2,2) scale(0.5)"><path fill="black" d="${CHATGPT_PATH}"/></g></svg>`
     : geminiStar(16, 'gfav');
   const tabTitle     = isAF ? 'ChatGPT' : 'Gemini';
   const addressUrl   = isAF ? 'chatgpt.com' : 'gemini.google.com';
@@ -1227,15 +1231,16 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
     <div class="gemini-page" style="background:#212121;">
       <div class="gemini-sidebar" style="background:#171717;">
         <div class="sb-top">
-          <div style="flex:1;padding-left:12px;font-size:15px;font-weight:600;color:#ececec;">ChatGPT</div>
+          <div style="flex:1;padding-left:14px;display:flex;align-items:center;">${chatGptSvg(22, 0.9)}</div>
           <div class="sb-icon">
+            <!-- Close sidebar icon -->
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ececec" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4Z"/>
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <line x1="9" y1="3" x2="9" y2="21"/>
             </svg>
           </div>
         </div>
-        <div class="sb-section" style="color:#8e8ea0;font-size:11px;padding:8px 12px 2px;font-weight:500;letter-spacing:0.04em;">TODAY</div>
+        <div class="sb-section" style="color:#8e8ea0;font-size:11px;padding:8px 12px 2px;font-weight:500;letter-spacing:0.04em;">${localeData.sidebarRecent}</div>
         ${sidebarConvos.map((c, i) =>
           `<div class="sb-convo${i === 0 ? ' active' : ''}" style="${i === 0 ? `background:rgba(255,255,255,0.1);border-radius:${sbConvoRadius};` : ''}">${c}</div>`
         ).join('')}
@@ -1243,11 +1248,10 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8e8ea0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
           </svg>
-          <span style="font-size:13px;">Personal</span>
         </div>
       </div>
-      <div class="gemini-main" style="background:#212121;">
-        <div class="gemini-topbar" style="padding:0 20px;justify-content:flex-start;gap:6px;border-bottom:1px solid rgba(255,255,255,0.06);">
+      <div class="gemini-main" style="background:#171717;${isRTL ? 'border-right' : 'border-left'}:1px solid rgba(255,255,255,0.1);">
+        <div class="gemini-topbar" style="padding:0 20px;justify-content:flex-start;gap:6px;">
           <span style="font-size:15px;font-weight:600;color:#ececec;">ChatGPT</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e8ea0" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
@@ -1256,31 +1260,24 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
             ${localeData.devChat1}
             <span class="msg-user-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
-          <div class="msg-ai">
-            <div class="msg-ai-header" style="gap:10px;margin-bottom:6px;">
-              <div class="msg-ai-star">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10a37f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z"/><path d="M8 12h8M12 8l4 4-4 4"/>
-                </svg>
-              </div>
-              <span style="font-size:13px;font-weight:600;color:#ececec;">ChatGPT</span>
-            </div>
-            <div class="msg-ai-body">${localeData.aiReply}</div>
+          <div class="msg-ai" style="margin-top:4px;">
+            <div class="msg-ai-body" style="padding-left:0;">${localeData.aiReply}</div>
           </div>
         </div>
-        <div class="gemini-input" style="background:#2f2f2f;border-radius:16px;margin:0 16px 16px;">
-          <div class="input-row1">
-            <span class="input-placeholder">Message ChatGPT</span>
-          </div>
-          <div class="input-row2">
-            <div class="input-left-tools">
-              <span class="input-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-              <span class="input-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-            </div>
-            <div class="input-right-tools">
-              <span class="input-btn" style="padding:4px 6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round"><rect x="9" y="2" width="6" height="12" rx="3" fill="#9aa0a6" stroke="none"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg></span>
-            </div>
-          </div>
+        <!-- Input field: single line, centred, ~70% width -->
+        <div style="margin:0 auto 14px;width:70%;background:#2f2f2f;border-radius:28px;padding:12px 14px 12px 16px;display:flex;align-items:center;gap:8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span style="flex:1;font-size:13px;color:#6b6b6b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${localeData.chatInputPlaceholder}</span>
+          <!-- hollow mic (outline, no fill) -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;margin-right:3px;"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+          <!-- voice mode icon: soundbars equalizer in dark rounded button -->
+          <svg width="22" height="22" viewBox="0 0 22 22" style="flex-shrink:0;">
+            <rect width="22" height="22" rx="6" fill="#343434"/>
+            <rect x="4"   y="9.5" width="2.2" height="3"   rx="1.1" fill="white"/>
+            <rect x="7.8" y="6.5" width="2.2" height="9"   rx="1.1" fill="white"/>
+            <rect x="11.6" y="8"  width="2.2" height="6"   rx="1.1" fill="white"/>
+            <rect x="15.4" y="10" width="2.2" height="2"   rx="1"   fill="white"/>
+          </svg>
         </div>
       </div>
       <div class="gemini-dim"></div>
