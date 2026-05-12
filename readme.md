@@ -6,7 +6,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ---
 
-## 🤖 AI Folders *(New — Phase 7)*
+## 🤖 AI Folders *(New)*
 
 **AI Folders** is the multi-platform evolution: it works across **ChatGPT, Claude, Perplexity, Copilot, Gemini**, and local LLMs — all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
 
