@@ -1,0 +1,57 @@
+Ваши AI разговори су расути по пет различитих сајтова. Стално поново уносите исте упите. Ваши најбољи четови нестају у бесконачним историјама на Gemini, Claude, ChatGPT, Copilot и Perplexity.
+AI фасцикле је проширење које вам треба.
+
+AI фасцикле је ваш јединствени AI кокпит: организујте разговоре из свих ваших AI алата у дељене фасцикле, изградите библиотеку упита за вишеструку употребу и убацујте упите директно у било који подржани AI — без копирања и лепљења.
+
+✨ MOD PROMPTOVA
+
+📝 Lična biblioteka promptova: Prebaci na Mod promptova jednim klikom na prekidač u zaglavlju. Sačuvaj najbolje promptove s naslovom i tekstom, pronađi ih odmah pretragom i sortiranjem (najnovije, najstarije, A–Ž).
+▶ Ubacivanje jednim klikom: Klikni dugme za reprodukciju (▶) na sačuvanom promptu da ga ubaciš direktno u polje za unos aktivnog AI-ja.
+✏️ Uređivanje na mestu: Klikni da proširiš prompt i uredi tekst direktno. Promene se automatski čuvaju nakon kratke pauze.
+🔀 Дугмад за нови разговор: Покрените нови разговор на ChatGPT, Claude, Copilot, Gemini или Perplexity директно из режима промптова — по јedno дугме по сервису.
+☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
+📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
+
+🌟 FUNKCIJE FOLDERA
+
+⚡ Brzo čuvanje (Desni klik i prečice): Sačuvaj trenutni razgovor jednostavnim desnim klikom ili koristi prečicu na tastaturi (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo čuvanje» – s vizuelnim upozorenjem ako je već sačuvan!
+☑️ Višestruki odabir (Masovne radnje): Odaberi više razgovora s potvrdnim okvirima za premještanje ili brisanje jednim klikom.
+📑 Integracija grupa kartica: Otvori cijeli folder jednim klikom kao nativnu, šifriranu bojom grupu kartica Chrome.
+😃 Prilagođeni emoji foldera: Počni naziv foldera s emojijem (npr. «💻 Kod»), da zamijeniš podrazumijevanu ikonu foldera.
+🖱️ Prevuci i ispusti: Premještaj razgovore između foldera.
+📱 Mobilna sinhronizacija: Zrcali strukturu foldera u Chrome obeleživačima za pristup s telefona.
+🗜️ Izuzetno efikasna kompresija: Automatski komprimuje podatke (LZString) za maksimiziranje skladišta Chrome.
+📊 Praćenje skladišta: Vizuelna traka napretka prikazuje raspoloživo skladište u oblaku u realnom vremenu.
+📁 Prilagođeni folderi i zakačeni favoriti: Organizuj razgovore po projektima, temama ili kategorijama.
+⇅ Prilagođeno sortiranje: Sortiraj foldere i razgovore (Najnovije, Najstarije, A–Ž) s promjenama koje se odmah ogledaju u mobilnoj sinhronizaciji.
+🤖 Pametno prepoznavanje i pretraga: Automatsko prethodno popunjavanje tačnog naslova razgovora i traka za pretragu u realnom vremenu.
+☁️ Sinhronizacija u oblaku i pravljenje rezervnih kopija: Pristup organizaciji na svim uređajima i izvoz podataka kao JSON.
+🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloškim okvirima, automatski tamni način i podrška za 43 jezika!
+
+
+🏠 PODRŠKA ZA LOKALNI LLM
+
+Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite AI фасцикле sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.
+
+🛠️ KAKO TO FUNKCIONIŠE?
+
+Mod foldera:
+Otvori razgovor na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Brzo čuvanje: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Sačuvaj u Gemini Foldere».
+Putem proširenja: Klikni ikonu, odaberi folder i sačuvaj.
+Mobilno: Označi 📱 u podnožju da sinhronizuješ foldere s telefonom.
+
+Mod promptova:
+Klikni 📝 na prekidaču gore desno u proširenju.
+Klikni ➕ Dodaj prompt, unesi naslov i tekst i sačuvaj.
+Za korišćenje prompta: proširi ga i klikni ▶ – ubacuje se direktno u aktivni AI.
+Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
+
+🔒 PRIVATNOST I SIGURNOST
+Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
+
+🤝 PROJEKAT OTVORENOG KODA
+AI фасцикле je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 AŽURIRANJA:
+Верзија 1.0: Прво издање! Организујте разговоре из Gemini, Claude, ChatGPT, Copilot и Perplexity у дељене фасцикле. Потпуна библиотека промптова са убацивањем једним кликом, пречице за брзо чување, превлачење и пуштање, мобилна синхронизација, масовне радње, групе картица и подршка за 43 језика.

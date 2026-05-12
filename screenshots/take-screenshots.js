@@ -21,12 +21,21 @@ const path = require('path');
 const fs   = require('fs');
 const os   = require('os');
 
-const SAMPLE_DATA = require('./sample-data');
+// ─── Extension target (must be parsed before constants) ──────────────────────
+
+const _argv      = process.argv.slice(2);
+const EXTENSION  = _argv.includes('--extension')
+  ? _argv[_argv.indexOf('--extension') + 1]
+  : 'gemini-folders';
+
+const SAMPLE_DATA = EXTENSION === 'ai-folders'
+  ? require('./sample-data-af')
+  : require('./sample-data');
 
 // ─── Configuration ────────────────────────────────────────────────────────────
 
-const EXT_PATH = path.resolve(__dirname, '../src');
-const OUT_DIR  = path.resolve(__dirname, '../Marketing/screenshots');
+const EXT_PATH = path.resolve(__dirname, `../dist/${EXTENSION}/chrome`);
+const OUT_DIR  = path.resolve(__dirname, `../Marketing/${EXTENSION}/screenshots`);
 
 const LOCALES = [
   { id: 'en',    chrome: 'en-US'  },
@@ -799,7 +808,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   const folderNames = Object.keys(localeData.folders);
 
   // Extension icon embedded as base64
-  const iconPath = path.resolve(__dirname, '../src/icon48.png');
+  const iconPath = path.resolve(__dirname, `../dist/${EXTENSION}/chrome/icon48.png`);
   const iconB64  = fs.existsSync(iconPath) ? fs.readFileSync(iconPath).toString('base64') : null;
   const iconImg  = iconB64
     ? `<img src="data:image/png;base64,${iconB64}" width="16" height="16" style="flex-shrink:0;">`
@@ -861,6 +870,18 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
 
   // Gemini star SVG — smooth 4-pointed star matching the real logo
   const geminiStar = (size, id) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1C7DFF"/><stop offset="100%" stop-color="#8A5CF7"/></linearGradient></defs><path d="M12 2 C11.5 7.5 7.5 11.5 2 12 C7.5 12.5 11.5 16.5 12 22 C12.5 16.5 16.5 12.5 22 12 C16.5 11.5 12.5 7.5 12 2 Z" fill="url(#${id})"/></svg>`;
+
+  // ChatGPT official logo path (white)
+  const CHATGPT_PATH = 'M22.28 9.82a5.98 5.98 0 00-.52-4.91 6.05 6.05 0 00-6.51-2.9A6.07 6.07 0 004.98 4.18a5.98 5.98 0 00-4 2.9 6.05 6.05 0 00.74 7.1 5.98 5.98 0 00.51 4.91 6.05 6.05 0 006.51 2.9A6.07 6.07 0 0013.26 24a6.06 6.06 0 005.77-4.21 5.99 5.99 0 004-2.9 6.06 6.06 0 00-.75-7.07zm-9.02 12.61a4.48 4.48 0 01-2.88-1.04l.14-.08 4.78-2.76a.79.79 0 00.39-.68V11.2l2.02 1.17a.07.07 0 01.04.05v5.58a4.5 4.5 0 01-4.49 4.43zm-9.66-4.13a4.47 4.47 0 01-.53-3.01l.14.08 4.78 2.76a.77.77 0 00.78 0l5.84-3.37v2.33a.08.08 0 01-.03.06L9.74 19.95a4.5 4.5 0 01-6.14-1.65zM2.34 7.9a4.49 4.49 0 012.37-1.97V11.6a.77.77 0 00.39.68l5.81 3.35-2.02 1.17a.08.08 0 01-.07 0L4.03 14.1A4.5 4.5 0 012.34 7.9zm16.6 3.86l-5.81-3.36 2.02-1.17a.08.08 0 01.07 0l4.83 2.79a4.49 4.49 0 01-.68 8.1V12.44a.79.79 0 00-.43-.68zm2.01-3.02l-.14-.09-4.77-2.78a.78.78 0 00-.79 0L9.41 9.23V6.9a.07.07 0 01.03-.06l4.83-2.79a4.5 4.5 0 016.68 4.66zM8.31 12.86l-2.02-1.16a.08.08 0 01-.04-.06V6.07a4.5 4.5 0 017.38-3.45l-.14.08-4.78 2.76a.79.79 0 00-.4.68zm1.1-2.37l2.6-1.5 2.61 1.5v3l-2.6 1.5-2.61-1.5z';
+  const chatGptSvg = (size, opacity = 1) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" style="opacity:${opacity};flex-shrink:0;"><path fill="white" d="${CHATGPT_PATH}"/></svg>`;
+
+  // AI Folders: show ChatGPT page instead of Gemini
+  const isAF         = EXTENSION === 'ai-folders';
+  const tabFavicon   = isAF
+    ? `<svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="4" fill="white"/><g transform="translate(2,2) scale(0.5)"><path fill="black" d="${CHATGPT_PATH}"/></g></svg>`
+    : geminiStar(16, 'gfav');
+  const tabTitle     = isAF ? 'ChatGPT' : 'Gemini';
+  const addressUrl   = isAF ? 'chatgpt.com' : 'gemini.google.com';
 
   // RTL: submenu chevron points left; sidebar active pill corners flip
   const ctxArrowPoints = isRTL ? '15 18 9 12 15 6' : '9 18 15 12 9 6';
@@ -1161,8 +1182,8 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
     <!-- Tab bar with Windows controls on the right -->
     <div class="tab-bar">
       <div class="tab">
-        ${geminiStar(16, 'gfav')}
-        <span class="tab-title">Gemini</span>
+        ${tabFavicon}
+        <span class="tab-title">${tabTitle}</span>
         <span class="tab-close">✕</span>
       </div>
       <div class="new-tab-btn">+</div>
@@ -1196,7 +1217,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
       <div class="nav-btn"><span style="display:inline-block;transform:${isRTL ? 'scaleY(-1) rotate(-90deg)' : 'rotate(90deg)'};font-size:18px;color:#9aa0a6;line-height:1;">↻</span></div>
       <div class="addr-pill">
         <span class="addr-lock">🔒</span>
-        <span class="addr-text">gemini.google.com</span>
+        <span class="addr-text">${addressUrl}</span>
         <span style="font-size:14px;color:#9aa0a6;flex-shrink:0;margin-left:auto;">☆</span>
       </div>
       <div class="addr-actions">
@@ -1205,156 +1226,102 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
       </div>
     </div>
 
-    <!-- Gemini page -->
-    <div class="gemini-page">
-
-      <!-- Sidebar (gray background) -->
-      <div class="gemini-sidebar">
-        <!-- Top: only hamburger + search, no Gemini text -->
+    ${isAF ? `
+    <!-- ChatGPT page (AI Folders) -->
+    <div class="gemini-page" style="background:#212121;">
+      <div class="gemini-sidebar" style="background:#171717;">
         <div class="sb-top">
+          <div style="flex:1;padding-left:14px;display:flex;align-items:center;">${chatGptSvg(22, 0.9)}</div>
           <div class="sb-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          </div>
-          <div style="flex:1;"></div>
-          <div class="sb-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <!-- Close sidebar icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ececec" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <line x1="9" y1="3" x2="9" y2="21"/>
             </svg>
           </div>
         </div>
-
-        <!-- New chat -->
-        <div class="sb-nav-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4Z"/>
-          </svg>
-          ${localeData.geminiNewChat}
-        </div>
-        <!-- My content — star -->
-        <div class="sb-nav-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-          ${localeData.geminiMyContent}
-        </div>
-
-        <!-- Gems section -->
-        <div class="sb-nav-item" style="justify-content:space-between;">
-          <span>Gems</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2"><polyline points="${isRTL ? '15 18 9 12 15 6' : '9 18 15 12 9 6'}"/></svg>
-        </div>
-        <div class="sb-nav-item" style="padding-left:24px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9L6 4h12l3 5-9 13Z"/>
-            <line x1="3" y1="9" x2="21" y2="9"/>
-            <path d="M20 2l.4 1 1 .4-1 .4-.4 1-.4-1-1-.4 1-.4Z" fill="#c4c7c5" stroke="none"/>
-          </svg>
-          Gem 1
-        </div>
-        <div class="sb-nav-item" style="padding-left:24px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9L6 4h12l3 5-9 13Z"/>
-            <line x1="3" y1="9" x2="21" y2="9"/>
-            <path d="M20 2l.4 1 1 .4-1 .4-.4 1-.4-1-1-.4 1-.4Z" fill="#c4c7c5" stroke="none"/>
-          </svg>
-          Gem 2
-        </div>
-
-        <div class="sb-section">${localeData.geminiDiscussions}</div>
-
+        <div class="sb-section" style="color:#8e8ea0;font-size:11px;padding:8px 12px 2px;font-weight:500;letter-spacing:0.04em;">${localeData.sidebarRecent}</div>
         ${sidebarConvos.map((c, i) =>
-          `<div class="sb-convo${i === 0 ? ' active' : ''}">${c}</div>`
+          `<div class="sb-convo${i === 0 ? ' active' : ''}" style="${i === 0 ? `background:rgba(255,255,255,0.1);border-radius:${sbConvoRadius};` : ''}">${c}</div>`
         ).join('')}
-
-        <!-- Settings at bottom — 8-tooth gear (mathematically computed) -->
-        <div class="sb-bottom">
-          <svg width="18" height="18" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" fill="#c4c7c5" d="M10.51,2.61 L13.49,2.61 L13.09,5.09 L16.11,6.34 L17.58,4.31 L19.69,6.42 L17.66,7.89 L18.91,10.91 L21.39,10.51 L21.39,13.49 L18.91,13.09 L17.66,16.11 L19.69,17.58 L17.58,19.69 L16.11,17.66 L13.09,18.91 L13.49,21.39 L10.51,21.39 L10.91,18.91 L7.89,17.66 L6.42,19.69 L4.31,17.58 L6.34,16.11 L5.09,13.09 L2.61,13.49 L2.61,10.51 L5.09,10.91 L6.34,7.89 L4.31,6.42 L6.42,4.31 L7.89,6.34 L10.91,5.09 Z M14.5,12 A2.5,2.5 0 1 1 9.5,12 A2.5,2.5 0 1 1 14.5,12 Z"/>
+        <div class="sb-bottom" style="color:#8e8ea0;border-top:1px solid rgba(255,255,255,0.08);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8e8ea0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
           </svg>
-          <span style="font-size:13px;">${localeData.geminiSettings}</span>
         </div>
       </div>
-
-      <!-- Main chat — Gemini starts the topbar, no hamburger before it -->
+      <div class="gemini-main" style="background:#171717;${isRTL ? 'border-right' : 'border-left'}:1px solid rgba(255,255,255,0.1);">
+        <div class="gemini-topbar" style="padding:0 20px;justify-content:flex-start;gap:6px;">
+          <span style="font-size:15px;font-weight:600;color:#ececec;">ChatGPT</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e8ea0" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="chat-scroll">
+          <div class="msg-user" style="background:#2f2f2f;">
+            ${localeData.devChat1}
+            <span class="msg-user-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </div>
+          <div class="msg-ai" style="margin-top:4px;">
+            <div class="msg-ai-body" style="padding-left:0;">${localeData.aiReply}</div>
+          </div>
+        </div>
+        <!-- Input field: single line, centred, ~70% width -->
+        <div style="margin:0 auto 14px;width:70%;background:#2f2f2f;border-radius:28px;padding:12px 14px 12px 16px;display:flex;align-items:center;gap:8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span style="flex:1;font-size:13px;color:#6b6b6b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${localeData.chatInputPlaceholder}</span>
+          <!-- hollow mic (outline, no fill) -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;margin-right:3px;"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+          <!-- voice mode icon: soundbars equalizer in dark rounded button -->
+          <svg width="22" height="22" viewBox="0 0 22 22" style="flex-shrink:0;">
+            <rect width="22" height="22" rx="6" fill="#343434"/>
+            <rect x="4"   y="9.5" width="2.2" height="3"   rx="1.1" fill="white"/>
+            <rect x="7.8" y="6.5" width="2.2" height="9"   rx="1.1" fill="white"/>
+            <rect x="11.6" y="8"  width="2.2" height="6"   rx="1.1" fill="white"/>
+            <rect x="15.4" y="10" width="2.2" height="2"   rx="1"   fill="white"/>
+          </svg>
+        </div>
+      </div>
+      <div class="gemini-dim"></div>
+    </div>` : `
+    <!-- Gemini page (Gemini Folders) -->
+    <div class="gemini-page">
+      <div class="gemini-sidebar">
+        <div class="sb-top">
+          <div class="sb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></div>
+          <div style="flex:1;"></div>
+          <div class="sb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        </div>
+        <div class="sb-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>${localeData.geminiNewChat}</div>
+        <div class="sb-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>${localeData.geminiMyContent}</div>
+        <div class="sb-nav-item" style="justify-content:space-between;"><span>Gems</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2"><polyline points="${isRTL ? '15 18 9 12 15 6' : '9 18 15 12 9 6'}"/></svg></div>
+        <div class="sb-nav-item" style="padding-left:24px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L6 4h12l3 5-9 13Z"/><line x1="3" y1="9" x2="21" y2="9"/><path d="M20 2l.4 1 1 .4-1 .4-.4 1-.4-1-1-.4 1-.4Z" fill="#c4c7c5" stroke="none"/></svg>Gem 1</div>
+        <div class="sb-nav-item" style="padding-left:24px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L6 4h12l3 5-9 13Z"/><line x1="3" y1="9" x2="21" y2="9"/><path d="M20 2l.4 1 1 .4-1 .4-.4 1-.4-1-1-.4 1-.4Z" fill="#c4c7c5" stroke="none"/></svg>Gem 2</div>
+        <div class="sb-section">${localeData.geminiDiscussions}</div>
+        ${sidebarConvos.map((c, i) => `<div class="sb-convo${i === 0 ? ' active' : ''}">${c}</div>`).join('')}
+        <div class="sb-bottom"><svg width="18" height="18" viewBox="0 0 24 24"><path fill-rule="evenodd" fill="#c4c7c5" d="M10.51,2.61 L13.49,2.61 L13.09,5.09 L16.11,6.34 L17.58,4.31 L19.69,6.42 L17.66,7.89 L18.91,10.91 L21.39,10.51 L21.39,13.49 L18.91,13.09 L17.66,16.11 L19.69,17.58 L17.58,19.69 L16.11,17.66 L13.09,18.91 L13.49,21.39 L10.51,21.39 L10.91,18.91 L7.89,17.66 L6.42,19.69 L4.31,17.58 L6.34,16.11 L5.09,13.09 L2.61,13.49 L2.61,10.51 L5.09,10.91 L6.34,7.89 L4.31,6.42 L6.42,4.31 L7.89,6.34 L10.91,5.09 Z M14.5,12 A2.5,2.5 0 1 1 9.5,12 A2.5,2.5 0 1 1 14.5,12 Z"/></svg><span style="font-size:13px;">${localeData.geminiSettings}</span></div>
+      </div>
       <div class="gemini-main">
         <div class="gemini-topbar">
           <span style="font-size:18px;font-weight:500;color:#e8eaed;margin-left:20px;margin-right:24px;white-space:nowrap;flex-shrink:0;">Gemini</span>
           <div class="gemini-topbar-title">${sidebarConvos[0]}</div>
-          <div class="topbar-icon" style="margin-right:16px;flex-shrink:0;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2"><circle cx="12" cy="5" r="1" fill="#c4c7c5"/><circle cx="12" cy="12" r="1" fill="#c4c7c5"/><circle cx="12" cy="19" r="1" fill="#c4c7c5"/></svg>
-          </div>
+          <div class="topbar-icon" style="margin-right:16px;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2"><circle cx="12" cy="5" r="1" fill="#c4c7c5"/><circle cx="12" cy="12" r="1" fill="#c4c7c5"/><circle cx="12" cy="19" r="1" fill="#c4c7c5"/></svg></div>
         </div>
-
         <div class="chat-scroll">
-          <!-- User message bubble -->
-          <div class="msg-user">
-            ${localeData.devChat1}
-            <span class="msg-user-chevron">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </span>
-          </div>
-
-          <!-- Gemini response: ✦ star + show-reasoning link, then body, then feedback -->
+          <div class="msg-user">${localeData.devChat1}<span class="msg-user-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></div>
           <div class="msg-ai">
-            <div class="msg-ai-thinking">
-              <span style="color:#4285f4;font-size:20px;line-height:1;">✦</span>
-              <span>${localeData.geminiShowReasoning}</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </div>
+            <div class="msg-ai-thinking"><span style="color:#4285f4;font-size:20px;line-height:1;">✦</span><span>${localeData.geminiShowReasoning}</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
             <div class="msg-ai-body">${localeData.geminiAiReply}</div>
           </div>
         </div>
-
-        <!-- Input bar (two rows, no borders on row-2 buttons) -->
         <div class="gemini-input">
-          <div class="input-row1">
-            <!-- Shield with checkmark -->
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6Z"/>
-              <polyline points="9 12 11 14 15 10"/>
-            </svg>
-            <span class="input-placeholder">${localeData.geminiInputPlaceholder}</span>
-          </div>
+          <div class="input-row1"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6Z"/><polyline points="9 12 11 14 15 10"/></svg><span class="input-placeholder">${localeData.geminiInputPlaceholder}</span></div>
           <div class="input-row2">
-            <div class="input-left-tools">
-              <!-- + as SVG for reliable vertical alignment -->
-              <span class="input-btn" style="padding:${isRTL ? '0 0 0 6px' : '0 6px 0 0'};">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2.2" stroke-linecap="round">
-                  <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
-              </span>
-              <!-- Tools: two-line sliders icon -->
-              <span class="input-btn" style="display:flex;align-items:center;gap:5px;">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round">
-                  <line x1="4" y1="7" x2="20" y2="7"/>
-                  <line x1="4" y1="17" x2="20" y2="17"/>
-                  <circle cx="9" cy="7" r="2.5" fill="#303134" stroke="#c4c7c5" stroke-width="1.5"/>
-                  <circle cx="15" cy="17" r="2.5" fill="#303134" stroke="#c4c7c5" stroke-width="1.5"/>
-                </svg>
-                ${localeData.geminiTools}
-              </span>
-            </div>
-            <div class="input-right-tools">
-              <span class="input-btn" style="display:flex;align-items:center;gap:3px;">Pro
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-              </span>
-              <!-- Mic with filled capsule -->
-              <span class="input-btn" style="padding:4px 6px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round">
-                  <rect x="9" y="2" width="6" height="12" rx="3" fill="#9aa0a6" stroke="none"/>
-                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                  <line x1="12" y1="19" x2="12" y2="22"/>
-                  <line x1="8" y1="22" x2="16" y2="22"/>
-                </svg>
-              </span>
-            </div>
+            <div class="input-left-tools"><span class="input-btn" style="padding:${isRTL ? '0 0 0 6px' : '0 6px 0 0'};"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><span class="input-btn" style="display:flex;align-items:center;gap:5px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="9" cy="7" r="2.5" fill="#303134" stroke="#c4c7c5" stroke-width="1.5"/><circle cx="15" cy="17" r="2.5" fill="#303134" stroke="#c4c7c5" stroke-width="1.5"/></svg>${localeData.geminiTools}</span></div>
+            <div class="input-right-tools"><span class="input-btn" style="display:flex;align-items:center;gap:3px;">Pro<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span><span class="input-btn" style="padding:4px 6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round"><rect x="9" y="2" width="6" height="12" rx="3" fill="#9aa0a6" stroke="none"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg></span></div>
           </div>
         </div>
       </div>
-
       <div class="gemini-dim"></div>
-    </div>
+    </div>`}
   </div>
 
   <!-- Context menu — dark mode -->
@@ -1388,7 +1355,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function run() {
-  const args      = process.argv.slice(2);
+  const args      = _argv;
   const modeArg   = args.includes('--mode')   ? args[args.indexOf('--mode') + 1]   : 'both';
   const localeArg = args.includes('--locale') ? args[args.indexOf('--locale') + 1] : null;
 
@@ -1402,7 +1369,7 @@ async function run() {
   }
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  console.log(`\nGemini Folders Screenshot Generator`);
+  console.log(`\n${EXTENSION} Screenshot Generator`);
   console.log(`Mode: ${modeArg}  |  Output → ${OUT_DIR}\n`);
 
   // Headless browser for composition (no extension needed)

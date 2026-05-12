@@ -1,0 +1,58 @@
+Suas conversas de IA estão espalhadas por cinco sites diferentes. Você continua redigitando os mesmos prompts. Seus melhores chats desaparecem em históricos intermináveis no Gemini, Claude, ChatGPT, Copilot e Perplexity.
+Pastas IA é a extensão que você precisa.
+
+Pastas IA é o seu cockpit de IA unificado: organize conversas de todas as suas ferramentas de IA em pastas compartilhadas, crie uma biblioteca de prompts reutilizáveis e injete prompts diretamente em qualquer IA compatível — sem precisar copiar e colar.
+
+✨ MODO PROMPTS
+
+📝 Biblioteca pessoal de prompts: Mude para o Modo Prompt com um clique no botão de alternância no cabeçalho. Salve seus melhores prompts com um título e texto completo, e encontre-os instantaneamente com busca e ordenação (mais recentes, mais antigos, A-Z).
+▶ Injeção com um clique: Acabou o copiar e colar. Clique no botão de reprodução (▶) em qualquer prompt salvo para injetá-lo diretamente no campo de texto da IA ativa.
+✏️ Edição inline: Clique em um prompt para expandi-lo e editar o texto diretamente. As alterações são salvas automaticamente após uma breve pausa e a ordenação é atualizada em seguida.
+🔀 Botões de Nova Conversa: Inicie uma nova conversa no ChatGPT, Claude, Copilot, Gemini ou Perplexity diretamente do Modo Prompt — um botão por serviço.
+☁️ Sincronização de prompts: Ative a sincronização na nuvem para sua biblioteca de prompts, de forma independente das suas pastas.
+📌 Prompts fixados: Fixe seus prompts essenciais com um clique para mantê-los no topo da biblioteca, separados dos demais por um divisor visual.
+
+🌟 FUNÇÕES DE PASTAS
+
+⚡ Salvar Rapidamente (Clique Direito e Atalhos): Salve a conversa com um simples clique direito, ou use o atalho de teclado (Ctrl+Shift+S ou Cmd+Shift+S no Mac) para enviá-la instantaneamente para "⚡ Salvamentos Rápidos" — com alerta visual se já estiver salva!
+☑️ Seleção Múltipla (Ações em lote): Selecione várias conversas com caixas de seleção para movê-las ou excluí-las com um clique.
+📑 Integração com Grupos de Abas: Abra uma pasta inteira com um clique como um Grupo de Abas nativo e colorido do Chrome.
+😃 Emojis personalizados: Comece o nome da pasta com um emoji (ex.: "💻 Código") para substituir o ícone padrão.
+🖱️ Arrastar e Soltar: Reorganize seu espaço de trabalho arrastando conversas entre pastas.
+📱 Sincronização Mobile: Um interruptor gera uma pasta espelho nos seus favoritos do Chrome, reproduzindo perfeitamente sua estrutura de pastas e ordem de classificação no celular.
+🗜️ Compressão ultra-eficiente: Comprime automaticamente seus dados (LZString) para maximizar o armazenamento nativo do Chrome e salvar centenas de conversas.
+📊 Monitor de armazenamento: Uma barra de progresso visual exibe seu espaço na nuvem disponível em tempo real.
+📁 Pastas personalizadas e Fixações: Classifique suas conversas por projetos, temas ou categorias. Fixe (📌) suas pastas favoritas no topo.
+⇅ Ordenação personalizada: Ordene pastas e conversas na hora (Mais recentes, Mais antigas, A-Z) com reflexo imediato na sincronização mobile.
+🤖 Detecção inteligente e Pesquisa: Preenchimento automático do título exato da conversa e barra de pesquisa em tempo real.
+☁️ Sincronização na Nuvem e Backup: Acesse sua organização em todos os seus dispositivos e exporte seus dados em JSON.
+🎨 Design Material 3 e Multilíngue: Interface ultra-compacta com diálogos totalmente personalizados, modo escuro automático e suporte para 43 idiomas!
+
+
+🏠 SUPORTE A LLM LOCAL
+
+Está usando um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure o Pastas IA com sua URL local — suporta localhost e endereços LAN (192.168.x.x, hostnames personalizados). O salvamento rápido e pelo menu de contexto também funcionam em interfaces locais.
+
+🛠️ COMO FUNCIONA?
+
+Modo Pastas:
+Abra uma conversa em Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Salvar rapidamente: Ctrl+Shift+S (ou Cmd+Shift+S no Mac), ou clique direito > "Salvar em Pastas IA".
+Pela extensão: Clique no ícone, escolha uma pasta e salve.
+Mobile: Ative 📱 no rodapé para sincronizar suas pastas com o celular.
+Use as caixas de seleção para ações em lote, abra pastas como Grupos de Abas (📑), arraste para reorganizar!
+
+Modo Prompts:
+Clique em 📝 no botão de alternância no canto superior direito da extensão.
+Clique em ➕ Adicionar Prompt, insira um título e seu texto, e salve.
+Para usar um prompt: expanda-o e clique em ▶ — ele é injetado diretamente na IA ativa, pronto para enviar.
+Para fixar um prompt: clique em 📍 — ele sobe para o topo da lista e fica sempre ao alcance.
+
+🔒 PRIVACIDADE E SEGURANÇA
+Desenvolvida com a privacidade no centro. Solicita acesso apenas a Gemini, Claude, ChatGPT, Copilot, Perplexity e lê a aba ativa somente ao salvar uma conversa ou injetar um prompt. A permissão "Favoritos" só é usada se você ativar a sincronização mobile. Armazenamento via Chrome Sync: sem servidores de terceiros, sem telemetria.
+
+🤝 PROJETO OPEN SOURCE
+Pastas IA é um projeto open source desenvolvido com paixão. Transparência e respeito à sua privacidade são nossas prioridades. É desenvolvedor ou simplesmente curioso? Consulte o código, acompanhe o histórico de alterações ou contribua no GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 ATUALIZAÇÕES:
+Versão 1.0: Lançamento inicial! Organize conversas do Gemini, Claude, ChatGPT, Copilot e Perplexity em pastas compartilhadas. Biblioteca de prompts completa com injeção em um clique, atalhos de salvamento rápido, arrastar e soltar, sincronização mobile, ações em massa, grupos de abas e suporte para 43 idiomas. Suporte a LLM local com URL configurável (localhost e endereços LAN).

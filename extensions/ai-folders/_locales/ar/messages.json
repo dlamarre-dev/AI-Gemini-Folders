@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "مجلدات AI"
+  },
+  "extDesc": {
+    "message": "نظّم محادثات الذكاء الاصطناعي في مجلدات مخصصة. يدعم Gemini وClaude وChatGPT وCopilot وPerplexity."
+  },
+  "appTitle": {
+    "message": "مجلدات AI"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 بحث في المحادثات..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 بحث في المطالبات..."
+  },
+  "folderPlaceholder": {
+    "message": "اسم المجلد (مثال: مشاريع الكود)"
+  },
+  "chatPlaceholder": {
+    "message": "عنوان المحادثة"
+  },
+  "saveBtn": {
+    "message": "حفظ"
+  },
+  "statusSaved": {
+    "message": "تم حفظ المحادثة!"
+  },
+  "noResults": {
+    "message": "لا توجد نتائج 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 تصدير"
+  },
+  "importBtn": {
+    "message": "📂 استيراد"
+  },
+  "defaultFolder": {
+    "message": "عام"
+  },
+  "defaultTitle": {
+    "message": "محادثة جديدة"
+  },
+  "promptRename": {
+    "message": "اسم المحادثة الجديد:"
+  },
+  "alertEmptyExport": {
+    "message": "مجلداتك ومطالباتك فارغة، لا يوجد شيء للتصدير!"
+  },
+  "alertImportSuccess": {
+    "message": "تم الاستيراد بنجاح! تم دمج مجلداتك ومطالباتك بنجاح."
+  },
+  "alertImportError": {
+    "message": "خطأ في الاستيراد. تأكد من أنه ملف JSON صالح تم إنشاؤه بواسطة هذه الإضافة."
+  },
+  "btnRename": {
+    "message": "إعادة التسمية"
+  },
+  "btnDelete": {
+    "message": "حذف"
+  },
+  "btnNewFolder": {
+    "message": "➕ مجلد"
+  },
+  "promptNewFolder": {
+    "message": "مجلد جديد:"
+  },
+  "btnDeleteFolder": {
+    "message": "حذف المجلد"
+  },
+  "confirmDeleteFolder": {
+    "message": "يحتوي هذا المجلد على محادثات. هل أنت متأكد من حذفه؟"
+  },
+  "btnPin": {
+    "message": "تثبيت"
+  },
+  "btnUnpin": {
+    "message": "فك التثبيت"
+  },
+  "sortNewest": {
+    "message": "الأحدث"
+  },
+  "sortOldest": {
+    "message": "الأقدم"
+  },
+  "sortAlpha": {
+    "message": "من أ إلى ي"
+  },
+  "ctxMenuSave": {
+    "message": "حفظ في مجلدات AI"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(لا توجد مجلدات - افتح الإضافة)"
+  },
+  "btnToggleAdd": {
+    "message": "إضافة محادثة"
+  },
+  "btnCancel": {
+    "message": "إغلاق"
+  },
+  "btnRenameFolder": {
+    "message": "إعادة تسمية المجلد"
+  },
+  "promptRenameFolder": {
+    "message": "الاسم الجديد:"
+  },
+  "errorFolderExists": {
+    "message": "يوجد مجلد بهذا الاسم بالفعل."
+  },
+  "storageCalc": {
+    "message": "جارٍ حساب المساحة..."
+  },
+  "storageInfo": {
+    "message": "المساحة: {used} / {max} ك.ب ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "حفظ المحادثة"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ الحفظ السريع"
+  },
+  "toastSaved": {
+    "message": "✅ تم الحفظ في مجلدات AI!"
+  },
+  "btnOpenGroup": {
+    "message": "فتح في مجموعة علامات تبويب"
+  },
+  "confirmOpenManyTabs": {
+    "message": "هل تريد فعلاً فتح علامات التبويب المحددة (العدد: {count}) في نفس الوقت؟"
+  },
+  "errorTabGroup": {
+    "message": "خطأ: تعذّر إنشاء مجموعة علامات التبويب. هل قبلت الأذونات الجديدة؟"
+  },
+  "bulkSelected": {
+    "message": "العناصر المحددة: {count}"
+  },
+  "bulkMove": {
+    "message": "نقل إلى..."
+  },
+  "bulkDelete": {
+    "message": "حذف"
+  },
+  "confirmBulkDelete": {
+    "message": "هل أنت متأكد من حذف المحادثات المحددة (العدد: {count})؟"
+  },
+  "bulkCancel": {
+    "message": "إلغاء التحديد"
+  },
+  "masterFolderName": {
+    "message": "مجلدات AI (مزامنة)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "ينشئ مجلداً متزامناً في إشاراتك المرجعية في Chrome للوصول إلى محادثاتك من هاتفك."
+  },
+  "modalBtnCancel": {
+    "message": "إلغاء"
+  },
+  "modalBtnConfirm": {
+    "message": "تأكيد"
+  },
+  "emojiTipPlaceholder": {
+    "message": "نصيحة: ابدأ بـ إيموجي (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ تم الحفظ مسبقاً!"
+  },
+  "folderModeTitle": {
+    "message": "وضع المجلدات"
+  },
+  "promptModeTitle": {
+    "message": "وضع المطالبات"
+  },
+  "promptCannotBeEmpty": {
+    "message": "لا يمكن أن تكون المطالبة فارغة!"
+  },
+  "promptSaved": {
+    "message": "تم حفظ المطالبة!"
+  },
+  "promptDuplicateWarning": {
+    "message": "توجد مطالبة بهذا العنوان بالفعل. هل تريد الكتابة فوقها؟"
+  },
+  "promptNoSavedYet": {
+    "message": "لا توجد مطالبات محفوظة بعد."
+  },
+  "promptAddBtn": {
+    "message": "إضافة مطالبة"
+  },
+  "promptCopyTitle": {
+    "message": "نسخ"
+  },
+  "promptDeleteTitle": {
+    "message": "حذف"
+  },
+  "newConversationBtn": {
+    "message": "محادثة جديدة"
+  },
+  "promptTitlePlaceholder": {
+    "message": "عنوان المطالبة"
+  },
+  "promptTextPlaceholder": {
+    "message": "اكتب مطالبتك هنا..."
+  },
+  "syncPromptsTooltip": {
+    "message": "مزامنة المطالبات"
+  },
+  "promptRenamePrompt": {
+    "message": "اسم المطالبة الجديد:"
+  },
+  "confirmDeletePrompt": {
+    "message": "حذف هذه المطالبة؟"
+  },
+  "promptInsertBtn": {
+    "message": "أدرج في المحادثة"
+  },
+  "promptPinTitle": {
+    "message": "تثبيت"
+  },
+  "newConv_gemini": {
+    "message": "محادثة Gemini جديدة"
+  },
+  "newConv_claude": {
+    "message": "محادثة Claude جديدة"
+  },
+  "newConv_chatgpt": {
+    "message": "محادثة ChatGPT جديدة"
+  },
+  "newConv_copilot": {
+    "message": "محادثة Copilot جديدة"
+  },
+  "newConv_perplexity": {
+    "message": "محادثة Perplexity جديدة"
+  },
+  "newConv_local": {
+    "message": "محادثة LLM محلية جديدة (اضغط مطوّلاً لتعيين الرابط)"
+  },
+  "setLocalUrl": {
+    "message": "تعيين عنوان URL للنموذج المحلي:"
+  },
+  "alertNotSupported": {
+    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."
+  }
+}

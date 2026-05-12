@@ -1,0 +1,58 @@
+AI-samtalene dine er spredt over fem forskjellige nettsteder. Du skriver stadig inn de samme promptene på nytt. De beste samtalene dine forsvinner inn i uendelige historikker på Gemini, Claude, ChatGPT, Copilot og Perplexity.
+AI-mapper er utvidelsen du trenger.
+
+AI-mapper er din samlede AI-kontrollpanel: organiser samtaler fra alle AI-verktøyene dine i delte mapper, bygg et bibliotek av gjenbrukbare prompter, og injiser prompter direkte i en hvilken som helst støttet AI — uten kopiering og innliming.
+
+✨ PROMPTMODUS
+
+📝 Personlig promptbibliotek: Bytt til Promptmodus med ett klikk på bryteren i overskriften. Lagre dine beste prompts med tittel og tekst, finn dem umiddelbart med søk og sortering (nyeste, eldste, A–Å).
+▶ Enklikksinnsetting: Klikk på avspillingsknappen (▶) på en lagret prompt for å sette den direkte inn i inndatafeltet til den aktive AI-en.
+✏️ Redigering på stedet: Klikk for å utvide en prompt og rediger teksten direkte. Endringer lagres automatisk etter en kort pause.
+🔀 Ny samtale-knapper: Start en ny samtale på ChatGPT, Claude, Copilot, Gemini eller Perplexity direkte fra Prompt-modus — én knapp per tjeneste.
+☁️ Promptsynkronisering: Aktiver skysynkronisering for promptbiblioteket uavhengig av mappene.
+📌 Festede prompts: Fest viktige prompts øverst i biblioteket, atskilt fra resten med en visuell skillelinje.
+
+🌟 MAPPEFUNKSJONER
+
+⚡ Hurtiglagring (Høyreklikk og snarveier): Lagre gjeldende samtale med et enkelt høyreklikk, eller bruk hurtigtasten (Ctrl+Shift+S eller Cmd+Shift+S på Mac) for å sende den til «⚡ Hurtiglagring» – med en visuell varsling hvis den allerede er lagret!
+☑️ Flervalg (Bulkhandlinger): Velg flere samtaler med avmerkingsbokser for å flytte eller slette dem med ett klikk.
+📑 Fanegruppeintegrasjon: Åpne en hel mappe med ett klikk som en innebygd, fargekodet Chrome-fanegruppe.
+😃 Egendefinerte mappeemojier: Start mappenavnet med en emoji (f.eks. «💻 Kode») for å erstatte standardmappeikonet.
+🖱️ Dra og slipp: Flytt samtaler intuitivt mellom mapper.
+📱 Mobilsynkronisering: En bryterknapp oppretter en speilmappe i Chrome-bokmerkene dine, som perfekt gjengir mappestrukturen og sorteringsrekkefølgen din på telefonen.
+🗜️ Svært effektiv komprimering: Komprimerer data automatisk (LZString) for å maksimere Chromes innebygde lagringskapasitet.
+📊 Lagringssporer: En visuell fremdriftslinje viser tilgjengelig skylagring i sanntid med detaljerte verktøytips.
+📁 Tilpassede mapper og festede favoritter: Organiser samtaler etter prosjekter, temaer eller kategorier. Pin (📌) favorittkategoriene øverst.
+⇅ Tilpasset sortering: Sorter mapper og samtaler (Nyeste, Eldste, A–Å) med endringer som umiddelbart gjenspeiles i mobilsynkroniseringen.
+🤖 Smart oppdaging og søk: Automatisk forhåndsutfylling av samtalens nøyaktige tittel og et søkefelt i sanntid.
+☁️ Skysynkronisering og sikkerhetskopiering: Tilgang til organiseringen på alle enheter og eksporter data som JSON.
+🎨 Material 3-design og flerspråklig: Ultrakompakt grensesnitt med fullstendig tilpassede modaldialogbokser, automatisk mørk modus og støtte for 43 språk!
+
+
+🏠 STØTTE FOR LOKAL LLM
+
+Kjører du en lokal AI-modell (Ollama, LM Studio, Jan eller annen)? Konfigurer AI-mapper med din lokale URL — støtter localhost og LAN-adresser (192.168.x.x, egendefinerte vertsnavn). Hurtiglagring og kontekstmenylagring fungerer også på lokale brukergrensesnitt.
+
+🛠️ HVORDAN FUNGERER DET?
+
+Mappemodus:
+Åpne en samtale på Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Hurtiglagring: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller høyreklikk > «Lagre i AI-mapper».
+Via tillegget: Klikk på ikonet, velg en mappe og lagre.
+Mobil: Merk av for 📱 i bunnteksten for å synkronisere mappene til telefonen.
+Bruk avmerkingsbokser for bulkhandlinger, åpne mapper som fanegruppene (📑), dra og slipp for å omorganisere!
+
+Promptmodus:
+Klikk på 📝 på bryteren øverst til høyre i tillegget.
+Klikk ➕ Legg til prompt, skriv inn tittel og tekst, og lagre.
+For å bruke en prompt: utvid den og klikk ▶ – den settes direkte inn i den aktive AI-en, klar til å sende.
+For å feste en prompt: klikk 📍 – den flyttes øverst på listen og forblir lett tilgjengelig.
+
+🔒 PERSONVERN OG SIKKERHET
+Bygget med personvern i fokus. Tillegget ber bare om tilgang til Gemini, Claude, ChatGPT, Copilot, Perplexity og leser bare den aktive fanen ved lagring av en samtale eller innsetting av en prompt. «Bokmerker»-tillatelsen brukes bare hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
+
+🤝 ÅPEN KILDEKODE-PROSJEKT
+AI-mapper er et åpen kildekode-prosjekt bygget med lidenskap. Transparens og respekt for personvernet ditt er våre høyeste prioriteter. Er du en utvikler eller bare nysgjerrig? Bla gjennom koden, følg endringsloggen eller bidra på GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 OPPDATERINGER:
+Versjon 1.0: Første utgivelse! Organiser samtaler fra Gemini, Claude, ChatGPT, Copilot og Perplexity i delte mapper. Fullstendig prompt-bibliotek med ett-klikks injeksjon, hurtiglagringssnarvei, dra og slipp, mobilsynkronisering, massehandlinger, fanegruppper og støtte for 43 språk.

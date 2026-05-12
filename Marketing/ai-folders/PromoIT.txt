@@ -1,0 +1,58 @@
+Le tue conversazioni AI sono sparse su cinque siti diversi. Continui a riscrivere gli stessi prompt. Le tue migliori chat scompaiono in cronologie infinite su Gemini, Claude, ChatGPT, Copilot e Perplexity.
+Cartelle IA è l'estensione di cui hai bisogno.
+
+Cartelle IA è il tuo cockpit AI unificato: organizza conversazioni da tutti i tuoi strumenti AI in cartelle condivise, crea una libreria di prompt riutilizzabili e inietta prompt direttamente in qualsiasi AI supportata — senza bisogno di copiare e incollare.
+
+✨ MODALITÀ PROMPT
+
+📝 Libreria di prompt personale: Passa alla modalità Prompt con un solo clic sull'interruttore nell'intestazione. Salva i tuoi migliori prompt con un titolo e il testo completo, poi trovali subito con ricerca e ordinamento (più recenti, più vecchi, A-Z).
+▶ Iniezione con un clic: Niente più copia e incolla. Clicca il pulsante di riproduzione (▶) su qualsiasi prompt salvato per iniettarlo direttamente nel campo di input dell'IA attiva.
+✏️ Modifica in linea: Clicca un prompt per espanderlo e modifica il testo direttamente. Le modifiche si salvano automaticamente dopo una breve pausa e l'ordinamento si aggiorna di conseguenza.
+🔀 Pulsanti Nuova Conversazione: Avvia una nuova conversazione su ChatGPT, Claude, Copilot, Gemini o Perplexity direttamente dalla Modalità Prompt — un pulsante per servizio.
+☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
+📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
+
+🌟 FUNZIONALITÀ CARTELLE
+
+⚡ Salvataggio Rapido (Clic Destro e Scorciatoie): Salva la conversazione con un semplice clic destro, o usa la scorciatoia da tastiera (Ctrl+Shift+S o Cmd+Shift+S su Mac) per inviarla istantaneamente a "⚡ Salvataggi Rapidi" — con un avviso visivo se è già salvata!
+☑️ Selezione Multipla (Azioni in blocco): Seleziona più conversazioni con le caselle di controllo per spostarle o eliminarle in un clic.
+📑 Integrazione Gruppi di schede: Apri un'intera cartella con un clic in un Gruppo di schede nativo di Chrome, con codice colore.
+😃 Emoji personalizzate: Inizia il nome della cartella con un'emoji (es. "💻 Codice") per sostituire l'icona predefinita.
+🖱️ Trascina e Rilascia: Riorganizza il tuo spazio di lavoro trascinando le conversazioni tra le cartelle.
+📱 Sincronizzazione Mobile: Un interruttore genera una cartella specchio nei segnalibri di Chrome, riproducendo perfettamente la tua struttura e l'ordine di ordinamento sul telefono.
+🗜️ Compressione ultra-efficiente: Comprime automaticamente i tuoi dati (LZString) per massimizzare lo spazio di archiviazione nativo di Chrome.
+📊 Monitor dello spazio: Una barra di avanzamento visiva mostra lo spazio cloud disponibile in tempo reale.
+📁 Cartelle personalizzate e Segnaposti: Classifica le conversazioni per progetti, temi o categorie. Aggiungi (📌) le cartelle preferite in cima.
+⇅ Ordinamento personalizzato: Ordina cartelle e conversazioni al volo (Più recenti, Più vecchie, A-Z) con ripercussione immediata sulla sincronizzazione mobile.
+🤖 Rilevamento intelligente e Ricerca: Compilazione automatica del titolo esatto della conversazione e barra di ricerca in tempo reale.
+☁️ Sincronizzazione Cloud e Backup: Accedi alla tua organizzazione su tutti i dispositivi ed esporta i dati in JSON.
+🎨 Design Material 3 e Multilingue: Interfaccia ultra-compatta con finestre di dialogo completamente personalizzate, modalità scura automatica e supporto per 43 lingue!
+
+
+🏠 SUPPORTO LLM LOCALE
+
+Stai usando un modello AI locale (Ollama, LM Studio, Jan o altro)? Configura Cartelle IA con il tuo URL locale — supporta localhost e indirizzi LAN (192.168.x.x, hostname personalizzati). Il salvataggio rapido e dal menu contestuale funzionano anche nelle interfacce locali.
+
+🛠️ COME FUNZIONA?
+
+Modalità Cartelle:
+Apri una conversazione su Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Salvataggio rapido: Ctrl+Shift+S (o Cmd+Shift+S su Mac), o clic destro > "Salva in Cartelle IA".
+Tramite l'estensione: Clicca l'icona, scegli una cartella e salva.
+Mobile: Attiva 📱 nel piè di pagina per sincronizzare le cartelle con il telefono.
+Usa le caselle per azioni in blocco, apri le cartelle come Gruppi di schede (📑), trascina per riorganizzare!
+
+Modalità Prompt:
+Clicca 📝 sull'interruttore in alto a destra nell'estensione.
+Clicca ➕ Aggiungi Prompt, inserisci un titolo e il tuo testo, salva.
+Per usare un prompt: espandilo e clicca ▶ — viene iniettato direttamente nell'IA attiva, pronto per l'invio.
+Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta sempre a portata di mano.
+
+🔒 PRIVACY E SICUREZZA
+Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, ChatGPT, Copilot, Perplexity e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
+
+🤝 PROGETTO OPEN SOURCE
+Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 AGGIORNAMENTI:
+Versione 1.0: Prima pubblicazione! Organizza conversazioni da Gemini, Claude, ChatGPT, Copilot e Perplexity in cartelle condivise. Libreria prompt completa con iniezione in un clic, scorciatoie di salvataggio rapido, drag & drop, sincronizzazione mobile, azioni in blocco, gruppi di schede e supporto per 43 lingue. Supporto LLM locale con URL configurabile (localhost e indirizzi LAN).

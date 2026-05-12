@@ -1,0 +1,58 @@
+Uw AI-gesprekken zijn verspreid over vijf verschillende sites. U blijft dezelfde prompts opnieuw typen. Uw beste chats verdwijnen in eindeloze historiek op Gemini, Claude, ChatGPT, Copilot en Perplexity.
+AI-mappen is de extensie die u nodig heeft.
+
+AI-mappen is uw uniforme AI-cockpit: organiseer gesprekken van al uw AI-tools in gedeelde mappen, bouw een herbruikbare promptbibliotheek en injecteer prompts rechtstreeks in elke ondersteunde AI — zonder kopiëren en plakken.
+
+✨ PROMPTMODUS
+
+📝 Persoonlijke promptbibliotheek: Schakel over naar Promptmodus met één klik op de schakelaar in de koptekst. Sla uw beste prompts op met een titel en volledige tekst en vind ze direct terug met zoeken en sorteren (nieuwste, oudste, A-Z).
+▶ Invoegen met één klik: Geen kopiëren en plakken meer. Klik op de afspeelknop (▶) van een opgeslagen prompt om deze direct rechtstreeks in het invoerveld van de actieve AI in te voegen.
+✏️ Inline bewerken: Klik op een prompt om deze uit te vouwen en de tekst direct te bewerken. Wijzigingen worden automatisch opgeslagen na een korte pauze en de sorteervolgorde wordt dienovereenkomstig bijgewerkt.
+🔀 Knoppen Nieuw Gesprek: Start een nieuw gesprek op ChatGPT, Claude, Copilot, Gemini of Perplexity direct vanuit de Promptmodus — één knop per dienst.
+☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
+📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
+
+🌟 MAPFUNCTIES
+
+⚡ Snel opslaan (rechtsklikken & sneltoetsen): Sla het huidige gesprek op met een eenvoudig rechtsklikken, of gebruik de sneltoets (Ctrl+Shift+S of Cmd+Shift+S op Mac) om het direct naar "⚡ Snelle opslag" te sturen — met een visuele melding als het al is opgeslagen!
+☑️ Meerdere selecteren (bulkacties): Selecteer meerdere gesprekken via selectievakjes om ze met één klik te verplaatsen of verwijderen.
+📑 Tabgroepintegratie: Open een volledige map met één klik als een native, kleurgecodeerde Chrome-tabgroep.
+😃 Aangepaste map-emoji's: Begin uw mapnaam met een emoji (bijv. "💻 Code") om het standaard mappictogram te vervangen.
+🖱️ Slepen en neerzetten: Herorganiseer uw werkruimte door gesprekken tussen mappen te slepen.
+📱 Mobiele synchronisatie: Een schakelaar maakt een spiegelmap aan in uw Chrome-bladwijzers, waarmee uw mapstructuur en aangepaste sorteervolgorde perfect op uw telefoon worden gereproduceerd.
+🗜️ Ultraëfficiënte compressie: Comprimeert uw gegevens automatisch (LZString) om de native opslag van Chrome te maximaliseren en honderden gesprekken op te slaan.
+📊 Opslagmeter: Een strakke visuele voortgangsbalk toont uw beschikbare cloudopslag in realtime.
+📁 Aangepaste mappen en pins: Organiseer uw gesprekken per project, thema of categorie. Zet (📌) uw favoriete mappen bovenaan vast.
+⇅ Aangepast sorteren: Sorteer mappen en gesprekken direct (Nieuwste, Oudste, A-Z) met wijzigingen die direct zichtbaar zijn in uw mobiele synchronisatie.
+🤖 Slimme detectie en zoeken: Automatisch vooraf invullen van de exacte titel van uw gesprek en een realtime zoekbalk.
+☁️ Cloudsynchronisatie en back-up: Toegang tot uw organisatie op al uw apparaten en exporteer uw gegevens als JSON.
+🎨 Material 3-ontwerp en meertalig: Ultracompact interface met volledig aangepaste modaldialoogvensters, automatische donkere modus en ondersteuning voor 43 talen!
+
+
+🏠 LOKALE LLM-ONDERSTEUNING
+
+Gebruikt u een lokaal AI-model (Ollama, LM Studio, Jan of een ander)? Configureer AI-mappen met uw lokale URL — ondersteunt localhost en LAN-adressen (192.168.x.x, aangepaste hostnamen). Snel opslaan en opslaan via contextmenu werken ook op lokale interfaces.
+
+🛠️ HOE WERKT HET?
+
+Mappenmodus:
+Open een gesprek op Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Snel opslaan: Ctrl+Shift+S (of Cmd+Shift+S op Mac), of rechtsklikken > "Opslaan in AI-mappen".
+Via de extensie: Klik op het pictogram, kies een map en sla op.
+Mobiel: Vink 📱 aan in de voettekst om uw mappen op uw telefoon te synchroniseren.
+Gebruik selectievakjes voor bulkacties, open mappen als tabgroepen (📑), sleep en zet neer om te reorganiseren!
+
+Promptmodus:
+Klik op 📝 op de schakelaarknop rechtsboven in de extensie.
+Klik op ➕ Prompt toevoegen, voer een titel en uw tekst in en sla op.
+Een prompt gebruiken: vouw hem uit en klik op ▶ — wordt direct ingevoegd in de actieve AI, klaar om te verzenden.
+Een prompt vastzetten: klik op 📍 — hij verplaatst naar boven en blijft gemakkelijk bereikbaar.
+
+🔒 PRIVACY EN BEVEILIGING
+Gebouwd met privacy als kern. Vraagt alleen toegang tot Gemini, Claude, ChatGPT, Copilot, Perplexity en leest het actieve tabblad alleen bij het opslaan van een gesprek of het invoegen van een prompt. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via Chrome Sync: geen servers van derden, geen telemetrie.
+
+🤝 OPEN-SOURCEPROJECT
+AI-mappen is een open-sourceproject gebouwd met passie. Transparantie en respect voor uw privacy zijn onze topprioriteiten. Bent u een ontwikkelaar of gewoon nieuwsgierig? Bekijk de code, volg het wijzigingenlogboek of draag bij op GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 UPDATES:
+Versie 1.0: Eerste uitgave! Organiseer gesprekken van Gemini, Claude, ChatGPT, Copilot en Perplexity in gedeelde mappen. Volledige promptbibliotheek met één-klik-invoegen, snelopslagsnelkoppelingen, slepen en neerzetten, mobiele synchronisatie, bulkacties, tabgroepen en ondersteuning voor 43 talen. Lokale LLM-ondersteuning met configureerbare URL (localhost en LAN-adressen).

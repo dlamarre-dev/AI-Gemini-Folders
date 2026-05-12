@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "Cartelle IA"
+  },
+  "extDesc": {
+    "message": "Organizza le tue conversazioni AI in cartelle personalizzate. Supporta Gemini, Claude, ChatGPT, Copilot e Perplexity."
+  },
+  "appTitle": {
+    "message": "Cartelle IA"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Cerca una conversazione..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Cerca un prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Nome cartella (es: Progetti Codice)"
+  },
+  "chatPlaceholder": {
+    "message": "Titolo della conversazione"
+  },
+  "saveBtn": {
+    "message": "Salva"
+  },
+  "statusSaved": {
+    "message": "Conversazione salvata!"
+  },
+  "noResults": {
+    "message": "Nessun risultato trovato 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Esporta"
+  },
+  "importBtn": {
+    "message": "📂 Importa"
+  },
+  "defaultFolder": {
+    "message": "Generale"
+  },
+  "defaultTitle": {
+    "message": "Nuova conversazione"
+  },
+  "promptRename": {
+    "message": "Nuovo nome della conversazione:"
+  },
+  "alertEmptyExport": {
+    "message": "Le tue cartelle sono vuote, nulla da esportare!"
+  },
+  "alertImportSuccess": {
+    "message": "Importazione riuscita! I tuoi dati sono stati uniti con successo."
+  },
+  "alertImportError": {
+    "message": "Errore di importazione. Assicurati che sia un file JSON valido generato da questa estensione."
+  },
+  "btnRename": {
+    "message": "Rinomina"
+  },
+  "btnDelete": {
+    "message": "Elimina"
+  },
+  "btnNewFolder": {
+    "message": "➕ Cartella"
+  },
+  "promptNewFolder": {
+    "message": "Nuova cartella:"
+  },
+  "btnDeleteFolder": {
+    "message": "Elimina cartella"
+  },
+  "confirmDeleteFolder": {
+    "message": "Questa cartella contiene conversazioni. Vuoi davvero eliminarla?"
+  },
+  "btnPin": {
+    "message": "Fissa"
+  },
+  "btnUnpin": {
+    "message": "Stacca"
+  },
+  "sortNewest": {
+    "message": "Più recenti"
+  },
+  "sortOldest": {
+    "message": "Più vecchi"
+  },
+  "sortAlpha": {
+    "message": "Dalla A alla Z"
+  },
+  "ctxMenuSave": {
+    "message": "Salva in Cartelle IA"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Nessuna cartella - Apri l'estensione)"
+  },
+  "btnToggleAdd": {
+    "message": "Aggiungi conversazione"
+  },
+  "btnCancel": {
+    "message": "Chiudi"
+  },
+  "btnRenameFolder": {
+    "message": "Rinomina cartella"
+  },
+  "promptRenameFolder": {
+    "message": "Nuovo nome:"
+  },
+  "errorFolderExists": {
+    "message": "Esiste già una cartella con questo nome."
+  },
+  "storageCalc": {
+    "message": "Calcolo spazio..."
+  },
+  "storageInfo": {
+    "message": "Archiviazione: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Salva conversazione"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Salvataggi Rapidi"
+  },
+  "toastSaved": {
+    "message": "✅ Salvato in Cartelle IA!"
+  },
+  "btnOpenGroup": {
+    "message": "Apri in un gruppo di schede"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Vuoi davvero aprire le schede selezionate ({count}) contemporaneamente?"
+  },
+  "errorTabGroup": {
+    "message": "Errore: Impossibile creare il gruppo di schede. Hai accettato i nuovi permessi?"
+  },
+  "bulkSelected": {
+    "message": "Selezionati: {count}"
+  },
+  "bulkMove": {
+    "message": "Sposta in..."
+  },
+  "bulkDelete": {
+    "message": "Elimina"
+  },
+  "confirmBulkDelete": {
+    "message": "Vuoi davvero eliminare le conversazioni selezionate ({count})?"
+  },
+  "bulkCancel": {
+    "message": "Annulla selezione"
+  },
+  "masterFolderName": {
+    "message": "Cartelle IA (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Crea una cartella sincronizzata nei preferiti di Chrome per accedere alle conversazioni dal telefono."
+  },
+  "modalBtnCancel": {
+    "message": "Annulla"
+  },
+  "modalBtnConfirm": {
+    "message": "Conferma"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Suggerimento: inizia con un'emoji (Win+. / ⌘⌃Spazio)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Già salvato!"
+  },
+  "folderModeTitle": {
+    "message": "Modalità cartelle"
+  },
+  "promptModeTitle": {
+    "message": "Modalità prompt"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Il prompt non può essere vuoto!"
+  },
+  "promptSaved": {
+    "message": "Prompt salvato!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Esiste già un prompt con questo titolo. Sovrascrivere?"
+  },
+  "promptNoSavedYet": {
+    "message": "Nessun prompt salvato ancora."
+  },
+  "promptAddBtn": {
+    "message": "Aggiungi prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Copia"
+  },
+  "promptDeleteTitle": {
+    "message": "Elimina"
+  },
+  "newConversationBtn": {
+    "message": "Nuova conversazione"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Titolo del prompt"
+  },
+  "promptTextPlaceholder": {
+    "message": "Scrivi il tuo prompt qui..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Sincronizza prompt"
+  },
+  "promptRenamePrompt": {
+    "message": "Nuovo nome del prompt:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Eliminare questo prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Inserisci nella chat"
+  },
+  "promptPinTitle": {
+    "message": "Fissa"
+  },
+  "newConv_gemini": {
+    "message": "Nuova conversazione Gemini"
+  },
+  "newConv_claude": {
+    "message": "Nuova conversazione Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Nuova conversazione ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Nuova conversazione Copilot"
+  },
+  "newConv_perplexity": {
+    "message": "Nuova conversazione Perplexity"
+  },
+  "newConv_local": {
+    "message": "Nuova conversazione LLM locale (tieni premuto per configurare l'URL)"
+  },
+  "setLocalUrl": {
+    "message": "Imposta URL LLM locale:"
+  },
+  "alertNotSupported": {
+    "message": "Usa questa estensione su un sito AI supportato (Gemini, Claude, ChatGPT, Copilot o Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Impossibile trovare il campo di testo in questa pagina. Prova a fare clic sull'editor prima, poi usa il pulsante di inserimento."
+  }
+}

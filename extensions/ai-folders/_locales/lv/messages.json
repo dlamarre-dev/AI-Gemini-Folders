@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "AI mapes"
+  },
+  "extDesc": {
+    "message": "Kārtojiet AI sarunas pielāgotās mapēs. Atbalsta Gemini, Claude, ChatGPT, Copilot un Perplexity."
+  },
+  "appTitle": {
+    "message": "AI mapes"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Meklēt sarunu..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Meklēt uzvedni..."
+  },
+  "folderPlaceholder": {
+    "message": "Mapes nosaukums (piem. Koda projekti)"
+  },
+  "chatPlaceholder": {
+    "message": "Sarunas nosaukums"
+  },
+  "saveBtn": {
+    "message": "Saglabāt"
+  },
+  "statusSaved": {
+    "message": "Saruna saglabāta!"
+  },
+  "noResults": {
+    "message": "Rezultātu nav 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Eksports"
+  },
+  "importBtn": {
+    "message": "📂 Imports"
+  },
+  "defaultFolder": {
+    "message": "Vispārīgi"
+  },
+  "defaultTitle": {
+    "message": "Jauna saruna"
+  },
+  "promptRename": {
+    "message": "Jaunais sarunas nosaukums:"
+  },
+  "alertEmptyExport": {
+    "message": "Tavas mapes un uzvednes ir tukšas, nav ko eksportēt!"
+  },
+  "alertImportSuccess": {
+    "message": "Importēšana veiksmīga! Tavas mapes un uzvednes ir apvienotas."
+  },
+  "alertImportError": {
+    "message": "Importēšanas kļūda. Pārliecinies, ka tas ir derīgs JSON fails, ko izveidojis šis paplašinājums."
+  },
+  "btnRename": {
+    "message": "Pārdēvēt"
+  },
+  "btnDelete": {
+    "message": "Dzēst"
+  },
+  "btnNewFolder": {
+    "message": "➕ Mape"
+  },
+  "promptNewFolder": {
+    "message": "Jauna mape:"
+  },
+  "btnDeleteFolder": {
+    "message": "Dzēst mapi"
+  },
+  "confirmDeleteFolder": {
+    "message": "Šajā mapē ir sarunas. Vai tiešām vēlies to dzēst?"
+  },
+  "btnPin": {
+    "message": "Piespraust"
+  },
+  "btnUnpin": {
+    "message": "Atspraust"
+  },
+  "sortNewest": {
+    "message": "Jaunākās"
+  },
+  "sortOldest": {
+    "message": "Vecākās"
+  },
+  "sortAlpha": {
+    "message": "A līdz Z"
+  },
+  "ctxMenuSave": {
+    "message": "Saglabāt Gemini Mapēs"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Nav mapju – Atvērt paplašinājumu)"
+  },
+  "btnToggleAdd": {
+    "message": "Pievienot sarunu"
+  },
+  "btnCancel": {
+    "message": "Aizvērt"
+  },
+  "btnRenameFolder": {
+    "message": "Pārdēvēt mapi"
+  },
+  "promptRenameFolder": {
+    "message": "Jaunais nosaukums:"
+  },
+  "errorFolderExists": {
+    "message": "Mape ar šādu nosaukumu jau pastāv."
+  },
+  "storageCalc": {
+    "message": "Aprēķina vietu..."
+  },
+  "storageInfo": {
+    "message": "Krātuve: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Saglabāt sarunu"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Ātrā saglabāšana"
+  },
+  "toastSaved": {
+    "message": "✅ Saglabāts Gemini Mapēs!"
+  },
+  "btnOpenGroup": {
+    "message": "Atvērt cilņu grupā"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Vai tiešām vēlies vienlaikus atvērt atlasītās cilnes (skaits: {count})?"
+  },
+  "errorTabGroup": {
+    "message": "Kļūda: nevar izveidot cilņu grupu. Vai esi pieņēmis jaunās atļaujas?"
+  },
+  "bulkSelected": {
+    "message": "Atlasīts: {count}"
+  },
+  "bulkMove": {
+    "message": "Pārvietot uz..."
+  },
+  "bulkDelete": {
+    "message": "Dzēst"
+  },
+  "confirmBulkDelete": {
+    "message": "Vai tiešām vēlies dzēst atlasītās sarunas (skaits: {count})?"
+  },
+  "bulkCancel": {
+    "message": "Atcelt atlasi"
+  },
+  "masterFolderName": {
+    "message": "AI mapes (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Izveido sinhronizētu mapi Chrome grāmatzīmēs, lai piekļūtu sarunām no tālruņa."
+  },
+  "modalBtnCancel": {
+    "message": "Atcelt"
+  },
+  "modalBtnConfirm": {
+    "message": "Apstiprināt"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Padoms: sāc ar emodzi (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Jau saglabāts!"
+  },
+  "folderModeTitle": {
+    "message": "Mapju režīms"
+  },
+  "promptModeTitle": {
+    "message": "Uzvedņu režīms"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Uzvedne nevar būt tukša!"
+  },
+  "promptSaved": {
+    "message": "Uzvedne saglabāta!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Uzvedne ar šādu nosaukumu jau pastāv. Pārrakstīt?"
+  },
+  "promptNoSavedYet": {
+    "message": "Vēl nav saglabātu uzvedņu."
+  },
+  "promptAddBtn": {
+    "message": "Pievienot uzvedni"
+  },
+  "promptCopyTitle": {
+    "message": "Kopēt"
+  },
+  "promptDeleteTitle": {
+    "message": "Dzēst"
+  },
+  "newConversationBtn": {
+    "message": "Jauna saruna"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Uzvednes nosaukums"
+  },
+  "promptTextPlaceholder": {
+    "message": "Raksti savu uzvedni šeit..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Sinhronizēt uzvednes"
+  },
+  "promptRenamePrompt": {
+    "message": "Jaunais uzvednes nosaukums:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Dzēst šo uzvedni?"
+  },
+  "promptInsertBtn": {
+    "message": "Ievietot tērzēšanā"
+  },
+  "promptPinTitle": {
+    "message": "Piespraust"
+  },
+  "newConv_gemini": {
+    "message": "Jauna Gemini saruna"
+  },
+  "newConv_claude": {
+    "message": "Jauna Claude saruna"
+  },
+  "newConv_chatgpt": {
+    "message": "Jauna ChatGPT saruna"
+  },
+  "newConv_copilot": {
+    "message": "Jauna Copilot saruna"
+  },
+  "newConv_perplexity": {
+    "message": "Jauna Perplexity saruna"
+  },
+  "newConv_local": {
+    "message": "Jauna lokālā LLM saruna (turiet nospiestu, lai konfigurētu URL)"
+  },
+  "setLocalUrl": {
+    "message": "Iestatīt lokālā LLM URL:"
+  },
+  "alertNotSupported": {
+    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot vai Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."
+  }
+}

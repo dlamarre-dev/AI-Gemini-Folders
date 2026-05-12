@@ -1,0 +1,58 @@
+Twoje rozmowy z AI są rozrzucone po pięciu różnych stronach. Ciągle przepisujesz te same prompty. Twoje najlepsze czaty znikają w nieskończonych historiach na Gemini, Claude, ChatGPT, Copilot i Perplexity.
+Foldery AI to rozszerzenie, którego potrzebujesz.
+
+Foldery AI to Twoje zunifikowane centrum AI: organizuj rozmowy ze wszystkich narzędzi AI w wspólnych folderach, buduj bibliotekę wielokrotnie używanych promptów i wstrzykuj prompty bezpośrednio do dowolnej obsługiwanej AI — bez kopiowania i wklejania.
+
+✨ TRYB PROMPTÓW
+
+📝 Osobista biblioteka promptów: Przełącz się na tryb promptów jednym kliknięciem przełącznika w nagłówku. Zapisuj najlepsze prompty z tytułem i pełnym tekstem, a potem znajdź je błyskawicznie dzięki wyszukiwaniu i sortowaniu (najnowsze, najstarsze, A-Z).
+▶ Wstrzyknięcie jednym kliknięciem: Koniec z kopiowaniem i wklejaniem. Kliknij przycisk odtwarzania (▶) przy dowolnym zapisanym prompcie, aby wstrzyknąć go bezpośrednio w pole tekstowe aktywnej AI.
+✏️ Edycja w miejscu: Kliknij prompt, aby go rozwinąć i edytować tekst bezpośrednio. Zmiany zapisują się automatycznie po krótkiej chwili, a kolejność sortowania aktualizuje się odpowiednio.
+🔀 Przyciski Nowej Rozmowy: Rozpocznij nową rozmowę na ChatGPT, Claude, Copilot, Gemini lub Perplexity bezpośrednio z Trybu Promptów — jeden przycisk na serwis.
+☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
+📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
+
+🌟 FUNKCJE FOLDERÓW
+
+⚡ Szybkie Zapisywanie (Prawy przycisk i Skróty): Zapisz rozmowę prawym przyciskiem myszy lub skrótem klawiszowym (Ctrl+Shift+S lub Cmd+Shift+S na Mac), aby natychmiast wysłać ją do „⚡ Szybkich Zapisów" — z wizualnym alertem, jeśli już jest zapisana!
+☑️ Wielokrotny Wybór (Akcje zbiorcze): Zaznacz kilka rozmów za pomocą pól wyboru, aby przenieść je lub usunąć jednym kliknięciem.
+📑 Integracja z Grupami kart: Otwórz cały folder jednym kliknięciem jako natywną, kolorową Grupę kart Chrome.
+😃 Niestandardowe emoji: Zacznij nazwę folderu od emoji (np. „💻 Kod"), aby zastąpić domyślną ikonę.
+🖱️ Przeciągnij i Upuść: Reorganizuj swoje miejsce pracy, przeciągając rozmowy między folderami.
+📱 Synchronizacja Mobilna: Przełącznik generuje lustrzany folder w zakładkach Chrome, doskonale odwzorowując strukturę folderów i kolejność sortowania na telefonie.
+🗜️ Ultraefektywna kompresja: Automatycznie kompresuje Twoje dane (LZString), aby zmaksymalizować natywne przechowywanie Chrome i zapisać setki rozmów.
+📊 Wskaźnik miejsca: Wizualny pasek postępu pokazuje dostępne miejsce w chmurze w czasie rzeczywistym.
+📁 Foldery na miarę i Przypinanie: Klasyfikuj rozmowy według projektów, tematów lub kategorii. Przypnij (📌) ulubione foldery na górze.
+⇅ Niestandardowe sortowanie: Sortuj foldery i rozmowy na bieżąco (Najnowsze, Najstarsze, A-Z) z natychmiastowym odzwierciedleniem w synchronizacji mobilnej.
+🤖 Inteligentne wykrywanie i Wyszukiwanie: Automatyczne uzupełnianie dokładnego tytułu rozmowy i pasek wyszukiwania w czasie rzeczywistym.
+☁️ Synchronizacja w chmurze i Kopia zapasowa: Dostęp do swojej organizacji na wszystkich urządzeniach i eksport danych w formacie JSON.
+🎨 Design Material 3 i Wielojęzyczność: Ultrakompaktowy interfejs z w pełni niestandardowymi oknami dialogowymi, automatycznym trybem ciemnym i obsługą 43 języków!
+
+
+🏠 WSPARCIE LOKALNEGO LLM
+
+Używasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj Foldery AI ze swoim lokalnym adresem URL — obsługuje localhost i adresy LAN (192.168.x.x, niestandardowe nazwy hostów). Szybkie zapisywanie i zapisywanie z menu kontekstowego działają również w lokalnych interfejsach.
+
+🛠️ JAK TO DZIAŁA?
+
+Tryb Folderów:
+Otwórz rozmowę na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Szybki zapis: Ctrl+Shift+S (lub Cmd+Shift+S na Mac), lub prawy przycisk > „Zapisz w Folderach Gemini".
+Przez rozszerzenie: Kliknij ikonę, wybierz folder, zapisz.
+Mobilny: Aktywuj 📱 w stopce, aby synchronizować foldery z telefonem.
+Używaj pól wyboru do akcji zbiorczych, otwieraj foldery jako Grupy kart (📑), przeciągaj, aby reorganizować!
+
+Tryb Promptów:
+Kliknij 📝 na przełączniku w prawym górnym rogu rozszerzenia.
+Kliknij ➕ Dodaj Prompt, wpisz tytuł i tekst, zapisz.
+Aby użyć promptu: rozwiń go i kliknij ▶ — zostaje wstrzyknięty bezpośrednio do aktywnej AI, gotowy do wysłania.
+Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jest zawsze pod ręką.
+
+🔒 PRYWATNOŚĆ I BEZPIECZEŃSTWO
+Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do Gemini, Claude, ChatGPT, Copilot, Perplexity i odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez Chrome Sync: bez serwerów zewnętrznych, bez telemetrii.
+
+🤝 PROJEKT OPEN SOURCE
+Foldery AI to projekt open source tworzony z pasją. Przejrzystość i poszanowanie Twojej prywatności to nasze priorytety. Jesteś programistą lub po prostu ciekawskim? Przejrzyj kod, śledź historię zmian lub wnieś wkład na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 AKTUALIZACJE:
+Wersja 1.0: Pierwsze wydanie! Organizuj rozmowy z Gemini, Claude, ChatGPT, Copilot i Perplexity we wspólnych folderach. Pełna biblioteka promptów z wstawianiem jednym kliknięciem, skróty szybkiego zapisu, przeciąganie i upuszczanie, synchronizacja mobilna, akcje zbiorcze, grupy kart i obsługa 43 języków. Obsługa lokalnych LLM z konfigurowalnym URL (localhost i adresy LAN).

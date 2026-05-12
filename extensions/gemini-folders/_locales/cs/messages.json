@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "Složky Gemini"
+  },
+  "extDesc": {
+    "message": "Uspořádejte si konverzace Gemini do vlastních složek."
+  },
+  "appTitle": {
+    "message": "Složky Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Hledat konverzaci..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Hledat prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Název složky (např. Projekty Kód)"
+  },
+  "chatPlaceholder": {
+    "message": "Název konverzace"
+  },
+  "saveBtn": {
+    "message": "Uložit"
+  },
+  "statusSaved": {
+    "message": "Konverzace uložena!"
+  },
+  "noResults": {
+    "message": "Nebyly nalezeny žádné výsledky 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Export"
+  },
+  "importBtn": {
+    "message": "📂 Import"
+  },
+  "alertNotGemini": {
+    "message": "Použijte prosím toto rozšíření na stránce Gemini."
+  },
+  "defaultFolder": {
+    "message": "Obecné"
+  },
+  "defaultTitle": {
+    "message": "Nová konverzace"
+  },
+  "promptRename": {
+    "message": "Nový název konverzace:"
+  },
+  "alertEmptyExport": {
+    "message": "Vaše složky jsou prázdné, není co exportovat!"
+  },
+  "alertImportSuccess": {
+    "message": "Import byl úspěšný! Vaše data byla úspěšně sloučena."
+  },
+  "alertImportError": {
+    "message": "Chyba importu. Ujistěte se, že jde o platný soubor JSON vygenerovaný tímto rozšířením."
+  },
+  "btnRename": {
+    "message": "Přejmenovat"
+  },
+  "btnDelete": {
+    "message": "Smazat"
+  },
+  "btnNewFolder": {
+    "message": "➕ Složka"
+  },
+  "promptNewFolder": {
+    "message": "Nová složka:"
+  },
+  "btnDeleteFolder": {
+    "message": "Smazat složku"
+  },
+  "confirmDeleteFolder": {
+    "message": "Tato složka obsahuje konverzace. Opravdu ji chcete smazat?"
+  },
+  "btnPin": {
+    "message": "Připnout"
+  },
+  "btnUnpin": {
+    "message": "Odepnout"
+  },
+  "sortNewest": {
+    "message": "Nejnovější"
+  },
+  "sortOldest": {
+    "message": "Nejstarší"
+  },
+  "sortAlpha": {
+    "message": "Od A do Z"
+  },
+  "ctxMenuSave": {
+    "message": "Uložit do Složek Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Žádné složky - Otevřete rozšíření)"
+  },
+  "btnToggleAdd": {
+    "message": "Přidat konverzaci"
+  },
+  "btnCancel": {
+    "message": "Zavřít"
+  },
+  "btnRenameFolder": {
+    "message": "Přejmenovat složku"
+  },
+  "promptRenameFolder": {
+    "message": "Nový název:"
+  },
+  "errorFolderExists": {
+    "message": "Složka s tímto názvem již existuje."
+  },
+  "storageCalc": {
+    "message": "Výpočet místa..."
+  },
+  "storageInfo": {
+    "message": "Úložiště: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Uložit konverzaci"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Rychlé uložení"
+  },
+  "toastSaved": {
+    "message": "✅ Uloženo do Složek Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Otevřít ve skupině karet"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Opravdu chcete otevřít vybrané karty (počet: {count}) současně?"
+  },
+  "errorTabGroup": {
+    "message": "Chyba: Nelze vytvořit skupinu karet. Přijali jste nová oprávnění?"
+  },
+  "bulkSelected": {
+    "message": "Vybráno: {count}"
+  },
+  "bulkMove": {
+    "message": "Přesunout do..."
+  },
+  "bulkDelete": {
+    "message": "Smazat"
+  },
+  "confirmBulkDelete": {
+    "message": "Opravdu chcete smazat vybrané konverzace (počet: {count})?"
+  },
+  "bulkCancel": {
+    "message": "Zrušit výběr"
+  },
+  "masterFolderName": {
+    "message": "Složky Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Vytvoří synchronizovanou složku v záložkách Chrome pro přístup ke konverzacím v telefonu."
+  },
+  "reviewTitle": {
+    "message": "⭐ Líbí se vám Složky Gemini?"
+  },
+  "reviewMessage": {
+    "message": "Vaše podpora tomuto open source projektu nesmírně pomáhá!"
+  },
+  "reviewRateBtn": {
+    "message": "Ohodnotit 5 hvězdičkami"
+  },
+  "reviewLaterBtn": {
+    "message": "Později"
+  },
+  "reviewNoBtn": {
+    "message": "Ne, děkuji"
+  },
+  "modalBtnCancel": {
+    "message": "Zrušit"
+  },
+  "modalBtnConfirm": {
+    "message": "Potvrdit"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tip: Začněte s emoji (Win+. / ⌘⌃Mezerník)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Již uloženo!"
+  },
+  "folderModeTitle": {
+    "message": "Režim složek"
+  },
+  "promptModeTitle": {
+    "message": "Režim promptů"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Výzva nemůže být prázdná!"
+  },
+  "promptSaved": {
+    "message": "Výzva uložena!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Výzva s tímto názvem již existuje. Přepsat?"
+  },
+  "promptNoSavedYet": {
+    "message": "Zatím žádné uložené výzvy."
+  },
+  "promptAddBtn": {
+    "message": "Přidat výzvu"
+  },
+  "promptCopyTitle": {
+    "message": "Kopírovat"
+  },
+  "promptDeleteTitle": {
+    "message": "Smazat"
+  },
+  "promptSetGemLink": {
+    "message": "Nastavit vlastní odkaz Gem:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Neplatný odkaz. Musí začínat https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Nová konverzace"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Název promptu"
+  },
+  "promptTextPlaceholder": {
+    "message": "Napište svůj prompt zde..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Povolit vlastní Gem"
+  },
+  "setGemBtnTooltip": {
+    "message": "Nastavit vlastní odkaz Gem"
+  },
+  "syncPromptsTooltip": {
+    "message": "Synchronizovat prompty"
+  },
+  "promptRenamePrompt": {
+    "message": "Nový název promptu:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Smazat tento prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Vložit do Gemini"
+  },
+  "promptPinTitle": {
+    "message": "Připnout"
+  }
+}

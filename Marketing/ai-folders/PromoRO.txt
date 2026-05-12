@@ -1,0 +1,58 @@
+Conversațiile dvs. de IA sunt răspândite pe cinci site-uri diferite. Continuați să retastați aceleași instrucțiuni. Cele mai bune conversații ale dvs. dispar în istorici nesfârșite pe Gemini, Claude, ChatGPT, Copilot și Perplexity.
+Dosare IA este extensia de care aveți nevoie.
+
+Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate instrumentele dvs. AI în dosare partajate, construiți o bibliotecă de prompturi reutilizabile și injectați prompturi direct în orice AI acceptat — fără a fi nevoie să copiați și să lipiți.
+
+✨ MODUL PROMPTURI
+
+📝 Bibliotecă personală de prompturi: Comutați la modul Prompturi cu un singur clic pe butonul de comutare din antet. Salvați cele mai bune prompturi cu titlu și text complet, apoi găsiți-le instantaneu cu căutare și sortare (cele mai noi, cele mai vechi, A-Z).
+▶ Injectare cu un clic: Nu mai este nevoie de copiere și lipire. Faceți clic pe butonul de redare (▶) al oricărui prompt salvat pentru a-l injecta direct în câmpul de introducere al oricărui AI acceptat.
+✏️ Editare în loc: Faceți clic pe un prompt pentru a-l extinde și edita textul direct. Modificările se salvează automat după o scurtă pauză, iar ordinea de sortare se actualizează corespunzător.
+🔀 Butoane Conversație Nouă: Lansați o conversație nouă pe ChatGPT, Claude, Copilot, Gemini sau Perplexity direct din Modul Prompt — un buton per serviciu.
+☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
+📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
+
+🌟 FUNCȚII FOLDERE
+
+⚡ Salvare Rapidă (Clic Dreapta și Comenzi Rapide): Salvați conversația cu un simplu clic dreapta sau folosiți comanda rapidă de la tastatură (Ctrl+Shift+S sau Cmd+Shift+S pe Mac) pentru a o trimite instantaneu în „⚡ Salvări Rapide" — cu alertă vizuală dacă este deja salvată!
+☑️ Selecție Multiplă (Acțiuni în bloc): Selectați mai multe conversații cu casete de bifare pentru a le muta sau șterge dintr-un singur clic.
+📑 Integrare Grupuri de File: Deschideți un întreg folder cu un clic ca un Grup de File nativ Chrome, cu coduri de culori.
+😃 Emoji personalizate: Începeți numele folderului cu un emoji (ex.: „💻 Cod") pentru a înlocui pictograma implicită.
+🖱️ Glisare și Plasare: Reorganizați spațiul de lucru trăgând conversațiile între foldere.
+📱 Sincronizare Mobilă: Un comutator generează un folder oglindă în marcajele Chrome, reproducând perfect structura de foldere și ordinea de sortare pe telefon.
+🗜️ Compresie ultra-eficientă: Comprimă automat datele (LZString) pentru a maximiza stocarea nativă Chrome și a salva sute de conversații.
+📊 Urmăritor de stocare: O bară de progres vizuală indică spațiul de stocare cloud disponibil în timp real.
+📁 Foldere personalizate și Fixate: Clasificați conversațiile după proiecte, teme sau categorii. Fixați (📌) folderele preferate în partea de sus.
+⇅ Sortare personalizată: Sortați folderele și conversațiile din mers (Cele mai noi, Cele mai vechi, A-Z) cu reflectare instantanee în sincronizarea mobilă.
+🤖 Detectare inteligentă și Căutare: Completare automată a titlului exact al conversației și bară de căutare în timp real.
+☁️ Sincronizare Cloud și Backup: Accesați organizarea pe toate dispozitivele și exportați datele în JSON.
+🎨 Design Material 3 și Multilingv: Interfață ultra-compactă cu ferestre de dialog complet personalizate, mod întunecat automat și suport pentru 43 limbi!
+
+
+🏠 SUPORT LLM LOCAL
+
+Folosiți un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dosare IA cu URL-ul local — acceptă localhost și adrese LAN (192.168.x.x, nume de gazdă personalizate). Salvarea rapidă și din meniul contextual funcționează și pe interfețe locale.
+
+🛠️ CUM FUNCȚIONEAZĂ?
+
+Modul Foldere:
+Deschideți o conversație pe Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Salvare rapidă: Ctrl+Shift+S (sau Cmd+Shift+S pe Mac), sau clic dreapta > „Salvați în Dosare IA".
+Prin extensie: Faceți clic pe pictogramă, alegeți un folder, salvați.
+Mobil: Activați 📱 din subsol pentru a sincroniza folderele cu telefonul.
+Folosiți casetele de bifare pentru acțiuni în bloc, deschideți foldere ca File de grup (📑), trageți pentru a reorganiza!
+
+Modul Prompturi:
+Faceți clic pe 📝 de pe butonul de comutare din colțul din dreapta sus al extensiei.
+Faceți clic pe ➕ Adăugați Prompt, introduceți un titlu și textul dvs., salvați.
+Pentru a utiliza un prompt: extindeți-l și faceți clic pe ▶ — se injectează direct în AI-ul activ, gata de trimis.
+Pentru a fixa un prompt: faceți clic pe 📍 — se mută în fruntea listei și rămâne mereu la îndemână.
+
+🔒 CONFIDENȚIALITATE ȘI SECURITATE
+Concepută cu confidențialitatea în centru. Solicită acces doar la Gemini, Claude, ChatGPT, Copilot, Perplexity și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.
+
+🤝 PROIECT OPEN SOURCE
+Dosare IA este un proiect open source dezvoltat cu pasiune. Transparența și respectul față de confidențialitatea dvs. sunt prioritățile noastre. Sunteți dezvoltator sau pur și simplu curios? Consultați codul, urmăriți istoricul modificărilor sau contribuiți pe GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 ACTUALIZĂRI:
+Versiunea 1.0: Prima lansare! Organizați conversații din Gemini, Claude, ChatGPT, Copilot și Perplexity în dosare partajate. Bibliotecă completă de prompturi cu injectare în un clic, comenzi rapide de salvare, glisare și plasare, sincronizare mobilă, acțiuni în masă, grupuri de file și suport pentru 43 de limbi. Suport LLM local cu URL configurabil (localhost și adrese LAN).

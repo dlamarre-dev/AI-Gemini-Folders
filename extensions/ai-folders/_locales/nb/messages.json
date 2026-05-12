@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "AI-mapper"
+  },
+  "extDesc": {
+    "message": "Organiser AI-samtalene dine i egendefinerte mapper. Støtter Gemini, Claude, ChatGPT, Copilot og Perplexity."
+  },
+  "appTitle": {
+    "message": "AI-mapper"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Søk etter en samtale..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Søk etter en prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Mappenavn (f.eks. Kodeprosjekter)"
+  },
+  "chatPlaceholder": {
+    "message": "Samtaletittel"
+  },
+  "saveBtn": {
+    "message": "Lagre"
+  },
+  "statusSaved": {
+    "message": "Samtale lagret!"
+  },
+  "noResults": {
+    "message": "Ingen resultater 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Eksport"
+  },
+  "importBtn": {
+    "message": "📂 Import"
+  },
+  "defaultFolder": {
+    "message": "Generelt"
+  },
+  "defaultTitle": {
+    "message": "Ny samtale"
+  },
+  "promptRename": {
+    "message": "Nytt samtalenavn:"
+  },
+  "alertEmptyExport": {
+    "message": "Mappene og promptene dine er tomme, ingenting å eksportere!"
+  },
+  "alertImportSuccess": {
+    "message": "Import vellykket! Mappene og promptene dine er slått sammen."
+  },
+  "alertImportError": {
+    "message": "Importfeil. Kontroller at det er en gyldig JSON-fil generert av dette tillegget."
+  },
+  "btnRename": {
+    "message": "Gi nytt navn"
+  },
+  "btnDelete": {
+    "message": "Slett"
+  },
+  "btnNewFolder": {
+    "message": "➕ Mappe"
+  },
+  "promptNewFolder": {
+    "message": "Ny mappe:"
+  },
+  "btnDeleteFolder": {
+    "message": "Slett mappe"
+  },
+  "confirmDeleteFolder": {
+    "message": "Denne mappen inneholder samtaler. Er du sikker på at du vil slette den?"
+  },
+  "btnPin": {
+    "message": "Fest"
+  },
+  "btnUnpin": {
+    "message": "Løsne"
+  },
+  "sortNewest": {
+    "message": "Nyeste"
+  },
+  "sortOldest": {
+    "message": "Eldste"
+  },
+  "sortAlpha": {
+    "message": "A til Å"
+  },
+  "ctxMenuSave": {
+    "message": "Lagre i AI-mapper"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Ingen mapper – Åpne tillegget)"
+  },
+  "btnToggleAdd": {
+    "message": "Legg til en samtale"
+  },
+  "btnCancel": {
+    "message": "Lukk"
+  },
+  "btnRenameFolder": {
+    "message": "Gi mappen nytt navn"
+  },
+  "promptRenameFolder": {
+    "message": "Nytt navn:"
+  },
+  "errorFolderExists": {
+    "message": "En mappe med dette navnet eksisterer allerede."
+  },
+  "storageCalc": {
+    "message": "Beregner plass..."
+  },
+  "storageInfo": {
+    "message": "Lagring: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Lagre samtale"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Hurtiglagring"
+  },
+  "toastSaved": {
+    "message": "✅ Lagret i AI-mapper!"
+  },
+  "btnOpenGroup": {
+    "message": "Åpne i fanegruppe"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Vil du virkelig åpne de valgte fanene (antall: {count}) samtidig?"
+  },
+  "errorTabGroup": {
+    "message": "Feil: Kan ikke opprette fanegruppen. Har du godtatt de nye tillatelsene?"
+  },
+  "bulkSelected": {
+    "message": "Valgt: {count}"
+  },
+  "bulkMove": {
+    "message": "Flytt til..."
+  },
+  "bulkDelete": {
+    "message": "Slett"
+  },
+  "confirmBulkDelete": {
+    "message": "Er du sikker på at du vil slette de valgte samtalene (antall: {count})?"
+  },
+  "bulkCancel": {
+    "message": "Avbryt valg"
+  },
+  "masterFolderName": {
+    "message": "AI-mapper (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Oppretter en synkronisert mappe i Chrome-bokmerkene dine for tilgang til samtaler på telefonen."
+  },
+  "modalBtnCancel": {
+    "message": "Avbryt"
+  },
+  "modalBtnConfirm": {
+    "message": "Bekreft"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tips: Start med emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Allerede lagret!"
+  },
+  "folderModeTitle": {
+    "message": "Mappemodus"
+  },
+  "promptModeTitle": {
+    "message": "Promptmodus"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompten kan ikke være tom!"
+  },
+  "promptSaved": {
+    "message": "Prompt lagret!"
+  },
+  "promptDuplicateWarning": {
+    "message": "En prompt med denne tittelen eksisterer allerede. Overskriv?"
+  },
+  "promptNoSavedYet": {
+    "message": "Ingen prompts lagret ennå."
+  },
+  "promptAddBtn": {
+    "message": "Legg til prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Kopier"
+  },
+  "promptDeleteTitle": {
+    "message": "Slett"
+  },
+  "newConversationBtn": {
+    "message": "Ny samtale"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Prompttittel"
+  },
+  "promptTextPlaceholder": {
+    "message": "Skriv prompten din her..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Synkroniser prompts"
+  },
+  "promptRenamePrompt": {
+    "message": "Nytt promptnavn:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Slett denne prompten?"
+  },
+  "promptInsertBtn": {
+    "message": "Sett inn i chat"
+  },
+  "promptPinTitle": {
+    "message": "Fest"
+  },
+  "newConv_gemini": {
+    "message": "Ny Gemini-samtale"
+  },
+  "newConv_claude": {
+    "message": "Ny Claude-samtale"
+  },
+  "newConv_chatgpt": {
+    "message": "Ny ChatGPT-samtale"
+  },
+  "newConv_copilot": {
+    "message": "Ny Copilot-samtale"
+  },
+  "newConv_perplexity": {
+    "message": "Ny Perplexity-samtale"
+  },
+  "newConv_local": {
+    "message": "Ny lokal LLM-samtale (hold inne for å konfigurere URL)"
+  },
+  "setLocalUrl": {
+    "message": "Angi lokal LLM-URL:"
+  },
+  "alertNotSupported": {
+    "message": "Bruk denne utvidelsen på et støttet AI-nettsted (Gemini, Claude, ChatGPT, Copilot eller Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Finner ikke tekstfeltet på denne siden. Prøv å klikke i editoren først, og bruk deretter sett inn-knappen."
+  }
+}

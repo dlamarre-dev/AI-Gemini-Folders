@@ -1,0 +1,57 @@
+Vaši AI pogovori so razpršeni po petih različnih spletnih mestih. Vedno znova vnašate iste pozive. Vaši najboljši klepeti izginejo v neskončnih zgodovinah na Gemini, Claude, ChatGPT, Copilot in Perplexity.
+Mape AI je razširitev, ki jo potrebujete.
+
+Mape AI je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vseh vaših AI-orodij v skupne mape, zgradite knjižnico promptov za večkratno uporabo in vstavljajte prompte neposredno v kateri koli podprti AI — brez kopiranja in lepljenja.
+
+✨ NAČIN POZIVOV
+
+📝 Osebna knjižnica pozivov: Preklopi na Način pozivov z enim klikom na stikalo v glavi. Shrani najboljše pozive z naslovom in besedilom, takoj jih najdi z iskanjem in razvrščanjem (najnovejše, najstarejše, A–Ž).
+▶ Vstavljanje z enim klikom: Klikni gumb za predvajanje (▶) na katerem koli shranjenem pozivu, da ga vstaviš neposredno v vnosno polje aktivnega AI.
+✏️ Urejanje na mestu: Klikni za razširitev poziva in uredi besedilo neposredno. Spremembe se samodejno shranijo po kratkem premoru.
+🔀 Gumbi za novo pogovor: Začnite nov pogovor na ChatGPT, Claude, Copilot, Gemini ali Perplexity neposredno iz načina pozivov — en gumb za vsako storitev.
+☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
+📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
+
+🌟 FUNKCIJE MAP
+
+⚡ Hitro shranjevanje (Desni klik in bližnjice): Shrani trenutni pogovor z enostavnim desnim klikom ali uporabi bližnjico tipkovnice (Ctrl+Shift+S ali Cmd+Shift+S na Macu), da ga pošlješ v «⚡ Hitro shranjevanje» – z vizualnim opozorilom, če je že shranjen!
+☑️ Večkratna izbira (Masovna dejanja): Izberi več pogovorov s potrditvenimi polji za premikanje ali brisanje z enim klikom.
+📑 Integracija skupin zavihkov: Odpri celotno mapo z enim klikom kot izvorno, barvno kodirano skupino zavihkov Chrome.
+😃 Prilagojeni emoji map: Začni ime mape z emojijem (npr. «💻 Koda»), da zamenjal privzeto ikono mape.
+🖱️ Povleci in spusti: Premakni pogovore med mapami.
+📱 Mobilna sinhronizacija: Zrcali strukturo map v zaznamkih Chrome za dostop s telefona.
+🗜️ Izjemno učinkovita stiskanje: Samodejno stisne podatke (LZString) za maksimiziranje shrambe Chrome.
+📊 Sledilnik shrambe: Vizualna vrstica napredka kaže razpoložljivo shrambo v oblaku v realnem času.
+📁 Prilagojene mape in pripete priljubnice: Organiziraj pogovore po projektih, temah ali kategorijah.
+⇅ Prilagojeno razvrščanje: Razvrsti mape in pogovore (Najnovejše, Najstarejše, A–Ž) s spremembami, ki se takoj odrazijo v mobilni sinhronizaciji.
+🤖 Pametno zaznavanje in iskanje: Samodejno predizpolnjevanje natančnega naslova pogovora in iskalna vrstica v realnem času.
+☁️ Sinhronizacija v oblaku in varnostne kopije: Dostop do organizacije na vseh napravah in izvoz podatkov kot JSON.
+🎨 Dizajn Material 3 in večjezičnost: Ultrakompakten vmesnik s popolnoma prilagojenimi modalnimi pogovornimi okni, samodejni temni način in podpora za 43 jezikov!
+
+
+🏠 PODPORA ZA LOKALNI LLM
+
+Uporabljate lokalni model AI (Ollama, LM Studio, Jan ali drugega)? Konfigurirajte Mape AI z lokalnim URL-jem — podpira localhost in LAN naslove (192.168.x.x, prilagojeni nazivi gostiteljev). Hitro shranjevanje in shranjevanje prek kontekstnega menija delujeta tudi na lokalnih vmesnikih.
+
+🛠️ KAKO DELUJE?
+
+Način map:
+Odpri pogovor na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Hitro shranjevanje: Ctrl+Shift+S (ali Cmd+Shift+S na Macu), ali desni klik > «Shrani v Mape AI».
+Prek razširitve: Klikni ikono, izberi mapo in shrani.
+Mobilno: Označi 📱 v nogi za sinhronizacijo map s telefonom.
+
+Način pozivov:
+Klikni 📝 na stikalu zgoraj desno v razširitvi.
+Klikni ➕ Dodaj poziv, vnesi naslov in besedilo ter shrani.
+Za uporabo poziva: razširi ga in klikni ▶ – vstavi se neposredno v aktivni AI.
+Za pripenjanje poziva: klikni 📍 – premakne se na vrh seznama.
+
+🔒 ZASEBNOST IN VARNOST
+Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do Gemini, Claude, ChatGPT, Copilot, Perplexity in bere aktivni zavihek samo pri shranjevanju pogovora ali vstavljanju poziva. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek Chrome Sync: brez strežnikov tretjih oseb, brez telemetrije.
+
+🤝 ODPRTOKODNI PROJEKT
+Mape AI je odprtokodni projekt, zgrajen s strastjo. Preglednost in spoštovanje tvoje zasebnosti sta naši najvišji prioriteti. Si razvijalec ali samo radoveden? Preglej kodo, sledi dnevniku sprememb ali prispevaj na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 POSODOBITVE:
+Različica 1.0: Prva izdaja! Organizirajte pogovore iz Gemini, Claude, ChatGPT, Copilot in Perplexity v skupne mape. Popolna knjižnica pozivov z vstavljanjem z enim klikom, bližnjice za hitro shranjevanje, povleci in spusti, mobilna sinhronizacija, množična dejanja, skupine zavihkov in podpora za 43 jezikov.

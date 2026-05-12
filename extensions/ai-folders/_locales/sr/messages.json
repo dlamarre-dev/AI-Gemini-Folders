@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "ВИ фасцикле"
+  },
+  "extDesc": {
+    "message": "Организујте ВИ разговоре у прилагођене фасцикле. Подржава Gemini, Claude, ChatGPT, Copilot и Perplexity."
+  },
+  "appTitle": {
+    "message": "ВИ фасцикле"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Pretraži razgovor..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Pretraži prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Naziv foldera (npr. Kodni projekti)"
+  },
+  "chatPlaceholder": {
+    "message": "Naslov razgovora"
+  },
+  "saveBtn": {
+    "message": "Sačuvaj"
+  },
+  "statusSaved": {
+    "message": "Razgovor sačuvan!"
+  },
+  "noResults": {
+    "message": "Nema rezultata 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Izvoz"
+  },
+  "importBtn": {
+    "message": "📂 Uvoz"
+  },
+  "defaultFolder": {
+    "message": "Opšte"
+  },
+  "defaultTitle": {
+    "message": "Novi razgovor"
+  },
+  "promptRename": {
+    "message": "Novi naziv razgovora:"
+  },
+  "alertEmptyExport": {
+    "message": "Tvoji folderi i promptovi su prazni, nema šta da se izveze!"
+  },
+  "alertImportSuccess": {
+    "message": "Uvoz uspešan! Tvoji folderi i promptovi su spojeni."
+  },
+  "alertImportError": {
+    "message": "Greška pri uvozu. Proveri da li je ovo validan JSON fajl koji je generisalo ovo proširenje."
+  },
+  "btnRename": {
+    "message": "Preimenuj"
+  },
+  "btnDelete": {
+    "message": "Obriši"
+  },
+  "btnNewFolder": {
+    "message": "➕ Folder"
+  },
+  "promptNewFolder": {
+    "message": "Novi folder:"
+  },
+  "btnDeleteFolder": {
+    "message": "Obriši folder"
+  },
+  "confirmDeleteFolder": {
+    "message": "Ovaj folder sadrži razgovore. Da li zaista želiš da ga obrišeš?"
+  },
+  "btnPin": {
+    "message": "Zakači"
+  },
+  "btnUnpin": {
+    "message": "Otkači"
+  },
+  "sortNewest": {
+    "message": "Najnovije"
+  },
+  "sortOldest": {
+    "message": "Najstarije"
+  },
+  "sortAlpha": {
+    "message": "A do Ž"
+  },
+  "ctxMenuSave": {
+    "message": "Sačuvaj u ВИ фасцикле"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Nema foldera – Otvori proširenje)"
+  },
+  "btnToggleAdd": {
+    "message": "Dodaj razgovor"
+  },
+  "btnCancel": {
+    "message": "Zatvori"
+  },
+  "btnRenameFolder": {
+    "message": "Preimenuj folder"
+  },
+  "promptRenameFolder": {
+    "message": "Novi naziv:"
+  },
+  "errorFolderExists": {
+    "message": "Folder s ovim nazivom već postoji."
+  },
+  "storageCalc": {
+    "message": "Izračunavanje prostora..."
+  },
+  "storageInfo": {
+    "message": "Skladište: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Sačuvaj razgovor"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Brzo čuvanje"
+  },
+  "toastSaved": {
+    "message": "✅ Sačuvano u ВИ фасцикле!"
+  },
+  "btnOpenGroup": {
+    "message": "Otvori u grupi kartica"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Da li zaista želiš da otvoriš izabrane kartice (broj: {count}) istovremeno?"
+  },
+  "errorTabGroup": {
+    "message": "Greška: ne može da se kreira grupa kartica. Da li su prihvaćena nova ovlašćenja?"
+  },
+  "bulkSelected": {
+    "message": "Odabrano: {count}"
+  },
+  "bulkMove": {
+    "message": "Premesti u..."
+  },
+  "bulkDelete": {
+    "message": "Obriši"
+  },
+  "confirmBulkDelete": {
+    "message": "Da li zaista želiš da obrišeš izabrane razgovore (broj: {count})?"
+  },
+  "bulkCancel": {
+    "message": "Otkaži odabir"
+  },
+  "masterFolderName": {
+    "message": "ВИ фасцикле (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Kreira sinhronizovani folder u Chrome obeleživačima za pristup razgovorima s telefona."
+  },
+  "modalBtnCancel": {
+    "message": "Otkaži"
+  },
+  "modalBtnConfirm": {
+    "message": "Potvrdi"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Savet: Počni s emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Već sačuvano!"
+  },
+  "folderModeTitle": {
+    "message": "Mod foldera"
+  },
+  "promptModeTitle": {
+    "message": "Mod promptova"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt ne sme biti prazan!"
+  },
+  "promptSaved": {
+    "message": "Prompt sačuvan!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Prompt s ovim naslovom već postoji. Prepiši?"
+  },
+  "promptNoSavedYet": {
+    "message": "Još nema sačuvanih promptova."
+  },
+  "promptAddBtn": {
+    "message": "Dodaj prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Kopiraj"
+  },
+  "promptDeleteTitle": {
+    "message": "Obriši"
+  },
+  "newConversationBtn": {
+    "message": "Novi razgovor"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Naslov prompta"
+  },
+  "promptTextPlaceholder": {
+    "message": "Napiši ovde svoj prompt..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Sinhronizuj promptove"
+  },
+  "promptRenamePrompt": {
+    "message": "Novi naziv prompta:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Obriši ovaj prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Убаци у разговор"
+  },
+  "promptPinTitle": {
+    "message": "Zakači"
+  },
+  "newConv_gemini": {
+    "message": "Нови разговор на Gemini"
+  },
+  "newConv_claude": {
+    "message": "Нови разговор на Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Нови разговор на ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Нови разговор на Copilot"
+  },
+  "newConv_perplexity": {
+    "message": "Нови разговор на Perplexity"
+  },
+  "newConv_local": {
+    "message": "Нови локални LLM разговор (задржите за конфигурацију URL-а)"
+  },
+  "setLocalUrl": {
+    "message": "Подесите URL локалног LLM-а:"
+  },
+  "alertNotSupported": {
+    "message": "Користите ово проширење на подржаном ВИ сајту (Gemini, Claude, ChatGPT, Copilot или Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Није могуће пронаћи поље за унос текста на овој страници. Прво кликните у уређивач, а затим користите дугме за убацивање."
+  }
+}

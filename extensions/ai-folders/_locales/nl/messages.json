@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "AI-mappen"
+  },
+  "extDesc": {
+    "message": "Organiseer je AI-gesprekken in aangepaste mappen. Ondersteunt Gemini, Claude, ChatGPT, Copilot en Perplexity."
+  },
+  "appTitle": {
+    "message": "AI-mappen"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Zoek een gesprek..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Zoek een prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Mapnaam (bijv. Codeprojecten)"
+  },
+  "chatPlaceholder": {
+    "message": "Gesprekstitel"
+  },
+  "saveBtn": {
+    "message": "Opslaan"
+  },
+  "statusSaved": {
+    "message": "Gesprek opgeslagen!"
+  },
+  "noResults": {
+    "message": "Geen resultaten gevonden 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Export"
+  },
+  "importBtn": {
+    "message": "📂 Import"
+  },
+  "defaultFolder": {
+    "message": "Algemeen"
+  },
+  "defaultTitle": {
+    "message": "Nieuw gesprek"
+  },
+  "promptRename": {
+    "message": "Nieuwe gespreksnaam:"
+  },
+  "alertEmptyExport": {
+    "message": "Uw mappen en prompts zijn leeg, niets om te exporteren!"
+  },
+  "alertImportSuccess": {
+    "message": "Import geslaagd! Uw mappen en prompts zijn succesvol samengevoegd."
+  },
+  "alertImportError": {
+    "message": "Importfout. Zorg ervoor dat het een geldig JSON-bestand is dat door deze extensie is aangemaakt."
+  },
+  "btnRename": {
+    "message": "Hernoemen"
+  },
+  "btnDelete": {
+    "message": "Verwijderen"
+  },
+  "btnNewFolder": {
+    "message": "➕ Map"
+  },
+  "promptNewFolder": {
+    "message": "Nieuwe map:"
+  },
+  "btnDeleteFolder": {
+    "message": "Map verwijderen"
+  },
+  "confirmDeleteFolder": {
+    "message": "Deze map bevat gesprekken. Weet u zeker dat u hem wilt verwijderen?"
+  },
+  "btnPin": {
+    "message": "Vastzetten"
+  },
+  "btnUnpin": {
+    "message": "Losmaken"
+  },
+  "sortNewest": {
+    "message": "Nieuwste"
+  },
+  "sortOldest": {
+    "message": "Oudste"
+  },
+  "sortAlpha": {
+    "message": "A tot Z"
+  },
+  "ctxMenuSave": {
+    "message": "Opslaan in AI-mappen"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Geen mappen - Open extensie)"
+  },
+  "btnToggleAdd": {
+    "message": "Gesprek toevoegen"
+  },
+  "btnCancel": {
+    "message": "Sluiten"
+  },
+  "btnRenameFolder": {
+    "message": "Map hernoemen"
+  },
+  "promptRenameFolder": {
+    "message": "Nieuwe naam:"
+  },
+  "errorFolderExists": {
+    "message": "Er bestaat al een map met deze naam."
+  },
+  "storageCalc": {
+    "message": "Ruimte berekenen..."
+  },
+  "storageInfo": {
+    "message": "Opslag: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Gesprek opslaan"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Snelle opslag"
+  },
+  "toastSaved": {
+    "message": "✅ Opgeslagen in AI-mappen!"
+  },
+  "btnOpenGroup": {
+    "message": "Openen in tabgroep"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Wilt u echt de geselecteerde tabbladen (aantal: {count}) tegelijk openen?"
+  },
+  "errorTabGroup": {
+    "message": "Fout: Kan de tabgroep niet aanmaken. Hebt u de nieuwe machtigingen geaccepteerd?"
+  },
+  "bulkSelected": {
+    "message": "Geselecteerd: {count}"
+  },
+  "bulkMove": {
+    "message": "Verplaatsen naar..."
+  },
+  "bulkDelete": {
+    "message": "Verwijderen"
+  },
+  "confirmBulkDelete": {
+    "message": "Weet u zeker dat u de geselecteerde gesprekken (aantal: {count}) wilt verwijderen?"
+  },
+  "bulkCancel": {
+    "message": "Selectie annuleren"
+  },
+  "masterFolderName": {
+    "message": "AI-mappen (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Maakt een gesynchroniseerde map aan in uw Chrome-bladwijzers voor toegang tot uw gesprekken op uw telefoon."
+  },
+  "modalBtnCancel": {
+    "message": "Annuleren"
+  },
+  "modalBtnConfirm": {
+    "message": "Bevestigen"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tip: Begin met een emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Al opgeslagen!"
+  },
+  "folderModeTitle": {
+    "message": "Mappenmodus"
+  },
+  "promptModeTitle": {
+    "message": "Promptmodus"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt mag niet leeg zijn!"
+  },
+  "promptSaved": {
+    "message": "Prompt opgeslagen!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Er bestaat al een prompt met deze titel. Overschrijven?"
+  },
+  "promptNoSavedYet": {
+    "message": "Nog geen prompts opgeslagen."
+  },
+  "promptAddBtn": {
+    "message": "Prompt toevoegen"
+  },
+  "promptCopyTitle": {
+    "message": "Kopiëren"
+  },
+  "promptDeleteTitle": {
+    "message": "Verwijderen"
+  },
+  "newConversationBtn": {
+    "message": "Nieuw gesprek"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Prompttitel"
+  },
+  "promptTextPlaceholder": {
+    "message": "Schrijf hier uw prompt..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Prompts synchroniseren"
+  },
+  "promptRenamePrompt": {
+    "message": "Nieuwe promptnaam:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Deze prompt verwijderen?"
+  },
+  "promptInsertBtn": {
+    "message": "Invoegen in chat"
+  },
+  "promptPinTitle": {
+    "message": "Vastzetten"
+  },
+  "newConv_gemini": {
+    "message": "Nieuw Gemini-gesprek"
+  },
+  "newConv_claude": {
+    "message": "Nieuw Claude-gesprek"
+  },
+  "newConv_chatgpt": {
+    "message": "Nieuw ChatGPT-gesprek"
+  },
+  "newConv_copilot": {
+    "message": "Nieuw Copilot-gesprek"
+  },
+  "newConv_perplexity": {
+    "message": "Nieuw Perplexity-gesprek"
+  },
+  "newConv_local": {
+    "message": "Nieuw lokaal LLM-gesprek (houd ingedrukt om URL in te stellen)"
+  },
+  "setLocalUrl": {
+    "message": "Lokale LLM-URL instellen:"
+  },
+  "alertNotSupported": {
+    "message": "Gebruik deze extensie op een ondersteunde AI-site (Gemini, Claude, ChatGPT, Copilot of Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Kan het tekstinvoerveld op deze pagina niet vinden. Probeer eerst in de editor te klikken en gebruik dan de invoegknop."
+  }
+}

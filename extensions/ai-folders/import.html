@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Import - AI Folders</title>
+    <link rel="stylesheet" href="import.css">
+</head>
+<body>
+    <div class="header">
+        <h1 id="app-title"></h1>
+    </div>
+
+    <div class="import-container">
+        <button id="import-action-btn"></button>
+        <div id="status-msg"></div>
+    </div>
+
+    <input type="file" id="file-input" accept=".json" style="position: absolute; left: -9999px; opacity: 0;" tabindex="-1">
+
+    <script src="lz-string.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="import.js"></script>
+</body>
+</html>

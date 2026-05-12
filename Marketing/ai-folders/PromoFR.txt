@@ -1,0 +1,58 @@
+Vos conversations IA sont éparpillées sur cinq sites différents. Vous retapez toujours les mêmes prompts. Vos meilleures discussions disparaissent dans des historiques sans fin sur Gemini, Claude, ChatGPT, Copilot et Perplexity.
+Dossiers IA est l'extension qu'il vous faut.
+
+Dossiers IA est votre cockpit IA unifié : organisez des conversations de tous vos outils IA dans des dossiers partagés, constituez une bibliothèque de prompts réutilisables et injectez des prompts directement dans n'importe quelle IA prise en charge — sans copier-coller.
+
+✨ MODE PROMPTS
+
+📝 Bibliothèque de prompts personnelle : Passez en mode Prompt d'un simple clic sur le bouton de bascule dans l'en-tête. Sauvegardez vos meilleurs prompts avec un titre et un texte complet, retrouvez-les instantanément grâce à la recherche et au tri (plus récents, plus anciens, A-Z).
+▶ Injection en un clic : Plus besoin de copier-coller. Cliquez sur le bouton lecture (▶) de n'importe quel prompt pour l'injecter directement dans le champ de saisie de l'IA active.
+✏️ Édition en place : Cliquez sur un prompt pour le déplier et modifiez son texte directement. Les changements se sauvegardent automatiquement et le tri se met à jour en conséquence.
+🔀 Boutons Nouvelle Conversation : Lancez une nouvelle discussion sur ChatGPT, Claude, Copilot, Gemini ou Perplexity directement depuis le Mode Prompts — un bouton par service.
+📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
+☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
+
+🌟 FONCTIONNALITÉS DOSSIERS
+
+⚡ Sauvegarde Rapide (Clic Droit & Raccourcis) : Sauvegardez la conversation via un simple clic droit, ou utilisez le raccourci clavier (Ctrl+Shift+S ou Cmd+Shift+S sur Mac) pour l'envoyer instantanément dans "⚡ Sauvegardes Rapides" — avec une alerte visuelle si elle est déjà sauvegardée !
+☑️ Sélection Multiple (Bulk Actions) : Sélectionnez plusieurs conversations avec des cases à cocher pour les déplacer ou les supprimer en un seul clic.
+📑 Groupes d'onglets (Tab Groups) : Ouvrez tout un dossier en un clic dans un groupe d'onglets Chrome natif et coloré.
+😃 Émojis personnalisés : Commencez le nom de votre dossier par un émoji (ex : "💻 Code") pour remplacer l'icône par défaut.
+🖱️ Drag & Drop : Réorganisez votre espace de travail en glissant-déposant vos conversations d'un dossier à l'autre.
+📱 Synchronisation Mobile : Un interrupteur génère un dossier miroir dans vos favoris Chrome, reproduisant parfaitement votre arborescence et votre ordre de tri sur votre téléphone.
+🗜️ Compression ultra-efficace : Compresse automatiquement vos données (LZString) pour maximiser le stockage natif de Chrome et sauvegarder des centaines de conversations.
+📊 Traqueur de stockage : Une barre de progression visuelle indique votre espace cloud disponible en temps réel.
+📁 Dossiers sur mesure & Épingles : Classez vos conversations par projets, thèmes ou catégories. Épinglez (📌) vos dossiers favoris en haut de la liste.
+⇅ Tri personnalisé : Triez dossiers et conversations à la volée (Plus récents, Plus anciens, A-Z) avec répercussion directe sur la synchronisation mobile.
+🤖 Détection intelligente & Recherche : Pré-remplissage automatique du titre exact de votre conversation et barre de recherche instantanée.
+☁️ Synchronisation Cloud & Backup : Retrouvez votre organisation sur tous vos appareils et exportez vos données en JSON.
+🎨 Design Material 3 & Multilingue : Interface ultra-compacte avec boîtes de dialogue entièrement sur mesure, mode sombre automatique et prise en charge de 43 langues !
+
+
+🏠 SUPPORT LLM LOCAL
+
+Vous utilisez un modèle IA local (Ollama, LM Studio, Jan ou autre) ? Configurez Dossiers IA avec votre URL locale — prend en charge localhost et les adresses LAN (192.168.x.x, noms d'hôtes personnalisés). La sauvegarde rapide et via le menu contextuel fonctionnent aussi sur les interfaces locales.
+
+🛠️ COMMENT ÇA MARCHE ?
+
+Mode Dossiers :
+Ouvrez une conversation sur Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Sauvegarde express : Ctrl+Shift+S (ou Cmd+Shift+S sur Mac), ou clic droit > "Sauvegarder dans Dossiers IA".
+Via l'extension : Cliquez sur l'icône, choisissez un dossier et sauvegardez.
+Mobile : Cochez 📱 dans le pied de page pour synchroniser vos dossiers sur votre téléphone.
+Cochez les cases pour des actions groupées, ouvrez des dossiers en onglets (📑), glissez-déposez pour réorganiser !
+
+Mode Prompts :
+Cliquez sur 📝 dans le bouton de bascule en haut à droite de l'extension.
+Cliquez sur ➕ Ajouter un prompt, entrez un titre et votre texte, sauvegardez.
+Pour utiliser un prompt : dépliez-le et cliquez ▶ — il s'injecte directement dans l'IA active, prêt à envoyer.
+Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et reste accessible d'un regard.
+
+🔒 CONFIDENTIALITÉ & SÉCURITÉ
+Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à Gemini, Claude, ChatGPT, Copilot, Perplexity et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
+
+🤝 PROJET OPEN SOURCE
+Dossiers IA est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Consultez le code, suivez l'historique ou contribuez sur GitHub : https://github.com/dlamarre-dev/GeminiFolders
+
+📢 MISES À JOUR :
+Version 1.0 : Première publication ! Organisez vos conversations depuis Gemini, Claude, ChatGPT, Copilot et Perplexity dans des dossiers partagés. Bibliothèque de prompts complète avec injection en un clic, raccourcis de sauvegarde rapide, glisser-déposer, synchronisation mobile, actions groupées, groupes d'onglets et prise en charge de 43 langues. Support des LLM locaux avec URL configurable (localhost et adresses LAN).

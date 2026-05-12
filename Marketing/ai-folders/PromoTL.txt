@@ -1,0 +1,58 @@
+Ang iyong mga AI na pag-uusap ay nakakalat sa limang magkakaibang site. Patuloy kang nagta-type ng parehong mga prompt. Ang iyong mga pinakamahusay na chat ay nawawala sa walang katapusang mga kasaysayan sa Gemini, Claude, ChatGPT, Copilot, at Perplexity.
+Mga AI Folder ang extension na kailangan mo.
+
+Mga AI Folder ang iyong pinagsamang AI cockpit: ayusin ang mga pag-uusap mula sa lahat ng iyong mga AI tool sa mga ibinabahaging folder, bumuo ng library ng mga prompt na magagamit muli, at mag-inject ng mga prompt nang direkta sa anumang sinusuportahang AI — hindi na kailangang mag-copy-paste.
+
+✨ PROMPT MODE
+
+📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).
+▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng aktibong AI.
+✏️ Inline na Pag-edit: I-click ang isang prompt para palawakin ito at i-edit ang teksto nang direkta. Awtomatikong nase-save ang mga pagbabago pagkatapos ng maikling pause at ina-update ang sort order.
+🔀 Mga Pindutan ng Bagong Pag-uusap: Magsimula ng bagong pag-uusap sa ChatGPT, Claude, Copilot, Gemini, o Perplexity nang direkta mula sa Prompt Mode.
+☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
+📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
+
+🌟 MGA FEATURE NG FOLDER
+
+⚡ Mabilis na Pag-save (Right-Click at Shortcuts): I-save ang kasalukuyang pag-uusap sa pamamagitan ng simpleng right-click, o gamitin ang keyboard shortcut (Ctrl+Shift+S o Cmd+Shift+S sa Mac) para agad itong ipadala sa "⚡ Mabilis na Pag-save" — na may visual na alerto kung nai-save na ito!
+☑️ Multi-Select (Bulk Actions): Pumili ng maraming pag-uusap gamit ang mga checkbox para ilipat o tanggalin ang mga ito sa isang click.
+📑 Tab Groups Integration: Buksan ang isang buong folder sa isang click bilang isang native, color-coded na Chrome Tab Group.
+😃 Custom Folder Emoji: Simulan ang pangalan ng iyong folder ng emoji (hal. "💻 Code") para palitan ang default na folder icon.
+🖱️ Drag at Drop: Muling ayusin ang iyong workspace sa pamamagitan ng pag-drag ng mga pag-uusap sa pagitan ng mga folder.
+📱 Mobile Sync: Ang isang toggle ay gumagawa ng mirror folder sa iyong mga Chrome bookmark, na perpektong nire-reproduce ang iyong folder structure at custom sort order sa iyong telepono.
+🗜️ Ultra-Efficient Compression: Awtomatikong kino-compress ang iyong data (LZString) para ma-maximize ang native storage ng Chrome at ma-save ang daan-daang pag-uusap.
+📊 Storage Tracker: Ang isang eleganteng visual progress bar ay nagpapakita ng iyong available na cloud storage sa real time.
+📁 Custom Folder at Pins: Ayusin ang iyong mga pag-uusap ayon sa mga proyekto, tema, o kategorya. I-pin (📌) ang iyong mga paboritong folder sa itaas.
+⇅ Custom Sorting: Mag-sort ng mga folder at pag-uusap on the fly (Pinakabago, Pinakamatanda, A-Z) na agad na makikita sa iyong mobile sync.
+🤖 Smart Detection at Search: Awtomatikong pre-fill ng eksaktong pamagat ng iyong pag-uusap at real-time na search bar.
+☁️ Cloud Sync at Backup: I-access ang iyong organisasyon sa lahat ng iyong device at i-export ang iyong data bilang JSON.
+🎨 Material 3 Design at Multilingual: Ultra-compact na interface na may ganap na custom na modal dialog, awtomatikong dark mode, at suporta para sa 43 na wika!
+
+
+🏠 SUPORTA SA LOKAL NA LLM
+
+Nagpapatakbo ng lokal na AI model (Ollama, LM Studio, Jan, o iba pa)? I-configure ang Mga AI Folder gamit ang iyong lokal na URL — sinusuportahan ang localhost at mga LAN address (192.168.x.x, mga custom na hostname). Gumagana rin ang mabilis na pag-save at pag-save sa pamamagitan ng context menu sa mga lokal na UI.
+
+🛠️ PAANO ITO GUMAGANA?
+
+Folder Mode:
+Magbukas ng pag-uusap sa Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Mabilis na pag-save: Ctrl+Shift+S (o Cmd+Shift+S sa Mac), o right-click > "I-save sa Mga AI Folder".
+Sa pamamagitan ng extension: I-click ang icon, pumili ng folder, at i-save.
+Mobile: Lagyan ng tsek ang 📱 sa footer para i-sync ang iyong mga folder sa iyong telepono.
+Gumamit ng mga checkbox para sa bulk actions, buksan ang mga folder bilang Tab Groups (📑), mag-drag at drop para muling ayusin!
+
+Prompt Mode:
+I-click ang 📝 sa toggle button sa kanang itaas ng extension.
+I-click ang ➕ Magdagdag ng Prompt, maglagay ng pamagat at teksto, at i-save.
+Para gamitin ang isang prompt: palawakin ito at i-click ang ▶ — direktang ini-inject sa aktibong AI, handa nang ipadala.
+Para i-pin ang isang prompt: i-click ang 📍 — lilipat ito sa tuktok ng listahan at mananatiling madaling ma-access.
+
+🔒 PRIVACY AT SEGURIDAD
+Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa Gemini, Claude, ChatGPT, Copilot, Perplexity at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.
+
+🤝 OPEN SOURCE NA PROYEKTO
+Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal. Ang transparency at paggalang sa iyong privacy ang aming mga pangunahing priyoridad. Ikaw ba ay isang developer o basta lang curious? I-browse ang code, sundan ang changelog, o mag-contribute sa GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 MGA UPDATE:
+Bersyon 1.0: Unang inilabas! Ayusin ang mga pag-uusap mula sa Gemini, Claude, ChatGPT, Copilot, at Perplexity sa mga ibinabahaging folder. Kumpletong prompt library na may one-click injection, mga shortcut ng mabilis na pag-save, drag at drop, mobile sync, bulk actions, tab groups, at suporta para sa 43 na wika.

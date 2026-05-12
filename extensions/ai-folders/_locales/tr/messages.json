@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "YZ Klasörleri"
+  },
+  "extDesc": {
+    "message": "AI sohbetlerinizi özel klasörlerde düzenleyin. Gemini, Claude, ChatGPT, Copilot ve Perplexity'yi destekler."
+  },
+  "appTitle": {
+    "message": "YZ Klasörleri"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Konuşma ara..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 İstem ara..."
+  },
+  "folderPlaceholder": {
+    "message": "Klasör adı (ör. Kod Projeleri)"
+  },
+  "chatPlaceholder": {
+    "message": "Konuşma başlığı"
+  },
+  "saveBtn": {
+    "message": "Kaydet"
+  },
+  "statusSaved": {
+    "message": "Konuşma kaydedildi!"
+  },
+  "noResults": {
+    "message": "Sonuç bulunamadı 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Dışa Aktar"
+  },
+  "importBtn": {
+    "message": "📂 İçe Aktar"
+  },
+  "defaultFolder": {
+    "message": "Genel"
+  },
+  "defaultTitle": {
+    "message": "Yeni konuşma"
+  },
+  "promptRename": {
+    "message": "Yeni konuşma adı:"
+  },
+  "alertEmptyExport": {
+    "message": "Klasörleriniz ve istemleriniz boş, dışa aktarılacak bir şey yok!"
+  },
+  "alertImportSuccess": {
+    "message": "İçe aktarma başarılı! Klasörleriniz ve istemleriniz başarıyla birleştirildi."
+  },
+  "alertImportError": {
+    "message": "İçe aktarma hatası. Bu uzantı tarafından oluşturulmuş geçerli bir JSON dosyası olduğundan emin olun."
+  },
+  "btnRename": {
+    "message": "Yeniden Adlandır"
+  },
+  "btnDelete": {
+    "message": "Sil"
+  },
+  "btnNewFolder": {
+    "message": "➕ Klasör"
+  },
+  "promptNewFolder": {
+    "message": "Yeni klasör:"
+  },
+  "btnDeleteFolder": {
+    "message": "Klasörü Sil"
+  },
+  "confirmDeleteFolder": {
+    "message": "Bu klasör konuşmalar içeriyor. Silmek istediğinizden emin misiniz?"
+  },
+  "btnPin": {
+    "message": "Sabitle"
+  },
+  "btnUnpin": {
+    "message": "Ayır"
+  },
+  "sortNewest": {
+    "message": "En Yeni"
+  },
+  "sortOldest": {
+    "message": "En Eski"
+  },
+  "sortAlpha": {
+    "message": "A'dan Z'ye"
+  },
+  "ctxMenuSave": {
+    "message": "YZ Klasörleri'ne Kaydet"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Klasör yok - Uzantıyı aç)"
+  },
+  "btnToggleAdd": {
+    "message": "Konuşma ekle"
+  },
+  "btnCancel": {
+    "message": "Kapat"
+  },
+  "btnRenameFolder": {
+    "message": "Klasörü Yeniden Adlandır"
+  },
+  "promptRenameFolder": {
+    "message": "Yeni ad:"
+  },
+  "errorFolderExists": {
+    "message": "Bu isimde bir klasör zaten mevcut."
+  },
+  "storageCalc": {
+    "message": "Alan hesaplanıyor..."
+  },
+  "storageInfo": {
+    "message": "Depolama: {used} KB / {max} KB (%{pct})"
+  },
+  "cmdQuickSave": {
+    "message": "Konuşmayı kaydet"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Hızlı Kayıtlar"
+  },
+  "toastSaved": {
+    "message": "✅ YZ Klasörleri'ne kaydedildi!"
+  },
+  "btnOpenGroup": {
+    "message": "Sekme Grubunda Aç"
+  },
+  "confirmOpenManyTabs": {
+    "message": "{count} sekmeyi aynı anda açmak istediğinizden emin misiniz?"
+  },
+  "errorTabGroup": {
+    "message": "Hata: Sekme grubu oluşturulamadı. Yeni izinleri kabul ettiniz mi?"
+  },
+  "bulkSelected": {
+    "message": "{count} seçildi"
+  },
+  "bulkMove": {
+    "message": "Taşı..."
+  },
+  "bulkDelete": {
+    "message": "Sil"
+  },
+  "confirmBulkDelete": {
+    "message": "Bu {count} konuşmayı silmek istediğinizden emin misiniz?"
+  },
+  "bulkCancel": {
+    "message": "Seçimi iptal et"
+  },
+  "masterFolderName": {
+    "message": "YZ Klasörleri (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Telefonunuzdan konuşmalarınıza erişmek için Chrome yer imlerinizde senkronize edilmiş bir klasör oluşturur."
+  },
+  "modalBtnCancel": {
+    "message": "İptal"
+  },
+  "modalBtnConfirm": {
+    "message": "Onayla"
+  },
+  "emojiTipPlaceholder": {
+    "message": "İpucu: Emoji ile başla (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Zaten kaydedildi!"
+  },
+  "folderModeTitle": {
+    "message": "Klasör Modu"
+  },
+  "promptModeTitle": {
+    "message": "İstem Modu"
+  },
+  "promptCannotBeEmpty": {
+    "message": "İstem boş olamaz!"
+  },
+  "promptSaved": {
+    "message": "İstem kaydedildi!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Bu başlıkta bir istem zaten var. Üzerine yazılsın mı?"
+  },
+  "promptNoSavedYet": {
+    "message": "Henüz kaydedilmiş istem yok."
+  },
+  "promptAddBtn": {
+    "message": "İstem Ekle"
+  },
+  "promptCopyTitle": {
+    "message": "Kopyala"
+  },
+  "promptDeleteTitle": {
+    "message": "Sil"
+  },
+  "newConversationBtn": {
+    "message": "Yeni Konuşma"
+  },
+  "promptTitlePlaceholder": {
+    "message": "İstem Başlığı"
+  },
+  "promptTextPlaceholder": {
+    "message": "İsteminizi buraya yazın..."
+  },
+  "syncPromptsTooltip": {
+    "message": "İstemleri senkronize et"
+  },
+  "promptRenamePrompt": {
+    "message": "Yeni istem adı:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Bu istemi silmek istiyor musunuz?"
+  },
+  "promptInsertBtn": {
+    "message": "Sohbete ekle"
+  },
+  "promptPinTitle": {
+    "message": "Sabitle"
+  },
+  "newConv_gemini": {
+    "message": "Yeni Gemini sohbeti"
+  },
+  "newConv_claude": {
+    "message": "Yeni Claude sohbeti"
+  },
+  "newConv_chatgpt": {
+    "message": "Yeni ChatGPT sohbeti"
+  },
+  "newConv_copilot": {
+    "message": "Yeni Copilot sohbeti"
+  },
+  "newConv_perplexity": {
+    "message": "Yeni Perplexity sohbeti"
+  },
+  "newConv_local": {
+    "message": "Yeni yerel LLM sohbeti (URL yapılandırmak için basılı tutun)"
+  },
+  "setLocalUrl": {
+    "message": "Yerel LLM URL'sini ayarla:"
+  },
+  "alertNotSupported": {
+    "message": "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot veya Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Bu sayfada metin giriş alanı bulunamadı. Önce düzenleyiciye tıklamayı deneyin, ardından ekle düğmesini kullanın."
+  }
+}

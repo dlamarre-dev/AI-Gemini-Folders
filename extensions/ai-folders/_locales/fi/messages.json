@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "AI-kansiot"
+  },
+  "extDesc": {
+    "message": "Järjestä tekoälykeskustelusi mukautettuihin kansioihin. Tukee Geminiä, Claudea, ChatGPT:tä, Copilotia ja Perplexityä."
+  },
+  "appTitle": {
+    "message": "AI-kansiot"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Hae keskustelua..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Hae promptia..."
+  },
+  "folderPlaceholder": {
+    "message": "Kansion nimi (esim. Koodiprojektit)"
+  },
+  "chatPlaceholder": {
+    "message": "Keskustelun otsikko"
+  },
+  "saveBtn": {
+    "message": "Tallenna"
+  },
+  "statusSaved": {
+    "message": "Keskustelu tallennettu!"
+  },
+  "noResults": {
+    "message": "Ei tuloksia 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Vie"
+  },
+  "importBtn": {
+    "message": "📂 Tuo"
+  },
+  "defaultFolder": {
+    "message": "Yleinen"
+  },
+  "defaultTitle": {
+    "message": "Uusi keskustelu"
+  },
+  "promptRename": {
+    "message": "Uusi keskustelun nimi:"
+  },
+  "alertEmptyExport": {
+    "message": "Kansiosi ja promptisi ovat tyhjiä, ei mitään vietävää!"
+  },
+  "alertImportSuccess": {
+    "message": "Tuonti onnistui! Kansiosi ja promptisi on yhdistetty."
+  },
+  "alertImportError": {
+    "message": "Tuontivirhe. Varmista, että tiedosto on tämän laajennuksen tuottama JSON-tiedosto."
+  },
+  "btnRename": {
+    "message": "Nimeä uudelleen"
+  },
+  "btnDelete": {
+    "message": "Poista"
+  },
+  "btnNewFolder": {
+    "message": "➕ Kansio"
+  },
+  "promptNewFolder": {
+    "message": "Uusi kansio:"
+  },
+  "btnDeleteFolder": {
+    "message": "Poista kansio"
+  },
+  "confirmDeleteFolder": {
+    "message": "Tässä kansiossa on keskusteluja. Haluatko varmasti poistaa sen?"
+  },
+  "btnPin": {
+    "message": "Kiinnitä"
+  },
+  "btnUnpin": {
+    "message": "Irrota"
+  },
+  "sortNewest": {
+    "message": "Uusimmat"
+  },
+  "sortOldest": {
+    "message": "Vanhimmat"
+  },
+  "sortAlpha": {
+    "message": "A–Ö"
+  },
+  "ctxMenuSave": {
+    "message": "Tallenna AI-kansioihin"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Ei kansioita – Avaa laajennus)"
+  },
+  "btnToggleAdd": {
+    "message": "Lisää keskustelu"
+  },
+  "btnCancel": {
+    "message": "Sulje"
+  },
+  "btnRenameFolder": {
+    "message": "Nimeä kansio uudelleen"
+  },
+  "promptRenameFolder": {
+    "message": "Uusi nimi:"
+  },
+  "errorFolderExists": {
+    "message": "Samanniminen kansio on jo olemassa."
+  },
+  "storageCalc": {
+    "message": "Lasketaan tilaa..."
+  },
+  "storageInfo": {
+    "message": "Tallennus: {used} Kt / {max} Kt ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Tallenna keskustelu"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Pikatallennus"
+  },
+  "toastSaved": {
+    "message": "✅ Tallennettu AI-kansioihin!"
+  },
+  "btnOpenGroup": {
+    "message": "Avaa välilehtiryhmässä"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Haluatko todella avata valitut välilehdet (määrä: {count}) samanaikaisesti?"
+  },
+  "errorTabGroup": {
+    "message": "Virhe: Välilehtiryhmää ei voi luoda. Oletko hyväksynyt uudet käyttöoikeudet?"
+  },
+  "bulkSelected": {
+    "message": "Valittu: {count}"
+  },
+  "bulkMove": {
+    "message": "Siirrä kohteeseen..."
+  },
+  "bulkDelete": {
+    "message": "Poista"
+  },
+  "confirmBulkDelete": {
+    "message": "Haluatko varmasti poistaa valitut keskustelut (määrä: {count})?"
+  },
+  "bulkCancel": {
+    "message": "Peruuta valinta"
+  },
+  "masterFolderName": {
+    "message": "AI-kansiot (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Luo synkronoitu kansio Chrome-kirjanmerkkeihin, jotta voit käyttää keskusteluja puhelimellasi."
+  },
+  "modalBtnCancel": {
+    "message": "Peruuta"
+  },
+  "modalBtnConfirm": {
+    "message": "Vahvista"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Vihje: Aloita emojilla (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Jo tallennettu!"
+  },
+  "folderModeTitle": {
+    "message": "Kansiotila"
+  },
+  "promptModeTitle": {
+    "message": "Prompttila"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt ei voi olla tyhjä!"
+  },
+  "promptSaved": {
+    "message": "Prompt tallennettu!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Samanniminen prompt on jo olemassa. Korvaa?"
+  },
+  "promptNoSavedYet": {
+    "message": "Ei vielä tallennettuja prompteja."
+  },
+  "promptAddBtn": {
+    "message": "Lisää prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Kopioi"
+  },
+  "promptDeleteTitle": {
+    "message": "Poista"
+  },
+  "newConversationBtn": {
+    "message": "Uusi keskustelu"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Promptin otsikko"
+  },
+  "promptTextPlaceholder": {
+    "message": "Kirjoita promptisi tähän..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Synkronoi promptit"
+  },
+  "promptRenamePrompt": {
+    "message": "Uusi promptin nimi:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Poistetaanko tämä prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Lisää chattiin"
+  },
+  "promptPinTitle": {
+    "message": "Kiinnitä"
+  },
+  "newConv_gemini": {
+    "message": "Uusi Gemini-keskustelu"
+  },
+  "newConv_claude": {
+    "message": "Uusi Claude-keskustelu"
+  },
+  "newConv_chatgpt": {
+    "message": "Uusi ChatGPT-keskustelu"
+  },
+  "newConv_copilot": {
+    "message": "Uusi Copilot-keskustelu"
+  },
+  "newConv_perplexity": {
+    "message": "Uusi Perplexity-keskustelu"
+  },
+  "newConv_local": {
+    "message": "Uusi paikallinen LLM-keskustelu (pidä painettuna URL:n määrittämiseksi)"
+  },
+  "setLocalUrl": {
+    "message": "Aseta paikallisen LLM:n URL:"
+  },
+  "alertNotSupported": {
+    "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot tai Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."
+  }
+}
