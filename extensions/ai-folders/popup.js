@@ -361,7 +361,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                   editor.value = promptText;
                 }
                 editor.dispatchEvent(new Event('input', { bubbles: true }));
-                editor.dispatchEvent(new Event('change', { bubbles: true }));
                 return true;
               }
 
