@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemukan kotak teks di halaman ini. Coba klik editor terlebih dahulu, lalu gunakan tombol sisipkan."
+  },
+  "reviewTitle": {
+    "message": "⭐ Apakah Anda menyukai Folder AI?"
+  },
+  "reviewMessage": {
+    "message": "Dukungan Anda sangat membantu proyek open source ini!"
+  },
+  "reviewRateBtn": {
+    "message": "Beri 5 bintang"
+  },
+  "reviewLaterBtn": {
+    "message": "Mungkin nanti"
+  },
+  "reviewNoBtn": {
+    "message": "Tidak, terima kasih"
   }
 }

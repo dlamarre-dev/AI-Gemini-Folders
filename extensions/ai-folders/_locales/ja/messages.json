@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "このページでテキスト入力欄が見つかりませんでした。先にエディタをクリックしてから、挿入ボタンをご使用ください。"
+  },
+  "reviewTitle": {
+    "message": "⭐ AI フォルダ をお楽しみですか？"
+  },
+  "reviewMessage": {
+    "message": "皆様のサポートがこのオープンソースプロジェクトの大きな力になります！"
+  },
+  "reviewRateBtn": {
+    "message": "5つ星で評価"
+  },
+  "reviewLaterBtn": {
+    "message": "後で"
+  },
+  "reviewNoBtn": {
+    "message": "いいえ、結構です"
   }
 }

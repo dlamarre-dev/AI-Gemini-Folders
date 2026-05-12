@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Não foi possível encontrar o campo de texto nesta página. Tente clicar no editor primeiro e use o botão de inserção."
+  },
+  "reviewTitle": {
+    "message": "⭐ Você está gostando do Pastas IA?"
+  },
+  "reviewMessage": {
+    "message": "Seu apoio ajuda imensamente este projeto de código aberto!"
+  },
+  "reviewRateBtn": {
+    "message": "Avaliar 5 estrelas"
+  },
+  "reviewLaterBtn": {
+    "message": "Mais tarde"
+  },
+  "reviewNoBtn": {
+    "message": "Não, obrigado"
   }
 }

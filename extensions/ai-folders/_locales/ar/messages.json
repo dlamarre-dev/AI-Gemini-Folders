@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."
+  },
+  "reviewTitle": {
+    "message": "⭐ هل تستمتع بمجلدات AI؟"
+  },
+  "reviewMessage": {
+    "message": "دعمك يساعد هذا المشروع مفتوح المصدر كثيراً!"
+  },
+  "reviewRateBtn": {
+    "message": "تقييم 5 نجوم"
+  },
+  "reviewLaterBtn": {
+    "message": "ربما لاحقاً"
+  },
+  "reviewNoBtn": {
+    "message": "لا، شكراً"
   }
 }

@@ -235,5 +235,20 @@
   },
   "alertEditorNotFound": {
     "message": "Couldn't find the text input on this page. Try clicking into the editor first, then use the insert button."
+  },
+  "reviewTitle": {
+    "message": "⭐ Are you enjoying AI Folders?"
+  },
+  "reviewMessage": {
+    "message": "Your support helps this open-source project immensely!"
+  },
+  "reviewRateBtn": {
+    "message": "Rate 5 stars"
+  },
+  "reviewLaterBtn": {
+    "message": "Maybe later"
+  },
+  "reviewNoBtn": {
+    "message": "No thanks"
   }
 }

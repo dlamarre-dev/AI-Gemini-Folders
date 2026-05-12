@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "No se encontró el campo de texto en esta página. Intenta hacer clic en el editor primero y luego usa el botón de inserción."
+  },
+  "reviewTitle": {
+    "message": "⭐ ¿Te gusta Carpetas IA?"
+  },
+  "reviewMessage": {
+    "message": "¡Tu apoyo ayuda enormemente a este proyecto de código abierto!"
+  },
+  "reviewRateBtn": {
+    "message": "Calificar 5 estrellas"
+  },
+  "reviewLaterBtn": {
+    "message": "Más tarde"
+  },
+  "reviewNoBtn": {
+    "message": "No, gracias"
   }
 }

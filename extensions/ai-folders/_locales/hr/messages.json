@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Pokušajte kliknuti u uređivač, a zatim koristite gumb za umetanje."
+  },
+  "reviewTitle": {
+    "message": "⭐ Sviđa ti se UI mape?"
+  },
+  "reviewMessage": {
+    "message": "Tvoja podrška ogromno pomaže ovom projektu otvorenog koda!"
+  },
+  "reviewRateBtn": {
+    "message": "Ocijeni s 5 zvjezdica"
+  },
+  "reviewLaterBtn": {
+    "message": "Možda kasnije"
+  },
+  "reviewNoBtn": {
+    "message": "Ne, hvala"
   }
 }

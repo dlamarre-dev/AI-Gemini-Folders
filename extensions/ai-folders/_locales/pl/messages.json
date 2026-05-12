@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Nie można znaleźć pola tekstowego na tej stronie. Spróbuj najpierw kliknąć w edytor, a następnie użyj przycisku wstawiania."
+  },
+  "reviewTitle": {
+    "message": "⭐ Podobają Ci się Foldery AI?"
+  },
+  "reviewMessage": {
+    "message": "Twoje wsparcie ogromnie pomaga temu projektowi open source!"
+  },
+  "reviewRateBtn": {
+    "message": "Oceń na 5 gwiazdek"
+  },
+  "reviewLaterBtn": {
+    "message": "Później"
+  },
+  "reviewNoBtn": {
+    "message": "Nie, dziękuję"
   }
 }

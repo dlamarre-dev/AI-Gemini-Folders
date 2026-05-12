@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Hindi mahanap ang text input sa pahinang ito. Subukang mag-click sa editor muna, pagkatapos ay gamitin ang insert button."
+  },
+  "reviewTitle": {
+    "message": "⭐ Nag-eenjoy ka ba sa Mga AI Folder?"
+  },
+  "reviewMessage": {
+    "message": "Ang iyong suporta ay nakakatulong nang malaki sa open-source na proyektong ito!"
+  },
+  "reviewRateBtn": {
+    "message": "Mag-rate ng 5 bituin"
+  },
+  "reviewLaterBtn": {
+    "message": "Marahil mamaya"
+  },
+  "reviewNoBtn": {
+    "message": "Hindi, salamat"
   }
 }

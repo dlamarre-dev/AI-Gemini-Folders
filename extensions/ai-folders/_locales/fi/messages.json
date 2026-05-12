@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."
+  },
+  "reviewTitle": {
+    "message": "⭐ Pidätkö Gemini-kansioista?"
+  },
+  "reviewMessage": {
+    "message": "Tukesi auttaa tätä avoimen lähdekoodin projektia valtavasti!"
+  },
+  "reviewRateBtn": {
+    "message": "Anna 5 tähteä"
+  },
+  "reviewLaterBtn": {
+    "message": "Ehkä myöhemmin"
+  },
+  "reviewNoBtn": {
+    "message": "Ei kiitos"
   }
 }

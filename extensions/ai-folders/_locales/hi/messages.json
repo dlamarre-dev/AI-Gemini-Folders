@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "इस पृष्ठ पर टेक्स्ट इनपुट नहीं मिला। पहले एडिटर में क्लिक करें, फिर इन्सर्ट बटन का उपयोग करें।"
+  },
+  "reviewTitle": {
+    "message": "⭐ क्या आपको AI फ़ोल्डर पसंद है?"
+  },
+  "reviewMessage": {
+    "message": "आपका समर्थन इस ओपन-सोर्स प्रोजेक्ट को बहुत मदद करता है!"
+  },
+  "reviewRateBtn": {
+    "message": "5 स्टार रेट करें"
+  },
+  "reviewLaterBtn": {
+    "message": "बाद में"
+  },
+  "reviewNoBtn": {
+    "message": "नहीं, धन्यवाद"
   }
 }

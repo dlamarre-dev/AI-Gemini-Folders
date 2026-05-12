@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Nu s-a găsit câmpul de text pe această pagină. Încercați să faceți clic mai întâi în editor, apoi folosiți butonul de inserare."
+  },
+  "reviewTitle": {
+    "message": "⭐ Vă plac Folderele Gemini?"
+  },
+  "reviewMessage": {
+    "message": "Sprijinul dvs. ajută enorm acest proiect open source!"
+  },
+  "reviewRateBtn": {
+    "message": "Evaluează cu 5 stele"
+  },
+  "reviewLaterBtn": {
+    "message": "Mai târziu"
+  },
+  "reviewNoBtn": {
+    "message": "Nu, mulțumesc"
   }
 }

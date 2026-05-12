@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Không tìm thấy ô nhập văn bản trên trang này. Hãy thử nhấp vào trình soạn thảo trước rồi sử dụng nút chèn."
+  },
+  "reviewTitle": {
+    "message": "⭐ Bạn có thích Thư mục AI không?"
+  },
+  "reviewMessage": {
+    "message": "Sự ủng hộ của bạn giúp ích rất nhiều cho dự án mã nguồn mở này!"
+  },
+  "reviewRateBtn": {
+    "message": "Đánh giá 5 sao"
+  },
+  "reviewLaterBtn": {
+    "message": "Có thể sau"
+  },
+  "reviewNoBtn": {
+    "message": "Không, cảm ơn"
   }
 }

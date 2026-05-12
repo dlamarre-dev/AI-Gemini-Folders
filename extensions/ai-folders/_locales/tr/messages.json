@@ -241,5 +241,20 @@
   },
   "alertEditorNotFound": {
     "message": "Bu sayfada metin giriş alanı bulunamadı. Önce düzenleyiciye tıklamayı deneyin, ardından ekle düğmesini kullanın."
+  },
+  "reviewTitle": {
+    "message": "⭐ YZ Klasörleri'ni beğeniyor musunuz?"
+  },
+  "reviewMessage": {
+    "message": "Desteğiniz bu açık kaynaklı projeye çok yardımcı oluyor!"
+  },
+  "reviewRateBtn": {
+    "message": "5 yıldız ver"
+  },
+  "reviewLaterBtn": {
+    "message": "Belki daha sonra"
+  },
+  "reviewNoBtn": {
+    "message": "Hayır, teşekkürler"
   }
 }
