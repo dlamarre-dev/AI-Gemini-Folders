@@ -1,0 +1,58 @@
+Vaše AI konverzácie sú rozptýlené po piatich rôznych stránkach. Neustále prepisujete tie isté výzvy. Vaše najlepšie chaty miznú v nekonečných históriách na Gemini, Claude, ChatGPT, Copilot a Perplexity.
+AI priečinky je rozšírenie, ktoré potrebujete.
+
+AI priečinky je váš zjednotený AI kokpit: organizujte konverzácie zo všetkých vašich AI nástrojov do zdieľaných priečinkov, vytvorte knižnicu opakovane použiteľných promptov a vkladajte prompty priamo do ľubovoľnej podporovanej AI — bez kopírovania a vkladania.
+
+✨ REŽIM VÝZIEV
+
+📝 Osobná knižnica výziev: Prepnite do režimu výziev jedným kliknutím na prepínač v hlavičke. Ukladajte najlepšie výzvy s názvom a úplným textom a okamžite ich nájdite vďaka vyhľadávaniu a triedeniu (najnovšie, najstaršie, A-Z).
+▶ Vloženie jedným kliknutím: Koniec kopírovaním a vkladaním. Kliknite na tlačidlo prehrávania (▶) pri uloženej výzve a vloží sa priamo do vstupného poľa aktívnej AI.
+✏️ Úprava na mieste: Kliknite na výzvu, rozbaľte ju a priamo upravte text. Zmeny sa automaticky uložia po krátkom okamihu a poradie triedenia sa zodpovedajúco aktualizuje.
+🔀 Tlačidlá novej konverzácie: Spustite novú konverzáciu na ChatGPT, Claude, Copilot, Gemini alebo Perplexity priamo z režimu promptov — jedno tlačidlo na službu.
+☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
+📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
+
+🌟 FUNKCIE PRIEČINKOV
+
+⚡ Rýchle uloženie (Pravý klik a Skratky): Uložte konverzáciu jednoduchým pravým kliknutím alebo klávesovými skratkami (Ctrl+Shift+S alebo Cmd+Shift+S na Mac) a okamžite ju odošlite do „⚡ Rýchlych uložení" — s vizuálnym upozornením, ak je už uložená!
+☑️ Viacnásobný výber (Hromadné akcie): Pomocou zaškrtávacích políčok vyberte viaceré konverzácie a presuňte alebo odstráňte ich jedným kliknutím.
+📑 Integrácia skupín kariet: Otvorte celý priečinok jedným kliknutím ako natívnu farebnú skupinu kariet Chrome.
+😃 Vlastné emoji: Začnite názov priečinka emojom (napr. „💻 Kód") a predvolená ikona sa nahradí.
+🖱️ Drag & Drop: Preorganizujte pracovný priestor presunutím konverzácií medzi priečinkami.
+📱 Mobilná synchronizácia: Prepínač vytvorí zrkadlový priečinok v záložkách Chrome, ktorý dokonale reprodukuje štruktúru priečinkov a poradie triedenia na telefóne.
+🗜️ Ultraefektívna kompresia: Automaticky komprimuje dáta (LZString), čím maximalizuje natívne úložisko Chrome a umožňuje uložiť stovky konverzácií.
+📊 Sledovač úložiska: Vizuálna lišta priebehu zobrazuje dostupné cloudové úložisko v reálnom čase.
+📁 Vlastné priečinky a Pripnutie: Triediť konverzácie podľa projektov, tém alebo kategórií. Pripnite (📌) obľúbené priečinky na vrch.
+⇅ Vlastné triedenie: Triedte priečinky a konverzácie okamžite (Najnovšie, Najstaršie, A-Z) s okamžitým odrazom v mobilnej synchronizácii.
+🤖 Inteligentná detekcia a Vyhľadávanie: Automatické vyplnenie presného názvu konverzácie a panel vyhľadávania v reálnom čase.
+☁️ Cloudová synchronizácia a Záloha: Prístup k organizácii na všetkých zariadeniach a export dát v JSON.
+🎨 Dizajn Material 3 a Viacjazyčnosť: Ultrakompaktné rozhranie s plne vlastnými dialógovými oknami, automatickým tmavým režimom a podporou 43 jazykov!
+
+
+🏠 PODPORA LOKÁLNEHO LLM
+
+Používate lokálny model AI (Ollama, LM Studio, Jan alebo iný)? Nakonfigurujte AI priečinky s miestnou URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastné názvy hostiteľov). Rýchle ukladanie a ukladanie cez kontextové menu fungujú aj na lokálnych rozhraniach.
+
+🛠️ AKO TO FUNGUJE?
+
+Režim priečinkov:
+Otvorte konverzáciu na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Rýchle uloženie: Ctrl+Shift+S (alebo Cmd+Shift+S na Mac), alebo pravý klik > „Uložiť do Priečinkov Gemini".
+Cez rozšírenie: Kliknite na ikonu, vyberte priečinok, uložte.
+Mobilné: Aktivujte 📱 v päte stránky a synchronizujte priečinky s telefónom.
+Používajte zaškrtávacie políčka pre hromadné akcie, otvárajte priečinky ako skupiny kariet (📑), presuňte pre reorganizáciu!
+
+Režim výziev:
+Kliknite na 📝 na prepínači v pravom hornom rohu rozšírenia.
+Kliknite na ➕ Pridať výzvu, zadajte názov a text, uložte.
+Ak chcete použiť výzvu: rozbaľte ju a kliknite na ▶ — vloží sa priamo do aktívnej AI, pripravená na odoslanie.
+Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vždy po ruke.
+
+🔒 SÚKROMIE A BEZPEČNOSŤ
+Navrhnuté so súkromím v centre. Vyžaduje prístup iba k Gemini, Claude, ChatGPT, Copilot, Perplexity a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.
+
+🤝 OPEN SOURCE PROJEKT
+AI priečinky sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 AKTUALIZÁCIE:
+Verzia 1.0: Prvé vydanie! Usporiadajte konverzácie z Gemini, Claude, ChatGPT, Copilot a Perplexity do zdieľaných priečinkov. Kompletná knižnica promptov s vkladaním jedným kliknutím, skratky rýchleho ukladania, drag & drop, mobilná synchronizácia, hromadné akcie, skupiny kariet a podpora 43 jazykov. Podpora lokálnych LLM s konfigurovateľnou URL (localhost a LAN adresy).

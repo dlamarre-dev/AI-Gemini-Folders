@@ -1,0 +1,58 @@
+Tus conversaciones de IA están dispersas en cinco sitios distintos. Sigues reescribiendo los mismos prompts. Tus mejores chats desaparecen en historiales interminables de Gemini, Claude, ChatGPT, Copilot y Perplexity.
+Carpetas IA es la extensión que necesitas.
+
+Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus herramientas de IA en carpetas compartidas, crea una biblioteca de prompts reutilizables e inyecta prompts directamente en cualquier IA compatible — sin necesidad de copiar y pegar.
+
+✨ MODO PROMPTS
+
+📝 Biblioteca personal de prompts: Cambia al modo Prompt con un solo clic en el botón de alternancia del encabezado. Guarda tus mejores prompts con un título y texto completo, y encuéntralos al instante con búsqueda y ordenación (más recientes, más antiguos, A-Z).
+▶ Inyección con un clic: Se acabó copiar y pegar. Haz clic en el botón de reproducción (▶) de cualquier prompt guardado para inyectarlo directamente en el campo de texto de la IA activa.
+✏️ Edición en línea: Haz clic en un prompt para desplegarlo y editar el texto directamente. Los cambios se guardan automáticamente tras una breve pausa y el orden se actualiza en consecuencia.
+🔀 Botones de Nueva Conversación: Inicia una nueva conversación en ChatGPT, Claude, Copilot, Gemini o Perplexity directamente desde el Modo Prompt — un botón por servicio.
+☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
+📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
+
+🌟 FUNCIONES DE CARPETAS
+
+⚡ Guardado Rápido (Clic derecho y Atajos): Guarda la conversación con un simple clic derecho, o usa el atajo de teclado (Ctrl+Shift+S o Cmd+Shift+S en Mac) para enviarla al instante a "⚡ Guardados Rápidos" — ¡con alerta visual si ya está guardada!
+☑️ Selección Múltiple (Acciones en lote): Selecciona varias conversaciones con casillas de verificación para moverlas o eliminarlas de un solo clic.
+📑 Integración con Grupos de Pestañas: Abre toda una carpeta de un clic en un Grupo de Pestañas nativo y con código de colores de Chrome.
+😃 Emojis personalizados: Comienza el nombre de tu carpeta con un emoji (p. ej., "💻 Código") para reemplazar el icono predeterminado.
+🖱️ Arrastrar y Soltar: Reorganiza tu espacio de trabajo arrastrando conversaciones entre carpetas.
+📱 Sincronización Móvil: Un interruptor genera una carpeta espejo en tus marcadores de Chrome, reproduciendo perfectamente tu estructura y orden de clasificación en el teléfono.
+🗜️ Compresión ultraeficiente: Comprime automáticamente tus datos (LZString) para maximizar el almacenamiento nativo de Chrome y guardar cientos de conversaciones.
+📊 Monitor de almacenamiento: Una barra de progreso visual muestra tu almacenamiento en la nube disponible en tiempo real.
+📁 Carpetas personalizadas y Anclajes: Clasifica tus conversaciones por proyectos, temas o categorías. Ancla (📌) tus carpetas favoritas en la parte superior.
+⇅ Ordenación personalizada: Ordena carpetas y conversaciones al vuelo (Más recientes, Más antiguos, A-Z) con cambios reflejados al instante en la sincronización móvil.
+🤖 Detección inteligente y Búsqueda: Relleno automático del título exacto de tu conversación y barra de búsqueda en tiempo real.
+☁️ Sincronización en la nube y Copia de seguridad: Accede a tu organización desde todos tus dispositivos y exporta tus datos en JSON.
+🎨 Diseño Material 3 y Multilingüe: Interfaz ultracompacta con diálogos totalmente personalizados, modo oscuro automático y soporte para 43 idiomas.
+
+
+🏠 SOPORTE DE LLM LOCAL
+
+¿Usas un modelo de IA local (Ollama, LM Studio, Jan u otro)? Configura Carpetas IA con tu URL local — compatible con localhost y direcciones LAN (192.168.x.x, nombres de host personalizados). El guardado rápido y el guardado por menú contextual también funcionan en interfaces locales.
+
+🛠️ ¿CÓMO FUNCIONA?
+
+Modo Carpetas:
+Abre una conversación en Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Guardado rápido: Ctrl+Shift+S (o Cmd+Shift+S en Mac), o clic derecho > "Guardar en Carpetas de Gemini".
+Desde la extensión: Haz clic en el icono, elige una carpeta y guarda.
+Móvil: Activa 📱 en el pie de página para sincronizar tus carpetas con el teléfono.
+¡Usa las casillas para acciones en lote, abre carpetas como Grupos de Pestañas (📑) y arrastra para reorganizar!
+
+Modo Prompts:
+Haz clic en 📝 en el botón de alternancia en la esquina superior derecha de la extensión.
+Haz clic en ➕ Añadir Prompt, escribe un título y tu texto, y guarda.
+Para usar un prompt: despliégalo y haz clic en ▶ — se inyecta directamente en la IA activa, listo para enviar.
+Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siempre está a mano.
+
+🔒 PRIVACIDAD Y SEGURIDAD
+Diseñada con la privacidad en el centro. Solo solicita acceso a Gemini, Claude, ChatGPT, Copilot, Perplexity y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
+
+🤝 PROYECTO OPEN SOURCE
+Carpetas de Gemini es un proyecto open source desarrollado con pasión. La transparencia y el respeto a tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente tienes curiosidad? Consulta el código, sigue el historial de cambios o contribuye en GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 ACTUALIZACIONES:
+Versión 1.0: ¡Publicación inicial! Organiza conversaciones de Gemini, Claude, ChatGPT, Copilot y Perplexity en carpetas compartidas. Biblioteca de prompts completa con inyección en un clic, atajos de guardado rápido, arrastrar y soltar, sincronización móvil, acciones en masa, grupos de pestañas y soporte para 43 idiomas. Compatibilidad con LLM locales con URL configurable (localhost y direcciones LAN).

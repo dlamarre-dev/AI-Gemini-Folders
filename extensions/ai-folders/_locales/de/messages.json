@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "KI-Ordner"
+  },
+  "extDesc": {
+    "message": "Organisieren Sie Ihre KI-Gespräche in benutzerdefinierten Ordnern. Unterstützt Gemini, Claude, ChatGPT, Copilot und Perplexity."
+  },
+  "appTitle": {
+    "message": "KI-Ordner"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Unterhaltung suchen..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Prompt suchen..."
+  },
+  "folderPlaceholder": {
+    "message": "Ordnername (z.B. Code-Projekte)"
+  },
+  "chatPlaceholder": {
+    "message": "Titel der Unterhaltung"
+  },
+  "saveBtn": {
+    "message": "Speichern"
+  },
+  "statusSaved": {
+    "message": "Unterhaltung gespeichert!"
+  },
+  "noResults": {
+    "message": "Keine Ergebnisse gefunden 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Export"
+  },
+  "importBtn": {
+    "message": "📂 Import"
+  },
+  "defaultFolder": {
+    "message": "Allgemein"
+  },
+  "defaultTitle": {
+    "message": "Neue Unterhaltung"
+  },
+  "promptRename": {
+    "message": "Neuer Name der Unterhaltung:"
+  },
+  "alertEmptyExport": {
+    "message": "Deine Ordner sind leer, es gibt nichts zu exportieren!"
+  },
+  "alertImportSuccess": {
+    "message": "Import erfolgreich! Deine Daten wurden erfolgreich zusammengeführt."
+  },
+  "alertImportError": {
+    "message": "Fehler beim Importieren. Stelle sicher, dass es sich um eine gültige JSON-Datei dieser Erweiterung handelt."
+  },
+  "btnRename": {
+    "message": "Umbenennen"
+  },
+  "btnDelete": {
+    "message": "Löschen"
+  },
+  "btnNewFolder": {
+    "message": "➕ Ordner"
+  },
+  "promptNewFolder": {
+    "message": "Neuer Ordner:"
+  },
+  "btnDeleteFolder": {
+    "message": "Ordner löschen"
+  },
+  "confirmDeleteFolder": {
+    "message": "Dieser Ordner enthält Unterhaltungen. Möchtest du ihn wirklich löschen?"
+  },
+  "btnPin": {
+    "message": "Anheften"
+  },
+  "btnUnpin": {
+    "message": "Lösen"
+  },
+  "sortNewest": {
+    "message": "Neueste"
+  },
+  "sortOldest": {
+    "message": "Älteste"
+  },
+  "sortAlpha": {
+    "message": "Von A bis Z"
+  },
+  "ctxMenuSave": {
+    "message": "In KI-Ordner speichern"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Kein Ordner - Erweiterung öffnen)"
+  },
+  "btnToggleAdd": {
+    "message": "Unterhaltung hinzufügen"
+  },
+  "btnCancel": {
+    "message": "Schließen"
+  },
+  "btnRenameFolder": {
+    "message": "Ordner umbenennen"
+  },
+  "promptRenameFolder": {
+    "message": "Neuer Name:"
+  },
+  "errorFolderExists": {
+    "message": "Ein Ordner mit diesem Namen existiert bereits."
+  },
+  "storageCalc": {
+    "message": "Speicher wird berechnet..."
+  },
+  "storageInfo": {
+    "message": "Speicher: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Unterhaltung speichern"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Schnellspeicherungen"
+  },
+  "toastSaved": {
+    "message": "✅ In KI-Ordner gespeichert!"
+  },
+  "btnOpenGroup": {
+    "message": "In Tab-Gruppe öffnen"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Möchten Sie wirklich die ausgewählten Tabs (Anzahl: {count}) gleichzeitig öffnen?"
+  },
+  "errorTabGroup": {
+    "message": "Fehler: Tab-Gruppe konnte nicht erstellt werden. Haben Sie die neuen Berechtigungen akzeptiert?"
+  },
+  "bulkSelected": {
+    "message": "{count} ausgewählt"
+  },
+  "bulkMove": {
+    "message": "Verschieben nach..."
+  },
+  "bulkDelete": {
+    "message": "Löschen"
+  },
+  "confirmBulkDelete": {
+    "message": "Möchten Sie die ausgewählten Unterhaltungen (Anzahl: {count}) wirklich löschen?"
+  },
+  "bulkCancel": {
+    "message": "Auswahl aufheben"
+  },
+  "masterFolderName": {
+    "message": "KI-Ordner (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Erstellt einen synchronisierten Ordner in Ihren Chrome-Lesezeichen, um auf Ihrem Telefon auf Ihre Unterhaltungen zuzugreifen."
+  },
+  "modalBtnCancel": {
+    "message": "Abbrechen"
+  },
+  "modalBtnConfirm": {
+    "message": "Bestätigen"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tipp: Emoji zuerst (Win+. / ⌘⌃Leertaste)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Bereits gespeichert!"
+  },
+  "folderModeTitle": {
+    "message": "Ordnermodus"
+  },
+  "promptModeTitle": {
+    "message": "Prompt-Modus"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt darf nicht leer sein!"
+  },
+  "promptSaved": {
+    "message": "Prompt gespeichert!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Ein Prompt mit diesem Titel existiert bereits. Überschreiben?"
+  },
+  "promptNoSavedYet": {
+    "message": "Noch keine Prompts gespeichert."
+  },
+  "promptAddBtn": {
+    "message": "Prompt hinzufügen"
+  },
+  "promptCopyTitle": {
+    "message": "Kopieren"
+  },
+  "promptDeleteTitle": {
+    "message": "Löschen"
+  },
+  "newConversationBtn": {
+    "message": "Neue Unterhaltung"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Prompt-Titel"
+  },
+  "promptTextPlaceholder": {
+    "message": "Prompt hier eingeben..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Prompts synchronisieren"
+  },
+  "promptRenamePrompt": {
+    "message": "Neuer Prompt-Name:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Diesen Prompt löschen?"
+  },
+  "promptInsertBtn": {
+    "message": "In Chat einfügen"
+  },
+  "promptPinTitle": {
+    "message": "Anheften"
+  },
+  "newConv_gemini": {
+    "message": "Neues Gemini-Gespräch"
+  },
+  "newConv_claude": {
+    "message": "Neues Claude-Gespräch"
+  },
+  "newConv_chatgpt": {
+    "message": "Neues ChatGPT-Gespräch"
+  },
+  "newConv_copilot": {
+    "message": "Neues Copilot-Gespräch"
+  },
+  "newConv_perplexity": {
+    "message": "Neues Perplexity-Gespräch"
+  },
+  "newConv_local": {
+    "message": "Neues lokales LLM-Gespräch (gedrückt halten zum Konfigurieren)"
+  },
+  "setLocalUrl": {
+    "message": "Lokale LLM-URL festlegen:"
+  },
+  "alertNotSupported": {
+    "message": "Bitte verwenden Sie diese Erweiterung auf einer unterstützten KI-Website (Gemini, Claude, ChatGPT, Copilot oder Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Das Texteingabefeld auf dieser Seite konnte nicht gefunden werden. Klicken Sie zuerst in den Editor und verwenden Sie dann die Einfügen-Schaltfläche."
+  }
+}

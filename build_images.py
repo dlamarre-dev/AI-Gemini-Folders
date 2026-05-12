@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Build marketing screenshots for Gemini Folders.
+Build marketing screenshots for Gemini Folders or AI Folders.
 
 Usage:
-  python build_images.py                     # all locales, 3 composed 1280×800 each
-  python build_images.py --locale fr         # single locale
-  python build_images.py --locale fr de ja   # multiple locales
-  python build_images.py --mode raw          # raw popup PNGs (no composition)
-  python build_images.py --build             # rebuild extension first
-  python build_images.py --build --locale en # rebuild + single locale
+  python build_images.py                                  # GF, all locales
+  python build_images.py --extension ai-folders           # AF, all locales
+  python build_images.py --locale fr                      # GF, single locale
+  python build_images.py --extension ai-folders --locale fr de ja
+  python build_images.py --mode raw                       # raw popup PNGs
+  python build_images.py --build                          # rebuild first
+  python build_images.py --extension ai-folders --build --locale en
 
 Output per locale (mode=both):
-  Promo_1_<locale>.png  — Folder + Prompt side by side (overview)
-  Promo_2_<locale>.png  — Folder mode, centered close-up
-  Promo_3_<locale>.png  — Prompt mode, centered close-up
-  Promo_4_<locale>.png  — Mobile sync: popup + phone bookmarks mockup
-  Promo_5_<locale>.png  — Context menu: right-click → folder submenu
+  Marketing/<extension>/screenshots/Promo_1_<locale>.png  — side-by-side overview
+  Marketing/<extension>/screenshots/Promo_2_<locale>.png  — folder mode close-up
+  Marketing/<extension>/screenshots/Promo_3_<locale>.png  — prompt mode close-up
+  Marketing/<extension>/screenshots/Promo_4_<locale>.png  — mobile sync mockup
+  Marketing/<extension>/screenshots/Promo_5_<locale>.png  — context menu
 """
 
 import argparse
@@ -30,9 +31,10 @@ import sys
 if hasattr(sys.stdout, 'buffer'):
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
-ROOT           = os.path.dirname(os.path.abspath(__file__))
+ROOT            = os.path.dirname(os.path.abspath(__file__))
 SCREENSHOTS_DIR = os.path.join(ROOT, 'screenshots')
-OUT_DIR        = os.path.join(ROOT, 'Marketing', 'screenshots')
+
+VALID_EXTENSIONS = ['gemini-folders', 'ai-folders']
 
 VALID_LOCALES = [
     'en', 'fr', 'de', 'es', 'it',
@@ -67,8 +69,9 @@ def npm_available():
 
 # ─── Steps ────────────────────────────────────────────────────────────────────
 
-def step_build_extension():
-    run(['python', 'build.py'], label='🔨 Building extension...')
+def step_build_extension(extension):
+    run(['python', '-X', 'utf8', 'build.py', '--extension', extension],
+        label=f'🔨 Building {extension}...')
 
 def step_install_deps():
     nm = os.path.join(SCREENSHOTS_DIR, 'node_modules')
@@ -80,27 +83,33 @@ def step_install_deps():
         sys.exit(1)
     run(['npm', 'install'], cwd=SCREENSHOTS_DIR, label='📦 Installing screenshot dependencies...')
 
-def step_screenshots(mode, locales):
+def step_screenshots(extension, mode, locales, out_dir):
     if not node_available():
         print('\n❌ node not found. Install Node.js to continue.')
         sys.exit(1)
-    os.makedirs(OUT_DIR, exist_ok=True)
-    cmd = ['node', 'take-screenshots.js', '--mode', mode]
+    os.makedirs(out_dir, exist_ok=True)
+    cmd = ['node', 'take-screenshots.js', '--extension', extension, '--mode', mode]
     if locales:
-        # Run once per locale if multiple provided
         for locale in locales:
             run(cmd + ['--locale', locale], cwd=SCREENSHOTS_DIR,
-                label=f'📸 Capturing {locale}...')
+                label=f'📸 [{extension}] Capturing {locale}...')
     else:
-        run(cmd, cwd=SCREENSHOTS_DIR, label='📸 Capturing all locales...')
+        run(cmd, cwd=SCREENSHOTS_DIR,
+            label=f'📸 [{extension}] Capturing all locales...')
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Build Gemini Folders marketing screenshots',
+        description='Build marketing screenshots for Gemini Folders or AI Folders',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=f'Valid locales: {", ".join(VALID_LOCALES)}',
+    )
+    parser.add_argument(
+        '--extension', '-e',
+        choices=VALID_EXTENSIONS,
+        default='gemini-folders',
+        help='Which extension to screenshot (default: gemini-folders)',
     )
     parser.add_argument(
         '--locale', nargs='+', metavar='LOCALE',
@@ -112,7 +121,7 @@ def main():
     )
     parser.add_argument(
         '--build', action='store_true',
-        help='Rebuild the extension (python build.py) before taking screenshots.',
+        help='Rebuild the extension before taking screenshots.',
     )
     args = parser.parse_args()
 
@@ -124,17 +133,27 @@ def main():
             print(f'   Valid: {", ".join(VALID_LOCALES)}')
             sys.exit(1)
 
-    print('╔══════════════════════════════════════╗')
-    print('║  Gemini Folders — build_images.py    ║')
-    print('╚══════════════════════════════════════╝')
+    out_dir = os.path.join(ROOT, 'Marketing', args.extension, 'screenshots')
+
+    # Verify the built extension exists
+    ext_dist = os.path.join(ROOT, 'dist', args.extension, 'chrome')
+    if not os.path.isdir(ext_dist):
+        print(f'❌ Built extension not found: {ext_dist}')
+        print(f'   Run:  python -X utf8 build.py --extension {args.extension}')
+        if not args.build:
+            sys.exit(1)
+
+    print(f'╔══════════════════════════════════════════╗')
+    print(f'║  build_images.py  [{args.extension}]')
+    print(f'╚══════════════════════════════════════════╝')
 
     if args.build:
-        step_build_extension()
+        step_build_extension(args.extension)
 
     step_install_deps()
-    step_screenshots(args.mode, args.locale)
+    step_screenshots(args.extension, args.mode, args.locale, out_dir)
 
-    print(f'\n✅ Done!  Output → {OUT_DIR}')
+    print(f'\n✅ Done!  Output → {out_dir}')
 
 if __name__ == '__main__':
     main()

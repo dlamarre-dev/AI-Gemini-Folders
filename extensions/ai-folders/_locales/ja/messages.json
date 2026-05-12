@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "AI フォルダ"
+  },
+  "extDesc": {
+    "message": "AIとの会話をカスタムフォルダに整理できます。Gemini、Claude、ChatGPT、Copilot、Perplexity に対応。"
+  },
+  "appTitle": {
+    "message": "AI フォルダ"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 会話を検索..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 プロンプトを検索..."
+  },
+  "folderPlaceholder": {
+    "message": "フォルダ名 (例: プロジェクト)"
+  },
+  "chatPlaceholder": {
+    "message": "会話のタイトル"
+  },
+  "saveBtn": {
+    "message": "保存"
+  },
+  "statusSaved": {
+    "message": "会話を保存しました！"
+  },
+  "noResults": {
+    "message": "結果が見つかりません 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 エクスポート"
+  },
+  "importBtn": {
+    "message": "📂 インポート"
+  },
+  "defaultFolder": {
+    "message": "一般"
+  },
+  "defaultTitle": {
+    "message": "新しい会話"
+  },
+  "promptRename": {
+    "message": "新しい会話の名前："
+  },
+  "alertEmptyExport": {
+    "message": "フォルダが空です。エクスポートするものがありません！"
+  },
+  "alertImportSuccess": {
+    "message": "インポート成功！データが正常に統合されました。"
+  },
+  "alertImportError": {
+    "message": "インポートエラー。この拡張機能の有効な JSON ファイルであることを確認してください。"
+  },
+  "btnRename": {
+    "message": "名前を変更"
+  },
+  "btnDelete": {
+    "message": "削除"
+  },
+  "btnNewFolder": {
+    "message": "➕ フォルダ"
+  },
+  "promptNewFolder": {
+    "message": "新しいフォルダ："
+  },
+  "btnDeleteFolder": {
+    "message": "フォルダを削除"
+  },
+  "confirmDeleteFolder": {
+    "message": "このフォルダには会話が含まれています。本当に削除しますか？"
+  },
+  "btnPin": {
+    "message": "ピン留め"
+  },
+  "btnUnpin": {
+    "message": "ピン留め解除"
+  },
+  "sortNewest": {
+    "message": "新しい順"
+  },
+  "sortOldest": {
+    "message": "古い順"
+  },
+  "sortAlpha": {
+    "message": "名前順"
+  },
+  "ctxMenuSave": {
+    "message": "AI フォルダに保存"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(フォルダなし - 拡張機能を開く)"
+  },
+  "btnToggleAdd": {
+    "message": "会話を追加"
+  },
+  "btnCancel": {
+    "message": "閉じる"
+  },
+  "btnRenameFolder": {
+    "message": "フォルダ名を変更"
+  },
+  "promptRenameFolder": {
+    "message": "新しい名前："
+  },
+  "errorFolderExists": {
+    "message": "この名前のフォルダはすでに存在します。"
+  },
+  "storageCalc": {
+    "message": "容量を計算中..."
+  },
+  "storageInfo": {
+    "message": "ストレージ：{used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "会話を保存"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ クイック保存"
+  },
+  "toastSaved": {
+    "message": "✅ AI フォルダに保存しました！"
+  },
+  "btnOpenGroup": {
+    "message": "タブグループで開く"
+  },
+  "confirmOpenManyTabs": {
+    "message": "本当に {count} 個のタブを同時に開きますか？"
+  },
+  "errorTabGroup": {
+    "message": "エラー：タブグループを作成できません。新しい権限を承認しましたか？"
+  },
+  "bulkSelected": {
+    "message": "{count} 件選択中"
+  },
+  "bulkMove": {
+    "message": "移動先..."
+  },
+  "bulkDelete": {
+    "message": "削除"
+  },
+  "confirmBulkDelete": {
+    "message": "選択した {count} 件の会話を本当に削除しますか？"
+  },
+  "bulkCancel": {
+    "message": "選択をキャンセル"
+  },
+  "masterFolderName": {
+    "message": "AI フォルダ (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Chromeのブックマークに同期されたフォルダを作成し、スマートフォンから会話にアクセスできるようにします。"
+  },
+  "modalBtnCancel": {
+    "message": "キャンセル"
+  },
+  "modalBtnConfirm": {
+    "message": "確認"
+  },
+  "emojiTipPlaceholder": {
+    "message": "ヒント：絵文字で開始（Win+. / ⌘⌃スペース）"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ 保存済みです！"
+  },
+  "folderModeTitle": {
+    "message": "フォルダモード"
+  },
+  "promptModeTitle": {
+    "message": "プロンプトモード"
+  },
+  "promptCannotBeEmpty": {
+    "message": "プロンプトは空にできません！"
+  },
+  "promptSaved": {
+    "message": "プロンプトを保存しました！"
+  },
+  "promptDuplicateWarning": {
+    "message": "このタイトルのプロンプトがすでに存在します。上書きしますか？"
+  },
+  "promptNoSavedYet": {
+    "message": "まだプロンプトが保存されていません。"
+  },
+  "promptAddBtn": {
+    "message": "プロンプトを追加"
+  },
+  "promptCopyTitle": {
+    "message": "コピー"
+  },
+  "promptDeleteTitle": {
+    "message": "削除"
+  },
+  "newConversationBtn": {
+    "message": "新しい会話"
+  },
+  "promptTitlePlaceholder": {
+    "message": "プロンプトのタイトル"
+  },
+  "promptTextPlaceholder": {
+    "message": "プロンプトをここに入力..."
+  },
+  "syncPromptsTooltip": {
+    "message": "プロンプトを同期"
+  },
+  "promptRenamePrompt": {
+    "message": "プロンプトの新しい名前："
+  },
+  "confirmDeletePrompt": {
+    "message": "このプロンプトを削除しますか？"
+  },
+  "promptInsertBtn": {
+    "message": "チャットに挿入"
+  },
+  "promptPinTitle": {
+    "message": "固定"
+  },
+  "newConv_gemini": {
+    "message": "新しい Gemini の会話"
+  },
+  "newConv_claude": {
+    "message": "新しい Claude の会話"
+  },
+  "newConv_chatgpt": {
+    "message": "新しい ChatGPT の会話"
+  },
+  "newConv_copilot": {
+    "message": "新しい Copilot の会話"
+  },
+  "newConv_perplexity": {
+    "message": "新しい Perplexity の会話"
+  },
+  "newConv_local": {
+    "message": "新しいローカル LLM の会話（長押しで URL を設定）"
+  },
+  "setLocalUrl": {
+    "message": "ローカル LLM の URL を設定:"
+  },
+  "alertNotSupported": {
+    "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、または Perplexity）でご使用ください。"
+  },
+  "alertEditorNotFound": {
+    "message": "このページでテキスト入力欄が見つかりませんでした。先にエディタをクリックしてから、挿入ボタンをご使用ください。"
+  }
+}

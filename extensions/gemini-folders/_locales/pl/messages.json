@@ -1,0 +1,248 @@
+{
+  "extName": {
+    "message": "Foldery Gemini"
+  },
+  "extDesc": {
+    "message": "Uporządkuj swoje rozmowy Gemini w niestandardowych folderach."
+  },
+  "appTitle": {
+    "message": "Foldery Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Szukaj konwersacji..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Szukaj promptu..."
+  },
+  "folderPlaceholder": {
+    "message": "Nazwa folderu (np. Projekty Kod)"
+  },
+  "chatPlaceholder": {
+    "message": "Tytuł konwersacji"
+  },
+  "saveBtn": {
+    "message": "Zapisz"
+  },
+  "statusSaved": {
+    "message": "Konwersacja zapisana!"
+  },
+  "noResults": {
+    "message": "Brak wyników 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Eksport"
+  },
+  "importBtn": {
+    "message": "📂 Import"
+  },
+  "alertNotGemini": {
+    "message": "Użyj tego rozszerzenia na stronie Gemini."
+  },
+  "defaultFolder": {
+    "message": "Ogólne"
+  },
+  "defaultTitle": {
+    "message": "Nowa konwersacja"
+  },
+  "promptRename": {
+    "message": "Nowa nazwa konwersacji:"
+  },
+  "alertEmptyExport": {
+    "message": "Twoje foldery są puste, nic do wyeksportowania!"
+  },
+  "alertImportSuccess": {
+    "message": "Import zakończony sukcesem! Twoje dane zostały pomyślnie scalone."
+  },
+  "alertImportError": {
+    "message": "Błąd importu. Upewnij się, że jest to prawidłowy plik JSON wygenerowany przez to rozszerzenie."
+  },
+  "btnRename": {
+    "message": "Zmień nazwę"
+  },
+  "btnDelete": {
+    "message": "Usuń"
+  },
+  "btnNewFolder": {
+    "message": "➕ Folder"
+  },
+  "promptNewFolder": {
+    "message": "Nowy folder:"
+  },
+  "btnDeleteFolder": {
+    "message": "Usuń folder"
+  },
+  "confirmDeleteFolder": {
+    "message": "Ten folder zawiera konwersacje. Czy na pewno chcesz go usunąć?"
+  },
+  "btnPin": {
+    "message": "Przypnij"
+  },
+  "btnUnpin": {
+    "message": "Odepnij"
+  },
+  "sortNewest": {
+    "message": "Najnowsze"
+  },
+  "sortOldest": {
+    "message": "Najstarsze"
+  },
+  "sortAlpha": {
+    "message": "Od A do Z"
+  },
+  "ctxMenuSave": {
+    "message": "Zapisz w Folderach Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Brak folderów - Otwórz rozszerzenie)"
+  },
+  "btnToggleAdd": {
+    "message": "Dodaj konwersację"
+  },
+  "btnCancel": {
+    "message": "Zamknij"
+  },
+  "btnRenameFolder": {
+    "message": "Zmień nazwę folderu"
+  },
+  "promptRenameFolder": {
+    "message": "Nowa nazwa:"
+  },
+  "errorFolderExists": {
+    "message": "Folder o tej nazwie już istnieje."
+  },
+  "storageCalc": {
+    "message": "Obliczanie miejsca..."
+  },
+  "storageInfo": {
+    "message": "Pamięć: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Zapisz konwersację"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Szybki zapis"
+  },
+  "toastSaved": {
+    "message": "✅ Zapisano w Folderach Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Otwórz w grupie kart"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Czy na pewno chcesz otworzyć wybrane karty (liczba: {count}) jednocześnie?"
+  },
+  "errorTabGroup": {
+    "message": "Błąd: Nie można utworzyć grupy kart. Czy zaakceptowałeś nowe uprawnienia?"
+  },
+  "bulkSelected": {
+    "message": "Wybrano: {count}"
+  },
+  "bulkMove": {
+    "message": "Przenieś do..."
+  },
+  "bulkDelete": {
+    "message": "Usuń"
+  },
+  "confirmBulkDelete": {
+    "message": "Czy na pewno chcesz usunąć wybrane konwersacje (liczba: {count})?"
+  },
+  "bulkCancel": {
+    "message": "Anuluj wybór"
+  },
+  "masterFolderName": {
+    "message": "Foldery Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Tworzy zsynchronizowany folder w zakładkach Chrome, aby uzyskać dostęp do konwersacji na telefonie."
+  },
+  "reviewTitle": {
+    "message": "⭐ Podobają Ci się Foldery Gemini?"
+  },
+  "reviewMessage": {
+    "message": "Twoje wsparcie ogromnie pomaga temu projektowi open source!"
+  },
+  "reviewRateBtn": {
+    "message": "Oceń na 5 gwiazdek"
+  },
+  "reviewLaterBtn": {
+    "message": "Później"
+  },
+  "reviewNoBtn": {
+    "message": "Nie, dziękuję"
+  },
+  "modalBtnCancel": {
+    "message": "Anuluj"
+  },
+  "modalBtnConfirm": {
+    "message": "Potwierdź"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Wskazówka: Zacznij od emoji (Win+. / ⌘⌃Spacja)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Już zapisane!"
+  },
+  "folderModeTitle": {
+    "message": "Tryb folderów"
+  },
+  "promptModeTitle": {
+    "message": "Tryb promptów"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt nie może być pusty!"
+  },
+  "promptSaved": {
+    "message": "Prompt zapisany!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Prompt o tym tytule już istnieje. Zastąpić?"
+  },
+  "promptNoSavedYet": {
+    "message": "Nie zapisano jeszcze żadnych promptów."
+  },
+  "promptAddBtn": {
+    "message": "Dodaj prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Kopiuj"
+  },
+  "promptDeleteTitle": {
+    "message": "Usuń"
+  },
+  "promptSetGemLink": {
+    "message": "Ustaw niestandardowy link Gem:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Nieprawidłowy link. Musi zaczynać się od https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Nowa konwersacja"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Tytuł promptu"
+  },
+  "promptTextPlaceholder": {
+    "message": "Wpisz swój prompt tutaj..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Włącz niestandardowy Gem"
+  },
+  "setGemBtnTooltip": {
+    "message": "Ustaw niestandardowy link Gem"
+  },
+  "syncPromptsTooltip": {
+    "message": "Synchronizuj prompty"
+  },
+  "promptRenamePrompt": {
+    "message": "Nowa nazwa promptu:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Usunąć ten prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Wstaw do Gemini"
+  },
+  "promptPinTitle": {
+    "message": "Przypnij"
+  }
+}

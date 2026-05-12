@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "MI mappák"
+  },
+  "extDesc": {
+    "message": "Rendszerezze MI-beszélgetéseit egyéni mappákban. Támogatja a Gemini-t, Claude-ot, ChatGPT-t, Copilot-ot és Perplexity-t."
+  },
+  "appTitle": {
+    "message": "MI mappák"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Beszélgetés keresése..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Prompt keresése..."
+  },
+  "folderPlaceholder": {
+    "message": "Mappa neve (pl. Kódprojektek)"
+  },
+  "chatPlaceholder": {
+    "message": "Beszélgetés címe"
+  },
+  "saveBtn": {
+    "message": "Mentés"
+  },
+  "statusSaved": {
+    "message": "Beszélgetés mentve!"
+  },
+  "noResults": {
+    "message": "Nincs találat 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Export"
+  },
+  "importBtn": {
+    "message": "📂 Import"
+  },
+  "defaultFolder": {
+    "message": "Általános"
+  },
+  "defaultTitle": {
+    "message": "Új beszélgetés"
+  },
+  "promptRename": {
+    "message": "Új beszélgetésnév:"
+  },
+  "alertEmptyExport": {
+    "message": "A mappák és promptok üresek, nincs mit exportálni!"
+  },
+  "alertImportSuccess": {
+    "message": "Importálás sikeres! A mappák és promptok sikeresen egyesítve."
+  },
+  "alertImportError": {
+    "message": "Importálási hiba. Győződjön meg róla, hogy érvényes JSON-fájlról van szó, amelyet ez a bővítmény generált."
+  },
+  "btnRename": {
+    "message": "Átnevezés"
+  },
+  "btnDelete": {
+    "message": "Törlés"
+  },
+  "btnNewFolder": {
+    "message": "➕ Mappa"
+  },
+  "promptNewFolder": {
+    "message": "Új mappa:"
+  },
+  "btnDeleteFolder": {
+    "message": "Mappa törlése"
+  },
+  "confirmDeleteFolder": {
+    "message": "Ez a mappa beszélgetéseket tartalmaz. Biztosan törölni szeretné?"
+  },
+  "btnPin": {
+    "message": "Rögzítés"
+  },
+  "btnUnpin": {
+    "message": "Feloldás"
+  },
+  "sortNewest": {
+    "message": "Legújabb"
+  },
+  "sortOldest": {
+    "message": "Legrégebbi"
+  },
+  "sortAlpha": {
+    "message": "A-tól Z-ig"
+  },
+  "ctxMenuSave": {
+    "message": "Mentés a MI-mappákba"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Nincs mappa – Bővítmény megnyitása)"
+  },
+  "btnToggleAdd": {
+    "message": "Beszélgetés hozzáadása"
+  },
+  "btnCancel": {
+    "message": "Bezárás"
+  },
+  "btnRenameFolder": {
+    "message": "Mappa átnevezése"
+  },
+  "promptRenameFolder": {
+    "message": "Új név:"
+  },
+  "errorFolderExists": {
+    "message": "Már létezik ilyen nevű mappa."
+  },
+  "storageCalc": {
+    "message": "Tárhely kiszámítása..."
+  },
+  "storageInfo": {
+    "message": "Tárhely: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Beszélgetés mentése"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Gyorsmentések"
+  },
+  "toastSaved": {
+    "message": "✅ Mentve a MI-mappákba!"
+  },
+  "btnOpenGroup": {
+    "message": "Megnyitás lapcsoportban"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Valóban meg szeretne nyitni {count} lapot egyszerre?"
+  },
+  "errorTabGroup": {
+    "message": "Hiba: Nem sikerült létrehozni a lapcsoportot. Elfogadta az új engedélyeket?"
+  },
+  "bulkSelected": {
+    "message": "{count} kijelölve"
+  },
+  "bulkMove": {
+    "message": "Áthelyezés ide..."
+  },
+  "bulkDelete": {
+    "message": "Törlés"
+  },
+  "confirmBulkDelete": {
+    "message": "Biztosan törölni szeretné a kijelölt {count} beszélgetést?"
+  },
+  "bulkCancel": {
+    "message": "Kijelölés megszüntetése"
+  },
+  "masterFolderName": {
+    "message": "MI mappák (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Szinkronizált mappát hoz létre a Chrome-könyvjelzőkben, hogy telefonján is elérhesse a beszélgetéseit."
+  },
+  "modalBtnCancel": {
+    "message": "Mégse"
+  },
+  "modalBtnConfirm": {
+    "message": "Megerősítés"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tipp: Kezdje emojival (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Már mentve!"
+  },
+  "folderModeTitle": {
+    "message": "Mappaüzemmód"
+  },
+  "promptModeTitle": {
+    "message": "Promptüzemmód"
+  },
+  "promptCannotBeEmpty": {
+    "message": "A prompt nem lehet üres!"
+  },
+  "promptSaved": {
+    "message": "Prompt mentve!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Már létezik ilyen nevű prompt. Felülírja?"
+  },
+  "promptNoSavedYet": {
+    "message": "Még nincs mentett prompt."
+  },
+  "promptAddBtn": {
+    "message": "Prompt hozzáadása"
+  },
+  "promptCopyTitle": {
+    "message": "Másolás"
+  },
+  "promptDeleteTitle": {
+    "message": "Törlés"
+  },
+  "newConversationBtn": {
+    "message": "Új beszélgetés"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Prompt neve"
+  },
+  "promptTextPlaceholder": {
+    "message": "Írja ide a promptot..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Promptok szinkronizálása"
+  },
+  "promptRenamePrompt": {
+    "message": "Új promptnév:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Törli ezt a promptot?"
+  },
+  "promptInsertBtn": {
+    "message": "Beillesztés a chatbe"
+  },
+  "promptPinTitle": {
+    "message": "Rögzítés"
+  },
+  "newConv_gemini": {
+    "message": "Új Gemini-beszélgetés"
+  },
+  "newConv_claude": {
+    "message": "Új Claude-beszélgetés"
+  },
+  "newConv_chatgpt": {
+    "message": "Új ChatGPT-beszélgetés"
+  },
+  "newConv_copilot": {
+    "message": "Új Copilot-beszélgetés"
+  },
+  "newConv_perplexity": {
+    "message": "Új Perplexity-beszélgetés"
+  },
+  "newConv_local": {
+    "message": "Új helyi LLM-beszélgetés (tartsa nyomva az URL konfigurálásához)"
+  },
+  "setLocalUrl": {
+    "message": "Helyi LLM URL beállítása:"
+  },
+  "alertNotSupported": {
+    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot vagy Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "extName": {
+    "message": "תיקיות AI"
+  },
+  "extDesc": {
+    "message": "ארגן את שיחות הבינה המלאכותית שלך בתיקיות מותאמות אישית. תומך ב-Gemini, Claude, ChatGPT, Copilot ו-Perplexity."
+  },
+  "appTitle": {
+    "message": "תיקיות AI"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 חיפוש שיחה..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 חיפוש פרומפט..."
+  },
+  "folderPlaceholder": {
+    "message": "שם תיקייה (למשל, פרויקטי קוד)"
+  },
+  "chatPlaceholder": {
+    "message": "כותרת שיחה"
+  },
+  "saveBtn": {
+    "message": "שמור"
+  },
+  "statusSaved": {
+    "message": "השיחה נשמרה!"
+  },
+  "noResults": {
+    "message": "לא נמצאו תוצאות 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 ייצוא"
+  },
+  "importBtn": {
+    "message": "📂 ייבוא"
+  },
+  "defaultFolder": {
+    "message": "כללי"
+  },
+  "defaultTitle": {
+    "message": "שיחה חדשה"
+  },
+  "promptRename": {
+    "message": "שם שיחה חדש:"
+  },
+  "alertEmptyExport": {
+    "message": "התיקיות והפרומפטים שלך ריקים, אין מה לייצא!"
+  },
+  "alertImportSuccess": {
+    "message": "הייבוא הצליח! התיקיות והפרומפטים שלך מוזגו."
+  },
+  "alertImportError": {
+    "message": "שגיאת ייבוא. ודא שזה קובץ JSON תקין שנוצר על ידי תוסף זה."
+  },
+  "btnRename": {
+    "message": "שנה שם"
+  },
+  "btnDelete": {
+    "message": "מחק"
+  },
+  "btnNewFolder": {
+    "message": "➕ תיקייה"
+  },
+  "promptNewFolder": {
+    "message": "תיקייה חדשה:"
+  },
+  "btnDeleteFolder": {
+    "message": "מחק תיקייה"
+  },
+  "confirmDeleteFolder": {
+    "message": "תיקייה זו מכילה שיחות. האם למחוק אותה?"
+  },
+  "btnPin": {
+    "message": "נעץ"
+  },
+  "btnUnpin": {
+    "message": "הסר נעיצה"
+  },
+  "sortNewest": {
+    "message": "חדשים ביותר"
+  },
+  "sortOldest": {
+    "message": "ישנים ביותר"
+  },
+  "sortAlpha": {
+    "message": "א עד ת"
+  },
+  "ctxMenuSave": {
+    "message": "שמור בתיקיות AI"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(אין תיקיות – פתח את התוסף)"
+  },
+  "btnToggleAdd": {
+    "message": "הוסף שיחה"
+  },
+  "btnCancel": {
+    "message": "סגור"
+  },
+  "btnRenameFolder": {
+    "message": "שנה שם תיקייה"
+  },
+  "promptRenameFolder": {
+    "message": "שם חדש:"
+  },
+  "errorFolderExists": {
+    "message": "תיקייה עם שם זה כבר קיימת."
+  },
+  "storageCalc": {
+    "message": "מחשב מקום..."
+  },
+  "storageInfo": {
+    "message": "אחסון: {used} מתוך {max} ק\"ב ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "שמור שיחה"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ שמירה מהירה"
+  },
+  "toastSaved": {
+    "message": "✅ נשמר בתיקיות AI!"
+  },
+  "btnOpenGroup": {
+    "message": "פתח בקבוצת כרטיסיות"
+  },
+  "confirmOpenManyTabs": {
+    "message": "האם לפתוח את הכרטיסיות שנבחרו (כמות: {count}) בו-זמנית?"
+  },
+  "errorTabGroup": {
+    "message": "שגיאה: לא ניתן ליצור את קבוצת הכרטיסיות. האם אישרת את ההרשאות החדשות?"
+  },
+  "bulkSelected": {
+    "message": "פריטים שנבחרו: {count}"
+  },
+  "bulkMove": {
+    "message": "העבר אל..."
+  },
+  "bulkDelete": {
+    "message": "מחק"
+  },
+  "confirmBulkDelete": {
+    "message": "האם למחוק את השיחות שנבחרו (כמות: {count})?"
+  },
+  "bulkCancel": {
+    "message": "בטל בחירה"
+  },
+  "masterFolderName": {
+    "message": "תיקיות AI (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "יוצר תיקייה מסונכרנת בסימניות Chrome לגישה לשיחות מהטלפון."
+  },
+  "modalBtnCancel": {
+    "message": "בטל"
+  },
+  "modalBtnConfirm": {
+    "message": "אשר"
+  },
+  "emojiTipPlaceholder": {
+    "message": "טיפ: התחל עם אמוג'י (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ כבר נשמר!"
+  },
+  "folderModeTitle": {
+    "message": "מצב תיקיות"
+  },
+  "promptModeTitle": {
+    "message": "מצב פרומפטים"
+  },
+  "promptCannotBeEmpty": {
+    "message": "הפרומפט לא יכול להיות ריק!"
+  },
+  "promptSaved": {
+    "message": "הפרומפט נשמר!"
+  },
+  "promptDuplicateWarning": {
+    "message": "כבר קיים פרומפט עם כותרת זו. לדרוס?"
+  },
+  "promptNoSavedYet": {
+    "message": "אין עדיין פרומפטים שמורים."
+  },
+  "promptAddBtn": {
+    "message": "הוסף פרומפט"
+  },
+  "promptCopyTitle": {
+    "message": "העתק"
+  },
+  "promptDeleteTitle": {
+    "message": "מחק"
+  },
+  "newConversationBtn": {
+    "message": "שיחה חדשה"
+  },
+  "promptTitlePlaceholder": {
+    "message": "כותרת פרומפט"
+  },
+  "promptTextPlaceholder": {
+    "message": "כתוב את הפרומפט שלך כאן..."
+  },
+  "syncPromptsTooltip": {
+    "message": "סנכרן פרומפטים"
+  },
+  "promptRenamePrompt": {
+    "message": "שם פרומפט חדש:"
+  },
+  "confirmDeletePrompt": {
+    "message": "למחוק פרומפט זה?"
+  },
+  "promptInsertBtn": {
+    "message": "הכנס לשיחה"
+  },
+  "promptPinTitle": {
+    "message": "נעץ"
+  },
+  "newConv_gemini": {
+    "message": "שיחת Gemini חדשה"
+  },
+  "newConv_claude": {
+    "message": "שיחת Claude חדשה"
+  },
+  "newConv_chatgpt": {
+    "message": "שיחת ChatGPT חדשה"
+  },
+  "newConv_copilot": {
+    "message": "שיחת Copilot חדשה"
+  },
+  "newConv_perplexity": {
+    "message": "שיחת Perplexity חדשה"
+  },
+  "newConv_local": {
+    "message": "שיחת LLM מקומית חדשה (לחץ לחיצה ארוכה להגדרת URL)"
+  },
+  "setLocalUrl": {
+    "message": "הגדר כתובת URL של LLM מקומי:"
+  },
+  "alertNotSupported": {
+    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot או Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "לא נמצא שדה הטקסט בדף זה. נסה ללחוץ תחילה בעורך ולאחר מכן השתמש בלחצן ההוספה."
+  }
+}

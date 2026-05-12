@@ -1,0 +1,57 @@
+Les vostres converses d'IA estan escampades per cinc llocs diferents. Seguiu reescrivint els mateixos prompts. Les vostres millors xats desapareixen en historials interminables de Gemini, Claude, ChatGPT, Copilot i Perplexity.
+Carpetes IA és l'extensió que necessiteu.
+
+Carpetes IA és el vostre cockpit d'IA unificat: organitzeu converses de totes les vostres eines d'IA en carpetes compartides, creeu una biblioteca de prompts reutilitzables i injecteu prompts directament a qualsevol IA compatible — sense necessitat de copiar i enganxar.
+
+✨ MODE PROMPTS
+
+📝 Biblioteca de prompts personal: Canvia al Mode prompts amb un clic al commutador de la capçalera. Desa els teus millors prompts amb títol i text, i troba'ls al moment amb cerca i ordenació (més recents, més antics, A–Z).
+▶ Injecció amb un sol clic: Fes clic al botó de reproducció (▶) en qualsevol prompt desat per inserir-lo directament al camp d'entrada de la IA activa.
+✏️ Edició en línia: Fes clic per expandir un prompt i edita el text directament. Els canvis es desen automàticament després d'una breu pausa.
+🔀 Botons de Nova Conversa: Inicieu una nova conversa a ChatGPT, Claude, Copilot, Gemini o Perplexity directament des del Mode Prompt — un botó per servei.
+☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
+📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
+
+🌟 FUNCIONS DE CARPETES
+
+⚡ Desat ràpid (Clic dret i dreceres): Desa la conversa actual amb un simple clic dret, o utilitza la drecera de teclat (Ctrl+Maj+S o Cmd+Maj+S al Mac) per enviar-la a «⚡ Desat ràpid» – amb una alerta visual si ja estava desada!
+☑️ Selecció múltiple (Accions massives): Selecciona diverses converses amb caselles de verificació per moure-les o eliminar-les d'un sol clic.
+📑 Integració de grups de pestanyes: Obre una carpeta sencera amb un clic com a grup de pestanyes de Chrome.
+😃 Emojis de carpeta personalitzats: Comença el nom de la carpeta amb un emoji (p. ex. «💻 Codi») per substituir la icona de carpeta predeterminada.
+🖱️ Arrossega i deixa anar: Mou les converses entre carpetes.
+📱 Sincronització mòbil: Crea una carpeta mirall als marcadors de Chrome per accedir-hi des del telèfon.
+🗜️ Compressió ultraeficient: Comprimeix les dades automàticament (LZString) per maximitzar l'emmagatzematge de Chrome.
+📊 Indicador d'emmagatzematge: Una barra de progrés visual mostra l'emmagatzematge al núvol disponible en temps real.
+📁 Carpetes personalitzades i fixades: Organitza les converses per projectes, temes o categories.
+⇅ Ordenació personalitzada: Ordena carpetes i converses (Més recents, Més antigues, A–Z) amb canvis que es reflecteixen immediatament a la sincronització mòbil.
+🤖 Detecció intel·ligent i cerca: Emplenament previ automàtic del títol exact de la conversa i una barra de cerca en temps real.
+☁️ Sincronització al núvol i còpia de seguretat: Accés a l'organització a tots els dispositius i exportació de dades en JSON.
+🎨 Disseny Material 3 i multilingüe: Interfície ultracompacta amb diàlegs modals completament personalitzats, mode fosc automàtic i suport per a 43 idiomes!
+
+
+🏠 SUPORT PER A LLM LOCAL
+
+Esteu executant un model d'IA local (Ollama, LM Studio, Jan o un altre)? Configureu Carpetes IA amb el vostre URL local — admet localhost i adreces LAN (192.168.x.x, noms d'host personalitzats). El desament ràpid i des del menú contextual també funcionen en interfícies locals.
+
+🛠️ COM FUNCIONA?
+
+Mode carpetes:
+Obre una conversa a Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Desat ràpid: Ctrl+Maj+S (o Cmd+Maj+S al Mac), o clic dret > «Desa a Carpetes IA».
+Mitjançant l'extensió: Fes clic a la icona, tria una carpeta i desa.
+Mòbil: Marca 📱 al peu de pàgina per sincronitzar les teves carpetes al telèfon.
+
+Mode prompts:
+Fes clic a 📝 al commutador a la part superior dreta de l'extensió.
+Fes clic a ➕ Afegeix un prompt, introdueix un títol i el teu text, i desa.
+Per utilitzar un prompt: expandeix-lo i fes clic a ▶ – s'injecta directament a la IA activa.
+Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
+
+🔒 PRIVACITAT I SEGURETAT
+Construït amb la privacitat com a prioritat. Només sol·licita accés a Gemini, Claude, ChatGPT, Copilot, Perplexity i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
+
+🤝 PROJECTE DE CODI OBERT
+Carpetes IA és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/GeminiFolders
+
+📢 ACTUALITZACIONS:
+Versió 1.0: Primera publicació! Organitzeu converses de Gemini, Claude, ChatGPT, Copilot i Perplexity en carpetes compartides. Biblioteca de prompts completa amb injecció d'un clic, dreceres de desament ràpid, arrossegar i deixar anar, sincronització mòbil, accions en bloc, grups de pestanyes i suport per a 43 idiomes.
