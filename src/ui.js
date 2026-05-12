@@ -122,9 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('reviewMessageTxt').textContent = chrome.i18n.getMessage("reviewMessage") || "Your support helps this open-source project immensely!";
     const btnReviewRate = document.getElementById('btnReviewRate');
     btnReviewRate.textContent = chrome.i18n.getMessage("reviewRateBtn") || "Rate 5 stars";
-    if (navigator.userAgent.toLowerCase().includes('firefox')) {
-      btnReviewRate.href = "https://addons.mozilla.org/firefox/addon/gemini_folders/reviews/";
-    }
     document.getElementById('btnReviewLater').textContent = chrome.i18n.getMessage("reviewLaterBtn") || "Maybe later";
     document.getElementById('btnReviewNo').textContent = chrome.i18n.getMessage("reviewNoBtn") || "No thanks";
 

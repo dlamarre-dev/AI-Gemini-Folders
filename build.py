@@ -24,6 +24,8 @@ EXTENSION_CONFIG = {
         "display_name":       "Gemini Folders",
         # Marketing dir: check Marketing/gemini-folders/ first, fall back to Marketing/
         "marketing_subdir":   "gemini-folders",
+        "review_url_chrome":  "https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik/reviews",
+        "review_url_firefox": "https://addons.mozilla.org/firefox/addon/gemini_folders/reviews/",
     },
     "ai-folders": {
         "firefox_gecko_id":   "aifolders@dlamarre-dev.github.io",
@@ -31,6 +33,8 @@ EXTENSION_CONFIG = {
         "zip_prefix":         "ai-folders",
         "display_name":       "AI Folders",
         "marketing_subdir":   "ai-folders",
+        "review_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/TODO/reviews",
+        "review_url_firefox": "https://addons.mozilla.org/firefox/addon/ai_folders/reviews/",
     },
 }
 
@@ -164,6 +168,15 @@ def build_chrome(ext_name, version):
         if os.path.exists(fp):
             os.remove(fp)
 
+    # --- Inject review URL ---
+    popup_path = os.path.join(dest, "popup.html")
+    if os.path.exists(popup_path):
+        with open(popup_path, "r", encoding="utf-8") as f:
+            html = f.read()
+        html = html.replace("__REVIEW_URL__", cfg["review_url_chrome"])
+        with open(popup_path, "w", encoding="utf-8") as f:
+            f.write(html)
+
     mkt = marketing_dir(ext_name)
     if mkt:
         shutil.copytree(mkt, os.path.join(DIST_DIR, ext_name, "marketing_chrome"))
@@ -207,7 +220,16 @@ def build_firefox(ext_name, version):
     with open(mfp, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
-    # --- 2. Patch translations ---
+    # --- 2. Inject review URL ---
+    popup_path = os.path.join(dest, "popup.html")
+    if os.path.exists(popup_path):
+        with open(popup_path, "r", encoding="utf-8") as f:
+            html = f.read()
+        html = html.replace("__REVIEW_URL__", cfg["review_url_firefox"])
+        with open(popup_path, "w", encoding="utf-8") as f:
+            f.write(html)
+
+    # --- 4. Patch translations ---
     locales_dir = os.path.join(dest, "_locales")
     if os.path.exists(locales_dir):
         for root, dirs, files in os.walk(locales_dir):
@@ -234,7 +256,7 @@ def build_firefox(ext_name, version):
                 with open(msg_path, "w", encoding="utf-8") as f:
                     json.dump(messages, f, indent=2, ensure_ascii=False)
 
-    # --- 3. Patch marketing text files ---
+    # --- 5. Patch marketing text files ---
     mkt = marketing_dir(ext_name)
     if mkt:
         print(f"📸 Processing marketing assets for Firefox...")

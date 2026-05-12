@@ -15,6 +15,18 @@
     </div>
   </h3>
 
+  <div id="reviewBanner" style="display: none; background-color: var(--hover-bg); padding: 12px; margin: 10px 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+    <p style="margin: 0 0 10px 0; font-size: 13px; color: var(--text-color);">
+      <b id="reviewTitleTxt">⭐ Are you enjoying AI Folders?</b><br>
+      <span id="reviewMessageTxt">Your support helps this open-source project immensely!</span>
+    </p>
+    <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
+      <a href="__REVIEW_URL__" target="_blank" id="btnReviewRate" style="background: #4CAF50; color: white; padding: 4px 10px; border-radius: 4px; text-decoration: none; font-size: 12px; font-weight: bold;">Rate 5 stars</a>
+      <button id="btnReviewLater" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-color); padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;">Later</button>
+      <button id="btnReviewNo" style="background: transparent; border: none; color: #888; padding: 4px 10px; font-size: 12px; cursor: pointer; text-decoration: underline;">No thanks</button>
+    </div>
+  </div>
+
   <div id="folderModeContainer">
     <div style="display: flex; gap: 8px; margin-bottom: 10px; position: relative; align-items: center;">
       <input type="text" id="searchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;">
