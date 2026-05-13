@@ -299,7 +299,7 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
           if (siteInfo.logoSvg) {
             const logo = document.createElement('span');
             logo.className = 'chat-site-logo';
-            logo.innerHTML = siteInfo.logoSvg;
+            logo.appendChild(new DOMParser().parseFromString(siteInfo.logoSvg, 'image/svg+xml').documentElement);
             chatItem.appendChild(logo);
           }
         }
