@@ -1,5 +1,5 @@
 Ginagamit mo ba ang Google Gemini araw-araw — para sa trabaho, code, pagsusulat, o pananaliksik — ngunit paulit-ulit kang nagta-type ng parehong mga prompt, habang nawawala ang iyong mga pinakamahusay na pag-uusap sa walang katapusang kasaysayan?
-Ang Mga Folder ng Gemini (Mga Folder ng Gemini) ang extension na kailangan mo.
+Ang Mga Folder ng Gemini (Gemini Folders) ang extension na kailangan mo.
 
 Sa bersyon 4.0, ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockpit: ayusin ang mga pag-uusap sa mga folder, bumuo ng library ng mga reusable na prompt, at i-inject ang mga ito nang direkta sa Gemini sa isang click — hindi na kailangang mag-copy-paste.
 

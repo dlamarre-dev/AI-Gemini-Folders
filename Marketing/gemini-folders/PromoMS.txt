@@ -1,5 +1,5 @@
 Adakah anda menggunakan Google Gemini setiap hari – untuk kerja, pengekodan, penulisan atau penyelidikan – tetapi terus menaip semula prompt yang sama, manakala perbualan terbaik anda hilang dalam sejarah yang tidak berkesudahan?
-Folder Gemini (Folder Geminis) adalah sambungan yang anda perlukan.
+Folder Gemini (Gemini Folders) adalah sambungan yang anda perlukan.
 
 Dengan versi 4.0, Folder Gemini menjadi cockpit Gemini sebenar anda: susun perbualan dalam folder, bina perpustakaan prompt yang boleh digunakan semula dan masukkannya terus ke Gemini dengan satu klik – tanpa salin dan tampal.
 
