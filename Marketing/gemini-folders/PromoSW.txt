@@ -14,6 +14,7 @@ Na toleo la 4.0, Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga 
 
 🌟 VIPENGELE VYA FOLDA
 
+⌨️ Mkato wa haraka wa jopo: Fungua jopo mara moja kutoka kichupo chochote na Ctrl+Shift+1 (au Cmd+Shift+1 kwenye Mac).
 ⚡ Hifadhi ya Haraka (Kubofya Kulia & Njia za Mkato): Hifadhi mazungumzo ya sasa kwa kubofya kulia rahisi, au tumia njia ya mkato ya kibodi (Ctrl+Shift+S au Cmd+Shift+S kwenye Mac) kutuma mara moja kwenye "⚡ Hifadhi ya Haraka" — pamoja na arifa ya kuona ikiwa tayari imehifadhiwa!
 ☑️ Kuchagua Vingi (Vitendo vya Wingi): Chagua mazungumzo mengi kwa kutumia masanduku ya kuchagua ili kuyahamisha au kuyafuta kwa kubofya mara moja.
 📑 Ujumuishaji wa Kikundi cha Vichupo: Fungua folda nzima kwa kubofya mara moja kama Kikundi cha Vichupo cha Chrome chenye rangi.
@@ -32,6 +33,7 @@ Na toleo la 4.0, Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga 
 
 Hali ya Folda:
 Fungua mazungumzo kwenye gemini.google.com.
+Fungua jopo: Ctrl+Shift+1 (au Cmd+Shift+1 kwenye Mac).
 Hifadhi ya haraka: Ctrl+Shift+S (au Cmd+Shift+S kwenye Mac), au bofya kulia > "Hifadhi kwenye Folda za Gemini".
 Kupitia kiendelezi: Bofya ikoni, chagua folda, na hifadhi.
 Simu: Weka alama 📱 kwenye kijachini ili kusawazisha folda zako na simu yako.

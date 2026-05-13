@@ -14,6 +14,7 @@ Gemini 文件夹 (Gemini Folders) 就是您需要的扩展程序。
 
 🌟 文件夹功能
 
+⌨️ 即时面板快捷键：在任意标签页用 Ctrl+Shift+1（Mac 上用 Cmd+Shift+1）即时打开面板。
 ⚡ 快速保存（右键菜单和快捷键）：通过简单的右键菜单保存对话，或使用键盘快捷键（Ctrl+Shift+S 或 Mac 上的 Cmd+Shift+S）立即发送到"⚡ 快速保存"——已保存时会有视觉提示！
 ☑️ 多选（批量操作）：通过复选框选择多个对话，一键移动或删除。
 📑 标签页组集成：一键将整个文件夹作为原生彩色 Chrome 标签页组打开。
@@ -32,6 +33,7 @@ Gemini 文件夹 (Gemini Folders) 就是您需要的扩展程序。
 
 文件夹模式：
 在 gemini.google.com 打开一个对话。
+打开面板：Ctrl+Shift+1（Mac 上为 Cmd+Shift+1）。
 快速保存：Ctrl+Shift+S（Mac 上为 Cmd+Shift+S），或右键 > "保存到 Gemini 文件夹"。
 通过扩展程序：点击图标，选择文件夹，保存。
 移动端：勾选页脚中的 📱 将文件夹同步到手机。

@@ -18,6 +18,7 @@ Gemini, Claude, ChatGPT, Copilot, and Perplexity. Conversations from different s
 
 🌟 FOLDER FEATURES
 
+⌨️ Instant Panel Shortcut: Open the panel instantly from any tab with Ctrl+Shift+1 (or Cmd+Shift+1 on Mac).
 ⚡ Quick Save (Right-Click & Shortcuts): Save the current conversation with a simple right-click, or use the keyboard shortcut (Ctrl+Shift+S or Cmd+Shift+S on Mac) to instantly send it to "⚡ Quick Saves" — with a visual alert if it's already saved!
 ☑️ Multi-Select (Bulk Actions): Select multiple conversations using checkboxes to move or delete them in one click.
 📑 Tab Groups Integration: Open an entire folder in a single click as a native, color-coded Chrome Tab Group.
@@ -40,6 +41,7 @@ Running a local AI model (Ollama, LM Studio, Jan, or any other)? Configure AI Fo
 
 Folder Mode:
 Open a conversation on any supported site (Gemini, Claude, ChatGPT, Copilot, or Perplexity).
+Open the panel: Ctrl+Shift+1 (or Cmd+Shift+1 on Mac).
 Quick save: Ctrl+Shift+S (or Cmd+Shift+S on Mac), or right-click > "Save to AI Folders".
 Via the extension: Click the icon, choose a folder, and save.
 Mobile: Check 📱 in the footer to sync your folders to your phone.

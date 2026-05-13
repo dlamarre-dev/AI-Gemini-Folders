@@ -14,6 +14,7 @@ S verzí 4.0 se Složky Gemini stávají vaším skutečným kokpitem pro Gemini
 
 🌟 FUNKCE SLOŽEK
 
+⌨️ Okamžitá klávesová zkratka: Otevřete panel okamžitě z libovolné záložky pomocí Ctrl+Shift+1 (nebo Cmd+Shift+1 na Macu).
 ⚡ Rychlé uložení (Pravý klik a Zkratky): Uložte konverzaci jednoduchým pravým kliknutím nebo klávesovými zkratkami (Ctrl+Shift+S nebo Cmd+Shift+S na Macu) a okamžitě ji odešlete do „⚡ Rychlých uložení" — s vizuálním upozorněním, pokud je již uložena!
 ☑️ Vícenásobný výběr (Hromadné akce): Pomocí zaškrtávacích políček vyberte více konverzací a přesuňte nebo odstraňte je jedním kliknutím.
 📑 Integrace skupin karet: Otevřete celou složku jedním kliknutím jako nativní barevnou skupinu karet Chrome.
@@ -32,6 +33,7 @@ S verzí 4.0 se Složky Gemini stávají vaším skutečným kokpitem pro Gemini
 
 Režim složek:
 Otevřete konverzaci na gemini.google.com.
+Otevření panelu: Ctrl+Shift+1 (nebo Cmd+Shift+1 na Macu).
 Rychlé uložení: Ctrl+Shift+S (nebo Cmd+Shift+S na Macu), nebo pravý klik > „Uložit do Složek Gemini".
 Přes rozšíření: Klikněte na ikonu, vyberte složku, uložte.
 Mobilní: Aktivujte 📱 v zápatí a synchronizujte složky s telefonem.

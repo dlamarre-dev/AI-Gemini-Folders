@@ -14,6 +14,7 @@ MI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-es
 
 🌟 MAPPAFUNKCIÓK
 
+⌨️ Azonnali panel-gyorsbillentyű: Nyissa meg a panelt azonnal bármely lapról a Ctrl+Shift+1 (vagy Mac-en Cmd+Shift+1) kombinációval.
 ⚡ Gyorsmentés (Jobb kattintás és billentyűparancsok): Mentse az aktuális beszélgetést egyszerű jobb kattintással, vagy használja a billentyűparancsot (Ctrl+Shift+S vagy Mac-en Cmd+Shift+S), hogy azonnal a „⚡ Gyorsmentések" közé küldje — vizuális figyelmeztetéssel, ha már mentve van!
 ☑️ Többes kijelölés (Tömeges műveletek): Jelöljön ki több beszélgetést jelölőnégyzetekkel, hogy egyetlen kattintással mozgassa vagy törölje őket.
 📑 Lapcsoportok integrációja: Nyissa meg az egész mappát egyetlen kattintással natív, színkódolt Chrome-lapcsoportként.
@@ -37,6 +38,7 @@ Helyi MI modellt használ (Ollama, LM Studio, Jan vagy más)? Konfigurálja a MI
 
 Mappaüzemmód:
 Nyisson meg egy beszélgetést a Gemini, Claude, ChatGPT, Copilot, Perplexity oldalon.
+A panel megnyitása: Ctrl+Shift+1 (vagy Cmd+Shift+1 Macen).
 Gyorsmentés: Ctrl+Shift+S (vagy Mac-en Cmd+Shift+S), vagy jobb kattintás > „Mentés a MI mappákba".
 A bővítményen keresztül: Kattintson az ikonra, válasszon mappát, és mentse el.
 Mobil: Jelölje be a 📱 ikont a láblécben a mappák telefonra szinkronizálásához.

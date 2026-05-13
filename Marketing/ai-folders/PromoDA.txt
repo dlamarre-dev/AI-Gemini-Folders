@@ -14,6 +14,7 @@ AI-mapper er dit samlede AI-kontrolpanel: organiser samtaler fra alle dine AI-v�
 
 🌟 MAPPEFUNKTIONER
 
+⌨️ Øjeblikkelig panelogenvej: Åbn panelet øjeblikkeligt fra enhver fane med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 ⚡ Hurtiggem (Højreklik og genveje): Gem den aktuelle samtale med et simpelt højreklik, eller brug tastaturgenvejen (Ctrl+Shift+S eller Cmd+Shift+S på Mac) til at sende den til «⚡ Hurtiggem» – med en visuel advarsel, hvis den allerede er gemt!
 ☑️ Flervalg (Massehandlinger): Vælg flere samtaler med afkrydsningsfelter for at flytte eller slette dem med ét klik.
 📑 Fanegruppeintegration: Åbn en hel mappe med ét klik som en indbygget, farvekodet Chrome-fanegruppe.
@@ -37,6 +38,7 @@ Kører du en lokal AI-model (Ollama, LM Studio, Jan eller en anden)? Konfigurer 
 
 Mappevisning:
 Åbn en samtale på Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Åbn panelet: Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 Hurtiggem: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller højreklik > «Gem i AI-mapper».
 Via udvidelsen: Klik på ikonet, vælg en mappe og gem.
 Mobil: Markér 📱 i sidefoden for at synkronisere dine mapper til din telefon.

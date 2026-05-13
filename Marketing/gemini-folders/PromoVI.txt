@@ -14,6 +14,7 @@ Với phiên bản 4.0, Thư mục Gemini trở thành buồng lái Gemini thự
 
 🌟 TÍNH NĂNG THƯ MỤC
 
+⌨️ Phím tắt bảng điều khiển tức thì: Mở bảng điều khiển ngay lập tức từ bất kỳ tab nào với Ctrl+Shift+1 (hoặc Cmd+Shift+1 trên Mac).
 ⚡ Lưu nhanh (Chuột phải & Phím tắt): Lưu cuộc trò chuyện hiện tại bằng cú nhấp chuột phải đơn giản, hoặc dùng phím tắt (Ctrl+Shift+S hoặc Cmd+Shift+S trên Mac) để gửi ngay vào "⚡ Lưu nhanh" — kèm cảnh báo trực quan nếu đã lưu trước đó!
 ☑️ Chọn nhiều (Thao tác hàng loạt): Chọn nhiều cuộc trò chuyện bằng hộp kiểm để di chuyển hoặc xóa chỉ với một cú nhấp.
 📑 Tích hợp Nhóm tab: Mở toàn bộ thư mục chỉ với một cú nhấp dưới dạng Nhóm tab Chrome gốc có màu sắc.
@@ -32,6 +33,7 @@ Với phiên bản 4.0, Thư mục Gemini trở thành buồng lái Gemini thự
 
 Chế độ thư mục:
 Mở cuộc trò chuyện trên gemini.google.com.
+Mở bảng điều khiển: Ctrl+Shift+1 (hoặc Cmd+Shift+1 trên Mac).
 Lưu nhanh: Ctrl+Shift+S (hoặc Cmd+Shift+S trên Mac), hoặc nhấp chuột phải > "Lưu vào Thư mục Gemini".
 Qua tiện ích: Nhấp biểu tượng, chọn thư mục và lưu.
 Di động: Tích 📱 ở chân trang để đồng bộ thư mục lên điện thoại.

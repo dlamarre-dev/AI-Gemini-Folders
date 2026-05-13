@@ -14,6 +14,7 @@ Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de 
 
 🌟 FUNCIONES DE CARPETAS
 
+⌨️ Atajo de teclado instantáneo: Abre el panel al instante desde cualquier pestaña con Ctrl+Shift+1 (o Cmd+Shift+1 en Mac).
 ⚡ Guardado Rápido (Clic derecho y Atajos): Guarda la conversación con un simple clic derecho, o usa el atajo de teclado (Ctrl+Shift+S o Cmd+Shift+S en Mac) para enviarla al instante a "⚡ Guardados Rápidos" — ¡con alerta visual si ya está guardada!
 ☑️ Selección Múltiple (Acciones en lote): Selecciona varias conversaciones con casillas de verificación para moverlas o eliminarlas de un solo clic.
 📑 Integración con Grupos de Pestañas: Abre toda una carpeta de un clic en un Grupo de Pestañas nativo y con código de colores de Chrome.
@@ -32,6 +33,7 @@ Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de 
 
 Modo Carpetas:
 Abre una conversación en gemini.google.com.
+Abrir el panel: Ctrl+Shift+1 (o Cmd+Shift+1 en Mac).
 Guardado rápido: Ctrl+Shift+S (o Cmd+Shift+S en Mac), o clic derecho > "Guardar en Carpetas de Gemini".
 Desde la extensión: Haz clic en el icono, elige una carpeta y guarda.
 Móvil: Activa 📱 en el pie de página para sincronizar tus carpetas con el teléfono.

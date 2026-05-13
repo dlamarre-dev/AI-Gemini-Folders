@@ -14,6 +14,7 @@ Pastas IA é o seu cockpit de IA unificado: organize conversas de todas as suas 
 
 🌟 FUNÇÕES DE PASTAS
 
+⌨️ Atalho instantâneo do painel: Abra o painel instantaneamente de qualquer aba com Ctrl+Shift+1 (ou Cmd+Shift+1 no Mac).
 ⚡ Salvar Rapidamente (Clique Direito e Atalhos): Salve a conversa com um simples clique direito, ou use o atalho de teclado (Ctrl+Shift+S ou Cmd+Shift+S no Mac) para enviá-la instantaneamente para "⚡ Salvamentos Rápidos" — com alerta visual se já estiver salva!
 ☑️ Seleção Múltipla (Ações em lote): Selecione várias conversas com caixas de seleção para movê-las ou excluí-las com um clique.
 📑 Integração com Grupos de Abas: Abra uma pasta inteira com um clique como um Grupo de Abas nativo e colorido do Chrome.
@@ -37,6 +38,7 @@ Está usando um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure 
 
 Modo Pastas:
 Abra uma conversa em Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Abrir o painel: Ctrl+Shift+1 (ou Cmd+Shift+1 no Mac).
 Salvar rapidamente: Ctrl+Shift+S (ou Cmd+Shift+S no Mac), ou clique direito > "Salvar em Pastas IA".
 Pela extensão: Clique no ícone, escolha uma pasta e salve.
 Mobile: Ative 📱 no rodapé para sincronizar suas pastas com o celular.

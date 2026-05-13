@@ -14,6 +14,7 @@ Foldery AI to Twoje zunifikowane centrum AI: organizuj rozmowy ze wszystkich nar
 
 🌟 FUNKCJE FOLDERÓW
 
+⌨️ Natychmiastowy skrót do panelu: Otwórz panel natychmiast z dowolnej karty za pomocą Ctrl+Shift+1 (lub Cmd+Shift+1 na Macu).
 ⚡ Szybkie Zapisywanie (Prawy przycisk i Skróty): Zapisz rozmowę prawym przyciskiem myszy lub skrótem klawiszowym (Ctrl+Shift+S lub Cmd+Shift+S na Mac), aby natychmiast wysłać ją do „⚡ Szybkich Zapisów" — z wizualnym alertem, jeśli już jest zapisana!
 ☑️ Wielokrotny Wybór (Akcje zbiorcze): Zaznacz kilka rozmów za pomocą pól wyboru, aby przenieść je lub usunąć jednym kliknięciem.
 📑 Integracja z Grupami kart: Otwórz cały folder jednym kliknięciem jako natywną, kolorową Grupę kart Chrome.
@@ -37,6 +38,7 @@ Używasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj Fo
 
 Tryb Folderów:
 Otwórz rozmowę na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Otwórz panel: Ctrl+Shift+1 (lub Cmd+Shift+1 na Macu).
 Szybki zapis: Ctrl+Shift+S (lub Cmd+Shift+S na Mac), lub prawy przycisk > „Zapisz w Folderach Gemini".
 Przez rozszerzenie: Kliknij ikonę, wybierz folder, zapisz.
 Mobilny: Aktywuj 📱 w stopce, aby synchronizować foldery z telefonem.

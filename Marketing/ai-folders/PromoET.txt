@@ -14,6 +14,7 @@ AI kaustad on teie ühtne AI-juhtimiskeskus: korraldage kõigi AI-tööriistade 
 
 🌟 KAUSTADE FUNKTSIOONID
 
+⌨️ Hetkelise paneeli otsetee: Avage paneel koheselt mis tahes vahekaardilt, kasutades Ctrl+Shift+1 (või Cmd+Shift+1 Macis).
 ⚡ Kiirsalvestus (Paremklõps ja otseteed): Salvesta praegune vestlus lihtsa paremklõpsuga või kasuta klaviatuuri otseteed (Ctrl+Shift+S või Cmd+Shift+S Macis), et saata see «⚡ Kiirsalvestus» kausta – visuaalse teavitusega, kui see on juba salvestatud!
 ☑️ Mitmikvalik (Hulktegevused): Vali mitu vestlust märkeruutude abil, et liigutada või kustutada need ühe klikiga.
 📑 Vahekaardi grupi integratsioon: Ava terve kaust ühe klikiga natiivsena, värvikodeeritud Chrome'i vahekaardi grupina.
@@ -37,6 +38,7 @@ Kasutate kohalikku AI mudelit (Ollama, LM Studio, Jan või mõni muu)? Konfigure
 
 Kaustade režiim:
 Ava vestlus aadressil Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Avage paneel: Ctrl+Shift+1 (või Cmd+Shift+1 Macis).
 Kiirsalvestus: Ctrl+Shift+S (või Cmd+Shift+S Macis) või paremklõps > «Salvesta AI kaustadesse».
 Laienduse kaudu: Klõpsa ikooni, vali kaust ja salvesta.
 Mobiil: Märgi 📱 jaluses kaustade sünkroonimiseks telefoniga.

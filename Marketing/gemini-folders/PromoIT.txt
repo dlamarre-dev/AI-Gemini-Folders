@@ -14,6 +14,7 @@ Con la versione 4.0, Cartelle Gemini diventa il tuo vero cockpit per Gemini: org
 
 🌟 FUNZIONALITÀ CARTELLE
 
+⌨️ Scorciatoia istantanea: Apri il pannello all'istante da qualsiasi scheda con Ctrl+Shift+1 (o Cmd+Shift+1 su Mac).
 ⚡ Salvataggio Rapido (Clic Destro e Scorciatoie): Salva la conversazione con un semplice clic destro, o usa la scorciatoia da tastiera (Ctrl+Shift+S o Cmd+Shift+S su Mac) per inviarla istantaneamente a "⚡ Salvataggi Rapidi" — con un avviso visivo se è già salvata!
 ☑️ Selezione Multipla (Azioni in blocco): Seleziona più conversazioni con le caselle di controllo per spostarle o eliminarle in un clic.
 📑 Integrazione Gruppi di schede: Apri un'intera cartella con un clic in un Gruppo di schede nativo di Chrome, con codice colore.
@@ -32,6 +33,7 @@ Con la versione 4.0, Cartelle Gemini diventa il tuo vero cockpit per Gemini: org
 
 Modalità Cartelle:
 Apri una conversazione su gemini.google.com.
+Apri il pannello: Ctrl+Shift+1 (o Cmd+Shift+1 su Mac).
 Salvataggio rapido: Ctrl+Shift+S (o Cmd+Shift+S su Mac), o clic destro > "Salva in Cartelle Gemini".
 Tramite l'estensione: Clicca l'icona, scegli una cartella e salva.
 Mobile: Attiva 📱 nel piè di pagina per sincronizzare le cartelle con il telefono.

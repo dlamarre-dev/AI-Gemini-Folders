@@ -14,6 +14,7 @@ Su versija 4.0 Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbiu
 
 🌟 APLANKŲ FUNKCIJOS
 
+⌨️ Momentinis skydelio spartusis klavišas: Atidarykite skydelį akimirksniu iš bet kurio skirtuko su Ctrl+Shift+1 (arba Cmd+Shift+1 „Mac").
 ⚡ Greitas išsaugojimas (Dešinysis spustelėjimas ir spartieji klavišai): Išsaugok dabartinį pokalbį paprastu dešiniuoju spustelėjimu arba naudok sparčiąją klavišų kombinaciją (Ctrl+Shift+S arba Cmd+Shift+S „Mac") norėdamas jį siųsti į «⚡ Greitas išsaugojimas» – su vizualiniu įspėjimu, jei jis jau išsaugotas!
 ☑️ Kelių elementų pasirinkimas (Masiniai veiksmai): Pažymėk kelis pokalbius žymimaisiais laukeliais, kad juos perkeltum arba ištrintum vienu paspaudimu.
 📑 Skirtukų grupės integracija: Atidaryti visą aplanką vienu spustelėjimu kaip natyvią, spalvinę „Chrome" skirtukų grupę.
@@ -32,6 +33,7 @@ Su versija 4.0 Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbiu
 
 Aplankų režimas:
 Atidaryk pokalbį adresu gemini.google.com.
+Atidaryti skydelį: Ctrl+Shift+1 (arba Cmd+Shift+1 „Mac").
 Greitas išsaugojimas: Ctrl+Shift+S (arba Cmd+Shift+S „Mac"), arba dešinysis spustelėjimas > «Išsaugoti Gemini Aplankuose».
 Per plėtinį: Spustelėk piktogramą, pasirink aplanką ir išsaugok.
 Mobilusis: Pažymėk 📱 poraštėje, kad sinchronizuotum aplankus su telefonu.

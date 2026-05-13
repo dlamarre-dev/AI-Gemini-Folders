@@ -14,6 +14,7 @@ S verzijom 4.0 Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgo
 
 🌟 FUNKCIJE FOLDERA
 
+⌨️ Тренутна пречица за панел: Отворите панел тренутно из било које картице помоћу Ctrl+Shift+1 (или Cmd+Shift+1 на Mac-у).
 ⚡ Brzo čuvanje (Desni klik i prečice): Sačuvaj trenutni razgovor jednostavnim desnim klikom ili koristi prečicu na tastaturi (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo čuvanje» – s vizuelnim upozorenjem ako je već sačuvan!
 ☑️ Višestruki odabir (Masovne radnje): Odaberi više razgovora s potvrdnim okvirima za premještanje ili brisanje jednim klikom.
 📑 Integracija grupa kartica: Otvori cijeli folder jednim klikom kao nativnu, šifriranu bojom grupu kartica Chrome.
@@ -32,6 +33,7 @@ S verzijom 4.0 Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgo
 
 Mod foldera:
 Otvori razgovor na gemini.google.com.
+Отворите панел: Ctrl+Shift+1 (или Cmd+Shift+1 на Mac-у).
 Brzo čuvanje: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Sačuvaj u Gemini Foldere».
 Putem proširenja: Klikni ikonu, odaberi folder i sačuvaj.
 Mobilno: Označi 📱 u podnožju da sinhronizuješ foldere s telefonom.

@@ -14,6 +14,7 @@ Ar versiju 4.0 Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sar
 
 🌟 MAPJU FUNKCIJAS
 
+⌨️ Tūlītēja paneļa īsinājumtaustiņš: Atveriet paneli uzreiz no jebkuras cilnes ar Ctrl+Shift+1 (vai Cmd+Shift+1 uz Mac).
 ⚡ Ātrā saglabāšana (Labais klikšķis un saīsnes): Saglabā pašreizējo sarunu ar vienkāršu labo klikšķi vai izmanto tastatūras saīsni (Ctrl+Shift+S vai Cmd+Shift+S Mac datorā), lai to nosūtītu uz «⚡ Ātrā saglabāšana» – ar vizuālu brīdinājumu, ja tā jau ir saglabāta!
 ☑️ Vairāku elementu atlase (Masveida darbības): Atlasi vairākas sarunas, izmantojot izvēles rūtiņas, lai tās pārvietotu vai dzēstu ar vienu klikšķi.
 📑 Cilņu grupas integrācija: Atver visu mapi ar vienu klikšķi kā vietējo, krāsaino Chrome cilņu grupu.
@@ -32,6 +33,7 @@ Ar versiju 4.0 Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sar
 
 Mapju režīms:
 Atver sarunu vietnē gemini.google.com.
+Atvert paneli: Ctrl+Shift+1 (vai Cmd+Shift+1 uz Mac).
 Ātrā saglabāšana: Ctrl+Shift+S (vai Cmd+Shift+S Mac datorā), vai labais klikšķis > «Saglabāt Gemini Mapēs».
 Caur paplašinājumu: Noklikšķini uz ikonas, izvēlies mapi un saglabā.
 Mobilais: Atzīmē 📱 kājenē, lai sinhronizētu mapes ar tālruni.

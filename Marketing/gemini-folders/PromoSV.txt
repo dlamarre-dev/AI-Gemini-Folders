@@ -14,6 +14,7 @@ Med version 4.0 blir Gemini-mappar din verkliga Gemini-cockpit: organisera konve
 
 🌟 MAPPFUNKTIONER
 
+⌨️ Omedelbar panelgenväg: Öppna panelen omedelbart från valflik med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 ⚡ Snabbspara (Högerklick och genvägar): Spara den aktuella konversationen med ett enkelt högerklick, eller använd tangentbordsgenvägen (Ctrl+Shift+S eller Cmd+Shift+S på Mac) för att skicka den till «⚡ Snabbspar» – med en visuell varning om den redan är sparad!
 ☑️ Flerval (Massåtgärder): Välj flera konversationer med kryssrutor för att flytta eller ta bort dem med ett klick.
 📑 Flikgruppsintegration: Öppna en hel mapp med ett klick som en inbyggd, färgkodad Chrome-flikgrupp.
@@ -32,6 +33,7 @@ Med version 4.0 blir Gemini-mappar din verkliga Gemini-cockpit: organisera konve
 
 Mappläge:
 Öppna en konversation på gemini.google.com.
+Öppna panelen: Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 Snabbspara: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller högerklicka > «Spara i Gemini-mappar».
 Via tillägget: Klicka på ikonen, välj en mapp och spara.
 Mobil: Markera 📱 i sidfoten för att synkronisera dina mappar till telefonen.

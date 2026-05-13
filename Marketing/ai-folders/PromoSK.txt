@@ -14,6 +14,7 @@ AI priečinky je váš zjednotený AI kokpit: organizujte konverzácie zo všetk
 
 🌟 FUNKCIE PRIEČINKOV
 
+⌨️ Okamžitá klávesová skratka panela: Otvorte panel okamžite z ľubovoľnej záložky pomocou Ctrl+Shift+1 (alebo Cmd+Shift+1 na Macu).
 ⚡ Rýchle uloženie (Pravý klik a Skratky): Uložte konverzáciu jednoduchým pravým kliknutím alebo klávesovými skratkami (Ctrl+Shift+S alebo Cmd+Shift+S na Mac) a okamžite ju odošlite do „⚡ Rýchlych uložení" — s vizuálnym upozornením, ak je už uložená!
 ☑️ Viacnásobný výber (Hromadné akcie): Pomocou zaškrtávacích políčok vyberte viaceré konverzácie a presuňte alebo odstráňte ich jedným kliknutím.
 📑 Integrácia skupín kariet: Otvorte celý priečinok jedným kliknutím ako natívnu farebnú skupinu kariet Chrome.
@@ -37,6 +38,7 @@ Používate lokálny AI model (Ollama, LM Studio, Jan alebo iný)? Nakonfigurujt
 
 Režim priečinkov:
 Otvorte konverzáciu na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Otvorenie panela: Ctrl+Shift+1 (alebo Cmd+Shift+1 na Macu).
 Rýchle uloženie: Ctrl+Shift+S (alebo Cmd+Shift+S na Mac), alebo pravý klik > „Uložiť do Priečinkov Gemini".
 Cez rozšírenie: Kliknite na ikonu, vyberte priečinok, uložte.
 Mobilné: Aktivujte 📱 v päte stránky a synchronizujte priečinky s telefónom.

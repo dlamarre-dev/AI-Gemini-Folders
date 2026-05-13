@@ -14,6 +14,7 @@ Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj po
 
 🌟 FUNKCIJE MAP
 
+⌨️ Takojšnja bližnjica za ploščo: Odprite ploščo takoj iz katerega koli zavihka z Ctrl+Shift+1 (ali Cmd+Shift+1 na Macu).
 ⚡ Hitro shranjevanje (Desni klik in bližnjice): Shrani trenutni pogovor z enostavnim desnim klikom ali uporabi bližnjico tipkovnice (Ctrl+Shift+S ali Cmd+Shift+S na Macu), da ga pošlješ v «⚡ Hitro shranjevanje» – z vizualnim opozorilom, če je že shranjen!
 ☑️ Večkratna izbira (Masovna dejanja): Izberi več pogovorov s potrditvenimi polji za premikanje ali brisanje z enim klikom.
 📑 Integracija skupin zavihkov: Odpri celotno mapo z enim klikom kot izvorno, barvno kodirano skupino zavihkov Chrome.
@@ -32,6 +33,7 @@ Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj po
 
 Način map:
 Odpri pogovor na gemini.google.com.
+Odprite ploščo: Ctrl+Shift+1 (ali Cmd+Shift+1 na Macu).
 Hitro shranjevanje: Ctrl+Shift+S (ali Cmd+Shift+S na Macu), ali desni klik > «Shrani v Mape Gemini».
 Prek razširitve: Klikni ikono, izberi mapo in shrani.
 Mobilno: Označi 📱 v nogi za sinhronizacijo map s telefonom.

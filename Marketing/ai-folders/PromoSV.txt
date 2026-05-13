@@ -14,6 +14,7 @@ AI-mappar är din enhetliga AI-kontrollpanel: organisera konversationer från al
 
 🌟 MAPPFUNKTIONER
 
+⌨️ Omedelbar panelgenväg: Öppna panelen omedelbart från valflik med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 ⚡ Snabbspara (Högerklick och genvägar): Spara den aktuella konversationen med ett enkelt högerklick, eller använd tangentbordsgenvägen (Ctrl+Shift+S eller Cmd+Shift+S på Mac) för att skicka den till «⚡ Snabbspar» – med en visuell varning om den redan är sparad!
 ☑️ Flerval (Massåtgärder): Välj flera konversationer med kryssrutor för att flytta eller ta bort dem med ett klick.
 📑 Flikgruppsintegration: Öppna en hel mapp med ett klick som en inbyggd, färgkodad Chrome-flikgrupp.
@@ -37,6 +38,7 @@ Kör du en lokal AI-modell (Ollama, LM Studio, Jan eller annan)? Konfigurera AI-
 
 Mappläge:
 Öppna en konversation på Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Öppna panelen: Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 Snabbspara: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller högerklicka > «Spara i AI-mappar».
 Via tillägget: Klicka på ikonen, välj en mapp och spara.
 Mobil: Markera 📱 i sidfoten för att synkronisera dina mappar till telefonen.

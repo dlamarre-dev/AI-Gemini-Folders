@@ -14,6 +14,7 @@ Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi kesku
 
 🌟 KANSIO-OMINAISUUDET
 
+⌨️ Välitön pikanäppäin: Avaa paneeli välittömästi mistä tahansa välilehdestä painamalla Ctrl+Shift+1 (tai Cmd+Shift+1 Macissa).
 ⚡ Pikatallennus (Hiiren oikea painike ja pikakuvakkeet): Tallenna nykyinen keskustelu yksinkertaisella hiiren oikealla painikkeella tai käytä pikanäppäintä (Ctrl+Shift+S tai Cmd+Shift+S Macissa) lähettääksesi sen «⚡ Pikatallennus» -kansioon – visuaalisella ilmoituksella, jos se on jo tallennettu!
 ☑️ Monivalinta (Joukotoiminnot): Valitse useita keskusteluja valintaruutujen avulla siirtääksesi tai poistaaksesi ne yhdellä napsautuksella.
 📑 Välilehtiryhmäintegraatio: Avaa kokonainen kansio yhdellä napsautuksella natiivin, värikoodatun Chrome-välilehtiryhmänä.
@@ -32,6 +33,7 @@ Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi kesku
 
 Kansiotila:
 Avaa keskustelu osoitteessa gemini.google.com.
+Avaa paneeli: Ctrl+Shift+1 (tai Cmd+Shift+1 Macissa).
 Pikatallennus: Ctrl+Shift+S (tai Cmd+Shift+S Macissa) tai hiiren oikea painike > «Tallenna Gemini Kansioihin».
 Lisäosan kautta: Napsauta kuvaketta, valitse kansio ja tallenna.
 Mobiili: Merkitse 📱 alatunnisteessa synkronoidaksesi kansiot puhelimeesi.
