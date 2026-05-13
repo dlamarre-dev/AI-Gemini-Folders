@@ -14,6 +14,7 @@ S verzijom 4.0 Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgov
 
 🌟 ZNAČAJKE MAPA
 
+⌨️ Trenutna tipkovnička prečica: Otvorite ploču odmah s bilo kojeg kartice pomoću Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
 ⚡ Brzo spremi (Desni klik i prečaci): Spremi trenutni razgovor jednostavnim desnim klikom ili koristi prečac na tipkovnici (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo spremi» – s vizualnim upozorenjem ako je već spremljeno!
 ☑️ Višestruki odabir (Masovne radnje): Odaberi više razgovora s potvrdnim okvirima za premještanje ili brisanje jednim klikom.
 📑 Integracija grupa kartica: Otvori cijelu mapu jednim klikom kao izvornu, bojama kodiranu grupu kartica Chrome.
@@ -32,6 +33,7 @@ S verzijom 4.0 Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgov
 
 Način mapa:
 Otvori razgovor na gemini.google.com.
+Otvorite ploču: Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
 Brzo spremi: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Spremi u Gemini Mape».
 Putem dodatka: Klikni ikonu, odaberi mapu i spremi.
 Mobilno: Označi 📱 u podnožju za sinkronizaciju mapa s telefonom.

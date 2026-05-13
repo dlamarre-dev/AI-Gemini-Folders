@@ -14,6 +14,7 @@ Mga AI Folder ang iyong pinagsamang AI cockpit: ayusin ang mga pag-uusap mula sa
 
 🌟 MGA FEATURE NG FOLDER
 
+⌨️ Instant na panel shortcut: Buksan ang panel agad mula sa anumang tab gamit ang Ctrl+Shift+1 (o Cmd+Shift+1 sa Mac).
 ⚡ Mabilis na Pag-save (Right-Click at Shortcuts): I-save ang kasalukuyang pag-uusap sa pamamagitan ng simpleng right-click, o gamitin ang keyboard shortcut (Ctrl+Shift+S o Cmd+Shift+S sa Mac) para agad itong ipadala sa "⚡ Mabilis na Pag-save" — na may visual na alerto kung nai-save na ito!
 ☑️ Multi-Select (Bulk Actions): Pumili ng maraming pag-uusap gamit ang mga checkbox para ilipat o tanggalin ang mga ito sa isang click.
 📑 Tab Groups Integration: Buksan ang isang buong folder sa isang click bilang isang native, color-coded na Chrome Tab Group.
@@ -37,6 +38,7 @@ Nagpapatakbo ka ba ng lokal na modelo ng AI (Ollama, LM Studio, Jan, o iba pa)? 
 
 Folder Mode:
 Magbukas ng pag-uusap sa Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Buksan ang panel: Ctrl+Shift+1 (o Cmd+Shift+1 sa Mac).
 Mabilis na pag-save: Ctrl+Shift+S (o Cmd+Shift+S sa Mac), o right-click > "I-save sa Mga AI Folder".
 Sa pamamagitan ng extension: I-click ang icon, pumili ng folder, at i-save.
 Mobile: Lagyan ng tsek ang 📱 sa footer para i-sync ang iyong mga folder sa iyong telepono.

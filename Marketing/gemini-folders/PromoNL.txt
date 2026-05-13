@@ -14,6 +14,7 @@ Met versie 4.0 wordt Gemini-mappen uw echte Gemini-cockpit: organiseer gesprekke
 
 🌟 MAPFUNCTIES
 
+⌨️ Directe paneelsneltoets: Open het paneel direct vanuit elk tabblad met Ctrl+Shift+1 (of Cmd+Shift+1 op Mac).
 ⚡ Snel opslaan (rechtsklikken & sneltoetsen): Sla het huidige gesprek op met een eenvoudig rechtsklikken, of gebruik de sneltoets (Ctrl+Shift+S of Cmd+Shift+S op Mac) om het direct naar "⚡ Snelle opslag" te sturen — met een visuele melding als het al is opgeslagen!
 ☑️ Meerdere selecteren (bulkacties): Selecteer meerdere gesprekken via selectievakjes om ze met één klik te verplaatsen of verwijderen.
 📑 Tabgroepintegratie: Open een volledige map met één klik als een native, kleurgecodeerde Chrome-tabgroep.
@@ -32,6 +33,7 @@ Met versie 4.0 wordt Gemini-mappen uw echte Gemini-cockpit: organiseer gesprekke
 
 Mappenmodus:
 Open een gesprek op gemini.google.com.
+Open het paneel: Ctrl+Shift+1 (of Cmd+Shift+1 op Mac).
 Snel opslaan: Ctrl+Shift+S (of Cmd+Shift+S op Mac), of rechtsklikken > "Opslaan in Gemini-mappen".
 Via de extensie: Klik op het pictogram, kies een map en sla op.
 Mobiel: Vink 📱 aan in de voettekst om uw mappen op uw telefoon te synchroniseren.

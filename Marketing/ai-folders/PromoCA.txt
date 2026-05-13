@@ -14,6 +14,7 @@ Carpetes IA és el vostre cockpit d'IA unificat: organitzeu converses de totes l
 
 🌟 FUNCIONS DE CARPETES
 
+⌨️ Drecera de teclat instantània: Obriu el panell instantàniament des de qualsevol pestanya amb Ctrl+Shift+1 (o Cmd+Shift+1 a Mac).
 ⚡ Desat ràpid (Clic dret i dreceres): Desa la conversa actual amb un simple clic dret, o utilitza la drecera de teclat (Ctrl+Maj+S o Cmd+Maj+S al Mac) per enviar-la a «⚡ Desat ràpid» – amb una alerta visual si ja estava desada!
 ☑️ Selecció múltiple (Accions massives): Selecciona diverses converses amb caselles de verificació per moure-les o eliminar-les d'un sol clic.
 📑 Integració de grups de pestanyes: Obre una carpeta sencera amb un clic com a grup de pestanyes de Chrome.

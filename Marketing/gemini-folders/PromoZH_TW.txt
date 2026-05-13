@@ -15,6 +15,7 @@ Gemini 資料夾（Gemini Folders）正是您所需的擴充功能。
 
 🌟 資料夾功能
 
+⌨️ 即時面板快捷鍵：在任意分頁用 Ctrl+Shift+1（Mac 上用 Cmd+Shift+1）即時開啟面板。
 ⚡ 快速儲存（右鍵 & 快速鍵）：簡單右鍵即可儲存當前對話，或使用鍵盤快速鍵（Ctrl+Shift+S 或 Mac 上的 Cmd+Shift+S）立即傳送至「⚡ 快速儲存」——如果已儲存則顯示視覺提示！
 ☑️ 多重選取（批次操作）：使用核取方塊選取多個對話，一鍵移動或刪除。
 📑 分頁群組整合：一鍵將整個資料夾作為原生、色彩編碼的 Chrome 分頁群組開啟。
@@ -33,6 +34,7 @@ Gemini 資料夾（Gemini Folders）正是您所需的擴充功能。
 
 資料夾模式：
 在 gemini.google.com 上開啟對話。
+開啟面板：Ctrl+Shift+1（Mac 上為 Cmd+Shift+1）。
 快速儲存：Ctrl+Shift+S（或 Mac 上的 Cmd+Shift+S），或右鍵 > 「儲存到 Gemini 資料夾」。
 透過擴充功能：點擊圖示，選擇資料夾並儲存。
 行動裝置：勾選底部的 📱 以將資料夾同步到您的手機。

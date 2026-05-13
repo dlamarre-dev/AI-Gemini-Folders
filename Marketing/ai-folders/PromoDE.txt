@@ -14,7 +14,8 @@ KI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ih
 
 🌟 ORDNER-FUNKTIONEN
 
-⚡ Schnellspeicherung (Rechtsklick & Shortcuts): Speichern Sie das Gespräch per Rechtsklick oder mit dem Tastaturkürzel (Ctrl+Shift+S bzw. Cmd+Shift+S auf Mac) sofort in „⚡ Schnellspeicherungen" — mit visueller Warnung bei Duplikaten!
+⌨️ Sofortiges Tastaturkürzel: Öffnen Sie das Panel direkt von jedem Tab aus mit Strg+Shift+1 (oder Cmd+Shift+1 auf Mac).
+⚡ Schnellspeicherung (Rechtsklick & Shortcuts): Speichern Sie das Gespräch per Rechtsklick oder mit dem Tastaturkürzel (Strg+Shift+S bzw. Cmd+Shift+S auf Mac) sofort in „⚡ Schnellspeicherungen" — mit visueller Warnung bei Duplikaten!
 ☑️ Mehrfachauswahl (Bulk Actions): Markieren Sie mehrere Gespräche per Checkbox, um sie mit einem Klick zu verschieben oder zu löschen.
 📑 Tab-Gruppen-Integration: Öffnen Sie einen ganzen Ordner per Klick als native, farbcodierte Chrome-Tab-Gruppe.
 😃 Benutzerdefinierte Emojis: Beginnen Sie Ihren Ordnernamen mit einem Emoji (z. B. „💻 Code"), um das Standardsymbol zu ersetzen.
@@ -37,7 +38,8 @@ Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? K
 
 Ordner-Modus:
 Öffnen Sie ein Gespräch auf Gemini, Claude, ChatGPT, Copilot, Perplexity.
-Schnellspeicherung: Ctrl+Shift+S (oder Cmd+Shift+S auf Mac), oder Rechtsklick > „In KI-Ordner speichern".
+Bereich öffnen: Strg+Shift+1 (oder Cmd+Shift+1 auf Mac).
+Schnellspeicherung: Strg+Shift+S (oder Cmd+Shift+S auf Mac), oder Rechtsklick > „In KI-Ordner speichern".
 Über die Erweiterung: Symbol anklicken, Ordner wählen, speichern.
 Mobil: 📱 in der Fußzeile aktivieren, um Ordner auf dem Smartphone zu synchronisieren.
 Checkboxen für Massenaktionen, Ordner als Tabs öffnen (📑), per Drag & Drop reorganisieren!

@@ -14,6 +14,7 @@ Med version 4.0 bliver Gemini Mapper dit sande Gemini-cockpit: organiser samtale
 
 🌟 MAPPEFUNKTIONER
 
+⌨️ Øjeblikkelig panelogenvej: Åbn panelet øjeblikkeligt fra enhver fane med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 ⚡ Hurtiggem (Højreklik og genveje): Gem den aktuelle samtale med et simpelt højreklik, eller brug tastaturgenvejen (Ctrl+Shift+S eller Cmd+Shift+S på Mac) til at sende den til «⚡ Hurtiggem» – med en visuel advarsel, hvis den allerede er gemt!
 ☑️ Flervalg (Massehandlinger): Vælg flere samtaler med afkrydsningsfelter for at flytte eller slette dem med ét klik.
 📑 Fanegruppeintegration: Åbn en hel mappe med ét klik som en indbygget, farvekodet Chrome-fanegruppe.
@@ -32,6 +33,7 @@ Med version 4.0 bliver Gemini Mapper dit sande Gemini-cockpit: organiser samtale
 
 Mappevisning:
 Åbn en samtale på gemini.google.com.
+Åbn panelet: Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 Hurtiggem: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller højreklik > «Gem i Gemini Mapper».
 Via udvidelsen: Klik på ikonet, vælg en mappe og gem.
 Mobil: Markér 📱 i sidefoden for at synkronisere dine mapper til din telefon.

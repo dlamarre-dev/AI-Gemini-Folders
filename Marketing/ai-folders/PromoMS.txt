@@ -14,6 +14,7 @@ Folder AI ialah kokpit AI bersatu anda: susun perbualan dari semua alat AI anda 
 
 🌟 CIRI-CIRI FOLDER
 
+⌨️ Pintasan panel segera: Buka panel secara serta-merta dari mana-mana tab dengan Ctrl+Shift+1 (atau Cmd+Shift+1 di Mac).
 ⚡ Simpan Pantas (Klik kanan & pintasan): Simpan perbualan semasa dengan klik kanan mudah, atau gunakan pintasan papan kekunci (Ctrl+Shift+S atau Cmd+Shift+S pada Mac) untuk menghantarnya ke «⚡ Simpan Pantas» – dengan amaran visual jika sudah disimpan!
 ☑️ Pilihan berbilang (Tindakan pukal): Pilih berbilang perbualan menggunakan kotak semak untuk memindah atau memadamnya dengan satu klik.
 📑 Integrasi kumpulan tab: Buka keseluruhan folder dengan satu klik sebagai kumpulan tab Chrome asli.
@@ -37,6 +38,7 @@ Adakah anda menjalankan model AI tempatan (Ollama, LM Studio, Jan, atau yang lai
 
 Mod Folder:
 Buka perbualan di Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Buka panel: Ctrl+Shift+1 (atau Cmd+Shift+1 di Mac).
 Simpan Pantas: Ctrl+Shift+S (atau Cmd+Shift+S pada Mac), atau klik kanan > «Simpan ke Folder AI».
 Melalui sambungan: Klik ikon, pilih folder dan simpan.
 Mudah alih: Tandakan 📱 di pengaki untuk menyegerakkan folder ke telefon anda.

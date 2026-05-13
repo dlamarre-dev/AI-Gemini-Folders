@@ -14,6 +14,7 @@ Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate i
 
 🌟 FUNCȚII FOLDERE
 
+⌨️ Comandă rapidă instant pentru panou: Deschideți panoul instantaneu din orice filă cu Ctrl+Shift+1 (sau Cmd+Shift+1 pe Mac).
 ⚡ Salvare Rapidă (Clic Dreapta și Comenzi Rapide): Salvați conversația cu un simplu clic dreapta sau folosiți comanda rapidă de la tastatură (Ctrl+Shift+S sau Cmd+Shift+S pe Mac) pentru a o trimite instantaneu în „⚡ Salvări Rapide" — cu alertă vizuală dacă este deja salvată!
 ☑️ Selecție Multiplă (Acțiuni în bloc): Selectați mai multe conversații cu casete de bifare pentru a le muta sau șterge dintr-un singur clic.
 📑 Integrare Grupuri de File: Deschideți un întreg folder cu un clic ca un Grup de File nativ Chrome, cu coduri de culori.
@@ -37,6 +38,7 @@ Rulați un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dosar
 
 Modul Foldere:
 Deschideți o conversație pe Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Deschideți panoul: Ctrl+Shift+1 (sau Cmd+Shift+1 pe Mac).
 Salvare rapidă: Ctrl+Shift+S (sau Cmd+Shift+S pe Mac), sau clic dreapta > „Salvați în Dosare IA".
 Prin extensie: Faceți clic pe pictogramă, alegeți un folder, salvați.
 Mobil: Activați 📱 din subsol pentru a sincroniza folderele cu telefonul.

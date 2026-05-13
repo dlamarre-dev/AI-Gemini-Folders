@@ -19,6 +19,12 @@
     "default_icon": "icon48.png"
   },
   "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1",
+        "mac": "Command+Shift+1"
+      }
+    },
     "quick-save": {
       "suggested_key": {
         "default": "Ctrl+Shift+S",

@@ -14,6 +14,7 @@ YZ Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan ge
 
 🌟 KLASÖR ÖZELLİKLERİ
 
+⌨️ Anlık panel kısayolu: Herhangi bir sekmeden Ctrl+Shift+1 (veya Mac'te Cmd+Shift+1) ile paneli anında açın.
 ⚡ Hızlı Kayıt (Sağ Tık & Kısayollar): Basit bir sağ tıklamayla mevcut konuşmayı kaydedin veya klavye kısayolunu (Ctrl+Shift+S ya da Mac'te Cmd+Shift+S) kullanarak anında "⚡ Hızlı Kayıtlar"a gönderin — zaten kaydedilmişse görsel uyarıyla!
 ☑️ Çoklu Seçim (Toplu İşlemler): Birden fazla konuşmayı onay kutularıyla seçin, tek tıkla taşıyın veya silin.
 📑 Sekme Grupları Entegrasyonu: Tüm bir klasörü tek tıklamayla yerel, renk kodlu Chrome Sekme Grubu olarak açın.
@@ -37,6 +38,7 @@ Yerel bir AI modeli (Ollama, LM Studio, Jan veya başka biri) mi çalıştırıy
 
 Klasör Modu:
 Gemini, Claude, ChatGPT, Copilot, Perplexity'da bir konuşma açın.
+Paneli açın: Ctrl+Shift+1 (veya Mac'te Cmd+Shift+1).
 Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "YZ Klasörleri'e Kaydet".
 Uzantı üzerinden: Simgeye tıklayın, bir klasör seçin ve kaydedin.
 Mobil: Telefonunuzda klasörlerinizi senkronize etmek için alt bilgideki 📱 işaretini işaretleyin.

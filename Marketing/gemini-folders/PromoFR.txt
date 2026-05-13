@@ -14,6 +14,7 @@ Avec la version 4.0, Dossiers Gemini devient votre véritable cockpit Gemini : o
 
 🌟 FONCTIONNALITÉS DOSSIERS
 
+⌨️ Raccourci instantané : Ouvrez le panneau à tout moment depuis n'importe quel onglet avec Ctrl+Shift+1 (ou Cmd+Shift+1 sur Mac).
 ⚡ Sauvegarde Rapide (Clic Droit & Raccourcis) : Sauvegardez la conversation via un simple clic droit, ou utilisez le raccourci clavier (Ctrl+Shift+S ou Cmd+Shift+S sur Mac) pour l'envoyer instantanément dans "⚡ Sauvegardes Rapides" — avec une alerte visuelle si elle est déjà sauvegardée !
 ☑️ Sélection Multiple (Bulk Actions) : Sélectionnez plusieurs conversations avec des cases à cocher pour les déplacer ou les supprimer en un seul clic.
 📑 Groupes d'onglets (Tab Groups) : Ouvrez tout un dossier en un clic dans un groupe d'onglets Chrome natif et coloré.
@@ -32,6 +33,7 @@ Avec la version 4.0, Dossiers Gemini devient votre véritable cockpit Gemini : o
 
 Mode Dossiers :
 Ouvrez une conversation sur gemini.google.com.
+Ouvrir le panneau : Ctrl+Shift+1 (ou Cmd+Shift+1 sur Mac).
 Sauvegarde express : Ctrl+Shift+S (ou Cmd+Shift+S sur Mac), ou clic droit > "Sauvegarder dans Dossiers Gemini".
 Via l'extension : Cliquez sur l'icône, choisissez un dossier et sauvegardez.
 Mobile : Cochez 📱 dans le pied de page pour synchroniser vos dossiers sur votre téléphone.
