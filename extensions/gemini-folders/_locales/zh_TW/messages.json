@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "釘選"
+  },
+  "storageFullError": {
+    "message": "⚠️ 儲存空間已滿 — 未儲存。"
   }
 }

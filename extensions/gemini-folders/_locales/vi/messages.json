@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Ghim"
+  },
+  "storageFullError": {
+    "message": "⚠️ Bộ nhớ đầy — chưa được lưu."
   }
 }

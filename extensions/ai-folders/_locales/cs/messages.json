@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Na této stránce nelze najít textové pole. Nejprve klikněte do editoru a poté použijte tlačítko Vložit."
   },
-  "reviewTitle": {
-    "message": "⭐ Líbí se vám AI složky?"
-  },
-  "reviewMessage": {
-    "message": "Vaše podpora tomuto open source projektu nesmírně pomáhá!"
-  },
-  "reviewRateBtn": {
-    "message": "Ohodnotit 5 hvězdičkami"
-  },
-  "reviewLaterBtn": {
-    "message": "Později"
-  },
-  "reviewNoBtn": {
-    "message": "Ne, děkuji"
+  "storageFullError": {
+    "message": "⚠️ Úložiště je plné — neuloženo."
   }
 }

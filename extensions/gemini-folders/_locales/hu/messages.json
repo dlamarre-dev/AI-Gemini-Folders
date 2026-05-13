@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Rögzítés"
+  },
+  "storageFullError": {
+    "message": "⚠️ A tároló tele van — nem mentve."
   }
 }

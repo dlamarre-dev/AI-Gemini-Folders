@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Није могуће пронаћи поље за унос текста на овој страници. Прво кликните у уређивач, а затим користите дугме за убацивање."
   },
-  "reviewTitle": {
-    "message": "⭐ Da li vam se sviđa ВИ фасцикле?"
-  },
-  "reviewMessage": {
-    "message": "Vaša podrška ogromno pomaže ovom projektu otvorenog koda!"
-  },
-  "reviewRateBtn": {
-    "message": "Oceni s 5 zvezdi"
-  },
-  "reviewLaterBtn": {
-    "message": "Možda kasnije"
-  },
-  "reviewNoBtn": {
-    "message": "Ne, hvala"
+  "storageFullError": {
+    "message": "⚠️ Меморија је пуна — није сачувано."
   }
 }

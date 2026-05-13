@@ -189,7 +189,8 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
         loadData({ folders: {}, pinnedFolders: [] }, (data) => {
           delete data.folders[folderName];
           let updatedPinned = data.pinnedFolders.filter(name => name !== folderName);
-          saveData({ folders: data.folders, pinnedFolders: updatedPinned }, () => {
+          saveData({ folders: data.folders, pinnedFolders: updatedPinned }, (err) => {
+            if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); displayFolders(); return; }
             displayFolders(null, searchInput ? searchInput.value.toLowerCase() : "");
           });
         });
@@ -365,7 +366,8 @@ async function renameChat(folderName, chatUrl, currentTitle) {
       const realIndex = folders[folderName].findIndex(c => c.url === chatUrl);
       if (realIndex !== -1) {
         folders[folderName][realIndex].title = newTitle.trim();
-        saveData({ folders: folders }, () => {
+        saveData({ folders: folders }, (err) => {
+          if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
           const searchInput = document.getElementById('searchInput');
           displayFolders(folderName, searchInput ? searchInput.value.toLowerCase() : "");
         });
@@ -380,7 +382,8 @@ function deleteChat(folderName, chatUrl) {
     const realIndex = folders[folderName].findIndex(c => c.url === chatUrl);
     if (realIndex !== -1) {
       folders[folderName].splice(realIndex, 1);
-      saveData({ folders: folders }, () => {
+      saveData({ folders: folders }, (err) => {
+        if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
         const searchInput = document.getElementById('searchInput');
         displayFolders(folderName, searchInput ? searchInput.value.toLowerCase() : "");
       });
@@ -422,7 +425,8 @@ function moveChat(sourceFolder, targetFolder, chatUrl) {
       openFolders.push(targetFolder);
     }
 
-    saveData({ folders: folders, openFolders: openFolders }, () => {
+    saveData({ folders: folders, openFolders: openFolders }, (err) => {
+      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
       const searchInput = document.getElementById('searchInput');
       displayFolders(openFolders, searchInput ? searchInput.value.toLowerCase() : "");
     });
@@ -486,8 +490,8 @@ async function renameFolder(oldName) {
       pinned[pinIndex] = trimmedNewName;
     }
 
-    saveData({ folders: folders, pinnedFolders: pinned }, () => {
-      // Refresh display while keeping folder open
+    saveData({ folders: folders, pinnedFolders: pinned }, (err) => {
+      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); displayFolders(); return; }
       const searchInput = document.getElementById('searchInput');
       displayFolders(trimmedNewName, searchInput ? searchInput.value.toLowerCase() : "");
     });

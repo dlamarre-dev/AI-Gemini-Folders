@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "पिन करें"
+  },
+  "storageFullError": {
+    "message": "⚠️ संग्रहण भरा हुआ है — सहेजा नहीं गया।"
   }
 }

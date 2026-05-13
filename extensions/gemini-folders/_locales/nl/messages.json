@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Vastzetten"
+  },
+  "storageFullError": {
+    "message": "⚠️ Opslag vol — niet opgeslagen."
   }
 }

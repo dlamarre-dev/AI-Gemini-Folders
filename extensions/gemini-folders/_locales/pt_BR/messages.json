@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Fixar"
+  },
+  "storageFullError": {
+    "message": "⚠️ Armazenamento cheio — não salvo."
   }
 }

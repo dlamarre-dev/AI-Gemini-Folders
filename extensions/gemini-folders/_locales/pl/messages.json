@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Przypnij"
+  },
+  "storageFullError": {
+    "message": "⚠️ Pamięć pełna — nie zapisano."
   }
 }

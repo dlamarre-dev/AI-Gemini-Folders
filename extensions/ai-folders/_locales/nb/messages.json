@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Finner ikke tekstfeltet på denne siden. Prøv å klikke i editoren først, og bruk deretter sett inn-knappen."
   },
-  "reviewTitle": {
-    "message": "⭐ Liker du AI-mapper?"
-  },
-  "reviewMessage": {
-    "message": "Din støtte hjelper dette åpen kildekode-prosjektet enormt!"
-  },
-  "reviewRateBtn": {
-    "message": "Gi 5 stjerner"
-  },
-  "reviewLaterBtn": {
-    "message": "Kanskje senere"
-  },
-  "reviewNoBtn": {
-    "message": "Nei takk"
+  "storageFullError": {
+    "message": "⚠️ Lageret er fullt — ikke lagret."
   }
 }

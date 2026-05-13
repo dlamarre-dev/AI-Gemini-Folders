@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Закрепить"
+  },
+  "storageFullError": {
+    "message": "⚠️ Хранилище заполнено — не сохранено."
   }
 }

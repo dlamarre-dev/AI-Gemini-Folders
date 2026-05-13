@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Kan het tekstinvoerveld op deze pagina niet vinden. Probeer eerst in de editor te klikken en gebruik dan de invoegknop."
   },
-  "reviewTitle": {
-    "message": "⭐ Bevalt AI-mappen u?"
-  },
-  "reviewMessage": {
-    "message": "Uw steun helpt dit open-sourceproject enorm!"
-  },
-  "reviewRateBtn": {
-    "message": "5 sterren geven"
-  },
-  "reviewLaterBtn": {
-    "message": "Misschien later"
-  },
-  "reviewNoBtn": {
-    "message": "Nee, bedankt"
+  "storageFullError": {
+    "message": "⚠️ Opslag vol — niet opgeslagen."
   }
 }

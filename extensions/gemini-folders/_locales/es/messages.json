@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Fijar"
+  },
+  "storageFullError": {
+    "message": "⚠️ Almacenamiento lleno — no guardado."
   }
 }

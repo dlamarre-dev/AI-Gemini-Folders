@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Fissa"
+  },
+  "storageFullError": {
+    "message": "⚠️ Archiviazione piena — non salvato."
   }
 }

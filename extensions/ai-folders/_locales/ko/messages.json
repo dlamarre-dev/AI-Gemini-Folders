@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "이 페이지에서 텍스트 입력란을 찾을 수 없습니다. 먼저 편집기를 클릭한 후 삽입 버튼을 사용하세요."
   },
-  "reviewTitle": {
-    "message": "⭐ AI 폴더가 마음에 드시나요?"
-  },
-  "reviewMessage": {
-    "message": "여러분의 지원은 이 오픈 소스 프로젝트에 큰 도움이 됩니다!"
-  },
-  "reviewRateBtn": {
-    "message": "별 5개 평가하기"
-  },
-  "reviewLaterBtn": {
-    "message": "나중에"
-  },
-  "reviewNoBtn": {
-    "message": "괜찮습니다"
+  "storageFullError": {
+    "message": "⚠️ 저장 공간 부족 — 저장되지 않았습니다."
   }
 }

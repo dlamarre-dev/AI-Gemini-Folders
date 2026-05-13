@@ -1,84 +1,251 @@
 {
-  "extName": { "message": "Gemini Kaustad" },
-  "extDesc": { "message": "Korralda oma Gemini vestlused kohandatud kaustadesse." },
-  "appTitle": { "message": "Gemini Kaustad" },
-  "searchPlaceholder": { "message": "🔍 Otsi vestlust..." },
-  "promptSearchPlaceholder": { "message": "🔍 Otsi prompti..." },
-  "folderPlaceholder": { "message": "Kausta nimi (nt Koodiprojektid)" },
-  "chatPlaceholder": { "message": "Vestluse pealkiri" },
-  "saveBtn": { "message": "Salvesta" },
-  "statusSaved": { "message": "Vestlus salvestatud!" },
-  "noResults": { "message": "Tulemusi ei leitud 🕵️" },
-  "exportBtn": { "message": "💾 Eksport" },
-  "importBtn": { "message": "📂 Import" },
-  "alertNotGemini": { "message": "Kasuta seda laiendust Gemini lehel." },
-  "defaultFolder": { "message": "Üldine" },
-  "defaultTitle": { "message": "Uus vestlus" },
-  "promptRename": { "message": "Vestluse uus nimi:" },
-  "alertEmptyExport": { "message": "Sinu kaustad ja promptid on tühjad, midagi ei saa eksportida!" },
-  "alertImportSuccess": { "message": "Import õnnestus! Sinu kaustad ja promptid on ühendatud." },
-  "alertImportError": { "message": "Impordi viga. Veendu, et see on selle laienduse loodud kehtiv JSON-fail." },
-  "btnRename": { "message": "Nimeta ümber" },
-  "btnDelete": { "message": "Kustuta" },
-  "btnNewFolder": { "message": "➕ Kaust" },
-  "promptNewFolder": { "message": "Uus kaust:" },
-  "btnDeleteFolder": { "message": "Kustuta kaust" },
-  "confirmDeleteFolder": { "message": "See kaust sisaldab vestlusi. Kas oled kindel, et soovid selle kustutada?" },
-  "btnPin": { "message": "Kinnita" },
-  "btnUnpin": { "message": "Eemalda kinnitus" },
-  "sortNewest": { "message": "Uusimad" },
-  "sortOldest": { "message": "Vanimad" },
-  "sortAlpha": { "message": "A kuni Z" },
-  "ctxMenuSave": { "message": "Salvesta Gemini Kaustadesse" },
-  "ctxMenuNoFolder": { "message": "(Kaustasid pole – Ava laiendus)" },
-  "btnToggleAdd": { "message": "Lisa vestlus" },
-  "btnCancel": { "message": "Sulge" },
-  "btnRenameFolder": { "message": "Nimeta kaust ümber" },
-  "promptRenameFolder": { "message": "Uus nimi:" },
-  "errorFolderExists": { "message": "Selle nimega kaust on juba olemas." },
-  "storageCalc": { "message": "Arvutan ruumi..." },
-  "storageInfo": { "message": "Salvestusruum: {used} KB / {max} KB ({pct}%)" },
-  "cmdQuickSave": { "message": "Salvesta vestlus" },
-  "quickSaveFolder": { "message": "⚡ Kiirsalvestus" },
-  "toastSaved": { "message": "✅ Salvestatud Gemini Kaustadesse!" },
-  "btnOpenGroup": { "message": "Ava vahekaardi grupis" },
-  "confirmOpenManyTabs": { "message": "Kas soovid tõesti avada valitud vahekaardid (arv: {count}) korraga?" },
-  "errorTabGroup": { "message": "Viga: vahekaardi gruppi ei saa luua. Kas oled uued õigused aktsepteerinud?" },
-  "bulkSelected": { "message": "{count} valitud" },
-  "bulkMove": { "message": "Liiguta..." },
-  "bulkDelete": { "message": "Kustuta" },
-  "confirmBulkDelete": { "message": "Kas oled kindel, et soovid valitud vestlused (arv: {count}) kustutada?" },
-  "bulkCancel": { "message": "Tühista valik" },
-  "masterFolderName": { "message": "Gemini Kaustad (Sync)" },
-  "syncBookmarksTooltip": { "message": "Loob sünkroonitud kausta Chrome'i järjehoidjatesse telefonis vestlustele juurdepääsuks." },
-  "reviewTitle": { "message": "⭐ Kas sulle meeldib Gemini Kaustad?" },
-  "reviewMessage": { "message": "Sinu toetus aitab seda avatud lähtekoodiga projekti tohutult!" },
-  "reviewRateBtn": { "message": "Hinda 5 tähega" },
-  "reviewLaterBtn": { "message": "Võib-olla hiljem" },
-  "reviewNoBtn": { "message": "Ei, aitäh" },
-  "modalBtnCancel": { "message": "Tühista" },
-  "modalBtnConfirm": { "message": "Kinnita" },
-  "emojiTipPlaceholder": { "message": "Vihje: alusta emojiga (Win+. / ⌘⌃Space)" },
-  "toastAlreadySaved": { "message": "⚠️ Juba salvestatud!" },
-  "folderModeTitle": { "message": "Kaustade režiim" },
-  "promptModeTitle": { "message": "Prompti režiim" },
-  "promptCannotBeEmpty": { "message": "Prompt ei saa olla tühi!" },
-  "promptSaved": { "message": "Prompt salvestatud!" },
-  "promptDuplicateWarning": { "message": "Selle pealkirjaga prompt on juba olemas. Kas kirjutada üle?" },
-  "promptNoSavedYet": { "message": "Ühtegi prompti pole veel salvestatud." },
-  "promptAddBtn": { "message": "Lisa prompt" },
-  "promptCopyTitle": { "message": "Kopeeri" },
-  "promptDeleteTitle": { "message": "Kustuta" },
-  "promptSetGemLink": { "message": "Määra kohandatud Gem-link:" },
-  "promptInvalidGemLink": { "message": "Kehtetu link. See peab algama https://gemini.google.com/" },
-  "newConversationBtn": { "message": "Uus vestlus" },
-  "promptTitlePlaceholder": { "message": "Prompti pealkiri" },
-  "promptTextPlaceholder": { "message": "Kirjuta siia oma prompt..." },
-  "enableCustomGemTooltip": { "message": "Luba kohandatud Gem" },
-  "setGemBtnTooltip": { "message": "Määra kohandatud Gem-link" },
-  "syncPromptsTooltip": { "message": "Sünkrooni promptid" },
-  "promptRenamePrompt": { "message": "Prompti uus nimi:" },
-  "confirmDeletePrompt": { "message": "Kustuta see prompt?" },
-  "promptInsertBtn": { "message": "Lisa Geminisse" },
-  "promptPinTitle": { "message": "Kinnita" }
+  "extName": {
+    "message": "Gemini Kaustad"
+  },
+  "extDesc": {
+    "message": "Korralda oma Gemini vestlused kohandatud kaustadesse."
+  },
+  "appTitle": {
+    "message": "Gemini Kaustad"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Otsi vestlust..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Otsi prompti..."
+  },
+  "folderPlaceholder": {
+    "message": "Kausta nimi (nt Koodiprojektid)"
+  },
+  "chatPlaceholder": {
+    "message": "Vestluse pealkiri"
+  },
+  "saveBtn": {
+    "message": "Salvesta"
+  },
+  "statusSaved": {
+    "message": "Vestlus salvestatud!"
+  },
+  "noResults": {
+    "message": "Tulemusi ei leitud 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Eksport"
+  },
+  "importBtn": {
+    "message": "📂 Import"
+  },
+  "alertNotGemini": {
+    "message": "Kasuta seda laiendust Gemini lehel."
+  },
+  "defaultFolder": {
+    "message": "Üldine"
+  },
+  "defaultTitle": {
+    "message": "Uus vestlus"
+  },
+  "promptRename": {
+    "message": "Vestluse uus nimi:"
+  },
+  "alertEmptyExport": {
+    "message": "Sinu kaustad ja promptid on tühjad, midagi ei saa eksportida!"
+  },
+  "alertImportSuccess": {
+    "message": "Import õnnestus! Sinu kaustad ja promptid on ühendatud."
+  },
+  "alertImportError": {
+    "message": "Impordi viga. Veendu, et see on selle laienduse loodud kehtiv JSON-fail."
+  },
+  "btnRename": {
+    "message": "Nimeta ümber"
+  },
+  "btnDelete": {
+    "message": "Kustuta"
+  },
+  "btnNewFolder": {
+    "message": "➕ Kaust"
+  },
+  "promptNewFolder": {
+    "message": "Uus kaust:"
+  },
+  "btnDeleteFolder": {
+    "message": "Kustuta kaust"
+  },
+  "confirmDeleteFolder": {
+    "message": "See kaust sisaldab vestlusi. Kas oled kindel, et soovid selle kustutada?"
+  },
+  "btnPin": {
+    "message": "Kinnita"
+  },
+  "btnUnpin": {
+    "message": "Eemalda kinnitus"
+  },
+  "sortNewest": {
+    "message": "Uusimad"
+  },
+  "sortOldest": {
+    "message": "Vanimad"
+  },
+  "sortAlpha": {
+    "message": "A kuni Z"
+  },
+  "ctxMenuSave": {
+    "message": "Salvesta Gemini Kaustadesse"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Kaustasid pole – Ava laiendus)"
+  },
+  "btnToggleAdd": {
+    "message": "Lisa vestlus"
+  },
+  "btnCancel": {
+    "message": "Sulge"
+  },
+  "btnRenameFolder": {
+    "message": "Nimeta kaust ümber"
+  },
+  "promptRenameFolder": {
+    "message": "Uus nimi:"
+  },
+  "errorFolderExists": {
+    "message": "Selle nimega kaust on juba olemas."
+  },
+  "storageCalc": {
+    "message": "Arvutan ruumi..."
+  },
+  "storageInfo": {
+    "message": "Salvestusruum: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Salvesta vestlus"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Kiirsalvestus"
+  },
+  "toastSaved": {
+    "message": "✅ Salvestatud Gemini Kaustadesse!"
+  },
+  "btnOpenGroup": {
+    "message": "Ava vahekaardi grupis"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Kas soovid tõesti avada valitud vahekaardid (arv: {count}) korraga?"
+  },
+  "errorTabGroup": {
+    "message": "Viga: vahekaardi gruppi ei saa luua. Kas oled uued õigused aktsepteerinud?"
+  },
+  "bulkSelected": {
+    "message": "{count} valitud"
+  },
+  "bulkMove": {
+    "message": "Liiguta..."
+  },
+  "bulkDelete": {
+    "message": "Kustuta"
+  },
+  "confirmBulkDelete": {
+    "message": "Kas oled kindel, et soovid valitud vestlused (arv: {count}) kustutada?"
+  },
+  "bulkCancel": {
+    "message": "Tühista valik"
+  },
+  "masterFolderName": {
+    "message": "Gemini Kaustad (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Loob sünkroonitud kausta Chrome'i järjehoidjatesse telefonis vestlustele juurdepääsuks."
+  },
+  "reviewTitle": {
+    "message": "⭐ Kas sulle meeldib Gemini Kaustad?"
+  },
+  "reviewMessage": {
+    "message": "Sinu toetus aitab seda avatud lähtekoodiga projekti tohutult!"
+  },
+  "reviewRateBtn": {
+    "message": "Hinda 5 tähega"
+  },
+  "reviewLaterBtn": {
+    "message": "Võib-olla hiljem"
+  },
+  "reviewNoBtn": {
+    "message": "Ei, aitäh"
+  },
+  "modalBtnCancel": {
+    "message": "Tühista"
+  },
+  "modalBtnConfirm": {
+    "message": "Kinnita"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Vihje: alusta emojiga (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Juba salvestatud!"
+  },
+  "folderModeTitle": {
+    "message": "Kaustade režiim"
+  },
+  "promptModeTitle": {
+    "message": "Prompti režiim"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt ei saa olla tühi!"
+  },
+  "promptSaved": {
+    "message": "Prompt salvestatud!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Selle pealkirjaga prompt on juba olemas. Kas kirjutada üle?"
+  },
+  "promptNoSavedYet": {
+    "message": "Ühtegi prompti pole veel salvestatud."
+  },
+  "promptAddBtn": {
+    "message": "Lisa prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Kopeeri"
+  },
+  "promptDeleteTitle": {
+    "message": "Kustuta"
+  },
+  "promptSetGemLink": {
+    "message": "Määra kohandatud Gem-link:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Kehtetu link. See peab algama https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Uus vestlus"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Prompti pealkiri"
+  },
+  "promptTextPlaceholder": {
+    "message": "Kirjuta siia oma prompt..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Luba kohandatud Gem"
+  },
+  "setGemBtnTooltip": {
+    "message": "Määra kohandatud Gem-link"
+  },
+  "syncPromptsTooltip": {
+    "message": "Sünkrooni promptid"
+  },
+  "promptRenamePrompt": {
+    "message": "Prompti uus nimi:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Kustuta see prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Lisa Geminisse"
+  },
+  "promptPinTitle": {
+    "message": "Kinnita"
+  },
+  "storageFullError": {
+    "message": "⚠️ Salvestusruum täis — ei salvestatud."
+  }
 }

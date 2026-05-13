@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "לא נמצא שדה הטקסט בדף זה. נסה ללחוץ תחילה בעורך ולאחר מכן השתמש בלחצן ההוספה."
   },
-  "reviewTitle": {
-    "message": "⭐ נהנה מ-Gemini תיקיות?"
-  },
-  "reviewMessage": {
-    "message": "התמיכה שלך עוזרת לפרויקט הקוד הפתוח הזה מאוד!"
-  },
-  "reviewRateBtn": {
-    "message": "דרג 5 כוכבים"
-  },
-  "reviewLaterBtn": {
-    "message": "אולי מאוחר יותר"
-  },
-  "reviewNoBtn": {
-    "message": "לא תודה"
+  "storageFullError": {
+    "message": "⚠️ האחסון מלא — לא נשמר."
   }
 }

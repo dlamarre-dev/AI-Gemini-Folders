@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "固定"
+  },
+  "storageFullError": {
+    "message": "⚠️ ストレージがいっぱいです — 保存されませんでした。"
   }
 }

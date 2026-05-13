@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Impossibile trovare il campo di testo in questa pagina. Prova a fare clic sull'editor prima, poi usa il pulsante di inserimento."
   },
-  "reviewTitle": {
-    "message": "⭐ Ti piace Cartelle IA?"
-  },
-  "reviewMessage": {
-    "message": "Il tuo supporto aiuta enormemente questo progetto open source!"
-  },
-  "reviewRateBtn": {
-    "message": "Valuta 5 stelle"
-  },
-  "reviewLaterBtn": {
-    "message": "Più tardi"
-  },
-  "reviewNoBtn": {
-    "message": "No grazie"
+  "storageFullError": {
+    "message": "⚠️ Archiviazione piena — non salvato."
   }
 }

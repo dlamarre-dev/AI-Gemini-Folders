@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Haiwezekani kupata sehemu ya kuandika katika ukurasa huu. Jaribu kubonyeza kwenye kihariri kwanza, kisha utumie kitufe cha ingiza."
   },
-  "reviewTitle": {
-    "message": "⭐ Je, unafurahia Folda za AI?"
-  },
-  "reviewMessage": {
-    "message": "Msaada wako unasaidia sana mradi huu wa chanzo wazi!"
-  },
-  "reviewRateBtn": {
-    "message": "Toa nyota 5"
-  },
-  "reviewLaterBtn": {
-    "message": "Labda baadaye"
-  },
-  "reviewNoBtn": {
-    "message": "Hapana, asante"
+  "storageFullError": {
+    "message": "⚠️ Hifadhi imejaa — haijahifadhiwa."
   }
 }

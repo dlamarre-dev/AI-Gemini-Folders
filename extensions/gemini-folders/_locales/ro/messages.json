@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Fixează"
+  },
+  "storageFullError": {
+    "message": "⚠️ Spațiu de stocare plin — nesalvat."
   }
 }

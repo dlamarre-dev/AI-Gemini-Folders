@@ -1,5 +1,10 @@
 // utils.js
 
+// Max characters per sync storage chunk. Chrome enforces 8,192 bytes per key-value pair
+// (key UTF-8 + JSON-serialized value UTF-8). At worst-case 3 bytes/char for LZString output,
+// 2,500 chars × 3 + key overhead ≈ 7,512 bytes — well under the 8,192 limit.
+const SYNC_CHUNK_SIZE = 2500;
+
 function loadData(defaults, callback) {
   chrome.storage.sync.get(null, (syncResult) => {
     chrome.storage.local.get(null, (localResult) => {
@@ -13,8 +18,16 @@ function loadData(defaults, callback) {
           }
         }
 
-        // 1. Folders
-        const rawFoldersData = syncResult.foldersDataCompressed || syncResult.folders;
+        // 1. Folders — chunked format (fdcN + fdc0..N) or legacy single key
+        let rawFoldersData = null;
+        if (syncResult.fdcN !== undefined) {
+          let assembled = '';
+          for (let i = 0; i < syncResult.fdcN; i++) assembled += (syncResult['fdc' + i] || '');
+          rawFoldersData = assembled || null;
+        } else {
+          rawFoldersData = syncResult.foldersDataCompressed || syncResult.folders;
+        }
+
         if (rawFoldersData) {
           if (typeof rawFoldersData === 'string') {
             try {
@@ -30,13 +43,19 @@ function loadData(defaults, callback) {
           }
         }
 
-        // 2. Prompts
+        // 2. Prompts — chunked sync (pdcN + pdc0..N), legacy sync key, or local
         const syncPromptsEnabled = syncResult.syncPromptsEnabled === true;
         let rawPromptsData = null;
-        if (syncPromptsEnabled && (syncResult.promptsDataCompressed || syncResult.prompts)) {
+        if (syncPromptsEnabled) {
+          if (syncResult.pdcN !== undefined) {
+            let assembled = '';
+            for (let i = 0; i < syncResult.pdcN; i++) assembled += (syncResult['pdc' + i] || '');
+            rawPromptsData = assembled || null;
+          } else if (syncResult.promptsDataCompressed || syncResult.prompts) {
             rawPromptsData = syncResult.promptsDataCompressed || syncResult.prompts;
+          }
         } else if (localResult.promptsDataCompressed || localResult.prompts) {
-            rawPromptsData = localResult.promptsDataCompressed || localResult.prompts;
+          rawPromptsData = localResult.promptsDataCompressed || localResult.prompts;
         }
 
         if (rawPromptsData) {
@@ -60,79 +79,103 @@ function loadData(defaults, callback) {
 }
 
 function saveData(dataToSave, callback) {
-  chrome.storage.sync.get(['syncPromptsEnabled'], (syncState) => {
-    const isPromptsSyncEnabled = dataToSave.syncPromptsEnabled !== undefined ? dataToSave.syncPromptsEnabled : syncState.syncPromptsEnabled;
-    const finalSaveSync = { ...dataToSave };
-    const finalSaveLocal = {};
+  // Also fetch current chunk counts so we can clean up stale chunks from previous larger saves.
+  chrome.storage.sync.get(['syncPromptsEnabled', 'fdcN', 'pdcN'], (syncState) => {
+    const isPromptsSyncEnabled = dataToSave.syncPromptsEnabled !== undefined
+      ? dataToSave.syncPromptsEnabled
+      : syncState.syncPromptsEnabled;
 
-    if (finalSaveSync.folders) {
-      finalSaveSync.foldersDataCompressed = LZString.compressToUTF16(JSON.stringify(finalSaveSync.folders));
-      delete finalSaveSync.folders;
-      chrome.storage.sync.remove('folders');
+    const syncToSet = {};
+    const syncToRemove = [];
+    const localToSet = {};
+    // Local keys to remove ONLY after sync.set confirms success, to prevent data loss on failure.
+    const localCleanupAfterSync = [];
+
+    // Pass through all non-data keys (sortPref, openFolders, pinnedFolders, etc.) to sync as-is.
+    for (const [k, v] of Object.entries(dataToSave)) {
+      if (!['folders', 'foldersDataCompressed', 'prompts', 'promptsDataCompressed'].includes(k)) {
+        syncToSet[k] = v;
+      }
     }
 
-    if (finalSaveSync.prompts) {
-      const compressedPrompts = LZString.compressToUTF16(JSON.stringify(finalSaveSync.prompts));
-      delete finalSaveSync.prompts;
-      chrome.storage.sync.remove('prompts');
-      chrome.storage.local.remove('prompts');
+    // --- Folders → sync, split into chunks to stay under kQuotaBytesPerItem (8 192 B) ---
+    if (dataToSave.folders) {
+      const compressed = LZString.compressToUTF16(JSON.stringify(dataToSave.folders));
+      const newN = Math.ceil(compressed.length / SYNC_CHUNK_SIZE) || 1;
+      const oldN = syncState.fdcN || 0;
+      syncToSet.fdcN = newN;
+      for (let i = 0; i < newN; i++) {
+        syncToSet['fdc' + i] = compressed.slice(i * SYNC_CHUNK_SIZE, (i + 1) * SYNC_CHUNK_SIZE);
+      }
+      for (let i = newN; i < oldN; i++) syncToRemove.push('fdc' + i); // stale chunks
+      syncToRemove.push('foldersDataCompressed', 'folders');            // legacy keys
+    }
+
+    // --- Prompts → sync (chunked) if enabled, otherwise local (no per-item limit) ---
+    if (dataToSave.prompts) {
+      const compressed = LZString.compressToUTF16(JSON.stringify(dataToSave.prompts));
+      syncToRemove.push('prompts');
+      chrome.storage.local.remove(['prompts']);
 
       if (isPromptsSyncEnabled) {
-        finalSaveSync.promptsDataCompressed = compressedPrompts;
-        chrome.storage.local.remove('promptsDataCompressed');
+        const newN = Math.ceil(compressed.length / SYNC_CHUNK_SIZE) || 1;
+        const oldN = syncState.pdcN || 0;
+        syncToSet.pdcN = newN;
+        for (let i = 0; i < newN; i++) {
+          syncToSet['pdc' + i] = compressed.slice(i * SYNC_CHUNK_SIZE, (i + 1) * SYNC_CHUNK_SIZE);
+        }
+        for (let i = newN; i < oldN; i++) syncToRemove.push('pdc' + i);
+        syncToRemove.push('promptsDataCompressed'); // remove legacy sync key
+        // Defer local cleanup: only delete local copy after sync confirms success.
+        localCleanupAfterSync.push('promptsDataCompressed');
       } else {
-        finalSaveLocal.promptsDataCompressed = compressedPrompts;
-        chrome.storage.sync.remove('promptsDataCompressed');
+        localToSet.promptsDataCompressed = compressed;
+        const oldSyncPdcN = syncState.pdcN || 0;
+        for (let i = 0; i < oldSyncPdcN; i++) syncToRemove.push('pdc' + i);
+        syncToRemove.push('pdcN', 'promptsDataCompressed');
       }
     }
 
-    chrome.storage.local.set(finalSaveLocal, () => {
-      if (chrome.runtime.lastError) {
-        console.error("Local storage write failed:", chrome.runtime.lastError);
-        alert("Storage Error (local): " + chrome.runtime.lastError.message);
-        if (callback) callback();
-        return;
-      }
+    // Fire-and-forget removes (Chrome queues ops, so these land before the subsequent set).
+    if (syncToRemove.length > 0) chrome.storage.sync.remove(syncToRemove);
 
-      chrome.storage.sync.set(finalSaveSync, () => {
+    const doSyncSave = () => {
+      chrome.storage.sync.set(syncToSet, () => {
         if (chrome.runtime.lastError) {
-          if (chrome.runtime.lastError.message.includes("QUOTA")) {
-            if (isPromptsSyncEnabled && dataToSave.prompts) {
-              console.warn("Quota exceeded on sync. Reverting prompts to local.");
-              const compressedPrompts = LZString.compressToUTF16(JSON.stringify(dataToSave.prompts));
-              chrome.storage.local.set({ promptsDataCompressed: compressedPrompts }, () => {
-                chrome.storage.sync.set({ syncPromptsEnabled: false }, () => {
-                  chrome.storage.sync.remove('promptsDataCompressed');
-                  alert("Not enough space to sync prompts. They have been saved locally instead. Sync disabled.");
-                  finishSave(callback);
-                });
-              });
-              return;
-            } else {
-              alert("Storage Error: " + chrome.runtime.lastError.message);
-            }
-          } else {
-            console.error("Sync storage write failed:", chrome.runtime.lastError);
-            alert("Storage Error (sync): " + chrome.runtime.lastError.message);
-          }
+          // Local data was NOT deleted (deferred cleanup never ran) — report error to caller.
+          if (callback) callback(chrome.runtime.lastError.message || 'Storage error');
+          return;
         }
-        finishSave(callback);
+        // Sync succeeded — now safe to remove the local backup of prompts that moved to sync.
+        if (localCleanupAfterSync.length > 0) chrome.storage.local.remove(localCleanupAfterSync);
+        finishSave(callback, null);
       });
-    });
+    };
+
+    if (Object.keys(localToSet).length > 0) {
+      chrome.storage.local.set(localToSet, () => {
+        if (chrome.runtime.lastError) {
+          console.error("Local storage write failed:", chrome.runtime.lastError);
+          alert("Storage Error (local): " + chrome.runtime.lastError.message);
+          if (callback) callback();
+          return;
+        }
+        doSyncSave();
+      });
+    } else {
+      doSyncSave();
+    }
   });
 }
 
-function finishSave(callback) {
-  chrome.storage.sync.get(['syncBookmarksEnabled', 'foldersDataCompressed', 'pinnedFolders', 'sortPref'], (syncData) => {
-    if (syncData.syncBookmarksEnabled && syncData.foldersDataCompressed) {
-      try {
-        const folders = JSON.parse(LZString.decompressFromUTF16(syncData.foldersDataCompressed));
-        const pinned = syncData.pinnedFolders || [];
-        const sortPref = syncData.sortPref || 'dateAsc';
-        syncToBookmarksTree(folders, pinned, sortPref);
-      } catch (e) {
-        console.error("Bookmark sync skipped — decompression error:", e);
-      }
+// err is null on success or an error message string on failure.
+// Callers that don't check the param continue to work unchanged.
+function finishSave(callback, err = null) {
+  chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref'], (syncData) => {
+    if (syncData.syncBookmarksEnabled) {
+      loadData({ folders: {} }, (data) => {
+        syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateAsc');
+      });
     }
   });
 
@@ -142,7 +185,7 @@ function finishSave(callback) {
     chrome.storage.local.set({ usageStats: stats });
   });
 
-  if (callback) callback();
+  if (callback) callback(err);
 }
 
 // --- BOOKMARKS SYNCHRONIZATION (MOBILE) ---

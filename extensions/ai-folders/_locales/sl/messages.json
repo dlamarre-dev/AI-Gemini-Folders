@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."
   },
-  "reviewTitle": {
-    "message": "⭐ Ali ti je všeč Mape AI?"
-  },
-  "reviewMessage": {
-    "message": "Tvoja podpora enormno pomaga temu odprtokodnemu projektu!"
-  },
-  "reviewRateBtn": {
-    "message": "Oceni z 5 zvezdicami"
-  },
-  "reviewLaterBtn": {
-    "message": "Morda pozneje"
-  },
-  "reviewNoBtn": {
-    "message": "Ne, hvala"
+  "storageFullError": {
+    "message": "⚠️ Prostor za shranjevanje je poln — ni shranjeno."
   }
 }

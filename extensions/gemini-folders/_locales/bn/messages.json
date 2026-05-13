@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "পিন করুন"
+  },
+  "storageFullError": {
+    "message": "⚠️ স্টোরেজ পূর্ণ — সংরক্ষণ হয়নি।"
   }
 }

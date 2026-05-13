@@ -1,84 +1,251 @@
 {
-  "extName": { "message": "Carpetes Gemini" },
-  "extDesc": { "message": "Organitza les teves converses de Gemini en carpetes personalitzades." },
-  "appTitle": { "message": "Carpetes Gemini" },
-  "searchPlaceholder": { "message": "🔍 Cerca una conversa..." },
-  "promptSearchPlaceholder": { "message": "🔍 Cerca un prompt..." },
-  "folderPlaceholder": { "message": "Nom de la carpeta (p. ex. Projectes de codi)" },
-  "chatPlaceholder": { "message": "Títol de la conversa" },
-  "saveBtn": { "message": "Desa" },
-  "statusSaved": { "message": "Conversa desada!" },
-  "noResults": { "message": "Cap resultat 🕵️" },
-  "exportBtn": { "message": "💾 Exportar" },
-  "importBtn": { "message": "📂 Importar" },
-  "alertNotGemini": { "message": "Utilitza aquesta extensió en una pàgina de Gemini." },
-  "defaultFolder": { "message": "General" },
-  "defaultTitle": { "message": "Nova conversa" },
-  "promptRename": { "message": "Nou nom de la conversa:" },
-  "alertEmptyExport": { "message": "Les teves carpetes i prompts estan buits, res per exportar!" },
-  "alertImportSuccess": { "message": "Importació correcta! Les teves carpetes i prompts s'han combinat." },
-  "alertImportError": { "message": "Error d'importació. Assegura't que és un fitxer JSON vàlid generat per aquesta extensió." },
-  "btnRename": { "message": "Reanomena" },
-  "btnDelete": { "message": "Elimina" },
-  "btnNewFolder": { "message": "➕ Carpeta" },
-  "promptNewFolder": { "message": "Nova carpeta:" },
-  "btnDeleteFolder": { "message": "Elimina la carpeta" },
-  "confirmDeleteFolder": { "message": "Aquesta carpeta conté converses. Estàs segur que vols eliminar-la?" },
-  "btnPin": { "message": "Fixa" },
-  "btnUnpin": { "message": "Desfixa" },
-  "sortNewest": { "message": "Més recents" },
-  "sortOldest": { "message": "Més antigues" },
-  "sortAlpha": { "message": "A fins a Z" },
-  "ctxMenuSave": { "message": "Desa a Carpetes Gemini" },
-  "ctxMenuNoFolder": { "message": "(Cap carpeta – Obre l'extensió)" },
-  "btnToggleAdd": { "message": "Afegeix una conversa" },
-  "btnCancel": { "message": "Tanca" },
-  "btnRenameFolder": { "message": "Reanomena la carpeta" },
-  "promptRenameFolder": { "message": "Nou nom:" },
-  "errorFolderExists": { "message": "Ja existeix una carpeta amb aquest nom." },
-  "storageCalc": { "message": "Calculant espai..." },
-  "storageInfo": { "message": "Emmagatzematge: {used} KB / {max} KB ({pct}%)" },
-  "cmdQuickSave": { "message": "Desa la conversa" },
-  "quickSaveFolder": { "message": "⚡ Desat ràpid" },
-  "toastSaved": { "message": "✅ Desat a Carpetes Gemini!" },
-  "btnOpenGroup": { "message": "Obre en grup de pestanyes" },
-  "confirmOpenManyTabs": { "message": "Realment vols obrir les pestanyes seleccionades ({count}) alhora?" },
-  "errorTabGroup": { "message": "Error: no es pot crear el grup de pestanyes. Has acceptat els nous permisos?" },
-  "bulkSelected": { "message": "Elements seleccionats: {count}" },
-  "bulkMove": { "message": "Mou a..." },
-  "bulkDelete": { "message": "Elimina" },
-  "confirmBulkDelete": { "message": "Estàs segur que vols eliminar les converses seleccionades ({count})?" },
-  "bulkCancel": { "message": "Cancel·la la selecció" },
-  "masterFolderName": { "message": "Carpetes Gemini (Sync)" },
-  "syncBookmarksTooltip": { "message": "Crea una carpeta sincronitzada als marcadors de Chrome per accedir a les converses al telèfon." },
-  "reviewTitle": { "message": "⭐ T'agrada Gemini Carpetes?" },
-  "reviewMessage": { "message": "El teu suport ajuda enormement aquest projecte de codi obert!" },
-  "reviewRateBtn": { "message": "Puntua amb 5 estrelles" },
-  "reviewLaterBtn": { "message": "Potser més tard" },
-  "reviewNoBtn": { "message": "No, gràcies" },
-  "modalBtnCancel": { "message": "Cancel·la" },
-  "modalBtnConfirm": { "message": "Confirma" },
-  "emojiTipPlaceholder": { "message": "Consell: comença amb un emoji (Win+. / ⌘⌃Space)" },
-  "toastAlreadySaved": { "message": "⚠️ Ja desat!" },
-  "folderModeTitle": { "message": "Mode carpetes" },
-  "promptModeTitle": { "message": "Mode prompts" },
-  "promptCannotBeEmpty": { "message": "El prompt no pot estar buit!" },
-  "promptSaved": { "message": "Prompt desat!" },
-  "promptDuplicateWarning": { "message": "Ja existeix un prompt amb aquest títol. Vols sobreescriure'l?" },
-  "promptNoSavedYet": { "message": "Encara no hi ha prompts desats." },
-  "promptAddBtn": { "message": "Afegeix un prompt" },
-  "promptCopyTitle": { "message": "Copia" },
-  "promptDeleteTitle": { "message": "Elimina" },
-  "promptSetGemLink": { "message": "Estableix un enllaç personalitzat de Gem:" },
-  "promptInvalidGemLink": { "message": "Enllaç no vàlid. Ha de començar amb https://gemini.google.com/" },
-  "newConversationBtn": { "message": "Nova conversa" },
-  "promptTitlePlaceholder": { "message": "Títol del prompt" },
-  "promptTextPlaceholder": { "message": "Escriu el teu prompt aquí..." },
-  "enableCustomGemTooltip": { "message": "Activa el Gem personalitzat" },
-  "setGemBtnTooltip": { "message": "Estableix un enllaç personalitzat de Gem" },
-  "syncPromptsTooltip": { "message": "Sincronitza els prompts" },
-  "promptRenamePrompt": { "message": "Nou nom del prompt:" },
-  "confirmDeletePrompt": { "message": "Elimina aquest prompt?" },
-  "promptInsertBtn": { "message": "Insereix a Gemini" },
-  "promptPinTitle": { "message": "Fixa" }
+  "extName": {
+    "message": "Carpetes Gemini"
+  },
+  "extDesc": {
+    "message": "Organitza les teves converses de Gemini en carpetes personalitzades."
+  },
+  "appTitle": {
+    "message": "Carpetes Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Cerca una conversa..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Cerca un prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Nom de la carpeta (p. ex. Projectes de codi)"
+  },
+  "chatPlaceholder": {
+    "message": "Títol de la conversa"
+  },
+  "saveBtn": {
+    "message": "Desa"
+  },
+  "statusSaved": {
+    "message": "Conversa desada!"
+  },
+  "noResults": {
+    "message": "Cap resultat 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Exportar"
+  },
+  "importBtn": {
+    "message": "📂 Importar"
+  },
+  "alertNotGemini": {
+    "message": "Utilitza aquesta extensió en una pàgina de Gemini."
+  },
+  "defaultFolder": {
+    "message": "General"
+  },
+  "defaultTitle": {
+    "message": "Nova conversa"
+  },
+  "promptRename": {
+    "message": "Nou nom de la conversa:"
+  },
+  "alertEmptyExport": {
+    "message": "Les teves carpetes i prompts estan buits, res per exportar!"
+  },
+  "alertImportSuccess": {
+    "message": "Importació correcta! Les teves carpetes i prompts s'han combinat."
+  },
+  "alertImportError": {
+    "message": "Error d'importació. Assegura't que és un fitxer JSON vàlid generat per aquesta extensió."
+  },
+  "btnRename": {
+    "message": "Reanomena"
+  },
+  "btnDelete": {
+    "message": "Elimina"
+  },
+  "btnNewFolder": {
+    "message": "➕ Carpeta"
+  },
+  "promptNewFolder": {
+    "message": "Nova carpeta:"
+  },
+  "btnDeleteFolder": {
+    "message": "Elimina la carpeta"
+  },
+  "confirmDeleteFolder": {
+    "message": "Aquesta carpeta conté converses. Estàs segur que vols eliminar-la?"
+  },
+  "btnPin": {
+    "message": "Fixa"
+  },
+  "btnUnpin": {
+    "message": "Desfixa"
+  },
+  "sortNewest": {
+    "message": "Més recents"
+  },
+  "sortOldest": {
+    "message": "Més antigues"
+  },
+  "sortAlpha": {
+    "message": "A fins a Z"
+  },
+  "ctxMenuSave": {
+    "message": "Desa a Carpetes Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Cap carpeta – Obre l'extensió)"
+  },
+  "btnToggleAdd": {
+    "message": "Afegeix una conversa"
+  },
+  "btnCancel": {
+    "message": "Tanca"
+  },
+  "btnRenameFolder": {
+    "message": "Reanomena la carpeta"
+  },
+  "promptRenameFolder": {
+    "message": "Nou nom:"
+  },
+  "errorFolderExists": {
+    "message": "Ja existeix una carpeta amb aquest nom."
+  },
+  "storageCalc": {
+    "message": "Calculant espai..."
+  },
+  "storageInfo": {
+    "message": "Emmagatzematge: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Desa la conversa"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Desat ràpid"
+  },
+  "toastSaved": {
+    "message": "✅ Desat a Carpetes Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Obre en grup de pestanyes"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Realment vols obrir les pestanyes seleccionades ({count}) alhora?"
+  },
+  "errorTabGroup": {
+    "message": "Error: no es pot crear el grup de pestanyes. Has acceptat els nous permisos?"
+  },
+  "bulkSelected": {
+    "message": "Elements seleccionats: {count}"
+  },
+  "bulkMove": {
+    "message": "Mou a..."
+  },
+  "bulkDelete": {
+    "message": "Elimina"
+  },
+  "confirmBulkDelete": {
+    "message": "Estàs segur que vols eliminar les converses seleccionades ({count})?"
+  },
+  "bulkCancel": {
+    "message": "Cancel·la la selecció"
+  },
+  "masterFolderName": {
+    "message": "Carpetes Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Crea una carpeta sincronitzada als marcadors de Chrome per accedir a les converses al telèfon."
+  },
+  "reviewTitle": {
+    "message": "⭐ T'agrada Gemini Carpetes?"
+  },
+  "reviewMessage": {
+    "message": "El teu suport ajuda enormement aquest projecte de codi obert!"
+  },
+  "reviewRateBtn": {
+    "message": "Puntua amb 5 estrelles"
+  },
+  "reviewLaterBtn": {
+    "message": "Potser més tard"
+  },
+  "reviewNoBtn": {
+    "message": "No, gràcies"
+  },
+  "modalBtnCancel": {
+    "message": "Cancel·la"
+  },
+  "modalBtnConfirm": {
+    "message": "Confirma"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Consell: comença amb un emoji (Win+. / ⌘⌃Space)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Ja desat!"
+  },
+  "folderModeTitle": {
+    "message": "Mode carpetes"
+  },
+  "promptModeTitle": {
+    "message": "Mode prompts"
+  },
+  "promptCannotBeEmpty": {
+    "message": "El prompt no pot estar buit!"
+  },
+  "promptSaved": {
+    "message": "Prompt desat!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Ja existeix un prompt amb aquest títol. Vols sobreescriure'l?"
+  },
+  "promptNoSavedYet": {
+    "message": "Encara no hi ha prompts desats."
+  },
+  "promptAddBtn": {
+    "message": "Afegeix un prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Copia"
+  },
+  "promptDeleteTitle": {
+    "message": "Elimina"
+  },
+  "promptSetGemLink": {
+    "message": "Estableix un enllaç personalitzat de Gem:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Enllaç no vàlid. Ha de començar amb https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Nova conversa"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Títol del prompt"
+  },
+  "promptTextPlaceholder": {
+    "message": "Escriu el teu prompt aquí..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Activa el Gem personalitzat"
+  },
+  "setGemBtnTooltip": {
+    "message": "Estableix un enllaç personalitzat de Gem"
+  },
+  "syncPromptsTooltip": {
+    "message": "Sincronitza els prompts"
+  },
+  "promptRenamePrompt": {
+    "message": "Nou nom del prompt:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Elimina aquest prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Insereix a Gemini"
+  },
+  "promptPinTitle": {
+    "message": "Fixa"
+  },
+  "storageFullError": {
+    "message": "⚠️ Emmagatzematge ple — no s'ha desat."
+  }
 }

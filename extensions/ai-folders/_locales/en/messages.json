@@ -250,5 +250,8 @@
   },
   "reviewNoBtn": {
     "message": "No thanks"
+  },
+  "storageFullError": {
+    "message": "⚠️ Storage full — not saved."
   }
 }

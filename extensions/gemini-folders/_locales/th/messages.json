@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "ปักหมุด"
+  },
+  "storageFullError": {
+    "message": "⚠️ พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก"
   }
 }

@@ -169,7 +169,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   syncPromptsToggle.addEventListener('change', (e) => {
       const isEnabled = e.target.checked;
       loadData({ prompts: {} }, (data) => {
-          saveData({ prompts: data.prompts, syncPromptsEnabled: isEnabled }, () => {
+          saveData({ prompts: data.prompts, syncPromptsEnabled: isEnabled }, (err) => {
+              if (err) {
+                  syncPromptsToggle.checked = !isEnabled; // revert toggle
+                  window.showCustomModal({
+                      title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.',
+                      type: 'alert'
+                  });
+                  return;
+              }
               setTimeout(() => {
                   chrome.storage.sync.get(['syncPromptsEnabled'], (res) => {
                       syncPromptsToggle.checked = !!res.syncPromptsEnabled;
@@ -207,8 +215,15 @@ document.addEventListener('DOMContentLoaded', async () => {
               }
           }
           data.prompts[title] = { text: text, timestamp: Date.now() };
-          saveData({ prompts: data.prompts }, () => {
+          saveData({ prompts: data.prompts }, (err) => {
               isSavingPrompt = false;
+              if (err) {
+                  promptStatusDiv.textContent = chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.';
+                  promptStatusDiv.style.color = 'red';
+                  promptStatusDiv.style.display = 'block';
+                  setTimeout(() => promptStatusDiv.style.display = 'none', 4000);
+                  return;
+              }
               promptTitleInput.value = '';
               promptTextInput.value = '';
               promptStatusDiv.textContent = chrome.i18n.getMessage("promptSaved") || 'Prompt saved!';
@@ -549,7 +564,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       loadData({ folders: {} }, (data) => {
         if (!data.folders[name.trim()]) {
           data.folders[name.trim()] = [];
-          saveData({ folders: data.folders }, () => {
+          saveData({ folders: data.folders }, (err) => {
+            if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
             if (window.displayFolders) window.displayFolders();
           });
         }
@@ -708,8 +724,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
       }
 
-      saveData({ folders: folders }, () => {
+      saveData({ folders: folders }, (err) => {
         isSavingFolder = false;
+        if (err) {
+          statusDiv.textContent = chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.';
+          statusDiv.style.color = 'red';
+          statusDiv.style.display = "block";
+          setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, 4000);
+          return;
+        }
         folderNameInput.value = "";
         addConversationPanel.style.display = 'none';
         toggleAddPanelBtn.textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");

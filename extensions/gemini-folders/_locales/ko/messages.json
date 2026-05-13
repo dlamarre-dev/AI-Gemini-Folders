@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "고정"
+  },
+  "storageFullError": {
+    "message": "⚠️ 저장 공간 부족 — 저장되지 않았습니다."
   }
 }

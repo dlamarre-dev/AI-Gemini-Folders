@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Sematkan"
+  },
+  "storageFullError": {
+    "message": "⚠️ Penyimpanan penuh — tidak disimpan."
   }
 }

@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "I-pin"
+  },
+  "storageFullError": {
+    "message": "⚠️ Puno na ang storage — hindi na-save."
   }
 }

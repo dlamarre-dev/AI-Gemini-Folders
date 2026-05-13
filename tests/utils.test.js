@@ -165,9 +165,21 @@ describe('loadData', () => {
     });
   });
 
-  test('decompresses folder data from sync storage', (done) => {
+  test('decompresses folder data from sync storage (legacy single key)', (done) => {
     const folders = { Dev: [{ title: 'Chat', url: 'https://gemini.google.com/app/a', timestamp: 1000 }] };
     mockStorage({ sync: { foldersDataCompressed: `C:${JSON.stringify(folders)}` } });
+
+    loadData({ folders: {} }, (data) => {
+      expect(data.folders).toEqual(folders);
+      done();
+    });
+  });
+
+  test('assembles folder data from chunked sync keys', (done) => {
+    const folders = { Dev: [{ title: 'Chat', url: 'https://gemini.google.com/app/a', timestamp: 1000 }] };
+    const compressed = `C:${JSON.stringify(folders)}`;
+    const mid = Math.floor(compressed.length / 2);
+    mockStorage({ sync: { fdcN: 2, fdc0: compressed.slice(0, mid), fdc1: compressed.slice(mid) } });
 
     loadData({ folders: {} }, (data) => {
       expect(data.folders).toEqual(folders);
@@ -201,10 +213,24 @@ describe('loadData', () => {
     });
   });
 
-  test('loads prompts from sync storage when sync is enabled', (done) => {
+  test('loads prompts from sync storage when sync is enabled (legacy single key)', (done) => {
     const prompts = { 'Synced Prompt': { text: 'Synced', timestamp: 2000 } };
     mockStorage({
       sync: { syncPromptsEnabled: true, promptsDataCompressed: `C:${JSON.stringify(prompts)}` },
+    });
+
+    loadData({ prompts: {} }, (data) => {
+      expect(data.prompts).toEqual(prompts);
+      done();
+    });
+  });
+
+  test('assembles prompt data from chunked sync keys', (done) => {
+    const prompts = { 'Synced Prompt': { text: 'Synced', timestamp: 2000 } };
+    const compressed = `C:${JSON.stringify(prompts)}`;
+    const mid = Math.floor(compressed.length / 2);
+    mockStorage({
+      sync: { syncPromptsEnabled: true, pdcN: 2, pdc0: compressed.slice(0, mid), pdc1: compressed.slice(mid) },
     });
 
     loadData({ prompts: {} }, (data) => {
@@ -237,13 +263,17 @@ describe('saveData', () => {
     return calls[calls.length - 1]?.[0] ?? {};
   }
 
-  test('compresses folders before storing in sync', (done) => {
+  test('compresses folders into sync chunks', (done) => {
     const folders = { Dev: [{ title: 'Chat', url: 'https://gemini.google.com/app/a', timestamp: 1 }] };
     saveData({ folders }, () => {
       const saved = getSyncSetArg();
-      expect(saved.foldersDataCompressed).toBeDefined();
-      expect(saved.folders).toBeUndefined(); // raw key must be removed
-      const decompressed = JSON.parse(LZString.decompressFromUTF16(saved.foldersDataCompressed));
+      expect(saved.fdcN).toBeDefined();
+      expect(saved.fdc0).toBeDefined();
+      expect(saved.foldersDataCompressed).toBeUndefined(); // legacy key must not be written
+      expect(saved.folders).toBeUndefined();
+      let assembled = '';
+      for (let i = 0; i < saved.fdcN; i++) assembled += (saved['fdc' + i] || '');
+      const decompressed = JSON.parse(LZString.decompressFromUTF16(assembled));
       expect(decompressed).toEqual(folders);
       done();
     });
@@ -269,7 +299,7 @@ describe('saveData', () => {
     });
   });
 
-  test('stores prompts in sync when sync is enabled', (done) => {
+  test('stores prompts in sync chunks when sync is enabled', (done) => {
     const prompts = { 'P1': { text: 'text', timestamp: 1 } };
     chrome.storage.sync.get.mockImplementation((keys, cb) => {
       cb({ syncPromptsEnabled: true, syncBookmarksEnabled: false });
@@ -277,13 +307,32 @@ describe('saveData', () => {
 
     saveData({ prompts }, () => {
       const syncArg = getSyncSetArg();
-      expect(syncArg.promptsDataCompressed).toBeDefined();
+      expect(syncArg.pdcN).toBeDefined();
+      expect(syncArg.pdc0).toBeDefined();
+      const decompressed = JSON.parse(LZString.decompressFromUTF16(syncArg.pdc0));
+      expect(decompressed).toEqual(prompts);
       done();
     });
   });
 
-  test('calls callback after save completes', (done) => {
-    saveData({ folders: {} }, () => done());
+  test('calls callback with null on success', (done) => {
+    saveData({ folders: {} }, (err) => {
+      expect(err).toBeNull();
+      done();
+    });
+  });
+
+  test('calls callback with error message on sync write failure', (done) => {
+    chrome.storage.sync.set.mockImplementationOnce((_, cb) => {
+      chrome.runtime.lastError = { message: 'QUOTA_BYTES quota exceeded' };
+      cb();
+      chrome.runtime.lastError = null;
+    });
+
+    saveData({ folders: {} }, (err) => {
+      expect(err).toBe('QUOTA_BYTES quota exceeded');
+      done();
+    });
   });
 });
 
@@ -307,8 +356,10 @@ describe('mergeImportData', () => {
   function savedFolders() {
     const calls = chrome.storage.sync.set.mock.calls;
     const arg = calls[calls.length - 1]?.[0];
-    if (!arg?.foldersDataCompressed) return null;
-    return JSON.parse(LZString.decompressFromUTF16(arg.foldersDataCompressed));
+    if (!arg?.fdcN) return null;
+    let assembled = '';
+    for (let i = 0; i < arg.fdcN; i++) assembled += (arg['fdc' + i] || '');
+    return JSON.parse(LZString.decompressFromUTF16(assembled));
   }
 
   function savedPrompts() {

@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "置顶"
+  },
+  "storageFullError": {
+    "message": "⚠️ 存储已满 — 未保存。"
   }
 }

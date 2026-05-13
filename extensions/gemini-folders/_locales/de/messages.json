@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Anheften"
+  },
+  "storageFullError": {
+    "message": "⚠️ Speicher voll — nicht gespeichert."
   }
 }

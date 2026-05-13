@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "无法在此页面找到文本输入框。请先点击编辑器，然后再使用插入按钮。"
   },
-  "reviewTitle": {
-    "message": "⭐ 您喜欢 AI 文件夹吗？"
-  },
-  "reviewMessage": {
-    "message": "您的支持对这个开源项目有巨大的帮助！"
-  },
-  "reviewRateBtn": {
-    "message": "评价 5 星"
-  },
-  "reviewLaterBtn": {
-    "message": "以后再说"
-  },
-  "reviewNoBtn": {
-    "message": "不，谢谢"
+  "storageFullError": {
+    "message": "⚠️ 存储已满 — 未保存。"
   }
 }

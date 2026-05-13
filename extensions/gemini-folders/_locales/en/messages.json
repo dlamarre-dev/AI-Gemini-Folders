@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Pin"
+  },
+  "storageFullError": {
+    "message": "⚠️ Storage full — not saved."
   }
 }

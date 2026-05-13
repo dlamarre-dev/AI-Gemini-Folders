@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Não foi possível encontrar o campo de texto nesta página. Tente clicar no editor primeiro e utilize o botão de inserção."
   },
-  "reviewTitle": {
-    "message": "⭐ Está a gostar das Pastas IA?"
-  },
-  "reviewMessage": {
-    "message": "O seu apoio ajuda imenso este projeto de código aberto!"
-  },
-  "reviewRateBtn": {
-    "message": "Avaliar com 5 estrelas"
-  },
-  "reviewLaterBtn": {
-    "message": "Mais tarde"
-  },
-  "reviewNoBtn": {
-    "message": "Não, obrigado"
+  "storageFullError": {
+    "message": "⚠️ Armazenamento cheio — não guardado."
   }
 }

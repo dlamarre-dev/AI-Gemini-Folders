@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "ไม่พบช่องป้อนข้อความในหน้านี้ ลองคลิกที่ตัวแก้ไขก่อน แล้วจึงใช้ปุ่มแทรก"
   },
-  "reviewTitle": {
-    "message": "⭐ คุณชอบโฟลเดอร์ AI หรือไม่?"
-  },
-  "reviewMessage": {
-    "message": "การสนับสนุนของคุณช่วยโปรเจกต์โอเพ่นซอร์สนี้เป็นอย่างมาก!"
-  },
-  "reviewRateBtn": {
-    "message": "ให้คะแนน 5 ดาว"
-  },
-  "reviewLaterBtn": {
-    "message": "บางทีภายหลัง"
-  },
-  "reviewNoBtn": {
-    "message": "ไม่ ขอบคุณ"
+  "storageFullError": {
+    "message": "⚠️ พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก"
   }
 }

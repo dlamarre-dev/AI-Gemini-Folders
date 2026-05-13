@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "تثبيت"
+  },
+  "storageFullError": {
+    "message": "⚠️ التخزين ممتلئ — لم يتم الحفظ."
   }
 }

@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Bandika"
+  },
+  "storageFullError": {
+    "message": "⚠️ Hifadhi imejaa — haijahifadhiwa."
   }
 }

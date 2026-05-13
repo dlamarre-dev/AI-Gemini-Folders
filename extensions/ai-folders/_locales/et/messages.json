@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Selle lehe tekstivälja ei leitud. Proovige esmalt redaktorisse klõpsata ja seejärel kasutage lisamisnuppu."
   },
-  "reviewTitle": {
-    "message": "⭐ Kas sulle meeldib AI kaustad?"
-  },
-  "reviewMessage": {
-    "message": "Sinu toetus aitab seda avatud lähtekoodiga projekti tohutult!"
-  },
-  "reviewRateBtn": {
-    "message": "Hinda 5 tähega"
-  },
-  "reviewLaterBtn": {
-    "message": "Võib-olla hiljem"
-  },
-  "reviewNoBtn": {
-    "message": "Ei, aitäh"
+  "storageFullError": {
+    "message": "⚠️ Salvestusruum täis — ei salvestatud."
   }
 }

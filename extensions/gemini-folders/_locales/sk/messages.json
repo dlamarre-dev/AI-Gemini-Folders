@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Pripnúť"
+  },
+  "storageFullError": {
+    "message": "⚠️ Úložisko je plné — neuložené."
   }
 }

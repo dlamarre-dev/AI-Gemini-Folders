@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Épingler"
+  },
+  "storageFullError": {
+    "message": "⚠️ Stockage plein — non sauvegardé."
   }
 }

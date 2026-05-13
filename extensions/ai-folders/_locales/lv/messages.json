@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."
   },
-  "reviewTitle": {
-    "message": "⭐ Vai tev patīk AI mapes?"
-  },
-  "reviewMessage": {
-    "message": "Tavs atbalsts ārkārtīgi palīdz šim atvērtā koda projektam!"
-  },
-  "reviewRateBtn": {
-    "message": "Novērtēt ar 5 zvaigznēm"
-  },
-  "reviewLaterBtn": {
-    "message": "Varbūt vēlāk"
-  },
-  "reviewNoBtn": {
-    "message": "Nē, paldies"
+  "storageFullError": {
+    "message": "⚠️ Krātuve ir pilna — nav saglabāts."
   }
 }

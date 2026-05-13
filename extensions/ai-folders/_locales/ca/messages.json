@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "No s'ha pogut trobar el camp de text en aquesta pàgina. Proveu de fer clic a l'editor primer i després useu el botó d'inserció."
   },
-  "reviewTitle": {
-    "message": "⭐ T'agrada Gemini Carpetes?"
-  },
-  "reviewMessage": {
-    "message": "El teu suport ajuda enormement aquest projecte de codi obert!"
-  },
-  "reviewRateBtn": {
-    "message": "Puntua amb 5 estrelles"
-  },
-  "reviewLaterBtn": {
-    "message": "Potser més tard"
-  },
-  "reviewNoBtn": {
-    "message": "No, gràcies"
+  "storageFullError": {
+    "message": "⚠️ Emmagatzematge ple — no s'ha desat."
   }
 }

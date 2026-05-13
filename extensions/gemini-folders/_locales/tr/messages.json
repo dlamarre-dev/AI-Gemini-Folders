@@ -244,5 +244,8 @@
   },
   "promptPinTitle": {
     "message": "Sabitle"
+  },
+  "storageFullError": {
+    "message": "⚠️ Depolama alanı dolu — kaydedilmedi."
   }
 }

@@ -242,19 +242,7 @@
   "alertEditorNotFound": {
     "message": "Impossible de trouver le champ de saisie sur cette page. Essayez de cliquer dans l'éditeur d'abord, puis utilisez le bouton d'insertion."
   },
-  "reviewTitle": {
-    "message": "⭐ Aimez-vous Dossiers IA ?"
-  },
-  "reviewMessage": {
-    "message": "Votre soutien aide énormément ce projet open source !"
-  },
-  "reviewRateBtn": {
-    "message": "Noter 5 étoiles"
-  },
-  "reviewLaterBtn": {
-    "message": "Plus tard"
-  },
-  "reviewNoBtn": {
-    "message": "Non merci"
+  "storageFullError": {
+    "message": "⚠️ Stockage plein — non sauvegardé."
   }
 }

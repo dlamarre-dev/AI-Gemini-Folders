@@ -44,6 +44,7 @@ AF = {
         "newConv_copilot":    "محادثة Copilot جديدة",
         "newConv_perplexity": "محادثة Perplexity جديدة",
         "newConv_local":      "محادثة LLM محلية جديدة (اضغط مطوّلاً لتعيين الرابط)",
+        "storageFullError":   "⚠️ التخزين ممتلئ — لم يتم الحفظ.",
     },
     "bn": {
         "extName":            "AI ফোল্ডার",
@@ -58,6 +59,7 @@ AF = {
         "newConv_copilot":    "নতুন Copilot কথোপকথন",
         "newConv_perplexity": "নতুন Perplexity কথোপকথন",
         "newConv_local":      "নতুন স্থানীয় LLM কথোপকথন (URL কনফিগার করতে ধরে রাখুন)",
+        "storageFullError":   "⚠️ স্টোরেজ পূর্ণ — সংরক্ষণ হয়নি।",
     },
     "bg": {
         "extName":            "ИИ папки",
@@ -72,6 +74,7 @@ AF = {
         "newConv_copilot":    "Нов разговор в Copilot",
         "newConv_perplexity": "Нов разговор в Perplexity",
         "newConv_local":      "Нов локален LLM разговор (задръжте за конфигуриране на URL)",
+        "storageFullError":   "⚠️ Хранилището е пълно — не е запазено.",
     },
     "ca": {
         "extName":            "Carpetes IA",
@@ -86,6 +89,7 @@ AF = {
         "newConv_copilot":    "Nova conversa a Copilot",
         "newConv_perplexity": "Nova conversa a Perplexity",
         "newConv_local":      "Nova conversa LLM local (manteniu premut per configurar l'URL)",
+        "storageFullError":   "⚠️ Emmagatzematge ple — no s'ha desat.",
     },
     "cs": {
         "extName":            "AI složky",
@@ -100,6 +104,7 @@ AF = {
         "newConv_copilot":    "Nová konverzace v Copilot",
         "newConv_perplexity": "Nová konverzace v Perplexity",
         "newConv_local":      "Nová konverzace s místním LLM (podržte pro nastavení URL)",
+        "storageFullError":   "⚠️ Úložiště je plné — neuloženo.",
     },
     "da": {
         "extName":            "AI-mapper",
@@ -114,6 +119,7 @@ AF = {
         "newConv_copilot":    "Ny Copilot-samtale",
         "newConv_perplexity": "Ny Perplexity-samtale",
         "newConv_local":      "Ny lokal LLM-samtale (hold nede for at konfigurere URL)",
+        "storageFullError":   "⚠️ Lageret er fuldt — ikke gemt.",
     },
     "de": {
         "extName":            "KI-Ordner",
@@ -128,6 +134,7 @@ AF = {
         "newConv_copilot":    "Neues Copilot-Gespräch",
         "newConv_perplexity": "Neues Perplexity-Gespräch",
         "newConv_local":      "Neues lokales LLM-Gespräch (gedrückt halten zum Konfigurieren)",
+        "storageFullError":   "⚠️ Speicher voll — nicht gespeichert.",
     },
     "el": {
         "extName":            "Φάκελοι ΤΝ",
@@ -144,6 +151,7 @@ AF = {
         "newConv_copilot":    "Νέα συνομιλία Copilot",
         "newConv_perplexity": "Νέα συνομιλία Perplexity",
         "newConv_local":      "Νέα τοπική LLM συνομιλία (κρατήστε πατημένο για ρύθμιση URL)",
+        "storageFullError":   "⚠️ Ο αποθηκευτικός χώρος είναι γεμάτος — δεν αποθηκεύτηκε.",
     },
     "es": {
         "extName":            "Carpetas IA",
@@ -158,6 +166,7 @@ AF = {
         "newConv_copilot":    "Nueva conversación en Copilot",
         "newConv_perplexity": "Nueva conversación en Perplexity",
         "newConv_local":      "Nueva conversación LLM local (mantén pulsado para configurar URL)",
+        "storageFullError":   "⚠️ Almacenamiento lleno — no guardado.",
     },
     "et": {
         "extName":            "AI kaustad",
@@ -172,6 +181,7 @@ AF = {
         "newConv_copilot":    "Uus Copilot vestlus",
         "newConv_perplexity": "Uus Perplexity vestlus",
         "newConv_local":      "Uus kohaliku LLM-i vestlus (hoidke URL-i konfigureerimiseks)",
+        "storageFullError":   "⚠️ Salvestusruum täis — ei salvestatud.",
     },
     "fi": {
         "extName":            "AI-kansiot",
@@ -188,6 +198,7 @@ AF = {
         "newConv_copilot":    "Uusi Copilot-keskustelu",
         "newConv_perplexity": "Uusi Perplexity-keskustelu",
         "newConv_local":      "Uusi paikallinen LLM-keskustelu (pidä painettuna URL:n määrittämiseksi)",
+        "storageFullError":   "⚠️ Tallennustila täynnä — ei tallennettu.",
     },
     "fr": {
         "extName":            "Dossiers IA",
@@ -202,6 +213,7 @@ AF = {
         "newConv_copilot":    "Nouvelle conversation Copilot",
         "newConv_perplexity": "Nouvelle conversation Perplexity",
         "newConv_local":      "Nouvelle conversation LLM local (maintenir pour configurer l'URL)",
+        "storageFullError":   "⚠️ Stockage plein — non sauvegardé.",
     },
     "he": {
         "extName":            "תיקיות AI",
@@ -216,6 +228,7 @@ AF = {
         "newConv_copilot":    "שיחת Copilot חדשה",
         "newConv_perplexity": "שיחת Perplexity חדשה",
         "newConv_local":      "שיחת LLM מקומית חדשה (לחץ לחיצה ארוכה להגדרת URL)",
+        "storageFullError":   "⚠️ האחסון מלא — לא נשמר.",
     },
     "hi": {
         "extName":            "AI फ़ोल्डर",
@@ -230,6 +243,7 @@ AF = {
         "newConv_copilot":    "नई Copilot बातचीत",
         "newConv_perplexity": "नई Perplexity बातचीत",
         "newConv_local":      "नई स्थानीय LLM बातचीत (URL कॉन्फ़िगर करने के लिए दबाए रखें)",
+        "storageFullError":   "⚠️ संग्रहण भरा हुआ है — सहेजा नहीं गया।",
     },
     "hr": {
         "extName":            "UI mape",
@@ -244,6 +258,7 @@ AF = {
         "newConv_copilot":    "Novi razgovor na Copilot",
         "newConv_perplexity": "Novi razgovor na Perplexity",
         "newConv_local":      "Novi lokalni LLM razgovor (držite za konfiguraciju URL-a)",
+        "storageFullError":   "⚠️ Pohrana je puna — nije spremljeno.",
     },
     "hu": {
         "extName":            "MI mappák",
@@ -260,6 +275,7 @@ AF = {
         "newConv_copilot":    "Új Copilot-beszélgetés",
         "newConv_perplexity": "Új Perplexity-beszélgetés",
         "newConv_local":      "Új helyi LLM-beszélgetés (tartsa nyomva az URL konfigurálásához)",
+        "storageFullError":   "⚠️ A tároló tele van — nem mentve.",
     },
     "id": {
         "extName":            "Folder AI",
@@ -274,6 +290,7 @@ AF = {
         "newConv_copilot":    "Percakapan Copilot baru",
         "newConv_perplexity": "Percakapan Perplexity baru",
         "newConv_local":      "Percakapan LLM lokal baru (tahan untuk mengonfigurasi URL)",
+        "storageFullError":   "⚠️ Penyimpanan penuh — tidak disimpan.",
     },
     "it": {
         "extName":            "Cartelle IA",
@@ -288,6 +305,7 @@ AF = {
         "newConv_copilot":    "Nuova conversazione Copilot",
         "newConv_perplexity": "Nuova conversazione Perplexity",
         "newConv_local":      "Nuova conversazione LLM locale (tieni premuto per configurare l'URL)",
+        "storageFullError":   "⚠️ Archiviazione piena — non salvato.",
     },
     "ja": {
         "extName":            "AI フォルダ",
@@ -302,6 +320,7 @@ AF = {
         "newConv_copilot":    "新しい Copilot の会話",
         "newConv_perplexity": "新しい Perplexity の会話",
         "newConv_local":      "新しいローカル LLM の会話（長押しで URL を設定）",
+        "storageFullError":   "⚠️ ストレージがいっぱいです — 保存されませんでした。",
     },
     "ko": {
         "extName":            "AI 폴더",
@@ -316,6 +335,7 @@ AF = {
         "newConv_copilot":    "새 Copilot 대화",
         "newConv_perplexity": "새 Perplexity 대화",
         "newConv_local":      "새 로컬 LLM 대화 (URL 설정하려면 길게 누르세요)",
+        "storageFullError":   "⚠️ 저장 공간 부족 — 저장되지 않았습니다.",
     },
     "lt": {
         "extName":            "AI aplankai",
@@ -330,6 +350,7 @@ AF = {
         "newConv_copilot":    "Naujas Copilot pokalbis",
         "newConv_perplexity": "Naujas Perplexity pokalbis",
         "newConv_local":      "Naujas vietinio LLM pokalbis (laikykite nuspaudę, kad nustatytumėte URL)",
+        "storageFullError":   "⚠️ Saugykla pilna — neišsaugota.",
     },
     "lv": {
         "extName":            "AI mapes",
@@ -344,6 +365,7 @@ AF = {
         "newConv_copilot":    "Jauna Copilot saruna",
         "newConv_perplexity": "Jauna Perplexity saruna",
         "newConv_local":      "Jauna lokālā LLM saruna (turiet nospiestu, lai konfigurētu URL)",
+        "storageFullError":   "⚠️ Krātuve ir pilna — nav saglabāts.",
     },
     "ms": {
         "extName":            "Folder AI",
@@ -358,6 +380,7 @@ AF = {
         "newConv_copilot":    "Perbualan Copilot baharu",
         "newConv_perplexity": "Perbualan Perplexity baharu",
         "newConv_local":      "Perbualan LLM tempatan baharu (tahan untuk konfigurasi URL)",
+        "storageFullError":   "⚠️ Storan penuh — tidak disimpan.",
     },
     "nb": {
         "extName":            "AI-mapper",
@@ -372,6 +395,7 @@ AF = {
         "newConv_copilot":    "Ny Copilot-samtale",
         "newConv_perplexity": "Ny Perplexity-samtale",
         "newConv_local":      "Ny lokal LLM-samtale (hold inne for å konfigurere URL)",
+        "storageFullError":   "⚠️ Lageret er fullt — ikke lagret.",
     },
     "nl": {
         "extName":            "AI-mappen",
@@ -386,6 +410,7 @@ AF = {
         "newConv_copilot":    "Nieuw Copilot-gesprek",
         "newConv_perplexity": "Nieuw Perplexity-gesprek",
         "newConv_local":      "Nieuw lokaal LLM-gesprek (houd ingedrukt om URL in te stellen)",
+        "storageFullError":   "⚠️ Opslag vol — niet opgeslagen.",
     },
     "pl": {
         "extName":            "Foldery AI",
@@ -400,6 +425,7 @@ AF = {
         "newConv_copilot":    "Nowa rozmowa w Copilot",
         "newConv_perplexity": "Nowa rozmowa w Perplexity",
         "newConv_local":      "Nowa rozmowa z lokalnym LLM (przytrzymaj, aby skonfigurować URL)",
+        "storageFullError":   "⚠️ Pamięć pełna — nie zapisano.",
     },
     "pt_BR": {
         "extName":            "Pastas IA",
@@ -414,6 +440,7 @@ AF = {
         "newConv_copilot":    "Nova conversa no Copilot",
         "newConv_perplexity": "Nova conversa no Perplexity",
         "newConv_local":      "Nova conversa com LLM local (mantenha pressionado para configurar URL)",
+        "storageFullError":   "⚠️ Armazenamento cheio — não salvo.",
     },
     "pt_PT": {
         "extName":            "Pastas IA",
@@ -428,6 +455,7 @@ AF = {
         "newConv_copilot":    "Nova conversa no Copilot",
         "newConv_perplexity": "Nova conversa no Perplexity",
         "newConv_local":      "Nova conversa com LLM local (mantenha premido para configurar URL)",
+        "storageFullError":   "⚠️ Armazenamento cheio — não guardado.",
     },
     "ro": {
         "extName":            "Dosare IA",
@@ -442,6 +470,7 @@ AF = {
         "newConv_copilot":    "Conversație nouă în Copilot",
         "newConv_perplexity": "Conversație nouă în Perplexity",
         "newConv_local":      "Conversație nouă cu LLM local (țineți apăsat pentru a configura URL)",
+        "storageFullError":   "⚠️ Spațiu de stocare plin — nesalvat.",
     },
     "ru": {
         "extName":            "ИИ-папки",
@@ -456,6 +485,7 @@ AF = {
         "newConv_copilot":    "Новый разговор в Copilot",
         "newConv_perplexity": "Новый разговор в Perplexity",
         "newConv_local":      "Новый разговор с локальной LLM (удерживайте для настройки URL)",
+        "storageFullError":   "⚠️ Хранилище заполнено — не сохранено.",
     },
     "sk": {
         "extName":            "AI priečinky",
@@ -470,6 +500,7 @@ AF = {
         "newConv_copilot":    "Nový rozhovor v Copilot",
         "newConv_perplexity": "Nový rozhovor v Perplexity",
         "newConv_local":      "Nový rozhovor s lokálnym LLM (podržte pre konfiguráciu URL)",
+        "storageFullError":   "⚠️ Úložisko je plné — neuložené.",
     },
     "sl": {
         "extName":            "Mape AI",
@@ -484,6 +515,7 @@ AF = {
         "newConv_copilot":    "Nov pogovor s Copilot",
         "newConv_perplexity": "Nov pogovor s Perplexity",
         "newConv_local":      "Nov pogovor z lokalnim LLM (pridržite za nastavitev URL)",
+        "storageFullError":   "⚠️ Prostor za shranjevanje je poln — ni shranjeno.",
     },
     "sr": {
         "extName":            "ВИ фасцикле",
@@ -500,6 +532,7 @@ AF = {
         "newConv_copilot":    "Нови разговор на Copilot",
         "newConv_perplexity": "Нови разговор на Perplexity",
         "newConv_local":      "Нови локални LLM разговор (задржите за конфигурацију URL-а)",
+        "storageFullError":   "⚠️ Меморија је пуна — није сачувано.",
     },
     "sv": {
         "extName":            "AI-mappar",
@@ -514,6 +547,7 @@ AF = {
         "newConv_copilot":    "Ny Copilot-konversation",
         "newConv_perplexity": "Ny Perplexity-konversation",
         "newConv_local":      "Ny lokal LLM-konversation (håll intryckt för att konfigurera URL)",
+        "storageFullError":   "⚠️ Lagringsutrymmet är fullt — inte sparat.",
     },
     "sw": {
         "extName":            "Folda za AI",
@@ -528,6 +562,7 @@ AF = {
         "newConv_copilot":    "Mazungumzo mapya ya Copilot",
         "newConv_perplexity": "Mazungumzo mapya ya Perplexity",
         "newConv_local":      "Mazungumzo mapya ya LLM ya ndani (shikilia kubadilisha URL)",
+        "storageFullError":   "⚠️ Hifadhi imejaa — haijahifadhiwa.",
     },
     "th": {
         "extName":            "โฟลเดอร์ AI",
@@ -542,6 +577,7 @@ AF = {
         "newConv_copilot":    "บทสนทนา Copilot ใหม่",
         "newConv_perplexity": "บทสนทนา Perplexity ใหม่",
         "newConv_local":      "บทสนทนา LLM ในเครื่องใหม่ (กดค้างเพื่อตั้งค่า URL)",
+        "storageFullError":   "⚠️ พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก",
     },
     "tl": {
         "extName":            "Mga AI Folder",
@@ -556,6 +592,7 @@ AF = {
         "newConv_copilot":    "Bagong Copilot na pag-uusap",
         "newConv_perplexity": "Bagong Perplexity na pag-uusap",
         "newConv_local":      "Bagong lokal na LLM na pag-uusap (pindutin nang matagal para i-configure ang URL)",
+        "storageFullError":   "⚠️ Puno na ang storage — hindi na-save.",
     },
     "tr": {
         "extName":            "YZ Klasörleri",
@@ -570,6 +607,7 @@ AF = {
         "newConv_copilot":    "Yeni Copilot sohbeti",
         "newConv_perplexity": "Yeni Perplexity sohbeti",
         "newConv_local":      "Yeni yerel LLM sohbeti (URL yapılandırmak için basılı tutun)",
+        "storageFullError":   "⚠️ Depolama alanı dolu — kaydedilmedi.",
     },
     "uk": {
         "extName":            "Теки ШІ",
@@ -584,6 +622,7 @@ AF = {
         "newConv_copilot":    "Нова розмова в Copilot",
         "newConv_perplexity": "Нова розмова в Perplexity",
         "newConv_local":      "Нова розмова з локальною LLM (утримуйте для налаштування URL)",
+        "storageFullError":   "⚠️ Сховище заповнене — не збережено.",
     },
     "vi": {
         "extName":            "Thư mục AI",
@@ -598,6 +637,7 @@ AF = {
         "newConv_copilot":    "Cuộc trò chuyện Copilot mới",
         "newConv_perplexity": "Cuộc trò chuyện Perplexity mới",
         "newConv_local":      "Cuộc trò chuyện LLM cục bộ mới (giữ để cấu hình URL)",
+        "storageFullError":   "⚠️ Bộ nhớ đầy — chưa được lưu.",
     },
     "zh_CN": {
         "extName":            "AI 文件夹",
@@ -612,6 +652,7 @@ AF = {
         "newConv_copilot":    "新建 Copilot 对话",
         "newConv_perplexity": "新建 Perplexity 对话",
         "newConv_local":      "新建本地 LLM 对话（长按以配置 URL）",
+        "storageFullError":   "⚠️ 存储已满 — 未保存。",
     },
     "zh_TW": {
         "extName":            "AI 資料夾",
@@ -626,6 +667,7 @@ AF = {
         "newConv_copilot":    "新增 Copilot 對話",
         "newConv_perplexity": "新增 Perplexity 對話",
         "newConv_local":      "新增本地 LLM 對話（長按以設定 URL）",
+        "storageFullError":   "⚠️ 儲存空間已滿 — 未儲存。",
     },
 }
 
@@ -635,6 +677,7 @@ NEW_KEYS_ORDER = [
     "newConv_gemini", "newConv_claude", "newConv_chatgpt",
     "newConv_copilot", "newConv_perplexity", "newConv_local",
     "setLocalUrl", "alertNotSupported", "alertEditorNotFound",
+    "storageFullError",
 ]
 
 def transform(lang, gf_msgs, af_overrides):
