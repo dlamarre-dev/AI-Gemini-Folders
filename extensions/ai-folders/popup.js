@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const site = SITES[siteKey];
     if (!site) return;
 
-    btn.innerHTML = site.logoSvg;
+    btn.appendChild(new DOMParser().parseFromString(site.logoSvg, 'image/svg+xml').documentElement);
     btn.title = chrome.i18n.getMessage(`newConv_${siteKey}`) || `New ${siteKey} conversation`;
 
     if (siteKey === 'local') {
