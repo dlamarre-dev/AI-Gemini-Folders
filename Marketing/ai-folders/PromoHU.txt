@@ -1,7 +1,7 @@
 AI-beszélgetései öt különböző oldalon szórványosan szétszórva vannak. Folyamatosan újra begépeli ugyanazokat a promptokat. Legjobb csevegései végtelen előzményekbe vesznek el a Geminiben, a Claude-ban, a ChatGPT-ben, a Copilotban és a Perplexityben.
-AI mappák a bővítmény, amelyre szüksége van.
+MI mappák a bővítmény, amelyre szüksége van.
 
-AI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-eszközéből származó beszélgetéseket közös mappákba, hozzon létre újra felhasználható prompt-könyvtárat, és illesszen be promptokat közvetlenül bármely támogatott AI-ba — másolás-beillesztés nélkül.
+MI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-eszközéből származó beszélgetéseket közös mappákba, hozzon létre újra felhasználható prompt-könyvtárat, és illesszen be promptokat közvetlenül bármely támogatott AI-ba — másolás-beillesztés nélkül.
 
 ✨ ban — PROMPTÜZEMMÓD
 
@@ -31,13 +31,13 @@ AI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-es
 
 🏠 HELYI LLM TÁMOGATÁS
 
-Helyi AI modellt futtat (Ollama, LM Studio, Jan vagy más)? Konfigurálja a(z) AI mappák-t a helyi URL-jével — támogatja a localhostot és a LAN-címeket (192.168.x.x, egyéni állomásneveket). A gyors mentés és a helyi menüs mentés is működik a helyi felületeken.
+Helyi AI modellt futtat (Ollama, LM Studio, Jan vagy más)? Konfigurálja a(z) MI mappák-t a helyi URL-jével — támogatja a localhostot és a LAN-címeket (192.168.x.x, egyéni állomásneveket). A gyors mentés és a helyi menüs mentés is működik a helyi felületeken.
 
 🛠️ HOGYAN MŰKÖDIK?
 
 Mappaüzemmód:
 Nyisson meg egy beszélgetést a Gemini, Claude, ChatGPT, Copilot, Perplexity oldalon.
-Gyorsmentés: Ctrl+Shift+S (vagy Mac-en Cmd+Shift+S), vagy jobb kattintás > „Mentés a AI mappákba".
+Gyorsmentés: Ctrl+Shift+S (vagy Mac-en Cmd+Shift+S), vagy jobb kattintás > „Mentés a MI mappákba".
 A bővítményen keresztül: Kattintson az ikonra, válasszon mappát, és mentse el.
 Mobil: Jelölje be a 📱 ikont a láblécben a mappák telefonra szinkronizálásához.
 Használja a jelölőnégyzeteket tömeges műveletekhez, nyissa meg a mappákat lapcsoportként (📑), húzza-ejtse az átrendezéshez!
@@ -52,7 +52,7 @@ Prompt rögzítéséhez: kattintson a 📍 gombra — a lista tetejére kerül, 
 Az adatvédelmet alapelvként kezelve fejlesztve. Csak a Gemini, Claude, ChatGPT, Copilot, Perplexity elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.
 
 🤝 NYÍLT FORRÁSKÓDÚ PROJEKT
-A AI mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az átláthatóság és az adatvédelem tiszteletben tartása a legfontosabb prioritásaink. Fejlesztő, vagy csak kíváncsi? Böngéssze a kódot, kövesse a változásnaplót, vagy járuljon hozzá a GitHubon: https://github.com/dlamarre-dev/GeminiFolders
+A MI mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az átláthatóság és az adatvédelem tiszteletben tartása a legfontosabb prioritásaink. Fejlesztő, vagy csak kíváncsi? Böngéssze a kódot, kövesse a változásnaplót, vagy járuljon hozzá a GitHubon: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 FRISSÍTÉSEK:
 1.0-s verzió: Első kiadás! Rendszerezze a Gemini, Claude, ChatGPT, Copilot és Perplexity beszélgetéseit közös mappákban. Teljes prompt-könyvtár egy kattintásos beillesztéssel, gyors mentési parancsikonok, húzás és ejtés, mobilszinkronizáció, tömeges műveletek, lapcsoportok és 43 nyelv támogatása.

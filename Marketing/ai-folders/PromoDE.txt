@@ -1,7 +1,7 @@
 Ihre KI-Gespräche sind über fünf verschiedene Sites verstreut. Sie tippen immer wieder dieselben Prompts. Ihre besten Chats verschwinden in endlosen Verläufen auf Gemini, Claude, ChatGPT, Copilot und Perplexity.
-AI-Ordner ist die Erweiterung, die Sie brauchen.
+KI-Ordner ist die Erweiterung, die Sie brauchen.
 
-AI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ihrer KI-Tools in gemeinsamen Ordnern, erstellen Sie eine Bibliothek wiederverwendbarer Prompts und injizieren Sie Prompts direkt in jede unterstützte KI — ganz ohne Kopieren und Einfügen.
+KI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ihrer KI-Tools in gemeinsamen Ordnern, erstellen Sie eine Bibliothek wiederverwendbarer Prompts und injizieren Sie Prompts direkt in jede unterstützte KI — ganz ohne Kopieren und Einfügen.
 
 ✨ PROMPT-MODUS
 
@@ -31,13 +31,13 @@ AI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ih
 
 🏠 LOKALER LLM-SUPPORT
 
-Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie AI-Ordner mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung und Kontextmenü-Speicherung funktionieren auch auf lokalen Benutzeroberflächen.
+Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie KI-Ordner mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung und Kontextmenü-Speicherung funktionieren auch auf lokalen Benutzeroberflächen.
 
 🛠️ WIE FUNKTIONIERT ES?
 
 Ordner-Modus:
 Öffnen Sie ein Gespräch auf Gemini, Claude, ChatGPT, Copilot, Perplexity.
-Schnellspeicherung: Ctrl+Shift+S (oder Cmd+Shift+S auf Mac), oder Rechtsklick > „In AI-Ordner speichern".
+Schnellspeicherung: Ctrl+Shift+S (oder Cmd+Shift+S auf Mac), oder Rechtsklick > „In KI-Ordner speichern".
 Über die Erweiterung: Symbol anklicken, Ordner wählen, speichern.
 Mobil: 📱 in der Fußzeile aktivieren, um Ordner auf dem Smartphone zu synchronisieren.
 Checkboxen für Massenaktionen, Ordner als Tabs öffnen (📑), per Drag & Drop reorganisieren!
@@ -52,7 +52,7 @@ Prompt anpinnen: auf 📍 klicken — er rückt an die erste Stelle und bleibt i
 Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf Gemini, Claude, ChatGPT, Copilot, Perplexity an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
 
 🤝 OPEN-SOURCE-PROJEKT
-AI-Ordner ist ein leidenschaftlich entwickeltes Open-Source-Projekt. Transparenz und Datenschutz haben höchste Priorität. Entwickler oder einfach neugierig? Code einsehen, Änderungsprotokoll verfolgen oder auf GitHub beitragen: https://github.com/dlamarre-dev/GeminiFolders
+KI-Ordner ist ein leidenschaftlich entwickeltes Open-Source-Projekt. Transparenz und Datenschutz haben höchste Priorität. Entwickler oder einfach neugierig? Code einsehen, Änderungsprotokoll verfolgen oder auf GitHub beitragen: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 UPDATES:
 Version 1.0: Erstveröffentlichung! Organisieren Sie Gespräche von Gemini, Claude, ChatGPT, Copilot und Perplexity in gemeinsamen Ordnern. Vollständige Prompt-Bibliothek mit Ein-Klick-Injektion, Schnellspeicher-Shortcuts, Drag & Drop, Mobile-Sync, Massenaktionen, Tab-Gruppen und Unterstützung für 43 Sprachen. Lokaler LLM-Support mit konfigurierbarer URL (localhost und LAN-Adressen).

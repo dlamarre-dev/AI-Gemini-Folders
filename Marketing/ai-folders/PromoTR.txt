@@ -1,7 +1,7 @@
 AI sohbetleriniz beş farklı siteye dağılmış durumda. Aynı promptları tekrar tekrar yazıyorsunuz. En iyi sohbetleriniz Gemini, Claude, ChatGPT, Copilot ve Perplexity'deki sonsuz geçmişlerde kayboluyor.
-AI Klasörleri ihtiyacınız olan uzantıdır.
+YZ Klasörleri ihtiyacınız olan uzantıdır.
 
-AI Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düzenleyin, yeniden kullanılabilir bir prompt kütüphanesi oluşturun ve promptları desteklenen herhangi bir AI'ye doğrudan enjekte edin — kopyala yapıştır gerekmez.
+YZ Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düzenleyin, yeniden kullanılabilir bir prompt kütüphanesi oluşturun ve promptları desteklenen herhangi bir AI'ye doğrudan enjekte edin — kopyala yapıştır gerekmez.
 
 ✨ İSTEM MODU
 
@@ -31,13 +31,13 @@ AI Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan ge
 
 🏠 YEREL LLM DESTEĞİ
 
-Yerel bir AI modeli (Ollama, LM Studio, Jan veya başka) mı kullanıyorsunuz? AI Klasörleri'ı yerel URL'nizle yapılandırın — localhost ve LAN adreslerini destekler (192.168.x.x, özel ana bilgisayar adları). Hızlı kaydetme ve bağlam menüsü kaydetme yerel arayüzlerde de çalışır.
+Yerel bir AI modeli (Ollama, LM Studio, Jan veya başka) mı kullanıyorsunuz? YZ Klasörleri'ı yerel URL'nizle yapılandırın — localhost ve LAN adreslerini destekler (192.168.x.x, özel ana bilgisayar adları). Hızlı kaydetme ve bağlam menüsü kaydetme yerel arayüzlerde de çalışır.
 
 🛠️ NASIL ÇALIŞIR?
 
 Klasör Modu:
 Gemini, Claude, ChatGPT, Copilot, Perplexity'da bir konuşma açın.
-Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "AI Klasörleri'e Kaydet".
+Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "YZ Klasörleri'e Kaydet".
 Uzantı üzerinden: Simgeye tıklayın, bir klasör seçin ve kaydedin.
 Mobil: Telefonunuzda klasörlerinizi senkronize etmek için alt bilgideki 📱 işaretini işaretleyin.
 Toplu işlemler için onay kutularını kullanın, klasörleri Sekme Grupları (📑) olarak açın, yeniden düzenlemek için sürükleyip bırakın!
@@ -52,7 +52,7 @@ Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar
 Gizlilik öncelikli tasarım. Yalnızca Gemini, Claude, ChatGPT, Copilot, Perplexity'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.
 
 🤝 AÇIK KAYNAK PROJE
-AI Klasörleri, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/GeminiFolders
+YZ Klasörleri, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 GÜNCELLEMELER:
 Sürüm 1.0: İlk yayın! Gemini, Claude, ChatGPT, Copilot ve Perplexity sohbetlerini paylaşılan klasörlerde düzenleyin. Tek tıkla ekleme özellikli tam prompt kütüphanesi, hızlı kaydetme kısayolları, sürükle ve bırak, mobil senkronizasyon, toplu işlemler, sekme grupları ve 43 dil desteği. Yapılandırılabilir URL (localhost ve LAN adresleri) ile yerel LLM desteği.

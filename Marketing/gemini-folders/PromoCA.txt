@@ -1,7 +1,7 @@
 Fas servir Google Gemini cada dia – per a feina, programació, escriptura o recerca – però continues reescrivint els mateixos prompts mentre les teves millors converses desapareixen en un historial interminable?
-Gemini Carpetes (Gemini Folders) és l'extensió que necessites.
+Carpetes Gemini (Gemini Folders) és l'extensió que necessites.
 
-Amb la versió 4.0, Gemini Carpetes és el teu veritable cockpit de Gemini: organitza les converses en carpetes, crea una biblioteca de prompts reutilitzables i injecta'ls directament a Gemini amb un sol clic, sense copiar ni enganxar.
+Amb la versió 4.0, Carpetes Gemini és el teu veritable cockpit de Gemini: organitza les converses en carpetes, crea una biblioteca de prompts reutilitzables i injecta'ls directament a Gemini amb un sol clic, sense copiar ni enganxar.
 
 ✨ NOVETAT A V4.0 – MODE PROMPTS
 
@@ -32,7 +32,7 @@ Amb la versió 4.0, Gemini Carpetes és el teu veritable cockpit de Gemini: orga
 
 Mode carpetes:
 Obre una conversa a gemini.google.com.
-Desat ràpid: Ctrl+Maj+S (o Cmd+Maj+S al Mac), o clic dret > «Desa a Gemini Carpetes».
+Desat ràpid: Ctrl+Maj+S (o Cmd+Maj+S al Mac), o clic dret > «Desa a Carpetes Gemini».
 Mitjançant l'extensió: Fes clic a la icona, tria una carpeta i desa.
 Mòbil: Marca 📱 al peu de pàgina per sincronitzar les teves carpetes al telèfon.
 
@@ -47,10 +47,10 @@ Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
 Construït amb la privacitat com a prioritat. Només sol·licita accés a gemini.google.com i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
 
 🤝 PROJECTE DE CODI OBERT
-Gemini Carpetes és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Carpetes Gemini és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 ACTUALITZACIONS:
-Versió 4.1 (Expansió global i enfortiment): 16 nous idiomes porten Gemini Carpetes a 43 localitzacions arreu del món — idiomes nòrdics, els estats bàltics i cobertura europea i del sud-est asiàtic ampliada. Corregida una condició de cursa que podia perdre silenciosament un desat en clics ràpids. Injecció de prompts modernitzada amb InputEvent, substituint l'execCommand obsolet. Pipeline d'importació endurit contra URL malicioses en fitxers de còpia de seguretat.
+Versió 4.1 (Expansió global i enfortiment): 16 nous idiomes porten Carpetes Gemini a 43 localitzacions arreu del món — idiomes nòrdics, els estats bàltics i cobertura europea i del sud-est asiàtic ampliada. Corregida una condició de cursa que podia perdre silenciosament un desat en clics ràpids. Injecció de prompts modernitzada amb InputEvent, substituint l'execCommand obsolet. Pipeline d'importació endurit contra URL malicioses en fitxers de còpia de seguretat. S'ha corregit un error crític de seguretat de dades: activar la sincronització de prompts amb l'emmagatzematge quasi ple podia esborrar silenciosament tots els prompts desats. L'emmagatzematge ara utilitza escriptures fragmentades per mantenir-se dins dels límits de Chrome, amb missatges d'error clars quan és ple.
 Versió 4.0 (Biblioteca de prompts): L'actualització més ambiciosa fins ara! Mode prompts completament nou: desa els teus millors prompts, edita'ls en línia i injecta'ls directament a Gemini amb un sol clic.
 Versió 3.5 (Bases sòlides i experiència millorada): Gran actualització interna per a una robustesa professional! Alerta visual per a desat duplicat via drecera de teclat.
 Versió 3.4.1 (Potència multiplataforma i estabilitat): Portat amb èxit a Mozilla Firefox amb un sistema de compilació automatitzat.

@@ -1,7 +1,7 @@
 Käytätkö Google Geminiä päivittäin – töihin, koodaukseen, kirjoittamiseen tai tutkimukseen – mutta kirjoitatko samat promptit uudelleen ja uudelleen, kun parhaat keskustelusi katoavat loputtomaan historiaasi?
-Gemini Kansiot (Gemini Folders) on lisäosa, jota tarvitset.
+Gemini-kansiot (Gemini Folders) on lisäosa, jota tarvitset.
 
-Version 4.0 myötä Gemini Kansiot on todellinen Gemini-ohjaamo: organisoi keskustelut kansioihin, rakenna uudelleenkäytettävien promptien kirjasto ja injektoi ne suoraan Geminiin yhdellä napsautuksella – ei kopiointia tai liittämistä.
+Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi keskustelut kansioihin, rakenna uudelleenkäytettävien promptien kirjasto ja injektoi ne suoraan Geminiin yhdellä napsautuksella – ei kopiointia tai liittämistä.
 
 ✨ UUTTA V4.0:SSA – PROMPTTILA
 
@@ -48,11 +48,11 @@ Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy
 Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain gemini.google.com:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.
 
 🤝 AVOIN LÄHDEKOODIN PROJEKTI
-Gemini Kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvyys ja yksityisyytesi kunnioittaminen ovat korkeimpia prioriteettiamme. Oletko kehittäjä tai vain utelias? Selaa koodia, seuraa muutoslokia tai osallistu GitHubissa: https://github.com/dlamarre-dev/GeminiFolders
+Gemini-kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvyys ja yksityisyytesi kunnioittaminen ovat korkeimpia prioriteettiamme. Oletko kehittäjä tai vain utelias? Selaa koodia, seuraa muutoslokia tai osallistu GitHubissa: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 PÄIVITYKSET:
-Versio 4.1 (Globaali laajennus ja kovettaminen): 16 uutta kieltä nostaa Gemini Kansiot 43 lokalisointiin maailmanlaajuisesti — pohjoismaiset kielet, Baltian maat sekä laajennettu eurooppalainen ja Kaakkois-Aasian kattavuus. Korjattu kilpailutilanne, joka saattoi hiljaa hävittää tallennuksen nopeiden napsautusten yhteydessä. Promptin syöttäminen modernisoitu InputEventillä korvaamaan vanhentunut execCommand. Tuontikanava kovetettu haittaohjelmallisia URL-osoitteita vastaan varmuuskopiotiedostoissa.
-Versio 4.0 (Promptikirjasto): Kunnianhimoisin päivitys tähän mennessä! Gemini Kansiot saa upouuden Prompttilan: tallenna parhaat promptisi, muokkaa niitä inlinen ja injektoi ne suoraan Geminiin yhdellä napsautuksella. Lisätty animoitu tilakytkин, haku ja lajittelu Prompttilassa, mukautettu Gem-painike ja itsenäinen promptisynkronointi.
+Versio 4.1 (Globaali laajennus ja kovettaminen): 16 uutta kieltä nostaa Gemini-kansiot 43 lokalisointiin maailmanlaajuisesti — pohjoismaiset kielet, Baltian maat sekä laajennettu eurooppalainen ja Kaakkois-Aasian kattavuus. Korjattu kilpailutilanne, joka saattoi hiljaa hävittää tallennuksen nopeiden napsautusten yhteydessä. Promptin syöttäminen modernisoitu InputEventillä korvaamaan vanhentunut execCommand. Tuontikanava kovetettu haittaohjelmallisia URL-osoitteita vastaan varmuuskopiotiedostoissa. Kriittinen tietoturvavika korjattu: kehotteiden synkronoinnin aktivointi lähes täydellä tallennustilalla saattoi äänettömästi poistaa kaikki tallennetut kehotteet. Tallennustila käyttää nyt paloiteltuja kirjoituksia pysyäkseen Chromen rajoissa, ja näyttää selkeitä virheilmoituksia kun tila on täynnä.
+Versio 4.0 (Promptikirjasto): Kunnianhimoisin päivitys tähän mennessä! Gemini-kansiot saa upouuden Prompttilan: tallenna parhaat promptisi, muokkaa niitä inlinen ja injektoi ne suoraan Geminiin yhdellä napsautuksella. Lisätty animoitu tilakytkин, haku ja lajittelu Prompttilassa, mukautettu Gem-painike ja itsenäinen promptisynkronointi.
 Versio 3.5 (Vahvat perusteet ja parannettu kokemus): Suuri sisäinen päivitys ammattimaiseen luotettavuuteen! Visuaalinen ilmoitus kaksoistallennetusta pikanäppäimellä.
 Versio 3.4.1 (Monialustavoima ja vakaus): Portattu Mozilla Firefoxiin automaattisella rakennusjärjestelmällä.
 Versio 3.3 (Premium-muotoilu ja kansainvälinen): Uudet 100 % mukautetut Material 3 -dialogit, mobiilisynkronointi ja 10 uutta kieltä!

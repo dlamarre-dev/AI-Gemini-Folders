@@ -1,7 +1,7 @@
 Gebruikt u Google Gemini elke dag — voor werk, code, schrijven of onderzoek — maar typt u steeds dezelfde prompts opnieuw, terwijl uw beste gesprekken verdwijnen in een eindeloze geschiedenis?
-Gemini Mappen (Gemini Folders) is de extensie die u nodig heeft.
+Gemini-mappen (Gemini Folders) is de extensie die u nodig heeft.
 
-Met versie 4.0 wordt Gemini Mappen uw echte Gemini-cockpit: organiseer gesprekken in mappen, bouw een bibliotheek van herbruikbare prompts en voeg ze met één klik direct in Gemini in — geen kopiëren en plakken vereist.
+Met versie 4.0 wordt Gemini-mappen uw echte Gemini-cockpit: organiseer gesprekken in mappen, bouw een bibliotheek van herbruikbare prompts en voeg ze met één klik direct in Gemini in — geen kopiëren en plakken vereist.
 
 ✨ NIEUW IN v4.0 — PROMPTMODUS
 
@@ -32,7 +32,7 @@ Met versie 4.0 wordt Gemini Mappen uw echte Gemini-cockpit: organiseer gesprekke
 
 Mappenmodus:
 Open een gesprek op gemini.google.com.
-Snel opslaan: Ctrl+Shift+S (of Cmd+Shift+S op Mac), of rechtsklikken > "Opslaan in Gemini Mappen".
+Snel opslaan: Ctrl+Shift+S (of Cmd+Shift+S op Mac), of rechtsklikken > "Opslaan in Gemini-mappen".
 Via de extensie: Klik op het pictogram, kies een map en sla op.
 Mobiel: Vink 📱 aan in de voettekst om uw mappen op uw telefoon te synchroniseren.
 Gebruik selectievakjes voor bulkacties, open mappen als tabgroepen (📑), sleep en zet neer om te reorganiseren!
@@ -48,11 +48,11 @@ Stel 💎 in om naar uw aangepaste Gem te wijzen.
 Gebouwd met privacy als kern. Vraagt alleen toegang tot gemini.google.com en leest het actieve tabblad alleen bij het opslaan van een gesprek of het invoegen van een prompt. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via Chrome Sync: geen servers van derden, geen telemetrie.
 
 🤝 OPEN-SOURCEPROJECT
-Gemini Mappen is een open-sourceproject gebouwd met passie. Transparantie en respect voor uw privacy zijn onze topprioriteiten. Bent u een ontwikkelaar of gewoon nieuwsgierig? Bekijk de code, volg het wijzigingenlogboek of draag bij op GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Gemini-mappen is een open-sourceproject gebouwd met passie. Transparantie en respect voor uw privacy zijn onze topprioriteiten. Bent u een ontwikkelaar of gewoon nieuwsgierig? Bekijk de code, volg het wijzigingenlogboek of draag bij op GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 UPDATES:
-Versie 4.1 (Globale uitbreiding en versterking): 16 nieuwe talen brengen Gemini Mappen naar 43 lokalisaties wereldwijd — Scandinavische talen, de Baltische staten en uitgebreide Europese en Zuidoost-Aziatische dekking. Een race condition opgelost die bij snelle klikken stilletjes een opslaan kon weggooien. Promptinjectie gemoderniseerd met InputEvent ter vervanging van de verouderde execCommand. Importpipeline gehardend tegen kwaadaardige URL's in back-upbestanden.
-Versie 4.0 (Promptbibliotheek): De meest ambitieuze update tot nu toe! Gemini Mappen krijgt een gloednieuwe Promptmodus: sla uw beste prompts op, bewerk ze inline en voeg ze met één klik direct in Gemini in. Geanimeerde modusschakelaar, zoeken en sorteren in Promptmodus, aangepaste Gem-knop en onafhankelijke promptsynchronisatie toegevoegd. Zet essentiële prompts bovenaan uw bibliotheek vast.
+Versie 4.1 (Globale uitbreiding en versterking): 16 nieuwe talen brengen Gemini-mappen naar 43 lokalisaties wereldwijd — Scandinavische talen, de Baltische staten en uitgebreide Europese en Zuidoost-Aziatische dekking. Een race condition opgelost die bij snelle klikken stilletjes een opslaan kon weggooien. Promptinjectie gemoderniseerd met InputEvent ter vervanging van de verouderde execCommand. Importpipeline gehardend tegen kwaadaardige URL's in back-upbestanden. Kritieke gegevensbeveiligingsfout opgelost: het inschakelen van prompt-synchronisatie met bijna vol opslaggeheugen kon alle opgeslagen prompts stilzwijgend verwijderen. De opslag gebruikt nu gefragmenteerde schrijfbewerkingen om binnen Chrome-limieten te blijven, met duidelijke foutmeldingen als het vol is.
+Versie 4.0 (Promptbibliotheek): De meest ambitieuze update tot nu toe! Gemini-mappen krijgt een gloednieuwe Promptmodus: sla uw beste prompts op, bewerk ze inline en voeg ze met één klik direct in Gemini in. Geanimeerde modusschakelaar, zoeken en sorteren in Promptmodus, aangepaste Gem-knop en onafhankelijke promptsynchronisatie toegevoegd. Zet essentiële prompts bovenaan uw bibliotheek vast.
 Versie 3.5 (Solide fundament & verbeterde ervaring): Een grote update onder de motorkap voor professionele robuustheid! Visuele melding voor dubbele opslag via sneltoets. Geen valse duplicaten meer door Gemini URL-wijzigingen, en een database beschermd tegen beschadiging met onze nieuwe beveiligingsarchitectuur.
 Versie 3.4.1 (Multiplatform kracht & stabiliteit): Succesvol overgezet naar Mozilla Firefox met een geautomatiseerd buildsysteem en strikte beveiligingsnaleving. Definitieve oplossing voor de bug met dubbele bladwijzermappen tijdens mobiele synchronisatie.
 Versie 3.3 (Premium ontwerp & internationalisering): Nieuwe 100% aangepaste Material 3-dialoogvensters, mobiele synchronisatie die uw sorteervolgorde weerspiegelt en wereldwijde uitbreiding met 10 nieuwe talen!

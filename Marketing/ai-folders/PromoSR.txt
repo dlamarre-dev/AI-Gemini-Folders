@@ -1,7 +1,7 @@
 Ваши AI разговори су расути по пет различитих сајтова. Стално поново уносите исте упите. Ваши најбољи четови нестају у бесконачним историјама на Gemini, Claude, ChatGPT, Copilot и Perplexity.
-AI фасцикле је проширење које вам треба.
+ВИ фасцикле је проширење које вам треба.
 
-AI фасцикле је ваш јединствени AI кокпит: организујте разговоре из свих ваших AI алата у дељене фасцикле, изградите библиотеку упита за вишеструку употребу и убацујте упите директно у било који подржани AI — без копирања и лепљења.
+ВИ фасцикле је ваш јединствени AI кокпит: организујте разговоре из свих ваших AI алата у дељене фасцикле, изградите библиотеку упита за вишеструку употребу и убацујте упите директно у било који подржани AI — без копирања и лепљења.
 
 ✨ MOD PROMPTOVA
 
@@ -31,7 +31,7 @@ AI фасцикле је ваш јединствени AI кокпит: орга
 
 🏠 PODRŠKA ZA LOKALNI LLM
 
-Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite AI фасцикле sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.
+Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite ВИ фасцикле sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.
 
 🛠️ KAKO TO FUNKCIONIŠE?
 
@@ -51,7 +51,7 @@ Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
 Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
 
 🤝 PROJEKAT OTVORENOG KODA
-AI фасцикле je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+ВИ фасцикле je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/GeminiFolders
 
 📢 AŽURIRANJA:
 Верзија 1.0: Прво издање! Организујте разговоре из Gemini, Claude, ChatGPT, Copilot и Perplexity у дељене фасцикле. Потпуна библиотека промптова са убацивањем једним кликом, пречице за брзо чување, превлачење и пуштање, мобилна синхронизација, масовне радње, групе картица и подршка за 43 језика.
