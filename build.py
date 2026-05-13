@@ -33,7 +33,7 @@ EXTENSION_CONFIG = {
         "zip_prefix":         "ai-folders",
         "display_name":       "AI Folders",
         "marketing_subdir":   "ai-folders",
-        "review_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/TODO/reviews",
+        "review_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf/reviews",
         "review_url_firefox": "https://addons.mozilla.org/firefox/addon/ai_folders/reviews/",
     },
 }
