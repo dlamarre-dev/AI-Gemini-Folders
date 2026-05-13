@@ -21,7 +21,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 | Perplexity | ✅ | ✅ | ✅ |
 | Microsoft Copilot | ✅ | ✅ | ✅ |
 | Google Gemini | ✅ | ✅ | ✅ |
-| Local LLM *(configurable URL)* | ✅ | ✅ | — |
+| Local LLM *(configurable URL)* | ✅ | ✅ | ✅ *(Open WebUI & others)* |
 
 ---
 
