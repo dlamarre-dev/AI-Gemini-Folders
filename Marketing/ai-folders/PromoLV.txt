@@ -31,7 +31,7 @@ AI mapes ir jūsu vienotais AI vadības panelis: kārtojiet sarunas no visiem AI
 
 🏠 VIETĒJĀ LLM ATBALSTS
 
-Vai izmantojat vietējo AI modeli (Ollama, LM Studio, Jan vai citu)? Konfigurējiet AI mapes ar savu vietējo URL — atbalsta localhost un LAN adreses (192.168.x.x, pielāgoti resursdatoru nosaukumi). Ātrā saglabāšana un saglabāšana konteksta izvēlnē darbojas arī vietējās saskarnēs.
+Vai izmantojat lokālu AI modeli (Ollama, LM Studio, Jan vai citu)? Konfigurējiet AI mapes ar savu lokālo URL — atbalsta localhost un LAN adreses (192.168.x.x, pielāgoti resursdatora nosaukumi). Ātrā saglabāšana, saglabāšana ar kontekstizvēlni un uzvedņu ievadīšana darbojas lielākajā daļā lokālo saskarņu (tostarp Open WebUI).
 
 🛠️ KĀ TAS DARBOJAS?
 

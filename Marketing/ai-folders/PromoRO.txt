@@ -31,7 +31,7 @@ Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate i
 
 🏠 SUPORT LLM LOCAL
 
-Folosiți un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dosare IA cu URL-ul local — acceptă localhost și adrese LAN (192.168.x.x, nume de gazdă personalizate). Salvarea rapidă și din meniul contextual funcționează și pe interfețe locale.
+Rulați un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dosare IA cu URL-ul dvs. local — acceptă localhost și adrese LAN (192.168.x.x, nume de gazdă personalizate). Salvarea rapidă, salvarea prin meniu contextual și injectarea prompturilor funcționează pe cele mai multe interfețe locale (inclusiv Open WebUI).
 
 🛠️ CUM FUNCȚIONEAZĂ?
 

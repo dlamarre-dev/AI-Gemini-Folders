@@ -31,7 +31,7 @@ AI aplankai yra jūsų vieninga AI valdymo centras: tvarkykite visų AI įranki�
 
 🏠 VIETINIO LLM PALAIKYMAS
 
-Ar naudojate vietinį AI modelį (Ollama, LM Studio, Jan ar kitą)? Sukonfigūruokite AI aplankai naudodami vietinį URL — palaiko localhost ir LAN adresus (192.168.x.x, pasirinktiniai prieglobos pavadinimai). Greitas išsaugojimas ir per kontekstinį meniu taip pat veikia vietinėse sąsajose.
+Ar naudojate vietinį AI modelį (Ollama, LM Studio, Jan ar kitą)? Konfigūruokite AI aplankai su savo vietiniu URL — palaiko localhost ir LAN adresus (192.168.x.x, pasirinktiniai pagrindinio kompiuterio vardai). Greitas įrašymas, įrašymas per kontekstinį meniu ir raginimų įterpimas veikia daugumoje vietinių sąsajų (įskaitant Open WebUI).
 
 🛠️ KAIP TAI VEIKIA?
 

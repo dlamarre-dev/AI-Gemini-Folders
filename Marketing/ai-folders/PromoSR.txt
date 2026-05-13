@@ -31,7 +31,7 @@
 
 🏠 PODRŠKA ZA LOKALNI LLM
 
-Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite ВИ фасцикле sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.
+Da li koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte ВИ фасцикле s vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena hosta). Brzo čuvanje, čuvanje putem kontekstnog menija i ubacivanje upita rade na većini lokalnih interfejsa (uključujući Open WebUI).
 
 🛠️ KAKO TO FUNKCIONIŠE?
 

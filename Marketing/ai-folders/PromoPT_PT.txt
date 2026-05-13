@@ -31,7 +31,7 @@ Pastas IA é o seu cockpit de IA unificado: organize conversas de todas as suas 
 
 🏠 SUPORTE A LLM LOCAL
 
-Está a usar um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure o Pastas IA com o seu URL local — suporta localhost e endereços LAN (192.168.x.x, nomes de anfitrião personalizados). O guardamento rápido e pelo menu de contexto também funcionam em interfaces locais.
+Está a usar um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure Pastas IA com o seu URL local — compatível com localhost e endereços LAN (192.168.x.x, nomes de host personalizados). Guardar rapidamente, guardar pelo menu de contexto e injeção de prompts funcionam na maioria das interfaces locais (incluindo Open WebUI).
 
 🛠️ COMO FUNCIONA?
 

@@ -31,7 +31,7 @@ AI složky je váš sjednocený AI kokpit: organizujte konverzace ze všech vaš
 
 🏠 PODPORA LOKÁLNÍHO LLM
 
-Používáte lokální AI model (Ollama, LM Studio, Jan nebo jiný)? Nakonfigurujte AI složky s místní URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastní názvy hostitelů). Rychlé ukládání a ukládání přes kontextové menu fungují i na lokálních rozhraních.
+Používáte lokální AI model (Ollama, LM Studio, Jan nebo jiný)? Nakonfigurujte AI složky s vaší lokální URL — podporuje localhost a LAN adresy (192.168.x.x, vlastní názvy hostitelů). Rychlé ukládání, ukládání přes kontextové menu a vkládání promptů fungují ve většině lokálních rozhraní (včetně Open WebUI).
 
 🛠️ JAK TO FUNGUJE?
 

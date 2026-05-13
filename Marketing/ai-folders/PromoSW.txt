@@ -31,7 +31,7 @@ Folda za AI ni kokpit yako ya AI iliyounganishwa: panga mazungumzo kutoka kwa za
 
 🏠 MSAADA WA LLM WA NDANI
 
-Unaendesha mfano wa AI wa ndani (Ollama, LM Studio, Jan, au mwingine)? Sanidi Folda za AI na URL yako ya ndani — inasaidia localhost na anwani za LAN (192.168.x.x, majina ya seva maalum). Kuhifadhi haraka na kuhifadhi kupitia menyu ya muktadha pia hufanya kazi kwenye UI za ndani.
+Je, unatumia modeli ya AI ya ndani (Ollama, LM Studio, Jan, au nyingine)? Sanidi Folda za AI kwa URL yako ya ndani — inasaidia localhost na anwani za LAN (192.168.x.x, majina ya seva maalum). Kuhifadhi haraka, kuhifadhi kupitia menyu ya muktadha na sindano ya maagizo hufanya kazi kwenye UI nyingi za ndani (ikiwemo Open WebUI).
 
 🛠️ INAVYOFANYA KAZI?
 

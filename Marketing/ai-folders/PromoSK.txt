@@ -31,7 +31,7 @@ AI priečinky je váš zjednotený AI kokpit: organizujte konverzácie zo všetk
 
 🏠 PODPORA LOKÁLNEHO LLM
 
-Používate lokálny model AI (Ollama, LM Studio, Jan alebo iný)? Nakonfigurujte AI priečinky s miestnou URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastné názvy hostiteľov). Rýchle ukladanie a ukladanie cez kontextové menu fungujú aj na lokálnych rozhraniach.
+Používate lokálny AI model (Ollama, LM Studio, Jan alebo iný)? Nakonfigurujte AI priečinky s vašou lokálnou URL — podporuje localhost a LAN adresy (192.168.x.x, vlastné názvy hostiteľov). Rýchle ukladanie, ukladanie cez kontextové menu a vkladanie výziev fungujú na väčšine lokálnych rozhraní (vrátane Open WebUI).
 
 🛠️ AKO TO FUNGUJE?
 

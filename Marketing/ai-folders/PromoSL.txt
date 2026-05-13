@@ -31,7 +31,7 @@ Mape AI je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vse
 
 🏠 PODPORA ZA LOKALNI LLM
 
-Uporabljate lokalni model AI (Ollama, LM Studio, Jan ali drugega)? Konfigurirajte Mape AI z lokalnim URL-jem — podpira localhost in LAN naslove (192.168.x.x, prilagojeni nazivi gostiteljev). Hitro shranjevanje in shranjevanje prek kontekstnega menija delujeta tudi na lokalnih vmesnikih.
+Uporabljate lokalni model umetne inteligence (Ollama, LM Studio, Jan ali drug)? Konfigurirajte Mape AI z lokalnim URL-jem — podpira localhost in naslove LAN (192.168.x.x, prilagojeni gostiteljski vnosi). Hitro shranjevanje, shranjevanje prek kontekstnega menija in vstavljanje pozivov delujejo v večini lokalnih vmesnikov (vključno z Open WebUI).
 
 🛠️ KAKO DELUJE?
 

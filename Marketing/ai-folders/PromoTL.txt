@@ -31,7 +31,7 @@ Mga AI Folder ang iyong pinagsamang AI cockpit: ayusin ang mga pag-uusap mula sa
 
 🏠 SUPORTA SA LOKAL NA LLM
 
-Nagpapatakbo ng lokal na AI model (Ollama, LM Studio, Jan, o iba pa)? I-configure ang Mga AI Folder gamit ang iyong lokal na URL — sinusuportahan ang localhost at mga LAN address (192.168.x.x, mga custom na hostname). Gumagana rin ang mabilis na pag-save at pag-save sa pamamagitan ng context menu sa mga lokal na UI.
+Nagpapatakbo ka ba ng lokal na modelo ng AI (Ollama, LM Studio, Jan, o iba pa)? I-configure ang Mga AI Folder sa iyong lokal na URL — sinusuportahan ang localhost at mga LAN address (192.168.x.x, mga custom na hostname). Ang mabilis na i-save, i-save sa pamamagitan ng context menu, at pag-inject ng prompt ay gumagana sa karamihan ng mga lokal na UI (kasama ang Open WebUI).
 
 🛠️ PAANO ITO GUMAGANA?
 

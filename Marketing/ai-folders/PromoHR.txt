@@ -31,7 +31,7 @@ UI mape je vaš objedinjeni AI kokpit: organizirajte razgovore iz svih vaših AI
 
 🏠 PODRŠKA ZA LOKALNI LLM
 
-Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte UI mape s vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođeni nazivi domaćina). Brzo spremanje i spremanje putem kontekstnog izbornika rade i na lokalnim sučeljima.
+Koristite li lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte UI mape s vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena hosta). Brzo spremi, spremi putem kontekstnog izbornika i injektiranje upita rade na većini lokalnih sučelja (uključujući Open WebUI).
 
 🛠️ KAKO TO FUNKCIONIRA?
 

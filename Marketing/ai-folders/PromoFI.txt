@@ -31,7 +31,7 @@ AI-kansiot on yhtenäinen AI-ohjauskeskuksesi: järjestä kaikista AI-työkaluis
 
 🏠 PAIKALLISEN LLM:N TUKI
 
-Käytätkö paikallista AI-mallia (Ollama, LM Studio, Jan tai muu)? Määritä AI-kansiot paikallisella URL-osoitteellasi — tukee localhostia ja LAN-osoitteita (192.168.x.x, mukautetut isäntänimet). Pikatallennus ja kontekstivalikosta tallennus toimivat myös paikallisissa käyttöliittymissä.
+Käytätkö paikallista tekoälymallia (Ollama, LM Studio, Jan tai muu)? Määritä AI-kansiot paikallisella URL:llä — tukee localhostia ja LAN-osoitteita (192.168.x.x, mukautetut isäntänimet). Pikatallennus, pikavalikosta tallennus ja kehotteen syöttö toimivat useimmissa paikallisissa käyttöliittymissä (Open WebUI mukaan lukien).
 
 🛠️ MITEN SE TOIMII?
 

@@ -31,7 +31,7 @@ MI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-es
 
 🏠 HELYI LLM TÁMOGATÁS
 
-Helyi AI modellt futtat (Ollama, LM Studio, Jan vagy más)? Konfigurálja a(z) MI mappák-t a helyi URL-jével — támogatja a localhostot és a LAN-címeket (192.168.x.x, egyéni állomásneveket). A gyors mentés és a helyi menüs mentés is működik a helyi felületeken.
+Helyi MI modellt használ (Ollama, LM Studio, Jan vagy más)? Konfigurálja a MI mappák alkalmazást helyi URL-lel — támogatja a localhost-ot és LAN-címeket (192.168.x.x, egyéni hosztnév). A gyorsmentés, a jobb gombos mentés és a promptok beillesztése a legtöbb helyi felületen működik (az Open WebUI-t is beleértve).
 
 🛠️ HOGYAN MŰKÖDIK?
 

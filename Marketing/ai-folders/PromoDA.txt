@@ -31,7 +31,7 @@ AI-mapper er dit samlede AI-kontrolpanel: organiser samtaler fra alle dine AI-v�
 
 🏠 UNDERSTØTTELSE AF LOKAL LLM
 
-Kører du en lokal AI-model (Ollama, LM Studio, Jan eller en anden)? Konfigurer AI-mapper med din lokale URL — understøtter localhost og LAN-adresser (192.168.x.x, brugerdefinerede værtsnavne). Hurtig lagring og genvejsmenu-lagring fungerer også på lokale brugergrænseflader.
+Kører du en lokal AI-model (Ollama, LM Studio, Jan eller en anden)? Konfigurer AI-mapper med din lokale URL — understøtter localhost og LAN-adresser (192.168.x.x, brugerdefinerede værtsnavne). Hurtig-gem, kontekstmenu-gem og promptindsprøjtning fungerer på de fleste lokale brugergrænseflader (herunder Open WebUI).
 
 🛠️ HVORDAN VIRKER DET?
 
