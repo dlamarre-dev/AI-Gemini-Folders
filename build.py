@@ -353,12 +353,10 @@ def main():
         print("🛑 Build cancelled.")
         sys.exit(1)
 
-    # Clean only the targeted extension subdirs, not the whole dist/
-    os.makedirs(DIST_DIR, exist_ok=True)
-    for ext in targets:
-        ext_dist = os.path.join(DIST_DIR, ext)
-        if os.path.exists(ext_dist):
-            shutil.rmtree(ext_dist)
+    # Wipe the entire dist/ directory before every build.
+    if os.path.exists(DIST_DIR):
+        shutil.rmtree(DIST_DIR)
+    os.makedirs(DIST_DIR)
 
     for ext in targets:
         build_extension(ext)
