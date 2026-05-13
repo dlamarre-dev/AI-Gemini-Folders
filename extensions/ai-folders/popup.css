@@ -821,3 +821,11 @@
       border-color: #6b7280;
       background: rgba(107, 114, 128, 0.1);
     }
+
+    /* ChatGPT's brand color (#fff) is invisible on a light background.
+       Override link text and SVG fills to near-black in light mode. */
+    @media (prefers-color-scheme: light) {
+      .chat-item.site-chatgpt .chat-link { color: #212121; }
+      .chat-item.site-chatgpt .chat-site-logo svg path,
+      .site-new-conv-btn[data-site="chatgpt"] svg path { fill: #212121; }
+    }
