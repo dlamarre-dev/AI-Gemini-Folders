@@ -31,7 +31,7 @@ AI-mappen is uw uniforme AI-cockpit: organiseer gesprekken van al uw AI-tools in
 
 🏠 LOKALE LLM-ONDERSTEUNING
 
-Gebruikt u een lokaal AI-model (Ollama, LM Studio, Jan of een ander)? Configureer AI-mappen met uw lokale URL — ondersteunt localhost en LAN-adressen (192.168.x.x, aangepaste hostnamen). Snel opslaan en opslaan via contextmenu werken ook op lokale interfaces.
+Gebruik je een lokaal AI-model (Ollama, LM Studio, Jan of een andere)? Configureer AI-mappen met je lokale URL — ondersteunt localhost en LAN-adressen (192.168.x.x, aangepaste hostnamen). Snel opslaan, opslaan via het contextmenu en promptinjectie werken op de meeste lokale interfaces (inclusief Open WebUI).
 
 🛠️ HOE WERKT HET?
 

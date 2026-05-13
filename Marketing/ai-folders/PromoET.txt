@@ -31,7 +31,7 @@ AI kaustad on teie ühtne AI-juhtimiskeskus: korraldage kõigi AI-tööriistade 
 
 🏠 KOHALIKU LLM TUGI
 
-Kas kasutate kohalikku AI-mudelit (Ollama, LM Studio, Jan või muu)? Seadistage AI kaustad oma kohaliku URL-iga — toetab localhosti ja LAN-aadresse (192.168.x.x, kohandatud hostinimed). Kiirsalvestamine ja kontekstimenüüst salvestamine töötavad ka kohalikes liidestes.
+Kasutate kohalikku AI mudelit (Ollama, LM Studio, Jan või mõni muu)? Konfigureerige AI kaustad oma kohaliku URL-iga — toetab localhost'i ja LAN-aadresse (192.168.x.x, kohandatud hostinimi). Kiirtalletamine, kontekstimenüü talletamine ja käskluste sisestamine töötavad enamikul kohalikest kasutajaliidestest (sealhulgas Open WebUI).
 
 🛠️ KUIDAS SEE TÖÖTAB?
 

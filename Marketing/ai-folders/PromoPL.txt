@@ -31,7 +31,7 @@ Foldery AI to Twoje zunifikowane centrum AI: organizuj rozmowy ze wszystkich nar
 
 🏠 WSPARCIE LOKALNEGO LLM
 
-Używasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj Foldery AI ze swoim lokalnym adresem URL — obsługuje localhost i adresy LAN (192.168.x.x, niestandardowe nazwy hostów). Szybkie zapisywanie i zapisywanie z menu kontekstowego działają również w lokalnych interfejsach.
+Używasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj Foldery AI ze swoim lokalnym URL — obsługuje localhost i adresy LAN (192.168.x.x, niestandardowe nazwy hostów). Szybkie zapisywanie, zapisywanie przez menu kontekstowe i wstrzykiwanie podpowiedzi działają na większości lokalnych interfejsów (w tym Open WebUI).
 
 🛠️ JAK TO DZIAŁA?
 

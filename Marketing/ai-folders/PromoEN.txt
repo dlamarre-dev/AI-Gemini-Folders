@@ -34,7 +34,7 @@ Gemini, Claude, ChatGPT, Copilot, and Perplexity. Conversations from different s
 
 🏠 LOCAL LLM SUPPORT
 
-Running a local AI model (Ollama, LM Studio, Jan, or any other)? Configure AI Folders with your local URL — supports localhost and LAN addresses (192.168.x.x, custom hostnames). Quick-save and context-menu save work on local UIs too.
+Running a local AI model (Ollama, LM Studio, Jan, or any other)? Configure AI Folders with your local URL — supports localhost and LAN addresses (192.168.x.x, custom hostnames). Quick-save, context-menu save, and prompt injection all work on most local UIs (including Open WebUI).
 
 🛠️ HOW DOES IT WORK?
 

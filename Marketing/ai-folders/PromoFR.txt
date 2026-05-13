@@ -31,7 +31,7 @@ Dossiers IA est votre cockpit IA unifié : organisez des conversations de tous v
 
 🏠 SUPPORT LLM LOCAL
 
-Vous utilisez un modèle IA local (Ollama, LM Studio, Jan ou autre) ? Configurez Dossiers IA avec votre URL locale — prend en charge localhost et les adresses LAN (192.168.x.x, noms d'hôtes personnalisés). La sauvegarde rapide et via le menu contextuel fonctionnent aussi sur les interfaces locales.
+Vous utilisez un modèle IA local (Ollama, LM Studio, Jan ou autre) ? Configurez Dossiers IA avec votre URL locale — prend en charge localhost et les adresses LAN (192.168.x.x, noms d'hôtes personnalisés). La sauvegarde rapide, la sauvegarde via le menu contextuel et l'injection de prompts fonctionnent sur la plupart des interfaces locales (dont Open WebUI).
 
 🛠️ COMMENT ÇA MARCHE ?
 

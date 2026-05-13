@@ -31,7 +31,7 @@ Cartelle IA è il tuo cockpit AI unificato: organizza conversazioni da tutti i t
 
 🏠 SUPPORTO LLM LOCALE
 
-Stai usando un modello AI locale (Ollama, LM Studio, Jan o altro)? Configura Cartelle IA con il tuo URL locale — supporta localhost e indirizzi LAN (192.168.x.x, hostname personalizzati). Il salvataggio rapido e dal menu contestuale funzionano anche nelle interfacce locali.
+Stai usando un modello AI locale (Ollama, LM Studio, Jan o un altro)? Configura Cartelle IA con il tuo URL locale — supporta localhost e indirizzi LAN (192.168.x.x, nomi host personalizzati). Il salvataggio rapido, il salvataggio via menu contestuale e l'iniezione di prompt funzionano sulla maggior parte delle interfacce locali (incluso Open WebUI).
 
 🛠️ COME FUNZIONA?
 

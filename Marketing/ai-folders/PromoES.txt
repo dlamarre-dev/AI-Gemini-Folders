@@ -31,7 +31,7 @@ Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus 
 
 🏠 SOPORTE DE LLM LOCAL
 
-¿Usas un modelo de IA local (Ollama, LM Studio, Jan u otro)? Configura Carpetas IA con tu URL local — compatible con localhost y direcciones LAN (192.168.x.x, nombres de host personalizados). El guardado rápido y el guardado por menú contextual también funcionan en interfaces locales.
+¿Usas un modelo de IA local (Ollama, LM Studio, Jan u otro)? Configura Carpetas IA con tu URL local — compatible con localhost y direcciones LAN (192.168.x.x, nombres de host personalizados). La grabación rápida, la grabación por menú contextual y la inyección de prompts funcionan en la mayoría de interfaces locales (incluido Open WebUI).
 
 🛠️ ¿CÓMO FUNCIONA?
 

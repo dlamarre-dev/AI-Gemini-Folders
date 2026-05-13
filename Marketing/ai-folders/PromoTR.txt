@@ -31,7 +31,7 @@ YZ Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan ge
 
 🏠 YEREL LLM DESTEĞİ
 
-Yerel bir AI modeli (Ollama, LM Studio, Jan veya başka) mı kullanıyorsunuz? YZ Klasörleri'ı yerel URL'nizle yapılandırın — localhost ve LAN adreslerini destekler (192.168.x.x, özel ana bilgisayar adları). Hızlı kaydetme ve bağlam menüsü kaydetme yerel arayüzlerde de çalışır.
+Yerel bir AI modeli (Ollama, LM Studio, Jan veya başka biri) mi çalıştırıyorsunuz? YZ Klasörleri yerel URL'nizle yapılandırın — localhost ve LAN adreslerini (192.168.x.x, özel ana bilgisayar adları) destekler. Hızlı kaydetme, bağlam menüsüyle kaydetme ve prompt enjeksiyonu çoğu yerel arayüzde çalışır (Open WebUI dahil).
 
 🛠️ NASIL ÇALIŞIR?
 

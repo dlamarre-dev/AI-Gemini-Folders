@@ -31,7 +31,7 @@ Folder AI adalah kokpit AI terpadu Anda: atur percakapan dari semua alat AI Anda
 
 🏠 DUKUNGAN LLM LOKAL
 
-Menjalankan model AI lokal (Ollama, LM Studio, Jan, atau lainnya)? Konfigurasikan Folder AI dengan URL lokal Anda — mendukung localhost dan alamat LAN (192.168.x.x, nama host khusus). Simpan cepat dan simpan melalui menu konteks juga berfungsi pada UI lokal.
+Apakah Anda menjalankan model AI lokal (Ollama, LM Studio, Jan, atau lainnya)? Konfigurasikan Folder AI dengan URL lokal Anda — mendukung localhost dan alamat LAN (192.168.x.x, nama host kustom). Simpan cepat, simpan via menu konteks, dan injeksi prompt berfungsi di sebagian besar antarmuka lokal (termasuk Open WebUI).
 
 🛠️ CARA KERJANYA?
 

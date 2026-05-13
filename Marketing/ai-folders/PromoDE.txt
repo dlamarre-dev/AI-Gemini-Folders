@@ -31,7 +31,7 @@ KI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ih
 
 🏠 LOKALER LLM-SUPPORT
 
-Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie KI-Ordner mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung und Kontextmenü-Speicherung funktionieren auch auf lokalen Benutzeroberflächen.
+Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie KI-Ordner mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung, Kontextmenü-Speicherung und Prompt-Injektion funktionieren auf den meisten lokalen Benutzeroberflächen (einschließlich Open WebUI).
 
 🛠️ WIE FUNKTIONIERT ES?
 
