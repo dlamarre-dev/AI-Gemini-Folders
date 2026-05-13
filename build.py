@@ -210,12 +210,14 @@ def build_firefox(ext_name, version):
         extra = ["site-config.js"] if os.path.exists(os.path.join(dest, "site-config.js")) else []
         manifest["background"]["scripts"] = ["lz-string.min.js", "utils.js"] + extra + [sw]
 
-    if "commands" in manifest:
-        for cmd_info in manifest["commands"].values():
-            if "suggested_key" in cmd_info:
-                for platform in ["default", "windows", "chromeos", "linux", "mac"]:
-                    if platform in cmd_info["suggested_key"]:
-                        cmd_info["suggested_key"][platform] = "Alt+Shift+S"
+    # Only patch the quick-save shortcut (Ctrl+Shift+S → Alt+Shift+S).
+    # Other commands (e.g. _execute_action) keep their original keys.
+    if "commands" in manifest and "quick-save" in manifest["commands"]:
+        qs = manifest["commands"]["quick-save"]
+        if "suggested_key" in qs:
+            for platform in ["default", "windows", "chromeos", "linux", "mac"]:
+                if platform in qs["suggested_key"]:
+                    qs["suggested_key"][platform] = "Alt+Shift+S"
 
     with open(mfp, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
