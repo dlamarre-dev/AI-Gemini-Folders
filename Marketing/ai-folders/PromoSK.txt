@@ -54,7 +54,7 @@ Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vž
 Navrhnuté so súkromím v centre. Vyžaduje prístup iba k Gemini, Claude, ChatGPT, Copilot, Perplexity a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.
 
 🤝 OPEN SOURCE PROJEKT
-AI priečinky sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+AI priečinky sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AKTUALIZÁCIE:
 Verzia 1.0: Prvé vydanie! Usporiadajte konverzácie z Gemini, Claude, ChatGPT, Copilot a Perplexity do zdieľaných priečinkov. Kompletná knižnica promptov s vkladaním jedným kliknutím, skratky rýchleho ukladania, drag & drop, mobilná synchronizácia, hromadné akcie, skupiny kariet a podpora 43 jazykov. Podpora lokálnych LLM s konfigurovateľnou URL (localhost a LAN adresy).

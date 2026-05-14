@@ -54,7 +54,7 @@ Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et 
 Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à Gemini, Claude, ChatGPT, Copilot, Perplexity et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
 
 🤝 PROJET OPEN SOURCE
-Dossiers IA est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Consultez le code, suivez l'historique ou contribuez sur GitHub : https://github.com/dlamarre-dev/GeminiFolders
+Dossiers IA est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Consultez le code, suivez l'historique ou contribuez sur GitHub : https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 MISES À JOUR :
 Version 1.0 : Première publication ! Organisez vos conversations depuis Gemini, Claude, ChatGPT, Copilot et Perplexity dans des dossiers partagés. Bibliothèque de prompts complète avec injection en un clic, raccourcis de sauvegarde rapide, glisser-déposer, synchronisation mobile, actions groupées, groupes d'onglets et prise en charge de 43 langues. Support des LLM locaux avec URL configurable (localhost et adresses LAN).

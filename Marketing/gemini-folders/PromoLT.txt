@@ -49,7 +49,7 @@ Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo vi
 Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie gemini.google.com ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.
 
 🤝 ATVIROJO KODO PROJEKTAS
-Gemini Aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pagarba jūsų privatumui yra mūsų aukščiausi prioritetai. Esi kūrėjas ar tiesiog smalsus? Naršyk kodą, sek pakeitimų žurnalą arba prisidėk prie „GitHub": https://github.com/dlamarre-dev/GeminiFolders
+Gemini Aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pagarba jūsų privatumui yra mūsų aukščiausi prioritetai. Esi kūrėjas ar tiesiog smalsus? Naršyk kodą, sek pakeitimų žurnalą arba prisidėk prie „GitHub": https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ATNAUJINIMAI:
 Versija 4.1 (Globalus plėtimas ir stiprinimas): 16 naujų kalbų pakelia Gemini Aplankus iki 43 lokalizacijų visame pasaulyje — Šiaurės šalių kalbos, Baltijos valstybės ir išplėsta Europos bei Pietryčių Azijos aprėptis. Ištaisyta race condition, kuri esant greitus paspaudimus galėjo tyliai prarasti išsaugojimą. Prompt įterpimas modernizuotas naudojant InputEvent, pakeičiant pasenusį execCommand. Importo srautas apsaugotas nuo kenkėjiškų URL atsarginių kopijų failuose. Ištaisyta kritinė duomenų saugos klaida: įjungus raginimų sinchronizavimą beveik pilnoje saugykloje, visi išsaugoti raginimai galėjo būti tyliai ištrinti. Saugykla dabar naudoja suskaidytus įrašus, kad liktų Chrome ribose, rodydama aiškius klaidos pranešimus kai ji pilna.

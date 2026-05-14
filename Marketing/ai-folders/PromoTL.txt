@@ -54,7 +54,7 @@ Para i-pin ang isang prompt: i-click ang 📍 — lilipat ito sa tuktok ng lista
 Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa Gemini, Claude, ChatGPT, Copilot, Perplexity at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.
 
 🤝 OPEN SOURCE NA PROYEKTO
-Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal. Ang transparency at paggalang sa iyong privacy ang aming mga pangunahing priyoridad. Ikaw ba ay isang developer o basta lang curious? I-browse ang code, sundan ang changelog, o mag-contribute sa GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal. Ang transparency at paggalang sa iyong privacy ang aming mga pangunahing priyoridad. Ikaw ba ay isang developer o basta lang curious? I-browse ang code, sundan ang changelog, o mag-contribute sa GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 MGA UPDATE:
 Bersyon 1.0: Unang inilabas! Ayusin ang mga pag-uusap mula sa Gemini, Claude, ChatGPT, Copilot, at Perplexity sa mga ibinabahaging folder. Kumpletong prompt library na may one-click injection, mga shortcut ng mabilis na pag-save, drag at drop, mobile sync, bulk actions, tab groups, at suporta para sa 43 na wika.

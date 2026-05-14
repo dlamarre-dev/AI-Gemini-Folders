@@ -54,7 +54,7 @@ Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi ku
 Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa Gemini, Claude, ChatGPT, Copilot, Perplexity na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
 
 🤝 MRADI WA CHANZO WAZI
-Folda za AI ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Folda za AI ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 MASASISHO:
 Toleo 1.0: Chapisho la kwanza! Panga mazungumzo kutoka Gemini, Claude, ChatGPT, Copilot na Perplexity katika folda zilizoshirikiwa. Maktaba kamili ya maagizo na sindano ya kubonyeza mara moja, njia za mkato za kuhifadhi haraka, buruta na uacha, usawazishaji wa simu, vitendo vya wingi, vikundi vya kichupo na usaidizi wa lugha 43.

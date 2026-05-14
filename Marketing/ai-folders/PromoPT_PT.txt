@@ -54,7 +54,7 @@ Para fixar um prompt: clique em 📍 — sobe para o topo da lista e fica sempre
 Desenvolvida com a privacidade no centro. Solicita acesso apenas a Gemini, Claude, ChatGPT, Copilot, Perplexity e lê o separador ativo apenas ao guardar uma conversa ou injetar um prompt. A permissão "Marcadores" é usada apenas se ativar a sincronização móvel. Armazenamento via Chrome Sync: sem servidores de terceiros, sem telemetria.
 
 🤝 PROJETO OPEN SOURCE
-Pastas IA é um projeto open source desenvolvido com paixão. A transparência e o respeito pela sua privacidade são as nossas prioridades. É programador ou simplesmente curioso? Consulte o código, acompanhe o histórico de alterações ou contribua no GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Pastas IA é um projeto open source desenvolvido com paixão. A transparência e o respeito pela sua privacidade são as nossas prioridades. É programador ou simplesmente curioso? Consulte o código, acompanhe o histórico de alterações ou contribua no GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ATUALIZAÇÕES:
 Versão 1.0: Lançamento inicial! Organize conversas do Gemini, Claude, ChatGPT, Copilot e Perplexity em pastas partilhadas. Biblioteca de prompts completa com injeção com um clique, atalhos de gravação rápida, arrastar e largar, sincronização móvel, ações em massa, grupos de separadores e suporte para 43 idiomas. Suporte a LLM local com URL configurável (localhost e endereços LAN).

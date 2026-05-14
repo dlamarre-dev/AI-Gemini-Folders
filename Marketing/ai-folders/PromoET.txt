@@ -53,7 +53,7 @@ Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
 Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult Gemini, Claude, ChatGPT, Copilot, Perplexity-ile ja loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.
 
 🤝 AVATUD LÄHTEKOODIGA PROJEKT
-AI kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/GeminiFolders
+AI kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 UUENDUSED:
 Versioon 1.0: Esimene väljalase! Korraldage Gemini, Claude, ChatGPT, Copilot ja Perplexity vestlused jagatud kaustadesse. Täielik viipade teek ühe klõpsuga lisamisega, kiirsalvestuse otseteed, lohistamine, mobiilsünkroniseerimine, hulgioperatsioonid, vahelehtede rühmad ja tugi 43 keelele.

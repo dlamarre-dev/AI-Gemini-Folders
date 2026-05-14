@@ -53,7 +53,7 @@ Uzvednes piespraudīšanai: noklikšķini 📍 – tā tiek pārvietota saraksta
 Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai Gemini, Claude, ChatGPT, Copilot, Perplexity un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot Chrome Sync: nav trešo pušu serveru, nav telemetrijas.
 
 🤝 ATVĒRTĀ PIRMKODA PROJEKTS
-AI mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība un cieņa pret tavu privātumu ir mūsu augstākās prioritātes. Vai esi izstrādātājs vai vienkārši ziņkārīgs? Pārlūkojiet kodu, sekojiet izmaiņu žurnālam vai piedalieties GitHub: https://github.com/dlamarre-dev/GeminiFolders
+AI mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība un cieņa pret tavu privātumu ir mūsu augstākās prioritātes. Vai esi izstrādātājs vai vienkārši ziņkārīgs? Pārlūkojiet kodu, sekojiet izmaiņu žurnālam vai piedalieties GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ATJAUNINĀJUMI:
 Versija 1.0: Pirmais laidiens! Kārtojiet sarunas no Gemini, Claude, ChatGPT, Copilot un Perplexity koplietotās mapēs. Pilna uzvedņu bibliotēka ar viena klikšķa ievietošanu, ātrās saglabāšanas īsinājumtaustiņi, vilkšana un nomešana, mobilo ierīču sinhronizācija, lielapjoma darbības, ciļņu grupas un atbalsts 43 valodām.

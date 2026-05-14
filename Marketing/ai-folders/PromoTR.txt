@@ -54,7 +54,7 @@ Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar
 Gizlilik öncelikli tasarım. Yalnızca Gemini, Claude, ChatGPT, Copilot, Perplexity'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.
 
 🤝 AÇIK KAYNAK PROJE
-YZ Klasörleri, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/GeminiFolders
+YZ Klasörleri, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 GÜNCELLEMELER:
 Sürüm 1.0: İlk yayın! Gemini, Claude, ChatGPT, Copilot ve Perplexity sohbetlerini paylaşılan klasörlerde düzenleyin. Tek tıkla ekleme özellikli tam prompt kütüphanesi, hızlı kaydetme kısayolları, sürükle ve bırak, mobil senkronizasyon, toplu işlemler, sekme grupları ve 43 dil desteği. Yapılandırılabilir URL (localhost ve LAN adresleri) ile yerel LLM desteği.

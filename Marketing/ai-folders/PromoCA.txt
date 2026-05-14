@@ -52,7 +52,7 @@ Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
 Construït amb la privacitat com a prioritat. Només sol·licita accés a Gemini, Claude, ChatGPT, Copilot, Perplexity i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
 
 🤝 PROJECTE DE CODI OBERT
-Carpetes IA és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Carpetes IA és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ACTUALITZACIONS:
 Versió 1.0: Primera publicació! Organitzeu converses de Gemini, Claude, ChatGPT, Copilot i Perplexity en carpetes compartides. Biblioteca de prompts completa amb injecció d'un clic, dreceres de desament ràpid, arrossegar i deixar anar, sincronització mòbil, accions en bloc, grups de pestanyes i suport per a 43 idiomes.

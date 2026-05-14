@@ -53,7 +53,7 @@ Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
 Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
 
 🤝 PROJEKAT OTVORENOG KODA
-ВИ фасцикле je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+ВИ фасцикле je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AŽURIRANJA:
 Верзија 1.0: Прво издање! Организујте разговоре из Gemini, Claude, ChatGPT, Copilot и Perplexity у дељене фасцикле. Потпуна библиотека промптова са убацивањем једним кликом, пречице за брзо чување, превлачење и пуштање, мобилна синхронизација, масовне радње, групе картица и подршка за 43 језика.

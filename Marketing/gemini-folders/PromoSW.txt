@@ -50,7 +50,7 @@ Sanidi 💎 ili kuelekeza kwenye Gem yako maalum.
 Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa gemini.google.com na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
 
 🤝 MRADI WA CHANZO WAZI
-Folda za Gemini ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Folda za Gemini ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 MASASISHO:
 Toleo 4.1 (Upanuzi wa Kimataifa na Ugumu): Lugha 16 mpya zinaongeza Folda za Gemini hadi lokalizesheni 43 duniani kote — lugha za Nordiki, nchi za Baltic na chanjo iliyopanuliwa ya Ulaya na Asia ya Kusini-mashariki. Kurekebisha hali ya mbio ambayo ingeweza kupoteza kimya kimya uhifadhi wakati wa kubonyeza haraka. Uingizaji wa prompt umeboreshwa kwa InputEvent, ukibadilisha execCommand iliyopitwa na wakati. Mfumo wa uingizaji umeimarishwa dhidi ya URL hasidi katika faili za nakala rudufu. Hitilafu mbaya ya usalama wa data imetibiwa: kuwezesha usawazishaji wa maagizo kwenye hifadhi iliyojaa karibu kungeweza kufuta kimya kimya maagizo yote yaliyohifadhiwa. Hifadhi sasa inatumia uandishi wa vipande ili kukaa ndani ya mipaka ya Chrome, na ujumbe wa makosa wazi wakati imejaa.

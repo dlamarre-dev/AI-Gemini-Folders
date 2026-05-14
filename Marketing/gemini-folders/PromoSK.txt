@@ -50,7 +50,7 @@ Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vž
 Navrhnuté so súkromím v centre. Vyžaduje prístup iba k gemini.google.com a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.
 
 🤝 OPEN SOURCE PROJEKT
-Priečinky Gemini sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Priečinky Gemini sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AKTUALIZÁCIE:
 Verzia 4.1 (Globálna expanzia a spevnenie): 16 nových jazykov privádza Priečinky Gemini na 43 lokalizácií po celom svete — severské jazyky, pobaltské štáty a rozšírené európske a juhovýchodoázijské pokrytie. Opravená race condition, ktorá mohla pri rýchlych kliknutiach ticho zahodiť uloženie. Vkladanie výziev modernizované pomocou InputEvent, nahradenie zastaraného execCommand. Importný kanál zabezpečený proti škodlivým URL v záložných súboroch. Opravená kritická chyba bezpečnosti dát: povolenie synchronizácie výziev pri takmer plnom úložisku mohlo ticho vymazať všetky uložené výzvy. Úložisko teraz používa fragmentované zápisy, aby zostalo v rámci limitov Chrome, s jasnými chybovými hláseniami keď je plné.

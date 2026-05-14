@@ -50,7 +50,7 @@ For å feste en prompt: klikk 📍 – den flyttes øverst på listen og forblir
 Bygget med personvern i fokus. Tillegget ber bare om tilgang til gemini.google.com og leser bare den aktive fanen ved lagring av en samtale eller innsetting av en prompt. «Bokmerker»-tillatelsen brukes bare hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
 
 🤝 ÅPEN KILDEKODE-PROSJEKT
-Gemini Mapper er et åpen kildekode-prosjekt bygget med lidenskap. Transparens og respekt for personvernet ditt er våre høyeste prioriteter. Er du en utvikler eller bare nysgjerrig? Bla gjennom koden, følg endringsloggen eller bidra på GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Gemini Mapper er et åpen kildekode-prosjekt bygget med lidenskap. Transparens og respekt for personvernet ditt er våre høyeste prioriteter. Er du en utvikler eller bare nysgjerrig? Bla gjennom koden, følg endringsloggen eller bidra på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 OPPDATERINGER:
 Versjon 4.1 (Global utvidelse og herding): 16 nye språk bringer Gemini Mapper til 43 lokaliseringer verden over — nordiske språk, de baltiske statene og utvidet europeisk og sørøstasiatisk dekning. Fikset en race condition som stille kunne miste en lagring ved raske klikk. Prompt-innsetting modernisert med InputEvent, som erstatter den utdaterte execCommand. Import-pipeline herdet mot ondsinnede URL-er i sikkerhetskopifiler. Rettet en kritisk datasikkerhetsfeil: aktivering av prompt-synkronisering med nesten fullt lager kunne lydløst slette alle lagrede prompts. Lageret bruker nå fragmenterte skrivinger for å holde seg innenfor Chromes grenser, med klare feilmeldinger når det er fullt.
