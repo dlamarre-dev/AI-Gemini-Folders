@@ -51,6 +51,12 @@ Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult gemini.google.c
 🤝 AVATUD LÄHTEKOODIGA PROJEKT
 Gemini Kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 SAADAVAL KA: AI kaustad — MITMIKPLATVORMI UUENDUS
+
+Huvitab teid Gemini Kaustad, kuid kasutate ka ChatGPT-d, Claudi, Copiloti, Perplexityt või kohalikku LLM-i? AI kaustad on loomulik järgmine samm: üks laiendus vestluste korraldamiseks kõigis oma AI-tööriistades, sama kaustasüsteemi, käskluste raamatukogu ja ühe klõpsuga sisestamisega, mis on saadaval Gemini Kaustad-s.
+
+👉 Installi AI kaustad: __AF_STORE_URL__
+
 📢 UUENDUSED:
 Versioon 4.1 (Globaalne laienemine ja karastamine): 16 uut keelt viib Gemini Kaustad 43 lokalisatsioonini üle maailma — põhjamaised keeled, Balti riigid ning laiendatud Euroopa ja Kagu-Aasia katvus. Parandati race condition, mis võis kiirklõpsude korral salvestuse vaikselt kaotada. Prompti sisestamine moderniseeriti InputEvent-iga, asendades aegunud execCommand-i. Impordipipe hardeeriti varufailide pahatahtlike URL-ide vastu. Kriitilise andmeturbe vea parandus: käskude sünkroonimine peaaegu täis salvestusruumiga võis kõik salvestatud käsklused vaikselt kustutada. Salvestusruum kasutab nüüd tükeldatud kirjutisi, et jääda Chrome'i piiridesse, ning kuvab selgeid veateateid, kui ruum on täis.
 Versioon 4.0 (Promptide kogu): Seni ambitsioonikam uuendus! Gemini Kaustad saab täiesti uue Prompti režiimi: salvesta oma parimad promptid, redigeeri neid otse ja lisa need otse Geminisse ühe klikiga.

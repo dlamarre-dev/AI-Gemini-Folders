@@ -52,6 +52,12 @@ Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do gemini.googl
 🤝 PROJEKT OPEN SOURCE
 Foldery Gemini to projekt open source tworzony z pasją. Przejrzystość i poszanowanie Twojej prywatności to nasze priorytety. Jesteś programistą lub po prostu ciekawskim? Przejrzyj kod, śledź historię zmian lub wnieś wkład na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 DOSTĘPNE RÓWNIEŻ: Foldery AI — ULEPSZENIE WIELOPLATFORMOWE
+
+Zainteresowany Foldery Gemini, ale używasz też ChatGPT, Claude, Copilot, Perplexity lub lokalnego LLM? Foldery AI to naturalny następny krok: jedno rozszerzenie do organizowania rozmów na wszystkich narzędziach AI, z tym samym systemem folderów, biblioteką podpowiedzi i wstawianiem jednym kliknięciem dostępnym w Foldery Gemini.
+
+👉 Zainstaluj Foldery AI: __AF_STORE_URL__
+
 📢 AKTUALIZACJE:
 Wersja 4.1 (Globalna ekspansja i wzmocnienie): 16 nowych języków wprowadza Foldery Gemini do 43 lokalizacji na całym świecie — języki nordyckie, kraje bałtyckie oraz rozszerzone pokrycie europejskie i południowoazjatyckie. Naprawiono wyścig, który mógł po cichu pominąć zapis przy szybkich kliknięciach. Wstrzykiwanie promptów unowocześnione za pomocą InputEvent, zastępując przestarzałe execCommand. Pipeline importu zabezpieczony przed złośliwymi adresami URL w plikach kopii zapasowych. Naprawiono krytyczny błąd bezpieczeństwa danych: włączenie synchronizacji podpowiedzi przy prawie pełnym magazynie mogło cicho usunąć wszystkie zapisane podpowiedzi. Pamięć masowa używa teraz fragmentowanych zapisów, aby pozostać w granicach Chrome, z wyraźnymi komunikatami o błędach gdy jest pełna.
 Wersja 4.0 (Biblioteka Promptów): Najbardziej ambitna aktualizacja! Foldery Gemini otrzymują zupełnie nowy tryb promptów: zapisuj najlepsze prompty, edytuj je w miejscu i wstrzykuj bezpośrednio do Gemini jednym kliknięciem. Dodano: animowany przełącznik trybów, wyszukiwanie i sortowanie w trybie promptów, przycisk niestandardowego Gem i niezależną synchronizację promptów. Przypinanie najważniejszych podpowiedzi na górze biblioteki.

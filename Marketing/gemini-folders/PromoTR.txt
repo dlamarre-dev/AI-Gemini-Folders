@@ -52,6 +52,12 @@ Gizlilik öncelikli tasarım. Yalnızca gemini.google.com'a erişim ister ve yal
 🤝 AÇIK KAYNAK PROJE
 Gemini Klasörler, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 AYRICA MEVCUT: YZ Klasörleri — ÇOKLU PLATFORM YÜKSELTMESİ
+
+Gemini Klasörleri ilginizi çekiyor ama ChatGPT, Claude, Copilot, Perplexity veya yerel bir LLM de kullanıyor musunuz? YZ Klasörleri doğal bir sonraki adımdır: tüm AI araçlarınızdaki konuşmaları düzenlemek için tek bir uzantı; Gemini Klasörleri'nde bulunan aynı klasör sistemi, prompt kütüphanesi ve tek tıkla enjeksiyonuyla.
+
+👉 YZ Klasörleri'ni yükle: __AF_STORE_URL__
+
 📢 GÜNCELLEMELER:
 Sürüm 4.1 (Küresel Genişleme ve Güçlendirme): 16 yeni dil, Gemini Klasörleri dünya genelinde 43 yerelleştirmeye taşıyor — İskandinav dilleri, Baltık devletleri ve genişletilmiş Avrupa ve Güneydoğu Asya kapsamı. Hızlı tıklamalarda bir kaydetme işleminin sessizce kaybolmasına yol açabilecek yarış durumu düzeltildi. Kullanımdan kaldırılan execCommand'ın yerini InputEvent ile modern prompt enjeksiyonu aldı. Yedek dosyalardaki kötü amaçlı URL'lere karşı içe aktarma boru hattı güçlendirildi. Kritik veri güvenliği hatası düzeltildi: neredeyse dolu depolama alanında prompt senkronizasyonunu etkinleştirmek, tüm kayıtlı promptları sessizce silebiliyordu. Depolama artık Chrome sınırları içinde kalmak için parçalanmış yazımlar kullanıyor ve dolduğunda açık hata mesajları gösteriyor.
 Sürüm 4.0 (İstem Kütüphanesi): Şimdiye kadarki en iddialı güncelleme! Gemini Klasörler, yepyeni bir İstem Modu kazanıyor: en iyi istemlerinizi kaydedin, yerinde düzenleyin ve tek tıklamayla doğrudan Gemini'ye enjekte edin. Animasyonlu mod geçiş düğmesi, İstem Modu'nda arama ve sıralama, özel Gem düğmesi ve bağımsız istem senkronizasyonu eklendi. Temel istemlerinizi kütüphanenizin en üstüne sabitleyin.

@@ -52,6 +52,12 @@ Az adatvédelmet alapelvként kezelve fejlesztve. Csak a gemini.google.com elér
 🤝 NYÍLT FORRÁSKÓDÚ PROJEKT
 A Gemini-mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az átláthatóság és az adatvédelem tiszteletben tartása a legfontosabb prioritásaink. Fejlesztő, vagy csak kíváncsi? Böngéssze a kódot, kövesse a változásnaplót, vagy járuljon hozzá a GitHubon: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 SZINTÉN ELÉRHETŐ: MI mappák — A TÖBBPLATFORMOS FRISSÍTÉS
+
+Érdekli a Gemini-mappák, de ChatGPT-t, Claude-ot, Copilotot, Perplexityt vagy helyi LLM-et is használ? A MI mappák a természetes következő lépés: egyetlen bővítmény az összes AI-eszközön folytatott beszélgetések rendszerezéséhez, a Gemini-mappák alkalmazásban is elérhető mappás rendszerrel, prompt-könyvtárral és egyetlen kattintásos beillesztéssel.
+
+👉 Telepítse a MI mappák alkalmazást: __AF_STORE_URL__
+
 📢 FRISSÍTÉSEK:
 4.1-es verzió (Globális bővítés és megerősítés): 16 új nyelv 43 világszintű lokalizációra emeli a Gemini-mappákat — északi nyelvek, balti államok és bővített európai és délkelet-ázsiai lefedettség. Javítva egy versenyhelyzet, amely gyors kattintások esetén csendben eldobhatott egy mentést. A prompt-injektálás modernizálva InputEvent segítségével, felváltva az elavult execCommand-ot. Az import-folyamat megerősítve a biztonsági mentési fájlokban lévő rosszindulatú URL-ek ellen. Kritikus adatbiztonsági hiba javítva: a prompt-szinkronizáció bekapcsolása majdnem teli tárhelyen csendesen törölhette az összes mentett promptot. A tároló mostantól fragmentált írásokat használ a Chrome korlátain belül maradáshoz, egyértelmű hibaüzenetekkel ha megtelt.
 4.0-s verzió (Promptkönyvtár): A valaha volt legambiciózusabb frissítés! A Gemini-mappák egy vadonatúj Promptüzemmódot kap: mentse el legjobb promptjait, szerkessze helyszínen, és illessze be közvetlenül a Geminibe egyetlen kattintással. Animált üzemmódkapcsoló, keresés és rendezés Promptüzemmódban, egyéni Gem-gomb és független prompt-szinkronizálás hozzáadva. Rögzítse lényeges promptjait a könyvtár tetejére.

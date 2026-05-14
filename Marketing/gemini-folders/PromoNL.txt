@@ -52,6 +52,12 @@ Gebouwd met privacy als kern. Vraagt alleen toegang tot gemini.google.com en lee
 🤝 OPEN-SOURCEPROJECT
 Gemini-mappen is een open-sourceproject gebouwd met passie. Transparantie en respect voor uw privacy zijn onze topprioriteiten. Bent u een ontwikkelaar of gewoon nieuwsgierig? Bekijk de code, volg het wijzigingenlogboek of draag bij op GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 OOK BESCHIKBAAR: AI-mappen — DE MULTI-PLATFORM UPGRADE
+
+Geïnteresseerd in Gemini-mappen maar gebruik je ook ChatGPT, Claude, Copilot, Perplexity of een lokaal LLM? AI-mappen is de logische volgende stap: één extensie om gesprekken te organiseren in al je AI-tools, met hetzelfde mappensysteem, de promptbibliotheek en de invoeg-met-één-klik die beschikbaar zijn in Gemini-mappen.
+
+👉 AI-mappen installeren: __AF_STORE_URL__
+
 📢 UPDATES:
 Versie 4.1 (Globale uitbreiding en versterking): 16 nieuwe talen brengen Gemini-mappen naar 43 lokalisaties wereldwijd — Scandinavische talen, de Baltische staten en uitgebreide Europese en Zuidoost-Aziatische dekking. Een race condition opgelost die bij snelle klikken stilletjes een opslaan kon weggooien. Promptinjectie gemoderniseerd met InputEvent ter vervanging van de verouderde execCommand. Importpipeline gehardend tegen kwaadaardige URL's in back-upbestanden. Kritieke gegevensbeveiligingsfout opgelost: het inschakelen van prompt-synchronisatie met bijna vol opslaggeheugen kon alle opgeslagen prompts stilzwijgend verwijderen. De opslag gebruikt nu gefragmenteerde schrijfbewerkingen om binnen Chrome-limieten te blijven, met duidelijke foutmeldingen als het vol is.
 Versie 4.0 (Promptbibliotheek): De meest ambitieuze update tot nu toe! Gemini-mappen krijgt een gloednieuwe Promptmodus: sla uw beste prompts op, bewerk ze inline en voeg ze met één klik direct in Gemini in. Geanimeerde modusschakelaar, zoeken en sorteren in Promptmodus, aangepaste Gem-knop en onafhankelijke promptsynchronisatie toegevoegd. Zet essentiële prompts bovenaan uw bibliotheek vast.

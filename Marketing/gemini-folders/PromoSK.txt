@@ -52,6 +52,12 @@ Navrhnuté so súkromím v centre. Vyžaduje prístup iba k gemini.google.com a 
 🤝 OPEN SOURCE PROJEKT
 Priečinky Gemini sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 DOSTUPNÉ AJ: AI priečinky — MULTIPLATFORMOVÁ AKTUALIZÁCIA
+
+Zaujímajú vás Priečinky Gemini, ale používate aj ChatGPT, Claude, Copilot, Perplexity alebo lokálny LLM? AI priečinky sú prirodzeným ďalším krokom: jedno rozšírenie na organizovanie konverzácií vo všetkých vašich AI nástrojoch, s rovnakým systémom priečinkov, knižnicou výziev a vkladaním jedným kliknutím dostupným v Priečinky Gemini.
+
+👉 Nainštalovať AI priečinky: __AF_STORE_URL__
+
 📢 AKTUALIZÁCIE:
 Verzia 4.1 (Globálna expanzia a spevnenie): 16 nových jazykov privádza Priečinky Gemini na 43 lokalizácií po celom svete — severské jazyky, pobaltské štáty a rozšírené európske a juhovýchodoázijské pokrytie. Opravená race condition, ktorá mohla pri rýchlych kliknutiach ticho zahodiť uloženie. Vkladanie výziev modernizované pomocou InputEvent, nahradenie zastaraného execCommand. Importný kanál zabezpečený proti škodlivým URL v záložných súboroch. Opravená kritická chyba bezpečnosti dát: povolenie synchronizácie výziev pri takmer plnom úložisku mohlo ticho vymazať všetky uložené výzvy. Úložisko teraz používa fragmentované zápisy, aby zostalo v rámci limitov Chrome, s jasnými chybovými hláseniami keď je plné.
 Verzia 4.0 (Knižnica výziev): Najambicióznejšia aktualizácia doteraz! Priečinky Gemini dostávajú úplne nový režim výziev: ukladajte najlepšie výzvy, upravujte ich na mieste a vkladajte ich priamo do Gemini jedným kliknutím. Pridané: animovaný prepínač režimov, vyhľadávanie a triedenie v režime výziev, tlačidlo vlastného Gem a nezávislá synchronizácia výziev. Pripnutie najdôležitejších výziev na vrch knižnice.

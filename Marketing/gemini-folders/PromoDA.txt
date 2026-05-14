@@ -52,6 +52,12 @@ Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til gemini.googl
 🤝 OPEN SOURCE-PROJEKT
 Gemini Mapper er et open source-projekt bygget med passion. Gennemsigtighed og respekt for dit privatliv er vores højeste prioriteter. Er du en udvikler eller bare nysgerrig? Gennemse koden, følg ændringsloggen eller bidrag på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 OGSÅ TILGÆNGELIGT: AI-mapper — MULTI-PLATFORM OPGRADERINGEN
+
+Interesseret i Gemini Mapper men bruger du også ChatGPT, Claude, Copilot, Perplexity eller en lokal LLM? AI-mapper er det naturlige næste skridt: én udvidelse til at organisere samtaler på tværs af alle dine AI-værktøjer, med det samme mappesystem, prompt-bibliotek og indsættelse med ét klik, der er tilgængeligt i Gemini Mapper.
+
+👉 Installer AI-mapper: __AF_STORE_URL__
+
 📢 OPDATERINGER:
 Version 4.1 (Global udvidelse og hærdning): 16 nye sprog bringer Gemini Mapper til 43 oversættelser verden over — nordiske sprog, de baltiske stater og udvidet europæisk og sydøstasiatisk dækning. Rettet en race condition, der stille kunne miste en gem ved hurtige klik. Prompt-indsætning moderniseret med InputEvent, som erstatter den forældede execCommand. Import-pipeline hærdet mod ondsindede URL'er i sikkerhedskopifiler. Rettet en kritisk datasikkerhedsfejl: aktivering af prompt-synkronisering med næsten fuldt lager kunne lydløst slette alle gemte prompts. Lageret bruger nu fragmenterede skrivninger for at forblive inden for Chromes grænser, med klare fejlmeddelelser når det er fuldt.
 Version 4.0 (Promptbibliotek): Den mest ambitiøse opdatering hidtil! Gemini Mapper får en helt ny Promptvisning: gem dine bedste prompts, rediger dem inline og indsæt dem direkte i Gemini med ét klik. Tilføjet animeret tilstandsskifter, søgning og sortering i Promptvisning, tilpasset Gem-knap og uafhængig promptsynkronisering.

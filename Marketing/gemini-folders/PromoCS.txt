@@ -52,6 +52,12 @@ Navrženo se soukromím v centru. Vyžaduje přístup pouze k gemini.google.com 
 🤝 OPEN SOURCE PROJEKT
 Složky Gemini jsou open source projekt vyvíjený s vášní. Transparentnost a respekt k vašemu soukromí jsou naše priority. Jste vývojář nebo jen zvědavý? Prohlédněte si kód, sledujte historii změn nebo přispějte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 TAKÉ K DISPOZICI: AI složky — MULTIPLATFORMNÍ UPGRADE
+
+Zajímají vás Složky Gemini, ale také používáte ChatGPT, Claude, Copilot, Perplexity nebo lokální LLM? AI složky jsou přirozeným dalším krokem: jedno rozšíření pro organizaci konverzací napříč všemi vašimi AI nástroji, se stejným systémem složek, knihovnou promptů a injekcí jedním kliknutím, dostupnými ve Složky Gemini.
+
+👉 Nainstalovat AI složky: __AF_STORE_URL__
+
 📢 AKTUALIZACE:
 Verze 4.1 (Globální expanze a zpevnění): 16 nových jazyků přivádí Složky Gemini na 43 lokalizací po celém světě — severské jazyky, pobaltské státy a rozšířené evropské a jihovýchodoasijské pokrytí. Opravena race condition, která mohla při rychlých kliknutích tiše zahodit uložení. Vkládání výzev modernizováno pomocí InputEvent, nahrazení zastaralého execCommand. Importní kanál zabezpečen proti škodlivým URL v záložních souborech. Oprava kritické chyby zabezpečení dat: povolení synchronizace promptů při téměř plném úložišti mohlo tiše vymazat všechny uložené prompty. Úložiště nyní používá fragmentované zápisy, aby zůstalo v mezích Chrome, s jasnými chybovými hlášeními při zaplnění.
 Verze 4.0 (Knihovna výzev): Nejambicióznější aktualizace dosud! Složky Gemini získávají zcela nový režim výzev: ukládejte nejlepší výzvy, upravujte je na místě a vkládejte je přímo do Gemini jedním kliknutím. Přidáno: animovaný přepínač režimů, vyhledávání a řazení v režimu výzev, tlačítko vlastního Gem a nezávislá synchronizace výzev. Připnutí nejdůležitějších výzev na vrchol knihovny.
