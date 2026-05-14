@@ -58,6 +58,7 @@ Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Perplexit
 👉 Namesti Mape AI: __AF_STORE_URL__
 
 📢 POSODOBITVE:
+Različica 4.1.1: Manjše popravke napak in izboljšave stabilnosti.
 Različica 4.1 (Globalna razširitev in utrjevanje): 16 novih jezikov prinaša Mape Gemini na 43 lokalizacij po vsem svetu — severski jeziki, baltske države in razširjena evropska ter južnoazijska pokritost. Odpravljena race condition, ki je lahko pri hitrih klikih tiho zavrgla shranjevanje. Vstavljanje pozivov posodobljeno z InputEvent, ki nadomešča zastareli execCommand. Uvozni kanal utrjen proti zlonamernim URL-jem v varnostnih kopijah. Odpravljena kritična napaka varnosti podatkov: vklop sinhronizacije pozivov s skoraj polnim shranjevalnikom je lahko tiho izbrisal vse shranjene pozive. Shranjevalnik zdaj uporablja fragmentirane zapise, da ostane znotraj omejitev Chrome, z jasnimi sporočili o napakah ko je poln.
 Različica 4.0 (Knjižnica pozivov): Najna mbicioznejša posodobitev doslej! Mape Gemini dobijo popolnoma nov Način pozivov: shrani najboljše pozive, uredi jih na mestu in vstavi neposredno v Gemini z enim klikom.
 Različica 3.5 (Trdne osnove in izboljšana izkušnja): Velika notranja posodobitev za profesionalno zanesljivost!

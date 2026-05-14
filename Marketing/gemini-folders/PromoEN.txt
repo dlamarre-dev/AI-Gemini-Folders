@@ -54,11 +54,12 @@ Gemini Folders is an open source project built with passion. Transparency and re
 
 🤖 ALSO AVAILABLE: AI Folders — THE MULTI-PLATFORM UPGRADE
 
-Interested by Gemini Folders but also use ChatGPT, Claude, Copilot, Perplexity or a local LLM? AI Folders is the natural next step: one extension to organize conversations across all your AI tools, with the same folder system, prompt library, and one-click injection available in Gemini Folders.
+Interested in Gemini Folders but also use ChatGPT, Claude, Copilot, Perplexity or a local LLM? AI Folders is the natural next step: one extension to organize conversations across all your AI tools, with the same folder system, prompt library, and one-click injection available in Gemini Folders.
 
 👉 Install AI Folders: __AF_STORE_URL__
 
 📢 UPDATES:
+Version 4.1.1: Minor bug fixes and stability improvements.
 Version 4.1 (Global Expansion & Hardening): 16 new languages bring Gemini Folders to 43 localizations worldwide — Nordic languages, the Baltic states, and expanded European and Southeast Asian coverage. Fixed a race condition that could silently drop a save on rapid button clicks. Modernized prompt injection with InputEvent, replacing the deprecated execCommand. Hardened the import pipeline against malicious URLs in backup files. Fixed a critical data-safety bug: enabling prompt sync on nearly-full storage could silently erase all saved prompts. Storage now uses chunked writes to stay within Chrome's per-item limit, with clear error messages when storage is full.
 Version 4.0 (Prompt Library): The most ambitious update yet! Gemini Folders gets a brand-new Prompt Mode: save your best prompts, edit them inline, and inject them directly into Gemini with one click. Added animated mode toggle, search and sort in Prompt Mode, custom Gem button, and independent prompt sync. Pin your essential prompts to the top of your library.
 Version 3.5 (Solid Foundations & Improved Experience): A major under-the-hood update for professional-grade robustness! Visual alert for duplicate saves via keyboard shortcut. No more false duplicates from Gemini URL changes, and a database shielded against corruption with our new security architecture.
