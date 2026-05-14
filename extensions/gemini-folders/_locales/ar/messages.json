@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ التخزين ممتلئ — لم يتم الحفظ."
+  },
+  "afPromoTitle": {
+    "message": "اكتشف مجلدات AI"
+  },
+  "afPromoMessage": {
+    "message": "هل تستخدم أيضاً أدوات ذكاء اصطناعي أخرى؟ انتقل إلى مجلدات AI لإضافة ChatGPT وClaude وCopilot وPerplexity ونموذج محلي إلى مجلداتك."
+  },
+  "afPromoDownloadBtn": {
+    "message": "تحميل"
   }
 }

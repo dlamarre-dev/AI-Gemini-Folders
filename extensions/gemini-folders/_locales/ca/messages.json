@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Emmagatzematge ple — no s'ha desat."
+  },
+  "afPromoTitle": {
+    "message": "Descobriu Carpetes IA"
+  },
+  "afPromoMessage": {
+    "message": "Feu servir també altres IA? Passeu a Carpetes IA per afegir ChatGPT, Claude, Copilot, Perplexity i un LLM local a les vostres carpetes."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Descarregar"
   }
 }

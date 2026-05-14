@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ 存储已满 — 未保存。"
+  },
+  "afPromoTitle": {
+    "message": "发现 AI 文件夹"
+  },
+  "afPromoMessage": {
+    "message": "您也使用其他 AI 吗？切换到 AI 文件夹，将 ChatGPT、Claude、Copilot、Perplexity 和本地 LLM 添加到您的文件夹中。"
+  },
+  "afPromoDownloadBtn": {
+    "message": "下载"
   }
 }

@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Hifadhi imejaa — haijahifadhiwa."
+  },
+  "afPromoTitle": {
+    "message": "Gundua Folda za AI"
+  },
+  "afPromoMessage": {
+    "message": "Je, unatumia AI nyingine pia? Badilisha kwa Folda za AI ili kuongeza ChatGPT, Claude, Copilot, Perplexity na LLM ya ndani kwenye folda zako."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Pakua"
   }
 }

@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Depolama alanı dolu — kaydedilmedi."
+  },
+  "afPromoTitle": {
+    "message": "YZ Klasörleri keşfedin"
+  },
+  "afPromoMessage": {
+    "message": "Diğer yapay zekâ araçlarını da kullanıyor musunuz? ChatGPT, Claude, Copilot, Perplexity ve yerel bir LLM'yi klasörlerinize eklemek için YZ Klasörleri'ne geçin."
+  },
+  "afPromoDownloadBtn": {
+    "message": "İndir"
   }
 }

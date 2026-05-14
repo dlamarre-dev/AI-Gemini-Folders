@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Хранилище заполнено — не сохранено."
+  },
+  "afPromoTitle": {
+    "message": "Откройте ИИ-папки"
+  },
+  "afPromoMessage": {
+    "message": "Вы также используете другие ИИ-сервисы? Перейдите на ИИ-папки, чтобы добавить ChatGPT, Claude, Copilot, Perplexity и локальный LLM в свои папки."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Скачать"
   }
 }

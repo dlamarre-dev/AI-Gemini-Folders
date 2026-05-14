@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Úložisko je plné — neuložené."
+  },
+  "afPromoTitle": {
+    "message": "Objavte AI priečinky"
+  },
+  "afPromoMessage": {
+    "message": "Používate aj iné AI nástroje? Prejdite na AI priečinky a pridajte ChatGPT, Claude, Copilot, Perplexity a lokálny LLM do svojich priečinkov."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Stiahnuť"
   }
 }

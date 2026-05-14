@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Ο αποθηκευτικός χώρος είναι γεμάτος — δεν αποθηκεύτηκε."
+  },
+  "afPromoTitle": {
+    "message": "Ανακαλύψτε τα Φάκελοι ΤΝ"
+  },
+  "afPromoMessage": {
+    "message": "Χρησιμοποιείτε και άλλες AI υπηρεσίες; Μεταβείτε στα Φάκελοι ΤΝ για να προσθέσετε ChatGPT, Claude, Copilot, Perplexity και τοπικό LLM στους φακέλους σας."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Λήψη"
   }
 }

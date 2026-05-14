@@ -24,8 +24,10 @@ EXTENSION_CONFIG = {
         "display_name":       "Gemini Folders",
         # Marketing dir: check Marketing/gemini-folders/ first, fall back to Marketing/
         "marketing_subdir":   "gemini-folders",
-        "review_url_chrome":  "https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik/reviews",
-        "review_url_firefox": "https://addons.mozilla.org/firefox/addon/gemini_folders/reviews/",
+        "review_url_chrome":       "https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik/reviews",
+        "review_url_firefox":      "https://addons.mozilla.org/firefox/addon/gemini_folders/reviews/",
+        "af_download_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf",
+        "af_download_url_firefox": "https://addons.mozilla.org/firefox/addon/ai_folders/",
     },
     "ai-folders": {
         "firefox_gecko_id":   "aifolders@dlamarre-dev.github.io",
@@ -168,12 +170,17 @@ def build_chrome(ext_name, version):
         if os.path.exists(fp):
             os.remove(fp)
 
-    # --- Inject review URL ---
+    # --- Inject review URL + AF promo URL (GF only) ---
     popup_path = os.path.join(dest, "popup.html")
     if os.path.exists(popup_path):
         with open(popup_path, "r", encoding="utf-8") as f:
             html = f.read()
         html = html.replace("__REVIEW_URL__", cfg["review_url_chrome"])
+        if "af_download_url_chrome" in cfg:
+            html = html.replace("__AF_DOWNLOAD_URL__", cfg["af_download_url_chrome"])
+            af_icon = os.path.join(ext_dir("ai-folders"), "icon48.png")
+            if os.path.exists(af_icon):
+                shutil.copy2(af_icon, os.path.join(dest, "af-icon.png"))
         with open(popup_path, "w", encoding="utf-8") as f:
             f.write(html)
 
@@ -222,12 +229,17 @@ def build_firefox(ext_name, version):
     with open(mfp, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
-    # --- 2. Inject review URL ---
+    # --- 2. Inject review URL + AF promo URL (GF only) ---
     popup_path = os.path.join(dest, "popup.html")
     if os.path.exists(popup_path):
         with open(popup_path, "r", encoding="utf-8") as f:
             html = f.read()
         html = html.replace("__REVIEW_URL__", cfg["review_url_firefox"])
+        if "af_download_url_firefox" in cfg:
+            html = html.replace("__AF_DOWNLOAD_URL__", cfg["af_download_url_firefox"])
+            af_icon = os.path.join(ext_dir("ai-folders"), "icon48.png")
+            if os.path.exists(af_icon):
+                shutil.copy2(af_icon, os.path.join(dest, "af-icon.png"))
         with open(popup_path, "w", encoding="utf-8") as f:
             f.write(html)
 

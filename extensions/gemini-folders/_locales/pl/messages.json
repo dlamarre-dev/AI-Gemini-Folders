@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Pamięć pełna — nie zapisano."
+  },
+  "afPromoTitle": {
+    "message": "Odkryj Foldery AI"
+  },
+  "afPromoMessage": {
+    "message": "Używasz też innych narzędzi AI? Przejdź do Foldery AI, aby dodać ChatGPT, Claude, Copilot, Perplexity i lokalny LLM do swoich folderów."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Pobierz"
   }
 }

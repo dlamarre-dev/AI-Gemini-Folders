@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Storan penuh — tidak disimpan."
+  },
+  "afPromoTitle": {
+    "message": "Temui Folder AI"
+  },
+  "afPromoMessage": {
+    "message": "Adakah anda juga menggunakan AI lain? Beralih ke Folder AI untuk menambah ChatGPT, Claude, Copilot, Perplexity dan LLM tempatan ke folder anda."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Muat turun"
   }
 }

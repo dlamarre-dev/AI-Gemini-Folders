@@ -141,19 +141,24 @@ document.addEventListener('DOMContentLoaded', () => {
         reviewBanner.style.display = 'block';
       }
 
+      const markRatingInteraction = () => chrome.storage.local.set({ afPromoRatingDate: Date.now() });
+
       document.getElementById('btnReviewRate').addEventListener('click', () => {
         chrome.storage.local.set({ reviewState: { status: 'rated' } });
+        markRatingInteraction();
         reviewBanner.style.display = 'none';
       });
 
       document.getElementById('btnReviewLater').addEventListener('click', () => {
         const nextDate = Date.now() + (5 * 24 * 60 * 60 * 1000);
         chrome.storage.local.set({ reviewState: { status: 'later', nextPromptDate: nextDate } });
+        markRatingInteraction();
         reviewBanner.style.display = 'none';
       });
 
       document.getElementById('btnReviewNo').addEventListener('click', () => {
         chrome.storage.local.set({ reviewState: { status: 'dismissed' } });
+        markRatingInteraction();
         reviewBanner.style.display = 'none';
       });
     });
