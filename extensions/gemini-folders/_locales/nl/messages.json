@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Opslag vol — niet opgeslagen."
+  },
+  "afPromoTitle": {
+    "message": "Ontdek AI-mappen"
+  },
+  "afPromoMessage": {
+    "message": "Gebruik je ook andere AI-diensten? Overstap naar AI-mappen om ChatGPT, Claude, Copilot, Perplexity en een lokaal LLM aan je mappen toe te voegen."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Downloaden"
   }
 }

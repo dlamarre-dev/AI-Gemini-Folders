@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Lageret er fullt — ikke lagret."
+  },
+  "afPromoTitle": {
+    "message": "Oppdag AI-mapper"
+  },
+  "afPromoMessage": {
+    "message": "Bruker du også andre AI-tjenester? Bytt til AI-mapper for å legge til ChatGPT, Claude, Copilot, Perplexity og en lokal LLM i mappene dine."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Last ned"
   }
 }

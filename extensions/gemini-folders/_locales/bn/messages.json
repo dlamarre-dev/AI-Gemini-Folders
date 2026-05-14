@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ স্টোরেজ পূর্ণ — সংরক্ষণ হয়নি।"
+  },
+  "afPromoTitle": {
+    "message": "AI ফোল্ডার আবিষ্কার করুন"
+  },
+  "afPromoMessage": {
+    "message": "আপনি কি অন্য AI-ও ব্যবহার করেন? AI ফোল্ডারে যান এবং আপনার ফোল্ডারে ChatGPT, Claude, Copilot, Perplexity এবং একটি স্থানীয় LLM যোগ করুন।"
+  },
+  "afPromoDownloadBtn": {
+    "message": "ডাউনলোড করুন"
   }
 }

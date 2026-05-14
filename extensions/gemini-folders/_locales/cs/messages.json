@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Úložiště je plné — neuloženo."
+  },
+  "afPromoTitle": {
+    "message": "Objevte AI složky"
+  },
+  "afPromoMessage": {
+    "message": "Používáte i jiné AI nástroje? Přejděte na AI složky a přidejte ChatGPT, Claude, Copilot, Perplexity a lokální LLM do svých složek."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Stáhnout"
   }
 }

@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Хранилището е пълно — не е запазено."
+  },
+  "afPromoTitle": {
+    "message": "Открийте ИИ папки"
+  },
+  "afPromoMessage": {
+    "message": "Използвате ли и други AI инструменти? Преминете към ИИ папки, за да добавите ChatGPT, Claude, Copilot, Perplexity и локален модел към папките си."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Изтегляне"
   }
 }

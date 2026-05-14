@@ -808,4 +808,54 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
     reader.readAsText(file);
   });
+
+  // --- AF PROMO BANNER ---
+  const afPromoBanner = document.getElementById('afPromoBanner');
+  if (afPromoBanner) {
+    document.getElementById('afPromoTitleTxt').textContent   = chrome.i18n.getMessage('afPromoTitle')       || 'Discover AI Folders';
+    document.getElementById('afPromoMessageTxt').textContent = chrome.i18n.getMessage('afPromoMessage')     || 'Do you also use other AIs?';
+    document.getElementById('btnAfPromoDownload').textContent = chrome.i18n.getMessage('afPromoDownloadBtn') || 'Download';
+    document.getElementById('btnAfPromoLater').textContent   = chrome.i18n.getMessage('reviewLaterBtn')     || 'Maybe later';
+    document.getElementById('btnAfPromoNo').textContent      = chrome.i18n.getMessage('reviewNoBtn')        || 'No thanks';
+
+    const OPENS_THRESHOLD = 5;
+    const ONE_DAY  = 24 * 60 * 60 * 1000;
+    const FIVE_DAYS = 5 * ONE_DAY;
+
+    chrome.storage.local.get(['usageStats', 'afPromoState', 'afPromoRatingDate'], (data) => {
+      const stats      = data.usageStats    || { opens: 0 };
+      const state      = data.afPromoState  || { status: 'pending', nextPromptDate: 0 };
+      const ratingDate = data.afPromoRatingDate || 0;
+
+      if (state.status === 'dismissed') return;
+      if (stats.opens < OPENS_THRESHOLD) return;
+
+      // Never show while the review banner is visible
+      const reviewBanner = document.getElementById('reviewBanner');
+      if (reviewBanner && reviewBanner.style.display !== 'none') return;
+
+      // Wait 1 day after any rating-banner interaction
+      if (ratingDate && Date.now() - ratingDate < ONE_DAY) return;
+
+      // Respect the "later" snooze
+      if (state.status === 'later' && Date.now() < state.nextPromptDate) return;
+
+      afPromoBanner.style.display = 'block';
+    });
+
+    document.getElementById('btnAfPromoDownload').addEventListener('click', () => {
+      chrome.storage.local.set({ afPromoState: { status: 'dismissed' } });
+      afPromoBanner.style.display = 'none';
+    });
+
+    document.getElementById('btnAfPromoLater').addEventListener('click', () => {
+      chrome.storage.local.set({ afPromoState: { status: 'later', nextPromptDate: Date.now() + FIVE_DAYS } });
+      afPromoBanner.style.display = 'none';
+    });
+
+    document.getElementById('btnAfPromoNo').addEventListener('click', () => {
+      chrome.storage.local.set({ afPromoState: { status: 'dismissed' } });
+      afPromoBanner.style.display = 'none';
+    });
+  }
 });

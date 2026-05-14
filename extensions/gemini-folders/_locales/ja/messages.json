@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ ストレージがいっぱいです — 保存されませんでした。"
+  },
+  "afPromoTitle": {
+    "message": "AI フォルダを発見"
+  },
+  "afPromoMessage": {
+    "message": "他の AI も使っていますか？AI フォルダに切り替えて、ChatGPT、Claude、Copilot、Perplexity、ローカル LLM をフォルダに追加しましょう。"
+  },
+  "afPromoDownloadBtn": {
+    "message": "ダウンロード"
   }
 }

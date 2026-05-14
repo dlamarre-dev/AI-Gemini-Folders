@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Bộ nhớ đầy — chưa được lưu."
+  },
+  "afPromoTitle": {
+    "message": "Khám phá Thư mục AI"
+  },
+  "afPromoMessage": {
+    "message": "Bạn cũng sử dụng các AI khác? Chuyển sang Thư mục AI để thêm ChatGPT, Claude, Copilot, Perplexity và LLM cục bộ vào thư mục của bạn."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Tải xuống"
   }
 }

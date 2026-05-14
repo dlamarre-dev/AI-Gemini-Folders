@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Меморија је пуна — није сачувано."
+  },
+  "afPromoTitle": {
+    "message": "Откријте ВИ фасцикле"
+  },
+  "afPromoMessage": {
+    "message": "Да ли користите и друге AI алате? Пређите на ВИ фасцикле и додајте ChatGPT, Claude, Copilot, Perplexity и локални LLM у своје фасцикле."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Преузми"
   }
 }

@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Krātuve ir pilna — nav saglabāts."
+  },
+  "afPromoTitle": {
+    "message": "Atklājiet AI mapes"
+  },
+  "afPromoMessage": {
+    "message": "Vai izmantojat arī citus AI rīkus? Pārslēdzieties uz AI mapēm un pievienojiet ChatGPT, Claude, Copilot, Perplexity un vietējo LLM savām mapēm."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Lejupielādēt"
   }
 }

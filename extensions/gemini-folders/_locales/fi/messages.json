@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Tallennustila täynnä — ei tallennettu."
+  },
+  "afPromoTitle": {
+    "message": "Tutustu AI-kansioihin"
+  },
+  "afPromoMessage": {
+    "message": "Käytätkö myös muita tekoälyjä? Vaihda AI-kansioihin lisätäksesi ChatGPT:n, Clauden, Copilotin, Perplexityn ja paikallisen LLM:n kansioihisi."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Lataa"
   }
 }

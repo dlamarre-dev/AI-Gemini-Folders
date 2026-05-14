@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Speicher voll — nicht gespeichert."
+  },
+  "afPromoTitle": {
+    "message": "KI-Ordner entdecken"
+  },
+  "afPromoMessage": {
+    "message": "Nutzen Sie auch andere KI-Dienste? Wechseln Sie zu KI-Ordner, um ChatGPT, Claude, Copilot, Perplexity und ein lokales LLM zu Ihren Ordnern hinzuzufügen."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Herunterladen"
   }
 }

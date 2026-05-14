@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Spațiu de stocare plin — nesalvat."
+  },
+  "afPromoTitle": {
+    "message": "Descoperă Dosare IA"
+  },
+  "afPromoMessage": {
+    "message": "Folosiți și alte servicii AI? Treceți la Dosare IA pentru a adăuga ChatGPT, Claude, Copilot, Perplexity și un LLM local în dosarele dvs."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Descarcă"
   }
 }

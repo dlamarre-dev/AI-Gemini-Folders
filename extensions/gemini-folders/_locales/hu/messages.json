@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ A tároló tele van — nem mentve."
+  },
+  "afPromoTitle": {
+    "message": "Fedezze fel a MI mappák alkalmazást"
+  },
+  "afPromoMessage": {
+    "message": "Más MI-eszközöket is használ? Váltson a MI mappák alkalmazásra, és adja hozzá a ChatGPT-t, Claude-ot, Copilotot, Perplexityt és egy helyi LLM-et a mappáihoz."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Letöltés"
   }
 }

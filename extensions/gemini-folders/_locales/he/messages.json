@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ האחסון מלא — לא נשמר."
+  },
+  "afPromoTitle": {
+    "message": "גלה את תיקיות AI"
+  },
+  "afPromoMessage": {
+    "message": "אתה משתמש גם בבינות מלאכותיות אחרות? עבור לתיקיות AI כדי להוסיף ChatGPT, Claude, Copilot, Perplexity ו-LLM מקומי לתיקיות שלך."
+  },
+  "afPromoDownloadBtn": {
+    "message": "הורדה"
   }
 }

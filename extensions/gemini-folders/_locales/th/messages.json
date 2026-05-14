@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก"
+  },
+  "afPromoTitle": {
+    "message": "ค้นพบ โฟลเดอร์ AI"
+  },
+  "afPromoMessage": {
+    "message": "คุณใช้ AI อื่นด้วยหรือเปล่า? เปลี่ยนไปใช้ โฟลเดอร์ AI เพื่อเพิ่ม ChatGPT, Claude, Copilot, Perplexity และ LLM ในเครื่องลงในโฟลเดอร์ของคุณ"
+  },
+  "afPromoDownloadBtn": {
+    "message": "ดาวน์โหลด"
   }
 }

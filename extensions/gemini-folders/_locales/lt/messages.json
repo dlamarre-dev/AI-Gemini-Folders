@@ -247,5 +247,14 @@
   },
   "storageFullError": {
     "message": "⚠️ Saugykla pilna — neišsaugota."
+  },
+  "afPromoTitle": {
+    "message": "Atraskite AI aplankus"
+  },
+  "afPromoMessage": {
+    "message": "Ar naudojate ir kitus AI įrankius? Pereikite prie AI aplankų ir pridėkite ChatGPT, Claude, Copilot, Perplexity ir vietinį LLM į savo aplankus."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Atsisiųsti"
   }
 }
