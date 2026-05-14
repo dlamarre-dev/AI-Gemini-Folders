@@ -51,6 +51,12 @@ Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do gemini.google.com i
 🤝 ODPRTOKODNI PROJEKT
 Mape Gemini je odprtokodni projekt, zgrajen s strastjo. Preglednost in spoštovanje tvoje zasebnosti sta naši najvišji prioriteti. Si razvijalec ali samo radoveden? Preglej kodo, sledi dnevniku sprememb ali prispevaj na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 NA VOLJO TUDI: Mape AI — NADGRADNJA ZA VEČ PLATFORM
+
+Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Perplexity ali lokalni LLM? Mape AI so naravni naslednji korak: ena razširitev za organizacijo pogovorov v vseh vaših AI orodjih, z enakim sistemom map, knjižnico pozivov in vstavljanjem z enim klikom, ki so na voljo v Mape Gemini.
+
+👉 Namesti Mape AI: __AF_STORE_URL__
+
 📢 POSODOBITVE:
 Različica 4.1 (Globalna razširitev in utrjevanje): 16 novih jezikov prinaša Mape Gemini na 43 lokalizacij po vsem svetu — severski jeziki, baltske države in razširjena evropska ter južnoazijska pokritost. Odpravljena race condition, ki je lahko pri hitrih klikih tiho zavrgla shranjevanje. Vstavljanje pozivov posodobljeno z InputEvent, ki nadomešča zastareli execCommand. Uvozni kanal utrjen proti zlonamernim URL-jem v varnostnih kopijah. Odpravljena kritična napaka varnosti podatkov: vklop sinhronizacije pozivov s skoraj polnim shranjevalnikom je lahko tiho izbrisal vse shranjene pozive. Shranjevalnik zdaj uporablja fragmentirane zapise, da ostane znotraj omejitev Chrome, z jasnimi sporočili o napakah ko je poln.
 Različica 4.0 (Knjižnica pozivov): Najna mbicioznejša posodobitev doslej! Mape Gemini dobijo popolnoma nov Način pozivov: shrani najboljše pozive, uredi jih na mestu in vstavi neposredno v Gemini z enim klikom.

@@ -186,7 +186,20 @@ def build_chrome(ext_name, version):
 
     mkt = marketing_dir(ext_name)
     if mkt:
-        shutil.copytree(mkt, os.path.join(DIST_DIR, ext_name, "marketing_chrome"))
+        mkt_chrome = os.path.join(DIST_DIR, ext_name, "marketing_chrome")
+        shutil.copytree(mkt, mkt_chrome)
+        af_url = cfg.get("af_download_url_chrome", "")
+        if af_url:
+            for root_d, _, mkt_files in os.walk(mkt_chrome):
+                for fn in mkt_files:
+                    if not fn.endswith(".txt"):
+                        continue
+                    fp = os.path.join(root_d, fn)
+                    with open(fp, encoding="utf-8") as f:
+                        ct = f.read()
+                    if "__AF_STORE_URL__" in ct:
+                        with open(fp, "w", encoding="utf-8") as f:
+                            f.write(ct.replace("__AF_STORE_URL__", af_url))
 
     zip_path = os.path.join(DIST_DIR, f"{cfg['zip_prefix']}-chrome-v{version}.zip")
     make_zip(dest, zip_path)
@@ -303,6 +316,11 @@ def build_firefox(ext_name, version):
                 )
                 if new_content != content:
                     content, modified = new_content, True
+
+                af_url = cfg.get("af_download_url_firefox", "")
+                if af_url and "__AF_STORE_URL__" in content:
+                    content = content.replace("__AF_STORE_URL__", af_url)
+                    modified = True
 
                 if modified:
                     with open(fp, "w", encoding="utf-8") as f:

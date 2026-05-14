@@ -52,6 +52,12 @@ Desenvolvida com a privacidade no centro. Solicita acesso apenas a gemini.google
 🤝 PROJETO OPEN SOURCE
 Pastas Gemini é um projeto open source desenvolvido com paixão. Transparência e respeito à sua privacidade são nossas prioridades. É desenvolvedor ou simplesmente curioso? Consulte o código, acompanhe o histórico de alterações ou contribua no GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 TAMBÉM DISPONÍVEL: Pastas IA — A EVOLUÇÃO MULTIPLATAFORMA
+
+Interessado em Pastas Gemini mas também usa ChatGPT, Claude, Copilot, Perplexity ou um LLM local? Pastas IA é o próximo passo natural: uma única extensão para organizar conversas em todas as suas ferramentas de IA, com o mesmo sistema de pastas, biblioteca de prompts e injeção com um clique disponíveis em Pastas Gemini.
+
+👉 Instalar Pastas IA: __AF_STORE_URL__
+
 📢 ATUALIZAÇÕES:
 Versão 4.1 (Expansão global e fortalecimento): 16 novos idiomas elevam o Pastas Gemini a 43 localizações em todo o mundo — idiomas nórdicos, os estados bálticos e cobertura europeia e do Sudeste Asiático ampliada. Corrigida uma condição de corrida que podia descartar silenciosamente um salvamento em cliques rápidos. Injeção de prompts modernizada com InputEvent, substituindo o execCommand obsoleto. Pipeline de importação reforçado contra URLs maliciosos em arquivos de backup. Correção de bug crítico de segurança de dados: ativar a sincronização de prompts com armazenamento quase cheio podia apagar silenciosamente todos os prompts salvos. O armazenamento agora usa gravações fragmentadas para ficar dentro dos limites do Chrome, com mensagens de erro claras quando está cheio.
 Versão 4.0 (Biblioteca de Prompts): A atualização mais ambiciosa até agora! Pastas Gemini estreia um novo Modo Prompts: salve seus melhores prompts, edite-os inline e injete-os diretamente no Gemini com um clique. Adicionado: alternância de modos animada, busca e ordenação no Modo Prompts, botão Gem personalizado e sincronização independente de prompts. Fixe seus prompts essenciais no topo da biblioteca.

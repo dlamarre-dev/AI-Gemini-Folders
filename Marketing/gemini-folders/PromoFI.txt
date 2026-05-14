@@ -52,6 +52,12 @@ Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain gemini.google.com:iin
 🤝 AVOIN LÄHDEKOODIN PROJEKTI
 Gemini-kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvyys ja yksityisyytesi kunnioittaminen ovat korkeimpia prioriteettiamme. Oletko kehittäjä tai vain utelias? Selaa koodia, seuraa muutoslokia tai osallistu GitHubissa: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 MYÖS SAATAVILLA: AI-kansiot — MONIALUSTAINEN PÄIVITYS
+
+Kiinnostuitko Gemini-kansiot-laajennuksesta, mutta käytätkö myös ChatGPT:tä, Claudea, Copilotia, Perplexityä tai paikallista LLM:ää? AI-kansiot on luonnollinen seuraava askel: yksi laajennus keskustelujen järjestämiseen kaikissa tekoälysovelluksissasi, samalla kansiojärjestelmällä, promptikirjastolla ja yhdellä napsautuksella tapahtuvalla syötöllä kuin Gemini-kansiot-laajennuksessa.
+
+👉 Asenna AI-kansiot: __AF_STORE_URL__
+
 📢 PÄIVITYKSET:
 Versio 4.1 (Globaali laajennus ja kovettaminen): 16 uutta kieltä nostaa Gemini-kansiot 43 lokalisointiin maailmanlaajuisesti — pohjoismaiset kielet, Baltian maat sekä laajennettu eurooppalainen ja Kaakkois-Aasian kattavuus. Korjattu kilpailutilanne, joka saattoi hiljaa hävittää tallennuksen nopeiden napsautusten yhteydessä. Promptin syöttäminen modernisoitu InputEventillä korvaamaan vanhentunut execCommand. Tuontikanava kovetettu haittaohjelmallisia URL-osoitteita vastaan varmuuskopiotiedostoissa. Kriittinen tietoturvavika korjattu: kehotteiden synkronoinnin aktivointi lähes täydellä tallennustilalla saattoi äänettömästi poistaa kaikki tallennetut kehotteet. Tallennustila käyttää nyt paloiteltuja kirjoituksia pysyäkseen Chromen rajoissa, ja näyttää selkeitä virheilmoituksia kun tila on täynnä.
 Versio 4.0 (Promptikirjasto): Kunnianhimoisin päivitys tähän mennessä! Gemini-kansiot saa upouuden Prompttilan: tallenna parhaat promptisi, muokkaa niitä inlinen ja injektoi ne suoraan Geminiin yhdellä napsautuksella. Lisätty animoitu tilakytkин, haku ja lajittelu Prompttilassa, mukautettu Gem-painike ja itsenäinen promptisynkronointi.

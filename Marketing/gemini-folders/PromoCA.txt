@@ -50,6 +50,12 @@ Construït amb la privacitat com a prioritat. Només sol·licita accés a gemini
 🤝 PROJECTE DE CODI OBERT
 Carpetes Gemini és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 TAMBÉ DISPONIBLE: Carpetes IA — L'ACTUALITZACIÓ MULTIPLATAFORMA
+
+Interessat en Carpetes Gemini però també feu servir ChatGPT, Claude, Copilot, Perplexity o un LLM local? Carpetes IA és el pas natural següent: una única extensió per organitzar converses a través de tots els vostres eines d'IA, amb el mateix sistema de carpetes, la biblioteca de prompts i la injecció amb un clic disponibles a Carpetes Gemini.
+
+👉 Instal·lar Carpetes IA: __AF_STORE_URL__
+
 📢 ACTUALITZACIONS:
 Versió 4.1 (Expansió global i enfortiment): 16 nous idiomes porten Carpetes Gemini a 43 localitzacions arreu del món — idiomes nòrdics, els estats bàltics i cobertura europea i del sud-est asiàtic ampliada. Corregida una condició de cursa que podia perdre silenciosament un desat en clics ràpids. Injecció de prompts modernitzada amb InputEvent, substituint l'execCommand obsolet. Pipeline d'importació endurit contra URL malicioses en fitxers de còpia de seguretat. S'ha corregit un error crític de seguretat de dades: activar la sincronització de prompts amb l'emmagatzematge quasi ple podia esborrar silenciosament tots els prompts desats. L'emmagatzematge ara utilitza escriptures fragmentades per mantenir-se dins dels límits de Chrome, amb missatges d'error clars quan és ple.
 Versió 4.0 (Biblioteca de prompts): L'actualització més ambiciosa fins ara! Mode prompts completament nou: desa els teus millors prompts, edita'ls en línia i injecta'ls directament a Gemini amb un sol clic.

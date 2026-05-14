@@ -52,6 +52,12 @@ Diseñada con la privacidad en el centro. Solo solicita acceso a gemini.google.c
 🤝 PROYECTO OPEN SOURCE
 Carpetas de Gemini es un proyecto open source desarrollado con pasión. La transparencia y el respeto a tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente tienes curiosidad? Consulta el código, sigue el historial de cambios o contribuye en GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 TAMBIÉN DISPONIBLE: Carpetas IA — LA ACTUALIZACIÓN MULTIPLATAFORMA
+
+¿Te interesa Carpetas Gemini pero también usas ChatGPT, Claude, Copilot, Perplexity o un LLM local? Carpetas IA es el paso natural siguiente: una única extensión para organizar conversaciones en todas tus herramientas de IA, con el mismo sistema de carpetas, biblioteca de prompts e inyección con un clic disponibles en Carpetas Gemini.
+
+👉 Instalar Carpetas IA: __AF_STORE_URL__
+
 📢 ACTUALIZACIONES:
 Versión 4.1 (Expansión global y refuerzo): 16 nuevos idiomas llevan Carpetas Gemini a 43 localizaciones en todo el mundo — idiomas nórdicos, los estados bálticos y mayor cobertura europea y del sudeste asiático. Corregida una condición de carrera que podía perder silenciosamente un guardado en clics rápidos. Inyección de prompts modernizada con InputEvent, reemplazando el execCommand obsoleto. Flujo de importación reforzado contra URLs maliciosas en archivos de copia de seguridad. Corrección de un error crítico de seguridad de datos: activar la sincronización de prompts con el almacenamiento casi lleno podía borrar silenciosamente todos los prompts guardados. El almacenamiento usa ahora escrituras fragmentadas para mantenerse dentro de los límites de Chrome, con mensajes de error claros cuando está lleno.
 Versión 4.0 (Biblioteca de Prompts): ¡La actualización más ambiciosa hasta ahora! Carpetas de Gemini estrena un nuevo modo Prompts: guarda tus mejores prompts, edítalos en línea e inyéctalos en Gemini con un clic. Se añade alternancia de modos animada, búsqueda y ordenación en el modo Prompts, botón Gem personalizado y sincronización independiente de prompts. Fija tus prompts esenciales en la parte superior de la biblioteca.

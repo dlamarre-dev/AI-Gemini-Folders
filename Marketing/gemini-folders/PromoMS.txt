@@ -51,6 +51,12 @@ Dibina dengan mengutamakan privasi. Hanya meminta akses ke gemini.google.com dan
 🤝 PROJEK SUMBER TERBUKA
 Folder Gemini ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelusan dan penghormatan terhadap privasi anda adalah keutamaan tertinggi kami. Anda pembangun atau sekadar ingin tahu? Semak kod, ikuti log perubahan atau sumbang di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+🤖 JUGA TERSEDIA: Folder AI — PENINGKATAN BERBILANG PLATFORM
+
+Berminat dengan Folder Gemini tetapi juga menggunakan ChatGPT, Claude, Copilot, Perplexity atau LLM tempatan? Folder AI adalah langkah semula jadi seterusnya: satu sambungan untuk menyusun perbualan merentasi semua alat AI anda, dengan sistem folder, pustaka gesaan dan suntikan satu klik yang sama tersedia dalam Folder Gemini.
+
+👉 Pasang Folder AI: __AF_STORE_URL__
+
 📢 KEMAS KINI:
 Versi 4.1 (Pengembangan Global & Penguatan): 16 bahasa baharu membawa Folder Gemini kepada 43 lokalisasi di seluruh dunia — bahasa-bahasa Nordik, negara-negara Baltik dan liputan Eropah dan Asia Tenggara yang diperluaskan. Diperbaiki race condition yang boleh menghilangkan penyimpanan secara senyap semasa klik pantas. Suntikan prompt dimodernkan dengan InputEvent, menggantikan execCommand yang lapuk. Pipeline import diperkukuh terhadap URL berbahaya dalam fail sandaran. Pembetulan pepijat keselamatan data kritikal: mengaktifkan penyegerakan gesaan pada storan yang hampir penuh boleh memadam semua gesaan tersimpan secara senyap. Storan kini menggunakan penulisan berpecah untuk kekal dalam had Chrome, dengan mesej ralat yang jelas apabila penuh.
 Versi 4.0 (Perpustakaan Prompt): Kemas kini paling bercita-cita tinggi setakat ini! Folder Gemini mendapat Mod Prompt baharu sepenuhnya: simpan prompt terbaik, sunting terus dan sisipkan ke Gemini dengan satu klik.
