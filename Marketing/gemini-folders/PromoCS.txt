@@ -59,6 +59,7 @@ Zajímají vás Složky Gemini, ale také používáte ChatGPT, Claude, Copilot,
 👉 Nainstalovat AI složky: __AF_STORE_URL__
 
 📢 AKTUALIZACE:
+Verze 4.1.1: Drobné opravy chyb a zlepšení stability.
 Verze 4.1 (Globální expanze a zpevnění): 16 nových jazyků přivádí Složky Gemini na 43 lokalizací po celém světě — severské jazyky, pobaltské státy a rozšířené evropské a jihovýchodoasijské pokrytí. Opravena race condition, která mohla při rychlých kliknutích tiše zahodit uložení. Vkládání výzev modernizováno pomocí InputEvent, nahrazení zastaralého execCommand. Importní kanál zabezpečen proti škodlivým URL v záložních souborech. Oprava kritické chyby zabezpečení dat: povolení synchronizace promptů při téměř plném úložišti mohlo tiše vymazat všechny uložené prompty. Úložiště nyní používá fragmentované zápisy, aby zůstalo v mezích Chrome, s jasnými chybovými hlášeními při zaplnění.
 Verze 4.0 (Knihovna výzev): Nejambicióznější aktualizace dosud! Složky Gemini získávají zcela nový režim výzev: ukládejte nejlepší výzvy, upravujte je na místě a vkládejte je přímo do Gemini jedním kliknutím. Přidáno: animovaný přepínač režimů, vyhledávání a řazení v režimu výzev, tlačítko vlastního Gem a nezávislá synchronizace výzev. Připnutí nejdůležitějších výzev na vrchol knihovny.
 Verze 3.5 (Pevné základy a vylepšená zkušenost): Velká interní aktualizace pro profesionální robustnost! Vizuální upozornění při duplicitním uložení. Konec falešným duplikátům ze změn URL Gemini, databáze chráněná před poškozením.
