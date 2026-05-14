@@ -49,7 +49,7 @@ Uzvednes piespraudīšanai: noklikšķini 📍 – tā tiek pārvietota saraksta
 Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai gemini.google.com un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot Chrome Sync: nav trešo pušu serveru, nav telemetrijas.
 
 🤝 ATVĒRTĀ PIRMKODA PROJEKTS
-Gemini Mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība un cieņa pret tavu privātumu ir mūsu augstākās prioritātes. Vai esi izstrādātājs vai vienkārši ziņkārīgs? Pārlūkojiet kodu, sekojiet izmaiņu žurnālam vai piedalieties GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Gemini Mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība un cieņa pret tavu privātumu ir mūsu augstākās prioritātes. Vai esi izstrādātājs vai vienkārši ziņkārīgs? Pārlūkojiet kodu, sekojiet izmaiņu žurnālam vai piedalieties GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ATJAUNINĀJUMI:
 Versija 4.1 (Globālā paplašināšanās un nostiprināšana): 16 jaunas valodas ceļ Gemini Mapes līdz 43 lokalizācijām visā pasaulē — ziemeļvalstu valodas, Baltijas valstis un paplašināts Eiropas un Dienvidaustrumāzijas pārklājums. Novērsts sacensību nosacījums, kas strauju klikšķu gadījumā varēja klusi pazaudēt saglabājumu. Uzvednes ievietošana modernizēta ar InputEvent, aizstājot novecojušo execCommand. Importa cauruļvads nocietināts pret ļaunprātīgiem URL rezerves failos. Novērsta kritiska datu drošības kļūda: aktivējot uzvedņu sinhronizāciju gandrīz pilnā krātuvē, visas saglabātās uzvednes varēja tikt klusumā dzēstas. Krātuve tagad izmanto sadalītus ierakstus, lai paliktu Chrome robežās, parādot skaidrus kļūdu ziņojumus, kad tā ir pilna.

@@ -54,7 +54,7 @@ Untuk menyematkan prompt: klik 📍 — naik ke bagian atas daftar dan tetap mud
 Dibangun dengan privasi sebagai inti. Hanya meminta akses ke Gemini, Claude, ChatGPT, Copilot, Perplexity dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui Chrome Sync: tidak ada server pihak ketiga, tidak ada telemetri.
 
 🤝 PROYEK OPEN SOURCE
-Folder AI adalah proyek open source yang dibangun dengan penuh semangat. Transparansi dan penghormatan terhadap privasi Anda adalah prioritas utama kami. Apakah Anda pengembang atau sekadar penasaran? Jelajahi kode, ikuti catatan perubahan, atau berkontribusi di GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Folder AI adalah proyek open source yang dibangun dengan penuh semangat. Transparansi dan penghormatan terhadap privasi Anda adalah prioritas utama kami. Apakah Anda pengembang atau sekadar penasaran? Jelajahi kode, ikuti catatan perubahan, atau berkontribusi di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 PEMBARUAN:
 Versi 1.0: Rilis pertama! Atur percakapan dari Gemini, Claude, ChatGPT, Copilot, dan Perplexity dalam folder bersama. Pustaka prompt lengkap dengan injeksi satu klik, pintasan simpan cepat, drag & drop, sinkronisasi mobile, aksi massal, grup tab, dan dukungan 43 bahasa. Dukungan LLM lokal dengan URL yang dapat dikonfigurasi (localhost dan alamat LAN).

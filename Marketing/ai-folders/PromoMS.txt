@@ -53,7 +53,7 @@ Untuk menyemat prompt: klik 📍 – ia berpindah ke bahagian atas senarai.
 Dibina dengan mengutamakan privasi. Hanya meminta akses ke Gemini, Claude, ChatGPT, Copilot, Perplexity dan membaca tab aktif hanya semasa menyimpan perbualan atau menyisipkan prompt. Kebenaran «Penanda buku» hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui Chrome Sync: tiada pelayan pihak ketiga, tiada telemetri.
 
 🤝 PROJEK SUMBER TERBUKA
-Folder AI ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelusan dan penghormatan terhadap privasi anda adalah keutamaan tertinggi kami. Anda pembangun atau sekadar ingin tahu? Semak kod, ikuti log perubahan atau sumbang di GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Folder AI ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelusan dan penghormatan terhadap privasi anda adalah keutamaan tertinggi kami. Anda pembangun atau sekadar ingin tahu? Semak kod, ikuti log perubahan atau sumbang di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 KEMAS KINI:
 Versi 1.0: Keluaran pertama! Susun perbualan dari Gemini, Claude, ChatGPT, Copilot dan Perplexity dalam folder berkongsi. Pustaka arahan lengkap dengan suntikan satu klik, pintasan simpan pantas, seret dan lepas, penyegerakan mudah alih, tindakan pukal, kumpulan tab dan sokongan untuk 43 bahasa.

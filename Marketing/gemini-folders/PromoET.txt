@@ -49,7 +49,7 @@ Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
 Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult gemini.google.com-ile ja loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.
 
 🤝 AVATUD LÄHTEKOODIGA PROJEKT
-Gemini Kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/GeminiFolders
+Gemini Kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 UUENDUSED:
 Versioon 4.1 (Globaalne laienemine ja karastamine): 16 uut keelt viib Gemini Kaustad 43 lokalisatsioonini üle maailma — põhjamaised keeled, Balti riigid ning laiendatud Euroopa ja Kagu-Aasia katvus. Parandati race condition, mis võis kiirklõpsude korral salvestuse vaikselt kaotada. Prompti sisestamine moderniseeriti InputEvent-iga, asendades aegunud execCommand-i. Impordipipe hardeeriti varufailide pahatahtlike URL-ide vastu. Kriitilise andmeturbe vea parandus: käskude sünkroonimine peaaegu täis salvestusruumiga võis kõik salvestatud käsklused vaikselt kustutada. Salvestusruum kasutab nüüd tükeldatud kirjutisi, et jääda Chrome'i piiridesse, ning kuvab selgeid veateateid, kui ruum on täis.

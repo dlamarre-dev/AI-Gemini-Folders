@@ -54,7 +54,7 @@ Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta s
 Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, ChatGPT, Copilot, Perplexity e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
 
 🤝 PROGETTO OPEN SOURCE
-Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/GeminiFolders
+Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AGGIORNAMENTI:
 Versione 1.0: Prima pubblicazione! Organizza conversazioni da Gemini, Claude, ChatGPT, Copilot e Perplexity in cartelle condivise. Libreria prompt completa con iniezione in un clic, scorciatoie di salvataggio rapido, drag & drop, sincronizzazione mobile, azioni in blocco, gruppi di schede e supporto per 43 lingue. Supporto LLM locale con URL configurabile (localhost e indirizzi LAN).
