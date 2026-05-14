@@ -157,8 +157,8 @@ chrome.commands.onCommand.addListener(async (command) => {
     const toastMsg = chrome.i18n.getMessage("toastSaved") || "✅ Saved!";
     const siteColor = SITES[siteKey]?.color || "#1a73e8";
 
-    // For local LLM: use the browser tab title directly — no script injection needed or wanted.
-    // For all other sites: extract title via executeScript.
+    // For local LLM: use the browser tab title directly
+    // Extract title via executeScript.
     let finalTitle = fallbackTitle;
     if (siteKey !== 'local') {
       const results = await chrome.scripting.executeScript({
