@@ -57,4 +57,5 @@ Concepută cu confidențialitatea în centru. Solicită acces doar la Gemini, Cl
 Dosare IA este un proiect open source dezvoltat cu pasiune. Transparența și respectul față de confidențialitatea dvs. sunt prioritățile noastre. Sunteți dezvoltator sau pur și simplu curios? Consultați codul, urmăriți istoricul modificărilor sau contribuiți pe GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ACTUALIZĂRI:
+Versiunea 1.0.1: Remedieri minore ale erorilor și îmbunătățiri ale stabilității.
 Versiunea 1.0: Prima lansare! Organizați conversații din Gemini, Claude, ChatGPT, Copilot și Perplexity în dosare partajate. Bibliotecă completă de prompturi cu injectare în un clic, comenzi rapide de salvare, glisare și plasare, sincronizare mobilă, acțiuni în masă, grupuri de file și suport pentru 43 de limbi. Suport LLM local cu URL configurabil (localhost și adrese LAN).

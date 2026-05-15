@@ -56,4 +56,5 @@ Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGP
 UI mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti naši su najviši prioriteti. Jesi li programer ili si jednostavno radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AŽURIRANJA:
+Verzija 1.0.1: Manja ispravka grešaka i poboljšanja stabilnosti.
 Verzija 1.0: Prvo izdanje! Organizirajte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u dijeljene mape. Potpuna biblioteka upita s umetanjem jednim klikom, prečaci za brzo spremanje, povuci i ispusti, mobilna sinkronizacija, skupne radnje, grupe kartica i podrška za 43 jezika.

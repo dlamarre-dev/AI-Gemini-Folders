@@ -57,4 +57,5 @@ Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng acces
 Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal. Ang transparency at paggalang sa iyong privacy ang aming mga pangunahing priyoridad. Ikaw ba ay isang developer o basta lang curious? I-browse ang code, sundan ang changelog, o mag-contribute sa GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 MGA UPDATE:
+Bersyon 1.0.1: Maliliit na pag-aayos ng bug at mga pagpapabuti ng katatagan.
 Bersyon 1.0: Unang inilabas! Ayusin ang mga pag-uusap mula sa Gemini, Claude, ChatGPT, Copilot, at Perplexity sa mga ibinabahaging folder. Kumpletong prompt library na may one-click injection, mga shortcut ng mabilis na pag-save, drag at drop, mobile sync, bulk actions, tab groups, at suporta para sa 43 na wika.
