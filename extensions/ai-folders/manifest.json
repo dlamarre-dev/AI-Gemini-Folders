@@ -33,6 +33,20 @@
       "description": "__MSG_cmdQuickSave__"
     }
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://gemini.google.com/*",
+        "*://claude.ai/*",
+        "*://chatgpt.com/*",
+        "*://copilot.microsoft.com/*",
+        "*://perplexity.ai/*",
+        "*://*.perplexity.ai/*"
+      ],
+      "js": ["lz-string.min.js", "prompt-trigger.js"],
+      "run_at": "document_idle"
+    }
+  ],
   "host_permissions": [
     "*://gemini.google.com/*",
     "*://claude.ai/*",
