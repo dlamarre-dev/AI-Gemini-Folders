@@ -107,6 +107,39 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   }
 });
 
+// --- PROMPT TRIGGER (#trigger + Space → inject prompt via executeScript) ---
+
+async function handlePromptTrigger(message, sender) {
+  const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
+  const siteKey = getSiteByUrl(sender.tab?.url, localLlmUrl);
+  const selectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
+  if (!selectors) return { matched: false };
+
+  const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
+  const promptText = findPromptByTrigger(data.prompts || {}, message.triggerName);
+  if (!promptText) return { matched: false };
+
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId: sender.tab.id },
+      args: [promptText, selectors],
+      func: injectPromptIntoEditor,
+    });
+    return { matched: true };
+  } catch (err) {
+    console.error('Prompt trigger inject failed:', err);
+    return { matched: false };
+  }
+}
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action !== 'injectPromptTrigger') return false;
+  handlePromptTrigger(message, sender)
+    .then(sendResponse)
+    .catch(() => sendResponse({ matched: false }));
+  return true; // keep channel open for async response
+});
+
 // --- TOAST ---
 
 const showToast = (msg, bgColor) => {

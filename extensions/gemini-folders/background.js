@@ -106,6 +106,35 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 });
 
 
+// --- PROMPT TRIGGER (#trigger + Space → inject prompt via executeScript) ---
+
+async function handlePromptTrigger(message, sender) {
+  const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
+  const promptText = findPromptByTrigger(data.prompts || {}, message.triggerName);
+  if (!promptText) return { matched: false };
+
+  const selectors = ['rich-textarea .ql-editor', '[contenteditable="true"].ql-editor'];
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId: sender.tab.id },
+      args: [promptText, selectors],
+      func: injectPromptIntoEditor,
+    });
+    return { matched: true };
+  } catch (err) {
+    console.error('Prompt trigger inject failed:', err);
+    return { matched: false };
+  }
+}
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action !== 'injectPromptTrigger') return false;
+  handlePromptTrigger(message, sender)
+    .then(sendResponse)
+    .catch(() => sendResponse({ matched: false }));
+  return true; // keep channel open for async response
+});
+
 // 4. Listen to keyboard shortcuts (Commands)
 chrome.commands.onCommand.addListener(async (command) => {
   if (command === "quick-save") {
