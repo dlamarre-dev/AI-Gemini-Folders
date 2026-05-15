@@ -115,12 +115,12 @@ async function handlePromptTrigger(message, sender) {
 
   const selectors = ['rich-textarea .ql-editor', '[contenteditable="true"].ql-editor'];
   try {
-    await chrome.scripting.executeScript({
+    const results = await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
       args: [promptText, selectors],
       func: injectPromptIntoEditor,
     });
-    return { matched: true };
+    return { matched: results?.[0]?.result === true };
   } catch (err) {
     console.error('Prompt trigger inject failed:', err);
     return { matched: false };

@@ -120,12 +120,12 @@ async function handlePromptTrigger(message, sender) {
   if (!promptText) return { matched: false };
 
   try {
-    await chrome.scripting.executeScript({
+    const results = await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
       args: [promptText, selectors],
       func: injectPromptIntoEditor,
     });
-    return { matched: true };
+    return { matched: results?.[0]?.result === true };
   } catch (err) {
     console.error('Prompt trigger inject failed:', err);
     return { matched: false };

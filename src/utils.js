@@ -415,6 +415,7 @@ function findPromptByTrigger(prompts, triggerName) {
 
 // Injected into the AI page via chrome.scripting.executeScript (runs in PAGE context).
 // Finds the chat editor with the given CSS selectors and replaces its full content.
+// Returns true if the editor was found and the injection was attempted; false otherwise.
 function injectPromptIntoEditor(promptText, selectors) {
   const active = document.activeElement;
   let editor = null;
@@ -429,14 +430,17 @@ function injectPromptIntoEditor(promptText, selectors) {
   editor.focus();
 
   if (editor.isContentEditable) {
-    const sel = window.getSelection();
-    const range = document.createRange();
-    range.selectNodeContents(editor);
-    sel.removeAllRanges();
-    sel.addRange(range);
-    const before = editor.textContent;
+    // Three-step replace: select all → delete → insert.
+    // This is more reliable than selectAll+insertText in one step for long text,
+    // because some editors (e.g. Perplexity) don't replace the selection when
+    // execCommand('insertText') receives a very long string.
+    document.execCommand('selectAll', false, null);
+    document.execCommand('delete', false, null);
     document.execCommand('insertText', false, promptText);
-    if (editor.textContent === before) {
+
+    // If the content still doesn't match (editor overrode our change), try the
+    // beforeinput approach that some React/ProseMirror editors listen to.
+    if (editor.textContent.trim() !== promptText.trim()) {
       editor.dispatchEvent(new InputEvent('beforeinput', {
         bubbles: true, cancelable: true,
         inputType: 'insertText', data: promptText,
@@ -455,7 +459,9 @@ function injectPromptIntoEditor(promptText, selectors) {
     } else {
       editor.value = promptText;
     }
+    // Dispatch both input and change: React listens to input, Svelte/Vue also use change.
     editor.dispatchEvent(new Event('input', { bubbles: true }));
+    editor.dispatchEvent(new Event('change', { bubbles: true }));
     return true;
   }
 
