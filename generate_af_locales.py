@@ -12,16 +12,20 @@ AF_LOCALES = "extensions/ai-folders/_locales"
 
 # Keys that are Gemini Folders-specific and must be removed from AF locales.
 KEYS_TO_REMOVE = {
+    # GF-only UI keys
     "alertNotGemini",
     "promptSetGemLink",
     "promptInvalidGemLink",
     "setGemBtnTooltip",
     "enableCustomGemTooltip",
-    "reviewTitle",
-    "reviewMessage",
-    "reviewRateBtn",
-    "reviewLaterBtn",
-    "reviewNoBtn",
+    "newConversationBtn",      # GF has one Gemini button; AF uses per-site newConv_* keys
+    "promptPinTitle",          # GF-specific key name; AF uses btnPin / btnUnpin
+    # GF-only AF promo banner keys (shown inside GF to promote AF; not needed in AF itself)
+    "afPromoTitle",
+    "afPromoMessage",
+    "afPromoDownloadBtn",
+    # NOTE: reviewTitle / reviewMessage / reviewRateBtn / reviewLaterBtn / reviewNoBtn
+    # are intentionally NOT removed — AF has the same review banner via shared ui.js.
 }
 
 # ---------------------------------------------------------------------------

@@ -627,6 +627,10 @@ def transform(text, lang, af_name, gf_name):
         for old, new in INJECTION_FIXES[lang]:
             text = text.replace(old, new)
 
+    # 12. Remove the GF cross-promo section for AI Folders — irrelevant in AF's own listing.
+    #     Pattern: \n🤖 HEADER\n\nBODY\n\n👉 CTA: __AF_STORE_URL__\n
+    text = re.sub(r'\n🤖[^\n]*\n\n[^\n]+\n\n👉[^\n]*__AF_STORE_URL__[^\n]*\n', '\n', text)
+
     return text
 
 
