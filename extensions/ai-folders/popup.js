@@ -477,7 +477,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     item.appendChild(header);
     item.appendChild(textArea);
-    if (isPromptOpen) autoResize(textArea);
+    if (isPromptOpen) requestAnimationFrame(() => autoResize(textArea));
     return item;
   }
 
