@@ -11,7 +11,7 @@ S verzijom 4.0 Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgov
 💎 Prilagođena Gem veza: Konfiguriraj vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
 ☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
 📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
+⌨️ Prečaci za aktiviranje upita: Upišite #PromptName izravno u polje za chat Gemini i pritisnite Razmak za trenutačno ubacivanje odgovarajućeg spremljenog upita — bez otvaranja panela proširenja.
 
 🌟 ZNAČAJKE MAPA
 
@@ -45,7 +45,7 @@ Klikni ➕ Dodaj upit, unesi naslov i tekst i spremi.
 Za korištenje upita: proširi ga i klikni ▶ – ubacuje se izravno u Gemini.
 Konfiguriraj 💎 da ukazuje na tvoj Gem.
 Za prikvačivanje upita: klikni 📍 – premješta se na vrh popisa.
-Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
+Aktiviranje upita: upišite #PromptName u polje za chat Gemini i pritisnite Razmak — upit se ubacuje trenutačno.
 
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s prioritetom privatnosti. Traži pristup samo gemini.google.com i čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem Chrome Sync: bez poslužitelja trećih strana, bez telemetrije.
@@ -60,6 +60,7 @@ Zainteresirani za Gemini Mape, ali koristite i ChatGPT, Claude, Copilot, Perplex
 👉 Instaliraj UI mape: __AF_STORE_URL__
 
 📢 AŽURIRANJA:
+Verzija 4.2 (Prečaci za aktiviranje upita): Upišite #PromptName izravno u polje za chat Gemini i pritisnite Razmak za trenutačno ubacivanje spremljenog upita — bez otvaranja panela proširenja.
 Verzija 4.1.1: Manja ispravka grešaka i poboljšanja stabilnosti.
 Verzija 4.1 (Globalna ekspanzija i ojačavanje): 16 novih jezika dovodi Gemini Mape na 43 lokalizacije diljem svijeta — nordički jezici, baltičke države i proširena europska i jugoistočnoazijska pokrivenost. Ispravljen race condition koji je mogao tiho izgubiti spremanje pri brzim klikovima. Umetanje upita modernizirano s InputEvent, zamjenjujući zastarjeli execCommand. Import pipeline ojačan protiv zlonamjernih URL-ova u backup datotekama. Ispravljena kritična greška sigurnosti podataka: aktiviranje sinkronizacije upita s gotovo punom pohranom moglo je tiho izbrisati sve pohranjene upite. Pohrana sada koristi fragmentirane zapise kako bi ostala unutar Chrome ograničenja, s jasnim porukama o pogrešci kad je puna.
 Verzija 4.0 (Knjižnica upita): Najna mbicioznije ažuriranje do sada! Gemini Mape dobivaju potpuno novi Način upita: spremi najbolje upite, uredi ih na licu mjesta i ubaci ih izravno u Gemini jednim klikom.

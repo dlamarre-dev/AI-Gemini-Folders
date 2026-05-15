@@ -11,7 +11,7 @@ Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de 
 💎 Enlace Gem personalizado: Configura un enlace a tu Gem favorito y actívalo con un clic. Cuando está activo, el botón "Nueva conversación" abre tu Gem en lugar del chat por defecto.
 ☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
 📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
+⌨️ Atajos de Activación de Prompts: Escribe #PromptName directamente en el campo de chat de Gemini y pulsa Espacio para inyectar al instante el prompt guardado correspondiente — sin abrir el panel de la extensión.
 
 🌟 FUNCIONES DE CARPETAS
 
@@ -46,7 +46,7 @@ Haz clic en ➕ Añadir Prompt, escribe un título y tu texto, y guarda.
 Para usar un prompt: despliégalo y haz clic en ▶ — se inyecta directamente en Gemini, listo para enviar.
 Configura 💎 para apuntar a tu Gem personalizado.
 Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siempre está a mano.
-Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
+Activación de prompt: escribe #PromptName en el campo de chat de Gemini y pulsa Espacio — el prompt se inyecta al instante.
 
 🔒 PRIVACIDAD Y SEGURIDAD
 Diseñada con la privacidad en el centro. Solo solicita acceso a gemini.google.com y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
@@ -61,6 +61,7 @@ Carpetas de Gemini es un proyecto open source desarrollado con pasión. La trans
 👉 Instalar Carpetas IA: __AF_STORE_URL__
 
 📢 ACTUALIZACIONES:
+Versión 4.2 (Atajos de Activación de Prompts): Escribe #PromptName directamente en el campo de chat de Gemini y pulsa Espacio para inyectar al instante un prompt guardado — sin abrir el panel de la extensión.
 Versión 4.1.1: Correcciones menores de errores y mejoras de estabilidad.
 Versión 4.1 (Expansión global y refuerzo): 16 nuevos idiomas llevan Carpetas Gemini a 43 localizaciones en todo el mundo — idiomas nórdicos, los estados bálticos y mayor cobertura europea y del sudeste asiático. Corregida una condición de carrera que podía perder silenciosamente un guardado en clics rápidos. Inyección de prompts modernizada con InputEvent, reemplazando el execCommand obsoleto. Flujo de importación reforzado contra URLs maliciosas en archivos de copia de seguridad. Corrección de un error crítico de seguridad de datos: activar la sincronización de prompts con el almacenamiento casi lleno podía borrar silenciosamente todos los prompts guardados. El almacenamiento usa ahora escrituras fragmentadas para mantenerse dentro de los límites de Chrome, con mensajes de error claros cuando está lleno.
 Versión 4.0 (Biblioteca de Prompts): ¡La actualización más ambiciosa hasta ahora! Carpetas de Gemini estrena un nuevo modo Prompts: guarda tus mejores prompts, edítalos en línea e inyéctalos en Gemini con un clic. Se añade alternancia de modos animada, búsqueda y ordenación en el modo Prompts, botón Gem personalizado y sincronización independiente de prompts. Fija tus prompts esenciales en la parte superior de la biblioteca.

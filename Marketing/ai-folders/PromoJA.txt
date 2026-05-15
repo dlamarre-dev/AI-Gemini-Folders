@@ -11,7 +11,7 @@ AI フォルダ はあなたの統合 AI コックピットです：すべての
 🔀 新規会話ボタン：プロンプトモードから直接 ChatGPT、Claude、Copilot、Gemini、または Perplexity の新しい会話を開始できます。サービスごとに1つのボタン。
 ☁️ プロンプト同期：フォルダとは独立して、プロンプトライブラリのクラウド同期を有効にできます。
 📌 ピン留めプロンプト：重要なプロンプトをワンクリックでライブラリの先頭に固定。視覚的な区切り線で他のプロンプトと区別されます。
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ プロンプトトリガーショートカット：対応している AI のチャット欄に #PromptName と入力してスペースキーを押すと、対応する保存済みプロンプトが即座に注入されます — 拡張機能パネルを開かずに。ローカル LLM を含むすべてのサービスで動作します。
 
 🌟 フォルダ機能
 
@@ -50,7 +50,7 @@ Gemini, Claude, ChatGPT, Copilot, Perplexity で会話を開きます。
 ➕ プロンプトを追加 をクリックし、タイトルとテキストを入力して保存。
 プロンプトを使うには：展開して ▶ をクリック——アクティブな AI に直接注入され、送信準備完了。
 プロンプトをピン留め：📍 をクリック — リストの先頭に移動し、いつでもすぐアクセスできます。
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+プロンプトトリガー：任意の AI のチャット欄に #PromptName と入力してスペースキーを押す — プロンプトが即座に注入されます。
 
 🔒 プライバシー＆セキュリティ
 プライバシーを核心に設計されています。アクセスは Gemini, Claude, ChatGPT, Copilot, Perplexity のみ、アクティブタブの読み取りは会話の保存またはプロンプトの注入時のみ。「ブックマーク」権限はモバイル同期を有効にした場合のみ使用。Chrome Sync でデータを保存：サードパーティのサーバーなし、テレメトリなし。
@@ -59,5 +59,6 @@ Prompt trigger: type #PromptName in any AI chat field and press Space — the pr
 AI フォルダは情熱を持って開発されたオープンソースプロジェクトです。透明性とプライバシーの尊重が最優先事項です。開発者または単純に好奇心旺盛な方は？コードを確認、変更履歴を追跡、または GitHub でコントリビュート：https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 アップデート：
+バージョン 1.1（プロンプトトリガーショートカット）：任意の AI のチャット欄に #PromptName と入力してスペースキーを押すと、保存済みプロンプトが即座に注入されます — 拡張機能パネルを開かずに。ローカル LLM を含むすべての対応サービスで動作します。
 バージョン 1.0.1：軽微なバグ修正と安定性の改善。
 バージョン 1.0: 初回リリース！Gemini、Claude、ChatGPT、Copilot、Perplexity の会話を共有フォルダに整理できます。ワンクリック注入対応の完全なプロンプトライブラリ、クイックセーブショートカット、ドラッグ＆ドロップ、モバイル同期、一括操作、タブグループ、43言語サポート。設定可能なURL（localhostとLANアドレス）でローカルLLMにも対応。

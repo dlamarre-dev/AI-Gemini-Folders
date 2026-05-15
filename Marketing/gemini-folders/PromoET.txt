@@ -11,7 +11,7 @@ Versiooniga 4.0 saab Gemini Kaustadest sinu tõeline Gemini cockpit: korralda ve
 💎 Kohandatud Gem-link: Seadista link oma lemmikhelmele ja lülita see ühe klikiga sisse/välja.
 ☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
 📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
+⌨️ Prompti käivitamise kiirklahvid: Sisestage #PromptName otse Gemini vestlusväljale ja vajutage Tühik, et vastav salvestatud prompt kohe lisada — ilma laienduse paneeli avamata.
 
 🌟 KAUSTADE FUNKTSIOONID
 
@@ -45,7 +45,7 @@ Klõpsa ➕ Lisa prompt, sisesta pealkiri ja tekst ning salvesta.
 Prompti kasutamiseks: laienda see ja klõpsa ▶ – see lisatakse otse Geminisse.
 Seadista 💎 osutama oma Helmele.
 Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
-Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
+Prompti käivitamine: sisestage #PromptName Gemini vestlusväljale ja vajutage Tühik — prompt lisatakse kohe.
 
 🔒 PRIVAATSUS JA TURVALISUS
 Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult gemini.google.com-ile ja loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.
@@ -60,6 +60,7 @@ Huvitab teid Gemini Kaustad, kuid kasutate ka ChatGPT-d, Claudi, Copiloti, Perpl
 👉 Installi AI kaustad: __AF_STORE_URL__
 
 📢 UUENDUSED:
+Versioon 4.2 (Prompti käivitamise kiirklahvid): Sisestage #PromptName otse Gemini vestlusväljale ja vajutage Tühik, et salvestatud prompt kohe lisada — ilma laienduse paneeli avamata.
 Versioon 4.1.1: Väiksemad veaparandused ja stabiilsuse parandused.
 Versioon 4.1 (Globaalne laienemine ja karastamine): 16 uut keelt viib Gemini Kaustad 43 lokalisatsioonini üle maailma — põhjamaised keeled, Balti riigid ning laiendatud Euroopa ja Kagu-Aasia katvus. Parandati race condition, mis võis kiirklõpsude korral salvestuse vaikselt kaotada. Prompti sisestamine moderniseeriti InputEvent-iga, asendades aegunud execCommand-i. Impordipipe hardeeriti varufailide pahatahtlike URL-ide vastu. Kriitilise andmeturbe vea parandus: käskude sünkroonimine peaaegu täis salvestusruumiga võis kõik salvestatud käsklused vaikselt kustutada. Salvestusruum kasutab nüüd tükeldatud kirjutisi, et jääda Chrome'i piiridesse, ning kuvab selgeid veateateid, kui ruum on täis.
 Versioon 4.0 (Promptide kogu): Seni ambitsioonikam uuendus! Gemini Kaustad saab täiesti uue Prompti režiimi: salvesta oma parimad promptid, redigeeri neid otse ja lisa need otse Geminisse ühe klikiga.

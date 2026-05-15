@@ -11,7 +11,7 @@ AI aplankai yra jūsų vieninga AI valdymo centras: tvarkykite visų AI įranki�
 🔀 Naujo pokalbio mygtukai: Pradėkite naują pokalbį ChatGPT, Claude, Copilot, Gemini arba Perplexity tiesiogiai iš raginimų režimo — vienas mygtukas kiekvienai paslaugai.
 ☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
 📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ Promptų suaktyvinimo spartieji klavišai: Įveskite #PromptName bet kurio palaikomo AI pokalbių lauke ir paspauskite Tarpas, kad iš karto įterptumėte atitinkamą išsaugotą promptą — neatidarydami plėtinio skydelio. Veikia su visomis paslaugomis, įskaitant vietinius LLM.
 
 🌟 APLANKŲ FUNKCIJOS
 
@@ -49,7 +49,7 @@ Spustelėk 📝 ant perjungiklio plėtinio viršutiniame dešiniajame kampe.
 Spustelėk ➕ Pridėti promptą, įveskite pavadinimą ir tekstą, išsaugok.
 Norėdamas naudoti promptą: išplėsk jį ir spustelėk ▶ – jis įterpiamas tiesiai į aktyvų AI.
 Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo viršų.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+Prompto suaktyvinimas: įveskite #PromptName bet kurio AI pokalbių lauke ir paspauskite Tarpas — promptas įterpiamas iš karto.
 
 🔒 PRIVATUMAS IR SAUGUMAS
 Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie Gemini, Claude, ChatGPT, Copilot, Perplexity ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.
@@ -58,5 +58,6 @@ Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie Gemini, Claude, C
 AI aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pagarba jūsų privatumui yra mūsų aukščiausi prioritetai. Esi kūrėjas ar tiesiog smalsus? Naršyk kodą, sek pakeitimų žurnalą arba prisidėk prie „GitHub": https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ATNAUJINIMAI:
+Versija 1.1 (Promptų suaktyvinimo spartieji klavišai): Įveskite #PromptName bet kurio AI pokalbių lauke ir paspauskite Tarpas, kad iš karto įterptumėte išsaugotą promptą — neatidarydami plėtinio skydelio. Veikia su visomis palaikomomis paslaugomis, įskaitant vietinius LLM.
 Versija 1.0.1: Nedideli klaidų ištaisymai ir stabilumo patobulinimai.
 Versija 1.0: Pirmasis leidimas! Tvarkykite pokalbius iš Gemini, Claude, ChatGPT, Copilot ir Perplexity bendrose aplankuose. Pilna raginimų biblioteka su vieno paspaudimo įterpimu, sparčiojo įrašymo spartieji klavišai, vilkimas ir numetimas, mobilioji sinchronizacija, masiniai veiksmai, skirtukų grupės ir palaikymas 43 kalbų.

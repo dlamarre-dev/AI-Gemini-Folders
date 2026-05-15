@@ -45,7 +45,7 @@ Auf 📝 im Umschalter oben rechts in der Erweiterung klicken.
 Prompt verwenden: aufklappen und ▶ klicken — er wird direkt in Gemini injiziert, bereit zum Senden.
 💎 konfigurieren, um auf Ihren benutzerdefinierten Gem zu verweisen.
 Prompt anpinnen: auf 📍 klicken — er rückt an die erste Stelle und bleibt immer griffbereit.
-Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
+Prompt-Trigger: Tippen Sie #PromptName in das Chat-Eingabefeld von Gemini und drücken Sie Leertaste — der Prompt wird sofort eingefügt.
 
 🔒 DATENSCHUTZ & SICHERHEIT
 Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf gemini.google.com an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
@@ -60,7 +60,7 @@ Interessiert an Gemini-Ordner, aber nutzen Sie auch ChatGPT, Claude, Copilot, Pe
 👉 KI-Ordner installieren: __AF_STORE_URL__
 
 📢 UPDATES:
-Version 4.2 (Prompt Trigger Shortcuts): Type #PromptName directly in Gemini's chat field and press Space to instantly inject a saved prompt — without opening the extension panel.
+Version 4.2 (Prompt-Trigger-Tastenkürzel): Tippen Sie #PromptName direkt in das Chat-Eingabefeld von Gemini und drücken Sie Leertaste, um einen gespeicherten Prompt sofort einzufügen — ohne das Erweiterungspanel zu öffnen.
 Version 4.1.1: Kleinere Fehlerbehebungen und Stabilitätsverbesserungen.
 Version 4.1 (Globale Erweiterung & Härtung): 16 neue Sprachen bringen Gemini-Ordner auf 43 weltweite Lokalisierungen — nordische Sprachen, die baltischen Staaten und erweiterte europäische sowie südostasiatische Abdeckung. Behobene Race-Condition, die bei schnellen Klicks eine Speicherung lautlos verwerfen konnte. Modernisierte Prompt-Injektion mit InputEvent als Ersatz für das veraltete execCommand. Import-Pipeline gegen bösartige URLs in Sicherungsdateien gehärtet. Kritischer Datensicherheitsfehler behoben: das Aktivieren der Prompt-Synchronisierung bei fast vollem Speicher konnte alle gespeicherten Prompts lautlos löschen. Der Speicher verwendet jetzt fragmentierte Schreibvorgänge, um innerhalb der Chrome-Grenzen zu bleiben, mit klaren Fehlermeldungen wenn er voll ist.
 Version 4.0 (Prompt-Bibliothek): Das ehrgeizigste Update bisher! Gemini-Ordner erhält einen brandneuen Prompt-Modus: Prompts speichern, direkt bearbeiten und mit einem Klick in Gemini injizieren. Neu: animierter Modus-Umschalter, Suche und Sortierung im Prompt-Modus, benutzerdefinierter Gem-Button und unabhängige Prompt-Synchronisierung. Wichtige Prompts oben anpinnen.

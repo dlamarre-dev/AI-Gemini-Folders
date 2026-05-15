@@ -11,7 +11,7 @@ Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus 
 🔀 Botones de Nueva Conversación: Inicia una nueva conversación en ChatGPT, Claude, Copilot, Gemini o Perplexity directamente desde el Modo Prompt — un botón por servicio.
 ☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
 📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ Atajos de Activación de Prompts: Escribe #PromptName en el campo de chat de cualquier IA compatible y pulsa Espacio para inyectar al instante el prompt guardado correspondiente — sin abrir el panel de la extensión. Funciona en todos los servicios, incluidos los LLM locales.
 
 🌟 FUNCIONES DE CARPETAS
 
@@ -50,7 +50,7 @@ Haz clic en 📝 en el botón de alternancia en la esquina superior derecha de l
 Haz clic en ➕ Añadir Prompt, escribe un título y tu texto, y guarda.
 Para usar un prompt: despliégalo y haz clic en ▶ — se inyecta directamente en la IA activa, listo para enviar.
 Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siempre está a mano.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+Activación de prompt: escribe #PromptName en el campo de chat de cualquier IA y pulsa Espacio — el prompt se inyecta al instante.
 
 🔒 PRIVACIDAD Y SEGURIDAD
 Diseñada con la privacidad en el centro. Solo solicita acceso a Gemini, Claude, ChatGPT, Copilot, Perplexity y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
@@ -59,5 +59,6 @@ Diseñada con la privacidad en el centro. Solo solicita acceso a Gemini, Claude,
 Carpetas de Gemini es un proyecto open source desarrollado con pasión. La transparencia y el respeto a tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente tienes curiosidad? Consulta el código, sigue el historial de cambios o contribuye en GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ACTUALIZACIONES:
+Versión 1.1 (Atajos de Activación de Prompts): Escribe #PromptName en el campo de chat de cualquier IA y pulsa Espacio para inyectar al instante un prompt guardado — sin abrir el panel de la extensión. Funciona en todos los servicios compatibles incluidos los LLM locales.
 Versión 1.0.1: Correcciones menores de errores y mejoras de estabilidad.
 Versión 1.0: ¡Publicación inicial! Organiza conversaciones de Gemini, Claude, ChatGPT, Copilot y Perplexity en carpetas compartidas. Biblioteca de prompts completa con inyección en un clic, atajos de guardado rápido, arrastrar y soltar, sincronización móvil, acciones en masa, grupos de pestañas y soporte para 43 idiomas. Compatibilidad con LLM locales con URL configurable (localhost y direcciones LAN).

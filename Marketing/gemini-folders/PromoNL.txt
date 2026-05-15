@@ -11,7 +11,7 @@ Met versie 4.0 wordt Gemini-mappen uw echte Gemini-cockpit: organiseer gesprekke
 💎 Aangepaste Gem-link: Stel een link in naar uw favoriete Gem en schakel deze in/uit met één klik. Wanneer actief, opent de knop "Nieuw gesprek" uw Gem in plaats van de standaard chat.
 ☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
 📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
+⌨️ Sneltoetsen voor prompttrigger: Typ #PromptName rechtstreeks in het chatvenster van Gemini en druk op Spatie om de overeenkomstige opgeslagen prompt direct in te voegen — zonder het extensiepaneel te openen.
 
 🌟 MAPFUNCTIES
 
@@ -46,7 +46,7 @@ Klik op ➕ Prompt toevoegen, voer een titel en uw tekst in en sla op.
 Een prompt gebruiken: vouw hem uit en klik op ▶ — wordt direct ingevoegd in Gemini, klaar om te verzenden.
 Een prompt vastzetten: klik op 📍 — hij verplaatst naar boven en blijft gemakkelijk bereikbaar.
 Stel 💎 in om naar uw aangepaste Gem te wijzen.
-Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
+Prompttrigger: typ #PromptName in het chatvenster van Gemini en druk op Spatie — de prompt wordt direct ingevoegd.
 
 🔒 PRIVACY EN BEVEILIGING
 Gebouwd met privacy als kern. Vraagt alleen toegang tot gemini.google.com en leest het actieve tabblad alleen bij het opslaan van een gesprek of het invoegen van een prompt. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via Chrome Sync: geen servers van derden, geen telemetrie.
@@ -61,6 +61,7 @@ Geïnteresseerd in Gemini-mappen maar gebruik je ook ChatGPT, Claude, Copilot, P
 👉 AI-mappen installeren: __AF_STORE_URL__
 
 📢 UPDATES:
+Versie 4.2 (Sneltoetsen voor prompttrigger): Typ #PromptName rechtstreeks in het chatvenster van Gemini en druk op Spatie om een opgeslagen prompt direct in te voegen — zonder het extensiepaneel te openen.
 Versie 4.1.1: Kleine bugfixes en stabiliteitsverbeteringen.
 Versie 4.1 (Globale uitbreiding en versterking): 16 nieuwe talen brengen Gemini-mappen naar 43 lokalisaties wereldwijd — Scandinavische talen, de Baltische staten en uitgebreide Europese en Zuidoost-Aziatische dekking. Een race condition opgelost die bij snelle klikken stilletjes een opslaan kon weggooien. Promptinjectie gemoderniseerd met InputEvent ter vervanging van de verouderde execCommand. Importpipeline gehardend tegen kwaadaardige URL's in back-upbestanden. Kritieke gegevensbeveiligingsfout opgelost: het inschakelen van prompt-synchronisatie met bijna vol opslaggeheugen kon alle opgeslagen prompts stilzwijgend verwijderen. De opslag gebruikt nu gefragmenteerde schrijfbewerkingen om binnen Chrome-limieten te blijven, met duidelijke foutmeldingen als het vol is.
 Versie 4.0 (Promptbibliotheek): De meest ambitieuze update tot nu toe! Gemini-mappen krijgt een gloednieuwe Promptmodus: sla uw beste prompts op, bewerk ze inline en voeg ze met één klik direct in Gemini in. Geanimeerde modusschakelaar, zoeken en sorteren in Promptmodus, aangepaste Gem-knop en onafhankelijke promptsynchronisatie toegevoegd. Zet essentiële prompts bovenaan uw bibliotheek vast.

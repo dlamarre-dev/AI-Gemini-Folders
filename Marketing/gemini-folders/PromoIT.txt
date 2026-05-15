@@ -11,7 +11,7 @@ Con la versione 4.0, Cartelle Gemini diventa il tuo vero cockpit per Gemini: org
 💎 Link Gem personalizzato: Configura un link al tuo Gem preferito e attivalo con un clic. Quando è attivo, il pulsante "Nuova conversazione" apre il tuo Gem invece della chat predefinita.
 ☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
 📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
+⌨️ Scorciatoie di attivazione prompt: Scrivi #PromptName direttamente nel campo chat di Gemini e premi Spazio per iniettare istantaneamente il prompt salvato corrispondente — senza aprire il pannello dell'estensione.
 
 🌟 FUNZIONALITÀ CARTELLE
 
@@ -46,7 +46,7 @@ Clicca ➕ Aggiungi Prompt, inserisci un titolo e il tuo testo, salva.
 Per usare un prompt: espandilo e clicca ▶ — viene iniettato direttamente in Gemini, pronto per l'invio.
 Configura 💎 per puntare al tuo Gem personalizzato.
 Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta sempre a portata di mano.
-Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
+Attivazione prompt: scrivi #PromptName nel campo chat di Gemini e premi Spazio — il prompt viene iniettato istantaneamente.
 
 🔒 PRIVACY E SICUREZZA
 Progettata con la privacy al centro. Richiede accesso solo a gemini.google.com e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
@@ -61,6 +61,7 @@ Interessato a Cartelle Gemini ma usi anche ChatGPT, Claude, Copilot, Perplexity 
 👉 Installa Cartelle IA: __AF_STORE_URL__
 
 📢 AGGIORNAMENTI:
+Versione 4.2 (Scorciatoie di attivazione prompt): Scrivi #PromptName direttamente nel campo chat di Gemini e premi Spazio per iniettare istantaneamente un prompt salvato — senza aprire il pannello dell'estensione.
 Versione 4.1.1: Correzioni minori di bug e miglioramenti alla stabilità.
 Versione 4.1 (Espansione globale e rafforzamento): 16 nuove lingue portano Cartelle Gemini a 43 localizzazioni in tutto il mondo — lingue nordiche, gli stati baltici e copertura europea e del Sud-Est asiatico ampliata. Corretta una race condition che poteva eliminare silenziosamente un salvataggio con clic rapidi. Iniezione di prompt modernizzata con InputEvent, sostituendo il deprecato execCommand. Pipeline di importazione rafforzata contro URL dannosi nei file di backup. Correzione di un bug critico di sicurezza dei dati: l'attivazione della sincronizzazione dei prompt con lo spazio di archiviazione quasi pieno poteva cancellare silenziosamente tutti i prompt salvati. L'archiviazione usa ora scritture frammentate per restare nei limiti di Chrome, con messaggi di errore chiari quando è piena.
 Versione 4.0 (Libreria di Prompt): L'aggiornamento più ambizioso finora! Cartelle Gemini ottiene una nuovissima modalità Prompt: salva i tuoi migliori prompt, modificali in linea e iniettali direttamente in Gemini con un clic. Aggiunto: interruttore animato tra modalità, ricerca e ordinamento in modalità Prompt, pulsante Gem personalizzato e sincronizzazione indipendente dei prompt. Fissa i prompt essenziali in cima alla libreria.

@@ -11,7 +11,7 @@ AI složky je váš sjednocený AI kokpit: organizujte konverzace ze všech vaš
 🔀 Tlačítka nové konverzace: Spusťte novou konverzaci na ChatGPT, Claude, Copilot, Gemini nebo Perplexity přímo z režimu promptů — jedno tlačítko na službu.
 ☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
 📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ Zkratky pro spouštění výzev: Napište #PromptName do chatovacího pole libovolné podporované AI a stiskněte Mezerník pro okamžité vložení odpovídající uložené výzvy — bez otevírání panelu rozšíření. Funguje ve všech službách včetně lokálních LLM.
 
 🌟 FUNKCE SLOŽEK
 
@@ -50,7 +50,7 @@ Klikněte na 📝 na přepínači v pravém horním rohu rozšíření.
 Klikněte na ➕ Přidat výzvu, zadejte název a text, uložte.
 Chcete-li použít výzvu: rozbalte ji a klikněte na ▶ — vloží se přímo do aktivní AI, připravena k odeslání.
 Připnout výzvu: klikněte na 📍 — přesune se na začátek seznamu a je vždy po ruce.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+Spuštění výzvy: napište #PromptName do chatovacího pole libovolné AI a stiskněte Mezerník — výzva se okamžitě vloží.
 
 🔒 SOUKROMÍ A BEZPEČNOST
 Navrženo se soukromím v centru. Vyžaduje přístup pouze k Gemini, Claude, ChatGPT, Copilot, Perplexity a čte aktivní kartu pouze při ukládání konverzace nebo vkládání výzvy. Oprávnění „Záložky" se používá pouze pokud aktivujete mobilní synchronizaci. Ukládání přes Chrome Sync: žádné servery třetích stran, žádná telemetrie.
@@ -59,5 +59,6 @@ Navrženo se soukromím v centru. Vyžaduje přístup pouze k Gemini, Claude, Ch
 AI složky jsou open source projekt vyvíjený s vášní. Transparentnost a respekt k vašemu soukromí jsou naše priority. Jste vývojář nebo jen zvědavý? Prohlédněte si kód, sledujte historii změn nebo přispějte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AKTUALIZACE:
+Verze 1.1 (Zkratky pro spouštění výzev): Napište #PromptName do chatovacího pole libovolné AI a stiskněte Mezerník pro okamžité vložení uložené výzvy — bez otevírání panelu rozšíření. Funguje ve všech podporovaných službách včetně lokálních LLM.
 Verze 1.0.1: Drobné opravy chyb a zlepšení stability.
 Verze 1.0: První vydání! Uspořádejte konverzace z Gemini, Claude, ChatGPT, Copilot a Perplexity do sdílených složek. Kompletní knihovna promptů s vkládáním jedním kliknutím, zkratky rychlého ukládání, přetahování, mobilní synchronizace, hromadné akce, skupiny karet a podpora 43 jazyků. Podpora lokálních LLM s konfigurovatelnou URL (localhost a LAN adresy).

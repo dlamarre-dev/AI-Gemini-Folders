@@ -11,7 +11,7 @@ AI-kansiot on yhtenäinen AI-ohjauskeskuksesi: järjestä kaikista AI-työkaluis
 🔀 Uuden keskustelun painikkeet: Aloita uusi keskustelu ChatGPT:ssä, Claudessa, Copilotissa, Geminissä tai Perplexityssä suoraan Kehotetyökalusta — yksi painike palvelua kohden.
 ☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
 📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ Promptin käynnistyspikavalintoja: Kirjoita #PromptName minkä tahansa tuetun tekoälyn chat-kenttään ja paina Välilyönti injektoidaksesi vastaavan tallennetun promptin välittömästi — ilman laajennuspaneelin avaamista. Toimii kaikissa palveluissa, mukaan lukien paikalliset LLM:t.
 
 🌟 KANSIO-OMINAISUUDET
 
@@ -50,7 +50,7 @@ Napsauta 📝 lisäosan oikeassa yläkulmassa olevaa kytkintä.
 Napsauta ➕ Lisää prompt, syötä otsikko ja teksti ja tallenna.
 Promptin käyttäminen: laajenna se ja napsauta ▶ – se injektoidaan suoraan aktiiviseen AI:hin, valmiina lähetettäväksi.
 Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy helposti saatavilla.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+Promptin käynnistys: kirjoita #PromptName minkä tahansa tekoälyn chat-kenttään ja paina Välilyönti — prompt injektoidaan välittömästi.
 
 🔒 YKSITYISYYS JA TURVALLISUUS
 Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain Gemini, Claude, ChatGPT, Copilot, Perplexity:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.
@@ -59,5 +59,6 @@ Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain Gemini, Claude, ChatG
 AI-kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvyys ja yksityisyytesi kunnioittaminen ovat korkeimpia prioriteettiamme. Oletko kehittäjä tai vain utelias? Selaa koodia, seuraa muutoslokia tai osallistu GitHubissa: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 PÄIVITYKSET:
+Versio 1.1 (Promptin käynnistyspikavalintoja): Kirjoita #PromptName minkä tahansa tekoälyn chat-kenttään ja paina Välilyönti injektoidaksesi tallennetun promptin välittömästi — ilman laajennuspaneelin avaamista. Toimii kaikissa tuetuissa palveluissa mukaan lukien paikalliset LLM:t.
 Versio 1.0.1: Pieniä virheenkorjauksia ja vakauteen liittyviä parannuksia.
 Versio 1.0: Ensijulkaisu! Järjestä Geminin, Clauden, ChatGPT:n, Copilotin ja Perplexityn keskustelut jaetuiksi kansioiksi. Täydellinen kehotekirjasto yhdellä napsautuksella, pikaentallenteen pikanäppäimet, vedä ja pudota, mobiilisynkronointi, joukkotoiminnot, välilehtiryhmät ja tuki 43 kielelle.
