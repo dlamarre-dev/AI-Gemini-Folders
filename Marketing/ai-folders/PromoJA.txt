@@ -11,6 +11,7 @@ AI フォルダ はあなたの統合 AI コックピットです：すべての
 🔀 新規会話ボタン：プロンプトモードから直接 ChatGPT、Claude、Copilot、Gemini、または Perplexity の新しい会話を開始できます。サービスごとに1つのボタン。
 ☁️ プロンプト同期：フォルダとは独立して、プロンプトライブラリのクラウド同期を有効にできます。
 📌 ピン留めプロンプト：重要なプロンプトをワンクリックでライブラリの先頭に固定。視覚的な区切り線で他のプロンプトと区別されます。
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 フォルダ機能
 
@@ -49,6 +50,7 @@ Gemini, Claude, ChatGPT, Copilot, Perplexity で会話を開きます。
 ➕ プロンプトを追加 をクリックし、タイトルとテキストを入力して保存。
 プロンプトを使うには：展開して ▶ をクリック——アクティブな AI に直接注入され、送信準備完了。
 プロンプトをピン留め：📍 をクリック — リストの先頭に移動し、いつでもすぐアクセスできます。
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 プライバシー＆セキュリティ
 プライバシーを核心に設計されています。アクセスは Gemini, Claude, ChatGPT, Copilot, Perplexity のみ、アクティブタブの読み取りは会話の保存またはプロンプトの注入時のみ。「ブックマーク」権限はモバイル同期を有効にした場合のみ使用。Chrome Sync でデータを保存：サードパーティのサーバーなし、テレメトリなし。

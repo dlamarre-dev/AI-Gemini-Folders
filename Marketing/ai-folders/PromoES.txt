@@ -11,6 +11,7 @@ Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus 
 🔀 Botones de Nueva Conversación: Inicia una nueva conversación en ChatGPT, Claude, Copilot, Gemini o Perplexity directamente desde el Modo Prompt — un botón por servicio.
 ☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
 📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 FUNCIONES DE CARPETAS
 
@@ -49,6 +50,7 @@ Haz clic en 📝 en el botón de alternancia en la esquina superior derecha de l
 Haz clic en ➕ Añadir Prompt, escribe un título y tu texto, y guarda.
 Para usar un prompt: despliégalo y haz clic en ▶ — se inyecta directamente en la IA activa, listo para enviar.
 Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siempre está a mano.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVACIDAD Y SEGURIDAD
 Diseñada con la privacidad en el centro. Solo solicita acceso a Gemini, Claude, ChatGPT, Copilot, Perplexity y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.

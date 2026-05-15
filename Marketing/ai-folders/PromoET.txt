@@ -11,6 +11,7 @@ AI kaustad on teie ühtne AI-juhtimiskeskus: korraldage kõigi AI-tööriistade 
 🔀 Uue vestluse nupud: Alustage uut vestlust ChatGPT-s, Claudes, Copilotis, Geminis või Perplexitys otse viipade režiimist — üks nupp teenuse kohta.
 ☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
 📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 KAUSTADE FUNKTSIOONID
 
@@ -48,6 +49,7 @@ Klõpsa 📝 laienduse paremas ülanurgas asuval lülitil.
 Klõpsa ➕ Lisa prompt, sisesta pealkiri ja tekst ning salvesta.
 Prompti kasutamiseks: laienda see ja klõpsa ▶ – see lisatakse otse aktiivsesse AI-sse.
 Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVAATSUS JA TURVALISUS
 Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult Gemini, Claude, ChatGPT, Copilot, Perplexity-ile ja loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.

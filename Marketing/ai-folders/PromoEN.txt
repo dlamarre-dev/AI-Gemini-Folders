@@ -15,6 +15,7 @@ Gemini, Claude, ChatGPT, Copilot, and Perplexity. Conversations from different s
 🔀 New Conversation Buttons: Launch a fresh conversation on ChatGPT, Claude, Copilot, Gemini, or Perplexity directly from Prompt Mode — one tap per service.
 📌 Pinned Prompts: Pin your essential prompts to keep them at the top of your library, separated from the rest by a visual divider.
 ☁️ Prompt Sync: Enable cloud sync for your prompt library independently from your folders.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 FOLDER FEATURES
 
@@ -53,6 +54,7 @@ Click ➕ Add Prompt, enter a title and your text, and save.
 To use a prompt: expand it and click ▶ — it injects directly into the active AI, ready to send.
 Use the service buttons (ChatGPT, Claude, Copilot, Gemini, Perplexity) to open a new conversation on any service.
 To pin a prompt: click 📍 — it moves to the top of the list.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVACY & SECURITY
 Built with privacy at its core. It only requests access to the 5 supported AI sites and your optional local LLM URL. It only reads the active tab when saving a conversation or injecting a prompt. The "Bookmarks" permission is only used if you enable mobile sync. Storage via Chrome Sync: no third-party servers, no telemetry.
@@ -61,5 +63,6 @@ Built with privacy at its core. It only requests access to the 5 supported AI si
 AI Folders is an open source project built with passion. Transparency and respect for your privacy are our top priorities. Are you a developer or just curious? Browse the code, follow the changelog, or contribute on GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 VERSION HISTORY:
+Version 1.1 (Prompt Trigger Shortcuts): Type #PromptName in any AI chat field and press Space to instantly inject a saved prompt — without opening the extension panel. Works on all supported services including local LLMs.
 Version 1.0.1: Minor bug fixes and stability improvements.
 Version 1.0: Initial release! Organize conversations from Gemini, Claude, ChatGPT, Copilot, and Perplexity in shared folders. Full prompt library with one-click injection, quick-save shortcuts, drag & drop, mobile sync, bulk actions, tab groups, and support for 43 languages. Local LLM support with configurable URL (localhost and LAN addresses).

@@ -11,6 +11,7 @@ YZ Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan ge
 🔀 Yeni Konuşma Düğmeleri: Prompt Modundan doğrudan ChatGPT, Claude, Copilot, Gemini veya Perplexity'de yeni bir konuşma başlatın — her hizmet için bir düğme.
 ☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
 📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 KLASÖR ÖZELLİKLERİ
 
@@ -49,6 +50,7 @@ Uzantının sağ üstündeki geçiş düğmesinde 📝'a tıklayın.
 ➕ İstem Ekle'ye tıklayın, bir başlık ve metin girin, kaydedin.
 Bir istemi kullanmak için: genişletin ve ▶'ye tıklayın — doğrudan aktif AI'ye enjekte edilir, göndermeye hazır.
 Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar ve kolayca erişilebilir kalır.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 GİZLİLİK & GÜVENLİK
 Gizlilik öncelikli tasarım. Yalnızca Gemini, Claude, ChatGPT, Copilot, Perplexity'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.

@@ -11,6 +11,7 @@
 💎 Προσαρμοσμένος σύνδεσμος Gem: Ρυθμίστε έναν σύνδεσμο στο αγαπημένο σας Gem και ενεργοποιήστε/απενεργοποιήστε τον με ένα κλικ.
 ☁️ Συγχρονισμός prompt: Ενεργοποιήστε συγχρονισμό cloud για τη βιβλιοθήκη prompt ανεξάρτητα από τους φακέλους.
 📌 Καρφιτσωμένα prompt: Καρφιτσώστε σημαντικά prompt στην κορυφή της βιβλιοθήκης.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 ΛΕΙΤΟΥΡΓΙΕΣ ΦΑΚΕΛΩΝ
 
@@ -44,6 +45,7 @@
 Χρήση prompt: αναπτύξτε το και κάντε κλικ ▶ – εισάγεται απευθείας στο Gemini.
 Ρυθμίστε 💎 για να δείχνει στο Gem σας.
 Καρφίτσωμα prompt: κάντε κλικ 📍 – μετακινείται στην κορυφή της λίστας.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 ΑΠΟΡΡΗΤΟ ΚΑΙ ΑΣΦΑΛΕΙΑ
 Κατασκευασμένο με γνώμονα το απόρρητο. Ζητά πρόσβαση μόνο στο gemini.google.com και διαβάζει την ενεργή καρτέλα μόνο κατά την αποθήκευση συνομιλίας ή εισαγωγή prompt. Η άδεια «Σελιδοδείκτες» χρησιμοποιείται μόνο εάν ενεργοποιήσετε τον συγχρονισμό κινητού. Αποθήκευση μέσω Chrome Sync: κανένας διακομιστής τρίτων, καμία τηλεμετρία.

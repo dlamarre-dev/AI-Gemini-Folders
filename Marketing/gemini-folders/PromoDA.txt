@@ -45,6 +45,7 @@ Klik ➕ Tilføj prompt, indtast titel og tekst og gem.
 Brug af en prompt: udvid den og klik ▶ – den indsættes direkte i Gemini, klar til at sende.
 Konfigurer 💎 til at pege mod din Gem.
 Fastgørelse af en prompt: klik 📍 – den flyttes øverst på listen og er altid let at finde.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVATLIV OG SIKKERHED
 Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til gemini.google.com og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
@@ -59,6 +60,7 @@ Interesseret i Gemini Mapper men bruger du også ChatGPT, Claude, Copilot, Perpl
 👉 Installer AI-mapper: __AF_STORE_URL__
 
 📢 OPDATERINGER:
+Version 4.2 (Prompt Trigger Shortcuts): Type #PromptName directly in Gemini's chat field and press Space to instantly inject a saved prompt — without opening the extension panel.
 Version 4.1.1: Mindre fejlrettelser og stabilitetsforbedringer.
 Version 4.1 (Global udvidelse og hærdning): 16 nye sprog bringer Gemini Mapper til 43 oversættelser verden over — nordiske sprog, de baltiske stater og udvidet europæisk og sydøstasiatisk dækning. Rettet en race condition, der stille kunne miste en gem ved hurtige klik. Prompt-indsætning moderniseret med InputEvent, som erstatter den forældede execCommand. Import-pipeline hærdet mod ondsindede URL'er i sikkerhedskopifiler. Rettet en kritisk datasikkerhedsfejl: aktivering af prompt-synkronisering med næsten fuldt lager kunne lydløst slette alle gemte prompts. Lageret bruger nu fragmenterede skrivninger for at forblive inden for Chromes grænser, med klare fejlmeddelelser når det er fuldt.
 Version 4.0 (Promptbibliotek): Den mest ambitiøse opdatering hidtil! Gemini Mapper får en helt ny Promptvisning: gem dine bedste prompts, rediger dem inline og indsæt dem direkte i Gemini med ét klik. Tilføjet animeret tilstandsskifter, søgning og sortering i Promptvisning, tilpasset Gem-knap og uafhængig promptsynkronisering.

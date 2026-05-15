@@ -11,6 +11,7 @@ S verzijom 4.0 Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgo
 💎 Prilagođena Gem veza: Konfiguriši vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 FUNKCIJE FOLDERA
 
@@ -44,6 +45,7 @@ Klikni ➕ Dodaj prompt, unesi naslov i tekst i sačuvaj.
 Za korišćenje prompta: proširi ga i klikni ▶ – ubacuje se direktno u Gemini.
 Konfiguriši 💎 da ukazuje na tvoj Gem.
 Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s prioritetom privatnosti. Traži pristup samo gemini.google.com i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.

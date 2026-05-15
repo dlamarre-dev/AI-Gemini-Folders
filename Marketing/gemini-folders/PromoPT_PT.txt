@@ -11,6 +11,7 @@ Com a versão 4.0, Pastas Gemini torna-se o seu verdadeiro cockpit do Gemini: or
 💎 Link Gem personalizado: Configure um link para o seu Gem favorito e ative-o com um clique. Quando ativo, o botão "Nova conversa" abre o seu Gem em vez do chat predefinido.
 ☁️ Sincronização de prompts: Ative a sincronização na nuvem para a sua biblioteca de prompts, de forma independente das suas pastas.
 📌 Prompts fixos: Fixe os seus prompts essenciais com um clique para os manter no topo da biblioteca, separados dos restantes por um divisor visual.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 FUNÇÕES DE PASTAS
 
@@ -45,6 +46,7 @@ Clique em ➕ Adicionar Prompt, insira um título e o seu texto, e guarde.
 Para usar um prompt: expanda-o e clique em ▶ — é injetado diretamente no Gemini, pronto para enviar.
 Configure 💎 para apontar para o seu Gem personalizado.
 Para fixar um prompt: clique em 📍 — sobe para o topo da lista e fica sempre acessível.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVACIDADE E SEGURANÇA
 Desenvolvida com a privacidade no centro. Solicita acesso apenas a gemini.google.com e lê o separador ativo apenas ao guardar uma conversa ou injetar um prompt. A permissão "Marcadores" é usada apenas se ativar a sincronização móvel. Armazenamento via Chrome Sync: sem servidores de terceiros, sem telemetria.

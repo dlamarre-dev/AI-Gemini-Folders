@@ -11,6 +11,7 @@
 🔀 Бутони за нов разговор: Стартирайте нов разговор в ChatGPT, Claude, Copilot, Gemini или Perplexity директно от режима на подсказки — един бутон за услуга.
 ☁️ Синхронизиране на промпти: Активирайте синхронизиране в облака за библиотеката с промпти независимо от папките.
 📌 Закачени промпти: Закачете важни промпти в горната част на библиотеката.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 ФУНКЦИИ НА ПАПКИТЕ
 
@@ -48,6 +49,7 @@
 Кликнете ➕ Добави промпт, въведете заглавие и текст и запазете.
 За използване на промпт: разширете го и щракнете ▶ – вмъква се директно в активния AI.
 За закачване на промпт: щракнете 📍 – той се премества в горната част на списъка.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 ПОВЕРИТЕЛНОСТ И СИГУРНОСТ
 Изградено с приоритет на поверителността. Изисква достъп само до Gemini, Claude, ChatGPT, Copilot, Perplexity и чете активния раздел само при запазване на разговор или вмъкване на промпт. Разрешението «Отметки» се използва само ако активирате мобилна синхронизация. Съхранение чрез Chrome Sync: без сървъри на трети страни, без телеметрия.

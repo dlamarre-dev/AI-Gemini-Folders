@@ -11,6 +11,7 @@ Mape AI je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vse
 🔀 Gumbi za novo pogovor: Začnite nov pogovor na ChatGPT, Claude, Copilot, Gemini ali Perplexity neposredno iz načina pozivov — en gumb za vsako storitev.
 ☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
 📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 FUNKCIJE MAP
 
@@ -48,6 +49,7 @@ Klikni 📝 na stikalu zgoraj desno v razširitvi.
 Klikni ➕ Dodaj poziv, vnesi naslov in besedilo ter shrani.
 Za uporabo poziva: razširi ga in klikni ▶ – vstavi se neposredno v aktivni AI.
 Za pripenjanje poziva: klikni 📍 – premakne se na vrh seznama.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 ZASEBNOST IN VARNOST
 Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do Gemini, Claude, ChatGPT, Copilot, Perplexity in bere aktivni zavihek samo pri shranjevanju pogovora ali vstavljanju poziva. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek Chrome Sync: brez strežnikov tretjih oseb, brez telemetrije.

@@ -11,6 +11,7 @@ AI priečinky je váš zjednotený AI kokpit: organizujte konverzácie zo všetk
 🔀 Tlačidlá novej konverzácie: Spustite novú konverzáciu na ChatGPT, Claude, Copilot, Gemini alebo Perplexity priamo z režimu promptov — jedno tlačidlo na službu.
 ☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
 📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 FUNKCIE PRIEČINKOV
 
@@ -49,6 +50,7 @@ Kliknite na 📝 na prepínači v pravom hornom rohu rozšírenia.
 Kliknite na ➕ Pridať výzvu, zadajte názov a text, uložte.
 Ak chcete použiť výzvu: rozbaľte ju a kliknite na ▶ — vloží sa priamo do aktívnej AI, pripravená na odoslanie.
 Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vždy po ruke.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 SÚKROMIE A BEZPEČNOSŤ
 Navrhnuté so súkromím v centre. Vyžaduje prístup iba k Gemini, Claude, ChatGPT, Copilot, Perplexity a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.

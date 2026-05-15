@@ -11,6 +11,7 @@
 🔀 כפתורי שיחה חדשה: התחל שיחה חדשה ב-ChatGPT, Claude, Copilot, Gemini או Perplexity ישירות ממצב Prompt — כפתור אחד לכל שירות.
 ☁️ סנכרון פרומפטים: הפעל סנכרון ענן לספריית הפרומפטים ללא תלות בתיקיות.
 📌 פרומפטים נעוצים: נעץ פרומפטים חשובים לראש הספרייה.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 תכונות תיקיות
 
@@ -48,6 +49,7 @@
 לחץ ➕ הוסף פרומפט, הזן כותרת וטקסט ושמור.
 שימוש בפרומפט: הרחב אותו ולחץ ▶ – הוא מוזן ישירות ל-AI הפעיל, מוכן לשליחה.
 נעיצת פרומפט: לחץ 📍 – הוא עובר לראש הרשימה.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 פרטיות ואבטחה
 נבנה עם פרטיות כעדיפות. מבקש גישה רק ל-Gemini, Claude, ChatGPT, Copilot, Perplexity וקורא את הכרטיסייה הפעילה רק בעת שמירת שיחה או הזנת פרומפט. הרשאת «סימניות» משמשת רק אם מפעילים סנכרון נייד. אחסון דרך Chrome Sync: ללא שרתי צד שלישי, ללא טלמטריה.

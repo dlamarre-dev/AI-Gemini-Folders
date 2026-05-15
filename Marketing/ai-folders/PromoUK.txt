@@ -11,6 +11,7 @@
 🔀 Кнопки нової розмови: Розпочніть нову розмову на ChatGPT, Claude, Copilot, Gemini або Perplexity безпосередньо з режиму підказок — по одній кнопці на сервіс.
 ☁️ Синхронізація промптів: Увімкніть хмарну синхронізацію для бібліотеки промптів незалежно від тек.
 📌 Закріплені промпти: Закріпіть важливі промпти вгорі бібліотеки.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 ФУНКЦІЇ ТЕК
 
@@ -48,6 +49,7 @@
 Натисніть ➕ Додати промпт, введіть заголовок і текст, збережіть.
 Щоб використати промпт: розгорніть його та натисніть ▶ – він вставляється безпосередньо в активний ШІ.
 Щоб закріпити промпт: натисніть 📍 – він переміщується на початок списку.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 КОНФІДЕНЦІЙНІСТЬ І БЕЗПЕКА
 Побудовано з урахуванням конфіденційності. Запитує доступ лише до Gemini, Claude, ChatGPT, Copilot, Perplexity і зчитує активну вкладку тільки під час збереження розмови або вставки промпту. Дозвіл «Закладки» використовується лише при увімкненні мобільної синхронізації. Зберігання через Chrome Sync: жодних сторонніх серверів, жодної телеметрії.

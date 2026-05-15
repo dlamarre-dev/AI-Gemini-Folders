@@ -11,6 +11,7 @@
 🔀 ปุ่มการสนทนาใหม่: เริ่มการสนทนาใหม่บน ChatGPT, Claude, Copilot, Gemini หรือ Perplexity โดยตรงจากโหมดพรอมต์
 ☁️ ซิงค์พรอมต์: เปิดใช้งานการซิงค์คลาวด์สำหรับคลังพรอมต์ของคุณโดยอิสระจากโฟลเดอร์
 📌 พรอมต์ที่ปักหมุด: ปักหมุดพรอมต์สำคัญด้วยคลิกเดียวเพื่อให้อยู่ด้านบนของคลัง แยกจากส่วนที่เหลือด้วยตัวคั่นภาพ
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 ฟีเจอร์โฟลเดอร์
 
@@ -49,6 +50,7 @@
 คลิก ➕ เพิ่มพรอมต์ ป้อนชื่อและข้อความของคุณ และบันทึก
 การใช้พรอมต์: ขยายและคลิก ▶ จะแทรกโดยตรงใน AI ที่ใช้งานอยู่ พร้อมส่ง
 การปักหมุดพรอมต์: คลิก 📍 จะย้ายขึ้นด้านบนของรายการและเข้าถึงได้ง่าย
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 ความเป็นส่วนตัวและความปลอดภัย
 สร้างโดยมีความเป็นส่วนตัวเป็นแกนหลัก ขอสิทธิ์เข้าถึง Gemini, Claude, ChatGPT, Copilot, Perplexity เท่านั้น และอ่านแท็บที่ใช้งานอยู่เมื่อบันทึกการสนทนาหรือแทรกพรอมต์เท่านั้น สิทธิ์ "บุ๊กมาร์ก" ใช้เฉพาะเมื่อคุณเปิดใช้งานการซิงค์มือถือ พื้นที่เก็บข้อมูลผ่าน Chrome Sync: ไม่มีเซิร์ฟเวอร์บุคคลที่สาม ไม่มีการวัดและส่งผลข้อมูล

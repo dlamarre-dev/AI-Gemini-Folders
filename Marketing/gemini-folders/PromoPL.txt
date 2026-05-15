@@ -11,6 +11,7 @@ W wersji 4.0 Foldery Gemini stają się Twoim prawdziwym centrum sterowania Gemi
 💎 Niestandardowy link Gem: Skonfiguruj link do swojego ulubionego Gem i aktywuj go kliknięciem. Gdy jest aktywny, przycisk „Nowa rozmowa" otwiera Twój Gem zamiast domyślnego czatu.
 ☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
 📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 FUNKCJE FOLDERÓW
 
@@ -45,6 +46,7 @@ Kliknij ➕ Dodaj Prompt, wpisz tytuł i tekst, zapisz.
 Aby użyć promptu: rozwiń go i kliknij ▶ — zostaje wstrzyknięty bezpośrednio do Gemini, gotowy do wysłania.
 Skonfiguruj 💎, aby wskazywał Twój niestandardowy Gem.
 Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jest zawsze pod ręką.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 PRYWATNOŚĆ I BEZPIECZEŃSTWO
 Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do gemini.google.com i odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez Chrome Sync: bez serwerów zewnętrznych, bez telemetrii.

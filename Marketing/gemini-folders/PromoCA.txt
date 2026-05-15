@@ -11,6 +11,7 @@ Amb la versió 4.0, Carpetes Gemini és el teu veritable cockpit de Gemini: orga
 💎 Enllaç Gem personalitzat: Configura un enllaç al teu Gem favorit i activa'l/desactiva'l amb un clic.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
 📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 FUNCIONS DE CARPETES
 
@@ -43,6 +44,7 @@ Fes clic a ➕ Afegeix un prompt, introdueix un títol i el teu text, i desa.
 Per utilitzar un prompt: expandeix-lo i fes clic a ▶ – s'injecta directament a Gemini.
 Configura 💎 per apuntar al teu Gem.
 Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVACITAT I SEGURETAT
 Construït amb la privacitat com a prioritat. Només sol·licita accés a gemini.google.com i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
