@@ -45,8 +45,11 @@
 
     const triggerName = currentText.slice(1);
 
-    // Suppress the space now; restore it below if no prompt matches.
+    // Stop propagation synchronously (before the await) so app-level React handlers
+    // (Open WebUI # command picker, Perplexity # tokenizer, etc.) never see this
+    // Space keydown and can't transform the editor content before our injection runs.
     e.preventDefault();
+    e.stopImmediatePropagation();
 
     let matched = false;
     try {
