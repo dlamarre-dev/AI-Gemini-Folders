@@ -57,4 +57,5 @@ Gemini, Claude, ChatGPT, Copilot, Perplexity에서 대화를 엽니다.
 AI 폴더는 열정으로 개발된 오픈소스 프로젝트입니다. 투명성과 개인정보 존중이 최우선입니다. 개발자이거나 단순히 궁금하신가요? 코드 확인, 변경 이력 추적, 또는 GitHub에서 기여하세요: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 업데이트:
+버전 1.0.1: 사소한 버그 수정 및 안정성 개선.
 버전 1.0: 첫 출시! Gemini, Claude, ChatGPT, Copilot, Perplexity의 대화를 공유 폴더에 정리하세요. 클릭 한 번으로 삽입 가능한 완전한 프롬프트 라이브러리, 빠른 저장 단축키, 드래그 앤 드롭, 모바일 동기화, 일괄 작업, 탭 그룹, 43개 언어 지원. 설정 가능한 URL(localhost 및 LAN 주소)로 로컬 LLM 지원.

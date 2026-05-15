@@ -56,4 +56,5 @@ Dibina dengan mengutamakan privasi. Hanya meminta akses ke Gemini, Claude, ChatG
 Folder AI ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelusan dan penghormatan terhadap privasi anda adalah keutamaan tertinggi kami. Anda pembangun atau sekadar ingin tahu? Semak kod, ikuti log perubahan atau sumbang di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 KEMAS KINI:
+Versi 1.0.1: Pembetulan pepijat kecil dan penambahbaikan kestabilan.
 Versi 1.0: Keluaran pertama! Susun perbualan dari Gemini, Claude, ChatGPT, Copilot dan Perplexity dalam folder berkongsi. Pustaka arahan lengkap dengan suntikan satu klik, pintasan simpan pantas, seret dan lepas, penyegerakan mudah alih, tindakan pukal, kumpulan tab dan sokongan untuk 43 bahasa.

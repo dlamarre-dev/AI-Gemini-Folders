@@ -57,4 +57,5 @@ Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, Cha
 Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AGGIORNAMENTI:
+Versione 1.0.1: Correzioni minori di bug e miglioramenti alla stabilità.
 Versione 1.0: Prima pubblicazione! Organizza conversazioni da Gemini, Claude, ChatGPT, Copilot e Perplexity in cartelle condivise. Libreria prompt completa con iniezione in un clic, scorciatoie di salvataggio rapido, drag & drop, sincronizzazione mobile, azioni in blocco, gruppi di schede e supporto per 43 lingue. Supporto LLM locale con URL configurabile (localhost e indirizzi LAN).

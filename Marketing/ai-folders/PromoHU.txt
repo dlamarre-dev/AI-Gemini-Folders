@@ -57,4 +57,5 @@ Az adatvédelmet alapelvként kezelve fejlesztve. Csak a Gemini, Claude, ChatGPT
 A MI mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az átláthatóság és az adatvédelem tiszteletben tartása a legfontosabb prioritásaink. Fejlesztő, vagy csak kíváncsi? Böngéssze a kódot, kövesse a változásnaplót, vagy járuljon hozzá a GitHubon: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 FRISSÍTÉSEK:
+1.0.1-es verzió: Kisebb hibajavítások és stabilitási fejlesztések.
 1.0-s verzió: Első kiadás! Rendszerezze a Gemini, Claude, ChatGPT, Copilot és Perplexity beszélgetéseit közös mappákban. Teljes prompt-könyvtár egy kattintásos beillesztéssel, gyors mentési parancsikonok, húzás és ejtés, mobilszinkronizáció, tömeges műveletek, lapcsoportok és 43 nyelv támogatása.

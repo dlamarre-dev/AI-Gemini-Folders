@@ -57,4 +57,5 @@ Gemini, Claude, ChatGPT, Copilot, Perplexity で会話を開きます。
 AI フォルダは情熱を持って開発されたオープンソースプロジェクトです。透明性とプライバシーの尊重が最優先事項です。開発者または単純に好奇心旺盛な方は？コードを確認、変更履歴を追跡、または GitHub でコントリビュート：https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 アップデート：
+バージョン 1.0.1：軽微なバグ修正と安定性の改善。
 バージョン 1.0: 初回リリース！Gemini、Claude、ChatGPT、Copilot、Perplexity の会話を共有フォルダに整理できます。ワンクリック注入対応の完全なプロンプトライブラリ、クイックセーブショートカット、ドラッグ＆ドロップ、モバイル同期、一括操作、タブグループ、43言語サポート。設定可能なURL（localhostとLANアドレス）でローカルLLMにも対応。

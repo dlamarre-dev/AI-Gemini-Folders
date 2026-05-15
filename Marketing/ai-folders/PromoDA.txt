@@ -57,4 +57,5 @@ Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til Gemini, Clau
 AI-mapper er et open source-projekt bygget med passion. Gennemsigtighed og respekt for dit privatliv er vores højeste prioriteter. Er du en udvikler eller bare nysgerrig? Gennemse koden, følg ændringsloggen eller bidrag på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 OPDATERINGER:
+Version 1.0.1: Mindre fejlrettelser og stabilitetsforbedringer.
 Version 1.0: Første udgivelse! Organiser samtaler fra Gemini, Claude, ChatGPT, Copilot og Perplexity i delte mapper. Komplet prompt-bibliotek med ét-klik-injektion, genveje til hurtig lagring, træk og slip, mobilsynkronisering, massehandlinger, fanegrupper og understøttelse af 43 sprog.
