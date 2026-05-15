@@ -5,6 +5,74 @@
 // 2,500 chars × 3 + key overhead ≈ 7,512 bytes — well under the 8,192 limit.
 const SYNC_CHUNK_SIZE = 2500;
 
+// Shared emoji-prefix regex — matches one leading emoji (with optional variation selector)
+// followed by optional whitespace. Used to extract custom folder icons.
+const EMOJI_PREFIX_REGEX = /^((?:\p{Emoji_Presentation}|\p{Extended_Pictographic})️?)\s*/u;
+
+// Brief delay after removing Chrome bookmarks before rebuilding the tree, to let
+// the browser propagate the deletion before new nodes are created.
+const BOOKMARK_PROPAGATION_DELAY = 50;
+
+// ---------------------------------------------------------------------------
+// Storage chunk helpers
+// ---------------------------------------------------------------------------
+
+// Reassemble a value stored as prefix+0, prefix+1 … prefix+N chunks.
+// Returns null when no chunks exist (caller falls back to legacy single-key format).
+function assembleChunks(source, prefix) {
+  const n = source[prefix + 'N'];
+  if (n === undefined) return null;
+  let result = '';
+  for (let i = 0; i < n; i++) result += (source[prefix + i] || '');
+  return result || null;
+}
+
+// Split a compressed string into a chunk object ready to merge into syncToSet.
+function makeChunks(compressed, prefix) {
+  const n = Math.ceil(compressed.length / SYNC_CHUNK_SIZE) || 1;
+  const obj = { [prefix + 'N']: n };
+  for (let i = 0; i < n; i++) {
+    obj[prefix + i] = compressed.slice(i * SYNC_CHUNK_SIZE, (i + 1) * SYNC_CHUNK_SIZE);
+  }
+  return obj;
+}
+
+// ---------------------------------------------------------------------------
+// Sorting helpers (shared by folders.js and syncToBookmarksTree)
+// ---------------------------------------------------------------------------
+
+function sortFolderNames(folders, pinnedFolders, sortPref) {
+  const pinned = pinnedFolders || [];
+  const getFolderTime = (name) => {
+    const chats = folders[name];
+    if (!chats || chats.length === 0) return 0;
+    if (sortPref === 'dateDesc') return Math.max(...chats.map(c => c.timestamp || 0));
+    return Math.min(...chats.map(c => c.timestamp || Date.now()));
+  };
+  return Object.keys(folders).sort((a, b) => {
+    const aPinned = pinned.includes(a);
+    const bPinned = pinned.includes(b);
+    if (aPinned !== bPinned) return bPinned ? 1 : -1;
+    if (sortPref === 'alphaAsc') return a.localeCompare(b);
+    const timeA = getFolderTime(a);
+    const timeB = getFolderTime(b);
+    if (sortPref === 'dateDesc') return timeB - timeA;
+    if (sortPref === 'dateAsc') return timeA - timeB;
+    return a.localeCompare(b);
+  });
+}
+
+function sortChats(chats, sortPref) {
+  return [...chats].sort((a, b) => {
+    const tA = a.timestamp || 0;
+    const tB = b.timestamp || 0;
+    if (sortPref === 'dateDesc') return tB - tA;
+    if (sortPref === 'dateAsc') return tA - tB;
+    if (sortPref === 'alphaAsc') return (a.title || '').localeCompare(b.title || '');
+    return 0;
+  });
+}
+
 function loadData(defaults, callback) {
   chrome.storage.sync.get(null, (syncResult) => {
     chrome.storage.local.get(null, (localResult) => {
@@ -19,14 +87,10 @@ function loadData(defaults, callback) {
         }
 
         // 1. Folders — chunked format (fdcN + fdc0..N) or legacy single key
-        let rawFoldersData = null;
-        if (syncResult.fdcN !== undefined) {
-          let assembled = '';
-          for (let i = 0; i < syncResult.fdcN; i++) assembled += (syncResult['fdc' + i] || '');
-          rawFoldersData = assembled || null;
-        } else {
-          rawFoldersData = syncResult.foldersDataCompressed || syncResult.folders;
-        }
+        const rawFoldersData = assembleChunks(syncResult, 'fdc')
+          ?? syncResult.foldersDataCompressed
+          ?? syncResult.folders
+          ?? null;
 
         if (rawFoldersData) {
           if (typeof rawFoldersData === 'string') {
@@ -45,18 +109,9 @@ function loadData(defaults, callback) {
 
         // 2. Prompts — chunked sync (pdcN + pdc0..N), legacy sync key, or local
         const syncPromptsEnabled = syncResult.syncPromptsEnabled === true;
-        let rawPromptsData = null;
-        if (syncPromptsEnabled) {
-          if (syncResult.pdcN !== undefined) {
-            let assembled = '';
-            for (let i = 0; i < syncResult.pdcN; i++) assembled += (syncResult['pdc' + i] || '');
-            rawPromptsData = assembled || null;
-          } else if (syncResult.promptsDataCompressed || syncResult.prompts) {
-            rawPromptsData = syncResult.promptsDataCompressed || syncResult.prompts;
-          }
-        } else if (localResult.promptsDataCompressed || localResult.prompts) {
-          rawPromptsData = localResult.promptsDataCompressed || localResult.prompts;
-        }
+        const rawPromptsData = syncPromptsEnabled
+          ? (assembleChunks(syncResult, 'pdc') ?? syncResult.promptsDataCompressed ?? syncResult.prompts ?? null)
+          : (localResult.promptsDataCompressed ?? localResult.prompts ?? null);
 
         if (rawPromptsData) {
           if (typeof rawPromptsData === 'string') {
@@ -101,14 +156,10 @@ function saveData(dataToSave, callback) {
     // --- Folders → sync, split into chunks to stay under kQuotaBytesPerItem (8 192 B) ---
     if (dataToSave.folders) {
       const compressed = LZString.compressToUTF16(JSON.stringify(dataToSave.folders));
-      const newN = Math.ceil(compressed.length / SYNC_CHUNK_SIZE) || 1;
-      const oldN = syncState.fdcN || 0;
-      syncToSet.fdcN = newN;
-      for (let i = 0; i < newN; i++) {
-        syncToSet['fdc' + i] = compressed.slice(i * SYNC_CHUNK_SIZE, (i + 1) * SYNC_CHUNK_SIZE);
-      }
-      for (let i = newN; i < oldN; i++) syncToRemove.push('fdc' + i); // stale chunks
-      syncToRemove.push('foldersDataCompressed', 'folders');            // legacy keys
+      Object.assign(syncToSet, makeChunks(compressed, 'fdc'));
+      const newN = syncToSet.fdcN;
+      for (let i = newN; i < (syncState.fdcN || 0); i++) syncToRemove.push('fdc' + i);
+      syncToRemove.push('foldersDataCompressed', 'folders');
     }
 
     // --- Prompts → sync (chunked) if enabled, otherwise local (no per-item limit) ---
@@ -118,13 +169,9 @@ function saveData(dataToSave, callback) {
       chrome.storage.local.remove(['prompts']);
 
       if (isPromptsSyncEnabled) {
-        const newN = Math.ceil(compressed.length / SYNC_CHUNK_SIZE) || 1;
-        const oldN = syncState.pdcN || 0;
-        syncToSet.pdcN = newN;
-        for (let i = 0; i < newN; i++) {
-          syncToSet['pdc' + i] = compressed.slice(i * SYNC_CHUNK_SIZE, (i + 1) * SYNC_CHUNK_SIZE);
-        }
-        for (let i = newN; i < oldN; i++) syncToRemove.push('pdc' + i);
+        Object.assign(syncToSet, makeChunks(compressed, 'pdc'));
+        const newN = syncToSet.pdcN;
+        for (let i = newN; i < (syncState.pdcN || 0); i++) syncToRemove.push('pdc' + i);
         syncToRemove.push('promptsDataCompressed'); // remove legacy sync key
         // Defer local cleanup: only delete local copy after sync confirms success.
         localCleanupAfterSync.push('promptsDataCompressed');
@@ -156,7 +203,10 @@ function saveData(dataToSave, callback) {
       chrome.storage.local.set(localToSet, () => {
         if (chrome.runtime.lastError) {
           console.error("Local storage write failed:", chrome.runtime.lastError);
-          alert("Storage Error (local): " + chrome.runtime.lastError.message);
+          const localErrMsg = "Storage Error (local): " + chrome.runtime.lastError.message;
+          if (typeof window !== 'undefined' && window.showCustomModal) {
+            window.showCustomModal({ title: localErrMsg, type: 'alert' });
+          } else { console.warn(localErrMsg); }
           if (callback) callback();
           return;
         }
@@ -213,47 +263,19 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
     }
 
     // Brief delay to let bookmark removals propagate before rebuilding the tree
-    await new Promise(r => setTimeout(r, 50));
+    await new Promise(r => setTimeout(r, BOOKMARK_PROPAGATION_DELAY));
 
     // 4. Master folder creation
     const masterNode = await new Promise(r => chrome.bookmarks.create({ title: MASTER_FOLDER_NAME }, r));
 
-    // --- DYNAMIC SORTING ---
-    let finalOrder = Object.keys(folders).sort((a, b) => {
-      const aPinned = pinnedFolders.includes(a);
-      const bPinned = pinnedFolders.includes(b);
-
-      if (aPinned && !bPinned) return -1;
-      if (!aPinned && bPinned) return 1;
-
-      if (sortPref === 'alphaAsc') {
-        return a.localeCompare(b);
-      } else {
-        const getFolderTime = (folderName) => {
-          const chatsList = folders[folderName];
-          if (!chatsList || chatsList.length === 0) return 0;
-          if (sortPref === 'dateDesc') return Math.max(...chatsList.map(c => c.timestamp || 0));
-          return Math.min(...chatsList.map(c => c.timestamp || Date.now()));
-        };
-        const timeA = getFolderTime(a);
-        const timeB = getFolderTime(b);
-        if (sortPref === 'dateDesc') return timeB - timeA;
-        if (sortPref === 'dateAsc') return timeA - timeB;
-      }
-      return a.localeCompare(b);
-    });
-
-    // 5. Folder and bookmark creation loop
+    // 5. Folder and bookmark creation loop (sorted)
+    const finalOrder = sortFolderNames(folders, pinnedFolders, sortPref);
     for (let i = 0; i < finalOrder.length; i++) {
       const folderName = finalOrder[i];
-      let displayFolderName = folderName;
-
-      const emojiRegex = /^((?:\p{Emoji_Presentation}|\p{Extended_Pictographic})\uFE0F?)\s*/u;
-      const match = folderName.match(emojiRegex);
-      if (match) {
-        const restOfString = folderName.slice(match[0].length);
-        displayFolderName = `${match[1]} ${restOfString}`;
-      }
+      const match = folderName.match(EMOJI_PREFIX_REGEX);
+      const displayFolderName = match
+        ? `${match[1]} ${folderName.slice(match[0].length)}`
+        : folderName;
 
       const folderNode = await new Promise(r => chrome.bookmarks.create({
         parentId: masterNode.id,
@@ -261,16 +283,7 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
         index: i
       }, r));
 
-      // Sort conversations
-      let chats = [...folders[folderName]];
-      chats.sort((a, b) => {
-        const timeA = a.timestamp || 0;
-        const timeB = b.timestamp || 0;
-        if (sortPref === 'dateDesc') return timeB - timeA;
-        if (sortPref === 'dateAsc') return timeA - timeB;
-        if (sortPref === 'alphaAsc') return a.title.localeCompare(b.title);
-        return 0;
-      });
+      const chats = sortChats(folders[folderName], sortPref);
 
       for (let j = 0; j < chats.length; j++) {
         const chat = chats[j];
@@ -387,6 +400,11 @@ function mergeImportData(importedData) {
 
 if (typeof module !== 'undefined') {
   module.exports = {
+    EMOJI_PREFIX_REGEX,
+    assembleChunks,
+    makeChunks,
+    sortFolderNames,
+    sortChats,
     loadData,
     saveData,
     finishSave,

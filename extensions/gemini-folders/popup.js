@@ -3,7 +3,20 @@ function parseSVG(svgString) {
   return new DOMParser().parseFromString(svgString, 'image/svg+xml').documentElement;
 }
 
+function autoResize(ta) {
+  ta.style.height = 'auto';
+  ta.style.height = Math.min(ta.scrollHeight, 200) + 'px';
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
+  const DELAY = {
+    FOCUS:    100,
+    SYNC:     500,
+    AUTOSAVE: 600,
+    ICON:    1500,
+    STATUS:  2000,
+    PROMO:   4000,
+  };
   // RTL support — set dir="rtl" on body (not html) to avoid scroll-origin issues
   const uiLang = chrome.i18n.getUILanguage();
   if (['ar', 'he', 'ur', 'fa'].some(l => uiLang.startsWith(l))) {
@@ -142,7 +155,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       gemPressTimer = setTimeout(() => {
           gemPressTimer = null;
           openGemModal();
-      }, 600);
+      }, DELAY.AUTOSAVE);
   });
 
   gemBtn.addEventListener('mouseup', () => {
@@ -182,7 +195,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   chrome.storage.sync.get(['syncPromptsEnabled'], (res) => {
                       syncPromptsToggle.checked = !!res.syncPromptsEnabled;
                   });
-              }, 500);
+              }, DELAY.SYNC);
           });
       });
   });
@@ -247,63 +260,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       chrome.tabs.create({ url: url });
   });
 
-  function displayPrompts() {
-      const searchQuery = (document.getElementById('promptSearchInput')?.value || '').toLowerCase().trim();
-      loadData({ prompts: {}, openPrompts: [], promptSortPref: 'dateDesc' }, (data) => {
-          promptListDiv.replaceChildren();
-          const prompts = data.prompts;
-          const openPrompts = data.openPrompts;
-          const sortPref = data.promptSortPref;
-
-          let titles = Object.keys(prompts);
-          if (searchQuery) {
-              titles = titles.filter(t =>
-                  t.toLowerCase().includes(searchQuery) ||
-                  (prompts[t].text || '').toLowerCase().includes(searchQuery)
-              );
-          }
-          titles.sort((a, b) => {
-              const aPinned = !!prompts[a].pinned;
-              const bPinned = !!prompts[b].pinned;
-              if (aPinned !== bPinned) return bPinned ? 1 : -1;
-              if (sortPref === 'alphaAsc') return a.localeCompare(b);
-              if (sortPref === 'dateAsc') return (prompts[a].timestamp || 0) - (prompts[b].timestamp || 0);
-              return (prompts[b].timestamp || 0) - (prompts[a].timestamp || 0);
-          });
-          
-          if (titles.length === 0) {
-              const emptyMsg = document.createElement('div');
-              emptyMsg.style.cssText = 'text-align: center; color: var(--muted-text); font-size: 13px;';
-              emptyMsg.textContent = chrome.i18n.getMessage("promptNoSavedYet") || 'No prompts saved yet.';
-              promptListDiv.replaceChildren(emptyMsg);
-              return;
-          }
-
-          let hasPinned = false;
-          let transitionDone = false;
-
-          titles.forEach(title => {
-              const p = prompts[title];
-              if (p.pinned) hasPinned = true;
-              if (!p.pinned && hasPinned && !transitionDone && !searchQuery) {
-                  const divider = document.createElement('hr');
-                  divider.className = 'pin-divider';
-                  promptListDiv.appendChild(divider);
-                  transitionDone = true;
-              }
-
-              const item = document.createElement('div');
-              item.className = 'prompt-item' + (p.pinned ? ' prompt-item--pinned' : '');
-
-              const header = document.createElement('div');
-              header.className = 'prompt-header';
-
-              const titleEl = document.createElement('div');
-              titleEl.className = 'prompt-title';
-              titleEl.textContent = title;
-
-              const actions = document.createElement('div');
-              actions.className = 'prompt-actions';
+  function buildPromptItem(title, p, openPrompts) {
+      const item = document.createElement('div');
+      item.className = 'prompt-item' + (p.pinned ? ' prompt-item--pinned' : '');
+      const header = document.createElement('div');
+      header.className = 'prompt-header';
+      const titleEl = document.createElement('div');
+      titleEl.className = 'prompt-title';
+      titleEl.textContent = title;
+      const actions = document.createElement('div');
+      actions.className = 'prompt-actions';
 
               const pinBtn = document.createElement('button');
               pinBtn.className = `action-btn pin-btn ${p.pinned ? 'is-pinned' : ''}`;
@@ -364,7 +330,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   });
                   if (results?.[0]?.result) {
                       sendBtn.textContent = '✅';
-                      setTimeout(() => { sendBtn.replaceChildren(parseSVG(sendSVG)); }, 1500);
+                      setTimeout(() => { sendBtn.replaceChildren(parseSVG(sendSVG)); }, DELAY.ICON);
                   } else {
                       window.showCustomModal({
                           title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
@@ -382,7 +348,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   e.stopPropagation();
                   navigator.clipboard.writeText(textArea.value);
                   copyBtn.textContent = '✅';
-                  setTimeout(() => { copyBtn.replaceChildren(parseSVG(copySVG)); }, 1500);
+                  setTimeout(() => { copyBtn.replaceChildren(parseSVG(copySVG)); }, DELAY.ICON);
               });
 
               const renameBtn = document.createElement('button');
@@ -454,11 +420,6 @@ document.addEventListener('DOMContentLoaded', async () => {
               textArea.setAttribute('writingsuggestions', 'false');
               textArea.setAttribute('spellcheck', 'false');
 
-              function autoResize(ta) {
-                  ta.style.height = 'auto';
-                  ta.style.height = Math.min(ta.scrollHeight, 200) + 'px';
-              }
-
               let saveTimeout;
               textArea.addEventListener('input', () => {
                   autoResize(textArea);
@@ -471,7 +432,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                               saveData({ prompts: data.prompts });
                           }
                       });
-                  }, 600);
+                  }, DELAY.AUTOSAVE);
               });
 
               textArea.addEventListener('click', (e) => e.stopPropagation());
@@ -495,14 +456,53 @@ document.addEventListener('DOMContentLoaded', async () => {
                   });
               });
 
-              item.appendChild(header);
-              item.appendChild(textArea);
-              promptListDiv.appendChild(item);
-              if (isPromptOpen) autoResize(textArea);
+      item.appendChild(header);
+      item.appendChild(textArea);
+      if (isPromptOpen) autoResize(textArea);
+      return item;
+  }
+
+  function displayPrompts() {
+      const searchQuery = (document.getElementById('promptSearchInput')?.value || '').toLowerCase().trim();
+      loadData({ prompts: {}, openPrompts: [], promptSortPref: 'dateDesc' }, (data) => {
+          promptListDiv.replaceChildren();
+          const { prompts, openPrompts, promptSortPref: sortPref } = data;
+          let titles = Object.keys(prompts);
+          if (searchQuery) {
+              titles = titles.filter(t =>
+                  t.toLowerCase().includes(searchQuery) ||
+                  (prompts[t].text || '').toLowerCase().includes(searchQuery)
+              );
+          }
+          titles.sort((a, b) => {
+              const aPinned = !!prompts[a].pinned;
+              const bPinned = !!prompts[b].pinned;
+              if (aPinned !== bPinned) return bPinned ? 1 : -1;
+              if (sortPref === 'alphaAsc') return a.localeCompare(b);
+              if (sortPref === 'dateAsc') return (prompts[a].timestamp || 0) - (prompts[b].timestamp || 0);
+              return (prompts[b].timestamp || 0) - (prompts[a].timestamp || 0);
+          });
+          if (titles.length === 0) {
+              const emptyMsg = Object.assign(document.createElement('div'), {
+                  style: 'text-align:center;color:var(--muted-text);font-size:13px;',
+                  textContent: chrome.i18n.getMessage("promptNoSavedYet") || 'No prompts saved yet.',
+              });
+              promptListDiv.replaceChildren(emptyMsg);
+              return;
+          }
+          let hasPinned = false, transitionDone = false;
+          titles.forEach(title => {
+              const p = prompts[title];
+              if (p.pinned) hasPinned = true;
+              if (!p.pinned && hasPinned && !transitionDone && !searchQuery) {
+                  promptListDiv.appendChild(Object.assign(document.createElement('hr'), { className: 'pin-divider' }));
+                  transitionDone = true;
+              }
+              promptListDiv.appendChild(buildPromptItem(title, p, openPrompts));
           });
       });
   }
-  
+
   window.displayPrompts = displayPrompts;
 
   // --- Prompt Search ---
@@ -730,7 +730,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           statusDiv.textContent = chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.';
           statusDiv.style.color = 'red';
           statusDiv.style.display = "block";
-          setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, 4000);
+          setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, DELAY.PROMO);
           return;
         }
         folderNameInput.value = "";
@@ -738,7 +738,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         toggleAddPanelBtn.textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");
         searchInput.value = "";
         statusDiv.style.display = "block";
-        setTimeout(() => { statusDiv.style.display = "none"; }, 2000);
+        setTimeout(() => { statusDiv.style.display = "none"; }, DELAY.STATUS);
         if (window.displayFolders) window.displayFolders(folderName);
       });
     });
