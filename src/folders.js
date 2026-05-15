@@ -19,52 +19,14 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
     let hasResults = false;
 
     // Folder sorting
-    const sortedFolderNames = Object.keys(folders).sort((a, b) => {
-      const aPinned = pinnedFolders.includes(a);
-      const bPinned = pinnedFolders.includes(b);
-
-      // Pinned first
-      if (aPinned && !bPinned) return -1;
-      if (!aPinned && bPinned) return 1;
-
-      if (sortPref === 'alphaAsc') {
-        return a.localeCompare(b);
-      } else {
-        // Sort by date
-        const getFolderTime = (folderName) => {
-          const chats = folders[folderName];
-          if (!chats || chats.length === 0) return 0;
-
-          if (sortPref === 'dateDesc') return Math.max(...chats.map(c => c.timestamp || 0));
-          return Math.min(...chats.map(c => c.timestamp || Date.now()));
-        };
-
-        const timeA = getFolderTime(a);
-        const timeB = getFolderTime(b);
-
-        if (sortPref === 'dateDesc') return timeB - timeA;
-        if (sortPref === 'dateAsc') return timeA - timeB;
-      }
-
-      return a.localeCompare(b); // Fallback
-    });
+    const sortedFolderNames = sortFolderNames(folders, pinnedFolders, sortPref);
 
     let hasPinned = false;
     let transitionDone = false;
 
     sortedFolderNames.forEach((folderName) => {
-      let chats = folders[folderName];
-
-      if (!chats || !Array.isArray(chats)) return;
-
-      chats.sort((a, b) => {
-        const timeA = a.timestamp || 0;
-        const timeB = b.timestamp || 0;
-        if (sortPref === 'dateDesc') return timeB - timeA;
-        if (sortPref === 'dateAsc') return timeA - timeB;
-        if (sortPref === 'alphaAsc') return a.title.localeCompare(b.title);
-        return 0;
-      });
+      if (!Array.isArray(folders[folderName])) return;
+      const chats = sortChats(folders[folderName], sortPref);
 
       const folderMatches = folderName.toLowerCase().includes(searchTerm);
       const matchingChats = chats.filter(chat => chat.title.toLowerCase().includes(searchTerm));
@@ -115,16 +77,9 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
       leftPart.style.display = 'flex';
 
       // --- Different folder icon if empty (📁) or full (🗂️) ---
-      const emojiRegex = /^((?:\p{Emoji_Presentation}|\p{Extended_Pictographic})\uFE0F?)\s*/u;
-      const match = folderName.match(emojiRegex);
-
-      let customIcon = null;
-      let displayName = folderName;
-
-      if (match) {
-        customIcon = match[1];
-        displayName = folderName.replace(emojiRegex, '');
-      }
+      const match = folderName.match(EMOJI_PREFIX_REGEX);
+      const customIcon = match ? match[1] : null;
+      const displayName = match ? folderName.replace(EMOJI_PREFIX_REGEX, '') : folderName;
 
       const isEmpty = chats.length === 0;
       // If there is a custom emoji we use it, otherwise default.
@@ -555,6 +510,14 @@ async function openFolderInTabGroup(folderName, chats) {
 window.displayFolders = displayFolders;
 
 if (typeof module !== 'undefined') {
+  // In Node/Jest the sort helpers are globals in the browser (from utils.js),
+  // but not available in module scope — pull them from utils for test compatibility.
+  const _u = require('./utils');
+  /* global sortFolderNames, sortChats, EMOJI_PREFIX_REGEX */
+  if (typeof sortFolderNames === 'undefined') global.sortFolderNames = _u.sortFolderNames;
+  if (typeof sortChats === 'undefined') global.sortChats = _u.sortChats;
+  if (typeof EMOJI_PREFIX_REGEX === 'undefined') global.EMOJI_PREFIX_REGEX = _u.EMOJI_PREFIX_REGEX;
+
   module.exports = {
     displayFolders,
     renameChat,

@@ -53,10 +53,9 @@ async function updateContextMenu() {
       }
 
       folderNames.sort().forEach(folder => {
-        const emojiRegex = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})\s*/u;
-        const match = folder.match(emojiRegex);
+        const match = folder.match(EMOJI_PREFIX_REGEX);
         const menuTitle = match
-          ? `${match[1]} ${folder.replace(emojiRegex, '')}`
+          ? `${match[1]} ${folder.replace(EMOJI_PREFIX_REGEX, '')}`
           : `📁 ${folder}`;
 
         chrome.contextMenus.create({

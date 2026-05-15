@@ -89,8 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       loadData({ folders: {} }, (data) => {
         Object.keys(data.folders).sort().forEach(folder => {
-          const emojiRegex = /^((?:\p{Emoji_Presentation}|\p{Extended_Pictographic})️?)\s*/u;
-          const hasCustomEmoji = emojiRegex.test(folder);
+          const hasCustomEmoji = EMOJI_PREFIX_REGEX.test(folder);
           const iconPrefix = hasCustomEmoji ? '' : '📁 ';
 
           const li = document.createElement('li');

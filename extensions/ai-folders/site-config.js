@@ -81,13 +81,16 @@ Object.values(SITES).forEach(site => {
 // any URL sharing the same origin (scheme+host+port) is matched as 'local'.
 function getSiteByUrl(url, localUrl) {
   if (!url) return null;
-  if (localUrl) {
-    try {
-      if (new URL(url).origin === new URL(localUrl).origin) return 'local';
-    } catch (_) {}
+  let hostname;
+  try {
+    const parsed = new URL(url);
+    hostname = parsed.hostname;
+    if (localUrl && parsed.origin === new URL(localUrl).origin) return 'local';
+  } catch (_) {
+    return null;
   }
   for (const [key, site] of Object.entries(SITES)) {
-    if (site.domain && url.includes(site.domain)) return key;
+    if (site.domain && (hostname === site.domain || hostname.endsWith('.' + site.domain))) return key;
   }
   return null;
 }
