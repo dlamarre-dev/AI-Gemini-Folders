@@ -11,7 +11,7 @@ AI kaustad on teie ühtne AI-juhtimiskeskus: korraldage kõigi AI-tööriistade 
 🔀 Uue vestluse nupud: Alustage uut vestlust ChatGPT-s, Claudes, Copilotis, Geminis või Perplexitys otse viipade režiimist — üks nupp teenuse kohta.
 ☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
 📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ Prompti käivitamise kiirklahvid: Sisestage #PromptName mis tahes toetatud AI vestlusväljale ja vajutage Tühik, et vastav salvestatud prompt kohe lisada — ilma laienduse paneeli avamata. Töötab kõikide teenustega, sealhulgas kohalike LLM-idega.
 
 🌟 KAUSTADE FUNKTSIOONID
 
@@ -49,7 +49,7 @@ Klõpsa 📝 laienduse paremas ülanurgas asuval lülitil.
 Klõpsa ➕ Lisa prompt, sisesta pealkiri ja tekst ning salvesta.
 Prompti kasutamiseks: laienda see ja klõpsa ▶ – see lisatakse otse aktiivsesse AI-sse.
 Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+Prompti käivitamine: sisestage #PromptName mis tahes AI vestlusväljale ja vajutage Tühik — prompt lisatakse kohe.
 
 🔒 PRIVAATSUS JA TURVALISUS
 Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult Gemini, Claude, ChatGPT, Copilot, Perplexity-ile ja loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.
@@ -58,5 +58,6 @@ Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult Gemini, Claude,
 AI kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 UUENDUSED:
+Versioon 1.1 (Prompti käivitamise kiirklahvid): Sisestage #PromptName mis tahes AI vestlusväljale ja vajutage Tühik, et salvestatud prompt kohe lisada — ilma laienduse paneeli avamata. Töötab kõikide toetatud teenustega, sealhulgas kohalike LLM-idega.
 Versioon 1.0.1: Väiksemad veaparandused ja stabiilsuse parandused.
 Versioon 1.0: Esimene väljalase! Korraldage Gemini, Claude, ChatGPT, Copilot ja Perplexity vestlused jagatud kaustadesse. Täielik viipade teek ühe klõpsuga lisamisega, kiirsalvestuse otseteed, lohistamine, mobiilsünkroniseerimine, hulgioperatsioonid, vahelehtede rühmad ja tugi 43 keelele.

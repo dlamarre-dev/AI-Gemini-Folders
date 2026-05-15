@@ -49,7 +49,7 @@ Klik på 📝 på justeringsknappen øverst til højre i udvidelsen.
 Klik ➕ Tilføj prompt, indtast titel og tekst og gem.
 Brug af en prompt: udvid den og klik ▶ – den indsættes direkte i den aktive AI, klar til at sende.
 Fastgørelse af en prompt: klik 📍 – den flyttes øverst på listen og er altid let at finde.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+Promptudløser: skriv #PromptName i et hvilket som helst AI-chatfelt og tryk på Mellemrum — prompten indsættes med det samme.
 
 🔒 PRIVATLIV OG SIKKERHED
 Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til Gemini, Claude, ChatGPT, Copilot, Perplexity og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
@@ -58,6 +58,6 @@ Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til Gemini, Clau
 AI-mapper er et open source-projekt bygget med passion. Gennemsigtighed og respekt for dit privatliv er vores højeste prioriteter. Er du en udvikler eller bare nysgerrig? Gennemse koden, følg ændringsloggen eller bidrag på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 OPDATERINGER:
-Version 1.1 (Prompt Trigger Shortcuts): Type #PromptName in any AI chat field and press Space to instantly inject a saved prompt — without opening the extension panel. Works on all supported services including local LLMs.
+Version 1.1 (Genveje til promptudløser): Skriv #PromptName i et hvilket som helst AI-chatfelt og tryk på Mellemrum for at indsætte en gemt prompt med det samme — uden at åbne udvidelsespanelet. Virker på alle understøttede tjenester inklusive lokale LLM'er.
 Version 1.0.1: Mindre fejlrettelser og stabilitetsforbedringer.
 Version 1.0: Første udgivelse! Organiser samtaler fra Gemini, Claude, ChatGPT, Copilot og Perplexity i delte mapper. Komplet prompt-bibliotek med ét-klik-injektion, genveje til hurtig lagring, træk og slip, mobilsynkronisering, massehandlinger, fanegrupper og understøttelse af 43 sprog.

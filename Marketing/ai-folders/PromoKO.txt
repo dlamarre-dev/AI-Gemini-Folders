@@ -11,7 +11,7 @@ AI 폴더은 통합 AI 콕핏입니다: 모든 AI 도구의 대화를 공유 폴
 🔀 새 대화 버튼: 프롬프트 모드에서 바로 ChatGPT, Claude, Copilot, Gemini, 또는 Perplexity의 새 대화를 시작하세요 — 서비스당 하나의 버튼.
 ☁️ 프롬프트 동기화: 폴더와 독립적으로 프롬프트 라이브러리의 클라우드 동기화를 활성화하세요.
 📌 고정 프롬프트: 중요한 프롬프트를 클릭 한 번으로 라이브러리 상단에 고정합니다. 시각적 구분선으로 나머지와 구분됩니다.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ 프롬프트 트리거 단축키: 지원되는 AI의 채팅창에 #PromptName을 입력하고 스페이스를 누르면 해당 저장된 프롬프트가 즉시 주입됩니다 — 확장 프로그램 패널을 열지 않아도 됩니다. 로컬 LLM을 포함한 모든 서비스에서 작동합니다.
 
 🌟 폴더 기능
 
@@ -50,7 +50,7 @@ Gemini, Claude, ChatGPT, Copilot, Perplexity에서 대화를 엽니다.
 ➕ 프롬프트 추가를 클릭하고 제목과 텍스트를 입력 후 저장합니다.
 프롬프트 사용: 펼친 후 ▶ 클릭 — 활성 AI에 직접 주입되어 바로 전송 가능합니다.
 프롬프트 고정: 📍 클릭 — 목록 상단으로 이동하여 항상 바로 접근할 수 있습니다.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+프롬프트 트리거: AI 채팅창에 #PromptName을 입력하고 스페이스를 누르면 — 프롬프트가 즉시 주입됩니다.
 
 🔒 개인정보 보호 & 보안
 개인정보 보호를 핵심으로 설계되었습니다. Gemini, Claude, ChatGPT, Copilot, Perplexity에만 접근 권한을 요청하며, 대화 저장 또는 프롬프트 주입 시에만 활성 탭을 읽습니다. "북마크" 권한은 모바일 동기화 활성화 시에만 사용됩니다. Chrome Sync로 저장: 서드파티 서버 없음, 추적 없음.
@@ -59,5 +59,6 @@ Prompt trigger: type #PromptName in any AI chat field and press Space — the pr
 AI 폴더는 열정으로 개발된 오픈소스 프로젝트입니다. 투명성과 개인정보 존중이 최우선입니다. 개발자이거나 단순히 궁금하신가요? 코드 확인, 변경 이력 추적, 또는 GitHub에서 기여하세요: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 업데이트:
+버전 1.1 (프롬프트 트리거 단축키): AI 채팅창에 #PromptName을 입력하고 스페이스를 누르면 저장된 프롬프트가 즉시 주입됩니다 — 확장 프로그램 패널을 열지 않아도 됩니다. 로컬 LLM을 포함한 모든 지원 서비스에서 작동합니다.
 버전 1.0.1: 사소한 버그 수정 및 안정성 개선.
 버전 1.0: 첫 출시! Gemini, Claude, ChatGPT, Copilot, Perplexity의 대화를 공유 폴더에 정리하세요. 클릭 한 번으로 삽입 가능한 완전한 프롬프트 라이브러리, 빠른 저장 단축키, 드래그 앤 드롭, 모바일 동기화, 일괄 작업, 탭 그룹, 43개 언어 지원. 설정 가능한 URL(localhost 및 LAN 주소)로 로컬 LLM 지원.

@@ -11,7 +11,7 @@
 🔀 כפתורי שיחה חדשה: התחל שיחה חדשה ב-ChatGPT, Claude, Copilot, Gemini או Perplexity ישירות ממצב Prompt — כפתור אחד לכל שירות.
 ☁️ סנכרון פרומפטים: הפעל סנכרון ענן לספריית הפרומפטים ללא תלות בתיקיות.
 📌 פרומפטים נעוצים: נעץ פרומפטים חשובים לראש הספרייה.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ קיצורי דרך להפעלת פרומפטים: הקלד #PromptName בשדה הצ'אט של כל AI נתמך ולחץ על רווח כדי להזין מיידית את הפרומפט השמור המתאים — ללא פתיחת לוח ההרחבה. פועל בכל השירותים, כולל LLM מקומיים.
 
 🌟 תכונות תיקיות
 
@@ -49,7 +49,7 @@
 לחץ ➕ הוסף פרומפט, הזן כותרת וטקסט ושמור.
 שימוש בפרומפט: הרחב אותו ולחץ ▶ – הוא מוזן ישירות ל-AI הפעיל, מוכן לשליחה.
 נעיצת פרומפט: לחץ 📍 – הוא עובר לראש הרשימה.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+הפעלת פרומפט: הקלד #PromptName בשדה הצ'אט של כל AI ולחץ על רווח — הפרומפט מוזן מיידית.
 
 🔒 פרטיות ואבטחה
 נבנה עם פרטיות כעדיפות. מבקש גישה רק ל-Gemini, Claude, ChatGPT, Copilot, Perplexity וקורא את הכרטיסייה הפעילה רק בעת שמירת שיחה או הזנת פרומפט. הרשאת «סימניות» משמשת רק אם מפעילים סנכרון נייד. אחסון דרך Chrome Sync: ללא שרתי צד שלישי, ללא טלמטריה.
@@ -58,5 +58,6 @@ Prompt trigger: type #PromptName in any AI chat field and press Space — the pr
 תיקיות AI הוא פרויקט קוד פתוח שנבנה בתשוקה. שקיפות וכבוד לפרטיותך הם העדיפויות הגבוהות ביותר שלנו. אתה מפתח או סתם סקרן? עיין בקוד, עקוב אחר יומן השינויים, או תרום ב-GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 עדכונים:
+גרסה 1.1 (קיצורי דרך להפעלת פרומפטים): הקלד #PromptName בשדה הצ'אט של כל AI ולחץ על רווח כדי להזין מיידית פרומפט שמור — ללא פתיחת לוח ההרחבה. פועל בכל השירותים הנתמכים כולל LLM מקומיים.
 גרסה 1.0.1: תיקוני באגים קלים ושיפורי יציבות.
 גרסה 1.0: פרסום ראשון! ארגן שיחות מ-Gemini, Claude, ChatGPT, Copilot ו-Perplexity בתיקיות משותפות. ספריית הנחיות מלאה עם הוספה בלחיצה אחת, קיצורי שמירה מהירה, גרור ושחרר, סנכרון נייד, פעולות מאסיביות, קבוצות כרטיסיות ותמיכה ב-43 שפות.

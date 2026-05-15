@@ -11,7 +11,7 @@ AI-mapper er din samlede AI-kontrollpanel: organiser samtaler fra alle AI-verkt�
 🔀 Ny samtale-knapper: Start en ny samtale på ChatGPT, Claude, Copilot, Gemini eller Perplexity direkte fra Prompt-modus — én knapp per tjeneste.
 ☁️ Promptsynkronisering: Aktiver skysynkronisering for promptbiblioteket uavhengig av mappene.
 📌 Festede prompts: Fest viktige prompts øverst i biblioteket, atskilt fra resten med en visuell skillelinje.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ Snarveier for promptutløser: Skriv #PromptName i chatfeltet til en hvilken som helst støttet AI og trykk Mellomrom for å sette inn den tilsvarende lagrede prompten umiddelbart — uten å åpne utvidelsespanelet. Fungerer på tvers av alle tjenester, inkludert lokale LLM-er.
 
 🌟 MAPPEFUNKSJONER
 
@@ -50,7 +50,7 @@ Klikk på 📝 på bryteren øverst til høyre i tillegget.
 Klikk ➕ Legg til prompt, skriv inn tittel og tekst, og lagre.
 For å bruke en prompt: utvid den og klikk ▶ – den settes direkte inn i den aktive AI-en, klar til å sende.
 For å feste en prompt: klikk 📍 – den flyttes øverst på listen og forblir lett tilgjengelig.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+Promptutløser: skriv #PromptName i et hvilket som helst AI-chatfelt og trykk Mellomrom — prompten settes inn umiddelbart.
 
 🔒 PERSONVERN OG SIKKERHET
 Bygget med personvern i fokus. Tillegget ber bare om tilgang til Gemini, Claude, ChatGPT, Copilot, Perplexity og leser bare den aktive fanen ved lagring av en samtale eller innsetting av en prompt. «Bokmerker»-tillatelsen brukes bare hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
@@ -59,5 +59,6 @@ Bygget med personvern i fokus. Tillegget ber bare om tilgang til Gemini, Claude,
 AI-mapper er et åpen kildekode-prosjekt bygget med lidenskap. Transparens og respekt for personvernet ditt er våre høyeste prioriteter. Er du en utvikler eller bare nysgjerrig? Bla gjennom koden, følg endringsloggen eller bidra på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 OPPDATERINGER:
+Versjon 1.1 (Snarveier for promptutløser): Skriv #PromptName i et hvilket som helst AI-chatfelt og trykk Mellomrom for å sette inn en lagret prompt umiddelbart — uten å åpne utvidelsespanelet. Fungerer på alle støttede tjenester inkludert lokale LLM-er.
 Versjon 1.0.1: Mindre feilrettinger og stabilitetsforbedringer.
 Versjon 1.0: Første utgivelse! Organiser samtaler fra Gemini, Claude, ChatGPT, Copilot og Perplexity i delte mapper. Fullstendig prompt-bibliotek med ett-klikks injeksjon, hurtiglagringssnarvei, dra og slipp, mobilsynkronisering, massehandlinger, fanegruppper og støtte for 43 språk.

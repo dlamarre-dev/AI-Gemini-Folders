@@ -49,7 +49,7 @@ Auf 📝 im Umschalter oben rechts in der Erweiterung klicken.
 ➕ Prompt hinzufügen anklicken, Titel und Text eingeben, speichern.
 Prompt verwenden: aufklappen und ▶ klicken — er wird direkt in die aktive KI injiziert, bereit zum Senden.
 Prompt anpinnen: auf 📍 klicken — er rückt an die erste Stelle und bleibt immer griffbereit.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+Prompt-Trigger: Tippen Sie #PromptName in das Chat-Eingabefeld einer beliebigen KI und drücken Sie Leertaste — der Prompt wird sofort eingefügt.
 
 🔒 DATENSCHUTZ & SICHERHEIT
 Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf Gemini, Claude, ChatGPT, Copilot, Perplexity an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
@@ -58,6 +58,6 @@ Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff 
 KI-Ordner ist ein leidenschaftlich entwickeltes Open-Source-Projekt. Transparenz und Datenschutz haben höchste Priorität. Entwickler oder einfach neugierig? Code einsehen, Änderungsprotokoll verfolgen oder auf GitHub beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 UPDATES:
-Version 1.1 (Prompt Trigger Shortcuts): Type #PromptName in any AI chat field and press Space to instantly inject a saved prompt — without opening the extension panel. Works on all supported services including local LLMs.
+Version 1.1 (Prompt-Trigger-Tastenkürzel): Tippen Sie #PromptName in das Chat-Eingabefeld einer beliebigen KI und drücken Sie Leertaste, um einen gespeicherten Prompt sofort einzufügen — ohne das Erweiterungspanel zu öffnen. Funktioniert für alle unterstützten Dienste einschließlich lokaler LLMs.
 Version 1.0.1: Kleinere Fehlerbehebungen und Stabilitätsverbesserungen.
 Version 1.0: Erstveröffentlichung! Organisieren Sie Gespräche von Gemini, Claude, ChatGPT, Copilot und Perplexity in gemeinsamen Ordnern. Vollständige Prompt-Bibliothek mit Ein-Klick-Injektion, Schnellspeicher-Shortcuts, Drag & Drop, Mobile-Sync, Massenaktionen, Tab-Gruppen und Unterstützung für 43 Sprachen. Lokaler LLM-Support mit konfigurierbarer URL (localhost und LAN-Adressen).

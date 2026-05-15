@@ -11,7 +11,7 @@ Amb la versió 4.0, Carpetes Gemini és el teu veritable cockpit de Gemini: orga
 💎 Enllaç Gem personalitzat: Configura un enllaç al teu Gem favorit i activa'l/desactiva'l amb un clic.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
 📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
+⌨️ Dreceres de Detonació de Prompts: Escriu #PromptName directament al camp de xat de Gemini i prem Espai per injectar instantàniament el prompt desat corresponent — sense obrir el panell de l'extensió.
 
 🌟 FUNCIONS DE CARPETES
 
@@ -44,7 +44,7 @@ Fes clic a ➕ Afegeix un prompt, introdueix un títol i el teu text, i desa.
 Per utilitzar un prompt: expandeix-lo i fes clic a ▶ – s'injecta directament a Gemini.
 Configura 💎 per apuntar al teu Gem.
 Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
-Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
+Detonació de prompt: escriu #PromptName al camp de xat de Gemini i prem Espai — el prompt s'injecta instantàniament.
 
 🔒 PRIVACITAT I SEGURETAT
 Construït amb la privacitat com a prioritat. Només sol·licita accés a gemini.google.com i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
@@ -59,6 +59,7 @@ Interessat en Carpetes Gemini però també feu servir ChatGPT, Claude, Copilot, 
 👉 Instal·lar Carpetes IA: __AF_STORE_URL__
 
 📢 ACTUALITZACIONS:
+Versió 4.2 (Dreceres de Detonació de Prompts): Escriu #PromptName directament al camp de xat de Gemini i prem Espai per injectar instantàniament un prompt desat — sense obrir el panell de l'extensió.
 Versió 4.1.1: Correccions menors d'errors i millores d'estabilitat.
 Versió 4.1 (Expansió global i enfortiment): 16 nous idiomes porten Carpetes Gemini a 43 localitzacions arreu del món — idiomes nòrdics, els estats bàltics i cobertura europea i del sud-est asiàtic ampliada. Corregida una condició de cursa que podia perdre silenciosament un desat en clics ràpids. Injecció de prompts modernitzada amb InputEvent, substituint l'execCommand obsolet. Pipeline d'importació endurit contra URL malicioses en fitxers de còpia de seguretat. S'ha corregit un error crític de seguretat de dades: activar la sincronització de prompts amb l'emmagatzematge quasi ple podia esborrar silenciosament tots els prompts desats. L'emmagatzematge ara utilitza escriptures fragmentades per mantenir-se dins dels límits de Chrome, amb missatges d'error clars quan és ple.
 Versió 4.0 (Biblioteca de prompts): L'actualització més ambiciosa fins ara! Mode prompts completament nou: desa els teus millors prompts, edita'ls en línia i injecta'ls directament a Gemini amb un sol clic.

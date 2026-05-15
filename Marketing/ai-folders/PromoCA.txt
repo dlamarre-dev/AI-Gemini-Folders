@@ -11,7 +11,7 @@ Carpetes IA és el vostre cockpit d'IA unificat: organitzeu converses de totes l
 🔀 Botons de Nova Conversa: Inicieu una nova conversa a ChatGPT, Claude, Copilot, Gemini o Perplexity directament des del Mode Prompt — un botó per servei.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
 📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
+⌨️ Dreceres de Detonació de Prompts: Escriu #PromptName al camp de xat de qualsevol IA compatible i prem Espai per injectar instantàniament el prompt desat corresponent — sense obrir el panell de l'extensió. Funciona a tots els serveis, inclosos els LLM locals.
 
 🌟 FUNCIONS DE CARPETES
 
@@ -48,7 +48,7 @@ Fes clic a 📝 al commutador a la part superior dreta de l'extensió.
 Fes clic a ➕ Afegeix un prompt, introdueix un títol i el teu text, i desa.
 Per utilitzar un prompt: expandeix-lo i fes clic a ▶ – s'injecta directament a la IA activa.
 Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
-Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
+Detonació de prompt: escriu #PromptName al camp de xat de qualsevol IA i prem Espai — el prompt s'injecta instantàniament.
 
 🔒 PRIVACITAT I SEGURETAT
 Construït amb la privacitat com a prioritat. Només sol·licita accés a Gemini, Claude, ChatGPT, Copilot, Perplexity i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
@@ -57,5 +57,6 @@ Construït amb la privacitat com a prioritat. Només sol·licita accés a Gemini
 Carpetes IA és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ACTUALITZACIONS:
+Versió 1.1 (Dreceres de Detonació de Prompts): Escriu #PromptName al camp de xat de qualsevol IA i prem Espai per injectar instantàniament un prompt desat — sense obrir el panell de l'extensió. Funciona a tots els serveis compatibles, inclosos els LLM locals.
 Versió 1.0.1: Correccions menors d'errors i millores d'estabilitat.
 Versió 1.0: Primera publicació! Organitzeu converses de Gemini, Claude, ChatGPT, Copilot i Perplexity en carpetes compartides. Biblioteca de prompts completa amb injecció d'un clic, dreceres de desament ràpid, arrossegar i deixar anar, sincronització mòbil, accions en bloc, grups de pestanyes i suport per a 43 idiomes.

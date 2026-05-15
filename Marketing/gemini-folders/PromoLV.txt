@@ -11,7 +11,7 @@ Ar versiju 4.0 Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sar
 💎 Pielāgota Gem saite: Konfigurē saiti uz iecienīto Gem un ieslēdz/izslēdz to ar vienu klikšķi.
 ☁️ Uzvedņu sinhronizācija: Iespējo mākoņa sinhronizāciju uzvedņu bibliotēkai neatkarīgi no mapēm.
 📌 Piespraustas uzvednes: Piespreudz svarīgas uzvednes bibliotēkas augšdaļā.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
+⌨️ Uzvednes aktivizācijas saīsnes: Ierakstiet #PromptName tieši Gemini tērzēšanas laukā un nospiediet Atstarpe, lai uzreiz ievietotu atbilstošo saglabāto uzvedni — neatverot paplašinājuma paneli.
 
 🌟 MAPJU FUNKCIJAS
 
@@ -45,7 +45,7 @@ Noklikšķini ➕ Pievienot uzvedni, ievadi virsrakstu un tekstu un saglabā.
 Uzvednes izmantošanai: izvērst to un noklikšķini ▶ – tā tiek ievietota tieši Gemini.
 Konfigurē 💎, lai norādītu uz savu Gem.
 Uzvednes piespraudīšanai: noklikšķini 📍 – tā tiek pārvietota saraksta augšgalā.
-Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
+Uzvednes aktivizēšana: ierakstiet #PromptName Gemini tērzēšanas laukā un nospiediet Atstarpe — uzvedne tiek ievietota uzreiz.
 
 🔒 PRIVĀTUMS UN DROŠĪBA
 Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai gemini.google.com un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot Chrome Sync: nav trešo pušu serveru, nav telemetrijas.
@@ -60,6 +60,7 @@ Interesē Gemini Mapes, bet izmantojat arī ChatGPT, Claude, Copilot, Perplexity
 👉 Instalēt AI mapes: __AF_STORE_URL__
 
 📢 ATJAUNINĀJUMI:
+Versija 4.2 (Uzvednes aktivizācijas saīsnes): Ierakstiet #PromptName tieši Gemini tērzēšanas laukā un nospiediet Atstarpe, lai uzreiz ievietotu saglabāto uzvedni — neatverot paplašinājuma paneli.
 Versija 4.1.1: Nelieli kļūdu labojumi un stabilitātes uzlabojumi.
 Versija 4.1 (Globālā paplašināšanās un nostiprināšana): 16 jaunas valodas ceļ Gemini Mapes līdz 43 lokalizācijām visā pasaulē — ziemeļvalstu valodas, Baltijas valstis un paplašināts Eiropas un Dienvidaustrumāzijas pārklājums. Novērsts sacensību nosacījums, kas strauju klikšķu gadījumā varēja klusi pazaudēt saglabājumu. Uzvednes ievietošana modernizēta ar InputEvent, aizstājot novecojušo execCommand. Importa cauruļvads nocietināts pret ļaunprātīgiem URL rezerves failos. Novērsta kritiska datu drošības kļūda: aktivējot uzvedņu sinhronizāciju gandrīz pilnā krātuvē, visas saglabātās uzvednes varēja tikt klusumā dzēstas. Krātuve tagad izmanto sadalītus ierakstus, lai paliktu Chrome robežās, parādot skaidrus kļūdu ziņojumus, kad tā ir pilna.
 Versija 4.0 (Uzvedņu bibliotēka): Līdz šim vērienīgākais atjauninājums! Gemini Mapes iegūst pilnīgi jaunu Uzvedņu režīmu: saglabā labākās uzvednes, rediģē tās tiešsaistē un ievietoj tieši Gemini ar vienu klikšķi.

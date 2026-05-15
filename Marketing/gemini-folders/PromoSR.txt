@@ -11,7 +11,7 @@ S verzijom 4.0 Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgo
 💎 Prilagođena Gem veza: Konfiguriši vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
-⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
+⌨️ Prečice za aktiviranje promptova: Ukucaj #PromptName direktno u polje za chat Gemini i pritisni Razmaknica da odmah ubaciš odgovarajući sačuvani prompt — bez otvaranja panela proširenja.
 
 🌟 FUNKCIJE FOLDERA
 
@@ -45,7 +45,7 @@ Klikni ➕ Dodaj prompt, unesi naslov i tekst i sačuvaj.
 Za korišćenje prompta: proširi ga i klikni ▶ – ubacuje se direktno u Gemini.
 Konfiguriši 💎 da ukazuje na tvoj Gem.
 Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
-Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
+Aktiviranje prompta: ukucaj #PromptName u polje za chat Gemini i pritisni Razmaknica — prompt se ubacuje odmah.
 
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s prioritetom privatnosti. Traži pristup samo gemini.google.com i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
@@ -60,6 +60,7 @@ Gemini Folderi je projekat otvorenog koda izgrađen sa strašću. Transparentnos
 👉 Инсталирај ВИ фасцикле: __AF_STORE_URL__
 
 📢 AŽURIRANJA:
+Verzija 4.2 (Prečice za aktiviranje promptova): Ukucaj #PromptName direktno u polje za chat Gemini i pritisni Razmaknica da odmah ubaciš sačuvani prompt — bez otvaranja panela proširenja.
 Verzija 4.1.1: Manje ispravke grešaka i poboljšanja stabilnosti.
 Verzija 4.1 (Globalna ekspanzija i ojačavanje): 16 novih jezika dovodi Gemini Foldere do 43 lokalizacije širom sveta — nordički jezici, baltičke države i proširena evropska i južnoazijska pokrivenost. Ispravljena race condition koja je mogla tiho izgubiti čuvanje pri brzim klikovima. Ubacivanje prompta modernizirano sa InputEvent, zamenjujući zastareli execCommand. Import pipeline ojačan protiv zlonamernih URL-ova u backup fajlovima. Ispravljena kritična greška bezbednosti podataka: aktiviranje sinhronizacije upita sa skoro punim skladištem moglo je tiho da obriše sve sačuvane upite. Skladište sada koristi fragmentirane zapise kako bi ostalo unutar Chrome ograničenja, sa jasnim porukama o grešci kada je puno.
 Verzija 4.0 (Biblioteka promptova): Najna mbicioznije ažuriranje do sada! Gemini Folderi dobijaju potpuno novi Mod promptova: sačuvaj najbolje promptove, uređuj ih na mestu i ubaci ih direktno u Gemini jednim klikom.
