@@ -13,6 +13,33 @@ const SUPPORTED_URL_PATTERNS = [
   "*://*.perplexity.ai/*",
 ];
 
+// --- PROMPT TRIGGER: dynamic content script for local LLM ---
+
+const PROMPT_TRIGGER_SCRIPT_ID = 'prompt-trigger-local';
+
+async function updateLocalLlmContentScript() {
+  try {
+    await chrome.scripting.unregisterContentScripts({ ids: [PROMPT_TRIGGER_SCRIPT_ID] });
+  } catch (_) { /* not registered — fine */ }
+
+  const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
+  if (!localLlmUrl) return;
+
+  try {
+    const { protocol, hostname, port } = new URL(localLlmUrl);
+    const portPart = port ? `:${port}` : '';
+    await chrome.scripting.registerContentScripts([{
+      id: PROMPT_TRIGGER_SCRIPT_ID,
+      matches: [`${protocol}//${hostname}${portPart}/*`],
+      js: ['lz-string.min.js', 'prompt-trigger.js'],
+      runAt: 'document_idle',
+      persistAcrossSessions: true,
+    }]);
+  } catch (err) {
+    console.error('Failed to register local LLM prompt-trigger script:', err);
+  }
+}
+
 // --- CONTEXT MENU ---
 
 // Returns SUPPORTED_URL_PATTERNS plus a pattern for the user's configured local LLM URL if any.
@@ -69,11 +96,14 @@ async function updateContextMenu() {
   });
 }
 
-chrome.runtime.onInstalled.addListener(updateContextMenu);
-chrome.runtime.onStartup.addListener(updateContextMenu);
+chrome.runtime.onInstalled.addListener(() => { updateContextMenu(); updateLocalLlmContentScript(); });
+chrome.runtime.onStartup.addListener(() => { updateContextMenu(); updateLocalLlmContentScript(); });
 chrome.storage.onChanged.addListener((changes, namespace) => {
   if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed || changes.localLlmUrl)) {
     updateContextMenu();
+  }
+  if (namespace === 'sync' && changes.localLlmUrl) {
+    updateLocalLlmContentScript();
   }
 });
 
