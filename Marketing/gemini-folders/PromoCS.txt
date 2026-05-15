@@ -11,6 +11,7 @@ S verzí 4.0 se Složky Gemini stávají vaším skutečným kokpitem pro Gemini
 💎 Vlastní odkaz Gem: Nastavte odkaz na váš oblíbený Gem a aktivujte ho kliknutím. Když je aktivní, tlačítko „Nová konverzace" otevře váš Gem místo výchozího chatu.
 ☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
 📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 FUNKCE SLOŽEK
 
@@ -45,6 +46,7 @@ Klikněte na ➕ Přidat výzvu, zadejte název a text, uložte.
 Chcete-li použít výzvu: rozbalte ji a klikněte na ▶ — vloží se přímo do Gemini, připravena k odeslání.
 Nakonfigurujte 💎, aby ukazoval na váš vlastní Gem.
 Připnout výzvu: klikněte na 📍 — přesune se na začátek seznamu a je vždy po ruce.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 SOUKROMÍ A BEZPEČNOST
 Navrženo se soukromím v centru. Vyžaduje přístup pouze k gemini.google.com a čte aktivní kartu pouze při ukládání konverzace nebo vkládání výzvy. Oprávnění „Záložky" se používá pouze pokud aktivujete mobilní synchronizaci. Ukládání přes Chrome Sync: žádné servery třetích stran, žádná telemetrie.

@@ -11,6 +11,7 @@ Na toleo la 4.0, Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga 
 💎 Kiungo Maalum cha Gem: Sanidi kiungo kwenda Gem unayoipenda na kiwashe/kizime kwa kubofya. Kinapowashwa, kitufe cha "Mazungumzo Mapya" kinafungua Gem yako badala ya gumzo la kawaida.
 ☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
 📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 VIPENGELE VYA FOLDA
 
@@ -45,6 +46,7 @@ Bofya ➕ Ongeza Kidokezo, ingiza kichwa na maandishi yako, na hifadhi.
 Kutumia kidokezo: kipanua na ubofye ▶ — kinaingizwa moja kwa moja kwenye Gemini, tayari kutumwa.
 Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi kufikiwa.
 Sanidi 💎 ili kuelekeza kwenye Gem yako maalum.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 FARAGHA NA USALAMA
 Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa gemini.google.com na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.

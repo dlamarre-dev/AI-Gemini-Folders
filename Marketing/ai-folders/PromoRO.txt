@@ -11,6 +11,7 @@ Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate i
 🔀 Butoane Conversație Nouă: Lansați o conversație nouă pe ChatGPT, Claude, Copilot, Gemini sau Perplexity direct din Modul Prompt — un buton per serviciu.
 ☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
 📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 FUNCȚII FOLDERE
 
@@ -49,6 +50,7 @@ Faceți clic pe 📝 de pe butonul de comutare din colțul din dreapta sus al ex
 Faceți clic pe ➕ Adăugați Prompt, introduceți un titlu și textul dvs., salvați.
 Pentru a utiliza un prompt: extindeți-l și faceți clic pe ▶ — se injectează direct în AI-ul activ, gata de trimis.
 Pentru a fixa un prompt: faceți clic pe 📍 — se mută în fruntea listei și rămâne mereu la îndemână.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
 Concepută cu confidențialitatea în centru. Solicită acces doar la Gemini, Claude, ChatGPT, Copilot, Perplexity și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.

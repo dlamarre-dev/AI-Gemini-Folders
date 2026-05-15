@@ -11,6 +11,7 @@ Sürüm 4.0 ile Gemini Klasörler, gerçek Gemini kokpitiniz haline geliyor: kon
 💎 Özel Gem Bağlantısı: Favori Gem'inize bir bağlantı yapılandırın ve tek tıkla açıp kapatın. Etkin olduğunda, "Yeni Konuşma" düğmesi varsayılan sohbet yerine Gem'inizi açar.
 ☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
 📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 KLASÖR ÖZELLİKLERİ
 
@@ -45,6 +46,7 @@ Uzantının sağ üstündeki geçiş düğmesinde 📝'a tıklayın.
 Bir istemi kullanmak için: genişletin ve ▶'ye tıklayın — doğrudan Gemini'ye enjekte edilir, göndermeye hazır.
 Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar ve kolayca erişilebilir kalır.
 Özel Gem'inize işaret etmesi için 💎'yi yapılandırın.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 GİZLİLİK & GÜVENLİK
 Gizlilik öncelikli tasarım. Yalnızca gemini.google.com'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.

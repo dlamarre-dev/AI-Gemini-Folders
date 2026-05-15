@@ -11,6 +11,7 @@ Dengan versi 4.0, Folder Gemini menjadi kokpit Gemini Anda yang sesungguhnya: su
 💎 Tautan Gem Khusus: Konfigurasikan tautan ke Gem favorit Anda dan aktifkan/nonaktifkan dengan klik. Saat aktif, tombol "Percakapan Baru" membuka Gem Anda, bukan obrolan default.
 ☁️ Sinkronisasi Prompt: Aktifkan sinkronisasi cloud untuk perpustakaan prompt Anda secara independen dari folder Anda.
 📌 Prompt yang Disematkan: Sematkan prompt penting Anda dengan satu klik agar tetap di bagian atas perpustakaan, dipisahkan dari yang lain oleh pemisah visual.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 FITUR FOLDER
 
@@ -45,6 +46,7 @@ Klik ➕ Tambah Prompt, masukkan judul dan teks Anda, lalu simpan.
 Untuk menggunakan prompt: luaskan dan klik ▶ — langsung disuntikkan ke Gemini, siap dikirim.
 Untuk menyematkan prompt: klik 📍 — naik ke bagian atas daftar dan tetap mudah dijangkau.
 Konfigurasikan 💎 untuk mengarah ke Gem kustom Anda.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVASI & KEAMANAN
 Dibangun dengan privasi sebagai inti. Hanya meminta akses ke gemini.google.com dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui Chrome Sync: tidak ada server pihak ketiga, tidak ada telemetri.

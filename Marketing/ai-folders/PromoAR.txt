@@ -11,6 +11,7 @@
 🔀 أزرار محادثة جديدة: ابدأ محادثة جديدة على ChatGPT أو Claude أو Copilot أو Gemini أو Perplexity مباشرةً من وضع الإرشادات — زر واحد لكل خدمة.
 ☁️ مزامنة الأوامر: فعّل المزامنة السحابية لمكتبة أوامرك بشكل مستقل عن مجلداتك.
 📌 الأوامر المثبّتة: ثبّت أوامرك الأساسية بنقرة واحدة لإبقائها في أعلى مكتبتك، مفصولة عن البقية بفاصل مرئي.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 ميزات المجلدات
 
@@ -49,6 +50,7 @@
 انقر على ➕ إضافة أمر، أدخل عنواناً ونصاً، واحفظ.
 لاستخدام أمر: وسّعه وانقر على ▶ — يُدرج مباشرةً في الذكاء الاصطناعي النشط، جاهز للإرسال.
 لتثبيت أمر: انقر على 📍 — يرتفع إلى أعلى القائمة ويبقى في متناول اليد.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 الخصوصية والأمان
 مُصمَّم مع وضع الخصوصية في صميمه. يطلب الوصول إلى Gemini, Claude, ChatGPT, Copilot, Perplexity فقط ويقرأ علامة التبويب النشطة فقط عند حفظ محادثة أو إدراج أمر. إذن "الإشارات المرجعية" يُستخدم فقط إذا فعّلت المزامنة مع الجوال. التخزين عبر Chrome Sync: لا خوادم خارجية، لا تتبع.

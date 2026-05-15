@@ -11,6 +11,7 @@
 💎 קישור Gem מותאם אישית: הגדר קישור ל-Gem המועדף עליך והפעל/השבת אותו בלחיצה אחת.
 ☁️ סנכרון פרומפטים: הפעל סנכרון ענן לספריית הפרומפטים ללא תלות בתיקיות.
 📌 פרומפטים נעוצים: נעץ פרומפטים חשובים לראש הספרייה.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 תכונות תיקיות
 
@@ -44,6 +45,7 @@
 שימוש בפרומפט: הרחב אותו ולחץ ▶ – הוא מוזן ישירות ל-Gemini, מוכן לשליחה.
 הגדר 💎 לכוון ל-Gem שלך.
 נעיצת פרומפט: לחץ 📍 – הוא עובר לראש הרשימה.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 פרטיות ואבטחה
 נבנה עם פרטיות כעדיפות. מבקש גישה רק ל-gemini.google.com וקורא את הכרטיסייה הפעילה רק בעת שמירת שיחה או הזנת פרומפט. הרשאת «סימניות» משמשת רק אם מפעילים סנכרון נייד. אחסון דרך Chrome Sync: ללא שרתי צד שלישי, ללא טלמטריה.

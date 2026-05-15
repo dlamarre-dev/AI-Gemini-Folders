@@ -49,6 +49,7 @@ Klicka på 📝 på reglaget längst upp till höger i tillägget.
 Klicka ➕ Lägg till prompt, ange titel och text och spara.
 Att använda en prompt: expandera den och klicka ▶ – den injiceras direkt i den aktiva AI:n, redo att skicka.
 Att fästa en prompt: klicka 📍 – den flyttas längst upp i listan och är alltid lätt att hitta.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 INTEGRITET OCH SÄKERHET
 Byggt med integritet i fokus. Tillägget begär bara åtkomst till Gemini, Claude, ChatGPT, Copilot, Perplexity och läser bara den aktiva fliken när en konversation sparas eller en prompt injiceras. «Bokmärken»-behörigheten används bara om du aktiverar mobilsynkronisering. Lagring via Chrome Sync: inga tredjepartsservrar, ingen telemetri.
@@ -57,5 +58,6 @@ Byggt med integritet i fokus. Tillägget begär bara åtkomst till Gemini, Claud
 AI-mappar är ett öppen källkod-projekt byggt med passion. Transparens och respekt för din integritet är våra högsta prioriteringar. Är du en utvecklare eller bara nyfiken? Bläddra i koden, följ ändringsloggen eller bidra på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 UPPDATERINGAR:
+Version 1.1 (Prompt Trigger Shortcuts): Type #PromptName in any AI chat field and press Space to instantly inject a saved prompt — without opening the extension panel. Works on all supported services including local LLMs.
 Version 1.0.1: Mindre felkorrigeringar och stabilitetsförbättringar.
 Version 1.0: Första utgåvan! Organisera konversationer från Gemini, Claude, ChatGPT, Copilot och Perplexity i delade mappar. Komplett promptbibliotek med ett-klicksinjektion, genvägar för snabbspara, dra och släpp, mobilsynkronisering, massåtgärder, flikgrupper och stöd för 43 språk.

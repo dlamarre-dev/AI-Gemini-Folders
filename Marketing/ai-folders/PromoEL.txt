@@ -11,6 +11,7 @@
 🔀 Κουμπιά Νέας Συνομιλίας: Ξεκινήστε μια νέα συνομιλία στο ChatGPT, Claude, Copilot, Gemini ή Perplexity απευθείας από τη Λειτουργία Prompt — ένα κουμπί ανά υπηρεσία.
 ☁️ Συγχρονισμός prompt: Ενεργοποιήστε συγχρονισμό cloud για τη βιβλιοθήκη prompt ανεξάρτητα από τους φακέλους.
 📌 Καρφιτσωμένα prompt: Καρφιτσώστε σημαντικά prompt στην κορυφή της βιβλιοθήκης.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName in any supported AI's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel. Works across all services, including local LLMs.
 
 🌟 ΛΕΙΤΟΥΡΓΙΕΣ ΦΑΚΕΛΩΝ
 
@@ -48,6 +49,7 @@
 Κάντε κλικ στο ➕ Προσθήκη prompt, εισάγετε τίτλο και κείμενο και αποθηκεύστε.
 Χρήση prompt: αναπτύξτε το και κάντε κλικ ▶ – εισάγεται απευθείας στον ενεργό AI.
 Καρφίτσωμα prompt: κάντε κλικ 📍 – μετακινείται στην κορυφή της λίστας.
+Prompt trigger: type #PromptName in any AI chat field and press Space — the prompt injects instantly.
 
 🔒 ΑΠΟΡΡΗΤΟ ΚΑΙ ΑΣΦΑΛΕΙΑ
 Κατασκευασμένο με γνώμονα το απόρρητο. Ζητά πρόσβαση μόνο στο Gemini, Claude, ChatGPT, Copilot, Perplexity και διαβάζει την ενεργή καρτέλα μόνο κατά την αποθήκευση συνομιλίας ή εισαγωγή prompt. Η άδεια «Σελιδοδείκτες» χρησιμοποιείται μόνο εάν ενεργοποιήσετε τον συγχρονισμό κινητού. Αποθήκευση μέσω Chrome Sync: κανένας διακομιστής τρίτων, καμία τηλεμετρία.

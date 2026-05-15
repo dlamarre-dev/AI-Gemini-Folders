@@ -11,6 +11,7 @@ A 4.0-s verzióval a Gemini-mappák valódi Gemini-kokpitjévé válik: rendszer
 💎 Egyéni Gem-hivatkozás: Állítson be hivatkozást kedvenc Gemjéhez, és kapcsolja be/ki egyetlen kattintással. Aktiválva az „Új beszélgetés" gomb az alapértelmezett csevegés helyett a Gemjét nyitja meg.
 ☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
 📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 MAPPAFUNKCIÓK
 
@@ -45,6 +46,7 @@ Kattintson a ➕ Prompt hozzáadása gombra, adjon meg egy nevet és szöveget, 
 Prompt használatához: bontsa ki, és kattintson a ▶ gombra — közvetlenül a Geminibe illeszti be, küldésre készen.
 Prompt rögzítéséhez: kattintson a 📍 gombra — a lista tetejére kerül, és könnyen elérhető marad.
 Konfigurálja a 💎 ikont, hogy az egyéni Gemjére mutasson.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 ADATVÉDELEM ÉS BIZTONSÁG
 Az adatvédelmet alapelvként kezelve fejlesztve. Csak a gemini.google.com elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.

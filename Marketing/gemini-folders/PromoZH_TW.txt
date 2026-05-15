@@ -11,6 +11,7 @@ Gemini 資料夾（Gemini Folders）正是您所需的擴充功能。
 💎 自訂 Gem 連結：設定連結至您喜愛的 Gem，並一鍵開啟或關閉。啟用時，「新對話」按鈕會開啟您的 Gem，而非預設聊天。
 ☁️ 提示詞同步：獨立於資料夾，為您的提示詞庫啟用雲端同步。
 📌 釘選提示詞：一鍵釘選您的重要提示詞，將其保持在庫的最上方，以視覺分隔線與其他提示詞區分。
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 資料夾功能
 
@@ -45,6 +46,7 @@ Gemini 資料夾（Gemini Folders）正是您所需的擴充功能。
 若要使用提示詞：展開它並點擊 ▶——直接注入 Gemini，準備傳送。
 若要釘選提示詞：點擊 📍——移至清單頂部並保持在隨手可及的位置。
 設定 💎 指向您的自訂 Gem。
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 隱私和安全
 以隱私為核心設計。僅請求存取 gemini.google.com，且僅在儲存對話或注入提示詞時讀取當前分頁。「書籤」權限僅在您啟用行動裝置同步時使用。透過 Chrome Sync 儲存：無第三方伺服器，無遙測。

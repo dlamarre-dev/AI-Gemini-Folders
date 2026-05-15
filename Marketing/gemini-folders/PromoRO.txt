@@ -11,6 +11,7 @@ Cu versiunea 4.0, Foldere Gemini devine adevăratul dvs. cockpit Gemini: organiz
 💎 Link Gem personalizat: Configurați un link către Gem-ul preferat și activați-l cu un clic. Când este activ, butonul „Conversație nouă" deschide Gem-ul dvs. în locul chat-ului implicit.
 ☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
 📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 FUNCȚII FOLDERE
 
@@ -45,6 +46,7 @@ Faceți clic pe ➕ Adăugați Prompt, introduceți un titlu și textul dvs., sa
 Pentru a utiliza un prompt: extindeți-l și faceți clic pe ▶ — se injectează direct în Gemini, gata de trimis.
 Configurați 💎 pentru a indica Gem-ul dvs. personalizat.
 Pentru a fixa un prompt: faceți clic pe 📍 — se mută în fruntea listei și rămâne mereu la îndemână.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
 Concepută cu confidențialitatea în centru. Solicită acces doar la gemini.google.com și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.

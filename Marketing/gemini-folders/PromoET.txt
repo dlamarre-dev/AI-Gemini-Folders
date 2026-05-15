@@ -11,6 +11,7 @@ Versiooniga 4.0 saab Gemini Kaustadest sinu tõeline Gemini cockpit: korralda ve
 💎 Kohandatud Gem-link: Seadista link oma lemmikhelmele ja lülita see ühe klikiga sisse/välja.
 ☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
 📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 KAUSTADE FUNKTSIOONID
 
@@ -44,6 +45,7 @@ Klõpsa ➕ Lisa prompt, sisesta pealkiri ja tekst ning salvesta.
 Prompti kasutamiseks: laienda see ja klõpsa ▶ – see lisatakse otse Geminisse.
 Seadista 💎 osutama oma Helmele.
 Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVAATSUS JA TURVALISUS
 Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult gemini.google.com-ile ja loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.

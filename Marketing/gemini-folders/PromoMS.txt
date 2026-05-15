@@ -11,6 +11,7 @@ Dengan versi 4.0, Folder Gemini menjadi cockpit Gemini sebenar anda: susun perbu
 💎 Pautan Gem tersuai: Konfigurasi pautan ke Gem kegemaran anda dan hidupkan/matikan dengan satu klik.
 ☁️ Penyegerakan prompt: Dayakan penyegerakan awan untuk perpustakaan prompt secara bebas daripada folder.
 📌 Prompt tersemat: Semat prompt penting di bahagian atas perpustakaan.
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 CIRI-CIRI FOLDER
 
@@ -44,6 +45,7 @@ Klik ➕ Tambah prompt, masukkan tajuk dan teks, dan simpan.
 Untuk menggunakan prompt: kembangkan dan klik ▶ – ia disisipkan terus ke Gemini.
 Konfigurasi 💎 untuk menghala ke Gem anda.
 Untuk menyemat prompt: klik 📍 – ia berpindah ke bahagian atas senarai.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 PRIVASI & KESELAMATAN
 Dibina dengan mengutamakan privasi. Hanya meminta akses ke gemini.google.com dan membaca tab aktif hanya semasa menyimpan perbualan atau menyisipkan prompt. Kebenaran «Penanda buku» hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui Chrome Sync: tiada pelayan pihak ketiga, tiada telemetri.

@@ -11,6 +11,7 @@ Gemini 文件夹 (Gemini Folders) 就是您需要的扩展程序。
 💎 自定义 Gem 链接：配置您最喜欢的 Gem 链接并一键启用。启用后，"新建对话"按钮将打开您的 Gem 而非默认聊天。
 ☁️ 提示词同步：独立于文件夹，为您的提示词库启用云同步。
 📌 置顶提示词：一键将重要提示词置顶，通过视觉分隔符与其他提示词区分，始终触手可及。
+⌨️ Prompt Trigger Shortcuts: Type #PromptName directly in Gemini's chat field and press Space to instantly inject the matching saved prompt — without opening the extension panel.
 
 🌟 文件夹功能
 
@@ -45,6 +46,7 @@ Gemini 文件夹 (Gemini Folders) 就是您需要的扩展程序。
 使用提示词：展开后点击 ▶——直接注入 Gemini，随时可发送。
 配置 💎 以指向您的自定义 Gem。
 置顶提示词：点击 📍 — 移至列表顶部，随时触手可及。
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 隐私与安全
 以隐私为核心设计。仅请求访问 gemini.google.com，仅在保存对话或注入提示词时读取活动标签页。"书签"权限仅在启用移动端同步时使用。通过 Chrome Sync 存储：无第三方服务器，无遥测。

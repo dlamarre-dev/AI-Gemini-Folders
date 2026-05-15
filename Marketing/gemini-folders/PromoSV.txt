@@ -45,6 +45,7 @@ Klicka ➕ Lägg till prompt, ange titel och text och spara.
 Att använda en prompt: expandera den och klicka ▶ – den injiceras direkt i Gemini, redo att skicka.
 Konfigurera 💎 för att peka mot din Gem.
 Att fästa en prompt: klicka 📍 – den flyttas längst upp i listan och är alltid lätt att hitta.
+Prompt trigger: type #PromptName in Gemini's chat field and press Space — the prompt injects instantly.
 
 🔒 INTEGRITET OCH SÄKERHET
 Byggt med integritet i fokus. Tillägget begär bara åtkomst till gemini.google.com och läser bara den aktiva fliken när en konversation sparas eller en prompt injiceras. «Bokmärken»-behörigheten används bara om du aktiverar mobilsynkronisering. Lagring via Chrome Sync: inga tredjepartsservrar, ingen telemetri.
@@ -59,6 +60,7 @@ Intresserad av Gemini-mappar men använder du också ChatGPT, Claude, Copilot, P
 👉 Installera AI-mappar: __AF_STORE_URL__
 
 📢 UPPDATERINGAR:
+Version 4.2 (Prompt Trigger Shortcuts): Type #PromptName directly in Gemini's chat field and press Space to instantly inject a saved prompt — without opening the extension panel.
 Version 4.1.1: Mindre felkorrigeringar och stabilitetsförbättringar.
 Version 4.1 (Global expansion och härdning): 16 nya språk tar Gemini-mappar till 43 lokaliseringar världen över — nordiska språk, de baltiska staterna och utökad europeisk och sydostasiatisk täckning. Åtgärdat ett race condition som tyst kunde tappa en sparning vid snabba klick. Promptinjicering moderniserad med InputEvent, som ersätter det inaktuella execCommand. Import-pipeline härdad mot skadliga URL:er i säkerhetskopior. Kritiskt datasäkerhetsfel åtgärdat: att aktivera prompt-synkronisering med nästan fullt lagringsutrymme kunde tyst radera alla sparade prompts. Lagringen använder nu fragmenterade skrivningar för att hålla sig inom Chromes gränser, med tydliga felmeddelanden när den är full.
 Version 4.0 (Promptbibliotek): Den mest ambitiösa uppdateringen hittills! Gemini-mappar får ett helt nytt Promptläge: spara dina bästa prompter, redigera dem inline och injicera dem direkt i Gemini med ett klick. Lade till animerat lägesreglage, sökning och sortering i Promptläge, anpassad Gem-knapp och oberoende promptsynkronisering.
