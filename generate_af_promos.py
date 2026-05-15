@@ -27,8 +27,6 @@ PROMO_FILES = {
     "SR":    "sr",   "HR":    "hr",
 }
 
-# promoHI.txt uses lowercase prefix
-PROMO_LOWERCASE = {"HI"}
 
 # ── Per-language v1.0 release notes ──────────────────────────────────────────
 V1_NOTES = {
@@ -640,10 +638,7 @@ def main():
     generated = 0
     for suffix, lang in sorted(PROMO_FILES.items()):
         # Find the GF promo file
-        if suffix in PROMO_LOWERCASE:
-            filename = f'promo{suffix}.txt'
-        else:
-            filename = f'Promo{suffix}.txt'
+        filename = f'Promo{suffix}.txt'
         gf_path = os.path.join(GF_PROMO_DIR, filename)
         if not os.path.exists(gf_path):
             print(f'  SKIP {lang:6s} — {filename} not found')
