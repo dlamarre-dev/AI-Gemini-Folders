@@ -398,6 +398,70 @@ function mergeImportData(importedData) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Prompt trigger helpers (used by background.js for #trigger + Space injection)
+// ---------------------------------------------------------------------------
+
+// Finds a saved prompt whose title matches triggerName (case-insensitive, leading emoji stripped).
+function findPromptByTrigger(prompts, triggerName) {
+  const EMOJI_RE = /^(?:\p{Emoji_Presentation}|\p{Extended_Pictographic})️?\s*/u;
+  const needle = triggerName.toLowerCase();
+  for (const [title, data] of Object.entries(prompts)) {
+    const stripped = title.replace(EMOJI_RE, '').trim().toLowerCase();
+    if (stripped === needle) return typeof data === 'string' ? data : (data.text || '');
+  }
+  return null;
+}
+
+// Injected into the AI page via chrome.scripting.executeScript (runs in PAGE context).
+// Finds the chat editor with the given CSS selectors and replaces its full content.
+function injectPromptIntoEditor(promptText, selectors) {
+  const active = document.activeElement;
+  let editor = null;
+  for (const sel of selectors) {
+    try {
+      if (active && active.matches(sel)) { editor = active; break; }
+      const found = document.querySelector(sel);
+      if (found) { editor = found; break; }
+    } catch (_) {}
+  }
+  if (!editor) return false;
+  editor.focus();
+
+  if (editor.isContentEditable) {
+    const sel = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents(editor);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    const before = editor.textContent;
+    document.execCommand('insertText', false, promptText);
+    if (editor.textContent === before) {
+      editor.dispatchEvent(new InputEvent('beforeinput', {
+        bubbles: true, cancelable: true,
+        inputType: 'insertText', data: promptText,
+      }));
+    }
+    return true;
+  }
+
+  if (editor.tagName === 'TEXTAREA' || editor.tagName === 'INPUT') {
+    const proto = editor.tagName === 'TEXTAREA'
+      ? window.HTMLTextAreaElement.prototype
+      : window.HTMLInputElement.prototype;
+    const nativeSetter = Object.getOwnPropertyDescriptor(proto, 'value')?.set;
+    if (nativeSetter) {
+      nativeSetter.call(editor, promptText);
+    } else {
+      editor.value = promptText;
+    }
+    editor.dispatchEvent(new Event('input', { bubbles: true }));
+    return true;
+  }
+
+  return false;
+}
+
 if (typeof module !== 'undefined') {
   module.exports = {
     EMOJI_PREFIX_REGEX,
@@ -413,5 +477,7 @@ if (typeof module !== 'undefined') {
     isSafeUrl,
     normalizeUrl,
     mergeImportData,
+    findPromptByTrigger,
+    injectPromptIntoEditor,
   };
 }
