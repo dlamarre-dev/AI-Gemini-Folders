@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -6 144 142" width="128" height="128">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -6 144 142">
   <defs>
-    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#10a37f"></stop>
       <stop offset="0.20" stop-color="#20b2aa"></stop>
       <stop offset="0.40" stop-color="#3b86d9"></stop>
@@ -14,13 +14,8 @@
       <feComponentTransfer><feFuncA type="linear" slope="0.18"></feFuncA></feComponentTransfer>
       <feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
     </filter>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-      <feComponentTransfer><feFuncA type="linear" slope="0.35"></feFuncA></feComponentTransfer>
-    </filter>
   </defs>
-  <path d="M 8 38 Q 8 28 18 28 H 48 Q 52 28 54 31 L 60 39 H 110 Q 120 39 120 49 V 110 Q 120 120 110 120 H 18 Q 8 120 8 110 Z" fill="#8a6df0" filter="url(#glow)"></path>
   <g filter="url(#ds)">
-    <path d="M 8 38 Q 8 28 18 28 H 48 Q 52 28 54 31 L 60 39 H 110 Q 120 39 120 49 V 110 Q 120 120 110 120 H 18 Q 8 120 8 110 Z" fill="url(#grad)"></path>
+    <path d="M 8 38 Q 8 28 18 28 H 48 Q 52 28 54 31 L 60 39 H 110 Q 120 39 120 49 V 110 Q 120 120 110 120 H 18 Q 8 120 8 110 Z" fill="url(#g)"></path>
   </g>
 </svg>
