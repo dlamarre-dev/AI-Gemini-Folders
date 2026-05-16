@@ -89,11 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       loadData({ folders: {} }, (data) => {
         Object.keys(data.folders).sort().forEach(folder => {
-          const hasCustomEmoji = EMOJI_PREFIX_REGEX.test(folder);
-          const iconPrefix = hasCustomEmoji ? '' : '📁 ';
+          const match = folder.match(EMOJI_PREFIX_REGEX);
+          const icon = match ? match[1] : '📁';
+          const displayName = match ? folder.slice(match[0].length) : folder;
 
           const li = document.createElement('li');
-          li.textContent = `${iconPrefix}${folder}`;
+          li.textContent = `${icon} ${displayName}`;
           li.addEventListener('click', (e) => { e.stopPropagation(); moveTo(folder); });
           bulkMoveList.appendChild(li);
         });
