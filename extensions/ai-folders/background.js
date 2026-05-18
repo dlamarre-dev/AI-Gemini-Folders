@@ -107,37 +107,93 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   }
 });
 
-// --- PROMPT TRIGGER (#trigger + Space → inject prompt via executeScript) ---
+// --- PROMPT TRIGGER (#prefix + Space → bash-like autocomplete/injection) ---
 
-async function handlePromptTrigger(message, sender) {
+async function handlePromptTriggerLookup(message, sender) {
   const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
   const siteKey = getSiteByUrl(sender.tab?.url, localLlmUrl);
   const selectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
-  if (!selectors) return { matched: false };
+  if (!selectors) return { status: 'no_match' };
 
   const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
-  const promptText = findPromptByTrigger(data.prompts || {}, message.triggerName);
-  if (!promptText) return { matched: false };
+  const matches = findPromptsByPrefix(data.prompts || {}, message.prefix);
+  if (matches.length === 0) return { status: 'no_match' };
+
+  const exact = matches.find(m => m.name.toLowerCase() === message.prefix.toLowerCase());
+
+  // Perplexity converts #word into non-selectable token chips; forceClear wipes
+  // those before injection. Also skip multi-match suggestions (corrupts content).
+  const forceClear = siteKey === 'perplexity';
 
   try {
-    const results = await chrome.scripting.executeScript({
+    if (exact) {
+      await chrome.scripting.executeScript({
+        target: { tabId: sender.tab.id },
+        args: [exact.text, selectors, forceClear],
+        func: injectPromptIntoEditor,
+      });
+      return { status: 'injected' };
+    }
+
+    if (matches.length === 1) {
+      await chrome.scripting.executeScript({
+        target: { tabId: sender.tab.id },
+        args: ['#' + matches[0].name, selectors, forceClear],
+        func: injectPromptIntoEditor,
+      });
+      return { status: 'autocompleted' };
+    }
+
+    if (forceClear) return { status: 'no_match' };
+
+    const suggResults = await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
-      args: [promptText, selectors],
-      func: injectPromptIntoEditor,
+      args: [matches.map(m => m.name), selectors],
+      func: insertSuggestionsInEditor,
     });
-    return { matched: results?.[0]?.result === true };
+    return { status: suggResults?.[0]?.result === true ? 'suggestions' : 'no_match' };
   } catch (err) {
-    console.error('Prompt trigger inject failed:', err);
-    return { matched: false };
+    console.error('Prompt trigger lookup failed:', err);
+    return { status: 'no_match' };
   }
 }
 
+async function handleSuggestUpdate(message, sender) {
+  const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
+  const siteKey = getSiteByUrl(sender.tab?.url, localLlmUrl);
+  const selectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
+  if (!selectors || siteKey === 'perplexity') return { status: 'cleared' };
+
+  const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
+  const names = message.prefix
+    ? findPromptsByPrefix(data.prompts || {}, message.prefix).map(m => m.name)
+    : [];
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId: sender.tab.id },
+      args: [names, selectors],
+      func: insertSuggestionsInEditor,
+    });
+  } catch (err) {
+    console.error('Suggest update failed:', err);
+  }
+  return { status: names.length > 0 ? 'updated' : 'cleared' };
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action !== 'injectPromptTrigger') return false;
-  handlePromptTrigger(message, sender)
-    .then(sendResponse)
-    .catch(() => sendResponse({ matched: false }));
-  return true; // keep channel open for async response
+  if (message.action === 'promptTriggerLookup') {
+    handlePromptTriggerLookup(message, sender)
+      .then(sendResponse)
+      .catch(() => sendResponse({ status: 'no_match' }));
+    return true;
+  }
+  if (message.action === 'promptTriggerSuggestUpdate') {
+    handleSuggestUpdate(message, sender)
+      .then(sendResponse)
+      .catch(() => sendResponse({ status: 'cleared' }));
+    return true;
+  }
+  return false;
 });
 
 // --- TOAST ---

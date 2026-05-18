@@ -38,12 +38,21 @@
     const isInput = el.tagName === 'TEXTAREA' || el.tagName === 'INPUT';
     if (!isEditable && !isInput) return;
 
-    const currentText = (isEditable ? el.textContent : el.value).trim();
+    // Use innerText (not textContent) so that <p>/<br> paragraph separators in
+    // contenteditable editors appear as \n — then check only the first line.
+    // This lets the trigger work even when suggestion lines are present below.
+    const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
+    const firstLine = rawText.split('\n')[0].trim();
 
-    // Trigger only when the entire field contains exactly #word
-    if (!/^#[\p{L}\p{N}_-]+$/u.test(currentText)) return;
+    if (!/^#[\p{L}\p{N}_-]+$/u.test(firstLine)) return;
 
-    const triggerName = currentText.slice(1);
+    const triggerName = firstLine.slice(1);
+
+    // Cancel any pending suggestion-update timer: if Space fires before the 80ms
+    // debounce elapses, the stale update would corrupt a field already modified by
+    // inject/autocomplete.
+    clearTimeout(_suggTimer);
+    _suggTimer = null;
 
     // Stop propagation synchronously (before the await) so app-level React handlers
     // (Open WebUI # command picker, Perplexity # tokenizer, etc.) never see this
@@ -51,17 +60,57 @@
     e.preventDefault();
     e.stopImmediatePropagation();
 
-    let matched = false;
+    let status = 'no_match';
     try {
       const response = await chrome.runtime.sendMessage({
-        action: 'injectPromptTrigger',
-        triggerName,
+        action: 'promptTriggerLookup',
+        prefix: triggerName,
       });
-      matched = response?.matched === true;
+      status = response?.status ?? 'no_match';
     } catch (_) {
       // Service worker unavailable — treat as no match.
     }
 
-    if (!matched) insertSpace(el);
+    if (status === 'no_match') insertSpace(el);
+    // All other statuses ('injected', 'autocompleted', 'suggestions'): background
+    // already acted on the editor via executeScript — nothing left to do here.
   }, true); // capture phase — fires before the editor's own handlers
+
+  // Live update of suggestion line as the user types.
+  // Matches "#word  #word" (contenteditable, e.g. Gemini) OR "word  word" (textarea,
+  // e.g. Perplexity — no '#' to avoid triggering site-specific token processors).
+  // Two-space separator makes the pattern specific enough to avoid false positives.
+  const SUGG_LINE_RE = /^(?:#[\p{L}\p{N}_-]+(?:\s{2,}#[\p{L}\p{N}_-]+)*|[\p{L}\p{N}_-]+(?:\s{2,}[\p{L}\p{N}_-]+)*)$/u;
+  let _suggTimer = null;
+
+  document.addEventListener('keyup', (e) => {
+    if (e.key === ' ') return; // handled by keydown above
+    // Only react to keys that actually change content.
+    if (e.key.length !== 1 && e.key !== 'Backspace' && e.key !== 'Delete') return;
+
+    const el = document.activeElement;
+    if (!el) return;
+    const isEditable = el.isContentEditable;
+    const isInput = el.tagName === 'TEXTAREA' || el.tagName === 'INPUT';
+    if (!isEditable && !isInput) return;
+
+    const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
+    // Filter empty lines: innerText can produce "\n\n" between <p> elements in Quill.
+    const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
+    // Only act when a suggestion line is present after the first line.
+    if (nonEmpty.length < 2 || !SUGG_LINE_RE.test(nonEmpty[1])) return;
+
+    const firstLine = nonEmpty[0];
+    // Backspace/Delete cancels the suggestion session; any other edit key updates it.
+    const prefix = (e.key === 'Backspace' || e.key === 'Delete')
+      ? ''
+      : (/^#[\p{L}\p{N}_-]+$/u.test(firstLine) ? firstLine.slice(1) : '');
+
+    clearTimeout(_suggTimer);
+    _suggTimer = setTimeout(async () => {
+      try {
+        await chrome.runtime.sendMessage({ action: 'promptTriggerSuggestUpdate', prefix });
+      } catch (_) {}
+    }, 80);
+  }, true);
 })();
