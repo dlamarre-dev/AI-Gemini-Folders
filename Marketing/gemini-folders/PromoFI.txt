@@ -11,7 +11,7 @@ Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi kesku
 💎 Mukautettu Gem-linkki: Määritä linkki suosikki-Geemisi ja ota se käyttöön tai poista käytöstä yhdellä napsautuksella. Kun se on aktiivinen, «Uusi keskustelu» -painike avaa Geemisi oletuschattin sijaan.
 ☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
 📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
-⌨️ Promptin käynnistyspikavalintoja: Kirjoita #PromptName suoraan Geminin chat-kenttään ja paina Välilyönti injektoidaksesi vastaavan tallennetun promptin välittömästi — ilman laajennuspaneelin avaamista.
+⌨️ Kehoteliipaisin automaattitäydennyksellä: Kirjoita #prefix Geminin chat-kenttään ja paina välilyöntiä — täydentää automaattisesti ainutlaatuiseen osumaan tai luettelee kaikki vaihtoehdot toiselle riville. Paina välilyöntiä uudelleen lisätäksesi.
 
 🌟 KANSIO-OMINAISUUDET
 
@@ -46,7 +46,7 @@ Napsauta ➕ Lisää prompt, syötä otsikko ja teksti ja tallenna.
 Promptin käyttäminen: laajenna se ja napsauta ▶ – se injektoidaan suoraan Geminiin, valmiina lähetettäväksi.
 Määritä 💎 osoittamaan Geemiisi.
 Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy helposti saatavilla.
-Promptin käynnistys: kirjoita #PromptName Geminin chat-kenttään ja paina Välilyönti — prompt injektoidaan välittömästi.
+Kehoteliipaisin: Kirjoita #prefix ja paina välilyöntiä — automaattitäydennys täyttää ainutlaatuisen osuman tai ehdotukset ilmestyvät alle. Paina välilyöntiä uudelleen lisätäksesi.
 
 🔒 YKSITYISYYS JA TURVALLISUUS
 Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain gemini.google.com:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.

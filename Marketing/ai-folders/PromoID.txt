@@ -11,7 +11,7 @@ Folder AI adalah kokpit AI terpadu Anda: atur percakapan dari semua alat AI Anda
 🔀 Tombol Percakapan Baru: Mulai percakapan baru di ChatGPT, Claude, Copilot, Gemini, atau Perplexity langsung dari Mode Prompt — satu tombol per layanan.
 ☁️ Sinkronisasi Prompt: Aktifkan sinkronisasi cloud untuk perpustakaan prompt Anda secara independen dari folder Anda.
 📌 Prompt yang Disematkan: Sematkan prompt penting Anda dengan satu klik agar tetap di bagian atas perpustakaan, dipisahkan dari yang lain oleh pemisah visual.
-⌨️ Pintasan Pemicu Prompt: Ketik #PromptName di kolom chat AI mana pun yang didukung dan tekan Spasi untuk langsung menyuntikkan prompt tersimpan yang sesuai — tanpa membuka panel ekstensi. Berfungsi di semua layanan, termasuk LLM lokal.
+⌨️ Pemicu Prompt dengan Pelengkapan Otomatis: Ketik #prefix di kolom chat AI mana pun dan tekan Spasi — melengkapi otomatis ke kecocokan unik, atau mencantumkan semua opsi di baris kedua. Tekan Spasi lagi untuk menyisipkan. Berfungsi di ChatGPT, Claude, Gemini, Copilot dan LLM lokal.
 
 🌟 FITUR FOLDER
 
@@ -50,7 +50,7 @@ Klik 📝 pada tombol sakelar di kanan atas ekstensi.
 Klik ➕ Tambah Prompt, masukkan judul dan teks Anda, lalu simpan.
 Untuk menggunakan prompt: luaskan dan klik ▶ — langsung disuntikkan ke AI aktif, siap dikirim.
 Untuk menyematkan prompt: klik 📍 — naik ke bagian atas daftar dan tetap mudah dijangkau.
-Pemicu prompt: ketik #PromptName di kolom chat AI mana pun dan tekan Spasi — prompt langsung tersuntik.
+Pemicu Prompt: Ketik #prefix dan tekan Spasi — pelengkapan otomatis mengisi kecocokan unik, atau saran muncul di bawah. Tekan Spasi lagi untuk menyisipkan.
 
 🔒 PRIVASI & KEAMANAN
 Dibangun dengan privasi sebagai inti. Hanya meminta akses ke Gemini, Claude, ChatGPT, Copilot, Perplexity dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui Chrome Sync: tidak ada server pihak ketiga, tidak ada telemetri.

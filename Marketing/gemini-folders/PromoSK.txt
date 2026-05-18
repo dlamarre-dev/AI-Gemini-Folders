@@ -11,7 +11,7 @@ S verziou 4.0 sa Priečinky Gemini stávajú vaším skutočným kokpitom pre Ge
 💎 Vlastný odkaz Gem: Nastavte odkaz na váš obľúbený Gem a aktivujte ho kliknutím. Keď je aktívny, tlačidlo „Nová konverzácia" otvorí váš Gem namiesto predvoleného chatu.
 ☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
 📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
-⌨️ Klávesové skratky na spúšťanie výziev: Napíšte #PromptName priamo do chatovacieho poľa Gemini a stlačte Medzerník, aby ste okamžite vložili zodpovedajúcu uloženú výzvu — bez otvorenia panela rozšírenia.
+⌨️ Spúšťač promptov s automatickým dopĺňaním: Napíšte #prefix do chatovacieho poľa Gemini a stlačte medzerník — automaticky doplní na jedinečnú zhodu alebo vypíše všetky možnosti na druhom riadku. Stlačte medzerník znovu pre vloženie.
 
 🌟 FUNKCIE PRIEČINKOV
 
@@ -46,7 +46,7 @@ Kliknite na ➕ Pridať výzvu, zadajte názov a text, uložte.
 Ak chcete použiť výzvu: rozbaľte ju a kliknite na ▶ — vloží sa priamo do Gemini, pripravená na odoslanie.
 Nakonfigurujte 💎, aby ukazoval na váš vlastný Gem.
 Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vždy po ruke.
-Spustenie výzvy: napíšte #PromptName do chatovacieho poľa Gemini a stlačte Medzerník — výzva sa okamžite vloží.
+Spúšťač promptov: Napíšte #prefix a stlačte medzerník — automatické dopĺňanie vyplní jedinečnú zhodu alebo sa zobrazia návrhy nižšie. Stlačte medzerník znovu pre vloženie.
 
 🔒 SÚKROMIE A BEZPEČNOSŤ
 Navrhnuté so súkromím v centre. Vyžaduje prístup iba k gemini.google.com a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.

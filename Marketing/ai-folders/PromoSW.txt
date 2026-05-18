@@ -11,7 +11,7 @@ Folda za AI ni kokpit yako ya AI iliyounganishwa: panga mazungumzo kutoka kwa za
 🔀 Vitufe vya Mazungumzo Mapya: Anza mazungumzo mapya kwenye ChatGPT, Claude, Copilot, Gemini, au Perplexity moja kwa moja kutoka Hali ya Maagizo.
 ☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
 📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
-⌨️ Njia za Mkato za Kuchochea Kidokezo: Andika #PromptName katika uwanja wa gumzo wa AI yoyote inayoungwa mkono na ubonyeze Nafasi ili kuingiza kidokezo kilichohifadhiwa kinachofanana mara moja — bila kufungua paneli ya kiendelezi. Inafanya kazi katika huduma zote, ikiwa ni pamoja na LLM za ndani.
+⌨️ Kichocheo cha Kidokezo na Ukamilishaji Otomatiki: Andika #prefix katika uwanja wa gumzo wa AI yoyote na ubonyeze Nafasi — hukamilisha kiotomatiki hadi kwenye mechi ya kipekee, au huorodhesha chaguo zote kwenye mstari wa pili. Bonyeza Nafasi tena ili kuingiza. Inafanya kazi na ChatGPT, Claude, Gemini, Copilot na LLM za ndani.
 
 🌟 VIPENGELE VYA FOLDA
 
@@ -50,7 +50,7 @@ Bofya 📝 kwenye kitufe cha kubadilisha upande wa juu kulia wa kiendelezi.
 Bofya ➕ Ongeza Kidokezo, ingiza kichwa na maandishi yako, na hifadhi.
 Kutumia kidokezo: kipanua na ubofye ▶ — kinaingizwa moja kwa moja kwenye AI inayotumika, tayari kutumwa.
 Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi kufikiwa.
-Kuchochea kidokezo: andika #PromptName katika uwanja wa gumzo wa AI yoyote na ubonyeze Nafasi — kidokezo kinaingizwa mara moja.
+Kichocheo cha Kidokezo: Andika #prefix na ubonyeze Nafasi — ukamilishaji otomatiki hujaza mechi ya kipekee, au mapendekezo yanaonekana chini. Bonyeza Nafasi tena ili kuingiza.
 
 🔒 FARAGHA NA USALAMA
 Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa Gemini, Claude, ChatGPT, Copilot, Perplexity na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.

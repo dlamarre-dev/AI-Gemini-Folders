@@ -11,7 +11,7 @@ Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de 
 💎 Enlace Gem personalizado: Configura un enlace a tu Gem favorito y actívalo con un clic. Cuando está activo, el botón "Nueva conversación" abre tu Gem en lugar del chat por defecto.
 ☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
 📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
-⌨️ Atajos de Activación de Prompts: Escribe #PromptName directamente en el campo de chat de Gemini y pulsa Espacio para inyectar al instante el prompt guardado correspondiente — sin abrir el panel de la extensión.
+⌨️ Disparador de prompts con autocompletado: Escribe #prefix en el campo de chat de Gemini y pulsa Espacio — autocompleta hasta la coincidencia única, o muestra todas las opciones en una segunda línea. Pulsa Espacio de nuevo para inyectar.
 
 🌟 FUNCIONES DE CARPETAS
 
@@ -46,7 +46,7 @@ Haz clic en ➕ Añadir Prompt, escribe un título y tu texto, y guarda.
 Para usar un prompt: despliégalo y haz clic en ▶ — se inyecta directamente en Gemini, listo para enviar.
 Configura 💎 para apuntar a tu Gem personalizado.
 Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siempre está a mano.
-Activación de prompt: escribe #PromptName en el campo de chat de Gemini y pulsa Espacio — el prompt se inyecta al instante.
+Disparador de prompts: Escribe #prefix y pulsa Espacio — el autocompletado rellena la coincidencia única, o aparecen sugerencias debajo. Pulsa Espacio de nuevo para inyectar.
 
 🔒 PRIVACIDAD Y SEGURIDAD
 Diseñada con la privacidad en el centro. Solo solicita acceso a gemini.google.com y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.

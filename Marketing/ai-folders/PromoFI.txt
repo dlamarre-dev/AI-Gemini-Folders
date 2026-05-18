@@ -11,7 +11,7 @@ AI-kansiot on yhtenäinen AI-ohjauskeskuksesi: järjestä kaikista AI-työkaluis
 🔀 Uuden keskustelun painikkeet: Aloita uusi keskustelu ChatGPT:ssä, Claudessa, Copilotissa, Geminissä tai Perplexityssä suoraan Kehotetyökalusta — yksi painike palvelua kohden.
 ☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
 📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
-⌨️ Promptin käynnistyspikavalintoja: Kirjoita #PromptName minkä tahansa tuetun tekoälyn chat-kenttään ja paina Välilyönti injektoidaksesi vastaavan tallennetun promptin välittömästi — ilman laajennuspaneelin avaamista. Toimii kaikissa palveluissa, mukaan lukien paikalliset LLM:t.
+⌨️ Kehoteliipaisin automaattitäydennyksellä: Kirjoita #prefix minkä tahansa tekoälyn chat-kenttään ja paina välilyöntiä — täydentää automaattisesti ainutlaatuiseen osumaan tai luettelee kaikki vaihtoehdot toiselle riville. Paina välilyöntiä uudelleen lisätäksesi. Toimii ChatGPT:n, Clauden, Geminin, Copilotin ja paikallisten LLM-mallien kanssa.
 
 🌟 KANSIO-OMINAISUUDET
 
@@ -50,7 +50,7 @@ Napsauta 📝 lisäosan oikeassa yläkulmassa olevaa kytkintä.
 Napsauta ➕ Lisää prompt, syötä otsikko ja teksti ja tallenna.
 Promptin käyttäminen: laajenna se ja napsauta ▶ – se injektoidaan suoraan aktiiviseen AI:hin, valmiina lähetettäväksi.
 Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy helposti saatavilla.
-Promptin käynnistys: kirjoita #PromptName minkä tahansa tekoälyn chat-kenttään ja paina Välilyönti — prompt injektoidaan välittömästi.
+Kehoteliipaisin: Kirjoita #prefix ja paina välilyöntiä — automaattitäydennys täyttää ainutlaatuisen osuman tai ehdotukset ilmestyvät alle. Paina välilyöntiä uudelleen lisätäksesi.
 
 🔒 YKSITYISYYS JA TURVALLISUUS
 Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain Gemini, Claude, ChatGPT, Copilot, Perplexity:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.

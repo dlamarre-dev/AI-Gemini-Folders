@@ -11,7 +11,7 @@ Ar versiju 4.0 Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sar
 💎 Pielāgota Gem saite: Konfigurē saiti uz iecienīto Gem un ieslēdz/izslēdz to ar vienu klikšķi.
 ☁️ Uzvedņu sinhronizācija: Iespējo mākoņa sinhronizāciju uzvedņu bibliotēkai neatkarīgi no mapēm.
 📌 Piespraustas uzvednes: Piespreudz svarīgas uzvednes bibliotēkas augšdaļā.
-⌨️ Uzvednes aktivizācijas saīsnes: Ierakstiet #PromptName tieši Gemini tērzēšanas laukā un nospiediet Atstarpe, lai uzreiz ievietotu atbilstošo saglabāto uzvedni — neatverot paplašinājuma paneli.
+⌨️ Uzvednes aktivizētājs ar automātisko pabeigšanu: Ievadiet #prefix Gemini tērzēšanas laukā un nospiediet atstarpi — automātiski pabeidz līdz unikālajai atbilstībai vai otrā rindā uzrāda visas iespējas. Nospiediet atstarpi vēlreiz, lai ievietotu.
 
 🌟 MAPJU FUNKCIJAS
 
@@ -45,7 +45,7 @@ Noklikšķini ➕ Pievienot uzvedni, ievadi virsrakstu un tekstu un saglabā.
 Uzvednes izmantošanai: izvērst to un noklikšķini ▶ – tā tiek ievietota tieši Gemini.
 Konfigurē 💎, lai norādītu uz savu Gem.
 Uzvednes piespraudīšanai: noklikšķini 📍 – tā tiek pārvietota saraksta augšgalā.
-Uzvednes aktivizēšana: ierakstiet #PromptName Gemini tērzēšanas laukā un nospiediet Atstarpe — uzvedne tiek ievietota uzreiz.
+Uzvednes aktivizētājs: Ievadiet #prefix un nospiediet atstarpi — automātiskā pabeigšana aizpilda unikālo atbilstību vai zemāk parādās ieteikumi. Nospiediet atstarpi vēlreiz, lai ievietotu.
 
 🔒 PRIVĀTUMS UN DROŠĪBA
 Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai gemini.google.com un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot Chrome Sync: nav trešo pušu serveru, nav telemetrijas.

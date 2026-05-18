@@ -11,6 +11,7 @@ AI-mapper er dit samlede AI-kontrolpanel: organiser samtaler fra alle dine AI-v�
 🔀 Knapper til ny samtale: Start en ny samtale på ChatGPT, Claude, Copilot, Gemini eller Perplexity direkte fra Prompt-tilstand — én knap pr. service.
 ☁️ Promptsynkronisering: Aktivér skysynkronisering for promptbiblioteket uafhængigt af mapper.
 📌 Fastgjorte prompts: Fastgør vigtige prompts øverst i biblioteket, adskilt fra resten med en visuel separator.
+⌨️ Prompt-udløser med autofuldførelse: Skriv #prefix i et vilkårligt AI-chatfelt og tryk på mellemrum — autofuldføres til det unikke match eller viser alle muligheder på en anden linje. Tryk mellemrum igen for at injicere. Virker med ChatGPT, Claude, Gemini, Copilot og lokale LLM'er.
 
 🌟 MAPPEFUNKTIONER
 
@@ -49,7 +50,7 @@ Klik på 📝 på justeringsknappen øverst til højre i udvidelsen.
 Klik ➕ Tilføj prompt, indtast titel og tekst og gem.
 Brug af en prompt: udvid den og klik ▶ – den indsættes direkte i den aktive AI, klar til at sende.
 Fastgørelse af en prompt: klik 📍 – den flyttes øverst på listen og er altid let at finde.
-Promptudløser: skriv #PromptName i et hvilket som helst AI-chatfelt og tryk på Mellemrum — prompten indsættes med det samme.
+Prompt-udløser: Skriv #prefix og tryk på mellemrum — autofuldførelse udfylder det unikke match, eller forslag vises nedenfor. Tryk på mellemrum igen for at injicere.
 
 🔒 PRIVATLIV OG SIKKERHED
 Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til Gemini, Claude, ChatGPT, Copilot, Perplexity og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.

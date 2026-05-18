@@ -11,7 +11,7 @@ Su versija 4.0 Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbiu
 💎 Tinkintas Gem nuoroda: Sukonfigūruok nuorodą į mėgstamą Gem ir įjunk/išjunk ją vienu paspaudimu.
 ☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
 📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
-⌨️ Promptų suaktyvinimo spartieji klavišai: Tiesiog įveskite #PromptName Gemini pokalbių lauke ir paspauskite Tarpas, kad iš karto įterptumėte atitinkamą išsaugotą promptą — neatidarydami plėtinio skydelio.
+⌨️ Raginimų paleidiklis su automatišku pildymu: Įveskite #prefix Gemini pokalbio lauke ir paspauskite tarpą — automatiškai užpildo unikalų atitikmenį arba išvardija visas parinktis antrojoje eilutėje. Paspauskite tarpą dar kartą įterpimui.
 
 🌟 APLANKŲ FUNKCIJOS
 
@@ -45,7 +45,7 @@ Spustelėk ➕ Pridėti promptą, įveskite pavadinimą ir tekstą, išsaugok.
 Norėdamas naudoti promptą: išplėsk jį ir spustelėk ▶ – jis įterpiamas tiesiai į Gemini.
 Sukonfigūruok 💎 norėdamas nukreipti į savo Gem.
 Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo viršų.
-Prompto suaktyvinimas: įveskite #PromptName Gemini pokalbių lauke ir paspauskite Tarpas — promptas įterpiamas iš karto.
+Raginimų paleidiklis: Įveskite #prefix ir paspauskite tarpą — automatinis pildymas užpildo unikalų atitikmenį arba apačioje atsiranda pasiūlymai. Paspauskite tarpą dar kartą įterpimui.
 
 🔒 PRIVATUMAS IR SAUGUMAS
 Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie gemini.google.com ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.

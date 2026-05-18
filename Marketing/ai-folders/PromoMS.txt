@@ -11,7 +11,7 @@ Folder AI ialah kokpit AI bersatu anda: susun perbualan dari semua alat AI anda 
 🔀 Butang Perbualan Baru: Mulakan perbualan baru di ChatGPT, Claude, Copilot, Gemini atau Perplexity terus dari Mod Arahan — satu butang setiap perkhidmatan.
 ☁️ Penyegerakan prompt: Dayakan penyegerakan awan untuk perpustakaan prompt secara bebas daripada folder.
 📌 Prompt tersemat: Semat prompt penting di bahagian atas perpustakaan.
-⌨️ Pintasan Pencetus Prompt: Taip #PromptName dalam medan sembang mana-mana AI yang disokong dan tekan Ruang untuk menyisipkan prompt tersimpan yang sepadan serta-merta — tanpa membuka panel sambungan. Berfungsi pada semua perkhidmatan, termasuk LLM tempatan.
+⌨️ Pencetus Prompt dengan Pelengkapan Automatik: Taip #prefix dalam medan sembang mana-mana AI dan tekan Ruang — melengkapkan secara automatik kepada padanan unik, atau menyenaraikan semua pilihan pada baris kedua. Tekan Ruang lagi untuk menyuntik. Berfungsi dengan ChatGPT, Claude, Gemini, Copilot dan LLM tempatan.
 
 🌟 CIRI-CIRI FOLDER
 
@@ -49,7 +49,7 @@ Klik 📝 pada suis di bahagian kanan atas sambungan.
 Klik ➕ Tambah prompt, masukkan tajuk dan teks, dan simpan.
 Untuk menggunakan prompt: kembangkan dan klik ▶ – ia disisipkan terus ke AI aktif.
 Untuk menyemat prompt: klik 📍 – ia berpindah ke bahagian atas senarai.
-Pencetus prompt: taip #PromptName dalam medan sembang mana-mana AI dan tekan Ruang — prompt disisipkan serta-merta.
+Pencetus Prompt: Taip #prefix dan tekan Ruang — pelengkapan automatik mengisi padanan unik, atau cadangan muncul di bawah. Tekan Ruang lagi untuk menyuntik.
 
 🔒 PRIVASI & KESELAMATAN
 Dibina dengan mengutamakan privasi. Hanya meminta akses ke Gemini, Claude, ChatGPT, Copilot, Perplexity dan membaca tab aktif hanya semasa menyimpan perbualan atau menyisipkan prompt. Kebenaran «Penanda buku» hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui Chrome Sync: tiada pelayan pihak ketiga, tiada telemetri.

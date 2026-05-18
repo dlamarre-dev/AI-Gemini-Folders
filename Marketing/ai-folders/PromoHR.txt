@@ -11,7 +11,7 @@ UI mape je vaš objedinjeni AI kokpit: organizirajte razgovore iz svih vaših AI
 🔀 Gumbi za novi razgovor: Pokrenite novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity izravno iz načina upita — jedan gumb po usluzi.
 ☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
 📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
-⌨️ Prečaci za aktiviranje upita: Upišite #PromptName u polje za chat bilo kojeg podržanog AI-a i pritisnite Razmak za trenutačno ubacivanje odgovarajućeg spremljenog upita — bez otvaranja panela proširenja. Radi na svim uslugama, uključujući lokalne LLM-ove.
+⌨️ Okidač upita s automatskim dovršavanjem: Upišite #prefix u polje za chat bilo kojeg AI-a i pritisnite razmak — automatski dovršava do jedinstvenog podudaranja ili prikazuje sve opcije u drugom redu. Pritisnite razmak ponovo za ubacivanje. Radi s ChatGPT, Claude, Gemini, Copilot i lokalnim LLM-ovima.
 
 🌟 ZNAČAJKE MAPA
 
@@ -49,7 +49,7 @@ Klikni 📝 na prekidaču gore desno u dodatku.
 Klikni ➕ Dodaj upit, unesi naslov i tekst i spremi.
 Za korištenje upita: proširi ga i klikni ▶ – ubacuje se izravno u aktivni AI.
 Za prikvačivanje upita: klikni 📍 – premješta se na vrh popisa.
-Aktiviranje upita: upišite #PromptName u polje za chat bilo kojeg AI-a i pritisnite Razmak — upit se ubacuje trenutačno.
+Okidač upita: Upišite #prefix i pritisnite razmak — automatsko dovršavanje popunjava jedinstveno podudaranje ili se prijedlozi pojavljuju ispod. Pritisnite razmak ponovo za ubacivanje.
 
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem Chrome Sync: bez poslužitelja trećih strana, bez telemetrije.

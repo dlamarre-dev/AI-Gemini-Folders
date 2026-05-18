@@ -11,7 +11,7 @@ Sürüm 4.0 ile Gemini Klasörler, gerçek Gemini kokpitiniz haline geliyor: kon
 💎 Özel Gem Bağlantısı: Favori Gem'inize bir bağlantı yapılandırın ve tek tıkla açıp kapatın. Etkin olduğunda, "Yeni Konuşma" düğmesi varsayılan sohbet yerine Gem'inizi açar.
 ☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
 📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
-⌨️ İstem Tetikleme Kısayolları: #PromptName ifadesini doğrudan Gemini'nin sohbet alanına yazın ve Boşluk tuşuna basarak eşleşen kayıtlı istemi anında enjekte edin — uzantı panelini açmadan.
+⌨️ Otomatik Tamamlamalı Komut Tetikleyici: Gemini'nin sohbet alanına #prefix yazın ve boşluk tuşuna basın — benzersiz eşleşmeye otomatik tamamlar veya ikinci satırda tüm seçenekleri listeler. Enjekte etmek için boşluk tuşuna tekrar basın.
 
 🌟 KLASÖR ÖZELLİKLERİ
 
@@ -46,7 +46,7 @@ Uzantının sağ üstündeki geçiş düğmesinde 📝'a tıklayın.
 Bir istemi kullanmak için: genişletin ve ▶'ye tıklayın — doğrudan Gemini'ye enjekte edilir, göndermeye hazır.
 Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar ve kolayca erişilebilir kalır.
 Özel Gem'inize işaret etmesi için 💎'yi yapılandırın.
-İstem tetikleyici: Gemini'nin sohbet alanına #PromptName yazın ve Boşluk tuşuna basın — istem anında enjekte edilir.
+Komut Tetikleyici: #prefix yazın ve boşluk tuşuna basın — otomatik tamamlama benzersiz eşleşmeyi doldurur ya da öneriler aşağıda görünür. Enjekte etmek için boşluk tuşuna tekrar basın.
 
 🔒 GİZLİLİK & GÜVENLİK
 Gizlilik öncelikli tasarım. Yalnızca gemini.google.com'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.

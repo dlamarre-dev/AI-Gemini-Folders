@@ -11,7 +11,7 @@ Avec la version 4.0, Dossiers Gemini devient votre véritable cockpit Gemini : o
 💎 Gem personnalisé : Configurez un lien vers votre Gem favori et activez-le d'un clic. Quand il est actif, le bouton "Nouvelle conversation" ouvre votre Gem plutôt que le chat par défaut.
 📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
 ☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
-⌨️ Raccourcis de déclenchement de prompts : Tapez #PromptName directement dans le champ de saisie de Gemini et appuyez sur Espace pour injecter instantanément le prompt sauvegardé correspondant — sans ouvrir le panneau de l'extension.
+⌨️ Déclenchement de prompt avec autocomplétion : Tapez #prefix dans le champ de saisie de Gemini et appuyez sur Espace — complète automatiquement vers la correspondance unique, ou liste toutes les options sur une deuxième ligne. Appuyez à nouveau sur Espace pour injecter.
 
 🌟 FONCTIONNALITÉS DOSSIERS
 
@@ -46,7 +46,7 @@ Cliquez sur ➕ Ajouter un prompt, entrez un titre et votre texte, sauvegardez.
 Pour utiliser un prompt : dépliez-le et cliquez ▶ — il s'injecte directement dans Gemini, prêt à envoyer.
 Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et reste accessible d'un regard.
 Configurez 💎 pour pointer vers votre Gem personnalisé.
-Déclenchement de prompt : tapez #PromptName dans le champ de saisie de Gemini et appuyez sur Espace — le prompt s'injecte instantanément.
+Déclenchement de prompt : tapez #prefix et appuyez sur Espace — l'autocomplétion remplit la correspondance unique, ou des suggestions apparaissent en dessous. Appuyez à nouveau sur Espace pour injecter.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ
 Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à gemini.google.com et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.

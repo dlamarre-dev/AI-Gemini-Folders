@@ -11,7 +11,7 @@ MI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-es
 🔀 Új Beszélgetés Gombok: Indítson új beszélgetést a ChatGPT-n, Claude-on, Copiloton, Geminin vagy a Perplexityn közvetlenül a Prompt módból — egy gomb szolgáltatásonként.
 ☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
 📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
-⌨️ Promptindító billentyűparancsok: Írja be a #PromptName kifejezést bármely támogatott AI csevegőmezőjébe, majd nyomja meg a Szóköz billentyűt a megfelelő mentett prompt azonnali beillesztéséhez — a bővítménypanel megnyitása nélkül. Minden szolgáltatáson működik, beleértve a helyi LLM-eket is.
+⌨️ Prompt-aktiváló automatikus kiegészítéssel: Gépelje be a #prefix szót bármely AI csevegőmezőjébe, és nyomja meg a szóközt — automatikusan kiegészíti az egyedi egyezésig, vagy a második sorban listázza az összes lehetőséget. A beillesztéshez nyomja meg újra a szóközt. Működik a ChatGPT, Claude, Gemini, Copilot és helyi LLM-ekkel.
 
 🌟 MAPPAFUNKCIÓK
 
@@ -50,7 +50,7 @@ Kattintson a 📝 gombra a bővítmény jobb felső sarkában lévő kapcsolón.
 Kattintson a ➕ Prompt hozzáadása gombra, adjon meg egy nevet és szöveget, majd mentse el.
 Prompt használatához: bontsa ki, és kattintson a ▶ gombra — közvetlenül az aktív AI-ba illeszti be, küldésre készen.
 Prompt rögzítéséhez: kattintson a 📍 gombra — a lista tetejére kerül, és könnyen elérhető marad.
-Promptindítás: írja be a #PromptName kifejezést bármely AI csevegőmezőjébe, majd nyomja meg a Szóköz billentyűt — a prompt azonnal beillesztődik.
+Prompt-aktiváló: Gépelje be a #prefix szót és nyomja meg a szóközt — az automatikus kiegészítés kitölti az egyedi egyezést, vagy javaslatok jelennek meg alatta. A beillesztéshez nyomja meg újra a szóközt.
 
 🔒 ADATVÉDELEM ÉS BIZTONSÁG
 Az adatvédelmet alapelvként kezelve fejlesztve. Csak a Gemini, Claude, ChatGPT, Copilot, Perplexity elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.

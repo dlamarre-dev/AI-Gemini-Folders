@@ -11,7 +11,7 @@ AI-mappen is uw uniforme AI-cockpit: organiseer gesprekken van al uw AI-tools in
 🔀 Knoppen Nieuw Gesprek: Start een nieuw gesprek op ChatGPT, Claude, Copilot, Gemini of Perplexity direct vanuit de Promptmodus — één knop per dienst.
 ☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
 📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
-⌨️ Sneltoetsen voor prompttrigger: Typ #PromptName in het chatvenster van een ondersteunde AI en druk op Spatie om de overeenkomstige opgeslagen prompt direct in te voegen — zonder het extensiepaneel te openen. Werkt voor alle services, inclusief lokale LLM's.
+⌨️ Prompttrigger met automatisch aanvullen: Typ #prefix in het chatveld van een willekeurige AI en druk op spatie — vult automatisch aan tot de unieke match, of toont alle opties op een tweede regel. Druk nogmaals op spatie om in te voegen. Werkt met ChatGPT, Claude, Gemini, Copilot en lokale LLM's.
 
 🌟 MAPFUNCTIES
 
@@ -50,7 +50,7 @@ Klik op 📝 op de schakelaarknop rechtsboven in de extensie.
 Klik op ➕ Prompt toevoegen, voer een titel en uw tekst in en sla op.
 Een prompt gebruiken: vouw hem uit en klik op ▶ — wordt direct ingevoegd in de actieve AI, klaar om te verzenden.
 Een prompt vastzetten: klik op 📍 — hij verplaatst naar boven en blijft gemakkelijk bereikbaar.
-Prompttrigger: typ #PromptName in het chatvenster van een AI en druk op Spatie — de prompt wordt direct ingevoegd.
+Prompttrigger: Typ #prefix en druk op spatie — automatisch aanvullen vult de unieke match in, of er verschijnen suggesties eronder. Druk nogmaals op spatie om in te voegen.
 
 🔒 PRIVACY EN BEVEILIGING
 Gebouwd met privacy als kern. Vraagt alleen toegang tot Gemini, Claude, ChatGPT, Copilot, Perplexity en leest het actieve tabblad alleen bij het opslaan van een gesprek of het invoegen van een prompt. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via Chrome Sync: geen servers van derden, geen telemetrie.

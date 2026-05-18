@@ -11,7 +11,7 @@ Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj po
 💎 Prilagojena povezava Gem: Nastavi povezavo do priljubljenega Gema in jo vklopiti/izklopiti z enim klikom.
 ☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
 📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
-⌨️ Bližnjice za sprožitev pozivov: Vpiši #PromptName neposredno v polje za klepet Gemini in pritisni Preslednica, da takoj vstaviš ustrezni shranjeni poziv — brez odpiranja plošče razširitve.
+⌨️ Sprožilec pozivov z samodejnim dopolnjevanjem: Vnesite #prefix v polje za klepet Gemini in pritisnite preslednico — samodejno dopolni do edinstvenega ujemanja ali navede vse možnosti v drugi vrstici. Pritisnite preslednico znova za vstavljanje.
 
 🌟 FUNKCIJE MAP
 
@@ -45,7 +45,7 @@ Klikni ➕ Dodaj poziv, vnesi naslov in besedilo ter shrani.
 Za uporabo poziva: razširi ga in klikni ▶ – vstavi se neposredno v Gemini.
 Nastavi 💎 za usmerjanje na tvoj Gem.
 Za pripenjanje poziva: klikni 📍 – premakne se na vrh seznama.
-Sprožitev poziva: vpiši #PromptName v polje za klepet Gemini in pritisni Preslednica — poziv se vstavi takoj.
+Sprožilec pozivov: Vnesite #prefix in pritisnite preslednico — samodejno dopolnjevanje zapolni edinstveno ujemanje ali se spodaj prikažejo predlogi. Pritisnite preslednico znova za vstavljanje.
 
 🔒 ZASEBNOST IN VARNOST
 Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do gemini.google.com in bere aktivni zavihek samo pri shranjevanju pogovora ali vstavljanju poziva. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek Chrome Sync: brez strežnikov tretjih oseb, brez telemetrije.

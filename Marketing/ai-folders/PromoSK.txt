@@ -11,7 +11,7 @@ AI priečinky je váš zjednotený AI kokpit: organizujte konverzácie zo všetk
 🔀 Tlačidlá novej konverzácie: Spustite novú konverzáciu na ChatGPT, Claude, Copilot, Gemini alebo Perplexity priamo z režimu promptov — jedno tlačidlo na službu.
 ☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
 📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
-⌨️ Klávesové skratky na spúšťanie výziev: Napíšte #PromptName do chatovacieho poľa ľubovoľnej podporovanej AI a stlačte Medzerník, aby ste okamžite vložili zodpovedajúcu uloženú výzvu — bez otvorenia panela rozšírenia. Funguje vo všetkých službách vrátane lokálnych LLM.
+⌨️ Spúšťač promptov s automatickým dopĺňaním: Napíšte #prefix do chatovacieho poľa ľubovoľnej AI a stlačte medzerník — automaticky doplní na jedinečnú zhodu alebo vypíše všetky možnosti na druhom riadku. Stlačte medzerník znovu pre vloženie. Funguje s ChatGPT, Claude, Gemini, Copilot a lokálnymi LLM.
 
 🌟 FUNKCIE PRIEČINKOV
 
@@ -50,7 +50,7 @@ Kliknite na 📝 na prepínači v pravom hornom rohu rozšírenia.
 Kliknite na ➕ Pridať výzvu, zadajte názov a text, uložte.
 Ak chcete použiť výzvu: rozbaľte ju a kliknite na ▶ — vloží sa priamo do aktívnej AI, pripravená na odoslanie.
 Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vždy po ruke.
-Spustenie výzvy: napíšte #PromptName do chatovacieho poľa ľubovoľnej AI a stlačte Medzerník — výzva sa okamžite vloží.
+Spúšťač promptov: Napíšte #prefix a stlačte medzerník — automatické dopĺňanie vyplní jedinečnú zhodu alebo sa zobrazia návrhy nižšie. Stlačte medzerník znovu pre vloženie.
 
 🔒 SÚKROMIE A BEZPEČNOSŤ
 Navrhnuté so súkromím v centre. Vyžaduje prístup iba k Gemini, Claude, ChatGPT, Copilot, Perplexity a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.

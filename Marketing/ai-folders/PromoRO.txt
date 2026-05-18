@@ -11,7 +11,7 @@ Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate i
 🔀 Butoane Conversație Nouă: Lansați o conversație nouă pe ChatGPT, Claude, Copilot, Gemini sau Perplexity direct din Modul Prompt — un buton per serviciu.
 ☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
 📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
-⌨️ Comenzi rapide de declanșare prompt: Scrieți #PromptName în câmpul de chat al oricărui AI suportat și apăsați Spațiu pentru a injecta instantaneu promptul salvat corespunzător — fără a deschide panoul extensiei. Funcționează pe toate serviciile, inclusiv LLM-urile locale.
+⌨️ Declanșator de prompt cu completare automată: Tastați #prefix în câmpul de chat al oricărei IA și apăsați Spațiu — completează automat până la potrivirea unică sau afișează toate opțiunile pe a doua linie. Apăsați din nou Spațiu pentru a injecta. Funcționează cu ChatGPT, Claude, Gemini, Copilot și LLM-uri locale.
 
 🌟 FUNCȚII FOLDERE
 
@@ -50,7 +50,7 @@ Faceți clic pe 📝 de pe butonul de comutare din colțul din dreapta sus al ex
 Faceți clic pe ➕ Adăugați Prompt, introduceți un titlu și textul dvs., salvați.
 Pentru a utiliza un prompt: extindeți-l și faceți clic pe ▶ — se injectează direct în AI-ul activ, gata de trimis.
 Pentru a fixa un prompt: faceți clic pe 📍 — se mută în fruntea listei și rămâne mereu la îndemână.
-Declanșare prompt: scrieți #PromptName în câmpul de chat al oricărui AI și apăsați Spațiu — promptul este injectat instantaneu.
+Declanșator de prompt: Tastați #prefix și apăsați Spațiu — completarea automată umple potrivirea unică sau sugestiile apar dedesubt. Apăsați din nou Spațiu pentru a injecta.
 
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
 Concepută cu confidențialitatea în centru. Solicită acces doar la Gemini, Claude, ChatGPT, Copilot, Perplexity și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.

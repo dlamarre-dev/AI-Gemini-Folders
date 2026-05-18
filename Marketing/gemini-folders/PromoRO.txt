@@ -11,7 +11,7 @@ Cu versiunea 4.0, Foldere Gemini devine adevăratul dvs. cockpit Gemini: organiz
 💎 Link Gem personalizat: Configurați un link către Gem-ul preferat și activați-l cu un clic. Când este activ, butonul „Conversație nouă" deschide Gem-ul dvs. în locul chat-ului implicit.
 ☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
 📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
-⌨️ Comenzi rapide de declanșare prompt: Scrieți #PromptName direct în câmpul de chat al Gemini și apăsați Spațiu pentru a injecta instantaneu promptul salvat corespunzător — fără a deschide panoul extensiei.
+⌨️ Declanșator de prompt cu completare automată: Tastați #prefix în câmpul de chat al Gemini și apăsați Spațiu — completează automat până la potrivirea unică sau afișează toate opțiunile pe a doua linie. Apăsați din nou Spațiu pentru a injecta.
 
 🌟 FUNCȚII FOLDERE
 
@@ -46,7 +46,7 @@ Faceți clic pe ➕ Adăugați Prompt, introduceți un titlu și textul dvs., sa
 Pentru a utiliza un prompt: extindeți-l și faceți clic pe ▶ — se injectează direct în Gemini, gata de trimis.
 Configurați 💎 pentru a indica Gem-ul dvs. personalizat.
 Pentru a fixa un prompt: faceți clic pe 📍 — se mută în fruntea listei și rămâne mereu la îndemână.
-Declanșare prompt: scrieți #PromptName în câmpul de chat al Gemini și apăsați Spațiu — promptul este injectat instantaneu.
+Declanșator de prompt: Tastați #prefix și apăsați Spațiu — completarea automată umple potrivirea unică sau sugestiile apar dedesubt. Apăsați din nou Spațiu pentru a injecta.
 
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
 Concepută cu confidențialitatea în centru. Solicită acces doar la gemini.google.com și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.

@@ -11,7 +11,7 @@ Con la versione 4.0, Cartelle Gemini diventa il tuo vero cockpit per Gemini: org
 💎 Link Gem personalizzato: Configura un link al tuo Gem preferito e attivalo con un clic. Quando è attivo, il pulsante "Nuova conversazione" apre il tuo Gem invece della chat predefinita.
 ☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
 📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
-⌨️ Scorciatoie di attivazione prompt: Scrivi #PromptName direttamente nel campo chat di Gemini e premi Spazio per iniettare istantaneamente il prompt salvato corrispondente — senza aprire il pannello dell'estensione.
+⌨️ Attivatore di prompt con completamento automatico: Digita #prefix nel campo chat di Gemini e premi Spazio — completa automaticamente alla corrispondenza unica, o elenca tutte le opzioni in una seconda riga. Premi di nuovo Spazio per iniettare.
 
 🌟 FUNZIONALITÀ CARTELLE
 
@@ -46,7 +46,7 @@ Clicca ➕ Aggiungi Prompt, inserisci un titolo e il tuo testo, salva.
 Per usare un prompt: espandilo e clicca ▶ — viene iniettato direttamente in Gemini, pronto per l'invio.
 Configura 💎 per puntare al tuo Gem personalizzato.
 Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta sempre a portata di mano.
-Attivazione prompt: scrivi #PromptName nel campo chat di Gemini e premi Spazio — il prompt viene iniettato istantaneamente.
+Attivatore di prompt: Digita #prefix e premi Spazio — il completamento automatico riempie la corrispondenza unica, o appaiono suggerimenti in basso. Premi di nuovo Spazio per iniettare.
 
 🔒 PRIVACY E SICUREZZA
 Progettata con la privacy al centro. Richiede accesso solo a gemini.google.com e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.

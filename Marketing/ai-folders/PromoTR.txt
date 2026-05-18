@@ -11,7 +11,7 @@ YZ Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan ge
 🔀 Yeni Konuşma Düğmeleri: Prompt Modundan doğrudan ChatGPT, Claude, Copilot, Gemini veya Perplexity'de yeni bir konuşma başlatın — her hizmet için bir düğme.
 ☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
 📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
-⌨️ İstem Tetikleme Kısayolları: #PromptName ifadesini desteklenen herhangi bir yapay zekanın sohbet alanına yazın ve Boşluk tuşuna basarak eşleşen kayıtlı istemi anında enjekte edin — uzantı panelini açmadan. Yerel LLM'ler dahil tüm hizmetlerde çalışır.
+⌨️ Otomatik Tamamlamalı Komut Tetikleyici: Herhangi bir yapay zekanın sohbet alanına #prefix yazın ve boşluk tuşuna basın — benzersiz eşleşmeye otomatik tamamlar veya ikinci satırda tüm seçenekleri listeler. Enjekte etmek için boşluk tuşuna tekrar basın. ChatGPT, Claude, Gemini, Copilot ve yerel LLM'lerle çalışır.
 
 🌟 KLASÖR ÖZELLİKLERİ
 
@@ -50,7 +50,7 @@ Uzantının sağ üstündeki geçiş düğmesinde 📝'a tıklayın.
 ➕ İstem Ekle'ye tıklayın, bir başlık ve metin girin, kaydedin.
 Bir istemi kullanmak için: genişletin ve ▶'ye tıklayın — doğrudan aktif AI'ye enjekte edilir, göndermeye hazır.
 Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar ve kolayca erişilebilir kalır.
-İstem tetikleyici: herhangi bir yapay zekanın sohbet alanına #PromptName yazın ve Boşluk tuşuna basın — istem anında enjekte edilir.
+Komut Tetikleyici: #prefix yazın ve boşluk tuşuna basın — otomatik tamamlama benzersiz eşleşmeyi doldurur ya da öneriler aşağıda görünür. Enjekte etmek için boşluk tuşuna tekrar basın.
 
 🔒 GİZLİLİK & GÜVENLİK
 Gizlilik öncelikli tasarım. Yalnızca Gemini, Claude, ChatGPT, Copilot, Perplexity'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.

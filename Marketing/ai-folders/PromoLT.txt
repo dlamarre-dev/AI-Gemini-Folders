@@ -11,7 +11,7 @@ AI aplankai yra jūsų vieninga AI valdymo centras: tvarkykite visų AI įranki�
 🔀 Naujo pokalbio mygtukai: Pradėkite naują pokalbį ChatGPT, Claude, Copilot, Gemini arba Perplexity tiesiogiai iš raginimų režimo — vienas mygtukas kiekvienai paslaugai.
 ☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
 📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
-⌨️ Promptų suaktyvinimo spartieji klavišai: Įveskite #PromptName bet kurio palaikomo AI pokalbių lauke ir paspauskite Tarpas, kad iš karto įterptumėte atitinkamą išsaugotą promptą — neatidarydami plėtinio skydelio. Veikia su visomis paslaugomis, įskaitant vietinius LLM.
+⌨️ Raginimų paleidiklis su automatišku pildymu: Įveskite #prefix bet kurio AI pokalbio lauke ir paspauskite tarpą — automatiškai užpildo unikalų atitikmenį arba išvardija visas parinktis antrojoje eilutėje. Paspauskite tarpą dar kartą įterpimui. Veikia su ChatGPT, Claude, Gemini, Copilot ir vietiniais LLM.
 
 🌟 APLANKŲ FUNKCIJOS
 
@@ -49,7 +49,7 @@ Spustelėk 📝 ant perjungiklio plėtinio viršutiniame dešiniajame kampe.
 Spustelėk ➕ Pridėti promptą, įveskite pavadinimą ir tekstą, išsaugok.
 Norėdamas naudoti promptą: išplėsk jį ir spustelėk ▶ – jis įterpiamas tiesiai į aktyvų AI.
 Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo viršų.
-Prompto suaktyvinimas: įveskite #PromptName bet kurio AI pokalbių lauke ir paspauskite Tarpas — promptas įterpiamas iš karto.
+Raginimų paleidiklis: Įveskite #prefix ir paspauskite tarpą — automatinis pildymas užpildo unikalų atitikmenį arba apačioje atsiranda pasiūlymai. Paspauskite tarpą dar kartą įterpimui.
 
 🔒 PRIVATUMAS IR SAUGUMAS
 Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie Gemini, Claude, ChatGPT, Copilot, Perplexity ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.
