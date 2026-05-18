@@ -11,6 +11,7 @@ Mit Version 4.0 wird Gemini-Ordner zu Ihrem echten Gemini-Cockpit: Organisieren 
 💎 Benutzerdefinierter Gem-Link: Hinterlegen Sie einen Link zu Ihrem Lieblings-Gem und aktivieren Sie ihn per Klick. Wenn aktiv, öffnet „Neues Gespräch" Ihr Gem statt des Standard-Chats.
 ☁️ Prompt-Synchronisierung: Aktivieren Sie die Cloud-Sync für Ihre Prompt-Bibliothek, unabhängig von Ihren Ordnern.
 📌 Angeheftete Prompts: Heften Sie Ihre wichtigsten Prompts mit einem Klick oben an Ihre Bibliothek — durch einen visuellen Trenner von den übrigen getrennt.
+⌨️ Prompt-Trigger mit Autovervollständigung: Geben Sie #prefix in das Chat-Feld von Gemini ein und drücken Sie Leertaste — vervollständigt automatisch zum eindeutigen Treffer oder listet alle Optionen in einer zweiten Zeile auf. Drücken Sie erneut Leertaste zum Einfügen.
 
 🌟 ORDNER-FUNKTIONEN
 
@@ -45,7 +46,7 @@ Auf 📝 im Umschalter oben rechts in der Erweiterung klicken.
 Prompt verwenden: aufklappen und ▶ klicken — er wird direkt in Gemini injiziert, bereit zum Senden.
 💎 konfigurieren, um auf Ihren benutzerdefinierten Gem zu verweisen.
 Prompt anpinnen: auf 📍 klicken — er rückt an die erste Stelle und bleibt immer griffbereit.
-Prompt-Trigger: Tippen Sie #PromptName in das Chat-Eingabefeld von Gemini und drücken Sie Leertaste — der Prompt wird sofort eingefügt.
+Prompt-Trigger: Geben Sie #prefix ein und drücken Sie Leertaste — die Autovervollständigung füllt den eindeutigen Treffer aus oder Vorschläge erscheinen darunter. Drücken Sie erneut Leertaste zum Einfügen.
 
 🔒 DATENSCHUTZ & SICHERHEIT
 Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf gemini.google.com an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.

@@ -11,7 +11,7 @@
 🔀 Дугмад за нови разговор: Покрените нови разговор на ChatGPT, Claude, Copilot, Gemini или Perplexity директно из режима промптова — по јedno дугме по сервису.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
-⌨️ Prečice za aktiviranje promptova: Ukucaj #PromptName u polje za chat bilo kog podržanog AI-ja i pritisni Razmaknica da odmah ubaciš odgovarajući sačuvani prompt — bez otvaranja panela proširenja. Radi na svim uslugama, uključujući lokalne LLM-ove.
+⌨️ Окидач упита са аутоматским довршавањем: Унесите #prefix у поље за ћаскање bilo kog AI и притисните размак — аутоматски довршава до јединственог подударања или наводи све опције у другом реду. Притисните поново размак за убацивање. Ради са ChatGPT, Claude, Gemini, Copilot и локалним LLM.
 
 🌟 FUNKCIJE FOLDERA
 
@@ -49,7 +49,7 @@ Klikni 📝 na prekidaču gore desno u proširenju.
 Klikni ➕ Dodaj prompt, unesi naslov i tekst i sačuvaj.
 Za korišćenje prompta: proširi ga i klikni ▶ – ubacuje se direktno u aktivni AI.
 Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
-Aktiviranje prompta: ukucaj #PromptName u polje za chat bilo kog AI-ja i pritisni Razmaknica — prompt se ubacuje odmah.
+Окидач упита: Унесите #prefix и притисните размак — аутоматско довршавање попуњава јединствено подударање или се предлози појављују испод. Притисните поново размак за убацивање.
 
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.

@@ -11,7 +11,7 @@ Sa bersyon 4.0, ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockp
 💎 Custom Gem Link: Mag-configure ng link sa iyong paboritong Gem at i-toggle ito on/off sa isang click. Kapag aktibo, ang button na "Bagong Pag-uusap" ay nagbubukas ng iyong Gem sa halip na ang default na chat.
 ☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
 📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
-⌨️ Mga Shortcut sa Pag-trigger ng Prompt: I-type ang #PromptName nang direkta sa chat field ng Gemini at pindutin ang Space para agad na i-inject ang katugmang naka-save na prompt — nang hindi binubuksan ang extension panel.
+⌨️ Prompt Trigger na may Autocomplete: I-type ang #prefix sa chat field ng Gemini at pindutin ang Space — awtomatikong nakukumpleto sa natatanging tugma, o naglilista ng lahat ng opsyon sa pangalawang linya. Pindutin muli ang Space para mag-inject.
 
 🌟 MGA FEATURE NG FOLDER
 
@@ -46,7 +46,7 @@ I-click ang ➕ Magdagdag ng Prompt, maglagay ng pamagat at teksto, at i-save.
 Para gamitin ang isang prompt: palawakin ito at i-click ang ▶ — direktang ini-inject sa Gemini, handa nang ipadala.
 Para i-pin ang isang prompt: i-click ang 📍 — lilipat ito sa tuktok ng listahan at mananatiling madaling ma-access.
 I-configure ang 💎 para ituro sa iyong custom na Gem.
-Pag-trigger ng prompt: i-type ang #PromptName sa chat field ng Gemini at pindutin ang Space — agad na naiii-inject ang prompt.
+Prompt Trigger: I-type ang #prefix at pindutin ang Space — ang autocomplete ay nagpupuno ng natatanging tugma, o lumilitaw ang mga mungkahi sa ibaba. Pindutin muli ang Space para mag-inject.
 
 🔒 PRIVACY AT SEGURIDAD
 Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa gemini.google.com at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.

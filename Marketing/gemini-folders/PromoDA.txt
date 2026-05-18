@@ -11,6 +11,7 @@ Med version 4.0 bliver Gemini Mapper dit sande Gemini-cockpit: organiser samtale
 💎 Tilpasset Gem-link: Konfigurer et link til din favoritgem og slå det til/fra med ét klik. Når det er aktivt, åbner knappen «Ny samtale» din Gem i stedet for standard-chatten.
 ☁️ Promptsynkronisering: Aktivér skysynkronisering for promptbiblioteket uafhængigt af mapper.
 📌 Fastgjorte prompts: Fastgør vigtige prompts øverst i biblioteket, adskilt fra resten med en visuel separator.
+⌨️ Prompt-udløser med autofuldførelse: Skriv #prefix i Geminis chatfelt og tryk på mellemrum — autofuldføres til det unikke match eller viser alle muligheder på en anden linje. Tryk mellemrum igen for at injicere.
 
 🌟 MAPPEFUNKTIONER
 
@@ -45,7 +46,7 @@ Klik ➕ Tilføj prompt, indtast titel og tekst og gem.
 Brug af en prompt: udvid den og klik ▶ – den indsættes direkte i Gemini, klar til at sende.
 Konfigurer 💎 til at pege mod din Gem.
 Fastgørelse af en prompt: klik 📍 – den flyttes øverst på listen og er altid let at finde.
-Promptudløser: skriv #PromptName i Geminis chatfelt og tryk på Mellemrum — prompten indsættes med det samme.
+Prompt-udløser: Skriv #prefix og tryk på mellemrum — autofuldførelse udfylder det unikke match, eller forslag vises nedenfor. Tryk på mellemrum igen for at injicere.
 
 🔒 PRIVATLIV OG SIKKERHED
 Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til gemini.google.com og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.

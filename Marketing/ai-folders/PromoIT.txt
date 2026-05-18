@@ -11,7 +11,7 @@ Cartelle IA è il tuo cockpit AI unificato: organizza conversazioni da tutti i t
 🔀 Pulsanti Nuova Conversazione: Avvia una nuova conversazione su ChatGPT, Claude, Copilot, Gemini o Perplexity direttamente dalla Modalità Prompt — un pulsante per servizio.
 ☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
 📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
-⌨️ Scorciatoie di attivazione prompt: Scrivi #PromptName nel campo chat di qualsiasi AI supportata e premi Spazio per iniettare istantaneamente il prompt salvato corrispondente — senza aprire il pannello dell'estensione. Funziona su tutti i servizi, inclusi i LLM locali.
+⌨️ Attivatore di prompt con completamento automatico: Digita #prefix nel campo chat di qualsiasi IA e premi Spazio — completa automaticamente alla corrispondenza unica, o elenca tutte le opzioni in una seconda riga. Premi di nuovo Spazio per iniettare. Funziona con ChatGPT, Claude, Gemini, Copilot e LLM locali.
 
 🌟 FUNZIONALITÀ CARTELLE
 
@@ -50,7 +50,7 @@ Clicca 📝 sull'interruttore in alto a destra nell'estensione.
 Clicca ➕ Aggiungi Prompt, inserisci un titolo e il tuo testo, salva.
 Per usare un prompt: espandilo e clicca ▶ — viene iniettato direttamente nell'IA attiva, pronto per l'invio.
 Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta sempre a portata di mano.
-Attivazione prompt: scrivi #PromptName nel campo chat di qualsiasi AI e premi Spazio — il prompt viene iniettato istantaneamente.
+Attivatore di prompt: Digita #prefix e premi Spazio — il completamento automatico riempie la corrispondenza unica, o appaiono suggerimenti in basso. Premi di nuovo Spazio per iniettare.
 
 🔒 PRIVACY E SICUREZZA
 Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, ChatGPT, Copilot, Perplexity e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.

@@ -11,7 +11,7 @@ Dossiers IA est votre cockpit IA unifié : organisez des conversations de tous v
 🔀 Boutons Nouvelle Conversation : Lancez une nouvelle discussion sur ChatGPT, Claude, Copilot, Gemini ou Perplexity directement depuis le Mode Prompts — un bouton par service.
 📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
 ☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
-⌨️ Raccourcis de déclenchement de prompts : Tapez #PromptName dans le champ de saisie de n'importe quelle IA prise en charge et appuyez sur Espace pour injecter instantanément le prompt sauvegardé correspondant — sans ouvrir le panneau de l'extension. Fonctionne sur tous les services, y compris les LLM locaux.
+⌨️ Déclenchement de prompt avec autocomplétion : Tapez #prefix dans le champ de saisie de n'importe quelle IA et appuyez sur Espace — complète automatiquement vers la correspondance unique, ou liste toutes les options sur une deuxième ligne. Appuyez à nouveau sur Espace pour injecter. Fonctionne sur ChatGPT, Claude, Gemini, Copilot et les LLM locaux.
 
 🌟 FONCTIONNALITÉS DOSSIERS
 
@@ -50,7 +50,7 @@ Cliquez sur 📝 dans le bouton de bascule en haut à droite de l'extension.
 Cliquez sur ➕ Ajouter un prompt, entrez un titre et votre texte, sauvegardez.
 Pour utiliser un prompt : dépliez-le et cliquez ▶ — il s'injecte directement dans l'IA active, prêt à envoyer.
 Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et reste accessible d'un regard.
-Déclenchement de prompt : tapez #PromptName dans le champ de saisie de n'importe quelle IA et appuyez sur Espace — le prompt s'injecte instantanément.
+Déclenchement de prompt : tapez #prefix et appuyez sur Espace — l'autocomplétion remplit la correspondance unique, ou des suggestions apparaissent en dessous. Appuyez à nouveau sur Espace pour injecter.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ
 Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à Gemini, Claude, ChatGPT, Copilot, Perplexity et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
