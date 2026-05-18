@@ -413,10 +413,25 @@ function findPromptByTrigger(prompts, triggerName) {
   return null;
 }
 
-// Injected into the AI page via chrome.scripting.executeScript (runs in PAGE context).
-// Finds the chat editor with the given CSS selectors and replaces its full content.
-// Returns true if the editor was found and the injection was attempted; false otherwise.
-function injectPromptIntoEditor(promptText, selectors) {
+// Returns all prompts whose stripped title starts with prefix (case-insensitive).
+// Each result: { name: stripped-title, text: prompt-body }
+function findPromptsByPrefix(prompts, prefix) {
+  const EMOJI_RE = /^(?:\p{Emoji_Presentation}|\p{Extended_Pictographic})️?\s*/u;
+  const needle = prefix.toLowerCase();
+  const results = [];
+  for (const [title, data] of Object.entries(prompts)) {
+    const stripped = title.replace(EMOJI_RE, '').trim();
+    if (stripped.toLowerCase().startsWith(needle)) {
+      results.push({ name: stripped, text: typeof data === 'string' ? data : (data.text || '') });
+    }
+  }
+  return results;
+}
+
+// Injected into the AI page via executeScript (runs in PAGE context).
+// Idempotent: always reconstructs content from the first line + new suggestions.
+// Pass an empty array to clear the suggestion line (keeps only line 1).
+function insertSuggestionsInEditor(suggestions, selectors) {
   const active = document.activeElement;
   let editor = null;
   for (const sel of selectors) {
@@ -430,6 +445,73 @@ function injectPromptIntoEditor(promptText, selectors) {
   editor.focus();
 
   if (editor.isContentEditable) {
+    // innerText respects <p>/<br> as \n (unlike textContent which concatenates).
+    const firstLine = (editor.innerText ?? editor.textContent).split('\n')[0].trim();
+    const newContent = suggestions.length > 0
+      ? firstLine + '\n' + suggestions.map(n => '#' + n).join('  ')
+      : firstLine;
+    document.execCommand('selectAll', false, null);
+    document.execCommand('delete', false, null);
+    document.execCommand('insertText', false, newContent);
+    // Place cursor at the end of the first block element (the first line).
+    // Targeting the first <p> / <div> directly is more reliable than a full
+    // TreeWalker traversal, which can be thrown off by invisible nodes or <br>.
+    const firstBlock = editor.querySelector('p, div') ?? editor;
+    const lastText = Array.from(firstBlock.childNodes).filter(n => n.nodeType === 3).pop();
+    const range = document.createRange();
+    if (lastText) {
+      range.setStart(lastText, lastText.textContent.length);
+    } else {
+      range.selectNodeContents(firstBlock);
+      range.collapse(false);
+    }
+    range.collapse(true);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    return true;
+  }
+
+  if (editor.tagName === 'TEXTAREA' || editor.tagName === 'INPUT') {
+    const firstLine = editor.value.split('\n')[0];
+    const newContent = suggestions.length > 0
+      // Textarea editors (e.g. Perplexity) process '#word' as their own tokens, so
+      // omit the '#' prefix in suggestion names to avoid triggering that system.
+      ? firstLine + '\n' + suggestions.join('  ')
+      : firstLine;
+    const proto = editor.tagName === 'TEXTAREA'
+      ? window.HTMLTextAreaElement.prototype
+      : window.HTMLInputElement.prototype;
+    const nativeSetter = Object.getOwnPropertyDescriptor(proto, 'value')?.set;
+    if (nativeSetter) nativeSetter.call(editor, newContent); else editor.value = newContent;
+    editor.dispatchEvent(new Event('input', { bubbles: true }));
+    editor.setSelectionRange(firstLine.length, firstLine.length);
+    return true;
+  }
+
+  return false;
+}
+
+// Injected into the AI page via chrome.scripting.executeScript (runs in PAGE context).
+// Finds the chat editor with the given CSS selectors and replaces its full content.
+// Returns true if the editor was found and the injection was attempted; false otherwise.
+function injectPromptIntoEditor(promptText, selectors, forceClear) {
+  const active = document.activeElement;
+  let editor = null;
+  for (const sel of selectors) {
+    try {
+      if (active && active.matches(sel)) { editor = active; break; }
+      const found = document.querySelector(sel);
+      if (found) { editor = found; break; }
+    } catch (_) {}
+  }
+  if (!editor) return false;
+  editor.focus();
+
+  if (editor.isContentEditable) {
+    // Some editors (e.g. Perplexity) convert #word into non-selectable token chips
+    // that survive selectAll+delete. Clearing textContent first removes them.
+    if (forceClear) editor.textContent = '';
     // Three-step replace: select all → delete → insert.
     // This is more reliable than selectAll+insertText in one step for long text,
     // because some editors (e.g. Perplexity) don't replace the selection when
@@ -484,6 +566,8 @@ if (typeof module !== 'undefined') {
     normalizeUrl,
     mergeImportData,
     findPromptByTrigger,
+    findPromptsByPrefix,
     injectPromptIntoEditor,
+    insertSuggestionsInEditor,
   };
 }
