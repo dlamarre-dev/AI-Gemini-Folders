@@ -117,13 +117,21 @@
     const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
     // Filter empty lines: innerText can produce "\n\n" between <p> elements in Quill.
     const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
-    // Only act when a suggestion line is present after the first line.
-    if (nonEmpty.length < 2 || !SUGG_LINE_RE.test(nonEmpty[1])) return;
 
-    const firstLine = nonEmpty[0];
-    // If # is still on the first line, refresh suggestions from its current suffix
-    // ('' means show all prompts). If # was deleted, pass null to signal "clear".
+    const firstLine = nonEmpty[0] ?? '';
     const startsWithHash = /^#[\p{L}\p{N}_-]*$/u.test(firstLine);
+    const hasSuggestionLine = nonEmpty.length >= 2 && SUGG_LINE_RE.test(nonEmpty[1]);
+    // # was just deleted: filter(Boolean) elevates the suggestion line to nonEmpty[0].
+    // Detect this so we can clear it (Backspace/Delete only, to avoid false positives).
+    const orphanedSuggestion = (e.key === 'Backspace' || e.key === 'Delete')
+      && !startsWithHash && !hasSuggestionLine && SUGG_LINE_RE.test(firstLine);
+
+    // Act when: suggestions are visible, OR # is on the first line (any content key
+    // triggers live updates from the first # onward), OR suggestion line became orphaned.
+    if (!hasSuggestionLine && !orphanedSuggestion && !startsWithHash) return;
+
+    // If # is still on the first line, pass its current suffix as prefix ('' = show all).
+    // If # was deleted (orphaned or otherwise), pass null to signal "clear suggestions".
     const prefix = startsWithHash ? firstLine.slice(1) : null;
 
     clearTimeout(_suggTimer);
