@@ -430,8 +430,11 @@ function findPromptsByPrefix(prompts, prefix) {
 
 // Injected into the AI page via executeScript (runs in PAGE context).
 // Idempotent: always reconstructs content from the first line + new suggestions.
-// Pass an empty array to clear the suggestion line (keeps only line 1).
-function insertSuggestionsInEditor(suggestions, selectors) {
+// Pass an empty array to clear the suggestion lines (keeps only line 1).
+// extensionLabel: optional string shown on line 2; suggestions appear on line 3.
+// newFirstLine: optional override for line 1 (used by autocomplete to update the
+//   trigger while keeping the suggestion structure stable in one operation).
+function insertSuggestionsInEditor(suggestions, selectors, extensionLabel, newFirstLine) {
   const active = document.activeElement;
   let editor = null;
   for (const sel of selectors) {
@@ -452,7 +455,9 @@ function insertSuggestionsInEditor(suggestions, selectors) {
       // Quill (Gemini): use a single insertText with '\n' because Quill's Delta format
       // treats '\n' as a paragraph break natively. Using insertParagraph desynchronises
       // Quill's model from the DOM in Firefox MAIN world (wrong element type inserted).
-      const newContent = firstLine + (suggestions.length > 0 ? '\n' + suggestions.map(n => '#' + n).join('  ') : '');
+      const line1 = newFirstLine !== undefined ? newFirstLine : firstLine;
+      const labelPart = (extensionLabel && suggestions.length > 0) ? '\n' + extensionLabel : '';
+      const newContent = line1 + (suggestions.length > 0 ? labelPart + '\n' + suggestions.map(n => '#' + n).join('  ') : '');
       document.execCommand('selectAll', false, null);
       document.execCommand('insertText', false, newContent);
       // Quill updates its selection asynchronously after insertText. Defer cursor
@@ -463,7 +468,7 @@ function insertSuggestionsInEditor(suggestions, selectors) {
         const qlRoot = qlContainer?.parentElement;
         const quill = qlRoot?.__quill ?? qlContainer?.__quill;
         if (quill?.setSelection) {
-          quill.setSelection(firstLine.length, 0, 'api');
+          quill.setSelection(line1.length, 0, 'api');
         } else {
           // Fallback Range API — Quill has settled so our Range won't be overridden.
           const firstBlock = editor.querySelector('p') ?? editor;
@@ -486,11 +491,16 @@ function insertSuggestionsInEditor(suggestions, selectors) {
 
     // ProseMirror (Claude) / React (ChatGPT): use insertParagraph for a reliable
     // paragraph break — '\n' in insertText is not guaranteed to split paragraphs.
+    const line1 = newFirstLine !== undefined ? newFirstLine : firstLine;
     document.execCommand('selectAll', false, null);
     document.execCommand('delete', false, null);
-    document.execCommand('insertText', false, firstLine);
+    document.execCommand('insertText', false, line1);
     if (suggestions.length > 0) {
       document.execCommand('insertParagraph', false, null);
+      if (extensionLabel) {
+        document.execCommand('insertText', false, extensionLabel);
+        document.execCommand('insertParagraph', false, null);
+      }
       document.execCommand('insertText', false, suggestions.map(n => '#' + n).join('  '));
     }
 
@@ -513,18 +523,21 @@ function insertSuggestionsInEditor(suggestions, selectors) {
 
   if (editor.tagName === 'TEXTAREA' || editor.tagName === 'INPUT') {
     const firstLine = editor.value.split('\n')[0];
-    const newContent = suggestions.length > 0
-      // Textarea editors (e.g. Perplexity) process '#word' as their own tokens, so
-      // omit the '#' prefix in suggestion names to avoid triggering that system.
-      ? firstLine + '\n' + suggestions.join('  ')
-      : firstLine;
+    const line1 = newFirstLine !== undefined ? newFirstLine : firstLine;
+    // Textarea editors (e.g. Open WebUI) omit the '#' prefix in suggestion names
+    // to avoid triggering site-specific token processors.
+    let newContent = line1;
+    if (suggestions.length > 0) {
+      if (extensionLabel) newContent += '\n' + extensionLabel;
+      newContent += '\n' + suggestions.join('  ');
+    }
     const proto = editor.tagName === 'TEXTAREA'
       ? window.HTMLTextAreaElement.prototype
       : window.HTMLInputElement.prototype;
     const nativeSetter = Object.getOwnPropertyDescriptor(proto, 'value')?.set;
     if (nativeSetter) nativeSetter.call(editor, newContent); else editor.value = newContent;
     editor.dispatchEvent(new Event('input', { bubbles: true }));
-    editor.setSelectionRange(firstLine.length, firstLine.length);
+    editor.setSelectionRange(line1.length, line1.length);
     return true;
   }
 

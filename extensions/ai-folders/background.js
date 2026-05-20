@@ -152,13 +152,26 @@ async function handlePromptTriggerLookup(message, sender) {
     }
 
     if (matches.length === 1) {
+      // Single match: autocomplete by updating line 1 to #fullName while keeping
+      // the suggestion structure stable (no flash). newFirstLine overrides line 1
+      // inside insertSuggestionsInEditor without clearing the suggestion lines.
+      if (!forceClear) {
+        await chrome.scripting.executeScript({
+          target: { tabId },
+          world: 'MAIN',
+          args: [[matches[0].name], selectors, chrome.i18n.getMessage('extName'), '#' + matches[0].name],
+          func: insertSuggestionsInEditor,
+        });
+        return { status: 'autocompleted' };
+      }
+      // forceClear sites (Perplexity) can't show suggestions — inject directly.
       await chrome.scripting.executeScript({
         target: { tabId },
         world: 'MAIN',
-        args: ['#' + matches[0].name, selectors, forceClear],
+        args: [matches[0].text, selectors, forceClear],
         func: injectPromptIntoEditor,
       });
-      return { status: 'autocompleted' };
+      return { status: 'injected' };
     }
 
     if (forceClear) return { status: 'no_match' };
@@ -166,7 +179,7 @@ async function handlePromptTriggerLookup(message, sender) {
     const suggResults = await chrome.scripting.executeScript({
       target: { tabId },
       world: 'MAIN',
-      args: [matches.map(m => m.name), selectors],
+      args: [matches.map(m => m.name), selectors, chrome.i18n.getMessage('extName')],
       func: insertSuggestionsInEditor,
     });
     return { status: suggResults?.[0]?.result === true ? 'suggestions' : 'no_match' };
@@ -193,7 +206,7 @@ async function handleSuggestUpdate(message, sender) {
     await chrome.scripting.executeScript({
       target: { tabId },
       world: 'MAIN',
-      args: [names, selectors],
+      args: [names, selectors, chrome.i18n.getMessage('extName')],
       func: insertSuggestionsInEditor,
     });
   } catch (err) {

@@ -129,12 +129,13 @@ async function handlePromptTriggerLookup(message, sender) {
     }
 
     if (matches.length === 1) {
-      // Unique prefix → autocomplete: replace field with #fullName.
+      // Single match: autocomplete by updating line 1 to #fullName while keeping
+      // the suggestion structure stable (no flash).
       await chrome.scripting.executeScript({
         target: { tabId: sender.tab.id },
         world: 'MAIN',
-        args: ['#' + matches[0].name, selectors],
-        func: injectPromptIntoEditor,
+        args: [[matches[0].name], selectors, chrome.i18n.getMessage('extName'), '#' + matches[0].name],
+        func: insertSuggestionsInEditor,
       });
       return { status: 'autocompleted' };
     }
@@ -143,7 +144,7 @@ async function handlePromptTriggerLookup(message, sender) {
     const suggResults = await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
       world: 'MAIN',
-      args: [matches.map(m => m.name), selectors],
+      args: [matches.map(m => m.name), selectors, chrome.i18n.getMessage('extName')],
       func: insertSuggestionsInEditor,
     });
     // insertSuggestionsInEditor returns false for non-Quill editors → fall back to space.
@@ -164,7 +165,7 @@ async function handleSuggestUpdate(message, sender) {
     await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
       world: 'MAIN',
-      args: [names, selectors],
+      args: [names, selectors, chrome.i18n.getMessage('extName')],
       func: insertSuggestionsInEditor,
     });
   } catch (err) {
