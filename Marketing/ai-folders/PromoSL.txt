@@ -11,7 +11,7 @@ Mape AI je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vse
 🔀 Gumbi za novo pogovor: Začnite nov pogovor na ChatGPT, Claude, Copilot, Gemini ali Perplexity neposredno iz načina pozivov — en gumb za vsako storitev.
 ☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
 📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
-⌨️ Sprožilec pozivov z samodejnim dopolnjevanjem: Vnesite #prefix v polje za klepet katerega koli AI in pritisnite preslednico — samodejno dopolni do edinstvenega ujemanja ali navede vse možnosti v drugi vrstici. Pritisnite preslednico znova za vstavljanje. Deluje s ChatGPT, Claude, Gemini, Copilot in lokalnimi LLM.
+⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet katerega koli AI, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje. Deluje s ChatGPT, Claude, Gemini, Copilot in lokalnimi LLM.
 
 🌟 FUNKCIJE MAP
 
@@ -49,7 +49,7 @@ Klikni 📝 na stikalu zgoraj desno v razširitvi.
 Klikni ➕ Dodaj poziv, vnesi naslov in besedilo ter shrani.
 Za uporabo poziva: razširi ga in klikni ▶ – vstavi se neposredno v aktivni AI.
 Za pripenjanje poziva: klikni 📍 – premakne se na vrh seznama.
-Sprožilec pozivov: Vnesite #prefix in pritisnite preslednico — samodejno dopolnjevanje zapolni edinstveno ujemanje ali se spodaj prikažejo predlogi. Pritisnite preslednico znova za vstavljanje.
+Sprožilec pozivov: Vnesite #, da takoj vidite vse shranjene pozive, ali nadaljujte tipkanje za filtriranje v realnem času. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za vstavljanje.
 
 🔒 ZASEBNOST IN VARNOST
 Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do Gemini, Claude, ChatGPT, Copilot, Perplexity in bere aktivni zavihek samo pri shranjevanju pogovora ali vstavljanju poziva. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek Chrome Sync: brez strežnikov tretjih oseb, brez telemetrije.
@@ -58,6 +58,6 @@ Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do Gemini, Claude, Cha
 Mape AI je odprtokodni projekt, zgrajen s strastjo. Preglednost in spoštovanje tvoje zasebnosti sta naši najvišji prioriteti. Si razvijalec ali samo radoveden? Preglej kodo, sledi dnevniku sprememb ali prispevaj na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 POSODOBITVE:
-Različica 1.1 (Bližnjice za sprožitev pozivov): Vpiši #PromptName v polje za klepet katerega koli AI-ja in pritisni Preslednica, da takoj vstaviš shranjeni poziv — brez odpiranja plošče razširitve. Deluje pri vseh podprtih storitvah, vključno z lokalnimi LLM-ji.
+Različica 1.1 (Bližnjice za sprožitev pozivov): Vnesite # v polje za klepet katerega koli AI, da takoj vidite vse shranjene pozive, filtrirane v realnem času med tipkanjem. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za vstavljanje — brez kdaj koli odpiranja plošče razširitve. Predlogi se prikažejo z imenom razširitve kot oznako, Backspace obnovi predloge po neujemanju in samodejno dopolnjevanje pri edinstvenem ujemanju ohranja ploščo stabilno. Deluje pri vseh podprtih storitvah, vključno z lokalnimi LLM-ji.
 Različica 1.0.1: Manjše popravke napak in izboljšave stabilnosti.
 Različica 1.0: Prva izdaja! Organizirajte pogovore iz Gemini, Claude, ChatGPT, Copilot in Perplexity v skupne mape. Popolna knjižnica pozivov z vstavljanjem z enim klikom, bližnjice za hitro shranjevanje, povleci in spusti, mobilna sinhronizacija, množična dejanja, skupine zavihkov in podpora za 43 jezikov.

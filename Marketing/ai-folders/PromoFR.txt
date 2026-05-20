@@ -11,7 +11,7 @@ Dossiers IA est votre cockpit IA unifié : organisez des conversations de tous v
 🔀 Boutons Nouvelle Conversation : Lancez une nouvelle discussion sur ChatGPT, Claude, Copilot, Gemini ou Perplexity directement depuis le Mode Prompts — un bouton par service.
 📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
 ☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
-⌨️ Déclenchement de prompt avec autocomplétion : Tapez #prefix dans le champ de saisie de n'importe quelle IA et appuyez sur Espace — complète automatiquement vers la correspondance unique, ou liste toutes les options sur une deuxième ligne. Appuyez à nouveau sur Espace pour injecter. Fonctionne sur ChatGPT, Claude, Gemini, Copilot et les LLM locaux.
+⌨️ Déclenchement de prompt avec suggestions en direct : Tapez # dans le champ de saisie de n'importe quelle IA pour voir instantanément tous vos prompts sauvegardés — filtrés en temps réel au fil de la frappe. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter directement. Fonctionne sur ChatGPT, Claude, Gemini, Copilot et les LLM locaux.
 
 🌟 FONCTIONNALITÉS DOSSIERS
 
@@ -50,7 +50,7 @@ Cliquez sur 📝 dans le bouton de bascule en haut à droite de l'extension.
 Cliquez sur ➕ Ajouter un prompt, entrez un titre et votre texte, sauvegardez.
 Pour utiliser un prompt : dépliez-le et cliquez ▶ — il s'injecte directement dans l'IA active, prêt à envoyer.
 Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et reste accessible d'un regard.
-Déclenchement de prompt : tapez #prefix et appuyez sur Espace — l'autocomplétion remplit la correspondance unique, ou des suggestions apparaissent en dessous. Appuyez à nouveau sur Espace pour injecter.
+Déclenchement de prompt : tapez # pour voir instantanément tous vos prompts sauvegardés, ou continuez à taper pour filtrer en temps réel. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ
 Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à Gemini, Claude, ChatGPT, Copilot, Perplexity et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
@@ -59,6 +59,6 @@ Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande
 Dossiers IA est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Consultez le code, suivez l'historique ou contribuez sur GitHub : https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 MISES À JOUR :
-Version 1.1 (Raccourcis de déclenchement de prompts) : Tapez #PromptName dans le champ de saisie de n'importe quelle IA et appuyez sur Espace pour injecter instantanément un prompt sauvegardé — sans ouvrir le panneau de l'extension. Fonctionne sur tous les services pris en charge, y compris les LLM locaux.
+Version 1.1 (Raccourcis de déclenchement de prompts) : Tapez # dans le champ de saisie de n'importe quelle IA pour voir instantanément tous vos prompts sauvegardés, filtrés en temps réel au fil de la frappe. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion ou sur une correspondance exacte pour l'injecter — sans jamais ouvrir le panneau de l'extension. Les suggestions apparaissent avec le nom de l'extension comme étiquette, la touche Retour arrière restaure les suggestions après une absence de correspondance, et l'autocomplétion sur correspondance unique maintient le panneau stable. Fonctionne sur tous les services pris en charge, y compris les LLM locaux.
 Version 1.0.1 : Corrections mineures et améliorations de la stabilité.
 Version 1.0 : Première publication ! Organisez vos conversations depuis Gemini, Claude, ChatGPT, Copilot et Perplexity dans des dossiers partagés. Bibliothèque de prompts complète avec injection en un clic, raccourcis de sauvegarde rapide, glisser-déposer, synchronisation mobile, actions groupées, groupes d'onglets et prise en charge de 43 langues. Support des LLM locaux avec URL configurable (localhost et adresses LAN).

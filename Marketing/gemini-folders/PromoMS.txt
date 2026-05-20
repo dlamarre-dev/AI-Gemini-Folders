@@ -11,7 +11,7 @@ Dengan versi 4.0, Folder Gemini menjadi cockpit Gemini sebenar anda: susun perbu
 💎 Pautan Gem tersuai: Konfigurasi pautan ke Gem kegemaran anda dan hidupkan/matikan dengan satu klik.
 ☁️ Penyegerakan prompt: Dayakan penyegerakan awan untuk perpustakaan prompt secara bebas daripada folder.
 📌 Prompt tersemat: Semat prompt penting di bahagian atas perpustakaan.
-⌨️ Pencetus Prompt dengan Pelengkapan Automatik: Taip #prefix dalam medan sembang Gemini dan tekan Ruang — melengkapkan secara automatik kepada padanan unik, atau menyenaraikan semua pilihan pada baris kedua. Tekan Ruang lagi untuk menyuntik.
+⌨️ Pencetus Prompt dengan Cadangan Langsung: Taip # dalam medan sembang Gemini untuk segera melihat semua prompt tersimpan anda — ditapis secara masa nyata semasa anda menaip. Tekan Ruang pada padanan unik untuk melengkapkan secara automatik, atau pada padanan tepat untuk menyuntik terus.
 
 🌟 CIRI-CIRI FOLDER
 
@@ -45,7 +45,7 @@ Klik ➕ Tambah prompt, masukkan tajuk dan teks, dan simpan.
 Untuk menggunakan prompt: kembangkan dan klik ▶ – ia disisipkan terus ke Gemini.
 Konfigurasi 💎 untuk menghala ke Gem anda.
 Untuk menyemat prompt: klik 📍 – ia berpindah ke bahagian atas senarai.
-Pencetus Prompt: Taip #prefix dan tekan Ruang — pelengkapan automatik mengisi padanan unik, atau cadangan muncul di bawah. Tekan Ruang lagi untuk menyuntik.
+Pencetus Prompt: Taip # untuk segera melihat semua prompt tersimpan anda, atau terus menaip untuk menapis secara masa nyata. Tekan Ruang pada padanan unik untuk melengkapkan secara automatik, atau pada padanan tepat untuk menyuntik.
 
 🔒 PRIVASI & KESELAMATAN
 Dibina dengan mengutamakan privasi. Hanya meminta akses ke gemini.google.com dan membaca tab aktif hanya semasa menyimpan perbualan atau menyisipkan prompt. Kebenaran «Penanda buku» hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui Chrome Sync: tiada pelayan pihak ketiga, tiada telemetri.
@@ -60,7 +60,7 @@ Berminat dengan Folder Gemini tetapi juga menggunakan ChatGPT, Claude, Copilot, 
 👉 Pasang Folder AI: __AF_STORE_URL__
 
 📢 KEMAS KINI:
-Versi 4.2 (Pintasan Pencetus Prompt): Taip #PromptName terus dalam medan sembang Gemini dan tekan Ruang untuk menyisipkan prompt tersimpan serta-merta — tanpa membuka panel sambungan.
+Versi 4.2 (Pintasan Pencetus Prompt): Taip # dalam medan sembang Gemini untuk segera melihat semua prompt tersimpan anda, ditapis secara masa nyata semasa anda menaip. Tekan Ruang pada padanan unik untuk melengkapkan secara automatik atau pada padanan tepat untuk menyuntik — tanpa membuka panel sambungan. Cadangan muncul dengan nama sambungan sebagai label, Backspace memulihkan cadangan selepas tiada padanan, dan pelengkapan automatik padanan tunggal mengekalkan kestabilan panel.
 Versi 4.1.1: Pembetulan pepijat kecil dan penambahbaikan kestabilan.
 Versi 4.1 (Pengembangan Global & Penguatan): 16 bahasa baharu membawa Folder Gemini kepada 43 lokalisasi di seluruh dunia — bahasa-bahasa Nordik, negara-negara Baltik dan liputan Eropah dan Asia Tenggara yang diperluaskan. Diperbaiki race condition yang boleh menghilangkan penyimpanan secara senyap semasa klik pantas. Suntikan prompt dimodernkan dengan InputEvent, menggantikan execCommand yang lapuk. Pipeline import diperkukuh terhadap URL berbahaya dalam fail sandaran. Pembetulan pepijat keselamatan data kritikal: mengaktifkan penyegerakan gesaan pada storan yang hampir penuh boleh memadam semua gesaan tersimpan secara senyap. Storan kini menggunakan penulisan berpecah untuk kekal dalam had Chrome, dengan mesej ralat yang jelas apabila penuh.
 Versi 4.0 (Perpustakaan Prompt): Kemas kini paling bercita-cita tinggi setakat ini! Folder Gemini mendapat Mod Prompt baharu sepenuhnya: simpan prompt terbaik, sunting terus dan sisipkan ke Gemini dengan satu klik.

@@ -11,7 +11,7 @@
 🔀 Дугмад за нови разговор: Покрените нови разговор на ChatGPT, Claude, Copilot, Gemini или Perplexity директно из режима промптова — по јedno дугме по сервису.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
-⌨️ Окидач упита са аутоматским довршавањем: Унесите #prefix у поље за ћаскање bilo kog AI и притисните размак — аутоматски довршава до јединственог подударања или наводи све опције у другом реду. Притисните поново размак за убацивање. Ради са ChatGPT, Claude, Gemini, Copilot и локалним LLM.
+⌨️ Окидач упита са уживо предлозима: Унесите # у поље за ћаскање bilo kog AI да одмах видите све своје сачуване упите — филтрирани у реалном времену током куцања. Притисните размак при јединственом подударању за аутоматско довршавање или при тачном подударању за директно убацивање. Ради са ChatGPT, Claude, Gemini, Copilot и локалним LLM.
 
 🌟 FUNKCIJE FOLDERA
 
@@ -49,7 +49,7 @@ Klikni 📝 na prekidaču gore desno u proširenju.
 Klikni ➕ Dodaj prompt, unesi naslov i tekst i sačuvaj.
 Za korišćenje prompta: proširi ga i klikni ▶ – ubacuje se direktno u aktivni AI.
 Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
-Окидач упита: Унесите #prefix и притисните размак — аутоматско довршавање попуњава јединствено подударање или се предлози појављују испод. Притисните поново размак за убацивање.
+Окидач упита: Унесите # да одмах видите све своје сачуване упите, или наставите да куцате за филтрирање у реалном времену. Притисните размак при јединственом подударању за аутоматско довршавање или при тачном подударању за убацивање.
 
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
@@ -58,6 +58,6 @@ Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGP
 ВИ фасцикле je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AŽURIRANJA:
-Verzija 1.1 (Prečice za aktiviranje promptova): Ukucaj #PromptName u polje za chat bilo kog AI-ja i pritisni Razmaknica da odmah ubaciš sačuvani prompt — bez otvaranja panela proširenja. Radi na svim podržanim uslugama uključujući lokalne LLM-ove.
+Verzija 1.1 (Prečice za aktiviranje promptova): Унесите # у поље за ћаскање bilo kog AI da odmah vidite sve svoje sačuvane upite, filtrirane u realnom vremenu током куцања. Притисните размак при јединственом подударању за аутоматско довршавање или при тачном подударању за убацивање — bez ikad otvaranja panela proširenja. Prijedlozi se pojavljuju s nazivom proširenja kao oznakom, Backspace obnavlja prijedloge nakon nepodudaranja, a automatsko dovršavanje pri jedinstvenoj podudarnosti drži panel stabilnim. Radi na svim podržanim uslugama uključujući lokalne LLM-ove.
 Verzija 1.0.1: Manje ispravke grešaka i poboljšanja stabilnosti.
 Верзија 1.0: Прво издање! Организујте разговоре из Gemini, Claude, ChatGPT, Copilot и Perplexity у дељене фасцикле. Потпуна библиотека промптова са убацивањем једним кликом, пречице за брзо чување, превлачење и пуштање, мобилна синхронизација, масовне радње, групе картица и подршка за 43 језика.

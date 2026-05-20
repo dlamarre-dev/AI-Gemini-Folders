@@ -11,7 +11,7 @@ W wersji 4.0 Foldery Gemini stają się Twoim prawdziwym centrum sterowania Gemi
 💎 Niestandardowy link Gem: Skonfiguruj link do swojego ulubionego Gem i aktywuj go kliknięciem. Gdy jest aktywny, przycisk „Nowa rozmowa" otwiera Twój Gem zamiast domyślnego czatu.
 ☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
 📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
-⌨️ Wyzwalacz promptów z autouzupełnianiem: Wpisz #prefix w polu czatu Gemini i naciśnij spację — automatycznie uzupełnia do unikalnego dopasowania lub wyświetla wszystkie opcje w drugiej linii. Naciśnij ponownie spację, aby wstawić.
+⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu Gemini, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić.
 
 🌟 FUNKCJE FOLDERÓW
 
@@ -46,7 +46,7 @@ Kliknij ➕ Dodaj Prompt, wpisz tytuł i tekst, zapisz.
 Aby użyć promptu: rozwiń go i kliknij ▶ — zostaje wstrzyknięty bezpośrednio do Gemini, gotowy do wysłania.
 Skonfiguruj 💎, aby wskazywał Twój niestandardowy Gem.
 Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jest zawsze pod ręką.
-Wyzwalacz promptu: Wpisz #prefix i naciśnij spację — autouzupełnianie wypełnia unikalne dopasowanie lub pojawiają się sugestie poniżej. Naciśnij spację ponownie, aby wstawić.
+Wyzwalacz promptu: Wpisz #, aby natychmiast zobaczyć wszystkie swoje zapisane prompty, lub pisz dalej, aby filtrować w czasie rzeczywistym. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby wstawić.
 
 🔒 PRYWATNOŚĆ I BEZPIECZEŃSTWO
 Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do gemini.google.com i odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez Chrome Sync: bez serwerów zewnętrznych, bez telemetrii.
@@ -61,7 +61,7 @@ Zainteresowany Foldery Gemini, ale używasz też ChatGPT, Claude, Copilot, Perpl
 👉 Zainstaluj Foldery AI: __AF_STORE_URL__
 
 📢 AKTUALIZACJE:
-Wersja 4.2 (Skróty wyzwalania promptów): Wpisz #PromptName bezpośrednio w polu czatu Gemini i naciśnij Spacja, aby natychmiast wstrzyknąć zapisany prompt — bez otwierania panelu rozszerzenia.
+Wersja 4.2 (Skróty wyzwalania promptów): Wpisz # w polu czatu Gemini, aby natychmiast zobaczyć wszystkie swoje zapisane prompty, filtrowane w czasie rzeczywistym podczas pisania. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby wstawić — bez otwierania panelu rozszerzenia. Sugestie pojawiają się z nazwą rozszerzenia jako etykietą, Backspace przywraca sugestie po braku dopasowania, a autouzupełnianie przy jedynym dopasowaniu utrzymuje panel w stabilnym stanie.
 Wersja 4.1.1: Drobne poprawki błędów i ulepszenia stabilności.
 Wersja 4.1 (Globalna ekspansja i wzmocnienie): 16 nowych języków wprowadza Foldery Gemini do 43 lokalizacji na całym świecie — języki nordyckie, kraje bałtyckie oraz rozszerzone pokrycie europejskie i południowoazjatyckie. Naprawiono wyścig, który mógł po cichu pominąć zapis przy szybkich kliknięciach. Wstrzykiwanie promptów unowocześnione za pomocą InputEvent, zastępując przestarzałe execCommand. Pipeline importu zabezpieczony przed złośliwymi adresami URL w plikach kopii zapasowych. Naprawiono krytyczny błąd bezpieczeństwa danych: włączenie synchronizacji podpowiedzi przy prawie pełnym magazynie mogło cicho usunąć wszystkie zapisane podpowiedzi. Pamięć masowa używa teraz fragmentowanych zapisów, aby pozostać w granicach Chrome, z wyraźnymi komunikatami o błędach gdy jest pełna.
 Wersja 4.0 (Biblioteka Promptów): Najbardziej ambitna aktualizacja! Foldery Gemini otrzymują zupełnie nowy tryb promptów: zapisuj najlepsze prompty, edytuj je w miejscu i wstrzykuj bezpośrednio do Gemini jednym kliknięciem. Dodano: animowany przełącznik trybów, wyszukiwanie i sortowanie w trybie promptów, przycisk niestandardowego Gem i niezależną synchronizację promptów. Przypinanie najważniejszych podpowiedzi na górze biblioteki.

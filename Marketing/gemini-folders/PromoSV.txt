@@ -11,7 +11,7 @@ Med version 4.0 blir Gemini-mappar din verkliga Gemini-cockpit: organisera konve
 💎 Anpassad Gem-länk: Konfigurera en länk till din favoritgem och slå på/av den med ett klick. När den är aktiv öppnar knappen «Ny konversation» din Gem i stället för standard-chatten.
 ☁️ Promptsynkronisering: Aktivera molnsynkronisering för promptbiblioteket oberoende av mapparna.
 📌 Fästa prompter: Fäst viktiga prompter längst upp i biblioteket, åtskilda från resten med en visuell avdelare.
-⌨️ Promptutlösare med autofullbordning: Skriv #prefix i Geminis chattfält och tryck på mellanslag — autofullbordar till den unika matchningen eller listar alla alternativ på en andra rad. Tryck på mellanslag igen för att injicera.
+⌨️ Promptutlösare med live-förslag: Skriv # i Geminis chattfält för att omedelbart se alla dina sparade prompter — filtrerade i realtid medan du skriver. Tryck på mellanslag vid en unik matchning för autofullbordning, eller vid en exakt matchning för direkt injektion.
 
 🌟 MAPPFUNKTIONER
 
@@ -46,7 +46,7 @@ Klicka ➕ Lägg till prompt, ange titel och text och spara.
 Att använda en prompt: expandera den och klicka ▶ – den injiceras direkt i Gemini, redo att skicka.
 Konfigurera 💎 för att peka mot din Gem.
 Att fästa en prompt: klicka 📍 – den flyttas längst upp i listan och är alltid lätt att hitta.
-Promptutlösare: Skriv #prefix och tryck på mellanslag — autofullbordningen fyller i den unika matchningen eller förslag visas nedanför. Tryck på mellanslag igen för att injicera.
+Promptutlösare: Skriv # för att omedelbart se alla dina sparade prompter, eller fortsätt skriva för att filtrera i realtid. Tryck på mellanslag vid en unik matchning för autofullbordning, eller vid en exakt matchning för att injicera.
 
 🔒 INTEGRITET OCH SÄKERHET
 Byggt med integritet i fokus. Tillägget begär bara åtkomst till gemini.google.com och läser bara den aktiva fliken när en konversation sparas eller en prompt injiceras. «Bokmärken»-behörigheten används bara om du aktiverar mobilsynkronisering. Lagring via Chrome Sync: inga tredjepartsservrar, ingen telemetri.
@@ -61,7 +61,7 @@ Intresserad av Gemini-mappar men använder du också ChatGPT, Claude, Copilot, P
 👉 Installera AI-mappar: __AF_STORE_URL__
 
 📢 UPPDATERINGAR:
-Version 4.2 (Snabbkommandon för promptutlösare): Skriv #PromptName direkt i Geminis chattfält och tryck på Mellanslag för att omedelbart injicera en sparad prompt — utan att öppna tilläggspanelen.
+Version 4.2 (Snabbkommandon för promptutlösare): Skriv # i Geminis chattfält för att omedelbart se alla dina sparade prompter, filtrerade i realtid medan du skriver. Tryck på mellanslag vid en unik matchning för autofullbordning eller vid en exakt matchning för att injicera — utan att öppna tilläggspanelen. Förslag visas med tilläggets namn som etikett, Backspace återställer förslag efter ingen matchning och autofullbordning vid unik matchning håller panelen stabil.
 Version 4.1.1: Mindre felkorrigeringar och stabilitetsförbättringar.
 Version 4.1 (Global expansion och härdning): 16 nya språk tar Gemini-mappar till 43 lokaliseringar världen över — nordiska språk, de baltiska staterna och utökad europeisk och sydostasiatisk täckning. Åtgärdat ett race condition som tyst kunde tappa en sparning vid snabba klick. Promptinjicering moderniserad med InputEvent, som ersätter det inaktuella execCommand. Import-pipeline härdad mot skadliga URL:er i säkerhetskopior. Kritiskt datasäkerhetsfel åtgärdat: att aktivera prompt-synkronisering med nästan fullt lagringsutrymme kunde tyst radera alla sparade prompts. Lagringen använder nu fragmenterade skrivningar för att hålla sig inom Chromes gränser, med tydliga felmeddelanden när den är full.
 Version 4.0 (Promptbibliotek): Den mest ambitiösa uppdateringen hittills! Gemini-mappar får ett helt nytt Promptläge: spara dina bästa prompter, redigera dem inline och injicera dem direkt i Gemini med ett klick. Lade till animerat lägesreglage, sökning och sortering i Promptläge, anpassad Gem-knapp och oberoende promptsynkronisering.

@@ -11,7 +11,7 @@ AI-mappen is uw uniforme AI-cockpit: organiseer gesprekken van al uw AI-tools in
 🔀 Knoppen Nieuw Gesprek: Start een nieuw gesprek op ChatGPT, Claude, Copilot, Gemini of Perplexity direct vanuit de Promptmodus — één knop per dienst.
 ☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
 📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
-⌨️ Prompttrigger met automatisch aanvullen: Typ #prefix in het chatveld van een willekeurige AI en druk op spatie — vult automatisch aan tot de unieke match, of toont alle opties op een tweede regel. Druk nogmaals op spatie om in te voegen. Werkt met ChatGPT, Claude, Gemini, Copilot en lokale LLM's.
+⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van een willekeurige AI om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen. Werkt met ChatGPT, Claude, Gemini, Copilot en lokale LLM's.
 
 🌟 MAPFUNCTIES
 
@@ -50,7 +50,7 @@ Klik op 📝 op de schakelaarknop rechtsboven in de extensie.
 Klik op ➕ Prompt toevoegen, voer een titel en uw tekst in en sla op.
 Een prompt gebruiken: vouw hem uit en klik op ▶ — wordt direct ingevoegd in de actieve AI, klaar om te verzenden.
 Een prompt vastzetten: klik op 📍 — hij verplaatst naar boven en blijft gemakkelijk bereikbaar.
-Prompttrigger: Typ #prefix en druk op spatie — automatisch aanvullen vult de unieke match in, of er verschijnen suggesties eronder. Druk nogmaals op spatie om in te voegen.
+Prompttrigger: Typ # om onmiddellijk al uw opgeslagen prompts te zien, of typ verder om in realtime te filteren. Druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om in te voegen.
 
 🔒 PRIVACY EN BEVEILIGING
 Gebouwd met privacy als kern. Vraagt alleen toegang tot Gemini, Claude, ChatGPT, Copilot, Perplexity en leest het actieve tabblad alleen bij het opslaan van een gesprek of het invoegen van een prompt. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via Chrome Sync: geen servers van derden, geen telemetrie.
@@ -59,6 +59,6 @@ Gebouwd met privacy als kern. Vraagt alleen toegang tot Gemini, Claude, ChatGPT,
 AI-mappen is een open-sourceproject gebouwd met passie. Transparantie en respect voor uw privacy zijn onze topprioriteiten. Bent u een ontwikkelaar of gewoon nieuwsgierig? Bekijk de code, volg het wijzigingenlogboek of draag bij op GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 UPDATES:
-Versie 1.1 (Sneltoetsen voor prompttrigger): Typ #PromptName in het chatvenster van een AI en druk op Spatie om een opgeslagen prompt direct in te voegen — zonder het extensiepaneel te openen. Werkt voor alle ondersteunde services inclusief lokale LLM's.
+Versie 1.1 (Sneltoetsen voor prompttrigger): Typ # in het chatvenster van een AI om onmiddellijk al uw opgeslagen prompts te zien, in realtime gefilterd terwijl u typt. Druk op spatie bij een unieke match voor automatisch aanvullen of bij een exacte match om in te voegen — zonder het extensiepaneel ooit te openen. Suggesties worden weergegeven met de naam van de extensie als label, Backspace herstelt suggesties na geen match en automatisch aanvullen bij een unieke match houdt het paneel stabiel. Werkt voor alle ondersteunde services inclusief lokale LLM's.
 Versie 1.0.1: Kleine bugfixes en stabiliteitsverbeteringen.
 Versie 1.0: Eerste uitgave! Organiseer gesprekken van Gemini, Claude, ChatGPT, Copilot en Perplexity in gedeelde mappen. Volledige promptbibliotheek met één-klik-invoegen, snelopslagsnelkoppelingen, slepen en neerzetten, mobiele synchronisatie, bulkacties, tabgroepen en ondersteuning voor 43 talen. Lokale LLM-ondersteuning met configureerbare URL (localhost en LAN-adressen).

@@ -11,7 +11,7 @@ YZ Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan ge
 🔀 Yeni Konuşma Düğmeleri: Prompt Modundan doğrudan ChatGPT, Claude, Copilot, Gemini veya Perplexity'de yeni bir konuşma başlatın — her hizmet için bir düğme.
 ☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
 📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
-⌨️ Otomatik Tamamlamalı Komut Tetikleyici: Herhangi bir yapay zekanın sohbet alanına #prefix yazın ve boşluk tuşuna basın — benzersiz eşleşmeye otomatik tamamlar veya ikinci satırda tüm seçenekleri listeler. Enjekte etmek için boşluk tuşuna tekrar basın. ChatGPT, Claude, Gemini, Copilot ve yerel LLM'lerle çalışır.
+⌨️ Canlı Önerili Komut Tetikleyici: Herhangi bir yapay zekanın sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün — siz yazarken gerçek zamanlı olarak filtrelenir. Otomatik tamamlamak için benzersiz eşleşmede, doğrudan enjekte etmek için tam eşleşmede boşluk tuşuna basın. ChatGPT, Claude, Gemini, Copilot ve yerel LLM'lerle çalışır.
 
 🌟 KLASÖR ÖZELLİKLERİ
 
@@ -50,7 +50,7 @@ Uzantının sağ üstündeki geçiş düğmesinde 📝'a tıklayın.
 ➕ İstem Ekle'ye tıklayın, bir başlık ve metin girin, kaydedin.
 Bir istemi kullanmak için: genişletin ve ▶'ye tıklayın — doğrudan aktif AI'ye enjekte edilir, göndermeye hazır.
 Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar ve kolayca erişilebilir kalır.
-Komut Tetikleyici: #prefix yazın ve boşluk tuşuna basın — otomatik tamamlama benzersiz eşleşmeyi doldurur ya da öneriler aşağıda görünür. Enjekte etmek için boşluk tuşuna tekrar basın.
+Komut Tetikleyici: # yazın ve tüm kayıtlı istemlerinizi anında görün veya gerçek zamanlı filtrelemek için yazmaya devam edin. Benzersiz eşleşmede otomatik tamamlamak için, tam eşleşmede enjekte etmek için boşluk tuşuna basın.
 
 🔒 GİZLİLİK & GÜVENLİK
 Gizlilik öncelikli tasarım. Yalnızca Gemini, Claude, ChatGPT, Copilot, Perplexity'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.
@@ -59,6 +59,6 @@ Gizlilik öncelikli tasarım. Yalnızca Gemini, Claude, ChatGPT, Copilot, Perple
 YZ Klasörleri, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 GÜNCELLEMELER:
-Sürüm 1.1 (İstem Tetikleme Kısayolları): Herhangi bir yapay zekanın sohbet alanına #PromptName yazın ve Boşluk tuşuna basarak kayıtlı bir istemi anında enjekte edin — uzantı panelini açmadan. Yerel LLM'ler dahil desteklenen tüm hizmetlerde çalışır.
+Sürüm 1.1 (İstem Tetikleme Kısayolları): Herhangi bir yapay zekanın sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün; siz yazarken gerçek zamanlı olarak filtrelenir. Benzersiz eşleşmede otomatik tamamlamak veya tam eşleşmede enjekte etmek için boşluk tuşuna basın — uzantı panelini hiç açmadan. Öneriler uzantı adıyla etiketli olarak görünür, Backspace eşleşme olmadığında önerileri geri getirir ve tek eşleşmeli otomatik tamamlama paneli kararlı tutar. Yerel LLM'ler dahil desteklenen tüm hizmetlerde çalışır.
 Sürüm 1.0.1: Küçük hata düzeltmeleri ve kararlılık iyileştirmeleri.
 Sürüm 1.0: İlk yayın! Gemini, Claude, ChatGPT, Copilot ve Perplexity sohbetlerini paylaşılan klasörlerde düzenleyin. Tek tıkla ekleme özellikli tam prompt kütüphanesi, hızlı kaydetme kısayolları, sürükle ve bırak, mobil senkronizasyon, toplu işlemler, sekme grupları ve 43 dil desteği. Yapılandırılabilir URL (localhost ve LAN adresleri) ile yerel LLM desteği.

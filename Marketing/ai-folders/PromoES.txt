@@ -11,7 +11,7 @@ Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus 
 🔀 Botones de Nueva Conversación: Inicia una nueva conversación en ChatGPT, Claude, Copilot, Gemini o Perplexity directamente desde el Modo Prompt — un botón por servicio.
 ☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
 📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
-⌨️ Disparador de prompts con autocompletado: Escribe #prefix en el campo de chat de cualquier IA y pulsa Espacio — autocompleta hasta la coincidencia única, o muestra todas las opciones en una segunda línea. Pulsa Espacio de nuevo para inyectar. Funciona con ChatGPT, Claude, Gemini, Copilot y LLMs locales.
+⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de cualquier IA para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente. Funciona con ChatGPT, Claude, Gemini, Copilot y LLMs locales.
 
 🌟 FUNCIONES DE CARPETAS
 
@@ -50,7 +50,7 @@ Haz clic en 📝 en el botón de alternancia en la esquina superior derecha de l
 Haz clic en ➕ Añadir Prompt, escribe un título y tu texto, y guarda.
 Para usar un prompt: despliégalo y haz clic en ▶ — se inyecta directamente en la IA activa, listo para enviar.
 Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siempre está a mano.
-Disparador de prompts: Escribe #prefix y pulsa Espacio — el autocompletado rellena la coincidencia única, o aparecen sugerencias debajo. Pulsa Espacio de nuevo para inyectar.
+Disparador de prompts: Escribe # para ver al instante todos tus prompts guardados, o sigue escribiendo para filtrar en tiempo real. Pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar.
 
 🔒 PRIVACIDAD Y SEGURIDAD
 Diseñada con la privacidad en el centro. Solo solicita acceso a Gemini, Claude, ChatGPT, Copilot, Perplexity y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
@@ -59,6 +59,6 @@ Diseñada con la privacidad en el centro. Solo solicita acceso a Gemini, Claude,
 Carpetas de Gemini es un proyecto open source desarrollado con pasión. La transparencia y el respeto a tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente tienes curiosidad? Consulta el código, sigue el historial de cambios o contribuye en GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ACTUALIZACIONES:
-Versión 1.1 (Atajos de Activación de Prompts): Escribe #PromptName en el campo de chat de cualquier IA y pulsa Espacio para inyectar al instante un prompt guardado — sin abrir el panel de la extensión. Funciona en todos los servicios compatibles incluidos los LLM locales.
+Versión 1.1 (Atajos de Activación de Prompts): Escribe # en el campo de chat de cualquier IA para ver al instante todos tus prompts guardados, filtrados en tiempo real mientras escribes. Pulsa Espacio en una coincidencia única para autocompletar o en una coincidencia exacta para inyectar — sin abrir nunca el panel de la extensión. Las sugerencias aparecen con el nombre de la extensión como etiqueta, la tecla Retroceso restaura las sugerencias tras una falta de coincidencia, y el autocompletado de coincidencia única mantiene el panel estable. Funciona en todos los servicios compatibles incluidos los LLM locales.
 Versión 1.0.1: Correcciones menores de errores y mejoras de estabilidad.
 Versión 1.0: ¡Publicación inicial! Organiza conversaciones de Gemini, Claude, ChatGPT, Copilot y Perplexity en carpetas compartidas. Biblioteca de prompts completa con inyección en un clic, atajos de guardado rápido, arrastrar y soltar, sincronización móvil, acciones en masa, grupos de pestañas y soporte para 43 idiomas. Compatibilidad con LLM locales con URL configurable (localhost y direcciones LAN).

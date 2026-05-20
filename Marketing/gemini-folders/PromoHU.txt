@@ -11,7 +11,7 @@ A 4.0-s verzióval a Gemini-mappák valódi Gemini-kokpitjévé válik: rendszer
 💎 Egyéni Gem-hivatkozás: Állítson be hivatkozást kedvenc Gemjéhez, és kapcsolja be/ki egyetlen kattintással. Aktiválva az „Új beszélgetés" gomb az alapértelmezett csevegés helyett a Gemjét nyitja meg.
 ☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
 📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
-⌨️ Prompt-aktiváló automatikus kiegészítéssel: Gépelje be a #prefix szót a Gemini csevegőmezőjébe, és nyomja meg a szóközt — automatikusan kiegészíti az egyedi egyezésig, vagy a második sorban listázza az összes lehetőséget. A beillesztéshez nyomja meg újra a szóközt.
+⌨️ Prompt-aktiváló élő javaslatokkal: Gépelje be a # jelet a Gemini csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját — valós időben szűrve gépelés közben. Nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a közvetlen beillesztéshez.
 
 🌟 MAPPAFUNKCIÓK
 
@@ -46,7 +46,7 @@ Kattintson a ➕ Prompt hozzáadása gombra, adjon meg egy nevet és szöveget, 
 Prompt használatához: bontsa ki, és kattintson a ▶ gombra — közvetlenül a Geminibe illeszti be, küldésre készen.
 Prompt rögzítéséhez: kattintson a 📍 gombra — a lista tetejére kerül, és könnyen elérhető marad.
 Konfigurálja a 💎 ikont, hogy az egyéni Gemjére mutasson.
-Prompt-aktiváló: Gépelje be a #prefix szót és nyomja meg a szóközt — az automatikus kiegészítés kitölti az egyedi egyezést, vagy javaslatok jelennek meg alatta. A beillesztéshez nyomja meg újra a szóközt.
+Prompt-aktiváló: Gépelje be a # jelet az összes mentett promptja azonnali megjelenítéséhez, vagy folytassa a gépelést a valós idejű szűréshez. Nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a beillesztéshez.
 
 🔒 ADATVÉDELEM ÉS BIZTONSÁG
 Az adatvédelmet alapelvként kezelve fejlesztve. Csak a gemini.google.com elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.
@@ -61,7 +61,7 @@ A Gemini-mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az
 👉 Telepítse a MI mappák alkalmazást: __AF_STORE_URL__
 
 📢 FRISSÍTÉSEK:
-Verzió 4.2 (Promptindító billentyűparancsok): Írja be a #PromptName kifejezést közvetlenül a Gemini csevegőmezőjébe, majd nyomja meg a Szóköz billentyűt egy mentett prompt azonnali beillesztéséhez — a bővítménypanel megnyitása nélkül.
+Verzió 4.2 (Promptindító billentyűparancsok): Gépelje be a # jelet a Gemini csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját, valós időben szűrve gépelés közben. Nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a beillesztéshez — a bővítménypanel megnyitása nélkül. A javaslatok a bővítmény nevével vannak ellátva, a Backspace visszaállítja a javaslatokat nem egyezés után, az egyedi egyezésnél végzett automatikus kiegészítés pedig stabilan tartja a panelt.
 4.1.1-es verzió: Kisebb hibajavítások és stabilitási fejlesztések.
 4.1-es verzió (Globális bővítés és megerősítés): 16 új nyelv 43 világszintű lokalizációra emeli a Gemini-mappákat — északi nyelvek, balti államok és bővített európai és délkelet-ázsiai lefedettség. Javítva egy versenyhelyzet, amely gyors kattintások esetén csendben eldobhatott egy mentést. A prompt-injektálás modernizálva InputEvent segítségével, felváltva az elavult execCommand-ot. Az import-folyamat megerősítve a biztonsági mentési fájlokban lévő rosszindulatú URL-ek ellen. Kritikus adatbiztonsági hiba javítva: a prompt-szinkronizáció bekapcsolása majdnem teli tárhelyen csendesen törölhette az összes mentett promptot. A tároló mostantól fragmentált írásokat használ a Chrome korlátain belül maradáshoz, egyértelmű hibaüzenetekkel ha megtelt.
 4.0-s verzió (Promptkönyvtár): A valaha volt legambiciózusabb frissítés! A Gemini-mappák egy vadonatúj Promptüzemmódot kap: mentse el legjobb promptjait, szerkessze helyszínen, és illessze be közvetlenül a Geminibe egyetlen kattintással. Animált üzemmódkapcsoló, keresés és rendezés Promptüzemmódban, egyéni Gem-gomb és független prompt-szinkronizálás hozzáadva. Rögzítse lényeges promptjait a könyvtár tetejére.

@@ -11,7 +11,7 @@ Folda za AI ni kokpit yako ya AI iliyounganishwa: panga mazungumzo kutoka kwa za
 🔀 Vitufe vya Mazungumzo Mapya: Anza mazungumzo mapya kwenye ChatGPT, Claude, Copilot, Gemini, au Perplexity moja kwa moja kutoka Hali ya Maagizo.
 ☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
 📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
-⌨️ Kichocheo cha Kidokezo na Ukamilishaji Otomatiki: Andika #prefix katika uwanja wa gumzo wa AI yoyote na ubonyeze Nafasi — hukamilisha kiotomatiki hadi kwenye mechi ya kipekee, au huorodhesha chaguo zote kwenye mstari wa pili. Bonyeza Nafasi tena ili kuingiza. Inafanya kazi na ChatGPT, Claude, Gemini, Copilot na LLM za ndani.
+⌨️ Kichocheo cha Kidokezo na Mapendekezo ya Moja kwa Moja: Andika # katika uwanja wa gumzo wa AI yoyote ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa — vikifiliwa kwa wakati halisi unapoendelea kuandika. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza moja kwa moja. Inafanya kazi na ChatGPT, Claude, Gemini, Copilot na LLM za ndani.
 
 🌟 VIPENGELE VYA FOLDA
 
@@ -50,7 +50,7 @@ Bofya 📝 kwenye kitufe cha kubadilisha upande wa juu kulia wa kiendelezi.
 Bofya ➕ Ongeza Kidokezo, ingiza kichwa na maandishi yako, na hifadhi.
 Kutumia kidokezo: kipanua na ubofye ▶ — kinaingizwa moja kwa moja kwenye AI inayotumika, tayari kutumwa.
 Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi kufikiwa.
-Kichocheo cha Kidokezo: Andika #prefix na ubonyeze Nafasi — ukamilishaji otomatiki hujaza mechi ya kipekee, au mapendekezo yanaonekana chini. Bonyeza Nafasi tena ili kuingiza.
+Kichocheo cha Kidokezo: Andika # ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa, au endelea kuandika ili kufilia kwa wakati halisi. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza.
 
 🔒 FARAGHA NA USALAMA
 Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa Gemini, Claude, ChatGPT, Copilot, Perplexity na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
@@ -59,6 +59,6 @@ Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa Gemini, Claude, ChatGPT,
 Folda za AI ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 MASASISHO:
-Toleo 1.1 (Njia za Mkato za Kuchochea Kidokezo): Andika #PromptName katika uwanja wa gumzo wa AI yoyote na ubonyeze Nafasi ili kuingiza kidokezo kilichohifadhiwa mara moja — bila kufungua paneli ya kiendelezi. Inafanya kazi katika huduma zote zinazooungwa mkono ikiwa ni pamoja na LLM za ndani.
+Toleo 1.1 (Njia za Mkato za Kuchochea Kidokezo): Andika # katika uwanja wa gumzo wa AI yoyote ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa, vikifiliwa kwa wakati halisi unapoendelea kuandika. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki au kwenye mechi sahihi kuingiza — bila kufungua paneli ya kiendelezi kamwe. Mapendekezo yanaonekana na jina la kiendelezi kama lebo, Backspace hurejesha mapendekezo baada ya kutokuwa na mechi, na ukamilishaji otomatiki wa mechi moja huhakikisha utulivu wa paneli. Inafanya kazi katika huduma zote zinazooungwa mkono ikiwa ni pamoja na LLM za ndani.
 Toleo 1.0.1: Marekebisho madogo ya hitilafu na maboresho ya uthabiti.
 Toleo 1.0: Chapisho la kwanza! Panga mazungumzo kutoka Gemini, Claude, ChatGPT, Copilot na Perplexity katika folda zilizoshirikiwa. Maktaba kamili ya maagizo na sindano ya kubonyeza mara moja, njia za mkato za kuhifadhi haraka, buruta na uacha, usawazishaji wa simu, vitendo vya wingi, vikundi vya kichupo na usaidizi wa lugha 43.

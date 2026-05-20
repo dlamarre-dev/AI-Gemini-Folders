@@ -11,7 +11,7 @@ Foldery AI to Twoje zunifikowane centrum AI: organizuj rozmowy ze wszystkich nar
 🔀 Przyciski Nowej Rozmowy: Rozpocznij nową rozmowę na ChatGPT, Claude, Copilot, Gemini lub Perplexity bezpośrednio z Trybu Promptów — jeden przycisk na serwis.
 ☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
 📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
-⌨️ Wyzwalacz promptów z autouzupełnianiem: Wpisz #prefix w polu czatu dowolnego AI i naciśnij spację — automatycznie uzupełnia do unikalnego dopasowania lub wyświetla wszystkie opcje w drugiej linii. Naciśnij ponownie spację, aby wstawić. Działa z ChatGPT, Claude, Gemini, Copilot i lokalnymi LLM.
+⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu dowolnego AI, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić. Działa z ChatGPT, Claude, Gemini, Copilot i lokalnymi LLM.
 
 🌟 FUNKCJE FOLDERÓW
 
@@ -50,7 +50,7 @@ Kliknij 📝 na przełączniku w prawym górnym rogu rozszerzenia.
 Kliknij ➕ Dodaj Prompt, wpisz tytuł i tekst, zapisz.
 Aby użyć promptu: rozwiń go i kliknij ▶ — zostaje wstrzyknięty bezpośrednio do aktywnej AI, gotowy do wysłania.
 Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jest zawsze pod ręką.
-Wyzwalacz promptu: Wpisz #prefix i naciśnij spację — autouzupełnianie wypełnia unikalne dopasowanie lub pojawiają się sugestie poniżej. Naciśnij spację ponownie, aby wstawić.
+Wyzwalacz promptu: Wpisz #, aby natychmiast zobaczyć wszystkie swoje zapisane prompty, lub pisz dalej, aby filtrować w czasie rzeczywistym. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby wstawić.
 
 🔒 PRYWATNOŚĆ I BEZPIECZEŃSTWO
 Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do Gemini, Claude, ChatGPT, Copilot, Perplexity i odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez Chrome Sync: bez serwerów zewnętrznych, bez telemetrii.
@@ -59,6 +59,6 @@ Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do Gemini, Clau
 Foldery AI to projekt open source tworzony z pasją. Przejrzystość i poszanowanie Twojej prywatności to nasze priorytety. Jesteś programistą lub po prostu ciekawskim? Przejrzyj kod, śledź historię zmian lub wnieś wkład na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AKTUALIZACJE:
-Wersja 1.1 (Skróty wyzwalania promptów): Wpisz #PromptName w polu czatu dowolnej AI i naciśnij Spacja, aby natychmiast wstrzyknąć zapisany prompt — bez otwierania panelu rozszerzenia. Działa we wszystkich obsługiwanych usługach, w tym lokalnych LLM.
+Wersja 1.1 (Skróty wyzwalania promptów): Wpisz # w polu czatu dowolnej AI, aby natychmiast zobaczyć wszystkie swoje zapisane prompty, filtrowane w czasie rzeczywistym podczas pisania. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby wstawić — bez otwierania panelu rozszerzenia. Sugestie pojawiają się z nazwą rozszerzenia jako etykietą, Backspace przywraca sugestie po braku dopasowania, a autouzupełnianie przy jedynym dopasowaniu utrzymuje panel w stabilnym stanie. Działa we wszystkich obsługiwanych usługach, w tym lokalnych LLM.
 Wersja 1.0.1: Drobne poprawki błędów i ulepszenia stabilności.
 Wersja 1.0: Pierwsze wydanie! Organizuj rozmowy z Gemini, Claude, ChatGPT, Copilot i Perplexity we wspólnych folderach. Pełna biblioteka promptów z wstawianiem jednym kliknięciem, skróty szybkiego zapisu, przeciąganie i upuszczanie, synchronizacja mobilna, akcje zbiorcze, grupy kart i obsługa 43 języków. Obsługa lokalnych LLM z konfigurowalnym URL (localhost i adresy LAN).

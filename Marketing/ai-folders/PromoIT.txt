@@ -11,7 +11,7 @@ Cartelle IA è il tuo cockpit AI unificato: organizza conversazioni da tutti i t
 🔀 Pulsanti Nuova Conversazione: Avvia una nuova conversazione su ChatGPT, Claude, Copilot, Gemini o Perplexity direttamente dalla Modalità Prompt — un pulsante per servizio.
 ☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
 📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
-⌨️ Attivatore di prompt con completamento automatico: Digita #prefix nel campo chat di qualsiasi IA e premi Spazio — completa automaticamente alla corrispondenza unica, o elenca tutte le opzioni in una seconda riga. Premi di nuovo Spazio per iniettare. Funziona con ChatGPT, Claude, Gemini, Copilot e LLM locali.
+⌨️ Attivatore di prompt con suggerimenti in tempo reale: Digita # nel campo chat di qualsiasi IA per vedere istantaneamente tutti i tuoi prompt salvati — filtrati in tempo reale mentre scrivi. Premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare direttamente. Funziona con ChatGPT, Claude, Gemini, Copilot e LLM locali.
 
 🌟 FUNZIONALITÀ CARTELLE
 
@@ -50,7 +50,7 @@ Clicca 📝 sull'interruttore in alto a destra nell'estensione.
 Clicca ➕ Aggiungi Prompt, inserisci un titolo e il tuo testo, salva.
 Per usare un prompt: espandilo e clicca ▶ — viene iniettato direttamente nell'IA attiva, pronto per l'invio.
 Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta sempre a portata di mano.
-Attivatore di prompt: Digita #prefix e premi Spazio — il completamento automatico riempie la corrispondenza unica, o appaiono suggerimenti in basso. Premi di nuovo Spazio per iniettare.
+Attivatore di prompt: Digita # per vedere istantaneamente tutti i tuoi prompt salvati, o continua a digitare per filtrare in tempo reale. Premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare.
 
 🔒 PRIVACY E SICUREZZA
 Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, ChatGPT, Copilot, Perplexity e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
@@ -59,6 +59,6 @@ Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, Cha
 Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 AGGIORNAMENTI:
-Versione 1.1 (Scorciatoie di attivazione prompt): Scrivi #PromptName nel campo chat di qualsiasi AI e premi Spazio per iniettare istantaneamente un prompt salvato — senza aprire il pannello dell'estensione. Funziona su tutti i servizi supportati inclusi i LLM locali.
+Versione 1.1 (Scorciatoie di attivazione prompt): Digita # nel campo chat di qualsiasi AI per vedere istantaneamente tutti i tuoi prompt salvati, filtrati in tempo reale mentre scrivi. Premi Spazio su una corrispondenza unica per il completamento automatico o su una corrispondenza esatta per iniettare — senza mai aprire il pannello dell'estensione. I suggerimenti appaiono con il nome dell'estensione come etichetta, Backspace ripristina i suggerimenti dopo nessuna corrispondenza e il completamento automatico su corrispondenza unica mantiene il pannello stabile. Funziona su tutti i servizi supportati inclusi i LLM locali.
 Versione 1.0.1: Correzioni minori di bug e miglioramenti alla stabilità.
 Versione 1.0: Prima pubblicazione! Organizza conversazioni da Gemini, Claude, ChatGPT, Copilot e Perplexity in cartelle condivise. Libreria prompt completa con iniezione in un clic, scorciatoie di salvataggio rapido, drag & drop, sincronizzazione mobile, azioni in blocco, gruppi di schede e supporto per 43 lingue. Supporto LLM locale con URL configurabile (localhost e indirizzi LAN).

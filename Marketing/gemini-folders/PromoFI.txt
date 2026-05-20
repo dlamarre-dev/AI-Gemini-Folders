@@ -11,7 +11,7 @@ Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi kesku
 💎 Mukautettu Gem-linkki: Määritä linkki suosikki-Geemisi ja ota se käyttöön tai poista käytöstä yhdellä napsautuksella. Kun se on aktiivinen, «Uusi keskustelu» -painike avaa Geemisi oletuschattin sijaan.
 ☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
 📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
-⌨️ Kehoteliipaisin automaattitäydennyksellä: Kirjoita #prefix Geminin chat-kenttään ja paina välilyöntiä — täydentää automaattisesti ainutlaatuiseen osumaan tai luettelee kaikki vaihtoehdot toiselle riville. Paina välilyöntiä uudelleen lisätäksesi.
+⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
 
 🌟 KANSIO-OMINAISUUDET
 
@@ -46,7 +46,7 @@ Napsauta ➕ Lisää prompt, syötä otsikko ja teksti ja tallenna.
 Promptin käyttäminen: laajenna se ja napsauta ▶ – se injektoidaan suoraan Geminiin, valmiina lähetettäväksi.
 Määritä 💎 osoittamaan Geemiisi.
 Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy helposti saatavilla.
-Kehoteliipaisin: Kirjoita #prefix ja paina välilyöntiä — automaattitäydennys täyttää ainutlaatuisen osuman tai ehdotukset ilmestyvät alle. Paina välilyöntiä uudelleen lisätäksesi.
+Kehoteliipaisin: Kirjoita # nähdäksesi välittömästi kaikki tallennetut kehotteesi, tai jatka kirjoittamista suodattaaksesi reaaliajassa. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa lisäämistä varten.
 
 🔒 YKSITYISYYS JA TURVALLISUUS
 Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain gemini.google.com:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.
@@ -61,7 +61,7 @@ Kiinnostuitko Gemini-kansiot-laajennuksesta, mutta käytätkö myös ChatGPT:tä
 👉 Asenna AI-kansiot: __AF_STORE_URL__
 
 📢 PÄIVITYKSET:
-Versio 4.2 (Promptin käynnistyspikavalintoja): Kirjoita #PromptName suoraan Geminin chat-kenttään ja paina Välilyönti injektoidaksesi tallennetun promptin välittömästi — ilman laajennuspaneelin avaamista.
+Versio 4.2 (Promptin käynnistyspikavalintoja): Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi, suodatetaan reaaliajassa kirjoittaessasi. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa lisäämistä varten — avaamatta laajennuspaneelia koskaan. Ehdotukset näkyvät laajennuksen nimellä merkittynä, Backspace palauttaa ehdotukset osumattoman jälkeen ja ainutlaatuisen osuman automaattitäydennys pitää paneelin vakaana.
 Versio 4.1.1: Pieniä virheenkorjauksia ja vakauteen liittyviä parannuksia.
 Versio 4.1 (Globaali laajennus ja kovettaminen): 16 uutta kieltä nostaa Gemini-kansiot 43 lokalisointiin maailmanlaajuisesti — pohjoismaiset kielet, Baltian maat sekä laajennettu eurooppalainen ja Kaakkois-Aasian kattavuus. Korjattu kilpailutilanne, joka saattoi hiljaa hävittää tallennuksen nopeiden napsautusten yhteydessä. Promptin syöttäminen modernisoitu InputEventillä korvaamaan vanhentunut execCommand. Tuontikanava kovetettu haittaohjelmallisia URL-osoitteita vastaan varmuuskopiotiedostoissa. Kriittinen tietoturvavika korjattu: kehotteiden synkronoinnin aktivointi lähes täydellä tallennustilalla saattoi äänettömästi poistaa kaikki tallennetut kehotteet. Tallennustila käyttää nyt paloiteltuja kirjoituksia pysyäkseen Chromen rajoissa, ja näyttää selkeitä virheilmoituksia kun tila on täynnä.
 Versio 4.0 (Promptikirjasto): Kunnianhimoisin päivitys tähän mennessä! Gemini-kansiot saa upouuden Prompttilan: tallenna parhaat promptisi, muokkaa niitä inlinen ja injektoi ne suoraan Geminiin yhdellä napsautuksella. Lisätty animoitu tilakytkин, haku ja lajittelu Prompttilassa, mukautettu Gem-painike ja itsenäinen promptisynkronointi.

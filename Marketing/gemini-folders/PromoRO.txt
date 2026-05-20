@@ -11,7 +11,7 @@ Cu versiunea 4.0, Foldere Gemini devine adevăratul dvs. cockpit Gemini: organiz
 💎 Link Gem personalizat: Configurați un link către Gem-ul preferat și activați-l cu un clic. Când este activ, butonul „Conversație nouă" deschide Gem-ul dvs. în locul chat-ului implicit.
 ☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
 📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
-⌨️ Declanșator de prompt cu completare automată: Tastați #prefix în câmpul de chat al Gemini și apăsați Spațiu — completează automat până la potrivirea unică sau afișează toate opțiunile pe a doua linie. Apăsați din nou Spațiu pentru a injecta.
+⌨️ Declanșator de prompt cu sugestii live: Tastați # în câmpul de chat al Gemini pentru a vedea imediat toate prompturile salvate — filtrate în timp real pe măsură ce tastați. Apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru injectare directă.
 
 🌟 FUNCȚII FOLDERE
 
@@ -46,7 +46,7 @@ Faceți clic pe ➕ Adăugați Prompt, introduceți un titlu și textul dvs., sa
 Pentru a utiliza un prompt: extindeți-l și faceți clic pe ▶ — se injectează direct în Gemini, gata de trimis.
 Configurați 💎 pentru a indica Gem-ul dvs. personalizat.
 Pentru a fixa un prompt: faceți clic pe 📍 — se mută în fruntea listei și rămâne mereu la îndemână.
-Declanșator de prompt: Tastați #prefix și apăsați Spațiu — completarea automată umple potrivirea unică sau sugestiile apar dedesubt. Apăsați din nou Spațiu pentru a injecta.
+Declanșator de prompt: Tastați # pentru a vedea imediat toate prompturile salvate, sau continuați să tastați pentru a filtra în timp real. Apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru a injecta.
 
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
 Concepută cu confidențialitatea în centru. Solicită acces doar la gemini.google.com și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.
@@ -61,7 +61,7 @@ Interesat de Foldere Gemini, dar folosiți și ChatGPT, Claude, Copilot, Perplex
 👉 Instalează Dosare IA: __AF_STORE_URL__
 
 📢 ACTUALIZĂRI:
-Versiunea 4.2 (Comenzi rapide de declanșare prompt): Scrieți #PromptName direct în câmpul de chat al Gemini și apăsați Spațiu pentru a injecta instantaneu un prompt salvat — fără a deschide panoul extensiei.
+Versiunea 4.2 (Comenzi rapide de declanșare prompt): Tastați # în câmpul de chat al Gemini pentru a vedea imediat toate prompturile salvate, filtrate în timp real pe măsură ce tastați. Apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru a injecta — fără a deschide vreodată panoul extensiei. Sugestiile apar cu numele extensiei ca etichetă, Backspace restaurează sugestiile după nicio potrivire, iar completarea automată la potrivire unică menține panoul stabil.
 Versiunea 4.1.1: Remedieri minore ale erorilor și îmbunătățiri ale stabilității.
 Versiunea 4.1 (Expansiune globală și consolidare): 16 limbi noi aduc Foldere Gemini la 43 de localizări în întreaga lume — limbi nordice, statele baltice și acoperire europeană și din Asia de Sud-Est extinsă. Corectată o condiție de cursă care putea pierde silențios o salvare la clicuri rapide. Injecția de prompturi modernizată cu InputEvent, înlocuind execCommand deprecat. Pipeline-ul de import întărit împotriva URL-urilor malițioase din fișierele de rezervă. Corectat un bug critic de securitate a datelor: activarea sincronizării prompturilor cu spațiu de stocare aproape plin putea șterge în liniște toate prompturile salvate. Spațiul de stocare folosește acum scrieri fragmentate pentru a rămâne în limitele Chrome, cu mesaje de eroare clare când este plin.
 Versiunea 4.0 (Biblioteca de Prompturi): Cea mai ambițioasă actualizare de până acum! Foldere Gemini primește un mod Prompturi complet nou: salvați cele mai bune prompturi, editați-le în loc și injectați-le direct în Gemini cu un clic. Adăugat: comutator de moduri animat, căutare și sortare în modul Prompturi, buton Gem personalizat și sincronizare independentă a prompturilor.

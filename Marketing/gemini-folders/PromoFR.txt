@@ -11,7 +11,7 @@ Avec la version 4.0, Dossiers Gemini devient votre véritable cockpit Gemini : o
 💎 Gem personnalisé : Configurez un lien vers votre Gem favori et activez-le d'un clic. Quand il est actif, le bouton "Nouvelle conversation" ouvre votre Gem plutôt que le chat par défaut.
 📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
 ☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
-⌨️ Déclenchement de prompt avec autocomplétion : Tapez #prefix dans le champ de saisie de Gemini et appuyez sur Espace — complète automatiquement vers la correspondance unique, ou liste toutes les options sur une deuxième ligne. Appuyez à nouveau sur Espace pour injecter.
+⌨️ Déclenchement de prompt avec suggestions en direct : Tapez # dans le champ de saisie de Gemini pour voir instantanément tous vos prompts sauvegardés — filtrés en temps réel au fil de la frappe. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter directement.
 
 🌟 FONCTIONNALITÉS DOSSIERS
 
@@ -46,7 +46,7 @@ Cliquez sur ➕ Ajouter un prompt, entrez un titre et votre texte, sauvegardez.
 Pour utiliser un prompt : dépliez-le et cliquez ▶ — il s'injecte directement dans Gemini, prêt à envoyer.
 Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et reste accessible d'un regard.
 Configurez 💎 pour pointer vers votre Gem personnalisé.
-Déclenchement de prompt : tapez #prefix et appuyez sur Espace — l'autocomplétion remplit la correspondance unique, ou des suggestions apparaissent en dessous. Appuyez à nouveau sur Espace pour injecter.
+Déclenchement de prompt : tapez # pour voir instantanément tous vos prompts sauvegardés, ou continuez à taper pour filtrer en temps réel. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ
 Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à gemini.google.com et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
@@ -61,7 +61,7 @@ Intéressé par Dossiers Gemini mais vous utilisez aussi ChatGPT, Claude, Copilo
 👉 Installer Dossiers IA: __AF_STORE_URL__
 
 📢 MISES À JOUR :
-Version 4.2 (Raccourcis de déclenchement de prompts) : Tapez #PromptName directement dans le champ de saisie de Gemini et appuyez sur Espace pour injecter instantanément un prompt sauvegardé — sans ouvrir le panneau de l'extension.
+Version 4.2 (Raccourcis de déclenchement de prompts) : Tapez # dans le champ de saisie de Gemini pour voir instantanément tous vos prompts sauvegardés, filtrés en temps réel au fil de la frappe. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion ou sur une correspondance exacte pour l'injecter — sans jamais ouvrir le panneau de l'extension. Les suggestions apparaissent avec le nom de l'extension comme étiquette, la touche Retour arrière restaure les suggestions après une absence de correspondance, et l'autocomplétion sur correspondance unique maintient le panneau stable.
 Version 4.1.1 : Corrections mineures et améliorations de la stabilité.
 Version 4.1 (Expansion mondiale et renforcement) : 16 nouvelles langues portent Dossiers Gemini à 43 localisations dans le monde — langues nordiques, pays baltes et couverture européenne et sud-est asiatique élargie. Correction d'une condition de course pouvant perdre silencieusement une sauvegarde en cas de clics rapides. Injection de prompts modernisée avec InputEvent, en remplacement du execCommand obsolète. Pipeline d'importation renforcé contre les URL malveillantes dans les fichiers de sauvegarde. Correction d'un bogue critique de sécurité des données : l'activation de la synchronisation des prompts avec un stockage quasi plein pouvait effacer silencieusement tous les prompts sauvegardés. Le stockage utilise désormais des écritures fragmentées pour rester dans les limites de Chrome, avec des messages d'erreur clairs quand il est plein.
 Version 4.0 (Bibliothèque de Prompts) : La mise à jour la plus ambitieuse à ce jour ! Dossiers Gemini se dote d'un tout nouveau mode Prompts : sauvegardez vos meilleurs prompts, éditez-les en place, et injectez-les directement dans Gemini en un clic. Épinglez vos prompts essentiels en tête de liste. Ajout du bouton de bascule animé entre les modes, de la recherche et du tri dans le mode Prompts, du bouton Gem personnalisé, et de la synchronisation indépendante des prompts.

@@ -11,7 +11,7 @@ AI mapes ir jūsu vienotais AI vadības panelis: kārtojiet sarunas no visiem AI
 🔀 Jaunas sarunas pogas: Sāciet jaunu sarunu ChatGPT, Claude, Copilot, Gemini vai Perplexity tieši no uzvedņu režīma — viena poga katram pakalpojumam.
 ☁️ Uzvedņu sinhronizācija: Iespējo mākoņa sinhronizāciju uzvedņu bibliotēkai neatkarīgi no mapēm.
 📌 Piespraustas uzvednes: Piespreudz svarīgas uzvednes bibliotēkas augšdaļā.
-⌨️ Uzvednes aktivizētājs ar automātisko pabeigšanu: Ievadiet #prefix jebkura AI tērzēšanas laukā un nospiediet atstarpi — automātiski pabeidz līdz unikālajai atbilstībai vai otrā rindā uzrāda visas iespējas. Nospiediet atstarpi vēlreiz, lai ievietotu. Darbojas ar ChatGPT, Claude, Gemini, Copilot un lokāliem LLM.
+⌨️ Uzvednes aktivizētājs ar tiešraides ieteikumiem: Ievadiet # jebkura AI tērzēšanas laukā, lai uzreiz redzētu visas saglabātās uzvednes — filtrētas reāllaikā, rakstot. Nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā tiešai ievietošanai. Darbojas ar ChatGPT, Claude, Gemini, Copilot un lokāliem LLM.
 
 🌟 MAPJU FUNKCIJAS
 
@@ -49,7 +49,7 @@ Noklikšķini uz 📝 uz slēdža paplašinājuma augšējā labajā stūrī.
 Noklikšķini ➕ Pievienot uzvedni, ievadi virsrakstu un tekstu un saglabā.
 Uzvednes izmantošanai: izvērst to un noklikšķini ▶ – tā tiek ievietota tieši aktīvajā AI.
 Uzvednes piespraudīšanai: noklikšķini 📍 – tā tiek pārvietota saraksta augšgalā.
-Uzvednes aktivizētājs: Ievadiet #prefix un nospiediet atstarpi — automātiskā pabeigšana aizpilda unikālo atbilstību vai zemāk parādās ieteikumi. Nospiediet atstarpi vēlreiz, lai ievietotu.
+Uzvednes aktivizētājs: Ievadiet #, lai uzreiz redzētu visas saglabātās uzvednes, vai turpiniet rakstīt filtrēšanai reāllaikā. Nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā ievietošanai.
 
 🔒 PRIVĀTUMS UN DROŠĪBA
 Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai Gemini, Claude, ChatGPT, Copilot, Perplexity un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot Chrome Sync: nav trešo pušu serveru, nav telemetrijas.
@@ -58,6 +58,6 @@ Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai Gemini, Claude, ChatG
 AI mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība un cieņa pret tavu privātumu ir mūsu augstākās prioritātes. Vai esi izstrādātājs vai vienkārši ziņkārīgs? Pārlūkojiet kodu, sekojiet izmaiņu žurnālam vai piedalieties GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 ATJAUNINĀJUMI:
-Versija 1.1 (Uzvednes aktivizācijas saīsnes): Ierakstiet #PromptName jebkura MI tērzēšanas laukā un nospiediet Atstarpe, lai uzreiz ievietotu saglabāto uzvedni — neatverot paplašinājuma paneli. Darbojas ar visiem atbalstītajiem pakalpojumiem, ieskaitot lokālos LLM.
+Versija 1.1 (Uzvednes aktivizācijas saīsnes): Ievadiet # jebkura AI tērzēšanas laukā, lai uzreiz redzētu visas saglabātās uzvednes, filtrētas reāllaikā, rakstot. Nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā ievietošanai — nekad neatverot paplašinājuma paneli. Ieteikumi tiek rādīti ar paplašinājuma nosaukumu kā etiķeti, Backspace atjauno ieteikumus pēc neatbilstības un automātiskā pabeigšana pie unikālas atbilstības saglabā paneli stabilu. Darbojas ar visiem atbalstītajiem pakalpojumiem, ieskaitot lokālos LLM.
 Versija 1.0.1: Nelieli kļūdu labojumi un stabilitātes uzlabojumi.
 Versija 1.0: Pirmais laidiens! Kārtojiet sarunas no Gemini, Claude, ChatGPT, Copilot un Perplexity koplietotās mapēs. Pilna uzvedņu bibliotēka ar viena klikšķa ievietošanu, ātrās saglabāšanas īsinājumtaustiņi, vilkšana un nomešana, mobilo ierīču sinhronizācija, lielapjoma darbības, ciļņu grupas un atbalsts 43 valodām.

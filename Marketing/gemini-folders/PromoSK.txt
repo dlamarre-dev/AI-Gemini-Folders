@@ -11,7 +11,7 @@ S verziou 4.0 sa Priečinky Gemini stávajú vaším skutočným kokpitom pre Ge
 💎 Vlastný odkaz Gem: Nastavte odkaz na váš obľúbený Gem a aktivujte ho kliknutím. Keď je aktívny, tlačidlo „Nová konverzácia" otvorí váš Gem namiesto predvoleného chatu.
 ☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
 📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
-⌨️ Spúšťač promptov s automatickým dopĺňaním: Napíšte #prefix do chatovacieho poľa Gemini a stlačte medzerník — automaticky doplní na jedinečnú zhodu alebo vypíše všetky možnosti na druhom riadku. Stlačte medzerník znovu pre vloženie.
+⌨️ Spúšťač promptov so živými návrhmi: Napíšte # do chatovacieho poľa Gemini a okamžite uvidíte všetky svoje uložené prompty — filtrované v reálnom čase pri písaní. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre priame vloženie.
 
 🌟 FUNKCIE PRIEČINKOV
 
@@ -46,7 +46,7 @@ Kliknite na ➕ Pridať výzvu, zadajte názov a text, uložte.
 Ak chcete použiť výzvu: rozbaľte ju a kliknite na ▶ — vloží sa priamo do Gemini, pripravená na odoslanie.
 Nakonfigurujte 💎, aby ukazoval na váš vlastný Gem.
 Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vždy po ruke.
-Spúšťač promptov: Napíšte #prefix a stlačte medzerník — automatické dopĺňanie vyplní jedinečnú zhodu alebo sa zobrazia návrhy nižšie. Stlačte medzerník znovu pre vloženie.
+Spúšťač promptov: Napíšte # a okamžite uvidíte všetky svoje uložené prompty, alebo pokračujte v písaní pre filtrovanie v reálnom čase. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre vloženie.
 
 🔒 SÚKROMIE A BEZPEČNOSŤ
 Navrhnuté so súkromím v centre. Vyžaduje prístup iba k gemini.google.com a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.
@@ -61,7 +61,7 @@ Zaujímajú vás Priečinky Gemini, ale používate aj ChatGPT, Claude, Copilot,
 👉 Nainštalovať AI priečinky: __AF_STORE_URL__
 
 📢 AKTUALIZÁCIE:
-Verzia 4.2 (Klávesové skratky na spúšťanie výziev): Napíšte #PromptName priamo do chatovacieho poľa Gemini a stlačte Medzerník, aby ste okamžite vložili uloženú výzvu — bez otvorenia panela rozšírenia.
+Verzia 4.2 (Klávesové skratky na spúšťanie výziev): Napíšte # do chatovacieho poľa Gemini a okamžite uvidíte všetky svoje uložené prompty, filtrované v reálnom čase pri písaní. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre vloženie — bez toho, aby ste kedy otvorili panel rozšírenia. Návrhy sa zobrazujú s názvom rozšírenia ako popiskom, Backspace obnoví návrhy po nesúlade a automatické doplnenie pri jedinečnej zhode udržuje panel stabilný.
 Verzia 4.1.1: Drobné opravy chýb a vylepšenia stability.
 Verzia 4.1 (Globálna expanzia a spevnenie): 16 nových jazykov privádza Priečinky Gemini na 43 lokalizácií po celom svete — severské jazyky, pobaltské štáty a rozšírené európske a juhovýchodoázijské pokrytie. Opravená race condition, ktorá mohla pri rýchlych kliknutiach ticho zahodiť uloženie. Vkladanie výziev modernizované pomocou InputEvent, nahradenie zastaraného execCommand. Importný kanál zabezpečený proti škodlivým URL v záložných súboroch. Opravená kritická chyba bezpečnosti dát: povolenie synchronizácie výziev pri takmer plnom úložisku mohlo ticho vymazať všetky uložené výzvy. Úložisko teraz používa fragmentované zápisy, aby zostalo v rámci limitov Chrome, s jasnými chybovými hláseniami keď je plné.
 Verzia 4.0 (Knižnica výziev): Najambicióznejšia aktualizácia doteraz! Priečinky Gemini dostávajú úplne nový režim výziev: ukladajte najlepšie výzvy, upravujte ich na mieste a vkladajte ich priamo do Gemini jedným kliknutím. Pridané: animovaný prepínač režimov, vyhľadávanie a triedenie v režime výziev, tlačidlo vlastného Gem a nezávislá synchronizácia výziev. Pripnutie najdôležitejších výziev na vrch knižnice.
