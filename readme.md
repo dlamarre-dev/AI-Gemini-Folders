@@ -62,7 +62,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 * 📝 **Prompt Library:** Switch to Prompt Mode via the pill toggle. Save reusable prompts with a title and full text, find them instantly with search and sort.
 * ▶ **One-Click Injection:** Hit the play button on any saved prompt to inject it directly into the active AI tab’s input field — works across all supported platforms in AI Folders.
-* ⌨️ **Prompt Trigger Shortcuts:** Type `#PromptName` directly in any AI chat field and press **Space** to inject the matching saved prompt instantly — no need to open the panel. Matching is case-insensitive and strips leading emojis from prompt titles. *(AI Folders: all supported sites including local LLMs; Gemini Folders: Gemini only.)*
+* ⌨️ **Prompt Trigger Shortcuts:** Type `#prefix` directly in any AI chat field and press **Space** — autocompletes to the unique match, or shows all matching prompts on a second line as live suggestions. Press **Space** again on an exact match to inject. Matching is case-insensitive and strips leading emojis from prompt titles. *(AI Folders: all supported sites including local LLMs; Gemini Folders: Gemini only.)*
 * ✏️ **Inline Editing:** Click a prompt to expand and edit it directly. Changes auto-save after a short pause.
 * 💎 **Custom Gem / AI Link:** Configure a custom URL (Gemini Gem or any AI) and toggle it with the 💎 button to make the “New Conversation” button open it. *(Gemini Folders only — AI Folders uses per-service shortcut buttons.)*
 * 📌 **Pin Important Prompts:** Pinned prompts stay at the top above a visual divider, independent of sort order.
@@ -115,7 +115,7 @@ This project uses a Python build pipeline to generate browser-specific versions.
 ### Prompt Mode
 1. Click the **📝** side of the pill toggle to switch to Prompt Mode.
 2. **Save a prompt:** Click **➕ Add Prompt**, enter a title and text, hit **Save**.
-3. **Quick inject via trigger:** Type `#PromptName` directly in any AI chat input field and press Space — the matching saved prompt replaces the field content instantly.
+3. **Quick inject via trigger:** Type `#prefix` in any AI chat input field and press **Space** — autocompletes to the unique match, or shows all matching prompts as live suggestions below. Continue typing to narrow down, or press **Space** again on an exact match to inject it instantly.
 4. **Use a prompt via panel:** Click any saved prompt to expand it, then hit **▶** to inject it into the active AI tab.
 5. **New conversation:** *(AI Folders)* Use the per-service shortcut buttons in Prompt Mode. *(Gemini Folders)* Click 💎 to configure a custom Gem URL, then 💬 to open a new conversation.
 6. Pin prompts with 📍, search and sort freely — all changes sync automatically.
