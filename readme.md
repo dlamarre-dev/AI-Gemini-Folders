@@ -115,7 +115,7 @@ This project uses a Python build pipeline to generate browser-specific versions.
 ### Prompt Mode
 1. Click the **📝** side of the pill toggle to switch to Prompt Mode.
 2. **Save a prompt:** Click **➕ Add Prompt**, enter a title and text, hit **Save**.
-3. **Quick inject via trigger:** Type `#prefix` in any AI chat input field and press **Space** — autocompletes to the unique match, or shows all matching prompts as live suggestions below. Continue typing to narrow down, or press **Space** again on an exact match to inject it instantly.
+3. **Quick inject via trigger:** Type `#prefix` in any AI chat input field and press **Space** — autocompletes to the unique match, or shows all matching prompts as live suggestions below. Continue typing to narrow down, or press **Space** again on an exact match to inject it instantly. *(Perplexity: autocomplete and suggestions are disabled — only exact prompt names inject directly.)*
 4. **Use a prompt via panel:** Click any saved prompt to expand it, then hit **▶** to inject it into the active AI tab.
 5. **New conversation:** *(AI Folders)* Use the per-service shortcut buttons in Prompt Mode. *(Gemini Folders)* Click 💎 to configure a custom Gem URL, then 💬 to open a new conversation.
 6. Pin prompts with 📍, search and sort freely — all changes sync automatically.
