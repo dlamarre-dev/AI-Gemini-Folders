@@ -40,20 +40,12 @@ async function updateLocalLlmContentScript() {
       await chrome.scripting.registerContentScripts([{ ...scriptBase, persistAcrossSessions: true }]);
     } catch (_) {
       // Fallback for Firefox < 128: register without persistAcrossSessions.
-      // The top-level call to updateLocalLlmContentScript() ensures re-registration
-      // on every service-worker activation, compensating for the missing persistence.
       await chrome.scripting.registerContentScripts([scriptBase]);
     }
   } catch (err) {
     console.error('Failed to register local LLM prompt-trigger script:', err);
   }
 }
-
-// Re-register on every service-worker activation. Firefox does not support
-// persistAcrossSessions, so dynamic registrations are lost when the service
-// worker restarts mid-session. This call ensures the script is always registered
-// when the worker wakes up, covering both browser-start and mid-session restarts.
-updateLocalLlmContentScript();
 
 // --- CONTEXT MENU ---
 
