@@ -121,10 +121,10 @@
     if (nonEmpty.length < 2 || !SUGG_LINE_RE.test(nonEmpty[1])) return;
 
     const firstLine = nonEmpty[0];
-    // Backspace/Delete cancels the suggestion session; any other edit key updates it.
-    const prefix = (e.key === 'Backspace' || e.key === 'Delete')
-      ? ''
-      : (/^#[\p{L}\p{N}_-]+$/u.test(firstLine) ? firstLine.slice(1) : '');
+    // If # is still on the first line, refresh suggestions from its current suffix
+    // ('' means show all prompts). If # was deleted, pass null to signal "clear".
+    const startsWithHash = /^#[\p{L}\p{N}_-]*$/u.test(firstLine);
+    const prefix = startsWithHash ? firstLine.slice(1) : null;
 
     clearTimeout(_suggTimer);
     _suggTimer = setTimeout(async () => {

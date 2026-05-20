@@ -184,7 +184,7 @@ async function handleSuggestUpdate(message, sender) {
   if (!selectors || siteKey === 'perplexity') return { status: 'cleared' };
 
   const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
-  const names = message.prefix
+  const names = message.prefix != null
     ? findPromptsByPrefix(data.prompts || {}, message.prefix).map(m => m.name)
     : [];
   const tabId = sender.tab?.id ?? (await chrome.tabs.query({ active: true, currentWindow: true }))[0]?.id;

@@ -157,7 +157,7 @@ async function handlePromptTriggerLookup(message, sender) {
 async function handleSuggestUpdate(message, sender) {
   const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
   const selectors = ['rich-textarea .ql-editor', '[contenteditable="true"].ql-editor'];
-  const names = message.prefix
+  const names = message.prefix != null
     ? findPromptsByPrefix(data.prompts || {}, message.prefix).map(m => m.name)
     : [];
   try {
