@@ -120,7 +120,9 @@
 
     const firstLine = nonEmpty[0] ?? '';
     const startsWithHash = /^#[\p{L}\p{N}_-]*$/u.test(firstLine);
-    const hasSuggestionLine = nonEmpty.length >= 2 && SUGG_LINE_RE.test(nonEmpty[1]);
+    // Check positions 1 and 2: with an extension label on line 2, suggestions are on line 3.
+    const hasSuggestionLine = (nonEmpty.length >= 2 && SUGG_LINE_RE.test(nonEmpty[1]))
+      || (nonEmpty.length >= 3 && SUGG_LINE_RE.test(nonEmpty[2]));
     // # was just deleted: filter(Boolean) elevates the suggestion line to nonEmpty[0].
     // Detect this so we can clear it (Backspace/Delete only, to avoid false positives).
     const orphanedSuggestion = (e.key === 'Backspace' || e.key === 'Delete')
