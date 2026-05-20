@@ -57,6 +57,10 @@
     // Stop propagation synchronously (before the await) so app-level React handlers
     // (Open WebUI # command picker, Perplexity # tokenizer, etc.) never see this
     // Space keydown and can't transform the editor content before our injection runs.
+    // Also flag the next Space keyup for suppression: in Firefox the service worker
+    // round-trip is slow enough that keyup fires before executeScript completes,
+    // letting Perplexity's keyup handler convert #word into a chip token.
+    _blockNextSpaceKeyup = true;
     e.preventDefault();
     e.stopImmediatePropagation();
 
@@ -71,10 +75,26 @@
       // Service worker unavailable — treat as no match.
     }
 
-    if (status === 'no_match') insertSpace(el);
+    if (status === 'no_match') {
+      _blockNextSpaceKeyup = false;
+      insertSpace(el);
+    }
     // All other statuses ('injected', 'autocompleted', 'suggestions'): background
     // already acted on the editor via executeScript — nothing left to do here.
   }, true); // capture phase — fires before the editor's own handlers
+
+  // Suppress the Space keyup that follows a triggered injection. In Firefox the
+  // service worker is slow enough that keyup fires before executeScript completes,
+  // giving apps (e.g. Perplexity) time to convert the #word text into a chip token.
+  // The flag is cleared here so only the immediate sibling keyup is suppressed.
+  let _blockNextSpaceKeyup = false;
+  document.addEventListener('keyup', (e) => {
+    if (e.key === ' ' && _blockNextSpaceKeyup) {
+      _blockNextSpaceKeyup = false;
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    }
+  }, true);
 
   // Live update of suggestion line as the user types.
   // Matches "#word  #word" (contenteditable, e.g. Gemini) OR "word  word" (textarea,

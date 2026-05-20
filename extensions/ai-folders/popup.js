@@ -679,6 +679,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (currentSiteKey === 'local') {
       // No script injection for local LLM — use the browser tab title directly
       chatTitleInput.value = currentTab.title || chrome.i18n.getMessage("defaultTitle") || "New conversation";
+      // Ensure prompt-trigger is active in the local LLM tab. Dynamic registerContentScripts
+      // is unreliable in Firefox, so we inject on popup open as a guaranteed fallback.
+      // window.__promptTriggerActive guards against double execution.
+      chrome.scripting.executeScript({
+        target: { tabId: currentTab.id },
+        files: ['lz-string.min.js', 'prompt-trigger.js'],
+      }).catch(() => {});
     } else {
       chrome.scripting.executeScript({
         target: { tabId: currentTab.id },

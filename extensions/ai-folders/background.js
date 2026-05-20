@@ -28,17 +28,32 @@ async function updateLocalLlmContentScript() {
   try {
     const { protocol, hostname, port } = new URL(localLlmUrl);
     const portPart = port ? `:${port}` : '';
-    await chrome.scripting.registerContentScripts([{
+    const scriptBase = {
       id: PROMPT_TRIGGER_SCRIPT_ID,
       matches: [`${protocol}//${hostname}${portPart}/*`],
       js: ['lz-string.min.js', 'prompt-trigger.js'],
       runAt: 'document_idle',
-      persistAcrossSessions: true,
-    }]);
+    };
+    try {
+      // persistAcrossSessions survives service-worker restarts in Chrome.
+      // Firefox added support in v128; older versions throw — caught below.
+      await chrome.scripting.registerContentScripts([{ ...scriptBase, persistAcrossSessions: true }]);
+    } catch (_) {
+      // Fallback for Firefox < 128: register without persistAcrossSessions.
+      // The top-level call to updateLocalLlmContentScript() ensures re-registration
+      // on every service-worker activation, compensating for the missing persistence.
+      await chrome.scripting.registerContentScripts([scriptBase]);
+    }
   } catch (err) {
     console.error('Failed to register local LLM prompt-trigger script:', err);
   }
 }
+
+// Re-register on every service-worker activation. Firefox does not support
+// persistAcrossSessions, so dynamic registrations are lost when the service
+// worker restarts mid-session. This call ensures the script is always registered
+// when the worker wakes up, covering both browser-start and mid-session restarts.
+updateLocalLlmContentScript();
 
 // --- CONTEXT MENU ---
 
@@ -111,7 +126,10 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 
 async function handlePromptTriggerLookup(message, sender) {
   const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
-  const siteKey = getSiteByUrl(sender.tab?.url, localLlmUrl);
+  // sender.tab may be absent for dynamically-registered content scripts in Firefox;
+  // sender.url (the document URL) is always present and is equivalent for main-frame scripts.
+  const tabUrl = sender.tab?.url ?? sender.url;
+  const siteKey = getSiteByUrl(tabUrl, localLlmUrl);
   const selectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
   if (!selectors) return { status: 'no_match' };
 
@@ -125,10 +143,16 @@ async function handlePromptTriggerLookup(message, sender) {
   // those before injection. Also skip multi-match suggestions (corrupts content).
   const forceClear = siteKey === 'perplexity';
 
+  // sender.tab may be absent for dynamically-registered scripts in Firefox;
+  // fall back to the active tab in the current window.
+  const tabId = sender.tab?.id ?? (await chrome.tabs.query({ active: true, currentWindow: true }))[0]?.id;
+  if (!tabId) return { status: 'no_match' };
+
   try {
     if (exact) {
       await chrome.scripting.executeScript({
-        target: { tabId: sender.tab.id },
+        target: { tabId },
+        world: 'MAIN',
         args: [exact.text, selectors, forceClear],
         func: injectPromptIntoEditor,
       });
@@ -137,7 +161,8 @@ async function handlePromptTriggerLookup(message, sender) {
 
     if (matches.length === 1) {
       await chrome.scripting.executeScript({
-        target: { tabId: sender.tab.id },
+        target: { tabId },
+        world: 'MAIN',
         args: ['#' + matches[0].name, selectors, forceClear],
         func: injectPromptIntoEditor,
       });
@@ -147,7 +172,8 @@ async function handlePromptTriggerLookup(message, sender) {
     if (forceClear) return { status: 'no_match' };
 
     const suggResults = await chrome.scripting.executeScript({
-      target: { tabId: sender.tab.id },
+      target: { tabId },
+      world: 'MAIN',
       args: [matches.map(m => m.name), selectors],
       func: insertSuggestionsInEditor,
     });
@@ -160,7 +186,8 @@ async function handlePromptTriggerLookup(message, sender) {
 
 async function handleSuggestUpdate(message, sender) {
   const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
-  const siteKey = getSiteByUrl(sender.tab?.url, localLlmUrl);
+  const tabUrl = sender.tab?.url ?? sender.url;
+  const siteKey = getSiteByUrl(tabUrl, localLlmUrl);
   const selectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
   if (!selectors || siteKey === 'perplexity') return { status: 'cleared' };
 
@@ -168,9 +195,12 @@ async function handleSuggestUpdate(message, sender) {
   const names = message.prefix
     ? findPromptsByPrefix(data.prompts || {}, message.prefix).map(m => m.name)
     : [];
+  const tabId = sender.tab?.id ?? (await chrome.tabs.query({ active: true, currentWindow: true }))[0]?.id;
+  if (!tabId) return { status: 'cleared' };
   try {
     await chrome.scripting.executeScript({
-      target: { tabId: sender.tab.id },
+      target: { tabId },
+      world: 'MAIN',
       args: [names, selectors],
       func: insertSuggestionsInEditor,
     });

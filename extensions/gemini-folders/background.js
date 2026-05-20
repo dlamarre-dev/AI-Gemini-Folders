@@ -121,6 +121,7 @@ async function handlePromptTriggerLookup(message, sender) {
       // Exact match → inject prompt content.
       await chrome.scripting.executeScript({
         target: { tabId: sender.tab.id },
+        world: 'MAIN',
         args: [exact.text, selectors],
         func: injectPromptIntoEditor,
       });
@@ -131,6 +132,7 @@ async function handlePromptTriggerLookup(message, sender) {
       // Unique prefix → autocomplete: replace field with #fullName.
       await chrome.scripting.executeScript({
         target: { tabId: sender.tab.id },
+        world: 'MAIN',
         args: ['#' + matches[0].name, selectors],
         func: injectPromptIntoEditor,
       });
@@ -140,6 +142,7 @@ async function handlePromptTriggerLookup(message, sender) {
     // Ambiguous prefix → show all matches on next line, cursor stays on first line.
     const suggResults = await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
+      world: 'MAIN',
       args: [matches.map(m => m.name), selectors],
       func: insertSuggestionsInEditor,
     });
@@ -160,6 +163,7 @@ async function handleSuggestUpdate(message, sender) {
   try {
     await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
+      world: 'MAIN',
       args: [names, selectors],
       func: insertSuggestionsInEditor,
     });

@@ -447,15 +447,54 @@ function insertSuggestionsInEditor(suggestions, selectors) {
   if (editor.isContentEditable) {
     // innerText respects <p>/<br> as \n (unlike textContent which concatenates).
     const firstLine = (editor.innerText ?? editor.textContent).split('\n')[0].trim();
-    const newContent = suggestions.length > 0
-      ? firstLine + '\n' + suggestions.map(n => '#' + n).join('  ')
-      : firstLine;
+
+    if (editor.classList.contains('ql-editor')) {
+      // Quill (Gemini): use a single insertText with '\n' because Quill's Delta format
+      // treats '\n' as a paragraph break natively. Using insertParagraph desynchronises
+      // Quill's model from the DOM in Firefox MAIN world (wrong element type inserted).
+      const newContent = firstLine + (suggestions.length > 0 ? '\n' + suggestions.map(n => '#' + n).join('  ') : '');
+      document.execCommand('selectAll', false, null);
+      document.execCommand('insertText', false, newContent);
+      // Quill updates its selection asynchronously after insertText. Defer cursor
+      // repositioning so Quill has settled before we set the cursor position.
+      return new Promise(resolve => setTimeout(() => {
+        // Prefer Quill's own setSelection API: authoritative and not overridable.
+        const qlContainer = editor.parentElement;
+        const qlRoot = qlContainer?.parentElement;
+        const quill = qlRoot?.__quill ?? qlContainer?.__quill;
+        if (quill?.setSelection) {
+          quill.setSelection(firstLine.length, 0, 'api');
+        } else {
+          // Fallback Range API — Quill has settled so our Range won't be overridden.
+          const firstBlock = editor.querySelector('p') ?? editor;
+          const lastText = Array.from(firstBlock.childNodes).filter(n => n.nodeType === 3).pop();
+          const range = document.createRange();
+          if (lastText) {
+            range.setStart(lastText, lastText.textContent.length);
+            range.collapse(true);
+          } else {
+            range.selectNodeContents(firstBlock);
+            range.collapse(false);
+          }
+          const sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
+        resolve(true);
+      }, 0));
+    }
+
+    // ProseMirror (Claude) / React (ChatGPT): use insertParagraph for a reliable
+    // paragraph break — '\n' in insertText is not guaranteed to split paragraphs.
     document.execCommand('selectAll', false, null);
     document.execCommand('delete', false, null);
-    document.execCommand('insertText', false, newContent);
+    document.execCommand('insertText', false, firstLine);
+    if (suggestions.length > 0) {
+      document.execCommand('insertParagraph', false, null);
+      document.execCommand('insertText', false, suggestions.map(n => '#' + n).join('  '));
+    }
+
     // Place cursor at the end of the first block element (the first line).
-    // Targeting the first <p> / <div> directly is more reliable than a full
-    // TreeWalker traversal, which can be thrown off by invisible nodes or <br>.
     const firstBlock = editor.querySelector('p, div') ?? editor;
     const lastText = Array.from(firstBlock.childNodes).filter(n => n.nodeType === 3).pop();
     const range = document.createRange();
@@ -509,20 +548,30 @@ function injectPromptIntoEditor(promptText, selectors, forceClear) {
   editor.focus();
 
   if (editor.isContentEditable) {
-    // Some editors (e.g. Perplexity) convert #word into non-selectable token chips
-    // that survive selectAll+delete. Clearing textContent first removes them.
-    if (forceClear) editor.textContent = '';
+    if (forceClear) {
+      // Dispatch beforeinput BEFORE the actual delete so Perplexity's React handler
+      // can clear its chip/token state first. In Chrome, execCommand('delete') also
+      // fires beforeinput — the duplicate is harmless. In Firefox, execCommand may not
+      // fire it at all, so we do it manually here before touching the DOM.
+      document.execCommand('selectAll', false, null);
+      editor.dispatchEvent(new InputEvent('beforeinput', {
+        bubbles: true, cancelable: true, inputType: 'deleteContentBackward',
+      }));
+      document.execCommand('delete', false, null);
+      editor.textContent = '';
+      // Do NOT dispatch 'input' here: that would trigger a React re-render that
+      // restores the chip from state, undoing the DOM clear we just performed.
+    }
     // Three-step replace: select all → delete → insert.
-    // This is more reliable than selectAll+insertText in one step for long text,
-    // because some editors (e.g. Perplexity) don't replace the selection when
-    // execCommand('insertText') receives a very long string.
     document.execCommand('selectAll', false, null);
     document.execCommand('delete', false, null);
     document.execCommand('insertText', false, promptText);
 
-    // If the content still doesn't match (editor overrode our change), try the
-    // beforeinput approach that some React/ProseMirror editors listen to.
-    if (editor.textContent.trim() !== promptText.trim()) {
+    // Fallback for editors that ignore execCommand('insertText') (some React/ProseMirror
+    // implementations revert DOM changes via their own state). Skipped when forceClear
+    // is true (e.g. Perplexity): their beforeinput handler already acts on the
+    // execCommand above, so dispatching it again causes double injection.
+    if (!forceClear && editor.textContent.trim() !== promptText.trim()) {
       editor.dispatchEvent(new InputEvent('beforeinput', {
         bubbles: true, cancelable: true,
         inputType: 'insertText', data: promptText,
@@ -536,6 +585,13 @@ function injectPromptIntoEditor(promptText, selectors, forceClear) {
       ? window.HTMLTextAreaElement.prototype
       : window.HTMLInputElement.prototype;
     const nativeSetter = Object.getOwnPropertyDescriptor(proto, 'value')?.set;
+    if (forceClear) {
+      // Clear to empty first so the framework can flush any chip/token state before
+      // the final value is set — prevents Firefox from re-rendering stale chips.
+      if (nativeSetter) nativeSetter.call(editor, ''); else editor.value = '';
+      editor.dispatchEvent(new Event('input', { bubbles: true }));
+      editor.dispatchEvent(new Event('change', { bubbles: true }));
+    }
     if (nativeSetter) {
       nativeSetter.call(editor, promptText);
     } else {
