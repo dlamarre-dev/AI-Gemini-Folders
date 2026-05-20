@@ -44,7 +44,7 @@
     const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
     const firstLine = rawText.split('\n')[0].trim();
 
-    if (!/^#[\p{L}\p{N}_-]+$/u.test(firstLine)) return;
+    if (!/^#[\p{L}\p{N}_-]*$/u.test(firstLine)) return;
 
     const triggerName = firstLine.slice(1);
 
