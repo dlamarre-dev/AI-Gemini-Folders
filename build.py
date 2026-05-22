@@ -118,11 +118,23 @@ def sync_package_version(version):
 # Test gate
 # ---------------------------------------------------------------------------
 
+def _node_env():
+    """Return an env dict that includes common Node install locations in PATH."""
+    env = os.environ.copy()
+    extra = [
+        os.path.expanduser("~/.local/bin"),
+        "/usr/local/bin",
+        "/opt/homebrew/bin",
+    ]
+    env["PATH"] = os.pathsep.join(extra) + os.pathsep + env.get("PATH", "")
+    return env
+
+
 def run_tests():
     """Runs Jest. Returns True if tests pass or the user chooses to continue."""
     if not os.path.isdir("node_modules"):
         print("📦 node_modules not found — running npm install...")
-        install = subprocess.run("npm install", shell=True)
+        install = subprocess.run("npm install", shell=True, env=_node_env())
         if install.returncode != 0:
             print("\n❌ npm install failed.")
             answer = input("   Continue with the build anyway? [y/N] ").strip().lower()
@@ -134,7 +146,7 @@ def run_tests():
         result = subprocess.run(
             "npx jest --no-coverage --no-colors",
             shell=True, capture_output=True, text=True,
-            encoding="utf-8", errors="replace",
+            encoding="utf-8", errors="replace", env=_node_env(),
         )
     except Exception as e:
         print(f"\n⚠️  Could not execute tests: {e}")
