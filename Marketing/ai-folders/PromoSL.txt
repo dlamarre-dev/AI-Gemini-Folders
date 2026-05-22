@@ -11,7 +11,7 @@ Mape AI je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vse
 🔀 Gumbi za novo pogovor: Začnite nov pogovor na ChatGPT, Claude, Copilot, Gemini ali Perplexity neposredno iz načina pozivov — en gumb za vsako storitev.
 ☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
 📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
-⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet katerega koli AI, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje. Deluje s ChatGPT, Claude, Gemini, Copilot in lokalnimi LLM.
+⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Uporabite ↓/↑ za krmarjenje, pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
 
 🌟 FUNKCIJE MAP
 
@@ -33,8 +33,7 @@ Mape AI je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vse
 
 🏠 PODPORA ZA LOKALNI LLM
 
-Uporabljate lokalni model umetne inteligence (Ollama, LM Studio, Jan ali drug)? Konfigurirajte Mape AI z lokalnim URL-jem — podpira localhost in naslove LAN (192.168.x.x, prilagojeni gostiteljski vnosi). Hitro shranjevanje, shranjevanje prek kontekstnega menija in vstavljanje pozivov delujejo v večini lokalnih vmesnikov (vključno z Open WebUI).
-
+Uporabljate lokalni model AI (Ollama, LM Studio, Jan ali drugega)? Konfigurirajte Mape AI z lokalnim URL-jem — podpira localhost in LAN naslove (192.168.x.x, prilagojeni nazivi gostiteljev). Hitro shranjevanje in shranjevanje prek kontekstnega menija delujeta tudi na lokalnih vmesnikih.
 🛠️ KAKO DELUJE?
 
 Način map:
@@ -57,7 +56,7 @@ Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do Gemini, Claude, Cha
 🤝 ODPRTOKODNI PROJEKT
 Mape AI je odprtokodni projekt, zgrajen s strastjo. Preglednost in spoštovanje tvoje zasebnosti sta naši najvišji prioriteti. Si razvijalec ali samo radoveden? Preglej kodo, sledi dnevniku sprememb ali prispevaj na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 POSODOBITVE:
-Različica 1.1 (Bližnjice za sprožitev pozivov): Vnesite # v polje za klepet katerega koli AI, da takoj vidite vse shranjene pozive, filtrirane v realnem času med tipkanjem. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za vstavljanje — brez kdaj koli odpiranja plošče razširitve. Predlogi se prikažejo z imenom razširitve kot oznako, Backspace obnovi predloge po neujemanju in samodejno dopolnjevanje pri edinstvenem ujemanju ohranja ploščo stabilno. Deluje pri vseh podprtih storitvah, vključno z lokalnimi LLM-ji.
-Različica 1.0.1: Manjše popravke napak in izboljšave stabilnosti.
+Različica 1.1 (Sprožilec pozivov): Vnesite # v katero koli polje za klepet AI in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče. Deluje na vseh podprtih storitvah, vključno z lokalnimi LLM.
 Različica 1.0: Prva izdaja! Organizirajte pogovore iz Gemini, Claude, ChatGPT, Copilot in Perplexity v skupne mape. Popolna knjižnica pozivov z vstavljanjem z enim klikom, bližnjice za hitro shranjevanje, povleci in spusti, mobilna sinhronizacija, množična dejanja, skupine zavihkov in podpora za 43 jezikov.

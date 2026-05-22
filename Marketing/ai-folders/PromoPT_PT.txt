@@ -11,7 +11,7 @@ Pastas IA é o seu cockpit de IA unificado: organize conversas de todas as suas 
 🔀 Botões de Nova Conversa: Inicie uma nova conversa no ChatGPT, Claude, Copilot, Gemini ou Perplexity diretamente do Modo Prompt — um botão por serviço.
 ☁️ Sincronização de prompts: Ative a sincronização na nuvem para a sua biblioteca de prompts, de forma independente das suas pastas.
 📌 Prompts fixos: Fixe os seus prompts essenciais com um clique para os manter no topo da biblioteca, separados dos restantes por um divisor visual.
-⌨️ Ativador de Prompt com Sugestões em Direto: Escreva # no campo de chat de qualquer IA para ver instantaneamente todos os seus prompts guardados — filtrados em tempo real enquanto escreve. Prima Espaço numa correspondência única para preenchimento automático, ou numa correspondência exata para injetar diretamente. Funciona com ChatGPT, Claude, Gemini, Copilot e LLMs locais.
+⌨️ Ativador de Prompt com Sugestões em Direto: Escreva # no campo de chat do Gemini para ver instantaneamente todos os seus prompts guardados — filtrados em tempo real enquanto escreve. Use ↓/↑ para navegar entre sugestões, prima Espaço numa correspondência única para preenchimento automático, ou numa correspondência exata para injetar diretamente.
 
 🌟 FUNÇÕES DE PASTAS
 
@@ -33,8 +33,7 @@ Pastas IA é o seu cockpit de IA unificado: organize conversas de todas as suas 
 
 🏠 SUPORTE A LLM LOCAL
 
-Está a usar um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure Pastas IA com o seu URL local — compatível com localhost e endereços LAN (192.168.x.x, nomes de host personalizados). Guardar rapidamente, guardar pelo menu de contexto e injeção de prompts funcionam na maioria das interfaces locais (incluindo Open WebUI).
-
+Está a usar um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure o Pastas IA com o seu URL local — suporta localhost e endereços LAN (192.168.x.x, nomes de anfitrião personalizados). O guardamento rápido e pelo menu de contexto também funcionam em interfaces locais.
 🛠️ COMO FUNCIONA?
 
 Modo Pastas:
@@ -58,7 +57,7 @@ Desenvolvida com a privacidade no centro. Solicita acesso apenas a Gemini, Claud
 🤝 PROJETO OPEN SOURCE
 Pastas IA é um projeto open source desenvolvido com paixão. A transparência e o respeito pela sua privacidade são as nossas prioridades. É programador ou simplesmente curioso? Consulte o código, acompanhe o histórico de alterações ou contribua no GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 ATUALIZAÇÕES:
-Versão 1.1 (Atalhos de Ativação de Prompts): Escreva # no campo de chat de qualquer IA para ver instantaneamente todos os seus prompts guardados, filtrados em tempo real enquanto escreve. Prima Espaço numa correspondência única para preenchimento automático ou numa correspondência exata para injetar — sem nunca abrir o painel da extensão. As sugestões aparecem com o nome da extensão como etiqueta, o Backspace restaura as sugestões após uma não-correspondência, e o preenchimento automático de correspondência única mantém o painel estável. Funciona em todos os serviços suportados incluindo LLMs locais.
-Versão 1.0.1: Pequenas correções de erros e melhorias de estabilidade.
+Versão 1.1 (Gatilho de Prompt): Escreva # em qualquer campo de chat de IA para ver os seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel. Funciona em todos os serviços suportados, incluindo LLMs locais.
 Versão 1.0: Lançamento inicial! Organize conversas do Gemini, Claude, ChatGPT, Copilot e Perplexity em pastas partilhadas. Biblioteca de prompts completa com injeção com um clique, atalhos de gravação rápida, arrastar e largar, sincronização móvel, ações em massa, grupos de separadores e suporte para 43 idiomas. Suporte a LLM local com URL configurável (localhost e endereços LAN).

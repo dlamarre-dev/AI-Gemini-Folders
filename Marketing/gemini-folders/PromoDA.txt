@@ -11,7 +11,7 @@ Med version 4.0 bliver Gemini Mapper dit sande Gemini-cockpit: organiser samtale
 💎 Tilpasset Gem-link: Konfigurer et link til din favoritgem og slå det til/fra med ét klik. Når det er aktivt, åbner knappen «Ny samtale» din Gem i stedet for standard-chatten.
 ☁️ Promptsynkronisering: Aktivér skysynkronisering for promptbiblioteket uafhængigt af mapper.
 📌 Fastgjorte prompts: Fastgør vigtige prompts øverst i biblioteket, adskilt fra resten med en visuel separator.
-⌨️ Prompt-udløser med live-forslag: Skriv # i Geminis chatfelt for straks at se alle dine gemte prompter — filtreret i realtid mens du skriver. Tryk mellemrum på et unikt match for at autofuldføre, eller på et eksakt match for at injicere direkte.
+⌨️ Prompt-udløser med live-forslag: Skriv # i Geminis chatfelt for straks at se alle dine gemte prompter — filtreret i realtid mens du skriver. Brug ↓/↑ til at navigere, tryk mellemrum på et unikt match for at autofuldføre, eller på et eksakt match for at injicere direkte.
 
 🌟 MAPPEFUNKTIONER
 
@@ -61,7 +61,7 @@ Interesseret i Gemini Mapper men bruger du også ChatGPT, Claude, Copilot, Perpl
 👉 Installer AI-mapper: __AF_STORE_URL__
 
 📢 OPDATERINGER:
-Version 4.2 (Genveje til promptudløser): Skriv # i Geminis chatfelt for straks at se alle dine gemte prompter, filtreret i realtid mens du skriver. Tryk mellemrum på et unikt match for at autofuldføre eller på et eksakt match for at injicere — uden nogensinde at åbne udvidelsespanelet. Forslag vises med udvidelsens navn som etikett, Backspace gendanner forslag efter et ikke-match, og autofuldførelse ved unikt match holder panelet stabilt.
+Version 4.2 (Prompt-udløser): Skriv # i Geminis chatfelt for at se dine gemte prompts filtreret i realtid. Brug ↓/↑ til at navigere gennem forslag, Mellemrum for at autofuldføre eller injicere — uden at åbne panelet.
 Version 4.1.1: Mindre fejlrettelser og stabilitetsforbedringer.
 Version 4.1 (Global udvidelse og hærdning): 16 nye sprog bringer Gemini Mapper til 43 oversættelser verden over — nordiske sprog, de baltiske stater og udvidet europæisk og sydøstasiatisk dækning. Rettet en race condition, der stille kunne miste en gem ved hurtige klik. Prompt-indsætning moderniseret med InputEvent, som erstatter den forældede execCommand. Import-pipeline hærdet mod ondsindede URL'er i sikkerhedskopifiler. Rettet en kritisk datasikkerhedsfejl: aktivering af prompt-synkronisering med næsten fuldt lager kunne lydløst slette alle gemte prompts. Lageret bruger nu fragmenterede skrivninger for at forblive inden for Chromes grænser, med klare fejlmeddelelser når det er fuldt.
 Version 4.0 (Promptbibliotek): Den mest ambitiøse opdatering hidtil! Gemini Mapper får en helt ny Promptvisning: gem dine bedste prompts, rediger dem inline og indsæt dem direkte i Gemini med ét klik. Tilføjet animeret tilstandsskifter, søgning og sortering i Promptvisning, tilpasset Gem-knap og uafhængig promptsynkronisering.

@@ -11,7 +11,7 @@ Carpetes IA és el vostre cockpit d'IA unificat: organitzeu converses de totes l
 🔀 Botons de Nova Conversa: Inicieu una nova conversa a ChatGPT, Claude, Copilot, Gemini o Perplexity directament des del Mode Prompt — un botó per servei.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
 📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
-⌨️ Disparador de prompts amb suggeriments en viu: Escriviu # al camp de xat de qualsevol IA per veure a l'instant tots els vostres prompts desats — filtrats en temps real mentre escriviu. Premeu Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament. Funciona amb ChatGPT, Claude, Gemini, Copilot i LLM locals.
+⌨️ Disparador de prompts amb suggeriments en viu: Escriviu # al camp de xat de Gemini per veure a l'instant tots els vostres prompts desats — filtrats en temps real mentre escriviu. Useu ↓/↑ per navegar, premeu Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
 
 🌟 FUNCIONS DE CARPETES
 
@@ -33,8 +33,7 @@ Carpetes IA és el vostre cockpit d'IA unificat: organitzeu converses de totes l
 
 🏠 SUPORT PER A LLM LOCAL
 
-Executeu un model d'IA local (Ollama, LM Studio, Jan o qualsevol altre)? Configureu Carpetes IA amb el vostre URL local — admet localhost i adreces LAN (192.168.x.x, noms d'amfitrió personalitzats). La gravació ràpida, la gravació via menú contextual i la injecció de prompts funcionen a la majoria d'interfícies locals (inclòs Open WebUI).
-
+Esteu executant un model d'IA local (Ollama, LM Studio, Jan o un altre)? Configureu Carpetes IA amb el vostre URL local — admet localhost i adreces LAN (192.168.x.x, noms d'host personalitzats). El desament ràpid i des del menú contextual també funcionen en interfícies locals.
 🛠️ COM FUNCIONA?
 
 Mode carpetes:
@@ -56,7 +55,7 @@ Construït amb la privacitat com a prioritat. Només sol·licita accés a Gemini
 🤝 PROJECTE DE CODI OBERT
 Carpetes IA és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 ACTUALITZACIONS:
-Versió 1.1 (Dreceres de Detonació de Prompts): Escriu # al camp de xat de qualsevol IA per veure a l'instant tots els teus prompts desats, filtrats en temps real mentre escrius. Prem Espai en una coincidència única per autocompletar o en una coincidència exacta per injectar — sense mai obrir el panell de l'extensió. Les suggerències apareixen amb el nom de l'extensió com a etiqueta, Retrocés restaura les suggerències després d'una no-coincidència, i l'autocompleció de coincidència única manté el panell estable. Funciona a tots els serveis compatibles, inclosos els LLM locals.
-Versió 1.0.1: Correccions menors d'errors i millores d'estabilitat.
+Versió 1.1 (Disparador de Prompts): Escriviu # a qualsevol camp de xat d'IA per veure els vostres prompts filtrats en temps real. Useu ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell. Funciona a tots els serveis compatibles, inclosos els LLM locals.
 Versió 1.0: Primera publicació! Organitzeu converses de Gemini, Claude, ChatGPT, Copilot i Perplexity en carpetes compartides. Biblioteca de prompts completa amb injecció d'un clic, dreceres de desament ràpid, arrossegar i deixar anar, sincronització mòbil, accions en bloc, grups de pestanyes i suport per a 43 idiomes.

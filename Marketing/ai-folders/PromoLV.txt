@@ -11,7 +11,7 @@ AI mapes ir jūsu vienotais AI vadības panelis: kārtojiet sarunas no visiem AI
 🔀 Jaunas sarunas pogas: Sāciet jaunu sarunu ChatGPT, Claude, Copilot, Gemini vai Perplexity tieši no uzvedņu režīma — viena poga katram pakalpojumam.
 ☁️ Uzvedņu sinhronizācija: Iespējo mākoņa sinhronizāciju uzvedņu bibliotēkai neatkarīgi no mapēm.
 📌 Piespraustas uzvednes: Piespreudz svarīgas uzvednes bibliotēkas augšdaļā.
-⌨️ Uzvednes aktivizētājs ar tiešraides ieteikumiem: Ievadiet # jebkura AI tērzēšanas laukā, lai uzreiz redzētu visas saglabātās uzvednes — filtrētas reāllaikā, rakstot. Nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā tiešai ievietošanai. Darbojas ar ChatGPT, Claude, Gemini, Copilot un lokāliem LLM.
+⌨️ Uzvednes aktivizētājs ar tiešraides ieteikumiem: Ievadiet # Gemini tērzēšanas laukā, lai uzreiz redzētu visas saglabātās uzvednes — filtrētas reāllaikā, rakstot. Izmantojiet ↓/↑ navigācijai, nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā tiešai ievietošanai.
 
 🌟 MAPJU FUNKCIJAS
 
@@ -33,8 +33,7 @@ AI mapes ir jūsu vienotais AI vadības panelis: kārtojiet sarunas no visiem AI
 
 🏠 VIETĒJĀ LLM ATBALSTS
 
-Vai izmantojat lokālu AI modeli (Ollama, LM Studio, Jan vai citu)? Konfigurējiet AI mapes ar savu lokālo URL — atbalsta localhost un LAN adreses (192.168.x.x, pielāgoti resursdatora nosaukumi). Ātrā saglabāšana, saglabāšana ar kontekstizvēlni un uzvedņu ievadīšana darbojas lielākajā daļā lokālo saskarņu (tostarp Open WebUI).
-
+Vai izmantojat vietējo AI modeli (Ollama, LM Studio, Jan vai citu)? Konfigurējiet AI mapes ar savu vietējo URL — atbalsta localhost un LAN adreses (192.168.x.x, pielāgoti resursdatoru nosaukumi). Ātrā saglabāšana un saglabāšana konteksta izvēlnē darbojas arī vietējās saskarnēs.
 🛠️ KĀ TAS DARBOJAS?
 
 Mapju režīms:
@@ -57,7 +56,7 @@ Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai Gemini, Claude, ChatG
 🤝 ATVĒRTĀ PIRMKODA PROJEKTS
 AI mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība un cieņa pret tavu privātumu ir mūsu augstākās prioritātes. Vai esi izstrādātājs vai vienkārši ziņkārīgs? Pārlūkojiet kodu, sekojiet izmaiņu žurnālam vai piedalieties GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 ATJAUNINĀJUMI:
-Versija 1.1 (Uzvednes aktivizācijas saīsnes): Ievadiet # jebkura AI tērzēšanas laukā, lai uzreiz redzētu visas saglabātās uzvednes, filtrētas reāllaikā, rakstot. Nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā ievietošanai — nekad neatverot paplašinājuma paneli. Ieteikumi tiek rādīti ar paplašinājuma nosaukumu kā etiķeti, Backspace atjauno ieteikumus pēc neatbilstības un automātiskā pabeigšana pie unikālas atbilstības saglabā paneli stabilu. Darbojas ar visiem atbalstītajiem pakalpojumiem, ieskaitot lokālos LLM.
-Versija 1.0.1: Nelieli kļūdu labojumi un stabilitātes uzlabojumi.
+Versija 1.1 (Uzvedņu aktivizētājs): Ievadiet # jebkurā AI tērzēšanas laukā, lai reāllaikā filtrētu saglabātās uzvednes. Izmantojiet ↓/↑, lai pārvietotos starp ieteikumiem, Atstarpi automātiskai pabeigšanai vai ievietošanai — neatverot paneli. Darbojas visos atbalstītajos pakalpojumos, ieskaitot vietējos LLM.
 Versija 1.0: Pirmais laidiens! Kārtojiet sarunas no Gemini, Claude, ChatGPT, Copilot un Perplexity koplietotās mapēs. Pilna uzvedņu bibliotēka ar viena klikšķa ievietošanu, ātrās saglabāšanas īsinājumtaustiņi, vilkšana un nomešana, mobilo ierīču sinhronizācija, lielapjoma darbības, ciļņu grupas un atbalsts 43 valodām.

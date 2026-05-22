@@ -11,7 +11,7 @@ Su versija 4.0 Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbiu
 💎 Tinkintas Gem nuoroda: Sukonfigūruok nuorodą į mėgstamą Gem ir įjunk/išjunk ją vienu paspaudimu.
 ☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
 📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
-⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # Gemini pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui.
+⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # Gemini pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Naudokite ↓/↑ naršymui, paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui.
 
 🌟 APLANKŲ FUNKCIJOS
 
@@ -60,7 +60,7 @@ Domitės Gemini Aplankai, bet naudojate ir ChatGPT, Claude, Copilot, Perplexity 
 👉 Įdiekite AI aplankus: __AF_STORE_URL__
 
 📢 ATNAUJINIMAI:
-Versija 4.2 (Promptų suaktyvinimo spartieji klavišai): Įveskite # Gemini pokalbių lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus, filtruojamus realiuoju laiku rašant. Paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens įterpimui — neatidarant plėtinio skydelio. Pasiūlymai rodomi su plėtinio pavadinimu kaip etikete, Backspace atnaujina pasiūlymus po nesutapimo ir automatinis pildymas prie unikalaus atitikmens palaiko skydelį stabilų.
+Versija 4.2 (Raginimų paleidiklis): Įveskite # Gemini pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio.
 Versija 4.1.1: Nedideli klaidų ištaisymai ir stabilumo patobulinimai.
 Versija 4.1 (Globalus plėtimas ir stiprinimas): 16 naujų kalbų pakelia Gemini Aplankus iki 43 lokalizacijų visame pasaulyje — Šiaurės šalių kalbos, Baltijos valstybės ir išplėsta Europos bei Pietryčių Azijos aprėptis. Ištaisyta race condition, kuri esant greitus paspaudimus galėjo tyliai prarasti išsaugojimą. Prompt įterpimas modernizuotas naudojant InputEvent, pakeičiant pasenusį execCommand. Importo srautas apsaugotas nuo kenkėjiškų URL atsarginių kopijų failuose. Ištaisyta kritinė duomenų saugos klaida: įjungus raginimų sinchronizavimą beveik pilnoje saugykloje, visi išsaugoti raginimai galėjo būti tyliai ištrinti. Saugykla dabar naudoja suskaidytus įrašus, kad liktų Chrome ribose, rodydama aiškius klaidos pranešimus kai ji pilna.
 Versija 4.0 (Promptų biblioteka): Pats ambicingiausias atnaujinimas iki šiol! Gemini Aplankai gauna visiškai naują Promptų režimą: išsaugok geriausius promptus, redaguok juos tiesiogiai ir įterpk tiesiai į Gemini vienu paspaudimu.

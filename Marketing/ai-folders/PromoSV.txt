@@ -11,7 +11,7 @@ AI-mappar är din enhetliga AI-kontrollpanel: organisera konversationer från al
 🔀 Knappar för ny konversation: Starta en ny konversation på ChatGPT, Claude, Copilot, Gemini eller Perplexity direkt från Promptläge — en knapp per tjänst.
 ☁️ Promptsynkronisering: Aktivera molnsynkronisering för promptbiblioteket oberoende av mapparna.
 📌 Fästa prompter: Fäst viktiga prompter längst upp i biblioteket, åtskilda från resten med en visuell avdelare.
-⌨️ Promptutlösare med live-förslag: Skriv # i chattfältet för valfri AI för att omedelbart se alla dina sparade prompter — filtrerade i realtid medan du skriver. Tryck på mellanslag vid en unik matchning för autofullbordning, eller vid en exakt matchning för direkt injektion. Fungerar med ChatGPT, Claude, Gemini, Copilot och lokala LLM.
+⌨️ Promptutlösare med live-förslag: Skriv # i Geminis chattfält för att omedelbart se alla dina sparade prompter — filtrerade i realtid medan du skriver. Använd ↓/↑ för att navigera, tryck på mellanslag vid en unik matchning för autofullbordning, eller vid en exakt matchning för direkt injektion.
 
 🌟 MAPPFUNKTIONER
 
@@ -33,8 +33,7 @@ AI-mappar är din enhetliga AI-kontrollpanel: organisera konversationer från al
 
 🏠 STÖD FÖR LOKAL LLM
 
-Kör du en lokal AI-modell (Ollama, LM Studio, Jan eller annan)? Konfigurera AI-mappar med din lokala URL — stöder localhost och LAN-adresser (192.168.x.x, anpassade värdnamn). Snabbspara, spara via kontextmeny och promptinjicering fungerar på de flesta lokala gränssnitt (inklusive Open WebUI).
-
+Kör du en lokal AI-modell (Ollama, LM Studio, Jan eller annan)? Konfigurera AI-mappar med din lokala URL — stöder localhost och LAN-adresser (192.168.x.x, anpassade värdnamn). Snabbspara och kontextmenyspara fungerar även på lokala gränssnitt.
 🛠️ HUR FUNGERAR DET?
 
 Mappläge:
@@ -58,7 +57,7 @@ Byggt med integritet i fokus. Tillägget begär bara åtkomst till Gemini, Claud
 🤝 ÖPPEN KÄLLKOD-PROJEKT
 AI-mappar är ett öppen källkod-projekt byggt med passion. Transparens och respekt för din integritet är våra högsta prioriteringar. Är du en utvecklare eller bara nyfiken? Bläddra i koden, följ ändringsloggen eller bidra på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 UPPDATERINGAR:
-Version 1.1 (Snabbkommandon för promptutlösare): Skriv # i chattfältet för vilken AI som helst för att omedelbart se alla dina sparade prompter, filtrerade i realtid medan du skriver. Tryck på mellanslag vid en unik matchning för autofullbordning eller vid en exakt matchning för att injicera — utan att öppna tilläggspanelen. Förslag visas med tilläggets namn som etikett, Backspace återställer förslag efter ingen matchning och autofullbordning vid unik matchning håller panelen stabil. Fungerar för alla stödda tjänster inklusive lokala LLM:er.
-Version 1.0.1: Mindre felkorrigeringar och stabilitetsförbättringar.
+Version 1.1 (Promptutlösare): Skriv # i valfritt AI-chattfält för att se dina sparade promptar filtrerade i realtid. Använd ↓/↑ för att navigera bland förslag, Blanksteg för att autokomplettera eller injicera — utan att öppna panelen. Fungerar på alla stödda tjänster inklusive lokala LLM:er.
 Version 1.0: Första utgåvan! Organisera konversationer från Gemini, Claude, ChatGPT, Copilot och Perplexity i delade mappar. Komplett promptbibliotek med ett-klicksinjektion, genvägar för snabbspara, dra och släpp, mobilsynkronisering, massåtgärder, flikgrupper och stöd för 43 språk.

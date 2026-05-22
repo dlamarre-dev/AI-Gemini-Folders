@@ -11,7 +11,7 @@ AI-kansiot on yhtenäinen AI-ohjauskeskuksesi: järjestä kaikista AI-työkaluis
 🔀 Uuden keskustelun painikkeet: Aloita uusi keskustelu ChatGPT:ssä, Claudessa, Copilotissa, Geminissä tai Perplexityssä suoraan Kehotetyökalusta — yksi painike palvelua kohden.
 ☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
 📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
-⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # minkä tahansa tekoälyn chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten. Toimii ChatGPT:n, Clauden, Geminin, Copilotin ja paikallisten LLM-mallien kanssa.
+⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Käytä ↓/↑ selailuun, paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
 
 🌟 KANSIO-OMINAISUUDET
 
@@ -33,8 +33,7 @@ AI-kansiot on yhtenäinen AI-ohjauskeskuksesi: järjestä kaikista AI-työkaluis
 
 🏠 PAIKALLISEN LLM:N TUKI
 
-Käytätkö paikallista tekoälymallia (Ollama, LM Studio, Jan tai muu)? Määritä AI-kansiot paikallisella URL:llä — tukee localhostia ja LAN-osoitteita (192.168.x.x, mukautetut isäntänimet). Pikatallennus, pikavalikosta tallennus ja kehotteen syöttö toimivat useimmissa paikallisissa käyttöliittymissä (Open WebUI mukaan lukien).
-
+Käytätkö paikallista AI-mallia (Ollama, LM Studio, Jan tai muu)? Määritä AI-kansiot paikallisella URL-osoitteellasi — tukee localhostia ja LAN-osoitteita (192.168.x.x, mukautetut isäntänimet). Pikatallennus ja kontekstivalikosta tallennus toimivat myös paikallisissa käyttöliittymissä.
 🛠️ MITEN SE TOIMII?
 
 Kansiotila:
@@ -58,7 +57,7 @@ Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain Gemini, Claude, ChatG
 🤝 AVOIN LÄHDEKOODIN PROJEKTI
 AI-kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvyys ja yksityisyytesi kunnioittaminen ovat korkeimpia prioriteettiamme. Oletko kehittäjä tai vain utelias? Selaa koodia, seuraa muutoslokia tai osallistu GitHubissa: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 PÄIVITYKSET:
-Versio 1.1 (Promptin käynnistyspikavalintoja): Kirjoita # minkä tahansa tekoälyn chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi, suodatetaan reaaliajassa kirjoittaessasi. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa lisäämistä varten — avaamatta laajennuspaneelia koskaan. Ehdotukset näkyvät laajennuksen nimellä merkittynä, Backspace palauttaa ehdotukset osumattoman jälkeen ja ainutlaatuisen osuman automaattitäydennys pitää paneelin vakaana. Toimii kaikissa tuetuissa palveluissa mukaan lukien paikalliset LLM:t.
-Versio 1.0.1: Pieniä virheenkorjauksia ja vakauteen liittyviä parannuksia.
+Versio 1.1 (Kehotteen laukaisin): Kirjoita # mihin tahansa AI-chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia. Toimii kaikilla tuetuilla palveluilla, mukaan lukien paikalliset LLM:t.
 Versio 1.0: Ensijulkaisu! Järjestä Geminin, Clauden, ChatGPT:n, Copilotin ja Perplexityn keskustelut jaetuiksi kansioiksi. Täydellinen kehotekirjasto yhdellä napsautuksella, pikaentallenteen pikanäppäimet, vedä ja pudota, mobiilisynkronointi, joukkotoiminnot, välilehtiryhmät ja tuki 43 kielelle.

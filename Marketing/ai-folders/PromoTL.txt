@@ -11,7 +11,7 @@ Mga AI Folder ang iyong pinagsamang AI cockpit: ayusin ang mga pag-uusap mula sa
 🔀 Mga Pindutan ng Bagong Pag-uusap: Magsimula ng bagong pag-uusap sa ChatGPT, Claude, Copilot, Gemini, o Perplexity nang direkta mula sa Prompt Mode.
 ☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
 📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
-⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng anumang AI para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta. Gumagana sa ChatGPT, Claude, Gemini, Copilot at mga lokal na LLM.
+⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng Gemini para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
 
 🌟 MGA FEATURE NG FOLDER
 
@@ -33,8 +33,7 @@ Mga AI Folder ang iyong pinagsamang AI cockpit: ayusin ang mga pag-uusap mula sa
 
 🏠 SUPORTA SA LOKAL NA LLM
 
-Nagpapatakbo ka ba ng lokal na modelo ng AI (Ollama, LM Studio, Jan, o iba pa)? I-configure ang Mga AI Folder sa iyong lokal na URL — sinusuportahan ang localhost at mga LAN address (192.168.x.x, mga custom na hostname). Ang mabilis na i-save, i-save sa pamamagitan ng context menu, at pag-inject ng prompt ay gumagana sa karamihan ng mga lokal na UI (kasama ang Open WebUI).
-
+Nagpapatakbo ng lokal na AI model (Ollama, LM Studio, Jan, o iba pa)? I-configure ang Mga AI Folder gamit ang iyong lokal na URL — sinusuportahan ang localhost at mga LAN address (192.168.x.x, mga custom na hostname). Gumagana rin ang mabilis na pag-save at pag-save sa pamamagitan ng context menu sa mga lokal na UI.
 🛠️ PAANO ITO GUMAGANA?
 
 Folder Mode:
@@ -58,7 +57,7 @@ Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng acces
 🤝 OPEN SOURCE NA PROYEKTO
 Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal. Ang transparency at paggalang sa iyong privacy ang aming mga pangunahing priyoridad. Ikaw ba ay isang developer o basta lang curious? I-browse ang code, sundan ang changelog, o mag-contribute sa GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 MGA UPDATE:
-Bersyon 1.1 (Mga Shortcut sa Pag-trigger ng Prompt): I-type ang # sa chat field ng anumang AI para agad makita ang lahat ng iyong naka-save na prompt, na-filter sa real time habang nagta-type. Pindutin ang Space sa natatanging tugma para mag-autocomplete o sa eksaktong tugma para mag-inject — nang hindi kailanman binubuksan ang extension panel. Ang mga mungkahi ay nagpapakita na may pangalan ng extension bilang label, ibinabalik ng Backspace ang mga mungkahi pagkatapos ng walang-tugmang resulta, at ang autocomplete ng natatanging tugma ay nagpapanatiling matatag ang panel. Gumagana sa lahat ng sinusuportahang serbisyo kasama ang mga lokal na LLM.
-Bersyon 1.0.1: Maliliit na pag-aayos ng bug at mga pagpapabuti ng katatagan.
+Bersyon 1.1 (Prompt Trigger): I-type ang # sa anumang AI chat field para makita ang iyong mga na-save na prompt na na-filter sa real time. Gamitin ang ↓/↑ para mag-navigate sa mga mungkahi, Space para mag-autocomplete o mag-inject — nang hindi binubuksan ang panel. Gumagana sa lahat ng sinusuportahang serbisyo kasama ang mga lokal na LLM.
 Bersyon 1.0: Unang inilabas! Ayusin ang mga pag-uusap mula sa Gemini, Claude, ChatGPT, Copilot, at Perplexity sa mga ibinabahaging folder. Kumpletong prompt library na may one-click injection, mga shortcut ng mabilis na pag-save, drag at drop, mobile sync, bulk actions, tab groups, at suporta para sa 43 na wika.

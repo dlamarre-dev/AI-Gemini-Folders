@@ -11,7 +11,7 @@ AI aplankai yra jūsų vieninga AI valdymo centras: tvarkykite visų AI įranki�
 🔀 Naujo pokalbio mygtukai: Pradėkite naują pokalbį ChatGPT, Claude, Copilot, Gemini arba Perplexity tiesiogiai iš raginimų režimo — vienas mygtukas kiekvienai paslaugai.
 ☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
 📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
-⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # bet kurio AI pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui. Veikia su ChatGPT, Claude, Gemini, Copilot ir vietiniais LLM.
+⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # Gemini pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Naudokite ↓/↑ naršymui, paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui.
 
 🌟 APLANKŲ FUNKCIJOS
 
@@ -33,8 +33,7 @@ AI aplankai yra jūsų vieninga AI valdymo centras: tvarkykite visų AI įranki�
 
 🏠 VIETINIO LLM PALAIKYMAS
 
-Ar naudojate vietinį AI modelį (Ollama, LM Studio, Jan ar kitą)? Konfigūruokite AI aplankai su savo vietiniu URL — palaiko localhost ir LAN adresus (192.168.x.x, pasirinktiniai pagrindinio kompiuterio vardai). Greitas įrašymas, įrašymas per kontekstinį meniu ir raginimų įterpimas veikia daugumoje vietinių sąsajų (įskaitant Open WebUI).
-
+Ar naudojate vietinį AI modelį (Ollama, LM Studio, Jan ar kitą)? Sukonfigūruokite AI aplankai naudodami vietinį URL — palaiko localhost ir LAN adresus (192.168.x.x, pasirinktiniai prieglobos pavadinimai). Greitas išsaugojimas ir per kontekstinį meniu taip pat veikia vietinėse sąsajose.
 🛠️ KAIP TAI VEIKIA?
 
 Aplankų režimas:
@@ -57,7 +56,7 @@ Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie Gemini, Claude, C
 🤝 ATVIROJO KODO PROJEKTAS
 AI aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pagarba jūsų privatumui yra mūsų aukščiausi prioritetai. Esi kūrėjas ar tiesiog smalsus? Naršyk kodą, sek pakeitimų žurnalą arba prisidėk prie „GitHub": https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 ATNAUJINIMAI:
-Versija 1.1 (Promptų suaktyvinimo spartieji klavišai): Įveskite # bet kurio AI pokalbių lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus, filtruojamus realiuoju laiku rašant. Paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens įterpimui — neatidarant plėtinio skydelio. Pasiūlymai rodomi su plėtinio pavadinimu kaip etikete, Backspace atnaujina pasiūlymus po nesutapimo ir automatinis pildymas prie unikalaus atitikmens palaiko skydelį stabilų. Veikia su visomis palaikomomis paslaugomis, įskaitant vietinius LLM.
-Versija 1.0.1: Nedideli klaidų ištaisymai ir stabilumo patobulinimai.
+Versija 1.1 (Raginimų paleidiklis): Įveskite # bet kuriame AI pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio. Veikia visose palaikomose paslaugose, įskaitant vietinius LLM.
 Versija 1.0: Pirmasis leidimas! Tvarkykite pokalbius iš Gemini, Claude, ChatGPT, Copilot ir Perplexity bendrose aplankuose. Pilna raginimų biblioteka su vieno paspaudimo įterpimu, sparčiojo įrašymo spartieji klavišai, vilkimas ir numetimas, mobilioji sinchronizacija, masiniai veiksmai, skirtukų grupės ir palaikymas 43 kalbų.

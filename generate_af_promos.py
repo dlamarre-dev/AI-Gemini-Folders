@@ -28,6 +28,52 @@ PROMO_FILES = {
 }
 
 
+# ── Per-language v1.1 release notes ──────────────────────────────────────────
+V1_1_NOTES = {
+    "fr":    "Version 1.1 (Déclenchement de prompt) : Tapez # dans n'importe quel champ de saisie IA pour voir vos prompts filtrés en temps réel. Utilisez ↓/↑ pour naviguer entre les suggestions, Espace pour autocompléter ou injecter — sans jamais ouvrir le panneau. Fonctionne sur tous les services pris en charge, y compris les LLM locaux.",
+    "de":    "Version 1.1 (Prompt-Auslöser): Geben Sie # in ein beliebiges KI-Chat-Feld ein, um gespeicherte Prompts in Echtzeit gefiltert zu sehen. Verwenden Sie ↓/↑ zum Navigieren durch Vorschläge, Leertaste zum Autovervollständigen oder Einsetzen — ohne das Panel zu öffnen. Funktioniert für alle unterstützten Dienste einschließlich lokaler LLMs.",
+    "es":    "Versión 1.1 (Disparador de prompts): Escribe # en cualquier campo de chat de IA para ver tus prompts filtrados en tiempo real. Usa ↓/↑ para navegar entre sugerencias, Espacio para autocompletar o inyectar — sin abrir jamás el panel. Funciona en todos los servicios compatibles, incluidos los LLM locales.",
+    "it":    "Versione 1.1 (Prompt Trigger): Digita # in qualsiasi campo chat AI per vedere i tuoi prompt filtrati in tempo reale. Usa ↓/↑ per navigare tra i suggerimenti, Spazio per autocompletare o iniettare — senza mai aprire il pannello. Funziona su tutti i servizi supportati, inclusi i LLM locali.",
+    "pt_BR": "Versão 1.1 (Gatilho de Prompt): Digite # em qualquer campo de chat de IA para ver seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel. Funciona em todos os serviços suportados, incluindo LLMs locais.",
+    "pt_PT": "Versão 1.1 (Gatilho de Prompt): Escreva # em qualquer campo de chat de IA para ver os seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel. Funciona em todos os serviços suportados, incluindo LLMs locais.",
+    "pl":    "Wersja 1.1 (Wyzwalacz Promptów): Wpisz # w dowolnym polu czatu AI, aby zobaczyć swoje prompty filtrowane w czasie rzeczywistym. Użyj ↓/↑ do nawigacji między sugestiami, Spacji do autouzupełniania lub wstrzyknięcia — bez otwierania panelu. Działa na wszystkich obsługiwanych serwisach, w tym lokalnych LLM.",
+    "ru":    "Версия 1.1 (Триггер промптов): Введите # в любое поле чата ИИ, чтобы увидеть сохранённые промпты с фильтрацией в реальном времени. Используйте ↓/↑ для навигации по подсказкам, пробел для автодополнения или вставки — без открытия панели. Работает на всех поддерживаемых сервисах, включая локальные LLM.",
+    "zh_CN": "版本 1.1（提示词触发器）：在任意 AI 聊天框输入 # 即可实时过滤查看已保存的提示词。用 ↓/↑ 浏览建议，空格键自动补全或注入 — 无需打开面板。适用于所有支持的服务，包括本地 LLM。",
+    "ja":    "バージョン 1.1（プロンプトトリガー）：任意の AI チャット欄に # を入力すると、保存済みプロンプトがリアルタイムで絞り込まれて表示されます。↓/↑ で候補を選択し、スペースでオートコンプリートまたは挿入 — パネルを開かずに利用できます。ローカル LLM を含む全対応サービスで動作します。",
+    "ko":    "버전 1.1 (프롬프트 트리거): AI 채팅 필드에 #을 입력하면 저장된 프롬프트가 실시간으로 필터링됩니다. ↓/↑로 제안 사항을 탐색하고, 스페이스로 자동 완성 또는 주입 — 패널을 열지 않아도 됩니다. 로컬 LLM을 포함한 모든 지원 서비스에서 작동합니다.",
+    "hi":    "संस्करण 1.1 (प्रॉम्प्ट ट्रिगर): किसी भी AI चैट फ़ील्ड में # टाइप करें और अपने सहेजे गए प्रॉम्प्ट को रीयल टाइम में फ़िल्टर होते देखें। सुझावों में नेविगेट करने के लिए ↓/↑ का उपयोग करें, ऑटोकंप्लीट या इंजेक्ट करने के लिए स्पेस — पैनल खोले बिना। सभी समर्थित सेवाओं पर काम करता है, स्थानीय LLM सहित।",
+    "ro":    "Versiunea 1.1 (Declanșatorul de Prompturi): Tastați # în orice câmp de chat AI pentru a vedea prompturile salvate filtrate în timp real. Folosiți ↓/↑ pentru a naviga prin sugestii, Spațiu pentru autocompletare sau injectare — fără a deschide vreodată panoul. Funcționează pe toate serviciile acceptate, inclusiv LLM-urile locale.",
+    "cs":    "Verze 1.1 (Spouštěč promptů): Zadejte # do libovolného pole chatu AI a zobrazte si uložené prompty filtrované v reálném čase. Pomocí ↓/↑ procházejte návrhy, mezerníkem je automaticky dokončete nebo vložte — bez otevření panelu. Funguje na všech podporovaných službách včetně lokálních LLM.",
+    "sk":    "Verzia 1.1 (Spúšťač promptov): Zadajte # do ľubovoľného poľa chatu AI a zobrazte si uložené prompty filtrované v reálnom čase. Pomocou ↓/↑ prechádzajte návrhy, medzerníkom ich automaticky dokončite alebo vložte — bez otvorenia panela. Funguje na všetkých podporovaných službách vrátane lokálnych LLM.",
+    "tr":    "Sürüm 1.1 (Prompt Tetikleyici): Herhangi bir AI sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan. Yerel LLM'ler dahil tüm desteklenen hizmetlerde çalışır.",
+    "id":    "Versi 1.1 (Pemicu Prompt): Ketik # di kolom chat AI mana pun untuk melihat prompt yang tersimpan difilter secara real time. Gunakan ↓/↑ untuk menavigasi saran, Spasi untuk melengkapi otomatis atau menyuntikkan — tanpa membuka panel. Berfungsi di semua layanan yang didukung termasuk LLM lokal.",
+    "zh_TW": "版本 1.1（提示詞觸發器）：在任意 AI 聊天框輸入 # 即可即時篩選查看已儲存的提示詞。用 ↓/↑ 瀏覽建議，空白鍵自動補全或插入 — 無需開啟面板。適用於所有支援的服務，包括本地 LLM。",
+    "vi":    "Phiên bản 1.1 (Kích hoạt Prompt): Nhập # vào bất kỳ trường chat AI nào để xem các prompt đã lưu được lọc theo thời gian thực. Dùng ↓/↑ để điều hướng gợi ý, phím Cách để tự hoàn thành hoặc chèn — mà không cần mở bảng. Hoạt động trên tất cả các dịch vụ được hỗ trợ kể cả LLM cục bộ.",
+    "bn":    "সংস্করণ 1.1 (প্রম্পট ট্রিগার): যেকোনো AI চ্যাট ফিল্ডে # টাইপ করুন এবং রিয়েল টাইমে ফিল্টার করা সংরক্ষিত প্রম্পটগুলি দেখুন। পরামর্শে নেভিগেট করতে ↓/↑ ব্যবহার করুন, অটোকমপ্লিট বা ইনজেক্ট করতে স্পেস — প্যানেল না খুলেই। স্থানীয় LLM সহ সমস্ত সমর্থিত পরিষেবায় কাজ করে।",
+    "nl":    "Versie 1.1 (Prompt-trigger): Typ # in een willekeurig AI-chatveld om uw opgeslagen prompts in realtime gefilterd te zien. Gebruik ↓/↑ om door suggesties te navigeren, Spatie om automatisch aan te vullen of in te voegen — zonder het panel te openen. Werkt op alle ondersteunde services inclusief lokale LLM's.",
+    "sw":    "Toleo 1.1 (Kichocheo cha Amri): Andika # katika uwanja wowote wa mazungumzo wa AI ili uone maagizo yako yaliyohifadhiwa yakichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli. Inafanya kazi kwenye huduma zote zinazounga mkono, ikiwemo LLM za ndani.",
+    "tl":    "Bersyon 1.1 (Prompt Trigger): I-type ang # sa anumang AI chat field para makita ang iyong mga na-save na prompt na na-filter sa real time. Gamitin ang ↓/↑ para mag-navigate sa mga mungkahi, Space para mag-autocomplete o mag-inject — nang hindi binubuksan ang panel. Gumagana sa lahat ng sinusuportahang serbisyo kasama ang mga lokal na LLM.",
+    "th":    "เวอร์ชัน 1.1 (ตัวกระตุ้น Prompt): พิมพ์ # ในช่องแชท AI ใดก็ได้เพื่อดูพรอมต์ที่บันทึกไว้แบบกรองแบบเรียลไทม์ ใช้ ↓/↑ เพื่อเลือกคำแนะนำ กด Space เพื่อเติมอัตโนมัติหรือแทรก — โดยไม่ต้องเปิดแผง ใช้ได้กับทุกบริการที่รองรับรวมถึง LLM ในเครื่อง",
+    "ar":    "الإصدار 1.1 (مُشغِّل الإرشادات): اكتب # في أي حقل دردشة AI لرؤية إرشاداتك المحفوظة مفلترةً في الوقت الفعلي. استخدم ↓/↑ للتنقل بين الاقتراحات، ومسافة للإكمال التلقائي أو الإدراج — دون فتح اللوحة. يعمل على جميع الخدمات المدعومة بما فيها LLM المحلية.",
+    "hu":    "1.1-es verzió (Prompt-kiváltó): Írjon # jelet bármely AI-chat mezőbe, hogy valós időben szűrve lássa mentett promptjait. Használja a ↓/↑ billentyűket a javaslatok közötti navigáláshoz, a szóközt az automatikus kiegészítéshez vagy beillesztéshez — a panel megnyitása nélkül. Minden támogatott szolgáltatáson működik, beleértve a helyi LLM-eket.",
+    "nb":    "Versjon 1.1 (Promptutløser): Skriv # i et AI-chatfelt for å se dine lagrede prompter filtrert i sanntid. Bruk ↓/↑ til å navigere gjennom forslag, Mellomrom for å autofullføre eller injisere — uten å åpne panelet. Fungerer på alle støttede tjenester inkludert lokale LLM-er.",
+    "sv":    "Version 1.1 (Promptutlösare): Skriv # i valfritt AI-chattfält för att se dina sparade promptar filtrerade i realtid. Använd ↓/↑ för att navigera bland förslag, Blanksteg för att autokomplettera eller injicera — utan att öppna panelen. Fungerar på alla stödda tjänster inklusive lokala LLM:er.",
+    "fi":    "Versio 1.1 (Kehotteen laukaisin): Kirjoita # mihin tahansa AI-chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia. Toimii kaikilla tuetuilla palveluilla, mukaan lukien paikalliset LLM:t.",
+    "ca":    "Versió 1.1 (Disparador de Prompts): Escriviu # a qualsevol camp de xat d'IA per veure els vostres prompts filtrats en temps real. Useu ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell. Funciona a tots els serveis compatibles, inclosos els LLM locals.",
+    "da":    "Version 1.1 (Prompt-udløser): Skriv # i et vilkårligt AI-chatfelt for at se dine gemte prompts filtreret i realtid. Brug ↓/↑ til at navigere gennem forslag, Mellemrum for at autofuldføre eller injicere — uden at åbne panelet. Fungerer på alle understøttede tjenester, inklusive lokale LLM'er.",
+    "uk":    "Версія 1.1 (Тригер підказок): Введіть # у будь-яке поле чату ШІ, щоб бачити збережені підказки з фільтрацією в реальному часі. Використовуйте ↓/↑ для навігації між пропозиціями, пробіл для автодоповнення або вставки — без відкриття панелі. Працює на всіх підтримуваних сервісах, включно з локальними LLM.",
+    "el":    "Έκδοση 1.1 (Ενεργοποιητής Prompt): Πληκτρολογήστε # σε οποιοδήποτε πεδίο AI chat για να δείτε τα αποθηκευμένα σας prompts φιλτραρισμένα σε πραγματικό χρόνο. Χρησιμοποιήστε ↓/↑ για πλοήγηση στις προτάσεις, Κενό για αυτόματη συμπλήρωση ή εισαγωγή — χωρίς να ανοίξετε τον πίνακα. Λειτουργεί σε όλες τις υποστηριζόμενες υπηρεσίες, συμπεριλαμβανομένων των τοπικών LLM.",
+    "he":    "גרסה 1.1 (מפעיל Prompt): הקלד # בכל שדה צ'אט AI כדי לראות את ה-Prompt השמורים מסוננים בזמן אמת. השתמש ב-↓/↑ לניווט בין הצעות, רווח להשלמה אוטומטית או הזרקה — מבלי לפתוח את הפאנל. עובד על כל השירותים הנתמכים כולל LLM מקומיים.",
+    "et":    "Versioon 1.1 (Viipade käivitaja): Sisestage # mis tahes AI vestlusväljale, et näha salvestatud viipasid reaalajas filtreerituna. Kasutage ↓/↑ soovituste vahel liikumiseks, Tühikut automaatseks täitmiseks või lisamiseks — ilma paneeli avamata. Töötab kõigil toetatud teenustel, sealhulgas kohalikel LLM-idel.",
+    "lt":    "Versija 1.1 (Raginimų paleidiklis): Įveskite # bet kuriame AI pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio. Veikia visose palaikomose paslaugose, įskaitant vietinius LLM.",
+    "lv":    "Versija 1.1 (Uzvedņu aktivizētājs): Ievadiet # jebkurā AI tērzēšanas laukā, lai reāllaikā filtrētu saglabātās uzvednes. Izmantojiet ↓/↑, lai pārvietotos starp ieteikumiem, Atstarpi automātiskai pabeigšanai vai ievietošanai — neatverot paneli. Darbojas visos atbalstītajos pakalpojumos, ieskaitot vietējos LLM.",
+    "ms":    "Versi 1.1 (Pencetus Prompt): Taip # dalam mana-mana medan chat AI untuk melihat arahan tersimpan anda ditapis dalam masa nyata. Gunakan ↓/↑ untuk navigasi cadangan, Ruang untuk autoisi atau suntik — tanpa membuka panel. Berfungsi pada semua perkhidmatan yang disokong termasuk LLM tempatan.",
+    "bg":    "Версия 1.1 (Тригер за подсказки): Въведете # в произволно поле за AI чат, за да видите запазените подсказки, филтрирани в реално време. Използвайте ↓/↑ за навигация между предложенията, интервала за автодовършване или вмъкване — без да отваряте панела. Работи на всички поддържани услуги, включително локални LLM.",
+    "sl":    "Različica 1.1 (Sprožilec pozivov): Vnesite # v katero koli polje za klepet AI in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče. Deluje na vseh podprtih storitvah, vključno z lokalnimi LLM.",
+    "sr":    "Верзија 1.1 (Окидач промптова): Унесите # у bilo које поље AI четовања да бисте у реалном времену видели филтриране сачуване промптове. Користите ↓/↑ за навигацију кроз предлоге, размак за аутодовршавање или убацивање — без отварања панела. Ради на свим подржаним сервисима, укључујући локалне LLM.",
+    "hr":    "Verzija 1.1 (Okidač upita): Unesite # u bilo koje polje za chat s AI-jem kako biste u stvarnom vremenu vidjeli filtrirane spremljene upite. Koristite ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela. Radi na svim podržanim uslugama, uključujući lokalne LLM.",
+}
+
 # ── Per-language v1.0 release notes ──────────────────────────────────────────
 V1_NOTES = {
     "fr":    "Version 1.0 : Première publication ! Organisez vos conversations depuis Gemini, Claude, ChatGPT, Copilot et Perplexity dans des dossiers partagés. Bibliothèque de prompts complète avec injection en un clic, raccourcis de sauvegarde rapide, glisser-déposer, synchronisation mobile, actions groupées, groupes d'onglets et prise en charge de 43 langues. Support des LLM locaux avec URL configurable (localhost et adresses LAN).",
@@ -584,14 +630,14 @@ def transform(text, lang, af_name, gf_name):
         if match:
             text = text[:match.start()] + new_bullet + text[match.end():]
 
-    # 4. Replace version history section (keep only V1 release note)
+    # 4. Replace version history section (v1.1 then v1.0)
     if lang in V1_NOTES:
+        v1_1 = (V1_1_NOTES[lang] + '\n') if lang in V1_1_NOTES else ''
         match = VERSION_SECTION_PATTERN.search(text)
         if match:
-            # match.start(1) is right after the header line — replace all old history
-            text = text[:match.start(1)] + V1_NOTES[lang] + '\n'
+            text = text[:match.start(1)] + v1_1 + V1_NOTES[lang] + '\n'
         else:
-            text = text.rstrip() + '\n\n📢 VERSION:\n' + V1_NOTES[lang] + '\n'
+            text = text.rstrip() + '\n\n📢 VERSION:\n' + v1_1 + V1_NOTES[lang] + '\n'
 
     # 5. Replace gemini.google.com references with site list
     text = re.sub(

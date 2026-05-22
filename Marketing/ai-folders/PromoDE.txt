@@ -11,7 +11,7 @@ KI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ih
 🔀 Neue-Konversation-Schaltflächen: Starten Sie direkt aus dem Prompt-Modus eine neue Unterhaltung auf ChatGPT, Claude, Copilot, Gemini oder Perplexity — ein Knopf pro Dienst.
 ☁️ Prompt-Synchronisierung: Aktivieren Sie die Cloud-Sync für Ihre Prompt-Bibliothek, unabhängig von Ihren Ordnern.
 📌 Angeheftete Prompts: Heften Sie Ihre wichtigsten Prompts mit einem Klick oben an Ihre Bibliothek — durch einen visuellen Trenner von den übrigen getrennt.
-⌨️ Prompt-Trigger mit Live-Vorschlägen: Geben Sie # in das Chat-Feld einer beliebigen KI ein, um sofort alle Ihre gespeicherten Prompts zu sehen — in Echtzeit gefiltert während der Eingabe. Drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur direkten Injektion. Funktioniert mit ChatGPT, Claude, Gemini, Copilot und lokalen LLMs.
+⌨️ Prompt-Trigger mit Live-Vorschlägen: Geben Sie # in das Chat-Feld von Gemini ein, um sofort alle Ihre gespeicherten Prompts zu sehen — in Echtzeit gefiltert während der Eingabe. Verwenden Sie ↓/↑ zum Navigieren, drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur direkten Injektion.
 
 🌟 ORDNER-FUNKTIONEN
 
@@ -33,8 +33,7 @@ KI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ih
 
 🏠 LOKALER LLM-SUPPORT
 
-Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie KI-Ordner mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung, Kontextmenü-Speicherung und Prompt-Injektion funktionieren auf den meisten lokalen Benutzeroberflächen (einschließlich Open WebUI).
-
+Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie KI-Ordner mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung und Kontextmenü-Speicherung funktionieren auch auf lokalen Benutzeroberflächen.
 🛠️ WIE FUNKTIONIERT ES?
 
 Ordner-Modus:
@@ -58,7 +57,7 @@ Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff 
 🤝 OPEN-SOURCE-PROJEKT
 KI-Ordner ist ein leidenschaftlich entwickeltes Open-Source-Projekt. Transparenz und Datenschutz haben höchste Priorität. Entwickler oder einfach neugierig? Code einsehen, Änderungsprotokoll verfolgen oder auf GitHub beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 UPDATES:
-Version 1.1 (Prompt-Trigger-Tastenkürzel): Geben Sie # in das Chat-Eingabefeld einer beliebigen KI ein, um sofort alle Ihre gespeicherten Prompts zu sehen, in Echtzeit gefiltert während der Eingabe. Drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur Injektion — ohne das Erweiterungspanel jemals öffnen zu müssen. Vorschläge erscheinen mit dem Erweiterungsnamen als Label, die Rücktaste stellt Vorschläge nach keiner Übereinstimmung wieder her, und die Autovervollständigung bei eindeutigem Treffer hält das Panel stabil. Funktioniert für alle unterstützten Dienste einschließlich lokaler LLMs.
-Version 1.0.1: Kleinere Fehlerbehebungen und Stabilitätsverbesserungen.
+Version 1.1 (Prompt-Auslöser): Geben Sie # in ein beliebiges KI-Chat-Feld ein, um gespeicherte Prompts in Echtzeit gefiltert zu sehen. Verwenden Sie ↓/↑ zum Navigieren durch Vorschläge, Leertaste zum Autovervollständigen oder Einsetzen — ohne das Panel zu öffnen. Funktioniert für alle unterstützten Dienste einschließlich lokaler LLMs.
 Version 1.0: Erstveröffentlichung! Organisieren Sie Gespräche von Gemini, Claude, ChatGPT, Copilot und Perplexity in gemeinsamen Ordnern. Vollständige Prompt-Bibliothek mit Ein-Klick-Injektion, Schnellspeicher-Shortcuts, Drag & Drop, Mobile-Sync, Massenaktionen, Tab-Gruppen und Unterstützung für 43 Sprachen. Lokaler LLM-Support mit konfigurierbarer URL (localhost und LAN-Adressen).

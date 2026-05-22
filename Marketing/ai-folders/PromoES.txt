@@ -11,7 +11,7 @@ Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus 
 🔀 Botones de Nueva Conversación: Inicia una nueva conversación en ChatGPT, Claude, Copilot, Gemini o Perplexity directamente desde el Modo Prompt — un botón por servicio.
 ☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
 📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
-⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de cualquier IA para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente. Funciona con ChatGPT, Claude, Gemini, Copilot y LLMs locales.
+⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de Gemini para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Usa ↓/↑ para navegar entre sugerencias, pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente.
 
 🌟 FUNCIONES DE CARPETAS
 
@@ -33,8 +33,7 @@ Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus 
 
 🏠 SOPORTE DE LLM LOCAL
 
-¿Usas un modelo de IA local (Ollama, LM Studio, Jan u otro)? Configura Carpetas IA con tu URL local — compatible con localhost y direcciones LAN (192.168.x.x, nombres de host personalizados). La grabación rápida, la grabación por menú contextual y la inyección de prompts funcionan en la mayoría de interfaces locales (incluido Open WebUI).
-
+¿Usas un modelo de IA local (Ollama, LM Studio, Jan u otro)? Configura Carpetas IA con tu URL local — compatible con localhost y direcciones LAN (192.168.x.x, nombres de host personalizados). El guardado rápido y el guardado por menú contextual también funcionan en interfaces locales.
 🛠️ ¿CÓMO FUNCIONA?
 
 Modo Carpetas:
@@ -58,7 +57,7 @@ Diseñada con la privacidad en el centro. Solo solicita acceso a Gemini, Claude,
 🤝 PROYECTO OPEN SOURCE
 Carpetas de Gemini es un proyecto open source desarrollado con pasión. La transparencia y el respeto a tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente tienes curiosidad? Consulta el código, sigue el historial de cambios o contribuye en GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 ACTUALIZACIONES:
-Versión 1.1 (Atajos de Activación de Prompts): Escribe # en el campo de chat de cualquier IA para ver al instante todos tus prompts guardados, filtrados en tiempo real mientras escribes. Pulsa Espacio en una coincidencia única para autocompletar o en una coincidencia exacta para inyectar — sin abrir nunca el panel de la extensión. Las sugerencias aparecen con el nombre de la extensión como etiqueta, la tecla Retroceso restaura las sugerencias tras una falta de coincidencia, y el autocompletado de coincidencia única mantiene el panel estable. Funciona en todos los servicios compatibles incluidos los LLM locales.
-Versión 1.0.1: Correcciones menores de errores y mejoras de estabilidad.
+Versión 1.1 (Disparador de prompts): Escribe # en cualquier campo de chat de IA para ver tus prompts filtrados en tiempo real. Usa ↓/↑ para navegar entre sugerencias, Espacio para autocompletar o inyectar — sin abrir jamás el panel. Funciona en todos los servicios compatibles, incluidos los LLM locales.
 Versión 1.0: ¡Publicación inicial! Organiza conversaciones de Gemini, Claude, ChatGPT, Copilot y Perplexity en carpetas compartidas. Biblioteca de prompts completa con inyección en un clic, atajos de guardado rápido, arrastrar y soltar, sincronización móvil, acciones en masa, grupos de pestañas y soporte para 43 idiomas. Compatibilidad con LLM locales con URL configurable (localhost y direcciones LAN).

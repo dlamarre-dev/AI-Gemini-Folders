@@ -11,7 +11,7 @@ UI mape je vaš objedinjeni AI kokpit: organizirajte razgovore iz svih vaših AI
 🔀 Gumbi za novi razgovor: Pokrenite novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity izravno iz načina upita — jedan gumb po usluzi.
 ☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
 📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
-⌨️ Okidač upita s prijedlozima uživo: Upišite # u polje za chat bilo kojeg AI-a kako biste odmah vidjeli sve svoje spremljene upite — filtrirane u stvarnom vremenu dok tipkate. Pritisnite razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za izravno ubacivanje. Radi s ChatGPT, Claude, Gemini, Copilot i lokalnim LLM-ovima.
+⌨️ Okidač upita s prijedlozima uživo: Upišite # u polje za chat Gemini kako biste odmah vidjeli sve svoje spremljene upite — filtrirane u stvarnom vremenu dok tipkate. Koristite ↓/↑ za navigaciju, pritisnite razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za izravno ubacivanje.
 
 🌟 ZNAČAJKE MAPA
 
@@ -33,8 +33,7 @@ UI mape je vaš objedinjeni AI kokpit: organizirajte razgovore iz svih vaših AI
 
 🏠 PODRŠKA ZA LOKALNI LLM
 
-Koristite li lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte UI mape s vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena hosta). Brzo spremi, spremi putem kontekstnog izbornika i injektiranje upita rade na većini lokalnih sučelja (uključujući Open WebUI).
-
+Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte UI mape s vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođeni nazivi domaćina). Brzo spremanje i spremanje putem kontekstnog izbornika rade i na lokalnim sučeljima.
 🛠️ KAKO TO FUNKCIONIRA?
 
 Način mapa:
@@ -57,7 +56,7 @@ Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGP
 🤝 PROJEKT OTVORENOG KODA
 UI mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti naši su najviši prioriteti. Jesi li programer ili si jednostavno radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 AŽURIRANJA:
-Verzija 1.1 (Prečaci za aktiviranje upita): Upišite # u polje za chat bilo kojeg AI-a kako biste odmah vidjeli sve svoje spremljene upite, filtrirane u stvarnom vremenu dok tipkate. Pritisnite razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za ubacivanje — bez ikada otvaranja panela proširenja. Prijedlozi se pojavljuju s nazivom proširenja kao oznakom, Backspace vraća prijedloge nakon nepodudaranja, a automatsko dovršavanje pri jedinstvenoj podudarnosti drži panel stabilnim. Radi na svim podržanim uslugama uključujući lokalne LLM-ove.
-Verzija 1.0.1: Manja ispravka grešaka i poboljšanja stabilnosti.
+Verzija 1.1 (Okidač upita): Unesite # u bilo koje polje za chat s AI-jem kako biste u stvarnom vremenu vidjeli filtrirane spremljene upite. Koristite ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela. Radi na svim podržanim uslugama, uključujući lokalne LLM.
 Verzija 1.0: Prvo izdanje! Organizirajte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u dijeljene mape. Potpuna biblioteka upita s umetanjem jednim klikom, prečaci za brzo spremanje, povuci i ispusti, mobilna sinkronizacija, skupne radnje, grupe kartica i podrška za 43 jezika.
