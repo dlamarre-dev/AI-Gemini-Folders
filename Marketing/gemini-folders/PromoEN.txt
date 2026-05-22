@@ -11,7 +11,7 @@ With version 4.0, Gemini Folders becomes your true Gemini cockpit: organize your
 💎 Custom Gem Link: Configure a link to your favorite Gem and toggle it on/off with a click. When active, the "New Conversation" button opens your Gem instead of the default chat.
 ☁️ Prompt Sync: Enable cloud sync for your prompt library independently from your folders.
 📌 Pinned Prompts: Pin your essential prompts with one click to keep them at the top of your library, separated from the rest by a visual divider.
-⌨️ Prompt Trigger with Live Suggestions: Type # in Gemini's chat field to instantly see all your saved prompts — filtered in real time as you type. Press Space on a unique match to autocomplete, or on an exact match to inject directly.
+⌨️ Prompt Trigger with Live Suggestions: Type # in Gemini's chat field to instantly see all your saved prompts — filtered in real time as you type. Use ↓/↑ to cycle through suggestions, press Space on a unique match to autocomplete, or on an exact match to inject directly.
 
 🌟 FOLDER FEATURES
 
@@ -46,7 +46,7 @@ Click ➕ Add Prompt, enter a title and your text, and save.
 To use a prompt: expand it and click ▶ — it injects directly into Gemini, ready to send.
 Configure 💎 to point to your custom Gem.
 To pin a prompt: click 📍 — it moves to the top of the list and stays within easy reach.
-Prompt Trigger: Type # to instantly see all your saved prompts, or keep typing to filter in real time. Press Space on a unique match to autocomplete, or on an exact match to inject.
+Prompt Trigger: Type # to instantly see all your saved prompts, or keep typing to filter in real time. Use ↓/↑ to cycle through suggestions. Press Space on a unique match to autocomplete, or on an exact match to inject.
 
 🔒 PRIVACY & SECURITY
 Built with privacy at its core. It only requests access to gemini.google.com and only reads the active tab when saving a conversation or injecting a prompt. The "Bookmarks" permission is only used if you enable mobile sync. Storage via Chrome Sync: no third-party servers, no telemetry.
@@ -61,7 +61,7 @@ Interested in Gemini Folders but also use ChatGPT, Claude, Copilot, Perplexity o
 👉 Install AI Folders: __AF_STORE_URL__
 
 📢 UPDATES:
-Version 4.2 (Prompt Trigger Shortcuts): Type # in Gemini's chat field to instantly see all your saved prompts, filtered in real time as you type. Press Space on a unique match to autocomplete or on an exact match to inject — without ever opening the extension panel. Suggestions appear with the extension name as a label, Backspace restores suggestions after a no-match, and single-match autocomplete keeps the panel stable.
+Version 4.2 (Prompt Trigger): Type # in Gemini's chat field to see your saved prompts filtered in real time. Use ↓/↑ to cycle through suggestions, Space to autocomplete or inject — without ever opening the panel.
 Version 4.1.1: Minor bug fixes and stability improvements.
 Version 4.1 (Global Expansion & Hardening): 16 new languages bring Gemini Folders to 43 localizations worldwide — Nordic languages, the Baltic states, and expanded European and Southeast Asian coverage. Fixed a race condition that could silently drop a save on rapid button clicks. Modernized prompt injection with InputEvent, replacing the deprecated execCommand. Hardened the import pipeline against malicious URLs in backup files. Fixed a critical data-safety bug: enabling prompt sync on nearly-full storage could silently erase all saved prompts. Storage now uses chunked writes to stay within Chrome's per-item limit, with clear error messages when storage is full.
 Version 4.0 (Prompt Library): The most ambitious update yet! Gemini Folders gets a brand-new Prompt Mode: save your best prompts, edit them inline, and inject them directly into Gemini with one click. Added animated mode toggle, search and sort in Prompt Mode, custom Gem button, and independent prompt sync. Pin your essential prompts to the top of your library.

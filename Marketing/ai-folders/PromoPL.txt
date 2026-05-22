@@ -11,7 +11,7 @@ Foldery AI to Twoje zunifikowane centrum AI: organizuj rozmowy ze wszystkich nar
 🔀 Przyciski Nowej Rozmowy: Rozpocznij nową rozmowę na ChatGPT, Claude, Copilot, Gemini lub Perplexity bezpośrednio z Trybu Promptów — jeden przycisk na serwis.
 ☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
 📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
-⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu dowolnego AI, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić. Działa z ChatGPT, Claude, Gemini, Copilot i lokalnymi LLM.
+⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu Gemini, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Użyj ↓/↑ do nawigacji między sugestiami, naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić.
 
 🌟 FUNKCJE FOLDERÓW
 
@@ -33,8 +33,7 @@ Foldery AI to Twoje zunifikowane centrum AI: organizuj rozmowy ze wszystkich nar
 
 🏠 WSPARCIE LOKALNEGO LLM
 
-Używasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj Foldery AI ze swoim lokalnym URL — obsługuje localhost i adresy LAN (192.168.x.x, niestandardowe nazwy hostów). Szybkie zapisywanie, zapisywanie przez menu kontekstowe i wstrzykiwanie podpowiedzi działają na większości lokalnych interfejsów (w tym Open WebUI).
-
+Używasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj Foldery AI ze swoim lokalnym adresem URL — obsługuje localhost i adresy LAN (192.168.x.x, niestandardowe nazwy hostów). Szybkie zapisywanie i zapisywanie z menu kontekstowego działają również w lokalnych interfejsach.
 🛠️ JAK TO DZIAŁA?
 
 Tryb Folderów:
@@ -58,7 +57,7 @@ Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do Gemini, Clau
 🤝 PROJEKT OPEN SOURCE
 Foldery AI to projekt open source tworzony z pasją. Przejrzystość i poszanowanie Twojej prywatności to nasze priorytety. Jesteś programistą lub po prostu ciekawskim? Przejrzyj kod, śledź historię zmian lub wnieś wkład na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 AKTUALIZACJE:
-Wersja 1.1 (Skróty wyzwalania promptów): Wpisz # w polu czatu dowolnej AI, aby natychmiast zobaczyć wszystkie swoje zapisane prompty, filtrowane w czasie rzeczywistym podczas pisania. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby wstawić — bez otwierania panelu rozszerzenia. Sugestie pojawiają się z nazwą rozszerzenia jako etykietą, Backspace przywraca sugestie po braku dopasowania, a autouzupełnianie przy jedynym dopasowaniu utrzymuje panel w stabilnym stanie. Działa we wszystkich obsługiwanych usługach, w tym lokalnych LLM.
-Wersja 1.0.1: Drobne poprawki błędów i ulepszenia stabilności.
+Wersja 1.1 (Wyzwalacz Promptów): Wpisz # w dowolnym polu czatu AI, aby zobaczyć swoje prompty filtrowane w czasie rzeczywistym. Użyj ↓/↑ do nawigacji między sugestiami, Spacji do autouzupełniania lub wstrzyknięcia — bez otwierania panelu. Działa na wszystkich obsługiwanych serwisach, w tym lokalnych LLM.
 Wersja 1.0: Pierwsze wydanie! Organizuj rozmowy z Gemini, Claude, ChatGPT, Copilot i Perplexity we wspólnych folderach. Pełna biblioteka promptów z wstawianiem jednym kliknięciem, skróty szybkiego zapisu, przeciąganie i upuszczanie, synchronizacja mobilna, akcje zbiorcze, grupy kart i obsługa 43 języków. Obsługa lokalnych LLM z konfigurowalnym URL (localhost i adresy LAN).

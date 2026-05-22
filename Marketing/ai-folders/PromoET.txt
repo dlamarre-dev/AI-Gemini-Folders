@@ -11,7 +11,7 @@ AI kaustad on teie ühtne AI-juhtimiskeskus: korraldage kõigi AI-tööriistade 
 🔀 Uue vestluse nupud: Alustage uut vestlust ChatGPT-s, Claudes, Copilotis, Geminis või Perplexitys otse viipade režiimist — üks nupp teenuse kohta.
 ☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
 📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
-⌨️ Viipete käivitaja reaalajas soovitustega: Sisestage mis tahes AI vestlusväljale #, et näha kohe kõiki oma salvestatud viipeid — reaalajas filtreeritud kirjutamise ajal. Vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral otseseks sisestamiseks. Töötab ChatGPT, Claude, Gemini, Copilot ja kohalike LLM-idega.
+⌨️ Viipete käivitaja reaalajas soovitustega: Sisestage # Gemini vestlusväljale, et näha kohe kõiki oma salvestatud viipeid — reaalajas filtreeritud kirjutamise ajal. Kasutage ↓/↑ navigeerimiseks, vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral otseseks sisestamiseks.
 
 🌟 KAUSTADE FUNKTSIOONID
 
@@ -33,8 +33,7 @@ AI kaustad on teie ühtne AI-juhtimiskeskus: korraldage kõigi AI-tööriistade 
 
 🏠 KOHALIKU LLM TUGI
 
-Kasutate kohalikku AI mudelit (Ollama, LM Studio, Jan või mõni muu)? Konfigureerige AI kaustad oma kohaliku URL-iga — toetab localhost'i ja LAN-aadresse (192.168.x.x, kohandatud hostinimi). Kiirtalletamine, kontekstimenüü talletamine ja käskluste sisestamine töötavad enamikul kohalikest kasutajaliidestest (sealhulgas Open WebUI).
-
+Kas kasutate kohalikku AI-mudelit (Ollama, LM Studio, Jan või muu)? Seadistage AI kaustad oma kohaliku URL-iga — toetab localhosti ja LAN-aadresse (192.168.x.x, kohandatud hostinimed). Kiirsalvestamine ja kontekstimenüüst salvestamine töötavad ka kohalikes liidestes.
 🛠️ KUIDAS SEE TÖÖTAB?
 
 Kaustade režiim:
@@ -57,7 +56,7 @@ Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult Gemini, Claude,
 🤝 AVATUD LÄHTEKOODIGA PROJEKT
 AI kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 UUENDUSED:
-Versioon 1.1 (Prompti käivitamise kiirklahvid): Sisestage # mis tahes AI vestlusväljale, et näha kohe kõiki oma salvestatud viipeid, reaalajas filtreeritud kirjutamise ajal. Vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral sisestamiseks — ilma kunagi laienduse paneeli avamata. Soovitused kuvatakse laienduse nimega sildina, Backspace taastab soovitused pärast mittevastust ja üheainsa vaste automaatne täitmine hoiab paneeli stabiilsena. Töötab kõikide toetatud teenustega, sealhulgas kohalike LLM-idega.
-Versioon 1.0.1: Väiksemad veaparandused ja stabiilsuse parandused.
+Versioon 1.1 (Viipade käivitaja): Sisestage # mis tahes AI vestlusväljale, et näha salvestatud viipasid reaalajas filtreerituna. Kasutage ↓/↑ soovituste vahel liikumiseks, Tühikut automaatseks täitmiseks või lisamiseks — ilma paneeli avamata. Töötab kõigil toetatud teenustel, sealhulgas kohalikel LLM-idel.
 Versioon 1.0: Esimene väljalase! Korraldage Gemini, Claude, ChatGPT, Copilot ja Perplexity vestlused jagatud kaustadesse. Täielik viipade teek ühe klõpsuga lisamisega, kiirsalvestuse otseteed, lohistamine, mobiilsünkroniseerimine, hulgioperatsioonid, vahelehtede rühmad ja tugi 43 keelele.

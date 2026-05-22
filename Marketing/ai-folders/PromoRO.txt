@@ -11,7 +11,7 @@ Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate i
 🔀 Butoane Conversație Nouă: Lansați o conversație nouă pe ChatGPT, Claude, Copilot, Gemini sau Perplexity direct din Modul Prompt — un buton per serviciu.
 ☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
 📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
-⌨️ Declanșator de prompt cu sugestii live: Tastați # în câmpul de chat al oricărei IA pentru a vedea imediat toate prompturile salvate — filtrate în timp real pe măsură ce tastați. Apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru injectare directă. Funcționează cu ChatGPT, Claude, Gemini, Copilot și LLM-uri locale.
+⌨️ Declanșator de prompt cu sugestii live: Tastați # în câmpul de chat al Gemini pentru a vedea imediat toate prompturile salvate — filtrate în timp real pe măsură ce tastați. Folosiți ↓/↑ pentru a naviga, apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru injectare directă.
 
 🌟 FUNCȚII FOLDERE
 
@@ -33,8 +33,7 @@ Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate i
 
 🏠 SUPORT LLM LOCAL
 
-Rulați un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dosare IA cu URL-ul dvs. local — acceptă localhost și adrese LAN (192.168.x.x, nume de gazdă personalizate). Salvarea rapidă, salvarea prin meniu contextual și injectarea prompturilor funcționează pe cele mai multe interfețe locale (inclusiv Open WebUI).
-
+Folosiți un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dosare IA cu URL-ul local — acceptă localhost și adrese LAN (192.168.x.x, nume de gazdă personalizate). Salvarea rapidă și din meniul contextual funcționează și pe interfețe locale.
 🛠️ CUM FUNCȚIONEAZĂ?
 
 Modul Foldere:
@@ -58,7 +57,7 @@ Concepută cu confidențialitatea în centru. Solicită acces doar la Gemini, Cl
 🤝 PROIECT OPEN SOURCE
 Dosare IA este un proiect open source dezvoltat cu pasiune. Transparența și respectul față de confidențialitatea dvs. sunt prioritățile noastre. Sunteți dezvoltator sau pur și simplu curios? Consultați codul, urmăriți istoricul modificărilor sau contribuiți pe GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 ACTUALIZĂRI:
-Versiunea 1.1 (Comenzi rapide de declanșare prompt): Tastați # în câmpul de chat al oricărui AI pentru a vedea imediat toate prompturile salvate, filtrate în timp real pe măsură ce tastați. Apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru a injecta — fără a deschide vreodată panoul extensiei. Sugestiile apar cu numele extensiei ca etichetă, Backspace restaurează sugestiile după nicio potrivire, iar completarea automată la potrivire unică menține panoul stabil. Funcționează pe toate serviciile suportate inclusiv LLM-urile locale.
-Versiunea 1.0.1: Remedieri minore ale erorilor și îmbunătățiri ale stabilității.
+Versiunea 1.1 (Declanșatorul de Prompturi): Tastați # în orice câmp de chat AI pentru a vedea prompturile salvate filtrate în timp real. Folosiți ↓/↑ pentru a naviga prin sugestii, Spațiu pentru autocompletare sau injectare — fără a deschide vreodată panoul. Funcționează pe toate serviciile acceptate, inclusiv LLM-urile locale.
 Versiunea 1.0: Prima lansare! Organizați conversații din Gemini, Claude, ChatGPT, Copilot și Perplexity în dosare partajate. Bibliotecă completă de prompturi cu injectare în un clic, comenzi rapide de salvare, glisare și plasare, sincronizare mobilă, acțiuni în masă, grupuri de file și suport pentru 43 de limbi. Suport LLM local cu URL configurabil (localhost și adrese LAN).

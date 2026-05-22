@@ -11,7 +11,7 @@ AI složky je váš sjednocený AI kokpit: organizujte konverzace ze všech vaš
 🔀 Tlačítka nové konverzace: Spusťte novou konverzaci na ChatGPT, Claude, Copilot, Gemini nebo Perplexity přímo z režimu promptů — jedno tlačítko na službu.
 ☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
 📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
-⌨️ Spouštěč promptů s živými návrhy: Napište # do chatovacího pole libovolné AI a okamžitě uvidíte všechny své uložené prompty — filtrované v reálném čase při psaní. Stiskněte mezerník u jedinečné shody pro automatické doplnění nebo u přesné shody pro přímé vložení. Funguje s ChatGPT, Claude, Gemini, Copilot a lokálními LLM.
+⌨️ Spouštěč promptů s živými návrhy: Napište # do chatovacího pole Gemini a okamžitě uvidíte všechny své uložené prompty — filtrované v reálném čase při psaní. Pomocí ↓/↑ procházejte návrhy, stiskněte mezerník u jedinečné shody pro automatické doplnění nebo u přesné shody pro přímé vložení.
 
 🌟 FUNKCE SLOŽEK
 
@@ -33,8 +33,7 @@ AI složky je váš sjednocený AI kokpit: organizujte konverzace ze všech vaš
 
 🏠 PODPORA LOKÁLNÍHO LLM
 
-Používáte lokální AI model (Ollama, LM Studio, Jan nebo jiný)? Nakonfigurujte AI složky s vaší lokální URL — podporuje localhost a LAN adresy (192.168.x.x, vlastní názvy hostitelů). Rychlé ukládání, ukládání přes kontextové menu a vkládání promptů fungují ve většině lokálních rozhraní (včetně Open WebUI).
-
+Používáte lokální AI model (Ollama, LM Studio, Jan nebo jiný)? Nakonfigurujte AI složky s místní URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastní názvy hostitelů). Rychlé ukládání a ukládání přes kontextové menu fungují i na lokálních rozhraních.
 🛠️ JAK TO FUNGUJE?
 
 Režim složek:
@@ -58,7 +57,7 @@ Navrženo se soukromím v centru. Vyžaduje přístup pouze k Gemini, Claude, Ch
 🤝 OPEN SOURCE PROJEKT
 AI složky jsou open source projekt vyvíjený s vášní. Transparentnost a respekt k vašemu soukromí jsou naše priority. Jste vývojář nebo jen zvědavý? Prohlédněte si kód, sledujte historii změn nebo přispějte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 AKTUALIZACE:
-Verze 1.1 (Zkratky pro spouštění výzev): Napište # do chatovacího pole libovolné AI a okamžitě uvidíte všechny své uložené prompty, filtrované v reálném čase při psaní. Stiskněte mezerník u jedinečné shody pro automatické doplnění nebo u přesné shody pro vložení — aniž byste kdy otevírali panel rozšíření. Návrhy se zobrazují s názvem rozšíření jako popiskem, klávesa Backspace obnovuje návrhy po neshodě a automatické doplnění u jedinečné shody udržuje panel stabilní. Funguje ve všech podporovaných službách včetně lokálních LLM.
-Verze 1.0.1: Drobné opravy chyb a zlepšení stability.
+Verze 1.1 (Spouštěč promptů): Zadejte # do libovolného pole chatu AI a zobrazte si uložené prompty filtrované v reálném čase. Pomocí ↓/↑ procházejte návrhy, mezerníkem je automaticky dokončete nebo vložte — bez otevření panelu. Funguje na všech podporovaných službách včetně lokálních LLM.
 Verze 1.0: První vydání! Uspořádejte konverzace z Gemini, Claude, ChatGPT, Copilot a Perplexity do sdílených složek. Kompletní knihovna promptů s vkládáním jedním kliknutím, zkratky rychlého ukládání, přetahování, mobilní synchronizace, hromadné akce, skupiny karet a podpora 43 jazyků. Podpora lokálních LLM s konfigurovatelnou URL (localhost a LAN adresy).

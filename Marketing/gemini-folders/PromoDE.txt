@@ -11,7 +11,7 @@ Mit Version 4.0 wird Gemini-Ordner zu Ihrem echten Gemini-Cockpit: Organisieren 
 💎 Benutzerdefinierter Gem-Link: Hinterlegen Sie einen Link zu Ihrem Lieblings-Gem und aktivieren Sie ihn per Klick. Wenn aktiv, öffnet „Neues Gespräch" Ihr Gem statt des Standard-Chats.
 ☁️ Prompt-Synchronisierung: Aktivieren Sie die Cloud-Sync für Ihre Prompt-Bibliothek, unabhängig von Ihren Ordnern.
 📌 Angeheftete Prompts: Heften Sie Ihre wichtigsten Prompts mit einem Klick oben an Ihre Bibliothek — durch einen visuellen Trenner von den übrigen getrennt.
-⌨️ Prompt-Trigger mit Live-Vorschlägen: Geben Sie # in das Chat-Feld von Gemini ein, um sofort alle Ihre gespeicherten Prompts zu sehen — in Echtzeit gefiltert während der Eingabe. Drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur direkten Injektion.
+⌨️ Prompt-Trigger mit Live-Vorschlägen: Geben Sie # in das Chat-Feld von Gemini ein, um sofort alle Ihre gespeicherten Prompts zu sehen — in Echtzeit gefiltert während der Eingabe. Verwenden Sie ↓/↑ zum Navigieren, drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur direkten Injektion.
 
 🌟 ORDNER-FUNKTIONEN
 
@@ -61,7 +61,7 @@ Interessiert an Gemini-Ordner, aber nutzen Sie auch ChatGPT, Claude, Copilot, Pe
 👉 KI-Ordner installieren: __AF_STORE_URL__
 
 📢 UPDATES:
-Version 4.2 (Prompt-Trigger-Tastenkürzel): Geben Sie # in das Chat-Eingabefeld von Gemini ein, um sofort alle Ihre gespeicherten Prompts zu sehen, in Echtzeit gefiltert während der Eingabe. Drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur Injektion — ohne das Erweiterungspanel jemals öffnen zu müssen. Vorschläge erscheinen mit dem Erweiterungsnamen als Label, die Rücktaste stellt Vorschläge nach keiner Übereinstimmung wieder her, und die Autovervollständigung bei eindeutigem Treffer hält das Panel stabil.
+Version 4.2 (Prompt-Auslöser): Geben Sie # in das Eingabefeld von Gemini ein, um gespeicherte Prompts in Echtzeit gefiltert zu sehen. Verwenden Sie ↓/↑ zum Navigieren durch Vorschläge, Leertaste zum Autovervollständigen oder Einsetzen — ohne das Panel zu öffnen.
 Version 4.1.1: Kleinere Fehlerbehebungen und Stabilitätsverbesserungen.
 Version 4.1 (Globale Erweiterung & Härtung): 16 neue Sprachen bringen Gemini-Ordner auf 43 weltweite Lokalisierungen — nordische Sprachen, die baltischen Staaten und erweiterte europäische sowie südostasiatische Abdeckung. Behobene Race-Condition, die bei schnellen Klicks eine Speicherung lautlos verwerfen konnte. Modernisierte Prompt-Injektion mit InputEvent als Ersatz für das veraltete execCommand. Import-Pipeline gegen bösartige URLs in Sicherungsdateien gehärtet. Kritischer Datensicherheitsfehler behoben: das Aktivieren der Prompt-Synchronisierung bei fast vollem Speicher konnte alle gespeicherten Prompts lautlos löschen. Der Speicher verwendet jetzt fragmentierte Schreibvorgänge, um innerhalb der Chrome-Grenzen zu bleiben, mit klaren Fehlermeldungen wenn er voll ist.
 Version 4.0 (Prompt-Bibliothek): Das ehrgeizigste Update bisher! Gemini-Ordner erhält einen brandneuen Prompt-Modus: Prompts speichern, direkt bearbeiten und mit einem Klick in Gemini injizieren. Neu: animierter Modus-Umschalter, Suche und Sortierung im Prompt-Modus, benutzerdefinierter Gem-Button und unabhängige Prompt-Synchronisierung. Wichtige Prompts oben anpinnen.

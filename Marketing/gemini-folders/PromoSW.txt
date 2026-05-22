@@ -11,7 +11,7 @@ Na toleo la 4.0, Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga 
 💎 Kiungo Maalum cha Gem: Sanidi kiungo kwenda Gem unayoipenda na kiwashe/kizime kwa kubofya. Kinapowashwa, kitufe cha "Mazungumzo Mapya" kinafungua Gem yako badala ya gumzo la kawaida.
 ☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
 📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
-⌨️ Kichocheo cha Kidokezo na Mapendekezo ya Moja kwa Moja: Andika # katika uwanja wa gumzo wa Gemini ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa — vikifiliwa kwa wakati halisi unapoendelea kuandika. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza moja kwa moja.
+⌨️ Kichocheo cha Kidokezo na Mapendekezo ya Moja kwa Moja: Andika # katika uwanja wa gumzo wa Gemini ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa — vikifiliwa kwa wakati halisi unapoendelea kuandika. Tumia ↓/↑ kuvinjari, kisha bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza moja kwa moja.
 
 🌟 VIPENGELE VYA FOLDA
 
@@ -61,7 +61,7 @@ Unavutiwa na Folda za Gemini lakini pia unatumia ChatGPT, Claude, Copilot, Perpl
 👉 Sakinisha Folda za AI: __AF_STORE_URL__
 
 📢 MASASISHO:
-Toleo 4.2 (Njia za Mkato za Kuchochea Kidokezo): Andika # katika uwanja wa gumzo wa Gemini ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa, vikifiliwa kwa wakati halisi unapoendelea kuandika. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki au kwenye mechi sahihi kuingiza — bila kufungua paneli ya kiendelezi kamwe. Mapendekezo yanaonekana na jina la kiendelezi kama lebo, Backspace hurejesha mapendekezo baada ya kutokuwa na mechi, na ukamilishaji otomatiki wa mechi moja huhakikisha utulivu wa paneli.
+Toleo 4.2 (Kichocheo cha Amri): Andika # katika uwanja wa mazungumzo wa Gemini ili uone maagizo yako yaliyohifadhiwa yakichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.
 Toleo 4.1.1: Marekebisho madogo ya hitilafu na maboresho ya uthabiti.
 Toleo 4.1 (Upanuzi wa Kimataifa na Ugumu): Lugha 16 mpya zinaongeza Folda za Gemini hadi lokalizesheni 43 duniani kote — lugha za Nordiki, nchi za Baltic na chanjo iliyopanuliwa ya Ulaya na Asia ya Kusini-mashariki. Kurekebisha hali ya mbio ambayo ingeweza kupoteza kimya kimya uhifadhi wakati wa kubonyeza haraka. Uingizaji wa prompt umeboreshwa kwa InputEvent, ukibadilisha execCommand iliyopitwa na wakati. Mfumo wa uingizaji umeimarishwa dhidi ya URL hasidi katika faili za nakala rudufu. Hitilafu mbaya ya usalama wa data imetibiwa: kuwezesha usawazishaji wa maagizo kwenye hifadhi iliyojaa karibu kungeweza kufuta kimya kimya maagizo yote yaliyohifadhiwa. Hifadhi sasa inatumia uandishi wa vipande ili kukaa ndani ya mipaka ya Chrome, na ujumbe wa makosa wazi wakati imejaa.
 Toleo la 4.0 (Maktaba ya Vidokezo): Sasishwa lenye tamaa zaidi hadi sasa! Folda za Gemini inapata Hali ya Vidokezo mpya kabisa: hifadhi vidokezo vyako bora, viharirie mahali pake, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja. Kitufe cha kubadilisha hali chenye mwendo, utafutaji na upangaji katika Hali ya Vidokezo, kitufe maalum cha Gem na usawazishaji wa vidokezo usiotegemea vimeongezwa. Bandika vidokezo muhimu juu ya maktaba yako.

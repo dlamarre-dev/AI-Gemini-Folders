@@ -11,7 +11,7 @@ Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi kesku
 💎 Mukautettu Gem-linkki: Määritä linkki suosikki-Geemisi ja ota se käyttöön tai poista käytöstä yhdellä napsautuksella. Kun se on aktiivinen, «Uusi keskustelu» -painike avaa Geemisi oletuschattin sijaan.
 ☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
 📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
-⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
+⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Käytä ↓/↑ selailuun, paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
 
 🌟 KANSIO-OMINAISUUDET
 
@@ -61,7 +61,7 @@ Kiinnostuitko Gemini-kansiot-laajennuksesta, mutta käytätkö myös ChatGPT:tä
 👉 Asenna AI-kansiot: __AF_STORE_URL__
 
 📢 PÄIVITYKSET:
-Versio 4.2 (Promptin käynnistyspikavalintoja): Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi, suodatetaan reaaliajassa kirjoittaessasi. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa lisäämistä varten — avaamatta laajennuspaneelia koskaan. Ehdotukset näkyvät laajennuksen nimellä merkittynä, Backspace palauttaa ehdotukset osumattoman jälkeen ja ainutlaatuisen osuman automaattitäydennys pitää paneelin vakaana.
+Versio 4.2 (Kehotteen laukaisin): Kirjoita # Geminin chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia.
 Versio 4.1.1: Pieniä virheenkorjauksia ja vakauteen liittyviä parannuksia.
 Versio 4.1 (Globaali laajennus ja kovettaminen): 16 uutta kieltä nostaa Gemini-kansiot 43 lokalisointiin maailmanlaajuisesti — pohjoismaiset kielet, Baltian maat sekä laajennettu eurooppalainen ja Kaakkois-Aasian kattavuus. Korjattu kilpailutilanne, joka saattoi hiljaa hävittää tallennuksen nopeiden napsautusten yhteydessä. Promptin syöttäminen modernisoitu InputEventillä korvaamaan vanhentunut execCommand. Tuontikanava kovetettu haittaohjelmallisia URL-osoitteita vastaan varmuuskopiotiedostoissa. Kriittinen tietoturvavika korjattu: kehotteiden synkronoinnin aktivointi lähes täydellä tallennustilalla saattoi äänettömästi poistaa kaikki tallennetut kehotteet. Tallennustila käyttää nyt paloiteltuja kirjoituksia pysyäkseen Chromen rajoissa, ja näyttää selkeitä virheilmoituksia kun tila on täynnä.
 Versio 4.0 (Promptikirjasto): Kunnianhimoisin päivitys tähän mennessä! Gemini-kansiot saa upouuden Prompttilan: tallenna parhaat promptisi, muokkaa niitä inlinen ja injektoi ne suoraan Geminiin yhdellä napsautuksella. Lisätty animoitu tilakytkин, haku ja lajittelu Prompttilassa, mukautettu Gem-painike ja itsenäinen promptisynkronointi.

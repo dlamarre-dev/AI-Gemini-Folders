@@ -11,7 +11,7 @@ Folder AI adalah kokpit AI terpadu Anda: atur percakapan dari semua alat AI Anda
 🔀 Tombol Percakapan Baru: Mulai percakapan baru di ChatGPT, Claude, Copilot, Gemini, atau Perplexity langsung dari Mode Prompt — satu tombol per layanan.
 ☁️ Sinkronisasi Prompt: Aktifkan sinkronisasi cloud untuk perpustakaan prompt Anda secara independen dari folder Anda.
 📌 Prompt yang Disematkan: Sematkan prompt penting Anda dengan satu klik agar tetap di bagian atas perpustakaan, dipisahkan dari yang lain oleh pemisah visual.
-⌨️ Pemicu Prompt dengan Saran Langsung: Ketik # di kolom chat AI mana pun untuk langsung melihat semua prompt tersimpan Anda — difilter secara real time saat Anda mengetik. Tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan langsung. Berfungsi di ChatGPT, Claude, Gemini, Copilot dan LLM lokal.
+⌨️ Pemicu Prompt dengan Saran Langsung: Ketik # di kolom chat Gemini untuk langsung melihat semua prompt tersimpan Anda — difilter secara real time saat Anda mengetik. Gunakan ↓/↑ untuk navigasi, tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan langsung.
 
 🌟 FITUR FOLDER
 
@@ -33,8 +33,7 @@ Folder AI adalah kokpit AI terpadu Anda: atur percakapan dari semua alat AI Anda
 
 🏠 DUKUNGAN LLM LOKAL
 
-Apakah Anda menjalankan model AI lokal (Ollama, LM Studio, Jan, atau lainnya)? Konfigurasikan Folder AI dengan URL lokal Anda — mendukung localhost dan alamat LAN (192.168.x.x, nama host kustom). Simpan cepat, simpan via menu konteks, dan injeksi prompt berfungsi di sebagian besar antarmuka lokal (termasuk Open WebUI).
-
+Menjalankan model AI lokal (Ollama, LM Studio, Jan, atau lainnya)? Konfigurasikan Folder AI dengan URL lokal Anda — mendukung localhost dan alamat LAN (192.168.x.x, nama host khusus). Simpan cepat dan simpan melalui menu konteks juga berfungsi pada UI lokal.
 🛠️ CARA KERJANYA?
 
 Mode Folder:
@@ -58,7 +57,7 @@ Dibangun dengan privasi sebagai inti. Hanya meminta akses ke Gemini, Claude, Cha
 🤝 PROYEK OPEN SOURCE
 Folder AI adalah proyek open source yang dibangun dengan penuh semangat. Transparansi dan penghormatan terhadap privasi Anda adalah prioritas utama kami. Apakah Anda pengembang atau sekadar penasaran? Jelajahi kode, ikuti catatan perubahan, atau berkontribusi di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 PEMBARUAN:
-Versi 1.1 (Pintasan Pemicu Prompt): Ketik # di kolom chat AI mana pun untuk langsung melihat semua prompt tersimpan Anda, difilter secara real time saat Anda mengetik. Tekan Spasi pada kecocokan unik untuk pelengkapan otomatis atau pada kecocokan tepat untuk menyisipkan — tanpa pernah membuka panel ekstensi. Saran muncul dengan nama ekstensi sebagai label, Backspace memulihkan saran setelah tidak ada kecocokan, dan pelengkapan otomatis pada kecocokan tunggal menjaga panel tetap stabil. Berfungsi di semua layanan yang didukung termasuk LLM lokal.
-Versi 1.0.1: Perbaikan bug kecil dan peningkatan stabilitas.
+Versi 1.1 (Pemicu Prompt): Ketik # di kolom chat AI mana pun untuk melihat prompt yang tersimpan difilter secara real time. Gunakan ↓/↑ untuk menavigasi saran, Spasi untuk melengkapi otomatis atau menyuntikkan — tanpa membuka panel. Berfungsi di semua layanan yang didukung termasuk LLM lokal.
 Versi 1.0: Rilis pertama! Atur percakapan dari Gemini, Claude, ChatGPT, Copilot, dan Perplexity dalam folder bersama. Pustaka prompt lengkap dengan injeksi satu klik, pintasan simpan cepat, drag & drop, sinkronisasi mobile, aksi massal, grup tab, dan dukungan 43 bahasa. Dukungan LLM lokal dengan URL yang dapat dikonfigurasi (localhost dan alamat LAN).

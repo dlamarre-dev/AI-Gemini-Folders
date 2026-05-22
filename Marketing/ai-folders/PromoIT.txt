@@ -11,7 +11,7 @@ Cartelle IA è il tuo cockpit AI unificato: organizza conversazioni da tutti i t
 🔀 Pulsanti Nuova Conversazione: Avvia una nuova conversazione su ChatGPT, Claude, Copilot, Gemini o Perplexity direttamente dalla Modalità Prompt — un pulsante per servizio.
 ☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
 📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
-⌨️ Attivatore di prompt con suggerimenti in tempo reale: Digita # nel campo chat di qualsiasi IA per vedere istantaneamente tutti i tuoi prompt salvati — filtrati in tempo reale mentre scrivi. Premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare direttamente. Funziona con ChatGPT, Claude, Gemini, Copilot e LLM locali.
+⌨️ Attivatore di prompt con suggerimenti in tempo reale: Digita # nel campo chat di Gemini per vedere istantaneamente tutti i tuoi prompt salvati — filtrati in tempo reale mentre scrivi. Usa ↓/↑ per navigare tra i suggerimenti, premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare direttamente.
 
 🌟 FUNZIONALITÀ CARTELLE
 
@@ -33,8 +33,7 @@ Cartelle IA è il tuo cockpit AI unificato: organizza conversazioni da tutti i t
 
 🏠 SUPPORTO LLM LOCALE
 
-Stai usando un modello AI locale (Ollama, LM Studio, Jan o un altro)? Configura Cartelle IA con il tuo URL locale — supporta localhost e indirizzi LAN (192.168.x.x, nomi host personalizzati). Il salvataggio rapido, il salvataggio via menu contestuale e l'iniezione di prompt funzionano sulla maggior parte delle interfacce locali (incluso Open WebUI).
-
+Stai usando un modello AI locale (Ollama, LM Studio, Jan o altro)? Configura Cartelle IA con il tuo URL locale — supporta localhost e indirizzi LAN (192.168.x.x, hostname personalizzati). Il salvataggio rapido e dal menu contestuale funzionano anche nelle interfacce locali.
 🛠️ COME FUNZIONA?
 
 Modalità Cartelle:
@@ -58,7 +57,7 @@ Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, Cha
 🤝 PROGETTO OPEN SOURCE
 Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 AGGIORNAMENTI:
-Versione 1.1 (Scorciatoie di attivazione prompt): Digita # nel campo chat di qualsiasi AI per vedere istantaneamente tutti i tuoi prompt salvati, filtrati in tempo reale mentre scrivi. Premi Spazio su una corrispondenza unica per il completamento automatico o su una corrispondenza esatta per iniettare — senza mai aprire il pannello dell'estensione. I suggerimenti appaiono con il nome dell'estensione come etichetta, Backspace ripristina i suggerimenti dopo nessuna corrispondenza e il completamento automatico su corrispondenza unica mantiene il pannello stabile. Funziona su tutti i servizi supportati inclusi i LLM locali.
-Versione 1.0.1: Correzioni minori di bug e miglioramenti alla stabilità.
+Versione 1.1 (Prompt Trigger): Digita # in qualsiasi campo chat AI per vedere i tuoi prompt filtrati in tempo reale. Usa ↓/↑ per navigare tra i suggerimenti, Spazio per autocompletare o iniettare — senza mai aprire il pannello. Funziona su tutti i servizi supportati, inclusi i LLM locali.
 Versione 1.0: Prima pubblicazione! Organizza conversazioni da Gemini, Claude, ChatGPT, Copilot e Perplexity in cartelle condivise. Libreria prompt completa con iniezione in un clic, scorciatoie di salvataggio rapido, drag & drop, sincronizzazione mobile, azioni in blocco, gruppi di schede e supporto per 43 lingue. Supporto LLM locale con URL configurabile (localhost e indirizzi LAN).

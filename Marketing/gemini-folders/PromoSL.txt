@@ -11,7 +11,7 @@ Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj po
 💎 Prilagojena povezava Gem: Nastavi povezavo do priljubljenega Gema in jo vklopiti/izklopiti z enim klikom.
 ☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
 📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
-⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
+⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Uporabite ↓/↑ za krmarjenje, pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
 
 🌟 FUNKCIJE MAP
 
@@ -60,7 +60,7 @@ Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Perplexit
 👉 Namesti Mape AI: __AF_STORE_URL__
 
 📢 POSODOBITVE:
-Različica 4.2 (Bližnjice za sprožitev pozivov): Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive, filtrirane v realnem času med tipkanjem. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za vstavljanje — brez kdaj koli odpiranja plošče razširitve. Predlogi se prikažejo z imenom razširitve kot oznako, Backspace obnovi predloge po neujemanju in samodejno dopolnjevanje pri edinstvenem ujemanju ohranja ploščo stabilno.
+Različica 4.2 (Sprožilec pozivov): Vnesite # v polje za klepet Gemini in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče.
 Različica 4.1.1: Manjše popravke napak in izboljšave stabilnosti.
 Različica 4.1 (Globalna razširitev in utrjevanje): 16 novih jezikov prinaša Mape Gemini na 43 lokalizacij po vsem svetu — severski jeziki, baltske države in razširjena evropska ter južnoazijska pokritost. Odpravljena race condition, ki je lahko pri hitrih klikih tiho zavrgla shranjevanje. Vstavljanje pozivov posodobljeno z InputEvent, ki nadomešča zastareli execCommand. Uvozni kanal utrjen proti zlonamernim URL-jem v varnostnih kopijah. Odpravljena kritična napaka varnosti podatkov: vklop sinhronizacije pozivov s skoraj polnim shranjevalnikom je lahko tiho izbrisal vse shranjene pozive. Shranjevalnik zdaj uporablja fragmentirane zapise, da ostane znotraj omejitev Chrome, z jasnimi sporočili o napakah ko je poln.
 Različica 4.0 (Knjižnica pozivov): Najna mbicioznejša posodobitev doslej! Mape Gemini dobijo popolnoma nov Način pozivov: shrani najboljše pozive, uredi jih na mestu in vstavi neposredno v Gemini z enim klikom.

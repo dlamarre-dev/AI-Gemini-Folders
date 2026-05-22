@@ -11,7 +11,7 @@ Sürüm 4.0 ile Gemini Klasörler, gerçek Gemini kokpitiniz haline geliyor: kon
 💎 Özel Gem Bağlantısı: Favori Gem'inize bir bağlantı yapılandırın ve tek tıkla açıp kapatın. Etkin olduğunda, "Yeni Konuşma" düğmesi varsayılan sohbet yerine Gem'inizi açar.
 ☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
 📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
-⌨️ Canlı Önerili Komut Tetikleyici: Gemini'nin sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün — siz yazarken gerçek zamanlı olarak filtrelenir. Otomatik tamamlamak için benzersiz eşleşmede, doğrudan enjekte etmek için tam eşleşmede boşluk tuşuna basın.
+⌨️ Canlı Önerili Komut Tetikleyici: Gemini'nin sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün — siz yazarken gerçek zamanlı olarak filtrelenir. Otomatik tamamlamak için benzersiz eşleşmede, doğrudan enjekte etmek için tam eşleşmede ↓/↑ ile gezinin, ardından boşluk tuşuna basın.
 
 🌟 KLASÖR ÖZELLİKLERİ
 
@@ -61,7 +61,7 @@ Gemini Klasörleri ilginizi çekiyor ama ChatGPT, Claude, Copilot, Perplexity ve
 👉 YZ Klasörleri'ni yükle: __AF_STORE_URL__
 
 📢 GÜNCELLEMELER:
-Sürüm 4.2 (İstem Tetikleme Kısayolları): Gemini'nin sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün; siz yazarken gerçek zamanlı olarak filtrelenir. Benzersiz eşleşmede otomatik tamamlamak veya tam eşleşmede enjekte etmek için boşluk tuşuna basın — uzantı panelini hiç açmadan. Öneriler uzantı adıyla etiketli olarak görünür, Backspace eşleşme olmadığında önerileri geri getirir ve tek eşleşmeli otomatik tamamlama paneli kararlı tutar.
+Sürüm 4.2 (Prompt Tetikleyici): Gemini sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan.
 Sürüm 4.1.1: Küçük hata düzeltmeleri ve kararlılık iyileştirmeleri.
 Sürüm 4.1 (Küresel Genişleme ve Güçlendirme): 16 yeni dil, Gemini Klasörleri dünya genelinde 43 yerelleştirmeye taşıyor — İskandinav dilleri, Baltık devletleri ve genişletilmiş Avrupa ve Güneydoğu Asya kapsamı. Hızlı tıklamalarda bir kaydetme işleminin sessizce kaybolmasına yol açabilecek yarış durumu düzeltildi. Kullanımdan kaldırılan execCommand'ın yerini InputEvent ile modern prompt enjeksiyonu aldı. Yedek dosyalardaki kötü amaçlı URL'lere karşı içe aktarma boru hattı güçlendirildi. Kritik veri güvenliği hatası düzeltildi: neredeyse dolu depolama alanında prompt senkronizasyonunu etkinleştirmek, tüm kayıtlı promptları sessizce silebiliyordu. Depolama artık Chrome sınırları içinde kalmak için parçalanmış yazımlar kullanıyor ve dolduğunda açık hata mesajları gösteriyor.
 Sürüm 4.0 (İstem Kütüphanesi): Şimdiye kadarki en iddialı güncelleme! Gemini Klasörler, yepyeni bir İstem Modu kazanıyor: en iyi istemlerinizi kaydedin, yerinde düzenleyin ve tek tıklamayla doğrudan Gemini'ye enjekte edin. Animasyonlu mod geçiş düğmesi, İstem Modu'nda arama ve sıralama, özel Gem düğmesi ve bağımsız istem senkronizasyonu eklendi. Temel istemlerinizi kütüphanenizin en üstüne sabitleyin.

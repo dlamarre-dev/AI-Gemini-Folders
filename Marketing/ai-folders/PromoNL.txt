@@ -11,7 +11,7 @@ AI-mappen is uw uniforme AI-cockpit: organiseer gesprekken van al uw AI-tools in
 🔀 Knoppen Nieuw Gesprek: Start een nieuw gesprek op ChatGPT, Claude, Copilot, Gemini of Perplexity direct vanuit de Promptmodus — één knop per dienst.
 ☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
 📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
-⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van een willekeurige AI om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen. Werkt met ChatGPT, Claude, Gemini, Copilot en lokale LLM's.
+⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van Gemini om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
 
 🌟 MAPFUNCTIES
 
@@ -33,8 +33,7 @@ AI-mappen is uw uniforme AI-cockpit: organiseer gesprekken van al uw AI-tools in
 
 🏠 LOKALE LLM-ONDERSTEUNING
 
-Gebruik je een lokaal AI-model (Ollama, LM Studio, Jan of een andere)? Configureer AI-mappen met je lokale URL — ondersteunt localhost en LAN-adressen (192.168.x.x, aangepaste hostnamen). Snel opslaan, opslaan via het contextmenu en promptinjectie werken op de meeste lokale interfaces (inclusief Open WebUI).
-
+Gebruikt u een lokaal AI-model (Ollama, LM Studio, Jan of een ander)? Configureer AI-mappen met uw lokale URL — ondersteunt localhost en LAN-adressen (192.168.x.x, aangepaste hostnamen). Snel opslaan en opslaan via contextmenu werken ook op lokale interfaces.
 🛠️ HOE WERKT HET?
 
 Mappenmodus:
@@ -58,7 +57,7 @@ Gebouwd met privacy als kern. Vraagt alleen toegang tot Gemini, Claude, ChatGPT,
 🤝 OPEN-SOURCEPROJECT
 AI-mappen is een open-sourceproject gebouwd met passie. Transparantie en respect voor uw privacy zijn onze topprioriteiten. Bent u een ontwikkelaar of gewoon nieuwsgierig? Bekijk de code, volg het wijzigingenlogboek of draag bij op GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 UPDATES:
-Versie 1.1 (Sneltoetsen voor prompttrigger): Typ # in het chatvenster van een AI om onmiddellijk al uw opgeslagen prompts te zien, in realtime gefilterd terwijl u typt. Druk op spatie bij een unieke match voor automatisch aanvullen of bij een exacte match om in te voegen — zonder het extensiepaneel ooit te openen. Suggesties worden weergegeven met de naam van de extensie als label, Backspace herstelt suggesties na geen match en automatisch aanvullen bij een unieke match houdt het paneel stabiel. Werkt voor alle ondersteunde services inclusief lokale LLM's.
-Versie 1.0.1: Kleine bugfixes en stabiliteitsverbeteringen.
+Versie 1.1 (Prompt-trigger): Typ # in een willekeurig AI-chatveld om uw opgeslagen prompts in realtime gefilterd te zien. Gebruik ↓/↑ om door suggesties te navigeren, Spatie om automatisch aan te vullen of in te voegen — zonder het panel te openen. Werkt op alle ondersteunde services inclusief lokale LLM's.
 Versie 1.0: Eerste uitgave! Organiseer gesprekken van Gemini, Claude, ChatGPT, Copilot en Perplexity in gedeelde mappen. Volledige promptbibliotheek met één-klik-invoegen, snelopslagsnelkoppelingen, slepen en neerzetten, mobiele synchronisatie, bulkacties, tabgroepen en ondersteuning voor 43 talen. Lokale LLM-ondersteuning met configureerbare URL (localhost en LAN-adressen).

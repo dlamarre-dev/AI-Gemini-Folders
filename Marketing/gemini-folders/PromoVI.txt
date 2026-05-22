@@ -11,7 +11,7 @@ Với phiên bản 4.0, Thư mục Gemini trở thành buồng lái Gemini thự
 💎 Liên kết Gem tùy chỉnh: Cấu hình liên kết đến Gem yêu thích và bật/tắt bằng một cú nhấp. Khi kích hoạt, nút "Cuộc trò chuyện mới" sẽ mở Gem của bạn thay vì chat mặc định.
 ☁️ Đồng bộ Prompt: Bật đồng bộ đám mây cho thư viện prompt độc lập với thư mục.
 📌 Ghim Prompt: Ghim các prompt thiết yếu bằng một cú nhấp để giữ chúng ở đầu thư viện, ngăn cách với phần còn lại bằng đường phân cách trực quan.
-⌨️ Trình kích hoạt Prompt với Gợi ý Trực tiếp: Nhập # vào trường trò chuyện của Gemini để xem ngay lập tức tất cả prompt đã lưu — được lọc theo thời gian thực khi bạn gõ. Nhấn Dấu cách trên kết quả khớp duy nhất để tự động hoàn thành, hoặc trên kết quả khớp chính xác để chèn trực tiếp.
+⌨️ Trình kích hoạt Prompt với Gợi ý Trực tiếp: Nhập # vào trường trò chuyện của Gemini để xem ngay lập tức tất cả prompt đã lưu — được lọc theo thời gian thực khi bạn gõ. Dùng ↓/↑ để điều hướng, nhấn Dấu cách trên kết quả khớp duy nhất để tự động hoàn thành, hoặc trên kết quả khớp chính xác để chèn trực tiếp.
 
 🌟 TÍNH NĂNG THƯ MỤC
 

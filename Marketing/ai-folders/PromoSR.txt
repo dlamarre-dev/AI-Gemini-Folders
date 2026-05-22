@@ -11,7 +11,7 @@
 🔀 Дугмад за нови разговор: Покрените нови разговор на ChatGPT, Claude, Copilot, Gemini или Perplexity директно из режима промптова — по јedno дугме по сервису.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
-⌨️ Окидач упита са уживо предлозима: Унесите # у поље за ћаскање bilo kog AI да одмах видите све своје сачуване упите — филтрирани у реалном времену током куцања. Притисните размак при јединственом подударању за аутоматско довршавање или при тачном подударању за директно убацивање. Ради са ChatGPT, Claude, Gemini, Copilot и локалним LLM.
+⌨️ Окидач упита са уживо предлозима: Унесите # у поље за ћаскање Gemini да одмах видите све своје сачуване упите — филтрирани у реалном времену током куцања. Користите ↓/↑ за навигацију, притисните размак при јединственом подударању за аутоматско довршавање или при тачном подударању за директно убацивање.
 
 🌟 FUNKCIJE FOLDERA
 
@@ -33,8 +33,7 @@
 
 🏠 PODRŠKA ZA LOKALNI LLM
 
-Da li koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte ВИ фасцикле s vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena hosta). Brzo čuvanje, čuvanje putem kontekstnog menija i ubacivanje upita rade na većini lokalnih interfejsa (uključujući Open WebUI).
-
+Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite ВИ фасцикле sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.
 🛠️ KAKO TO FUNKCIONIŠE?
 
 Mod foldera:
@@ -57,7 +56,7 @@ Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGP
 🤝 PROJEKAT OTVORENOG KODA
 ВИ фасцикле je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 AŽURIRANJA:
-Verzija 1.1 (Prečice za aktiviranje promptova): Унесите # у поље за ћаскање bilo kog AI da odmah vidite sve svoje sačuvane upite, filtrirane u realnom vremenu током куцања. Притисните размак при јединственом подударању за аутоматско довршавање или при тачном подударању за убацивање — bez ikad otvaranja panela proširenja. Prijedlozi se pojavljuju s nazivom proširenja kao oznakom, Backspace obnavlja prijedloge nakon nepodudaranja, a automatsko dovršavanje pri jedinstvenoj podudarnosti drži panel stabilnim. Radi na svim podržanim uslugama uključujući lokalne LLM-ove.
-Verzija 1.0.1: Manje ispravke grešaka i poboljšanja stabilnosti.
+Верзија 1.1 (Окидач промптова): Унесите # у bilo које поље AI четовања да бисте у реалном времену видели филтриране сачуване промптове. Користите ↓/↑ за навигацију кроз предлоге, размак за аутодовршавање или убацивање — без отварања панела. Ради на свим подржаним сервисима, укључујући локалне LLM.
 Верзија 1.0: Прво издање! Организујте разговоре из Gemini, Claude, ChatGPT, Copilot и Perplexity у дељене фасцикле. Потпуна библиотека промптова са убацивањем једним кликом, пречице за брзо чување, превлачење и пуштање, мобилна синхронизација, масовне радње, групе картица и подршка за 43 језика.

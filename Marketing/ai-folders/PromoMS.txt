@@ -11,7 +11,7 @@ Folder AI ialah kokpit AI bersatu anda: susun perbualan dari semua alat AI anda 
 🔀 Butang Perbualan Baru: Mulakan perbualan baru di ChatGPT, Claude, Copilot, Gemini atau Perplexity terus dari Mod Arahan — satu butang setiap perkhidmatan.
 ☁️ Penyegerakan prompt: Dayakan penyegerakan awan untuk perpustakaan prompt secara bebas daripada folder.
 📌 Prompt tersemat: Semat prompt penting di bahagian atas perpustakaan.
-⌨️ Pencetus Prompt dengan Cadangan Langsung: Taip # dalam medan sembang mana-mana AI untuk segera melihat semua prompt tersimpan anda — ditapis secara masa nyata semasa anda menaip. Tekan Ruang pada padanan unik untuk melengkapkan secara automatik, atau pada padanan tepat untuk menyuntik terus. Berfungsi dengan ChatGPT, Claude, Gemini, Copilot dan LLM tempatan.
+⌨️ Pencetus Prompt dengan Cadangan Langsung: Taip # dalam medan sembang Gemini untuk segera melihat semua prompt tersimpan anda — ditapis secara masa nyata semasa anda menaip. Gunakan ↓/↑ untuk navigasi, tekan Ruang pada padanan unik untuk melengkapkan secara automatik, atau pada padanan tepat untuk menyuntik terus.
 
 🌟 CIRI-CIRI FOLDER
 
@@ -33,8 +33,7 @@ Folder AI ialah kokpit AI bersatu anda: susun perbualan dari semua alat AI anda 
 
 🏠 SOKONGAN LLM TEMPATAN
 
-Adakah anda menjalankan model AI tempatan (Ollama, LM Studio, Jan, atau yang lain)? Konfigurasikan Folder AI dengan URL tempatan anda — menyokong localhost dan alamat LAN (192.168.x.x, nama hos tersuai). Simpan pantas, simpan melalui menu konteks, dan suntikan gesaan berfungsi di kebanyakan antara muka tempatan (termasuk Open WebUI).
-
+Menjalankan model AI tempatan (Ollama, LM Studio, Jan, atau lain-lain)? Konfigurasikan Folder AI dengan URL tempatan anda — menyokong localhost dan alamat LAN (192.168.x.x, nama hos tersuai). Simpan pantas dan simpan menu konteks juga berfungsi pada antara muka tempatan.
 🛠️ BAGAIMANA IA BERFUNGSI?
 
 Mod Folder:
@@ -57,7 +56,7 @@ Dibina dengan mengutamakan privasi. Hanya meminta akses ke Gemini, Claude, ChatG
 🤝 PROJEK SUMBER TERBUKA
 Folder AI ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelusan dan penghormatan terhadap privasi anda adalah keutamaan tertinggi kami. Anda pembangun atau sekadar ingin tahu? Semak kod, ikuti log perubahan atau sumbang di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 KEMAS KINI:
-Versi 1.1 (Pintasan Pencetus Prompt): Taip # dalam medan sembang mana-mana AI untuk segera melihat semua prompt tersimpan anda, ditapis secara masa nyata semasa anda menaip. Tekan Ruang pada padanan unik untuk melengkapkan secara automatik atau pada padanan tepat untuk menyuntik — tanpa membuka panel sambungan. Cadangan muncul dengan nama sambungan sebagai label, Backspace memulihkan cadangan selepas tiada padanan, dan pelengkapan automatik padanan tunggal mengekalkan kestabilan panel. Berfungsi pada semua perkhidmatan yang disokong termasuk LLM tempatan.
-Versi 1.0.1: Pembetulan pepijat kecil dan penambahbaikan kestabilan.
+Versi 1.1 (Pencetus Prompt): Taip # dalam mana-mana medan chat AI untuk melihat arahan tersimpan anda ditapis dalam masa nyata. Gunakan ↓/↑ untuk navigasi cadangan, Ruang untuk autoisi atau suntik — tanpa membuka panel. Berfungsi pada semua perkhidmatan yang disokong termasuk LLM tempatan.
 Versi 1.0: Keluaran pertama! Susun perbualan dari Gemini, Claude, ChatGPT, Copilot dan Perplexity dalam folder berkongsi. Pustaka arahan lengkap dengan suntikan satu klik, pintasan simpan pantas, seret dan lepas, penyegerakan mudah alih, tindakan pukal, kumpulan tab dan sokongan untuk 43 bahasa.

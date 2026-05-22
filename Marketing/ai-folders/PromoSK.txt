@@ -11,7 +11,7 @@ AI priečinky je váš zjednotený AI kokpit: organizujte konverzácie zo všetk
 🔀 Tlačidlá novej konverzácie: Spustite novú konverzáciu na ChatGPT, Claude, Copilot, Gemini alebo Perplexity priamo z režimu promptov — jedno tlačidlo na službu.
 ☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
 📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
-⌨️ Spúšťač promptov so živými návrhmi: Napíšte # do chatovacieho poľa ľubovoľnej AI a okamžite uvidíte všetky svoje uložené prompty — filtrované v reálnom čase pri písaní. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre priame vloženie. Funguje s ChatGPT, Claude, Gemini, Copilot a lokálnymi LLM.
+⌨️ Spúšťač promptov so živými návrhmi: Napíšte # do chatovacieho poľa Gemini a okamžite uvidíte všetky svoje uložené prompty — filtrované v reálnom čase pri písaní. Pomocou ↓/↑ prechádzajte návrhy, stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre priame vloženie.
 
 🌟 FUNKCIE PRIEČINKOV
 
@@ -33,8 +33,7 @@ AI priečinky je váš zjednotený AI kokpit: organizujte konverzácie zo všetk
 
 🏠 PODPORA LOKÁLNEHO LLM
 
-Používate lokálny AI model (Ollama, LM Studio, Jan alebo iný)? Nakonfigurujte AI priečinky s vašou lokálnou URL — podporuje localhost a LAN adresy (192.168.x.x, vlastné názvy hostiteľov). Rýchle ukladanie, ukladanie cez kontextové menu a vkladanie výziev fungujú na väčšine lokálnych rozhraní (vrátane Open WebUI).
-
+Používate lokálny model AI (Ollama, LM Studio, Jan alebo iný)? Nakonfigurujte AI priečinky s miestnou URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastné názvy hostiteľov). Rýchle ukladanie a ukladanie cez kontextové menu fungujú aj na lokálnych rozhraniach.
 🛠️ AKO TO FUNGUJE?
 
 Režim priečinkov:
@@ -58,7 +57,7 @@ Navrhnuté so súkromím v centre. Vyžaduje prístup iba k Gemini, Claude, Chat
 🤝 OPEN SOURCE PROJEKT
 AI priečinky sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 AKTUALIZÁCIE:
-Verzia 1.1 (Klávesové skratky na spúšťanie výziev): Napíšte # do chatovacieho poľa ľubovoľnej AI a okamžite uvidíte všetky svoje uložené prompty, filtrované v reálnom čase pri písaní. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre vloženie — bez toho, aby ste kedy otvorili panel rozšírenia. Návrhy sa zobrazujú s názvom rozšírenia ako popiskom, Backspace obnoví návrhy po nesúlade a automatické doplnenie pri jedinečnej zhode udržuje panel stabilný. Funguje vo všetkých podporovaných službách vrátane lokálnych LLM.
-Verzia 1.0.1: Drobné opravy chýb a vylepšenia stability.
+Verzia 1.1 (Spúšťač promptov): Zadajte # do ľubovoľného poľa chatu AI a zobrazte si uložené prompty filtrované v reálnom čase. Pomocou ↓/↑ prechádzajte návrhy, medzerníkom ich automaticky dokončite alebo vložte — bez otvorenia panela. Funguje na všetkých podporovaných službách vrátane lokálnych LLM.
 Verzia 1.0: Prvé vydanie! Usporiadajte konverzácie z Gemini, Claude, ChatGPT, Copilot a Perplexity do zdieľaných priečinkov. Kompletná knižnica promptov s vkladaním jedným kliknutím, skratky rýchleho ukladania, drag & drop, mobilná synchronizácia, hromadné akcie, skupiny kariet a podpora 43 jazykov. Podpora lokálnych LLM s konfigurovateľnou URL (localhost a LAN adresy).

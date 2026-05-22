@@ -11,7 +11,7 @@ MI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-es
 🔀 Új Beszélgetés Gombok: Indítson új beszélgetést a ChatGPT-n, Claude-on, Copiloton, Geminin vagy a Perplexityn közvetlenül a Prompt módból — egy gomb szolgáltatásonként.
 ☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
 📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
-⌨️ Prompt-aktiváló élő javaslatokkal: Gépelje be a # jelet bármely AI csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját — valós időben szűrve gépelés közben. Nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a közvetlen beillesztéshez. Működik a ChatGPT, Claude, Gemini, Copilot és helyi LLM-ekkel.
+⌨️ Prompt-aktiváló élő javaslatokkal: Gépelje be a # jelet a Gemini csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját — valós időben szűrve gépelés közben. Használja a ↓/↑ billentyűket a navigáláshoz, majd nyomja meg nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a közvetlen beillesztéshez.
 
 🌟 MAPPAFUNKCIÓK
 
@@ -33,8 +33,7 @@ MI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-es
 
 🏠 HELYI LLM TÁMOGATÁS
 
-Helyi MI modellt használ (Ollama, LM Studio, Jan vagy más)? Konfigurálja a MI mappák alkalmazást helyi URL-lel — támogatja a localhost-ot és LAN-címeket (192.168.x.x, egyéni hosztnév). A gyorsmentés, a jobb gombos mentés és a promptok beillesztése a legtöbb helyi felületen működik (az Open WebUI-t is beleértve).
-
+Helyi AI modellt futtat (Ollama, LM Studio, Jan vagy más)? Konfigurálja a(z) MI mappák-t a helyi URL-jével — támogatja a localhostot és a LAN-címeket (192.168.x.x, egyéni állomásneveket). A gyors mentés és a helyi menüs mentés is működik a helyi felületeken.
 🛠️ HOGYAN MŰKÖDIK?
 
 Mappaüzemmód:
@@ -58,7 +57,7 @@ Az adatvédelmet alapelvként kezelve fejlesztve. Csak a Gemini, Claude, ChatGPT
 🤝 NYÍLT FORRÁSKÓDÚ PROJEKT
 A MI mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az átláthatóság és az adatvédelem tiszteletben tartása a legfontosabb prioritásaink. Fejlesztő, vagy csak kíváncsi? Böngéssze a kódot, kövesse a változásnaplót, vagy járuljon hozzá a GitHubon: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
+
 📢 FRISSÍTÉSEK:
-Verzió 1.1 (Promptindító billentyűparancsok): Gépelje be a # jelet bármely AI csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját, valós időben szűrve gépelés közben. Nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a beillesztéshez — a bővítménypanel megnyitása nélkül. A javaslatok a bővítmény nevével vannak ellátva, a Backspace visszaállítja a javaslatokat nem egyezés után, az egyedi egyezésnél végzett automatikus kiegészítés pedig stabilan tartja a panelt. Minden támogatott szolgáltatáson működik, beleértve a helyi LLM-eket is.
-1.0.1-es verzió: Kisebb hibajavítások és stabilitási fejlesztések.
+1.1-es verzió (Prompt-kiváltó): Írjon # jelet bármely AI-chat mezőbe, hogy valós időben szűrve lássa mentett promptjait. Használja a ↓/↑ billentyűket a javaslatok közötti navigáláshoz, a szóközt az automatikus kiegészítéshez vagy beillesztéshez — a panel megnyitása nélkül. Minden támogatott szolgáltatáson működik, beleértve a helyi LLM-eket.
 1.0-s verzió: Első kiadás! Rendszerezze a Gemini, Claude, ChatGPT, Copilot és Perplexity beszélgetéseit közös mappákban. Teljes prompt-könyvtár egy kattintásos beillesztéssel, gyors mentési parancsikonok, húzás és ejtés, mobilszinkronizáció, tömeges műveletek, lapcsoportok és 43 nyelv támogatása.
