@@ -9,6 +9,12 @@
   if (window.__promptTriggerActive) return;
   window.__promptTriggerActive = true;
 
+  // Matches "#word  #word" (contenteditable, e.g. Gemini) OR "word  word" (textarea,
+  // e.g. Perplexity — no '#' to avoid triggering site-specific token processors).
+  // Two-space separator makes the pattern specific enough to avoid false positives.
+  const SUGG_LINE_RE = /^(?:#[\p{L}\p{N}_-]+(?:\s{2,}#[\p{L}\p{N}_-]+)*|[\p{L}\p{N}_-]+(?:\s{2,}[\p{L}\p{N}_-]+)*)$/u;
+  let _suggTimer = null;
+
   // Re-inserts a space after e.preventDefault() when no prompt matched.
   function insertSpace(el) {
     if (el.isContentEditable) {
@@ -28,6 +34,20 @@
       el.dispatchEvent(new Event('input', { bubbles: true }));
     }
   }
+
+  // Returns the suggestion names currently visible in the editor, or null if none.
+  function readSuggestionNames(el) {
+    const isEditable = el.isContentEditable;
+    const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
+    const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
+    const suggLine =
+      (nonEmpty.length >= 2 && SUGG_LINE_RE.test(nonEmpty[1]) ? nonEmpty[1] : null) ??
+      (nonEmpty.length >= 3 && SUGG_LINE_RE.test(nonEmpty[2]) ? nonEmpty[2] : null);
+    if (!suggLine) return null;
+    return suggLine.split(/\s{2,}/).map(s => s.replace(/^#/, '').trim()).filter(Boolean);
+  }
+
+  // --- Space: inject prompt or show suggestions ---
 
   document.addEventListener('keydown', async (e) => {
     if (e.key !== ' ') return;
@@ -96,12 +116,44 @@
     }
   }, true);
 
-  // Live update of suggestion line as the user types.
-  // Matches "#word  #word" (contenteditable, e.g. Gemini) OR "word  word" (textarea,
-  // e.g. Perplexity — no '#' to avoid triggering site-specific token processors).
-  // Two-space separator makes the pattern specific enough to avoid false positives.
-  const SUGG_LINE_RE = /^(?:#[\p{L}\p{N}_-]+(?:\s{2,}#[\p{L}\p{N}_-]+)*|[\p{L}\p{N}_-]+(?:\s{2,}[\p{L}\p{N}_-]+)*)$/u;
-  let _suggTimer = null;
+  // --- ArrowDown / ArrowUp: cycle through visible suggestions ---
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+
+    const el = document.activeElement;
+    if (!el) return;
+    const isEditable = el.isContentEditable;
+    const isInput = el.tagName === 'TEXTAREA' || el.tagName === 'INPUT';
+    if (!isEditable && !isInput) return;
+
+    const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
+    const firstLine = rawText.split('\n')[0].trim();
+    if (!/^#/u.test(firstLine)) return;
+
+    const names = readSuggestionNames(el);
+    if (!names || names.length === 0) return;
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    const currentName = firstLine.slice(1);
+    const currentIdx = names.indexOf(currentName);
+    const step = e.key === 'ArrowUp' ? -1 : 1;
+    // When nothing is selected yet: ArrowDown → first, ArrowUp → last.
+    const baseIdx = currentIdx === -1 ? (e.key === 'ArrowUp' ? names.length : -1) : currentIdx;
+    const nextIdx = ((baseIdx + step) % names.length + names.length) % names.length;
+    const nextName = names[nextIdx];
+
+    clearTimeout(_suggTimer);
+    _suggTimer = null;
+
+    try {
+      chrome.runtime.sendMessage({ action: 'promptTriggerCycleTab', name: nextName, allNames: names });
+    } catch (_) {}
+  }, true);
+
+  // --- Live update of suggestion line as the user types ---
 
   document.addEventListener('keyup', (e) => {
     if (e.key === ' ') return; // handled by keydown above
