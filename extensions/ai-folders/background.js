@@ -215,6 +215,27 @@ async function handleSuggestUpdate(message, sender) {
   return { status: names.length > 0 ? 'updated' : 'cleared' };
 }
 
+async function handleCycleTab(message, sender) {
+  const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
+  const tabUrl = sender.tab?.url ?? sender.url;
+  const siteKey = getSiteByUrl(tabUrl, localLlmUrl);
+  const selectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
+  if (!selectors) return { status: 'error' };
+  const tabId = sender.tab?.id ?? (await chrome.tabs.query({ active: true, currentWindow: true }))[0]?.id;
+  if (!tabId) return { status: 'error' };
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId },
+      world: 'MAIN',
+      args: [message.allNames, selectors, chrome.i18n.getMessage('extName'), '#' + message.name],
+      func: insertSuggestionsInEditor,
+    });
+  } catch (err) {
+    console.error('Cycle tab failed:', err);
+  }
+  return { status: 'cycled' };
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'promptTriggerLookup') {
     handlePromptTriggerLookup(message, sender)
@@ -226,6 +247,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     handleSuggestUpdate(message, sender)
       .then(sendResponse)
       .catch(() => sendResponse({ status: 'cleared' }));
+    return true;
+  }
+  if (message.action === 'promptTriggerCycleTab') {
+    handleCycleTab(message, sender)
+      .then(sendResponse)
+      .catch(() => sendResponse({ status: 'error' }));
     return true;
   }
   return false;
