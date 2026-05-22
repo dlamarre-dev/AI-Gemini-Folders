@@ -166,6 +166,7 @@
       /* ── Scrollbar (dark mode) ───────────────────────────────────────────── */
       ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.72); }
       ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.90); }
+      body { scrollbar-color: rgba(255,255,255,0.72) transparent; }
     }
 
     /* --- Base --- */
@@ -195,6 +196,9 @@
       transition: background-color 0.2s ease;
       max-height: 576px; /* 600px Chrome popup max − 24px vertical padding (8+16) */
       overflow-y: auto;
+      scrollbar-gutter: stable; /* reserve scrollbar space always so content never shifts */
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0,0,0,0.15) transparent;
     }
 
     h3 {
