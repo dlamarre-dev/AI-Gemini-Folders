@@ -456,7 +456,8 @@ function insertSuggestionsInEditor(suggestions, selectors, extensionLabel, newFi
       // treats '\n' as a paragraph break natively. Using insertParagraph desynchronises
       // Quill's model from the DOM in Firefox MAIN world (wrong element type inserted).
       const line1 = newFirstLine !== undefined ? newFirstLine : firstLine;
-      const labelPart = (extensionLabel && suggestions.length > 0) ? '\n' + extensionLabel : '';
+      const label = extensionLabel ? '== ' + extensionLabel + ' ==' : '';
+      const labelPart = (label && suggestions.length > 0) ? '\n' + label : '';
       const newContent = line1 + (suggestions.length > 0 ? labelPart + '\n' + suggestions.map(n => '#' + n).join('  ') : '');
       document.execCommand('selectAll', false, null);
       document.execCommand('insertText', false, newContent);
@@ -498,7 +499,7 @@ function insertSuggestionsInEditor(suggestions, selectors, extensionLabel, newFi
     if (suggestions.length > 0) {
       document.execCommand('insertParagraph', false, null);
       if (extensionLabel) {
-        document.execCommand('insertText', false, extensionLabel);
+        document.execCommand('insertText', false, '== ' + extensionLabel + ' ==');
         document.execCommand('insertParagraph', false, null);
       }
       document.execCommand('insertText', false, suggestions.map(n => '#' + n).join('  '));
@@ -528,7 +529,7 @@ function insertSuggestionsInEditor(suggestions, selectors, extensionLabel, newFi
     // to avoid triggering site-specific token processors.
     let newContent = line1;
     if (suggestions.length > 0) {
-      if (extensionLabel) newContent += '\n' + extensionLabel;
+      if (extensionLabel) newContent += '\n== ' + extensionLabel + ' ==';
       newContent += '\n' + suggestions.join('  ');
     }
     const proto = editor.tagName === 'TEXTAREA'
