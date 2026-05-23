@@ -1,4 +1,4 @@
-Tus conversaciones de IA están dispersas en cinco sitios distintos. Sigues reescribiendo los mismos prompts. Tus mejores chats desaparecen en historiales interminables de Gemini, Claude, ChatGPT, Copilot y Perplexity.
+﻿Tus conversaciones de IA están dispersas en cinco sitios distintos. Sigues reescribiendo los mismos prompts. Tus mejores chats desaparecen en historiales interminables de Gemini, Claude, ChatGPT, Copilot y Perplexity.
 Carpetas IA es la extensión que necesitas.
 
 Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus herramientas de IA en carpetas compartidas, crea una biblioteca de prompts reutilizables e inyecta prompts directamente en cualquier IA compatible — sin necesidad de copiar y pegar.
@@ -59,5 +59,5 @@ Carpetas de Gemini es un proyecto open source desarrollado con pasión. La trans
 
 
 📢 ACTUALIZACIONES:
-Versión 1.1 (Disparador de prompts): Escribe # en cualquier campo de chat de IA para ver tus prompts filtrados en tiempo real. Usa ↓/↑ para navegar entre sugerencias, Espacio para autocompletar o inyectar — sin abrir jamás el panel. Funciona en todos los servicios compatibles, incluidos los LLM locales.
+Versión 1.1 (Disparador de prompts): Escribe # en cualquier campo de chat de IA para ver tus prompts filtrados en tiempo real. Usa ↓/↑ para navegar entre sugerencias, Espacio para autocompletar o inyectar — sin abrir jamás el panel.
 Versión 1.0: ¡Publicación inicial! Organiza conversaciones de Gemini, Claude, ChatGPT, Copilot y Perplexity en carpetas compartidas. Biblioteca de prompts completa con inyección en un clic, atajos de guardado rápido, arrastrar y soltar, sincronización móvil, acciones en masa, grupos de pestañas y soporte para 43 idiomas. Compatibilidad con LLM locales con URL configurable (localhost y direcciones LAN).

@@ -1,4 +1,4 @@
-Vaši AI razgovori su rasuti po pet različitih sajtova. Stalno ponovo unosite iste upite. Vaši najbolji četovi nestaju u beskonačnim istorijama na Gemini, Claude, ChatGPT, Copilot i Perplexity.
+﻿Vaši AI razgovori su rasuti po pet različitih sajtova. Stalno ponovo unosite iste upite. Vaši najbolji četovi nestaju u beskonačnim istorijama na Gemini, Claude, ChatGPT, Copilot i Perplexity.
 VI fascikle je proširenje koje vam treba.
 
 VI fascikle je vaš jedinstveni AI kokpit: organizujte razgovore iz svih vaših AI alata u deljene fascikle, izgradite biblioteku upita za višestruku upotrebu i ubacujte upite direktno u bilo koji podržani AI — bez kopiranja i lepljenja.
@@ -58,5 +58,5 @@ VI fascikle je projekat otvorenog koda izgrađen sa strašću. Transparentnost i
 
 
 📢 AŽURIRANJA:
-Verzija 1.1 (Okidač promptova): Unesi # u bilo koje polje AI čavrljanja da u realnom vremenu vidiš filtrirane sačuvane promptove. Koristi ↓/↑ za navigaciju kroz predloge, razmak za autodovršavanje ili ubacivanje — bez otvaranja panela. Radi na svim podržanim servisima, uključujući lokalne LLM.
+Verzija 1.1 (Okidač promptova): Unesi # u bilo koje polje AI čavrljanja da u realnom vremenu vidiš filtrirane sačuvane promptove. Koristi ↓/↑ za navigaciju kroz predloge, razmak za autodovršavanje ili ubacivanje — bez otvaranja panela.
 Verzija 1.0: Prvo izdanje! Organizujte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u deljene fascikle. Potpuna biblioteka promptova sa ubacivanjem jednim klikom, prečice za brzo čuvanje, prevlačenje i puštanje, mobilna sinhronizacija, masovne radnje, grupe kartica i podrška za 43 jezika.

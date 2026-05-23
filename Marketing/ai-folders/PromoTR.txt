@@ -1,4 +1,4 @@
-AI sohbetleriniz beş farklı siteye dağılmış durumda. Aynı promptları tekrar tekrar yazıyorsunuz. En iyi sohbetleriniz Gemini, Claude, ChatGPT, Copilot ve Perplexity'deki sonsuz geçmişlerde kayboluyor.
+﻿AI sohbetleriniz beş farklı siteye dağılmış durumda. Aynı promptları tekrar tekrar yazıyorsunuz. En iyi sohbetleriniz Gemini, Claude, ChatGPT, Copilot ve Perplexity'deki sonsuz geçmişlerde kayboluyor.
 YZ Klasörleri ihtiyacınız olan uzantıdır.
 
 YZ Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düzenleyin, yeniden kullanılabilir bir prompt kütüphanesi oluşturun ve promptları desteklenen herhangi bir AI'ye doğrudan enjekte edin — kopyala yapıştır gerekmez.
@@ -59,5 +59,5 @@ Gemini Klasörler, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şef
 
 
 📢 GÜNCELLEMELER:
-Sürüm 1.1 (Prompt Tetikleyici): Herhangi bir AI sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan. Yerel LLM'ler dahil tüm desteklenen hizmetlerde çalışır.
+Sürüm 1.1 (Prompt Tetikleyici): Herhangi bir AI sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan.
 Sürüm 1.0: İlk yayın! Gemini, Claude, ChatGPT, Copilot ve Perplexity sohbetlerini paylaşılan klasörlerde düzenleyin. Tek tıkla ekleme özellikli tam prompt kütüphanesi, hızlı kaydetme kısayolları, sürükle ve bırak, mobil senkronizasyon, toplu işlemler, sekme grupları ve 43 dil desteği. Yapılandırılabilir URL (localhost ve LAN adresleri) ile yerel LLM desteği.

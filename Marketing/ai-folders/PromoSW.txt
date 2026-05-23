@@ -1,4 +1,4 @@
-Mazungumzo yako ya AI yametawanyika kwenye tovuti tano tofauti. Unaendelea kuandika tena maagizo yale yale. Mazungumzo yako bora yanayopotea katika historia zisizo na mwisho kwenye Gemini, Claude, ChatGPT, Copilot, na Perplexity.
+﻿Mazungumzo yako ya AI yametawanyika kwenye tovuti tano tofauti. Unaendelea kuandika tena maagizo yale yale. Mazungumzo yako bora yanayopotea katika historia zisizo na mwisho kwenye Gemini, Claude, ChatGPT, Copilot, na Perplexity.
 Folda za AI ni kiendelezi unachohitaji.
 
 Folda za AI ni kokpit yako ya AI iliyounganishwa: panga mazungumzo kutoka kwa zana zako zote za AI katika folda zilizoshirikiwa, jenga maktaba ya maagizo yanayoweza kutumika tena, na uweke maagizo moja kwa moja katika AI yoyote inayounga mkono — bila kuhitaji kunakili na kubandika.
@@ -59,5 +59,5 @@ Folda za AI ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu fa
 
 
 📢 MASASISHO:
-Toleo 1.1 (Kichocheo cha Kidokezo): Andika # katika uwanja wowote wa mazungumzo wa AI ili uone vidokezo vyako vilivyohifadhiwa vikichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli. Inafanya kazi kwenye huduma zote zinazounga mkono, ikiwemo LLM za ndani.
+Toleo 1.1 (Kichocheo cha Kidokezo): Andika # katika uwanja wowote wa mazungumzo wa AI ili uone vidokezo vyako vilivyohifadhiwa vikichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.
 Toleo 1.0: Chapisho la kwanza! Panga mazungumzo kutoka Gemini, Claude, ChatGPT, Copilot na Perplexity katika folda zilizoshirikiwa. Maktaba kamili ya maagizo na sindano ya kubonyeza mara moja, njia za mkato za kuhifadhi haraka, buruta na uacha, usawazishaji wa simu, vitendo vya wingi, vikundi vya kichupo na usaidizi wa lugha 43.

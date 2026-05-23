@@ -1,4 +1,4 @@
-AI-keskustelusi ovat hajallaan viidellä eri sivustolla. Kirjoitat jatkuvasti samat kehotteet uudelleen. Parhaat keskustelusi katoavat loputtomiin historioihin Geminissä, Claudessa, ChatGPT:ssä, Copilotissa ja Perplexityssä.
+﻿AI-keskustelusi ovat hajallaan viidellä eri sivustolla. Kirjoitat jatkuvasti samat kehotteet uudelleen. Parhaat keskustelusi katoavat loputtomiin historioihin Geminissä, Claudessa, ChatGPT:ssä, Copilotissa ja Perplexityssä.
 AI-kansiot on laajennus, jota tarvitset.
 
 AI-kansiot on yhtenäinen AI-ohjauskeskuksesi: järjestä kaikista AI-työkaluistasi käydyt keskustelut jaetuiksi kansioiksi, rakenna uudelleenkäytettävien kehotteiden kirjasto ja lisää kehotteet suoraan mihin tahansa tuettuun AI:hin — ilman kopiointia ja liittämistä.
@@ -59,5 +59,5 @@ AI-kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvy
 
 
 📢 PÄIVITYKSET:
-Versio 1.1 (Kehotteen laukaisin): Kirjoita # mihin tahansa AI-chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia. Toimii kaikilla tuetuilla palveluilla, mukaan lukien paikalliset LLM:t.
+Versio 1.1 (Kehotteen laukaisin): Kirjoita # mihin tahansa AI-chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia.
 Versio 1.0: Ensijulkaisu! Järjestä Geminin, Clauden, ChatGPT:n, Copilotin ja Perplexityn keskustelut jaetuiksi kansioiksi. Täydellinen kehotekirjasto yhdellä napsautuksella, pikaentallenteen pikanäppäimet, vedä ja pudota, mobiilisynkronointi, joukkotoiminnot, välilehtiryhmät ja tuki 43 kielelle.

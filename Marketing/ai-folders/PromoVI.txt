@@ -1,4 +1,4 @@
-Các cuộc trò chuyện AI của bạn bị phân tán trên năm trang web khác nhau. Bạn cứ phải nhập lại những prompt giống nhau. Những cuộc trò chuyện hay nhất của bạn biến mất vào lịch sử vô tận trên Gemini, Claude, ChatGPT, Copilot và Perplexity.
+﻿Các cuộc trò chuyện AI của bạn bị phân tán trên năm trang web khác nhau. Bạn cứ phải nhập lại những prompt giống nhau. Những cuộc trò chuyện hay nhất của bạn biến mất vào lịch sử vô tận trên Gemini, Claude, ChatGPT, Copilot và Perplexity.
 Thư mục AI là tiện ích mở rộng bạn cần.
 
 Thư mục AI là trung tâm AI thống nhất của bạn: sắp xếp các cuộc trò chuyện từ tất cả các công cụ AI vào các thư mục chung, xây dựng thư viện prompt có thể tái sử dụng, và chèn prompt trực tiếp vào bất kỳ AI nào được hỗ trợ — không cần sao chép và dán.
@@ -59,5 +59,5 @@ Thư mục AI là dự án mã nguồn mở được xây dựng với niềm đ
 
 
 📢 CẬP NHẬT:
-Phiên bản 1.1 (Kích hoạt Prompt): Nhập # vào bất kỳ trường chat AI nào để xem các prompt đã lưu được lọc theo thời gian thực. Dùng ↓/↑ để điều hướng gợi ý, phím Cách để tự hoàn thành hoặc chèn — mà không cần mở bảng. Hoạt động trên tất cả các dịch vụ được hỗ trợ kể cả LLM cục bộ.
+Phiên bản 1.1 (Kích hoạt Prompt): Nhập # vào bất kỳ trường chat AI nào để xem các prompt đã lưu được lọc theo thời gian thực. Dùng ↓/↑ để điều hướng gợi ý, phím Cách để tự hoàn thành hoặc chèn — mà không cần mở bảng.
 Phiên bản 1.0: Ra mắt lần đầu! Tổ chức các cuộc trò chuyện từ Gemini, Claude, ChatGPT, Copilot và Perplexity vào các thư mục chung. Thư viện prompt đầy đủ với chèn một cú nhấp, phím tắt lưu nhanh, kéo và thả, đồng bộ di động, hành động hàng loạt, nhóm tab và hỗ trợ 43 ngôn ngữ. Hỗ trợ LLM cục bộ với URL có thể cấu hình (localhost và địa chỉ LAN).

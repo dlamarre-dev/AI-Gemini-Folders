@@ -1,4 +1,4 @@
-Tvoji AI razgovori su rasuti po pet različitih stranica. Stalno ponovo unosiš iste upite. Tvoji najbolji chatovi nestaju u beskonačnim povijestima na Geminiju, Claudeu, ChatGPT-u, Copilotu i Perplexityju.
+﻿Tvoji AI razgovori su rasuti po pet različitih stranica. Stalno ponovo unosiš iste upite. Tvoji najbolji chatovi nestaju u beskonačnim povijestima na Geminiju, Claudeu, ChatGPT-u, Copilotu i Perplexityju.
 UI mape je proširenje koje ti treba.
 
 UI mape je tvoj objedinjeni AI kokpit: organiziraj razgovore iz svih tvojih AI alata u dijeljene mape, izgradi knjižnicu upita za višekratnu upotrebu i ubacuj upite izravno u bilo koji podržani AI — bez kopiranja i lijepljenja.
@@ -58,5 +58,5 @@ UI mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poš
 
 
 📢 AŽURIRANJA:
-Verzija 1.1 (Okidač upita): Unesi # u bilo koje polje za chat s AI-jem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela. Radi na svim podržanim uslugama, uključujući lokalne LLM.
+Verzija 1.1 (Okidač upita): Unesi # u bilo koje polje za chat s AI-jem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela.
 Verzija 1.0: Prvo izdanje! Organizirajte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u dijeljene mape. Potpuna biblioteka upita s umetanjem jednim klikom, prečaci za brzo spremanje, povuci i ispusti, mobilna sinkronizacija, skupne radnje, grupe kartica i podrška za 43 jezika.
