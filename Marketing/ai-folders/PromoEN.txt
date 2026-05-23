@@ -64,5 +64,4 @@ AI Folders is an open source project built with passion. Transparency and respec
 
 📢 VERSION HISTORY:
 Version 1.1 (Prompt Trigger): Type # in any AI chat field to see your saved prompts filtered in real time. Use ↓/↑ to cycle through suggestions, Space to autocomplete or inject — without ever opening the panel.
-Version 1.0.1: Minor bug fixes and stability improvements.
 Version 1.0: Initial release! Organize conversations from Gemini, Claude, ChatGPT, Copilot, and Perplexity in shared folders. Full prompt library with one-click injection, quick-save shortcuts, drag & drop, mobile sync, bulk actions, tab groups, and support for 43 languages. Local LLM support with configurable URL (localhost and LAN addresses).
