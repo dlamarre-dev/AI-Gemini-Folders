@@ -1,14 +1,14 @@
-Les vostres converses d'IA estan escampades per cinc llocs diferents. Seguiu reescrivint els mateixos prompts. Les vostres millors xats desapareixen en historials interminables de Gemini, Claude, ChatGPT, Copilot i Perplexity.
-Carpetes IA és l'extensió que necessiteu.
+Les teves converses d'IA estan escampades per cinc llocs diferents. Continues reescrivint els mateixos prompts. Les teves millors xats desapareixen en historials interminables de Gemini, Claude, ChatGPT, Copilot i Perplexity.
+Carpetes IA és l'extensió que necessites.
 
-Carpetes IA és el vostre cockpit d'IA unificat: organitzeu converses de totes les vostres eines d'IA en carpetes compartides, creeu una biblioteca de prompts reutilitzables i injecteu prompts directament a qualsevol IA compatible — sense necessitat de copiar i enganxar.
+Carpetes IA és el teu cockpit d'IA unificat: organitza converses de totes les teves eines d'IA en carpetes compartides, crea una biblioteca de prompts reutilitzables i injecta prompts directament a qualsevol IA compatible — sense necessitat de copiar i enganxar.
 
 ✨ MODE PROMPTS
 
 📝 Biblioteca de prompts personal: Canvia al Mode prompts amb un clic al commutador de la capçalera. Desa els teus millors prompts amb títol i text, i troba'ls al moment amb cerca i ordenació (més recents, més antics, A–Z).
 ▶ Injecció amb un sol clic: Fes clic al botó de reproducció (▶) en qualsevol prompt desat per inserir-lo directament al camp d'entrada de la IA activa.
 ✏️ Edició en línia: Fes clic per expandir un prompt i edita el text directament. Els canvis es desen automàticament després d'una breu pausa.
-🔀 Botons de Nova Conversa: Inicieu una nova conversa a ChatGPT, Claude, Copilot, Gemini o Perplexity directament des del Mode Prompt — un botó per servei.
+🔀 Botons de Nova Conversa: Inicia una nova conversa a ChatGPT, Claude, Copilot, Gemini o Perplexity directament des del Mode Prompt — un botó per servei.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
 📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
 ⌨️ Disparador de prompts amb suggeriments en viu: Escriu # al camp de xat de Gemini per veure a l'instant tots els teus prompts desats — filtrats en temps real mentre escrius. Usa ↓/↑ per navegar, prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
@@ -33,7 +33,7 @@ Carpetes IA és el vostre cockpit d'IA unificat: organitzeu converses de totes l
 
 🏠 SUPORT PER A LLM LOCAL
 
-Esteu executant un model d'IA local (Ollama, LM Studio, Jan o un altre)? Configureu Carpetes IA amb el vostre URL local — admet localhost i adreces LAN (192.168.x.x, noms d'host personalitzats). El desament ràpid i des del menú contextual també funcionen en interfícies locals.
+Estàs executant un model d'IA local (Ollama, LM Studio, Jan o un altre)? Configura Carpetes IA amb el teu URL local — admet localhost i adreces LAN (192.168.x.x, noms d'host personalitzats). El desament ràpid i des del menú contextual també funcionen en interfícies locals.
 🛠️ COM FUNCIONA?
 
 Mode carpetes:
@@ -57,5 +57,5 @@ Carpetes IA és un projecte de codi obert construït amb passió. La transparèn
 
 
 📢 ACTUALITZACIONS:
-Versió 1.1 (Disparador de Prompts): Escriviu # a qualsevol camp de xat d'IA per veure els vostres prompts filtrats en temps real. Useu ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell. Funciona a tots els serveis compatibles, inclosos els LLM locals.
+Versió 1.1 (Disparador de Prompts): Escriu # a qualsevol camp de xat d'IA per veure els teus prompts filtrats en temps real. Usa ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell. Funciona a tots els serveis compatibles, inclosos els LLM locals.
 Versió 1.0: Primera publicació! Organitzeu converses de Gemini, Claude, ChatGPT, Copilot i Perplexity en carpetes compartides. Biblioteca de prompts completa amb injecció d'un clic, dreceres de desament ràpid, arrossegar i deixar anar, sincronització mòbil, accions en bloc, grups de pestanyes i suport per a 43 idiomes.

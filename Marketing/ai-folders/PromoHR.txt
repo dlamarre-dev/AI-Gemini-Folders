@@ -1,14 +1,14 @@
-Vaši AI razgovori su rasuti po pet različitih stranica. Stalno ponovo unosite iste upite. Vaši najbolji chatovi nestaju u beskonačnim povijestima na Geminiju, Claudeu, ChatGPT-u, Copilotu i Perplexityju.
-UI mape je proširenje koje vam treba.
+Tvoji AI razgovori su rasuti po pet različitih stranica. Stalno ponovo unosiš iste upite. Tvoji najbolji chatovi nestaju u beskonačnim povijestima na Geminiju, Claudeu, ChatGPT-u, Copilotu i Perplexityju.
+UI mape je proširenje koje ti treba.
 
-UI mape je vaš objedinjeni AI kokpit: organizirajte razgovore iz svih vaših AI alata u dijeljene mape, izgradite knjižnicu upita za višekratnu upotrebu i ubacujte upite izravno u bilo koji podržani AI — bez kopiranja i lijepljenja.
+UI mape je tvoj objedinjeni AI kokpit: organiziraj razgovore iz svih tvojih AI alata u dijeljene mape, izgradi knjižnicu upita za višekratnu upotrebu i ubacuj upite izravno u bilo koji podržani AI — bez kopiranja i lijepljenja.
 
 ✨ NAČIN UPITA
 
 📝 Osobna knjižnica upita: Prebaci na Način upita jednim klikom na prekidač u zaglavlju. Spremi najbolje upite s naslovom i tekstom, pronađi ih odmah pretraživanjem i sortiranjem (najnovije, najstarije, A–Ž).
 ▶ Ubacivanje jednim klikom: Klikni gumb za reprodukciju (▶) na spremljenome upitu kako bi ga ubacio izravno u polje za unos aktivnog AI-ja.
 ✏️ Uređivanje na licu mjesta: Klikni za proširenje upita i uredi tekst izravno. Promjene se automatski spremaju nakon kratke pauze.
-🔀 Gumbi za novi razgovor: Pokrenite novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity izravno iz načina upita — jedan gumb po usluzi.
+🔀 Gumbi za novi razgovor: Pokreni novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity izravno iz načina upita — jedan gumb po usluzi.
 ☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
 📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
 ⌨️ Okidač upita s prijedlozima uživo: Upiši # u polje za chat Gemini da odmah vidiš sve svoje spremljene upite — filtrirane u stvarnom vremenu dok tipkaš. Koristi ↓/↑ za navigaciju, pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za izravno ubacivanje.
@@ -33,7 +33,7 @@ UI mape je vaš objedinjeni AI kokpit: organizirajte razgovore iz svih vaših AI
 
 🏠 PODRŠKA ZA LOKALNI LLM
 
-Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte UI mape s vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođeni nazivi domaćina). Brzo spremanje i spremanje putem kontekstnog izbornika rade i na lokalnim sučeljima.
+Koristiš lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfiguriraj UI mape s tvojim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođeni nazivi domaćina). Brzo spremanje i spremanje putem kontekstnog izbornika rade i na lokalnim sučeljima.
 🛠️ KAKO TO FUNKCIONIRA?
 
 Način mapa:
@@ -58,5 +58,5 @@ UI mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poš
 
 
 📢 AŽURIRANJA:
-Verzija 1.1 (Okidač upita): Unesite # u bilo koje polje za chat s AI-jem kako biste u stvarnom vremenu vidjeli filtrirane spremljene upite. Koristite ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela. Radi na svim podržanim uslugama, uključujući lokalne LLM.
+Verzija 1.1 (Okidač upita): Unesi # u bilo koje polje za chat s AI-jem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela. Radi na svim podržanim uslugama, uključujući lokalne LLM.
 Verzija 1.0: Prvo izdanje! Organizirajte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u dijeljene mape. Potpuna biblioteka upita s umetanjem jednim klikom, prečaci za brzo spremanje, povuci i ispusti, mobilna sinkronizacija, skupne radnje, grupe kartica i podrška za 43 jezika.

@@ -48,7 +48,7 @@ Klikni 📝 na prekidaču gore desno u proširenju.
 Klikni ➕ Dodaj prompt, unesi naslov i tekst i sačuvaj.
 Za korišćenje prompta: proširi ga i klikni ▶ – ubacuje se direktno u aktivni AI.
 Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
-Окидач упита: Унесите # да одмах видите све своје сачуване упите, или наставите да куцате за филтрирање у реалном времену. Притисните размак при јединственом подударању за аутоматско довршавање или при тачном подударању за убацивање.
+Okidač prompta: Upiši # da odmah vidiš sve sačuvane promptove, ili nastavi da kucaš za filtriranje u realnom vremenu. Pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za ubacivanje.
 
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
