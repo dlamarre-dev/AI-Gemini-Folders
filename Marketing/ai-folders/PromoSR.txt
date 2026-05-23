@@ -1,21 +1,21 @@
-Ваши AI разговори су расути по пет различитих сајтова. Стално поново уносите исте упите. Ваши најбољи четови нестају у бесконачним историјама на Gemini, Claude, ChatGPT, Copilot и Perplexity.
-ВИ фасцикле је проширење које вам треба.
+Vaši AI razgovori su rasuti po pet različitih sajtova. Stalno ponovo unosite iste upite. Vaši najbolji četovi nestaju u beskonačnim istorijama na Gemini, Claude, ChatGPT, Copilot i Perplexity.
+VI fascikle je proširenje koje vam treba.
 
-ВИ фасцикле је ваш јединствени AI кокпит: организујте разговоре из свих ваших AI алата у дељене фасцикле, изградите библиотеку упита за вишеструку употребу и убацујте упите директно у било који подржани AI — без копирања и лепљења.
+VI fascikle je vaš jedinstveni AI kokpit: organizujte razgovore iz svih vaših AI alata u deljene fascikle, izgradite biblioteku upita za višestruku upotrebu i ubacujte upite direktno u bilo koji podržani AI — bez kopiranja i lepljenja.
 
 ✨ MOD PROMPTOVA
 
 📝 Lična biblioteka promptova: Prebaci na Mod promptova jednim klikom na prekidač u zaglavlju. Sačuvaj najbolje promptove s naslovom i tekstom, pronađi ih odmah pretragom i sortiranjem (najnovije, najstarije, A–Ž).
 ▶ Ubacivanje jednim klikom: Klikni dugme za reprodukciju (▶) na sačuvanom promptu da ga ubaciš direktno u polje za unos aktivnog AI-ja.
 ✏️ Uređivanje na mestu: Klikni da proširiš prompt i uredi tekst direktno. Promene se automatski čuvaju nakon kratke pauze.
-🔀 Дугмад за нови разговор: Покрените нови разговор на ChatGPT, Claude, Copilot, Gemini или Perplexity директно из режима промптова — по јedno дугме по сервису.
+🔀 Dugmad za novi razgovor: Pokrenite novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity direktno iz režima promptova — po jedno dugme po servisu.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
 ⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat Gemini da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
 
 🌟 FUNKCIJE FOLDERA
 
-⌨️ Тренутна пречица за панел: Отворите панел тренутно из било које картице помоћу Ctrl+Shift+1 (или Cmd+Shift+1 на Mac-у).
+⌨️ Trenutna prečica za panel: Otvori panel odmah s bilo koje kartice pomoću Ctrl+Shift+1 (ili Cmd+Shift+1 na Mac-u).
 ⚡ Brzo čuvanje (Desni klik i prečice): Sačuvaj trenutni razgovor jednostavnim desnim klikom ili koristi prečicu na tastaturi (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo čuvanje» – s vizuelnim upozorenjem ako je već sačuvan!
 ☑️ Višestruki odabir (Masovne radnje): Odaberi više razgovora s potvrdnim okvirima za premještanje ili brisanje jednim klikom.
 📑 Integracija grupa kartica: Otvori cijeli folder jednim klikom kao nativnu, šifriranu bojom grupu kartica Chrome.
@@ -33,12 +33,12 @@
 
 🏠 PODRŠKA ZA LOKALNI LLM
 
-Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite ВИ фасцикле sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.
+Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite VI fascikle sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.
 🛠️ KAKO TO FUNKCIONIŠE?
 
 Mod foldera:
 Otvori razgovor na Gemini, Claude, ChatGPT, Copilot, Perplexity.
-Отворите панел: Ctrl+Shift+1 (или Cmd+Shift+1 на Mac-у).
+Otvori panel: Ctrl+Shift+1 (ili Cmd+Shift+1 na Mac-u).
 Brzo čuvanje: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Sačuvaj u Gemini Foldere».
 Putem proširenja: Klikni ikonu, odaberi folder i sačuvaj.
 Mobilno: Označi 📱 u podnožju da sinhronizuješ foldere s telefonom.
@@ -54,9 +54,9 @@ Okidač prompta: Upiši # da odmah vidiš sve sačuvane promptove, ili nastavi d
 Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
 
 🤝 PROJEKAT OTVORENOG KODA
-ВИ фасцикле je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+VI fascikle je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AŽURIRANJA:
-Верзија 1.1 (Окидач промптова): Унесите # у bilo које поље AI четовања да бисте у реалном времену видели филтриране сачуване промптове. Користите ↓/↑ за навигацију кроз предлоге, размак за аутодовршавање или убацивање — без отварања панела. Ради на свим подржаним сервисима, укључујући локалне LLM.
-Верзија 1.0: Прво издање! Организујте разговоре из Gemini, Claude, ChatGPT, Copilot и Perplexity у дељене фасцикле. Потпуна библиотека промптова са убацивањем једним кликом, пречице за брзо чување, превлачење и пуштање, мобилна синхронизација, масовне радње, групе картица и подршка за 43 језика.
+Verzija 1.1 (Okidač promptova): Unesi # u bilo koje polje AI čavrljanja da u realnom vremenu vidiš filtrirane sačuvane promptove. Koristi ↓/↑ za navigaciju kroz predloge, razmak za autodovršavanje ili ubacivanje — bez otvaranja panela. Radi na svim podržanim servisima, uključujući lokalne LLM.
+Verzija 1.0: Prvo izdanje! Organizujte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u deljene fascikle. Potpuna biblioteka promptova sa ubacivanjem jednim klikom, prečice za brzo čuvanje, prevlačenje i puštanje, mobilna sinhronizacija, masovne radnje, grupe kartica i podrška za 43 jezika.
