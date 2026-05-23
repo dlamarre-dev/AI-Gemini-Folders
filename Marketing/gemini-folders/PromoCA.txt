@@ -11,11 +11,11 @@ Amb la versió 4.0, Carpetes Gemini és el teu veritable cockpit de Gemini: orga
 💎 Enllaç Gem personalitzat: Configura un enllaç al teu Gem favorit i activa'l/desactiva'l amb un clic.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
 📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
-⌨️ Disparador de prompts amb suggeriments en viu: Escriviu # al camp de xat de Gemini per veure a l'instant tots els vostres prompts desats — filtrats en temps real mentre escriviu. Useu ↓/↑ per navegar, premeu Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
+⌨️ Disparador de prompts amb suggeriments en viu: Escriu # al camp de xat de Gemini per veure a l'instant tots els teus prompts desats — filtrats en temps real mentre escrius. Usa ↓/↑ per navegar, prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
 
 🌟 FUNCIONS DE CARPETES
 
-⌨️ Drecera de teclat instantània: Obriu el panell instantàniament des de qualsevol pestanya amb Ctrl+Shift+1 (o Cmd+Shift+1 a Mac).
+⌨️ Drecera de teclat instantània: Obre el panell instantàniament des de qualsevol pestanya amb Ctrl+Shift+1 (o Cmd+Shift+1 a Mac).
 ⚡ Desat ràpid (Clic dret i dreceres): Desa la conversa actual amb un simple clic dret, o utilitza la drecera de teclat (Ctrl+Maj+S o Cmd+Maj+S al Mac) per enviar-la a «⚡ Desat ràpid» – amb una alerta visual si ja estava desada!
 ☑️ Selecció múltiple (Accions massives): Selecciona diverses converses amb caselles de verificació per moure-les o eliminar-les d'un sol clic.
 📑 Integració de grups de pestanyes: Obre una carpeta sencera amb un clic com a grup de pestanyes de Chrome.
@@ -44,7 +44,7 @@ Fes clic a ➕ Afegeix un prompt, introdueix un títol i el teu text, i desa.
 Per utilitzar un prompt: expandeix-lo i fes clic a ▶ – s'injecta directament a Gemini.
 Configura 💎 per apuntar al teu Gem.
 Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
-Disparador de prompts: Escriviu # per veure a l'instant tots els vostres prompts desats, o continueu escrivint per filtrar en temps real. Premeu Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar.
+Disparador de prompts: Escriu # per veure a l'instant tots els teus prompts desats, o continua escrivint per filtrar en temps real. Prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar.
 
 🔒 PRIVACITAT I SEGURETAT
 Construït amb la privacitat com a prioritat. Només sol·licita accés a gemini.google.com i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
@@ -54,12 +54,12 @@ Carpetes Gemini és un projecte de codi obert construït amb passió. La transpa
 
 🤖 TAMBÉ DISPONIBLE: Carpetes IA — L'ACTUALITZACIÓ MULTIPLATAFORMA
 
-Interessat en Carpetes Gemini però també feu servir ChatGPT, Claude, Copilot, Perplexity o un LLM local? Carpetes IA és el pas natural següent: una única extensió per organitzar converses a través de totes les vostres eines d'IA, amb el mateix sistema de carpetes, la biblioteca de prompts i la injecció amb un clic disponibles a Carpetes Gemini.
+Interessat en Carpetes Gemini però també fas servir ChatGPT, Claude, Copilot, Perplexity o un LLM local? Carpetes IA és el pas natural següent: una única extensió per organitzar converses a través de totes les teves eines d'IA, amb el mateix sistema de carpetes, la biblioteca de prompts i la injecció amb un clic disponibles a Carpetes Gemini.
 
 👉 Instal·lar Carpetes IA: __AF_STORE_URL__
 
 📢 ACTUALITZACIONS:
-Versió 4.2 (Disparador de Prompts): Escriviu # al camp de xat de Gemini per veure els vostres prompts filtrats en temps real. Useu ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell.
+Versió 4.2 (Disparador de Prompts): Escriu # al camp de xat de Gemini per veure els teus prompts filtrats en temps real. Usa ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell.
 Versió 4.1.1: Correccions menors d'errors i millores d'estabilitat.
 Versió 4.1 (Expansió global i enfortiment): 16 nous idiomes porten Carpetes Gemini a 43 localitzacions arreu del món — idiomes nòrdics, els estats bàltics i cobertura europea i del sud-est asiàtic ampliada. Corregida una condició de cursa que podia perdre silenciosament un desat en clics ràpids. Injecció de prompts modernitzada amb InputEvent, substituint l'execCommand obsolet. Pipeline d'importació endurit contra URL malicioses en fitxers de còpia de seguretat. S'ha corregit un error crític de seguretat de dades: activar la sincronització de prompts amb l'emmagatzematge quasi ple podia esborrar silenciosament tots els prompts desats. L'emmagatzematge ara utilitza escriptures fragmentades per mantenir-se dins dels límits de Chrome, amb missatges d'error clars quan és ple.
 Versió 4.0 (Biblioteca de prompts): L'actualització més ambiciosa fins ara! Mode prompts completament nou: desa els teus millors prompts, edita'ls en línia i injecta'ls directament a Gemini amb un sol clic.

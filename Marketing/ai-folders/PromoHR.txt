@@ -11,11 +11,11 @@ UI mape je vaš objedinjeni AI kokpit: organizirajte razgovore iz svih vaših AI
 🔀 Gumbi za novi razgovor: Pokrenite novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity izravno iz načina upita — jedan gumb po usluzi.
 ☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
 📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
-⌨️ Okidač upita s prijedlozima uživo: Upišite # u polje za chat Gemini kako biste odmah vidjeli sve svoje spremljene upite — filtrirane u stvarnom vremenu dok tipkate. Koristite ↓/↑ za navigaciju, pritisnite razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za izravno ubacivanje.
+⌨️ Okidač upita s prijedlozima uživo: Upiši # u polje za chat Gemini da odmah vidiš sve svoje spremljene upite — filtrirane u stvarnom vremenu dok tipkaš. Koristi ↓/↑ za navigaciju, pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za izravno ubacivanje.
 
 🌟 ZNAČAJKE MAPA
 
-⌨️ Trenutna tipkovnička prečica: Otvorite ploču odmah s bilo kojeg kartice pomoću Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
+⌨️ Trenutna tipkovnička prečica: Otvori ploču odmah s bilo kojeg kartice pomoću Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
 ⚡ Brzo spremi (Desni klik i prečaci): Spremi trenutni razgovor jednostavnim desnim klikom ili koristi prečac na tipkovnici (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo spremi» – s vizualnim upozorenjem ako je već spremljeno!
 ☑️ Višestruki odabir (Masovne radnje): Odaberi više razgovora s potvrdnim okvirima za premještanje ili brisanje jednim klikom.
 📑 Integracija grupa kartica: Otvori cijelu mapu jednim klikom kao izvornu, bojama kodiranu grupu kartica Chrome.
@@ -38,7 +38,7 @@ Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurirajte UI
 
 Način mapa:
 Otvori razgovor na Gemini, Claude, ChatGPT, Copilot, Perplexity.
-Otvorite ploču: Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
+Otvori ploču: Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
 Brzo spremi: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Spremi u UI mape».
 Putem dodatka: Klikni ikonu, odaberi mapu i spremi.
 Mobilno: Označi 📱 u podnožju za sinkronizaciju mapa s telefonom.
@@ -48,7 +48,7 @@ Klikni 📝 na prekidaču gore desno u dodatku.
 Klikni ➕ Dodaj upit, unesi naslov i tekst i spremi.
 Za korištenje upita: proširi ga i klikni ▶ – ubacuje se izravno u aktivni AI.
 Za prikvačivanje upita: klikni 📍 – premješta se na vrh popisa.
-Okidač upita: Upišite # kako biste odmah vidjeli sve svoje spremljene upite, ili nastavite tipkati za filtriranje u stvarnom vremenu. Pritisnite razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za ubacivanje.
+Okidač upita: Upiši # da odmah vidiš sve svoje spremljene upite, ili nastavi tipkati za filtriranje u stvarnom vremenu. Pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za ubacivanje.
 
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem Chrome Sync: bez poslužitelja trećih strana, bez telemetrije.
