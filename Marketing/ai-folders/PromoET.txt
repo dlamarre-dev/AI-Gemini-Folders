@@ -1,4 +1,4 @@
-Teie AI-vestlused on hajutatud viiele erinevale saidile. Te kirjutate ikka samu käsklusi uuesti. Teie parimad vestlused kaovad lõpututesse ajalugudesse Geminis, Claude'is, ChatGPT-s, Copilotis ja Perplexitys.
+﻿Teie AI-vestlused on hajutatud viiele erinevale saidile. Te kirjutate ikka samu käsklusi uuesti. Teie parimad vestlused kaovad lõpututesse ajalugudesse Geminis, Claude'is, ChatGPT-s, Copilotis ja Perplexitys.
 AI kaustad on laiendus, mida vajate.
 
 AI kaustad on teie ühtne AI-juhtimiskeskus: korraldage kõigi AI-tööriistade vestlused jagatud kaustadesse, looge korduvkasutatavate käskluste teek ja lisage käsklused otse mistahes toetatud AI-sse — ilma kopeerimise ja kleepimiseta.
@@ -58,5 +58,5 @@ AI kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sin
 
 
 📢 UUENDUSED:
-Versioon 1.1 (Viipade käivitaja): Sisestage # mis tahes AI vestlusväljale, et näha salvestatud viipasid reaalajas filtreerituna. Kasutage ↓/↑ soovituste vahel liikumiseks, Tühikut automaatseks täitmiseks või lisamiseks — ilma paneeli avamata. Töötab kõigil toetatud teenustel, sealhulgas kohalikel LLM-idel.
+Versioon 1.1 (Viipade käivitaja): Sisestage # mis tahes AI vestlusväljale, et näha salvestatud viipasid reaalajas filtreerituna. Kasutage ↓/↑ soovituste vahel liikumiseks, Tühikut automaatseks täitmiseks või lisamiseks — ilma paneeli avamata.
 Versioon 1.0: Esimene väljalase! Korraldage Gemini, Claude, ChatGPT, Copilot ja Perplexity vestlused jagatud kaustadesse. Täielik viipade teek ühe klõpsuga lisamisega, kiirsalvestuse otseteed, lohistamine, mobiilsünkroniseerimine, hulgioperatsioonid, vahelehtede rühmad ja tugi 43 keelele.

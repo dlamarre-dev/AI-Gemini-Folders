@@ -1,4 +1,4 @@
-Perbualan AI anda tersebar di lima laman yang berbeza. Anda terus menaip semula arahan yang sama. Perbualan terbaik anda hilang dalam sejarah tanpa henti di Gemini, Claude, ChatGPT, Copilot, dan Perplexity.
+﻿Perbualan AI anda tersebar di lima laman yang berbeza. Anda terus menaip semula arahan yang sama. Perbualan terbaik anda hilang dalam sejarah tanpa henti di Gemini, Claude, ChatGPT, Copilot, dan Perplexity.
 Folder AI ialah sambungan yang anda perlukan.
 
 Folder AI ialah kokpit AI bersatu anda: susun perbualan dari semua alat AI anda dalam folder berkongsi, bina perpustakaan arahan yang boleh digunakan semula, dan suntik arahan terus ke mana-mana AI yang disokong — tanpa perlu menyalin dan menampal.
@@ -58,5 +58,5 @@ Folder AI ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelus
 
 
 📢 KEMAS KINI:
-Versi 1.1 (Pencetus Prompt): Taip # dalam mana-mana medan chat AI untuk melihat arahan tersimpan anda ditapis dalam masa nyata. Gunakan ↓/↑ untuk navigasi cadangan, Ruang untuk autoisi atau suntik — tanpa membuka panel. Berfungsi pada semua perkhidmatan yang disokong termasuk LLM tempatan.
+Versi 1.1 (Pencetus Prompt): Taip # dalam mana-mana medan chat AI untuk melihat arahan tersimpan anda ditapis dalam masa nyata. Gunakan ↓/↑ untuk navigasi cadangan, Ruang untuk autoisi atau suntik — tanpa membuka panel.
 Versi 1.0: Keluaran pertama! Susun perbualan dari Gemini, Claude, ChatGPT, Copilot dan Perplexity dalam folder berkongsi. Pustaka arahan lengkap dengan suntikan satu klik, pintasan simpan pantas, seret dan lepas, penyegerakan mudah alih, tindakan pukal, kumpulan tab dan sokongan untuk 43 bahasa.

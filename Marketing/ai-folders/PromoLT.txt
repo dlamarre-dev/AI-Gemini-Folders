@@ -1,4 +1,4 @@
-Jūsų AI pokalbiai išsibarstyti per penkis skirtingus puslapius. Jūs nuolat iš naujo įvedate tuos pačius raginimus. Geriausi jūsų pokalbiai dingsta begalinėse istorijose Gemini, Claude, ChatGPT, Copilot ir Perplexity platformose.
+﻿Jūsų AI pokalbiai išsibarstyti per penkis skirtingus puslapius. Jūs nuolat iš naujo įvedate tuos pačius raginimus. Geriausi jūsų pokalbiai dingsta begalinėse istorijose Gemini, Claude, ChatGPT, Copilot ir Perplexity platformose.
 AI aplankai yra plėtinys, kurio jums reikia.
 
 AI aplankai yra jūsų vieninga AI valdymo centras: tvarkykite visų AI įrankių pokalbius bendrose aplankuose, kurkite daugkartinio naudojimo raginimų biblioteką ir įterpkite raginimus tiesiogiai į bet kurią palaikomą AI — be kopijavimo ir įklijavimo.
@@ -58,5 +58,5 @@ AI aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pa
 
 
 📢 ATNAUJINIMAI:
-Versija 1.1 (Raginimų paleidiklis): Įveskite # bet kuriame AI pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio. Veikia visose palaikomose paslaugose, įskaitant vietinius LLM.
+Versija 1.1 (Raginimų paleidiklis): Įveskite # bet kuriame AI pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio.
 Versija 1.0: Pirmasis leidimas! Tvarkykite pokalbius iš Gemini, Claude, ChatGPT, Copilot ir Perplexity bendrose aplankuose. Pilna raginimų biblioteka su vieno paspaudimo įterpimu, sparčiojo įrašymo spartieji klavišai, vilkimas ir numetimas, mobilioji sinchronizacija, masiniai veiksmai, skirtukų grupės ir palaikymas 43 kalbų.

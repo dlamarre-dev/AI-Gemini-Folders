@@ -1,4 +1,4 @@
-Jūsu AI sarunas ir izkaisītas pa piecām dažādām vietnēm. Jūs nemitīgi pārtipat vienas un tās pašas uzvednes. Jūsu labākās sarunas pazūd bezgalīgās vēsturēs Gemini, Claude, ChatGPT, Copilot un Perplexity platformās.
+﻿Jūsu AI sarunas ir izkaisītas pa piecām dažādām vietnēm. Jūs nemitīgi pārtipat vienas un tās pašas uzvednes. Jūsu labākās sarunas pazūd bezgalīgās vēsturēs Gemini, Claude, ChatGPT, Copilot un Perplexity platformās.
 AI mapes ir paplašinājums, kas jums nepieciešams.
 
 AI mapes ir jūsu vienotais AI vadības panelis: kārtojiet sarunas no visiem AI rīkiem koplietotās mapēs, veidojiet atkārtoti izmantojamu uzvedņu bibliotēku un ievietojiet uzvednes tieši jebkurā atbalstītajā AI — bez kopēšanas un ielīmēšanas.
@@ -58,5 +58,5 @@ AI mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība u
 
 
 📢 ATJAUNINĀJUMI:
-Versija 1.1 (Uzvedņu aktivizētājs): Ievadiet # jebkurā AI tērzēšanas laukā, lai reāllaikā filtrētu saglabātās uzvednes. Izmantojiet ↓/↑, lai pārvietotos starp ieteikumiem, Atstarpi automātiskai pabeigšanai vai ievietošanai — neatverot paneli. Darbojas visos atbalstītajos pakalpojumos, ieskaitot vietējos LLM.
+Versija 1.1 (Uzvedņu aktivizētājs): Ievadiet # jebkurā AI tērzēšanas laukā, lai reāllaikā filtrētu saglabātās uzvednes. Izmantojiet ↓/↑, lai pārvietotos starp ieteikumiem, Atstarpi automātiskai pabeigšanai vai ievietošanai — neatverot paneli.
 Versija 1.0: Pirmais laidiens! Kārtojiet sarunas no Gemini, Claude, ChatGPT, Copilot un Perplexity koplietotās mapēs. Pilna uzvedņu bibliotēka ar viena klikšķa ievietošanu, ātrās saglabāšanas īsinājumtaustiņi, vilkšana un nomešana, mobilo ierīču sinhronizācija, lielapjoma darbības, ciļņu grupas un atbalsts 43 valodām.

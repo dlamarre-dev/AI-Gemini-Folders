@@ -1,4 +1,4 @@
-Dina AI-konversationer är utspridda över fem olika sidor. Du skriver ständigt om samma promptar. Dina bästa chattar försvinner i oändliga historiker på Gemini, Claude, ChatGPT, Copilot och Perplexity.
+﻿Dina AI-konversationer är utspridda över fem olika sidor. Du skriver ständigt om samma promptar. Dina bästa chattar försvinner i oändliga historiker på Gemini, Claude, ChatGPT, Copilot och Perplexity.
 AI-mappar är tillägget du behöver.
 
 AI-mappar är din enhetliga AI-kontrollpanel: organisera konversationer från alla dina AI-verktyg i delade mappar, bygg ett bibliotek med återanvändbara promptar och injicera promptar direkt i valfri AI som stöds — utan att behöva kopiera och klistra in.
@@ -59,5 +59,5 @@ AI-mappar är ett öppen källkod-projekt byggt med passion. Transparens och res
 
 
 📢 UPPDATERINGAR:
-Version 1.1 (Promptutlösare): Skriv # i valfritt AI-chattfält för att se dina sparade promptar filtrerade i realtid. Använd ↓/↑ för att navigera bland förslag, Blanksteg för att autokomplettera eller injicera — utan att öppna panelen. Fungerar på alla stödda tjänster inklusive lokala LLM:er.
+Version 1.1 (Promptutlösare): Skriv # i valfritt AI-chattfält för att se dina sparade promptar filtrerade i realtid. Använd ↓/↑ för att navigera bland förslag, Blanksteg för att autokomplettera eller injicera — utan att öppna panelen.
 Version 1.0: Första utgåvan! Organisera konversationer från Gemini, Claude, ChatGPT, Copilot och Perplexity i delade mappar. Komplett promptbibliotek med ett-klicksinjektion, genvägar för snabbspara, dra och släpp, mobilsynkronisering, massåtgärder, flikgrupper och stöd för 43 språk.
