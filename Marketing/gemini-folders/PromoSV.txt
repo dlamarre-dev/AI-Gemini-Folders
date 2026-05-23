@@ -28,7 +28,7 @@ Med version 4.0 blir Gemini-mappar din verkliga Gemini-cockpit: organisera konve
 ⇅ Anpassad sortering: Sortera mappar och konversationer (Nyaste, Äldsta, A–Ö) med ändringar som omedelbart speglas i mobilsynkroniseringen.
 🤖 Smart identifiering och sökning: Automatisk förifyllning av konversationens exakta titel och ett realtidssökfält.
 ☁️ Molnsynkronisering och säkerhetskopiering: Åtkomst till din organisation på alla enheter och exportera data som JSON.
-🎨 Material 3-design och flerspråkig: Ultrakompakt gränssnitt med helt anpassade modala dialogrutor, automatiskt mörkt läge och stöd för 27 språk!
+🎨 Material 3-design och flerspråkig: Ultrakompakt gränssnitt med helt anpassade modala dialogrutor, automatiskt mörkt läge och stöd för 43 språk!
 
 🛠️ HUR FUNGERAR DET?
 

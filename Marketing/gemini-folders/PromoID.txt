@@ -28,7 +28,7 @@ Dengan versi 4.0, Folder Gemini menjadi kokpit Gemini Anda yang sesungguhnya: su
 ⇅ Pengurutan Kustom: Urutkan folder dan percakapan secara langsung (Terbaru, Terlama, A-Z) dengan perubahan yang langsung tercermin dalam sinkronisasi mobile Anda.
 🤖 Deteksi Cerdas & Pencarian: Pengisian otomatis judul percakapan yang tepat dan bilah pencarian real time.
 ☁️ Sinkronisasi Cloud & Cadangan: Akses organisasi Anda di semua perangkat dan ekspor data sebagai JSON.
-🎨 Desain Material 3 & Multibahasa: Antarmuka ultra-kompak dengan dialog modal yang sepenuhnya kustom, mode gelap otomatis, dan dukungan 27 bahasa!
+🎨 Desain Material 3 & Multibahasa: Antarmuka ultra-kompak dengan dialog modal yang sepenuhnya kustom, mode gelap otomatis, dan dukungan 43 bahasa!
 
 🛠️ CARA KERJANYA?
 

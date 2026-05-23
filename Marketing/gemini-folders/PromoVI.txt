@@ -28,7 +28,7 @@ Với phiên bản 4.0, Thư mục Gemini trở thành buồng lái Gemini thự
 ⇅ Sắp xếp tùy chỉnh: Sắp xếp thư mục và cuộc trò chuyện ngay lập tức (Mới nhất, Cũ nhất, A-Z) với thay đổi phản ánh ngay trong đồng bộ di động.
 🤖 Phát hiện thông minh & Tìm kiếm: Tự động điền tiêu đề chính xác của cuộc trò chuyện và thanh tìm kiếm thời gian thực.
 ☁️ Đồng bộ & Sao lưu đám mây: Truy cập tổ chức của bạn trên mọi thiết bị và xuất dữ liệu dưới dạng JSON.
-🎨 Material 3 Design & Đa ngôn ngữ: Giao diện siêu nhỏ gọn với hộp thoại modal tùy chỉnh hoàn toàn, chế độ tối tự động và hỗ trợ 27 ngôn ngữ!
+🎨 Material 3 Design & Đa ngôn ngữ: Giao diện siêu nhỏ gọn với hộp thoại modal tùy chỉnh hoàn toàn, chế độ tối tự động và hỗ trợ 43 ngôn ngữ!
 
 🛠️ CÁCH HOẠT ĐỘNG?
 

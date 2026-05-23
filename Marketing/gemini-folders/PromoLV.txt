@@ -28,7 +28,7 @@ Ar versiju 4.0 Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sar
 ⇅ Pielāgota kārtošana: Kārtoj mapes un sarunas (Jaunākās, Vecākās, A–Z) ar izmaiņām, kas tūlīt atspoguļojas mobilajā sinhronizācijā.
 🤖 Viedā noteikšana un meklēšana: Automātiska sarunas precīzā virsraksta aizpildīšana un reāllaika meklēšanas josla.
 ☁️ Mākoņa sinhronizācija un dublēšana: Piekļuve organizācijai visās ierīcēs un datu eksportēšana JSON formātā.
-🎨 Material 3 dizains un daudzvalodu: Īpaši kompakts interfeiss ar pilnībā pielāgotiem modālo dialogu logiem, automātisks tumšais režīms un atbalsts 27 valodām!
+🎨 Material 3 dizains un daudzvalodu: Īpaši kompakts interfeiss ar pilnībā pielāgotiem modālo dialogu logiem, automātisks tumšais režīms un atbalsts 43 valodām!
 
 🛠️ KĀ TAS DARBOJAS?
 

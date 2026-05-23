@@ -28,7 +28,7 @@ Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de 
 ⇅ Ordenación personalizada: Ordena carpetas y conversaciones al vuelo (Más recientes, Más antiguos, A-Z) con cambios reflejados al instante en la sincronización móvil.
 🤖 Detección inteligente y Búsqueda: Relleno automático del título exacto de tu conversación y barra de búsqueda en tiempo real.
 ☁️ Sincronización en la nube y Copia de seguridad: Accede a tu organización desde todos tus dispositivos y exporta tus datos en JSON.
-🎨 Diseño Material 3 y Multilingüe: Interfaz ultracompacta con diálogos totalmente personalizados, modo oscuro automático y soporte para 27 idiomas.
+🎨 Diseño Material 3 y Multilingüe: Interfaz ultracompacta con diálogos totalmente personalizados, modo oscuro automático y soporte para 43 idiomas.
 
 🛠️ ¿CÓMO FUNCIONA?
 

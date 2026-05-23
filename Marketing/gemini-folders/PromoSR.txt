@@ -11,7 +11,7 @@ S verzijom 4.0 Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgo
 💎 Prilagođena Gem veza: Konfiguriši vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
-⌨️ Окидач упита са уживо предлозима: Унесите # у поље за ћаскање Gemini да одмах видите све своје сачуване упите — филтрирани у реалном времену током куцања. Користите ↓/↑ за навигацију, притисните размак при јединственом подударању за аутоматско довршавање или при тачном подударању за директно убацивање.
+⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat Gemini da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
 
 🌟 FUNKCIJE FOLDERA
 
@@ -28,7 +28,7 @@ S verzijom 4.0 Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgo
 ⇅ Prilagođeno sortiranje: Sortiraj foldere i razgovore (Najnovije, Najstarije, A–Ž) s promjenama koje se odmah ogledaju u mobilnoj sinhronizaciji.
 🤖 Pametno prepoznavanje i pretraga: Automatsko prethodno popunjavanje tačnog naslova razgovora i traka za pretragu u realnom vremenu.
 ☁️ Sinhronizacija u oblaku i pravljenje rezervnih kopija: Pristup organizaciji na svim uređajima i izvoz podataka kao JSON.
-🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloškim okvirima, automatski tamni način i podrška za 27 jezika!
+🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloškim okvirima, automatski tamni način i podrška za 43 jezika!
 
 🛠️ KAKO TO FUNKCIONIŠE?
 

@@ -28,7 +28,7 @@ Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi kesku
 ⇅ Mukautettu lajittelu: Lajittele kansiot ja keskustelut (Uusimmat, Vanhimmat, A–Ö) muutosten heijastuessa välittömästi mobiilisynkronointiin.
 🤖 Älykäs tunnistus ja haku: Automaattinen keskustelun tarkan otsikon esitäyttö ja reaaliaikainen hakupalkki.
 ☁️ Pilvisynkronointi ja varmuuskopiointi: Pääsy järjestelyyn kaikilla laitteilla ja tietojen vienti JSON-muodossa.
-🎨 Material 3 -muotoilu ja monikielinen: Erittäin kompakti käyttöliittymä täysin mukautetuilla modaali-dialogeilla, automaattinen tumma tila ja tuki 27 kielelle!
+🎨 Material 3 -muotoilu ja monikielinen: Erittäin kompakti käyttöliittymä täysin mukautetuilla modaali-dialogeilla, automaattinen tumma tila ja tuki 43 kielelle!
 
 🛠️ MITEN SE TOIMII?
 

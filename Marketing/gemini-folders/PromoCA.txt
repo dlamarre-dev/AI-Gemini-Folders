@@ -28,7 +28,7 @@ Amb la versió 4.0, Carpetes Gemini és el teu veritable cockpit de Gemini: orga
 ⇅ Ordenació personalitzada: Ordena carpetes i converses (Més recents, Més antigues, A–Z) amb canvis que es reflecteixen immediatament a la sincronització mòbil.
 🤖 Detecció intel·ligent i cerca: Emplenament previ automàtic del títol exact de la conversa i una barra de cerca en temps real.
 ☁️ Sincronització al núvol i còpia de seguretat: Accés a l'organització a tots els dispositius i exportació de dades en JSON.
-🎨 Disseny Material 3 i multilingüe: Interfície ultracompacta amb diàlegs modals completament personalitzats, mode fosc automàtic i suport per a 27 idiomes!
+🎨 Disseny Material 3 i multilingüe: Interfície ultracompacta amb diàlegs modals completament personalitzats, mode fosc automàtic i suport per a 43 idiomes!
 
 🛠️ COM FUNCIONA?
 
@@ -54,7 +54,7 @@ Carpetes Gemini és un projecte de codi obert construït amb passió. La transpa
 
 🤖 TAMBÉ DISPONIBLE: Carpetes IA — L'ACTUALITZACIÓ MULTIPLATAFORMA
 
-Interessat en Carpetes Gemini però també feu servir ChatGPT, Claude, Copilot, Perplexity o un LLM local? Carpetes IA és el pas natural següent: una única extensió per organitzar converses a través de tots els vostres eines d'IA, amb el mateix sistema de carpetes, la biblioteca de prompts i la injecció amb un clic disponibles a Carpetes Gemini.
+Interessat en Carpetes Gemini però també feu servir ChatGPT, Claude, Copilot, Perplexity o un LLM local? Carpetes IA és el pas natural següent: una única extensió per organitzar converses a través de totes les vostres eines d'IA, amb el mateix sistema de carpetes, la biblioteca de prompts i la injecció amb un clic disponibles a Carpetes Gemini.
 
 👉 Instal·lar Carpetes IA: __AF_STORE_URL__
 

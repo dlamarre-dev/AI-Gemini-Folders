@@ -28,7 +28,7 @@ Su versija 4.0 Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbiu
 ⇅ Tinkinamas rikiavimas: Rikiuok aplankus ir pokalbius (Naujausi, Seniausi, A–Ž) su pakeitimais, kurie iš karto atsispindi mobiliojo ryšio sinchronizavime.
 🤖 Išmanus aptikimas ir paieška: Automatinis tikslaus pokalbio pavadinimo pildymas ir realiojo laiko paieškos juosta.
 ☁️ Debesies sinchronizavimas ir atsarginės kopijos: Prieiga prie organizavimo visuose įrenginiuose ir duomenų eksportavimas JSON formatu.
-🎨 „Material 3" dizainas ir daugiakalbis: Itin kompaktiškas sąsaja su visiškai tinkintais modaliniais dialogo langais, automatinis tamsus režimas ir 27 kalbų palaikymas!
+🎨 „Material 3" dizainas ir daugiakalbis: Itin kompaktiškas sąsaja su visiškai tinkintais modaliniais dialogo langais, automatinis tamsus režimas ir 43 kalbų palaikymas!
 
 🛠️ KAIP TAI VEIKIA?
 

@@ -11,7 +11,7 @@ AI-mappen is uw uniforme AI-cockpit: organiseer gesprekken van al uw AI-tools in
 🔀 Knoppen Nieuw Gesprek: Start een nieuw gesprek op ChatGPT, Claude, Copilot, Gemini of Perplexity direct vanuit de Promptmodus — één knop per dienst.
 ☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
 📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
-⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van Gemini om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
+⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van Gemini om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
 
 🌟 MAPFUNCTIES
 

@@ -11,7 +11,7 @@
 🔀 Дугмад за нови разговор: Покрените нови разговор на ChatGPT, Claude, Copilot, Gemini или Perplexity директно из режима промптова — по јedno дугме по сервису.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
-⌨️ Окидач упита са уживо предлозима: Унесите # у поље за ћаскање Gemini да одмах видите све своје сачуване упите — филтрирани у реалном времену током куцања. Користите ↓/↑ за навигацију, притисните размак при јединственом подударању за аутоматско довршавање или при тачном подударању за директно убацивање.
+⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat Gemini da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
 
 🌟 FUNKCIJE FOLDERA
 

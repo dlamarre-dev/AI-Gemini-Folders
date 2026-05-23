@@ -28,7 +28,7 @@ Com a versão 4.0, Pastas Gemini se torna seu verdadeiro cockpit do Gemini: orga
 ⇅ Ordenação personalizada: Ordene pastas e conversas na hora (Mais recentes, Mais antigas, A-Z) com reflexo imediato na sincronização mobile.
 🤖 Detecção inteligente e Pesquisa: Preenchimento automático do título exato da conversa e barra de pesquisa em tempo real.
 ☁️ Sincronização na Nuvem e Backup: Acesse sua organização em todos os seus dispositivos e exporte seus dados em JSON.
-🎨 Design Material 3 e Multilíngue: Interface ultra-compacta com diálogos totalmente personalizados, modo escuro automático e suporte para 27 idiomas!
+🎨 Design Material 3 e Multilíngue: Interface ultra-compacta com diálogos totalmente personalizados, modo escuro automático e suporte para 43 idiomas!
 
 🛠️ COMO FUNCIONA?
 

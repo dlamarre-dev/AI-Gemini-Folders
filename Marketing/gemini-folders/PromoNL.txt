@@ -11,7 +11,7 @@ Met versie 4.0 wordt Gemini-mappen uw echte Gemini-cockpit: organiseer gesprekke
 💎 Aangepaste Gem-link: Stel een link in naar uw favoriete Gem en schakel deze in/uit met één klik. Wanneer actief, opent de knop "Nieuw gesprek" uw Gem in plaats van de standaard chat.
 ☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
 📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
-⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van Gemini om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
+⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van Gemini om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
 
 🌟 MAPFUNCTIES
 
@@ -28,7 +28,7 @@ Met versie 4.0 wordt Gemini-mappen uw echte Gemini-cockpit: organiseer gesprekke
 ⇅ Aangepast sorteren: Sorteer mappen en gesprekken direct (Nieuwste, Oudste, A-Z) met wijzigingen die direct zichtbaar zijn in uw mobiele synchronisatie.
 🤖 Slimme detectie en zoeken: Automatisch vooraf invullen van de exacte titel van uw gesprek en een realtime zoekbalk.
 ☁️ Cloudsynchronisatie en back-up: Toegang tot uw organisatie op al uw apparaten en exporteer uw gegevens als JSON.
-🎨 Material 3-ontwerp en meertalig: Ultracompact interface met volledig aangepaste modaldialoogvensters, automatische donkere modus en ondersteuning voor 27 talen!
+🎨 Material 3-ontwerp en meertalig: Ultracompact interface met volledig aangepaste modaldialoogvensters, automatische donkere modus en ondersteuning voor 43 talen!
 
 🛠️ HOE WERKT HET?
 

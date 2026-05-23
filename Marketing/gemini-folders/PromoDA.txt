@@ -28,7 +28,7 @@ Med version 4.0 bliver Gemini Mapper dit sande Gemini-cockpit: organiser samtale
 ⇅ Tilpasset sortering: Sorter mapper og samtaler (Nyeste, Ældste, A–Å) med ændringer, der straks afspejles i mobilsynkroniseringen.
 🤖 Smart registrering og søgning: Automatisk forudfyldning af samtalens nøjagtige titel og en realtidssøgebjælke.
 ☁️ Skysynkronisering og sikkerhedskopiering: Adgang til din organisation på alle enheder og eksport af data som JSON.
-🎨 Material 3-design og flersproget: Ultrakompakt interface med fuldt tilpassede modaldialogbokse, automatisk mørk tilstand og understøttelse af 27 sprog!
+🎨 Material 3-design og flersproget: Ultrakompakt interface med fuldt tilpassede modaldialogbokse, automatisk mørk tilstand og understøttelse af 43 sprog!
 
 🛠️ HVORDAN VIRKER DET?
 
