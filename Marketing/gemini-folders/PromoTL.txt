@@ -11,7 +11,7 @@ Sa bersyon 4.0, ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockp
 💎 Custom Gem Link: Mag-configure ng link sa iyong paboritong Gem at i-toggle ito on/off sa isang click. Kapag aktibo, ang button na "Bagong Pag-uusap" ay nagbubukas ng iyong Gem sa halip na ang default na chat.
 ☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
 📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
-⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng Gemini para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
+⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng Gemini para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
 
 🌟 MGA FEATURE NG FOLDER
 

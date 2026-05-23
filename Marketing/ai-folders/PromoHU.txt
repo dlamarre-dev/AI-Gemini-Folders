@@ -11,7 +11,7 @@ MI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-es
 🔀 Új Beszélgetés Gombok: Indítson új beszélgetést a ChatGPT-n, Claude-on, Copiloton, Geminin vagy a Perplexityn közvetlenül a Prompt módból — egy gomb szolgáltatásonként.
 ☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
 📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
-⌨️ Prompt-aktiváló élő javaslatokkal: Gépelje be a # jelet a Gemini csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját — valós időben szűrve gépelés közben. Használja a ↓/↑ billentyűket a navigáláshoz, majd nyomja meg nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a közvetlen beillesztéshez.
+⌨️ Prompt-aktiváló élő javaslatokkal: Gépelje be a # jelet a Gemini csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját — valós időben szűrve gépelés közben. Használja a ↓/↑ billentyűket a navigáláshoz, majd nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a közvetlen beillesztéshez.
 
 🌟 MAPPAFUNKCIÓK
 

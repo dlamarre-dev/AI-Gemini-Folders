@@ -11,7 +11,7 @@ YZ Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan ge
 🔀 Yeni Konuşma Düğmeleri: Prompt Modundan doğrudan ChatGPT, Claude, Copilot, Gemini veya Perplexity'de yeni bir konuşma başlatın — her hizmet için bir düğme.
 ☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
 📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
-⌨️ Canlı Önerili Komut Tetikleyici: Gemini'nin sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün — siz yazarken gerçek zamanlı olarak filtrelenir. Otomatik tamamlamak için benzersiz eşleşmede, doğrudan enjekte etmek için tam eşleşmede ↓/↑ ile gezinin, ardından boşluk tuşuna basın.
+⌨️ Canlı Önerili Komut Tetikleyici: Gemini'nin sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün — siz yazarken gerçek zamanlı olarak filtrelenir. ↓/↑ ile öneriler arasında gezinin; benzersiz eşleşmede otomatik tamamlamak veya tam eşleşmede enjekte etmek için boşluk tuşuna basın.
 
 🌟 KLASÖR ÖZELLİKLERİ
 
