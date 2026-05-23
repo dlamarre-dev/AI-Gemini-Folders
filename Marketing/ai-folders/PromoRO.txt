@@ -39,7 +39,7 @@ Folosiți un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dos
 Modul Foldere:
 Deschideți o conversație pe Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Deschideți panoul: Ctrl+Shift+1 (sau Cmd+Shift+1 pe Mac).
-Salvare rapidă: Ctrl+Shift+S (sau Cmd+Shift+S pe Mac), sau clic dreapta > „Salvați în Dosare IA".
+Salvare rapidă: Ctrl+Shift+S (sau Cmd+Shift+S pe Mac), sau clic dreapta > „Salvează în Dosare IA".
 Prin extensie: Faceți clic pe pictogramă, alegeți un folder, salvați.
 Mobil: Activați 📱 din subsol pentru a sincroniza folderele cu telefonul.
 Folosiți casetele de bifare pentru acțiuni în bloc, deschideți foldere ca File de grup (📑), trageți pentru a reorganiza!

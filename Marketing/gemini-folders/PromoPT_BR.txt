@@ -35,7 +35,7 @@ Com a versão 4.0, Pastas Gemini se torna seu verdadeiro cockpit do Gemini: orga
 Modo Pastas:
 Abra uma conversa em gemini.google.com.
 Abrir o painel: Ctrl+Shift+1 (ou Cmd+Shift+1 no Mac).
-Salvar rapidamente: Ctrl+Shift+S (ou Cmd+Shift+S no Mac), ou clique direito > "Salvar em Pastas Gemini".
+Salvar rapidamente: Ctrl+Shift+S (ou Cmd+Shift+S no Mac), ou clique direito > "Salvar nas Pastas Gemini".
 Pela extensão: Clique no ícone, escolha uma pasta e salve.
 Mobile: Ative 📱 no rodapé para sincronizar suas pastas com o celular.
 Use as caixas de seleção para ações em lote, abra pastas como Grupos de Abas (📑), arraste para reorganizar!

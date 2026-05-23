@@ -1,260 +1,260 @@
 {
-  "extName": {
-    "message": "Gemini फ़ोल्डर्स"
-  },
-  "extDesc": {
-    "message": "अपनी Gemini बातचीत को कस्टम फ़ोल्डर्स में व्यवस्थित करें।"
-  },
-  "appTitle": {
-    "message": "Gemini फ़ोल्डर्स"
-  },
-  "searchPlaceholder": {
-    "message": "🔍 बातचीत खोजें..."
-  },
-  "promptSearchPlaceholder": {
-    "message": "🔍 प्रॉम्प्ट खोजें..."
-  },
-  "folderPlaceholder": {
-    "message": "फ़ोल्डर का नाम (उदा: कोड प्रोजेक्ट्स)"
-  },
-  "chatPlaceholder": {
-    "message": "बातचीत का शीर्षक"
-  },
-  "saveBtn": {
-    "message": "सहेजें"
-  },
-  "statusSaved": {
-    "message": "बातचीत सहेजी गई!"
-  },
-  "noResults": {
-    "message": "कोई परिणाम नहीं मिला 🕵️"
-  },
-  "exportBtn": {
-    "message": "💾 निर्यात"
-  },
-  "importBtn": {
-    "message": "📂 आयात"
-  },
-  "alertNotGemini": {
-    "message": "कृपया इस एक्सटेंशन का उपयोग Gemini पेज पर करें।"
-  },
-  "defaultFolder": {
-    "message": "सामान्य"
-  },
-  "defaultTitle": {
-    "message": "नई बातचीत"
-  },
-  "promptRename": {
-    "message": "बातचीत का नया नाम:"
-  },
-  "alertEmptyExport": {
-    "message": "आपके फ़ोल्डर्स खाली हैं, निर्यात करने के लिए कुछ नहीं है!"
-  },
-  "alertImportSuccess": {
-    "message": "आयात सफल! आपका डेटा सफलतापूर्वक मर्ज कर दिया गया है।"
-  },
-  "alertImportError": {
-    "message": "आयात त्रुटि। सुनिश्चित करें कि यह इस एक्सटेंशन द्वारा उत्पन्न एक मान्य JSON फ़ाइल है।"
-  },
-  "btnRename": {
-    "message": "नाम बदलें"
-  },
-  "btnDelete": {
-    "message": "हटाएं"
-  },
-  "btnNewFolder": {
-    "message": "➕ फ़ोल्डर"
-  },
-  "promptNewFolder": {
-    "message": "नया फ़ोल्डर:"
-  },
-  "btnDeleteFolder": {
-    "message": "फ़ोल्डर हटाएं"
-  },
-  "confirmDeleteFolder": {
-    "message": "इस फ़ोल्डर में बातचीत शामिल है। क्या आप वाकई इसे हटाना चाहते हैं?"
-  },
-  "btnPin": {
-    "message": "पिन करें"
-  },
-  "btnUnpin": {
-    "message": "अनपिन करें"
-  },
-  "sortNewest": {
-    "message": "सबसे नया"
-  },
-  "sortOldest": {
-    "message": "सबसे पुराना"
-  },
-  "sortAlpha": {
-    "message": "नाम के अनुसार"
-  },
-  "ctxMenuSave": {
-    "message": "Gemini फ़ोल्डर्स में सहेजें"
-  },
-  "ctxMenuNoFolder": {
-    "message": "(कोई फ़ोल्डर नहीं - एक्सटेंशन खोलें)"
-  },
-  "btnToggleAdd": {
-    "message": "बातचीत जोड़ें"
-  },
-  "btnCancel": {
-    "message": "बंद करें"
-  },
-  "btnRenameFolder": {
-    "message": "फ़ोल्डर का नाम बदलें"
-  },
-  "promptRenameFolder": {
-    "message": "नया नाम:"
-  },
-  "errorFolderExists": {
-    "message": "इस नाम का एक फ़ोल्डर पहले से मौजूद है।"
-  },
-  "storageCalc": {
-    "message": "स्थान की गणना हो रही है..."
-  },
-  "storageInfo": {
-    "message": "स्टोरेज: {used} KB / {max} KB ({pct}%)"
-  },
-  "cmdQuickSave": {
-    "message": "बातचीत सहेजें"
-  },
-  "quickSaveFolder": {
-    "message": "⚡ त्वरित सेव"
-  },
-  "toastSaved": {
-    "message": "✅ Gemini फ़ोल्डर्स में सहेजा गया!"
-  },
-  "btnOpenGroup": {
-    "message": "टैब समूह में खोलें"
-  },
-  "confirmOpenManyTabs": {
-    "message": "क्या आप वाकई एक ही समय में चयनित टैब (संख्या: {count}) खोलना चाहते हैं?"
-  },
-  "errorTabGroup": {
-    "message": "त्रुटि: टैब समूह नहीं बनाया जा सका। क्या आपने नई अनुमतियाँ स्वीकार की हैं?"
-  },
-  "bulkSelected": {
-    "message": "{count} चयनित"
-  },
-  "bulkMove": {
-    "message": "इसमें ले जाएं..."
-  },
-  "bulkDelete": {
-    "message": "हटाएं"
-  },
-  "confirmBulkDelete": {
-    "message": "क्या आप वाकई चयनित बातचीत (संख्या: {count}) को हटाना चाहते हैं?"
-  },
-  "bulkCancel": {
-    "message": "चयन रद्द करें"
-  },
-  "masterFolderName": {
-    "message": "Gemini फ़ोल्डर्स (Sync)"
-  },
-  "syncBookmarksTooltip": {
-    "message": "अपने फ़ोन पर अपनी बातचीत तक पहुँचने के लिए Chrome बुकमार्क में एक समन्वयित फ़ोल्डर बनाता है।"
-  },
-  "reviewTitle": {
-    "message": "⭐ क्या आपको Gemini फ़ोल्डर्स पसंद है?"
-  },
-  "reviewMessage": {
-    "message": "आपका समर्थन इस ओपन-सोर्स प्रोजेक्ट को बहुत मदद करता है!"
-  },
-  "reviewRateBtn": {
-    "message": "5 स्टार रेट करें"
-  },
-  "reviewLaterBtn": {
-    "message": "बाद में"
-  },
-  "reviewNoBtn": {
-    "message": "नहीं, धन्यवाद"
-  },
-  "modalBtnCancel": {
-    "message": "रद्द करें"
-  },
-  "modalBtnConfirm": {
-    "message": "पुष्टि करें"
-  },
-  "emojiTipPlaceholder": {
-    "message": "टिप: इमोजी से शुरू करें (Win+. / ⌘⌃Space)"
-  },
-  "toastAlreadySaved": {
-    "message": "⚠️ पहले से सहेजा गया!"
-  },
-  "folderModeTitle": {
-    "message": "फ़ोल्डर मोड"
-  },
-  "promptModeTitle": {
-    "message": "प्रॉम्प्ट मोड"
-  },
-  "promptCannotBeEmpty": {
-    "message": "प्रॉम्प्ट खाली नहीं हो सकता!"
-  },
-  "promptSaved": {
-    "message": "प्रॉम्प्ट सहेजा गया!"
-  },
-  "promptDuplicateWarning": {
-    "message": "इस शीर्षक का प्रॉम्प्ट पहले से मौजूद है। ओवरराइट करें?"
-  },
-  "promptNoSavedYet": {
-    "message": "अभी तक कोई प्रॉम्प्ट सहेजा नहीं गया।"
-  },
-  "promptAddBtn": {
-    "message": "प्रॉम्प्ट जोड़ें"
-  },
-  "promptCopyTitle": {
-    "message": "कॉपी"
-  },
-  "promptDeleteTitle": {
-    "message": "हटाएं"
-  },
-  "promptSetGemLink": {
-    "message": "कस्टम Gem लिंक सेट करें:"
-  },
-  "promptInvalidGemLink": {
-    "message": "अमान्य लिंक। यह https://gemini.google.com/ से शुरू होना चाहिए।"
-  },
-  "newConversationBtn": {
-    "message": "नई बातचीत"
-  },
-  "promptTitlePlaceholder": {
-    "message": "प्रॉम्प्ट शीर्षक"
-  },
-  "promptTextPlaceholder": {
-    "message": "अपना प्रॉम्प्ट यहाँ लिखें..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "कस्टम Gem सक्षम करें"
-  },
-  "setGemBtnTooltip": {
-    "message": "कस्टम Gem लिंक सेट करें"
-  },
-  "syncPromptsTooltip": {
-    "message": "प्रॉम्प्ट्स सिंक करें"
-  },
-  "promptRenamePrompt": {
-    "message": "प्रॉम्प्ट का नया नाम:"
-  },
-  "confirmDeletePrompt": {
-    "message": "इस प्रॉम्प्ट को हटाएं?"
-  },
-  "promptInsertBtn": {
-    "message": "Gemini में डालें"
-  },
-  "promptPinTitle": {
-    "message": "पिन करें"
-  },
-  "storageFullError": {
-    "message": "⚠️ संग्रहण भरा हुआ है — सहेजा नहीं गया।"
-  },
-  "afPromoTitle": {
-    "message": "AI फ़ोल्डर खोजें"
-  },
-  "afPromoMessage": {
-    "message": "क्या आप अन्य AI भी उपयोग करते हैं? AI फ़ोल्डर पर स्विच करें और ChatGPT, Claude, Copilot, Perplexity और एक लोकल LLM को अपने फ़ोल्डर में जोड़ें।"
-  },
-  "afPromoDownloadBtn": {
-    "message": "डाउनलोड करें"
-  }
+    "extName": {
+        "message": "Gemini फ़ोल्डर्स"
+    },
+    "extDesc": {
+        "message": "अपनी Gemini बातचीत को कस्टम फ़ोल्डर्स में व्यवस्थित करें।"
+    },
+    "appTitle": {
+        "message": "Gemini फ़ोल्डर्स"
+    },
+    "searchPlaceholder": {
+        "message": "🔍 बातचीत खोजें..."
+    },
+    "promptSearchPlaceholder": {
+        "message": "🔍 प्रॉम्प्ट खोजें..."
+    },
+    "folderPlaceholder": {
+        "message": "फ़ोल्डर का नाम (उदा: कोड प्रोजेक्ट्स)"
+    },
+    "chatPlaceholder": {
+        "message": "बातचीत का शीर्षक"
+    },
+    "saveBtn": {
+        "message": "सहेजें"
+    },
+    "statusSaved": {
+        "message": "बातचीत सहेजी गई!"
+    },
+    "noResults": {
+        "message": "कोई परिणाम नहीं मिला 🕵️"
+    },
+    "exportBtn": {
+        "message": "💾 निर्यात"
+    },
+    "importBtn": {
+        "message": "📂 आयात"
+    },
+    "alertNotGemini": {
+        "message": "कृपया इस एक्सटेंशन का उपयोग Gemini पेज पर करें।"
+    },
+    "defaultFolder": {
+        "message": "सामान्य"
+    },
+    "defaultTitle": {
+        "message": "नई बातचीत"
+    },
+    "promptRename": {
+        "message": "बातचीत का नया नाम:"
+    },
+    "alertEmptyExport": {
+        "message": "आपके फ़ोल्डर्स खाली हैं, निर्यात करने के लिए कुछ नहीं है!"
+    },
+    "alertImportSuccess": {
+        "message": "आयात सफल! आपका डेटा सफलतापूर्वक मर्ज कर दिया गया है।"
+    },
+    "alertImportError": {
+        "message": "आयात त्रुटि। सुनिश्चित करें कि यह इस एक्सटेंशन द्वारा उत्पन्न एक मान्य JSON फ़ाइल है।"
+    },
+    "btnRename": {
+        "message": "नाम बदलें"
+    },
+    "btnDelete": {
+        "message": "हटाएं"
+    },
+    "btnNewFolder": {
+        "message": "➕ फ़ोल्डर"
+    },
+    "promptNewFolder": {
+        "message": "नया फ़ोल्डर:"
+    },
+    "btnDeleteFolder": {
+        "message": "फ़ोल्डर हटाएं"
+    },
+    "confirmDeleteFolder": {
+        "message": "इस फ़ोल्डर में बातचीत शामिल है। क्या आप वाकई इसे हटाना चाहते हैं?"
+    },
+    "btnPin": {
+        "message": "पिन करें"
+    },
+    "btnUnpin": {
+        "message": "अनपिन करें"
+    },
+    "sortNewest": {
+        "message": "सबसे नया"
+    },
+    "sortOldest": {
+        "message": "सबसे पुराना"
+    },
+    "sortAlpha": {
+        "message": "नाम के अनुसार"
+    },
+    "ctxMenuSave": {
+        "message": "Gemini फ़ोल्डर्स में सहेजें"
+    },
+    "ctxMenuNoFolder": {
+        "message": "(कोई फ़ोल्डर नहीं - एक्सटेंशन खोलें)"
+    },
+    "btnToggleAdd": {
+        "message": "बातचीत जोड़ें"
+    },
+    "btnCancel": {
+        "message": "बंद करें"
+    },
+    "btnRenameFolder": {
+        "message": "फ़ोल्डर का नाम बदलें"
+    },
+    "promptRenameFolder": {
+        "message": "नया नाम:"
+    },
+    "errorFolderExists": {
+        "message": "इस नाम का एक फ़ोल्डर पहले से मौजूद है।"
+    },
+    "storageCalc": {
+        "message": "स्थान की गणना हो रही है..."
+    },
+    "storageInfo": {
+        "message": "स्टोरेज: {used} KB / {max} KB ({pct}%)"
+    },
+    "cmdQuickSave": {
+        "message": "बातचीत सहेजें"
+    },
+    "quickSaveFolder": {
+        "message": "⚡ त्वरित सहेजें"
+    },
+    "toastSaved": {
+        "message": "✅ Gemini फ़ोल्डर्स में सहेजा गया!"
+    },
+    "btnOpenGroup": {
+        "message": "टैब समूह में खोलें"
+    },
+    "confirmOpenManyTabs": {
+        "message": "क्या आप वाकई एक ही समय में चयनित टैब (संख्या: {count}) खोलना चाहते हैं?"
+    },
+    "errorTabGroup": {
+        "message": "त्रुटि: टैब समूह नहीं बनाया जा सका। क्या आपने नई अनुमतियाँ स्वीकार की हैं?"
+    },
+    "bulkSelected": {
+        "message": "{count} चयनित"
+    },
+    "bulkMove": {
+        "message": "इसमें ले जाएं..."
+    },
+    "bulkDelete": {
+        "message": "हटाएं"
+    },
+    "confirmBulkDelete": {
+        "message": "क्या आप वाकई चयनित बातचीत (संख्या: {count}) को हटाना चाहते हैं?"
+    },
+    "bulkCancel": {
+        "message": "चयन रद्द करें"
+    },
+    "masterFolderName": {
+        "message": "Gemini फ़ोल्डर्स (Sync)"
+    },
+    "syncBookmarksTooltip": {
+        "message": "अपने फ़ोन पर अपनी बातचीत तक पहुँचने के लिए Chrome बुकमार्क में एक समन्वयित फ़ोल्डर बनाता है।"
+    },
+    "reviewTitle": {
+        "message": "⭐ क्या आपको Gemini फ़ोल्डर्स पसंद है?"
+    },
+    "reviewMessage": {
+        "message": "आपका समर्थन इस ओपन-सोर्स प्रोजेक्ट को बहुत मदद करता है!"
+    },
+    "reviewRateBtn": {
+        "message": "5 स्टार रेट करें"
+    },
+    "reviewLaterBtn": {
+        "message": "बाद में"
+    },
+    "reviewNoBtn": {
+        "message": "नहीं, धन्यवाद"
+    },
+    "modalBtnCancel": {
+        "message": "रद्द करें"
+    },
+    "modalBtnConfirm": {
+        "message": "पुष्टि करें"
+    },
+    "emojiTipPlaceholder": {
+        "message": "टिप: इमोजी से शुरू करें (Win+. / ⌘⌃Space)"
+    },
+    "toastAlreadySaved": {
+        "message": "⚠️ पहले से सहेजा गया!"
+    },
+    "folderModeTitle": {
+        "message": "फ़ोल्डर मोड"
+    },
+    "promptModeTitle": {
+        "message": "प्रॉम्प्ट मोड"
+    },
+    "promptCannotBeEmpty": {
+        "message": "प्रॉम्प्ट खाली नहीं हो सकता!"
+    },
+    "promptSaved": {
+        "message": "प्रॉम्प्ट सहेजा गया!"
+    },
+    "promptDuplicateWarning": {
+        "message": "इस शीर्षक का प्रॉम्प्ट पहले से मौजूद है। ओवरराइट करें?"
+    },
+    "promptNoSavedYet": {
+        "message": "अभी तक कोई प्रॉम्प्ट सहेजा नहीं गया।"
+    },
+    "promptAddBtn": {
+        "message": "प्रॉम्प्ट जोड़ें"
+    },
+    "promptCopyTitle": {
+        "message": "कॉपी"
+    },
+    "promptDeleteTitle": {
+        "message": "हटाएं"
+    },
+    "promptSetGemLink": {
+        "message": "कस्टम Gem लिंक सेट करें:"
+    },
+    "promptInvalidGemLink": {
+        "message": "अमान्य लिंक। यह https://gemini.google.com/ से शुरू होना चाहिए।"
+    },
+    "newConversationBtn": {
+        "message": "नई बातचीत"
+    },
+    "promptTitlePlaceholder": {
+        "message": "प्रॉम्प्ट शीर्षक"
+    },
+    "promptTextPlaceholder": {
+        "message": "अपना प्रॉम्प्ट यहाँ लिखें..."
+    },
+    "enableCustomGemTooltip": {
+        "message": "कस्टम Gem सक्षम करें"
+    },
+    "setGemBtnTooltip": {
+        "message": "कस्टम Gem लिंक सेट करें"
+    },
+    "syncPromptsTooltip": {
+        "message": "प्रॉम्प्ट्स सिंक करें"
+    },
+    "promptRenamePrompt": {
+        "message": "प्रॉम्प्ट का नया नाम:"
+    },
+    "confirmDeletePrompt": {
+        "message": "इस प्रॉम्प्ट को हटाएं?"
+    },
+    "promptInsertBtn": {
+        "message": "Gemini में डालें"
+    },
+    "promptPinTitle": {
+        "message": "पिन करें"
+    },
+    "storageFullError": {
+        "message": "⚠️ संग्रहण भरा हुआ है — सहेजा नहीं गया।"
+    },
+    "afPromoTitle": {
+        "message": "AI फ़ोल्डर खोजें"
+    },
+    "afPromoMessage": {
+        "message": "क्या आप अन्य AI भी उपयोग करते हैं? AI फ़ोल्डर पर स्विच करें और ChatGPT, Claude, Copilot, Perplexity और एक लोकल LLM को अपने फ़ोल्डर में जोड़ें।"
+    },
+    "afPromoDownloadBtn": {
+        "message": "डाउनलोड करें"
+    }
 }
