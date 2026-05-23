@@ -70,7 +70,7 @@ V1_1_NOTES = {
     "ms":    "Versi 1.1 (Pencetus Prompt): Taip # dalam mana-mana medan chat AI untuk melihat arahan tersimpan anda ditapis dalam masa nyata. Gunakan ↓/↑ untuk navigasi cadangan, Ruang untuk autoisi atau suntik — tanpa membuka panel. Berfungsi pada semua perkhidmatan yang disokong termasuk LLM tempatan.",
     "bg":    "Версия 1.1 (Тригер за подсказки): Въведете # в произволно поле за AI чат, за да видите запазените подсказки, филтрирани в реално време. Използвайте ↓/↑ за навигация между предложенията, интервала за автодовършване или вмъкване — без да отваряте панела. Работи на всички поддържани услуги, включително локални LLM.",
     "sl":    "Različica 1.1 (Sprožilec pozivov): Vnesite # v katero koli polje za klepet AI in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče. Deluje na vseh podprtih storitvah, vključno z lokalnimi LLM.",
-    "sr":    "Верзија 1.1 (Окидач промптова): Унесите # у bilo које поље AI четовања да бисте у реалном времену видели филтриране сачуване промптове. Користите ↓/↑ за навигацију кроз предлоге, размак за аутодовршавање или убацивање — без отварања панела. Ради на свим подржаним сервисима, укључујући локалне LLM.",
+    "sr":    "Verzija 1.1 (Okidač promptova): Unesi # u bilo koje polje AI čavrljanja da u realnom vremenu vidiš filtrirane sačuvane promptove. Koristi ↓/↑ za navigaciju kroz predloge, razmak za autodovršavanje ili ubacivanje — bez otvaranja panela. Radi na svim podržanim servisima, uključujući lokalne LLM.",
     "hr":    "Verzija 1.1 (Okidač upita): Unesi # u bilo koje polje za chat s AI-jem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela. Radi na svim podržanim uslugama, uključujući lokalne LLM.",
 }
 
@@ -116,7 +116,7 @@ V1_NOTES = {
     "ms":    "Versi 1.0: Keluaran pertama! Susun perbualan dari Gemini, Claude, ChatGPT, Copilot dan Perplexity dalam folder berkongsi. Pustaka arahan lengkap dengan suntikan satu klik, pintasan simpan pantas, seret dan lepas, penyegerakan mudah alih, tindakan pukal, kumpulan tab dan sokongan untuk 43 bahasa.",
     "bg":    "Версия 1.0: Първо издание! Организирайте разговори от Gemini, Claude, ChatGPT, Copilot и Perplexity в споделени папки. Пълна библиотека с подсказки с вмъкване с едно кликване, преки пътища за бързо запазване, плъзгане и пускане, мобилна синхронизация, масови действия, групи раздели и поддръжка на 43 езика.",
     "sl":    "Različica 1.0: Prva izdaja! Organizirajte pogovore iz Gemini, Claude, ChatGPT, Copilot in Perplexity v skupne mape. Popolna knjižnica pozivov z vstavljanjem z enim klikom, bližnjice za hitro shranjevanje, povleci in spusti, mobilna sinhronizacija, množična dejanja, skupine zavihkov in podpora za 43 jezikov.",
-    "sr":    "Верзија 1.0: Прво издање! Организујте разговоре из Gemini, Claude, ChatGPT, Copilot и Perplexity у дељене фасцикле. Потпуна библиотека промптова са убацивањем једним кликом, пречице за брзо чување, превлачење и пуштање, мобилна синхронизација, масовне радње, групе картица и подршка за 43 језика.",
+    "sr":    "Verzija 1.0: Prvo izdanje! Organizujte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u deljene fascikle. Potpuna biblioteka promptova sa ubacivanjem jednim klikom, prečice za brzo čuvanje, prevlačenje i puštanje, mobilna sinhronizacija, masovne radnje, grupe kartica i podrška za 43 jezika.",
     "hr":    "Verzija 1.0: Prvo izdanje! Organizirajte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u dijeljene mape. Potpuna biblioteka upita s umetanjem jednim klikom, prečaci za brzo spremanje, povuci i ispusti, mobilna sinkronizacija, skupne radnje, grupe kartica i podrška za 43 jezika.",
 }
 
@@ -163,7 +163,7 @@ GEM_REPLACEMENTS = {
     "ms":    "🔀 Butang Perbualan Baru: Mulakan perbualan baru di ChatGPT, Claude, Copilot, Gemini atau Perplexity terus dari Mod Arahan — satu butang setiap perkhidmatan.",
     "bg":    "🔀 Бутони за нов разговор: Стартирайте нов разговор в ChatGPT, Claude, Copilot, Gemini или Perplexity директно от режима на подсказки — един бутон за услуга.",
     "sl":    "🔀 Gumbi za novo pogovor: Začnite nov pogovor na ChatGPT, Claude, Copilot, Gemini ali Perplexity neposredno iz načina pozivov — en gumb za vsako storitev.",
-    "sr":    "🔀 Дугмад за нови разговор: Покрените нови разговор на ChatGPT, Claude, Copilot, Gemini или Perplexity директно из режима промптова — по јedno дугме по сервису.",
+    "sr":    "🔀 Dugmad za novi razgovor: Pokrenite novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity direktno iz režima promptova — po jedno dugme po servisu.",
     "hr":    "🔀 Gumbi za novi razgovor: Pokreni novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity izravno iz načina upita — jedan gumb po usluzi.",
 }
 
@@ -227,7 +227,7 @@ INTRO_REPLACEMENTS = {
     "ms":    "Perbualan AI anda tersebar di lima laman yang berbeza. Anda terus menaip semula arahan yang sama. Perbualan terbaik anda hilang dalam sejarah tanpa henti di Gemini, Claude, ChatGPT, Copilot, dan Perplexity.\n{af_name} ialah sambungan yang anda perlukan.",
     "bg":    "Вашите AI разговори са разпръснати из пет различни сайта. Продължавате да въвеждате едни и същи подсказки отново и отново. Най-добрите ви чатове изчезват в безкрайните истории на Gemini, Claude, ChatGPT, Copilot и Perplexity.\n{af_name} е разширението, от което се нуждаете.",
     "sl":    "Vaši AI pogovori so razpršeni po petih različnih spletnih mestih. Vedno znova vnašate iste pozive. Vaši najboljši klepeti izginejo v neskončnih zgodovinah na Gemini, Claude, ChatGPT, Copilot in Perplexity.\n{af_name} je razširitev, ki jo potrebujete.",
-    "sr":    "Ваши AI разговори су расути по пет различитих сајтова. Стално поново уносите исте упите. Ваши најбољи четови нестају у бесконачним историјама на Gemini, Claude, ChatGPT, Copilot и Perplexity.\n{af_name} је проширење које вам треба.",
+    "sr":    "Vaši AI razgovori su rasuti po pet različitih sajtova. Stalno ponovo unosite iste upite. Vaši najbolji četovi nestaju u beskonačnim istorijama na Gemini, Claude, ChatGPT, Copilot i Perplexity.\n{af_name} je proširenje koje vam treba.",
     "hr":    "Tvoji AI razgovori su rasuti po pet različitih stranica. Stalno ponovo unosiš iste upite. Tvoji najbolji chatovi nestaju u beskonačnim povijestima na Geminiju, Claudeu, ChatGPT-u, Copilotu i Perplexityju.\n{af_name} je proširenje koje ti treba.",
 }
 
@@ -274,7 +274,7 @@ COCKPIT_REPLACEMENTS = {
     "ms":    "{af_name} ialah kokpit AI bersatu anda: susun perbualan dari semua alat AI anda dalam folder berkongsi, bina perpustakaan arahan yang boleh digunakan semula, dan suntik arahan terus ke mana-mana AI yang disokong — tanpa perlu menyalin dan menampal.",
     "bg":    "{af_name} е вашето обединено AI табло за управление: организирайте разговори от всички ваши AI инструменти в споделени папки, изградете библиотека от подсказки за многократна употреба и вмъквайте подсказки директно в произволен поддържан AI — без копиране и поставяне.",
     "sl":    "{af_name} je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vseh vaših AI-orodij v skupne mape, zgradite knjižnico promptov za večkratno uporabo in vstavljajte prompte neposredno v kateri koli podprti AI — brez kopiranja in lepljenja.",
-    "sr":    "{af_name} је ваш јединствени AI кокпит: организујте разговоре из свих ваших AI алата у дељене фасцикле, изградите библиотеку упита за вишеструку употребу и убацујте упите директно у било који подржани AI — без копирања и лепљења.",
+    "sr":    "{af_name} je vaš jedinstveni AI kokpit: organizujte razgovore iz svih vaših AI alata u deljene fascikle, izgradite biblioteku upita za višestruku upotrebu i ubacujte upite direktno u bilo koji podržani AI — bez kopiranja i lepljenja.",
     "hr":    "{af_name} je tvoj objedinjeni AI kokpit: organiziraj razgovore iz svih tvojih AI alata u dijeljene mape, izgradi knjižnicu upita za višekratnu upotrebu i ubacuj upite izravno u bilo koji podržani AI — bez kopiranja i lijepljenja.",
 }
 
