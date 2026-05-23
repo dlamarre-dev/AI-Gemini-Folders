@@ -35,7 +35,7 @@ Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de 
 Modo Carpetas:
 Abre una conversación en gemini.google.com.
 Abrir el panel: Ctrl+Shift+1 (o Cmd+Shift+1 en Mac).
-Guardado rápido: Ctrl+Shift+S (o Cmd+Shift+S en Mac), o clic derecho > "Guardar en Carpetas de Gemini".
+Guardado rápido: Ctrl+Shift+S (o Cmd+Shift+S en Mac), o clic derecho > "Guardar en Carpetas Gemini".
 Desde la extensión: Haz clic en el icono, elige una carpeta y guarda.
 Móvil: Activa 📱 en el pie de página para sincronizar tus carpetas con el teléfono.
 ¡Usa las casillas para acciones en lote, abre carpetas como Grupos de Pestañas (📑) y arrastra para reorganizar!

@@ -24,7 +24,7 @@ KI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ih
 📱 Mobile Synchronisierung: Ein Schalter erstellt einen Spiegelordner in Ihren Chrome-Lesezeichen, der Ihre Struktur und Sortierung auf dem Smartphone wiedergibt.
 🗜️ Ultra-effiziente Komprimierung: Komprimiert Ihre Daten automatisch (LZString), um den nativen Chrome-Speicher zu maximieren.
 📊 Speicher-Tracker: Ein visueller Fortschrittsbalken zeigt Ihren verfügbaren Cloud-Speicher in Echtzeit.
-📁 Benutzerdefinierte Ordner & Pins: Organisieren Sie Gespräche nach Projekten, Themen oder Kategorien. Pinnen Sie (📌) Lieblingsordner oben an.
+📁 Benutzerdefinierte Ordner & Pins: Organisieren Sie Gespräche nach Projekten, Themen oder Kategorien. Heften Sie (📌) Lieblingsordner oben an.
 ⇅ Benutzerdefinierte Sortierung: Sortieren Sie Ordner und Gespräche nach Belieben (Neueste, Älteste, A-Z) mit sofortiger Auswirkung auf die mobile Sync.
 🤖 Intelligente Erkennung & Suche: Automatische Vorausfüllung des Gesprächstitels und Echtzeit-Suchleiste.
 ☁️ Cloud-Synchronisierung & Backup: Behalten Sie Ihre Organisation auf allen Geräten und exportieren Sie Daten als JSON.
@@ -48,7 +48,7 @@ Prompt-Modus:
 Auf 📝 im Umschalter oben rechts in der Erweiterung klicken.
 ➕ Prompt hinzufügen anklicken, Titel und Text eingeben, speichern.
 Prompt verwenden: aufklappen und ▶ klicken — er wird direkt in die aktive KI injiziert, bereit zum Senden.
-Prompt anpinnen: auf 📍 klicken — er rückt an die erste Stelle und bleibt immer griffbereit.
+Prompt anheften: auf 📍 klicken — er rückt an die erste Stelle und bleibt immer griffbereit.
 Prompt-Trigger: Geben Sie # ein, um sofort alle Ihre gespeicherten Prompts zu sehen, oder tippen Sie weiter, um in Echtzeit zu filtern. Drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur Injektion.
 
 🔒 DATENSCHUTZ & SICHERHEIT

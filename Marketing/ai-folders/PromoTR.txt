@@ -39,7 +39,7 @@ Yerel bir AI modeli (Ollama, LM Studio, Jan veya başka) mı kullanıyorsunuz? Y
 Klasör Modu:
 Gemini, Claude, ChatGPT, Copilot, Perplexity'da bir konuşma açın.
 Paneli açın: Ctrl+Shift+1 (veya Mac'te Cmd+Shift+1).
-Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "YZ Klasörleri'e Kaydet".
+Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "YZ Klasörleri'ne Kaydet".
 Uzantı üzerinden: Simgeye tıklayın, bir klasör seçin ve kaydedin.
 Mobil: Telefonunuzda klasörlerinizi senkronize etmek için alt bilgideki 📱 işaretini işaretleyin.
 Toplu işlemler için onay kutularını kullanın, klasörleri Sekme Grupları (📑) olarak açın, yeniden düzenlemek için sürükleyip bırakın!

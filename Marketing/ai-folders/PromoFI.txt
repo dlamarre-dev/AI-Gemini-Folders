@@ -39,7 +39,7 @@ Käytätkö paikallista AI-mallia (Ollama, LM Studio, Jan tai muu)? Määritä A
 Kansiotila:
 Avaa keskustelu osoitteessa Gemini, Claude, ChatGPT, Copilot, Perplexity.
 Avaa paneeli: Ctrl+Shift+1 (tai Cmd+Shift+1 Macissa).
-Pikatallennus: Ctrl+Shift+S (tai Cmd+Shift+S Macissa) tai hiiren oikea painike > «Tallenna Gemini Kansioihin».
+Pikatallennus: Ctrl+Shift+S (tai Cmd+Shift+S Macissa) tai hiiren oikea painike > «Tallenna Gemini-kansioihin».
 Lisäosan kautta: Napsauta kuvaketta, valitse kansio ja tallenna.
 Mobiili: Merkitse 📱 alatunnisteessa synkronoidaksesi kansiot puhelimeesi.
 Käytä valintaruutuja joukotoimintoja varten, avaa kansiot välilehtiryhmien (📑) avulla, raahaa ja pudota järjestelläksesi uudelleen!

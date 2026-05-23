@@ -35,7 +35,7 @@ Sürüm 4.0 ile Gemini Klasörler, gerçek Gemini kokpitiniz haline geliyor: kon
 Klasör Modu:
 gemini.google.com'da bir konuşma açın.
 Paneli açın: Ctrl+Shift+1 (veya Mac'te Cmd+Shift+1).
-Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "Gemini Klasörleri'e Kaydet".
+Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "Gemini Klasörleri'ne Kaydet".
 Uzantı üzerinden: Simgeye tıklayın, bir klasör seçin ve kaydedin.
 Mobil: Telefonunuzda klasörlerinizi senkronize etmek için alt bilgideki 📱 işaretini işaretleyin.
 Toplu işlemler için onay kutularını kullanın, klasörleri Sekme Grupları (📑) olarak açın, yeniden düzenlemek için sürükleyip bırakın!
