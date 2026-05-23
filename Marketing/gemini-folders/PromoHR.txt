@@ -28,7 +28,7 @@ S verzijom 4.0 Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgov
 ⇅ Prilagođeno sortiranje: Sortiraj mape i razgovore (Najnovije, Najstarije, A–Ž) s promjenama koje se odmah odražavaju u mobilnoj sinkronizaciji.
 🤖 Pametno prepoznavanje i pretraživanje: Automatsko predispunjavanje točnog naslova razgovora i traka za pretraživanje u stvarnom vremenu.
 ☁️ Sinkronizacija u oblaku i sigurnosne kopije: Pristup organizaciji na svim uređajima i izvoz podataka kao JSON.
-🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloški okvirima, automatski tamni način i podrška za 27 jezika!
+🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloški okvirima, automatski tamni način i podrška za 43 jezika!
 
 🛠️ KAKO TO FUNKCIONIRA?
 

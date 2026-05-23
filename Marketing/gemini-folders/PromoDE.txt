@@ -1,7 +1,7 @@
 Sie nutzen Google Gemini täglich — für Arbeit, Code, Texte oder Recherche — tippen aber immer wieder dieselben Prompts, während Ihre besten Gespräche in einem endlosen Verlauf verschwinden?
 Gemini-Ordner (Gemini Folders) ist die Erweiterung, die Sie brauchen.
 
-Mit Version 4.0 wird Gemini-Ordner zu Ihrem echten Gemini-Cockpit: Organisieren Sie Gespräche in Ordnern, bauen Sie eine Bibliothek wiederverwendbarer Prompts auf und injizieren Sie diese mit einem Klick direkt in Gemini — ganz ohne Kopieren und Einfügen. Wichtige Prompts oben anheften.
+Mit Version 4.0 wird Gemini-Ordner zu Ihrem echten Gemini-Cockpit: Organisieren Sie Gespräche in Ordnern, bauen Sie eine Bibliothek wiederverwendbarer Prompts auf und injizieren Sie diese mit einem Klick direkt in Gemini — ganz ohne Kopieren und Einfügen.
 
 ✨ NEU IN v4.0 — PROMPT-MODUS
 
@@ -28,7 +28,7 @@ Mit Version 4.0 wird Gemini-Ordner zu Ihrem echten Gemini-Cockpit: Organisieren 
 ⇅ Benutzerdefinierte Sortierung: Sortieren Sie Ordner und Gespräche nach Belieben (Neueste, Älteste, A-Z) mit sofortiger Auswirkung auf die mobile Sync.
 🤖 Intelligente Erkennung & Suche: Automatische Vorausfüllung des Gesprächstitels und Echtzeit-Suchleiste.
 ☁️ Cloud-Synchronisierung & Backup: Behalten Sie Ihre Organisation auf allen Geräten und exportieren Sie Daten als JSON.
-🎨 Material 3 Design & Mehrsprachig: Ultra-kompakte Oberfläche mit vollständig angepassten Dialogen, automatischem Dunkelmodus und Unterstützung für 27 Sprachen!
+🎨 Material 3 Design & Mehrsprachig: Ultra-kompakte Oberfläche mit vollständig angepassten Dialogen, automatischem Dunkelmodus und Unterstützung für 43 Sprachen!
 
 🛠️ WIE FUNKTIONIERT ES?
 
@@ -64,7 +64,7 @@ Interessiert an Gemini-Ordner, aber nutzen Sie auch ChatGPT, Claude, Copilot, Pe
 Version 4.2 (Prompt-Auslöser): Geben Sie # in das Eingabefeld von Gemini ein, um gespeicherte Prompts in Echtzeit gefiltert zu sehen. Verwenden Sie ↓/↑ zum Navigieren durch Vorschläge, Leertaste zum Autovervollständigen oder Einsetzen — ohne das Panel zu öffnen.
 Version 4.1.1: Kleinere Fehlerbehebungen und Stabilitätsverbesserungen.
 Version 4.1 (Globale Erweiterung & Härtung): 16 neue Sprachen bringen Gemini-Ordner auf 43 weltweite Lokalisierungen — nordische Sprachen, die baltischen Staaten und erweiterte europäische sowie südostasiatische Abdeckung. Behobene Race-Condition, die bei schnellen Klicks eine Speicherung lautlos verwerfen konnte. Modernisierte Prompt-Injektion mit InputEvent als Ersatz für das veraltete execCommand. Import-Pipeline gegen bösartige URLs in Sicherungsdateien gehärtet. Kritischer Datensicherheitsfehler behoben: das Aktivieren der Prompt-Synchronisierung bei fast vollem Speicher konnte alle gespeicherten Prompts lautlos löschen. Der Speicher verwendet jetzt fragmentierte Schreibvorgänge, um innerhalb der Chrome-Grenzen zu bleiben, mit klaren Fehlermeldungen wenn er voll ist.
-Version 4.0 (Prompt-Bibliothek): Das ehrgeizigste Update bisher! Gemini-Ordner erhält einen brandneuen Prompt-Modus: Prompts speichern, direkt bearbeiten und mit einem Klick in Gemini injizieren. Neu: animierter Modus-Umschalter, Suche und Sortierung im Prompt-Modus, benutzerdefinierter Gem-Button und unabhängige Prompt-Synchronisierung. Wichtige Prompts oben anheften.
+Version 4.0 (Prompt-Bibliothek): Das ehrgeizigste Update bisher! Gemini-Ordner erhält einen brandneuen Prompt-Modus: Prompts speichern, direkt bearbeiten und mit einem Klick in Gemini injizieren. Neu: animierter Modus-Umschalter, Suche und Sortierung im Prompt-Modus, benutzerdefinierter Gem-Button und unabhängige Prompt-Synchronisierung.
 Version 3.5 (Solide Grundlagen & Verbesserte Erfahrung): Großes Update unter der Haube für professionelle Robustheit. Visuelle Warnung bei Duplikaten. Keine Falsch-Duplikate mehr durch URL-Änderungen, Datenbank gegen Beschädigungen geschützt.
 Version 3.4.1 (Multiplattform & Stabilität): Erfolgreich auf Mozilla Firefox portiert. Endgültige Behebung des Fehlers mit doppelten Lesezeichenordnern bei der mobilen Synchronisierung.
 Version 3.3 (Premium Design & International): Neue Material 3 Dialoge, mobile Sync nach Sortierreihenfolge und 10 neue Sprachen!

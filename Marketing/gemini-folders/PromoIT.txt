@@ -28,7 +28,7 @@ Con la versione 4.0, Cartelle Gemini diventa il tuo vero cockpit per Gemini: org
 ⇅ Ordinamento personalizzato: Ordina cartelle e conversazioni al volo (Più recenti, Più vecchie, A-Z) con ripercussione immediata sulla sincronizzazione mobile.
 🤖 Rilevamento intelligente e Ricerca: Compilazione automatica del titolo esatto della conversazione e barra di ricerca in tempo reale.
 ☁️ Sincronizzazione Cloud e Backup: Accedi alla tua organizzazione su tutti i dispositivi ed esporta i dati in JSON.
-🎨 Design Material 3 e Multilingue: Interfaccia ultra-compatta con finestre di dialogo completamente personalizzate, modalità scura automatica e supporto per 27 lingue!
+🎨 Design Material 3 e Multilingue: Interfaccia ultra-compatta con finestre di dialogo completamente personalizzate, modalità scura automatica e supporto per 43 lingue!
 
 🛠️ COME FUNZIONA?
 

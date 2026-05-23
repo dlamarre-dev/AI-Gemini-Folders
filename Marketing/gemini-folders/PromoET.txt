@@ -28,7 +28,7 @@ Versiooniga 4.0 saab Gemini Kaustadest sinu tõeline Gemini cockpit: korralda ve
 ⇅ Kohandatud sortimine: Sordi kaustad ja vestlused (Uusimad, Vanimad, A–Z) muudatustega, mis kajastuvad kohe mobiilsünkroonimises.
 🤖 Nutikas tuvastamine ja otsing: Vestluse täpse pealkirja automaatne eeltäitmine ja reaalajas otsinguriiba.
 ☁️ Pilvsünkroonimine ja varundamine: Juurdepääs oma korraldusse kõigis seadmetes ja andmete eksport JSON-ina.
-🎨 Material 3 disain ja mitmekeelne: Ülimalt kompaktne liides täiesti kohandatud modaaldialoogi akendega, automaatne tume režiim ja tugi 27 keelele!
+🎨 Material 3 disain ja mitmekeelne: Ülimalt kompaktne liides täiesti kohandatud modaaldialoogi akendega, automaatne tume režiim ja tugi 43 keelele!
 
 🛠️ KUIDAS SEE TÖÖTAB?
 

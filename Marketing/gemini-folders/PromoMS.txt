@@ -28,7 +28,7 @@ Dengan versi 4.0, Folder Gemini menjadi cockpit Gemini sebenar anda: susun perbu
 ⇅ Pengisihan tersuai: Isih folder dan perbualan (Terbaharu, Terlama, A–Z) dengan perubahan yang segera ditunjukkan dalam penyegerakan mudah alih.
 🤖 Pengesanan pintar & carian: Pra-pengisian automatik tajuk tepat perbualan dan bar carian masa nyata.
 ☁️ Penyegerakan awan & sandaran: Akses ke organisasi anda pada semua peranti dan eksport data sebagai JSON.
-🎨 Reka bentuk Material 3 & berbilang bahasa: Antara muka ultra-padat dengan dialog modal sepenuhnya tersuai, mod gelap automatik dan sokongan untuk 27 bahasa!
+🎨 Reka bentuk Material 3 & berbilang bahasa: Antara muka ultra-padat dengan dialog modal sepenuhnya tersuai, mod gelap automatik dan sokongan untuk 43 bahasa!
 
 🛠️ BAGAIMANA IA BERFUNGSI?
 

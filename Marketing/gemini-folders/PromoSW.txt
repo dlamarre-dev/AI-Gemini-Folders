@@ -28,7 +28,7 @@ Na toleo la 4.0, Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga 
 ⇅ Upangaji Maalum: Panga folda na mazungumzo kwa haraka (Mpya Zaidi, Kongwe Zaidi, A-Z) pamoja na mabadiliko yanayoonyeshwa mara moja katika usawazishaji wako wa simu.
 🤖 Ugunduzi Mzuri na Utafutaji: Kujaza awali kiotomatiki kwa kichwa halisi cha mazungumzo yako na mwambaa wa utafutaji wa wakati halisi.
 ☁️ Usawazishaji wa Wingu na Hifadhinakala: Fikia upangaji wako kwenye vifaa vyako vyote na hamisha data yako kama JSON.
-🎨 Muundo wa Material 3 na Lugha Nyingi: Kiolesura cha kompakt sana chenye sanduku za mazungumzo maalum kabisa, hali ya giza kiotomatiki na msaada kwa lugha 27!
+🎨 Muundo wa Material 3 na Lugha Nyingi: Kiolesura cha kompakt sana chenye sanduku za mazungumzo maalum kabisa, hali ya giza kiotomatiki na msaada kwa lugha 43!
 
 🛠️ INAVYOFANYA KAZI?
 
@@ -61,7 +61,7 @@ Unavutiwa na Folda za Gemini lakini pia unatumia ChatGPT, Claude, Copilot, Perpl
 👉 Sakinisha Folda za AI: __AF_STORE_URL__
 
 📢 MASASISHO:
-Toleo 4.2 (Kichocheo cha Amri): Andika # katika uwanja wa mazungumzo wa Gemini ili uone maagizo yako yaliyohifadhiwa yakichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.
+Toleo 4.2 (Kichocheo cha Kidokezo): Andika # katika uwanja wa mazungumzo wa Gemini ili uone maagizo yako yaliyohifadhiwa yakichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.
 Toleo 4.1.1: Marekebisho madogo ya hitilafu na maboresho ya uthabiti.
 Toleo 4.1 (Upanuzi wa Kimataifa na Ugumu): Lugha 16 mpya zinaongeza Folda za Gemini hadi lokalizesheni 43 duniani kote — lugha za Nordiki, nchi za Baltic na chanjo iliyopanuliwa ya Ulaya na Asia ya Kusini-mashariki. Kurekebisha hali ya mbio ambayo ingeweza kupoteza kimya kimya uhifadhi wakati wa kubonyeza haraka. Uingizaji wa prompt umeboreshwa kwa InputEvent, ukibadilisha execCommand iliyopitwa na wakati. Mfumo wa uingizaji umeimarishwa dhidi ya URL hasidi katika faili za nakala rudufu. Hitilafu mbaya ya usalama wa data imetibiwa: kuwezesha usawazishaji wa maagizo kwenye hifadhi iliyojaa karibu kungeweza kufuta kimya kimya maagizo yote yaliyohifadhiwa. Hifadhi sasa inatumia uandishi wa vipande ili kukaa ndani ya mipaka ya Chrome, na ujumbe wa makosa wazi wakati imejaa.
 Toleo la 4.0 (Maktaba ya Vidokezo): Sasishwa lenye tamaa zaidi hadi sasa! Folda za Gemini inapata Hali ya Vidokezo mpya kabisa: hifadhi vidokezo vyako bora, viharirie mahali pake, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja. Kitufe cha kubadilisha hali chenye mwendo, utafutaji na upangaji katika Hali ya Vidokezo, kitufe maalum cha Gem na usawazishaji wa vidokezo usiotegemea vimeongezwa. Bandika vidokezo muhimu juu ya maktaba yako.

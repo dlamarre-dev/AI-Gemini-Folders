@@ -28,7 +28,7 @@ S verzí 4.0 se Složky Gemini stávají vaším skutečným kokpitem pro Gemini
 ⇅ Vlastní řazení: Řaďte složky a konverzace okamžitě (Nejnovější, Nejstarší, A-Z) s okamžitým odrazem v mobilní synchronizaci.
 🤖 Inteligentní detekce a Vyhledávání: Automatické vyplnění přesného názvu konverzace a panel vyhledávání v reálném čase.
 ☁️ Cloudová synchronizace a Záloha: Přístup k organizaci na všech zařízeních a export dat v JSON.
-🎨 Dizajn Material 3 a Vícejazyčnost: Ultrakompaktní rozhraní s plně vlastními dialogovými okny, automatickým tmavým režimem a podporou 27 jazyků!
+🎨 Dizajn Material 3 a Vícejazyčnost: Ultrakompaktní rozhraní s plně vlastními dialogovými okny, automatickým tmavým režimem a podporou 43 jazyků!
 
 🛠️ JAK TO FUNGUJE?
 

@@ -28,7 +28,7 @@ S verziou 4.0 sa Priečinky Gemini stávajú vaším skutočným kokpitom pre Ge
 ⇅ Vlastné triedenie: Triedte priečinky a konverzácie okamžite (Najnovšie, Najstaršie, A-Z) s okamžitým odrazom v mobilnej synchronizácii.
 🤖 Inteligentná detekcia a Vyhľadávanie: Automatické vyplnenie presného názvu konverzácie a panel vyhľadávania v reálnom čase.
 ☁️ Cloudová synchronizácia a Záloha: Prístup k organizácii na všetkých zariadeniach a export dát v JSON.
-🎨 Dizajn Material 3 a Viacjazyčnosť: Ultrakompaktné rozhranie s plne vlastnými dialógovými oknami, automatickým tmavým režimom a podporou 27 jazykov!
+🎨 Dizajn Material 3 a Viacjazyčnosť: Ultrakompaktné rozhranie s plne vlastnými dialógovými oknami, automatickým tmavým režimom a podporou 43 jazykov!
 
 🛠️ AKO TO FUNGUJE?
 

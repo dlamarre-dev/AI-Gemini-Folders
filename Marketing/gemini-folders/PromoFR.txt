@@ -28,7 +28,7 @@ Avec la version 4.0, Dossiers Gemini devient votre véritable cockpit Gemini : o
 ⇅ Tri personnalisé : Triez dossiers et conversations à la volée (Plus récents, Plus anciens, A-Z) avec répercussion directe sur la synchronisation mobile.
 🤖 Détection intelligente & Recherche : Pré-remplissage automatique du titre exact de votre conversation et barre de recherche instantanée.
 ☁️ Synchronisation Cloud & Backup : Retrouvez votre organisation sur tous vos appareils et exportez vos données en JSON.
-🎨 Design Material 3 & Multilingue : Interface ultra-compacte avec boîtes de dialogue entièrement sur mesure, mode sombre automatique et prise en charge de 27 langues !
+🎨 Design Material 3 & Multilingue : Interface ultra-compacte avec boîtes de dialogue entièrement sur mesure, mode sombre automatique et prise en charge de 43 langues !
 
 🛠️ COMMENT ÇA MARCHE ?
 

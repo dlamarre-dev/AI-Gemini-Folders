@@ -28,7 +28,7 @@ Sa bersyon 4.0, ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockp
 ⇅ Custom Sorting: Mag-sort ng mga folder at pag-uusap on the fly (Pinakabago, Pinakamatanda, A-Z) na agad na makikita sa iyong mobile sync.
 🤖 Smart Detection at Search: Awtomatikong pre-fill ng eksaktong pamagat ng iyong pag-uusap at real-time na search bar.
 ☁️ Cloud Sync at Backup: I-access ang iyong organisasyon sa lahat ng iyong device at i-export ang iyong data bilang JSON.
-🎨 Material 3 Design at Multilingual: Ultra-compact na interface na may ganap na custom na modal dialog, awtomatikong dark mode, at suporta para sa 27 na wika!
+🎨 Material 3 Design at Multilingual: Ultra-compact na interface na may ganap na custom na modal dialog, awtomatikong dark mode, at suporta para sa 43 na wika!
 
 🛠️ PAANO ITO GUMAGANA?
 

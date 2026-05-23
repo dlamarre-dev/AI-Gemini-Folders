@@ -28,7 +28,7 @@ W wersji 4.0 Foldery Gemini stają się Twoim prawdziwym centrum sterowania Gemi
 ⇅ Niestandardowe sortowanie: Sortuj foldery i rozmowy na bieżąco (Najnowsze, Najstarsze, A-Z) z natychmiastowym odzwierciedleniem w synchronizacji mobilnej.
 🤖 Inteligentne wykrywanie i Wyszukiwanie: Automatyczne uzupełnianie dokładnego tytułu rozmowy i pasek wyszukiwania w czasie rzeczywistym.
 ☁️ Synchronizacja w chmurze i Kopia zapasowa: Dostęp do swojej organizacji na wszystkich urządzeniach i eksport danych w formacie JSON.
-🎨 Design Material 3 i Wielojęzyczność: Ultrakompaktowy interfejs z w pełni niestandardowymi oknami dialogowymi, automatycznym trybem ciemnym i obsługą 27 języków!
+🎨 Design Material 3 i Wielojęzyczność: Ultrakompaktowy interfejs z w pełni niestandardowymi oknami dialogowymi, automatycznym trybem ciemnym i obsługą 43 języków!
 
 🛠️ JAK TO DZIAŁA?
 

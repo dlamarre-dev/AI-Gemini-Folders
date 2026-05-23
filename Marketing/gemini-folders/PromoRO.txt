@@ -28,7 +28,7 @@ Cu versiunea 4.0, Foldere Gemini devine adevăratul dvs. cockpit Gemini: organiz
 ⇅ Sortare personalizată: Sortați folderele și conversațiile din mers (Cele mai noi, Cele mai vechi, A-Z) cu reflectare instantanee în sincronizarea mobilă.
 🤖 Detectare inteligentă și Căutare: Completare automată a titlului exact al conversației și bară de căutare în timp real.
 ☁️ Sincronizare Cloud și Backup: Accesați organizarea pe toate dispozitivele și exportați datele în JSON.
-🎨 Design Material 3 și Multilingv: Interfață ultra-compactă cu ferestre de dialog complet personalizate, mod întunecat automat și suport pentru 27 limbi!
+🎨 Design Material 3 și Multilingv: Interfață ultra-compactă cu ferestre de dialog complet personalizate, mod întunecat automat și suport pentru 43 limbi!
 
 🛠️ CUM FUNCȚIONEAZĂ?
 

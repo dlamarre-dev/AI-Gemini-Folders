@@ -8,7 +8,7 @@ Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj po
 📝 Osebna knjižnica pozivov: Preklopi na Način pozivov z enim klikom na stikalo v glavi. Shrani najboljše pozive z naslovom in besedilom, takoj jih najdi z iskanjem in razvrščanjem (najnovejše, najstarejše, A–Ž).
 ▶ Vstavljanje z enim klikom: Klikni gumb za predvajanje (▶) na katerem koli shranjenem pozivu, da ga vstaviš neposredno v vnosno polje Gemini.
 ✏️ Urejanje na mestu: Klikni za razširitev poziva in uredi besedilo neposredno. Spremembe se samodejno shranijo po kratkem premoru.
-💎 Prilagojena povezava Gem: Nastavi povezavo do priljubljenega Gema in jo vklopiti/izklopiti z enim klikom.
+💎 Prilagojena povezava Gem: Nastavi povezavo do priljubljenega Gema in jo vklopi/izklopi z enim klikom.
 ☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
 📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
 ⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Uporabite ↓/↑ za krmarjenje, pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
@@ -28,7 +28,7 @@ Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj po
 ⇅ Prilagojeno razvrščanje: Razvrsti mape in pogovore (Najnovejše, Najstarejše, A–Ž) s spremembami, ki se takoj odrazijo v mobilni sinhronizaciji.
 🤖 Pametno zaznavanje in iskanje: Samodejno predizpolnjevanje natančnega naslova pogovora in iskalna vrstica v realnem času.
 ☁️ Sinhronizacija v oblaku in varnostne kopije: Dostop do organizacije na vseh napravah in izvoz podatkov kot JSON.
-🎨 Dizajn Material 3 in večjezičnost: Ultrakompakten vmesnik s popolnoma prilagojenimi modalnimi pogovornimi okni, samodejni temni način in podpora za 27 jezikov!
+🎨 Dizajn Material 3 in večjezičnost: Ultrakompakten vmesnik s popolnoma prilagojenimi modalnimi pogovornimi okni, samodejni temni način in podpora za 43 jezikov!
 
 🛠️ KAKO DELUJE?
 
