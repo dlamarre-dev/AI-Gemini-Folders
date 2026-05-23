@@ -1,4 +1,4 @@
-Je, unatumia Google Gemini kila siku — kwa kazi, msimbo, uandishi, au utafiti — lakini unajikuta ukiandika tena vidokezo vile vile, huku mazungumzo yako bora yakipotea katika historia isiyo na mwisho?
+﻿Je, unatumia Google Gemini kila siku — kwa kazi, msimbo, uandishi, au utafiti — lakini unajikuta ukiandika tena vidokezo vile vile, huku mazungumzo yako bora yakipotea katika historia isiyo na mwisho?
 Folda za Gemini (Gemini Folders) ni kiendelezi unachohitaji.
 
 Na toleo la 4.0, Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga mazungumzo katika folda, jenga maktaba ya vidokezo vinavyoweza kutumika tena, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja — bila kunakili na kubandika.
@@ -62,7 +62,6 @@ Unavutiwa na Folda za Gemini lakini pia unatumia ChatGPT, Claude, Copilot, Perpl
 
 📢 MASASISHO:
 Toleo 4.2 (Kichocheo cha Kidokezo): Andika # katika uwanja wa mazungumzo wa Gemini ili uone maagizo yako yaliyohifadhiwa yakichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.
-Toleo 4.1.1: Marekebisho madogo ya hitilafu na maboresho ya uthabiti.
 Toleo 4.1 (Upanuzi wa Kimataifa na Ugumu): Lugha 16 mpya zinaongeza Folda za Gemini hadi lokalizesheni 43 duniani kote — lugha za Nordiki, nchi za Baltic na chanjo iliyopanuliwa ya Ulaya na Asia ya Kusini-mashariki. Kurekebisha hali ya mbio ambayo ingeweza kupoteza kimya kimya uhifadhi wakati wa kubonyeza haraka. Uingizaji wa prompt umeboreshwa kwa InputEvent, ukibadilisha execCommand iliyopitwa na wakati. Mfumo wa uingizaji umeimarishwa dhidi ya URL hasidi katika faili za nakala rudufu. Hitilafu mbaya ya usalama wa data imetibiwa: kuwezesha usawazishaji wa maagizo kwenye hifadhi iliyojaa karibu kungeweza kufuta kimya kimya maagizo yote yaliyohifadhiwa. Hifadhi sasa inatumia uandishi wa vipande ili kukaa ndani ya mipaka ya Chrome, na ujumbe wa makosa wazi wakati imejaa.
 Toleo la 4.0 (Maktaba ya Vidokezo): Sasishwa lenye tamaa zaidi hadi sasa! Folda za Gemini inapata Hali ya Vidokezo mpya kabisa: hifadhi vidokezo vyako bora, viharirie mahali pake, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja. Kitufe cha kubadilisha hali chenye mwendo, utafutaji na upangaji katika Hali ya Vidokezo, kitufe maalum cha Gem na usawazishaji wa vidokezo usiotegemea vimeongezwa. Bandika vidokezo muhimu juu ya maktaba yako.
 Toleo la 3.5 (Misingi Imara na Uzoefu Ulioboreshwa): Sasisha kubwa chini ya kofia kwa uthabiti wa kiwango cha kitaaluma! Arifa ya kuona kwa hifadhi zilizorudiwa kupitia njia ya mkato ya kibodi. Hakuna rudiaji za uongo kutoka kwa mabadiliko ya URL ya Gemini, na hifadhidata inalindwa dhidi ya uharibifu na usanifu wetu mpya wa usalama.

@@ -1,4 +1,4 @@
-Bruker du Google Gemini hver dag – til jobb, koding, skriving eller forskning – men skriver du de samme promptene på nytt igjen og igjen, mens de beste samtalene dine forsvinner i en endeløs historikk?
+﻿Bruker du Google Gemini hver dag – til jobb, koding, skriving eller forskning – men skriver du de samme promptene på nytt igjen og igjen, mens de beste samtalene dine forsvinner i en endeløs historikk?
 Gemini Mapper (Gemini Folders) er tillegget du trenger.
 
 Med versjon 4.0 blir Gemini Mapper din sanne Gemini-cockpit: organiser samtaler i mapper, bygg et bibliotek med gjenbrukbare prompts, og sett dem direkte inn i Gemini med ett klikk – uten kopiering og liming.
@@ -62,7 +62,6 @@ Interessert i Gemini Mapper men bruker du også ChatGPT, Claude, Copilot, Perple
 
 📢 OPPDATERINGER:
 Versjon 4.2 (Promptutløser): Skriv # i Geminis chatfelt for å se dine lagrede prompter filtrert i sanntid. Bruk ↓/↑ til å navigere gjennom forslag, Mellomrom for å autofullføre eller injisere — uten å åpne panelet.
-Versjon 4.1.1: Mindre feilrettinger og stabilitetsforbedringer.
 Versjon 4.1 (Global utvidelse og herding): 16 nye språk bringer Gemini Mapper til 43 lokaliseringer verden over — nordiske språk, de baltiske statene og utvidet europeisk og sørøstasiatisk dekning. Fikset en race condition som stille kunne miste en lagring ved raske klikk. Prompt-innsetting modernisert med InputEvent, som erstatter den utdaterte execCommand. Import-pipeline herdet mot ondsinnede URL-er i sikkerhetskopifiler. Rettet en kritisk datasikkerhetsfeil: aktivering av prompt-synkronisering med nesten fullt lager kunne lydløst slette alle lagrede prompts. Lageret bruker nå fragmenterte skrivinger for å holde seg innenfor Chromes grenser, med klare feilmeldinger når det er fullt.
 Versjon 4.0 (Promptbibliotek): Den mest ambisiøse oppdateringen hittil! Gemini Mapper får en helt ny Promptmodus: lagre dine beste prompts, rediger dem på stedet og sett dem direkte inn i Gemini med ett klikk. Lagt til animert modusbryter, søk og sortering i Promptmodus, tilpasset Gem-knapp og uavhengig promptsynkronisering.
 Versjon 3.5 (Solide grunnlag og forbedret opplevelse): En stor internjustering for profesjonell robusthet! Visuell varsling for duplisert lagring via hurtigtast. Ingen falske duplikater fra Gemini-URL-endringer.

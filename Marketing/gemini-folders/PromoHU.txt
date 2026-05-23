@@ -1,4 +1,4 @@
-Naponta használja a Google Geminit — munkához, kódoláshoz, íráshoz vagy kutatáshoz —, mégis újra és újra ugyanazokat a promptokat gépeli, miközben legjobb beszélgetései eltűnnek a végtelen előzményekben?
+﻿Naponta használja a Google Geminit — munkához, kódoláshoz, íráshoz vagy kutatáshoz —, mégis újra és újra ugyanazokat a promptokat gépeli, miközben legjobb beszélgetései eltűnnek a végtelen előzményekben?
 Gemini-mappák (Gemini Folders) a bővítmény, amelyre szüksége van.
 
 A 4.0-s verzióval a Gemini-mappák valódi Gemini-kokpitjévé válik: rendszerezze a beszélgetéseket mappákba, építsen fel újrafelhasználható promptokból álló könyvtárat, és egyetlen kattintással illessze be őket közvetlenül a Geminibe — másolás-beillesztés nélkül.
@@ -62,7 +62,6 @@ A Gemini-mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az
 
 📢 FRISSÍTÉSEK:
 4.2-es verzió (Prompt-kiváltó): Írjon # jelet a Gemini chat mezőbe, hogy valós időben szűrve lássa mentett promptjait. Használja a ↓/↑ billentyűket a javaslatok közötti navigáláshoz, a szóközt az automatikus kiegészítéshez vagy beillesztéshez — a panel megnyitása nélkül.
-4.1.1-es verzió: Kisebb hibajavítások és stabilitási fejlesztések.
 4.1-es verzió (Globális bővítés és megerősítés): 16 új nyelv 43 világszintű lokalizációra emeli a Gemini-mappákat — északi nyelvek, balti államok és bővített európai és délkelet-ázsiai lefedettség. Javítva egy versenyhelyzet, amely gyors kattintások esetén csendben eldobhatott egy mentést. A prompt-injektálás modernizálva InputEvent segítségével, felváltva az elavult execCommand-ot. Az import-folyamat megerősítve a biztonsági mentési fájlokban lévő rosszindulatú URL-ek ellen. Kritikus adatbiztonsági hiba javítva: a prompt-szinkronizáció bekapcsolása majdnem teli tárhelyen csendesen törölhette az összes mentett promptot. A tároló mostantól fragmentált írásokat használ a Chrome korlátain belül maradáshoz, egyértelmű hibaüzenetekkel ha megtelt.
 4.0-s verzió (Promptkönyvtár): A valaha volt legambiciózusabb frissítés! A Gemini-mappák egy vadonatúj Promptüzemmódot kap: mentse el legjobb promptjait, szerkessze helyszínen, és illessze be közvetlenül a Geminibe egyetlen kattintással. Animált üzemmódkapcsoló, keresés és rendezés Promptüzemmódban, egyéni Gem-gomb és független prompt-szinkronizálás hozzáadva. Rögzítse lényeges promptjait a könyvtár tetejére.
 3.5-ös verzió (Szilárd alapok és jobb élmény): Jelentős motorháztető alatti frissítés a professzionális szintű megbízhatóságért! Vizuális figyelmeztetés a billentyűparancson keresztüli dupla mentésekhez. Nincs több hamis duplikáció a Gemini URL-változásaiból, az adatbázis védett a sérülés ellen az új biztonsági architektúrával.

@@ -1,4 +1,4 @@
-Koristiš li Google Gemini svaki dan – za posao, kodiranje, pisanje ili istraživanje – ali neprestano iznova tipkaš iste upite, dok ti se najbolji razgovori gube u beskonačnoj povijesti?
+﻿Koristiš li Google Gemini svaki dan – za posao, kodiranje, pisanje ili istraživanje – ali neprestano iznova tipkaš iste upite, dok ti se najbolji razgovori gube u beskonačnoj povijesti?
 Gemini Mape (Gemini Folders) je dodatak koji ti treba.
 
 S verzijom 4.0 Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgovore u mape, izgradi knjižnicu upita za višekratnu upotrebu i ubacuj ih izravno u Gemini jednim klikom – bez kopiranja i lijepljenja.
@@ -61,7 +61,6 @@ Zanima te Gemini Mape, ali koristiš i ChatGPT, Claude, Copilot, Perplexity ili 
 
 📢 AŽURIRANJA:
 Verzija 4.2 (Okidač upita): Unesi # u polje za chat s Geminijem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela.
-Verzija 4.1.1: Manja ispravka grešaka i poboljšanja stabilnosti.
 Verzija 4.1 (Globalna ekspanzija i ojačavanje): 16 novih jezika dovodi Gemini Mape na 43 lokalizacije diljem svijeta — nordički jezici, baltičke države i proširena europska i jugoistočnoazijska pokrivenost. Ispravljen race condition koji je mogao tiho izgubiti spremanje pri brzim klikovima. Umetanje upita modernizirano s InputEvent, zamjenjujući zastarjeli execCommand. Import pipeline ojačan protiv zlonamjernih URL-ova u backup datotekama. Ispravljena kritična greška sigurnosti podataka: aktiviranje sinkronizacije upita s gotovo punom pohranom moglo je tiho izbrisati sve pohranjene upite. Pohrana sada koristi fragmentirane zapise kako bi ostala unutar Chrome ograničenja, s jasnim porukama o pogrešci kad je puna.
 Verzija 4.0 (Knjižnica upita): Najambicioznije ažuriranje do sada! Gemini Mape dobivaju potpuno novi Način upita: spremi najbolje upite, uredi ih na licu mjesta i ubaci ih izravno u Gemini jednim klikom.
 Verzija 3.5 (Čvrsti temelji i poboljšano iskustvo): Veliko interno ažuriranje za profesionalnu pouzdanost!
