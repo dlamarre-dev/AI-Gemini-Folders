@@ -11,11 +11,11 @@ Carpetes IA és el vostre cockpit d'IA unificat: organitzeu converses de totes l
 🔀 Botons de Nova Conversa: Inicieu una nova conversa a ChatGPT, Claude, Copilot, Gemini o Perplexity directament des del Mode Prompt — un botó per servei.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
 📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
-⌨️ Disparador de prompts amb suggeriments en viu: Escriviu # al camp de xat de Gemini per veure a l'instant tots els vostres prompts desats — filtrats en temps real mentre escriviu. Useu ↓/↑ per navegar, premeu Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
+⌨️ Disparador de prompts amb suggeriments en viu: Escriu # al camp de xat de Gemini per veure a l'instant tots els teus prompts desats — filtrats en temps real mentre escrius. Usa ↓/↑ per navegar, prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
 
 🌟 FUNCIONS DE CARPETES
 
-⌨️ Drecera de teclat instantània: Obriu el panell instantàniament des de qualsevol pestanya amb Ctrl+Shift+1 (o Cmd+Shift+1 a Mac).
+⌨️ Drecera de teclat instantània: Obre el panell instantàniament des de qualsevol pestanya amb Ctrl+Shift+1 (o Cmd+Shift+1 a Mac).
 ⚡ Desat ràpid (Clic dret i dreceres): Desa la conversa actual amb un simple clic dret, o utilitza la drecera de teclat (Ctrl+Maj+S o Cmd+Maj+S al Mac) per enviar-la a «⚡ Desat ràpid» – amb una alerta visual si ja estava desada!
 ☑️ Selecció múltiple (Accions massives): Selecciona diverses converses amb caselles de verificació per moure-les o eliminar-les d'un sol clic.
 📑 Integració de grups de pestanyes: Obre una carpeta sencera amb un clic com a grup de pestanyes de Chrome.
@@ -47,7 +47,7 @@ Fes clic a 📝 al commutador a la part superior dreta de l'extensió.
 Fes clic a ➕ Afegeix un prompt, introdueix un títol i el teu text, i desa.
 Per utilitzar un prompt: expandeix-lo i fes clic a ▶ – s'injecta directament a la IA activa.
 Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
-Disparador de prompts: Escriviu # per veure a l'instant tots els vostres prompts desats, o continueu escrivint per filtrar en temps real. Premeu Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar.
+Disparador de prompts: Escriu # per veure a l'instant tots els teus prompts desats, o continua escrivint per filtrar en temps real. Prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar.
 
 🔒 PRIVACITAT I SEGURETAT
 Construït amb la privacitat com a prioritat. Només sol·licita accés a Gemini, Claude, ChatGPT, Copilot, Perplexity i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
