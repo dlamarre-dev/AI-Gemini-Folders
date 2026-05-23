@@ -1,4 +1,4 @@
-Kasutad Google Gemini iga päev – töö, koodi kirjutamise, kirjutamise või uurimise jaoks – kuid kirjutad samu prompte uuesti ja uuesti, samal ajal kui sinu parimad vestlused kaovad lõpmatutesse ajaloohoidlatesse?
+﻿Kasutad Google Gemini iga päev – töö, koodi kirjutamise, kirjutamise või uurimise jaoks – kuid kirjutad samu prompte uuesti ja uuesti, samal ajal kui sinu parimad vestlused kaovad lõpmatutesse ajaloohoidlatesse?
 Gemini Kaustad (Gemini Folders) on laiendus, mida vajad.
 
 Versiooniga 4.0 saab Gemini Kaustadest sinu tõeline Gemini cockpit: korralda vestlused kaustadesse, loo korduvkasutatavate promptide kogu ja lisa need otse Geminisse ühe klikiga – kopeerimine ja kleepimine pole vajalik.
@@ -61,7 +61,6 @@ Huvitab teid Gemini Kaustad, kuid kasutate ka ChatGPT-d, Claudi, Copiloti, Perpl
 
 📢 UUENDUSED:
 Versioon 4.2 (Viipade käivitaja): Sisestage # Gemini vestlusväljale, et näha salvestatud viipasid reaalajas filtreerituna. Kasutage ↓/↑ soovituste vahel liikumiseks, Tühikut automaatseks täitmiseks või lisamiseks — ilma paneeli avamata.
-Versioon 4.1.1: Väiksemad veaparandused ja stabiilsuse parandused.
 Versioon 4.1 (Globaalne laienemine ja karastamine): 16 uut keelt viib Gemini Kaustad 43 lokalisatsioonini üle maailma — põhjamaised keeled, Balti riigid ning laiendatud Euroopa ja Kagu-Aasia katvus. Parandati race condition, mis võis kiirklõpsude korral salvestuse vaikselt kaotada. Prompti sisestamine moderniseeriti InputEvent-iga, asendades aegunud execCommand-i. Impordipipe hardeeriti varufailide pahatahtlike URL-ide vastu. Kriitilise andmeturbe vea parandus: käskude sünkroonimine peaaegu täis salvestusruumiga võis kõik salvestatud käsklused vaikselt kustutada. Salvestusruum kasutab nüüd tükeldatud kirjutisi, et jääda Chrome'i piiridesse, ning kuvab selgeid veateateid, kui ruum on täis.
 Versioon 4.0 (Promptide kogu): Seni ambitsioonikam uuendus! Gemini Kaustad saab täiesti uue Prompti režiimi: salvesta oma parimad promptid, redigeeri neid otse ja lisa need otse Geminisse ühe klikiga.
 Versioon 3.5 (Kindlad alused ja parem kogemus): Suur sisemine uuendus professionaalse töökindluse jaoks!

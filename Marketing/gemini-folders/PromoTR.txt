@@ -1,4 +1,4 @@
-Google Gemini'yi her gün kullanıyor musunuz — iş, kod, yazım veya araştırma için — ama aynı istemleri sürekli yeniden mi yazıyorsunuz? En iyi konuşmalarınız bitmek bilmez bir geçmişin içinde mi kayboluyor?
+﻿Google Gemini'yi her gün kullanıyor musunuz — iş, kod, yazım veya araştırma için — ama aynı istemleri sürekli yeniden mi yazıyorsunuz? En iyi konuşmalarınız bitmek bilmez bir geçmişin içinde mi kayboluyor?
 Gemini Klasörleri (Gemini Folders) tam aradığınız uzantı.
 
 Sürüm 4.0 ile Gemini Klasörler, gerçek Gemini kokpitiniz haline geliyor: konuşmalarınızı klasörlere düzenleyin, yeniden kullanılabilir istemlerden oluşan bir kütüphane oluşturun ve tek tıklamayla Gemini'ye doğrudan enjekte edin — kopyala-yapıştır yok.
@@ -62,7 +62,6 @@ Gemini Klasörleri ilginizi çekiyor ama ChatGPT, Claude, Copilot, Perplexity ve
 
 📢 GÜNCELLEMELER:
 Sürüm 4.2 (İstem Tetikleyici): Gemini sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan.
-Sürüm 4.1.1: Küçük hata düzeltmeleri ve kararlılık iyileştirmeleri.
 Sürüm 4.1 (Küresel Genişleme ve Güçlendirme): 16 yeni dil, Gemini Klasörleri dünya genelinde 43 yerelleştirmeye taşıyor — İskandinav dilleri, Baltık devletleri ve genişletilmiş Avrupa ve Güneydoğu Asya kapsamı. Hızlı tıklamalarda bir kaydetme işleminin sessizce kaybolmasına yol açabilecek yarış durumu düzeltildi. Kullanımdan kaldırılan execCommand'ın yerini InputEvent ile modern prompt enjeksiyonu aldı. Yedek dosyalardaki kötü amaçlı URL'lere karşı içe aktarma boru hattı güçlendirildi. Kritik veri güvenliği hatası düzeltildi: neredeyse dolu depolama alanında prompt senkronizasyonunu etkinleştirmek, tüm kayıtlı promptları sessizce silebiliyordu. Depolama artık Chrome sınırları içinde kalmak için parçalanmış yazımlar kullanıyor ve dolduğunda açık hata mesajları gösteriyor.
 Sürüm 4.0 (İstem Kütüphanesi): Şimdiye kadarki en iddialı güncelleme! Gemini Klasörler, yepyeni bir İstem Modu kazanıyor: en iyi istemlerinizi kaydedin, yerinde düzenleyin ve tek tıklamayla doğrudan Gemini'ye enjekte edin. Animasyonlu mod geçiş düğmesi, İstem Modu'nda arama ve sıralama, özel Gem düğmesi ve bağımsız istem senkronizasyonu eklendi. Temel istemlerinizi kütüphanenizin en üstüne sabitleyin.
 Sürüm 3.5 (Sağlam Temeller & İyileştirilmiş Deneyim): Profesyonel düzeyde sağlamlık için kaputun altında büyük bir güncelleme! Klavye kısayoluyla yinelenen kayıtlar için görsel uyarı. Gemini URL değişikliklerinden kaynaklanan sahte yinelemeler artık yok ve yeni güvenlik mimarimiz sayesinde veri tabanı bozulmaya karşı korumalı.

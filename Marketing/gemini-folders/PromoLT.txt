@@ -1,4 +1,4 @@
-Naudoji Google Gemini kiekvieną dieną – darbui, kodavimui, rašymui ar tyrimams – bet vis iš naujo rašai tuos pačius promptus, o geriausi pokalbiai dingsta begalinėje istorijoje?
+﻿Naudoji Google Gemini kiekvieną dieną – darbui, kodavimui, rašymui ar tyrimams – bet vis iš naujo rašai tuos pačius promptus, o geriausi pokalbiai dingsta begalinėje istorijoje?
 Gemini Aplankai (Gemini Folders) – plėtinys, kurio reikia.
 
 Su versija 4.0 Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbius aplankuose, kurkite pakartotinai naudojamų promptų biblioteką ir įterpk juos tiesiai į Gemini vienu paspaudimu – jokio kopijavimo ir įklijavimo.
@@ -61,7 +61,6 @@ Domitės Gemini Aplankai, bet naudojate ir ChatGPT, Claude, Copilot, Perplexity 
 
 📢 ATNAUJINIMAI:
 Versija 4.2 (Raginimų paleidiklis): Įveskite # Gemini pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio.
-Versija 4.1.1: Nedideli klaidų ištaisymai ir stabilumo patobulinimai.
 Versija 4.1 (Globalus plėtimas ir stiprinimas): 16 naujų kalbų pakelia Gemini Aplankus iki 43 lokalizacijų visame pasaulyje — Šiaurės šalių kalbos, Baltijos valstybės ir išplėsta Europos bei Pietryčių Azijos aprėptis. Ištaisyta race condition, kuri esant greitus paspaudimus galėjo tyliai prarasti išsaugojimą. Prompt įterpimas modernizuotas naudojant InputEvent, pakeičiant pasenusį execCommand. Importo srautas apsaugotas nuo kenkėjiškų URL atsarginių kopijų failuose. Ištaisyta kritinė duomenų saugos klaida: įjungus raginimų sinchronizavimą beveik pilnoje saugykloje, visi išsaugoti raginimai galėjo būti tyliai ištrinti. Saugykla dabar naudoja suskaidytus įrašus, kad liktų Chrome ribose, rodydama aiškius klaidos pranešimus kai ji pilna.
 Versija 4.0 (Promptų biblioteka): Pats ambicingiausias atnaujinimas iki šiol! Gemini Aplankai gauna visiškai naują Promptų režimą: išsaugok geriausius promptus, redaguok juos tiesiogiai ir įterpk tiesiai į Gemini vienu paspaudimu.
 Versija 3.5 (Tvirti pagrindai ir patobulinta patirtis): Didelis vidinis atnaujinimas profesionaliam patikimumui!

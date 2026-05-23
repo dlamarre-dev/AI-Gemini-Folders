@@ -1,4 +1,4 @@
-Você usa o Google Gemini todos os dias — para trabalho, código, redação ou pesquisa — mas fica reescrevendo os mesmos prompts enquanto suas melhores conversas desaparecem em um histórico interminável?
+﻿Você usa o Google Gemini todos os dias — para trabalho, código, redação ou pesquisa — mas fica reescrevendo os mesmos prompts enquanto suas melhores conversas desaparecem em um histórico interminável?
 Pastas Gemini (Gemini Folders) é a extensão que você precisa.
 
 Com a versão 4.0, Pastas Gemini se torna seu verdadeiro cockpit do Gemini: organize suas conversas em pastas, construa uma biblioteca de prompts reutilizáveis e injete-os diretamente no Gemini com um único clique — sem copiar e colar.
@@ -62,7 +62,6 @@ Interessado em Pastas Gemini mas também usa ChatGPT, Claude, Copilot, Perplexit
 
 📢 ATUALIZAÇÕES:
 Versão 4.2 (Gatilho de Prompt): Digite # no campo de chat do Gemini para ver seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel.
-Versão 4.1.1: Pequenas correções de bugs e melhorias de estabilidade.
 Versão 4.1 (Expansão global e fortalecimento): 16 novos idiomas elevam o Pastas Gemini a 43 localizações em todo o mundo — idiomas nórdicos, os estados bálticos e cobertura europeia e do Sudeste Asiático ampliada. Corrigida uma condição de corrida que podia descartar silenciosamente um salvamento em cliques rápidos. Injeção de prompts modernizada com InputEvent, substituindo o execCommand obsoleto. Pipeline de importação reforçado contra URLs maliciosos em arquivos de backup. Correção de bug crítico de segurança de dados: ativar a sincronização de prompts com armazenamento quase cheio podia apagar silenciosamente todos os prompts salvos. O armazenamento agora usa gravações fragmentadas para ficar dentro dos limites do Chrome, com mensagens de erro claras quando está cheio.
 Versão 4.0 (Biblioteca de Prompts): A atualização mais ambiciosa até agora! Pastas Gemini estreia um novo Modo Prompts: salve seus melhores prompts, edite-os inline e injete-os diretamente no Gemini com um clique. Adicionado: alternância de modos animada, busca e ordenação no Modo Prompts, botão Gem personalizado e sincronização independente de prompts. Fixe seus prompts essenciais no topo da biblioteca.
 Versão 3.5 (Bases Sólidas e Experiência Aprimorada): Grande atualização interna para robustez profissional! Alerta visual para salvamentos duplicados. Fim dos falsos duplicados por mudanças de URL do Gemini e banco de dados protegido contra corrupções.

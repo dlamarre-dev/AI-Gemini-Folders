@@ -1,4 +1,4 @@
-Käytätkö Google Geminiä päivittäin – töihin, koodaukseen, kirjoittamiseen tai tutkimukseen – mutta kirjoitatko samat promptit uudelleen ja uudelleen, kun parhaat keskustelusi katoavat loputtomaan historiaasi?
+﻿Käytätkö Google Geminiä päivittäin – töihin, koodaukseen, kirjoittamiseen tai tutkimukseen – mutta kirjoitatko samat promptit uudelleen ja uudelleen, kun parhaat keskustelusi katoavat loputtomaan historiaasi?
 Gemini-kansiot (Gemini Folders) on lisäosa, jota tarvitset.
 
 Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi keskustelut kansioihin, rakenna uudelleenkäytettävien promptien kirjasto ja injektoi ne suoraan Geminiin yhdellä napsautuksella – ei kopiointia tai liittämistä.
@@ -62,7 +62,6 @@ Kiinnostuitko Gemini-kansiot-laajennuksesta, mutta käytätkö myös ChatGPT:tä
 
 📢 PÄIVITYKSET:
 Versio 4.2 (Kehotteen laukaisin): Kirjoita # Geminin chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia.
-Versio 4.1.1: Pieniä virheenkorjauksia ja vakauteen liittyviä parannuksia.
 Versio 4.1 (Globaali laajennus ja kovettaminen): 16 uutta kieltä nostaa Gemini-kansiot 43 lokalisointiin maailmanlaajuisesti — pohjoismaiset kielet, Baltian maat sekä laajennettu eurooppalainen ja Kaakkois-Aasian kattavuus. Korjattu kilpailutilanne, joka saattoi hiljaa hävittää tallennuksen nopeiden napsautusten yhteydessä. Promptin syöttäminen modernisoitu InputEventillä korvaamaan vanhentunut execCommand. Tuontikanava kovetettu haittaohjelmallisia URL-osoitteita vastaan varmuuskopiotiedostoissa. Kriittinen tietoturvavika korjattu: kehotteiden synkronoinnin aktivointi lähes täydellä tallennustilalla saattoi äänettömästi poistaa kaikki tallennetut kehotteet. Tallennustila käyttää nyt paloiteltuja kirjoituksia pysyäkseen Chromen rajoissa, ja näyttää selkeitä virheilmoituksia kun tila on täynnä.
 Versio 4.0 (Promptikirjasto): Kunnianhimoisin päivitys tähän mennessä! Gemini-kansiot saa upouuden Prompttilan: tallenna parhaat promptisi, muokkaa niitä inlinen ja injektoi ne suoraan Geminiin yhdellä napsautuksella. Lisätty animoitu tilakytkин, haku ja lajittelu Prompttilassa, mukautettu Gem-painike ja itsenäinen promptisynkronointi.
 Versio 3.5 (Vahvat perusteet ja parannettu kokemus): Suuri sisäinen päivitys ammattimaiseen luotettavuuteen! Visuaalinen ilmoitus kaksoistallennetusta pikanäppäimellä.

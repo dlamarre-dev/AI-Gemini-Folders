@@ -1,4 +1,4 @@
-Bruger du Google Gemini hver dag – til arbejde, kodning, skrivning eller forskning – men skriver du de samme prompts igen og igen, mens dine bedste samtaler forsvinder i en uendelig historik?
+﻿Bruger du Google Gemini hver dag – til arbejde, kodning, skrivning eller forskning – men skriver du de samme prompts igen og igen, mens dine bedste samtaler forsvinder i en uendelig historik?
 Gemini Mapper (Gemini Folders) er udvidelsen, du har brug for.
 
 Med version 4.0 bliver Gemini Mapper dit sande Gemini-cockpit: organiser samtaler i mapper, byg et bibliotek med genbrugelige prompts og indsæt dem direkte i Gemini med ét klik – ingen kopiering og indsætning.
@@ -62,7 +62,6 @@ Interesseret i Gemini Mapper men bruger du også ChatGPT, Claude, Copilot, Perpl
 
 📢 OPDATERINGER:
 Version 4.2 (Prompt-udløser): Skriv # i Geminis chatfelt for at se dine gemte prompts filtreret i realtid. Brug ↓/↑ til at navigere gennem forslag, Mellemrum for at autofuldføre eller injicere — uden at åbne panelet.
-Version 4.1.1: Mindre fejlrettelser og stabilitetsforbedringer.
 Version 4.1 (Global udvidelse og hærdning): 16 nye sprog bringer Gemini Mapper til 43 oversættelser verden over — nordiske sprog, de baltiske stater og udvidet europæisk og sydøstasiatisk dækning. Rettet en race condition, der stille kunne miste en gem ved hurtige klik. Prompt-indsætning moderniseret med InputEvent, som erstatter den forældede execCommand. Import-pipeline hærdet mod ondsindede URL'er i sikkerhedskopifiler. Rettet en kritisk datasikkerhedsfejl: aktivering af prompt-synkronisering med næsten fuldt lager kunne lydløst slette alle gemte prompts. Lageret bruger nu fragmenterede skrivninger for at forblive inden for Chromes grænser, med klare fejlmeddelelser når det er fuldt.
 Version 4.0 (Promptbibliotek): Den mest ambitiøse opdatering hidtil! Gemini Mapper får en helt ny Promptvisning: gem dine bedste prompts, rediger dem inline og indsæt dem direkte i Gemini med ét klik. Tilføjet animeret tilstandsskifter, søgning og sortering i Promptvisning, tilpasset Gem-knap og uafhængig promptsynkronisering.
 Version 3.5 (Solide grundlag og forbedret oplevelse): En stor intern opdatering for professionel robusthed! Visuel advarsel om duplikatgem via tastaturgenvejen.

@@ -1,4 +1,4 @@
-Uporabljaš Google Gemini vsak dan – za delo, programiranje, pisanje ali raziskovanje – a znova in znova pišeš iste pozive, medtem ko se tvoji najboljši pogovori izgubijo v neskončni zgodovini?
+﻿Uporabljaš Google Gemini vsak dan – za delo, programiranje, pisanje ali raziskovanje – a znova in znova pišeš iste pozive, medtem ko se tvoji najboljši pogovori izgubijo v neskončni zgodovini?
 Mape Gemini (Gemini Folders) je razširitev, ki jo potrebuješ.
 
 Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj pogovore v mape, ustvari knjižnico pozivov za večkratno uporabo in jih vstavi neposredno v Gemini z enim klikom – brez kopiranja in lepljenja.
@@ -61,7 +61,6 @@ Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Perplexit
 
 📢 POSODOBITVE:
 Različica 4.2 (Sprožilec pozivov): Vnesite # v polje za klepet Gemini in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče.
-Različica 4.1.1: Manjše popravke napak in izboljšave stabilnosti.
 Različica 4.1 (Globalna razširitev in utrjevanje): 16 novih jezikov prinaša Mape Gemini na 43 lokalizacij po vsem svetu — severski jeziki, baltske države in razširjena evropska ter južnoazijska pokritost. Odpravljena race condition, ki je lahko pri hitrih klikih tiho zavrgla shranjevanje. Vstavljanje pozivov posodobljeno z InputEvent, ki nadomešča zastareli execCommand. Uvozni kanal utrjen proti zlonamernim URL-jem v varnostnih kopijah. Odpravljena kritična napaka varnosti podatkov: vklop sinhronizacije pozivov s skoraj polnim shranjevalnikom je lahko tiho izbrisal vse shranjene pozive. Shranjevalnik zdaj uporablja fragmentirane zapise, da ostane znotraj omejitev Chrome, z jasnimi sporočili o napakah ko je poln.
 Različica 4.0 (Knjižnica pozivov): Najna mbicioznejša posodobitev doslej! Mape Gemini dobijo popolnoma nov Način pozivov: shrani najboljše pozive, uredi jih na mestu in vstavi neposredno v Gemini z enim klikom.
 Različica 3.5 (Trdne osnove in izboljšana izkušnja): Velika notranja posodobitev za profesionalno zanesljivost!

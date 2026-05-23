@@ -1,4 +1,4 @@
-Folosiți Google Gemini zilnic — pentru muncă, cod, scriere sau cercetare — dar tot reintroduceți aceleași prompturi, iar cele mai bune conversații dispar într-un istoric fără sfârșit?
+﻿Folosiți Google Gemini zilnic — pentru muncă, cod, scriere sau cercetare — dar tot reintroduceți aceleași prompturi, iar cele mai bune conversații dispar într-un istoric fără sfârșit?
 Foldere Gemini (Gemini Folders) este extensia de care aveți nevoie.
 
 Cu versiunea 4.0, Foldere Gemini devine adevăratul dvs. cockpit Gemini: organizați conversațiile în foldere, construiți o bibliotecă de prompturi reutilizabile și injectați-le direct în Gemini cu un singur clic — fără copiere și lipire.
@@ -62,7 +62,6 @@ Interesat de Foldere Gemini, dar folosiți și ChatGPT, Claude, Copilot, Perplex
 
 📢 ACTUALIZĂRI:
 Versiunea 4.2 (Declanșatorul de Prompturi): Tastați # în câmpul de chat al Gemini pentru a vedea prompturile salvate filtrate în timp real. Folosiți ↓/↑ pentru a naviga prin sugestii, Spațiu pentru autocompletare sau injectare — fără a deschide vreodată panoul.
-Versiunea 4.1.1: Remedieri minore ale erorilor și îmbunătățiri ale stabilității.
 Versiunea 4.1 (Expansiune globală și consolidare): 16 limbi noi aduc Foldere Gemini la 43 de localizări în întreaga lume — limbi nordice, statele baltice și acoperire europeană și din Asia de Sud-Est extinsă. Corectată o condiție de cursă care putea pierde silențios o salvare la clicuri rapide. Injecția de prompturi modernizată cu InputEvent, înlocuind execCommand deprecat. Pipeline-ul de import întărit împotriva URL-urilor malițioase din fișierele de rezervă. Corectat un bug critic de securitate a datelor: activarea sincronizării prompturilor cu spațiu de stocare aproape plin putea șterge în liniște toate prompturile salvate. Spațiul de stocare folosește acum scrieri fragmentate pentru a rămâne în limitele Chrome, cu mesaje de eroare clare când este plin.
 Versiunea 4.0 (Biblioteca de Prompturi): Cea mai ambițioasă actualizare de până acum! Foldere Gemini primește un mod Prompturi complet nou: salvați cele mai bune prompturi, editați-le în loc și injectați-le direct în Gemini cu un clic. Adăugat: comutator de moduri animat, căutare și sortare în modul Prompturi, buton Gem personalizat și sincronizare independentă a prompturilor.
 Versiunea 3.5 (Fundații Solide și Experiență Îmbunătățită): O actualizare majoră internă pentru robustețe profesională! Alertă vizuală pentru salvări duplicate. Fără false duplicate din cauza schimbărilor URL Gemini, baza de date protejată împotriva corupțiilor.

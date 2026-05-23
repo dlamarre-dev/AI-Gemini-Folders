@@ -1,4 +1,4 @@
-Vai izmanto Google Gemini katru dienu – darbam, kodēšanai, rakstīšanai vai pētīšanai – bet turpini rakstīt tos pašus uzdevumus no jauna, kamēr labākās sarunas pazūd bezgalīgajā vēsturē?
+﻿Vai izmanto Google Gemini katru dienu – darbam, kodēšanai, rakstīšanai vai pētīšanai – bet turpini rakstīt tos pašus uzdevumus no jauna, kamēr labākās sarunas pazūd bezgalīgajā vēsturē?
 Gemini Mapes (Gemini Folders) ir paplašinājums, kas tev nepieciešams.
 
 Ar versiju 4.0 Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sarunas mapēs, veido atkārtoti lietojamu uzvedņu bibliotēku un ievietojiet tās tieši Gemini ar vienu klikšķi – bez kopēšanas un ielīmēšanas.
@@ -61,7 +61,6 @@ Interesē Gemini Mapes, bet izmantojat arī ChatGPT, Claude, Copilot, Perplexity
 
 📢 ATJAUNINĀJUMI:
 Versija 4.2 (Uzvedņu aktivizētājs): Ievadiet # Gemini tērzēšanas laukā, lai reāllaikā filtrētu saglabātās uzvednes. Izmantojiet ↓/↑, lai pārvietotos starp ieteikumiem, Atstarpi automātiskai pabeigšanai vai ievietošanai — neatverot paneli.
-Versija 4.1.1: Nelieli kļūdu labojumi un stabilitātes uzlabojumi.
 Versija 4.1 (Globālā paplašināšanās un nostiprināšana): 16 jaunas valodas ceļ Gemini Mapes līdz 43 lokalizācijām visā pasaulē — ziemeļvalstu valodas, Baltijas valstis un paplašināts Eiropas un Dienvidaustrumāzijas pārklājums. Novērsts sacensību nosacījums, kas strauju klikšķu gadījumā varēja klusi pazaudēt saglabājumu. Uzvednes ievietošana modernizēta ar InputEvent, aizstājot novecojušo execCommand. Importa cauruļvads nocietināts pret ļaunprātīgiem URL rezerves failos. Novērsta kritiska datu drošības kļūda: aktivējot uzvedņu sinhronizāciju gandrīz pilnā krātuvē, visas saglabātās uzvednes varēja tikt klusumā dzēstas. Krātuve tagad izmanto sadalītus ierakstus, lai paliktu Chrome robežās, parādot skaidrus kļūdu ziņojumus, kad tā ir pilna.
 Versija 4.0 (Uzvedņu bibliotēka): Līdz šim vērienīgākais atjauninājums! Gemini Mapes iegūst pilnīgi jaunu Uzvedņu režīmu: saglabā labākās uzvednes, rediģē tās tiešsaistē un ievietoj tieši Gemini ar vienu klikšķi.
 Versija 3.5 (Stabili pamati un uzlabota pieredze): Liels iekšējs atjauninājums profesionālai uzticamībai!
