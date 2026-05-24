@@ -28,9 +28,15 @@ async function updateLocalLlmContentScript() {
   try {
     const { protocol, hostname, port } = new URL(localLlmUrl);
     const portPart = port ? `:${port}` : '';
+    const origin = `${protocol}//${hostname}${portPart}/*`;
+
+    // Only register if the optional host permission was granted by the user
+    const hasPermission = await new Promise(resolve => chrome.permissions.contains({ origins: [origin] }, resolve));
+    if (!hasPermission) return;
+
     const scriptBase = {
       id: PROMPT_TRIGGER_SCRIPT_ID,
-      matches: [`${protocol}//${hostname}${portPart}/*`],
+      matches: [origin],
       js: ['lz-string.min.js', 'prompt-trigger.js'],
       runAt: 'document_idle',
     };
@@ -105,6 +111,26 @@ async function updateContextMenu() {
 
 chrome.runtime.onInstalled.addListener(() => { updateContextMenu(); updateLocalLlmContentScript(); });
 chrome.runtime.onStartup.addListener(() => { updateContextMenu(); updateLocalLlmContentScript(); });
+
+// The popup closes when Chrome shows its permission dialog, so the permissions.request()
+// callback may never fire there. We activate the pending URL here instead.
+chrome.permissions.onAdded.addListener(async (permissions) => {
+  const { pendingLocalLlmUrl, pendingLocalLlmPrev } = await chrome.storage.local.get(['pendingLocalLlmUrl', 'pendingLocalLlmPrev']);
+  if (!pendingLocalLlmUrl) return;
+
+  try {
+    const origin = new URL(pendingLocalLlmUrl).origin + '/*';
+    if (!permissions.origins || !permissions.origins.includes(origin)) return;
+
+    // Revoke the previous origin's permission if it was different
+    if (pendingLocalLlmPrev) {
+      try { chrome.permissions.remove({ origins: [new URL(pendingLocalLlmPrev).origin + '/*'] }); } catch (_) {}
+    }
+    await chrome.storage.sync.set({ localLlmUrl: pendingLocalLlmUrl });
+    await chrome.storage.local.remove(['pendingLocalLlmUrl', 'pendingLocalLlmPrev']);
+    // updateLocalLlmContentScript will be triggered by the storage change above
+  } catch (_) {}
+});
 chrome.storage.onChanged.addListener((changes, namespace) => {
   if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed || changes.localLlmUrl)) {
     updateContextMenu();

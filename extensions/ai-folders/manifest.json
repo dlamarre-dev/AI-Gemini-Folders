@@ -48,6 +48,15 @@
     }
   ],
   "host_permissions": [
-    "<all_urls>"
+    "*://gemini.google.com/*",
+    "*://claude.ai/*",
+    "*://chatgpt.com/*",
+    "*://copilot.microsoft.com/*",
+    "*://perplexity.ai/*",
+    "*://*.perplexity.ai/*"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
   ]
 }

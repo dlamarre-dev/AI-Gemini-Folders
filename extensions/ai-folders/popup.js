@@ -121,11 +121,53 @@ document.addEventListener('DOMContentLoaded', async () => {
       defaultValue: localLlmUrl,
       placeholder: "http://localhost:3000"
     });
-    if (url !== null) {
-      localLlmUrl = url.trim();
-      chrome.storage.sync.set({ localLlmUrl });
+    if (url === null) return;
+
+    const trimmed = url.trim();
+
+    // User cleared the URL — revoke permission and clear storage
+    if (!trimmed) {
+      if (localLlmUrl) {
+        try { chrome.permissions.remove({ origins: [new URL(localLlmUrl).origin + '/*'] }); } catch (_) {}
+      }
+      localLlmUrl = '';
+      chrome.storage.sync.set({ localLlmUrl: '' });
       updateLocalBtn();
+      return;
     }
+
+    let origin;
+    try { origin = new URL(trimmed).origin + '/*'; } catch (_) { return; }
+
+    // Same origin as before — just update stored value, no permission change needed
+    try {
+      if (localLlmUrl && new URL(trimmed).origin === new URL(localLlmUrl).origin) {
+        localLlmUrl = trimmed;
+        chrome.storage.sync.set({ localLlmUrl: trimmed });
+        updateLocalBtn();
+        return;
+      }
+    } catch (_) {}
+
+    // New or changed URL — request optional host permission.
+    // Chrome closes the popup when the permission dialog appears, so we stash the
+    // URL in local storage first; the service worker's onAdded listener will
+    // activate it if the popup is destroyed before the callback fires.
+    chrome.storage.local.set({ pendingLocalLlmUrl: trimmed, pendingLocalLlmPrev: localLlmUrl || '' });
+
+    const granted = await new Promise(resolve => chrome.permissions.request({ origins: [origin] }, resolve));
+
+    // If we reach here, the popup survived the permission dialog.
+    chrome.storage.local.remove(['pendingLocalLlmUrl', 'pendingLocalLlmPrev']);
+    if (!granted) return;
+
+    // Revoke the previous origin's permission if it changed
+    if (localLlmUrl) {
+      try { chrome.permissions.remove({ origins: [new URL(localLlmUrl).origin + '/*'] }); } catch (_) {}
+    }
+    localLlmUrl = trimmed;
+    chrome.storage.sync.set({ localLlmUrl: trimmed });
+    updateLocalBtn();
   }
 
   document.querySelectorAll('.site-new-conv-btn').forEach(btn => {
