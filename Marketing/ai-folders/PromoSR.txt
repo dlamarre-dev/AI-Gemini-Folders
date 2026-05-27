@@ -39,7 +39,7 @@ Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite VI
 Mod foldera:
 Otvori razgovor na Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Otvori panel: Ctrl+Shift+1 (ili Cmd+Shift+1 na Mac-u).
-Brzo čuvanje: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Sačuvaj u Gemini Foldere».
+Brzo čuvanje: Ctrl+Shift+S (ili Cmd+Shift+S na Mac-u), ili desni klik > «Sačuvaj u Gemini Foldere».
 Putem proširenja: Klikni ikonu, odaberi folder i sačuvaj.
 Mobilno: Označi 📱 u podnožju da sinhronizuješ foldere s telefonom.
 
