@@ -69,11 +69,11 @@ function make(locale) {
     devChat1, devChat2, resChat1, writeChat1,
     pinnedFolders: [devFolder],
     folders: {
-      // Dev folder: conversations from ChatGPT + Claude + Gemini
+      // Dev folder: conversations from ChatGPT + Claude + Deepseek +    Gemini
       [devFolder]: [
         { url: 'https://chatgpt.com/c/aaa1',   title: devChat1,  timestamp: NOW - 1 * DAY, site: 'chatgpt' },
         { url: 'https://claude.ai/chat/aaa2',   title: devChat2,  timestamp: NOW - 2 * DAY, site: 'claude' },
-        { url: 'https://chatgpt.com/c/aaa3',    title: devChat3,  timestamp: NOW - 3 * DAY, site: 'chatgpt' },
+        { url: 'https://chat.deepseek.com/a/aaa3', title: devChat3,  timestamp: NOW - 3 * DAY, site: 'deepseek' },
         { url: 'https://gemini.google.com/app/aaa4', title: `${devChat1} v2`, timestamp: NOW - 4 * DAY, site: 'gemini' },
       ],
       // Research folder: Perplexity + Copilot + Claude
