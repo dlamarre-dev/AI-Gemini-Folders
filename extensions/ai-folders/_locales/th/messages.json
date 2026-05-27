@@ -3,7 +3,7 @@
     "message": "โฟลเดอร์ AI"
   },
   "extDesc": {
-    "message": "จัดระเบียบบทสนทนา AI ของคุณในโฟลเดอร์แบบกำหนดเอง รองรับ Gemini, Claude, ChatGPT, Copilot และ Perplexity"
+    "message": "จัดระเบียบบทสนทนา AI ของคุณในโฟลเดอร์แบบกำหนดเอง รองรับ Gemini, Claude, ChatGPT, Copilot, DeepSeek และ Perplexity"
   },
   "appTitle": {
     "message": "โฟลเดอร์ AI"
@@ -183,7 +183,7 @@
     "message": "ยังไม่มีพรอมต์ที่บันทึกไว้"
   },
   "promptAddBtn": {
-    "message": "เพิ่มพรอมต์"
+    "message": "พรอมต์"
   },
   "promptCopyTitle": {
     "message": "คัดลอก"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "บทสนทนา Copilot ใหม่"
   },
+  "newConv_deepseek": {
+    "message": "บทสนทนา DeepSeek ใหม่"
+  },
   "newConv_perplexity": {
     "message": "บทสนทนา Perplexity ใหม่"
   },
@@ -237,7 +240,7 @@
     "message": "ตั้งค่า URL ของ LLM ในเครื่อง:"
   },
   "alertNotSupported": {
-    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot หรือ Perplexity)"
+    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek หรือ Perplexity)"
   },
   "alertEditorNotFound": {
     "message": "ไม่พบช่องป้อนข้อความในหน้านี้ ลองคลิกที่ตัวแก้ไขก่อน แล้วจึงใช้ปุ่มแทรก"

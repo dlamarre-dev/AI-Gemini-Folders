@@ -3,7 +3,7 @@
         "message": "AI složky"
     },
     "extDesc": {
-        "message": "Uspořádejte konverzace s AI do vlastních složek. Podporuje Gemini, Claude, ChatGPT, Copilot a Perplexity."
+        "message": "Uspořádejte konverzace s AI do vlastních složek. Podporuje Gemini, Claude, ChatGPT, Copilot, DeepSeek a Perplexity."
     },
     "appTitle": {
         "message": "AI složky"
@@ -183,7 +183,7 @@
         "message": "Zatím žádné uložené výzvy."
     },
     "promptAddBtn": {
-        "message": "Přidat výzvu"
+        "message": "Výzva"
     },
     "promptCopyTitle": {
         "message": "Kopírovat"
@@ -227,6 +227,9 @@
     "newConv_copilot": {
         "message": "Nová konverzace v Copilot"
     },
+  "newConv_deepseek": {
+    "message": "Nová konverzace v DeepSeek"
+  },
     "newConv_perplexity": {
         "message": "Nová konverzace v Perplexity"
     },
@@ -237,7 +240,7 @@
         "message": "Nastavit URL místního LLM:"
     },
     "alertNotSupported": {
-        "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot nebo Perplexity)."
+        "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek nebo Perplexity)."
     },
     "alertEditorNotFound": {
         "message": "Na této stránce nelze najít textové pole. Nejprve klikněte do editoru a poté použijte tlačítko Vložit."

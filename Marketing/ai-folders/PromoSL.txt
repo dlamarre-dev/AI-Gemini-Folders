@@ -1,4 +1,4 @@
-﻿Vaši AI pogovori so razpršeni po petih različnih spletnih mestih. Vedno znova vnašate iste pozive. Vaši najboljši klepeti izginejo v neskončnih zgodovinah na Gemini, Claude, ChatGPT, Copilot in Perplexity.
+﻿Vaši AI pogovori so razpršeni po šestih različnih spletnih mestih. Vedno znova vnašate iste pozive. Vaši najboljši klepeti izginejo v neskončnih zgodovinah na Gemini, Claude, ChatGPT, Copilot, DeepSeek in Perplexity.
 Mape AI je razširitev, ki jo potrebujete.
 
 Mape AI je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vseh vaših AI-orodij v skupne mape, zgradite knjižnico promptov za večkratno uporabo in vstavljajte prompte neposredno v kateri koli podprti AI — brez kopiranja in lepljenja.
@@ -8,7 +8,7 @@ Mape AI je vaše enotno AI-upravljalno središče: organizirajte pogovore iz vse
 📝 Osebna knjižnica pozivov: Preklopi na Način pozivov z enim klikom na stikalo v glavi. Shrani najboljše pozive z naslovom in besedilom, takoj jih najdi z iskanjem in razvrščanjem (najnovejše, najstarejše, A–Ž).
 ▶ Vstavljanje z enim klikom: Klikni gumb za predvajanje (▶) na katerem koli shranjenem pozivu, da ga vstaviš neposredno v vnosno polje aktivnega AI.
 ✏️ Urejanje na mestu: Klikni za razširitev poziva in uredi besedilo neposredno. Spremembe se samodejno shranijo po kratkem premoru.
-🔀 Gumbi za novo pogovor: Začnite nov pogovor na ChatGPT, Claude, Copilot, Gemini ali Perplexity neposredno iz načina pozivov — en gumb za vsako storitev.
+🔀 Gumbi za novo pogovor: Začnite nov pogovor na ChatGPT, Claude, Copilot, DeepSeek, Gemini ali Perplexity neposredno iz načina pozivov — en gumb za vsako storitev.
 ☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
 📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
 ⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Uporabite ↓/↑ za krmarjenje, pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
@@ -37,7 +37,7 @@ Uporabljate lokalni model AI (Ollama, LM Studio, Jan ali drugega)? Konfigurirajt
 🛠️ KAKO DELUJE?
 
 Način map:
-Odpri pogovor na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Odpri pogovor na Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Odprite ploščo: Ctrl+Shift+1 (ali Cmd+Shift+1 na Macu).
 Hitro shranjevanje: Ctrl+Shift+S (ali Cmd+Shift+S na Macu), ali desni klik > «Shrani v Mape AI».
 Prek razširitve: Klikni ikono, izberi mapo in shrani.
@@ -51,12 +51,13 @@ Za pripenjanje poziva: klikni 📍 – premakne se na vrh seznama.
 Sprožilec pozivov: Vnesite #, da takoj vidite vse shranjene pozive, ali nadaljujte tipkanje za filtriranje v realnem času. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za vstavljanje.
 
 🔒 ZASEBNOST IN VARNOST
-Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do Gemini, Claude, ChatGPT, Copilot, Perplexity in bere aktivni zavihek samo pri shranjevanju pogovora ali vstavljanju poziva. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek Chrome Sync: brez strežnikov tretjih oseb, brez telemetrije.
+Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity in bere aktivni zavihek samo pri shranjevanju pogovora ali vstavljanju poziva. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek Chrome Sync: brez strežnikov tretjih oseb, brez telemetrije.
 
 🤝 ODPRTOKODNI PROJEKT
 Mape AI je odprtokodni projekt, zgrajen s strastjo. Preglednost in spoštovanje tvoje zasebnosti sta naši najvišji prioriteti. Si razvijalec ali samo radoveden? Preglej kodo, sledi dnevniku sprememb ali prispevaj na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 POSODOBITVE:
+Različica 1.2 (DeepSeek): Dodana podpora za DeepSeek (chat.deepseek.com). Zaženite nove pogovore na DeepSeeku neposredno iz načina pozivov, shranite jih v mape in vstavljajte pozive — z barvo in logotipom DeepSeek.
 Različica 1.1 (Sprožilec pozivov): Vnesite # v katero koli polje za klepet AI in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče.
 Različica 1.0: Prva izdaja! Organizirajte pogovore iz Gemini, Claude, ChatGPT, Copilot in Perplexity v skupne mape. Popolna knjižnica pozivov z vstavljanjem z enim klikom, bližnjice za hitro shranjevanje, povleci in spusti, mobilna sinhronizacija, množična dejanja, skupine zavihkov in podpora za 43 jezikov.

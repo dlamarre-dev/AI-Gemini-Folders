@@ -3,7 +3,7 @@
     "message": "Mape AI"
   },
   "extDesc": {
-    "message": "Organizirajte pogovore z AI v mape po meri. Podpira Gemini, Claude, ChatGPT, Copilot in Perplexity."
+    "message": "Organizirajte pogovore z AI v mape po meri. Podpira Gemini, Claude, ChatGPT, Copilot, DeepSeek in Perplexity."
   },
   "appTitle": {
     "message": "Mape AI"
@@ -183,7 +183,7 @@
     "message": "Še ni shranjenih pozivov."
   },
   "promptAddBtn": {
-    "message": "Dodaj poziv"
+    "message": "Poziv"
   },
   "promptCopyTitle": {
     "message": "Kopiraj"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Nov pogovor s Copilot"
   },
+  "newConv_deepseek": {
+    "message": "Nov pogovor z DeepSeek"
+  },
   "newConv_perplexity": {
     "message": "Nov pogovor s Perplexity"
   },
@@ -237,7 +240,7 @@
     "message": "Nastavi URL lokalnega LLM:"
   },
   "alertNotSupported": {
-    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot ali Perplexity)."
+    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek ali Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."

@@ -3,7 +3,7 @@
     "message": "Foldery AI"
   },
   "extDesc": {
-    "message": "Organizuj rozmowy z AI w niestandardowych folderach. Obsługuje Gemini, Claude, ChatGPT, Copilot i Perplexity."
+    "message": "Organizuj rozmowy z AI w niestandardowych folderach. Obsługuje Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity."
   },
   "appTitle": {
     "message": "Foldery AI"
@@ -183,7 +183,7 @@
     "message": "Nie zapisano jeszcze żadnych promptów."
   },
   "promptAddBtn": {
-    "message": "Dodaj prompt"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Kopiuj"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Nowa rozmowa w Copilot"
   },
+  "newConv_deepseek": {
+    "message": "Nowa rozmowa w DeepSeek"
+  },
   "newConv_perplexity": {
     "message": "Nowa rozmowa w Perplexity"
   },
@@ -237,7 +240,7 @@
     "message": "Ustaw URL lokalnego LLM:"
   },
   "alertNotSupported": {
-    "message": "Używaj tego rozszerzenia na obsługiwanej stronie AI (Gemini, Claude, ChatGPT, Copilot lub Perplexity)."
+    "message": "Używaj tego rozszerzenia na obsługiwanej stronie AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek lub Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nie można znaleźć pola tekstowego na tej stronie. Spróbuj najpierw kliknąć w edytor, a następnie użyj przycisku wstawiania."

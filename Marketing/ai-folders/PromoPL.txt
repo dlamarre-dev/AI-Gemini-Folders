@@ -1,4 +1,4 @@
-﻿Twoje rozmowy z AI są rozrzucone po pięciu różnych stronach. Ciągle przepisujesz te same prompty. Twoje najlepsze czaty znikają w nieskończonych historiach na Gemini, Claude, ChatGPT, Copilot i Perplexity.
+﻿Twoje rozmowy z AI są rozrzucone po sześciu różnych stronach. Ciągle przepisujesz te same prompty. Twoje najlepsze czaty znikają w nieskończonych historiach na Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity.
 Foldery AI to rozszerzenie, którego potrzebujesz.
 
 Foldery AI to Twoje zunifikowane centrum AI: organizuj rozmowy ze wszystkich narzędzi AI w wspólnych folderach, buduj bibliotekę wielokrotnie używanych promptów i wstrzykuj prompty bezpośrednio do dowolnej obsługiwanej AI — bez kopiowania i wklejania.
@@ -8,7 +8,7 @@ Foldery AI to Twoje zunifikowane centrum AI: organizuj rozmowy ze wszystkich nar
 📝 Osobista biblioteka promptów: Przełącz się na tryb promptów jednym kliknięciem przełącznika w nagłówku. Zapisuj najlepsze prompty z tytułem i pełnym tekstem, a potem znajdź je błyskawicznie dzięki wyszukiwaniu i sortowaniu (najnowsze, najstarsze, A-Z).
 ▶ Wstrzyknięcie jednym kliknięciem: Koniec z kopiowaniem i wklejaniem. Kliknij przycisk odtwarzania (▶) przy dowolnym zapisanym prompcie, aby wstrzyknąć go bezpośrednio w pole tekstowe aktywnej AI.
 ✏️ Edycja w miejscu: Kliknij prompt, aby go rozwinąć i edytować tekst bezpośrednio. Zmiany zapisują się automatycznie po krótkiej chwili, a kolejność sortowania aktualizuje się odpowiednio.
-🔀 Przyciski Nowej Rozmowy: Rozpocznij nową rozmowę na ChatGPT, Claude, Copilot, Gemini lub Perplexity bezpośrednio z Trybu Promptów — jeden przycisk na serwis.
+🔀 Przyciski Nowej Rozmowy: Rozpocznij nową rozmowę na ChatGPT, Claude, Copilot, DeepSeek, Gemini lub Perplexity bezpośrednio z Trybu Promptów — jeden przycisk na serwis.
 ☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
 📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
 ⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu Gemini, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Użyj ↓/↑ do nawigacji między sugestiami, naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić.
@@ -37,7 +37,7 @@ Używasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj Fo
 🛠️ JAK TO DZIAŁA?
 
 Tryb Folderów:
-Otwórz rozmowę na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Otwórz rozmowę na Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Otwórz panel: Ctrl+Shift+1 (lub Cmd+Shift+1 na Macu).
 Szybki zapis: Ctrl+Shift+S (lub Cmd+Shift+S na Mac), lub prawy przycisk > „Zapisz w Folderach Gemini".
 Przez rozszerzenie: Kliknij ikonę, wybierz folder, zapisz.
@@ -52,12 +52,13 @@ Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jes
 Wyzwalacz promptu: Wpisz #, aby natychmiast zobaczyć wszystkie swoje zapisane prompty, lub pisz dalej, aby filtrować w czasie rzeczywistym. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby wstawić.
 
 🔒 PRYWATNOŚĆ I BEZPIECZEŃSTWO
-Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do Gemini, Claude, ChatGPT, Copilot, Perplexity i odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez Chrome Sync: bez serwerów zewnętrznych, bez telemetrii.
+Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity i odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez Chrome Sync: bez serwerów zewnętrznych, bez telemetrii.
 
 🤝 PROJEKT OPEN SOURCE
 Foldery AI to projekt open source tworzony z pasją. Przejrzystość i poszanowanie Twojej prywatności to nasze priorytety. Jesteś programistą lub po prostu ciekawskim? Przejrzyj kod, śledź historię zmian lub wnieś wkład na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AKTUALIZACJE:
+Wersja 1.2 (DeepSeek): Dodano obsługę DeepSeek (chat.deepseek.com). Rozpoczynaj nowe rozmowy na DeepSeek bezpośrednio z Trybu Promptów, zapisuj je w folderach i wstrzykuj prompty — z kolorem i logo DeepSeek.
 Wersja 1.1 (Wyzwalacz Promptów): Wpisz # w dowolnym polu czatu AI, aby zobaczyć swoje prompty filtrowane w czasie rzeczywistym. Użyj ↓/↑ do nawigacji między sugestiami, Spacji do autouzupełniania lub wstrzyknięcia — bez otwierania panelu.
 Wersja 1.0: Pierwsze wydanie! Organizuj rozmowy z Gemini, Claude, ChatGPT, Copilot i Perplexity we wspólnych folderach. Pełna biblioteka promptów z wstawianiem jednym kliknięciem, skróty szybkiego zapisu, przeciąganie i upuszczanie, synchronizacja mobilna, akcje zbiorcze, grupy kart i obsługa 43 języków. Obsługa lokalnych LLM z konfigurowalnym URL (localhost i adresy LAN).

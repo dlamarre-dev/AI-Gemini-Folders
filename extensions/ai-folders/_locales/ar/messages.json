@@ -3,7 +3,7 @@
     "message": "مجلدات AI"
   },
   "extDesc": {
-    "message": "نظّم محادثات الذكاء الاصطناعي في مجلدات مخصصة. يدعم Gemini وClaude وChatGPT وCopilot وPerplexity."
+    "message": "نظّم محادثات الذكاء الاصطناعي في مجلدات مخصصة. يدعم Gemini وClaude وChatGPT وCopilot وDeepSeek وPerplexity."
   },
   "appTitle": {
     "message": "مجلدات AI"
@@ -183,7 +183,7 @@
     "message": "لا توجد مطالبات محفوظة بعد."
   },
   "promptAddBtn": {
-    "message": "إضافة مطالبة"
+    "message": "مطالبة"
   },
   "promptCopyTitle": {
     "message": "نسخ"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "محادثة Copilot جديدة"
   },
+  "newConv_deepseek": {
+    "message": "محادثة DeepSeek جديدة"
+  },
   "newConv_perplexity": {
     "message": "محادثة Perplexity جديدة"
   },
@@ -237,7 +240,7 @@
     "message": "تعيين عنوان URL للنموذج المحلي:"
   },
   "alertNotSupported": {
-    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو Perplexity)."
+    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."

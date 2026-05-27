@@ -3,7 +3,7 @@
     "message": "Folder AI"
   },
   "extDesc": {
-    "message": "Susun perbualan AI anda dalam folder tersuai. Menyokong Gemini, Claude, ChatGPT, Copilot dan Perplexity."
+    "message": "Susun perbualan AI anda dalam folder tersuai. Menyokong Gemini, Claude, ChatGPT, Copilot, DeepSeek dan Perplexity."
   },
   "appTitle": {
     "message": "Folder AI"
@@ -183,7 +183,7 @@
     "message": "Belum ada prompt yang disimpan."
   },
   "promptAddBtn": {
-    "message": "Tambah prompt"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Salin"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Perbualan Copilot baharu"
   },
+  "newConv_deepseek": {
+    "message": "Perbualan DeepSeek baharu"
+  },
   "newConv_perplexity": {
     "message": "Perbualan Perplexity baharu"
   },
@@ -237,7 +240,7 @@
     "message": "Tetapkan URL LLM tempatan:"
   },
   "alertNotSupported": {
-    "message": "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot atau Perplexity)."
+    "message": "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot, DeepSeek atau Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemui medan teks pada halaman ini. Cuba klik pada editor terlebih dahulu, kemudian gunakan butang sisip."

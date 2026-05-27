@@ -3,7 +3,7 @@
     "message": "AI Folders"
   },
   "extDesc": {
-    "message": "Organize your AI conversations into custom folders. Supports Gemini, Claude, ChatGPT, Copilot, and Perplexity."
+    "message": "Organize your AI conversations into custom folders. Supports Gemini, Claude, ChatGPT, Copilot, DeepSeek, and Perplexity."
   },
   "appTitle": {
     "message": "AI Folders"
@@ -36,7 +36,7 @@
     "message": "📂 Import"
   },
   "alertNotSupported": {
-    "message": "Please use this extension on a supported AI site (Gemini, Claude, ChatGPT, Copilot, or Perplexity)."
+    "message": "Please use this extension on a supported AI site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, or Perplexity)."
   },
   "defaultFolder": {
     "message": "General"
@@ -223,6 +223,9 @@
   },
   "newConv_copilot": {
     "message": "New Copilot conversation"
+  },
+  "newConv_deepseek": {
+    "message": "New DeepSeek conversation"
   },
   "newConv_perplexity": {
     "message": "New Perplexity conversation"

@@ -3,7 +3,7 @@
     "message": "AI aplankai"
   },
   "extDesc": {
-    "message": "Tvarkykite AI pokalbius pasirinktiniuose aplankuose. Palaikoma Gemini, Claude, ChatGPT, Copilot ir Perplexity."
+    "message": "Tvarkykite AI pokalbius pasirinktiniuose aplankuose. Palaikoma Gemini, Claude, ChatGPT, Copilot, DeepSeek ir Perplexity."
   },
   "appTitle": {
     "message": "AI aplankai"
@@ -183,7 +183,7 @@
     "message": "Dar nėra išsaugotų promptų."
   },
   "promptAddBtn": {
-    "message": "Pridėti promptą"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Kopijuoti"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Naujas Copilot pokalbis"
   },
+  "newConv_deepseek": {
+    "message": "Naujas DeepSeek pokalbis"
+  },
   "newConv_perplexity": {
     "message": "Naujas Perplexity pokalbis"
   },
@@ -237,7 +240,7 @@
     "message": "Nustatyti vietinio LLM URL:"
   },
   "alertNotSupported": {
-    "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot arba Perplexity)."
+    "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek arba Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nepavyko rasti teksto įvesties šiame puslapyje. Pirmiausia spustelėkite redaktorių, tada naudokite įterpimo mygtuką."

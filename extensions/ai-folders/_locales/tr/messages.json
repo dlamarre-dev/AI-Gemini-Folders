@@ -3,7 +3,7 @@
     "message": "YZ Klasörleri"
   },
   "extDesc": {
-    "message": "AI sohbetlerinizi özel klasörlerde düzenleyin. Gemini, Claude, ChatGPT, Copilot ve Perplexity'yi destekler."
+    "message": "AI sohbetlerinizi özel klasörlerde düzenleyin. Gemini, Claude, ChatGPT, Copilot, DeepSeek ve Perplexity'yi destekler."
   },
   "appTitle": {
     "message": "YZ Klasörleri"
@@ -183,7 +183,7 @@
     "message": "Henüz kaydedilmiş istem yok."
   },
   "promptAddBtn": {
-    "message": "İstem Ekle"
+    "message": "İstem"
   },
   "promptCopyTitle": {
     "message": "Kopyala"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Yeni Copilot sohbeti"
   },
+  "newConv_deepseek": {
+    "message": "Yeni DeepSeek sohbeti"
+  },
   "newConv_perplexity": {
     "message": "Yeni Perplexity sohbeti"
   },
@@ -237,7 +240,7 @@
     "message": "Yerel LLM URL'sini ayarla:"
   },
   "alertNotSupported": {
-    "message": "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot veya Perplexity)."
+    "message": "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot, DeepSeek veya Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Bu sayfada metin giriş alanı bulunamadı. Önce düzenleyiciye tıklamayı deneyin, ardından ekle düğmesini kullanın."

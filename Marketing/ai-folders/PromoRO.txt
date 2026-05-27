@@ -1,4 +1,4 @@
-﻿Conversațiile dvs. de IA sunt răspândite pe cinci site-uri diferite. Continuați să retastați aceleași instrucțiuni. Cele mai bune conversații ale dvs. dispar în istorici nesfârșite pe Gemini, Claude, ChatGPT, Copilot și Perplexity.
+﻿Conversațiile dvs. de IA sunt răspândite pe șase site-uri diferite. Continuați să retastați aceleași instrucțiuni. Cele mai bune conversații ale dvs. dispar în istorici nesfârșite pe Gemini, Claude, ChatGPT, Copilot, DeepSeek și Perplexity.
 Dosare IA este extensia de care aveți nevoie.
 
 Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate instrumentele dvs. AI în dosare partajate, construiți o bibliotecă de prompturi reutilizabile și injectați prompturi direct în orice AI acceptat — fără a fi nevoie să copiați și să lipiți.
@@ -8,7 +8,7 @@ Dosare IA este cockpit-ul dvs. AI unificat: organizați conversații din toate i
 📝 Bibliotecă personală de prompturi: Comutați la modul Prompturi cu un singur clic pe butonul de comutare din antet. Salvați cele mai bune prompturi cu titlu și text complet, apoi găsiți-le instantaneu cu căutare și sortare (cele mai noi, cele mai vechi, A-Z).
 ▶ Injectare cu un clic: Nu mai este nevoie de copiere și lipire. Faceți clic pe butonul de redare (▶) al oricărui prompt salvat pentru a-l injecta direct în câmpul de introducere al oricărui AI acceptat.
 ✏️ Editare în loc: Faceți clic pe un prompt pentru a-l extinde și edita textul direct. Modificările se salvează automat după o scurtă pauză, iar ordinea de sortare se actualizează corespunzător.
-🔀 Butoane Conversație Nouă: Lansați o conversație nouă pe ChatGPT, Claude, Copilot, Gemini sau Perplexity direct din Modul Prompt — un buton per serviciu.
+🔀 Butoane Conversație Nouă: Lansați o conversație nouă pe ChatGPT, Claude, Copilot, DeepSeek, Gemini sau Perplexity direct din Modul Prompt — un buton per serviciu.
 ☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
 📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
 ⌨️ Declanșator de prompt cu sugestii live: Tastați # în câmpul de chat al Gemini pentru a vedea imediat toate prompturile salvate — filtrate în timp real pe măsură ce tastați. Folosiți ↓/↑ pentru a naviga, apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru injectare directă.
@@ -37,7 +37,7 @@ Folosiți un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dos
 🛠️ CUM FUNCȚIONEAZĂ?
 
 Modul Foldere:
-Deschideți o conversație pe Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Deschideți o conversație pe Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Deschideți panoul: Ctrl+Shift+1 (sau Cmd+Shift+1 pe Mac).
 Salvare rapidă: Ctrl+Shift+S (sau Cmd+Shift+S pe Mac), sau clic dreapta > „Salvează în Dosare IA".
 Prin extensie: Faceți clic pe pictogramă, alegeți un folder, salvați.
@@ -52,12 +52,13 @@ Pentru a fixa un prompt: faceți clic pe 📍 — se mută în fruntea listei ș
 Declanșator de prompt: Tastați # pentru a vedea imediat toate prompturile salvate, sau continuați să tastați pentru a filtra în timp real. Apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru a injecta.
 
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
-Concepută cu confidențialitatea în centru. Solicită acces doar la Gemini, Claude, ChatGPT, Copilot, Perplexity și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.
+Concepută cu confidențialitatea în centru. Solicită acces doar la Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.
 
 🤝 PROIECT OPEN SOURCE
 Dosare IA este un proiect open source dezvoltat cu pasiune. Transparența și respectul față de confidențialitatea dvs. sunt prioritățile noastre. Sunteți dezvoltator sau pur și simplu curios? Consultați codul, urmăriți istoricul modificărilor sau contribuiți pe GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ACTUALIZĂRI:
+Versiunea 1.2 (DeepSeek): Adăugat suport pentru DeepSeek (chat.deepseek.com). Lansați conversații noi pe DeepSeek direct din Modul Prompt, salvați-le în dosare și injectați prompturi — cu culoarea și logo-ul DeepSeek.
 Versiunea 1.1 (Declanșatorul de Prompturi): Tastați # în orice câmp de chat AI pentru a vedea prompturile salvate filtrate în timp real. Folosiți ↓/↑ pentru a naviga prin sugestii, Spațiu pentru autocompletare sau injectare — fără a deschide vreodată panoul.
 Versiunea 1.0: Prima lansare! Organizați conversații din Gemini, Claude, ChatGPT, Copilot și Perplexity în dosare partajate. Bibliotecă completă de prompturi cu injectare în un clic, comenzi rapide de salvare, glisare și plasare, sincronizare mobilă, acțiuni în masă, grupuri de file și suport pentru 43 de limbi. Suport LLM local cu URL configurabil (localhost și adrese LAN).

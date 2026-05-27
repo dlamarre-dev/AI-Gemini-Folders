@@ -1,4 +1,4 @@
-﻿Tvoji AI razgovori su rasuti po pet različitih stranica. Stalno ponovo unosiš iste upite. Tvoji najbolji chatovi nestaju u beskonačnim povijestima na Geminiju, Claudeu, ChatGPT-u, Copilotu i Perplexityju.
+﻿Tvoji AI razgovori su rasuti po šest različitih stranica. Stalno ponovo unosiš iste upite. Tvoji najbolji chatovi nestaju u beskonačnim povijestima na Geminiju, Claudeu, ChatGPT-u, Copilotu, DeepSeeku i Perplexityju.
 UI mape je proširenje koje ti treba.
 
 UI mape je tvoj objedinjeni AI kokpit: organiziraj razgovore iz svih tvojih AI alata u dijeljene mape, izgradi knjižnicu upita za višekratnu upotrebu i ubacuj upite izravno u bilo koji podržani AI — bez kopiranja i lijepljenja.
@@ -8,7 +8,7 @@ UI mape je tvoj objedinjeni AI kokpit: organiziraj razgovore iz svih tvojih AI a
 📝 Osobna knjižnica upita: Prebaci na Način upita jednim klikom na prekidač u zaglavlju. Spremi najbolje upite s naslovom i tekstom, pronađi ih odmah pretraživanjem i sortiranjem (najnovije, najstarije, A–Ž).
 ▶ Ubacivanje jednim klikom: Klikni gumb za reprodukciju (▶) na spremljenome upitu kako bi ga ubacio izravno u polje za unos aktivnog AI-ja.
 ✏️ Uređivanje na licu mjesta: Klikni za proširenje upita i uredi tekst izravno. Promjene se automatski spremaju nakon kratke pauze.
-🔀 Gumbi za novi razgovor: Pokreni novi razgovor na ChatGPT, Claude, Copilot, Gemini ili Perplexity izravno iz načina upita — jedan gumb po usluzi.
+🔀 Gumbi za novi razgovor: Pokreni novi razgovor na ChatGPT, Claude, Copilot, DeepSeek, Gemini ili Perplexity izravno iz načina upita — jedan gumb po usluzi.
 ☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
 📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
 ⌨️ Okidač upita s prijedlozima uživo: Upiši # u polje za chat Gemini da odmah vidiš sve svoje spremljene upite — filtrirane u stvarnom vremenu dok tipkaš. Koristi ↓/↑ za navigaciju, pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za izravno ubacivanje.
@@ -37,7 +37,7 @@ Koristiš lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfiguriraj UI m
 🛠️ KAKO TO FUNKCIONIRA?
 
 Način mapa:
-Otvori razgovor na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Otvori razgovor na Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Otvori ploču: Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
 Brzo spremi: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Spremi u UI mape».
 Putem dodatka: Klikni ikonu, odaberi mapu i spremi.
@@ -51,12 +51,13 @@ Za prikvačivanje upita: klikni 📍 – premješta se na vrh popisa.
 Okidač upita: Upiši # da odmah vidiš sve svoje spremljene upite, ili nastavi tipkati za filtriranje u stvarnom vremenu. Pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za ubacivanje.
 
 🔒 PRIVATNOST I SIGURNOST
-Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, Perplexity i čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem Chrome Sync: bez poslužitelja trećih strana, bez telemetrije.
+Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity i čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem Chrome Sync: bez poslužitelja trećih strana, bez telemetrije.
 
 🤝 PROJEKT OTVORENOG KODA
 UI mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti naši su najviši prioriteti. Jesi li programer ili si jednostavno radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AŽURIRANJA:
+Verzija 1.2 (DeepSeek): Dodana podrška za DeepSeek (chat.deepseek.com). Pokrenite nove razgovore na DeepSeeku izravno iz načina upita, spremite ih u mape i ubacite upite — s bojom i logom DeepSeeka.
 Verzija 1.1 (Okidač upita): Unesi # u bilo koje polje za chat s AI-jem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela.
 Verzija 1.0: Prvo izdanje! Organizirajte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u dijeljene mape. Potpuna biblioteka upita s umetanjem jednim klikom, prečaci za brzo spremanje, povuci i ispusti, mobilna sinkronizacija, skupne radnje, grupe kartica i podrška za 43 jezika.

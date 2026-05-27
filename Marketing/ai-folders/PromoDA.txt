@@ -1,4 +1,4 @@
-﻿Dine AI-samtaler er spredt ud over fem forskellige sider. Du bliver ved med at skrive de samme prompts igen. Dine bedste chats forsvinder i endeløse historikker på Gemini, Claude, ChatGPT, Copilot og Perplexity.
+﻿Dine AI-samtaler er spredt ud over seks forskellige sider. Du bliver ved med at skrive de samme prompts igen. Dine bedste chats forsvinder i endeløse historikker på Gemini, Claude, ChatGPT, Copilot, DeepSeek og Perplexity.
 AI-mapper er den udvidelse, du har brug for.
 
 AI-mapper er dit samlede AI-kontrolpanel: organiser samtaler fra alle dine AI-værktøjer i delte mapper, opbyg et bibliotek af genbrugbare prompter, og injicér prompter direkte i enhver understøttet AI — uden at kopiere og indsætte.
@@ -8,7 +8,7 @@ AI-mapper er dit samlede AI-kontrolpanel: organiser samtaler fra alle dine AI-v�
 📝 Personligt promptbibliotek: Skift til Promptvisning med ét klik på justeringsknappen i overskriften. Gem dine bedste prompts med titel og tekst, find dem øjeblikkeligt med søgning og sortering (nyeste, ældste, A–Å).
 ▶ Indsætning med ét klik: Klik på afspilningsknappen (▶) på en gemt prompt for at indsætte den direkte i inputfeltet på den aktive AI.
 ✏️ Inline-redigering: Klik for at udvide en prompt og rediger teksten direkte. Ændringer gemmes automatisk efter en kort pause.
-🔀 Knapper til ny samtale: Start en ny samtale på ChatGPT, Claude, Copilot, Gemini eller Perplexity direkte fra Prompt-tilstand — én knap pr. service.
+🔀 Knapper til ny samtale: Start en ny samtale på ChatGPT, Claude, Copilot, DeepSeek, Gemini eller Perplexity direkte fra Prompt-tilstand — én knap pr. service.
 ☁️ Promptsynkronisering: Aktivér skysynkronisering for promptbiblioteket uafhængigt af mapper.
 📌 Fastgjorte prompts: Fastgør vigtige prompts øverst i biblioteket, adskilt fra resten med en visuel separator.
 ⌨️ Prompt-udløser med live-forslag: Skriv # i Geminis chatfelt for straks at se alle dine gemte prompter — filtreret i realtid mens du skriver. Brug ↓/↑ til at navigere, tryk mellemrum på et unikt match for at autofuldføre, eller på et eksakt match for at injicere direkte.
@@ -37,7 +37,7 @@ Kører du en lokal AI-model (Ollama, LM Studio, Jan eller en anden)? Konfigurer 
 🛠️ HVORDAN VIRKER DET?
 
 Mappevisning:
-Åbn en samtale på Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Åbn en samtale på Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Åbn panelet: Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 Hurtiggem: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller højreklik > «Gem i AI-mapper».
 Via udvidelsen: Klik på ikonet, vælg en mappe og gem.
@@ -52,12 +52,13 @@ Fastgørelse af en prompt: klik 📍 – den flyttes øverst på listen og er al
 Prompt-udløser: Skriv # for straks at se alle dine gemte prompter, eller fortsæt med at skrive for at filtrere i realtid. Tryk mellemrum på et unikt match for at autofuldføre, eller på et eksakt match for at injicere.
 
 🔒 PRIVATLIV OG SIKKERHED
-Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til Gemini, Claude, ChatGPT, Copilot, Perplexity og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
+Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
 
 🤝 OPEN SOURCE-PROJEKT
 AI-mapper er et open source-projekt bygget med passion. Gennemsigtighed og respekt for dit privatliv er vores højeste prioriteter. Er du en udvikler eller bare nysgerrig? Gennemse koden, følg ændringsloggen eller bidrag på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 OPDATERINGER:
+Version 1.2 (DeepSeek): Support for DeepSeek (chat.deepseek.com) er tilføjet. Start nye DeepSeek-samtaler direkte fra Promptvisning, gem dem i mapper og injicér prompts — med DeepSeeks farve og logo.
 Version 1.1 (Prompt-udløser): Skriv # i et vilkårligt AI-chatfelt for at se dine gemte prompts filtreret i realtid. Brug ↓/↑ til at navigere gennem forslag, Mellemrum for at autofuldføre eller injicere — uden at åbne panelet.
 Version 1.0: Første udgivelse! Organiser samtaler fra Gemini, Claude, ChatGPT, Copilot og Perplexity i delte mapper. Komplet prompt-bibliotek med ét-klik-injektion, genveje til hurtig lagring, træk og slip, mobilsynkronisering, massehandlinger, fanegrupper og understøttelse af 43 sprog.

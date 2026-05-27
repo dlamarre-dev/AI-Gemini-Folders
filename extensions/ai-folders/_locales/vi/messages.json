@@ -3,7 +3,7 @@
     "message": "Thư mục AI"
   },
   "extDesc": {
-    "message": "Tổ chức các cuộc trò chuyện AI của bạn vào các thư mục tùy chỉnh. Hỗ trợ Gemini, Claude, ChatGPT, Copilot và Perplexity."
+    "message": "Tổ chức các cuộc trò chuyện AI của bạn vào các thư mục tùy chỉnh. Hỗ trợ Gemini, Claude, ChatGPT, Copilot, DeepSeek và Perplexity."
   },
   "appTitle": {
     "message": "Thư mục AI"
@@ -183,7 +183,7 @@
     "message": "Chưa có prompt nào được lưu."
   },
   "promptAddBtn": {
-    "message": "Thêm prompt"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Sao chép"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Cuộc trò chuyện Copilot mới"
   },
+  "newConv_deepseek": {
+    "message": "Cuộc trò chuyện DeepSeek mới"
+  },
   "newConv_perplexity": {
     "message": "Cuộc trò chuyện Perplexity mới"
   },
@@ -237,7 +240,7 @@
     "message": "Đặt URL LLM cục bộ:"
   },
   "alertNotSupported": {
-    "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot hoặc Perplexity)."
+    "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek hoặc Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Không tìm thấy ô nhập văn bản trên trang này. Hãy thử nhấp vào trình soạn thảo trước rồi sử dụng nút chèn."

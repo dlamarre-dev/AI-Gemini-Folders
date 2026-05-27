@@ -3,7 +3,7 @@
     "message": "Folda za AI"
   },
   "extDesc": {
-    "message": "Panga mazungumzo yako ya AI katika folda za kibinafsi. Inasaidia Gemini, Claude, ChatGPT, Copilot na Perplexity."
+    "message": "Panga mazungumzo yako ya AI katika folda za kibinafsi. Inasaidia Gemini, Claude, ChatGPT, Copilot, DeepSeek na Perplexity."
   },
   "appTitle": {
     "message": "Folda za AI"
@@ -183,7 +183,7 @@
     "message": "Hakuna vidokezo vilivyohifadhiwa bado."
   },
   "promptAddBtn": {
-    "message": "Ongeza Kidokezo"
+    "message": "Kidokezo"
   },
   "promptCopyTitle": {
     "message": "Nakili"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Mazungumzo mapya ya Copilot"
   },
+  "newConv_deepseek": {
+    "message": "Mazungumzo mapya ya DeepSeek"
+  },
   "newConv_perplexity": {
     "message": "Mazungumzo mapya ya Perplexity"
   },
@@ -237,7 +240,7 @@
     "message": "Weka URL ya LLM ya ndani:"
   },
   "alertNotSupported": {
-    "message": "Tafadhali tumia kiendelezi hiki kwenye tovuti ya AI inayotumika (Gemini, Claude, ChatGPT, Copilot, au Perplexity)."
+    "message": "Tafadhali tumia kiendelezi hiki kwenye tovuti ya AI inayotumika (Gemini, Claude, ChatGPT, Copilot, DeepSeek, au Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Haiwezekani kupata sehemu ya kuandika katika ukurasa huu. Jaribu kubonyeza kwenye kihariri kwanza, kisha utumie kitufe cha ingiza."

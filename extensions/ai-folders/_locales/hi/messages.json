@@ -3,7 +3,7 @@
         "message": "AI फ़ोल्डर"
     },
     "extDesc": {
-        "message": "अपनी AI बातचीत को कस्टम फ़ोल्डर में व्यवस्थित करें। Gemini, Claude, ChatGPT, Copilot और Perplexity को समर्थन करता है।"
+        "message": "अपनी AI बातचीत को कस्टम फ़ोल्डर में व्यवस्थित करें। Gemini, Claude, ChatGPT, Copilot, DeepSeek और Perplexity को समर्थन करता है।"
     },
     "appTitle": {
         "message": "AI फ़ोल्डर"
@@ -183,7 +183,7 @@
         "message": "अभी तक कोई प्रॉम्प्ट सहेजा नहीं गया।"
     },
     "promptAddBtn": {
-        "message": "प्रॉम्प्ट जोड़ें"
+        "message": "प्रॉम्प्ट"
     },
     "promptCopyTitle": {
         "message": "कॉपी"
@@ -227,6 +227,9 @@
     "newConv_copilot": {
         "message": "नई Copilot बातचीत"
     },
+  "newConv_deepseek": {
+    "message": "नई DeepSeek बातचीत"
+  },
     "newConv_perplexity": {
         "message": "नई Perplexity बातचीत"
     },
@@ -237,7 +240,7 @@
         "message": "स्थानीय LLM URL सेट करें:"
     },
     "alertNotSupported": {
-        "message": "कृपया इस एक्सटेंशन को किसी समर्थित AI साइट पर उपयोग करें (Gemini, Claude, ChatGPT, Copilot या Perplexity)।"
+        "message": "कृपया इस एक्सटेंशन को किसी समर्थित AI साइट पर उपयोग करें (Gemini, Claude, ChatGPT, Copilot, DeepSeek या Perplexity)।"
     },
     "alertEditorNotFound": {
         "message": "इस पृष्ठ पर टेक्स्ट इनपुट नहीं मिला। पहले एडिटर में क्लिक करें, फिर इन्सर्ट बटन का उपयोग करें।"

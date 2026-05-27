@@ -3,7 +3,7 @@
     "message": "AI mapes"
   },
   "extDesc": {
-    "message": "Kārtojiet AI sarunas pielāgotās mapēs. Atbalsta Gemini, Claude, ChatGPT, Copilot un Perplexity."
+    "message": "Kārtojiet AI sarunas pielāgotās mapēs. Atbalsta Gemini, Claude, ChatGPT, Copilot, DeepSeek un Perplexity."
   },
   "appTitle": {
     "message": "AI mapes"
@@ -183,7 +183,7 @@
     "message": "Vēl nav saglabātu uzvedņu."
   },
   "promptAddBtn": {
-    "message": "Pievienot uzvedni"
+    "message": "Uzvedne"
   },
   "promptCopyTitle": {
     "message": "Kopēt"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Jauna Copilot saruna"
   },
+  "newConv_deepseek": {
+    "message": "Jauna DeepSeek saruna"
+  },
   "newConv_perplexity": {
     "message": "Jauna Perplexity saruna"
   },
@@ -237,7 +240,7 @@
     "message": "Iestatīt lokālā LLM URL:"
   },
   "alertNotSupported": {
-    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot vai Perplexity)."
+    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek vai Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."

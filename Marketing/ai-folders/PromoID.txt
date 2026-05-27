@@ -1,4 +1,4 @@
-﻿Percakapan AI Anda tersebar di lima situs yang berbeda. Anda terus mengetik ulang prompt yang sama. Obrolan terbaik Anda menghilang dalam riwayat tak berujung di Gemini, Claude, ChatGPT, Copilot, dan Perplexity.
+﻿Percakapan AI Anda tersebar di enam situs yang berbeda. Anda terus mengetik ulang prompt yang sama. Obrolan terbaik Anda menghilang dalam riwayat tak berujung di Gemini, Claude, ChatGPT, Copilot, DeepSeek, dan Perplexity.
 Folder AI adalah ekstensi yang Anda butuhkan.
 
 Folder AI adalah kokpit AI terpadu Anda: atur percakapan dari semua alat AI Anda dalam folder bersama, bangun perpustakaan prompt yang dapat digunakan kembali, dan suntikkan prompt langsung ke AI yang didukung — tanpa perlu menyalin dan menempel.
@@ -8,7 +8,7 @@ Folder AI adalah kokpit AI terpadu Anda: atur percakapan dari semua alat AI Anda
 📝 Perpustakaan Prompt Pribadi: Beralih ke Mode Prompt dengan satu klik pada tombol sakelar di header. Simpan prompt terbaik Anda dengan judul dan teks lengkap, lalu temukan seketika dengan pencarian dan pengurutan (terbaru, terlama, A-Z).
 ▶ Injeksi Satu Klik: Tidak perlu lagi salin-tempel. Klik tombol putar (▶) pada prompt mana pun untuk menyuntikkannya langsung ke kolom input AI aktif.
 ✏️ Pengeditan di Tempat: Klik prompt untuk meluaskannya dan edit teks langsung. Perubahan otomatis tersimpan setelah jeda singkat dan urutan pengurutan diperbarui sesuai.
-🔀 Tombol Percakapan Baru: Mulai percakapan baru di ChatGPT, Claude, Copilot, Gemini, atau Perplexity langsung dari Mode Prompt — satu tombol per layanan.
+🔀 Tombol Percakapan Baru: Mulai percakapan baru di ChatGPT, Claude, Copilot, DeepSeek, Gemini, atau Perplexity langsung dari Mode Prompt — satu tombol per layanan.
 ☁️ Sinkronisasi Prompt: Aktifkan sinkronisasi cloud untuk perpustakaan prompt Anda secara independen dari folder Anda.
 📌 Prompt yang Disematkan: Sematkan prompt penting Anda dengan satu klik agar tetap di bagian atas perpustakaan, dipisahkan dari yang lain oleh pemisah visual.
 ⌨️ Pemicu Prompt dengan Saran Langsung: Ketik # di kolom chat Gemini untuk langsung melihat semua prompt tersimpan Anda — difilter secara real time saat Anda mengetik. Gunakan ↓/↑ untuk navigasi, tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan langsung.
@@ -37,7 +37,7 @@ Menjalankan model AI lokal (Ollama, LM Studio, Jan, atau lainnya)? Konfigurasika
 🛠️ CARA KERJANYA?
 
 Mode Folder:
-Buka percakapan di Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Buka percakapan di Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Buka panel: Ctrl+Shift+1 (atau Cmd+Shift+1 di Mac).
 Simpan cepat: Ctrl+Shift+S (atau Cmd+Shift+S di Mac), atau klik kanan > "Simpan ke Folder AI".
 Via ekstensi: Klik ikon, pilih folder, dan simpan.
@@ -52,12 +52,13 @@ Untuk menyematkan prompt: klik 📍 — naik ke bagian atas daftar dan tetap mud
 Pemicu Prompt: Ketik # untuk langsung melihat semua prompt tersimpan Anda, atau lanjutkan mengetik untuk memfilter secara real time. Tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan.
 
 🔒 PRIVASI & KEAMANAN
-Dibangun dengan privasi sebagai inti. Hanya meminta akses ke Gemini, Claude, ChatGPT, Copilot, Perplexity dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui Chrome Sync: tidak ada server pihak ketiga, tidak ada telemetri.
+Dibangun dengan privasi sebagai inti. Hanya meminta akses ke Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui Chrome Sync: tidak ada server pihak ketiga, tidak ada telemetri.
 
 🤝 PROYEK OPEN SOURCE
 Folder AI adalah proyek open source yang dibangun dengan penuh semangat. Transparansi dan penghormatan terhadap privasi Anda adalah prioritas utama kami. Apakah Anda pengembang atau sekadar penasaran? Jelajahi kode, ikuti catatan perubahan, atau berkontribusi di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 PEMBARUAN:
+Versi 1.2 (DeepSeek): Dukungan DeepSeek (chat.deepseek.com) ditambahkan. Mulai percakapan DeepSeek baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt — dengan warna dan logo DeepSeek.
 Versi 1.1 (Pemicu Prompt): Ketik # di kolom chat AI mana pun untuk melihat prompt yang tersimpan difilter secara real time. Gunakan ↓/↑ untuk menavigasi saran, Spasi untuk melengkapi otomatis atau menyuntikkan — tanpa membuka panel.
 Versi 1.0: Rilis pertama! Atur percakapan dari Gemini, Claude, ChatGPT, Copilot, dan Perplexity dalam folder bersama. Pustaka prompt lengkap dengan injeksi satu klik, pintasan simpan cepat, drag & drop, sinkronisasi mobile, aksi massal, grup tab, dan dukungan 43 bahasa. Dukungan LLM lokal dengan URL yang dapat dikonfigurasi (localhost dan alamat LAN).

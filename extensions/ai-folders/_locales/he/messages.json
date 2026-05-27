@@ -3,7 +3,7 @@
     "message": "תיקיות AI"
   },
   "extDesc": {
-    "message": "ארגן את שיחות הבינה המלאכותית שלך בתיקיות מותאמות אישית. תומך ב-Gemini, Claude, ChatGPT, Copilot ו-Perplexity."
+    "message": "ארגן את שיחות הבינה המלאכותית שלך בתיקיות מותאמות אישית. תומך ב-Gemini, Claude, ChatGPT, Copilot, DeepSeek ו-Perplexity."
   },
   "appTitle": {
     "message": "תיקיות AI"
@@ -183,7 +183,7 @@
     "message": "אין עדיין פרומפטים שמורים."
   },
   "promptAddBtn": {
-    "message": "הוסף פרומפט"
+    "message": "פרומפט"
   },
   "promptCopyTitle": {
     "message": "העתק"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "שיחת Copilot חדשה"
   },
+  "newConv_deepseek": {
+    "message": "שיחת DeepSeek חדשה"
+  },
   "newConv_perplexity": {
     "message": "שיחת Perplexity חדשה"
   },
@@ -237,7 +240,7 @@
     "message": "הגדר כתובת URL של LLM מקומי:"
   },
   "alertNotSupported": {
-    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot או Perplexity)."
+    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek או Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "לא נמצא שדה הטקסט בדף זה. נסה ללחוץ תחילה בעורך ולאחר מכן השתמש בלחצן ההוספה."
