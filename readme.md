@@ -8,7 +8,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ## 🤖 AI Folders *(New)*
 
-**AI Folders** is the multi-platform evolution: it works across **ChatGPT, Claude, Perplexity, Copilot, Gemini**, and local LLMs — all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
+**AI Folders** is the multi-platform evolution: it works across **ChatGPT, Claude, Perplexity, Copilot, DeepSeek, Gemini**, and local LLMs — all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
 
 [![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-blue?logo=googlechrome)](https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf)
 [![Available on Firefox Add-ons](https://img.shields.io/badge/Firefox_Add--ons-Available-orange?logo=firefox)](https://addons.mozilla.org/firefox/addon/ai_folders/)
@@ -20,6 +20,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 | Claude | ✅ | ✅ | ✅ |
 | Perplexity | ✅ | ✅ | ✅ |
 | Microsoft Copilot | ✅ | ✅ | ✅ |
+| DeepSeek | ✅ | ✅ | ✅ |
 | Google Gemini | ✅ | ✅ | ✅ |
 | Local LLM *(configurable URL)* | ✅ | ✅ | ✅ *(Open WebUI & others)* |
 
@@ -127,7 +128,7 @@ This project uses a Python build pipeline to generate browser-specific versions.
 Both extensions are built with privacy in mind.
 
 * **Gemini Folders** only requests access to `gemini.google.com` and the context menu.
-* **AI Folders** requests access to the supported AI domains (`chatgpt.com`, `claude.ai`, `perplexity.ai`, `copilot.microsoft.com`, `gemini.google.com`) and the context menu — and nothing else.
+* **AI Folders** requests access to the supported AI domains (`chatgpt.com`, `claude.ai`, `perplexity.ai`, `copilot.microsoft.com`, `chat.deepseek.com`, `gemini.google.com`) and the context menu — and nothing else.
 * The `bookmarks` permission is used strictly to manage the mobile sync folder when you enable that feature.
 * Tab content is read **only** when you explicitly save a conversation, solely to extract its title.
 * All data is stored in your browser’s built-in sync storage. **No third-party servers, no analytics, no tracking.** Your data is entirely yours.

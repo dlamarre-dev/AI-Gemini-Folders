@@ -1,4 +1,4 @@
-﻿Vaše AI konverzácie sú rozptýlené po piatich rôznych stránkach. Neustále prepisujete tie isté výzvy. Vaše najlepšie chaty miznú v nekonečných históriách na Gemini, Claude, ChatGPT, Copilot a Perplexity.
+﻿Vaše AI konverzácie sú rozptýlené po šiestich rôznych stránkach. Neustále prepisujete tie isté výzvy. Vaše najlepšie chaty miznú v nekonečných históriách na Gemini, Claude, ChatGPT, Copilot, DeepSeek a Perplexity.
 AI priečinky je rozšírenie, ktoré potrebujete.
 
 AI priečinky je váš zjednotený AI kokpit: organizujte konverzácie zo všetkých vašich AI nástrojov do zdieľaných priečinkov, vytvorte knižnicu opakovane použiteľných promptov a vkladajte prompty priamo do ľubovoľnej podporovanej AI — bez kopírovania a vkladania.
@@ -8,7 +8,7 @@ AI priečinky je váš zjednotený AI kokpit: organizujte konverzácie zo všetk
 📝 Osobná knižnica výziev: Prepnite do režimu výziev jedným kliknutím na prepínač v hlavičke. Ukladajte najlepšie výzvy s názvom a úplným textom a okamžite ich nájdite vďaka vyhľadávaniu a triedeniu (najnovšie, najstaršie, A-Z).
 ▶ Vloženie jedným kliknutím: Koniec kopírovaním a vkladaním. Kliknite na tlačidlo prehrávania (▶) pri uloženej výzve a vloží sa priamo do vstupného poľa aktívnej AI.
 ✏️ Úprava na mieste: Kliknite na výzvu, rozbaľte ju a priamo upravte text. Zmeny sa automaticky uložia po krátkom okamihu a poradie triedenia sa zodpovedajúco aktualizuje.
-🔀 Tlačidlá novej konverzácie: Spustite novú konverzáciu na ChatGPT, Claude, Copilot, Gemini alebo Perplexity priamo z režimu promptov — jedno tlačidlo na službu.
+🔀 Tlačidlá novej konverzácie: Spustite novú konverzáciu na ChatGPT, Claude, Copilot, DeepSeek, Gemini alebo Perplexity priamo z režimu promptov — jedno tlačidlo na službu.
 ☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
 📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
 ⌨️ Spúšťač promptov so živými návrhmi: Napíšte # do chatovacieho poľa Gemini a okamžite uvidíte všetky svoje uložené prompty — filtrované v reálnom čase pri písaní. Pomocou ↓/↑ prechádzajte návrhy, stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre priame vloženie.
@@ -37,7 +37,7 @@ Používate lokálny model AI (Ollama, LM Studio, Jan alebo iný)? Nakonfigurujt
 🛠️ AKO TO FUNGUJE?
 
 Režim priečinkov:
-Otvorte konverzáciu na Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Otvorte konverzáciu na Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Otvorenie panela: Ctrl+Shift+1 (alebo Cmd+Shift+1 na Macu).
 Rýchle uloženie: Ctrl+Shift+S (alebo Cmd+Shift+S na Mac), alebo pravý klik > „Uložiť do Priečinkov Gemini".
 Cez rozšírenie: Kliknite na ikonu, vyberte priečinok, uložte.
@@ -52,12 +52,13 @@ Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vž
 Spúšťač promptov: Napíšte # a okamžite uvidíte všetky svoje uložené prompty, alebo pokračujte v písaní pre filtrovanie v reálnom čase. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre vloženie.
 
 🔒 SÚKROMIE A BEZPEČNOSŤ
-Navrhnuté so súkromím v centre. Vyžaduje prístup iba k Gemini, Claude, ChatGPT, Copilot, Perplexity a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.
+Navrhnuté so súkromím v centre. Vyžaduje prístup iba k Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.
 
 🤝 OPEN SOURCE PROJEKT
 AI priečinky sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AKTUALIZÁCIE:
+Verzia 1.2 (DeepSeek): Pridaná podpora pre DeepSeek (chat.deepseek.com). Spustite nové konverzácie na DeepSeek priamo z režimu výziev, ukladajte ich do priečinkov a vkladajte výzvy — s farbou a logom DeepSeek.
 Verzia 1.1 (Spúšťač promptov): Zadajte # do ľubovoľného poľa chatu AI a zobrazte si uložené prompty filtrované v reálnom čase. Pomocou ↓/↑ prechádzajte návrhy, medzerníkom ich automaticky dokončite alebo vložte — bez otvorenia panela.
 Verzia 1.0: Prvé vydanie! Usporiadajte konverzácie z Gemini, Claude, ChatGPT, Copilot a Perplexity do zdieľaných priečinkov. Kompletná knižnica promptov s vkladaním jedným kliknutím, skratky rýchleho ukladania, drag & drop, mobilná synchronizácia, hromadné akcie, skupiny kariet a podpora 43 jazykov. Podpora lokálnych LLM s konfigurovateľnou URL (localhost a LAN adresy).

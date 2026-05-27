@@ -3,7 +3,7 @@
     "message": "Carpetas IA"
   },
   "extDesc": {
-    "message": "Organiza tus conversaciones con IA en carpetas personalizadas. Compatible con Gemini, Claude, ChatGPT, Copilot y Perplexity."
+    "message": "Organiza tus conversaciones con IA en carpetas personalizadas. Compatible con Gemini, Claude, ChatGPT, Copilot, DeepSeek y Perplexity."
   },
   "appTitle": {
     "message": "Carpetas IA"
@@ -183,7 +183,7 @@
     "message": "Aún no hay prompts guardados."
   },
   "promptAddBtn": {
-    "message": "Añadir prompt"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Copiar"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Nueva conversación en Copilot"
   },
+  "newConv_deepseek": {
+    "message": "Nueva conversación en DeepSeek"
+  },
   "newConv_perplexity": {
     "message": "Nueva conversación en Perplexity"
   },
@@ -237,7 +240,7 @@
     "message": "Establecer URL del LLM local:"
   },
   "alertNotSupported": {
-    "message": "Usa esta extensión en un sitio de IA compatible (Gemini, Claude, ChatGPT, Copilot o Perplexity)."
+    "message": "Usa esta extensión en un sitio de IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek o Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "No se encontró el campo de texto en esta página. Intenta hacer clic en el editor primero y luego usa el botón de inserción."

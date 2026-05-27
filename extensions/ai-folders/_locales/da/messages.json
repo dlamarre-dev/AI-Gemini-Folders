@@ -3,7 +3,7 @@
     "message": "AI-mapper"
   },
   "extDesc": {
-    "message": "Organiser dine AI-samtaler i brugerdefinerede mapper. Understøtter Gemini, Claude, ChatGPT, Copilot og Perplexity."
+    "message": "Organiser dine AI-samtaler i brugerdefinerede mapper. Understøtter Gemini, Claude, ChatGPT, Copilot, DeepSeek og Perplexity."
   },
   "appTitle": {
     "message": "AI-mapper"
@@ -183,7 +183,7 @@
     "message": "Ingen prompts gemt endnu."
   },
   "promptAddBtn": {
-    "message": "Tilføj prompt"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Kopiér"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Ny Copilot-samtale"
   },
+  "newConv_deepseek": {
+    "message": "Ny DeepSeek-samtale"
+  },
   "newConv_perplexity": {
     "message": "Ny Perplexity-samtale"
   },
@@ -237,7 +240,7 @@
     "message": "Indstil lokal LLM-URL:"
   },
   "alertNotSupported": {
-    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot eller Perplexity)."
+    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek eller Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Kunne ikke finde tekstfeltet på denne side. Prøv at klikke i editoren først, og brug derefter indsætknappen."

@@ -1,4 +1,4 @@
-﻿Ang iyong mga AI na pag-uusap ay nakakalat sa limang magkakaibang site. Patuloy kang nagta-type ng parehong mga prompt. Ang iyong mga pinakamahusay na chat ay nawawala sa walang katapusang mga kasaysayan sa Gemini, Claude, ChatGPT, Copilot, at Perplexity.
+﻿Ang iyong mga AI na pag-uusap ay nakakalat sa anim na magkakaibang site. Patuloy kang nagta-type ng parehong mga prompt. Ang iyong mga pinakamahusay na chat ay nawawala sa walang katapusang mga kasaysayan sa Gemini, Claude, ChatGPT, Copilot, DeepSeek, at Perplexity.
 Mga AI Folder ang extension na kailangan mo.
 
 Mga AI Folder ang iyong pinagsamang AI cockpit: ayusin ang mga pag-uusap mula sa lahat ng iyong mga AI tool sa mga ibinabahaging folder, bumuo ng library ng mga prompt na magagamit muli, at mag-inject ng mga prompt nang direkta sa anumang sinusuportahang AI — hindi na kailangang mag-copy-paste.
@@ -8,7 +8,7 @@ Mga AI Folder ang iyong pinagsamang AI cockpit: ayusin ang mga pag-uusap mula sa
 📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).
 ▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng aktibong AI.
 ✏️ Inline na Pag-edit: I-click ang isang prompt para palawakin ito at i-edit ang teksto nang direkta. Awtomatikong nase-save ang mga pagbabago pagkatapos ng maikling pause at ina-update ang sort order.
-🔀 Mga Pindutan ng Bagong Pag-uusap: Magsimula ng bagong pag-uusap sa ChatGPT, Claude, Copilot, Gemini, o Perplexity nang direkta mula sa Prompt Mode.
+🔀 Mga Pindutan ng Bagong Pag-uusap: Magsimula ng bagong pag-uusap sa ChatGPT, Claude, Copilot, DeepSeek, Gemini, o Perplexity nang direkta mula sa Prompt Mode.
 ☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
 📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
 ⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng Gemini para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
@@ -37,7 +37,7 @@ Nagpapatakbo ng lokal na AI model (Ollama, LM Studio, Jan, o iba pa)? I-configur
 🛠️ PAANO ITO GUMAGANA?
 
 Folder Mode:
-Magbukas ng pag-uusap sa Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Magbukas ng pag-uusap sa Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Buksan ang panel: Ctrl+Shift+1 (o Cmd+Shift+1 sa Mac).
 Mabilis na pag-save: Ctrl+Shift+S (o Cmd+Shift+S sa Mac), o right-click > "I-save sa Mga AI Folder".
 Sa pamamagitan ng extension: I-click ang icon, pumili ng folder, at i-save.
@@ -52,12 +52,13 @@ Para i-pin ang isang prompt: i-click ang 📍 — lilipat ito sa tuktok ng lista
 Prompt Trigger: I-type ang # para agad makita ang lahat ng iyong naka-save na prompt, o magpatuloy na mag-type para mag-filter sa real time. Pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject.
 
 🔒 PRIVACY AT SEGURIDAD
-Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa Gemini, Claude, ChatGPT, Copilot, Perplexity at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.
+Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.
 
 🤝 OPEN SOURCE NA PROYEKTO
 Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal. Ang transparency at paggalang sa iyong privacy ang aming mga pangunahing priyoridad. Ikaw ba ay isang developer o basta lang curious? I-browse ang code, sundan ang changelog, o mag-contribute sa GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MGA UPDATE:
+Bersyon 1.2 (DeepSeek): Naidagdag ang suporta para sa DeepSeek (chat.deepseek.com). Magsimula ng mga bagong pag-uusap sa DeepSeek nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt — na may kulay at logo ng DeepSeek.
 Bersyon 1.1 (Prompt Trigger): I-type ang # sa anumang AI chat field para makita ang iyong mga na-save na prompt na na-filter sa real time. Gamitin ang ↓/↑ para mag-navigate sa mga mungkahi, Space para mag-autocomplete o mag-inject — nang hindi binubuksan ang panel.
 Bersyon 1.0: Unang inilabas! Ayusin ang mga pag-uusap mula sa Gemini, Claude, ChatGPT, Copilot, at Perplexity sa mga ibinabahaging folder. Kumpletong prompt library na may one-click injection, mga shortcut ng mabilis na pag-save, drag at drop, mobile sync, bulk actions, tab groups, at suporta para sa 43 na wika.

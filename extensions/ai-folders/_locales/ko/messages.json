@@ -3,7 +3,7 @@
     "message": "AI 폴더"
   },
   "extDesc": {
-    "message": "AI 대화를 맞춤 폴더에 정리하세요. Gemini, Claude, ChatGPT, Copilot, Perplexity를 지원합니다."
+    "message": "AI 대화를 맞춤 폴더에 정리하세요. Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity를 지원합니다."
   },
   "appTitle": {
     "message": "AI 폴더"
@@ -183,7 +183,7 @@
     "message": "아직 저장된 프롬프트가 없습니다."
   },
   "promptAddBtn": {
-    "message": "프롬프트 추가"
+    "message": "프롬프트"
   },
   "promptCopyTitle": {
     "message": "복사"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "새 Copilot 대화"
   },
+  "newConv_deepseek": {
+    "message": "새 DeepSeek 대화"
+  },
   "newConv_perplexity": {
     "message": "새 Perplexity 대화"
   },
@@ -237,7 +240,7 @@
     "message": "로컬 LLM URL 설정:"
   },
   "alertNotSupported": {
-    "message": "지원되는 AI 사이트(Gemini, Claude, ChatGPT, Copilot 또는 Perplexity)에서 이 확장 프로그램을 사용하세요."
+    "message": "지원되는 AI 사이트(Gemini, Claude, ChatGPT, Copilot, DeepSeek 또는 Perplexity)에서 이 확장 프로그램을 사용하세요."
   },
   "alertEditorNotFound": {
     "message": "이 페이지에서 텍스트 입력란을 찾을 수 없습니다. 먼저 편집기를 클릭한 후 삽입 버튼을 사용하세요."

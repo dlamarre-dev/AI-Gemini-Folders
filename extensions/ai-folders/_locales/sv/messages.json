@@ -3,7 +3,7 @@
     "message": "AI-mappar"
   },
   "extDesc": {
-    "message": "Organisera dina AI-konversationer i anpassade mappar. Stöder Gemini, Claude, ChatGPT, Copilot och Perplexity."
+    "message": "Organisera dina AI-konversationer i anpassade mappar. Stöder Gemini, Claude, ChatGPT, Copilot, DeepSeek och Perplexity."
   },
   "appTitle": {
     "message": "AI-mappar"
@@ -183,7 +183,7 @@
     "message": "Inga prompter sparade ännu."
   },
   "promptAddBtn": {
-    "message": "Lägg till prompt"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Kopiera"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Ny Copilot-konversation"
   },
+  "newConv_deepseek": {
+    "message": "Ny DeepSeek-konversation"
+  },
   "newConv_perplexity": {
     "message": "Ny Perplexity-konversation"
   },
@@ -237,7 +240,7 @@
     "message": "Ange lokal LLM-URL:"
   },
   "alertNotSupported": {
-    "message": "Använd den här utökningen på en AI-webbplats som stöds (Gemini, Claude, ChatGPT, Copilot eller Perplexity)."
+    "message": "Använd den här utökningen på en AI-webbplats som stöds (Gemini, Claude, ChatGPT, Copilot, DeepSeek eller Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Det gick inte att hitta textfältet på den här sidan. Försök att klicka i redigeraren först och använd sedan infogaknappen."

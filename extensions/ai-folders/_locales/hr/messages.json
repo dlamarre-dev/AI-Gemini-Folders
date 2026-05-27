@@ -3,7 +3,7 @@
     "message": "UI mape"
   },
   "extDesc": {
-    "message": "Organizirajte AI razgovore u prilagođene mape. Podržava Gemini, Claude, ChatGPT, Copilot i Perplexity."
+    "message": "Organizirajte AI razgovore u prilagođene mape. Podržava Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity."
   },
   "appTitle": {
     "message": "UI mape"
@@ -183,7 +183,7 @@
     "message": "Još nema spremljenih upita."
   },
   "promptAddBtn": {
-    "message": "Dodaj upit"
+    "message": "Upit"
   },
   "promptCopyTitle": {
     "message": "Kopiraj"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Novi razgovor na Copilot"
   },
+  "newConv_deepseek": {
+    "message": "Novi razgovor na DeepSeek"
+  },
   "newConv_perplexity": {
     "message": "Novi razgovor na Perplexity"
   },
@@ -237,7 +240,7 @@
     "message": "Postavi URL lokalnog LLM-a:"
   },
   "alertNotSupported": {
-    "message": "Koristite ovo proširenje na podržanoj AI stranici (Gemini, Claude, ChatGPT, Copilot ili Perplexity)."
+    "message": "Koristite ovo proširenje na podržanoj AI stranici (Gemini, Claude, ChatGPT, Copilot, DeepSeek ili Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Pokušajte kliknuti u uređivač, a zatim koristite gumb za umetanje."

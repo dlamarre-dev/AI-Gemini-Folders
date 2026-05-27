@@ -3,7 +3,7 @@
         "message": "AI priečinky"
     },
     "extDesc": {
-        "message": "Usporiadajte AI rozhovory do vlastných priečinkov. Podporuje Gemini, Claude, ChatGPT, Copilot a Perplexity."
+        "message": "Usporiadajte AI rozhovory do vlastných priečinkov. Podporuje Gemini, Claude, ChatGPT, Copilot, DeepSeek a Perplexity."
     },
     "appTitle": {
         "message": "AI priečinky"
@@ -183,7 +183,7 @@
         "message": "Zatiaľ neboli uložené žiadne prompty."
     },
     "promptAddBtn": {
-        "message": "Pridať výzvu"
+        "message": "Výzva"
     },
     "promptCopyTitle": {
         "message": "Kopírovať"
@@ -227,6 +227,9 @@
     "newConv_copilot": {
         "message": "Nový rozhovor v Copilot"
     },
+  "newConv_deepseek": {
+    "message": "Nový rozhovor v DeepSeek"
+  },
     "newConv_perplexity": {
         "message": "Nový rozhovor v Perplexity"
     },
@@ -237,7 +240,7 @@
         "message": "Nastaviť URL lokálneho LLM:"
     },
     "alertNotSupported": {
-        "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot alebo Perplexity)."
+        "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek alebo Perplexity)."
     },
     "alertEditorNotFound": {
         "message": "Na tejto stránke sa nepodarilo nájsť textové pole. Najprv kliknite do editora a potom použite tlačidlo vložiť."

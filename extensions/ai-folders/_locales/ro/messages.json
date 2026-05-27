@@ -3,7 +3,7 @@
     "message": "Dosare IA"
   },
   "extDesc": {
-    "message": "Organizați conversațiile AI în dosare personalizate. Suportă Gemini, Claude, ChatGPT, Copilot și Perplexity."
+    "message": "Organizați conversațiile AI în dosare personalizate. Suportă Gemini, Claude, ChatGPT, Copilot, DeepSeek și Perplexity."
   },
   "appTitle": {
     "message": "Dosare IA"
@@ -183,7 +183,7 @@
     "message": "Nu există prompturi salvate încă."
   },
   "promptAddBtn": {
-    "message": "Adaugă prompt"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Copiază"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Conversație nouă în Copilot"
   },
+  "newConv_deepseek": {
+    "message": "Conversație nouă în DeepSeek"
+  },
   "newConv_perplexity": {
     "message": "Conversație nouă în Perplexity"
   },
@@ -237,7 +240,7 @@
     "message": "Setați URL-ul LLM local:"
   },
   "alertNotSupported": {
-    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot sau Perplexity)."
+    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek sau Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nu s-a găsit câmpul de text pe această pagină. Încercați să faceți clic mai întâi în editor, apoi folosiți butonul de inserare."

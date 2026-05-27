@@ -1,4 +1,4 @@
-﻿Le tue conversazioni AI sono sparse su cinque siti diversi. Continui a riscrivere gli stessi prompt. Le tue migliori chat scompaiono in cronologie infinite su Gemini, Claude, ChatGPT, Copilot e Perplexity.
+﻿Le tue conversazioni AI sono sparse su sei siti diversi. Continui a riscrivere gli stessi prompt. Le tue migliori chat scompaiono in cronologie infinite su Gemini, Claude, ChatGPT, Copilot, DeepSeek e Perplexity.
 Cartelle IA è l'estensione di cui hai bisogno.
 
 Cartelle IA è il tuo cockpit AI unificato: organizza conversazioni da tutti i tuoi strumenti AI in cartelle condivise, crea una libreria di prompt riutilizzabili e inietta prompt direttamente in qualsiasi AI supportata — senza bisogno di copiare e incollare.
@@ -8,7 +8,7 @@ Cartelle IA è il tuo cockpit AI unificato: organizza conversazioni da tutti i t
 📝 Libreria di prompt personale: Passa alla modalità Prompt con un solo clic sull'interruttore nell'intestazione. Salva i tuoi migliori prompt con un titolo e il testo completo, poi trovali subito con ricerca e ordinamento (più recenti, più vecchi, A-Z).
 ▶ Iniezione con un clic: Niente più copia e incolla. Clicca il pulsante di riproduzione (▶) su qualsiasi prompt salvato per iniettarlo direttamente nel campo di input dell'IA attiva.
 ✏️ Modifica in linea: Clicca un prompt per espanderlo e modifica il testo direttamente. Le modifiche si salvano automaticamente dopo una breve pausa e l'ordinamento si aggiorna di conseguenza.
-🔀 Pulsanti Nuova Conversazione: Avvia una nuova conversazione su ChatGPT, Claude, Copilot, Gemini o Perplexity direttamente dalla Modalità Prompt — un pulsante per servizio.
+🔀 Pulsanti Nuova Conversazione: Avvia una nuova conversazione su ChatGPT, Claude, Copilot, DeepSeek, Gemini o Perplexity direttamente dalla Modalità Prompt — un pulsante per servizio.
 ☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
 📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
 ⌨️ Attivatore di prompt con suggerimenti in tempo reale: Digita # nel campo chat di Gemini per vedere istantaneamente tutti i tuoi prompt salvati — filtrati in tempo reale mentre scrivi. Usa ↓/↑ per navigare tra i suggerimenti, premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare direttamente.
@@ -37,7 +37,7 @@ Stai usando un modello AI locale (Ollama, LM Studio, Jan o altro)? Configura Car
 🛠️ COME FUNZIONA?
 
 Modalità Cartelle:
-Apri una conversazione su Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Apri una conversazione su Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Apri il pannello: Ctrl+Shift+1 (o Cmd+Shift+1 su Mac).
 Salvataggio rapido: Ctrl+Shift+S (o Cmd+Shift+S su Mac), o clic destro > "Salva in Cartelle IA".
 Tramite l'estensione: Clicca l'icona, scegli una cartella e salva.
@@ -52,12 +52,13 @@ Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta s
 Attivatore di prompt: Digita # per vedere istantaneamente tutti i tuoi prompt salvati, o continua a digitare per filtrare in tempo reale. Premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare.
 
 🔒 PRIVACY E SICUREZZA
-Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, ChatGPT, Copilot, Perplexity e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
+Progettata con la privacy al centro. Richiede accesso solo a Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
 
 🤝 PROGETTO OPEN SOURCE
 Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AGGIORNAMENTI:
+Versione 1.2 (DeepSeek): Aggiunto supporto per DeepSeek (chat.deepseek.com). Avvia nuove conversazioni DeepSeek direttamente dalla Modalità Prompt, salvale in cartelle e inietta prompt — con il colore e il logo di DeepSeek.
 Versione 1.1 (Prompt Trigger): Digita # in qualsiasi campo chat AI per vedere i tuoi prompt filtrati in tempo reale. Usa ↓/↑ per navigare tra i suggerimenti, Spazio per autocompletare o iniettare — senza mai aprire il pannello.
 Versione 1.0: Prima pubblicazione! Organizza conversazioni da Gemini, Claude, ChatGPT, Copilot e Perplexity in cartelle condivise. Libreria prompt completa con iniezione in un clic, scorciatoie di salvataggio rapido, drag & drop, sincronizzazione mobile, azioni in blocco, gruppi di schede e supporto per 43 lingue. Supporto LLM locale con URL configurabile (localhost e indirizzi LAN).

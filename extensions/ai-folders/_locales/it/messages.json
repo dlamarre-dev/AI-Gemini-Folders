@@ -3,7 +3,7 @@
     "message": "Cartelle IA"
   },
   "extDesc": {
-    "message": "Organizza le tue conversazioni AI in cartelle personalizzate. Supporta Gemini, Claude, ChatGPT, Copilot e Perplexity."
+    "message": "Organizza le tue conversazioni AI in cartelle personalizzate. Supporta Gemini, Claude, ChatGPT, Copilot, DeepSeek e Perplexity."
   },
   "appTitle": {
     "message": "Cartelle IA"
@@ -183,7 +183,7 @@
     "message": "Nessun prompt salvato ancora."
   },
   "promptAddBtn": {
-    "message": "Aggiungi prompt"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Copia"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Nuova conversazione Copilot"
   },
+  "newConv_deepseek": {
+    "message": "Nuova conversazione DeepSeek"
+  },
   "newConv_perplexity": {
     "message": "Nuova conversazione Perplexity"
   },
@@ -237,7 +240,7 @@
     "message": "Imposta URL LLM locale:"
   },
   "alertNotSupported": {
-    "message": "Usa questa estensione su un sito AI supportato (Gemini, Claude, ChatGPT, Copilot o Perplexity)."
+    "message": "Usa questa estensione su un sito AI supportato (Gemini, Claude, ChatGPT, Copilot, DeepSeek o Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Impossibile trovare il campo di testo in questa pagina. Prova a fare clic sull'editor prima, poi usa il pulsante di inserimento."

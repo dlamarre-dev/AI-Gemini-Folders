@@ -1,4 +1,4 @@
-﻿Mazungumzo yako ya AI yametawanyika kwenye tovuti tano tofauti. Unaendelea kuandika tena maagizo yale yale. Mazungumzo yako bora yanayopotea katika historia zisizo na mwisho kwenye Gemini, Claude, ChatGPT, Copilot, na Perplexity.
+﻿Mazungumzo yako ya AI yametawanyika kwenye tovuti sita tofauti. Unaendelea kuandika tena maagizo yale yale. Mazungumzo yako bora yanayopotea katika historia zisizo na mwisho kwenye Gemini, Claude, ChatGPT, Copilot, DeepSeek, na Perplexity.
 Folda za AI ni kiendelezi unachohitaji.
 
 Folda za AI ni kokpit yako ya AI iliyounganishwa: panga mazungumzo kutoka kwa zana zako zote za AI katika folda zilizoshirikiwa, jenga maktaba ya maagizo yanayoweza kutumika tena, na uweke maagizo moja kwa moja katika AI yoyote inayounga mkono — bila kuhitaji kunakili na kubandika.
@@ -8,7 +8,7 @@ Folda za AI ni kokpit yako ya AI iliyounganishwa: panga mazungumzo kutoka kwa za
 📝 Maktaba ya Kidokezo ya Kibinafsi: Badilika kwenda Hali ya Kidokezo kwa kubofya mara moja kwenye kitufe cha kubadilisha kilichoko kwenye kichwa. Hifadhi vidokezo vyako bora pamoja na kichwa na maandishi kamili, kisha vipate mara moja kwa kutumia utafutaji na upangaji (mpya zaidi, kongwe zaidi, A-Z).
 ▶ Kuingiza kwa Kubofya Mara Moja: Hakuna tena kunakili na kubandika. Bofya kitufe cha kucheza (▶) kwenye kidokezo chochote kilichohifadhiwa ili kukiingiza moja kwa moja kwenye uwanja wa kuandika wa AI inayotumika.
 ✏️ Kuhariri Mahali Pake: Bofya kidokezo ili kukipanua na kuhariri maandishi moja kwa moja. Mabadiliko huhifadhiwa kiotomatiki baada ya muda mfupi na mpangilio wa kusortia husasishwa ipasavyo.
-🔀 Vitufe vya Mazungumzo Mapya: Anza mazungumzo mapya kwenye ChatGPT, Claude, Copilot, Gemini, au Perplexity moja kwa moja kutoka Hali ya Maagizo.
+🔀 Vitufe vya Mazungumzo Mapya: Anza mazungumzo mapya kwenye ChatGPT, Claude, Copilot, DeepSeek, Gemini, au Perplexity moja kwa moja kutoka Hali ya Maagizo.
 ☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
 📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
 ⌨️ Kichocheo cha Kidokezo na Mapendekezo ya Moja kwa Moja: Andika # katika uwanja wa gumzo wa Gemini ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa — vikifiliwa kwa wakati halisi unapoendelea kuandika. Tumia ↓/↑ kuvinjari, kisha bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza moja kwa moja.
@@ -37,7 +37,7 @@ Unaendesha mfano wa AI wa ndani (Ollama, LM Studio, Jan, au mwingine)? Sanidi Fo
 🛠️ INAVYOFANYA KAZI?
 
 Hali ya Folda:
-Fungua mazungumzo kwenye Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Fungua mazungumzo kwenye Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Fungua jopo: Ctrl+Shift+1 (au Cmd+Shift+1 kwenye Mac).
 Hifadhi ya haraka: Ctrl+Shift+S (au Cmd+Shift+S kwenye Mac), au bofya kulia > "Hifadhi kwenye Folda za AI".
 Kupitia kiendelezi: Bofya ikoni, chagua folda, na hifadhi.
@@ -52,12 +52,13 @@ Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi ku
 Kichocheo cha Kidokezo: Andika # ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa, au endelea kuandika ili kufilia kwa wakati halisi. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza.
 
 🔒 FARAGHA NA USALAMA
-Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa Gemini, Claude, ChatGPT, Copilot, Perplexity na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
+Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
 
 🤝 MRADI WA CHANZO WAZI
 Folda za AI ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MASASISHO:
+Toleo 1.2 (DeepSeek): Msaada wa DeepSeek (chat.deepseek.com) umeongezwa. Anza mazungumzo mapya ya DeepSeek moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo — na rangi na nembo ya DeepSeek.
 Toleo 1.1 (Kichocheo cha Kidokezo): Andika # katika uwanja wowote wa mazungumzo wa AI ili uone vidokezo vyako vilivyohifadhiwa vikichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.
 Toleo 1.0: Chapisho la kwanza! Panga mazungumzo kutoka Gemini, Claude, ChatGPT, Copilot na Perplexity katika folda zilizoshirikiwa. Maktaba kamili ya maagizo na sindano ya kubonyeza mara moja, njia za mkato za kuhifadhi haraka, buruta na uacha, usawazishaji wa simu, vitendo vya wingi, vikundi vya kichupo na usaidizi wa lugha 43.

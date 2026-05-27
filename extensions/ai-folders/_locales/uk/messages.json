@@ -3,7 +3,7 @@
     "message": "Теки ШІ"
   },
   "extDesc": {
-    "message": "Організуйте розмови зі штучним інтелектом у власних теках. Підтримує Gemini, Claude, ChatGPT, Copilot і Perplexity."
+    "message": "Організуйте розмови зі штучним інтелектом у власних теках. Підтримує Gemini, Claude, ChatGPT, Copilot, DeepSeek і Perplexity."
   },
   "appTitle": {
     "message": "Теки ШІ"
@@ -183,7 +183,7 @@
     "message": "Промптів ще не збережено."
   },
   "promptAddBtn": {
-    "message": "Додати промпт"
+    "message": "Промпт"
   },
   "promptCopyTitle": {
     "message": "Копіювати"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Нова розмова в Copilot"
   },
+  "newConv_deepseek": {
+    "message": "Нова розмова в DeepSeek"
+  },
   "newConv_perplexity": {
     "message": "Нова розмова в Perplexity"
   },
@@ -237,7 +240,7 @@
     "message": "Вкажіть URL локальної LLM:"
   },
   "alertNotSupported": {
-    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot або Perplexity)."
+    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek або Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Не вдалося знайти поле введення тексту на цій сторінці. Спочатку натисніть на редактор, а потім скористайтеся кнопкою вставки."

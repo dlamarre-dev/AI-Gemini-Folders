@@ -1,4 +1,4 @@
-﻿Suas conversas de IA estão espalhadas por cinco sites diferentes. Você continua redigitando os mesmos prompts. Seus melhores chats desaparecem em históricos intermináveis no Gemini, Claude, ChatGPT, Copilot e Perplexity.
+﻿Suas conversas de IA estão espalhadas por seis sites diferentes. Você continua redigitando os mesmos prompts. Seus melhores chats desaparecem em históricos intermináveis no Gemini, Claude, ChatGPT, Copilot, DeepSeek e Perplexity.
 Pastas IA é a extensão que você precisa.
 
 Pastas IA é o seu cockpit de IA unificado: organize conversas de todas as suas ferramentas de IA em pastas compartilhadas, crie uma biblioteca de prompts reutilizáveis e injete prompts diretamente em qualquer IA compatível — sem precisar copiar e colar.
@@ -8,7 +8,7 @@ Pastas IA é o seu cockpit de IA unificado: organize conversas de todas as suas 
 📝 Biblioteca pessoal de prompts: Mude para o Modo Prompt com um clique no botão de alternância no cabeçalho. Salve seus melhores prompts com um título e texto completo, e encontre-os instantaneamente com busca e ordenação (mais recentes, mais antigos, A-Z).
 ▶ Injeção com um clique: Acabou o copiar e colar. Clique no botão de reprodução (▶) em qualquer prompt salvo para injetá-lo diretamente no campo de texto da IA ativa.
 ✏️ Edição inline: Clique em um prompt para expandi-lo e editar o texto diretamente. As alterações são salvas automaticamente após uma breve pausa e a ordenação é atualizada em seguida.
-🔀 Botões de Nova Conversa: Inicie uma nova conversa no ChatGPT, Claude, Copilot, Gemini ou Perplexity diretamente do Modo Prompt — um botão por serviço.
+🔀 Botões de Nova Conversa: Inicie uma nova conversa no ChatGPT, Claude, Copilot, DeepSeek, Gemini ou Perplexity diretamente do Modo Prompt — um botão por serviço.
 ☁️ Sincronização de prompts: Ative a sincronização na nuvem para sua biblioteca de prompts, de forma independente das suas pastas.
 📌 Prompts fixados: Fixe seus prompts essenciais com um clique para mantê-los no topo da biblioteca, separados dos demais por um divisor visual.
 ⌨️ Gatilho de Prompt com Sugestões ao Vivo: Digite # no campo de chat do Gemini para ver instantaneamente todos os seus prompts salvos — filtrados em tempo real enquanto você digita. Use ↓/↑ para navegar entre sugestões, pressione Espaço em uma correspondência única para autocompletar, ou em uma correspondência exata para injetar diretamente.
@@ -37,7 +37,7 @@ Está usando um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure 
 🛠️ COMO FUNCIONA?
 
 Modo Pastas:
-Abra uma conversa em Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Abra uma conversa em Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Abrir o painel: Ctrl+Shift+1 (ou Cmd+Shift+1 no Mac).
 Salvar rapidamente: Ctrl+Shift+S (ou Cmd+Shift+S no Mac), ou clique direito > "Salvar nas Pastas IA".
 Pela extensão: Clique no ícone, escolha uma pasta e salve.
@@ -52,12 +52,13 @@ Para fixar um prompt: clique em 📍 — ele sobe para o topo da lista e fica se
 Gatilho de Prompt: Digite # para ver instantaneamente todos os seus prompts salvos, ou continue digitando para filtrar em tempo real. Pressione Espaço em uma correspondência única para autocompletar, ou em uma correspondência exata para injetar.
 
 🔒 PRIVACIDADE E SEGURANÇA
-Desenvolvida com a privacidade no centro. Solicita acesso apenas a Gemini, Claude, ChatGPT, Copilot, Perplexity e lê a aba ativa somente ao salvar uma conversa ou injetar um prompt. A permissão "Favoritos" só é usada se você ativar a sincronização mobile. Armazenamento via Chrome Sync: sem servidores de terceiros, sem telemetria.
+Desenvolvida com a privacidade no centro. Solicita acesso apenas a Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity e lê a aba ativa somente ao salvar uma conversa ou injetar um prompt. A permissão "Favoritos" só é usada se você ativar a sincronização mobile. Armazenamento via Chrome Sync: sem servidores de terceiros, sem telemetria.
 
 🤝 PROJETO OPEN SOURCE
 Pastas IA é um projeto open source desenvolvido com paixão. Transparência e respeito à sua privacidade são nossas prioridades. É desenvolvedor ou simplesmente curioso? Consulte o código, acompanhe o histórico de alterações ou contribua no GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ATUALIZAÇÕES:
+Versão 1.2 (DeepSeek): Adicionado suporte ao DeepSeek (chat.deepseek.com). Inicie novas conversas no DeepSeek diretamente do Modo Prompt, salve-as em pastas e injete prompts — com a cor e o logo do DeepSeek.
 Versão 1.1 (Gatilho de Prompt): Digite # em qualquer campo de chat de IA para ver seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel.
 Versão 1.0: Lançamento inicial! Organize conversas do Gemini, Claude, ChatGPT, Copilot e Perplexity em pastas compartilhadas. Biblioteca de prompts completa com injeção em um clique, atalhos de salvamento rápido, arrastar e soltar, sincronização mobile, ações em massa, grupos de abas e suporte para 43 idiomas. Suporte a LLM local com URL configurável (localhost e endereços LAN).

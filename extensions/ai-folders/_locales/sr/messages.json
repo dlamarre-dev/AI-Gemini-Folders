@@ -3,7 +3,7 @@
         "message": "VI fascikle"
     },
     "extDesc": {
-        "message": "Organizujte VI razgovore u prilagođene fascikle. Podržava Gemini, Claude, ChatGPT, Copilot i Perplexity."
+        "message": "Organizujte VI razgovore u prilagođene fascikle. Podržava Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity."
     },
     "appTitle": {
         "message": "VI fascikle"
@@ -183,7 +183,7 @@
         "message": "Još nema sačuvanih promptova."
     },
     "promptAddBtn": {
-        "message": "Dodaj prompt"
+        "message": "Prompt"
     },
     "promptCopyTitle": {
         "message": "Kopiraj"
@@ -227,6 +227,9 @@
     "newConv_copilot": {
         "message": "Novi razgovor na Copilot"
     },
+  "newConv_deepseek": {
+    "message": "Novi razgovor na DeepSeek"
+  },
     "newConv_perplexity": {
         "message": "Novi razgovor na Perplexity"
     },
@@ -237,7 +240,7 @@
         "message": "Podesite URL lokalnog LLM-a:"
     },
     "alertNotSupported": {
-        "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot ili Perplexity)."
+        "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek ili Perplexity)."
     },
     "alertEditorNotFound": {
         "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Prvo kliknite u uređivač, a zatim koristite dugme za ubacivanje."

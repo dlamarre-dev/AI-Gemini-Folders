@@ -3,7 +3,7 @@
     "message": "Folder AI"
   },
   "extDesc": {
-    "message": "Atur percakapan AI Anda ke dalam folder kustom. Mendukung Gemini, Claude, ChatGPT, Copilot, dan Perplexity."
+    "message": "Atur percakapan AI Anda ke dalam folder kustom. Mendukung Gemini, Claude, ChatGPT, Copilot, DeepSeek, dan Perplexity."
   },
   "appTitle": {
     "message": "Folder AI"
@@ -183,7 +183,7 @@
     "message": "Belum ada prompt yang tersimpan."
   },
   "promptAddBtn": {
-    "message": "Tambah Prompt"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Salin"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Percakapan Copilot baru"
   },
+  "newConv_deepseek": {
+    "message": "Percakapan DeepSeek baru"
+  },
   "newConv_perplexity": {
     "message": "Percakapan Perplexity baru"
   },
@@ -237,7 +240,7 @@
     "message": "Atur URL LLM lokal:"
   },
   "alertNotSupported": {
-    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, atau Perplexity)."
+    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, atau Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemukan kotak teks di halaman ini. Coba klik editor terlebih dahulu, lalu gunakan tombol sisipkan."

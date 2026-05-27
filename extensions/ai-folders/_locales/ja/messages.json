@@ -3,7 +3,7 @@
     "message": "AI フォルダ"
   },
   "extDesc": {
-    "message": "AIとの会話をカスタムフォルダに整理できます。Gemini、Claude、ChatGPT、Copilot、Perplexity に対応。"
+    "message": "AIとの会話をカスタムフォルダに整理できます。Gemini、Claude、ChatGPT、Copilot、DeepSeek、Perplexity に対応。"
   },
   "appTitle": {
     "message": "AI フォルダ"
@@ -183,7 +183,7 @@
     "message": "まだプロンプトが保存されていません。"
   },
   "promptAddBtn": {
-    "message": "プロンプトを追加"
+    "message": "プロンプト"
   },
   "promptCopyTitle": {
     "message": "コピー"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "新しい Copilot の会話"
   },
+  "newConv_deepseek": {
+    "message": "新しい DeepSeek の会話"
+  },
   "newConv_perplexity": {
     "message": "新しい Perplexity の会話"
   },
@@ -237,7 +240,7 @@
     "message": "ローカル LLM の URL を設定:"
   },
   "alertNotSupported": {
-    "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、または Perplexity）でご使用ください。"
+    "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、または Perplexity）でご使用ください。"
   },
   "alertEditorNotFound": {
     "message": "このページでテキスト入力欄が見つかりませんでした。先にエディタをクリックしてから、挿入ボタンをご使用ください。"

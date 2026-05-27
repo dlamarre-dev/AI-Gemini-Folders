@@ -3,7 +3,7 @@
     "message": "AI 資料夾"
   },
   "extDesc": {
-    "message": "將您的 AI 對話整理到自訂資料夾中。支援 Gemini、Claude、ChatGPT、Copilot 和 Perplexity。"
+    "message": "將您的 AI 對話整理到自訂資料夾中。支援 Gemini、Claude、ChatGPT、Copilot、DeepSeek 和 Perplexity。"
   },
   "appTitle": {
     "message": "AI 資料夾"
@@ -183,7 +183,7 @@
     "message": "尚未儲存任何提示詞。"
   },
   "promptAddBtn": {
-    "message": "新增提示詞"
+    "message": "提示詞"
   },
   "promptCopyTitle": {
     "message": "複製"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "新增 Copilot 對話"
   },
+  "newConv_deepseek": {
+    "message": "新增 DeepSeek 對話"
+  },
   "newConv_perplexity": {
     "message": "新增 Perplexity 對話"
   },
@@ -237,7 +240,7 @@
     "message": "設定本地 LLM URL："
   },
   "alertNotSupported": {
-    "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot 或 Perplexity）。"
+    "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek 或 Perplexity）。"
   },
   "alertEditorNotFound": {
     "message": "無法在此頁面找到文字輸入框。請先點擊編輯器，再使用插入按鈕。"

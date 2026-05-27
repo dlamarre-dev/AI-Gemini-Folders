@@ -3,7 +3,7 @@
     "message": "MI mappák"
   },
   "extDesc": {
-    "message": "Rendszerezze MI-beszélgetéseit egyéni mappákban. Támogatja a Gemini-t, Claude-ot, ChatGPT-t, Copilot-ot és Perplexity-t."
+    "message": "Rendszerezze MI-beszélgetéseit egyéni mappákban. Támogatja a Gemini-t, Claude-ot, ChatGPT-t, Copilot-ot, DeepSeek-et és Perplexity-t."
   },
   "appTitle": {
     "message": "MI mappák"
@@ -183,7 +183,7 @@
     "message": "Még nincs mentett prompt."
   },
   "promptAddBtn": {
-    "message": "Prompt hozzáadása"
+    "message": "Prompt"
   },
   "promptCopyTitle": {
     "message": "Másolás"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Új Copilot-beszélgetés"
   },
+  "newConv_deepseek": {
+    "message": "Új DeepSeek-beszélgetés"
+  },
   "newConv_perplexity": {
     "message": "Új Perplexity-beszélgetés"
   },
@@ -237,7 +240,7 @@
     "message": "Helyi LLM URL beállítása:"
   },
   "alertNotSupported": {
-    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot vagy Perplexity)."
+    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek vagy Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."

@@ -1,4 +1,4 @@
-﻿Les teves converses d'IA estan escampades per cinc llocs diferents. Continues reescrivint els mateixos prompts. Les teves millors xats desapareixen en historials interminables de Gemini, Claude, ChatGPT, Copilot i Perplexity.
+﻿Les teves converses d'IA estan escampades per sis llocs diferents. Continues reescrivint els mateixos prompts. Les teves millors xats desapareixen en historials interminables de Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity.
 Carpetes IA és l'extensió que necessites.
 
 Carpetes IA és el teu cockpit d'IA unificat: organitza converses de totes les teves eines d'IA en carpetes compartides, crea una biblioteca de prompts reutilitzables i injecta prompts directament a qualsevol IA compatible — sense necessitat de copiar i enganxar.
@@ -8,7 +8,7 @@ Carpetes IA és el teu cockpit d'IA unificat: organitza converses de totes les t
 📝 Biblioteca de prompts personal: Canvia al Mode prompts amb un clic al commutador de la capçalera. Desa els teus millors prompts amb títol i text, i troba'ls al moment amb cerca i ordenació (més recents, més antics, A–Z).
 ▶ Injecció amb un sol clic: Fes clic al botó de reproducció (▶) en qualsevol prompt desat per inserir-lo directament al camp d'entrada de la IA activa.
 ✏️ Edició en línia: Fes clic per expandir un prompt i edita el text directament. Els canvis es desen automàticament després d'una breu pausa.
-🔀 Botons de Nova Conversa: Inicia una nova conversa a ChatGPT, Claude, Copilot, Gemini o Perplexity directament des del Mode Prompt — un botó per servei.
+🔀 Botons de Nova Conversa: Inicia una nova conversa a ChatGPT, Claude, Copilot, DeepSeek, Gemini o Perplexity directament des del Mode Prompt — un botó per servei.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
 📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
 ⌨️ Disparador de prompts amb suggeriments en viu: Escriu # al camp de xat de Gemini per veure a l'instant tots els teus prompts desats — filtrats en temps real mentre escrius. Usa ↓/↑ per navegar, prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
@@ -37,7 +37,7 @@ Estàs executant un model d'IA local (Ollama, LM Studio, Jan o un altre)? Config
 🛠️ COM FUNCIONA?
 
 Mode carpetes:
-Obre una conversa a Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Obre una conversa a Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Desat ràpid: Ctrl+Maj+S (o Cmd+Maj+S al Mac), o clic dret > «Desa a Carpetes IA».
 Mitjançant l'extensió: Fes clic a la icona, tria una carpeta i desa.
 Mòbil: Marca 📱 al peu de pàgina per sincronitzar les teves carpetes al telèfon.
@@ -50,12 +50,13 @@ Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
 Disparador de prompts: Escriu # per veure a l'instant tots els teus prompts desats, o continua escrivint per filtrar en temps real. Prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar.
 
 🔒 PRIVACITAT I SEGURETAT
-Construït amb la privacitat com a prioritat. Només sol·licita accés a Gemini, Claude, ChatGPT, Copilot, Perplexity i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
+Construït amb la privacitat com a prioritat. Només sol·licita accés a Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
 
 🤝 PROJECTE DE CODI OBERT
 Carpetes IA és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ACTUALITZACIONS:
+Versió 1.2 (DeepSeek): S'ha afegit compatibilitat amb DeepSeek (chat.deepseek.com). Inicia noves converses a DeepSeek directament des del Mode Prompt, desa-les en carpetes i injecta prompts — amb el color i el logotip de DeepSeek.
 Versió 1.1 (Disparador de Prompts): Escriu # a qualsevol camp de xat d'IA per veure els teus prompts filtrats en temps real. Usa ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell.
 Versió 1.0: Primera publicació! Organitzeu converses de Gemini, Claude, ChatGPT, Copilot i Perplexity en carpetes compartides. Biblioteca de prompts completa amb injecció d'un clic, dreceres de desament ràpid, arrossegar i deixar anar, sincronització mòbil, accions en bloc, grups de pestanyes i suport per a 43 idiomes.

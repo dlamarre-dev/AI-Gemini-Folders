@@ -9,6 +9,7 @@ const SUPPORTED_URL_PATTERNS = [
   "*://claude.ai/*",
   "*://chatgpt.com/*",
   "*://copilot.microsoft.com/*",
+  "*://chat.deepseek.com/*",
   "*://perplexity.ai/*",
   "*://*.perplexity.ai/*",
 ];

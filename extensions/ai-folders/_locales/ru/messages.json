@@ -3,7 +3,7 @@
     "message": "ИИ-папки"
   },
   "extDesc": {
-    "message": "Организуйте беседы с ИИ в пользовательских папках. Поддерживает Gemini, Claude, ChatGPT, Copilot и Perplexity."
+    "message": "Организуйте беседы с ИИ в пользовательских папках. Поддерживает Gemini, Claude, ChatGPT, Copilot, DeepSeek и Perplexity."
   },
   "appTitle": {
     "message": "ИИ-папки"
@@ -183,7 +183,7 @@
     "message": "Пока нет сохранённых промптов."
   },
   "promptAddBtn": {
-    "message": "Добавить промпт"
+    "message": "Промпт"
   },
   "promptCopyTitle": {
     "message": "Копировать"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "Новый разговор в Copilot"
   },
+  "newConv_deepseek": {
+    "message": "Новый разговор в DeepSeek"
+  },
   "newConv_perplexity": {
     "message": "Новый разговор в Perplexity"
   },
@@ -237,7 +240,7 @@
     "message": "Задать URL локальной LLM:"
   },
   "alertNotSupported": {
-    "message": "Пожалуйста, используйте это расширение на поддерживаемом AI-сайте (Gemini, Claude, ChatGPT, Copilot или Perplexity)."
+    "message": "Пожалуйста, используйте это расширение на поддерживаемом AI-сайте (Gemini, Claude, ChatGPT, Copilot, DeepSeek или Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Не удалось найти поле ввода на этой странице. Сначала нажмите в редактор, затем используйте кнопку вставки."

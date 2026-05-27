@@ -3,7 +3,7 @@
         "message": "Pastas IA"
     },
     "extDesc": {
-        "message": "Organize suas conversas de IA em pastas personalizadas. Compatível com Gemini, Claude, ChatGPT, Copilot e Perplexity."
+        "message": "Organize suas conversas de IA em pastas personalizadas. Compatível com Gemini, Claude, ChatGPT, Copilot, DeepSeek e Perplexity."
     },
     "appTitle": {
         "message": "Pastas IA"
@@ -183,7 +183,7 @@
         "message": "Nenhum prompt salvo ainda."
     },
     "promptAddBtn": {
-        "message": "Adicionar prompt"
+        "message": "Prompt"
     },
     "promptCopyTitle": {
         "message": "Copiar"
@@ -227,6 +227,9 @@
     "newConv_copilot": {
         "message": "Nova conversa no Copilot"
     },
+  "newConv_deepseek": {
+    "message": "Nova conversa no DeepSeek"
+  },
     "newConv_perplexity": {
         "message": "Nova conversa no Perplexity"
     },
@@ -237,7 +240,7 @@
         "message": "Definir URL do LLM local:"
     },
     "alertNotSupported": {
-        "message": "Use esta extensão em um site de IA compatível (Gemini, Claude, ChatGPT, Copilot ou Perplexity)."
+        "message": "Use esta extensão em um site de IA compatível (Gemini, Claude, ChatGPT, Copilot, DeepSeek ou Perplexity)."
     },
     "alertEditorNotFound": {
         "message": "Não foi possível encontrar o campo de texto nesta página. Tente clicar no editor primeiro e use o botão de inserção."

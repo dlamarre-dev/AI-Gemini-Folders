@@ -3,7 +3,7 @@
     "message": "AI 文件夹"
   },
   "extDesc": {
-    "message": "将您的 AI 对话整理到自定义文件夹中。支持 Gemini、Claude、ChatGPT、Copilot 和 Perplexity。"
+    "message": "将您的 AI 对话整理到自定义文件夹中。支持 Gemini、Claude、ChatGPT、Copilot、DeepSeek 和 Perplexity。"
   },
   "appTitle": {
     "message": "AI 文件夹"
@@ -183,7 +183,7 @@
     "message": "尚未保存任何提示词。"
   },
   "promptAddBtn": {
-    "message": "添加提示词"
+    "message": "提示词"
   },
   "promptCopyTitle": {
     "message": "复制"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "新建 Copilot 对话"
   },
+  "newConv_deepseek": {
+    "message": "新建 DeepSeek 对话"
+  },
   "newConv_perplexity": {
     "message": "新建 Perplexity 对话"
   },
@@ -237,7 +240,7 @@
     "message": "设置本地 LLM URL："
   },
   "alertNotSupported": {
-    "message": "请在受支持的 AI 网站上使用此扩展程序（Gemini、Claude、ChatGPT、Copilot 或 Perplexity）。"
+    "message": "请在受支持的 AI 网站上使用此扩展程序（Gemini、Claude、ChatGPT、Copilot、DeepSeek 或 Perplexity）。"
   },
   "alertEditorNotFound": {
     "message": "无法在此页面找到文本输入框。请先点击编辑器，然后再使用插入按钮。"

@@ -3,7 +3,7 @@
     "message": "AI ফোল্ডার"
   },
   "extDesc": {
-    "message": "আপনার AI কথোপকথনগুলো কাস্টম ফোল্ডারে সংগঠিত করুন। Gemini, Claude, ChatGPT, Copilot এবং Perplexity সমর্থিত।"
+    "message": "আপনার AI কথোপকথনগুলো কাস্টম ফোল্ডারে সংগঠিত করুন। Gemini, Claude, ChatGPT, Copilot, DeepSeek এবং Perplexity সমর্থিত।"
   },
   "appTitle": {
     "message": "AI ফোল্ডার"
@@ -183,7 +183,7 @@
     "message": "এখনো কোনো প্রম্পট সংরক্ষণ করা হয়নি।"
   },
   "promptAddBtn": {
-    "message": "প্রম্পট যোগ করুন"
+    "message": "প্রম্পট"
   },
   "promptCopyTitle": {
     "message": "কপি করুন"
@@ -227,6 +227,9 @@
   "newConv_copilot": {
     "message": "নতুন Copilot কথোপকথন"
   },
+  "newConv_deepseek": {
+    "message": "নতুন DeepSeek কথোপকথন"
+  },
   "newConv_perplexity": {
     "message": "নতুন Perplexity কথোপকথন"
   },
@@ -237,7 +240,7 @@
     "message": "স্থানীয় LLM URL সেট করুন:"
   },
   "alertNotSupported": {
-    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, বা Perplexity)।"
+    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, বা Perplexity)।"
   },
   "alertEditorNotFound": {
     "message": "এই পৃষ্ঠায় টেক্সট ইনপুট খুঁজে পাওয়া যায়নি। প্রথমে এডিটরে ক্লিক করুন, তারপর ইনসার্ট বাটন ব্যবহার করুন।"

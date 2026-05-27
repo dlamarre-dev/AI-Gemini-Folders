@@ -1,4 +1,4 @@
-﻿AI-keskustelusi ovat hajallaan viidellä eri sivustolla. Kirjoitat jatkuvasti samat kehotteet uudelleen. Parhaat keskustelusi katoavat loputtomiin historioihin Geminissä, Claudessa, ChatGPT:ssä, Copilotissa ja Perplexityssä.
+﻿AI-keskustelusi ovat hajallaan kuudella eri sivustolla. Kirjoitat jatkuvasti samat kehotteet uudelleen. Parhaat keskustelusi katoavat loputtomiin historioihin Geminissä, Claudessa, ChatGPT:ssä, Copilotissa, DeepSeekissä ja Perplexityssä.
 AI-kansiot on laajennus, jota tarvitset.
 
 AI-kansiot on yhtenäinen AI-ohjauskeskuksesi: järjestä kaikista AI-työkaluistasi käydyt keskustelut jaetuiksi kansioiksi, rakenna uudelleenkäytettävien kehotteiden kirjasto ja lisää kehotteet suoraan mihin tahansa tuettuun AI:hin — ilman kopiointia ja liittämistä.
@@ -8,7 +8,7 @@ AI-kansiot on yhtenäinen AI-ohjauskeskuksesi: järjestä kaikista AI-työkaluis
 📝 Henkilökohtainen promptikirjasto: Vaihda Prompttilaan napsauttamalla otsikon kytkintä. Tallenna parhaat promptisi otsikolla ja tekstillä, löydä ne välittömästi hakemalla ja lajittelemalla (uusimmat, vanhimmat, A–Ö).
 ▶ Injektio yhdellä napsautuksella: Napsauta tallennetun promptin toistopainiketta (▶) injektoidaksesi sen suoraan aktiivisen AI:n syöttökenttään.
 ✏️ Inline-muokkaus: Napsauta laajentaaksesi promptin ja muokkaa tekstiä suoraan. Muutokset tallentuvat automaattisesti lyhyen tauon jälkeen.
-🔀 Uuden keskustelun painikkeet: Aloita uusi keskustelu ChatGPT:ssä, Claudessa, Copilotissa, Geminissä tai Perplexityssä suoraan Kehotetyökalusta — yksi painike palvelua kohden.
+🔀 Uuden keskustelun painikkeet: Aloita uusi keskustelu ChatGPT:ssä, Claudessa, Copilotissa, DeepSeekissä, Geminissä tai Perplexityssä suoraan Kehotetyökalusta — yksi painike palvelua kohden.
 ☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
 📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
 ⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Käytä ↓/↑ selailuun, paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
@@ -37,7 +37,7 @@ Käytätkö paikallista AI-mallia (Ollama, LM Studio, Jan tai muu)? Määritä A
 🛠️ MITEN SE TOIMII?
 
 Kansiotila:
-Avaa keskustelu osoitteessa Gemini, Claude, ChatGPT, Copilot, Perplexity.
+Avaa keskustelu osoitteessa Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
 Avaa paneeli: Ctrl+Shift+1 (tai Cmd+Shift+1 Macissa).
 Pikatallennus: Ctrl+Shift+S (tai Cmd+Shift+S Macissa) tai hiiren oikea painike > «Tallenna Gemini-kansioihin».
 Lisäosan kautta: Napsauta kuvaketta, valitse kansio ja tallenna.
@@ -52,12 +52,13 @@ Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy
 Kehoteliipaisin: Kirjoita # nähdäksesi välittömästi kaikki tallennetut kehotteesi, tai jatka kirjoittamista suodattaaksesi reaaliajassa. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa lisäämistä varten.
 
 🔒 YKSITYISYYS JA TURVALLISUUS
-Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain Gemini, Claude, ChatGPT, Copilot, Perplexity:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.
+Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.
 
 🤝 AVOIN LÄHDEKOODIN PROJEKTI
 AI-kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvyys ja yksityisyytesi kunnioittaminen ovat korkeimpia prioriteettiamme. Oletko kehittäjä tai vain utelias? Selaa koodia, seuraa muutoslokia tai osallistu GitHubissa: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 PÄIVITYKSET:
+Versio 1.2 (DeepSeek): DeepSeek (chat.deepseek.com) -tuki lisätty. Aloita uusia DeepSeek-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet — DeepSeekin värillä ja logolla.
 Versio 1.1 (Kehotteen laukaisin): Kirjoita # mihin tahansa AI-chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia.
 Versio 1.0: Ensijulkaisu! Järjestä Geminin, Clauden, ChatGPT:n, Copilotin ja Perplexityn keskustelut jaetuiksi kansioiksi. Täydellinen kehotekirjasto yhdellä napsautuksella, pikaentallenteen pikanäppäimet, vedä ja pudota, mobiilisynkronointi, joukkotoiminnot, välilehtiryhmät ja tuki 43 kielelle.
