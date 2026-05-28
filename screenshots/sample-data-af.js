@@ -69,7 +69,7 @@ function make(locale) {
     devChat1, devChat2, resChat1, writeChat1,
     pinnedFolders: [devFolder],
     folders: {
-      // Dev folder: conversations from ChatGPT + Claude + Deepseek +    Gemini
+      // Dev folder: conversations from ChatGPT + Claude + Deepseek + Gemini
       [devFolder]: [
         { url: 'https://chatgpt.com/c/aaa1',   title: devChat1,  timestamp: NOW - 1 * DAY, site: 'chatgpt' },
         { url: 'https://claude.ai/chat/aaa2',   title: devChat2,  timestamp: NOW - 2 * DAY, site: 'claude' },
@@ -82,11 +82,11 @@ function make(locale) {
         { url: 'https://copilot.microsoft.com/c/bbb2',  title: resChat2, timestamp: NOW - 2 * DAY, site: 'copilot' },
         { url: 'https://claude.ai/chat/bbb3',           title: `${resChat1} — deep dive`, timestamp: NOW - 5 * DAY, site: 'claude' },
       ],
-      // Writing folder: Gemini + Claude + ChatGPT
+      // Writing folder: Perplexity + Claude + Copilot
       [writeFolder]: [
-        { url: 'https://gemini.google.com/app/ccc1', title: writeChat1, timestamp: NOW - 1 * DAY, site: 'gemini' },
+        { url: 'https://www.perplexity.ai/search/ccc1', title: writeChat1, timestamp: NOW - 1 * DAY, site: 'perplexity' },
         { url: 'https://claude.ai/chat/ccc2',        title: writeChat2, timestamp: NOW - 2 * DAY, site: 'claude' },
-        { url: 'https://chatgpt.com/c/ccc3',         title: `${writeChat2} final`, timestamp: NOW - 3 * DAY, site: 'chatgpt' },
+        { url: 'https://copilot.microsoft.com/c/ccc3',         title: `${writeChat2} final`, timestamp: NOW - 3 * DAY, site: 'copilot' },
       ],
     },
     pinnedPrompts: [codeReviewer || 'Code Reviewer'],
