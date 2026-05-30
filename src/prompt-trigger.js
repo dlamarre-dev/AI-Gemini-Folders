@@ -11,8 +11,8 @@
 
   // Matches "#word  #word" (contenteditable, e.g. Gemini) OR "word  word" (textarea,
   // e.g. Perplexity — no '#' to avoid triggering site-specific token processors).
-  // Two-space separator makes the pattern specific enough to avoid false positives.
-  const SUGG_LINE_RE = /^(?:#[\p{L}\p{N}_-]+(?:\s{2,}#[\p{L}\p{N}_-]+)*|[\p{L}\p{N}_-]+(?:\s{2,}[\p{L}\p{N}_-]+)*)$/u;
+  // Two-space separator separates names; single spaces are allowed within a name.
+  const SUGG_LINE_RE = /^(?:#[\p{L}\p{N}_-]+(?:[ ][\p{L}\p{N}_-]+)*(?:\s{2,}#[\p{L}\p{N}_-]+(?:[ ][\p{L}\p{N}_-]+)*)*|[\p{L}\p{N}_-]+(?:[ ][\p{L}\p{N}_-]+)*(?:\s{2,}[\p{L}\p{N}_-]+(?:[ ][\p{L}\p{N}_-]+)*)*)$/u;
   let _suggTimer = null;
 
   // Re-inserts a space after e.preventDefault() when no prompt matched.
@@ -64,7 +64,7 @@
     const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
     const firstLine = rawText.split('\n')[0].trim();
 
-    if (!/^#[\p{L}\p{N}_-]*$/u.test(firstLine)) return;
+    if (!/^#[\p{L}\p{N} _-]*$/u.test(firstLine)) return;
 
     const triggerName = firstLine.slice(1);
 
@@ -95,12 +95,14 @@
       // Service worker unavailable — treat as no match.
     }
 
-    if (status === 'no_match') {
+    if (status === 'no_match' || status === 'suggestions') {
+      // no_match: no prompt found, let the space through normally.
+      // suggestions: multiple matches — insert the space so the user can continue
+      // typing the rest of the title to disambiguate (e.g. "#Review " → "code").
       _blockNextSpaceKeyup = false;
       insertSpace(el);
     }
-    // All other statuses ('injected', 'autocompleted', 'suggestions'): background
-    // already acted on the editor via executeScript — nothing left to do here.
+    // 'injected' / 'autocompleted': background already acted on the editor.
   }, true); // capture phase — fires before the editor's own handlers
 
   // Suppress the Space keyup that follows a triggered injection. In Firefox the
@@ -171,7 +173,7 @@
     const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
 
     const firstLine = nonEmpty[0] ?? '';
-    const startsWithHash = /^#[\p{L}\p{N}_-]*$/u.test(firstLine);
+    const startsWithHash = /^#[\p{L}\p{N} _-]*$/u.test(firstLine);
     // Check positions 1 and 2: with an extension label on line 2, suggestions are on line 3.
     const hasSuggestionLine = (nonEmpty.length >= 2 && SUGG_LINE_RE.test(nonEmpty[1]))
       || (nonEmpty.length >= 3 && SUGG_LINE_RE.test(nonEmpty[2]));
