@@ -1,0 +1,55 @@
+# AI Folders
+
+> AI Folders is a free, open-source browser extension that organizes your AI conversations into custom folders and provides a reusable prompt library, available across ChatGPT, Claude, Gemini, Copilot, DeepSeek, Perplexity, and local LLMs.
+
+AI Folders solves the problem of losing track of conversations across multiple AI chat services. Users can save, categorize, and retrieve any conversation from a unified side-panel, and inject saved prompts directly into any AI chat with a keyboard shortcut.
+
+## Key features
+
+- **Folder organization**: Save AI conversations from any supported service into named folders with custom emoji labels
+- **Prompt library**: Store reusable prompts and inject them into any AI chat with one click or the `#PromptName` keyboard shortcut
+- **Multi-service support**: Works with ChatGPT, Claude, Gemini, Copilot, DeepSeek, Perplexity, and self-hosted local LLMs (Open WebUI, LM Studio, etc.)
+- **Cloud sync**: Conversations and prompts sync across devices via the browser's built-in sync
+- **Mobile access**: Synced conversations appear in Chrome bookmarks, accessible on any phone
+- **Tab groups**: Open an entire folder as a Chrome tab group in one click
+- **Bulk actions**: Select, move, or delete multiple conversations at once
+- **Drag and drop**: Reorder conversations and move them between folders
+- **Right-click save**: Save any conversation via the browser context menu without opening the extension
+- **Import / Export**: Full JSON backup and restore
+- **43 languages**: Full UI localization including Arabic and Hebrew (RTL)
+- **Open source**: MIT license, no telemetry, no account required
+
+## Supported AI services
+
+- ChatGPT (chat.openai.com)
+- Claude (claude.ai)
+- Gemini (gemini.google.com)
+- Microsoft Copilot (copilot.microsoft.com)
+- DeepSeek (chat.deepseek.com)
+- Perplexity (perplexity.ai)
+- Local LLMs: Open WebUI, LM Studio, and any configurable URL
+
+## Install
+
+- Chrome Web Store: https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf
+- Firefox Add-ons: https://addons.mozilla.org/firefox/addon/ai_folders/
+- Source code: https://github.com/dlamarre-dev/AI-Gemini-Folders
+
+## Also available
+
+**Gemini Folders** — the single-site variant focused exclusively on Gemini conversations, with identical folder and prompt features.
+
+- Chrome: https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik
+- Firefox: https://addons.mozilla.org/firefox/addon/gemini_folders/
+
+## Technical details
+
+- Built with vanilla JS and Chrome Extension Manifest V3
+- Storage: Chrome sync storage with LZ-String compression (chunked to stay under quota)
+- No external servers, no analytics, no account
+- Permissions: storage, contextMenus, scripting, tabs (used only for injection on AI sites)
+- Content scripts are injected only on supported AI domains
+
+## Developer
+
+David Fugère-Lamarre — https://github.com/dlamarre-dev
