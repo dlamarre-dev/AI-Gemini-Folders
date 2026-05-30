@@ -133,7 +133,8 @@ chrome.permissions.onAdded.addListener(async (permissions) => {
   } catch (_) {}
 });
 chrome.storage.onChanged.addListener((changes, namespace) => {
-  if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed || changes.localLlmUrl)) {
+  if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed
+      || changes.localLlmUrl || Object.keys(changes).some(k => k.startsWith('fdc')))) {
     updateContextMenu();
   }
   if (namespace === 'sync' && changes.localLlmUrl) {

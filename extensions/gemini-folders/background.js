@@ -61,7 +61,8 @@ function updateContextMenu() {
 chrome.runtime.onInstalled.addListener(updateContextMenu);
 chrome.runtime.onStartup.addListener(updateContextMenu);
 chrome.storage.onChanged.addListener((changes, namespace) => {
-  if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed)) {
+  if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed
+      || Object.keys(changes).some(k => k.startsWith('fdc')))) {
     updateContextMenu();
   }
 });
