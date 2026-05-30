@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Cria uma pasta sincronizada nos marcadores do Chrome para aceder às suas conversas no telemóvel."
   },
+  "reviewTitle": {
+    "message": "⭐ Está a gostar das Pastas IA?"
+  },
+  "reviewMessage": {
+    "message": "O seu apoio ajuda imenso este projeto de código aberto!"
+  },
+  "reviewRateBtn": {
+    "message": "Avaliar com 5 estrelas"
+  },
+  "reviewLaterBtn": {
+    "message": "Mais tarde"
+  },
+  "reviewNoBtn": {
+    "message": "Não, obrigado"
+  },
   "modalBtnCancel": {
     "message": "Cancelar"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Eliminar"
   },
-  "newConversationBtn": {
-    "message": "Nova conversa"
-  },
   "promptTitlePlaceholder": {
     "message": "Título do prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Inserir no chat"
   },
-  "promptPinTitle": {
-    "message": "Fixar"
+  "storageFullError": {
+    "message": "⚠️ Armazenamento cheio — não guardado."
   },
   "newConv_gemini": {
     "message": "Nova conversa no Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Não foi possível encontrar o campo de texto nesta página. Tente clicar no editor primeiro e utilize o botão de inserção."
-  },
-  "storageFullError": {
-    "message": "⚠️ Armazenamento cheio — não guardado."
   }
 }

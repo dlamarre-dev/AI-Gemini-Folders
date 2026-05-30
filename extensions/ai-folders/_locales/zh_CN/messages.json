@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "在 Chrome 书签中创建一个同步的文件夹，以便在手机上访问您的对话。"
   },
+  "reviewTitle": {
+    "message": "⭐ 您喜欢 AI 文件夹吗？"
+  },
+  "reviewMessage": {
+    "message": "您的支持对这个开源项目有巨大的帮助！"
+  },
+  "reviewRateBtn": {
+    "message": "评价 5 星"
+  },
+  "reviewLaterBtn": {
+    "message": "以后再说"
+  },
+  "reviewNoBtn": {
+    "message": "不，谢谢"
+  },
   "modalBtnCancel": {
     "message": "取消"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "删除"
   },
-  "newConversationBtn": {
-    "message": "新对话"
-  },
   "promptTitlePlaceholder": {
     "message": "提示词标题"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "插入到对话"
   },
-  "promptPinTitle": {
-    "message": "置顶"
+  "storageFullError": {
+    "message": "⚠️ 存储已满 — 未保存。"
   },
   "newConv_gemini": {
     "message": "新建 Gemini 对话"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "无法在此页面找到文本输入框。请先点击编辑器，然后再使用插入按钮。"
-  },
-  "storageFullError": {
-    "message": "⚠️ 存储已满 — 未保存。"
   }
 }

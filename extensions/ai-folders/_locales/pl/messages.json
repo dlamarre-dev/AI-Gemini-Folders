@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Tworzy zsynchronizowany folder w zakładkach Chrome, aby uzyskać dostęp do konwersacji na telefonie."
   },
+  "reviewTitle": {
+    "message": "⭐ Podobają Ci się Foldery AI?"
+  },
+  "reviewMessage": {
+    "message": "Twoje wsparcie ogromnie pomaga temu projektowi open source!"
+  },
+  "reviewRateBtn": {
+    "message": "Oceń na 5 gwiazdek"
+  },
+  "reviewLaterBtn": {
+    "message": "Później"
+  },
+  "reviewNoBtn": {
+    "message": "Nie, dziękuję"
+  },
   "modalBtnCancel": {
     "message": "Anuluj"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Usuń"
   },
-  "newConversationBtn": {
-    "message": "Nowa konwersacja"
-  },
   "promptTitlePlaceholder": {
     "message": "Tytuł promptu"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Wstaw do czatu"
   },
-  "promptPinTitle": {
-    "message": "Przypnij"
+  "storageFullError": {
+    "message": "⚠️ Pamięć pełna — nie zapisano."
   },
   "newConv_gemini": {
     "message": "Nowa rozmowa w Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Nie można znaleźć pola tekstowego na tej stronie. Spróbuj najpierw kliknąć w edytor, a następnie użyj przycisku wstawiania."
-  },
-  "storageFullError": {
-    "message": "⚠️ Pamięć pełna — nie zapisano."
   }
 }

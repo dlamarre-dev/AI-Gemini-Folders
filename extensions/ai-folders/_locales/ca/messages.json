@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Crea una carpeta sincronitzada als marcadors de Chrome per accedir a les converses al telèfon."
   },
+  "reviewTitle": {
+    "message": "⭐ T'agrada Gemini Carpetes?"
+  },
+  "reviewMessage": {
+    "message": "El teu suport ajuda enormement aquest projecte de codi obert!"
+  },
+  "reviewRateBtn": {
+    "message": "Puntua amb 5 estrelles"
+  },
+  "reviewLaterBtn": {
+    "message": "Potser més tard"
+  },
+  "reviewNoBtn": {
+    "message": "No, gràcies"
+  },
   "modalBtnCancel": {
     "message": "Cancel·la"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Elimina"
   },
-  "newConversationBtn": {
-    "message": "Nova conversa"
-  },
   "promptTitlePlaceholder": {
     "message": "Títol del prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Insereix al xat"
   },
-  "promptPinTitle": {
-    "message": "Fixa"
+  "storageFullError": {
+    "message": "⚠️ Emmagatzematge ple — no s'ha desat."
   },
   "newConv_gemini": {
     "message": "Nova conversa a Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "No s'ha pogut trobar el camp de text en aquesta pàgina. Proveu de fer clic a l'editor primer i després useu el botó d'inserció."
-  },
-  "storageFullError": {
-    "message": "⚠️ Emmagatzematge ple — no s'ha desat."
   }
 }

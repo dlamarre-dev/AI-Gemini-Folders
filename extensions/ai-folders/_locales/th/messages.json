@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "สร้างโฟลเดอร์ที่ซิงค์ในบุ๊กมาร์ก Chrome เพื่อเข้าถึงการสนทนาบนโทรศัพท์ของคุณ"
   },
+  "reviewTitle": {
+    "message": "⭐ คุณชอบโฟลเดอร์ AI หรือไม่?"
+  },
+  "reviewMessage": {
+    "message": "การสนับสนุนของคุณช่วยโปรเจกต์โอเพ่นซอร์สนี้เป็นอย่างมาก!"
+  },
+  "reviewRateBtn": {
+    "message": "ให้คะแนน 5 ดาว"
+  },
+  "reviewLaterBtn": {
+    "message": "บางทีภายหลัง"
+  },
+  "reviewNoBtn": {
+    "message": "ไม่ ขอบคุณ"
+  },
   "modalBtnCancel": {
     "message": "ยกเลิก"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "ลบ"
   },
-  "newConversationBtn": {
-    "message": "การสนทนาใหม่"
-  },
   "promptTitlePlaceholder": {
     "message": "ชื่อพรอมต์"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "แทรกในแชท"
   },
-  "promptPinTitle": {
-    "message": "ปักหมุด"
+  "storageFullError": {
+    "message": "⚠️ พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก"
   },
   "newConv_gemini": {
     "message": "บทสนทนา Gemini ใหม่"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "ไม่พบช่องป้อนข้อความในหน้านี้ ลองคลิกที่ตัวแก้ไขก่อน แล้วจึงใช้ปุ่มแทรก"
-  },
-  "storageFullError": {
-    "message": "⚠️ พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก"
   }
 }

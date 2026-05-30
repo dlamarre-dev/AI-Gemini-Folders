@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Tạo thư mục đồng bộ trong dấu trang Chrome để truy cập cuộc trò chuyện trên điện thoại."
   },
+  "reviewTitle": {
+    "message": "⭐ Bạn có thích Thư mục AI không?"
+  },
+  "reviewMessage": {
+    "message": "Sự ủng hộ của bạn giúp ích rất nhiều cho dự án mã nguồn mở này!"
+  },
+  "reviewRateBtn": {
+    "message": "Đánh giá 5 sao"
+  },
+  "reviewLaterBtn": {
+    "message": "Có thể sau"
+  },
+  "reviewNoBtn": {
+    "message": "Không, cảm ơn"
+  },
   "modalBtnCancel": {
     "message": "Hủy"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Xóa"
   },
-  "newConversationBtn": {
-    "message": "Cuộc trò chuyện mới"
-  },
   "promptTitlePlaceholder": {
     "message": "Tiêu đề prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Chèn vào cuộc trò chuyện"
   },
-  "promptPinTitle": {
-    "message": "Ghim"
+  "storageFullError": {
+    "message": "⚠️ Bộ nhớ đầy — chưa được lưu."
   },
   "newConv_gemini": {
     "message": "Cuộc trò chuyện Gemini mới"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Không tìm thấy ô nhập văn bản trên trang này. Hãy thử nhấp vào trình soạn thảo trước rồi sử dụng nút chèn."
-  },
-  "storageFullError": {
-    "message": "⚠️ Bộ nhớ đầy — chưa được lưu."
   }
 }

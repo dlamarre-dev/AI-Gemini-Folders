@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Membuat folder tersinkronisasi di bookmark Chrome Anda untuk mengakses percakapan di ponsel."
   },
+  "reviewTitle": {
+    "message": "⭐ Apakah Anda menyukai Folder AI?"
+  },
+  "reviewMessage": {
+    "message": "Dukungan Anda sangat membantu proyek open source ini!"
+  },
+  "reviewRateBtn": {
+    "message": "Beri 5 bintang"
+  },
+  "reviewLaterBtn": {
+    "message": "Mungkin nanti"
+  },
+  "reviewNoBtn": {
+    "message": "Tidak, terima kasih"
+  },
   "modalBtnCancel": {
     "message": "Batal"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Hapus"
   },
-  "newConversationBtn": {
-    "message": "Percakapan Baru"
-  },
   "promptTitlePlaceholder": {
     "message": "Judul Prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Sisipkan ke obrolan"
   },
-  "promptPinTitle": {
-    "message": "Sematkan"
+  "storageFullError": {
+    "message": "⚠️ Penyimpanan penuh — tidak disimpan."
   },
   "newConv_gemini": {
     "message": "Percakapan Gemini baru"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemukan kotak teks di halaman ini. Coba klik editor terlebih dahulu, lalu gunakan tombol sisipkan."
-  },
-  "storageFullError": {
-    "message": "⚠️ Penyimpanan penuh — tidak disimpan."
   }
 }

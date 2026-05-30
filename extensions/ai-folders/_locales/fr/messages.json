@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Crée un dossier synchronisé dans vos favoris Chrome pour accéder à vos conversations sur votre téléphone."
   },
+  "reviewTitle": {
+    "message": "⭐ Aimez-vous Dossiers IA ?"
+  },
+  "reviewMessage": {
+    "message": "Votre soutien aide énormément ce projet open source !"
+  },
+  "reviewRateBtn": {
+    "message": "Noter 5 étoiles"
+  },
+  "reviewLaterBtn": {
+    "message": "Plus tard"
+  },
+  "reviewNoBtn": {
+    "message": "Non merci"
+  },
   "modalBtnCancel": {
     "message": "Annuler"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Supprimer"
   },
-  "newConversationBtn": {
-    "message": "Nouvelle conversation"
-  },
   "promptTitlePlaceholder": {
     "message": "Titre du prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Insérer dans le chat"
   },
-  "promptPinTitle": {
-    "message": "Épingler"
+  "storageFullError": {
+    "message": "⚠️ Stockage plein — non sauvegardé."
   },
   "newConv_gemini": {
     "message": "Nouvelle conversation Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Impossible de trouver le champ de saisie sur cette page. Essayez de cliquer dans l'éditeur d'abord, puis utilisez le bouton d'insertion."
-  },
-  "storageFullError": {
-    "message": "⚠️ Stockage plein — non sauvegardé."
   }
 }

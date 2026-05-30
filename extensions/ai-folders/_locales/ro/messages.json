@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Creează un folder sincronizat în marcajele Chrome pentru a accesa conversațiile pe telefon."
   },
+  "reviewTitle": {
+    "message": "⭐ Vă plac Folderele Gemini?"
+  },
+  "reviewMessage": {
+    "message": "Sprijinul dvs. ajută enorm acest proiect open source!"
+  },
+  "reviewRateBtn": {
+    "message": "Evaluează cu 5 stele"
+  },
+  "reviewLaterBtn": {
+    "message": "Mai târziu"
+  },
+  "reviewNoBtn": {
+    "message": "Nu, mulțumesc"
+  },
   "modalBtnCancel": {
     "message": "Anulează"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Șterge"
   },
-  "newConversationBtn": {
-    "message": "Conversație nouă"
-  },
   "promptTitlePlaceholder": {
     "message": "Titlul promptului"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Inserează în chat"
   },
-  "promptPinTitle": {
-    "message": "Fixează"
+  "storageFullError": {
+    "message": "⚠️ Spațiu de stocare plin — nesalvat."
   },
   "newConv_gemini": {
     "message": "Conversație nouă în Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Nu s-a găsit câmpul de text pe această pagină. Încercați să faceți clic mai întâi în editor, apoi folosiți butonul de inserare."
-  },
-  "storageFullError": {
-    "message": "⚠️ Spațiu de stocare plin — nesalvat."
   }
 }

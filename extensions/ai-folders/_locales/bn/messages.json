@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "আপনার ফোনে কথোপকথন অ্যাক্সেস করতে Chrome বুকমার্কে একটি সিঙ্ক ফোল্ডার তৈরি করে।"
   },
+  "reviewTitle": {
+    "message": "⭐ আপনি কি AI ফোল্ডার উপভোগ করছেন?"
+  },
+  "reviewMessage": {
+    "message": "আপনার সমর্থন এই ওপেন-সোর্স প্রকল্পকে অনেক সাহায্য করে!"
+  },
+  "reviewRateBtn": {
+    "message": "৫ স্টার দিন"
+  },
+  "reviewLaterBtn": {
+    "message": "হয়তো পরে"
+  },
+  "reviewNoBtn": {
+    "message": "না, ধন্যবাদ"
+  },
   "modalBtnCancel": {
     "message": "বাতিল"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "মুছুন"
   },
-  "newConversationBtn": {
-    "message": "নতুন কথোপকথন"
-  },
   "promptTitlePlaceholder": {
     "message": "প্রম্পটের শিরোনাম"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "চ্যাটে সন্নিবেশ করুন"
   },
-  "promptPinTitle": {
-    "message": "পিন করুন"
+  "storageFullError": {
+    "message": "⚠️ স্টোরেজ পূর্ণ — সংরক্ষণ হয়নি।"
   },
   "newConv_gemini": {
     "message": "নতুন Gemini কথোপকথন"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "এই পৃষ্ঠায় টেক্সট ইনপুট খুঁজে পাওয়া যায়নি। প্রথমে এডিটরে ক্লিক করুন, তারপর ইনসার্ট বাটন ব্যবহার করুন।"
-  },
-  "storageFullError": {
-    "message": "⚠️ স্টোরেজ পূর্ণ — সংরক্ষণ হয়নি।"
   }
 }
