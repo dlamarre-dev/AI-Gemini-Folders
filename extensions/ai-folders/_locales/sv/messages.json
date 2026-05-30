@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Skapar en synkroniserad mapp i dina Chrome-bokmärken för åtkomst till konversationer på telefonen."
   },
+  "reviewTitle": {
+    "message": "⭐ Gillar du AI-mappar?"
+  },
+  "reviewMessage": {
+    "message": "Ditt stöd hjälper det här öppen källkod-projektet enormt!"
+  },
+  "reviewRateBtn": {
+    "message": "Betygsätt 5 stjärnor"
+  },
+  "reviewLaterBtn": {
+    "message": "Kanske senare"
+  },
+  "reviewNoBtn": {
+    "message": "Nej tack"
+  },
   "modalBtnCancel": {
     "message": "Avbryt"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Ta bort"
   },
-  "newConversationBtn": {
-    "message": "Ny konversation"
-  },
   "promptTitlePlaceholder": {
     "message": "Prompttitel"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Infoga i chatten"
   },
-  "promptPinTitle": {
-    "message": "Fäst"
+  "storageFullError": {
+    "message": "⚠️ Lagringsutrymmet är fullt — inte sparat."
   },
   "newConv_gemini": {
     "message": "Ny Gemini-konversation"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Det gick inte att hitta textfältet på den här sidan. Försök att klicka i redigeraren först och använd sedan infogaknappen."
-  },
-  "storageFullError": {
-    "message": "⚠️ Lagringsutrymmet är fullt — inte sparat."
   }
 }

@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Gumagawa ng naka-sync na folder sa iyong mga Chrome bookmark para ma-access ang iyong mga pag-uusap sa iyong telepono."
   },
+  "reviewTitle": {
+    "message": "⭐ Nag-eenjoy ka ba sa Mga AI Folder?"
+  },
+  "reviewMessage": {
+    "message": "Ang iyong suporta ay nakakatulong nang malaki sa open-source na proyektong ito!"
+  },
+  "reviewRateBtn": {
+    "message": "Mag-rate ng 5 bituin"
+  },
+  "reviewLaterBtn": {
+    "message": "Marahil mamaya"
+  },
+  "reviewNoBtn": {
+    "message": "Hindi, salamat"
+  },
   "modalBtnCancel": {
     "message": "Kanselahin"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Tanggalin"
   },
-  "newConversationBtn": {
-    "message": "Bagong Pag-uusap"
-  },
   "promptTitlePlaceholder": {
     "message": "Pamagat ng Prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Ipasok sa chat"
   },
-  "promptPinTitle": {
-    "message": "I-pin"
+  "storageFullError": {
+    "message": "⚠️ Puno na ang storage — hindi na-save."
   },
   "newConv_gemini": {
     "message": "Bagong Gemini na pag-uusap"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Hindi mahanap ang text input sa pahinang ito. Subukang mag-click sa editor muna, pagkatapos ay gamitin ang insert button."
-  },
-  "storageFullError": {
-    "message": "⚠️ Puno na ang storage — hindi na-save."
   }
 }

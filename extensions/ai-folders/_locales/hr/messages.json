@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Stvara sinkroniziranu mapu u Chrome oznakama za pristup razgovorima s telefona."
   },
+  "reviewTitle": {
+    "message": "⭐ Sviđa ti se UI mape?"
+  },
+  "reviewMessage": {
+    "message": "Tvoja podrška ogromno pomaže ovom projektu otvorenog koda!"
+  },
+  "reviewRateBtn": {
+    "message": "Ocijeni s 5 zvjezdica"
+  },
+  "reviewLaterBtn": {
+    "message": "Možda kasnije"
+  },
+  "reviewNoBtn": {
+    "message": "Ne, hvala"
+  },
   "modalBtnCancel": {
     "message": "Otkaži"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Izbriši"
   },
-  "newConversationBtn": {
-    "message": "Novi razgovor"
-  },
   "promptTitlePlaceholder": {
     "message": "Naslov upita"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Umetni u chat"
   },
-  "promptPinTitle": {
-    "message": "Prikvači"
+  "storageFullError": {
+    "message": "⚠️ Pohrana je puna — nije spremljeno."
   },
   "newConv_gemini": {
     "message": "Novi razgovor na Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Pokušajte kliknuti u uređivač, a zatim koristite gumb za umetanje."
-  },
-  "storageFullError": {
-    "message": "⚠️ Pohrana je puna — nije spremljeno."
   }
 }

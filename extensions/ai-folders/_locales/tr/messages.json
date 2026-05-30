@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Telefonunuzdan konuşmalarınıza erişmek için Chrome yer imlerinizde senkronize edilmiş bir klasör oluşturur."
   },
+  "reviewTitle": {
+    "message": "⭐ YZ Klasörleri'ni beğeniyor musunuz?"
+  },
+  "reviewMessage": {
+    "message": "Desteğiniz bu açık kaynaklı projeye çok yardımcı oluyor!"
+  },
+  "reviewRateBtn": {
+    "message": "5 yıldız ver"
+  },
+  "reviewLaterBtn": {
+    "message": "Belki daha sonra"
+  },
+  "reviewNoBtn": {
+    "message": "Hayır, teşekkürler"
+  },
   "modalBtnCancel": {
     "message": "İptal"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Sil"
   },
-  "newConversationBtn": {
-    "message": "Yeni Konuşma"
-  },
   "promptTitlePlaceholder": {
     "message": "İstem Başlığı"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Sohbete ekle"
   },
-  "promptPinTitle": {
-    "message": "Sabitle"
+  "storageFullError": {
+    "message": "⚠️ Depolama alanı dolu — kaydedilmedi."
   },
   "newConv_gemini": {
     "message": "Yeni Gemini sohbeti"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Bu sayfada metin giriş alanı bulunamadı. Önce düzenleyiciye tıklamayı deneyin, ardından ekle düğmesini kullanın."
-  },
-  "storageFullError": {
-    "message": "⚠️ Depolama alanı dolu — kaydedilmedi."
   }
 }

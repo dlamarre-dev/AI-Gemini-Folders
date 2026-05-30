@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Luo synkronoitu kansio Chrome-kirjanmerkkeihin, jotta voit käyttää keskusteluja puhelimellasi."
   },
+  "reviewTitle": {
+    "message": "⭐ Pidätkö Gemini-kansioista?"
+  },
+  "reviewMessage": {
+    "message": "Tukesi auttaa tätä avoimen lähdekoodin projektia valtavasti!"
+  },
+  "reviewRateBtn": {
+    "message": "Anna 5 tähteä"
+  },
+  "reviewLaterBtn": {
+    "message": "Ehkä myöhemmin"
+  },
+  "reviewNoBtn": {
+    "message": "Ei kiitos"
+  },
   "modalBtnCancel": {
     "message": "Peruuta"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Poista"
   },
-  "newConversationBtn": {
-    "message": "Uusi keskustelu"
-  },
   "promptTitlePlaceholder": {
     "message": "Promptin otsikko"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Lisää chattiin"
   },
-  "promptPinTitle": {
-    "message": "Kiinnitä"
+  "storageFullError": {
+    "message": "⚠️ Tallennustila täynnä — ei tallennettu."
   },
   "newConv_gemini": {
     "message": "Uusi Gemini-keskustelu"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."
-  },
-  "storageFullError": {
-    "message": "⚠️ Tallennustila täynnä — ei tallennettu."
   }
 }

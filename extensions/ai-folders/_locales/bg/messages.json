@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Създава синхронизирана папка в отметките на Chrome за достъп до разговори от телефона."
   },
+  "reviewTitle": {
+    "message": "⭐ Харесвате ли ИИ папки?"
+  },
+  "reviewMessage": {
+    "message": "Вашата подкрепа помага огромно на този проект с отворен код!"
+  },
+  "reviewRateBtn": {
+    "message": "Оценете с 5 звезди"
+  },
+  "reviewLaterBtn": {
+    "message": "Може би по-късно"
+  },
+  "reviewNoBtn": {
+    "message": "Не, благодаря"
+  },
   "modalBtnCancel": {
     "message": "Отмени"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Изтрий"
   },
-  "newConversationBtn": {
-    "message": "Нов разговор"
-  },
   "promptTitlePlaceholder": {
     "message": "Заглавие на промпта"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Вмъкни в чата"
   },
-  "promptPinTitle": {
-    "message": "Закачи"
+  "storageFullError": {
+    "message": "⚠️ Хранилището е пълно — не е запазено."
   },
   "newConv_gemini": {
     "message": "Нов разговор в Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Не може да се намери текстовото поле на тази страница. Опитайте да кликнете в редактора първо, след което използвайте бутона за вмъкване."
-  },
-  "storageFullError": {
-    "message": "⚠️ Хранилището е пълно — не е запазено."
   }
 }

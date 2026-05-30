@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Chromeのブックマークに同期されたフォルダを作成し、スマートフォンから会話にアクセスできるようにします。"
   },
+  "reviewTitle": {
+    "message": "⭐ AI フォルダ をお楽しみですか？"
+  },
+  "reviewMessage": {
+    "message": "皆様のサポートがこのオープンソースプロジェクトの大きな力になります！"
+  },
+  "reviewRateBtn": {
+    "message": "5つ星で評価"
+  },
+  "reviewLaterBtn": {
+    "message": "後で"
+  },
+  "reviewNoBtn": {
+    "message": "いいえ、結構です"
+  },
   "modalBtnCancel": {
     "message": "キャンセル"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "削除"
   },
-  "newConversationBtn": {
-    "message": "新しい会話"
-  },
   "promptTitlePlaceholder": {
     "message": "プロンプトのタイトル"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "チャットに挿入"
   },
-  "promptPinTitle": {
-    "message": "固定"
+  "storageFullError": {
+    "message": "⚠️ ストレージがいっぱいです — 保存されませんでした。"
   },
   "newConv_gemini": {
     "message": "新しい Gemini の会話"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "このページでテキスト入力欄が見つかりませんでした。先にエディタをクリックしてから、挿入ボタンをご使用ください。"
-  },
-  "storageFullError": {
-    "message": "⚠️ ストレージがいっぱいです — 保存されませんでした。"
   }
 }

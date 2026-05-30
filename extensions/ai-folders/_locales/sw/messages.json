@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Inaunda folda iliyosawazishwa katika alamisho za Chrome ili ufikie mazungumzo yako kwenye simu yako."
   },
+  "reviewTitle": {
+    "message": "⭐ Je, unafurahia Folda za AI?"
+  },
+  "reviewMessage": {
+    "message": "Msaada wako unasaidia sana mradi huu wa chanzo wazi!"
+  },
+  "reviewRateBtn": {
+    "message": "Toa nyota 5"
+  },
+  "reviewLaterBtn": {
+    "message": "Labda baadaye"
+  },
+  "reviewNoBtn": {
+    "message": "Hapana, asante"
+  },
   "modalBtnCancel": {
     "message": "Ghairi"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Futa"
   },
-  "newConversationBtn": {
-    "message": "Mazungumzo Mapya"
-  },
   "promptTitlePlaceholder": {
     "message": "Kichwa cha Kidokezo"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Ingiza kwenye gumzo"
   },
-  "promptPinTitle": {
-    "message": "Bandika"
+  "storageFullError": {
+    "message": "⚠️ Hifadhi imejaa — haijahifadhiwa."
   },
   "newConv_gemini": {
     "message": "Mazungumzo mapya ya Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Haiwezekani kupata sehemu ya kuandika katika ukurasa huu. Jaribu kubonyeza kwenye kihariri kwanza, kisha utumie kitufe cha ingiza."
-  },
-  "storageFullError": {
-    "message": "⚠️ Hifadhi imejaa — haijahifadhiwa."
   }
 }

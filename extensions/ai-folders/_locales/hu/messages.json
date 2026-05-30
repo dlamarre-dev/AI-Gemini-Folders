@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Szinkronizált mappát hoz létre a Chrome-könyvjelzőkben, hogy telefonján is elérhesse a beszélgetéseit."
   },
+  "reviewTitle": {
+    "message": "⭐ Tetszik a MI mappák?"
+  },
+  "reviewMessage": {
+    "message": "Támogatása nagymértékben segíti ezt a nyílt forráskódú projektet!"
+  },
+  "reviewRateBtn": {
+    "message": "5 csillagos értékelés"
+  },
+  "reviewLaterBtn": {
+    "message": "Talán később"
+  },
+  "reviewNoBtn": {
+    "message": "Nem, köszönöm"
+  },
   "modalBtnCancel": {
     "message": "Mégse"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Törlés"
   },
-  "newConversationBtn": {
-    "message": "Új beszélgetés"
-  },
   "promptTitlePlaceholder": {
     "message": "Prompt neve"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Beillesztés a chatbe"
   },
-  "promptPinTitle": {
-    "message": "Rögzítés"
+  "storageFullError": {
+    "message": "⚠️ A tároló tele van — nem mentve."
   },
   "newConv_gemini": {
     "message": "Új Gemini-beszélgetés"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."
-  },
-  "storageFullError": {
-    "message": "⚠️ A tároló tele van — nem mentve."
   }
 }

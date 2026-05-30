@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Crea una cartella sincronizzata nei preferiti di Chrome per accedere alle conversazioni dal telefono."
   },
+  "reviewTitle": {
+    "message": "⭐ Ti piace Cartelle IA?"
+  },
+  "reviewMessage": {
+    "message": "Il tuo supporto aiuta enormemente questo progetto open source!"
+  },
+  "reviewRateBtn": {
+    "message": "Valuta 5 stelle"
+  },
+  "reviewLaterBtn": {
+    "message": "Più tardi"
+  },
+  "reviewNoBtn": {
+    "message": "No grazie"
+  },
   "modalBtnCancel": {
     "message": "Annulla"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Elimina"
   },
-  "newConversationBtn": {
-    "message": "Nuova conversazione"
-  },
   "promptTitlePlaceholder": {
     "message": "Titolo del prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Inserisci nella chat"
   },
-  "promptPinTitle": {
-    "message": "Fissa"
+  "storageFullError": {
+    "message": "⚠️ Archiviazione piena — non salvato."
   },
   "newConv_gemini": {
     "message": "Nuova conversazione Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Impossibile trovare il campo di testo in questa pagina. Prova a fare clic sull'editor prima, poi usa il pulsante di inserimento."
-  },
-  "storageFullError": {
-    "message": "⚠️ Archiviazione piena — non salvato."
   }
 }

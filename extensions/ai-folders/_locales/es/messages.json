@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Crea una carpeta sincronizada en tus marcadores de Chrome para acceder a tus conversaciones en tu teléfono."
   },
+  "reviewTitle": {
+    "message": "⭐ ¿Te gusta Carpetas IA?"
+  },
+  "reviewMessage": {
+    "message": "¡Tu apoyo ayuda enormemente a este proyecto de código abierto!"
+  },
+  "reviewRateBtn": {
+    "message": "Calificar 5 estrellas"
+  },
+  "reviewLaterBtn": {
+    "message": "Más tarde"
+  },
+  "reviewNoBtn": {
+    "message": "No, gracias"
+  },
   "modalBtnCancel": {
     "message": "Cancelar"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Eliminar"
   },
-  "newConversationBtn": {
-    "message": "Nueva conversación"
-  },
   "promptTitlePlaceholder": {
     "message": "Título del prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Insertar en el chat"
   },
-  "promptPinTitle": {
-    "message": "Fijar"
+  "storageFullError": {
+    "message": "⚠️ Almacenamiento lleno — no guardado."
   },
   "newConv_gemini": {
     "message": "Nueva conversación en Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "No se encontró el campo de texto en esta página. Intenta hacer clic en el editor primero y luego usa el botón de inserción."
-  },
-  "storageFullError": {
-    "message": "⚠️ Almacenamiento lleno — no guardado."
   }
 }

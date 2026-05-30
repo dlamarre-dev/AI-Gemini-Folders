@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Sukuria sinchronizuotą aplanką Chrome žymėse, kad galėtum pasiekti pokalbius iš telefono."
   },
+  "reviewTitle": {
+    "message": "⭐ Ar tau patinka AI aplankai?"
+  },
+  "reviewMessage": {
+    "message": "Tavo palaikymas labai padeda šiam atvirojo kodo projektui!"
+  },
+  "reviewRateBtn": {
+    "message": "Įvertink 5 žvaigždutėmis"
+  },
+  "reviewLaterBtn": {
+    "message": "Gal vėliau"
+  },
+  "reviewNoBtn": {
+    "message": "Ne, ačiū"
+  },
   "modalBtnCancel": {
     "message": "Atšaukti"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Ištrinti"
   },
-  "newConversationBtn": {
-    "message": "Naujas pokalbis"
-  },
   "promptTitlePlaceholder": {
     "message": "Prompto pavadinimas"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Įterpti į pokalbį"
   },
-  "promptPinTitle": {
-    "message": "Prisegti"
+  "storageFullError": {
+    "message": "⚠️ Saugykla pilna — neišsaugota."
   },
   "newConv_gemini": {
     "message": "Naujas Gemini pokalbis"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Nepavyko rasti teksto įvesties šiame puslapyje. Pirmiausia spustelėkite redaktorių, tada naudokite įterpimo mygtuką."
-  },
-  "storageFullError": {
-    "message": "⚠️ Saugykla pilna — neišsaugota."
   }
 }

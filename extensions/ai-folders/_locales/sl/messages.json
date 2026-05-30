@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Ustvari sinhronizirano mapo v zaznamkih Chrome za dostop do pogovorov na telefonu."
   },
+  "reviewTitle": {
+    "message": "⭐ Ali ti je všeč Mape AI?"
+  },
+  "reviewMessage": {
+    "message": "Tvoja podpora enormno pomaga temu odprtokodnemu projektu!"
+  },
+  "reviewRateBtn": {
+    "message": "Oceni z 5 zvezdicami"
+  },
+  "reviewLaterBtn": {
+    "message": "Morda pozneje"
+  },
+  "reviewNoBtn": {
+    "message": "Ne, hvala"
+  },
   "modalBtnCancel": {
     "message": "Prekliči"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Izbriši"
   },
-  "newConversationBtn": {
-    "message": "Nov pogovor"
-  },
   "promptTitlePlaceholder": {
     "message": "Naslov poziva"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Vstavi v klepet"
   },
-  "promptPinTitle": {
-    "message": "Pripni"
+  "storageFullError": {
+    "message": "⚠️ Prostor za shranjevanje je poln — ni shranjeno."
   },
   "newConv_gemini": {
     "message": "Nov pogovor z Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."
-  },
-  "storageFullError": {
-    "message": "⚠️ Prostor za shranjevanje je poln — ni shranjeno."
   }
 }

@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Mencipta folder tersinkron dalam penanda buku Chrome untuk mengakses perbualan pada telefon."
   },
+  "reviewTitle": {
+    "message": "⭐ Adakah anda menyukai Gemini Folder?"
+  },
+  "reviewMessage": {
+    "message": "Sokongan anda amat membantu projek sumber terbuka ini!"
+  },
+  "reviewRateBtn": {
+    "message": "Beri 5 bintang"
+  },
+  "reviewLaterBtn": {
+    "message": "Mungkin kemudian"
+  },
+  "reviewNoBtn": {
+    "message": "Tidak, terima kasih"
+  },
   "modalBtnCancel": {
     "message": "Batal"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Padam"
   },
-  "newConversationBtn": {
-    "message": "Perbualan baharu"
-  },
   "promptTitlePlaceholder": {
     "message": "Tajuk prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Sisipkan ke sembang"
   },
-  "promptPinTitle": {
-    "message": "Semat"
+  "storageFullError": {
+    "message": "⚠️ Storan penuh — tidak disimpan."
   },
   "newConv_gemini": {
     "message": "Perbualan Gemini baharu"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemui medan teks pada halaman ini. Cuba klik pada editor terlebih dahulu, kemudian gunakan butang sisip."
-  },
-  "storageFullError": {
-    "message": "⚠️ Storan penuh — tidak disimpan."
   }
 }

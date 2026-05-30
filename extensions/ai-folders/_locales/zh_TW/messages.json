@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "在您的 Chrome 書籤中建立同步資料夾，以便在手機上存取您的對話。"
   },
+  "reviewTitle": {
+    "message": "⭐ 您喜歡 AI 資料夾嗎？"
+  },
+  "reviewMessage": {
+    "message": "您的支持對這個開源專案非常有幫助！"
+  },
+  "reviewRateBtn": {
+    "message": "給 5 顆星"
+  },
+  "reviewLaterBtn": {
+    "message": "也許稍後"
+  },
+  "reviewNoBtn": {
+    "message": "不，謝謝"
+  },
   "modalBtnCancel": {
     "message": "取消"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "刪除"
   },
-  "newConversationBtn": {
-    "message": "新對話"
-  },
   "promptTitlePlaceholder": {
     "message": "提示詞標題"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "插入到對話"
   },
-  "promptPinTitle": {
-    "message": "釘選"
+  "storageFullError": {
+    "message": "⚠️ 儲存空間已滿 — 未儲存。"
   },
   "newConv_gemini": {
     "message": "新增 Gemini 對話"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "無法在此頁面找到文字輸入框。請先點擊編輯器，再使用插入按鈕。"
-  },
-  "storageFullError": {
-    "message": "⚠️ 儲存空間已滿 — 未儲存。"
   }
 }

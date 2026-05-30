@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Maakt een gesynchroniseerde map aan in uw Chrome-bladwijzers voor toegang tot uw gesprekken op uw telefoon."
   },
+  "reviewTitle": {
+    "message": "⭐ Bevalt AI-mappen u?"
+  },
+  "reviewMessage": {
+    "message": "Uw steun helpt dit open-sourceproject enorm!"
+  },
+  "reviewRateBtn": {
+    "message": "5 sterren geven"
+  },
+  "reviewLaterBtn": {
+    "message": "Misschien later"
+  },
+  "reviewNoBtn": {
+    "message": "Nee, bedankt"
+  },
   "modalBtnCancel": {
     "message": "Annuleren"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Verwijderen"
   },
-  "newConversationBtn": {
-    "message": "Nieuw gesprek"
-  },
   "promptTitlePlaceholder": {
     "message": "Prompttitel"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Invoegen in chat"
   },
-  "promptPinTitle": {
-    "message": "Vastzetten"
+  "storageFullError": {
+    "message": "⚠️ Opslag vol — niet opgeslagen."
   },
   "newConv_gemini": {
     "message": "Nieuw Gemini-gesprek"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Kan het tekstinvoerveld op deze pagina niet vinden. Probeer eerst in de editor te klikken en gebruik dan de invoegknop."
-  },
-  "storageFullError": {
-    "message": "⚠️ Opslag vol — niet opgeslagen."
   }
 }

@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Создает синхронизированную папку в закладках Chrome для доступа к беседам на телефоне."
   },
+  "reviewTitle": {
+    "message": "⭐ Вам нравятся ИИ-папки?"
+  },
+  "reviewMessage": {
+    "message": "Ваша поддержка очень помогает этому проекту с открытым исходным кодом!"
+  },
+  "reviewRateBtn": {
+    "message": "Оценить на 5 звезд"
+  },
+  "reviewLaterBtn": {
+    "message": "Позже"
+  },
+  "reviewNoBtn": {
+    "message": "Нет, спасибо"
+  },
   "modalBtnCancel": {
     "message": "Отмена"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Удалить"
   },
-  "newConversationBtn": {
-    "message": "Новая беседа"
-  },
   "promptTitlePlaceholder": {
     "message": "Название промпта"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Вставить в чат"
   },
-  "promptPinTitle": {
-    "message": "Закрепить"
+  "storageFullError": {
+    "message": "⚠️ Хранилище заполнено — не сохранено."
   },
   "newConv_gemini": {
     "message": "Новый разговор в Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Не удалось найти поле ввода на этой странице. Сначала нажмите в редактор, затем используйте кнопку вставки."
-  },
-  "storageFullError": {
-    "message": "⚠️ Хранилище заполнено — не сохранено."
   }
 }

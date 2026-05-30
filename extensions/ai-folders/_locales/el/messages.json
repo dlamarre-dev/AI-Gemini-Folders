@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Δημιουργεί συγχρονισμένο φάκελο στους σελιδοδείκτες Chrome για πρόσβαση σε συνομιλίες από το τηλέφωνο."
   },
+  "reviewTitle": {
+    "message": "⭐ Σας αρέσουν οι Φάκελοι ΤΝ;"
+  },
+  "reviewMessage": {
+    "message": "Η υποστήριξή σας βοηθά τεράστια αυτό το έργο ανοιχτού κώδικα!"
+  },
+  "reviewRateBtn": {
+    "message": "Αξιολογήστε με 5 αστέρια"
+  },
+  "reviewLaterBtn": {
+    "message": "Ίσως αργότερα"
+  },
+  "reviewNoBtn": {
+    "message": "Όχι ευχαριστώ"
+  },
   "modalBtnCancel": {
     "message": "Ακύρωση"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Διαγραφή"
   },
-  "newConversationBtn": {
-    "message": "Νέα συνομιλία"
-  },
   "promptTitlePlaceholder": {
     "message": "Τίτλος prompt"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Εισαγωγή στη συνομιλία"
   },
-  "promptPinTitle": {
-    "message": "Καρφίτσωμα"
+  "storageFullError": {
+    "message": "⚠️ Ο αποθηκευτικός χώρος είναι γεμάτος — δεν αποθηκεύτηκε."
   },
   "newConv_gemini": {
     "message": "Νέα συνομιλία Gemini"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Δεν ήταν δυνατή η εύρεση του πεδίου κειμένου σε αυτή τη σελίδα. Κάντε κλικ στον επεξεργαστή πρώτα και μετά χρησιμοποιήστε το κουμπί εισαγωγής."
-  },
-  "storageFullError": {
-    "message": "⚠️ Ο αποθηκευτικός χώρος είναι γεμάτος — δεν αποθηκεύτηκε."
   }
 }

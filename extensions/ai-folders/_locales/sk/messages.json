@@ -1,251 +1,260 @@
 {
-    "extName": {
-        "message": "AI priečinky"
-    },
-    "extDesc": {
-        "message": "Usporiadajte AI rozhovory do vlastných priečinkov. Podporuje Gemini, Claude, ChatGPT, Copilot, DeepSeek a Perplexity."
-    },
-    "appTitle": {
-        "message": "AI priečinky"
-    },
-    "searchPlaceholder": {
-        "message": "🔍 Hľadať konverzáciu..."
-    },
-    "promptSearchPlaceholder": {
-        "message": "🔍 Hľadať prompt..."
-    },
-    "folderPlaceholder": {
-        "message": "Názov priečinka (napr. Projekty Kód)"
-    },
-    "chatPlaceholder": {
-        "message": "Názov konverzácie"
-    },
-    "saveBtn": {
-        "message": "Uložiť"
-    },
-    "statusSaved": {
-        "message": "Konverzácia uložená!"
-    },
-    "noResults": {
-        "message": "Nenašli sa žiadne výsledky 🕵️"
-    },
-    "exportBtn": {
-        "message": "💾 Export"
-    },
-    "importBtn": {
-        "message": "📂 Import"
-    },
-    "defaultFolder": {
-        "message": "Všeobecné"
-    },
-    "defaultTitle": {
-        "message": "Nová konverzácia"
-    },
-    "promptRename": {
-        "message": "Nový názov konverzácie:"
-    },
-    "alertEmptyExport": {
-        "message": "Vaše priečinky sú prázdne, nie je čo exportovať!"
-    },
-    "alertImportSuccess": {
-        "message": "Import bol úspešný! Vaše dáta boli úspešne zlúčené."
-    },
-    "alertImportError": {
-        "message": "Chyba importu. Uistite sa, že ide o platný súbor JSON vygenerovaný týmto rozšírením."
-    },
-    "btnRename": {
-        "message": "Premenovať"
-    },
-    "btnDelete": {
-        "message": "Vymazať"
-    },
-    "btnNewFolder": {
-        "message": "➕ Priečinok"
-    },
-    "promptNewFolder": {
-        "message": "Nový priečinok:"
-    },
-    "btnDeleteFolder": {
-        "message": "Vymazať priečinok"
-    },
-    "confirmDeleteFolder": {
-        "message": "Tento priečinok obsahuje konverzácie. Naozaj ho chcete vymazať?"
-    },
-    "btnPin": {
-        "message": "Pripnúť"
-    },
-    "btnUnpin": {
-        "message": "Odopnúť"
-    },
-    "sortNewest": {
-        "message": "Najnovšie"
-    },
-    "sortOldest": {
-        "message": "Najstaršie"
-    },
-    "sortAlpha": {
-        "message": "Od A do Z"
-    },
-    "ctxMenuSave": {
-        "message": "Uložiť do Priečinkov Gemini"
-    },
-    "ctxMenuNoFolder": {
-        "message": "(Žiadne priečinky - Otvorte rozšírenie)"
-    },
-    "btnToggleAdd": {
-        "message": "Pridať konverzáciu"
-    },
-    "btnCancel": {
-        "message": "Zavrieť"
-    },
-    "btnRenameFolder": {
-        "message": "Premenovať priečinok"
-    },
-    "promptRenameFolder": {
-        "message": "Nový názov:"
-    },
-    "errorFolderExists": {
-        "message": "Priečinok s týmto názvom už existuje."
-    },
-    "storageCalc": {
-        "message": "Výpočet miesta..."
-    },
-    "storageInfo": {
-        "message": "Úložisko: {used} KB / {max} KB ({pct}%)"
-    },
-    "cmdQuickSave": {
-        "message": "Uložiť konverzáciu"
-    },
-    "quickSaveFolder": {
-        "message": "⚡ Rýchle uloženie"
-    },
-    "toastSaved": {
-        "message": "✅ Uložené do Priečinkov Gemini!"
-    },
-    "btnOpenGroup": {
-        "message": "Otvoriť v skupine kariet"
-    },
-    "confirmOpenManyTabs": {
-        "message": "Naozaj chcete otvoriť vybrané karty (počet: {count}) súčasne?"
-    },
-    "errorTabGroup": {
-        "message": "Chyba: Nedá sa vytvoriť skupina kariet. Prijali ste nové povolenia?"
-    },
-    "bulkSelected": {
-        "message": "Vybrané: {count}"
-    },
-    "bulkMove": {
-        "message": "Presunúť do..."
-    },
-    "bulkDelete": {
-        "message": "Vymazať"
-    },
-    "confirmBulkDelete": {
-        "message": "Naozaj chcete vymazať vybrané konverzácie (počet: {count})?"
-    },
-    "bulkCancel": {
-        "message": "Zrušiť výber"
-    },
-    "masterFolderName": {
-        "message": "AI priečinky (Sync)"
-    },
-    "syncBookmarksTooltip": {
-        "message": "Vytvorí synchronizovaný priečinok v záložkách Chrome pre prístup ku konverzáciám v telefóne."
-    },
-    "modalBtnCancel": {
-        "message": "Zrušiť"
-    },
-    "modalBtnConfirm": {
-        "message": "Potvrdiť"
-    },
-    "emojiTipPlaceholder": {
-        "message": "Tip: Začnite s emoji (Win+. / ⌘⌃Medzerník)"
-    },
-    "toastAlreadySaved": {
-        "message": "⚠️ Už uložené!"
-    },
-    "folderModeTitle": {
-        "message": "Režim priečinkov"
-    },
-    "promptModeTitle": {
-        "message": "Režim výziev"
-    },
-    "promptCannotBeEmpty": {
-        "message": "Prompt nemôže byť prázdny!"
-    },
-    "promptSaved": {
-        "message": "Prompt uložený!"
-    },
-    "promptDuplicateWarning": {
-        "message": "Prompt s týmto názvom už existuje. Prepísať?"
-    },
-    "promptNoSavedYet": {
-        "message": "Zatiaľ neboli uložené žiadne prompty."
-    },
-    "promptAddBtn": {
-        "message": "Výzva"
-    },
-    "promptCopyTitle": {
-        "message": "Kopírovať"
-    },
-    "promptDeleteTitle": {
-        "message": "Odstrániť"
-    },
-    "newConversationBtn": {
-        "message": "Nová konverzácia"
-    },
-    "promptTitlePlaceholder": {
-        "message": "Názov promptu"
-    },
-    "promptTextPlaceholder": {
-        "message": "Napíšte váš prompt tu..."
-    },
-    "syncPromptsTooltip": {
-        "message": "Synchronizovať prompty"
-    },
-    "promptRenamePrompt": {
-        "message": "Nový názov promptu:"
-    },
-    "confirmDeletePrompt": {
-        "message": "Odstrániť tento prompt?"
-    },
-    "promptInsertBtn": {
-        "message": "Vložiť do chatu"
-    },
-    "promptPinTitle": {
-        "message": "Pripnúť"
-    },
-    "newConv_gemini": {
-        "message": "Nový rozhovor v Gemini"
-    },
-    "newConv_claude": {
-        "message": "Nový rozhovor v Claude"
-    },
-    "newConv_chatgpt": {
-        "message": "Nový rozhovor v ChatGPT"
-    },
-    "newConv_copilot": {
-        "message": "Nový rozhovor v Copilot"
-    },
+  "extName": {
+    "message": "AI priečinky"
+  },
+  "extDesc": {
+    "message": "Usporiadajte AI rozhovory do vlastných priečinkov. Podporuje Gemini, Claude, ChatGPT, Copilot, DeepSeek a Perplexity."
+  },
+  "appTitle": {
+    "message": "AI priečinky"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Hľadať konverzáciu..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Hľadať prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Názov priečinka (napr. Projekty Kód)"
+  },
+  "chatPlaceholder": {
+    "message": "Názov konverzácie"
+  },
+  "saveBtn": {
+    "message": "Uložiť"
+  },
+  "statusSaved": {
+    "message": "Konverzácia uložená!"
+  },
+  "noResults": {
+    "message": "Nenašli sa žiadne výsledky 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Export"
+  },
+  "importBtn": {
+    "message": "📂 Import"
+  },
+  "defaultFolder": {
+    "message": "Všeobecné"
+  },
+  "defaultTitle": {
+    "message": "Nová konverzácia"
+  },
+  "promptRename": {
+    "message": "Nový názov konverzácie:"
+  },
+  "alertEmptyExport": {
+    "message": "Vaše priečinky sú prázdne, nie je čo exportovať!"
+  },
+  "alertImportSuccess": {
+    "message": "Import bol úspešný! Vaše dáta boli úspešne zlúčené."
+  },
+  "alertImportError": {
+    "message": "Chyba importu. Uistite sa, že ide o platný súbor JSON vygenerovaný týmto rozšírením."
+  },
+  "btnRename": {
+    "message": "Premenovať"
+  },
+  "btnDelete": {
+    "message": "Vymazať"
+  },
+  "btnNewFolder": {
+    "message": "➕ Priečinok"
+  },
+  "promptNewFolder": {
+    "message": "Nový priečinok:"
+  },
+  "btnDeleteFolder": {
+    "message": "Vymazať priečinok"
+  },
+  "confirmDeleteFolder": {
+    "message": "Tento priečinok obsahuje konverzácie. Naozaj ho chcete vymazať?"
+  },
+  "btnPin": {
+    "message": "Pripnúť"
+  },
+  "btnUnpin": {
+    "message": "Odopnúť"
+  },
+  "sortNewest": {
+    "message": "Najnovšie"
+  },
+  "sortOldest": {
+    "message": "Najstaršie"
+  },
+  "sortAlpha": {
+    "message": "Od A do Z"
+  },
+  "ctxMenuSave": {
+    "message": "Uložiť do Priečinkov Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Žiadne priečinky - Otvorte rozšírenie)"
+  },
+  "btnToggleAdd": {
+    "message": "Pridať konverzáciu"
+  },
+  "btnCancel": {
+    "message": "Zavrieť"
+  },
+  "btnRenameFolder": {
+    "message": "Premenovať priečinok"
+  },
+  "promptRenameFolder": {
+    "message": "Nový názov:"
+  },
+  "errorFolderExists": {
+    "message": "Priečinok s týmto názvom už existuje."
+  },
+  "storageCalc": {
+    "message": "Výpočet miesta..."
+  },
+  "storageInfo": {
+    "message": "Úložisko: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Uložiť konverzáciu"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Rýchle uloženie"
+  },
+  "toastSaved": {
+    "message": "✅ Uložené do Priečinkov Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Otvoriť v skupine kariet"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Naozaj chcete otvoriť vybrané karty (počet: {count}) súčasne?"
+  },
+  "errorTabGroup": {
+    "message": "Chyba: Nedá sa vytvoriť skupina kariet. Prijali ste nové povolenia?"
+  },
+  "bulkSelected": {
+    "message": "Vybrané: {count}"
+  },
+  "bulkMove": {
+    "message": "Presunúť do..."
+  },
+  "bulkDelete": {
+    "message": "Vymazať"
+  },
+  "confirmBulkDelete": {
+    "message": "Naozaj chcete vymazať vybrané konverzácie (počet: {count})?"
+  },
+  "bulkCancel": {
+    "message": "Zrušiť výber"
+  },
+  "masterFolderName": {
+    "message": "AI priečinky (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Vytvorí synchronizovaný priečinok v záložkách Chrome pre prístup ku konverzáciám v telefóne."
+  },
+  "reviewTitle": {
+    "message": "⭐ Páčia sa vám AI priečinky?"
+  },
+  "reviewMessage": {
+    "message": "Vaša podpora tomuto open source projektu nesmierne pomáha!"
+  },
+  "reviewRateBtn": {
+    "message": "Ohodnotiť 5 hviezdičkami"
+  },
+  "reviewLaterBtn": {
+    "message": "Neskôr"
+  },
+  "reviewNoBtn": {
+    "message": "Nie, ďakujem"
+  },
+  "modalBtnCancel": {
+    "message": "Zrušiť"
+  },
+  "modalBtnConfirm": {
+    "message": "Potvrdiť"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Tip: Začnite s emoji (Win+. / ⌘⌃Medzerník)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Už uložené!"
+  },
+  "folderModeTitle": {
+    "message": "Režim priečinkov"
+  },
+  "promptModeTitle": {
+    "message": "Režim výziev"
+  },
+  "promptCannotBeEmpty": {
+    "message": "Prompt nemôže byť prázdny!"
+  },
+  "promptSaved": {
+    "message": "Prompt uložený!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Prompt s týmto názvom už existuje. Prepísať?"
+  },
+  "promptNoSavedYet": {
+    "message": "Zatiaľ neboli uložené žiadne prompty."
+  },
+  "promptAddBtn": {
+    "message": "Výzva"
+  },
+  "promptCopyTitle": {
+    "message": "Kopírovať"
+  },
+  "promptDeleteTitle": {
+    "message": "Odstrániť"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Názov promptu"
+  },
+  "promptTextPlaceholder": {
+    "message": "Napíšte váš prompt tu..."
+  },
+  "syncPromptsTooltip": {
+    "message": "Synchronizovať prompty"
+  },
+  "promptRenamePrompt": {
+    "message": "Nový názov promptu:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Odstrániť tento prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Vložiť do chatu"
+  },
+  "storageFullError": {
+    "message": "⚠️ Úložisko je plné — neuložené."
+  },
+  "newConv_gemini": {
+    "message": "Nový rozhovor v Gemini"
+  },
+  "newConv_claude": {
+    "message": "Nový rozhovor v Claude"
+  },
+  "newConv_chatgpt": {
+    "message": "Nový rozhovor v ChatGPT"
+  },
+  "newConv_copilot": {
+    "message": "Nový rozhovor v Copilot"
+  },
   "newConv_deepseek": {
     "message": "Nový rozhovor v DeepSeek"
   },
-    "newConv_perplexity": {
-        "message": "Nový rozhovor v Perplexity"
-    },
-    "newConv_local": {
-        "message": "Nový rozhovor s lokálnym LLM (podržte pre konfiguráciu URL)"
-    },
-    "setLocalUrl": {
-        "message": "Nastaviť URL lokálneho LLM:"
-    },
-    "alertNotSupported": {
-        "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek alebo Perplexity)."
-    },
-    "alertEditorNotFound": {
-        "message": "Na tejto stránke sa nepodarilo nájsť textové pole. Najprv kliknite do editora a potom použite tlačidlo vložiť."
-    },
-    "storageFullError": {
-        "message": "⚠️ Úložisko je plné — neuložené."
-    }
+  "newConv_perplexity": {
+    "message": "Nový rozhovor v Perplexity"
+  },
+  "newConv_local": {
+    "message": "Nový rozhovor s lokálnym LLM (podržte pre konfiguráciu URL)"
+  },
+  "setLocalUrl": {
+    "message": "Nastaviť URL lokálneho LLM:"
+  },
+  "alertNotSupported": {
+    "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek alebo Perplexity)."
+  },
+  "alertEditorNotFound": {
+    "message": "Na tejto stránke sa nepodarilo nájsť textové pole. Najprv kliknite do editora a potom použite tlačidlo vložiť."
+  }
 }

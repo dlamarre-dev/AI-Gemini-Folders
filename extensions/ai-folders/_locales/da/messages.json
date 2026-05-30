@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Opretter en synkroniseret mappe i dine Chrome-bogmærker for adgang til samtaler på din telefon."
   },
+  "reviewTitle": {
+    "message": "⭐ Nyder du AI-mapper?"
+  },
+  "reviewMessage": {
+    "message": "Din støtte hjælper dette open source-projekt enormt!"
+  },
+  "reviewRateBtn": {
+    "message": "Giv 5 stjerner"
+  },
+  "reviewLaterBtn": {
+    "message": "Måske senere"
+  },
+  "reviewNoBtn": {
+    "message": "Nej tak"
+  },
   "modalBtnCancel": {
     "message": "Annullér"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Slet"
   },
-  "newConversationBtn": {
-    "message": "Ny samtale"
-  },
   "promptTitlePlaceholder": {
     "message": "Prompttitel"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Indsæt i chatten"
   },
-  "promptPinTitle": {
-    "message": "Fastgør"
+  "storageFullError": {
+    "message": "⚠️ Lageret er fuldt — ikke gemt."
   },
   "newConv_gemini": {
     "message": "Ny Gemini-samtale"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Kunne ikke finde tekstfeltet på denne side. Prøv at klikke i editoren først, og brug derefter indsætknappen."
-  },
-  "storageFullError": {
-    "message": "⚠️ Lageret er fuldt — ikke gemt."
   }
 }

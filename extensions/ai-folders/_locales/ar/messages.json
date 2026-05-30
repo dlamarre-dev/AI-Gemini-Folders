@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "ينشئ مجلداً متزامناً في إشاراتك المرجعية في Chrome للوصول إلى محادثاتك من هاتفك."
   },
+  "reviewTitle": {
+    "message": "⭐ هل تستمتع بمجلدات AI؟"
+  },
+  "reviewMessage": {
+    "message": "دعمك يساعد هذا المشروع مفتوح المصدر كثيراً!"
+  },
+  "reviewRateBtn": {
+    "message": "تقييم 5 نجوم"
+  },
+  "reviewLaterBtn": {
+    "message": "ربما لاحقاً"
+  },
+  "reviewNoBtn": {
+    "message": "لا، شكراً"
+  },
   "modalBtnCancel": {
     "message": "إلغاء"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "حذف"
   },
-  "newConversationBtn": {
-    "message": "محادثة جديدة"
-  },
   "promptTitlePlaceholder": {
     "message": "عنوان المطالبة"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "أدرج في المحادثة"
   },
-  "promptPinTitle": {
-    "message": "تثبيت"
+  "storageFullError": {
+    "message": "⚠️ التخزين ممتلئ — لم يتم الحفظ."
   },
   "newConv_gemini": {
     "message": "محادثة Gemini جديدة"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."
-  },
-  "storageFullError": {
-    "message": "⚠️ التخزين ممتلئ — لم يتم الحفظ."
   }
 }

@@ -152,6 +152,21 @@
   "syncBookmarksTooltip": {
     "message": "Izveido sinhronizētu mapi Chrome grāmatzīmēs, lai piekļūtu sarunām no tālruņa."
   },
+  "reviewTitle": {
+    "message": "⭐ Vai tev patīk AI mapes?"
+  },
+  "reviewMessage": {
+    "message": "Tavs atbalsts ārkārtīgi palīdz šim atvērtā koda projektam!"
+  },
+  "reviewRateBtn": {
+    "message": "Novērtēt ar 5 zvaigznēm"
+  },
+  "reviewLaterBtn": {
+    "message": "Varbūt vēlāk"
+  },
+  "reviewNoBtn": {
+    "message": "Nē, paldies"
+  },
   "modalBtnCancel": {
     "message": "Atcelt"
   },
@@ -191,9 +206,6 @@
   "promptDeleteTitle": {
     "message": "Dzēst"
   },
-  "newConversationBtn": {
-    "message": "Jauna saruna"
-  },
   "promptTitlePlaceholder": {
     "message": "Uzvednes nosaukums"
   },
@@ -212,8 +224,8 @@
   "promptInsertBtn": {
     "message": "Ievietot tērzēšanā"
   },
-  "promptPinTitle": {
-    "message": "Piespraust"
+  "storageFullError": {
+    "message": "⚠️ Krātuve ir pilna — nav saglabāts."
   },
   "newConv_gemini": {
     "message": "Jauna Gemini saruna"
@@ -244,8 +256,5 @@
   },
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."
-  },
-  "storageFullError": {
-    "message": "⚠️ Krātuve ir pilna — nav saglabāts."
   }
 }
