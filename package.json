@@ -1,6 +1,6 @@
 {
   "name": "gemini-folders",
-  "version": "4.2",
+  "version": "4.2.1",
   "private": true,
   "scripts": {
     "test": "jest",
