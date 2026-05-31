@@ -280,9 +280,11 @@ ul{padding:0;margin:0}
   .feat-grid{grid-template-columns:1fr}
   .lang-menu{grid-template-columns:1fr}
   .hero-cta .btn,.final-cta .btn{flex:1}
-  .gemini-card{flex-wrap:nowrap;align-items:center}
-  .gemini-card .gmark{width:80px;height:80px}
-  .gemini-card .gbody{min-width:0}
+  .gemini-card{flex-wrap:nowrap;align-items:center;padding:20px 16px}
+  .gemini-card .gmark{width:72px;height:72px;flex-shrink:0}
+  .gemini-card .gbody{min-width:0;flex:1}
+  .gemini-card .hero-cta{flex-direction:column;gap:8px}
+  .gemini-card .hero-cta .btn{width:100%}
 }
 
 /* hero lang row — right-aligned just below nav */
