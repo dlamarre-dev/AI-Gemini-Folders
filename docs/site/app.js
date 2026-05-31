@@ -196,6 +196,17 @@
     const material = dpath(lang, "feat.material3");
 
     return `
+    <div class="container">
+      <div class="hero-lang-row">
+        <div class="lang" id="langWrap">
+          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+            <span class="globe">🌐</span><span id="langLabel">${esc(NAMES[lang])}</span><span class="chev">▾</span>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- HERO -->
     <section class="hero" data-screen-label="Hero">
       <div class="container hero-grid">
@@ -456,6 +467,8 @@
   function render(lang, animate) {
     applyLangMeta(lang);
     document.getElementById("app").innerHTML = build(lang);
+    buildMenu();
+    document.getElementById("langBtn").addEventListener("click", toggleMenu);
     // nav bits — real logos + localized labels
     const chromeBtn = document.getElementById("navCtaLink");
     if (chromeBtn) chromeBtn.innerHTML = `<span class="ic">${LOGOS.chrome}</span>${esc(man(lang, "ctaChrome"))}`;
@@ -515,10 +528,9 @@
 
   function init() {
     makeStars();
-    buildMenu();
-    document.getElementById("langBtn").addEventListener("click", toggleMenu);
     document.addEventListener("click", (e) => {
-      if (!document.getElementById("langWrap").contains(e.target)) closeMenu();
+      const wrap = document.getElementById("langWrap");
+      if (wrap && !wrap.contains(e.target)) closeMenu();
     });
     // nav scroll state
     const nav = document.getElementById("nav");

@@ -232,9 +232,10 @@ ul{padding:0;margin:0}
 /* ============================================================ GEMINI (also available) */
 .gemini{padding-block:clamp(50px,7vw,90px)}
 .gemini-card{display:flex;align-items:center;gap:clamp(20px,4vw,44px);padding:clamp(26px,4vw,44px);border-radius:24px;
-  background:linear-gradient(110deg,rgba(59,134,217,0.12),rgba(138,109,240,0.08));border:1px solid var(--card-border);border-top-color:var(--card-border-top);flex-wrap:wrap}
+  background:linear-gradient(110deg,rgba(59,134,217,0.12),rgba(138,109,240,0.08));border:1px solid var(--card-border);border-top-color:var(--card-border-top);flex-wrap:wrap;
+  width:fit-content;max-width:100%;margin-inline:auto}
 .gemini-card .gmark{width:96px;height:96px;flex:none;filter:drop-shadow(0 14px 30px rgba(0,0,0,.4))}
-.gemini-card .gbody{flex:1;min-width:240px}
+.gemini-card .gbody{flex:none;min-width:240px}
 .gemini-card h3{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-0.02em;margin:6px 0 10px}
 .gemini-card p{font-size:15.5px;color:var(--muted);line-height:1.55;margin:0 0 18px;max-width:52ch}
 
@@ -273,16 +274,19 @@ ul{padding:0;margin:0}
   .split,.lang-hero,.privacy-grid{grid-template-columns:1fr;gap:32px}
   .split.rev .split-media{order:0}
   .shots{grid-template-columns:1fr}
-  .lang-hero{text-align:center}
-  .big-num{margin:0 auto}
 }
 @media (max-width:720px){#navCtaFoxLink{display:none}}
 @media (max-width:560px){
   .feat-grid{grid-template-columns:1fr}
-  .nav .brand span{display:none}
   .lang-menu{grid-template-columns:1fr}
   .hero-cta .btn,.final-cta .btn{flex:1}
+  .gemini-card{flex-wrap:nowrap;align-items:center}
+  .gemini-card .gmark{width:80px;height:80px}
+  .gemini-card .gbody{min-width:0}
 }
+
+/* hero lang row — right-aligned just below nav */
+.hero-lang-row{display:flex;justify-content:flex-end;padding-top:14px}
 
 /* ============================================================ RTL refinements */
 [dir=rtl] .hero-sub,[dir=rtl] .sec-lead,[dir=rtl] .h2{text-align:start}
