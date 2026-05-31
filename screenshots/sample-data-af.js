@@ -248,7 +248,7 @@ const LOCALES = {
     explainSimply: 'Explique de forma simples', blogOutline: 'Esboço de blog',
     debugHelper: 'Depurador', debugHelperText: 'Tenho o seguinte erro ou comportamento inesperado. Ajuda-me a diagnosticar a causa raiz passo a passo e depois sugere uma solução.',
     folderScreenTitle: 'Todos os seus chats IA, num só lugar organizado',
-    promptScreenTitle: 'Os seus melhores prompts, prontos para qualquer IA',
+    promptScreenTitle: 'Seus melhores prompts, prontos para qualquer IA',
     mobileScreenTitle: 'Aceda aos seus chats IA no telemóvel',
     contextMenuScreenTitle: 'Guarde conversas IA com um clique direito',
   }),
