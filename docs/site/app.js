@@ -242,8 +242,8 @@
         </div>
         <div class="svc-strip reveal d2" style="margin-top:34px">${servicesStrip(lang, true)}</div>
         <div class="shots">
-          <div class="shot reveal d1"><div class="shot-glow"></div><img src="${shot(lang,"folder-mode")}" alt="Folder mode" loading="lazy"><span class="cap">${esc(dpath(lang,"ui.folderModeTitle"))}</span></div>
-          <div class="shot reveal d2"><div class="shot-glow"></div><img src="${shot(lang,"prompt-mode")}" alt="Prompt mode" loading="lazy"><span class="cap">${esc(dpath(lang,"ui.promptModeTitle"))}</span></div>
+          <div class="shot reveal d1"><div class="shot-glow"></div><img src="${shot(lang,"folder-mode")}" alt="Folder mode" loading="lazy" width="1280" height="800"><span class="cap">${esc(dpath(lang,"ui.folderModeTitle"))}</span></div>
+          <div class="shot reveal d2"><div class="shot-glow"></div><img src="${shot(lang,"prompt-mode")}" alt="Prompt mode" loading="lazy" width="1280" height="800"><span class="cap">${esc(dpath(lang,"ui.promptModeTitle"))}</span></div>
         </div>
       </div>
     </section>
@@ -275,7 +275,7 @@
         </div>
         <div class="split-media reveal d2">
           <div class="mglow"></div>
-          <img src="${shot(lang,"prompt-mode")}" alt="Prompt mode" loading="lazy">
+          <img src="${shot(lang,"prompt-mode")}" alt="Prompt mode" loading="lazy" width="1280" height="800">
         </div>
       </div>
       <div class="container" style="margin-top:18px">
@@ -307,7 +307,7 @@
         </div>
         <div class="split-media reveal d1">
           <div class="mglow"></div>
-          <img src="${shot(lang,"mobile-sync")}" alt="Mobile sync" loading="lazy">
+          <img src="${shot(lang,"mobile-sync")}" alt="Mobile sync" loading="lazy" width="1280" height="800">
         </div>
       </div>
     </section>
@@ -464,9 +464,27 @@
     document.body.style.setProperty("--font-script", sf);
   }
 
+  function getScrollAnchor() {
+    const navH = (document.getElementById("nav") || {}).offsetHeight || 68;
+    const viewTop = window.scrollY + navH;
+    let best = null;
+    document.querySelectorAll("section[data-screen-label]").forEach(s => {
+      if (s.offsetTop <= viewTop) best = { label: s.getAttribute("data-screen-label"), offset: viewTop - s.offsetTop };
+    });
+    return best;
+  }
+  function restoreScrollAnchor(anchor) {
+    if (!anchor) { window.scrollTo(0, 0); return; }
+    const navH = (document.getElementById("nav") || {}).offsetHeight || 68;
+    const target = document.querySelector(`section[data-screen-label="${anchor.label}"]`);
+    if (target) window.scrollTo(0, target.offsetTop + anchor.offset - navH);
+  }
+
   function render(lang, animate) {
+    const anchor = animate ? null : getScrollAnchor();
     applyLangMeta(lang);
     document.getElementById("app").innerHTML = build(lang);
+    if (!animate) restoreScrollAnchor(anchor);
     buildMenu();
     document.getElementById("langBtn").addEventListener("click", toggleMenu);
     // nav bits — real logos + localized labels
