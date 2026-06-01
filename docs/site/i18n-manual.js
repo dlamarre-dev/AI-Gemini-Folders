@@ -77,12 +77,26 @@ window.AF_MANUAL = {
   const LOCALLLM = {en:"Local LLM",fr:"LLM local",es:"LLM local",de:"Lokales LLM",it:"LLM locale",pt_BR:"LLM local",pt_PT:"LLM local",nl:"Lokale LLM",pl:"Lokalny LLM",ru:"Локальная LLM",uk:"Локальна LLM",cs:"Lokální LLM",sk:"Lokálne LLM",ja:"ローカルLLM",ko:"로컬 LLM",zh_CN:"本地 LLM",zh_TW:"本機 LLM",ar:"نموذج محلي",he:"LLM מקומי",tr:"Yerel LLM",sv:"Lokal LLM",da:"Lokal LLM",nb:"Lokal LLM",fi:"Paikallinen LLM",el:"Τοπικό LLM",ro:"LLM local",hu:"Helyi LLM",hr:"Lokalni LLM",sr:"Локални LLM",bg:"Локален LLM",sl:"Lokalni LLM",lt:"Vietinis LLM",lv:"Lokāls LLM",et:"Kohalik LLM",ca:"LLM local",id:"LLM lokal",ms:"LLM tempatan",vi:"LLM cục bộ",th:"LLM ในเครื่อง",hi:"लोकल LLM",bn:"লোকাল LLM",sw:"LLM ya Ndani",tl:"Lokal na LLM"};
   const DEMONAME = {en:"Code Reviewer",fr:"Relecteur de code",es:"Revisor de código",de:"Code-Reviewer",it:"Revisore di codice",pt_BR:"Revisor de código",pt_PT:"Revisor de código",nl:"Code-reviewer",pl:"Recenzent kodu",ru:"Ревью кода",uk:"Рев’ю коду",cs:"Revize kódu",sk:"Revízia kódu",ja:"コードレビュー",ko:"코드 리뷰어",zh_CN:"代码审查",zh_TW:"程式碼審查",ar:"مُراجِع الكود",he:"בודק קוד",tr:"Kod İnceleyici",sv:"Kodgranskare",da:"Kodegennemgang",nb:"Kodegjennomgang",fi:"Koodikatselmoija",el:"Έλεγχος κώδικα",ro:"Recenzent de cod",hu:"Kódellenőr",hr:"Pregled koda",sr:"Преглед кода",bg:"Преглед на код",sl:"Pregled kode",lt:"Kodo recenzentas",lv:"Koda recenzents",et:"Koodi ülevaataja",ca:"Revisor de codi",id:"Peninjau Kode",ms:"Penyemak Kod",vi:"Người duyệt mã",th:"ผู้ตรวจโค้ด",hi:"कोड समीक्षक",bn:"কোড রিভিউয়ার",sw:"Mkaguzi wa Kodi",tl:"Tagasuri ng Code"};
   const DEMOBODY = {en:"Review this code and suggest improvements.",fr:"Relis ce code et propose des améliorations.",es:"Revisa este código y sugiere mejoras.",de:"Überprüfe diesen Code und schlage Verbesserungen vor.",it:"Esamina questo codice e suggerisci miglioramenti.",pt_BR:"Revise este código e sugira melhorias.",pt_PT:"Reveja este código e sugira melhorias.",nl:"Beoordeel deze code en stel verbeteringen voor.",pl:"Przejrzyj ten kod i zaproponuj ulepszenia.",ru:"Проверь этот код и предложи улучшения.",uk:"Перевір цей код і запропонуй покращення.",cs:"Zkontroluj tento kód a navrhni vylepšení.",sk:"Skontroluj tento kód a navrhni vylepšenia.",ja:"このコードをレビューして改善案を提案してください。",ko:"이 코드를 검토하고 개선점을 제안해 주세요.",zh_CN:"审查这段代码并提出改进建议。",zh_TW:"審查這段程式碼並提出改進建議。",ar:"راجِع هذا الكود واقترح تحسينات.",he:"בדוק את הקוד הזה והצע שיפורים.",tr:"Bu kodu incele ve iyileştirmeler öner.",sv:"Granska den här koden och föreslå förbättringar.",da:"Gennemgå denne kode og foreslå forbedringer.",nb:"Gå gjennom denne koden og foreslå forbedringer.",fi:"Tarkista tämä koodi ja ehdota parannuksia.",el:"Έλεγξε αυτόν τον κώδικα και πρότεινε βελτιώσεις.",ro:"Revizuiește acest cod și sugerează îmbunătățiri.",hu:"Nézd át ezt a kódot, és javasolj fejlesztéseket.",hr:"Pregledaj ovaj kôd i predloži poboljšanja.",sr:"Прегледај овај кôд и предложи побољшања.",bg:"Прегледай този код и предложи подобрения.",sl:"Preglej to kodo in predlagaj izboljšave.",lt:"Peržiūrėk šį kodą ir pasiūlyk patobulinimų.",lv:"Pārskati šo kodu un iesaki uzlabojumus.",et:"Vaata see kood üle ja paku parandusi.",ca:"Revisa aquest codi i suggereix millores.",id:"Tinjau kode ini dan sarankan perbaikan.",ms:"Semak kod ini dan cadangkan penambahbaikan.",vi:"Xem lại đoạn mã này và đề xuất cải tiến.",th:"ตรวจสอบโค้ดนี้และเสนอแนะการปรับปรุง",hi:"इस कोड की समीक्षा करें और सुधार सुझाएं।",bn:"এই কোড পর্যালোচনা করুন এবং উন্নতির পরামর্শ দিন।",sw:"Kagua msimbo huu na pendekeza maboresho.",tl:"Suriin ang code na ito at magmungkahi ng mga pagpapabuti."};
+  const GF_NAME = {
+    en:"Gemini Folders",fr:"Dossiers Gemini",es:"Carpetas de Gemini",de:"Gemini-Ordner",
+    it:"Cartelle Gemini",pt_BR:"Pastas Gemini",pt_PT:"Pastas Gemini",nl:"Gemini-mappen",
+    pl:"Foldery Gemini",ru:"Папки Gemini",uk:"Теки Gemini",cs:"Složky Gemini",
+    sk:"Priečinky Gemini",ja:"Gemini フォルダ",ko:"Gemini 폴더",zh_CN:"Gemini 文件夹",
+    zh_TW:"Gemini 資料夾",ar:"مجلدات Gemini",he:"תיקיות Gemini",tr:"Gemini Klasörleri",
+    sv:"Gemini-mappar",da:"Gemini Mapper",nb:"Gemini Mapper",fi:"Gemini-kansiot",
+    el:"Φάκελοι Gemini",ro:"Foldere Gemini",hu:"Gemini-mappák",hr:"Gemini Mape",
+    sr:"Gemini Folderi",bg:"Gemini Папки",sl:"Mape Gemini",lt:"Gemini Aplankai",
+    lv:"Gemini Mapes",et:"Gemini Kaustad",ca:"Carpetes Gemini",id:"Folder Gemini",
+    ms:"Folder Gemini",vi:"Thư mục Gemini",th:"โฟลเดอร์ Gemini",hi:"Gemini फ़ोल्डर्स",
+    bn:"Gemini ফোল্ডার",sw:"Folda za Gemini",tl:"Mga Folder ng Gemini"
+  };
   Object.keys(window.AF_MANUAL).forEach(l => {
     const m = window.AF_MANUAL[l];
     m.browser = BROWSER[l] || BROWSER.en;
     m.localLLM = LOCALLLM[l] || LOCALLLM.en;
     m.demoName = DEMONAME[l] || DEMONAME.en;
     m.demoBody = DEMOBODY[l] || DEMOBODY.en;
+    m.gfName = GF_NAME[l] || GF_NAME.en;
   });
 
   // --- "7 supported AI services" section (heading + body), localized ---
