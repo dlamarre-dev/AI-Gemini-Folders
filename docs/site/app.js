@@ -353,7 +353,7 @@
         <div class="gemini-card reveal d1">
           <span class="gmark">${LOGOS.geminiFolders}</span>
           <div class="gbody">
-            <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;color:var(--blue);text-transform:uppercase">Gemini Folders</div>
+            <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;color:var(--blue);text-transform:uppercase">${esc(man(lang,"gfName"))}</div>
             <h3>${esc(man(lang,"heroTitle"))}</h3>
             <p>Google Gemini · ${esc(man(lang,"free"))} · ${esc(man(lang,"openSource"))}</p>
             <div class="hero-cta">
