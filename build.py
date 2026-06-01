@@ -319,12 +319,19 @@ def build_firefox(ext_name, version):
                     if sc in content:
                         content = content.replace(sc, "Alt+Shift+S")
                         modified = True
-                # On Firefox, Mac and PC share the same shortcut, so the
+                # On Firefox, Mac and PC share the same shortcut, so any
                 # "(or Alt+Shift+S on Mac)" parenthetical is now redundant.
-                # Remove it entirely instead of leaving a duplicate.
+                # Case 1: shortcut outside parens — "Alt+Shift+S (or Alt+Shift+S on Mac)"
                 new_content = re.sub(
                     r'(Alt\+Shift\+S)\s*[\(（][^)）]*Alt\+Shift\+S[^)）]*[\)）]',
                     r'\1', content
+                )
+                if new_content != content:
+                    content, modified = new_content, True
+                # Case 2: both shortcuts inside parens — "(Alt+Shift+S or Alt+Shift+S on Mac)"
+                new_content = re.sub(
+                    r'[\(（]Alt\+Shift\+S[^)）]*Alt\+Shift\+S[^)）]*[\)）]',
+                    r'(Alt+Shift+S)', content
                 )
                 if new_content != content:
                     content, modified = new_content, True
