@@ -3,7 +3,8 @@
    ============================================================ */
 (function () {
   const M = window.AF_MANUAL, D = window.AF_I18N, NAMES = window.AF_LANGS,
-        RTL = window.AF_RTL, SFONT = window.AF_SCRIPT_FONT, LOGOS = window.AF_LOGOS;
+        RTL = window.AF_RTL, SFONT = window.AF_SCRIPT_FONT, LOGOS = window.AF_LOGOS,
+        AF_PRIVACY = window.AF_PRIVACY || {};
 
   const LANG_ORDER = ["en","fr","es","de","it","pt_BR","pt_PT","nl","pl","ru","uk",
     "cs","sk","sl","hr","sr","bg","ro","hu","el","tr","sv","da","nb","fi","et","lv","lt","ca",
@@ -390,6 +391,65 @@
           <a href="${LINKS.chrome}" target="_blank" rel="noopener">Chrome</a>
           <a href="${LINKS.firefox}" target="_blank" rel="noopener">Firefox</a>
           <a href="${LINKS.github}" target="_blank" rel="noopener">GitHub</a>
+          <a href="/privacy.html">${esc(priv_link(lang))}</a>
+        </div>
+      </div>
+    </footer>`;
+  }
+
+  // localized footer label for the privacy page link
+  function priv_link(lang) { return ((AF_PRIVACY[lang] || AF_PRIVACY.en) || {}).navLink || "Privacy Policy"; }
+
+  function buildPrivacy(lang) {
+    const p = AF_PRIVACY[lang] || AF_PRIVACY.en;
+    return `
+    <div class="container">
+      <div class="hero-lang-row">
+        <div class="lang" id="langWrap">
+          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+            <span class="globe">🌐</span><span id="langLabel">${esc(NAMES[lang])}</span><span class="chev">▾</span>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu"></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="privacy-page">
+      <div class="container privacy-page-inner">
+        <h1 class="h1">${esc(p.pageTitle)}</h1>
+        <p class="privacy-intro">${esc(p.intro)}</p>
+
+        <h2 class="h3">${esc(p.s1Title)}</h2>
+        <h3 class="privacy-point-title">${esc(p.s1NoTrackTitle)}</h3>
+        <p>${esc(p.s1NoTrackBody)}</p>
+        <h3 class="privacy-point-title">${esc(p.s1LangTitle)}</h3>
+        <p>${esc(p.s1LangBody)}</p>
+
+        <h2 class="h3">${esc(p.s2Title)}</h2>
+        <h3 class="privacy-point-title">${esc(p.s2TelTitle)}</h3>
+        <p>${esc(p.s2TelBody)}</p>
+        <h3 class="privacy-point-title">${esc(p.s2StoreTitle)}</h3>
+        <p>${esc(p.s2StoreBody)}</p>
+        <h3 class="privacy-point-title">${esc(p.s2ServerTitle)}</h3>
+        <p>${esc(p.s2ServerBody)}</p>
+
+        <h2 class="h3">${esc(p.s3Title)}</h2>
+        <p>${esc(p.s3Body)}</p>
+
+        <h2 class="h3">${esc(p.s4Title)}</h2>
+        <p>${esc(p.s4Body)} <a href="${LINKS.github}" target="_blank" rel="noopener">${LINKS.github}</a></p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="brand"><span class="mark">${FOLDER_SVG}</span>${esc(appName(lang))}</div>
+        <div class="footer-links">
+          <a href="${LINKS.chrome}" target="_blank" rel="noopener">Chrome</a>
+          <a href="${LINKS.firefox}" target="_blank" rel="noopener">Firefox</a>
+          <a href="${LINKS.github}" target="_blank" rel="noopener">GitHub</a>
+          <a href="/privacy.html" aria-current="page">${esc(priv_link(lang))}</a>
         </div>
       </div>
     </footer>`;
@@ -481,9 +541,10 @@
   }
 
   function render(lang, animate) {
+    const isPrivacy = window.location.pathname.includes('privacy');
     const anchor = animate ? null : getScrollAnchor();
     applyLangMeta(lang);
-    document.getElementById("app").innerHTML = build(lang);
+    document.getElementById("app").innerHTML = isPrivacy ? buildPrivacy(lang) : build(lang);
     if (!animate) restoreScrollAnchor(anchor);
     buildMenu();
     document.getElementById("langBtn").addEventListener("click", toggleMenu);
@@ -496,7 +557,11 @@
     const brand = document.getElementById("brandName");
     if (brand) brand.textContent = appName(lang);
     // localized document title
-    document.title = appName(lang) + " — " + man(lang, "heroTitle");
+    if (isPrivacy) {
+      document.title = (AF_PRIVACY[lang] || AF_PRIVACY.en).pageTitle;
+    } else {
+      document.title = appName(lang) + " — " + man(lang, "heroTitle");
+    }
     updateMenuActive(lang);
     // reveal
     if (animate) { requestAnimationFrame(revealCheck); }
@@ -504,7 +569,7 @@
     // dynamic lang-cloud clicks
     document.querySelectorAll("[data-setlang]").forEach(el =>
       el.addEventListener("click", () => setLang(el.getAttribute("data-setlang"), false)));
-    runTriggerAnim();
+    if (!isPrivacy) runTriggerAnim();
   }
 
   let current = "en";

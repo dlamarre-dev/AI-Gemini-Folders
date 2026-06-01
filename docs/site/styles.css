@@ -306,3 +306,14 @@ ul{padding:0;margin:0}
 [dir=rtl] .btn .ic{transform:none}
 [dir=rtl] .btn .ic svg{transform:none}
 .trigger-input .injected{color:var(--ink);font-family:var(--font-display)}
+
+
+/* ---- Privacy page ---- */
+.privacy-page{padding:80px 0 120px}
+.privacy-page-inner{max-width:720px}
+.privacy-page .h1{font-size:clamp(28px,4vw,42px);line-height:1.1;font-weight:800;letter-spacing:-0.03em;margin:0 0 32px}
+.privacy-intro{font-size:1.1rem;color:var(--muted);margin-bottom:48px;line-height:1.7}
+.privacy-page .h3{font-size:clamp(20px,2.4vw,26px);font-weight:700;letter-spacing:-0.02em;margin-top:40px;margin-bottom:8px}
+.privacy-point-title{font-size:1rem;font-weight:600;margin-top:24px;margin-bottom:4px;color:var(--ink)}
+.privacy-page p{color:var(--muted);line-height:1.7;margin-bottom:12px}
+.privacy-page a{color:var(--violet-2)}
