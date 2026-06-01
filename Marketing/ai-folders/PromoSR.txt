@@ -1,14 +1,18 @@
-﻿Vaši AI razgovori su rasuti po šest različitih sajtova. Stalno ponovo unosite iste upite. Vaši najbolji četovi nestaju u beskonačnim istorijama na Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity.
-VI fascikle je proširenje koje vam treba.
+﻿Vaši AI razgovori su rasuti po različitim sajtovima. Stalno ponovo unosite iste upite, a vaši najbolji četovi nestaju u beskonačnim istorijama. VI fascikle je jedinstveni kokpit pregledača koji vam treba da povratite kontrolu nad svojim radnim prostorom.
 
-VI fascikle je vaš jedinstveni AI kokpit: organizujte razgovore iz svih vaših AI alata u deljene fascikle, izgradite biblioteku upita za višestruku upotrebu i ubacujte upite direktno u bilo koji podržani AI — bez kopiranja i lepljenja.
+Organizujte razgovore iz svih svojih omiljenih AI alata u deljene fascikle, izgradite biblioteku upita za višestruku upotrebu i ubacujte šablone direktno u bilo koje polje za unos — bez kopiranja i lepljenja.
+
+🌐 7 PODRŽANIH AI USLUGA
+
+VI fascikle se izvorno integriše sa: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity i lokalnim LLM-ovima.
+Razgovori sa različitih platformi mogu da dele potpuno istu fasciklu. Svaki čet prikazuje boju i logotip svoje usluge, tako da uvek znate odakle dolazi.
 
 ✨ MOD PROMPTOVA
 
 📝 Lična biblioteka promptova: Prebaci na Mod promptova jednim klikom na prekidač u zaglavlju. Sačuvaj najbolje promptove s naslovom i tekstom, pronađi ih odmah pretragom i sortiranjem (najnovije, najstarije, A–Ž).
 ▶ Ubacivanje jednim klikom: Klikni dugme za reprodukciju (▶) na sačuvanom promptu da ga ubaciš direktno u polje za unos aktivnog AI-ja.
 ✏️ Uređivanje na mestu: Klikni da proširiš prompt i uredi tekst direktno. Promene se automatski čuvaju nakon kratke pauze.
-🔀 Dugmad za novi razgovor: Pokrenite novi razgovor na ChatGPT, Claude, Copilot, DeepSeek, Gemini ili Perplexity direktno iz režima promptova — po jedno dugme po servisu.
+🔀 Dugmad za novi razgovor: Pokrenite novi razgovor na bilo kojem od podržanih veb servisa direktno iz režima promptova — jednim dodirom.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
 ⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat Gemini da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
@@ -37,7 +41,7 @@ Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite VI
 🛠️ KAKO TO FUNKCIONIŠE?
 
 Mod foldera:
-Otvori razgovor na Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
+Otvori razgovor na bilo kojoj od podržanih AI platformi.
 Otvori panel: Ctrl+Shift+1 (ili Cmd+Shift+1 na Mac-u).
 Brzo čuvanje: Ctrl+Shift+S (ili Cmd+Shift+S na Mac-u), ili desni klik > «Sačuvaj u Gemini Foldere».
 Putem proširenja: Klikni ikonu, odaberi folder i sačuvaj.
@@ -51,13 +55,13 @@ Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
 Okidač prompta: Upiši # da odmah vidiš sve sačuvane promptove, ili nastavi da kucaš za filtriranje u realnom vremenu. Pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za ubacivanje.
 
 🔒 PRIVATNOST I SIGURNOST
-Izgrađeno s prioritetom privatnosti. Traži pristup samo Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
+Izgrađeno s prioritetom privatnosti. Traži pristup samo 6 podržanih AI sajtova i vašem opcionom lokalnom LLM URL-u i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
 
 🤝 PROJEKAT OTVORENOG KODA
 VI fascikle je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AŽURIRANJA:
-Verzija 1.2 (DeepSeek): Dodata podrška za DeepSeek (chat.deepseek.com). Pokrenite nove razgovore na DeepSeeku direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove — sa bojom i logom DeepSeeka.
+Verzija 1.2 (DeepSeek): Pokrenite nove razgovore na DeepSeeku direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove.
 Verzija 1.1 (Okidač promptova): Unesi # u bilo koje polje AI čavrljanja da u realnom vremenu vidiš filtrirane sačuvane promptove. Koristi ↓/↑ za navigaciju kroz predloge, razmak za autodovršavanje ili ubacivanje — bez otvaranja panela.
 Verzija 1.0: Prvo izdanje! Organizujte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u deljene fascikle. Potpuna biblioteka promptova sa ubacivanjem jednim klikom, prečice za brzo čuvanje, prevlačenje i puštanje, mobilna sinhronizacija, masovne radnje, grupe kartica i podrška za 43 jezika.

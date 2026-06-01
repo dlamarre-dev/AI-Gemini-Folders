@@ -1,14 +1,18 @@
-﻿AI-beszélgetései hat különböző oldalon szórványosan szétszórva vannak. Folyamatosan újra begépeli ugyanazokat a promptokat. Legjobb csevegései végtelen előzményekbe vesznek el a Geminiben, a Claude-ban, a ChatGPT-ben, a Copilotban, a DeepSeekben és a Perplexityben.
-MI mappák a bővítmény, amelyre szüksége van.
+﻿AI-beszélgetései különböző oldalakon szétszórva vannak. Folyamatosan újra begépeli ugyanazokat a promptokat, és legjobb csevegései végtelen előzményekbe vesznek el. MI mappák az az egységes böngésző-irányítóközpont, amelyre szüksége van, hogy visszanyerje az irányítást a munkaterülete felett.
 
-MI mappák az Ön egységes AI-irányítóközpontja: szervezze az összes AI-eszközéből származó beszélgetéseket közös mappákba, hozzon létre újra felhasználható prompt-könyvtárat, és illesszen be promptokat közvetlenül bármely támogatott AI-ba — másolás-beillesztés nélkül.
+Szervezze az összes kedvenc AI-eszközéből származó beszélgetéseket közös mappákba, hozzon létre újra felhasználható prompt-könyvtárat, és illesszen be sablonokat közvetlenül bármely beviteli mezőbe — másolás-beillesztés nélkül.
+
+🌐 7 TÁMOGATOTT MI-SZOLGÁLTATÁS
+
+A MI mappák natívan integrálódik a következőkkel: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity és helyi LLM-ek.
+A különböző platformokról származó beszélgetések ugyanabban a mappában lehetnek. Minden csevegés a szolgáltatása színét és logóját jeleníti meg, így mindig tudja, honnan származik.
 
 ✨ ban — PROMPTÜZEMMÓD
 
 📝 Személyes promptkönyvtár: Váltson Promptüzemmódba egyetlen kattintással a fejlécben lévő kapcsolón. Mentse el legjobb promptjait cím és teljes szöveg megadásával, majd keresse meg őket azonnal kereséssel és rendezéssel (legújabb, legrégebbi, A–Z).
 ▶ Egyetlen kattintásos beillesztés: Nincs több másolás-beillesztés. Kattintson a lejátszás gombra (▶) bármely mentett promptnál, hogy közvetlenül az aktív AI beviteli mezőjébe illessze be.
 ✏️ Helyszíni szerkesztés: Kattintson egy promptra a kibontáshoz és a szöveg közvetlen szerkesztéséhez. A módosítások rövid szünet után automatikusan mentődnek, a rendezési sorrend frissül.
-🔀 Új Beszélgetés Gombok: Indítson új beszélgetést a ChatGPT-n, Claude-on, Copiloton, DeepSeeken, Geminin vagy a Perplexityn közvetlenül a Prompt módból — egy gomb szolgáltatásonként.
+🔀 Új Beszélgetés Gombok: Indítson új beszélgetést a támogatott webszolgáltatások bármelyikén közvetlenül a Prompt módból — egyetlen koppintással.
 ☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
 📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
 ⌨️ Prompt-aktiváló élő javaslatokkal: Gépelje be a # jelet a Gemini csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját — valós időben szűrve gépelés közben. Használja a ↓/↑ billentyűket a navigáláshoz, majd nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a közvetlen beillesztéshez.
@@ -37,7 +41,7 @@ Helyi AI modellt futtat (Ollama, LM Studio, Jan vagy más)? Konfigurálja a(z) M
 🛠️ HOGYAN MŰKÖDIK?
 
 Mappaüzemmód:
-Nyisson meg egy beszélgetést a Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity oldalon.
+Nyisson meg egy beszélgetést a támogatott AI-platformok bármelyikén.
 A panel megnyitása: Ctrl+Shift+1 (vagy Cmd+Shift+1 Macen).
 Gyorsmentés: Ctrl+Shift+S (vagy Mac-en Cmd+Shift+S), vagy jobb kattintás > „Mentés a MI mappákba".
 A bővítményen keresztül: Kattintson az ikonra, válasszon mappát, és mentse el.
@@ -52,13 +56,13 @@ Prompt rögzítéséhez: kattintson a 📍 gombra — a lista tetejére kerül, 
 Prompt-aktiváló: Gépelje be a # jelet az összes mentett promptja azonnali megjelenítéséhez, vagy folytassa a gépelést a valós idejű szűréshez. Nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a beillesztéshez.
 
 🔒 ADATVÉDELEM ÉS BIZTONSÁG
-Az adatvédelmet alapelvként kezelve fejlesztve. Csak a Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.
+Az adatvédelmet alapelvként kezelve fejlesztve. Csak a 6 támogatott AI-oldal és az opcionális helyi LLM URL elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.
 
 🤝 NYÍLT FORRÁSKÓDÚ PROJEKT
 A MI mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az átláthatóság és az adatvédelem tiszteletben tartása a legfontosabb prioritásaink. Fejlesztő, vagy csak kíváncsi? Böngéssze a kódot, kövesse a változásnaplót, vagy járuljon hozzá a GitHubon: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 FRISSÍTÉSEK:
-1.2-es verzió (DeepSeek): Hozzáadva a DeepSeek (chat.deepseek.com) támogatása. Indítson új DeepSeek-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat — a DeepSeek saját színével és logójával.
+1.2-es verzió (DeepSeek): Indítson új DeepSeek-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat.
 1.1-es verzió (Prompt-kiváltó): Írjon # jelet bármely AI-chat mezőbe, hogy valós időben szűrve lássa mentett promptjait. Használja a ↓/↑ billentyűket a javaslatok közötti navigáláshoz, a szóközt az automatikus kiegészítéshez vagy beillesztéshez — a panel megnyitása nélkül.
 1.0-s verzió: Első kiadás! Rendszerezze a Gemini, Claude, ChatGPT, Copilot és Perplexity beszélgetéseit közös mappákban. Teljes prompt-könyvtár egy kattintásos beillesztéssel, gyors mentési parancsikonok, húzás és ejtés, mobilszinkronizáció, tömeges műveletek, lapcsoportok és 43 nyelv támogatása.

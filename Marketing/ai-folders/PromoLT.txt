@@ -1,14 +1,18 @@
-﻿Jūsų AI pokalbiai išsibarstyti per šešis skirtingus puslapius. Jūs nuolat iš naujo įvedate tuos pačius raginimus. Geriausi jūsų pokalbiai dingsta begalinėse istorijose Gemini, Claude, ChatGPT, Copilot, DeepSeek ir Perplexity platformose.
-AI aplankai yra plėtinys, kurio jums reikia.
+﻿Jūsų AI pokalbiai išsibarstyti per skirtingus puslapius. Jūs nuolat iš naujo įvedate tuos pačius raginimus, o geriausi jūsų pokalbiai dingsta begalinėse istorijose. AI aplankai yra vieningas naršyklės valdymo centras, kurio jums reikia, kad atgautumėte savo darbo erdvės kontrolę.
 
-AI aplankai yra jūsų vieninga AI valdymo centras: tvarkykite visų AI įrankių pokalbius bendrose aplankuose, kurkite daugkartinio naudojimo raginimų biblioteką ir įterpkite raginimus tiesiogiai į bet kurią palaikomą AI — be kopijavimo ir įklijavimo.
+Tvarkykite visų mėgstamiausių AI įrankių pokalbius bendrose aplankuose, kurkite daugkartinio naudojimo raginimų biblioteką ir įterpkite šablonus tiesiogiai į bet kurį įvesties lauką — be kopijavimo ir įklijavimo.
+
+🌐 7 PALAIKOMOS DI PASLAUGOS
+
+AI aplankai natūraliai integruojasi su: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity ir vietiniais LLM.
+Pokalbiai iš skirtingų platformų gali būti tame pačiame aplanke. Kiekvienas pokalbis rodo savo paslaugos spalvą ir logotipą, todėl visada žinote, iš kur jis atsirado.
 
 ✨ PROMPTŲ REŽIMAS
 
 📝 Asmeninė promptų biblioteka: Perjunk į Promptų režimą paspausdamas antraštės perjungiklį. Išsaugok geriausius promptus su pavadinimu ir tekstu, rask juos iš karto naudodamas paiešką ir rikiavimą (naujausi, seniausi, A–Ž).
 ▶ Įterpimas vienu paspaudimu: Spustelėk paleidimo mygtuką (▶) ant išsaugoto prompto, kad jis būtų įterptas tiesiai į aktyvaus AI įvesties lauką.
 ✏️ Tiesioginis redagavimas: Spustelėk norėdamas išplėsti promptą ir redaguok tekstą tiesiogiai. Pakeitimai automatiškai išsaugomi po trumpos pauzės.
-🔀 Naujo pokalbio mygtukai: Pradėkite naują pokalbį ChatGPT, Claude, Copilot, DeepSeek, Gemini arba Perplexity tiesiogiai iš raginimų režimo — vienas mygtukas kiekvienai paslaugai.
+🔀 Naujo pokalbio mygtukai: Pradėkite naują pokalbį bet kurioje iš palaikomų žiniatinklio paslaugų tiesiogiai iš raginimų režimo — vienu paspaudimu.
 ☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
 📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
 ⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # Gemini pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Naudokite ↓/↑ naršymui, paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui.
@@ -37,7 +41,7 @@ Ar naudojate vietinį AI modelį (Ollama, LM Studio, Jan ar kitą)? Sukonfigūru
 🛠️ KAIP TAI VEIKIA?
 
 Aplankų režimas:
-Atidaryk pokalbį adresu Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
+Atidaryk pokalbį bet kurioje iš palaikomų AI platformų.
 Atidaryti skydelį: Ctrl+Shift+1 (arba Cmd+Shift+1 „Mac").
 Greitas išsaugojimas: Ctrl+Shift+S (arba Cmd+Shift+S „Mac"), arba dešinysis spustelėjimas > «Išsaugoti Gemini Aplankuose».
 Per plėtinį: Spustelėk piktogramą, pasirink aplanką ir išsaugok.
@@ -51,13 +55,13 @@ Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo vi
 Raginimų paleidiklis: Įveskite #, kad iš karto pamatytumėte visus savo išsaugotus raginimus, arba toliau rašykite filtravimui realiuoju laiku. Paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens įterpimui.
 
 🔒 PRIVATUMAS IR SAUGUMAS
-Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.
+Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie 6 palaikomų AI svetainių ir jūsų pasirenkamo vietinio LLM URL ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.
 
 🤝 ATVIROJO KODO PROJEKTAS
 AI aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pagarba jūsų privatumui yra mūsų aukščiausi prioritetai. Esi kūrėjas ar tiesiog smalsus? Naršyk kodą, sek pakeitimų žurnalą arba prisidėk prie „GitHub": https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ATNAUJINIMAI:
-Versija 1.2 (DeepSeek): Pridėta DeepSeek (chat.deepseek.com) palaikymas. Pradėkite naujus DeepSeek pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus — su DeepSeek spalva ir logotipu.
+Versija 1.2 (DeepSeek): Pradėkite naujus DeepSeek pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus.
 Versija 1.1 (Raginimų paleidiklis): Įveskite # bet kuriame AI pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio.
 Versija 1.0: Pirmasis leidimas! Tvarkykite pokalbius iš Gemini, Claude, ChatGPT, Copilot ir Perplexity bendrose aplankuose. Pilna raginimų biblioteka su vieno paspaudimo įterpimu, sparčiojo įrašymo spartieji klavišai, vilkimas ir numetimas, mobilioji sinchronizacija, masiniai veiksmai, skirtukų grupės ir palaikymas 43 kalbų.
