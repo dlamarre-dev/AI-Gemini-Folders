@@ -50,6 +50,10 @@ AI Folders solves the problem of losing track of conversations across multiple A
 - Permissions: storage, contextMenus, scripting, tabs (used only for injection on AI sites)
 - Content scripts are injected only on supported AI domains
 
+## Privacy
+
+No tracking, no telemetry, no third-party servers. The website stores only a language preference in localStorage. Extension data is stored via browser sync. Full policy: https://aifolders.xyz/privacy.html
+
 ## Developer
 
 David Fugère-Lamarre — https://github.com/dlamarre-dev
