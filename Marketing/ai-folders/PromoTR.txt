@@ -1,14 +1,18 @@
-﻿AI sohbetleriniz altı farklı siteye dağılmış durumda. Aynı promptları tekrar tekrar yazıyorsunuz. En iyi sohbetleriniz Gemini, Claude, ChatGPT, Copilot, DeepSeek ve Perplexity'deki sonsuz geçmişlerde kayboluyor.
-YZ Klasörleri ihtiyacınız olan uzantıdır.
+﻿AI sohbetleriniz farklı sitelere dağılmış durumda. Aynı promptları tekrar tekrar yazıyorsunuz ve en iyi sohbetleriniz sonsuz geçmişlerde kayboluyor. YZ Klasörleri, çalışma alanınızın kontrolünü yeniden kazanmak için ihtiyacınız olan birleşik tarayıcı kontrol merkezidir.
 
-YZ Klasörleri, birleşik AI kontrol merkezinizdir: tüm AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düzenleyin, yeniden kullanılabilir bir prompt kütüphanesi oluşturun ve promptları desteklenen herhangi bir AI'ye doğrudan enjekte edin — kopyala yapıştır gerekmez.
+Tüm favori AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düzenleyin, yeniden kullanılabilir bir prompt kütüphanesi oluşturun ve şablonları herhangi bir giriş alanına doğrudan enjekte edin — kopyala yapıştır gerekmez.
+
+🌐 DESTEKLENEN 7 YZ HİZMETİ
+
+YZ Klasörleri şunlarla yerel olarak entegre olur: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity ve yerel LLM'ler.
+Farklı platformlardan gelen sohbetler tamamen aynı klasörü paylaşabilir. Her sohbet, kendi hizmetinin rengini ve logosunu gösterir, böylece nereden geldiğini her zaman bilirsiniz.
 
 ✨ İSTEM MODU
 
 📝 Kişisel İstem Kütüphanesi: Üst bilgideki geçiş düğmesine tek tıkla İstem Modu'na geçin. En iyi istemlerinizi başlık ve tam metinle kaydedin, arama ve sıralama (en yeni, en eski, A-Z) ile anında bulun.
 ▶ Tek Tıkla Enjeksiyon: Artık kopyala-yapıştır yok. Kayıtlı herhangi bir istemin oynat düğmesine (▶) tıklayın, doğrudan aktif AI'nin giriş alanına enjekte edin.
 ✏️ Yerinde Düzenleme: İstemi genişletmek için tıklayın ve metni doğrudan düzenleyin. Değişiklikler kısa bir duraklamadan sonra otomatik kaydedilir ve sıralama buna göre güncellenir.
-🔀 Yeni Konuşma Düğmeleri: Prompt Modundan doğrudan ChatGPT, Claude, Copilot, DeepSeek, Gemini veya Perplexity'de yeni bir konuşma başlatın — her hizmet için bir düğme.
+🔀 Yeni Konuşma Düğmeleri: Prompt Modundan doğrudan desteklenen web hizmetlerinden herhangi birinde tek dokunuşla yeni bir konuşma başlatın.
 ☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
 📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
 ⌨️ Canlı Önerili İstem Tetikleyici: Gemini'nin sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün — siz yazarken gerçek zamanlı olarak filtrelenir. ↓/↑ ile öneriler arasında gezinin; benzersiz eşleşmede otomatik tamamlamak veya tam eşleşmede enjekte etmek için boşluk tuşuna basın.
@@ -37,7 +41,7 @@ Yerel bir AI modeli (Ollama, LM Studio, Jan veya başka) mı kullanıyorsunuz? Y
 🛠️ NASIL ÇALIŞIR?
 
 Klasör Modu:
-Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity'da bir konuşma açın.
+Desteklenen AI platformlarından herhangi birinde bir konuşma açın.
 Paneli açın: Ctrl+Shift+1 (veya Mac'te Cmd+Shift+1).
 Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "YZ Klasörleri'ne Kaydet".
 Uzantı üzerinden: Simgeye tıklayın, bir klasör seçin ve kaydedin.
@@ -52,13 +56,13 @@ Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar
 İstem Tetikleyici: # yazın ve tüm kayıtlı istemlerinizi anında görün veya gerçek zamanlı filtrelemek için yazmaya devam edin. Benzersiz eşleşmede otomatik tamamlamak için, tam eşleşmede enjekte etmek için boşluk tuşuna basın.
 
 🔒 GİZLİLİK & GÜVENLİK
-Gizlilik öncelikli tasarım. Yalnızca Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.
+Gizlilik öncelikli tasarım. Yalnızca desteklenen 6 AI sitesine ve isteğe bağlı yerel LLM URL'nize erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.
 
 🤝 AÇIK KAYNAK PROJE
 Gemini Klasörler, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 GÜNCELLEMELER:
-Sürüm 1.2 (DeepSeek): DeepSeek (chat.deepseek.com) desteği eklendi. Prompt Modundan doğrudan yeni DeepSeek konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin — DeepSeek'in rengi ve logosuyla.
+Sürüm 1.2 (DeepSeek): Prompt Modundan doğrudan yeni DeepSeek konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin.
 Sürüm 1.1 (Prompt Tetikleyici): Herhangi bir AI sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan.
 Sürüm 1.0: İlk yayın! Gemini, Claude, ChatGPT, Copilot ve Perplexity sohbetlerini paylaşılan klasörlerde düzenleyin. Tek tıkla ekleme özellikli tam prompt kütüphanesi, hızlı kaydetme kısayolları, sürükle ve bırak, mobil senkronizasyon, toplu işlemler, sekme grupları ve 43 dil desteği. Yapılandırılabilir URL (localhost ve LAN adresleri) ile yerel LLM desteği.

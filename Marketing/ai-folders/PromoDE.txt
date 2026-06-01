@@ -1,14 +1,18 @@
-﻿Ihre KI-Gespräche sind über sechs verschiedene Sites verstreut. Sie tippen immer wieder dieselben Prompts. Ihre besten Chats verschwinden in endlosen Verläufen auf Gemini, Claude, ChatGPT, Copilot, DeepSeek und Perplexity.
-KI-Ordner ist die Erweiterung, die Sie brauchen.
+﻿Ihre KI-Gespräche sind über verschiedene Sites verstreut. Sie tippen immer wieder dieselben Prompts, und Ihre besten Chats verschwinden in endlosen Verläufen. KI-Ordner ist das einheitliche Browser-Cockpit, das Sie brauchen, um die Kontrolle über Ihren Arbeitsbereich zurückzugewinnen.
 
-KI-Ordner ist Ihr einheitliches KI-Cockpit: Organisieren Sie Gespräche aller Ihrer KI-Tools in gemeinsamen Ordnern, erstellen Sie eine Bibliothek wiederverwendbarer Prompts und injizieren Sie Prompts direkt in jede unterstützte KI — ganz ohne Kopieren und Einfügen.
+Organisieren Sie Gespräche aller Ihrer bevorzugten KI-Tools in gemeinsamen Ordnern, erstellen Sie eine Bibliothek wiederverwendbarer Prompts und injizieren Sie Vorlagen direkt in jedes Eingabefeld — ganz ohne Kopieren und Einfügen.
+
+🌐 7 UNTERSTÜTZTE KI-DIENSTE
+
+KI-Ordner integriert sich nativ mit: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity und lokalen LLMs.
+Gespräche von verschiedenen Plattformen können denselben Ordner teilen. Jeder Chat zeigt die Farbe und das Logo seines Dienstes an, sodass Sie immer wissen, woher er stammt.
 
 ✨ PROMPT-MODUS
 
 📝 Persönliche Prompt-Bibliothek: Wechseln Sie mit einem Klick auf den Umschalter in der Kopfzeile in den Prompt-Modus. Speichern Sie Ihre besten Prompts mit Titel und vollständigem Text und finden Sie sie sofort per Suche und Sortierung (Neueste, Älteste, A-Z).
 ▶ Injection mit einem Klick: Kein Kopieren und Einfügen mehr. Klicken Sie auf die Wiedergabetaste (▶) eines Prompts, um ihn direkt in das Eingabefeld der aktiven KI zu injizieren.
 ✏️ Direktbearbeitung: Klicken Sie auf einen Prompt, um ihn aufzuklappen und den Text direkt zu bearbeiten. Änderungen werden automatisch gespeichert und die Sortierung aktualisiert sich entsprechend.
-🔀 Neue-Konversation-Schaltflächen: Starten Sie direkt aus dem Prompt-Modus eine neue Unterhaltung auf ChatGPT, Claude, Copilot, DeepSeek, Gemini oder Perplexity — ein Knopf pro Dienst.
+🔀 Neue-Konversation-Schaltflächen: Starten Sie direkt aus dem Prompt-Modus eine neue Unterhaltung auf einem der unterstützten Web-Dienste — mit einem einzigen Tippen.
 ☁️ Prompt-Synchronisierung: Aktivieren Sie die Cloud-Sync für Ihre Prompt-Bibliothek, unabhängig von Ihren Ordnern.
 📌 Angeheftete Prompts: Heften Sie Ihre wichtigsten Prompts mit einem Klick oben an Ihre Bibliothek — durch einen visuellen Trenner von den übrigen getrennt.
 ⌨️ Prompt-Trigger mit Live-Vorschlägen: Geben Sie # in das Chat-Feld von Gemini ein, um sofort alle Ihre gespeicherten Prompts zu sehen — in Echtzeit gefiltert während der Eingabe. Verwenden Sie ↓/↑ zum Navigieren, drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur direkten Injektion.
@@ -37,7 +41,7 @@ Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? K
 🛠️ WIE FUNKTIONIERT ES?
 
 Ordner-Modus:
-Öffnen Sie ein Gespräch auf Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
+Öffnen Sie ein Gespräch auf einer der unterstützten KI-Plattformen.
 Bereich öffnen: Strg+Shift+1 (oder Cmd+Shift+1 auf Mac).
 Schnellspeicherung: Strg+Shift+S (oder Cmd+Shift+S auf Mac), oder Rechtsklick > „In KI-Ordner speichern".
 Über die Erweiterung: Symbol anklicken, Ordner wählen, speichern.
@@ -52,13 +56,13 @@ Prompt anheften: auf 📍 klicken — er rückt an die erste Stelle und bleibt i
 Prompt-Trigger: Geben Sie # ein, um sofort alle Ihre gespeicherten Prompts zu sehen, oder tippen Sie weiter, um in Echtzeit zu filtern. Drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur Injektion.
 
 🔒 DATENSCHUTZ & SICHERHEIT
-Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
+Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf die 6 unterstützten KI-Sites und Ihre optionale lokale LLM-URL an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
 
 🤝 OPEN-SOURCE-PROJEKT
 KI-Ordner ist ein leidenschaftlich entwickeltes Open-Source-Projekt. Transparenz und Datenschutz haben höchste Priorität. Entwickler oder einfach neugierig? Code einsehen, Änderungsprotokoll verfolgen oder auf GitHub beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
-Version 1.2 (DeepSeek): DeepSeek (chat.deepseek.com) wird jetzt unterstützt. Starten Sie neue DeepSeek-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts — mit DeepSeeks Farbe und Logo.
+Version 1.2 (DeepSeek): Starten Sie neue DeepSeek-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts.
 Version 1.1 (Prompt-Auslöser): Geben Sie # in ein beliebiges KI-Chat-Feld ein, um gespeicherte Prompts in Echtzeit gefiltert zu sehen. Verwenden Sie ↓/↑ zum Navigieren durch Vorschläge, Leertaste zum Autovervollständigen oder Einsetzen — ohne das Panel zu öffnen.
 Version 1.0: Erstveröffentlichung! Organisieren Sie Gespräche von Gemini, Claude, ChatGPT, Copilot und Perplexity in gemeinsamen Ordnern. Vollständige Prompt-Bibliothek mit Ein-Klick-Injektion, Schnellspeicher-Shortcuts, Drag & Drop, Mobile-Sync, Massenaktionen, Tab-Gruppen und Unterstützung für 43 Sprachen. Lokaler LLM-Support mit konfigurierbarer URL (localhost und LAN-Adressen).

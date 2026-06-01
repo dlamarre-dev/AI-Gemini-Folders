@@ -1,14 +1,18 @@
-﻿Tus conversaciones de IA están dispersas en seis sitios distintos. Sigues reescribiendo los mismos prompts. Tus mejores chats desaparecen en historiales interminables de Gemini, Claude, ChatGPT, Copilot, DeepSeek y Perplexity.
-Carpetas IA es la extensión que necesitas.
+﻿Tus conversaciones de IA están dispersas en distintos sitios. Sigues reescribiendo los mismos prompts, y tus mejores chats desaparecen en historiales interminables. Carpetas IA es el cockpit de navegador unificado que necesitas para recuperar el control de tu espacio de trabajo.
 
-Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus herramientas de IA en carpetas compartidas, crea una biblioteca de prompts reutilizables e inyecta prompts directamente en cualquier IA compatible — sin necesidad de copiar y pegar.
+Organiza conversaciones de todas tus herramientas de IA favoritas en carpetas compartidas, crea una biblioteca de prompts reutilizables e inyecta plantillas directamente en cualquier campo de texto — sin necesidad de copiar y pegar.
+
+🌐 7 SERVICIOS DE IA COMPATIBLES
+
+Carpetas IA se integra de forma nativa con: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity y LLM locales.
+Las conversaciones de diferentes plataformas pueden compartir la misma carpeta. Cada chat muestra el color y el logotipo de su servicio de origen, para que siempre sepas de dónde proviene.
 
 ✨ MODO PROMPTS
 
 📝 Biblioteca personal de prompts: Cambia al modo Prompt con un solo clic en el botón de alternancia del encabezado. Guarda tus mejores prompts con un título y texto completo, y encuéntralos al instante con búsqueda y ordenación (más recientes, más antiguos, A-Z).
 ▶ Inyección con un clic: Se acabó copiar y pegar. Haz clic en el botón de reproducción (▶) de cualquier prompt guardado para inyectarlo directamente en el campo de texto de la IA activa.
 ✏️ Edición en línea: Haz clic en un prompt para desplegarlo y editar el texto directamente. Los cambios se guardan automáticamente tras una breve pausa y el orden se actualiza en consecuencia.
-🔀 Botones de Nueva Conversación: Inicia una nueva conversación en ChatGPT, Claude, Copilot, DeepSeek, Gemini o Perplexity directamente desde el Modo Prompt — un botón por servicio.
+🔀 Botones de Nueva Conversación: Inicia una nueva conversación en cualquiera de los servicios web compatibles directamente desde el Modo Prompt — con un solo toque.
 ☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
 📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
 ⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de Gemini para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Usa ↓/↑ para navegar entre sugerencias, pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente.
@@ -37,7 +41,7 @@ Carpetas IA es tu cockpit de IA unificado: organiza conversaciones de todas tus 
 🛠️ ¿CÓMO FUNCIONA?
 
 Modo Carpetas:
-Abre una conversación en Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
+Abre una conversación en cualquiera de las plataformas de IA compatibles.
 Abrir el panel: Ctrl+Shift+1 (o Cmd+Shift+1 en Mac).
 Guardado rápido: Ctrl+Shift+S (o Cmd+Shift+S en Mac), o clic derecho > "Guardar en Carpetas IA".
 Desde la extensión: Haz clic en el icono, elige una carpeta y guarda.
@@ -52,13 +56,13 @@ Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siemp
 Disparador de prompts: Escribe # para ver al instante todos tus prompts guardados, o sigue escribiendo para filtrar en tiempo real. Pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar.
 
 🔒 PRIVACIDAD Y SEGURIDAD
-Diseñada con la privacidad en el centro. Solo solicita acceso a Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
+Diseñada con la privacidad en el centro. Solo solicita acceso a los 6 sitios de IA compatibles y a tu URL de LLM local opcional, y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
 
 🤝 PROYECTO OPEN SOURCE
 Carpetas de Gemini es un proyecto open source desarrollado con pasión. La transparencia y el respeto a tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente tienes curiosidad? Consulta el código, sigue el historial de cambios o contribuye en GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ACTUALIZACIONES:
-Versión 1.2 (DeepSeek): Se añade compatibilidad con DeepSeek (chat.deepseek.com). Inicia nuevas conversaciones de DeepSeek directamente desde el Modo Prompt, guárdalas en carpetas e inyecta prompts — con el color y el logo de DeepSeek.
+Versión 1.2 (DeepSeek): Inicia nuevas conversaciones de DeepSeek directamente desde el Modo Prompt, guárdalas en carpetas e inyecta prompts.
 Versión 1.1 (Disparador de prompts): Escribe # en cualquier campo de chat de IA para ver tus prompts filtrados en tiempo real. Usa ↓/↑ para navegar entre sugerencias, Espacio para autocompletar o inyectar — sin abrir jamás el panel.
 Versión 1.0: ¡Publicación inicial! Organiza conversaciones de Gemini, Claude, ChatGPT, Copilot y Perplexity en carpetas compartidas. Biblioteca de prompts completa con inyección en un clic, atajos de guardado rápido, arrastrar y soltar, sincronización móvil, acciones en masa, grupos de pestañas y soporte para 43 idiomas. Compatibilidad con LLM locales con URL configurable (localhost y direcciones LAN).

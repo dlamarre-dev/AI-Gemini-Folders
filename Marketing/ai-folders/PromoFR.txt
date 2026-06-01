@@ -1,14 +1,18 @@
-Vos conversations IA sont éparpillées sur six sites différents. Vous retapez toujours les mêmes prompts. Vos meilleures discussions disparaissent dans des historiques sans fin sur Gemini, Claude, ChatGPT, Copilot, DeepSeek et Perplexity.
-Dossiers IA est l'extension qu'il vous faut.
+Vos conversations IA sont éparpillées sur différents sites. Vous retapez toujours les mêmes prompts, et vos meilleures discussions disparaissent dans des historiques sans fin. Dossiers IA est le cockpit navigateur unifié dont vous avez besoin pour reprendre le contrôle de votre espace de travail.
 
-Dossiers IA est votre cockpit IA unifié : organisez des conversations de tous vos outils IA dans des dossiers partagés, constituez une bibliothèque de prompts réutilisables et injectez des prompts directement dans n'importe quelle IA prise en charge — sans copier-coller.
+Organisez les conversations de tous vos outils IA favoris dans des dossiers partagés, constituez une bibliothèque de modèles réutilisables et injectez des modèles directement dans n'importe quel champ de saisie — sans copier-coller.
+
+🌐 7 SERVICES IA PRIS EN CHARGE
+
+Dossiers IA s'intègre nativement avec : Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity et les LLM locaux.
+Les conversations de différentes plateformes peuvent partager le même dossier. Chaque discussion affiche la couleur et le logo de son service d'origine, pour que vous sachiez toujours d'où elle vient.
 
 ✨ MODE PROMPTS
 
 📝 Bibliothèque de prompts personnelle : Passez en mode Prompt d'un simple clic sur le bouton de bascule dans l'en-tête. Sauvegardez vos meilleurs prompts avec un titre et un texte complet, retrouvez-les instantanément grâce à la recherche et au tri (plus récents, plus anciens, A-Z).
 ▶ Injection en un clic : Plus besoin de copier-coller. Cliquez sur le bouton lecture (▶) de n'importe quel prompt pour l'injecter directement dans le champ de saisie de l'IA active.
 ✏️ Édition en place : Cliquez sur un prompt pour le déplier et modifiez son texte directement. Les changements se sauvegardent automatiquement et le tri se met à jour en conséquence.
-🔀 Boutons Nouvelle Conversation : Lancez une nouvelle discussion sur ChatGPT, Claude, Copilot, DeepSeek, Gemini ou Perplexity directement depuis le Mode Prompts — un bouton par service.
+🔀 Boutons Nouvelle Conversation : Lancez une nouvelle discussion sur l'un des services web pris en charge directement depuis le Mode Prompts, en un seul clic.
 📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
 ☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
 ⌨️ Déclenchement de prompt avec suggestions en direct : Tapez # dans le champ de saisie de Gemini pour voir instantanément tous vos prompts sauvegardés — filtrés en temps réel au fil de la frappe. Utilisez ↓/↑ pour naviguer entre les suggestions, appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter directement.
@@ -37,7 +41,7 @@ Vous utilisez un modèle IA local (Ollama, LM Studio, Jan ou autre) ? Configurez
 🛠️ COMMENT ÇA MARCHE ?
 
 Mode Dossiers :
-Ouvrez une conversation sur Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity.
+Ouvrez une conversation sur l'une des plateformes IA prises en charge.
 Ouvrir le panneau : Ctrl+Shift+1 (ou Cmd+Shift+1 sur Mac).
 Sauvegarde express : Ctrl+Shift+S (ou Cmd+Shift+S sur Mac), ou clic droit > "Sauvegarder dans Dossiers IA".
 Via l'extension : Cliquez sur l'icône, choisissez un dossier et sauvegardez.
@@ -52,13 +56,13 @@ Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et 
 Déclenchement de prompt : tapez # pour voir instantanément tous vos prompts sauvegardés, ou continuez à taper pour filtrer en temps réel. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ
-Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'à Gemini, Claude, ChatGPT, Copilot, DeepSeek (chat.deepseek.com), Perplexity et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
+Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'aux 6 sites IA pris en charge et à votre URL LLM local optionnelle, et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
 
 🤝 PROJET OPEN SOURCE
 Dossiers IA est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Consultez le code, suivez l'historique ou contribuez sur GitHub : https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MISES À JOUR :
-Version 1.2 (DeepSeek) : Ajout du support de DeepSeek (chat.deepseek.com). Lancez de nouvelles conversations DeepSeek directement depuis le Mode Prompts, sauvegardez-les dans des dossiers et injectez vos prompts — avec la couleur et le logo de DeepSeek.
+Version 1.2 (DeepSeek) : Lancez de nouvelles conversations DeepSeek directement depuis le Mode Prompts, sauvegardez-les dans des dossiers et injectez vos prompts.
 Version 1.1 (Déclenchement de prompt) : Tapez # dans n'importe quel champ de saisie IA pour voir vos prompts filtrés en temps réel. Utilisez ↓/↑ pour naviguer entre les suggestions, Espace pour autocompléter ou injecter — sans jamais ouvrir le panneau.
 Version 1.0 : Première publication ! Organisez vos conversations depuis Gemini, Claude, ChatGPT, Copilot et Perplexity dans des dossiers partagés. Bibliothèque de prompts complète avec injection en un clic, raccourcis de sauvegarde rapide, glisser-déposer, synchronisation mobile, actions groupées, groupes d'onglets et prise en charge de 43 langues. Support des LLM locaux avec URL configurable (localhost et adresses LAN).
