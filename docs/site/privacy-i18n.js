@@ -1,6 +1,5 @@
 /* ============================================================
    AI Folders — privacy policy translations (43 languages)
-   "AI Folders" is a proper product name; keep as-is everywhere.
    ============================================================ */
 window.AF_PRIVACY = {
   en: {
