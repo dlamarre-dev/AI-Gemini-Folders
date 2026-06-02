@@ -155,25 +155,27 @@ async function handlePromptTriggerLookup(message, sender) {
   try {
     if (exact) {
       // Exact match → inject prompt content.
-      await chrome.scripting.executeScript({
+      const r = await chrome.scripting.executeScript({
         target: { tabId: sender.tab.id },
         world: 'MAIN',
         args: [exact.text, selectors],
         func: injectPromptIntoEditor,
       });
-      return { status: 'injected' };
+      // injectPromptIntoEditor returns false when the focused field isn't a
+      // known editor (e.g. editing a previous message) — let the space through.
+      return { status: r?.[0]?.result === true ? 'injected' : 'no_match' };
     }
 
     if (matches.length === 1) {
       // Single match: autocomplete by updating line 1 to #fullName while keeping
       // the suggestion structure stable (no flash).
-      await chrome.scripting.executeScript({
+      const r = await chrome.scripting.executeScript({
         target: { tabId: sender.tab.id },
         world: 'MAIN',
         args: [[matches[0].name], selectors, chrome.i18n.getMessage('extName'), '#' + matches[0].name],
         func: insertSuggestionsInEditor,
       });
-      return { status: 'autocompleted' };
+      return { status: r?.[0]?.result === true ? 'autocompleted' : 'no_match' };
     }
 
     // Ambiguous prefix → show all matches on next line, cursor stays on first line.
