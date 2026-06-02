@@ -13,6 +13,10 @@
   // e.g. Perplexity — no '#' to avoid triggering site-specific token processors).
   // Two-space separator separates names; single spaces are allowed within a name.
   const SUGG_LINE_RE = /^(?:#[\p{L}\p{N}_-]+(?:[ ][\p{L}\p{N}_-]+)*(?:\s{2,}#[\p{L}\p{N}_-]+(?:[ ][\p{L}\p{N}_-]+)*)*|[\p{L}\p{N}_-]+(?:[ ][\p{L}\p{N}_-]+)*(?:\s{2,}[\p{L}\p{N}_-]+(?:[ ][\p{L}\p{N}_-]+)*)*)$/u;
+  // Matches the "== Extension Name ==" label line we inject above the suggestion
+  // list. Its presence is the reliable signal that we're in trigger mode (vs. a
+  // normal multi-line prompt that merely starts with '#').
+  const LABEL_RE = /^==\s.+\s==$/;
   let _suggTimer = null;
 
   // Re-inserts a space after e.preventDefault() when no prompt matched.
@@ -65,6 +69,12 @@
     const firstLine = rawText.split('\n')[0].trim();
 
     if (!/^#[\p{L}\p{N} _-]*$/u.test(firstLine)) return;
+
+    // Only treat this as a trigger when the field is just the #line, or our
+    // suggestion block (label on line 2) is showing. A normal multi-line prompt
+    // that merely starts with '#' must pass through untouched.
+    const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
+    if (nonEmpty.length > 1 && !LABEL_RE.test(nonEmpty[1] || '')) return;
 
     const triggerName = firstLine.slice(1);
 
@@ -133,6 +143,11 @@
     const firstLine = rawText.split('\n')[0].trim();
     if (!/^#/u.test(firstLine)) return;
 
+    // Only when our suggestion block (label on line 2) is actually showing,
+    // so Arrow keys aren't hijacked inside a normal multi-line prompt.
+    const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
+    if (!(nonEmpty.length >= 2 && LABEL_RE.test(nonEmpty[1]))) return;
+
     const names = readSuggestionNames(el);
     if (!names || names.length === 0) return;
 
@@ -174,21 +189,21 @@
 
     const firstLine = nonEmpty[0] ?? '';
     const startsWithHash = /^#[\p{L}\p{N} _-]*$/u.test(firstLine);
-    // Check positions 1 and 2: with an extension label on line 2, suggestions are on line 3.
-    const hasSuggestionLine = (nonEmpty.length >= 2 && SUGG_LINE_RE.test(nonEmpty[1]))
-      || (nonEmpty.length >= 3 && SUGG_LINE_RE.test(nonEmpty[2]));
-    // # was just deleted: filter(Boolean) elevates the suggestion line to nonEmpty[0].
-    // Detect this so we can clear it (Backspace/Delete only, to avoid false positives).
-    const orphanedSuggestion = (e.key === 'Backspace' || e.key === 'Delete')
-      && !startsWithHash && !hasSuggestionLine && SUGG_LINE_RE.test(firstLine);
+    const labelIdx = nonEmpty.findIndex(l => LABEL_RE.test(l));
 
-    // Act when: suggestions are visible, OR # is on the first line (any content key
-    // triggers live updates from the first # onward), OR suggestion line became orphaned.
-    if (!hasSuggestionLine && !orphanedSuggestion && !startsWithHash) return;
+    // Composing the trigger: the field is just the #line, or our suggestion block
+    // (label on line 2) is present right below it. This is the ONLY state that may
+    // drive live updates — a normal multi-line prompt that merely starts with '#'
+    // must never move the caret.
+    const composingTrigger = startsWithHash && (nonEmpty.length <= 1 || labelIdx === 1);
+    // The '#' was removed but our injected suggestion block is still there → clear it.
+    const needsClear = labelIdx !== -1 && !startsWithHash;
 
-    // If # is still on the first line, pass its current suffix as prefix ('' = show all).
-    // If # was deleted (orphaned or otherwise), pass null to signal "clear suggestions".
-    const prefix = startsWithHash ? firstLine.slice(1) : null;
+    if (!composingTrigger && !needsClear) return;
+
+    // While composing, pass the current suffix as prefix ('' shows all). When
+    // clearing, pass null to remove the leftover suggestion lines.
+    const prefix = composingTrigger ? firstLine.slice(1) : null;
 
     clearTimeout(_suggTimer);
     _suggTimer = setTimeout(async () => {

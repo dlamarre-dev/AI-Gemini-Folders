@@ -465,13 +465,21 @@ function findPromptsByPrefix(prompts, prefix) {
 //   trigger while keeping the suggestion structure stable in one operation).
 function insertSuggestionsInEditor(suggestions, selectors, extensionLabel, newFirstLine) {
   const active = document.activeElement;
+  const activeEditable = !!active &&
+    (active.isContentEditable || active.tagName === 'TEXTAREA' || active.tagName === 'INPUT');
   let editor = null;
-  for (const sel of selectors) {
-    try {
-      if (active && active.matches(sel)) { editor = active; break; }
-      const found = document.querySelector(sel);
-      if (found) { editor = found; break; }
-    } catch (_) {}
+  if (activeEditable) {
+    // The user is typing in an editable element — only act on it when it is a
+    // recognized main editor. Never redirect into a different field (e.g. when
+    // editing a previous message), which would steal the caret.
+    for (const sel of selectors) {
+      try { if (active.matches(sel)) { editor = active; break; } } catch (_) {}
+    }
+  } else {
+    // No editable element focused — fall back to the first matching editor.
+    for (const sel of selectors) {
+      try { const found = document.querySelector(sel); if (found) { editor = found; break; } } catch (_) {}
+    }
   }
   if (!editor) return false;
   editor.focus();
@@ -577,15 +585,32 @@ function insertSuggestionsInEditor(suggestions, selectors, extensionLabel, newFi
 // Injected into the AI page via chrome.scripting.executeScript (runs in PAGE context).
 // Finds the chat editor with the given CSS selectors and replaces its full content.
 // Returns true if the editor was found and the injection was attempted; false otherwise.
+//
+// Editor targeting & a known limitation: when the user is focused in an editable
+// element, we only act if THAT element matches `selectors` — we never redirect
+// into a different field (that would steal the caret). Consequence: while editing
+// a *previous* message, the #-trigger is a deliberate no-op on sites with
+// specific selectors (ChatGPT / Gemini / Claude), but still works in place on
+// sites whose selectors include generic fallbacks like 'textarea' /
+// '[contenteditable="true"]' (DeepSeek / Perplexity / local LLM). Both are
+// harmless — neither hijacks the main composer. Same guard in insertSuggestionsInEditor.
 function injectPromptIntoEditor(promptText, selectors, forceClear) {
   const active = document.activeElement;
+  const activeEditable = !!active &&
+    (active.isContentEditable || active.tagName === 'TEXTAREA' || active.tagName === 'INPUT');
   let editor = null;
-  for (const sel of selectors) {
-    try {
-      if (active && active.matches(sel)) { editor = active; break; }
-      const found = document.querySelector(sel);
-      if (found) { editor = found; break; }
-    } catch (_) {}
+  if (activeEditable) {
+    // The user is typing in an editable element — only act on it when it is a
+    // recognized main editor. Never redirect into a different field (e.g. when
+    // editing a previous message), which would steal the caret.
+    for (const sel of selectors) {
+      try { if (active.matches(sel)) { editor = active; break; } } catch (_) {}
+    }
+  } else {
+    // No editable element focused — fall back to the first matching editor.
+    for (const sel of selectors) {
+      try { const found = document.querySelector(sel); if (found) { editor = found; break; } } catch (_) {}
+    }
   }
   if (!editor) return false;
   editor.focus();
