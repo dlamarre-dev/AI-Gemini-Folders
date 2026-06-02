@@ -39,16 +39,56 @@
     }
   }
 
-  // Returns the suggestion names currently visible in the editor, or null if none.
-  function readSuggestionNames(el) {
-    const isEditable = el.isContentEditable;
-    const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
-    const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
-    const suggLine =
-      (nonEmpty.length >= 2 && SUGG_LINE_RE.test(nonEmpty[1]) ? nonEmpty[1] : null) ??
-      (nonEmpty.length >= 3 && SUGG_LINE_RE.test(nonEmpty[2]) ? nonEmpty[2] : null);
+  // Reads the editor's text as the user sees it (innerText keeps <p>/<br> as \n).
+  function fieldText(el) {
+    return el.isContentEditable ? (el.innerText ?? el.textContent) : el.value;
+  }
+
+  // Classifies a field's text for the #-trigger. Pure (no DOM) for unit testing.
+  //   composingTrigger: actively composing "#name" — the field is just the #line,
+  //                     or our suggestion block (label on line 2) sits right below.
+  //   needsClear:       the '#' is gone but our injected suggestion block remains.
+  //   prefix:           query suffix after '#' to send, or null when clearing.
+  function classifyTriggerField(rawText) {
+    const nonEmpty = String(rawText ?? '').split('\n').map(l => l.trim()).filter(Boolean);
+    const firstLine = nonEmpty[0] ?? '';
+    const labelIdx = nonEmpty.findIndex(l => LABEL_RE.test(l));
+    // In scope = the field is just the #line, or our suggestion block (label on
+    // line 2) sits right below it. Outside scope it's a normal multi-line prompt.
+    const inScope = nonEmpty.length <= 1 || labelIdx === 1;
+    // Restrictive charset drives the LIVE suggestion updates: only refresh
+    // suggestions while the first line is a clean "#word", so normal prose is
+    // never disturbed (no caret moves on multi-line / punctuated text).
+    const startsWithHash = /^#[\p{L}\p{N} _-]*$/u.test(firstLine);
+    const composingTrigger = startsWithHash && inScope;
+    // Broad: any in-scope first line starting with '#' can be injected on Space,
+    // so prompts whose NAME contains punctuation ("Done!", "Q&A", "réf:") stay
+    // reachable. On no match the Space just passes through, so this is safe.
+    const injectable = firstLine.startsWith('#') && inScope;
+    const needsClear = labelIdx !== -1 && !startsWithHash;
+    const prefix = composingTrigger ? firstLine.slice(1) : null;
+    return { nonEmpty, firstLine, startsWithHash, labelIdx, inScope, composingTrigger, injectable, needsClear, prefix };
+  }
+
+  // Parses the visible suggestion names out of the editor text, or null if none. Pure.
+  function parseSuggestionNames(rawText) {
+    const nonEmpty = String(rawText ?? '').split('\n').map(l => l.trim()).filter(Boolean);
+    // The suggestion line is the one right below our "== label ==" line. Locating
+    // it by the label (not by a charset regex) lets names contain punctuation
+    // ("Done!", "Q&A") — otherwise Arrow cycling broke for such prompts. The
+    // SUGG_LINE_RE probe stays only as a no-label fallback.
+    const labelIdx = nonEmpty.findIndex(l => LABEL_RE.test(l));
+    const suggLine = labelIdx !== -1
+      ? (nonEmpty[labelIdx + 1] ?? null)
+      : ((nonEmpty.length >= 2 && SUGG_LINE_RE.test(nonEmpty[1]) ? nonEmpty[1] : null) ??
+         (nonEmpty.length >= 3 && SUGG_LINE_RE.test(nonEmpty[2]) ? nonEmpty[2] : null));
     if (!suggLine) return null;
     return suggLine.split(/\s{2,}/).map(s => s.replace(/^#/, '').trim()).filter(Boolean);
+  }
+
+  // Returns the suggestion names currently visible in the editor, or null if none.
+  function readSuggestionNames(el) {
+    return parseSuggestionNames(fieldText(el));
   }
 
   // --- Space: inject prompt or show suggestions ---
@@ -62,19 +102,12 @@
     const isInput = el.tagName === 'TEXTAREA' || el.tagName === 'INPUT';
     if (!isEditable && !isInput) return;
 
-    // Use innerText (not textContent) so that <p>/<br> paragraph separators in
-    // contenteditable editors appear as \n — then check only the first line.
-    // This lets the trigger work even when suggestion lines are present below.
-    const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
-    const firstLine = rawText.split('\n')[0].trim();
-
-    if (!/^#[\p{L}\p{N} _-]*$/u.test(firstLine)) return;
-
-    // Only treat this as a trigger when the field is just the #line, or our
-    // suggestion block (label on line 2) is showing. A normal multi-line prompt
-    // that merely starts with '#' must pass through untouched.
-    const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
-    if (nonEmpty.length > 1 && !LABEL_RE.test(nonEmpty[1] || '')) return;
+    // Inject on Space for any in-scope first line starting with '#' (so prompt
+    // names with punctuation work too). A normal multi-line prompt that merely
+    // starts with '#' is out of scope and passes through untouched; a no-match
+    // simply re-inserts the space below.
+    const { injectable, firstLine } = classifyTriggerField(fieldText(el));
+    if (!injectable) return;
 
     const triggerName = firstLine.slice(1);
 
@@ -139,14 +172,10 @@
     const isInput = el.tagName === 'TEXTAREA' || el.tagName === 'INPUT';
     if (!isEditable && !isInput) return;
 
-    const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
-    const firstLine = rawText.split('\n')[0].trim();
-    if (!/^#/u.test(firstLine)) return;
-
+    const { firstLine, labelIdx } = classifyTriggerField(fieldText(el));
     // Only when our suggestion block (label on line 2) is actually showing,
     // so Arrow keys aren't hijacked inside a normal multi-line prompt.
-    const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
-    if (!(nonEmpty.length >= 2 && LABEL_RE.test(nonEmpty[1]))) return;
+    if (!firstLine.startsWith('#') || labelIdx !== 1) return;
 
     const names = readSuggestionNames(el);
     if (!names || names.length === 0) return;
@@ -183,27 +212,11 @@
     const isInput = el.tagName === 'TEXTAREA' || el.tagName === 'INPUT';
     if (!isEditable && !isInput) return;
 
-    const rawText = isEditable ? (el.innerText ?? el.textContent) : el.value;
-    // Filter empty lines: innerText can produce "\n\n" between <p> elements in Quill.
-    const nonEmpty = rawText.split('\n').map(l => l.trim()).filter(Boolean);
-
-    const firstLine = nonEmpty[0] ?? '';
-    const startsWithHash = /^#[\p{L}\p{N} _-]*$/u.test(firstLine);
-    const labelIdx = nonEmpty.findIndex(l => LABEL_RE.test(l));
-
-    // Composing the trigger: the field is just the #line, or our suggestion block
-    // (label on line 2) is present right below it. This is the ONLY state that may
-    // drive live updates — a normal multi-line prompt that merely starts with '#'
-    // must never move the caret.
-    const composingTrigger = startsWithHash && (nonEmpty.length <= 1 || labelIdx === 1);
-    // The '#' was removed but our injected suggestion block is still there → clear it.
-    const needsClear = labelIdx !== -1 && !startsWithHash;
-
+    // Drive live updates only while composing the trigger, or to clear a leftover
+    // suggestion block once '#' is gone — never inside a normal multi-line prompt
+    // (that would move the caret). See classifyTriggerField.
+    const { composingTrigger, needsClear, prefix } = classifyTriggerField(fieldText(el));
     if (!composingTrigger && !needsClear) return;
-
-    // While composing, pass the current suffix as prefix ('' shows all). When
-    // clearing, pass null to remove the leftover suggestion lines.
-    const prefix = composingTrigger ? firstLine.slice(1) : null;
 
     clearTimeout(_suggTimer);
     _suggTimer = setTimeout(async () => {
@@ -212,4 +225,9 @@
       } catch (_) {}
     }, 80);
   }, true);
+
+  // Exposed for unit tests (Node only; `module` is undefined in the content script).
+  if (typeof module !== 'undefined') {
+    module.exports = { classifyTriggerField, parseSuggestionNames, SUGG_LINE_RE, LABEL_RE };
+  }
 })();
