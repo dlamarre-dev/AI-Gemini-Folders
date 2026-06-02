@@ -19,7 +19,7 @@ MARKETING_DIR = "Marketing"
 EXTENSION_CONFIG = {
     "gemini-folders": {
         "firefox_gecko_id":   "geminifolders@dlamarre-dev.github.io",
-        "firefox_only_files": ["import.html", "import.js"],
+        "firefox_only_files": ["import.html", "import.js", "import.css"],
         "zip_prefix":         "gemini-folders",
         "display_name":       "Gemini Folders",
         # Marketing dir: check Marketing/gemini-folders/ first, fall back to Marketing/
@@ -31,7 +31,7 @@ EXTENSION_CONFIG = {
     },
     "ai-folders": {
         "firefox_gecko_id":   "aifolders@dlamarre-dev.github.io",
-        "firefox_only_files": ["import.html", "import.js"],
+        "firefox_only_files": ["import.html", "import.js", "import.css"],
         "zip_prefix":         "ai-folders",
         "display_name":       "AI Folders",
         "marketing_subdir":   "ai-folders",
@@ -387,10 +387,15 @@ def main():
         print(f"❌ Shared source directory '{SRC_DIR}/' not found.")
         sys.exit(1)
 
+    # Filter out targets without a manifest. Build a new list rather than calling
+    # targets.remove() while iterating, which skips elements as the list shifts.
+    valid_targets = []
     for ext in targets:
-        if not os.path.exists(manifest_path(ext)):
+        if os.path.exists(manifest_path(ext)):
+            valid_targets.append(ext)
+        else:
             print(f"❌ extensions/{ext}/manifest.json not found — skipping.")
-            targets.remove(ext)
+    targets = valid_targets
 
     if not targets:
         sys.exit(1)

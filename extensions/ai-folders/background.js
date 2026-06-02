@@ -69,7 +69,18 @@ async function getUrlPatterns() {
   }
 }
 
+// Serialize rebuilds: removeAll + create runs across async callbacks, so two
+// overlapping calls (onInstalled + onStartup, or several storage-change events
+// from one save) would each recreate the same ids and throw "duplicate id".
+// While a rebuild is in flight, extra requests are coalesced into a single
+// follow-up run once the current one finishes.
+let isUpdatingMenu = false;
+let menuUpdateQueued = false;
+
 async function updateContextMenu() {
+  if (isUpdatingMenu) { menuUpdateQueued = true; return; }
+  isUpdatingMenu = true;
+
   const patterns = await getUrlPatterns();
   chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({
@@ -90,22 +101,25 @@ async function updateContextMenu() {
           contexts: ["page"],
           enabled: false
         });
-        return;
+      } else {
+        folderNames.sort().forEach(folder => {
+          const match = folder.match(EMOJI_PREFIX_REGEX);
+          const menuTitle = match
+            ? `${match[1]} ${folder.replace(EMOJI_PREFIX_REGEX, '')}`
+            : `📁 ${folder}`;
+
+          chrome.contextMenus.create({
+            id: `folder_${folder}`,
+            parentId: "ai-folders-parent",
+            title: menuTitle,
+            contexts: ["page"]
+          });
+        });
       }
 
-      folderNames.sort().forEach(folder => {
-        const match = folder.match(EMOJI_PREFIX_REGEX);
-        const menuTitle = match
-          ? `${match[1]} ${folder.replace(EMOJI_PREFIX_REGEX, '')}`
-          : `📁 ${folder}`;
-
-        chrome.contextMenus.create({
-          id: `folder_${folder}`,
-          parentId: "ai-folders-parent",
-          title: menuTitle,
-          contexts: ["page"]
-        });
-      });
+      // Done — run one more time if requests arrived during this rebuild.
+      isUpdatingMenu = false;
+      if (menuUpdateQueued) { menuUpdateQueued = false; updateContextMenu(); }
     });
   });
 }

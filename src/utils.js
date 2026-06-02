@@ -13,6 +13,11 @@ const EMOJI_PREFIX_REGEX = /^((?:\p{Emoji_Presentation}|\p{Extended_Pictographic
 // the browser propagate the deletion before new nodes are created.
 const BOOKMARK_PROPAGATION_DELAY = 50;
 
+// Storage keys that hold the actual user content (folders/prompts). They are
+// handled specially (compressed + chunked) and must NOT be passed through as
+// plain key/value pairs alongside settings like sortPref/openFolders.
+const DATA_KEYS = ['folders', 'foldersDataCompressed', 'prompts', 'promptsDataCompressed'];
+
 // ---------------------------------------------------------------------------
 // Storage chunk helpers
 // ---------------------------------------------------------------------------
@@ -81,7 +86,7 @@ function loadData(defaults, callback) {
 
       if (combinedResult) {
         for (let key in combinedResult) {
-          if (key !== 'folders' && key !== 'foldersDataCompressed' && key !== 'prompts' && key !== 'promptsDataCompressed') {
+          if (!DATA_KEYS.includes(key)) {
             finalData[key] = syncResult[key] !== undefined ? syncResult[key] : localResult[key];
           }
         }
@@ -148,10 +153,15 @@ function saveData(dataToSave, callback) {
 
     // Pass through all non-data keys (sortPref, openFolders, pinnedFolders, etc.) to sync as-is.
     for (const [k, v] of Object.entries(dataToSave)) {
-      if (!['folders', 'foldersDataCompressed', 'prompts', 'promptsDataCompressed'].includes(k)) {
+      if (!DATA_KEYS.includes(k)) {
         syncToSet[k] = v;
       }
     }
+
+    // Only an actual content write (a conversation or prompt) counts toward the
+    // usage stats that drive the review prompt — not UI-state writes like
+    // open/closed folders, sort preference, or sync toggles.
+    const isContentSave = !!(dataToSave.folders || dataToSave.prompts);
 
     // --- Folders → sync, split into chunks to stay under kQuotaBytesPerItem (8 192 B) ---
     if (dataToSave.folders) {
@@ -195,7 +205,7 @@ function saveData(dataToSave, callback) {
         }
         // Sync succeeded — now safe to remove the local backup of prompts that moved to sync.
         if (localCleanupAfterSync.length > 0) chrome.storage.local.remove(localCleanupAfterSync);
-        finishSave(callback, null);
+        finishSave(callback, null, isContentSave);
       });
     };
 
@@ -219,8 +229,11 @@ function saveData(dataToSave, callback) {
 }
 
 // err is null on success or an error message string on failure.
+// countSave: when true (default), increment the saved-content counter that gates
+// the review prompt. Callers pass false for pure UI-state writes so toggling a
+// folder open or changing the sort order doesn't inflate the count.
 // Callers that don't check the param continue to work unchanged.
-function finishSave(callback, err = null) {
+function finishSave(callback, err = null, countSave = true) {
   chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref'], (syncData) => {
     if (syncData.syncBookmarksEnabled) {
       loadData({ folders: {} }, (data) => {
@@ -229,11 +242,13 @@ function finishSave(callback, err = null) {
     }
   });
 
-  chrome.storage.local.get(['usageStats'], (data) => {
-    let stats = data.usageStats || { saves: 0, opens: 0 };
-    stats.saves += 1;
-    chrome.storage.local.set({ usageStats: stats });
-  });
+  if (countSave) {
+    chrome.storage.local.get(['usageStats'], (data) => {
+      let stats = data.usageStats || { saves: 0, opens: 0 };
+      stats.saves += 1;
+      chrome.storage.local.set({ usageStats: stats });
+    });
+  }
 
   if (callback) callback(err);
 }
@@ -331,9 +346,22 @@ function normalizeUrl(rawUrl) {
   }
 }
 
+// Normalizes an imported prompt value to { text, ... }, or returns null if it
+// carries no usable text. Accepts the legacy plain-string shape and the current
+// object shape; anything else (numbers, arrays, missing text) is rejected.
+function normalizePromptData(promptData) {
+  if (typeof promptData === 'string') return { text: promptData };
+  if (promptData && typeof promptData === 'object' && !Array.isArray(promptData)
+      && typeof promptData.text === 'string') {
+    return { ...promptData, text: promptData.text };
+  }
+  return null;
+}
+
 function mergeImportData(importedData) {
   return new Promise((resolve, reject) => {
-    if (typeof importedData !== 'object' || importedData === null) {
+    // A backup is always a plain object; reject null, primitives, and arrays.
+    if (typeof importedData !== 'object' || importedData === null || Array.isArray(importedData)) {
       return reject(new Error("Invalid Format"));
     }
 
@@ -342,28 +370,38 @@ function mergeImportData(importedData) {
       let currentPinned = data.pinnedFolders || [];
       let currentPrompts = data.prompts || {};
 
+      const isPlainObject = (v) => v && typeof v === 'object' && !Array.isArray(v);
+
       // --- BACKWARD COMPATIBILITY MANAGEMENT ---
+      // Current format wraps content in { folders, pinnedFolders, prompts };
+      // the legacy format is a flat { folderName: chats[] } object.
       let foldersToImport = {};
       let pinsToImport = [];
       let promptsToImport = {};
 
-      if (importedData.folders) {
+      if (isPlainObject(importedData.folders)) {
         foldersToImport = importedData.folders;
         if (Array.isArray(importedData.pinnedFolders)) {
           pinsToImport = importedData.pinnedFolders;
         }
-        if (importedData.prompts) {
+        if (isPlainObject(importedData.prompts)) {
           promptsToImport = importedData.prompts;
         }
-      } else {
+      } else if (!('folders' in importedData) && !('prompts' in importedData)) {
+        // Legacy flat format: the object itself maps folder names to chat arrays.
         foldersToImport = importedData;
       }
 
-      // 1. Merge folders and conversations
+      // 1. Merge folders and conversations. Skip entries whose value isn't an
+      //    array of chats, and validate each chat's shape before storing it.
       for (const [folderName, chats] of Object.entries(foldersToImport)) {
+        if (typeof folderName !== 'string' || !Array.isArray(chats)) continue;
         if (!currentFolders[folderName]) currentFolders[folderName] = [];
         chats.forEach(importedChat => {
-          if (importedChat.title && importedChat.url && isSafeUrl(importedChat.url)) {
+          if (isPlainObject(importedChat)
+              && typeof importedChat.title === 'string'
+              && typeof importedChat.url === 'string'
+              && isSafeUrl(importedChat.url)) {
             const cleanTargetUrl = normalizeUrl(importedChat.url);
             const isDuplicate = currentFolders[folderName].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
             if (!isDuplicate) currentFolders[folderName].push(importedChat);
@@ -373,19 +411,22 @@ function mergeImportData(importedData) {
 
       // 2. Merge pins (without creating duplicates)
       pinsToImport.forEach(pin => {
-        if (!currentPinned.includes(pin) && currentFolders[pin]) {
+        if (typeof pin === 'string' && !currentPinned.includes(pin) && currentFolders[pin]) {
           currentPinned.push(pin);
         }
       });
 
       // 3. Merge prompts
       for (const [promptTitle, promptData] of Object.entries(promptsToImport)) {
+        if (typeof promptTitle !== 'string') continue;
+        const normalized = normalizePromptData(promptData);
+        if (!normalized) continue; // skip malformed prompt entries
         if (!currentPrompts[promptTitle]) {
-          currentPrompts[promptTitle] = promptData;
+          currentPrompts[promptTitle] = normalized;
         } else {
           // Title conflict: keep the existing prompt and suffix-import the incoming one to avoid silent data loss
-          if (currentPrompts[promptTitle].text !== promptData.text) {
-             currentPrompts[promptTitle + " (Imported)"] = promptData;
+          if (currentPrompts[promptTitle].text !== normalized.text) {
+             currentPrompts[promptTitle + " (Imported)"] = normalized;
           }
         }
       }
@@ -402,25 +443,13 @@ function mergeImportData(importedData) {
 // Prompt trigger helpers (used by background.js for #trigger + Space injection)
 // ---------------------------------------------------------------------------
 
-// Finds a saved prompt whose title matches triggerName (case-insensitive, leading emoji stripped).
-function findPromptByTrigger(prompts, triggerName) {
-  const EMOJI_RE = /^(?:\p{Emoji_Presentation}|\p{Extended_Pictographic})️?\s*/u;
-  const needle = triggerName.toLowerCase();
-  for (const [title, data] of Object.entries(prompts)) {
-    const stripped = title.replace(EMOJI_RE, '').trim().toLowerCase();
-    if (stripped === needle) return typeof data === 'string' ? data : (data.text || '');
-  }
-  return null;
-}
-
 // Returns all prompts whose stripped title starts with prefix (case-insensitive).
 // Each result: { name: stripped-title, text: prompt-body }
 function findPromptsByPrefix(prompts, prefix) {
-  const EMOJI_RE = /^(?:\p{Emoji_Presentation}|\p{Extended_Pictographic})️?\s*/u;
   const needle = prefix.toLowerCase();
   const results = [];
   for (const [title, data] of Object.entries(prompts)) {
-    const stripped = title.replace(EMOJI_RE, '').trim();
+    const stripped = title.replace(EMOJI_PREFIX_REGEX, '').trim();
     if (stripped.toLowerCase().startsWith(needle)) {
       results.push({ name: stripped, text: typeof data === 'string' ? data : (data.text || '') });
     }
@@ -635,7 +664,6 @@ if (typeof module !== 'undefined') {
     isSafeUrl,
     normalizeUrl,
     mergeImportData,
-    findPromptByTrigger,
     findPromptsByPrefix,
     injectPromptIntoEditor,
     insertSuggestionsInEditor,

@@ -1,12 +1,6 @@
-// popup.js
-function parseSVG(svgString) {
-  return new DOMParser().parseFromString(svgString, 'image/svg+xml').documentElement;
-}
-
-function autoResize(ta) {
-  ta.style.height = 'auto';
-  ta.style.height = Math.min(ta.scrollHeight, 200) + 'px';
-}
+// popup.js — Gemini Folders
+// parseSVG/autoResize and the whole prompt-library UI live in the shared
+// src/prompts.js (loaded before this file); popup.js wires the rest.
 
 document.addEventListener('DOMContentLoaded', async () => {
   const DELAY = {
@@ -51,9 +45,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('syncPromptsLabel').title = chrome.i18n.getMessage("syncPromptsTooltip") || "Sync prompts";
 
   const saveBtn = document.getElementById('saveBtn');
-  const exportBtn = document.getElementById('exportBtn');
-  const importBtn = document.getElementById('importBtn');
-  const importFile = document.getElementById('importFile');
   const folderNameInput = document.getElementById('folderName');
   const chatTitleInput = document.getElementById('chatTitle');
   const searchInput = document.getElementById('searchInput');
@@ -63,55 +54,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   const toggleAddPanelBtn = document.getElementById('toggleAddPanelBtn');
   const addConversationPanel = document.getElementById('addConversationPanel');
 
-  // --- Prompt Mode Logic ---
-  const modeFolderBtn = document.getElementById('modeFolderBtn');
-  const modePromptBtn = document.getElementById('modePromptBtn');
-  const modeTogglePill = document.querySelector('.mode-toggle-pill');
-  const folderModeContainer = document.getElementById('folderModeContainer');
-  const promptModeContainer = document.getElementById('promptModeContainer');
+  // --- Shared popup wiring: mode toggle, sort, mobile sync, export/import… (src/popup-core.js) ---
+  initPopupCommon({ exportFilename: 'gemini_folders_backup.json' });
 
-  let currentMode = 'folder';
-  const syncBookmarksLabel = document.getElementById('syncBookmarksLabel');
-  const syncPromptsLabel = document.getElementById('syncPromptsLabel');
-
-  function setMode(mode) {
-    currentMode = mode;
-    const isPrompt = mode === 'prompt';
-    folderModeContainer.style.display = isPrompt ? 'none' : 'block';
-    promptModeContainer.style.display = isPrompt ? 'block' : 'none';
-    if (syncBookmarksLabel) syncBookmarksLabel.style.display = isPrompt ? 'none' : 'flex';
-    if (syncPromptsLabel) syncPromptsLabel.style.display = isPrompt ? 'flex' : 'none';
-    modeTogglePill.classList.toggle('is-prompt', isPrompt);
-    modeFolderBtn.classList.toggle('mode-toggle-btn--active', !isPrompt);
-    modePromptBtn.classList.toggle('mode-toggle-btn--active', isPrompt);
-    if (isPrompt) displayPrompts();
-    chrome.storage.local.set({ lastMode: mode });
-  }
-
-  chrome.storage.local.get(['lastMode'], (data) => {
-    if (data.lastMode === 'prompt') {
-      const toggleEls = [modeTogglePill, modeFolderBtn, modePromptBtn];
-      toggleEls.forEach(el => el.style.transition = 'none');
-      setMode('prompt');
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          toggleEls.forEach(el => el.style.transition = '');
-        });
-      });
-    }
-  });
-
-  modeFolderBtn.addEventListener('click', () => { if (currentMode !== 'folder') setMode('folder'); });
-  modePromptBtn.addEventListener('click', () => { if (currentMode !== 'prompt') setMode('prompt'); });
-
-  const promptTitleInput = document.getElementById('promptTitle');
-  const promptTextInput = document.getElementById('promptText');
-  const savePromptBtn = document.getElementById('savePromptBtn');
   const newGeminiConvBtn = document.getElementById('newGeminiConvBtn');
   const gemBtn = document.getElementById('gemBtn');
-  const syncPromptsToggle = document.getElementById('syncPromptsToggle');
-  const promptListDiv = document.getElementById('promptList');
-  const promptStatusDiv = document.getElementById('promptStatus');
 
   let useGemEnabled = false;
   let currentGemLink = '';
@@ -144,8 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
   }
 
-  chrome.storage.sync.get(['syncPromptsEnabled', 'gemLink', 'useGemEnabled'], (data) => {
-    syncPromptsToggle.checked = !!data.syncPromptsEnabled;
+  chrome.storage.sync.get(['gemLink', 'useGemEnabled'], (data) => {
     useGemEnabled = !!data.useGemEnabled;
     currentGemLink = data.gemLink || '';
     updateGemBtn();
@@ -179,78 +125,56 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
   });
 
-  syncPromptsToggle.addEventListener('change', (e) => {
-      const isEnabled = e.target.checked;
-      loadData({ prompts: {} }, (data) => {
-          saveData({ prompts: data.prompts, syncPromptsEnabled: isEnabled }, (err) => {
-              if (err) {
-                  syncPromptsToggle.checked = !isEnabled; // revert toggle
-                  window.showCustomModal({
-                      title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.',
-                      type: 'alert'
-                  });
-                  return;
-              }
-              setTimeout(() => {
-                  chrome.storage.sync.get(['syncPromptsEnabled'], (res) => {
-                      syncPromptsToggle.checked = !!res.syncPromptsEnabled;
-                  });
-              }, DELAY.SYNC);
-          });
+  // --- Prompt Mode UI (shared: src/prompts.js) ---
+  initPromptsUI();
+
+  // Site-specific insert: route a saved prompt into the active Gemini editor.
+  // Returns true on success; shows its own modal on failure. Used by the shared
+  // prompt list's insert (▶) button via window.insertPromptIntoActiveTab.
+  window.insertPromptIntoActiveTab = async function (promptText) {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (!tab || !tab.url || !tab.url.includes('gemini.google.com')) {
+      window.showCustomModal({
+        title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
+        type: 'alert'
       });
-  });
-
-  let isSavingPrompt = false;
-  savePromptBtn.addEventListener('click', async () => {
-      if (isSavingPrompt) return;
-      isSavingPrompt = true;
-
-      const title = promptTitleInput.value.trim() || 'Untitled Prompt';
-      const text = promptTextInput.value.trim();
-      if (!text) {
-         promptStatusDiv.textContent = chrome.i18n.getMessage("promptCannotBeEmpty") || 'Prompt cannot be empty!';
-         promptStatusDiv.style.color = 'red';
-         promptStatusDiv.style.display = 'block';
-         setTimeout(() => promptStatusDiv.style.display = 'none', 2000);
-         isSavingPrompt = false;
-         return;
+      return false;
+    }
+    const results = await chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      args: [promptText],
+      func: (promptText) => {
+        const editor =
+          document.querySelector('rich-textarea .ql-editor') ||
+          document.querySelector('[contenteditable="true"].ql-editor');
+        if (!editor) return false;
+        editor.focus();
+        const sel = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(editor);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        const contentBefore = editor.textContent;
+        editor.dispatchEvent(new InputEvent('beforeinput', {
+          bubbles: true,
+          cancelable: true,
+          inputType: 'insertText',
+          data: promptText
+        }));
+        // Fall back to execCommand if InputEvent wasn't handled
+        if (editor.textContent === contentBefore) {
+          document.execCommand('insertText', false, promptText);
+        }
+        return true;
       }
-
-      loadData({ prompts: {} }, async (data) => {
-          if (data.prompts[title]) {
-              const confirmed = await window.showCustomModal({
-                  title: chrome.i18n.getMessage("promptDuplicateWarning") || "A prompt with this title already exists. Overwrite?",
-                  type: 'confirm'
-              });
-              if (!confirmed) {
-                  isSavingPrompt = false;
-                  return;
-              }
-          }
-          data.prompts[title] = { text: text, timestamp: Date.now() };
-          saveData({ prompts: data.prompts }, (err) => {
-              isSavingPrompt = false;
-              if (err) {
-                  promptStatusDiv.textContent = chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.';
-                  promptStatusDiv.style.color = 'red';
-                  promptStatusDiv.style.display = 'block';
-                  setTimeout(() => promptStatusDiv.style.display = 'none', 4000);
-                  return;
-              }
-              promptTitleInput.value = '';
-              promptTextInput.value = '';
-              promptStatusDiv.textContent = chrome.i18n.getMessage("promptSaved") || 'Prompt saved!';
-              promptStatusDiv.style.color = '#1e8e3e';
-              promptStatusDiv.style.display = 'block';
-              if (addPromptPanel) {
-                  addPromptPanel.style.display = 'none';
-                  if (toggleAddPromptPanelBtn) toggleAddPromptPanelBtn.textContent = "➕ " + (chrome.i18n.getMessage("promptAddBtn") || "Add Prompt");
-              }
-              setTimeout(() => promptStatusDiv.style.display = 'none', 2000);
-              displayPrompts();
-          });
-      });
-  });
+    });
+    if (results?.[0]?.result) return true;
+    window.showCustomModal({
+      title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
+      type: 'alert'
+    });
+    return false;
+  };
 
   newGeminiConvBtn.addEventListener('click', () => {
       let url = 'https://gemini.google.com/app';
@@ -260,409 +184,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       chrome.tabs.create({ url: url });
   });
 
-  function buildPromptItem(title, p, openPrompts) {
-      const item = document.createElement('div');
-      item.className = 'prompt-item' + (p.pinned ? ' prompt-item--pinned' : '');
-      const header = document.createElement('div');
-      header.className = 'prompt-header';
-      const titleEl = document.createElement('div');
-      titleEl.className = 'prompt-title';
-      titleEl.textContent = title;
-      const actions = document.createElement('div');
-      actions.className = 'prompt-actions';
-
-              const pinBtn = document.createElement('button');
-              pinBtn.className = `action-btn pin-btn ${p.pinned ? 'is-pinned' : ''}`;
-              pinBtn.textContent = p.pinned ? '📌' : '📍';
-              pinBtn.title = chrome.i18n.getMessage(p.pinned ? "btnUnpin" : "btnPin") || (p.pinned ? 'Unpin' : 'Pin');
-              pinBtn.addEventListener('click', (e) => {
-                  e.stopPropagation();
-                  loadData({ prompts: {} }, (data) => {
-                      if (data.prompts[title]) {
-                          data.prompts[title].pinned = !data.prompts[title].pinned;
-                          saveData({ prompts: data.prompts }, () => displayPrompts());
-                      }
-                  });
-              });
-
-              const sendSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
-              const sendBtn = document.createElement('button');
-              sendBtn.className = 'action-btn prompt-insert-btn';
-              sendBtn.replaceChildren(parseSVG(sendSVG));
-              sendBtn.title = chrome.i18n.getMessage("promptInsertBtn") || 'Insert into Gemini';
-              sendBtn.addEventListener('click', async (e) => {
-                  e.stopPropagation();
-                  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-                  if (!tab || !tab.url || !tab.url.includes('gemini.google.com')) {
-                      window.showCustomModal({
-                          title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
-                          type: 'alert'
-                      });
-                      return;
-                  }
-                  const results = await chrome.scripting.executeScript({
-                      target: { tabId: tab.id },
-                      args: [textArea.value],
-                      func: (promptText) => {
-                          const editor =
-                              document.querySelector('rich-textarea .ql-editor') ||
-                              document.querySelector('[contenteditable="true"].ql-editor');
-                          if (!editor) return false;
-                          editor.focus();
-                          const sel = window.getSelection();
-                          const range = document.createRange();
-                          range.selectNodeContents(editor);
-                          sel.removeAllRanges();
-                          sel.addRange(range);
-                          const contentBefore = editor.textContent;
-                          editor.dispatchEvent(new InputEvent('beforeinput', {
-                              bubbles: true,
-                              cancelable: true,
-                              inputType: 'insertText',
-                              data: promptText
-                          }));
-                          // Fall back to execCommand if InputEvent wasn't handled
-                          if (editor.textContent === contentBefore) {
-                              document.execCommand('insertText', false, promptText);
-                          }
-                          return true;
-                      }
-                  });
-                  if (results?.[0]?.result) {
-                      sendBtn.textContent = '✅';
-                      setTimeout(() => { sendBtn.replaceChildren(parseSVG(sendSVG)); }, DELAY.ICON);
-                  } else {
-                      window.showCustomModal({
-                          title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
-                          type: 'alert'
-                      });
-                  }
-              });
-
-              const copySVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>`;
-              const copyBtn = document.createElement('button');
-              copyBtn.className = 'action-btn';
-              copyBtn.replaceChildren(parseSVG(copySVG));
-              copyBtn.title = chrome.i18n.getMessage("promptCopyTitle") || 'Copy';
-              copyBtn.addEventListener('click', (e) => {
-                  e.stopPropagation();
-                  navigator.clipboard.writeText(textArea.value);
-                  copyBtn.textContent = '✅';
-                  setTimeout(() => { copyBtn.replaceChildren(parseSVG(copySVG)); }, DELAY.ICON);
-              });
-
-              const renameBtn = document.createElement('button');
-              renameBtn.className = 'action-btn';
-              renameBtn.textContent = '✏️';
-              renameBtn.title = chrome.i18n.getMessage("btnRename") || 'Rename';
-              renameBtn.addEventListener('click', async (e) => {
-                  e.stopPropagation();
-                  const newTitle = await window.showCustomModal({
-                      title: chrome.i18n.getMessage("promptRenamePrompt") || "New prompt name:",
-                      type: 'prompt',
-                      defaultValue: title,
-                  });
-                  if (!newTitle || newTitle.trim() === '' || newTitle.trim() === title) return;
-                  const trimmed = newTitle.trim();
-                  loadData({ prompts: {}, openPrompts: [] }, (data) => {
-                      if (data.prompts[trimmed] && trimmed !== title) {
-                          window.showCustomModal({
-                              title: chrome.i18n.getMessage("promptDuplicateWarning") || "A prompt with this title already exists. Overwrite?",
-                              type: 'confirm',
-                          }).then(confirmed => {
-                              if (!confirmed) return;
-                              doRename(data, trimmed);
-                          });
-                      } else {
-                          doRename(data, trimmed);
-                      }
-                      function doRename(d, newName) {
-                          d.prompts[newName] = { ...d.prompts[title], timestamp: Date.now() };
-                          delete d.prompts[title];
-                          let open = d.openPrompts;
-                          const idx = open.indexOf(title);
-                          if (idx !== -1) { open[idx] = newName; }
-                          saveData({ prompts: d.prompts, openPrompts: open }, () => displayPrompts());
-                      }
-                  });
-              });
-
-              const deleteBtn = document.createElement('button');
-              deleteBtn.className = 'action-btn delete-btn';
-              deleteBtn.textContent = '🗑️';
-              deleteBtn.title = chrome.i18n.getMessage("promptDeleteTitle") || 'Delete';
-              deleteBtn.addEventListener('click', async (e) => {
-                  e.stopPropagation();
-                  const isSure = await window.showCustomModal({
-                      title: chrome.i18n.getMessage("confirmDeletePrompt") || "Delete this prompt?",
-                      type: 'confirm'
-                  });
-                  if (!isSure) return;
-                  loadData({ prompts: {} }, (data) => {
-                      delete data.prompts[title];
-                      saveData({ prompts: data.prompts }, () => {
-                          displayPrompts();
-                      });
-                  });
-              });
-
-              actions.appendChild(pinBtn);
-              actions.appendChild(sendBtn);
-              actions.appendChild(copyBtn);
-              actions.appendChild(renameBtn);
-              actions.appendChild(deleteBtn);
-              header.appendChild(titleEl);
-              header.appendChild(actions);
-
-              const textArea = document.createElement('textarea');
-              textArea.className = 'prompt-text-edit';
-              textArea.value = p.text;
-              textArea.setAttribute('writingsuggestions', 'false');
-              textArea.setAttribute('spellcheck', 'false');
-
-              let saveTimeout;
-              textArea.addEventListener('input', () => {
-                  autoResize(textArea);
-                  clearTimeout(saveTimeout);
-                  saveTimeout = setTimeout(() => {
-                      loadData({ prompts: {} }, (data) => {
-                          if (data.prompts[title]) {
-                              data.prompts[title].text = textArea.value;
-                              data.prompts[title].timestamp = Date.now();
-                              saveData({ prompts: data.prompts });
-                          }
-                      });
-                  }, DELAY.AUTOSAVE);
-              });
-
-              textArea.addEventListener('click', (e) => e.stopPropagation());
-
-              let isPromptOpen = openPrompts.includes(title);
-              textArea.style.display = isPromptOpen ? 'block' : 'none';
-
-              header.addEventListener('click', () => {
-                  const isCurrentlyOpen = textArea.style.display === 'block';
-                  textArea.style.display = isCurrentlyOpen ? 'none' : 'block';
-                  if (!isCurrentlyOpen) autoResize(textArea);
-
-                  loadData({ openPrompts: [] }, (storageData) => {
-                      let currentOpen = storageData.openPrompts;
-                      if (isCurrentlyOpen) {
-                          currentOpen = currentOpen.filter(name => name !== title);
-                      } else {
-                          if (!currentOpen.includes(title)) currentOpen.push(title);
-                      }
-                      saveData({ openPrompts: currentOpen });
-                  });
-              });
-
-      item.appendChild(header);
-      item.appendChild(textArea);
-      if (isPromptOpen) requestAnimationFrame(() => autoResize(textArea));
-      return item;
-  }
-
-  function displayPrompts() {
-      const searchQuery = (document.getElementById('promptSearchInput')?.value || '').toLowerCase().trim();
-      loadData({ prompts: {}, openPrompts: [], promptSortPref: 'dateDesc' }, (data) => {
-          promptListDiv.replaceChildren();
-          const { prompts, openPrompts, promptSortPref: sortPref } = data;
-          let titles = Object.keys(prompts);
-          if (searchQuery) {
-              titles = titles.filter(t =>
-                  t.toLowerCase().includes(searchQuery) ||
-                  (prompts[t].text || '').toLowerCase().includes(searchQuery)
-              );
-          }
-          titles.sort((a, b) => {
-              const aPinned = !!prompts[a].pinned;
-              const bPinned = !!prompts[b].pinned;
-              if (aPinned !== bPinned) return bPinned ? 1 : -1;
-              if (sortPref === 'alphaAsc') return a.localeCompare(b);
-              if (sortPref === 'dateAsc') return (prompts[a].timestamp || 0) - (prompts[b].timestamp || 0);
-              return (prompts[b].timestamp || 0) - (prompts[a].timestamp || 0);
-          });
-          if (titles.length === 0) {
-              const emptyMsg = Object.assign(document.createElement('div'), {
-                  style: 'text-align:center;color:var(--muted-text);font-size:13px;',
-                  textContent: chrome.i18n.getMessage("promptNoSavedYet") || 'No prompts saved yet.',
-              });
-              promptListDiv.replaceChildren(emptyMsg);
-              return;
-          }
-          let hasPinned = false, transitionDone = false;
-          titles.forEach(title => {
-              const p = prompts[title];
-              if (p.pinned) hasPinned = true;
-              if (!p.pinned && hasPinned && !transitionDone && !searchQuery) {
-                  promptListDiv.appendChild(Object.assign(document.createElement('hr'), { className: 'pin-divider' }));
-                  transitionDone = true;
-              }
-              promptListDiv.appendChild(buildPromptItem(title, p, openPrompts));
-          });
-      });
-  }
-
-  window.displayPrompts = displayPrompts;
-
-  // --- Prompt Search ---
-  document.getElementById('promptSearchInput').addEventListener('input', () => displayPrompts());
-
-  // --- Prompt Sort ---
-  const promptSortToggleBtn = document.getElementById('promptSortToggleBtn');
-  const promptSortMenu = document.getElementById('promptSortMenu');
-
-  promptSortToggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      promptSortMenu.classList.toggle('show');
-  });
-
-  loadData({ promptSortPref: 'dateDesc' }, (data) => {
-      const activeItem = document.querySelector(`#promptSortMenu .dropdown-item[data-value="${data.promptSortPref}"]`);
-      if (activeItem) activeItem.classList.add('active');
-  });
-
-  document.querySelectorAll('#promptSortMenu .dropdown-item').forEach(item => {
-      item.addEventListener('click', () => {
-          const value = item.getAttribute('data-value');
-          document.querySelectorAll('#promptSortMenu .dropdown-item').forEach(i => i.classList.remove('active'));
-          item.classList.add('active');
-          promptSortMenu.classList.remove('show');
-          saveData({ promptSortPref: value }, () => displayPrompts());
-      });
-  });
-
-  const toggleAddPromptPanelBtn = document.getElementById('toggleAddPromptPanelBtn');
-  const addPromptPanel = document.getElementById('addPromptPanel');
-  if (toggleAddPromptPanelBtn && addPromptPanel) {
-      toggleAddPromptPanelBtn.addEventListener('click', () => {
-          const isHidden = addPromptPanel.style.display === 'none';
-          addPromptPanel.style.display = isHidden ? 'block' : 'none';
-          toggleAddPromptPanelBtn.textContent = isHidden
-              ? "➖ " + (chrome.i18n.getMessage("btnCancel") || "Cancel")
-              : "➕ " + (chrome.i18n.getMessage("promptAddBtn") || "Add Prompt");
-      });
-  }
-
-  toggleAddPanelBtn.addEventListener('click', () => {
-    const isHidden = addConversationPanel.style.display === 'none';
-    addConversationPanel.style.display = isHidden ? 'block' : 'none';
-
-    // Change text and icon based on panel state
-    toggleAddPanelBtn.textContent = isHidden
-      ? "➖ " + chrome.i18n.getMessage("btnCancel")
-      : "➕ " + chrome.i18n.getMessage("btnToggleAdd");
-  });
-
-  newFolderBtn.addEventListener('click', async () => {
-    const name = await window.showCustomModal({
-        title: chrome.i18n.getMessage("promptNewFolder") || "New folder:",
-        type: 'prompt',
-        placeholder: chrome.i18n.getMessage("emojiTipPlaceholder") || "Tip: Start with an emoji! (Win+. or Cmd+Ctrl+Space)"
-    });
-    if (name && name.trim()) {
-      loadData({ folders: {} }, (data) => {
-        if (!data.folders[name.trim()]) {
-          data.folders[name.trim()] = [];
-          saveData({ folders: data.folders }, (err) => {
-            if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
-            if (window.displayFolders) window.displayFolders();
-          });
-        }
-      });
-    }
-  });
-
-  const sortToggleBtn = document.getElementById('sortToggleBtn');
-  const sortMenu = document.getElementById('sortMenu');
-  const sortItems = document.querySelectorAll('#sortMenu .dropdown-item');
-
-  // --- MOBILE SYNC (BOOKMARKS) ---
-  const syncBookmarksToggle = document.getElementById('syncBookmarksToggle');
-
-  syncBookmarksLabel.title = chrome.i18n.getMessage("syncBookmarksTooltip") || "Creates a synced folder in your Chrome bookmarks to access your conversations on your phone.";
-
-  // Load toggle state
-  chrome.storage.sync.get(['syncBookmarksEnabled'], (data) => {
-    syncBookmarksToggle.checked = !!data.syncBookmarksEnabled;
-  });
-
-  // When user clicks on toggle
-  syncBookmarksToggle.addEventListener('change', (e) => {
-    const isEnabled = e.target.checked;
-    chrome.storage.sync.set({ syncBookmarksEnabled: isEnabled }, () => {
-      if (isEnabled) {
-        // Immediate sync
-        loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateAsc' }, (fullData) => {
-          if (typeof syncToBookmarksTree === 'function') {
-            syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref);
-          }
-        });
-      } else {
-        // Clear bookmarks when user untoggles
-        const masterFolderName = chrome.i18n.getMessage("masterFolderName") || "Gemini Folders (Sync)";
-
-        chrome.bookmarks.search({ title: masterFolderName }, async (results) => {
-          for (const node of results) {
-            if (!node.url && node.title === masterFolderName) {
-              await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
-            }
-          }
-        });
-      }
-    });
-  });
-
-  const githubLink = document.getElementById('githubLink');
-  const manifestData = chrome.runtime.getManifest();
-  githubLink.title = `GitHub - v${manifestData.version}`;
-
-  // 1. Open/Close menu on click
-  sortToggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent click from propagating and closing the menu immediately
-    sortMenu.classList.toggle('show');
-  });
-
-  document.addEventListener('click', () => {
-    sortMenu.classList.remove('show');
-  });
-
-  loadData({ sortPref: 'dateAsc' }, (data) => {
-    const activeItem = document.querySelector(`#sortMenu .dropdown-item[data-value="${data.sortPref}"]`);
-    if (activeItem) activeItem.classList.add('active');
-  });
-
-  sortItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const selectedSort = item.getAttribute('data-value');
-
-      sortItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-
-      // Save and refresh while keeping open folders open
-      saveData({ sortPref: selectedSort }, () => {
-        let openFolders = [];
-        document.querySelectorAll('.folder').forEach(folder => {
-          const content = folder.querySelector('.folder-content');
-          if (content && content.style.display === 'block') {
-            openFolders.push(folder.querySelector('.folder-name').textContent);
-          }
-        });
-        if (window.displayFolders) window.displayFolders(openFolders, searchInput.value.toLowerCase());
-      });
-    });
-    
-    // Trigger a bookmark sync if the feature is enabled (runs once per sort item on init)
-    chrome.storage.sync.get(['syncBookmarksEnabled'], (syncData) => {
-      if (syncData.syncBookmarksEnabled) {
-        loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateAsc' }, (fullData) => {
-          if (typeof syncToBookmarksTree === 'function') {
-            syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref);
-          }
-        });
-      }
-    });
-  });
 
   // Smart title pre-filling
   let [currentTab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -681,14 +202,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Initialize display
-  if (window.displayFolders) window.displayFolders();
-
-  // Search listener
-  searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    if (window.displayFolders) window.displayFolders(null, searchTerm);
-  });
 
   // 1. Save
   let isSavingFolder = false;
@@ -744,70 +257,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // 2. Export (Updated to include pins)
-  exportBtn.addEventListener('click', async () => {
-      loadData({ folders: {}, pinnedFolders: [], prompts: {} }, async (data) => {
-        if (Object.keys(data.folders).length === 0 && Object.keys(data.prompts).length === 0) {
-          await window.showCustomModal({
-            title: chrome.i18n.getMessage("alertEmptyExport") || "Your folders and prompts are empty, nothing to export!",
-            type: 'alert'
-          });
-          return;
-        }
-      // Export the global "data" object containing both keys
-      const dataString = JSON.stringify(data, null, 2);
-      const blob = new Blob([dataString], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = "gemini_folders_backup.json";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    });
-  });
-
-  // 3. Import (Updated for backward compatibility)
-  importBtn.addEventListener('click', (e) => {
-    if (navigator.userAgent.includes("Firefox")) {
-        e.preventDefault();
-        chrome.tabs.create({ url: chrome.runtime.getURL("import.html") });
-    } else {
-        importFile.click();
-    }
-  });
-
-  importFile.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      try {
-        const importedData = JSON.parse(e.target.result);
-
-        await mergeImportData(importedData);
-
-        await window.showCustomModal({
-          title: chrome.i18n.getMessage("alertImportSuccess") || "Import successful! Your folders and prompts have been merged successfully.",
-          type: 'alert'
-        });
-        importFile.value = "";
-        if (window.displayFolders) window.displayFolders();
-        if (window.displayPrompts) window.displayPrompts();
-
-      } catch (error) {
-        console.error("Import error:", error);
-        await window.showCustomModal({
-          title: chrome.i18n.getMessage("alertImportError") || "Import error. Make sure it's a valid JSON file generated by this extension.",
-          type: 'alert'
-        });
-        importFile.value = "";
-      }
-    };
-    reader.readAsText(file);
-  });
 
   // --- AF PROMO BANNER ---
   const afPromoBanner = document.getElementById('afPromoBanner');

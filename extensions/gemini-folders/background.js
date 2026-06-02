@@ -6,8 +6,19 @@ if (typeof importScripts === 'function') {
 
 // --- CONTEXT MENU ---
 
+// Serialize rebuilds: removeAll + create runs across async callbacks, so two
+// overlapping calls (onInstalled + onStartup, or several storage-change events
+// from one save) would each recreate the same ids and throw "duplicate id".
+// While a rebuild is in flight, extra requests are coalesced into a single
+// follow-up run once the current one finishes.
+let isUpdatingMenu = false;
+let menuUpdateQueued = false;
+
 // 1. Rebuild the context menu from current folder data
 function updateContextMenu() {
+  if (isUpdatingMenu) { menuUpdateQueued = true; return; }
+  isUpdatingMenu = true;
+
   chrome.contextMenus.removeAll(() => {
     // Create the main parent menu with translation
     chrome.contextMenus.create({
@@ -29,30 +40,33 @@ function updateContextMenu() {
           contexts: ["page"],
           enabled: false
         });
-        return;
+      } else {
+        // Create a submenu for each folder
+        folderNames.sort().forEach(folder => {
+          const emojiRegex = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})\s*/u;
+          const match = folder.match(emojiRegex);
+
+          let menuTitle = folder;
+          if (match) {
+            const customIcon = match[1];
+            const displayName = folder.replace(emojiRegex, '');
+            menuTitle = `${customIcon} ${displayName}`;
+          } else {
+            menuTitle = `📁 ${folder}`;
+          }
+
+          chrome.contextMenus.create({
+            id: `folder_${folder}`,
+            parentId: "gemini-folders-parent",
+            title: menuTitle,
+            contexts: ["page"]
+          });
+        });
       }
 
-      // Create a submenu for each folder
-      folderNames.sort().forEach(folder => {
-        const emojiRegex = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})\s*/u;
-        const match = folder.match(emojiRegex);
-
-        let menuTitle = folder;
-        if (match) {
-          const customIcon = match[1];
-          const displayName = folder.replace(emojiRegex, '');
-          menuTitle = `${customIcon} ${displayName}`;
-        } else {
-          menuTitle = `📁 ${folder}`;
-        }
-
-        chrome.contextMenus.create({
-          id: `folder_${folder}`,
-          parentId: "gemini-folders-parent",
-          title: menuTitle,
-          contexts: ["page"]
-        });
-      });
+      // Done — run one more time if requests arrived during this rebuild.
+      isUpdatingMenu = false;
+      if (menuUpdateQueued) { menuUpdateQueued = false; updateContextMenu(); }
     });
   });
 }
@@ -66,6 +80,15 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
     updateContextMenu();
   }
 });
+
+// Injected into the active Gemini tab to show a transient confirmation toast.
+function showToast(msg, bgColor) {
+  const toast = document.createElement('div');
+  toast.textContent = msg;
+  toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:white; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
+  document.body.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2500);
+}
 
 // 3. Listen for menu clicks
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
@@ -99,6 +122,18 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
         });
 
         await new Promise(resolve => saveData({ folders: folders }, resolve));
+
+        await chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          args: [chrome.i18n.getMessage("toastSaved") || "✅ Saved!", "#1a73e8"],
+          func: showToast
+        });
+      } else {
+        await chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          args: [chrome.i18n.getMessage("toastAlreadySaved") || "⚠️ Already saved!", "#d93025"],
+          func: showToast
+        });
       }
     } catch (error) {
       console.error("Critical error during save through context menu:", error);
