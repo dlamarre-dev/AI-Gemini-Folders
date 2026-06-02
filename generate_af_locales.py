@@ -37,7 +37,7 @@ KEYS_TO_REMOVE = {
 AF = {
     "ar": {
         "extName":            "مجلدات AI",
-        "extDesc":            "نظّم محادثات الذكاء الاصطناعي في مجلدات مخصصة. يدعم Gemini وClaude وChatGPT وCopilot وDeepSeek وPerplexity.",
+        "extDesc":            "نظّم محادثات الذكاء الاصطناعي في مجلدات وأدِر مكتبة مطالبات شخصية. يعمل مع جميع مساعدي الذكاء الاصطناعي الرئيسيين.",
         "promptInsertBtn":    "أدرج في المحادثة",
         "promptAddBtn":       "مطالبة",
         "alertNotSupported":  "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Perplexity).",
@@ -54,7 +54,7 @@ AF = {
     },
     "bn": {
         "extName":            "AI ফোল্ডার",
-        "extDesc":            "আপনার AI কথোপকথনগুলো কাস্টম ফোল্ডারে সংগঠিত করুন। Gemini, Claude, ChatGPT, Copilot, DeepSeek এবং Perplexity সমর্থিত।",
+        "extDesc":            "আপনার AI কথোপকথন ফোল্ডারে সংগঠিত করুন এবং একটি ব্যক্তিগত প্রম্পট লাইব্রেরি পরিচালনা করুন। সমস্ত প্রধান AI সহকারীর সাথে কাজ করে।",
         "promptInsertBtn":    "চ্যাটে সন্নিবেশ করুন",
         "promptAddBtn":       "প্রম্পট",
         "alertNotSupported":  "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, বা Perplexity)।",
@@ -71,7 +71,7 @@ AF = {
     },
     "bg": {
         "extName":            "ИИ папки",
-        "extDesc":            "Организирайте AI разговорите си в персонализирани папки. Поддържа Gemini, Claude, ChatGPT, Copilot, DeepSeek и Perplexity.",
+        "extDesc":            "Организирайте AI разговорите си в папки и управлявайте лична библиотека с промптове. Работи с всички водещи AI асистенти.",
         "promptInsertBtn":    "Вмъкни в чата",
         "promptAddBtn":       "Промпт",
         "alertNotSupported":  "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek или Perplexity).",
@@ -88,7 +88,7 @@ AF = {
     },
     "ca": {
         "extName":            "Carpetes IA",
-        "extDesc":            "Organitzeu les vostres converses d'IA en carpetes personalitzades. Compatible amb Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity.",
+        "extDesc":            "Organitzeu les converses d'IA en carpetes i gestioneu una biblioteca de prompts. Compatible amb els principals assistents d'IA.",
         "promptInsertBtn":    "Insereix al xat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Utilitzeu aquesta extensió en un lloc d'IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek o Perplexity).",
@@ -105,7 +105,7 @@ AF = {
     },
     "cs": {
         "extName":            "AI složky",
-        "extDesc":            "Uspořádejte konverzace s AI do vlastních složek. Podporuje Gemini, Claude, ChatGPT, Copilot, DeepSeek a Perplexity.",
+        "extDesc":            "Uspořádejte konverzace s AI do složek a spravujte osobní knihovnu promptů. Funguje se všemi hlavními AI asistenty.",
         "promptInsertBtn":    "Vložit do chatu",
         "promptAddBtn":       "Výzva",
         "alertNotSupported":  "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek nebo Perplexity).",
@@ -122,7 +122,7 @@ AF = {
     },
     "da": {
         "extName":            "AI-mapper",
-        "extDesc":            "Organiser dine AI-samtaler i brugerdefinerede mapper. Understøtter Gemini, Claude, ChatGPT, Copilot, DeepSeek og Perplexity.",
+        "extDesc":            "Organiser dine AI-samtaler i mapper og administrer et personligt prompt-bibliotek. Virker med alle større AI-assistenter.",
         "promptInsertBtn":    "Indsæt i chatten",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek eller Perplexity).",
@@ -139,7 +139,7 @@ AF = {
     },
     "de": {
         "extName":            "KI-Ordner",
-        "extDesc":            "Organisieren Sie Ihre KI-Gespräche in benutzerdefinierten Ordnern. Unterstützt Gemini, Claude, ChatGPT, Copilot, DeepSeek und Perplexity.",
+        "extDesc":            "Organisieren Sie Ihre KI-Gespräche in Ordnern und verwalten Sie eine Prompt-Bibliothek. Für alle gängigen KI-Assistenten.",
         "promptInsertBtn":    "In Chat einfügen",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Bitte verwenden Sie diese Erweiterung auf einer unterstützten KI-Website (Gemini, Claude, ChatGPT, Copilot, DeepSeek oder Perplexity).",
@@ -156,7 +156,7 @@ AF = {
     },
     "el": {
         "extName":            "Φάκελοι ΤΝ",
-        "extDesc":            "Οργανώστε τις AI συνομιλίες σας σε προσαρμοσμένους φακέλους. Υποστηρίζει Gemini, Claude, ChatGPT, Copilot, DeepSeek και Perplexity.",
+        "extDesc":            "Οργανώστε τις AI συνομιλίες σε φακέλους και διαχειριστείτε μια βιβλιοθήκη προτροπών. Για όλους τους κύριους AI βοηθούς.",
         "promptInsertBtn":    "Εισαγωγή στη συνομιλία",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Χρησιμοποιήστε αυτήν την επέκταση σε υποστηριζόμενο AI ιστότοπο (Gemini, Claude, ChatGPT, Copilot, DeepSeek ή Perplexity).",
@@ -175,7 +175,7 @@ AF = {
     },
     "es": {
         "extName":            "Carpetas IA",
-        "extDesc":            "Organiza tus conversaciones con IA en carpetas personalizadas. Compatible con Gemini, Claude, ChatGPT, Copilot, DeepSeek y Perplexity.",
+        "extDesc":            "Organiza tus conversaciones con IA en carpetas y gestiona una biblioteca de prompts. Funciona con los principales asistentes de IA.",
         "promptInsertBtn":    "Insertar en el chat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Usa esta extensión en un sitio de IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek o Perplexity).",
@@ -192,7 +192,7 @@ AF = {
     },
     "et": {
         "extName":            "AI kaustad",
-        "extDesc":            "Korraldage oma AI-vestlused kohandatud kaustadesse. Toetab Gemini, Claude, ChatGPT, Copilot, DeepSeek ja Perplexity.",
+        "extDesc":            "Korraldage oma AI-vestlused kaustadesse ja hallake isiklikku viipade kogu. Töötab kõigi suuremate AI-assistentidega.",
         "promptInsertBtn":    "Lisa vestlusesse",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek või Perplexity).",
@@ -209,7 +209,7 @@ AF = {
     },
     "fi": {
         "extName":            "AI-kansiot",
-        "extDesc":            "Järjestä tekoälykeskustelusi mukautettuihin kansioihin. Tukee Geminiä, Claudea, ChatGPT:tä, Copilotia, DeepSeekiä ja Perplexityä.",
+        "extDesc":            "Järjestä tekoälykeskustelusi kansioihin ja hallitse omaa kehotekirjastoa. Toimii kaikkien suurten tekoälyavustajien kanssa.",
         "promptInsertBtn":    "Lisää chattiin",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek tai Perplexity).",
@@ -228,7 +228,7 @@ AF = {
     },
     "fr": {
         "extName":            "Dossiers IA",
-        "extDesc":            "Organisez vos conversations IA dans des dossiers personnalisés. Compatible avec Gemini, Claude, ChatGPT, Copilot, DeepSeek et Perplexity.",
+        "extDesc":            "Organisez vos conversations IA dans des dossiers et gérez une bibliothèque de prompts. Compatible avec les principaux assistants IA.",
         "promptInsertBtn":    "Insérer dans le chat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Veuillez utiliser cette extension sur un site IA pris en charge (Gemini, Claude, ChatGPT, Copilot, DeepSeek ou Perplexity).",
@@ -245,7 +245,7 @@ AF = {
     },
     "he": {
         "extName":            "תיקיות AI",
-        "extDesc":            "ארגן את שיחות הבינה המלאכותית שלך בתיקיות מותאמות אישית. תומך ב-Gemini, Claude, ChatGPT, Copilot, DeepSeek ו-Perplexity.",
+        "extDesc":            "ארגנו את שיחות הבינה המלאכותית בתיקיות ונהלו ספריית פרומפטים אישית. עובד עם כל עוזרי הבינה המלאכותית המובילים.",
         "promptInsertBtn":    "הכנס לשיחה",
         "promptAddBtn":       "פרומפט",
         "alertNotSupported":  "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek או Perplexity).",
@@ -262,7 +262,7 @@ AF = {
     },
     "hi": {
         "extName":            "AI फ़ोल्डर",
-        "extDesc":            "अपनी AI बातचीत को कस्टम फ़ोल्डर में व्यवस्थित करें। Gemini, Claude, ChatGPT, Copilot, DeepSeek और Perplexity को समर्थन करता है।",
+        "extDesc":            "अपनी AI बातचीत को फ़ोल्डर में व्यवस्थित करें और निजी प्रॉम्प्ट लाइब्रेरी प्रबंधित करें। सभी प्रमुख AI सहायकों के साथ काम करता है।",
         "promptInsertBtn":    "चैट में डालें",
         "promptAddBtn":       "प्रॉम्प्ट",
         "alertNotSupported":  "कृपया इस एक्सटेंशन को किसी समर्थित AI साइट पर उपयोग करें (Gemini, Claude, ChatGPT, Copilot, DeepSeek या Perplexity)।",
@@ -279,7 +279,7 @@ AF = {
     },
     "hr": {
         "extName":            "UI mape",
-        "extDesc":            "Organizirajte AI razgovore u prilagođene mape. Podržava Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity.",
+        "extDesc":            "Organizirajte AI razgovore u mape i upravljajte osobnom bibliotekom upita. Radi sa svim glavnim AI asistentima.",
         "promptInsertBtn":    "Umetni u chat",
         "promptAddBtn":       "Upit",
         "alertNotSupported":  "Koristite ovo proširenje na podržanoj AI stranici (Gemini, Claude, ChatGPT, Copilot, DeepSeek ili Perplexity).",
@@ -296,7 +296,7 @@ AF = {
     },
     "hu": {
         "extName":            "MI mappák",
-        "extDesc":            "Rendszerezze MI-beszélgetéseit egyéni mappákban. Támogatja a Gemini-t, Claude-ot, ChatGPT-t, Copilot-ot, DeepSeek-et és Perplexity-t.",
+        "extDesc":            "Rendszerezze MI-beszélgetéseit mappákba, és kezeljen egy személyes prompt-könyvtárat. Minden népszerű MI-asszisztenssel működik.",
         "promptInsertBtn":    "Beillesztés a chatbe",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek vagy Perplexity).",
@@ -315,7 +315,7 @@ AF = {
     },
     "id": {
         "extName":            "Folder AI",
-        "extDesc":            "Atur percakapan AI Anda ke dalam folder kustom. Mendukung Gemini, Claude, ChatGPT, Copilot, DeepSeek, dan Perplexity.",
+        "extDesc":            "Atur percakapan AI Anda ke dalam folder dan kelola pustaka prompt pribadi. Berfungsi dengan semua asisten AI utama.",
         "promptInsertBtn":    "Sisipkan ke obrolan",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, atau Perplexity).",
@@ -332,7 +332,7 @@ AF = {
     },
     "it": {
         "extName":            "Cartelle IA",
-        "extDesc":            "Organizza le tue conversazioni AI in cartelle personalizzate. Supporta Gemini, Claude, ChatGPT, Copilot, DeepSeek e Perplexity.",
+        "extDesc":            "Organizza le tue conversazioni AI in cartelle e gestisci una libreria di prompt. Funziona con i principali assistenti AI.",
         "promptInsertBtn":    "Inserisci nella chat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Usa questa estensione su un sito AI supportato (Gemini, Claude, ChatGPT, Copilot, DeepSeek o Perplexity).",
@@ -349,7 +349,7 @@ AF = {
     },
     "ja": {
         "extName":            "AI フォルダ",
-        "extDesc":            "AIとの会話をカスタムフォルダに整理できます。Gemini、Claude、ChatGPT、Copilot、DeepSeek、Perplexity に対応。",
+        "extDesc":            "AIとの会話をフォルダーで整理し、個人用のプロンプトライブラリを管理。主要なAIアシスタントに対応。",
         "promptInsertBtn":    "チャットに挿入",
         "promptAddBtn":       "プロンプト",
         "alertNotSupported":  "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、または Perplexity）でご使用ください。",
@@ -366,7 +366,7 @@ AF = {
     },
     "ko": {
         "extName":            "AI 폴더",
-        "extDesc":            "AI 대화를 맞춤 폴더에 정리하세요. Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity를 지원합니다.",
+        "extDesc":            "AI 대화를 폴더로 정리하고 개인 프롬프트 라이브러리를 관리하세요. 모든 주요 AI 어시스턴트를 지원합니다.",
         "promptInsertBtn":    "채팅에 삽입",
         "promptAddBtn":       "프롬프트",
         "alertNotSupported":  "지원되는 AI 사이트(Gemini, Claude, ChatGPT, Copilot, DeepSeek 또는 Perplexity)에서 이 확장 프로그램을 사용하세요.",
@@ -383,7 +383,7 @@ AF = {
     },
     "lt": {
         "extName":            "AI aplankai",
-        "extDesc":            "Tvarkykite AI pokalbius pasirinktiniuose aplankuose. Palaikoma Gemini, Claude, ChatGPT, Copilot, DeepSeek ir Perplexity.",
+        "extDesc":            "Tvarkykite AI pokalbius aplankuose ir valdykite asmeninę užklausų biblioteką. Veikia su visais pagrindiniais AI asistentais.",
         "promptInsertBtn":    "Įterpti į pokalbį",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek arba Perplexity).",
@@ -400,7 +400,7 @@ AF = {
     },
     "lv": {
         "extName":            "AI mapes",
-        "extDesc":            "Kārtojiet AI sarunas pielāgotās mapēs. Atbalsta Gemini, Claude, ChatGPT, Copilot, DeepSeek un Perplexity.",
+        "extDesc":            "Kārtojiet AI sarunas mapēs un pārvaldiet personīgu uzvedņu bibliotēku. Darbojas ar visiem galvenajiem AI asistentiem.",
         "promptInsertBtn":    "Ievietot tērzēšanā",
         "promptAddBtn":       "Uzvedne",
         "alertNotSupported":  "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek vai Perplexity).",
@@ -417,7 +417,7 @@ AF = {
     },
     "ms": {
         "extName":            "Folder AI",
-        "extDesc":            "Susun perbualan AI anda dalam folder tersuai. Menyokong Gemini, Claude, ChatGPT, Copilot, DeepSeek dan Perplexity.",
+        "extDesc":            "Susun perbualan AI anda dalam folder dan urus pustaka gesaan peribadi. Berfungsi dengan semua pembantu AI utama.",
         "promptInsertBtn":    "Sisipkan ke sembang",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot, DeepSeek atau Perplexity).",
@@ -434,7 +434,7 @@ AF = {
     },
     "nb": {
         "extName":            "AI-mapper",
-        "extDesc":            "Organiser AI-samtalene dine i egendefinerte mapper. Støtter Gemini, Claude, ChatGPT, Copilot, DeepSeek og Perplexity.",
+        "extDesc":            "Organiser AI-samtalene dine i mapper og administrer et personlig promptbibliotek. Fungerer med alle store AI-assistenter.",
         "promptInsertBtn":    "Sett inn i chat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Bruk denne utvidelsen på et støttet AI-nettsted (Gemini, Claude, ChatGPT, Copilot, DeepSeek eller Perplexity).",
@@ -451,7 +451,7 @@ AF = {
     },
     "nl": {
         "extName":            "AI-mappen",
-        "extDesc":            "Organiseer je AI-gesprekken in aangepaste mappen. Ondersteunt Gemini, Claude, ChatGPT, Copilot, DeepSeek en Perplexity.",
+        "extDesc":            "Organiseer je AI-gesprekken in mappen en beheer een persoonlijke promptbibliotheek. Werkt met alle grote AI-assistenten.",
         "promptInsertBtn":    "Invoegen in chat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Gebruik deze extensie op een ondersteunde AI-site (Gemini, Claude, ChatGPT, Copilot, DeepSeek of Perplexity).",
@@ -468,7 +468,7 @@ AF = {
     },
     "pl": {
         "extName":            "Foldery AI",
-        "extDesc":            "Organizuj rozmowy z AI w niestandardowych folderach. Obsługuje Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity.",
+        "extDesc":            "Porządkuj rozmowy z AI w folderach i zarządzaj osobistą biblioteką promptów. Działa ze wszystkimi głównymi asystentami AI.",
         "promptInsertBtn":    "Wstaw do czatu",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Używaj tego rozszerzenia na obsługiwanej stronie AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek lub Perplexity).",
@@ -485,7 +485,7 @@ AF = {
     },
     "pt_BR": {
         "extName":            "Pastas IA",
-        "extDesc":            "Organize suas conversas de IA em pastas personalizadas. Compatível com Gemini, Claude, ChatGPT, Copilot, DeepSeek e Perplexity.",
+        "extDesc":            "Organize suas conversas de IA em pastas e gerencie uma biblioteca de prompts. Compatível com os principais assistentes de IA.",
         "promptInsertBtn":    "Inserir no chat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Use esta extensão em um site de IA compatível (Gemini, Claude, ChatGPT, Copilot, DeepSeek ou Perplexity).",
@@ -502,7 +502,7 @@ AF = {
     },
     "pt_PT": {
         "extName":            "Pastas IA",
-        "extDesc":            "Organize as suas conversas de IA em pastas personalizadas. Compatível com Gemini, Claude, ChatGPT, Copilot, DeepSeek e Perplexity.",
+        "extDesc":            "Organize as suas conversas de IA em pastas e gira uma biblioteca de prompts. Compatível com os principais assistentes de IA.",
         "promptInsertBtn":    "Inserir no chat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Utilize esta extensão num site de IA suportado (Gemini, Claude, ChatGPT, Copilot, DeepSeek ou Perplexity).",
@@ -519,7 +519,7 @@ AF = {
     },
     "ro": {
         "extName":            "Dosare IA",
-        "extDesc":            "Organizați conversațiile AI în dosare personalizate. Suportă Gemini, Claude, ChatGPT, Copilot, DeepSeek și Perplexity.",
+        "extDesc":            "Organizați conversațiile AI în dosare și gestionați o bibliotecă de prompturi. Compatibil cu toți asistenții AI importanți.",
         "promptInsertBtn":    "Inserează în chat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek sau Perplexity).",
@@ -536,7 +536,7 @@ AF = {
     },
     "ru": {
         "extName":            "ИИ-папки",
-        "extDesc":            "Организуйте беседы с ИИ в пользовательских папках. Поддерживает Gemini, Claude, ChatGPT, Copilot, DeepSeek и Perplexity.",
+        "extDesc":            "Упорядочивайте беседы с ИИ по папкам и управляйте библиотекой промптов. Работает со всеми основными ИИ-ассистентами.",
         "promptInsertBtn":    "Вставить в чат",
         "promptAddBtn":       "Промпт",
         "alertNotSupported":  "Пожалуйста, используйте это расширение на поддерживаемом AI-сайте (Gemini, Claude, ChatGPT, Copilot, DeepSeek или Perplexity).",
@@ -553,7 +553,7 @@ AF = {
     },
     "sk": {
         "extName":            "AI priečinky",
-        "extDesc":            "Usporiadajte AI rozhovory do vlastných priečinkov. Podporuje Gemini, Claude, ChatGPT, Copilot, DeepSeek a Perplexity.",
+        "extDesc":            "Usporiadajte AI rozhovory do priečinkov a spravujte knižnicu promptov. Funguje so všetkými hlavnými AI asistentmi.",
         "promptInsertBtn":    "Vložiť do chatu",
         "promptAddBtn":       "Výzva",
         "alertNotSupported":  "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek alebo Perplexity).",
@@ -570,7 +570,7 @@ AF = {
     },
     "sl": {
         "extName":            "Mape AI",
-        "extDesc":            "Organizirajte pogovore z AI v mape po meri. Podpira Gemini, Claude, ChatGPT, Copilot, DeepSeek in Perplexity.",
+        "extDesc":            "Organizirajte pogovore z AI v mape in upravljajte osebno knjižnico pozivov. Deluje z vsemi glavnimi AI-pomočniki.",
         "promptInsertBtn":    "Vstavi v klepet",
         "promptAddBtn":       "Poziv",
         "alertNotSupported":  "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek ali Perplexity).",
@@ -587,7 +587,7 @@ AF = {
     },
     "sr": {
         "extName":            "VI fascikle",
-        "extDesc":            "Organizujte VI razgovore u prilagođene fascikle. Podržava Gemini, Claude, ChatGPT, Copilot, DeepSeek i Perplexity.",
+        "extDesc":            "Organizujte VI razgovore u fascikle i upravljajte ličnom bibliotekom upita. Radi sa svim glavnim VI asistentima.",
         "promptInsertBtn":    "Ubaci u razgovor",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek ili Perplexity).",
@@ -606,7 +606,7 @@ AF = {
     },
     "sv": {
         "extName":            "AI-mappar",
-        "extDesc":            "Organisera dina AI-konversationer i anpassade mappar. Stöder Gemini, Claude, ChatGPT, Copilot, DeepSeek och Perplexity.",
+        "extDesc":            "Organisera dina AI-konversationer i mappar och hantera ett personligt promptbibliotek. Fungerar med alla större AI-assistenter.",
         "promptInsertBtn":    "Infoga i chatten",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Använd den här utökningen på en AI-webbplats som stöds (Gemini, Claude, ChatGPT, Copilot, DeepSeek eller Perplexity).",
@@ -623,7 +623,7 @@ AF = {
     },
     "sw": {
         "extName":            "Folda za AI",
-        "extDesc":            "Panga mazungumzo yako ya AI katika folda za kibinafsi. Inasaidia Gemini, Claude, ChatGPT, Copilot, DeepSeek na Perplexity.",
+        "extDesc":            "Panga mazungumzo yako ya AI katika folda na udhibiti maktaba ya prompt ya kibinafsi. Hufanya kazi na wasaidizi wakuu wote wa AI.",
         "promptInsertBtn":    "Ingiza kwenye gumzo",
         "promptAddBtn":       "Kidokezo",
         "alertNotSupported":  "Tafadhali tumia kiendelezi hiki kwenye tovuti ya AI inayotumika (Gemini, Claude, ChatGPT, Copilot, DeepSeek, au Perplexity).",
@@ -640,7 +640,7 @@ AF = {
     },
     "th": {
         "extName":            "โฟลเดอร์ AI",
-        "extDesc":            "จัดระเบียบบทสนทนา AI ของคุณในโฟลเดอร์แบบกำหนดเอง รองรับ Gemini, Claude, ChatGPT, Copilot, DeepSeek และ Perplexity",
+        "extDesc":            "จัดระเบียบบทสนทนา AI ของคุณในโฟลเดอร์ และจัดการคลังพรอมต์ส่วนตัว รองรับผู้ช่วย AI หลักทั้งหมด",
         "promptInsertBtn":    "แทรกในแชท",
         "promptAddBtn":       "พรอมต์",
         "alertNotSupported":  "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek หรือ Perplexity)",
@@ -657,7 +657,7 @@ AF = {
     },
     "tl": {
         "extName":            "Mga AI Folder",
-        "extDesc":            "Ayusin ang iyong mga AI na pag-uusap sa mga custom na folder. Sinusuportahan ang Gemini, Claude, ChatGPT, Copilot, DeepSeek, at Perplexity.",
+        "extDesc":            "Ayusin ang mga AI na pag-uusap sa mga folder at pamahalaan ang personal na prompt library. Gumagana sa mga pangunahing AI assistant.",
         "promptInsertBtn":    "Ipasok sa chat",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Gamitin ang extension na ito sa isang sinusuportahang AI na site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, o Perplexity).",
@@ -674,7 +674,7 @@ AF = {
     },
     "tr": {
         "extName":            "YZ Klasörleri",
-        "extDesc":            "AI sohbetlerinizi özel klasörlerde düzenleyin. Gemini, Claude, ChatGPT, Copilot, DeepSeek ve Perplexity'yi destekler.",
+        "extDesc":            "AI sohbetlerinizi klasörlerde düzenleyin ve kişisel komut istemi kitaplığınızı yönetin. Tüm büyük AI asistanlarıyla çalışır.",
         "promptInsertBtn":    "Sohbete ekle",
         "promptAddBtn":       "İstem",
         "alertNotSupported":  "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot, DeepSeek veya Perplexity).",
@@ -691,7 +691,7 @@ AF = {
     },
     "uk": {
         "extName":            "Теки ШІ",
-        "extDesc":            "Організуйте розмови зі штучним інтелектом у власних теках. Підтримує Gemini, Claude, ChatGPT, Copilot, DeepSeek і Perplexity.",
+        "extDesc":            "Упорядковуйте розмови зі штучним інтелектом у теках і керуйте бібліотекою промптів. Працює з усіма основними ШІ-асистентами.",
         "promptInsertBtn":    "Вставити в чат",
         "promptAddBtn":       "Промпт",
         "alertNotSupported":  "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek або Perplexity).",
@@ -708,7 +708,7 @@ AF = {
     },
     "vi": {
         "extName":            "Thư mục AI",
-        "extDesc":            "Tổ chức các cuộc trò chuyện AI của bạn vào các thư mục tùy chỉnh. Hỗ trợ Gemini, Claude, ChatGPT, Copilot, DeepSeek và Perplexity.",
+        "extDesc":            "Sắp xếp các cuộc trò chuyện AI vào thư mục và quản lý thư viện lời nhắc cá nhân. Hoạt động với mọi trợ lý AI lớn.",
         "promptInsertBtn":    "Chèn vào cuộc trò chuyện",
         "promptAddBtn":       "Prompt",
         "alertNotSupported":  "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek hoặc Perplexity).",
@@ -725,7 +725,7 @@ AF = {
     },
     "zh_CN": {
         "extName":            "AI 文件夹",
-        "extDesc":            "将您的 AI 对话整理到自定义文件夹中。支持 Gemini、Claude、ChatGPT、Copilot、DeepSeek 和 Perplexity。",
+        "extDesc":            "将您的 AI 对话整理到文件夹，并管理个人提示词库。支持所有主流 AI 助手。",
         "promptInsertBtn":    "插入到对话",
         "promptAddBtn":       "提示词",
         "alertNotSupported":  "请在受支持的 AI 网站上使用此扩展程序（Gemini、Claude、ChatGPT、Copilot、DeepSeek 或 Perplexity）。",
@@ -742,7 +742,7 @@ AF = {
     },
     "zh_TW": {
         "extName":            "AI 資料夾",
-        "extDesc":            "將您的 AI 對話整理到自訂資料夾中。支援 Gemini、Claude、ChatGPT、Copilot、DeepSeek 和 Perplexity。",
+        "extDesc":            "將您的 AI 對話整理到資料夾，並管理個人提示詞庫。支援所有主流 AI 助手。",
         "promptInsertBtn":    "插入到對話",
         "promptAddBtn":       "提示詞",
         "alertNotSupported":  "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek 或 Perplexity）。",

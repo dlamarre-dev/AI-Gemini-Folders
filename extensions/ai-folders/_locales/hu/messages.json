@@ -3,7 +3,7 @@
     "message": "MI mappák"
   },
   "extDesc": {
-    "message": "Rendszerezze MI-beszélgetéseit egyéni mappákban. Támogatja a Gemini-t, Claude-ot, ChatGPT-t, Copilot-ot, DeepSeek-et és Perplexity-t."
+    "message": "Rendszerezze MI-beszélgetéseit mappákba, és kezeljen egy személyes prompt-könyvtárat. Minden népszerű MI-asszisztenssel működik."
   },
   "appTitle": {
     "message": "MI mappák"
