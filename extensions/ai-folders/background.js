@@ -61,9 +61,12 @@ async function getUrlPatterns() {
   const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
   if (!localLlmUrl) return SUPPORTED_URL_PATTERNS;
   try {
-    const { protocol, hostname, port } = new URL(localLlmUrl);
-    const portPart = port ? `:${port}` : '';
-    return [...SUPPORTED_URL_PATTERNS, `${protocol}//${hostname}${portPart}/*`];
+    const { protocol, hostname } = new URL(localLlmUrl);
+    // Match patterns must NOT include a port: Firefox rejects a port-bearing
+    // pattern outright, which silently drops the entire context menu (the local
+    // LLM runs on e.g. :3000). The port is ignored when matching anyway, so we
+    // match the host on any port. Chrome accepts this form too.
+    return [...SUPPORTED_URL_PATTERNS, `${protocol}//${hostname}/*`];
   } catch (_) {
     return SUPPORTED_URL_PATTERNS;
   }
