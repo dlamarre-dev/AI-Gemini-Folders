@@ -4,6 +4,14 @@ const {
   insertSuggestionsInEditor,
 } = require('../src/utils');
 
+// jsdom has no layout, so getBoundingClientRect returns zeros. Stub a rect big
+// enough to pass the composer heuristic's size filter, at a given vertical pos.
+function stubRect(el, bottom) {
+  el.getBoundingClientRect = () => ({
+    width: 400, height: 40, top: bottom - 40, bottom, left: 0, right: 400, x: 0, y: bottom - 40, toJSON() {},
+  });
+}
+
 describe('findPromptsByPrefix', () => {
   const prompts = {
     'Review': { text: 'review body' },
@@ -85,5 +93,46 @@ describe('insertSuggestionsInEditor (editor targeting)', () => {
     document.getElementById('other').focus();
     expect(insertSuggestionsInEditor(['review'], ['#main'], 'AI Folders')).toBe(false);
     expect(main.value).toBe('');
+  });
+});
+
+// Graceful degradation: when a site changes its DOM and the specific selectors
+// stop matching, the trigger should still target the main chat box heuristically
+// (the lowest sizeable text field) — without ever hijacking a different field.
+describe('editor targeting: heuristic fallback when selectors are stale', () => {
+  let warnSpy;
+  beforeEach(() => {
+    // The fallback intentionally console.warns (the stale-selector signal); mock
+    // it to keep the test output clean and assert below that it actually fires.
+    warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    document.body.innerHTML = '<textarea id="top"></textarea><textarea id="composer"></textarea>';
+    stubRect(document.getElementById('top'), 100);       // higher on the page
+    stubRect(document.getElementById('composer'), 600);  // lowest = the chat composer
+  });
+  afterEach(() => warnSpy.mockRestore());
+
+  test('focused composer + stale selectors -> still injects via fallback (and warns)', () => {
+    const composer = document.getElementById('composer');
+    composer.focus();
+    expect(injectPromptIntoEditor('hi', ['#does-not-exist'])).toBe(true);
+    expect(composer.value).toBe('hi');
+    expect(warnSpy).toHaveBeenCalled(); // stale-selector signal fired
+  });
+
+  test('no focus + stale selectors -> injects into the bottom-most composer (and warns)', () => {
+    expect(injectPromptIntoEditor('hi', ['#does-not-exist'])).toBe(true);
+    expect(document.getElementById('composer').value).toBe('hi');
+    expect(document.getElementById('top').value).toBe('');
+    expect(warnSpy).toHaveBeenCalled();
+  });
+
+  test('focused in a NON-composer field -> still no hijack, and does NOT warn', () => {
+    const top = document.getElementById('top'); // e.g. an "edit previous message" box, higher up
+    top.value = 'editing';
+    top.focus();
+    expect(injectPromptIntoEditor('hi', ['#does-not-exist'])).toBe(false);
+    expect(document.getElementById('composer').value).toBe(''); // composer untouched
+    expect(top.value).toBe('editing');                          // edit field untouched
+    expect(warnSpy).not.toHaveBeenCalled(); // no fallback used → no warning
   });
 });

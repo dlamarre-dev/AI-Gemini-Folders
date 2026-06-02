@@ -136,6 +136,15 @@ Both extensions are built with privacy in mind.
 
 ---
 
+## ⚠️ Known Limitations
+
+These follow from the extension reading each AI platform’s live page (no servers involved):
+
+* **Prompt trigger while editing a *previous* message:** Typing `#name` inside the box used to edit an earlier message injects in place on **DeepSeek, Perplexity and local LLMs**, but is a deliberate **no-op on ChatGPT, Gemini and Claude** (their composer selectors are specific, so an edit box isn’t recognized as the main input). It never affects the main composer. The trigger is designed for the main chat box. *(Copilot doesn’t allow editing a sent message, so it isn’t affected.)*
+* **Platform DOM changes:** Title detection, prompt injection and the `#` trigger depend on each site’s page structure. If a platform ships a redesign they can degrade. As a safety net the extension targets the main chat box **heuristically** (the lowest sizeable text field) when its specific selectors stop matching, and logs a `console.warn` (`[Folders extension] …`) when it has to. If you notice a site misbehaving, please open an issue — the fix is usually a one-line selector update in `site-config.js`.
+
+---
+
 ## 💻 Built With
 
 * HTML5 / CSS3
