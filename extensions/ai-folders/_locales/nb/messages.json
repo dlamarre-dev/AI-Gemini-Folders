@@ -3,7 +3,7 @@
     "message": "AI-mapper"
   },
   "extDesc": {
-    "message": "Organiser AI-samtalene dine i egendefinerte mapper. Støtter Gemini, Claude, ChatGPT, Copilot, DeepSeek og Perplexity."
+    "message": "Organiser AI-samtalene dine i mapper og administrer et personlig promptbibliotek. Fungerer med alle store AI-assistenter."
   },
   "appTitle": {
     "message": "AI-mapper"

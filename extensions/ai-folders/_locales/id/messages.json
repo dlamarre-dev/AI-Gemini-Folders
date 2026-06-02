@@ -3,7 +3,7 @@
     "message": "Folder AI"
   },
   "extDesc": {
-    "message": "Atur percakapan AI Anda ke dalam folder kustom. Mendukung Gemini, Claude, ChatGPT, Copilot, DeepSeek, dan Perplexity."
+    "message": "Atur percakapan AI Anda ke dalam folder dan kelola pustaka prompt pribadi. Berfungsi dengan semua asisten AI utama."
   },
   "appTitle": {
     "message": "Folder AI"

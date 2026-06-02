@@ -3,7 +3,7 @@
     "message": "AI 文件夹"
   },
   "extDesc": {
-    "message": "将您的 AI 对话整理到自定义文件夹中。支持 Gemini、Claude、ChatGPT、Copilot、DeepSeek 和 Perplexity。"
+    "message": "将您的 AI 对话整理到文件夹，并管理个人提示词库。支持所有主流 AI 助手。"
   },
   "appTitle": {
     "message": "AI 文件夹"
