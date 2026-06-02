@@ -426,6 +426,41 @@ describe('mergeImportData', () => {
     expect(syncArg?.pinnedFolders ?? []).toContain('Dev');
   });
 
+  test('rejects array input', async () => {
+    await expect(mergeImportData([])).rejects.toThrow('Invalid Format');
+  });
+
+  test('skips a folder whose value is not an array without throwing', async () => {
+    const importedData = {
+      folders: {
+        Bad: 'not-an-array',
+        Good: [{ title: 'Chat', url: 'https://gemini.google.com/app/x', timestamp: 1 }],
+      },
+    };
+    await expect(mergeImportData(importedData)).resolves.toBeUndefined();
+    const folders = savedFolders();
+    expect(folders.Bad).toBeUndefined();
+    expect(folders.Good).toHaveLength(1);
+  });
+
+  test('skips malformed prompt entries, keeping valid ones', async () => {
+    const importedData = {
+      folders: {},
+      prompts: {
+        Valid: { text: 'hello', timestamp: 1 },
+        Legacy: 'plain string prompt',
+        BadNumber: 42,
+        BadNoText: { timestamp: 1 },
+      },
+    };
+    await mergeImportData(importedData);
+    const prompts = savedPrompts();
+    expect(prompts.Valid.text).toBe('hello');
+    expect(prompts.Legacy.text).toBe('plain string prompt');
+    expect(prompts.BadNumber).toBeUndefined();
+    expect(prompts.BadNoText).toBeUndefined();
+  });
+
   test('suffixes conflicting prompt title instead of silently overwriting', async () => {
     const existingPrompts = { 'My Prompt': { text: 'Original', timestamp: 1 } };
     chrome.storage.local.get
