@@ -464,22 +464,35 @@ function findPromptsByPrefix(prompts, prefix) {
 // newFirstLine: optional override for line 1 (used by autocomplete to update the
 //   trigger while keeping the suggestion structure stable in one operation).
 function insertSuggestionsInEditor(suggestions, selectors, extensionLabel, newFirstLine) {
+  // Runs in the page MAIN world (serialized standalone) — keep self-contained.
   const active = document.activeElement;
   const activeEditable = !!active &&
     (active.isContentEditable || active.tagName === 'TEXTAREA' || active.tagName === 'INPUT');
+  // Heuristic fallback shared with injectPromptIntoEditor: lowest sizeable visible
+  // textarea/contenteditable, used only when the site's selectors match nothing.
+  // (No console.warn here — this runs on every keystroke; the warning lives in
+  // injectPromptIntoEditor to avoid log spam.)
+  const findComposer = () => {
+    const els = Array.from(document.querySelectorAll('textarea, [contenteditable=""], [contenteditable="true"]'))
+      .filter(el => {
+        if (el.getAttribute('contenteditable') === 'false') return false;
+        const r = el.getBoundingClientRect();
+        return r.width > 120 && r.height > 12;
+      });
+    if (!els.length) return null;
+    return els.reduce((lo, el) => el.getBoundingClientRect().bottom > lo.getBoundingClientRect().bottom ? el : lo);
+  };
   let editor = null;
   if (activeEditable) {
-    // The user is typing in an editable element — only act on it when it is a
-    // recognized main editor. Never redirect into a different field (e.g. when
-    // editing a previous message), which would steal the caret.
     for (const sel of selectors) {
       try { if (active.matches(sel)) { editor = active; break; } } catch (_) {}
     }
+    if (!editor && active === findComposer()) editor = active;
   } else {
-    // No editable element focused — fall back to the first matching editor.
     for (const sel of selectors) {
       try { const found = document.querySelector(sel); if (found) { editor = found; break; } } catch (_) {}
     }
+    if (!editor) editor = findComposer();
   }
   if (!editor) return false;
   editor.focus();
@@ -587,32 +600,53 @@ function insertSuggestionsInEditor(suggestions, selectors, extensionLabel, newFi
 // Returns true if the editor was found and the injection was attempted; false otherwise.
 //
 // Editor targeting & a known limitation: when the user is focused in an editable
-// element, we only act if THAT element matches `selectors` — we never redirect
-// into a different field (that would steal the caret). Consequence: while editing
-// a *previous* message, the #-trigger is a deliberate no-op on sites with
-// specific selectors (ChatGPT / Gemini / Claude), but still works in place on
-// sites whose selectors include generic fallbacks like 'textarea' /
-// '[contenteditable="true"]' (DeepSeek / Perplexity / local LLM). Both are
-// harmless — neither hijacks the main composer. Same guard in insertSuggestionsInEditor.
+// element, we act on it only if it matches `selectors` OR is the page's main
+// composer by heuristic — never a different field (that would steal the caret).
+// Consequence: while editing a *previous* message, the #-trigger is a no-op on
+// sites with specific selectors (ChatGPT / Gemini / Claude) but works in place on
+// sites with generic-fallback selectors (DeepSeek / Perplexity / local LLM). If a
+// site changes its DOM, the positional fallback keeps the main composer working
+// and logs a console warning. Both behaviours are harmless — neither hijacks the
+// main composer. Same targeting logic in insertSuggestionsInEditor.
 function injectPromptIntoEditor(promptText, selectors, forceClear) {
+  // Runs in the page MAIN world (serialized standalone) — keep self-contained.
   const active = document.activeElement;
   const activeEditable = !!active &&
     (active.isContentEditable || active.tagName === 'TEXTAREA' || active.tagName === 'INPUT');
+  // Heuristic fallback: the lowest sizeable visible textarea/contenteditable
+  // (chat composers sit at the bottom). Used ONLY when the site's own selectors
+  // match nothing, so a DOM redesign degrades gracefully instead of breaking.
+  const findComposer = () => {
+    const els = Array.from(document.querySelectorAll('textarea, [contenteditable=""], [contenteditable="true"]'))
+      .filter(el => {
+        if (el.getAttribute('contenteditable') === 'false') return false;
+        const r = el.getBoundingClientRect();
+        return r.width > 120 && r.height > 12;
+      });
+    if (!els.length) return null;
+    return els.reduce((lo, el) => el.getBoundingClientRect().bottom > lo.getBoundingClientRect().bottom ? el : lo);
+  };
   let editor = null;
+  let viaFallback = false;
   if (activeEditable) {
-    // The user is typing in an editable element — only act on it when it is a
-    // recognized main editor. Never redirect into a different field (e.g. when
-    // editing a previous message), which would steal the caret.
+    // Act on the focused element only when it's a recognized main editor — never
+    // a different field (e.g. editing a previous message), which would steal the caret.
     for (const sel of selectors) {
       try { if (active.matches(sel)) { editor = active; break; } } catch (_) {}
     }
+    // Selectors may be stale: still act on the focused field if it's the page's
+    // main composer (heuristic) — but never on a different field.
+    if (!editor && active === findComposer()) { editor = active; viaFallback = true; }
   } else {
-    // No editable element focused — fall back to the first matching editor.
     for (const sel of selectors) {
       try { const found = document.querySelector(sel); if (found) { editor = found; break; } } catch (_) {}
     }
+    if (!editor) { editor = findComposer(); viaFallback = !!editor; }
   }
   if (!editor) return false;
+  if (viaFallback) {
+    console.warn('[Folders extension] composer selectors matched nothing — used a positional fallback. The site DOM likely changed; selectors need updating.');
+  }
   editor.focus();
 
   if (editor.isContentEditable) {
