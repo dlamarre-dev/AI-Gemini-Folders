@@ -4,7 +4,6 @@ Organiser samtaler fra alle dine foretrukne AI-værktøjer i delte mapper, opbyg
 
 🌐 7 UNDERSTØTTEDE AI-TJENESTER
 
-AI-mapper integreres nativt med: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity og lokale LLM'er.
 Samtaler fra forskellige platforme kan dele præcis den samme mappe. Hver chat viser farven og logoet for sin egen tjeneste, så du altid ved, hvor den kommer fra.
 
 ✨ PROMPTVISNING

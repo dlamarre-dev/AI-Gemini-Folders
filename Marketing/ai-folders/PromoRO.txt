@@ -4,7 +4,6 @@ Organizați conversații din toate instrumentele dvs. AI preferate în dosare pa
 
 🌐 7 SERVICII IA ACCEPTATE
 
-Dosare IA se integrează nativ cu: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity și LLM-uri locale.
 Conversațiile de pe platforme diferite pot împărtăși exact același dosar. Fiecare conversație afișează culoarea și sigla serviciului său, astfel încât să știți întotdeauna de unde provine.
 
 ✨ MODUL PROMPTURI

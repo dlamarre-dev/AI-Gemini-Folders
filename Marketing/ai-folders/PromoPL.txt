@@ -4,7 +4,6 @@ Organizuj rozmowy ze wszystkich swoich ulubionych narzędzi AI w wspólnych fold
 
 🌐 7 OBSŁUGIWANYCH USŁUG AI
 
-Foldery AI integrują się natywnie z: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity i lokalnymi LLM.
 Rozmowy z różnych platform mogą znajdować się w tym samym folderze. Każdy czat wyświetla kolor i logo swojej usługi, dzięki czemu zawsze wiesz, skąd pochodzi.
 
 ✨ TRYB PROMPTÓW

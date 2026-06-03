@@ -4,7 +4,6 @@ Organizujte razgovore iz svih svojih omiljenih AI alata u deljene fascikle, izgr
 
 🌐 7 PODRŽANIH AI USLUGA
 
-VI fascikle se izvorno integriše sa: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity i lokalnim LLM-ovima.
 Razgovori sa različitih platformi mogu da dele potpuno istu fasciklu. Svaki čet prikazuje boju i logotip svoje usluge, tako da uvek znate odakle dolazi.
 
 ✨ MOD PROMPTOVA

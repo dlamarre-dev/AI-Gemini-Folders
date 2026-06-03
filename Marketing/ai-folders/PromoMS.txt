@@ -4,7 +4,6 @@ Susun perbualan dari semua alat AI kegemaran anda dalam folder berkongsi, bina p
 
 🌐 7 PERKHIDMATAN AI YANG DISOKONG
 
-Folder AI berintegrasi secara asli dengan: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity dan LLM tempatan.
 Perbualan daripada platform yang berbeza boleh berkongsi folder yang sama. Setiap sembang memaparkan warna dan logo perkhidmatannya, jadi anda sentiasa tahu dari mana ia datang.
 
 ✨ MOD PROMPT

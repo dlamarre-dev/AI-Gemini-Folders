@@ -4,7 +4,6 @@ Organizza conversazioni da tutti i tuoi strumenti AI preferiti in cartelle condi
 
 🌐 7 SERVIZI AI SUPPORTATI
 
-Cartelle IA si integra in modo nativo con: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity e LLM locali.
 Le conversazioni di piattaforme diverse possono condividere la stessa cartella. Ogni chat mostra il colore e il logo del suo servizio di origine, così sai sempre da dove proviene.
 
 ✨ MODALITÀ PROMPT

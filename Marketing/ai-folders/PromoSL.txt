@@ -4,7 +4,6 @@ Organizirajte pogovore iz vseh svojih najljubših AI-orodij v skupne mape, zgrad
 
 🌐 7 PODPRTIH STORITEV UI
 
-Mape AI se izvorno povezujejo z: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity in lokalnimi LLM-ji.
 Pogovori z različnih platform si lahko delijo popolnoma isto mapo. Vsak klepet prikazuje barvo in logotip svoje storitve, tako da vedno veste, od kod prihaja.
 
 ✨ NAČIN POZIVOV

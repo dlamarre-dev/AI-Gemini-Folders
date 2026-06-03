@@ -4,7 +4,6 @@ Tvarkykite visų mėgstamiausių AI įrankių pokalbius bendrose aplankuose, kur
 
 🌐 7 PALAIKOMOS DI PASLAUGOS
 
-AI aplankai natūraliai integruojasi su: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity ir vietiniais LLM.
 Pokalbiai iš skirtingų platformų gali būti tame pačiame aplanke. Kiekvienas pokalbis rodo savo paslaugos spalvą ir logotipą, todėl visada žinote, iš kur jis atsirado.
 
 ✨ PROMPTŲ REŽIMAS

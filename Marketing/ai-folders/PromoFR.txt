@@ -4,7 +4,6 @@ Organisez les conversations de tous vos outils IA favoris dans des dossiers part
 
 🌐 7 SERVICES IA PRIS EN CHARGE
 
-Dossiers IA s'intègre nativement avec : Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity et les LLM locaux.
 Les conversations de différentes plateformes peuvent partager le même dossier. Chaque discussion affiche la couleur et le logo de son service d'origine, pour que vous sachiez toujours d'où elle vient.
 
 ✨ MODE PROMPTS

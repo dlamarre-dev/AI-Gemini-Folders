@@ -4,7 +4,6 @@ Atur percakapan dari semua alat AI favorit Anda dalam folder bersama, bangun per
 
 🌐 7 LAYANAN AI YANG DIDUKUNG
 
-Folder AI terintegrasi secara native dengan: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity dan LLM lokal.
 Percakapan dari platform yang berbeda dapat berbagi folder yang sama persis. Setiap obrolan menampilkan warna dan logo layanannya, jadi Anda selalu tahu dari mana asalnya.
 
 ✨ MODE PROMPT

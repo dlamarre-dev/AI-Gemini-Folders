@@ -4,7 +4,6 @@ Kārtojiet sarunas no visiem saviem iecienītākajiem AI rīkiem koplietotās ma
 
 🌐 7 ATBALSTĪTI MI PAKALPOJUMI
 
-AI mapes dabiski integrējas ar: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity un vietējiem LLM.
 Sarunas no dažādām platformām var atrasties vienā un tajā pašā mapē. Katra saruna parāda sava pakalpojuma krāsu un logotipu, tāpēc jūs vienmēr zināt, no kurienes tā nāk.
 
 ✨ UZVEDŅU REŽĪMS
