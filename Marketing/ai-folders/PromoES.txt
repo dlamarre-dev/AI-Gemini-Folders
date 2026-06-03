@@ -4,7 +4,7 @@ Organiza conversaciones de todas tus herramientas de IA favoritas en carpetas co
 
 🌐 7 SERVICIOS DE IA COMPATIBLES
 
-Las conversaciones de diferentes plataformas pueden compartir la misma carpeta. Cada chat muestra el color y el logotipo de su servicio de origen, para que siempre sepas de dónde proviene.
+Carpetas IA se integra de forma nativa con todos los principales asistentes de chat de IA, así como con los LLM locales que ejecutas tú mismo. Las conversaciones de diferentes plataformas pueden compartir la misma carpeta. Cada chat muestra el color y el logotipo de su servicio de origen, para que siempre sepas de dónde proviene.
 
 ✨ MODO PROMPTS
 

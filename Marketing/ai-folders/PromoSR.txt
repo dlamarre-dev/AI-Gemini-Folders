@@ -4,7 +4,7 @@ Organizujte razgovore iz svih svojih omiljenih AI alata u deljene fascikle, izgr
 
 🌐 7 PODRŽANIH AI USLUGA
 
-Razgovori sa različitih platformi mogu da dele potpuno istu fasciklu. Svaki čet prikazuje boju i logotip svoje usluge, tako da uvek znate odakle dolazi.
+VI fascikle se izvorno integriše sa svim glavnim AI chat asistentima, kao i sa lokalnim LLM modelima koje sami pokrećete. Razgovori sa različitih platformi mogu da dele potpuno istu fasciklu. Svaki čet prikazuje boju i logotip svoje usluge, tako da uvek znate odakle dolazi.
 
 ✨ MOD PROMPTOVA
 

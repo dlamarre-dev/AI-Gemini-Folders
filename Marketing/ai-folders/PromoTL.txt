@@ -4,7 +4,7 @@ Ayusin ang mga pag-uusap mula sa lahat ng iyong mga paboritong AI tool sa mga ib
 
 🌐 7 SUPORTADONG AI SERVICE
 
-Ang mga pag-uusap mula sa iba't ibang platform ay maaaring magbahagi ng eksaktong parehong folder. Ang bawat chat ay nagpapakita ng kulay at logo ng serbisyo nito, kaya alam mo lagi kung saan ito nanggaling.
+Ang Mga AI Folder ay natively na nag-iintegrate sa lahat ng pangunahing AI chat assistant, at sa mga lokal na LLM na pinapatakbo mo mismo. Ang mga pag-uusap mula sa iba't ibang platform ay maaaring magbahagi ng eksaktong parehong folder. Ang bawat chat ay nagpapakita ng kulay at logo ng serbisyo nito, kaya alam mo lagi kung saan ito nanggaling.
 
 ✨ PROMPT MODE
 

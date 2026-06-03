@@ -4,7 +4,7 @@ Panga mazungumzo kutoka kwa zana zako zote unazozipenda za AI katika folda ziliz
 
 🌐 HUDUMA 7 ZA AI ZINAZOTUMIKA
 
-Mazungumzo kutoka kwa majukwaa tofauti yanaweza kushiriki folda ile ile. Kila mazungumzo huonyesha rangi na nembo ya huduma yake, hivyo unajua kila wakati yametoka wapi.
+Folda za AI huunganishwa kiasili na wasaidizi wakuu wote wa gumzo la AI, pamoja na LLM za ndani unazoendesha mwenyewe. Mazungumzo kutoka kwa majukwaa tofauti yanaweza kushiriki folda ile ile. Kila mazungumzo huonyesha rangi na nembo ya huduma yake, hivyo unajua kila wakati yametoka wapi.
 
 ✨ HALI YA KIDOKEZO
 

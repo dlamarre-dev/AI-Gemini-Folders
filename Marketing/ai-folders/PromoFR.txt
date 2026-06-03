@@ -4,7 +4,7 @@ Organisez les conversations de tous vos outils IA favoris dans des dossiers part
 
 🌐 7 SERVICES IA PRIS EN CHARGE
 
-Les conversations de différentes plateformes peuvent partager le même dossier. Chaque discussion affiche la couleur et le logo de son service d'origine, pour que vous sachiez toujours d'où elle vient.
+Dossiers IA s'intègre nativement avec tous les principaux assistants de chat IA, ainsi qu'avec les LLM locaux que vous exécutez vous-même. Les conversations de différentes plateformes peuvent partager le même dossier. Chaque discussion affiche la couleur et le logo de son service d'origine, pour que vous sachiez toujours d'où elle vient.
 
 ✨ MODE PROMPTS
 
