@@ -368,6 +368,40 @@ def build_extension(ext_name):
 # Entry point
 # ---------------------------------------------------------------------------
 
+def sync_diagnostics_config():
+    """Refresh the maintainer diagnostics tool's copy of AI Folders' site-config.js
+    so it always tests the current production selectors. No-op if either path is absent."""
+    src = os.path.join(EXTENSIONS_DIR, "ai-folders", "site-config.js")
+    dst_dir = os.path.join("tools", "site-diagnostics")
+    if os.path.isfile(src) and os.path.isdir(dst_dir):
+        shutil.copy2(src, os.path.join(dst_dir, "site-config.js"))
+        print("[sync] tools/site-diagnostics/site-config.js refreshed")
+
+
+
+def build_firefox_extension():
+    """
+    Copies site-diagnostics extension files for Firefox and replaces the manifest file.
+    """
+    src_dir = "tools/site-diagnostics"
+    dest_dir = "tools/site-diagnostics/firefox"
+
+    if os.path.exists(dest_dir):
+        shutil.rmtree(dest_dir)
+
+    dest_name = os.path.basename(dest_dir)
+    shutil.copytree(src_dir, dest_dir, ignore=shutil.ignore_patterns(dest_name))
+
+    manifest_default_path = os.path.join(dest_dir, "manifest.json")
+    manifest_ff_path = os.path.join(dest_dir, "manifestFF.json")
+
+    if os.path.exists(manifest_ff_path):
+        shutil.move(manifest_ff_path, manifest_default_path)
+        print("✅ manifest.json replaced for Firefox site-diagnostics.")
+    else:
+        print("⚠️ Warning : 'manifestFF.json' cannot be found in source folder.")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Build Gemini Folders / AI Folders extensions")
     parser.add_argument(
@@ -416,6 +450,9 @@ def main():
 
     for ext in targets:
         build_extension(ext)
+
+    sync_diagnostics_config()
+    build_firefox_extension()
 
     print("\n🎉 Build finished successfully!")
 
