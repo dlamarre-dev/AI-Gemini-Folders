@@ -7,6 +7,12 @@ import re
 import subprocess
 import argparse
 
+# Windows consoles default to cp1252 and crash on the emoji in our log lines.
+# Force UTF-8 on the streams so `python build.py` works without PYTHONUTF8=1.
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8")
+
 GREEN = "\033[32m"
 RESET = "\033[0m"
 

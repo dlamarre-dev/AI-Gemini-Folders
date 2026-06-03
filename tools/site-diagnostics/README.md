@@ -31,7 +31,11 @@ DOM with the **production** `editorSelectors`, then closes the tab. Per site:
    - Chrome: `chrome://extensions` → Developer mode → **Load unpacked** →
      select `tools/site-diagnostics/`.
    - Firefox: `about:debugging` → This Firefox → **Load Temporary Add-on** →
-     select `tools/site-diagnostics/manifest.json`.
+     select `tools/site-diagnostics/firefox/manifest.json`. The `firefox/`
+     copy carries the Firefox-specific manifest (event-page `background.scripts`
+     instead of Chrome's `service_worker`); run `python build.py` first to
+     (re)generate it. Loading the root folder's `manifest.json` in Firefox
+     would use the Chrome manifest and fail.
 3. Click the toolbar icon → a diagnostics page opens in a tab.
 4. Click **Run diagnostics**. A full run takes ~30–60 s (sites are opened one at
    a time and closed after probing).
