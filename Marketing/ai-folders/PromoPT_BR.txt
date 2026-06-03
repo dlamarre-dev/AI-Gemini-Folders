@@ -4,7 +4,7 @@ Organize conversas de todas as suas ferramentas de IA favoritas em pastas compar
 
 🌐 7 SERVIÇOS DE IA SUPORTADOS
 
-Conversas de plataformas diferentes podem compartilhar a mesma pasta. Cada chat exibe a cor e o logotipo do seu serviço de origem, para que você sempre saiba de onde ele veio.
+Pastas IA integra-se nativamente com todos os principais assistentes de chat de IA e com os LLMs locais que você mesmo executa. Conversas de plataformas diferentes podem compartilhar a mesma pasta. Cada chat exibe a cor e o logotipo do seu serviço de origem, para que você sempre saiba de onde ele veio.
 
 ✨ MODO PROMPTS
 

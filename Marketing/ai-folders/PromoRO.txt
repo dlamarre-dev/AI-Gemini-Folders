@@ -4,7 +4,7 @@ Organizați conversații din toate instrumentele dvs. AI preferate în dosare pa
 
 🌐 7 SERVICII IA ACCEPTATE
 
-Conversațiile de pe platforme diferite pot împărtăși exact același dosar. Fiecare conversație afișează culoarea și sigla serviciului său, astfel încât să știți întotdeauna de unde provine.
+Dosare IA se integrează nativ cu toți principalii asistenți de chat IA, precum și cu LLM-urile locale pe care le rulați chiar dumneavoastră. Conversațiile de pe platforme diferite pot împărtăși exact același dosar. Fiecare conversație afișează culoarea și sigla serviciului său, astfel încât să știți întotdeauna de unde provine.
 
 ✨ MODUL PROMPTURI
 

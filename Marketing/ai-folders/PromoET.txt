@@ -4,7 +4,7 @@ Korraldage kõigi oma lemmik-AI-tööriistade vestlused jagatud kaustadesse, loo
 
 🌐 7 TOETATUD TEHISINTELLEKTI TEENUST
 
-Eri platvormide vestlused võivad asuda täpselt samas kaustas. Iga vestlus kuvab oma teenuse värvi ja logo, nii et te teate alati, kust see pärineb.
+AI kaustad integreerub natiivselt kõigi peamiste AI-vestlusassistentidega ning kohalike LLM-idega, mida ise käitate. Eri platvormide vestlused võivad asuda täpselt samas kaustas. Iga vestlus kuvab oma teenuse värvi ja logo, nii et te teate alati, kust see pärineb.
 
 ✨ S – PROMPTI REŽIIM
 

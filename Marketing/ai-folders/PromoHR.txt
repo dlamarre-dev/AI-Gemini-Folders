@@ -4,7 +4,7 @@ Organiziraj razgovore iz svih tvojih omiljenih AI alata u dijeljene mape, izgrad
 
 🌐 7 PODRŽANIH AI USLUGA
 
-Razgovori s različitih platformi mogu dijeliti potpuno istu mapu. Svaki chat prikazuje boju i logotip svoje usluge, tako da uvijek znaš odakle dolazi.
+UI mape integrira se izvorno sa svim glavnim AI chat asistentima te s lokalnim LLM modelima koje sami pokrećete. Razgovori s različitih platformi mogu dijeliti potpuno istu mapu. Svaki chat prikazuje boju i logotip svoje usluge, tako da uvijek znaš odakle dolazi.
 
 ✨ NAČIN UPITA
 

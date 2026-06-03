@@ -4,7 +4,7 @@ Organisieren Sie Gespräche aller Ihrer bevorzugten KI-Tools in gemeinsamen Ordn
 
 🌐 7 UNTERSTÜTZTE KI-DIENSTE
 
-Gespräche von verschiedenen Plattformen können denselben Ordner teilen. Jeder Chat zeigt die Farbe und das Logo seines Dienstes an, sodass Sie immer wissen, woher er stammt.
+KI-Ordner integriert sich nativ mit allen großen KI-Chat-Assistenten sowie mit den lokalen LLMs, die Sie selbst betreiben. Gespräche von verschiedenen Plattformen können denselben Ordner teilen. Jeder Chat zeigt die Farbe und das Logo seines Dienstes an, sodass Sie immer wissen, woher er stammt.
 
 ✨ PROMPT-MODUS
 

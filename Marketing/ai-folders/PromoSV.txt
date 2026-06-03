@@ -4,7 +4,7 @@ Organisera konversationer från alla dina favorit-AI-verktyg i delade mappar, by
 
 🌐 7 AI-TJÄNSTER SOM STÖDS
 
-Konversationer från olika plattformar kan dela exakt samma mapp. Varje chatt visar färgen och logotypen för sin egen tjänst, så att du alltid vet varifrån den kommer.
+AI-mappar integrerar nativt med alla större AI-chattassistenter och med de lokala LLM:er du kör själv. Konversationer från olika plattformar kan dela exakt samma mapp. Varje chatt visar färgen och logotypen för sin egen tjänst, så att du alltid vet varifrån den kommer.
 
 ✨ PROMPTLÄGE
 

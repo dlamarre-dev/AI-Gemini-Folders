@@ -4,7 +4,7 @@ Tüm favori AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düz
 
 🌐 DESTEKLENEN 7 YZ HİZMETİ
 
-Farklı platformlardan gelen sohbetler tamamen aynı klasörü paylaşabilir. Her sohbet, kendi hizmetinin rengini ve logosunu gösterir, böylece nereden geldiğini her zaman bilirsiniz.
+YZ Klasörleri, tüm büyük yapay zeka sohbet asistanlarıyla ve kendi çalıştırdığınız yerel LLM'lerle yerel olarak entegre olur. Farklı platformlardan gelen sohbetler tamamen aynı klasörü paylaşabilir. Her sohbet, kendi hizmetinin rengini ve logosunu gösterir, böylece nereden geldiğini her zaman bilirsiniz.
 
 ✨ İSTEM MODU
 

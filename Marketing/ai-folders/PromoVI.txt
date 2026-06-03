@@ -4,7 +4,7 @@ Sắp xếp các cuộc trò chuyện từ tất cả các công cụ AI yêu th
 
 🌐 7 DỊCH VỤ AI ĐƯỢC HỖ TRỢ
 
-Các cuộc trò chuyện từ những nền tảng khác nhau có thể nằm chung trong cùng một thư mục. Mỗi cuộc trò chuyện hiển thị màu sắc và logo của dịch vụ của nó, vì vậy bạn luôn biết nó đến từ đâu.
+Thư mục AI tích hợp tự nhiên với tất cả các trợ lý trò chuyện AI hàng đầu, cùng các LLM cục bộ mà bạn tự chạy. Các cuộc trò chuyện từ những nền tảng khác nhau có thể nằm chung trong cùng một thư mục. Mỗi cuộc trò chuyện hiển thị màu sắc và logo của dịch vụ của nó, vì vậy bạn luôn biết nó đến từ đâu.
 
 ✨ CHẾ ĐỘ PROMPT
 

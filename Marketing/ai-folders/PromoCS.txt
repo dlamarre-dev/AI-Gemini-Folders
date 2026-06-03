@@ -4,7 +4,7 @@ Organizujte konverzace ze všech vašich oblíbených AI nástrojů do sdílený
 
 🌐 7 PODPOROVANÝCH AI SLUŽEB
 
-Konverzace z různých platforem mohou sdílet úplně stejnou složku. Každý chat zobrazuje barvu a logo své služby, takže vždy víte, odkud pochází.
+AI složky se nativně integrují se všemi hlavními AI chatovacími asistenty a s lokálními LLM, které si spustíte sami. Konverzace z různých platforem mohou sdílet úplně stejnou složku. Každý chat zobrazuje barvu a logo své služby, takže vždy víte, odkud pochází.
 
 ✨ REŽIM VÝZEV
 

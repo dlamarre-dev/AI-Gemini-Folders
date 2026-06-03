@@ -4,7 +4,7 @@ Organizirajte pogovore iz vseh svojih najljubših AI-orodij v skupne mape, zgrad
 
 🌐 7 PODPRTIH STORITEV UI
 
-Pogovori z različnih platform si lahko delijo popolnoma isto mapo. Vsak klepet prikazuje barvo in logotip svoje storitve, tako da vedno veste, od kod prihaja.
+Mape AI se izvorno povezujejo z vsemi glavnimi klepetalnimi pomočniki UI ter z lokalnimi modeli LLM, ki jih poganjate sami. Pogovori z različnih platform si lahko delijo popolnoma isto mapo. Vsak klepet prikazuje barvo in logotip svoje storitve, tako da vedno veste, od kod prihaja.
 
 ✨ NAČIN POZIVOV
 

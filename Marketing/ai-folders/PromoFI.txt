@@ -4,7 +4,7 @@ Järjestä kaikista suosikki-AI-työkaluistasi käydyt keskustelut jaetuiksi kan
 
 🌐 7 TUETTUA TEKOÄLYPALVELUA
 
-Eri alustojen keskustelut voivat jakaa täsmälleen saman kansion. Jokainen keskustelu näyttää oman palvelunsa värin ja logon, joten tiedät aina, mistä se on peräisin.
+AI-kansiot integroituu natiivisti kaikkiin suuriin tekoälychat-avustajiin sekä itse käyttämiisi paikallisiin LLM-malleihin. Eri alustojen keskustelut voivat jakaa täsmälleen saman kansion. Jokainen keskustelu näyttää oman palvelunsa värin ja logon, joten tiedät aina, mistä se on peräisin.
 
 ✨ PROMPTTILA
 
