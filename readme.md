@@ -32,7 +32,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 [![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-blue?logo=googlechrome)](https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik)
 [![Available on Firefox Add-ons](https://img.shields.io/badge/Firefox_Add--ons-Available-orange?logo=firefox)](https://addons.mozilla.org/firefox/addon/gemini_folders/)
-
+   
 ---
 
 ## ✨ Features (both extensions)

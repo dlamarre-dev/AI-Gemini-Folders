@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "AI/Gemini Folders — Selector Diagnostics",
+  "version": "1.0",
+  "description": "Maintainer tool: opens each supported AI site and checks whether its editor selectors still match, flagging when only the positional fallback works.",
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": [
+    "*://gemini.google.com/*",
+    "*://claude.ai/*",
+    "*://chatgpt.com/*",
+    "*://copilot.microsoft.com/*",
+    "*://chat.deepseek.com/*",
+    "*://perplexity.ai/*",
+    "*://*.perplexity.ai/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_title": "Open Folders selector diagnostics"
+  }
+}

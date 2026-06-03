@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Folders — Selector Diagnostics</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 24px auto; padding: 0 16px; line-height: 1.45; }
+    h1 { font-size: 20px; margin-bottom: 4px; }
+    .sub { color: #666; font-size: 13px; margin-top: 0; }
+    .note { background: rgba(127,127,127,.12); border-radius: 8px; padding: 10px 14px; font-size: 13px; margin: 14px 0; }
+    button { font-size: 14px; font-weight: 600; padding: 9px 18px; border: none; border-radius: 8px; background: #0b57d0; color: #fff; cursor: pointer; }
+    button:disabled { opacity: .5; cursor: default; }
+    #status { margin-left: 12px; font-size: 13px; color: #666; }
+    table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 13px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(127,127,127,.25); vertical-align: top; }
+    th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #888; }
+    td.site { font-weight: 600; white-space: nowrap; }
+    td.detail { color: #555; font-family: ui-monospace, monospace; font-size: 12px; word-break: break-word; }
+    tr.ok td.st { color: #1e8e3e; }
+    tr.fallback td.st { color: #b8860b; font-weight: 700; }
+    tr.login td.st { color: #8a6d00; }
+    tr.fail td.st, tr.error td.st { color: #c5221f; font-weight: 700; }
+    tr.pending td { opacity: .5; }
+    .legend { font-size: 12px; color: #777; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Folders — Selector Diagnostics</h1>
+  <p class="sub">Checks each supported AI site against the production editor selectors (from <code>site-config.js</code>).</p>
+
+  <div class="note">
+    ⚠️ <b>Log in to every site first</b> in this browser profile. The tool opens each site in a background
+    tab, probes the page, then closes it. A run takes ~30–60&nbsp;s. Sites not logged in are flagged.
+  </div>
+
+  <button id="run">Run diagnostics</button>
+  <span id="status"></span>
+
+  <table id="results">
+    <thead>
+      <tr><th>Site</th><th>Status</th><th>Details</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <p class="legend">
+    🟢 selector OK · 🟡 <b>fallback used — selectors stale, update <code>site-config.js</code></b> ·
+    🔒 not logged in / redirected · 🔴 no composer found · ❌ probe error
+  </p>
+
+  <script src="site-config.js"></script>
+  <script src="diagnostics.js"></script>
+</body>
+</html>
