@@ -56,8 +56,16 @@ function waitForComplete(tabId, timeoutMs = 30000) {
   });
 }
 
+// A login redirect (auth subdomain or login path) anywhere in the final URL.
+const LOGIN_URL_RE = /login|signin|sign-in|\bauth\b|accounts\.google|microsoftonline|login\.live/i;
+
 async function runSite(site) {
   let tab;
+  // Final tab URL after any redirect. Readable via the "tabs" permission alone,
+  // so we still get it when executeScript is blocked on a cross-domain login page.
+  const tabUrl = async () => {
+    try { const t = await chrome.tabs.get(tab.id); return t.url || ''; } catch (_) { return ''; }
+  };
   try {
     tab = await chrome.tabs.create({ url: site.newConvUrl, active: false });
     await waitForComplete(tab.id);
@@ -67,22 +75,33 @@ async function runSite(site) {
       args: [site.editorSelectors, site.domain],
       func: probe,
     });
-    return results?.[0]?.result ?? null;
+    return results?.[0]?.result ?? { error: 'No result (tab not scriptable).', href: await tabUrl() };
   } catch (err) {
-    return { error: String(err && err.message || err) };
+    // executeScript throws when the tab navigated to a domain we lack host access
+    // for — typically a login page (e.g. Gemini → accounts.google.com). Surface the
+    // URL so classify() can report "not logged in" instead of a bare error.
+    return { error: String(err && err.message || err), href: await tabUrl() };
   } finally {
     if (tab) { try { await chrome.tabs.remove(tab.id); } catch (_) {} }
   }
 }
 
+function looksLikeLogin(r) {
+  return r.onExpectedDomain === false || (r.href && LOGIN_URL_RE.test(r.href));
+}
+
 function classify(r) {
-  if (!r || r.error) return { cls: 'error', icon: '❌', label: 'ERROR', detail: r && r.error ? r.error : 'No result (tab not scriptable).' };
+  if (!r) return { cls: 'error', icon: '❌', label: 'ERROR', detail: 'No result (tab not scriptable).' };
+  if (r.error) {
+    if (looksLikeLogin(r)) return { cls: 'login', icon: '🔒', label: 'NOT LOGGED IN?', detail: 'redirected to ' + r.href + ' — log in and re-run' };
+    return { cls: 'error', icon: '❌', label: 'ERROR', detail: r.error };
+  }
   if (r.matchedSelector) return { cls: 'ok', icon: '🟢', label: 'OK', detail: 'matched: ' + r.matchedSelector };
   if (r.heuristicFound) return {
     cls: 'fallback', icon: '🟡', label: 'FALLBACK — selectors stale',
     detail: 'No site selector matched; heuristic found ' + (r.heuristicDesc || 'a composer') + '. → update editorSelectors in site-config.js',
   };
-  if (!r.onExpectedDomain || /login|signin|sign-in|auth|accounts\.google/i.test(r.href)) return {
+  if (looksLikeLogin(r)) return {
     cls: 'login', icon: '🔒', label: 'NOT LOGGED IN?', detail: 'on ' + r.hostname + ' — log in and re-run',
   };
   return { cls: 'fail', icon: '🔴', label: 'NO COMPOSER', detail: 'neither selectors nor heuristic found an input (logged out or major redesign)' };
