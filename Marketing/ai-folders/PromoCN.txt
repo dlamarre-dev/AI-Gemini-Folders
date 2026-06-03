@@ -4,7 +4,6 @@
 
 🌐 7 种支持的 AI 服务
 
-AI 文件夹 原生集成了：Gemini、Claude、ChatGPT、Copilot、DeepSeek、Perplexity 以及本地 LLM。
 来自不同平台的对话可以共享同一个文件夹。每个对话都会显示其服务的颜色和徽标，让您始终知道它的来源。
 
 ✨ 提示词模式

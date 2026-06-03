@@ -4,7 +4,6 @@ Järjestä kaikista suosikki-AI-työkaluistasi käydyt keskustelut jaetuiksi kan
 
 🌐 7 TUETTUA TEKOÄLYPALVELUA
 
-AI-kansiot integroituu natiivisti palveluihin: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity ja paikalliset LLM:t.
 Eri alustojen keskustelut voivat jakaa täsmälleen saman kansion. Jokainen keskustelu näyttää oman palvelunsa värin ja logon, joten tiedät aina, mistä se on peräisin.
 
 ✨ PROMPTTILA

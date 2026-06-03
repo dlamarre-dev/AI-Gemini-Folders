@@ -4,7 +4,6 @@ Organize conversas de todas as suas ferramentas de IA favoritas em pastas partil
 
 🌐 7 SERVIÇOS DE IA SUPORTADOS
 
-Pastas IA integra-se nativamente com: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity e LLMs locais.
 As conversas de plataformas diferentes podem partilhar a mesma pasta. Cada chat apresenta a cor e o logótipo do seu serviço de origem, para que saiba sempre de onde veio.
 
 ✨ MODO PROMPTS

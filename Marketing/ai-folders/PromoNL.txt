@@ -4,7 +4,6 @@ Organiseer gesprekken van al uw favoriete AI-tools in gedeelde mappen, bouw een 
 
 🌐 7 ONDERSTEUNDE AI-DIENSTEN
 
-AI-mappen integreert native met: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity en lokale LLM's.
 Gesprekken van verschillende platforms kunnen exact dezelfde map delen. Elke chat toont de kleur en het logo van zijn eigen dienst, zodat u altijd weet waar het vandaan komt.
 
 ✨ PROMPTMODUS

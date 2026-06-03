@@ -4,7 +4,6 @@ Organizujte konverzácie zo všetkých vašich obľúbených AI nástrojov do zd
 
 🌐 7 PODPOROVANÝCH AI SLUŽIEB
 
-AI priečinky sa natívne integrujú s: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity a lokálnymi LLM.
 Konverzácie z rôznych platforiem môžu zdieľať úplne ten istý priečinok. Každý chat zobrazuje farbu a logo svojej služby, takže vždy viete, odkiaľ pochádza.
 
 ✨ REŽIM VÝZIEV

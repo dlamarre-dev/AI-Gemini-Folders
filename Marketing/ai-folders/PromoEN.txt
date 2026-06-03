@@ -2,10 +2,9 @@ Your AI conversations are scattered across different sites. You keep retyping th
 
 Organize conversations from all your favorite AI tools into shared folders, build a reusable prompt library, and inject templates directly into any input field — no copy-pasting required.
 
-🌐 7 SUPPORTED AI SERVICES
+🌐 WORKS WITH YOUR AI TOOLS
 
-AI Folders natively integrates with: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity and local LLMs.
-Conversations from different platforms can share the exact same folder. Each chat displays its native service's color and logo so you always know where it came from.
+AI Folders works natively across all the major AI chat assistants — and the local LLMs you run yourself. Conversations from different platforms share the exact same folder, and each chat shows its native service's color and logo so you always know where it came from.
 
 ✨ PROMPT MODE
 

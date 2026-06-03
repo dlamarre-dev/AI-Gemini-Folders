@@ -4,7 +4,6 @@ Organitza converses de totes les teves eines d'IA preferides en carpetes compart
 
 🌐 7 SERVEIS D'IA COMPATIBLES
 
-Carpetes IA s'integra de manera nativa amb: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity i LLM locals.
 Les converses de plataformes diferents poden compartir exactament la mateixa carpeta. Cada xat mostra el color i el logotip del seu servei, de manera que sempre saps d'on prové.
 
 ✨ MODE PROMPTS

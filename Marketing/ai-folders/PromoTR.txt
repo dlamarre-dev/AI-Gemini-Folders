@@ -4,7 +4,6 @@ Tüm favori AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düz
 
 🌐 DESTEKLENEN 7 YZ HİZMETİ
 
-YZ Klasörleri şunlarla yerel olarak entegre olur: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity ve yerel LLM'ler.
 Farklı platformlardan gelen sohbetler tamamen aynı klasörü paylaşabilir. Her sohbet, kendi hizmetinin rengini ve logosunu gösterir, böylece nereden geldiğini her zaman bilirsiniz.
 
 ✨ İSTEM MODU

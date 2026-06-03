@@ -4,7 +4,6 @@ Organiser samtaler fra alle favoritt-AI-verktøyene dine i delte mapper, bygg et
 
 🌐 7 STØTTEDE AI-TJENESTER
 
-AI-mapper integreres nativt med: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity og lokale LLM-er.
 Samtaler fra forskjellige plattformer kan dele nøyaktig samme mappe. Hver samtale viser fargen og logoen til sin egen tjeneste, slik at du alltid vet hvor den kommer fra.
 
 ✨ PROMPTMODUS

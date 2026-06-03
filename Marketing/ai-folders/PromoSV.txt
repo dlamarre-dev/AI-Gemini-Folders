@@ -4,7 +4,6 @@ Organisera konversationer från alla dina favorit-AI-verktyg i delade mappar, by
 
 🌐 7 AI-TJÄNSTER SOM STÖDS
 
-AI-mappar integrerar nativt med: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity och lokala LLM:er.
 Konversationer från olika plattformar kan dela exakt samma mapp. Varje chatt visar färgen och logotypen för sin egen tjänst, så att du alltid vet varifrån den kommer.
 
 ✨ PROMPTLÄGE

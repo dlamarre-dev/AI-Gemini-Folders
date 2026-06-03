@@ -4,7 +4,6 @@ Organisieren Sie Gespräche aller Ihrer bevorzugten KI-Tools in gemeinsamen Ordn
 
 🌐 7 UNTERSTÜTZTE KI-DIENSTE
 
-KI-Ordner integriert sich nativ mit: Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity und lokalen LLMs.
 Gespräche von verschiedenen Plattformen können denselben Ordner teilen. Jeder Chat zeigt die Farbe und das Logo seines Dienstes an, sodass Sie immer wissen, woher er stammt.
 
 ✨ PROMPT-MODUS

@@ -4,7 +4,6 @@
 
 🌐 7 種支援的 AI 服務
 
-AI 資料夾 原生整合了：Gemini、Claude、ChatGPT、Copilot、DeepSeek、Perplexity 以及本機 LLM。
 來自不同平台的對話可以共用同一個資料夾。每個對話都會顯示其服務的顏色和標誌，讓您始終知道它的來源。
 
 ✨ 提示詞模式
