@@ -438,6 +438,7 @@ async function runBackfill(config, token, onProgress) {
         const installsData = await scrapeUrlWithPreset(
           buildUrl(`${itemBase}/analytics/installs`), preset
         );
+        onProgress(`  [diag] all FhBhHd on installs page: ${JSON.stringify(installsData._all_totals)}`);
 
         let usersData = null;
         try {

@@ -18,6 +18,10 @@
     const totals = parsePeriodTotals(doc);
     const bd = parseAllBreakdowns(doc);
     const dr = parseDateRange(doc);
+    // _all_totals: raw text of every div.FhBhHd on the page — used to diagnose
+    // wrong values when a preset period is selected (more elements may appear).
+    const _all_totals = Array.from(doc.querySelectorAll('div.FhBhHd'))
+      .map(el => el.textContent.trim());
     return {
       page: 'installs',
       period_start:          dr?.period_start          ?? null,
@@ -30,6 +34,7 @@
       uninstalls_by_country: bd[3]                     ?? null,
       uninstalls_by_language:bd[4]                     ?? null,
       uninstalls_by_os:      bd[5]                     ?? null,
+      _all_totals,
     };
   }
 
