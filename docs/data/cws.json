@@ -12,57 +12,43 @@
           "weekly_users": 562,
           "impressions": 225,
           "installs_by_country": {
-            "Ãtats-Unis": 18,
-            "Espagne": 16,
-            "Japon": 11,
-            "Autre": 55
+            "United States": 18,
+            "Spain": 16,
+            "Japan": 11,
+            "Other": 55
           },
           "installs_by_language": {
-            "espagnol": 26,
-            "anglais (Ãtats-Unis)": 13,
-            "japonais": 12,
-            "Autre": 49
+            "Spanish": 26,
+            "English (United States)": 13,
+            "Japanese": 12,
+            "Other": 49
           },
           "installs_by_os": {
             "Windows": 76,
-            "MacÂ OS": 12,
+            "Mac OS": 12,
             "ChromeOS": 10,
-            "Autre": 2
+            "Other": 2
           },
           "uninstalls_by_country": {
-            "Japon": 18,
-            "CorÃ©e du Sud": 13,
-            "Autre": 56
+            "Japan": 18,
+            "South Korea": 13,
+            "Other": 56
           },
           "uninstalls_by_language": {
-            "espagnol": 24,
-            "anglais (Ãtats-Unis)": 15,
-            "japonais": 14,
-            "Autre": 47
+            "Spanish": 24,
+            "English (United States)": 15,
+            "Japanese": 14,
+            "Other": 47
           },
           "uninstalls_by_os": {
             "Windows": 84,
-            "MacÂ OS": 14,
+            "Mac OS": 14,
             "Linux": 2,
-            "Autre": 1
+            "Other": 1
           },
-          "users_by_country": {
-            "Espagne": 24,
-            "Japon": 12,
-            "BrÃ©sil": 11,
-            "Autre": 53
-          },
-          "users_by_language": {
-            "espagnol": 34,
-            "anglais (Ãtats-Unis)": 15,
-            "japonais": 13,
-            "Autre": 37
-          },
-          "users_by_os": {
-            "MacÂ OS": 82,
-            "Linux": 15,
-            "Autre": 1
-          },
+          "users_by_country": null,
+          "users_by_language": null,
+          "users_by_os": null,
           "active_versions": [
             "3.3.0.0",
             "3.4.1.0",
@@ -93,22 +79,22 @@
           },
           "installs_by_language": {
             "chinois (Chine)": 21,
-            "anglais (États-Unis)": 11,
+            "anglais (Ãtats-Unis)": 11,
             "Autre": 58
           },
           "installs_by_os": {
             "Windows": 58,
             "ChromeOS": 32,
-            "Mac OS": 6,
+            "MacÂ OS": 6,
             "Autre": 4
           },
           "uninstalls_by_country": {
-            "Suède": 40,
+            "SuÃ¨de": 40,
             "Autre": 20
           },
           "uninstalls_by_language": {
-            "anglais (États-Unis)": 43,
-            "suédois": 29,
+            "anglais (Ãtats-Unis)": 43,
+            "suÃ©dois": 29,
             "Autre": 14
           },
           "uninstalls_by_os": {
