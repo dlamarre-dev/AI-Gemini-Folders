@@ -7,9 +7,8 @@ const LOGIN_RE   = /accounts\.google|google\.com\/ServiceLogin|SignIn/i;
 const SCRAPE_FILES = ['lib/selectors.js', 'lib/normalize.js', 'content/scrape.js'];
 const CWS_BASE   = 'https://chrome.google.com/webstore/devconsole';
 
-// ── URL helpers ───────────────────────────────────────────────────────────────
+// ── URL helper ────────────────────────────────────────────────────────────────
 
-// Always injects hl=en; additional params (e.g. startDate/endDate) are merged in.
 function buildUrl(base, extra = {}) {
   const params = { hl: 'en', ...extra };
   const qs = Object.entries(params)
@@ -17,6 +16,8 @@ function buildUrl(base, extra = {}) {
     .join('&');
   return `${base}?${qs}`;
 }
+
+// ── date helpers ──────────────────────────────────────────────────────────────
 
 function isoToDayIndex(iso) {
   return Math.floor(new Date(iso + 'T00:00:00Z').getTime() / 864e5);
@@ -32,7 +33,7 @@ function monthRanges(n) {
   if (m < 0) { m = 11; y--; }
   for (let i = 0; i < n; i++) {
     const start = new Date(Date.UTC(y, m, 1));
-    const end   = new Date(Date.UTC(y, m + 1, 0)); // last day of month
+    const end   = new Date(Date.UTC(y, m + 1, 0));
     ranges.unshift({
       period_start: start.toISOString().slice(0, 10),
       period_end:   end.toISOString().slice(0, 10),
@@ -41,6 +42,108 @@ function monthRanges(n) {
     if (m < 0) { m = 11; y--; }
   }
   return ranges;
+}
+
+// ── date-picker interaction (runs in MAIN world) ──────────────────────────────
+
+// Injected into the CWS analytics page via executeScript {world:'MAIN'}.
+// Finds the date range picker, sets start/end, waits for the SPA to re-render.
+// Returns {ok:true} on success or {ok:false, step, ...diagnostics} on failure.
+async function setDateRangeInPage(startISO, endISO) {
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  // Format "2026-02-01" → "Feb 1, 2026" (matches Google's picker display)
+  function fmt(iso) {
+    const [y, m, d] = iso.split('-').map(Number);
+    return new Date(y, m - 1, d).toLocaleDateString('en-US', {
+      month: 'short', day: 'numeric', year: 'numeric',
+    });
+  }
+
+  // Set an input value in a way gwiz/Material components actually see.
+  function setVal(input, value) {
+    input.focus();
+    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+    setter.call(input, value);
+    input.dispatchEvent(new Event('input',  { bubbles: true }));
+    input.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  const DATE_RE = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i;
+
+  // ── 1. Find the date-range trigger ──────────────────────────────────────────
+  const trigger = Array.from(
+    document.querySelectorAll('[role="button"], button, [jsaction]')
+  ).find(el => DATE_RE.test(el.innerText));
+
+  if (!trigger) {
+    return {
+      ok: false, step: 'find-trigger',
+      buttons: Array.from(document.querySelectorAll('[role="button"], button'))
+        .slice(0, 15)
+        .map(el => ({ text: el.innerText?.trim().slice(0, 60), cls: el.className.slice(0, 80) })),
+    };
+  }
+
+  // ── 2. Open the picker ───────────────────────────────────────────────────────
+  trigger.click();
+  await sleep(800);
+
+  // ── 3. Find visible date inputs inside the opened container ─────────────────
+  const container =
+    document.querySelector('[role="dialog"]') ||
+    document.querySelector('[role="tooltip"]') ||
+    document.querySelector('[aria-modal="true"]') ||
+    document;
+
+  const visibleInputs = Array.from(
+    container.querySelectorAll('input[type="text"], input:not([type])')
+  ).filter(inp => inp.offsetParent !== null);
+
+  if (visibleInputs.length < 2) {
+    return {
+      ok: false, step: 'find-inputs',
+      found: visibleInputs.length,
+      allInputs: Array.from(document.querySelectorAll('input'))
+        .map(i => ({ type: i.type, val: i.value, cls: i.className.slice(0, 80) })),
+    };
+  }
+
+  // ── 4. Set start + end dates ─────────────────────────────────────────────────
+  setVal(visibleInputs[0], fmt(startISO));
+  await sleep(200);
+  setVal(visibleInputs[1], fmt(endISO));
+  await sleep(200);
+
+  // ── 5. Click Apply / Update ──────────────────────────────────────────────────
+  const applyBtn = Array.from(
+    container.querySelectorAll('[role="button"], button')
+  ).find(el => /\b(apply|update|ok|done)\b/i.test(el.innerText));
+
+  if (applyBtn) {
+    applyBtn.click();
+  } else {
+    visibleInputs[1].dispatchEvent(
+      new KeyboardEvent('keydown', { key: 'Enter', keyCode: 13, bubbles: true })
+    );
+  }
+
+  // ── 6. Wait for re-render, then verify trigger text updated ─────────────────
+  const fmtStart = fmt(startISO).slice(0, 6); // e.g. "Feb 1"
+  const fmtEnd   = fmt(endISO).slice(0, 6);
+  for (let i = 0; i < 12; i++) {
+    await sleep(500);
+    const txt = trigger.innerText || '';
+    if (txt.includes(fmtStart) && txt.includes(fmtEnd)) {
+      return { ok: true };
+    }
+  }
+
+  return {
+    ok: false, step: 'verify',
+    triggerText: trigger.innerText?.trim().slice(0, 100),
+    expected: `${fmtStart} … ${fmtEnd}`,
+  };
 }
 
 // ── tab helpers ───────────────────────────────────────────────────────────────
@@ -66,7 +169,8 @@ function waitForTabComplete(tabId, timeoutMs = 30000) {
   });
 }
 
-async function scrapeUrl(url) {
+// dateRange: null for a regular scrape, or {start, end} to change the picker first.
+async function scrapeUrl(url, dateRange = null) {
   let tab;
   try {
     tab = await chrome.tabs.create({ url, active: false });
@@ -78,6 +182,23 @@ async function scrapeUrl(url) {
     }
 
     await new Promise(r => setTimeout(r, SETTLE_MS));
+
+    if (dateRange) {
+      const dr = await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        world: 'MAIN',
+        func: setDateRangeInPage,
+        args: [dateRange.start, dateRange.end],
+      });
+      const res = dr?.[0]?.result;
+      if (!res?.ok) {
+        throw new Error(
+          `Date picker failed at step "${res?.step ?? '?'}": ` +
+          JSON.stringify(res, null, 2)
+        );
+      }
+      // setDateRangeInPage already polls up to 6 s for re-render; no extra sleep.
+    }
 
     const results = await chrome.scripting.executeScript({
       target: { tabId: tab.id },
@@ -157,46 +278,29 @@ async function runBackfill(config, token, onProgress, months = 12) {
   const ranges = monthRanges(months);
 
   for (const { period_start, period_end } of ranges) {
-    const dateParams = {
-      startDate: isoToDayIndex(period_start),
-      endDate:   isoToDayIndex(period_end),
-    };
-
     onProgress(`── ${period_start} → ${period_end}`);
 
     for (const item of items) {
       const itemBase = `${CWS_BASE}/${pubId}/${item.id}`;
+      const dr = { start: period_start, end: period_end };
 
       onProgress(`  ${item.name}: installs…`);
-      const installsData = await scrapeUrl(
-        buildUrl(`${itemBase}/analytics/installs`, dateParams)
-      );
-
-      // Verify the page actually loaded the requested date range.
-      if (installsData.period_start && installsData.period_start !== period_start) {
-        throw new Error(
-          `Date-range params not respected for ${period_start}: ` +
-          `page returned ${installsData.period_start}–${installsData.period_end}. ` +
-          `CWS may not support URL date params — please file an issue.`
-        );
-      }
+      const installsData = await scrapeUrl(buildUrl(`${itemBase}/analytics/installs`), dr);
 
       onProgress(`  ${item.name}: users…`);
-      const usersData = await scrapeUrl(
-        buildUrl(`${itemBase}/analytics/users`, dateParams)
-      );
+      const usersData = await scrapeUrl(buildUrl(`${itemBase}/analytics/users`), dr);
 
       let impressions = null;
       try {
         onProgress(`  ${item.name}: impressions…`);
-        const impData = await scrapeUrl(
-          buildUrl(`${itemBase}/analytics/impressions`, dateParams)
-        );
+        const impData = await scrapeUrl(buildUrl(`${itemBase}/analytics/impressions`), dr);
         impressions = impData.impressions ?? null;
       } catch (e) {
         console.warn(`[stats-collector] impressions backfill failed for ${item.id}:`, e.message);
       }
 
+      // Use the requested period dates directly — parseDateRange reflects the
+      // initial page load, not the UI-updated range.
       const entry = {
         collected_at:           today,
         period_start,
