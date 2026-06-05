@@ -5,6 +5,25 @@
       "history": [
         {
           "collected_at": "2026-06-05",
+          "period_start": "2025-06-05",
+          "period_end": "2026-06-05",
+          "installs": 105,
+          "uninstalls": 439,
+          "weekly_users": null,
+          "impressions": null,
+          "installs_by_country": null,
+          "installs_by_language": null,
+          "installs_by_os": null,
+          "uninstalls_by_country": null,
+          "uninstalls_by_language": null,
+          "uninstalls_by_os": null,
+          "users_by_country": null,
+          "users_by_language": null,
+          "users_by_os": null,
+          "active_versions": []
+        },
+        {
+          "collected_at": "2026-06-05",
           "period_start": "2026-05-06",
           "period_end": "2026-06-04",
           "installs": 694,
