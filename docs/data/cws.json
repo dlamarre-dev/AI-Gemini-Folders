@@ -298,11 +298,11 @@
         {
           "collected_at": "2026-06-05",
           "period_start": "2026-05-06",
-          "period_end": "2026-06-05",
+          "period_end": "2026-06-04",
           "installs": 53,
           "uninstalls": 7,
-          "weekly_users": null,
-          "impressions": null,
+          "weekly_users": 23,
+          "impressions": 110,
           "installs_by_country": {
             "Spain": 63,
             "Japan": 6,
@@ -320,12 +320,12 @@
             "Other": 4
           },
           "uninstalls_by_country": {
-            "Sweden": 40,
+            "France": 40,
             "Other": 20
           },
           "uninstalls_by_language": {
             "English (United States)": 43,
-            "Chinese (Taiwan)": 29,
+            "Swedish": 29,
             "Other": 14
           },
           "uninstalls_by_os": {
