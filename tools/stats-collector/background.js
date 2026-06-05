@@ -20,32 +20,54 @@ function buildUrl(base, extra = {}) {
 // ── preset-period click (runs in MAIN world) ──────────────────────────────────
 
 // Finds a preset period tab/button by label text and clicks it.
+// Two-step: tries direct match first, then opens the date-range trigger in
+// case presets only appear inside a dropdown.
 // Must be self-contained (serialised by executeScript — no closure access).
-// Returns {ok:true, clicked} or {ok:false, step, candidates, label}.
+// Returns {ok:true, clicked} or {ok:false, step, hints, label}.
 async function clickPresetPeriod(label) {
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const normalized = label.trim().toLowerCase();
 
-  const allCandidates = Array.from(
-    document.querySelectorAll('[role="tab"], [role="option"], button, [role="button"]')
-  ).filter(el => el.offsetParent !== null);
+  function visible(sel) {
+    return Array.from(document.querySelectorAll(sel)).filter(el => el.offsetParent !== null);
+  }
+  function findIn(els) {
+    return els.find(el => {
+      const t = (el.innerText || el.textContent || '').trim().toLowerCase();
+      return t === normalized || t.includes(normalized);
+    });
+  }
 
-  const target = allCandidates.find(el => {
-    const text = (el.innerText || el.textContent || '').trim().toLowerCase();
-    return text === normalized || text.includes(normalized);
-  });
+  // Pass 1: preset may already be visible as a tab/button/option.
+  const INTERACTIVE = '[role="tab"],[role="option"],[role="menuitem"],[role="radio"],button,[role="button"]';
+  let target = findIn(visible(INTERACTIVE));
+
+  // Pass 2: preset might live in a dropdown — click the current date-range
+  // display first to open it, then re-search.
+  if (!target) {
+    const RANGE_RE = /\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b.{1,40}\bto\b/i;
+    const trigger = visible('[role="button"],button,[jsaction]')
+      .find(el => RANGE_RE.test(el.innerText || '') || /last\s+\d+\s+days/i.test(el.innerText || ''));
+    if (trigger) {
+      trigger.click();
+      await sleep(1000);
+    }
+    target = findIn(visible(INTERACTIVE + ',li,[jsaction]'));
+  }
 
   if (!target) {
-    return {
-      ok: false,
-      step: 'find-preset-tab',
-      label,
-      candidates: allCandidates.slice(0, 30).map(el => ({
+    // Diagnostic: collect any small element mentioning "year", "day", "month".
+    const hints = Array.from(document.querySelectorAll('*'))
+      .filter(el => el.offsetParent !== null && el.childElementCount <= 2)
+      .filter(el => /\b(year|day|month)\b/i.test((el.innerText || el.textContent || '').trim()))
+      .slice(0, 15)
+      .map(el => ({
         tag: el.tagName,
         role: el.getAttribute('role'),
-        text: (el.innerText || el.textContent || '').trim().slice(0, 40),
-      })),
-    };
+        text: (el.innerText || el.textContent || '').trim().slice(0, 50),
+        cls: (el.className || '').toString().slice(0, 50),
+      }));
+    return { ok: false, step: 'find-preset-tab', label, hints };
   }
 
   target.click();
@@ -257,7 +279,10 @@ async function scrapeTimeSeries(url, presetLabel) {
     });
     const clickRes = clickResult?.[0]?.result;
     if (!clickRes?.ok) {
-      throw new Error(`Preset "${presetLabel}" not found: ${JSON.stringify(clickRes)}`);
+      const hints = (clickRes?.hints ?? [])
+        .map(h => `[${h.role || h.tag}] "${h.text}"`)
+        .join(' | ');
+      throw new Error(`Preset "${presetLabel}" not found. Hints: ${hints || '(none)'}`);
     }
 
     // Extra settle after preset click — chart re-fetches data from the server.
@@ -358,7 +383,7 @@ async function runBackfill(config, token, onProgress) {
         usedPreset = preset;
         break;
       } catch (e) {
-        onProgress(`  preset "${preset}" failed — ${e.message.slice(0, 80)}`);
+        onProgress(`  preset "${preset}" failed — ${e.message.slice(0, 300)}`);
       }
     }
 
