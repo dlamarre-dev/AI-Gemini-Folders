@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "CWS Stats Collector",
+  "version": "1.0",
+  "description": "Dev-only operator tool: scrapes CWS developer console analytics and commits monthly snapshots to GitHub. Load via about:debugging in Firefox.",
+  "permissions": ["tabs", "scripting", "storage"],
+  "host_permissions": [
+    "*://chrome.google.com/webstore/devconsole/*"
+  ],
+  "background": {
+    "scripts": ["lib/github.js", "background.js"]
+  },
+  "action": {
+    "default_title": "CWS Stats Collector",
+    "default_popup": "popup.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "cws-stats-collector@dev.local",
+      "strict_min_version": "112.0"
+    }
+  }
+}

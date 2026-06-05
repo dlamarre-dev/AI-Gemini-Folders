@@ -1,6 +1,8 @@
 dist/
 build/
 
+tools/stats-collector/config.json
+
 *.zip
 *.tar.gz
 

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "CWS Stats Spike",
+  "version": "0.1",
+  "description": "Throwaway spike: reads a CWS dev-console stats table from the rendered DOM and logs parsed numbers. Load via about:debugging in Firefox.",
+  "permissions": [],
+  "host_permissions": [
+    "*://chrome.google.com/webstore/devconsole/*",
+    "*://chromewebstore.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chrome.google.com/webstore/devconsole/*",
+        "*://chromewebstore.google.com/*"
+      ],
+      "js": ["scrape.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "cws-stats-spike@dev.local",
+      "strict_min_version": "112.0"
+    }
+  }
+}
