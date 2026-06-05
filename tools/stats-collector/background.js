@@ -56,7 +56,9 @@ async function setDateRangeInPage(startISO, endISO) {
     'January','February','March','April','May','June',
     'July','August','September','October','November','December',
   ];
-  const DATE_RE = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i;
+  // Matches a date range: two dates separated by an en/em dash, e.g.
+  // "May 6 – Jun 4, 2026"  or  "May 6, 2026 – Jun 4, 2026"
+  const RANGE_RE = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b[\s\S]{0,40}[–—][\s\S]{0,40}\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i;
 
   // Parse "2026-02-01" → {y,m,d}
   function parseISO(iso) {
@@ -65,22 +67,35 @@ async function setDateRangeInPage(startISO, endISO) {
   }
 
   // ── 1. Find the date-range trigger ──────────────────────────────────────────
-  const trigger = Array.from(
-    document.querySelectorAll('[role="button"], button, [jsaction]')
-  ).find(el => DATE_RE.test(el.innerText));
+  // Require a range pattern (two dates + dash) to avoid matching chart axis labels.
+  let trigger = Array.from(
+    document.querySelectorAll('[role="button"], button, [jsaction], [tabindex="0"]')
+  ).find(el => el.offsetParent !== null && RANGE_RE.test(el.innerText));
+
+  // Fallback: any visible near-leaf element with a range pattern
+  if (!trigger) {
+    trigger = Array.from(document.querySelectorAll('*'))
+      .filter(el => el.offsetParent !== null && el.childElementCount <= 3)
+      .find(el => RANGE_RE.test(el.innerText?.trim()));
+  }
 
   if (!trigger) {
     return {
       ok: false, step: 'find-trigger',
-      buttons: Array.from(document.querySelectorAll('[role="button"], button'))
+      hint: 'No element found with two dates and a dash separator.',
+      // Dump candidate elements for diagnosis
+      rangeCandidates: Array.from(document.querySelectorAll('*'))
+        .filter(el => el.offsetParent !== null && /[–—]/.test(el.innerText))
         .slice(0, 15)
-        .map(el => ({ text: el.innerText?.trim().slice(0, 60), cls: el.className.slice(0, 80) })),
+        .map(el => ({ tag: el.tagName, text: el.innerText?.trim().slice(0, 80), role: el.getAttribute('role'), cls: el.className.slice(0, 60) })),
     };
   }
 
+  const triggerText = trigger.innerText?.trim().slice(0, 80);
+
   // ── 2. Open the picker ───────────────────────────────────────────────────────
   trigger.click();
-  await sleep(1000);
+  await sleep(1200);
 
   // ── 3. Find the calendar month header anywhere in the document ──────────────
   // No container guess — walk the whole document and find the exact element
@@ -145,7 +160,7 @@ async function setDateRangeInPage(startISO, endISO) {
       const visButtons = Array.from(document.querySelectorAll('[role="button"], button'))
         .filter(b => b.offsetParent !== null)
         .slice(0, 20).map(b => ({ text: b.innerText?.trim().slice(0, 40), aria: b.getAttribute('aria-label'), cls: b.className.slice(0,60) }));
-      return { ok: false, step: 'find-header', visButtons };
+      return { ok: false, step: 'find-header', triggerText, visButtons };
     }
 
     let attempts = 0;
