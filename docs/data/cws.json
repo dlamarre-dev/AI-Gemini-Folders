@@ -86,12 +86,35 @@
           "uninstalls": 7,
           "weekly_users": null,
           "impressions": null,
-          "installs_by_country": null,
-          "installs_by_language": null,
-          "installs_by_os": null,
-          "uninstalls_by_country": null,
-          "uninstalls_by_language": null,
-          "uninstalls_by_os": null,
+          "installs_by_country": {
+            "Spain": 63,
+            "Japan": 6,
+            "Other": 25
+          },
+          "installs_by_language": {
+            "English (United States)": 21,
+            "Korean": 11,
+            "Other": 58
+          },
+          "installs_by_os": {
+            "Windows": 58,
+            "ChromeOS": 32,
+            "Mac OS": 6,
+            "Other": 4
+          },
+          "uninstalls_by_country": {
+            "Sweden": 40,
+            "Other": 20
+          },
+          "uninstalls_by_language": {
+            "English (United States)": 43,
+            "Chinese (Taiwan)": 29,
+            "Other": 14
+          },
+          "uninstalls_by_os": {
+            "Windows": 71,
+            "Linux": 29
+          },
           "users_by_country": {
             "Spain": 30,
             "Canada": 17,
