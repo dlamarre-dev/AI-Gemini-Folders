@@ -405,9 +405,11 @@ async function runBackfill(config, token, onProgress) {
   const { publisher_id: pubId, items, github } = config;
   const today = new Date().toISOString().slice(0, 10);
 
-  // Presets in order of preference; longest first for maximum history.
-  // Labels must match the exact text in the CWS combobox options.
-  const PRESETS = ['Last year', 'Last 180 days', 'Last 90 days', 'Last 30 days'];
+  // Only back-fill "Last 90 days": the extensions launched March 2026, so
+  // "Last year" / "Last 180 days" produce pre-launch fake data, and
+  // "Last 30 days" overlaps the regular monthly-collection entry (which
+  // carries real weekly_users) and would overwrite it with null.
+  const PRESETS = ['Last 90 days'];
 
   // Fallback: compute approximate period dates from preset label when
   // parseDateRange doesn't reflect the newly selected preset.
