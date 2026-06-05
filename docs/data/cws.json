@@ -9,8 +9,8 @@
           "period_end": "2026-06-04",
           "installs": 694,
           "uninstalls": 297,
-          "weekly_users": 562,
-          "impressions": 225,
+          "weekly_users": null,
+          "impressions": null,
           "installs_by_country": {
             "United States": 18,
             "Spain": 16,
@@ -46,9 +46,23 @@
             "Linux": 2,
             "Other": 1
           },
-          "users_by_country": null,
-          "users_by_language": null,
-          "users_by_os": null,
+          "users_by_country": {
+            "Spain": 24,
+            "Japan": 12,
+            "Brazil": 11,
+            "Other": 53
+          },
+          "users_by_language": {
+            "Spanish": 34,
+            "English (United States)": 15,
+            "Japanese": 13,
+            "Other": 37
+          },
+          "users_by_os": {
+            "Mac OS": 82,
+            "Linux": 15,
+            "Other": 1
+          },
           "active_versions": [
             "3.3.0.0",
             "3.4.1.0",
