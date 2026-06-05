@@ -28,56 +28,64 @@ async function clickPresetPeriod(label) {
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const normalized = label.trim().toLowerCase();
 
-  // offsetParent is null for position:fixed elements in Firefox (common in
-  // Google's SPA). Use getBoundingClientRect() for visibility instead.
-  function hasSize(el) {
-    const r = el.getBoundingClientRect();
-    return r.width > 0 && r.height > 0;
-  }
-  function visible(sel) {
-    return Array.from(document.querySelectorAll(sel)).filter(hasSize);
-  }
-  function findIn(els) {
-    return els.find(el => {
-      const t = (el.innerText || el.textContent || '').trim().toLowerCase();
-      return t === normalized || t.includes(normalized);
-    });
+  // Scroll to bring the chart area into layout range — inactive (background)
+  // tabs don't compute layout for off-screen elements, so getBoundingClientRect
+  // returns 0,0 for anything below the fold. A scroll forces the layout engine
+  // to resolve element positions.
+  window.scrollTo(0, 800);
+  await sleep(400);
+
+  function notHidden(el) {
+    const s = window.getComputedStyle(el);
+    return s.display !== 'none' && s.visibility !== 'hidden';
   }
 
-  // Pass 1: preset may already be visible as a tab/button/option.
-  const INTERACTIVE = '[role="tab"],[role="option"],[role="menuitem"],[role="radio"],button,[role="button"]';
-  let target = findIn(visible(INTERACTIVE));
+  function findByText(candidates) {
+    // Prefer leaf-ish elements (childElementCount ≤ 3) whose text closely
+    // matches the label; fall back to any element containing it.
+    const norm = normalized;
+    return candidates
+      .filter(el => {
+        const t = (el.textContent || '').trim().toLowerCase();
+        return t === norm || t.startsWith(norm) || t.includes(norm);
+      })
+      .sort((a, b) => (a.textContent?.trim().length ?? 999) - (b.textContent?.trim().length ?? 999))
+      [0];
+  }
 
-  // Pass 2: preset might live in a dropdown — click the current date-range
-  // display first to open it, then re-search.
+  const allEls = () => Array.from(document.querySelectorAll('*')).filter(notHidden);
+
+  // Pass 1: search every visible element for the label text.
+  let target = findByText(allEls());
+
+  // Pass 2: if not found, try clicking the current date-range display first
+  // (presets may live inside a dropdown that isn't open yet).
   if (!target) {
     const RANGE_RE = /\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b.{1,40}\bto\b/i;
-    const trigger = visible('[role="button"],button,[jsaction]')
-      .find(el => RANGE_RE.test(el.innerText || '') || /last\s+\d+\s+days/i.test(el.innerText || ''));
+    const trigger = allEls()
+      .filter(el => el.tagName === 'BUTTON' || el.getAttribute('role') === 'button' || el.getAttribute('jsaction'))
+      .find(el => RANGE_RE.test(el.textContent || '') || /last\s+\d+\s+days/i.test(el.textContent || ''));
     if (trigger) {
       trigger.click();
-      await sleep(1000);
+      await sleep(1200);
     }
-    target = findIn(visible(INTERACTIVE + ',li,[jsaction]'));
+    target = findByText(allEls());
   }
 
   if (!target) {
-    // Diagnostic: dump all visible interactive elements so we can see exact labels.
-    const allInteractive = visible(INTERACTIVE + ',li,[jsaction]')
-      .filter(el => (el.innerText || el.textContent || '').trim().length > 0)
-      .slice(0, 25)
-      .map(el => ({
-        tag: el.tagName,
-        role: el.getAttribute('role'),
-        text: (el.innerText || el.textContent || '').trim().slice(0, 50),
-        cls: (el.className || '').toString().slice(0, 60),
-      }));
-    return { ok: false, step: 'find-preset-tab', label, allInteractive };
+    // Diagnostic: show page text and any date-count-related elements.
+    const bodyText = (document.body.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 400);
+    const dateEls = allEls()
+      .filter(el => /\d+\s*(day|year|month|365)/i.test((el.textContent || '').trim()))
+      .filter(el => ((el.textContent || '').trim().length) < 35)
+      .slice(0, 12)
+      .map(el => ({ tag: el.tagName, role: el.getAttribute('role'), text: (el.textContent || '').trim().slice(0, 40) }));
+    return { ok: false, step: 'find-preset', label, bodyText, dateEls };
   }
 
   target.click();
-  await sleep(2000);
-  return { ok: true, clicked: (target.innerText || target.textContent || '').trim() };
+  await sleep(2500);
+  return { ok: true, clicked: (target.textContent || '').trim().slice(0, 40) };
 }
 
 // ── SVG time-series extraction (runs in MAIN world) ───────────────────────────
@@ -284,10 +292,9 @@ async function scrapeTimeSeries(url, presetLabel) {
     });
     const clickRes = clickResult?.[0]?.result;
     if (!clickRes?.ok) {
-      const items = (clickRes?.allInteractive ?? clickRes?.hints ?? [])
-        .map(h => `[${h.role || h.tag}] "${h.text}"`)
-        .join(' | ');
-      throw new Error(`Preset "${presetLabel}" not found. Interactive: ${items || '(none)'}`);
+      const dateEls = (clickRes?.dateEls ?? []).map(h => `[${h.role || h.tag}] "${h.text}"`).join(' | ');
+      const body = clickRes?.bodyText ? `\n    page: "${clickRes.bodyText.slice(0, 200)}"` : '';
+      throw new Error(`Preset "${presetLabel}" not found. date-els: ${dateEls || '(none)'}${body}`);
     }
 
     // Extra settle after preset click — chart re-fetches data from the server.
@@ -374,7 +381,7 @@ async function runCollection(config, token, onProgress) {
 async function runBackfill(config, token, onProgress) {
   const { publisher_id: pubId, items, github } = config;
   const today = new Date().toISOString().slice(0, 10);
-  const PRESETS = ['5 years', 'Last year', '1 year'];
+  const PRESETS = ['Last year', '1 year', '365 days', '180 days'];
 
   for (const item of items) {
     const itemBase = `${CWS_BASE}/${pubId}/${item.id}`;
