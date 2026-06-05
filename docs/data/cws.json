@@ -11,55 +11,26 @@
           "uninstalls": 297,
           "weekly_users": 562,
           "impressions": 225,
-          "installs_by_country": {
-            "Ãtats-Unis": 18,
-            "Espagne": 16,
-            "Japon": 11,
-            "Autre": 55
-          },
-          "installs_by_language": {
-            "espagnol": 26,
-            "anglais (Ãtats-Unis)": 13,
-            "japonais": 12,
-            "Autre": 49
-          },
-          "installs_by_os": {
-            "Windows": 76,
-            "MacÂ OS": 12,
-            "ChromeOS": 10,
-            "Autre": 2
-          },
-          "uninstalls_by_country": {
-            "Japon": 18,
-            "CorÃ©e du Sud": 13,
-            "Autre": 56
-          },
-          "uninstalls_by_language": {
-            "espagnol": 24,
-            "anglais (Ãtats-Unis)": 15,
-            "japonais": 14,
-            "Autre": 47
-          },
-          "uninstalls_by_os": {
-            "Windows": 84,
-            "MacÂ OS": 14,
-            "Linux": 2,
-            "Autre": 1
-          },
+          "installs_by_country": null,
+          "installs_by_language": null,
+          "installs_by_os": null,
+          "uninstalls_by_country": null,
+          "uninstalls_by_language": null,
+          "uninstalls_by_os": null,
           "users_by_country": {
             "Espagne": 24,
             "Japon": 12,
-            "BrÃ©sil": 11,
+            "Brésil": 11,
             "Autre": 53
           },
           "users_by_language": {
             "espagnol": 34,
-            "anglais (Ãtats-Unis)": 15,
+            "anglais (États-Unis)": 15,
             "japonais": 13,
             "Autre": 37
           },
           "users_by_os": {
-            "MacÂ OS": 82,
+            "Mac OS": 82,
             "Linux": 15,
             "Autre": 1
           },
@@ -95,13 +66,13 @@
           "users_by_country": {
             "Espagne": 30,
             "Canada": 17,
-            "Corée du Sud": 9,
+            "CorÃ©e du Sud": 9,
             "Autre": 44
           },
           "users_by_language": {
             "espagnol": 34,
-            "français": 16,
-            "coréen": 9,
+            "franÃ§ais": 16,
+            "corÃ©en": 9,
             "Autre": 40
           },
           "users_by_os": null,
