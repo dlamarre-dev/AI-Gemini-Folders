@@ -1,8 +1,7 @@
-const patInput     = document.getElementById('pat');
-const runBtn       = document.getElementById('run');
-const backfillBtn  = document.getElementById('backfill');
-const monthsInput  = document.getElementById('months');
-const logEl        = document.getElementById('log');
+const patInput    = document.getElementById('pat');
+const runBtn      = document.getElementById('run');
+const backfillBtn = document.getElementById('backfill');
+const logEl       = document.getElementById('log');
 
 function appendLog(text, cls) {
   logEl.style.display = 'block';
@@ -62,7 +61,6 @@ runBtn.addEventListener('click', () => {
 });
 
 backfillBtn.addEventListener('click', () => {
-  const months = Math.max(1, Math.min(24, parseInt(monthsInput.value, 10) || 12));
-  appendLog(`Starting back-fill (${months} months) — this will take several minutes…`);
-  startRun('START_BACKFILL', { months });
+  appendLog('Starting back-fill (reads 5-year chart) — this will take a few minutes…');
+  startRun('START_BACKFILL');
 });

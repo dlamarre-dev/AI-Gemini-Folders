@@ -2,10 +2,10 @@
 // lib/github.js is loaded first (see manifest background.scripts), so
 // commitCwsEntry is available as a global here.
 
-const SETTLE_MS  = 3500;
-const LOGIN_RE   = /accounts\.google|google\.com\/ServiceLogin|SignIn/i;
+const SETTLE_MS    = 3500;
+const LOGIN_RE     = /accounts\.google|google\.com\/ServiceLogin|SignIn/i;
 const SCRAPE_FILES = ['lib/selectors.js', 'lib/normalize.js', 'content/scrape.js'];
-const CWS_BASE   = 'https://chrome.google.com/webstore/devconsole';
+const CWS_BASE     = 'https://chrome.google.com/webstore/devconsole';
 
 // ── URL helper ────────────────────────────────────────────────────────────────
 
@@ -17,244 +17,169 @@ function buildUrl(base, extra = {}) {
   return `${base}?${qs}`;
 }
 
-// ── date helpers ──────────────────────────────────────────────────────────────
+// ── preset-period click (runs in MAIN world) ──────────────────────────────────
 
-function isoToDayIndex(iso) {
-  return Math.floor(new Date(iso + 'T00:00:00Z').getTime() / 864e5);
-}
-
-// Returns the last n complete calendar months as [{period_start, period_end}],
-// oldest first.
-function monthRanges(n) {
-  const ranges = [];
-  const now = new Date();
-  let y = now.getUTCFullYear();
-  let m = now.getUTCMonth() - 1; // last complete month (0-indexed)
-  if (m < 0) { m = 11; y--; }
-  for (let i = 0; i < n; i++) {
-    const start = new Date(Date.UTC(y, m, 1));
-    const end   = new Date(Date.UTC(y, m + 1, 0));
-    ranges.unshift({
-      period_start: start.toISOString().slice(0, 10),
-      period_end:   end.toISOString().slice(0, 10),
-    });
-    m--;
-    if (m < 0) { m = 11; y--; }
-  }
-  return ranges;
-}
-
-// ── date-picker interaction (runs in MAIN world) ──────────────────────────────
-
-// Injected into the CWS analytics page via executeScript {world:'MAIN'}.
-// Finds the date range picker, navigates the calendar grid, clicks the right
-// days, and confirms. Returns {ok:true} or {ok:false, step, ...diagnostics}.
-async function setDateRangeInPage(startISO, endISO) {
+// Finds a preset period tab/button by label text and clicks it.
+// Must be self-contained (serialised by executeScript — no closure access).
+// Returns {ok:true, clicked} or {ok:false, step, candidates, label}.
+async function clickPresetPeriod(label) {
   const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const normalized = label.trim().toLowerCase();
 
-  const MONTH_NAMES = [
-    'January','February','March','April','May','June',
-    'July','August','September','October','November','December',
-  ];
-  // Parse "2026-02-01" → {y,m,d}
-  function parseISO(iso) {
-    const [y, m, d] = iso.split('-').map(Number);
-    return { y, m, d };
-  }
+  const allCandidates = Array.from(
+    document.querySelectorAll('[role="tab"], [role="option"], button, [role="button"]')
+  ).filter(el => el.offsetParent !== null);
 
-  // ── 1. Find the date-range trigger ──────────────────────────────────────────
-  // Try several heuristics in order of confidence.
-  const MONTH_RE   = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i;
-  const YEAR_RE    = /\b20\d\d\b/;
+  const target = allCandidates.find(el => {
+    const text = (el.innerText || el.textContent || '').trim().toLowerCase();
+    return text === normalized || text.includes(normalized);
+  });
 
-  function interactiveEls() {
-    return Array.from(
-      document.querySelectorAll('[role="button"], button, [jsaction], [tabindex="0"]')
-    ).filter(el => el.offsetParent !== null && !el.closest('svg'));
-  }
-
-  // 1a. aria-label that mentions "date"
-  let trigger = Array.from(document.querySelectorAll('[aria-label]'))
-    .find(el => el.offsetParent !== null && /date|period|range/i.test(el.getAttribute('aria-label')));
-
-  // 1b. interactive element whose text has both a month name and a 4-digit year
-  if (!trigger) {
-    trigger = interactiveEls()
-      .filter(el => MONTH_RE.test(el.innerText) && YEAR_RE.test(el.innerText))
-      .sort((a, b) => a.innerText.length - b.innerText.length)[0]; // prefer the shortest match
-  }
-
-  // 1c. "Last N days" preset label
-  if (!trigger) {
-    trigger = interactiveEls().find(el => /last\s+\d+\s+days/i.test(el.innerText));
-  }
-
-  // 1d. any near-leaf element with a month name + year (broadest fallback)
-  if (!trigger) {
-    trigger = Array.from(document.querySelectorAll('*'))
-      .filter(el => el.offsetParent !== null && !el.closest('svg') && el.childElementCount <= 3)
-      .filter(el => MONTH_RE.test(el.innerText?.trim()) && YEAR_RE.test(el.innerText?.trim()))
-      .sort((a, b) => (a.innerText?.length ?? 999) - (b.innerText?.length ?? 999))[0];
-  }
-
-  if (!trigger) {
-    // Dump all interactive elements + small year-containing elements for diagnosis.
+  if (!target) {
     return {
-      ok: false, step: 'find-trigger',
-      interactiveWithText: interactiveEls()
-        .filter(el => el.innerText?.trim())
-        .slice(0, 25)
-        .map(el => ({ tag: el.tagName, text: el.innerText?.trim().slice(0, 70), aria: el.getAttribute('aria-label'), cls: el.className.slice(0, 70) })),
-      yearEls: Array.from(document.querySelectorAll('*'))
-        .filter(el => el.offsetParent !== null && !el.closest('svg') && el.childElementCount <= 2 && YEAR_RE.test(el.innerText?.trim()))
-        .slice(0, 15)
-        .map(el => ({ tag: el.tagName, text: el.innerText?.trim().slice(0, 70), cls: el.className.slice(0, 70) })),
+      ok: false,
+      step: 'find-preset-tab',
+      label,
+      candidates: allCandidates.slice(0, 30).map(el => ({
+        tag: el.tagName,
+        role: el.getAttribute('role'),
+        text: (el.innerText || el.textContent || '').trim().slice(0, 40),
+      })),
     };
   }
 
-  const triggerText = trigger.innerText?.trim().slice(0, 80);
+  target.click();
+  await sleep(2000);
+  return { ok: true, clicked: (target.innerText || target.textContent || '').trim() };
+}
 
-  // ── 2. Open the picker ───────────────────────────────────────────────────────
-  trigger.click();
-  await sleep(1200);
+// ── SVG time-series extraction (runs in MAIN world) ───────────────────────────
 
-  // ── 3. Find the calendar month header anywhere in the document ──────────────
-  // No container guess — walk the whole document and find the exact element
-  // whose text is "MonthName YYYY" (the calendar header, not the trigger).
-  function getShownYM() {
-    for (const el of document.querySelectorAll('*')) {
-      if (!el.offsetParent) continue;          // not visible
-      if (el.closest('svg')) continue;         // skip SVG text nodes
-      if (el.childElementCount > 2) continue;  // skip large containers
-      const txt = el.innerText?.trim();
-      if (!txt) continue;
-      const m = txt.match(/^(January|February|March|April|May|June|July|August|September|October|November|December)\s+(20\d\d)$/i);
-      if (m) {
-        const mi = MONTH_NAMES.findIndex(n => n.toLowerCase() === m[1].toLowerCase());
-        return { y: +m[2], m: mi + 1, el };
-      }
+// Extracts a time-series from the rendered CWS analytics SVG chart.
+// Uses pixel coordinate math: bar top-y → value via y-axis label scale.
+// Must be self-contained (serialised by executeScript — no closure access).
+// Returns {ok:true, entries:[{label,value}]} or {ok:false, step, ...diagnostics}.
+function extractTimeSeriesFromSVG() {
+  const DATE_RE       = /^[A-Za-zÀ-ÿ]+ \d{1,2}(, \d{4})?$/;
+  const MONTH_YEAR_RE = /^[A-Za-zÀ-ÿ]+ \d{4}$/;
+
+  // Find all large, visible SVGs and pick the one with date-like x-axis labels.
+  const allSvgs = Array.from(document.querySelectorAll('svg')).filter(svg => {
+    if (!svg.offsetParent) return false;
+    const r = svg.getBoundingClientRect();
+    return r.width > 100 && r.height > 50;
+  });
+
+  const tsSvg = allSvgs.find(svg =>
+    Array.from(svg.querySelectorAll('text')).some(t => {
+      const v = t.textContent.trim();
+      return DATE_RE.test(v) || MONTH_YEAR_RE.test(v);
+    })
+  );
+
+  if (!tsSvg) {
+    return {
+      ok: false, step: 'no-ts-svg',
+      svgCount: allSvgs.length,
+      svgTexts: allSvgs.map(s => ({
+        dims: `${Math.round(s.getBoundingClientRect().width)}x${Math.round(s.getBoundingClientRect().height)}`,
+        texts: Array.from(s.querySelectorAll('text')).map(t => t.textContent.trim()).slice(0, 8),
+      })),
+    };
+  }
+
+  // Collect all visible text nodes with pixel centres.
+  const textEls = Array.from(tsSvg.querySelectorAll('text'))
+    .map(t => {
+      const r = t.getBoundingClientRect();
+      return { text: t.textContent.trim(), cx: r.left + r.width / 2, cy: r.top + r.height / 2 };
+    })
+    .filter(t => t.text && t.cx > 0);
+
+  const xLabels = textEls.filter(({ text }) => DATE_RE.test(text) || MONTH_YEAR_RE.test(text));
+  const yLabels = textEls
+    .filter(({ text }) => /^\d[\d,]*$/.test(text))
+    .map(({ text, cy }) => ({ value: parseInt(text.replace(/,/g, ''), 10), cy }))
+    .filter(({ value }) => !isNaN(value));
+
+  if (xLabels.length < 2) {
+    return { ok: false, step: 'no-x-labels', xCount: xLabels.length, texts: textEls.map(t => t.text).slice(0, 30) };
+  }
+  if (yLabels.length < 2) {
+    return { ok: false, step: 'no-y-labels', yCount: yLabels.length, texts: textEls.map(t => t.text).slice(0, 30) };
+  }
+
+  // Build y-axis pixel→value scale.
+  // Lower cy = higher on screen = higher data value.
+  yLabels.sort((a, b) => a.cy - b.cy);
+  const yTop = yLabels[0];
+  const yBot = yLabels[yLabels.length - 1];
+
+  function pixelToValue(py) {
+    if (yTop.cy === yBot.cy) return yTop.value;
+    const t = (py - yTop.cy) / (yBot.cy - yTop.cy);
+    return Math.round(yTop.value + t * (yBot.value - yTop.value));
+  }
+
+  // Find bar rects (height > 3px, width > 2px).
+  const rects = Array.from(tsSvg.querySelectorAll('rect'))
+    .map(r => r.getBoundingClientRect())
+    .filter(box => box.height > 3 && box.width > 2);
+
+  if (rects.length < 2) {
+    return { ok: false, step: 'no-bars', rectCount: rects.length };
+  }
+
+  // Assign each bar to its nearest x-label (by centre-x distance).
+  xLabels.sort((a, b) => a.cx - b.cx);
+  const buckets = xLabels.map(l => ({ label: l.text, cx: l.cx, bars: [] }));
+
+  for (const box of rects) {
+    const barCx = box.left + box.width / 2;
+    let best = buckets[0], bestDist = Math.abs(barCx - buckets[0].cx);
+    for (const b of buckets) {
+      const d = Math.abs(barCx - b.cx);
+      if (d < bestDist) { bestDist = d; best = b; }
     }
-    return null;
+    best.bars.push(box);
   }
 
-  // Walk up from the month-header element until an ancestor also contains
-  // the navigation buttons or day cells we need.
-  function calArea(headerEl, selector) {
-    let el = headerEl;
-    for (let i = 0; i < 8; i++) {
-      if (!el.parentElement) break;
-      el = el.parentElement;
-      if (el.querySelector(selector)) return el;
-    }
-    return document;
+  // For each x-label bucket, the bar with the lowest top-y (= tallest bar) is
+  // the primary series (installs on the installs page).
+  const entries = buckets
+    .filter(b => b.bars.length > 0)
+    .map(b => {
+      const topBar = b.bars.reduce((best, box) => box.top < best.top ? box : best);
+      return { label: b.label, value: Math.max(0, pixelToValue(topBar.top)) };
+    });
+
+  if (!entries.length) {
+    return { ok: false, step: 'no-entries', buckets: buckets.map(b => ({ label: b.label, barCount: b.bars.length })) };
   }
 
-  function getNavButtons(headerEl) {
-    const area = calArea(headerEl, '[role="button"], button');
-    const btns = Array.from(area.querySelectorAll('[role="button"], button'))
-      .filter(b => b.offsetParent !== null && b !== headerEl);
-    const prev = btns.find(b =>
-      /prev|previous|back/i.test(b.getAttribute('aria-label') || '') ||
-      /chevron_left|arrow_back|keyboard_arrow_left/i.test(b.innerHTML)
-    );
-    const next = btns.find(b =>
-      /next|forward/i.test(b.getAttribute('aria-label') || '') ||
-      /chevron_right|arrow_forward|keyboard_arrow_right/i.test(b.innerHTML)
-    );
-    return { prev, next, area };
-  }
+  return { ok: true, entries };
+}
 
-  function clickDay(headerEl, dayNum) {
-    const area = calArea(headerEl, '[role="gridcell"], td');
-    const cells = Array.from(area.querySelectorAll('[role="gridcell"], [role="button"], td'))
-      .filter(c => c.offsetParent !== null);
-    const cell = cells.find(c => c.innerText?.trim() === String(dayNum));
-    if (!cell) return { ok: false, cells: cells.map(c => c.innerText?.trim()).slice(0, 42) };
-    cell.click();
-    return { ok: true };
-  }
+// ── label → ISO range ─────────────────────────────────────────────────────────
 
-  async function navigateTo(targetY, targetM) {
-    let shown = getShownYM();
-    if (!shown) {
-      // Dump what visible buttons/text exists to diagnose
-      const visButtons = Array.from(document.querySelectorAll('[role="button"], button'))
-        .filter(b => b.offsetParent !== null)
-        .slice(0, 20).map(b => ({ text: b.innerText?.trim().slice(0, 40), aria: b.getAttribute('aria-label'), cls: b.className.slice(0,60) }));
-      return { ok: false, step: 'find-header', triggerText, visButtons };
-    }
-
-    let attempts = 0;
-    while ((shown.y !== targetY || shown.m !== targetM) && attempts < 24) {
-      const monthsAway = (targetY - shown.y) * 12 + (targetM - shown.m);
-      const { prev, next } = getNavButtons(shown.el);
-      if (monthsAway < 0) {
-        if (!prev) return { ok: false, step: 'no-prev-btn',
-          shownYM: `${shown.y}-${shown.m}`, targetYM: `${targetY}-${targetM}` };
-        prev.click();
-      } else {
-        if (!next) return { ok: false, step: 'no-next-btn',
-          shownYM: `${shown.y}-${shown.m}`, targetYM: `${targetY}-${targetM}` };
-        next.click();
-      }
-      await sleep(400);
-      shown = getShownYM();
-      attempts++;
-    }
-    if (!shown || shown.y !== targetY || shown.m !== targetM) {
-      return { ok: false, step: 'nav-timeout',
-        shownYM: shown ? `${shown.y}-${shown.m}` : 'unknown',
-        targetYM: `${targetY}-${targetM}` };
-    }
-    return null; // success — returns shown for use by caller
-  }
-
-  const start = parseISO(startISO);
-  const end   = parseISO(endISO);
-
-  // ── 4. Navigate to start month & click start day ─────────────────────────────
-  let navErr = await navigateTo(start.y, start.m);
-  if (navErr) return navErr;
-
-  let shown = getShownYM();
-  const startClick = clickDay(shown.el, start.d);
-  if (!startClick.ok) return { ok: false, step: 'click-start-day', day: start.d, ...startClick };
-  await sleep(400);
-
-  // ── 5. Navigate to end month (may be same) & click end day ──────────────────
-  navErr = await navigateTo(end.y, end.m);
-  if (navErr) return navErr;
-
-  shown = getShownYM();
-  const endClick = clickDay(shown.el, end.d);
-  if (!endClick.ok) return { ok: false, step: 'click-end-day', day: end.d, ...endClick };
-  await sleep(400);
-
-  // ── 6. Click Apply / Update ──────────────────────────────────────────────────
-  const applyBtn = Array.from(
-    container.querySelectorAll('[role="button"], button')
-  ).find(el => /\b(apply|update|ok|done)\b/i.test(el.innerText));
-
-  if (applyBtn) {
-    applyBtn.click();
-  }
-  // (some pickers auto-close after range selection; clicking Apply may be optional)
-
-  // ── 7. Poll for trigger text update ─────────────────────────────────────────
-  const wantStart = MONTH_NAMES[start.m - 1].slice(0, 3); // e.g. "Feb"
-  const wantEnd   = MONTH_NAMES[end.m - 1].slice(0, 3);
-  for (let i = 0; i < 14; i++) {
-    await sleep(500);
-    const txt = trigger.innerText || '';
-    if (txt.includes(wantStart) && String(start.d) && txt.includes(wantEnd)) {
-      return { ok: true };
-    }
-  }
-
+// Converts an SVG x-axis label ("Jan 2022", "January 2022") to
+// {period_start, period_end} ISO strings, or null if unrecognised.
+function parseLabelToRange(label) {
+  const MONTHS = {
+    january:0, february:1, march:2, april:3, may:4, june:5,
+    july:6, august:7, september:8, october:9, november:10, december:11,
+    jan:0, feb:1, mar:2, apr:3, jun:5, jul:6, aug:7, sep:8, oct:9, nov:10, dec:11,
+  };
+  const m = label.trim().match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
+  if (!m) return null;
+  const monthIdx = MONTHS[m[1].toLowerCase()];
+  if (monthIdx === undefined) return null;
+  const year = parseInt(m[2], 10);
+  const start = new Date(Date.UTC(year, monthIdx, 1));
+  const end   = new Date(Date.UTC(year, monthIdx + 1, 0));
   return {
-    ok: false, step: 'verify',
-    triggerText: trigger.innerText?.trim().slice(0, 120),
-    wantedStart: `${wantStart} ${start.d}`, wantedEnd: `${wantEnd} ${end.d}`,
+    period_start: start.toISOString().slice(0, 10),
+    period_end:   end.toISOString().slice(0, 10),
   };
 }
 
@@ -281,8 +206,7 @@ function waitForTabComplete(tabId, timeoutMs = 30000) {
   });
 }
 
-// dateRange: null for a regular scrape, or {start, end} to change the picker first.
-async function scrapeUrl(url, dateRange = null) {
+async function scrapeUrl(url) {
   let tab;
   try {
     tab = await chrome.tabs.create({ url, active: false });
@@ -295,23 +219,6 @@ async function scrapeUrl(url, dateRange = null) {
 
     await new Promise(r => setTimeout(r, SETTLE_MS));
 
-    if (dateRange) {
-      const dr = await chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        world: 'MAIN',
-        func: setDateRangeInPage,
-        args: [dateRange.start, dateRange.end],
-      });
-      const res = dr?.[0]?.result;
-      if (!res?.ok) {
-        throw new Error(
-          `Date picker failed at step "${res?.step ?? '?'}": ` +
-          JSON.stringify(res, null, 2)
-        );
-      }
-      // setDateRangeInPage already polls up to 6 s for re-render; no extra sleep.
-    }
-
     const results = await chrome.scripting.executeScript({
       target: { tabId: tab.id },
       files: SCRAPE_FILES,
@@ -321,6 +228,52 @@ async function scrapeUrl(url, dateRange = null) {
     if (!result) throw new Error(`No scrape result from ${url}`);
     if (result.page === 'unknown') throw new Error(`Unexpected page at ${url} (path: ${result.path})`);
     return result;
+  } finally {
+    if (tab) { try { await chrome.tabs.remove(tab.id); } catch (_) {} }
+  }
+}
+
+// Opens url, clicks the named preset period tab, waits for chart re-render,
+// then extracts the time-series via SVG coordinate math.
+// Returns [{label, value}] (primary metric for the page).
+async function scrapeTimeSeries(url, presetLabel) {
+  let tab;
+  try {
+    tab = await chrome.tabs.create({ url, active: false });
+    await waitForTabComplete(tab.id);
+
+    const { url: finalUrl } = await chrome.tabs.get(tab.id);
+    if (LOGIN_RE.test(finalUrl)) {
+      throw new Error(`Not logged in — redirected to ${finalUrl}. Log in and re-run.`);
+    }
+
+    await new Promise(r => setTimeout(r, SETTLE_MS));
+
+    const clickResult = await chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      world: 'MAIN',
+      func: clickPresetPeriod,
+      args: [presetLabel],
+    });
+    const clickRes = clickResult?.[0]?.result;
+    if (!clickRes?.ok) {
+      throw new Error(`Preset "${presetLabel}" not found: ${JSON.stringify(clickRes)}`);
+    }
+
+    // Extra settle after preset click — chart re-fetches data from the server.
+    await new Promise(r => setTimeout(r, SETTLE_MS));
+
+    const extractResult = await chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      world: 'MAIN',
+      func: extractTimeSeriesFromSVG,
+    });
+    const extractRes = extractResult?.[0]?.result;
+    if (!extractRes?.ok) {
+      throw new Error(`SVG extraction failed at "${extractRes?.step}": ${JSON.stringify(extractRes)}`);
+    }
+
+    return extractRes.entries;
   } finally {
     if (tab) { try { await chrome.tabs.remove(tab.id); } catch (_) {} }
   }
@@ -384,59 +337,71 @@ async function runCollection(config, token, onProgress) {
 
 // ── back-fill run ─────────────────────────────────────────────────────────────
 
-async function runBackfill(config, token, onProgress, months = 12) {
+// Reads the CWS analytics time-series chart using the longest available preset
+// period, then commits approximate monthly entries into cws.json.
+// Installs values are derived from SVG bar heights (coordinate-math approximation).
+// Breakdowns and weekly_users are not available historically; those fields are null.
+async function runBackfill(config, token, onProgress) {
   const { publisher_id: pubId, items, github } = config;
   const today = new Date().toISOString().slice(0, 10);
-  const ranges = monthRanges(months);
+  const PRESETS = ['5 years', 'Last year', '1 year'];
 
-  for (const { period_start, period_end } of ranges) {
-    onProgress(`── ${period_start} → ${period_end}`);
+  for (const item of items) {
+    const itemBase = `${CWS_BASE}/${pubId}/${item.id}`;
+    let entries = null;
+    let usedPreset = null;
 
-    for (const item of items) {
-      const itemBase = `${CWS_BASE}/${pubId}/${item.id}`;
-      const dr = { start: period_start, end: period_end };
-
-      onProgress(`  ${item.name}: installs…`);
-      const installsData = await scrapeUrl(buildUrl(`${itemBase}/analytics/installs`), dr);
-
-      onProgress(`  ${item.name}: users…`);
-      const usersData = await scrapeUrl(buildUrl(`${itemBase}/analytics/users`), dr);
-
-      let impressions = null;
+    onProgress(`${item.name}: reading installs history…`);
+    for (const preset of PRESETS) {
       try {
-        onProgress(`  ${item.name}: impressions…`);
-        const impData = await scrapeUrl(buildUrl(`${itemBase}/analytics/impressions`), dr);
-        impressions = impData.impressions ?? null;
+        entries = await scrapeTimeSeries(buildUrl(`${itemBase}/analytics/installs`), preset);
+        usedPreset = preset;
+        break;
       } catch (e) {
-        console.warn(`[stats-collector] impressions backfill failed for ${item.id}:`, e.message);
+        onProgress(`  preset "${preset}" failed — ${e.message.slice(0, 80)}`);
+      }
+    }
+
+    if (!entries?.length) {
+      onProgress(`${item.name}: no chart data found — skipping.`);
+      continue;
+    }
+
+    onProgress(`${item.name}: ${entries.length} data points from "${usedPreset}"`);
+
+    let committed = 0, skipped = 0;
+    for (const { label, value } of entries) {
+      const range = parseLabelToRange(label);
+      if (!range) {
+        onProgress(`  skipping unrecognised label: "${label}"`);
+        continue;
       }
 
-      // Use the requested period dates directly — parseDateRange reflects the
-      // initial page load, not the UI-updated range.
       const entry = {
         collected_at:           today,
-        period_start,
-        period_end,
-        installs:               installsData.installs               ?? null,
-        uninstalls:             installsData.uninstalls             ?? null,
-        weekly_users:           null, // point-in-time metric, not meaningful historically
-        impressions,
-        installs_by_country:    installsData.installs_by_country    ?? null,
-        installs_by_language:   installsData.installs_by_language   ?? null,
-        installs_by_os:         installsData.installs_by_os         ?? null,
-        uninstalls_by_country:  installsData.uninstalls_by_country  ?? null,
-        uninstalls_by_language: installsData.uninstalls_by_language ?? null,
-        uninstalls_by_os:       installsData.uninstalls_by_os       ?? null,
-        users_by_country:       usersData.users_by_country          ?? null,
-        users_by_language:      usersData.users_by_language         ?? null,
-        users_by_os:            usersData.users_by_os               ?? null,
-        active_versions:        usersData.active_versions           ?? null,
+        period_start:           range.period_start,
+        period_end:             range.period_end,
+        installs:               value,
+        uninstalls:             null,
+        weekly_users:           null,
+        impressions:            null,
+        installs_by_country:    null,
+        installs_by_language:   null,
+        installs_by_os:         null,
+        uninstalls_by_country:  null,
+        uninstalls_by_language: null,
+        uninstalls_by_os:       null,
+        users_by_country:       null,
+        users_by_language:      null,
+        users_by_os:            null,
+        active_versions:        null,
       };
 
-      onProgress(`  ${item.name}: committing…`);
-      const { committed, reason } = await commitCwsEntry(token, github, item.id, entry);
-      onProgress(`  ${item.name}: ${committed ? 'committed ✓' : `skipped (${reason})`}`);
+      const result = await commitCwsEntry(token, github, item.id, entry);
+      if (result.committed) committed++; else skipped++;
     }
+
+    onProgress(`${item.name}: ${committed} new, ${skipped} already recorded ✓`);
   }
 
   onProgress('Back-fill complete ✓');
@@ -447,14 +412,14 @@ async function runBackfill(config, token, onProgress, months = 12) {
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   if (msg.type !== 'START_COLLECTION' && msg.type !== 'START_BACKFILL') return;
 
-  const { config, token, months } = msg;
+  const { config, token } = msg;
   (async () => {
     try {
       const progress = status =>
         chrome.runtime.sendMessage({ type: 'PROGRESS', status }).catch(() => {});
 
       if (msg.type === 'START_BACKFILL') {
-        await runBackfill(config, token, progress, months ?? 12);
+        await runBackfill(config, token, progress);
       } else {
         await runCollection(config, token, progress);
       }
