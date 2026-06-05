@@ -12,54 +12,54 @@
           "weekly_users": 562,
           "impressions": 225,
           "installs_by_country": {
-            "États-Unis": 18,
+            "Ãtats-Unis": 18,
             "Espagne": 16,
             "Japon": 11,
             "Autre": 55
           },
           "installs_by_language": {
             "espagnol": 26,
-            "anglais (États-Unis)": 13,
+            "anglais (Ãtats-Unis)": 13,
             "japonais": 12,
             "Autre": 49
           },
           "installs_by_os": {
             "Windows": 76,
-            "Mac OS": 12,
+            "MacÂ OS": 12,
             "ChromeOS": 10,
             "Autre": 2
           },
           "uninstalls_by_country": {
             "Japon": 18,
-            "Corée du Sud": 13,
+            "CorÃ©e du Sud": 13,
             "Autre": 56
           },
           "uninstalls_by_language": {
             "espagnol": 24,
-            "anglais (États-Unis)": 15,
+            "anglais (Ãtats-Unis)": 15,
             "japonais": 14,
             "Autre": 47
           },
           "uninstalls_by_os": {
             "Windows": 84,
-            "Mac OS": 14,
+            "MacÂ OS": 14,
             "Linux": 2,
             "Autre": 1
           },
           "users_by_country": {
             "Espagne": 24,
             "Japon": 12,
-            "Brésil": 11,
+            "BrÃ©sil": 11,
             "Autre": 53
           },
           "users_by_language": {
             "espagnol": 34,
-            "anglais (États-Unis)": 15,
+            "anglais (Ãtats-Unis)": 15,
             "japonais": 13,
             "Autre": 37
           },
           "users_by_os": {
-            "Mac OS": 82,
+            "MacÂ OS": 82,
             "Linux": 15,
             "Autre": 1
           },
@@ -72,6 +72,42 @@
             "4.2.0.0",
             "4.2.1.0",
             "4.2.2.0"
+          ]
+        }
+      ]
+    },
+    "kjmgfajofolnfeaahchpmkpecfimcppf": {
+      "history": [
+        {
+          "collected_at": "2026-06-05",
+          "period_start": "2026-05-06",
+          "period_end": "2026-06-04",
+          "installs": 53,
+          "uninstalls": 7,
+          "weekly_users": 23,
+          "impressions": 110,
+          "installs_by_country": null,
+          "installs_by_language": null,
+          "installs_by_os": null,
+          "uninstalls_by_country": null,
+          "uninstalls_by_language": null,
+          "uninstalls_by_os": null,
+          "users_by_country": {
+            "Espagne": 30,
+            "Canada": 17,
+            "Corée du Sud": 9,
+            "Autre": 44
+          },
+          "users_by_language": {
+            "espagnol": 34,
+            "français": 16,
+            "coréen": 9,
+            "Autre": 40
+          },
+          "users_by_os": null,
+          "active_versions": [
+            "1.0.0.0",
+            "1.1.0.0"
           ]
         }
       ]
