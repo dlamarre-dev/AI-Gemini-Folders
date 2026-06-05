@@ -82,67 +82,76 @@ async function setDateRangeInPage(startISO, endISO) {
   trigger.click();
   await sleep(1000);
 
-  // ── 3. Find the calendar container ──────────────────────────────────────────
-  const container =
-    document.querySelector('[role="dialog"]') ||
-    document.querySelector('[role="tooltip"]') ||
-    document.querySelector('[aria-modal="true"]') ||
-    document.querySelector('[role="grid"]')?.closest('*') ||
-    document;
-
-  // Helper: find the month header showing e.g. "February 2026"
+  // ── 3. Find the calendar month header anywhere in the document ──────────────
+  // No container guess — walk the whole document and find the exact element
+  // whose text is "MonthName YYYY" (the calendar header, not the trigger).
   function getShownYM() {
-    for (const el of container.querySelectorAll('*')) {
-      if (el.childElementCount > 3) continue;
+    for (const el of document.querySelectorAll('*')) {
+      if (!el.offsetParent) continue;          // not visible
+      if (el.closest('svg')) continue;         // skip SVG text nodes
+      if (el.childElementCount > 2) continue;  // skip large containers
       const txt = el.innerText?.trim();
       if (!txt) continue;
-      for (let mi = 0; mi < 12; mi++) {
-        if (txt.startsWith(MONTH_NAMES[mi]) && /\b20\d\d\b/.test(txt)) {
-          const y = parseInt(txt.match(/\b(20\d\d)\b/)[1], 10);
-          return { y, m: mi + 1, el };
-        }
+      const m = txt.match(/^(January|February|March|April|May|June|July|August|September|October|November|December)\s+(20\d\d)$/i);
+      if (m) {
+        const mi = MONTH_NAMES.findIndex(n => n.toLowerCase() === m[1].toLowerCase());
+        return { y: +m[2], m: mi + 1, el };
       }
     }
     return null;
   }
 
-  // Helper: find prev/next month nav buttons
-  function getNavButtons() {
-    const btns = Array.from(container.querySelectorAll('[role="button"], button'))
-      .filter(el => el.offsetParent !== null);
-    const prev = btns.find(el =>
-      /prev|previous|back/i.test(el.getAttribute('aria-label') || '') ||
-      /chevron_left|arrow_back|keyboard_arrow_left/i.test(el.innerHTML) ||
-      el.innerText.trim() === '<'
-    );
-    const next = btns.find(el =>
-      /next|forward/i.test(el.getAttribute('aria-label') || '') ||
-      /chevron_right|arrow_forward|keyboard_arrow_right/i.test(el.innerHTML) ||
-      el.innerText.trim() === '>'
-    );
-    return { prev, next };
+  // Walk up from the month-header element until an ancestor also contains
+  // the navigation buttons or day cells we need.
+  function calArea(headerEl, selector) {
+    let el = headerEl;
+    for (let i = 0; i < 8; i++) {
+      if (!el.parentElement) break;
+      el = el.parentElement;
+      if (el.querySelector(selector)) return el;
+    }
+    return document;
   }
 
-  // Helper: click a specific day number in the visible calendar
-  function clickDay(dayNum) {
-    const cells = Array.from(
-      container.querySelectorAll('[role="gridcell"], [role="button"], td')
-    ).filter(el => el.offsetParent !== null);
-    const cell = cells.find(el => el.innerText?.trim() === String(dayNum));
-    if (!cell) return false;
+  function getNavButtons(headerEl) {
+    const area = calArea(headerEl, '[role="button"], button');
+    const btns = Array.from(area.querySelectorAll('[role="button"], button'))
+      .filter(b => b.offsetParent !== null && b !== headerEl);
+    const prev = btns.find(b =>
+      /prev|previous|back/i.test(b.getAttribute('aria-label') || '') ||
+      /chevron_left|arrow_back|keyboard_arrow_left/i.test(b.innerHTML)
+    );
+    const next = btns.find(b =>
+      /next|forward/i.test(b.getAttribute('aria-label') || '') ||
+      /chevron_right|arrow_forward|keyboard_arrow_right/i.test(b.innerHTML)
+    );
+    return { prev, next, area };
+  }
+
+  function clickDay(headerEl, dayNum) {
+    const area = calArea(headerEl, '[role="gridcell"], td');
+    const cells = Array.from(area.querySelectorAll('[role="gridcell"], [role="button"], td'))
+      .filter(c => c.offsetParent !== null);
+    const cell = cells.find(c => c.innerText?.trim() === String(dayNum));
+    if (!cell) return { ok: false, cells: cells.map(c => c.innerText?.trim()).slice(0, 42) };
     cell.click();
-    return true;
+    return { ok: true };
   }
 
-  // Navigate the calendar to a target {y, m}
   async function navigateTo(targetY, targetM) {
     let shown = getShownYM();
-    if (!shown) return { ok: false, step: 'find-header', containerHTML: container.innerHTML.slice(0, 600) };
+    if (!shown) {
+      // Dump what visible buttons/text exists to diagnose
+      const visButtons = Array.from(document.querySelectorAll('[role="button"], button'))
+        .filter(b => b.offsetParent !== null)
+        .slice(0, 20).map(b => ({ text: b.innerText?.trim().slice(0, 40), aria: b.getAttribute('aria-label'), cls: b.className.slice(0,60) }));
+      return { ok: false, step: 'find-header', visButtons };
+    }
 
     let attempts = 0;
     while ((shown.y !== targetY || shown.m !== targetM) && attempts < 24) {
       const monthsAway = (targetY - shown.y) * 12 + (targetM - shown.m);
-      const { prev, next } = getNavButtons();
+      const { prev, next } = getNavButtons(shown.el);
       if (monthsAway < 0) {
         if (!prev) return { ok: false, step: 'no-prev-btn',
           shownYM: `${shown.y}-${shown.m}`, targetYM: `${targetY}-${targetM}` };
@@ -152,7 +161,7 @@ async function setDateRangeInPage(startISO, endISO) {
           shownYM: `${shown.y}-${shown.m}`, targetYM: `${targetY}-${targetM}` };
         next.click();
       }
-      await sleep(350);
+      await sleep(400);
       shown = getShownYM();
       attempts++;
     }
@@ -161,39 +170,29 @@ async function setDateRangeInPage(startISO, endISO) {
         shownYM: shown ? `${shown.y}-${shown.m}` : 'unknown',
         targetYM: `${targetY}-${targetM}` };
     }
-    return null; // success
+    return null; // success — returns shown for use by caller
   }
 
   const start = parseISO(startISO);
   const end   = parseISO(endISO);
 
   // ── 4. Navigate to start month & click start day ─────────────────────────────
-  const navErr = await navigateTo(start.y, start.m);
+  let navErr = await navigateTo(start.y, start.m);
   if (navErr) return navErr;
 
-  if (!clickDay(start.d)) {
-    return {
-      ok: false, step: 'click-start-day',
-      day: start.d,
-      cells: Array.from(container.querySelectorAll('[role="gridcell"]'))
-        .map(el => el.innerText?.trim()).slice(0, 35),
-    };
-  }
-  await sleep(300);
+  let shown = getShownYM();
+  const startClick = clickDay(shown.el, start.d);
+  if (!startClick.ok) return { ok: false, step: 'click-start-day', day: start.d, ...startClick };
+  await sleep(400);
 
   // ── 5. Navigate to end month (may be same) & click end day ──────────────────
-  const navErr2 = await navigateTo(end.y, end.m);
-  if (navErr2) return navErr2;
+  navErr = await navigateTo(end.y, end.m);
+  if (navErr) return navErr;
 
-  if (!clickDay(end.d)) {
-    return {
-      ok: false, step: 'click-end-day',
-      day: end.d,
-      cells: Array.from(container.querySelectorAll('[role="gridcell"]'))
-        .map(el => el.innerText?.trim()).slice(0, 35),
-    };
-  }
-  await sleep(300);
+  shown = getShownYM();
+  const endClick = clickDay(shown.el, end.d);
+  if (!endClick.ok) return { ok: false, step: 'click-end-day', day: end.d, ...endClick };
+  await sleep(400);
 
   // ── 6. Click Apply / Update ──────────────────────────────────────────────────
   const applyBtn = Array.from(
