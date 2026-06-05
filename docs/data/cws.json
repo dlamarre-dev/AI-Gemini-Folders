@@ -7,20 +7,72 @@
           "collected_at": "2026-06-05",
           "period_start": "2026-05-06",
           "period_end": "2026-06-04",
-          "installs": 105,
-          "uninstalls": 439,
+          "installs": 694,
+          "uninstalls": 297,
           "weekly_users": null,
           "impressions": null,
-          "installs_by_country": null,
-          "installs_by_language": null,
-          "installs_by_os": null,
-          "uninstalls_by_country": null,
-          "uninstalls_by_language": null,
-          "uninstalls_by_os": null,
-          "users_by_country": null,
-          "users_by_language": null,
-          "users_by_os": null,
-          "active_versions": []
+          "installs_by_country": {
+            "United States": 18,
+            "Spain": 16,
+            "Japan": 11,
+            "Other": 55
+          },
+          "installs_by_language": {
+            "Spanish": 26,
+            "English (United States)": 13,
+            "Japanese": 12,
+            "Other": 49
+          },
+          "installs_by_os": {
+            "Windows": 76,
+            "Mac OS": 12,
+            "ChromeOS": 10,
+            "Other": 2
+          },
+          "uninstalls_by_country": {
+            "Japan": 18,
+            "South Korea": 13,
+            "Other": 56
+          },
+          "uninstalls_by_language": {
+            "Spanish": 24,
+            "English (United States)": 15,
+            "Japanese": 14,
+            "Other": 47
+          },
+          "uninstalls_by_os": {
+            "Windows": 84,
+            "Mac OS": 14,
+            "Linux": 2,
+            "Other": 1
+          },
+          "users_by_country": {
+            "Spain": 24,
+            "Japan": 12,
+            "Brazil": 11,
+            "Other": 53
+          },
+          "users_by_language": {
+            "Spanish": 34,
+            "English (United States)": 15,
+            "Japanese": 13,
+            "Other": 37
+          },
+          "users_by_os": {
+            "Mac OS": 82,
+            "Linux": 15,
+            "Other": 1
+          },
+          "active_versions": [
+            "3.3.0.0",
+            "3.4.1.0",
+            "3.5.0.0",
+            "4.0.0.0",
+            "4.1.0.0",
+            "4.2.0.0",
+            "4.2.1.0",
+            "4.2.2.0"
+          ]
         }
       ]
     },
