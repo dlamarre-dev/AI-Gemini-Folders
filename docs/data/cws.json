@@ -267,6 +267,65 @@
         },
         {
           "collected_at": "2026-06-05",
+          "period_start": "2026-03-07",
+          "period_end": "2026-06-05",
+          "installs": 53,
+          "uninstalls": 7,
+          "weekly_users": null,
+          "impressions": null,
+          "installs_by_country": {
+            "Spain": 63,
+            "Japan": 6,
+            "Other": 25
+          },
+          "installs_by_language": {
+            "English (United States)": 21,
+            "Korean": 11,
+            "Other": 58
+          },
+          "installs_by_os": {
+            "Windows": 58,
+            "ChromeOS": 32,
+            "Mac OS": 6,
+            "Other": 4
+          },
+          "uninstalls_by_country": {
+            "Sweden": 40,
+            "Other": 20
+          },
+          "uninstalls_by_language": {
+            "English (United States)": 43,
+            "Swedish": 29,
+            "Other": 14
+          },
+          "uninstalls_by_os": {
+            "Windows": 71,
+            "Linux": 29
+          },
+          "users_by_country": {
+            "Spain": 30,
+            "Canada": 17,
+            "South Korea": 9,
+            "Other": 44
+          },
+          "users_by_language": {
+            "Spanish": 34,
+            "French": 16,
+            "Korean": 9,
+            "Other": 40
+          },
+          "users_by_os": {
+            "Windows": 65,
+            "Mac OS": 28,
+            "ChromeOS": 7
+          },
+          "active_versions": [
+            "1.0.0.0",
+            "1.1.0.0"
+          ]
+        },
+        {
+          "collected_at": "2026-06-05",
           "period_start": "2026-05-06",
           "period_end": "2026-06-04",
           "installs": 53,
