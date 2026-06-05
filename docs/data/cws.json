@@ -84,8 +84,8 @@
           "period_end": "2026-06-04",
           "installs": 53,
           "uninstalls": 7,
-          "weekly_users": 23,
-          "impressions": 110,
+          "weekly_users": null,
+          "impressions": null,
           "installs_by_country": {
             "Spain": 63,
             "Japan": 6,
