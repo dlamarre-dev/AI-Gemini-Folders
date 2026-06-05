@@ -55,7 +55,12 @@ async function commitCwsEntry(token, github, itemId, entry) {
   if (!db.items[itemId]) db.items[itemId] = { history: [] };
 
   const history = db.items[itemId].history;
-  const idx = history.findIndex(e => e.collected_at === entry.collected_at);
+  // Match by period_start when present (back-fill); fall back to collected_at.
+  const idx = history.findIndex(e =>
+    entry.period_start
+      ? e.period_start === entry.period_start
+      : e.collected_at === entry.collected_at
+  );
 
   if (idx >= 0) {
     if (JSON.stringify(history[idx]) === JSON.stringify(entry)) {
@@ -64,7 +69,7 @@ async function commitCwsEntry(token, github, itemId, entry) {
     history[idx] = entry;
   } else {
     history.push(entry);
-    history.sort((a, b) => (a.collected_at < b.collected_at ? -1 : 1));
+    history.sort((a, b) => (a.period_start ?? a.collected_at) < (b.period_start ?? b.collected_at) ? -1 : 1);
   }
 
   const msg = `stats: CWS monthly snapshot ${entry.collected_at} (${itemId.slice(0, 8)}…)`;

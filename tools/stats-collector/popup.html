@@ -10,15 +10,20 @@
       width: 100%; box-sizing: border-box; padding: 5px 7px;
       border: 1px solid #ccc; border-radius: 3px; font: inherit; margin-bottom: 10px;
     }
+    input.short { width: 60px; }
+    .actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
     button {
       padding: 6px 14px; background: #1a73e8; color: #fff;
       border: none; border-radius: 3px; cursor: pointer; font: inherit;
     }
+    button.secondary { background: #5f6368; }
     button:disabled { background: #aaa; cursor: default; }
+    .backfill-row { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+    .backfill-row label { margin: 0; white-space: nowrap; }
     #log {
       margin-top: 10px; font-size: 11px; font-family: monospace;
       background: #f7f7f7; border-radius: 3px; padding: 7px;
-      max-height: 220px; overflow-y: auto; white-space: pre-wrap; word-break: break-all;
+      max-height: 260px; overflow-y: auto; white-space: pre-wrap; word-break: break-all;
       display: none;
     }
     .ok  { color: #1e7b34; }
@@ -31,7 +36,16 @@
   <label for="pat">GitHub PAT <small>(stored locally, never synced)</small></label>
   <input id="pat" type="password" placeholder="ghp_…" autocomplete="off">
 
-  <button id="run">Run monthly collection</button>
+  <div class="actions">
+    <button id="run">Run monthly collection</button>
+  </div>
+
+  <div class="backfill-row" style="margin-top:10px;">
+    <button id="backfill" class="secondary">Back-fill history</button>
+    <label for="months">last</label>
+    <input id="months" class="short" type="number" min="1" max="24" value="12">
+    <label for="months">months</label>
+  </div>
 
   <div id="log"></div>
 
