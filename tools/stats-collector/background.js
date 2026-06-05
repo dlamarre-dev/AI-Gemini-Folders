@@ -444,12 +444,11 @@ async function runBackfill(config, token, onProgress) {
           );
         } catch (_) { /* users breakdown is optional */ }
 
-        // parseDateRange reads the inline AF_dataServiceRequests script.
-        // If the SPA updated it after the preset click, we get precise dates;
-        // otherwise fall back to approximate computed dates.
-        const dates = (installsData.period_start && installsData.period_end)
-          ? { period_start: installsData.period_start, period_end: installsData.period_end }
-          : approxDates(preset);
+        // parseDateRange reads the DEFAULT period from inline scripts (not the
+        // selected preset), so all presets would return the same period_start.
+        // Always use approximate dates derived from the preset label so each
+        // preset creates a distinct entry with the correct historical window.
+        const dates = approxDates(preset);
 
         if (!dates) {
           onProgress(`  ${preset}: could not determine period dates — skipping`);
