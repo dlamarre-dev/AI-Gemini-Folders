@@ -1,0 +1,14 @@
+{
+  "_comment": "Copy to config.json, fill in your values. config.json is gitignored (contains your publisher UUID).",
+  "publisher_id": "YOUR_PUBLISHER_UUID_HERE",
+  "items": [
+    { "id": "jffchdehoapigpmifkmleglfimjiilik", "name": "Gemini Folders" },
+    { "id": "kjmgfajofolnfeaahchpmkpecfimcppf", "name": "AI Folders" }
+  ],
+  "github": {
+    "owner": "YOUR_GITHUB_USERNAME",
+    "repo": "AI-Gemini-Folders",
+    "branch": "main",
+    "cws_data_path": "docs/data/cws.json"
+  }
+}
