@@ -47,29 +47,22 @@ function monthRanges(n) {
 // ── date-picker interaction (runs in MAIN world) ──────────────────────────────
 
 // Injected into the CWS analytics page via executeScript {world:'MAIN'}.
-// Finds the date range picker, sets start/end, waits for the SPA to re-render.
-// Returns {ok:true} on success or {ok:false, step, ...diagnostics} on failure.
+// Finds the date range picker, navigates the calendar grid, clicks the right
+// days, and confirms. Returns {ok:true} or {ok:false, step, ...diagnostics}.
 async function setDateRangeInPage(startISO, endISO) {
   const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-  // Format "2026-02-01" → "Feb 1, 2026" (matches Google's picker display)
-  function fmt(iso) {
-    const [y, m, d] = iso.split('-').map(Number);
-    return new Date(y, m - 1, d).toLocaleDateString('en-US', {
-      month: 'short', day: 'numeric', year: 'numeric',
-    });
-  }
-
-  // Set an input value in a way gwiz/Material components actually see.
-  function setVal(input, value) {
-    input.focus();
-    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-    setter.call(input, value);
-    input.dispatchEvent(new Event('input',  { bubbles: true }));
-    input.dispatchEvent(new Event('change', { bubbles: true }));
-  }
-
+  const MONTH_NAMES = [
+    'January','February','March','April','May','June',
+    'July','August','September','October','November','December',
+  ];
   const DATE_RE = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i;
+
+  // Parse "2026-02-01" → {y,m,d}
+  function parseISO(iso) {
+    const [y, m, d] = iso.split('-').map(Number);
+    return { y, m, d };
+  }
 
   // ── 1. Find the date-range trigger ──────────────────────────────────────────
   const trigger = Array.from(
@@ -87,62 +80,146 @@ async function setDateRangeInPage(startISO, endISO) {
 
   // ── 2. Open the picker ───────────────────────────────────────────────────────
   trigger.click();
-  await sleep(800);
+  await sleep(1000);
 
-  // ── 3. Find visible date inputs inside the opened container ─────────────────
+  // ── 3. Find the calendar container ──────────────────────────────────────────
   const container =
     document.querySelector('[role="dialog"]') ||
     document.querySelector('[role="tooltip"]') ||
     document.querySelector('[aria-modal="true"]') ||
+    document.querySelector('[role="grid"]')?.closest('*') ||
     document;
 
-  const visibleInputs = Array.from(
-    container.querySelectorAll('input[type="text"], input:not([type])')
-  ).filter(inp => inp.offsetParent !== null);
-
-  if (visibleInputs.length < 2) {
-    return {
-      ok: false, step: 'find-inputs',
-      found: visibleInputs.length,
-      allInputs: Array.from(document.querySelectorAll('input'))
-        .map(i => ({ type: i.type, val: i.value, cls: i.className.slice(0, 80) })),
-    };
+  // Helper: find the month header showing e.g. "February 2026"
+  function getShownYM() {
+    for (const el of container.querySelectorAll('*')) {
+      if (el.childElementCount > 3) continue;
+      const txt = el.innerText?.trim();
+      if (!txt) continue;
+      for (let mi = 0; mi < 12; mi++) {
+        if (txt.startsWith(MONTH_NAMES[mi]) && /\b20\d\d\b/.test(txt)) {
+          const y = parseInt(txt.match(/\b(20\d\d)\b/)[1], 10);
+          return { y, m: mi + 1, el };
+        }
+      }
+    }
+    return null;
   }
 
-  // ── 4. Set start + end dates ─────────────────────────────────────────────────
-  setVal(visibleInputs[0], fmt(startISO));
-  await sleep(200);
-  setVal(visibleInputs[1], fmt(endISO));
-  await sleep(200);
+  // Helper: find prev/next month nav buttons
+  function getNavButtons() {
+    const btns = Array.from(container.querySelectorAll('[role="button"], button'))
+      .filter(el => el.offsetParent !== null);
+    const prev = btns.find(el =>
+      /prev|previous|back/i.test(el.getAttribute('aria-label') || '') ||
+      /chevron_left|arrow_back|keyboard_arrow_left/i.test(el.innerHTML) ||
+      el.innerText.trim() === '<'
+    );
+    const next = btns.find(el =>
+      /next|forward/i.test(el.getAttribute('aria-label') || '') ||
+      /chevron_right|arrow_forward|keyboard_arrow_right/i.test(el.innerHTML) ||
+      el.innerText.trim() === '>'
+    );
+    return { prev, next };
+  }
 
-  // ── 5. Click Apply / Update ──────────────────────────────────────────────────
+  // Helper: click a specific day number in the visible calendar
+  function clickDay(dayNum) {
+    const cells = Array.from(
+      container.querySelectorAll('[role="gridcell"], [role="button"], td')
+    ).filter(el => el.offsetParent !== null);
+    const cell = cells.find(el => el.innerText?.trim() === String(dayNum));
+    if (!cell) return false;
+    cell.click();
+    return true;
+  }
+
+  // Navigate the calendar to a target {y, m}
+  async function navigateTo(targetY, targetM) {
+    let shown = getShownYM();
+    if (!shown) return { ok: false, step: 'find-header', containerHTML: container.innerHTML.slice(0, 600) };
+
+    let attempts = 0;
+    while ((shown.y !== targetY || shown.m !== targetM) && attempts < 24) {
+      const monthsAway = (targetY - shown.y) * 12 + (targetM - shown.m);
+      const { prev, next } = getNavButtons();
+      if (monthsAway < 0) {
+        if (!prev) return { ok: false, step: 'no-prev-btn',
+          shownYM: `${shown.y}-${shown.m}`, targetYM: `${targetY}-${targetM}` };
+        prev.click();
+      } else {
+        if (!next) return { ok: false, step: 'no-next-btn',
+          shownYM: `${shown.y}-${shown.m}`, targetYM: `${targetY}-${targetM}` };
+        next.click();
+      }
+      await sleep(350);
+      shown = getShownYM();
+      attempts++;
+    }
+    if (!shown || shown.y !== targetY || shown.m !== targetM) {
+      return { ok: false, step: 'nav-timeout',
+        shownYM: shown ? `${shown.y}-${shown.m}` : 'unknown',
+        targetYM: `${targetY}-${targetM}` };
+    }
+    return null; // success
+  }
+
+  const start = parseISO(startISO);
+  const end   = parseISO(endISO);
+
+  // ── 4. Navigate to start month & click start day ─────────────────────────────
+  const navErr = await navigateTo(start.y, start.m);
+  if (navErr) return navErr;
+
+  if (!clickDay(start.d)) {
+    return {
+      ok: false, step: 'click-start-day',
+      day: start.d,
+      cells: Array.from(container.querySelectorAll('[role="gridcell"]'))
+        .map(el => el.innerText?.trim()).slice(0, 35),
+    };
+  }
+  await sleep(300);
+
+  // ── 5. Navigate to end month (may be same) & click end day ──────────────────
+  const navErr2 = await navigateTo(end.y, end.m);
+  if (navErr2) return navErr2;
+
+  if (!clickDay(end.d)) {
+    return {
+      ok: false, step: 'click-end-day',
+      day: end.d,
+      cells: Array.from(container.querySelectorAll('[role="gridcell"]'))
+        .map(el => el.innerText?.trim()).slice(0, 35),
+    };
+  }
+  await sleep(300);
+
+  // ── 6. Click Apply / Update ──────────────────────────────────────────────────
   const applyBtn = Array.from(
     container.querySelectorAll('[role="button"], button')
   ).find(el => /\b(apply|update|ok|done)\b/i.test(el.innerText));
 
   if (applyBtn) {
     applyBtn.click();
-  } else {
-    visibleInputs[1].dispatchEvent(
-      new KeyboardEvent('keydown', { key: 'Enter', keyCode: 13, bubbles: true })
-    );
   }
+  // (some pickers auto-close after range selection; clicking Apply may be optional)
 
-  // ── 6. Wait for re-render, then verify trigger text updated ─────────────────
-  const fmtStart = fmt(startISO).slice(0, 6); // e.g. "Feb 1"
-  const fmtEnd   = fmt(endISO).slice(0, 6);
-  for (let i = 0; i < 12; i++) {
+  // ── 7. Poll for trigger text update ─────────────────────────────────────────
+  const wantStart = MONTH_NAMES[start.m - 1].slice(0, 3); // e.g. "Feb"
+  const wantEnd   = MONTH_NAMES[end.m - 1].slice(0, 3);
+  for (let i = 0; i < 14; i++) {
     await sleep(500);
     const txt = trigger.innerText || '';
-    if (txt.includes(fmtStart) && txt.includes(fmtEnd)) {
+    if (txt.includes(wantStart) && String(start.d) && txt.includes(wantEnd)) {
       return { ok: true };
     }
   }
 
   return {
     ok: false, step: 'verify',
-    triggerText: trigger.innerText?.trim().slice(0, 100),
-    expected: `${fmtStart} … ${fmtEnd}`,
+    triggerText: trigger.innerText?.trim().slice(0, 120),
+    wantedStart: `${wantStart} ${start.d}`, wantedEnd: `${wantEnd} ${end.d}`,
   };
 }
 
