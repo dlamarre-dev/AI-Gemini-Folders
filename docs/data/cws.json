@@ -73,37 +73,51 @@
           "weekly_users": 23,
           "impressions": 110,
           "installs_by_country": {
-            "Espagne": 63,
-            "Japon": 6,
-            "Autre": 25
+            "Spain": 63,
+            "Japan": 6,
+            "Other": 25
           },
           "installs_by_language": {
-            "chinois (Chine)": 21,
-            "anglais (Ãtats-Unis)": 11,
-            "Autre": 58
+            "English (United States)": 21,
+            "Korean": 11,
+            "Other": 58
           },
           "installs_by_os": {
             "Windows": 58,
             "ChromeOS": 32,
-            "MacÂ OS": 6,
-            "Autre": 4
+            "Mac OS": 6,
+            "Other": 4
           },
           "uninstalls_by_country": {
-            "SuÃ¨de": 40,
-            "Autre": 20
+            "Sweden": 40,
+            "Other": 20
           },
           "uninstalls_by_language": {
-            "anglais (Ãtats-Unis)": 43,
-            "suÃ©dois": 29,
-            "Autre": 14
+            "English (United States)": 43,
+            "Swedish": 29,
+            "Other": 14
           },
           "uninstalls_by_os": {
             "Windows": 71,
             "Linux": 29
           },
-          "users_by_country": null,
-          "users_by_language": null,
-          "users_by_os": null,
+          "users_by_country": {
+            "Spain": 30,
+            "Canada": 17,
+            "South Korea": 9,
+            "Other": 44
+          },
+          "users_by_language": {
+            "Spanish": 34,
+            "French": 16,
+            "Korean": 9,
+            "Other": 40
+          },
+          "users_by_os": {
+            "Windows": 65,
+            "Mac OS": 28,
+            "ChromeOS": 7
+          },
           "active_versions": [
             "1.0.0.0",
             "1.1.0.0"
