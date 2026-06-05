@@ -12,20 +12,40 @@
           "weekly_users": 562,
           "impressions": 225,
           "installs_by_country": {
+            "États-Unis": 18,
+            "Espagne": 16,
+            "Japon": 11,
+            "Autre": 55
+          },
+          "installs_by_language": {
+            "espagnol": 26,
+            "anglais (États-Unis)": 13,
+            "japonais": 12,
+            "Autre": 49
+          },
+          "installs_by_os": {
+            "Windows": 76,
+            "Mac OS": 12,
+            "ChromeOS": 10,
+            "Autre": 2
+          },
+          "uninstalls_by_country": {
             "Japon": 18,
             "Corée du Sud": 13,
             "Autre": 56
           },
-          "installs_by_language": {
+          "uninstalls_by_language": {
+            "espagnol": 24,
+            "anglais (États-Unis)": 15,
+            "japonais": 14,
+            "Autre": 47
+          },
+          "uninstalls_by_os": {
             "Windows": 84,
             "Mac OS": 14,
             "Linux": 2,
             "Autre": 1
           },
-          "installs_by_os": null,
-          "uninstalls_by_country": null,
-          "uninstalls_by_language": null,
-          "uninstalls_by_os": null,
           "users_by_country": {
             "Espagne": 24,
             "Japon": 12,
@@ -75,13 +95,13 @@
           "users_by_country": {
             "Espagne": 30,
             "Canada": 17,
-            "CorÃÂ©e du Sud": 9,
+            "CorÃÂÃÂ©e du Sud": 9,
             "Autre": 44
           },
           "users_by_language": {
             "espagnol": 34,
-            "franÃÂ§ais": 16,
-            "corÃÂ©en": 9,
+            "franÃÂÃÂ§ais": 16,
+            "corÃÂÃÂ©en": 9,
             "Autre": 40
           },
           "users_by_os": null,
