@@ -235,13 +235,13 @@ function renderGa4(ga4db) {
   const footer = document.getElementById('footer');
 
   try {
-    const resp = await fetch('../data/cws.json');
+    const resp = await fetch('../data/cws.json', { cache: 'no-cache' });
     if (!resp.ok) throw new Error(`Failed to load data (${resp.status})`);
     const db = await resp.json();
 
     let ga4db = null;
     try {
-      const g4r = await fetch('../data/ga4.json');
+      const g4r = await fetch('../data/ga4.json', { cache: 'no-cache' });
       if (g4r.ok) ga4db = await g4r.json();
     } catch (_) {}
 
