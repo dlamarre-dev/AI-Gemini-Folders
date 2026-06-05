@@ -92,11 +92,18 @@ function parseAllBreakdowns(doc) {
 /**
  * Read aggregate period totals from div.FhBhHd in DOM order.
  * On analytics/installs: [installs_total, uninstalls_total].
+ * Handles K/M suffixes: "1.05K" → 1050, "2.3M" → 2300000.
  */
 function parsePeriodTotals(doc) {
   return Array.from(doc.querySelectorAll(SEL.PERIOD_TOTAL)).map(el => {
-    const n = parseInt(el.textContent.replace(/\D/g, ''), 10);
-    return isNaN(n) ? null : n;
+    const t = el.textContent.trim();
+    const m = t.match(/^([\d,]+(?:\.\d+)?)\s*([KkMm]?)$/);
+    if (!m) return null;
+    const num = parseFloat(m[1].replace(/,/g, ''));
+    if (isNaN(num)) return null;
+    const suffix = m[2].toUpperCase();
+    const mult = suffix === 'K' ? 1e3 : suffix === 'M' ? 1e6 : 1;
+    return Math.round(num * mult);
   });
 }
 
