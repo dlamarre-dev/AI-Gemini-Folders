@@ -62,9 +62,10 @@ async function runCollection(config, token, onProgress) {
   const { publisher_id: pubId, items, github } = config;
   const today = new Date().toISOString().slice(0, 10);
   const base = `https://chrome.google.com/webstore/devconsole/${pubId}`;
+  const en = url => `${url}?hl=en`;
 
   onProgress('Scraping listing page…');
-  const listing = await scrapeUrl(base);
+  const listing = await scrapeUrl(en(base));
   const weeklyUsersById = Object.fromEntries(
     (listing.items ?? []).map(({ id, weekly_users }) => [id, weekly_users])
   );
@@ -73,15 +74,15 @@ async function runCollection(config, token, onProgress) {
     const itemBase = `${base}/${item.id}`;
 
     onProgress(`${item.name}: installs…`);
-    const installsData = await scrapeUrl(`${itemBase}/analytics/installs`);
+    const installsData = await scrapeUrl(en(`${itemBase}/analytics/installs`));
 
     onProgress(`${item.name}: users…`);
-    const usersData = await scrapeUrl(`${itemBase}/analytics/users`);
+    const usersData = await scrapeUrl(en(`${itemBase}/analytics/users`));
 
     onProgress(`${item.name}: impressions…`);
     let impressions = null;
     try {
-      const impData = await scrapeUrl(`${itemBase}/analytics/impressions`);
+      const impData = await scrapeUrl(en(`${itemBase}/analytics/impressions`));
       impressions = impData.impressions ?? null;
     } catch (e) {
       console.warn(`[stats-collector] impressions scrape failed for ${item.id}:`, e.message);
