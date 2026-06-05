@@ -5,7 +5,7 @@ const GITHUB_API = 'https://api.github.com';
 
 async function _ghGet(token, owner, repo, branch, path) {
   const resp = await fetch(
-    `${GITHUB_API}/repos/${owner}/${repo}/contents/${path}?ref=${branch}`,
+    `${GITHUB_API}/repos/${owner}/${repo}/contents/${path}?ref=${branch}&_t=${Date.now()}`,
     { headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github.v3+json' } }
   );
   if (resp.status === 404) return { sha: null, content: null };
