@@ -91,19 +91,18 @@ async function clickPresetPeriod(label) {
 // ── SVG time-series extraction (runs in MAIN world) ───────────────────────────
 
 // Extracts a time-series from the rendered CWS analytics SVG chart.
-// Uses pixel coordinate math: bar top-y → value via y-axis label scale.
+// Uses SVG coordinate attributes (x/y/height on <text> and <rect>) rather than
+// getBoundingClientRect — the latter returns 0,0 for elements outside the
+// viewport in inactive Firefox tabs.
 // Must be self-contained (serialised by executeScript — no closure access).
 // Returns {ok:true, entries:[{label,value}]} or {ok:false, step, ...diagnostics}.
 function extractTimeSeriesFromSVG() {
   const DATE_RE       = /^[A-Za-zÀ-ÿ]+ \d{1,2}(, \d{4})?$/;
   const MONTH_YEAR_RE = /^[A-Za-zÀ-ÿ]+ \d{4}$/;
 
-  // Find all large, visible SVGs and pick the one with date-like x-axis labels.
-  const allSvgs = Array.from(document.querySelectorAll('svg')).filter(svg => {
-    if (!svg.offsetParent) return false;
-    const r = svg.getBoundingClientRect();
-    return r.width > 100 && r.height > 50;
-  });
+  // No visibility filter — getBoundingClientRect is unreliable in inactive tabs.
+  // Identify the time-series SVG by the presence of date-like x-axis labels.
+  const allSvgs = Array.from(document.querySelectorAll('svg'));
 
   const tsSvg = allSvgs.find(svg =>
     Array.from(svg.querySelectorAll('text')).some(t => {
@@ -116,25 +115,46 @@ function extractTimeSeriesFromSVG() {
     return {
       ok: false, step: 'no-ts-svg',
       svgCount: allSvgs.length,
-      svgTexts: allSvgs.map(s => ({
-        dims: `${Math.round(s.getBoundingClientRect().width)}x${Math.round(s.getBoundingClientRect().height)}`,
-        texts: Array.from(s.querySelectorAll('text')).map(t => t.textContent.trim()).slice(0, 8),
+      svgSamples: allSvgs.slice(0, 6).map(s => ({
+        textCount: s.querySelectorAll('text').length,
+        texts: Array.from(s.querySelectorAll('text')).map(t => t.textContent.trim()).slice(0, 6),
       })),
     };
   }
 
-  // Collect all visible text nodes with pixel centres.
+  // Accumulate translate(dx, dy) transforms walking up to the SVG root.
+  function getTranslate(el) {
+    let dx = 0, dy = 0;
+    let node = el.parentElement;
+    while (node && node !== tsSvg) {
+      const t = node.getAttribute('transform');
+      if (t) {
+        const m = t.match(/translate\(\s*([-\d.]+)(?:\s*[, ]\s*([-\d.]+))?\s*\)/);
+        if (m) { dx += parseFloat(m[1]) || 0; dy += parseFloat(m[2]) || 0; }
+      }
+      node = node.parentElement;
+    }
+    return { dx, dy };
+  }
+
+  // Absolute SVG-space coordinates for a <text> element.
+  function textCoords(el) {
+    const { dx, dy } = getTranslate(el);
+    return {
+      text: el.textContent.trim(),
+      x: (parseFloat(el.getAttribute('x') || '0')) + dx,
+      y: (parseFloat(el.getAttribute('y') || '0')) + dy,
+    };
+  }
+
   const textEls = Array.from(tsSvg.querySelectorAll('text'))
-    .map(t => {
-      const r = t.getBoundingClientRect();
-      return { text: t.textContent.trim(), cx: r.left + r.width / 2, cy: r.top + r.height / 2 };
-    })
-    .filter(t => t.text && t.cx > 0);
+    .map(textCoords)
+    .filter(t => t.text);
 
   const xLabels = textEls.filter(({ text }) => DATE_RE.test(text) || MONTH_YEAR_RE.test(text));
   const yLabels = textEls
     .filter(({ text }) => /^\d[\d,]*$/.test(text))
-    .map(({ text, cy }) => ({ value: parseInt(text.replace(/,/g, ''), 10), cy }))
+    .map(({ text, y }) => ({ value: parseInt(text.replace(/,/g, ''), 10), y }))
     .filter(({ value }) => !isNaN(value));
 
   if (xLabels.length < 2) {
@@ -144,52 +164,57 @@ function extractTimeSeriesFromSVG() {
     return { ok: false, step: 'no-y-labels', yCount: yLabels.length, texts: textEls.map(t => t.text).slice(0, 30) };
   }
 
-  // Build y-axis pixel→value scale.
-  // Lower cy = higher on screen = higher data value.
-  yLabels.sort((a, b) => a.cy - b.cy);
+  // In SVG space, smaller y = higher on screen = higher data value.
+  yLabels.sort((a, b) => a.y - b.y);
   const yTop = yLabels[0];
   const yBot = yLabels[yLabels.length - 1];
 
-  function pixelToValue(py) {
-    if (yTop.cy === yBot.cy) return yTop.value;
-    const t = (py - yTop.cy) / (yBot.cy - yTop.cy);
+  function svgYToValue(svgY) {
+    if (yTop.y === yBot.y) return yTop.value;
+    const t = (svgY - yTop.y) / (yBot.y - yTop.y);
     return Math.round(yTop.value + t * (yBot.value - yTop.value));
   }
 
-  // Find bar rects (height > 3px, width > 2px).
-  const rects = Array.from(tsSvg.querySelectorAll('rect'))
-    .map(r => r.getBoundingClientRect())
-    .filter(box => box.height > 3 && box.width > 2);
+  // Bar rects using SVG attributes (not getBoundingClientRect).
+  const rects = Array.from(tsSvg.querySelectorAll('rect')).map(r => {
+    const { dx, dy } = getTranslate(r);
+    return {
+      x: (parseFloat(r.getAttribute('x') || '0')) + dx,
+      y: (parseFloat(r.getAttribute('y') || '0')) + dy,
+      w: parseFloat(r.getAttribute('width') || '0'),
+      h: parseFloat(r.getAttribute('height') || '0'),
+    };
+  }).filter(({ h, w }) => h > 1 && w > 1);
 
   if (rects.length < 2) {
     return { ok: false, step: 'no-bars', rectCount: rects.length };
   }
 
-  // Assign each bar to its nearest x-label (by centre-x distance).
-  xLabels.sort((a, b) => a.cx - b.cx);
-  const buckets = xLabels.map(l => ({ label: l.text, cx: l.cx, bars: [] }));
+  // Assign each bar to its nearest x-label by SVG x coordinate.
+  xLabels.sort((a, b) => a.x - b.x);
+  const buckets = xLabels.map(l => ({ label: l.text, x: l.x, bars: [] }));
 
-  for (const box of rects) {
-    const barCx = box.left + box.width / 2;
-    let best = buckets[0], bestDist = Math.abs(barCx - buckets[0].cx);
+  for (const rect of rects) {
+    const barCx = rect.x + rect.w / 2;
+    let best = buckets[0], bestDist = Math.abs(barCx - buckets[0].x);
     for (const b of buckets) {
-      const d = Math.abs(barCx - b.cx);
+      const d = Math.abs(barCx - b.x);
       if (d < bestDist) { bestDist = d; best = b; }
     }
-    best.bars.push(box);
+    best.bars.push(rect);
   }
 
-  // For each x-label bucket, the bar with the lowest top-y (= tallest bar) is
-  // the primary series (installs on the installs page).
+  // For each bucket, the bar with the smallest y (= top of tallest bar) is the
+  // primary series (installs on the installs page).
   const entries = buckets
     .filter(b => b.bars.length > 0)
     .map(b => {
-      const topBar = b.bars.reduce((best, box) => box.top < best.top ? box : best);
-      return { label: b.label, value: Math.max(0, pixelToValue(topBar.top)) };
+      const topBar = b.bars.reduce((best, r) => r.y < best.y ? r : best);
+      return { label: b.label, value: Math.max(0, svgYToValue(topBar.y)) };
     });
 
   if (!entries.length) {
-    return { ok: false, step: 'no-entries', buckets: buckets.map(b => ({ label: b.label, barCount: b.bars.length })) };
+    return { ok: false, step: 'no-entries' };
   }
 
   return { ok: true, entries };
@@ -381,7 +406,7 @@ async function runCollection(config, token, onProgress) {
 async function runBackfill(config, token, onProgress) {
   const { publisher_id: pubId, items, github } = config;
   const today = new Date().toISOString().slice(0, 10);
-  const PRESETS = ['Last year', '1 year', '365 days', '180 days'];
+  const PRESETS = ['Last year', 'Last 180 days', 'Last 90 days'];
 
   for (const item of items) {
     const itemBase = `${CWS_BASE}/${pubId}/${item.id}`;
