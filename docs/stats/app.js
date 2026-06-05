@@ -59,11 +59,7 @@ function renderBarChart(title, data, colorClass) {
 // ── time-series chart (uPlot) ─────────────────────────────────────────────────
 
 function renderTimeSeries(container, history) {
-  if (history.length < 2) {
-    container.appendChild(el('p', { class: 'chart-note' },
-      'Time-series chart will appear after 2+ monthly collections.'));
-    return;
-  }
+  if (!history.length) return;
 
   const timestamps = history.map(e => new Date(e.collected_at).getTime() / 1000);
   const installs   = history.map(e => e.installs);
@@ -196,7 +192,7 @@ function renderGa4(ga4db) {
     )
   );
 
-  if (history.length >= 2) {
+  if (history.length >= 1) {
     const chartWrap = el('div', { class: 'chart-wrap' });
     section.appendChild(el('div', { class: 'section-title' }, 'Trend'));
     section.appendChild(chartWrap);
