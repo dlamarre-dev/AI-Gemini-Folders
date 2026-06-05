@@ -56,10 +56,6 @@ async function setDateRangeInPage(startISO, endISO) {
     'January','February','March','April','May','June',
     'July','August','September','October','November','December',
   ];
-  // Matches a date range: two dates separated by an en/em dash, e.g.
-  // "May 6 – Jun 4, 2026"  or  "May 6, 2026 – Jun 4, 2026"
-  const RANGE_RE = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b[\s\S]{0,40}[–—][\s\S]{0,40}\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i;
-
   // Parse "2026-02-01" → {y,m,d}
   function parseISO(iso) {
     const [y, m, d] = iso.split('-').map(Number);
@@ -67,27 +63,52 @@ async function setDateRangeInPage(startISO, endISO) {
   }
 
   // ── 1. Find the date-range trigger ──────────────────────────────────────────
-  // Require a range pattern (two dates + dash) to avoid matching chart axis labels.
-  let trigger = Array.from(
-    document.querySelectorAll('[role="button"], button, [jsaction], [tabindex="0"]')
-  ).find(el => el.offsetParent !== null && RANGE_RE.test(el.innerText));
+  // Try several heuristics in order of confidence.
+  const MONTH_RE   = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i;
+  const YEAR_RE    = /\b20\d\d\b/;
 
-  // Fallback: any visible near-leaf element with a range pattern
+  function interactiveEls() {
+    return Array.from(
+      document.querySelectorAll('[role="button"], button, [jsaction], [tabindex="0"]')
+    ).filter(el => el.offsetParent !== null && !el.closest('svg'));
+  }
+
+  // 1a. aria-label that mentions "date"
+  let trigger = Array.from(document.querySelectorAll('[aria-label]'))
+    .find(el => el.offsetParent !== null && /date|period|range/i.test(el.getAttribute('aria-label')));
+
+  // 1b. interactive element whose text has both a month name and a 4-digit year
+  if (!trigger) {
+    trigger = interactiveEls()
+      .filter(el => MONTH_RE.test(el.innerText) && YEAR_RE.test(el.innerText))
+      .sort((a, b) => a.innerText.length - b.innerText.length)[0]; // prefer the shortest match
+  }
+
+  // 1c. "Last N days" preset label
+  if (!trigger) {
+    trigger = interactiveEls().find(el => /last\s+\d+\s+days/i.test(el.innerText));
+  }
+
+  // 1d. any near-leaf element with a month name + year (broadest fallback)
   if (!trigger) {
     trigger = Array.from(document.querySelectorAll('*'))
-      .filter(el => el.offsetParent !== null && el.childElementCount <= 3)
-      .find(el => RANGE_RE.test(el.innerText?.trim()));
+      .filter(el => el.offsetParent !== null && !el.closest('svg') && el.childElementCount <= 3)
+      .filter(el => MONTH_RE.test(el.innerText?.trim()) && YEAR_RE.test(el.innerText?.trim()))
+      .sort((a, b) => (a.innerText?.length ?? 999) - (b.innerText?.length ?? 999))[0];
   }
 
   if (!trigger) {
+    // Dump all interactive elements + small year-containing elements for diagnosis.
     return {
       ok: false, step: 'find-trigger',
-      hint: 'No element found with two dates and a dash separator.',
-      // Dump candidate elements for diagnosis
-      rangeCandidates: Array.from(document.querySelectorAll('*'))
-        .filter(el => el.offsetParent !== null && /[–—]/.test(el.innerText))
+      interactiveWithText: interactiveEls()
+        .filter(el => el.innerText?.trim())
+        .slice(0, 25)
+        .map(el => ({ tag: el.tagName, text: el.innerText?.trim().slice(0, 70), aria: el.getAttribute('aria-label'), cls: el.className.slice(0, 70) })),
+      yearEls: Array.from(document.querySelectorAll('*'))
+        .filter(el => el.offsetParent !== null && !el.closest('svg') && el.childElementCount <= 2 && YEAR_RE.test(el.innerText?.trim()))
         .slice(0, 15)
-        .map(el => ({ tag: el.tagName, text: el.innerText?.trim().slice(0, 80), role: el.getAttribute('role'), cls: el.className.slice(0, 60) })),
+        .map(el => ({ tag: el.tagName, text: el.innerText?.trim().slice(0, 70), cls: el.className.slice(0, 70) })),
     };
   }
 
