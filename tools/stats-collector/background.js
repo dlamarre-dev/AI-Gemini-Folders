@@ -28,8 +28,14 @@ async function clickPresetPeriod(label) {
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const normalized = label.trim().toLowerCase();
 
+  // offsetParent is null for position:fixed elements in Firefox (common in
+  // Google's SPA). Use getBoundingClientRect() for visibility instead.
+  function hasSize(el) {
+    const r = el.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  }
   function visible(sel) {
-    return Array.from(document.querySelectorAll(sel)).filter(el => el.offsetParent !== null);
+    return Array.from(document.querySelectorAll(sel)).filter(hasSize);
   }
   function findIn(els) {
     return els.find(el => {
@@ -56,18 +62,17 @@ async function clickPresetPeriod(label) {
   }
 
   if (!target) {
-    // Diagnostic: collect any small element mentioning "year", "day", "month".
-    const hints = Array.from(document.querySelectorAll('*'))
-      .filter(el => el.offsetParent !== null && el.childElementCount <= 2)
-      .filter(el => /\b(year|day|month)\b/i.test((el.innerText || el.textContent || '').trim()))
-      .slice(0, 15)
+    // Diagnostic: dump all visible interactive elements so we can see exact labels.
+    const allInteractive = visible(INTERACTIVE + ',li,[jsaction]')
+      .filter(el => (el.innerText || el.textContent || '').trim().length > 0)
+      .slice(0, 25)
       .map(el => ({
         tag: el.tagName,
         role: el.getAttribute('role'),
         text: (el.innerText || el.textContent || '').trim().slice(0, 50),
-        cls: (el.className || '').toString().slice(0, 50),
+        cls: (el.className || '').toString().slice(0, 60),
       }));
-    return { ok: false, step: 'find-preset-tab', label, hints };
+    return { ok: false, step: 'find-preset-tab', label, allInteractive };
   }
 
   target.click();
@@ -279,10 +284,10 @@ async function scrapeTimeSeries(url, presetLabel) {
     });
     const clickRes = clickResult?.[0]?.result;
     if (!clickRes?.ok) {
-      const hints = (clickRes?.hints ?? [])
+      const items = (clickRes?.allInteractive ?? clickRes?.hints ?? [])
         .map(h => `[${h.role || h.tag}] "${h.text}"`)
         .join(' | ');
-      throw new Error(`Preset "${presetLabel}" not found. Hints: ${hints || '(none)'}`);
+      throw new Error(`Preset "${presetLabel}" not found. Interactive: ${items || '(none)'}`);
     }
 
     // Extra settle after preset click — chart re-fetches data from the server.
