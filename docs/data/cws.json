@@ -292,8 +292,8 @@
             "Other": 25
           },
           "installs_by_language": {
-            "Chinese (China)": 21,
-            "English (United States)": 11,
+            "English (United States)": 21,
+            "Korean": 11,
             "Other": 58
           },
           "installs_by_os": {
@@ -303,12 +303,12 @@
             "Other": 4
           },
           "uninstalls_by_country": {
-            "France": 40,
+            "Sweden": 40,
             "Other": 20
           },
           "uninstalls_by_language": {
             "English (United States)": 43,
-            "Chinese (Taiwan)": 29,
+            "Swedish": 29,
             "Other": 14
           },
           "uninstalls_by_os": {
