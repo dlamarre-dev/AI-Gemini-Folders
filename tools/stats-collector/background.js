@@ -88,14 +88,11 @@ async function clickPresetPeriod(label) {
   return { ok: true, clicked: (target.textContent || '').trim().slice(0, 40) };
 }
 
-// ── SVG time-series extraction (runs in MAIN world) ───────────────────────────
+// ── SVG time-series extraction (runs in MAIN world) ──────────────────────────
+// NOTE: The CWS analytics time-series chart is canvas-based (0 SVG text nodes).
+// This function is kept for reference but is no longer called.
+// Back-fill uses scrapeUrlWithPreset instead.
 
-// Extracts a time-series from the rendered CWS analytics SVG chart.
-// Uses SVG coordinate attributes (x/y/height on <text> and <rect>) rather than
-// getBoundingClientRect — the latter returns 0,0 for elements outside the
-// viewport in inactive Firefox tabs.
-// Must be self-contained (serialised by executeScript — no closure access).
-// Returns {ok:true, entries:[{label,value}]} or {ok:false, step, ...diagnostics}.
 function extractTimeSeriesFromSVG() {
   const DATE_RE       = /^[A-Za-zÀ-ÿ]+ \d{1,2}(, \d{4})?$/;
   const MONTH_YEAR_RE = /^[A-Za-zÀ-ÿ]+ \d{4}$/;
@@ -293,10 +290,10 @@ async function scrapeUrl(url) {
   }
 }
 
-// Opens url, clicks the named preset period tab, waits for chart re-render,
-// then extracts the time-series via SVG coordinate math.
-// Returns [{label, value}] (primary metric for the page).
-async function scrapeTimeSeries(url, presetLabel) {
+// Opens url, clicks the named preset period, waits for the SPA to re-render,
+// then runs the normal scrape.js to read DOM totals and breakdown charts.
+// Returns the same shape as scrapeUrl().
+async function scrapeUrlWithPreset(url, presetLabel) {
   let tab;
   try {
     tab = await chrome.tabs.create({ url, active: false });
@@ -318,24 +315,21 @@ async function scrapeTimeSeries(url, presetLabel) {
     const clickRes = clickResult?.[0]?.result;
     if (!clickRes?.ok) {
       const dateEls = (clickRes?.dateEls ?? []).map(h => `[${h.role || h.tag}] "${h.text}"`).join(' | ');
-      const body = clickRes?.bodyText ? `\n    page: "${clickRes.bodyText.slice(0, 200)}"` : '';
+      const body = clickRes?.bodyText ? ` | page: "${clickRes.bodyText.slice(0, 120)}"` : '';
       throw new Error(`Preset "${presetLabel}" not found. date-els: ${dateEls || '(none)'}${body}`);
     }
 
-    // Extra settle after preset click — chart re-fetches data from the server.
+    // The SPA re-fetches chart data; wait before reading DOM.
     await new Promise(r => setTimeout(r, SETTLE_MS));
 
-    const extractResult = await chrome.scripting.executeScript({
+    const results = await chrome.scripting.executeScript({
       target: { tabId: tab.id },
-      world: 'MAIN',
-      func: extractTimeSeriesFromSVG,
+      files: SCRAPE_FILES,
     });
-    const extractRes = extractResult?.[0]?.result;
-    if (!extractRes?.ok) {
-      throw new Error(`SVG extraction failed at "${extractRes?.step}": ${JSON.stringify(extractRes)}`);
-    }
-
-    return extractRes.entries;
+    const result = results?.[0]?.result;
+    if (!result) throw new Error(`No scrape result after preset "${presetLabel}"`);
+    if (result.page === 'unknown') throw new Error(`Unexpected page at ${url}`);
+    return result;
   } finally {
     if (tab) { try { await chrome.tabs.remove(tab.id); } catch (_) {} }
   }
@@ -399,71 +393,98 @@ async function runCollection(config, token, onProgress) {
 
 // ── back-fill run ─────────────────────────────────────────────────────────────
 
-// Reads the CWS analytics time-series chart using the longest available preset
-// period, then commits approximate monthly entries into cws.json.
-// Installs values are derived from SVG bar heights (coordinate-math approximation).
-// Breakdowns and weekly_users are not available historically; those fields are null.
+// For each preset period, clicks the preset on the CWS analytics page and runs
+// the normal scrape.js to read the live DOM totals and breakdown charts for
+// that window.  Commits one entry per preset per item.
+//
+// The CWS time-series chart is canvas-based (no SVG text nodes), so per-month
+// granularity is not available; this gives one data point per preset window.
+// The dashboard chart uses period_start for the x-axis so these appear at
+// their correct historical positions.
 async function runBackfill(config, token, onProgress) {
   const { publisher_id: pubId, items, github } = config;
   const today = new Date().toISOString().slice(0, 10);
-  const PRESETS = ['Last year', 'Last 180 days', 'Last 90 days'];
+
+  // Presets in order of preference; longest first for maximum history.
+  // Labels must match the exact text in the CWS combobox options.
+  const PRESETS = ['Last year', 'Last 180 days', 'Last 90 days', 'Last 30 days'];
+
+  // Fallback: compute approximate period dates from preset label when
+  // parseDateRange doesn't reflect the newly selected preset.
+  function approxDates(label) {
+    const DAYS = { 'last year': 365, 'last 180 days': 180, 'last 90 days': 90, 'last 30 days': 30 };
+    const days = DAYS[label.toLowerCase()];
+    if (!days) return null;
+    const end   = new Date();
+    const start = new Date(Date.now() - days * 864e5);
+    return {
+      period_start: start.toISOString().slice(0, 10),
+      period_end:   end.toISOString().slice(0, 10),
+    };
+  }
 
   for (const item of items) {
     const itemBase = `${CWS_BASE}/${pubId}/${item.id}`;
-    let entries = null;
-    let usedPreset = null;
-
-    onProgress(`${item.name}: reading installs history…`);
-    for (const preset of PRESETS) {
-      try {
-        entries = await scrapeTimeSeries(buildUrl(`${itemBase}/analytics/installs`), preset);
-        usedPreset = preset;
-        break;
-      } catch (e) {
-        onProgress(`  preset "${preset}" failed — ${e.message.slice(0, 300)}`);
-      }
-    }
-
-    if (!entries?.length) {
-      onProgress(`${item.name}: no chart data found — skipping.`);
-      continue;
-    }
-
-    onProgress(`${item.name}: ${entries.length} data points from "${usedPreset}"`);
+    onProgress(`${item.name}: scraping historical preset windows…`);
 
     let committed = 0, skipped = 0;
-    for (const { label, value } of entries) {
-      const range = parseLabelToRange(label);
-      if (!range) {
-        onProgress(`  skipping unrecognised label: "${label}"`);
-        continue;
+
+    for (const preset of PRESETS) {
+      try {
+        onProgress(`  ${preset}…`);
+
+        const installsData = await scrapeUrlWithPreset(
+          buildUrl(`${itemBase}/analytics/installs`), preset
+        );
+
+        let usersData = null;
+        try {
+          usersData = await scrapeUrlWithPreset(
+            buildUrl(`${itemBase}/analytics/users`), preset
+          );
+        } catch (_) { /* users breakdown is optional */ }
+
+        // parseDateRange reads the inline AF_dataServiceRequests script.
+        // If the SPA updated it after the preset click, we get precise dates;
+        // otherwise fall back to approximate computed dates.
+        const dates = (installsData.period_start && installsData.period_end)
+          ? { period_start: installsData.period_start, period_end: installsData.period_end }
+          : approxDates(preset);
+
+        if (!dates) {
+          onProgress(`  ${preset}: could not determine period dates — skipping`);
+          continue;
+        }
+
+        const entry = {
+          collected_at:           today,
+          period_start:           dates.period_start,
+          period_end:             dates.period_end,
+          installs:               installsData.installs               ?? null,
+          uninstalls:             installsData.uninstalls             ?? null,
+          weekly_users:           null,
+          impressions:            null,
+          installs_by_country:    installsData.installs_by_country    ?? null,
+          installs_by_language:   installsData.installs_by_language   ?? null,
+          installs_by_os:         installsData.installs_by_os         ?? null,
+          uninstalls_by_country:  installsData.uninstalls_by_country  ?? null,
+          uninstalls_by_language: installsData.uninstalls_by_language ?? null,
+          uninstalls_by_os:       installsData.uninstalls_by_os       ?? null,
+          users_by_country:       usersData?.users_by_country         ?? null,
+          users_by_language:      usersData?.users_by_language        ?? null,
+          users_by_os:            usersData?.users_by_os              ?? null,
+          active_versions:        usersData?.active_versions          ?? null,
+        };
+
+        const { committed: c, reason } = await commitCwsEntry(token, github, item.id, entry);
+        if (c) committed++; else skipped++;
+        onProgress(`  ${preset} (${dates.period_start}…${dates.period_end}): ${c ? '✓' : `skipped (${reason})`}`);
+      } catch (e) {
+        onProgress(`  ${preset}: failed — ${e.message.slice(0, 200)}`);
       }
-
-      const entry = {
-        collected_at:           today,
-        period_start:           range.period_start,
-        period_end:             range.period_end,
-        installs:               value,
-        uninstalls:             null,
-        weekly_users:           null,
-        impressions:            null,
-        installs_by_country:    null,
-        installs_by_language:   null,
-        installs_by_os:         null,
-        uninstalls_by_country:  null,
-        uninstalls_by_language: null,
-        uninstalls_by_os:       null,
-        users_by_country:       null,
-        users_by_language:      null,
-        users_by_os:            null,
-        active_versions:        null,
-      };
-
-      const result = await commitCwsEntry(token, github, item.id, entry);
-      if (result.committed) committed++; else skipped++;
     }
 
-    onProgress(`${item.name}: ${committed} new, ${skipped} already recorded ✓`);
+    onProgress(`${item.name}: ${committed} committed, ${skipped} skipped`);
   }
 
   onProgress('Back-fill complete ✓');

@@ -61,7 +61,7 @@ function renderBarChart(title, data, colorClass) {
 function renderTimeSeries(container, history) {
   if (!history.length) return;
 
-  const timestamps = history.map(e => new Date(e.collected_at).getTime() / 1000);
+  const timestamps = history.map(e => new Date(e.period_start ?? e.collected_at).getTime() / 1000);
   const installs   = history.map(e => e.installs);
   const uninstalls = history.map(e => e.uninstalls);
   const users      = history.map(e => e.weekly_users);
