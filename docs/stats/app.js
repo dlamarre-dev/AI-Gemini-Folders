@@ -133,17 +133,8 @@ function renderItem(itemId, itemData) {
       { key: 'installs',   label: 'Installs',   stroke: '#1a73e8' },
       { key: 'uninstalls', label: 'Uninstalls', stroke: '#d93025' },
     ]},
-    { label: 'Page views',          series: [{ key: 'impressions', label: 'Page views', stroke: '#e37400' }] },
+    { label: 'Impressions',         series: [{ key: 'impressions', label: 'Impressions', stroke: '#e37400' }] },
   ];
-
-  section.appendChild(el('div', { class: 'section-title' }, 'Trend'));
-  for (const { label, series } of charts) {
-    const wrap = el('div', { class: 'chart-wrap' });
-    wrap.appendChild(el('div', { class: 'chart-note', style: { marginBottom: '4px', fontStyle: 'normal', color: '#5f6368' } }, label));
-    section.appendChild(wrap);
-    const s = series;
-    setTimeout(() => renderTimeSeries(wrap, chartData, s), 0);
-  }
 
   // Breakdown bar charts
   const bdRow = el('div', { class: 'breakdowns' });
@@ -167,6 +158,16 @@ function renderItem(itemId, itemData) {
     section.appendChild(el('div', { class: 'section-title', style: { marginTop: '18px' } }, 'Active versions'));
     section.appendChild(el('p', { style: { margin: 0, fontSize: '12px', color: '#5f6368' } },
       latest.active_versions.join(' · ')));
+  }
+
+  // Time-series charts — after breakdowns
+  section.appendChild(el('div', { class: 'section-title', style: { marginTop: '18px' } }, 'Trend'));
+  for (const { label, series } of charts) {
+    const wrap = el('div', { class: 'chart-wrap' });
+    wrap.appendChild(el('div', { class: 'chart-note', style: { marginBottom: '4px', fontStyle: 'normal', color: '#5f6368' } }, label));
+    section.appendChild(wrap);
+    const s = series;
+    setTimeout(() => renderTimeSeries(wrap, chartData, s), 0);
   }
 
   return section;
