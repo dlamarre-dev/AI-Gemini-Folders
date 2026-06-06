@@ -76,13 +76,15 @@ async function clickPresetPeriod(label) {
 
 // ── CSV capture (runs in MAIN world) ─────────────────────────────────────────
 
-// Locates the Export button/link on an analytics page and returns the raw CSV
-// text without saving it to disk.  Three patterns handled:
-//   1. <a href="…"> — fetches the URL directly (same-origin cookies apply)
-//   2. button → window.fetch() — patches fetch to capture the response body
-//   3. button → Blob download — patches URL.createObjectURL to read the Blob
+// Clicks the Nth visible "Export to CSV" button on an analytics page and
+// returns the raw CSV text without saving it to disk.
+// Three interception strategies run in parallel:
+//   1. window.fetch() patch — captures the response body before the browser sees it
+//   2. URL.createObjectURL patch — reads blob content via FileReader
+//   3. HTMLAnchorElement.prototype.click patch — suppresses the actual file download
+//      so the file never lands in the user's downloads folder
 // Must be self-contained (serialised by executeScript — no closure access).
-async function captureAnalyticsCsv() {
+async function captureAnalyticsCsv(buttonIndex) {
   const sleep = ms => new Promise(r => setTimeout(r, ms));
 
   function notHidden(el) {
@@ -105,7 +107,7 @@ async function captureAnalyticsCsv() {
   const candidates = Array.from(document.querySelectorAll('a, button, [role="button"], [role="menuitem"]'))
     .filter(notHidden).filter(isExportEl);
 
-  if (!candidates.length) {
+  if (!candidates.length || buttonIndex >= candidates.length) {
     const btnTexts = Array.from(document.querySelectorAll('button, [role="button"], [role="menuitem"], a[href]'))
       .filter(notHidden).slice(0, 40)
       .map(el => ({
@@ -114,15 +116,15 @@ async function captureAnalyticsCsv() {
         label: (el.getAttribute('aria-label') || '').slice(0, 50),
         title: (el.getAttribute('title') || '').slice(0, 50),
       }));
-    return { ok: false, step: 'no-export-element', btnTexts };
+    return { ok: false, step: 'no-export-element', found: candidates.length, requested: buttonIndex, btnTexts };
   }
 
-  const el = candidates[0];
+  const btn = candidates[buttonIndex];
 
-  // Pattern 1: direct anchor
-  if (el.tagName === 'A' && el.href && !el.href.startsWith('javascript:')) {
+  // Pattern 1: direct anchor — fetch directly, no download triggered
+  if (btn.tagName === 'A' && btn.href && !btn.href.startsWith('javascript:')) {
     try {
-      const r = await fetch(el.href, { credentials: 'include' });
+      const r = await fetch(btn.href, { credentials: 'include' });
       if (!r.ok) return { ok: false, step: 'link-fetch-failed', status: r.status };
       return { ok: true, csv: await r.text() };
     } catch (e) {
@@ -130,32 +132,44 @@ async function captureAnalyticsCsv() {
     }
   }
 
-  // Patterns 2 & 3: intercept what the button triggers
+  // Patterns 2 & 3: button — intercept network + suppress file download
   let captured = null;
 
+  // Strategy A: intercept fetch (captures response before browser processes it)
   const origFetch = window.fetch;
   window.fetch = function(...args) {
     const p = origFetch.apply(this, args);
     p.then(r => {
-      const ct = r.headers.get('content-type') || '';
-      if (!captured && (ct.includes('csv') || ct.includes('text/plain'))) {
-        r.clone().text().then(t => { captured = t; }).catch(() => {});
+      if (!captured) {
+        const ct = (r.headers.get('content-type')        || '').toLowerCase();
+        const cd = (r.headers.get('content-disposition') || '').toLowerCase();
+        if (ct.includes('csv') || ct.includes('text/plain') || ct.includes('octet-stream') || cd.includes('attachment')) {
+          r.clone().text().then(t => { if (t && !captured) captured = t; }).catch(() => {});
+        }
       }
     }).catch(() => {});
     return p;
   };
 
+  // Strategy B: intercept blob creation (fallback if fetch isn't used)
   const origCOBU = URL.createObjectURL;
   URL.createObjectURL = function(obj) {
     if (obj instanceof Blob && !captured) {
       const reader = new FileReader();
-      reader.onload = e => { captured = e.target.result; };
+      reader.onload = e => { if (!captured) captured = e.target.result; };
       reader.readAsText(obj);
     }
     return origCOBU.call(URL, obj);
   };
 
-  el.click();
+  // Strategy C: suppress anchor downloads so the file never lands on disk
+  const origAnchorClick = HTMLAnchorElement.prototype.click;
+  HTMLAnchorElement.prototype.click = function() {
+    if (this.hasAttribute('download') || (this.href && this.href.startsWith('blob:'))) return;
+    return origAnchorClick.call(this);
+  };
+
+  btn.click();
 
   for (let i = 0; i < 75; i++) {
     await sleep(200);
@@ -164,6 +178,7 @@ async function captureAnalyticsCsv() {
 
   window.fetch = origFetch;
   URL.createObjectURL = origCOBU;
+  HTMLAnchorElement.prototype.click = origAnchorClick;
 
   if (!captured) return { ok: false, step: 'no-csv-received' };
   return { ok: true, csv: captured };
@@ -219,10 +234,11 @@ async function scrapeUrl(url) {
   }
 }
 
-// Opens an analytics page, sets period to "Last year", triggers the CSV export
-// button, captures the response in memory (never writes to disk), and returns
-// the raw CSV text.
-async function scrapeUrlForCsv(url) {
+// Opens an analytics page, sets period to "Last year", then captures one CSV
+// per entry in buttonIndices (0-based index into the visible "Export to CSV"
+// buttons on the page).  Returns [{ok, csv, diagnostic}] in the same order.
+// Opening the page once for multiple buttons avoids redundant tab loads.
+async function scrapeUrlForCsvs(url, buttonIndices) {
   let tab;
   try {
     tab = await chrome.tabs.create({ url, active: false });
@@ -243,17 +259,21 @@ async function scrapeUrlForCsv(url) {
 
     await new Promise(r => setTimeout(r, SETTLE_MS));
 
-    const csvResult = await chrome.scripting.executeScript({
-      target: { tabId: tab.id }, world: 'MAIN', func: captureAnalyticsCsv,
-    });
-    const csvRes = csvResult?.[0]?.result;
-    if (!csvRes?.ok) {
-      const err = new Error(`CSV capture failed: step=${csvRes?.step ?? 'unknown'}`);
-      err.diagnostic = csvRes;
-      throw err;
+    const results = [];
+    for (const idx of buttonIndices) {
+      const csvResult = await chrome.scripting.executeScript({
+        target: { tabId: tab.id }, world: 'MAIN', func: captureAnalyticsCsv, args: [idx],
+      });
+      const csvRes = csvResult?.[0]?.result;
+      if (!csvRes?.ok) {
+        const err = new Error(`CSV capture failed: step=${csvRes?.step ?? 'unknown'}`);
+        err.diagnostic = csvRes;
+        results.push({ ok: false, err });
+      } else {
+        results.push({ ok: true, csv: csvRes.csv });
+      }
     }
-
-    return csvRes.csv;
+    return results;
   } finally {
     if (tab) { try { await chrome.tabs.remove(tab.id); } catch (_) {} }
   }
@@ -382,36 +402,43 @@ async function runCollection(config, token, onProgress) {
     };
 
     // ── daily CSV export ──────────────────────────────────────────────────────
-    // Each analytics page has a "Last year" CSV export that gives per-day values.
-    // We capture the file in memory, parse it, and only store days not already
-    // in the JSON — so re-running is safe and past data is never duplicated.
+    // Button indices (0-based) per analytics page:
+    //   analytics/installs  : 0 = installs, 4 = uninstalls
+    //   analytics/users     : 0 = weekly active users
+    //   analytics/impressions: 4 = CWS store impressions
     onProgress(`${item.name}: fetching daily CSV data…`);
     const csvArrays = [];
     for (const src of [
-      { label: 'installs',    url: buildUrl(`${itemBase}/analytics/installs`) },
-      { label: 'users',       url: buildUrl(`${itemBase}/analytics/users`) },
-      { label: 'impressions', url: buildUrl(`${itemBase}/analytics/impressions`) },
+      { label: 'installs/uninstalls', url: buildUrl(`${itemBase}/analytics/installs`),   buttons: [0, 4] },
+      { label: 'users',               url: buildUrl(`${itemBase}/analytics/users`),       buttons: [0]    },
+      { label: 'impressions',         url: buildUrl(`${itemBase}/analytics/impressions`), buttons: [4]    },
     ]) {
       try {
         onProgress(`  ${src.label} CSV…`);
-        const csv  = await scrapeUrlForCsv(src.url);
-        const rows = parseCsvRows(csv);
-        onProgress(`  ${src.label}: ${rows.length} rows`);
-        csvArrays.push(rows);
-      } catch (e) {
-        const btns = e.diagnostic?.btnTexts;
-        if (btns?.length) {
-          onProgress(`  ${src.label} CSV: export button not found. Visible elements:`);
-          for (const b of btns) {
-            const parts = [`[${b.tag}]`];
-            if (b.text)  parts.push(`"${b.text}"`);
-            if (b.label) parts.push(`lbl:"${b.label}"`);
-            if (b.title) parts.push(`title:"${b.title}"`);
-            onProgress(`    ${parts.join(' ')}`);
+        const results = await scrapeUrlForCsvs(src.url, src.buttons);
+        for (const res of results) {
+          if (!res.ok) {
+            const btns = res.err?.diagnostic?.btnTexts;
+            if (btns?.length) {
+              onProgress(`  export button not found. Visible elements:`);
+              for (const b of btns) {
+                const parts = [`[${b.tag}]`];
+                if (b.text)  parts.push(`"${b.text}"`);
+                if (b.label) parts.push(`lbl:"${b.label}"`);
+                if (b.title) parts.push(`title:"${b.title}"`);
+                onProgress(`    ${parts.join(' ')}`);
+              }
+            } else {
+              onProgress(`  ${src.label} CSV: ${res.err?.message?.slice(0, 200)}`);
+            }
+          } else {
+            const rows = parseCsvRows(res.csv);
+            onProgress(`  ${src.label}: ${rows.length} rows`);
+            csvArrays.push(rows);
           }
-        } else {
-          onProgress(`  ${src.label} CSV: failed — ${e.message.slice(0, 400)}`);
-        };
+        }
+      } catch (e) {
+        onProgress(`  ${src.label} CSV: failed — ${e.message.slice(0, 200)}`);
       }
     }
     const dailyRows = csvArrays.length ? mergeByDate(...csvArrays) : [];
