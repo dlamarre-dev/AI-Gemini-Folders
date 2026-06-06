@@ -215,13 +215,13 @@
           "weekly_users": 23,
           "impressions": 117,
           "installs_by_country": {
-            "Japan": 62,
-            "Spain": 5,
+            "Spain": 62,
+            "Japan": 5,
             "Other": 27
           },
           "installs_by_language": {
-            "English (United States)": 19,
-            "Korean": 10,
+            "Chinese (China)": 19,
+            "Chinese (Taiwan)": 10,
             "Other": 62
           },
           "installs_by_os": {
@@ -232,7 +232,7 @@
           },
           "uninstalls_by_country": {
             "Taiwan": 29,
-            "Sweden": 14,
+            "France": 14,
             "Other": 29
           },
           "uninstalls_by_language": {
