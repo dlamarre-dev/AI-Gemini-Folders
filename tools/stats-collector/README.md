@@ -126,6 +126,5 @@ Results are written to `docs/data/cws.json`, keyed by item ID:
 }
 ```
 
-`history` entries are **appended** monthly — existing history is never deleted.
-`daily` rows are **merged by date** — re-running the same month only adds rows
-not already present.
+`history` holds exactly **one entry** — the latest run always overwrites it.
+`daily` rows are **merged by date** — re-running only adds rows not already present.
