@@ -74,177 +74,75 @@ async function clickPresetPeriod(label) {
   return { ok: true, clicked: (target.textContent || '').trim().slice(0, 40) };
 }
 
-// ── CSV capture (runs in MAIN world) ─────────────────────────────────────────
+// ── CSV export button click (runs in MAIN world) ─────────────────────────────
 
-// Clicks the Nth visible "Export to CSV" button and returns the CSV text
-// without saving any file to disk.
-//
-// Strategy: intercept window.fetch, return an immediate fake-empty response so
-// the page never triggers a browser download, then replay the same request
-// ourselves to read the actual CSV text.  Max idle wait: 3 s (vs old 15 s),
-// which prevents the Firefox message-port from closing mid-operation.
-//
+// Clicks the Nth visible "Export to CSV" button.  The actual file capture is
+// handled at the browser level by captureDownloadedCsv() in background context.
 // Must be self-contained (serialised by executeScript — no closure access).
-async function captureAnalyticsCsv(buttonIndex) {
-  const sleep = ms => new Promise(r => setTimeout(r, ms));
-
+function clickExportButton(buttonIndex) {
   function notHidden(el) {
     const s = window.getComputedStyle(el);
     return s.display !== 'none' && s.visibility !== 'hidden';
   }
-
   function isExportEl(el) {
     const t   = (el.textContent || '').trim().toLowerCase();
     const lbl = (el.getAttribute('aria-label') || '').toLowerCase();
     const tit = (el.getAttribute('title')      || '').toLowerCase();
     return (t.includes('export') && t.includes('csv')) ||
-           (t.includes('download') && t.includes('csv')) ||
-           t === 'export' || t === 'download' ||
-           lbl.includes('export') || lbl.includes('download') ||
-           tit.includes('export') || tit.includes('download') ||
-           lbl.includes('csv') || tit.includes('csv');
+           t === 'export' ||
+           lbl.includes('export csv') || tit.includes('export csv');
   }
-
-  const candidates = Array.from(document.querySelectorAll('a, button, [role="button"], [role="menuitem"]'))
+  const candidates = Array.from(document.querySelectorAll('a, button, [role="button"]'))
     .filter(notHidden).filter(isExportEl);
-
   if (!candidates.length || buttonIndex >= candidates.length) {
-    const btnTexts = Array.from(document.querySelectorAll('button, [role="button"], [role="menuitem"], a[href]'))
-      .filter(notHidden).slice(0, 40)
-      .map(el => ({
-        tag: el.tagName,
-        text: (el.textContent || '').trim().slice(0, 50),
-        label: (el.getAttribute('aria-label') || '').slice(0, 50),
-        title: (el.getAttribute('title') || '').slice(0, 50),
-      }));
-    return { ok: false, step: 'no-export-element', found: candidates.length, requested: buttonIndex, btnTexts };
+    return { ok: false, found: candidates.length, requested: buttonIndex };
   }
+  candidates[buttonIndex].click();
+  return { ok: true };
+}
 
-  const btn = candidates[buttonIndex];
+// ── background-level download capture ────────────────────────────────────────
 
-  // Direct anchor: fetch the href in-page (session cookies apply, no download)
-  if (btn.tagName === 'A' && btn.href && !btn.href.startsWith('javascript:')) {
-    try {
-      const r = await fetch(btn.href, { credentials: 'include' });
-      if (!r.ok) return { ok: false, step: 'link-fetch-failed', status: r.status };
-      return { ok: true, csv: await r.text() };
-    } catch (e) {
-      return { ok: false, step: 'link-fetch-error', message: e.message };
+// Waits for a CSV download to complete (initiated after `afterMs` timestamp),
+// reads its content via file:// URL, removes the file from disk, and resolves
+// with the CSV text.  Requires "downloads" + "file:///*" permissions.
+function captureDownloadedCsv(afterMs, timeoutMs = 20000) {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      chrome.downloads.onChanged.removeListener(onChange);
+      reject(new Error('CSV download timeout'));
+    }, timeoutMs);
+
+    function onChange(delta) {
+      if (delta.state?.current !== 'complete') return;
+      chrome.downloads.search({ id: delta.id }, async ([item]) => {
+        if (!item) return;
+        // Only accept downloads that started after our trigger and look like CSVs
+        if (new Date(item.startTime).getTime() < afterMs) return;
+        const looksLikeCsv = /\.(csv|txt)$/i.test(item.filename) ||
+                             (item.mime || '').includes('csv') ||
+                             (item.mime || '').includes('text/plain');
+        if (!looksLikeCsv && !item.url?.includes('chrome.google.com')) return;
+
+        clearTimeout(timer);
+        chrome.downloads.onChanged.removeListener(onChange);
+
+        try {
+          const path = item.filename.replace(/\\/g, '/');
+          const fileUrl = 'file://' + (path.startsWith('/') ? '' : '/') + path;
+          const r = await fetch(fileUrl);
+          if (!r.ok) throw new Error(`File read failed: HTTP ${r.status}`);
+          const csv = await r.text();
+          chrome.downloads.removeFile(item.id, () => {});
+          resolve(csv);
+        } catch (e) {
+          reject(e);
+        }
+      });
     }
-  }
 
-  // Button: intercept whatever the click triggers and read the CSV without
-  // saving any file to disk.  Four strategies run simultaneously:
-  //
-  //   A. window.fetch patch — capture args, return fake response, replay for real
-  //   B. XMLHttpRequest patch — capture URL, abort request, replay via fetch
-  //   C. URL.createObjectURL patch — capture Blob text via .text() (microtask,
-  //      not throttled in inactive tabs), suppress the anchor download
-  //   D. HTMLAnchorElement.prototype.click patch — belt-and-suspenders suppression
-  //
-  // Strategy C is most likely for CWS (client-side CSV generation from chart data).
-  // A and B remain as fallbacks for server-side export endpoints.
-
-  let capturedFetchArgs = null;
-  let capturedXhr       = null;
-  let blobTextPromise   = null;   // set synchronously if URL.createObjectURL fires
-
-  // Strategy A
-  const origFetch = window.fetch;
-  window.fetch = function(...args) {
-    if (!capturedFetchArgs) {
-      capturedFetchArgs = args;
-      return Promise.resolve(new Response('', { status: 200, headers: { 'content-type': 'text/csv' } }));
-    }
-    return origFetch.apply(this, args);
-  };
-
-  // Strategy B
-  const origOpen = XMLHttpRequest.prototype.open;
-  const origSend = XMLHttpRequest.prototype.send;
-  XMLHttpRequest.prototype.open = function(method, url, ...rest) {
-    if (!capturedFetchArgs && !capturedXhr) {
-      this._captureMethod = method;
-      this._captureUrl    = url;
-    }
-    return origOpen.call(this, method, url, ...rest);
-  };
-  XMLHttpRequest.prototype.send = function(body) {
-    if (!capturedFetchArgs && !capturedXhr && this._captureUrl) {
-      capturedXhr = { method: this._captureMethod, url: this._captureUrl, body };
-      this.abort();
-      return;
-    }
-    return origSend.call(this, body);
-  };
-
-  // Strategy C — Blob.prototype.text() is microtask-based and not throttled in
-  // background tabs, unlike FileReader which relies on throttled timers.
-  const origCOBU = URL.createObjectURL;
-  URL.createObjectURL = function(obj) {
-    const url = origCOBU.call(URL, obj);
-    if (obj instanceof Blob && !blobTextPromise && !capturedFetchArgs && !capturedXhr) {
-      blobTextPromise = obj.text().catch(() => null);
-    }
-    return url;   // return real URL so page can build the anchor (we suppress the click)
-  };
-
-  // Strategy D
-  const origAnchorClick = HTMLAnchorElement.prototype.click;
-  HTMLAnchorElement.prototype.click = function() {
-    if (this.hasAttribute('download') || (this.href && this.href.startsWith('blob:'))) return;
-    return origAnchorClick.call(this);
-  };
-
-  btn.click();
-
-  // If the blob was created synchronously during the click (common pattern),
-  // blobTextPromise is already set — await it directly (microtask, near-instant).
-  if (blobTextPromise) {
-    window.fetch = origFetch;
-    XMLHttpRequest.prototype.open = origOpen;
-    XMLHttpRequest.prototype.send = origSend;
-    URL.createObjectURL = origCOBU;
-    HTMLAnchorElement.prototype.click = origAnchorClick;
-    const csv = await blobTextPromise;
-    return csv ? { ok: true, csv } : { ok: false, step: 'blob-empty' };
-  }
-
-  // Blob may be created asynchronously (after a fetch), or the button uses
-  // fetch/XHR.  Wait up to 3 s.
-  for (let i = 0; i < 15; i++) {
-    await sleep(200);
-    if (blobTextPromise || capturedFetchArgs || capturedXhr) break;
-  }
-
-  window.fetch = origFetch;
-  XMLHttpRequest.prototype.open = origOpen;
-  XMLHttpRequest.prototype.send = origSend;
-  URL.createObjectURL = origCOBU;
-  HTMLAnchorElement.prototype.click = origAnchorClick;
-
-  // Blob path (async)
-  if (blobTextPromise) {
-    const csv = await blobTextPromise;
-    return csv ? { ok: true, csv } : { ok: false, step: 'blob-empty' };
-  }
-
-  if (!capturedFetchArgs && !capturedXhr) return { ok: false, step: 'no-request-intercepted' };
-
-  // Fetch / XHR path
-  try {
-    let r;
-    if (capturedFetchArgs) {
-      r = await origFetch.apply(window, capturedFetchArgs);
-    } else {
-      const u = capturedXhr.url.startsWith('/') ? window.location.origin + capturedXhr.url : capturedXhr.url;
-      r = await origFetch(u, { method: capturedXhr.method || 'GET', body: capturedXhr.body, credentials: 'include' });
-    }
-    if (!r.ok) return { ok: false, step: 'csv-fetch-failed', status: r.status };
-    return { ok: true, csv: await r.text() };
-  } catch (e) {
-    return { ok: false, step: 'csv-fetch-error', message: e.message };
-  }
+    chrome.downloads.onChanged.addListener(onChange);
+  });
 }
 
 // ── tab helpers ───────────────────────────────────────────────────────────────
@@ -324,16 +222,26 @@ async function scrapeUrlForCsvs(url, buttonIndices) {
 
     const results = [];
     for (const idx of buttonIndices) {
-      const csvResult = await chrome.scripting.executeScript({
-        target: { tabId: tab.id }, world: 'MAIN', func: captureAnalyticsCsv, args: [idx],
+      // Start watching for the download BEFORE clicking, then click.
+      const afterMs = Date.now();
+      const downloadPromise = captureDownloadedCsv(afterMs);
+
+      const clickResult = await chrome.scripting.executeScript({
+        target: { tabId: tab.id }, world: 'MAIN', func: clickExportButton, args: [idx],
       });
-      const csvRes = csvResult?.[0]?.result;
-      if (!csvRes?.ok) {
-        const err = new Error(`CSV capture failed: step=${csvRes?.step ?? 'unknown'}`);
-        err.diagnostic = csvRes;
+      const clickRes = clickResult?.[0]?.result;
+      if (!clickRes?.ok) {
+        downloadPromise.catch(() => {}); // discard pending listener
+        const err = new Error(`Export button not found: ${JSON.stringify(clickRes)}`);
         results.push({ ok: false, err });
-      } else {
-        results.push({ ok: true, csv: csvRes.csv });
+        continue;
+      }
+
+      try {
+        const csv = await downloadPromise;
+        results.push({ ok: true, csv });
+      } catch (e) {
+        results.push({ ok: false, err: e });
       }
     }
     return results;
