@@ -133,13 +133,23 @@ async function captureAnalyticsCsv(buttonIndex) {
     }
   }
 
-  // Button: intercept whatever network call the button triggers (fetch or XHR),
-  // abort/fake it immediately to prevent any file download, then replay the
-  // same request ourselves to read the CSV as text.
+  // Button: intercept whatever the click triggers and read the CSV without
+  // saving any file to disk.  Four strategies run simultaneously:
+  //
+  //   A. window.fetch patch — capture args, return fake response, replay for real
+  //   B. XMLHttpRequest patch — capture URL, abort request, replay via fetch
+  //   C. URL.createObjectURL patch — capture Blob text via .text() (microtask,
+  //      not throttled in inactive tabs), suppress the anchor download
+  //   D. HTMLAnchorElement.prototype.click patch — belt-and-suspenders suppression
+  //
+  // Strategy C is most likely for CWS (client-side CSV generation from chart data).
+  // A and B remain as fallbacks for server-side export endpoints.
+
   let capturedFetchArgs = null;
   let capturedXhr       = null;
+  let blobTextPromise   = null;   // set synchronously if URL.createObjectURL fires
 
-  // Strategy A: window.fetch (used by some Google pages)
+  // Strategy A
   const origFetch = window.fetch;
   window.fetch = function(...args) {
     if (!capturedFetchArgs) {
@@ -149,7 +159,7 @@ async function captureAnalyticsCsv(buttonIndex) {
     return origFetch.apply(this, args);
   };
 
-  // Strategy B: XMLHttpRequest (used by Angular's HttpClient in older bundles)
+  // Strategy B
   const origOpen = XMLHttpRequest.prototype.open;
   const origSend = XMLHttpRequest.prototype.send;
   XMLHttpRequest.prototype.open = function(method, url, ...rest) {
@@ -162,13 +172,24 @@ async function captureAnalyticsCsv(buttonIndex) {
   XMLHttpRequest.prototype.send = function(body) {
     if (!capturedFetchArgs && !capturedXhr && this._captureUrl) {
       capturedXhr = { method: this._captureMethod, url: this._captureUrl, body };
-      this.abort();   // prevent file download; URL is already captured
+      this.abort();
       return;
     }
     return origSend.call(this, body);
   };
 
-  // Belt-and-suspenders: suppress any blob/download anchor that slips through
+  // Strategy C — Blob.prototype.text() is microtask-based and not throttled in
+  // background tabs, unlike FileReader which relies on throttled timers.
+  const origCOBU = URL.createObjectURL;
+  URL.createObjectURL = function(obj) {
+    const url = origCOBU.call(URL, obj);
+    if (obj instanceof Blob && !blobTextPromise && !capturedFetchArgs && !capturedXhr) {
+      blobTextPromise = obj.text().catch(() => null);
+    }
+    return url;   // return real URL so page can build the anchor (we suppress the click)
+  };
+
+  // Strategy D
   const origAnchorClick = HTMLAnchorElement.prototype.click;
   HTMLAnchorElement.prototype.click = function() {
     if (this.hasAttribute('download') || (this.href && this.href.startsWith('blob:'))) return;
@@ -177,31 +198,47 @@ async function captureAnalyticsCsv(buttonIndex) {
 
   btn.click();
 
-  // Wait at most 3 s for any request to be intercepted (usually <200 ms)
+  // If the blob was created synchronously during the click (common pattern),
+  // blobTextPromise is already set — await it directly (microtask, near-instant).
+  if (blobTextPromise) {
+    window.fetch = origFetch;
+    XMLHttpRequest.prototype.open = origOpen;
+    XMLHttpRequest.prototype.send = origSend;
+    URL.createObjectURL = origCOBU;
+    HTMLAnchorElement.prototype.click = origAnchorClick;
+    const csv = await blobTextPromise;
+    return csv ? { ok: true, csv } : { ok: false, step: 'blob-empty' };
+  }
+
+  // Blob may be created asynchronously (after a fetch), or the button uses
+  // fetch/XHR.  Wait up to 3 s.
   for (let i = 0; i < 15; i++) {
     await sleep(200);
-    if (capturedFetchArgs || capturedXhr) break;
+    if (blobTextPromise || capturedFetchArgs || capturedXhr) break;
   }
 
   window.fetch = origFetch;
   XMLHttpRequest.prototype.open = origOpen;
   XMLHttpRequest.prototype.send = origSend;
+  URL.createObjectURL = origCOBU;
   HTMLAnchorElement.prototype.click = origAnchorClick;
+
+  // Blob path (async)
+  if (blobTextPromise) {
+    const csv = await blobTextPromise;
+    return csv ? { ok: true, csv } : { ok: false, step: 'blob-empty' };
+  }
 
   if (!capturedFetchArgs && !capturedXhr) return { ok: false, step: 'no-request-intercepted' };
 
-  // Re-issue the real request and read response as text (no download)
+  // Fetch / XHR path
   try {
     let r;
     if (capturedFetchArgs) {
       r = await origFetch.apply(window, capturedFetchArgs);
     } else {
-      const url = capturedXhr.url.startsWith('/') ? window.location.origin + capturedXhr.url : capturedXhr.url;
-      r = await origFetch(url, {
-        method:      capturedXhr.method || 'GET',
-        body:        capturedXhr.body   || undefined,
-        credentials: 'include',
-      });
+      const u = capturedXhr.url.startsWith('/') ? window.location.origin + capturedXhr.url : capturedXhr.url;
+      r = await origFetch(u, { method: capturedXhr.method || 'GET', body: capturedXhr.body, credentials: 'include' });
     }
     if (!r.ok) return { ok: false, step: 'csv-fetch-failed', status: r.status };
     return { ok: true, csv: await r.text() };
