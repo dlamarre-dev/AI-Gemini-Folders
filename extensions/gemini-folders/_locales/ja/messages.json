@@ -252,7 +252,7 @@
     "message": "AI フォルダを発見"
   },
   "afPromoMessage": {
-    "message": "他の AI も使っていますか？AI フォルダに切り替えて、ChatGPT、Claude、Copilot、Perplexity、ローカル LLM をフォルダに追加しましょう。"
+    "message": "他の AI も使っていますか？AI フォルダに切り替えて、ChatGPT、Claude、Copilot、DeepSeek、Perplexity、ローカル LLM をフォルダに追加しましょう。"
   },
   "afPromoDownloadBtn": {
     "message": "ダウンロード"

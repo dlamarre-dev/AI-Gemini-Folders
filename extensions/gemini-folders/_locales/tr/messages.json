@@ -252,7 +252,7 @@
     "message": "YZ Klasörleri keşfedin"
   },
   "afPromoMessage": {
-    "message": "Diğer yapay zekâ araçlarını da kullanıyor musunuz? ChatGPT, Claude, Copilot, Perplexity ve yerel bir LLM'yi klasörlerinize eklemek için YZ Klasörleri'ne geçin."
+    "message": "Diğer yapay zekâ araçlarını da kullanıyor musunuz? ChatGPT, Claude, Copilot, DeepSeek, Perplexity ve yerel bir LLM'yi klasörlerinize eklemek için YZ Klasörleri'ne geçin."
   },
   "afPromoDownloadBtn": {
     "message": "İndir"

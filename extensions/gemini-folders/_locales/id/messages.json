@@ -252,7 +252,7 @@
     "message": "Temukan Folder AI"
   },
   "afPromoMessage": {
-    "message": "Apakah Anda juga menggunakan AI lain? Beralih ke Folder AI untuk menambahkan ChatGPT, Claude, Copilot, Perplexity, dan LLM lokal ke folder Anda."
+    "message": "Apakah Anda juga menggunakan AI lain? Beralih ke Folder AI untuk menambahkan ChatGPT, Claude, Copilot, DeepSeek, Perplexity, dan LLM lokal ke folder Anda."
   },
   "afPromoDownloadBtn": {
     "message": "Unduh"

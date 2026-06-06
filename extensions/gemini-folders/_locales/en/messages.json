@@ -252,7 +252,7 @@
     "message": "Discover AI Folders"
   },
   "afPromoMessage": {
-    "message": "Do you also use other AIs? Switch to AI Folders to add ChatGPT, Claude, Copilot, Perplexity and a local LLM to your folders."
+    "message": "Do you also use other AIs? Switch to AI Folders to add ChatGPT, Claude, Copilot, DeepSeek, Perplexity and a local LLM to your folders."
   },
   "afPromoDownloadBtn": {
     "message": "Download"
