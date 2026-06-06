@@ -133,21 +133,42 @@ async function captureAnalyticsCsv(buttonIndex) {
     }
   }
 
-  // Button: intercept the fetch it triggers.
-  // We return a fake empty-CSV response immediately so the page does nothing
-  // with the data (no blob URL, no download), then replay the real request.
-  let capturedArgs = null;
-  const origFetch = window.fetch;
+  // Button: intercept whatever network call the button triggers (fetch or XHR),
+  // abort/fake it immediately to prevent any file download, then replay the
+  // same request ourselves to read the CSV as text.
+  let capturedFetchArgs = null;
+  let capturedXhr       = null;
 
+  // Strategy A: window.fetch (used by some Google pages)
+  const origFetch = window.fetch;
   window.fetch = function(...args) {
-    if (!capturedArgs) {
-      capturedArgs = args;
+    if (!capturedFetchArgs) {
+      capturedFetchArgs = args;
       return Promise.resolve(new Response('', { status: 200, headers: { 'content-type': 'text/csv' } }));
     }
     return origFetch.apply(this, args);
   };
 
-  // Belt-and-suspenders: also suppress anchor-click downloads
+  // Strategy B: XMLHttpRequest (used by Angular's HttpClient in older bundles)
+  const origOpen = XMLHttpRequest.prototype.open;
+  const origSend = XMLHttpRequest.prototype.send;
+  XMLHttpRequest.prototype.open = function(method, url, ...rest) {
+    if (!capturedFetchArgs && !capturedXhr) {
+      this._captureMethod = method;
+      this._captureUrl    = url;
+    }
+    return origOpen.call(this, method, url, ...rest);
+  };
+  XMLHttpRequest.prototype.send = function(body) {
+    if (!capturedFetchArgs && !capturedXhr && this._captureUrl) {
+      capturedXhr = { method: this._captureMethod, url: this._captureUrl, body };
+      this.abort();   // prevent file download; URL is already captured
+      return;
+    }
+    return origSend.call(this, body);
+  };
+
+  // Belt-and-suspenders: suppress any blob/download anchor that slips through
   const origAnchorClick = HTMLAnchorElement.prototype.click;
   HTMLAnchorElement.prototype.click = function() {
     if (this.hasAttribute('download') || (this.href && this.href.startsWith('blob:'))) return;
@@ -156,21 +177,32 @@ async function captureAnalyticsCsv(buttonIndex) {
 
   btn.click();
 
-  // Wait at most 3 s for the fetch to be intercepted (usually <100 ms)
+  // Wait at most 3 s for any request to be intercepted (usually <200 ms)
   for (let i = 0; i < 15; i++) {
     await sleep(200);
-    if (capturedArgs) break;
+    if (capturedFetchArgs || capturedXhr) break;
   }
 
   window.fetch = origFetch;
+  XMLHttpRequest.prototype.open = origOpen;
+  XMLHttpRequest.prototype.send = origSend;
   HTMLAnchorElement.prototype.click = origAnchorClick;
 
-  if (!capturedArgs) return { ok: false, step: 'no-fetch-intercepted' };
+  if (!capturedFetchArgs && !capturedXhr) return { ok: false, step: 'no-request-intercepted' };
 
-  // Re-issue the identical request with the real fetch — reads CSV as text,
-  // no download dialog, result comes back as a normal Response.
+  // Re-issue the real request and read response as text (no download)
   try {
-    const r = await origFetch.apply(window, capturedArgs);
+    let r;
+    if (capturedFetchArgs) {
+      r = await origFetch.apply(window, capturedFetchArgs);
+    } else {
+      const url = capturedXhr.url.startsWith('/') ? window.location.origin + capturedXhr.url : capturedXhr.url;
+      r = await origFetch(url, {
+        method:      capturedXhr.method || 'GET',
+        body:        capturedXhr.body   || undefined,
+        credentials: 'include',
+      });
+    }
     if (!r.ok) return { ok: false, step: 'csv-fetch-failed', status: r.status };
     return { ok: true, csv: await r.text() };
   } catch (e) {
