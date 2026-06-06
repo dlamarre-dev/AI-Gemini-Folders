@@ -76,15 +76,61 @@ function parseSvgBreakdown(svgEl) {
   return Object.fromEntries(categories.map((cat, i) => [cat, percentages[i]]));
 }
 
+// OS key names as they appear in the CWS dashboard (hl=en).
+const _OS_KEYS = new Set(['windows', 'mac os', 'macos', 'chrome os', 'chromeos', 'linux', 'android', 'ios', 'ipad os']);
+
 /**
- * Collect all breakdown SVGs from the page, in DOM order, skipping time-series and
- * decoration SVGs (fewer than 5 text nodes).
+ * Classify a parsed breakdown object as 'os', 'language', or 'country'
+ * based on its key names, so callers don't rely on fragile DOM ordering.
+ */
+function classifyBreakdown(data) {
+  if (!data) return 'country';
+  const keys = Object.keys(data).filter(k => k.toLowerCase() !== 'other');
+  if (!keys.length) return 'country';
+  if (keys.some(k => _OS_KEYS.has(k.toLowerCase()))) return 'os';
+  // Language entries often carry parenthetical locale specifiers ("English (United States)")
+  // or are well-known language names.
+  const LANG_RE = /\b(english|spanish|japanese|korean|french|german|portuguese|italian|russian|arabic|hindi|turkish|dutch|polish|swedish|chinese|anglais|espagnol|japonais)\b/i;
+  if (keys.some(k => k.includes('(') || LANG_RE.test(k))) return 'language';
+  return 'country';
+}
+
+/**
+ * From a typed breakdown array, extract the country/language/os for one section.
+ * Sections are delimited by country-type entries (each section starts with its
+ * country breakdown).  sectionIndex 0 = installs (or users page), 1 = uninstalls.
+ *
+ * Using section boundaries — not simple Nth-occurrence — ensures that a language
+ * or OS chart absent in section 0 does not bleed into it from section 1.
+ */
+function pickSection(typedBds, sectionIndex) {
+  const countryPos = typedBds.reduce((acc, b, i) => {
+    if (b.type === 'country') acc.push(i);
+    return acc;
+  }, []);
+
+  const start = countryPos[sectionIndex] ?? -1;
+  if (start === -1) return { country: null, language: null, os: null };
+
+  const end     = countryPos[sectionIndex + 1] ?? typedBds.length;
+  const section = typedBds.slice(start, end);
+  return {
+    country:  section.find(b => b.type === 'country') ?.data ?? null,
+    language: section.find(b => b.type === 'language')?.data ?? null,
+    os:       section.find(b => b.type === 'os')      ?.data ?? null,
+  };
+}
+
+/**
+ * Collect all breakdown SVGs from the page, classify each by content type,
+ * and return [{type: 'country'|'language'|'os', data: {…}}] in DOM order.
  */
 function parseAllBreakdowns(doc) {
   return Array.from(doc.querySelectorAll('svg'))
     .filter(svg => svg.querySelectorAll(SEL.SVG_TEXT_NODES).length >= 5 && !isTimeSeries(svg))
     .map(parseSvgBreakdown)
-    .filter(Boolean);
+    .filter(Boolean)
+    .map(data => ({ type: classifyBreakdown(data), data }));
 }
 
 // ── per-page scrapers ─────────────────────────────────────────────────────────
@@ -137,7 +183,7 @@ function parseActiveVersions(doc) {
 if (typeof module !== 'undefined') {
   module.exports = {
     dayIndexToISO, cleanSvgText, parseDateRange,
-    isTimeSeries, parseSvgBreakdown, parseAllBreakdowns,
+    isTimeSeries, parseSvgBreakdown, classifyBreakdown, parseAllBreakdowns, pickSection,
     parsePeriodTotals, parseListingRows, parseActiveVersions,
   };
 }

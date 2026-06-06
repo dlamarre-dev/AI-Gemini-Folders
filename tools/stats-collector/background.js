@@ -393,7 +393,22 @@ async function runCollection(config, token, onProgress) {
         onProgress(`  ${src.label}: ${rows.length} rows`);
         csvArrays.push(rows);
       } catch (e) {
-        onProgress(`  ${src.label} CSV: failed — ${e.message.slice(0, 2000)}`);
+        const msg = e.message;
+        const m = msg.match(/"btnTexts":(\[[\s\S]*?\])\}/);
+        if (m) {
+          try {
+            onProgress(`  ${src.label} CSV: export button not found. Visible elements:`);
+            JSON.parse(m[1]).forEach(b => {
+              const parts = [`[${b.tag}]`];
+              if (b.text)  parts.push(`"${b.text}"`);
+              if (b.label) parts.push(`lbl:"${b.label}"`);
+              if (b.title) parts.push(`title:"${b.title}"`);
+              onProgress(`    ${parts.join(' ')}`);
+            });
+          } catch (_) { onProgress(`  ${src.label} CSV: failed — ${msg.slice(0, 400)}`); }
+        } else {
+          onProgress(`  ${src.label} CSV: failed — ${msg.slice(0, 400)}`);
+        };
       }
     }
     const dailyRows = csvArrays.length ? mergeByDate(...csvArrays) : [];
