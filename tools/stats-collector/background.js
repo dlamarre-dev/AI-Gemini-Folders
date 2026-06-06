@@ -101,11 +101,39 @@ function clickExportButton(buttonIndex) {
   return { ok: true };
 }
 
-// ── background-level download capture ────────────────────────────────────────
+// ── download capture + content-script file read ───────────────────────────────
 
-// Waits for a CSV download to complete (initiated after `afterMs` timestamp),
-// reads its content via file:// URL, removes the file from disk, and resolves
-// with the CSV text.  Requires "downloads" + "file:///*" permissions.
+// ── native messaging file read ─────────────────────────────────────────────────
+
+// Reads a local file via the native messaging host (filereader.py).
+// Requires one-time setup: run tools/stats-collector/native/install-native-host.ps1
+function readFileNative(filename) {
+  return new Promise((resolve, reject) => {
+    let port;
+    try {
+      port = chrome.runtime.connectNative('com.geminifoldersantigravity.filereader');
+    } catch (e) {
+      reject(new Error('Native host unavailable — run install-native-host.ps1 first. ' + e.message));
+      return;
+    }
+
+    port.onMessage.addListener(msg => {
+      port.disconnect();
+      if (msg.ok) resolve(msg.content);
+      else reject(new Error('Native read error: ' + msg.error));
+    });
+
+    port.onDisconnect.addListener(() => {
+      const err = chrome.runtime.lastError?.message ?? 'disconnected';
+      reject(new Error('Native host disconnected: ' + err));
+    });
+
+    port.postMessage({ path: filename });
+  });
+}
+
+// Waits for a CSV download to complete after `afterMs`, reads it via the
+// native messaging host, deletes the file from disk, and resolves with the text.
 function captureDownloadedCsv(afterMs, timeoutMs = 20000) {
   return new Promise((resolve, reject) => {
     const timer = setTimeout(() => {
@@ -117,26 +145,23 @@ function captureDownloadedCsv(afterMs, timeoutMs = 20000) {
       if (delta.state?.current !== 'complete') return;
       chrome.downloads.search({ id: delta.id }, async ([item]) => {
         if (!item) return;
-        // Only accept downloads that started after our trigger and look like CSVs
         if (new Date(item.startTime).getTime() < afterMs) return;
         const looksLikeCsv = /\.(csv|txt)$/i.test(item.filename) ||
                              (item.mime || '').includes('csv') ||
                              (item.mime || '').includes('text/plain');
-        if (!looksLikeCsv && !item.url?.includes('chrome.google.com')) return;
+        if (!looksLikeCsv) return;
 
         clearTimeout(timer);
         chrome.downloads.onChanged.removeListener(onChange);
 
         try {
-          const path = item.filename.replace(/\\/g, '/');
-          const fileUrl = 'file://' + (path.startsWith('/') ? '' : '/') + path;
-          const r = await fetch(fileUrl);
-          if (!r.ok) throw new Error(`File read failed: HTTP ${r.status}`);
-          const csv = await r.text();
+          console.log('[stats-collector] reading via native host:', item.filename, '| size:', item.fileSize);
+          const text = await readFileNative(item.filename);
+          console.log('[stats-collector] native read ok:', text.length, 'chars');
           chrome.downloads.removeFile(item.id, () => {});
-          resolve(csv);
+          resolve(text);
         } catch (e) {
-          reject(e);
+          reject(new Error(e.message + ' [file=' + item.filename + ']'));
         }
       });
     }
@@ -197,7 +222,7 @@ async function scrapeUrl(url) {
 
 // Opens an analytics page, sets period to "Last year", then captures one CSV
 // per entry in buttonIndices (0-based index into the visible "Export to CSV"
-// buttons on the page).  Returns [{ok, csv, diagnostic}] in the same order.
+// buttons on the page).  Returns [{ok, csv}] in the same order.
 // Opening the page once for multiple buttons avoids redundant tab loads.
 async function scrapeUrlForCsvs(url, buttonIndices) {
   let tab;
@@ -212,28 +237,28 @@ async function scrapeUrlForCsvs(url, buttonIndices) {
 
     await new Promise(r => setTimeout(r, SETTLE_MS));
 
-    const clickResult = await chrome.scripting.executeScript({
+    const presetResult = await chrome.scripting.executeScript({
       target: { tabId: tab.id }, world: 'MAIN', func: clickPresetPeriod, args: ['Last year'],
     });
-    const clickRes = clickResult?.[0]?.result;
-    if (!clickRes?.ok) throw new Error(`Preset "Last year" not found: ${JSON.stringify(clickRes).slice(0, 200)}`);
+    const presetRes = presetResult?.[0]?.result;
+    if (!presetRes?.ok) throw new Error(`Preset "Last year" not found: ${JSON.stringify(presetRes).slice(0, 200)}`);
+    console.log('[stats-collector] preset clicked:', JSON.stringify(presetRes.clicked), 'on', url.slice(url.lastIndexOf('/') + 1));
 
     await new Promise(r => setTimeout(r, SETTLE_MS));
 
     const results = [];
     for (const idx of buttonIndices) {
-      // Start watching for the download BEFORE clicking, then click.
+      // Start listening for the download BEFORE clicking so we don't miss it.
       const afterMs = Date.now();
       const downloadPromise = captureDownloadedCsv(afterMs);
 
-      const clickResult = await chrome.scripting.executeScript({
+      const btnResult = await chrome.scripting.executeScript({
         target: { tabId: tab.id }, world: 'MAIN', func: clickExportButton, args: [idx],
       });
-      const clickRes = clickResult?.[0]?.result;
-      if (!clickRes?.ok) {
-        downloadPromise.catch(() => {}); // discard pending listener
-        const err = new Error(`Export button not found: ${JSON.stringify(clickRes)}`);
-        results.push({ ok: false, err });
+      const btnRes = btnResult?.[0]?.result;
+      if (!btnRes?.ok) {
+        downloadPromise.catch(() => {});
+        results.push({ ok: false, err: new Error(`Export button not found: ${JSON.stringify(btnRes)}`) });
         continue;
       }
 
@@ -267,6 +292,12 @@ function splitCsvLine(line) {
 function parseIsoDate(str) {
   if (!str) return null;
   if (/^\d{4}-\d{2}-\d{2}$/.test(str)) return str;
+  // CWS exports dates as M/D/YY (e.g. "5/7/26" → "2026-05-07")
+  const mdyy = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2})$/);
+  if (mdyy) {
+    const year = 2000 + parseInt(mdyy[3], 10);
+    return `${year}-${mdyy[1].padStart(2, '0')}-${mdyy[2].padStart(2, '0')}`;
+  }
   const d = new Date(str);
   return isNaN(d.getTime()) ? null : d.toISOString().slice(0, 10);
 }
@@ -277,13 +308,20 @@ function parseCsvNum(str) {
 }
 
 // Parse a CWS CSV export into [{date, installs?, uninstalls?, weekly_users?, impressions?}].
-// Flexible column detection — tolerates different orderings and extra columns.
+// Flexible column detection — tolerates different orderings, extra columns, and the
+// leading report-title row that CWS prepends before the real header (e.g. "Installs\nDate,Installs\n...").
 function parseCsvRows(csvText) {
   if (!csvText) return [];
   const lines = csvText.trim().split(/\r?\n/).filter(l => l.trim());
   if (lines.length < 2) return [];
 
-  const headers = splitCsvLine(lines[0]).map(h => h.toLowerCase());
+  // Skip a leading title row (single bare word/phrase with no commas that isn't a header)
+  let dataStart = 0;
+  let headers = splitCsvLine(lines[0]).map(h => h.toLowerCase());
+  if (!headers.some(h => h === 'date' || h === 'day' || h.includes('date'))) {
+    dataStart = 1;
+    headers = splitCsvLine(lines[1]).map(h => h.toLowerCase());
+  }
 
   const dateCol    = headers.findIndex(h => h === 'date' || h === 'day' || h.includes('date'));
   const instCol    = headers.findIndex(h => h.includes('install') && !h.includes('uninstall'));
@@ -296,7 +334,7 @@ function parseCsvRows(csvText) {
 
   if (dateCol === -1) return [];
 
-  return lines.slice(1).flatMap(line => {
+  return lines.slice(dataStart + 1).flatMap(line => {
     const v    = splitCsvLine(line);
     const date = parseIsoDate(v[dateCol]);
     if (!date) return [];

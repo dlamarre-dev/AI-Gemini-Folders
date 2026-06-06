@@ -1,0 +1,7 @@
+{
+  "name": "com.geminifoldersantigravity.filereader",
+  "description": "Reads downloaded CSV files for CWS Stats Collector",
+  "path": "C:\\Users\\david\\OneDrive\\Documents\\Extensions Chrome\\GeminiFoldersAntigravity\\GeminiFolders\\tools\\stats-collector\\native\\filereader.bat",
+  "type": "stdio",
+  "allowed_extensions": ["cws-stats-collector@dev.local"]
+}
