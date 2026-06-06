@@ -3,9 +3,10 @@
   "name": "CWS Stats Collector",
   "version": "1.0",
   "description": "Dev-only operator tool: scrapes CWS developer console analytics and commits monthly snapshots to GitHub. Load via about:debugging in Firefox.",
-  "permissions": ["tabs", "scripting", "storage"],
+  "permissions": ["tabs", "scripting", "storage", "downloads"],
   "host_permissions": [
-    "*://chrome.google.com/webstore/devconsole/*"
+    "*://chrome.google.com/webstore/devconsole/*",
+    "file:///*"
   ],
   "background": {
     "scripts": ["lib/github.js", "background.js"]
