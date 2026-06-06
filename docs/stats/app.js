@@ -58,32 +58,27 @@ function renderBarChart(title, data, colorClass) {
 
 // ── time-series chart (uPlot) ─────────────────────────────────────────────────
 
-function renderTimeSeries(container, data) {
+// Renders one uPlot chart for the given series keys into container.
+// seriesDef: [{key, label, stroke}]
+function renderTimeSeries(container, data, seriesDef) {
   if (!data.length) return;
 
   // Works with both daily rows {date, …} and history entries {period_start, collected_at, …}
-  const timestamps  = data.map(e => new Date(e.date ?? e.period_start ?? e.collected_at).getTime() / 1000);
-  const installs    = data.map(e => e.installs     ?? null);
-  const uninstalls  = data.map(e => e.uninstalls   ?? null);
-  const users       = data.map(e => e.weekly_users ?? null);
-  const impressions = data.map(e => e.impressions  ?? null);
+  const timestamps = data.map(e => new Date(e.date ?? e.period_start ?? e.collected_at).getTime() / 1000);
 
-  const series     = [
-    {},
-    { label: 'Installs',     stroke: '#1a73e8', width: 2 },
-    { label: 'Uninstalls',   stroke: '#d93025', width: 2 },
-    { label: 'Weekly users', stroke: '#188038', width: 2 },
-  ];
-  const seriesData = [timestamps, installs, uninstalls, users];
-
-  if (impressions.some(v => v !== null)) {
-    series.push({ label: 'Impressions', stroke: '#e37400', width: 2 });
-    seriesData.push(impressions);
+  const series     = [{}];
+  const seriesData = [timestamps];
+  for (const { key, label, stroke } of seriesDef) {
+    const vals = data.map(e => e[key] ?? null);
+    if (!vals.some(v => v !== null)) continue;
+    series.push({ label, stroke, width: 2 });
+    seriesData.push(vals);
   }
+  if (series.length < 2) return; // nothing to plot
 
   new uPlot({
     width: container.clientWidth || 600,
-    height: 180,
+    height: 160,
     series,
     axes: [{ space: 60 }, { size: 50 }],
     legend: { show: true },
@@ -123,18 +118,32 @@ function renderItem(itemId, itemData) {
       ),
       latest.impressions != null ? el('div', { class: 'kpi' },
         el('span', { class: 'kpi-val' }, fmt(latest.impressions)),
-        el('span', { class: 'kpi-lbl' }, 'Impressions')
+        el('span', { class: 'kpi-lbl' }, 'Page views')
       ) : null
     )
   );
 
-  // Time-series chart — prefer daily CSV data when available, fall back to history
+  // Time-series charts — prefer daily CSV data when available, fall back to history
   const daily = (itemData.daily ?? []).slice().sort((a, b) => a.date < b.date ? -1 : 1);
   const chartData = daily.length >= 2 ? daily : history;
-  const chartWrap = el('div', { class: 'chart-wrap' });
+
+  const charts = [
+    { label: 'Weekly users',        series: [{ key: 'weekly_users', label: 'Weekly users', stroke: '#188038' }] },
+    { label: 'Installs & Uninstalls', series: [
+      { key: 'installs',   label: 'Installs',   stroke: '#1a73e8' },
+      { key: 'uninstalls', label: 'Uninstalls', stroke: '#d93025' },
+    ]},
+    { label: 'Page views',          series: [{ key: 'impressions', label: 'Page views', stroke: '#e37400' }] },
+  ];
+
   section.appendChild(el('div', { class: 'section-title' }, 'Trend'));
-  section.appendChild(chartWrap);
-  setTimeout(() => renderTimeSeries(chartWrap, chartData), 0);
+  for (const { label, series } of charts) {
+    const wrap = el('div', { class: 'chart-wrap' });
+    wrap.appendChild(el('div', { class: 'chart-note', style: { marginBottom: '4px', fontStyle: 'normal', color: '#5f6368' } }, label));
+    section.appendChild(wrap);
+    const s = series;
+    setTimeout(() => renderTimeSeries(wrap, chartData, s), 0);
+  }
 
   // Breakdown bar charts
   const bdRow = el('div', { class: 'breakdowns' });
