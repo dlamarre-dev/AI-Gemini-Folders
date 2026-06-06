@@ -76,13 +76,14 @@ async function clickPresetPeriod(label) {
 
 // ── CSV capture (runs in MAIN world) ─────────────────────────────────────────
 
-// Clicks the Nth visible "Export to CSV" button on an analytics page and
-// returns the raw CSV text without saving it to disk.
-// Three interception strategies run in parallel:
-//   1. window.fetch() patch — captures the response body before the browser sees it
-//   2. URL.createObjectURL patch — reads blob content via FileReader
-//   3. HTMLAnchorElement.prototype.click patch — suppresses the actual file download
-//      so the file never lands in the user's downloads folder
+// Clicks the Nth visible "Export to CSV" button and returns the CSV text
+// without saving any file to disk.
+//
+// Strategy: intercept window.fetch, return an immediate fake-empty response so
+// the page never triggers a browser download, then replay the same request
+// ourselves to read the actual CSV text.  Max idle wait: 3 s (vs old 15 s),
+// which prevents the Firefox message-port from closing mid-operation.
+//
 // Must be self-contained (serialised by executeScript — no closure access).
 async function captureAnalyticsCsv(buttonIndex) {
   const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -93,15 +94,15 @@ async function captureAnalyticsCsv(buttonIndex) {
   }
 
   function isExportEl(el) {
-    const t     = (el.textContent       || '').trim().toLowerCase();
-    const lbl   = (el.getAttribute('aria-label') || '').toLowerCase();
-    const title = (el.getAttribute('title')      || '').toLowerCase();
+    const t   = (el.textContent || '').trim().toLowerCase();
+    const lbl = (el.getAttribute('aria-label') || '').toLowerCase();
+    const tit = (el.getAttribute('title')      || '').toLowerCase();
     return (t.includes('export') && t.includes('csv')) ||
            (t.includes('download') && t.includes('csv')) ||
            t === 'export' || t === 'download' ||
            lbl.includes('export') || lbl.includes('download') ||
-           title.includes('export') || title.includes('download') ||
-           lbl.includes('csv') || title.includes('csv');
+           tit.includes('export') || tit.includes('download') ||
+           lbl.includes('csv') || tit.includes('csv');
   }
 
   const candidates = Array.from(document.querySelectorAll('a, button, [role="button"], [role="menuitem"]'))
@@ -121,7 +122,7 @@ async function captureAnalyticsCsv(buttonIndex) {
 
   const btn = candidates[buttonIndex];
 
-  // Pattern 1: direct anchor — fetch directly, no download triggered
+  // Direct anchor: fetch the href in-page (session cookies apply, no download)
   if (btn.tagName === 'A' && btn.href && !btn.href.startsWith('javascript:')) {
     try {
       const r = await fetch(btn.href, { credentials: 'include' });
@@ -132,37 +133,21 @@ async function captureAnalyticsCsv(buttonIndex) {
     }
   }
 
-  // Patterns 2 & 3: button — intercept network + suppress file download
-  let captured = null;
-
-  // Strategy A: intercept fetch (captures response before browser processes it)
+  // Button: intercept the fetch it triggers.
+  // We return a fake empty-CSV response immediately so the page does nothing
+  // with the data (no blob URL, no download), then replay the real request.
+  let capturedArgs = null;
   const origFetch = window.fetch;
+
   window.fetch = function(...args) {
-    const p = origFetch.apply(this, args);
-    p.then(r => {
-      if (!captured) {
-        const ct = (r.headers.get('content-type')        || '').toLowerCase();
-        const cd = (r.headers.get('content-disposition') || '').toLowerCase();
-        if (ct.includes('csv') || ct.includes('text/plain') || ct.includes('octet-stream') || cd.includes('attachment')) {
-          r.clone().text().then(t => { if (t && !captured) captured = t; }).catch(() => {});
-        }
-      }
-    }).catch(() => {});
-    return p;
-  };
-
-  // Strategy B: intercept blob creation (fallback if fetch isn't used)
-  const origCOBU = URL.createObjectURL;
-  URL.createObjectURL = function(obj) {
-    if (obj instanceof Blob && !captured) {
-      const reader = new FileReader();
-      reader.onload = e => { if (!captured) captured = e.target.result; };
-      reader.readAsText(obj);
+    if (!capturedArgs) {
+      capturedArgs = args;
+      return Promise.resolve(new Response('', { status: 200, headers: { 'content-type': 'text/csv' } }));
     }
-    return origCOBU.call(URL, obj);
+    return origFetch.apply(this, args);
   };
 
-  // Strategy C: suppress anchor downloads so the file never lands on disk
+  // Belt-and-suspenders: also suppress anchor-click downloads
   const origAnchorClick = HTMLAnchorElement.prototype.click;
   HTMLAnchorElement.prototype.click = function() {
     if (this.hasAttribute('download') || (this.href && this.href.startsWith('blob:'))) return;
@@ -171,17 +156,26 @@ async function captureAnalyticsCsv(buttonIndex) {
 
   btn.click();
 
-  for (let i = 0; i < 75; i++) {
+  // Wait at most 3 s for the fetch to be intercepted (usually <100 ms)
+  for (let i = 0; i < 15; i++) {
     await sleep(200);
-    if (captured !== null) break;
+    if (capturedArgs) break;
   }
 
   window.fetch = origFetch;
-  URL.createObjectURL = origCOBU;
   HTMLAnchorElement.prototype.click = origAnchorClick;
 
-  if (!captured) return { ok: false, step: 'no-csv-received' };
-  return { ok: true, csv: captured };
+  if (!capturedArgs) return { ok: false, step: 'no-fetch-intercepted' };
+
+  // Re-issue the identical request with the real fetch — reads CSV as text,
+  // no download dialog, result comes back as a normal Response.
+  try {
+    const r = await origFetch.apply(window, capturedArgs);
+    if (!r.ok) return { ok: false, step: 'csv-fetch-failed', status: r.status };
+    return { ok: true, csv: await r.text() };
+  } catch (e) {
+    return { ok: false, step: 'csv-fetch-error', message: e.message };
+  }
 }
 
 // ── tab helpers ───────────────────────────────────────────────────────────────
