@@ -73,6 +73,75 @@
             "4.2.1.0",
             "4.2.2.0"
           ]
+        },
+        {
+          "collected_at": "2026-06-06",
+          "period_start": "2026-05-07",
+          "period_end": "2026-06-05",
+          "installs": 699,
+          "uninstalls": 297,
+          "weekly_users": 596,
+          "impressions": 2280,
+          "installs_by_country": {
+            "United States": 17,
+            "Spain": 15,
+            "Japan": 11,
+            "Other": 56
+          },
+          "installs_by_language": {
+            "Japanese": 24,
+            "English (United States)": 13,
+            "Other": 50
+          },
+          "installs_by_os": {
+            "Windows": 76,
+            "Mac OS": 12,
+            "ChromeOS": 9,
+            "Other": 2
+          },
+          "uninstalls_by_country": {
+            "South Korea": 17,
+            "Japan": 14,
+            "Other": 55
+          },
+          "uninstalls_by_language": {
+            "English (United States)": 22,
+            "Korean": 14,
+            "Other": 49
+          },
+          "uninstalls_by_os": {
+            "Windows": 83,
+            "Mac OS": 14,
+            "Linux": 2,
+            "Other": 1
+          },
+          "users_by_country": {
+            "Spain": 24,
+            "Japan": 12,
+            "Brazil": 11,
+            "Other": 53
+          },
+          "users_by_language": {
+            "Spanish": 34,
+            "English (United States)": 15,
+            "Japanese": 13,
+            "Other": 38
+          },
+          "users_by_os": {
+            "Mac OS": 82,
+            "Linux": 15,
+            "Other": 1
+          },
+          "active_versions": [
+            "3.3.0.0",
+            "3.4.1.0",
+            "3.5.0.0",
+            "4.0.0.0",
+            "4.1.0.0",
+            "4.2.0.0",
+            "4.2.1.0",
+            "4.2.2.0"
+          ]
         }
       ]
     },
