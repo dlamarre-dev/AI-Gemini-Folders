@@ -94,10 +94,12 @@ async function captureAnalyticsCsv() {
     const t     = (el.textContent       || '').trim().toLowerCase();
     const lbl   = (el.getAttribute('aria-label') || '').toLowerCase();
     const title = (el.getAttribute('title')      || '').toLowerCase();
-    return t === 'export' || t.includes('export csv') || t === 'download' || t.includes('download csv') ||
+    return (t.includes('export') && t.includes('csv')) ||
+           (t.includes('download') && t.includes('csv')) ||
+           t === 'export' || t === 'download' ||
            lbl.includes('export') || lbl.includes('download') ||
            title.includes('export') || title.includes('download') ||
-           (t === 'csv') || lbl.includes('csv') || title.includes('csv');
+           lbl.includes('csv') || title.includes('csv');
   }
 
   const candidates = Array.from(document.querySelectorAll('a, button, [role="button"], [role="menuitem"]'))
