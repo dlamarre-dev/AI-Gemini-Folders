@@ -245,7 +245,11 @@ async function scrapeUrlForCsv(url) {
       target: { tabId: tab.id }, world: 'MAIN', func: captureAnalyticsCsv,
     });
     const csvRes = csvResult?.[0]?.result;
-    if (!csvRes?.ok) throw new Error(`CSV capture failed: ${JSON.stringify(csvRes).slice(0, 200)}`);
+    if (!csvRes?.ok) {
+      const err = new Error(`CSV capture failed: step=${csvRes?.step ?? 'unknown'}`);
+      err.diagnostic = csvRes;
+      throw err;
+    }
 
     return csvRes.csv;
   } finally {
@@ -393,21 +397,18 @@ async function runCollection(config, token, onProgress) {
         onProgress(`  ${src.label}: ${rows.length} rows`);
         csvArrays.push(rows);
       } catch (e) {
-        const msg = e.message;
-        const m = msg.match(/"btnTexts":(\[[\s\S]*?\])\}/);
-        if (m) {
-          try {
-            onProgress(`  ${src.label} CSV: export button not found. Visible elements:`);
-            JSON.parse(m[1]).forEach(b => {
-              const parts = [`[${b.tag}]`];
-              if (b.text)  parts.push(`"${b.text}"`);
-              if (b.label) parts.push(`lbl:"${b.label}"`);
-              if (b.title) parts.push(`title:"${b.title}"`);
-              onProgress(`    ${parts.join(' ')}`);
-            });
-          } catch (_) { onProgress(`  ${src.label} CSV: failed — ${msg.slice(0, 400)}`); }
+        const btns = e.diagnostic?.btnTexts;
+        if (btns?.length) {
+          onProgress(`  ${src.label} CSV: export button not found. Visible elements:`);
+          for (const b of btns) {
+            const parts = [`[${b.tag}]`];
+            if (b.text)  parts.push(`"${b.text}"`);
+            if (b.label) parts.push(`lbl:"${b.label}"`);
+            if (b.title) parts.push(`title:"${b.title}"`);
+            onProgress(`    ${parts.join(' ')}`);
+          }
         } else {
-          onProgress(`  ${src.label} CSV: failed — ${msg.slice(0, 400)}`);
+          onProgress(`  ${src.label} CSV: failed — ${e.message.slice(0, 400)}`);
         };
       }
     }
