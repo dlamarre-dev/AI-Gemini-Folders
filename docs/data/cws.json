@@ -220,30 +220,47 @@
             "Other": 27
           },
           "installs_by_language": {
+            "English (United States)": 19,
+            "Korean": 10,
+            "Other": 62
+          },
+          "installs_by_os": {
             "Windows": 57,
             "ChromeOS": 32,
             "Mac OS": 7,
             "Other": 4
           },
-          "installs_by_os": {
+          "uninstalls_by_country": {
             "Taiwan": 29,
             "France": 14,
             "Other": 29
           },
-          "uninstalls_by_country": {
+          "uninstalls_by_language": {
             "Chinese (Taiwan)": 33,
             "Other": 22
           },
-          "uninstalls_by_language": null,
-          "uninstalls_by_os": null,
+          "uninstalls_by_os": {
+            "Windows": 67,
+            "Linux": 22,
+            "Mac OS": 11
+          },
           "users_by_country": {
             "Spain": 30,
             "Canada": 17,
             "South Korea": 9,
             "Other": 44
           },
-          "users_by_language": null,
-          "users_by_os": null,
+          "users_by_language": {
+            "Spanish": 34,
+            "French": 15,
+            "Korean": 9,
+            "Other": 41
+          },
+          "users_by_os": {
+            "Windows": 66,
+            "Mac OS": 28,
+            "ChromeOS": 7
+          },
           "active_versions": [
             "1.0.0.0",
             "1.1.0.0"
