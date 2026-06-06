@@ -205,6 +205,49 @@
             "1.0.0.0",
             "1.1.0.0"
           ]
+        },
+        {
+          "collected_at": "2026-06-06",
+          "period_start": "2026-05-07",
+          "period_end": "2026-06-05",
+          "installs": 56,
+          "uninstalls": 9,
+          "weekly_users": 23,
+          "impressions": 117,
+          "installs_by_country": {
+            "Spain": 62,
+            "Japan": 5,
+            "Other": 27
+          },
+          "installs_by_language": {
+            "Windows": 57,
+            "ChromeOS": 32,
+            "Mac OS": 7,
+            "Other": 4
+          },
+          "installs_by_os": {
+            "Taiwan": 29,
+            "France": 14,
+            "Other": 29
+          },
+          "uninstalls_by_country": {
+            "Chinese (Taiwan)": 33,
+            "Other": 22
+          },
+          "uninstalls_by_language": null,
+          "uninstalls_by_os": null,
+          "users_by_country": {
+            "Spain": 30,
+            "Canada": 17,
+            "South Korea": 9,
+            "Other": 44
+          },
+          "users_by_language": null,
+          "users_by_os": null,
+          "active_versions": [
+            "1.0.0.0",
+            "1.1.0.0"
+          ]
         }
       ]
     }
