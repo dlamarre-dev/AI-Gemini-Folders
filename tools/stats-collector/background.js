@@ -3,6 +3,7 @@
 // commitCwsEntry is available as a global here.
 
 const SETTLE_MS    = 3500;
+const TAB_LOAD_MS  = 60000; // tab load timeout; CWS analytics can be slow
 const LOGIN_RE     = /accounts\.google|google\.com\/ServiceLogin|SignIn/i;
 const SCRAPE_FILES = ['lib/selectors.js', 'lib/normalize.js', 'content/scrape.js'];
 const CWS_BASE     = 'https://chrome.google.com/webstore/devconsole';
@@ -70,8 +71,27 @@ async function clickPresetPeriod(label) {
   }
 
   target.click();
-  await sleep(2500);
-  return { ok: true, clicked: (target.textContent || '').trim().slice(0, 40) };
+
+  // Poll until the page shows a date range spanning two different calendar years
+  // (e.g. "Jun 6, 2025 – Jun 6, 2026"), which confirms the SPA reloaded the data.
+  // Fall back after 15 s so we never hang forever.
+  const deadline = Date.now() + 15000;
+  let rangeDetected = false;
+  while (Date.now() < deadline) {
+    await sleep(600);
+    const found = Array.from(document.querySelectorAll('*')).find(el => {
+      const s = window.getComputedStyle(el);
+      if (s.display === 'none' || s.visibility === 'hidden') return false;
+      const t = (el.textContent || '').trim();
+      if (t.length < 10 || t.length > 120) return false;
+      if (!/[–—\-]|\bto\b/i.test(t)) return false; // must look like a range
+      const years = [...t.matchAll(/20(\d{2})/g)].map(m => 2000 + parseInt(m[1], 10));
+      return years.length >= 2 && Math.max(...years) - Math.min(...years) >= 1;
+    });
+    if (found) { rangeDetected = true; break; }
+  }
+
+  return { ok: true, clicked: (target.textContent || '').trim().slice(0, 40), rangeDetected };
 }
 
 // ── CSV export button click (runs in MAIN world) ─────────────────────────────
@@ -197,7 +217,7 @@ async function scrapeUrl(url) {
   let tab;
   try {
     tab = await chrome.tabs.create({ url, active: false });
-    await waitForTabComplete(tab.id);
+    await waitForTabComplete(tab.id, TAB_LOAD_MS);
 
     const { url: finalUrl } = await chrome.tabs.get(tab.id);
     if (LOGIN_RE.test(finalUrl)) {
@@ -228,7 +248,7 @@ async function scrapeUrlForCsvs(url, buttonIndices) {
   let tab;
   try {
     tab = await chrome.tabs.create({ url, active: false });
-    await waitForTabComplete(tab.id);
+    await waitForTabComplete(tab.id, TAB_LOAD_MS);
 
     const { url: finalUrl } = await chrome.tabs.get(tab.id);
     if (LOGIN_RE.test(finalUrl)) {
@@ -242,7 +262,8 @@ async function scrapeUrlForCsvs(url, buttonIndices) {
     });
     const presetRes = presetResult?.[0]?.result;
     if (!presetRes?.ok) throw new Error(`Preset "Last year" not found: ${JSON.stringify(presetRes).slice(0, 200)}`);
-    console.log('[stats-collector] preset clicked:', JSON.stringify(presetRes.clicked), 'on', url.slice(url.lastIndexOf('/') + 1));
+    console.log('[stats-collector] preset clicked:', JSON.stringify(presetRes.clicked),
+      '| range detected:', presetRes.rangeDetected, 'on', url.slice(url.lastIndexOf('/') + 1));
 
     await new Promise(r => setTimeout(r, SETTLE_MS));
 
