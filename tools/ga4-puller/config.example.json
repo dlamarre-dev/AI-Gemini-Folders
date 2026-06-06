@@ -1,5 +1,0 @@
-{
-  "_comment": "Copy to config.json, fill in your values. config.json is gitignored (contains path to service account key).",
-  "property_id": "properties/YOUR_GA4_PROPERTY_ID",
-  "service_account_key": "service-account-key.json"
-}

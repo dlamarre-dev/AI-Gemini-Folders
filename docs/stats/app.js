@@ -172,76 +172,6 @@ function renderItem(itemId, itemData) {
   return section;
 }
 
-// ── GA4 section ───────────────────────────────────────────────────────────────
-
-function countsToPercents(obj) {
-  if (!obj) return null;
-  const entries = Object.entries(obj);
-  if (!entries.length) return null;
-  const total = entries.reduce((s, [, v]) => s + v, 0);
-  if (total === 0) return null;
-  const result = {};
-  for (const [k, v] of entries) result[k] = Math.round((v / total) * 100);
-  return result;
-}
-
-function renderGa4(ga4db) {
-  if (!ga4db?.history?.length) return null;
-
-  const history = ga4db.history.slice().sort((a, b) =>
-    a.period_start < b.period_start ? -1 : 1);
-  const latest = history[history.length - 1];
-  const period = latest.period_start
-    ? `${fmtDate(latest.period_start)} – ${fmtDate(latest.period_end)}`
-    : `collected ${fmtDate(latest.collected_at)}`;
-
-  const section = el('div', { class: 'item-section' },
-    el('div', { class: 'item-header' },
-      el('h2', { class: 'item-name' }, 'GA4 Analytics'),
-      el('span', { class: 'item-period' }, period)
-    ),
-    el('div', { class: 'kpi-row' },
-      el('div', { class: 'kpi' },
-        el('span', { class: 'kpi-val green' }, fmt(latest.active_users)),
-        el('span', { class: 'kpi-lbl' }, 'Active users')
-      )
-    )
-  );
-
-  if (history.length >= 1) {
-    const chartWrap = el('div', { class: 'chart-wrap' });
-    section.appendChild(el('div', { class: 'section-title' }, 'Trend'));
-    section.appendChild(chartWrap);
-    setTimeout(() => {
-      const timestamps = history.map(e => new Date(e.period_end).getTime() / 1000);
-      const users = history.map(e => e.active_users);
-      const opts = {
-        width: chartWrap.clientWidth || 600,
-        height: 140,
-        series: [
-          {},
-          { label: 'Active users', stroke: '#188038', width: 2 },
-        ],
-        axes: [{ space: 60 }, { size: 50 }],
-        legend: { show: true },
-      };
-      new uPlot(opts, [timestamps, users], chartWrap);
-    }, 0);
-  }
-
-  const bdRow = el('div', { class: 'breakdowns' });
-  const bds = [
-    renderBarChart('Users by country',        countsToPercents(latest.users_by_country),      ''),
-    renderBarChart('Acquisition (src/medium)', countsToPercents(latest.users_by_source_medium), 'accent'),
-  ].filter(Boolean);
-  if (bds.length) {
-    bds.forEach(b => bdRow.appendChild(b));
-    section.appendChild(el('div', { class: 'section-title' }, 'Breakdowns'));
-    section.appendChild(bdRow);
-  }
-
-  return section;
-}
 
 // ── main ──────────────────────────────────────────────────────────────────────
 
@@ -254,12 +184,6 @@ function renderGa4(ga4db) {
     const resp = await fetch('../data/cws.json', { cache: 'no-cache' });
     if (!resp.ok) throw new Error(`Failed to load data (${resp.status})`);
     const db = await resp.json();
-
-    let ga4db = null;
-    try {
-      const g4r = await fetch('../data/ga4.json', { cache: 'no-cache' });
-      if (g4r.ok) ga4db = await g4r.json();
-    } catch (_) {}
 
     loadEl.style.display = 'none';
 
@@ -274,9 +198,6 @@ function renderGa4(ga4db) {
       const section = renderItem(itemId, itemData);
       if (section) appEl.appendChild(section);
     }
-
-    const ga4section = renderGa4(ga4db);
-    if (ga4section) appEl.appendChild(ga4section);
 
     // Footer: last collected date
     const allDates = items.flatMap(([, d]) => (d.history ?? []).map(e => e.collected_at));
