@@ -252,7 +252,7 @@
     "message": "Fedezze fel a MI mappák alkalmazást"
   },
   "afPromoMessage": {
-    "message": "Más MI-eszközöket is használ? Váltson a MI mappák alkalmazásra, és adja hozzá a ChatGPT-t, Claude-ot, Copilotot, Perplexityt és egy helyi LLM-et a mappáihoz."
+    "message": "Más MI-eszközöket is használ? Váltson a MI mappák alkalmazásra, és adja hozzá a ChatGPT-t, Claude-ot, Copilotot, DeepSeeket, Perplexityt és egy helyi LLM-et a mappáihoz."
   },
   "afPromoDownloadBtn": {
     "message": "Letöltés"

@@ -252,7 +252,7 @@
     "message": "探索 AI 資料夾"
   },
   "afPromoMessage": {
-    "message": "您也使用其他 AI 嗎？切換到 AI 資料夾，將 ChatGPT、Claude、Copilot、Perplexity 和本地 LLM 添加到您的資料夾中。"
+    "message": "您也使用其他 AI 嗎？切換到 AI 資料夾，將 ChatGPT、Claude、Copilot、DeepSeek、Perplexity 和本地 LLM 添加到您的資料夾中。"
   },
   "afPromoDownloadBtn": {
     "message": "下載"

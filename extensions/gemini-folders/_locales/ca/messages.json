@@ -252,7 +252,7 @@
     "message": "Descobriu Carpetes IA"
   },
   "afPromoMessage": {
-    "message": "Feu servir també altres IA? Passeu a Carpetes IA per afegir ChatGPT, Claude, Copilot, Perplexity i un LLM local a les vostres carpetes."
+    "message": "Feu servir també altres IA? Passeu a Carpetes IA per afegir ChatGPT, Claude, Copilot, DeepSeek, Perplexity i un LLM local a les vostres carpetes."
   },
   "afPromoDownloadBtn": {
     "message": "Descarregar"

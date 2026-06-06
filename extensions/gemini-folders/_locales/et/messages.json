@@ -252,7 +252,7 @@
     "message": "Avasta AI kaustad"
   },
   "afPromoMessage": {
-    "message": "Kasutate ka teisi AI-teenuseid? Lülituge AI kaustadele, et lisada ChatGPT, Claude, Copilot, Perplexity ja kohalik LLM oma kaustadesse."
+    "message": "Kasutate ka teisi AI-teenuseid? Lülituge AI kaustadele, et lisada ChatGPT, Claude, Copilot, DeepSeek, Perplexity ja kohalik LLM oma kaustadesse."
   },
   "afPromoDownloadBtn": {
     "message": "Lae alla"

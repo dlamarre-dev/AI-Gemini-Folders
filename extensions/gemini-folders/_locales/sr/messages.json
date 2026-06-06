@@ -252,7 +252,7 @@
         "message": "Otkrijte VI fascikle"
     },
     "afPromoMessage": {
-        "message": "Da li koristite i druge AI alate? Pređite na VI fascikle i dodajte ChatGPT, Claude, Copilot, Perplexity i lokalni LLM u svoje fascikle."
+        "message": "Da li koristite i druge AI alate? Pređite na VI fascikle i dodajte ChatGPT, Claude, Copilot, DeepSeek, Perplexity i lokalni LLM u svoje fascikle."
     },
     "afPromoDownloadBtn": {
         "message": "Preuzmi"
