@@ -87,6 +87,26 @@ const POPUP_WIDTH = 392;
 
 const RTL_LOCALES = new Set(['ar', 'he', 'ur', 'fa']);
 
+// ─── Shared brand SVG assets ──────────────────────────────────────────────────
+
+// ChatGPT official logo path (white, 24×24 viewBox)
+const CHATGPT_PATH = 'M22.28 9.82a5.98 5.98 0 00-.52-4.91 6.05 6.05 0 00-6.51-2.9A6.07 6.07 0 004.98 4.18a5.98 5.98 0 00-4 2.9 6.05 6.05 0 00.74 7.1 5.98 5.98 0 00.51 4.91 6.05 6.05 0 006.51 2.9A6.07 6.07 0 0013.26 24a6.06 6.06 0 005.77-4.21 5.99 5.99 0 004-2.9 6.06 6.06 0 00-.75-7.07zm-9.02 12.61a4.48 4.48 0 01-2.88-1.04l.14-.08 4.78-2.76a.79.79 0 00.39-.68V11.2l2.02 1.17a.07.07 0 01.04.05v5.58a4.5 4.5 0 01-4.49 4.43zm-9.66-4.13a4.47 4.47 0 01-.53-3.01l.14.08 4.78 2.76a.77.77 0 00.78 0l5.84-3.37v2.33a.08.08 0 01-.03.06L9.74 19.95a4.5 4.5 0 01-6.14-1.65zM2.34 7.9a4.49 4.49 0 012.37-1.97V11.6a.77.77 0 00.39.68l5.81 3.35-2.02 1.17a.08.08 0 01-.07 0L4.03 14.1A4.5 4.5 0 012.34 7.9zm16.6 3.86l-5.81-3.36 2.02-1.17a.08.08 0 01.07 0l4.83 2.79a4.49 4.49 0 01-.68 8.1V12.44a.79.79 0 00-.43-.68zm2.01-3.02l-.14-.09-4.77-2.78a.78.78 0 00-.79 0L9.41 9.23V6.9a.07.07 0 01.03-.06l4.83-2.79a4.5 4.5 0 016.68 4.66zM8.31 12.86l-2.02-1.16a.08.08 0 01-.04-.06V6.07a4.5 4.5 0 017.38-3.45l-.14.08-4.78 2.76a.79.79 0 00-.4.68zm1.1-2.37l2.6-1.5 2.61 1.5v3l-2.6 1.5-2.61-1.5z';
+
+const geminiStar = (size, id) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1C7DFF"/><stop offset="100%" stop-color="#8A5CF7"/></linearGradient></defs><path d="M12 2 C11.5 7.5 7.5 11.5 2 12 C7.5 12.5 11.5 16.5 12 22 C12.5 16.5 16.5 12.5 22 12 C16.5 11.5 12.5 7.5 12 2 Z" fill="url(#${id})"/></svg>`;
+
+const chatGptSvg = (size, opacity = 1) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" style="opacity:${opacity};flex-shrink:0;"><path fill="white" d="${CHATGPT_PATH}"/></svg>`;
+
+// ─── Service name overrides per locale ────────────────────────────────────────
+// All 6 services use their English brand name globally.  Add locale-specific
+// overrides here if a service officially uses a different name in that market.
+// Each key is a locale id (matching LOCALES[].id); value is { ServiceName: 'override' }.
+const SVC_NAME_OVERRIDES = {
+  // DeepSeek's company name in Chinese is 深度求索 (Shēndù Qiúsuǒ), but the
+  // product brand is "DeepSeek" even on Chinese app stores.  Uncomment if needed:
+  // zh_CN: { DeepSeek: '深度求索' },
+  // zh_TW: { DeepSeek: '深度求索' },
+};
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function makeTmpDir() {
@@ -286,7 +306,7 @@ async function screenshotPromptMode(page, extId, localeData, outPath) {
 
 // ─── Composition ─────────────────────────────────────────────────────────────
 
-async function compositeScreenshot(page, folderPath, promptPath, localeData, outPath) {
+async function compositeScreenshot(page, folderPath, promptPath, localeData, outPath, localeId = 'en') {
   // ── Layout constants ──────────────────────────────────────────────────────
   const CANVAS_W     = 1280;
   const CANVAS_H     = 800;
@@ -333,6 +353,46 @@ async function compositeScreenshot(page, folderPath, promptPath, localeData, out
   // Embed images as base64 so no file:// issues in Playwright page
   const folderB64 = fs.readFileSync(folderPath).toString('base64');
   const promptB64 = fs.readFileSync(promptPath).toString('base64');
+
+  // ── AI Folders: service-logo columns (official SVGs from docs/site/logos.js) ─
+  const _svcOverrides = SVC_NAME_OVERRIDES[localeId] ?? {};
+  const svcName = name => _svcOverrides[name] ?? name;
+
+  const svcItems = EXTENSION === 'ai-folders' ? {
+    left: [
+      { name: svcName('ChatGPT'),
+        // White paths → needs a dark backing circle
+        icon: `<div style="width:62px;height:62px;border-radius:50%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="46" height="46"><path fill="#fff" d="M30.7,7.27L28.33,9.1c-1.605-2.067-4.068-3.209-6.697-3.092C17.313,6.2,14,9.953,14,14.277l0,9.143l10.5,6.12l-1,1.72l-11.706-6.827C11.302,24.146,11,23.62,11,23.051l0-8.687C11,8.1,16.129,2.79,22.39,3.007C25.669,3.12,28.68,4.663,30.7,7.27z"/><path fill="#fff" d="M12.861,9.833l0.4,2.967c-2.592,0.357-4.813,1.919-6.026,4.254c-1.994,3.837-0.4,8.582,3.345,10.745l7.918,4.571l10.55-6.033l0.99,1.726l-11.765,6.724c-0.494,0.282-1.101,0.281-1.594-0.003l-7.523-4.343C3.73,27.308,1.696,20.211,5.014,14.898C6.752,12.114,9.594,10.279,12.861,9.833z"/><path fill="#fff" d="M6.161,26.563l2.77,1.137c-0.987,2.423-0.745,5.128,0.671,7.346c2.326,3.645,7.233,4.638,10.977,2.476l7.918-4.572l0.05-12.153l1.99,0.006l-0.059,13.551c-0.002,0.569-0.307,1.094-0.8,1.379l-7.523,4.343c-5.425,3.132-12.588,1.345-15.531-4.185C5.083,32.994,4.914,29.616,6.161,26.563z"/><path fill="#fff" d="M17.3,40.73l2.37-1.83c1.605,2.067,4.068,3.209,6.697,3.092C30.687,41.8,34,38.047,34,33.723l0-9.143l-10.5-6.12l1-1.72l11.706,6.827C36.698,23.854,37,24.38,37,24.949l0,8.687c0,6.264-5.13,11.574-11.39,11.358C22.331,44.88,19.32,43.337,17.3,40.73z"/><path fill="#fff" d="M35.139,38.167l-0.4-2.967c2.592-0.357,4.813-1.919,6.026-4.254c1.994-3.837,0.4-8.582-3.345-10.745l-7.918-4.571l-10.55,6.033l-0.99-1.726l11.765-6.724c0.494-0.282,1.101-0.281,1.594,0.003l7.523,4.343c5.425,3.132,7.459,10.229,4.141,15.543C41.248,35.886,38.406,37.721,35.139,38.167z"/><path fill="#fff" d="M41.839,21.437l-2.77-1.137c0.987-2.423,0.745-5.128-0.671-7.346c-2.326-3.645-7.233-4.638-10.977-2.476l-7.918,4.572l-0.05,12.153l-1.99-0.006l0.059-13.551c0.002-0.569,0.307-1.094,0.8-1.379l7.523-4.343c5.425-3.132,12.588-1.345,15.531,4.185C42.917,15.006,43.086,18.384,41.839,21.437z"/></svg></div>` },
+      { name: svcName('Gemini'),
+        icon: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="62" height="62"><path fill="#4285F4" d="M16 8.016A8.522 8.522 0 008.016 16h-.032A8.521 8.521 0 000 8.016v-.032A8.521 8.521 0 007.984 0h.032A8.522 8.522 0 0016 7.984v.032z"/></svg>` },
+      { name: svcName('Claude'),
+        icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="62" height="62"><path fill="#D97757" d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z"/></svg>` },
+    ],
+    right: [
+      { name: svcName('Copilot'),
+        icon: `<svg viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg" width="62" height="67"><path fill="#0a84ff" d="M17.533 1.829A2.528 2.528 0 0015.11 0h-.737a2.531 2.531 0 00-2.484 2.087l-1.263 6.937.314-1.08a2.528 2.528 0 012.424-1.833h4.284l1.797.706 1.731-.706h-.505a2.528 2.528 0 01-2.423-1.829l-.715-2.453z" transform="translate(0 1)"/><path fill="#0a84ff" d="M6.726 20.16A2.528 2.528 0 009.152 22h1.566c1.37 0 2.49-1.1 2.525-2.48l.17-6.69-.357 1.228a2.528 2.528 0 01-2.423 1.83h-4.32l-1.54-.842-1.667.843h.497c1.124 0 2.113.75 2.426 1.84l.697 2.432z" transform="translate(0 1)"/><path fill="#22b8b0" d="M15 0H6.252c-2.5 0-4 3.331-5 6.662-1.184 3.947-2.734 9.225 1.75 9.225H6.78c1.13 0 2.12-.753 2.43-1.847.657-2.317 1.809-6.359 2.713-9.436.46-1.563.842-2.906 1.43-3.742A1.97 1.97 0 0115 0" transform="translate(0 1)"/><path fill="#22b8b0" d="M9 22h8.749c2.5 0 4-3.332 5-6.663 1.184-3.948 2.734-9.227-1.75-9.227H17.22c-1.129 0-2.12.754-2.43 1.848a1149.2 1149.2 0 01-2.713 9.437c-.46 1.564-.842 2.907-1.43 3.743A1.97 1.97 0 019 22" transform="translate(0 1)"/></svg>` },
+      { name: svcName('DeepSeek'),
+        icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="62" height="62"><path fill="#4D6BFE" d="M23.748 4.651c-.254-.124-.364.113-.512.233-.051.04-.094.09-.137.137-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.155-.708-.311-.955-.65-.172-.24-.219-.509-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.094.172.187.129.323-.082.28-.18.553-.266.833-.055.179-.137.218-.328.14a5.5 5.5 0 0 1-1.737-1.179c-.857-.828-1.631-1.743-2.597-2.46a12 12 0 0 0-.689-.47c-.985-.957.13-1.743.387-1.836.27-.098.094-.433-.778-.428-.872.003-1.67.295-2.687.685a3 3 0 0 1-.465.136 9.6 9.6 0 0 0-2.883-.101c-1.885.21-3.39 1.1-4.497 2.622C.082 8.776-.231 10.854.152 13.02c.403 2.284 1.568 4.175 3.36 5.653 1.857 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.132-.284 4.994-1.86.47.234.962.328 1.78.398.629.058 1.235-.031 1.705-.129.735-.155.684-.836.418-.961-2.155-1.004-1.682-.595-2.112-.926 1.095-1.295 2.768-3.598 3.284-6.733.05-.346.115-.834.108-1.114-.004-.171.035-.238.23-.257a4.2 4.2 0 0 0 1.545-.475c1.397-.763 1.96-2.016 2.093-3.517.02-.23-.004-.467-.247-.588M11.58 18.168c-2.088-1.642-3.101-2.183-3.52-2.16-.39.024-.32.472-.234.763.09.288.207.487.371.74.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.168-1.361-.801-2.5-1.86-3.301-3.306-.775-1.393-1.225-2.888-1.299-4.482-.02-.385.094-.522.477-.592a4.7 4.7 0 0 1 1.53-.038c2.131.311 3.946 1.264 5.467 2.774.868.86 1.525 1.887 2.202 2.89.72 1.066 1.494 2.082 2.48 2.915.348.291.626.513.892.677-.802.09-2.14.109-3.055-.615zm1.001-6.44a.306.306 0 0 1 .415-.287.3.3 0 0 1 .113.074.3.3 0 0 1 .086.214c0 .17-.136.307-.308.307a.303.303 0 0 1-.306-.307m3.11 1.596c-.2.081-.4.151-.591.16a1.25 1.25 0 0 1-.798-.254c-.274-.23-.47-.358-.551-.758a1.7 1.7 0 0 1 .015-.588c.07-.327-.007-.537-.238-.727-.188-.156-.426-.199-.689-.199a.6.6 0 0 1-.254-.078.253.253 0 0 1-.114-.358a1 1 0 0 1 .192-.21c.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.392.451.462.576.685.915.176.264.336.536.446.848.066.194-.02.353-.25.45"/></svg>` },
+      { name: svcName('Perplexity'),
+        icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="62" height="62"><path fill="#22B8CD" d="M19.785 0v7.272H22.5V17.62h-2.935V24l-7.037-6.194v6.145h-1.091v-6.152L4.392 24v-6.465H1.5V7.188h2.884V0l7.053 6.494V.19h1.09v6.49L19.786 0zm-7.257 9.044v7.319l5.946 5.234V14.44l-5.946-5.397zm-1.099-.08l-5.946 5.398v7.235l5.946-5.234V8.965zm8.136 7.58h1.844V8.349H13.46l6.105 5.54v2.655zm-8.982-8.28H2.59v8.195h1.8v-2.576l6.192-5.62zM5.475 2.476v4.71h5.115l-5.115-4.71zm13.219 0l-5.115 4.71h5.115v-4.71z"/></svg>` },
+    ],
+  } : null;
+
+  const svcColCss = svcItems ? `
+  .svc-col { position:absolute; top:${TITLE_H - 10}px; width:160px; height:${CANVAS_H - TITLE_H + 10}px; display:flex; flex-direction:column; justify-content:space-evenly; align-items:center; padding:0 0 40px; }
+  .svc-left  { left:23px; }
+  .svc-right { right:23px; }
+  .svc-item  { display:flex; flex-direction:column; align-items:center; gap:12px; padding:18px 0; width:144px; border-radius:22px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.13); border-top-color:rgba(255,255,255,0.2); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+  .svc-name  { font-size:17px; font-weight:600; color:rgba(215,228,255,0.95); text-align:center; letter-spacing:.01em; text-shadow:0 1px 6px rgba(0,0,0,0.9); }
+  ` : '';
+
+  const svcColHtml = svcItems ? `
+  <div class="svc-col svc-left">
+    ${svcItems.left.map(s => `<div class="svc-item">${s.icon}<span class="svc-name">${s.name}</span></div>`).join('\n    ')}
+  </div>
+  <div class="svc-col svc-right">
+    ${svcItems.right.map(s => `<div class="svc-item">${s.icon}<span class="svc-name">${s.name}</span></div>`).join('\n    ')}
+  </div>` : '';
 
   const html = `<!DOCTYPE html>
 <html>
@@ -425,6 +485,7 @@ async function compositeScreenshot(page, folderPath, promptPath, localeData, out
   }
   .label-folder { left: ${leftX}px;  top: ${folderLabelY}px; width: ${dispW}px; }
   .label-prompt { left: ${rightX}px; top: ${promptLabelY}px; width: ${dispW}px; }
+  ${svcColCss}
 </style>
 </head>
 <body>
@@ -442,6 +503,7 @@ async function compositeScreenshot(page, folderPath, promptPath, localeData, out
 
   <div class="mode-label label-folder">${folderText}</div>
   <div class="mode-label label-prompt">${promptText}</div>
+  ${svcColHtml}
 </body>
 </html>`;
 
@@ -869,11 +931,6 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
     .join('');
 
   // Gemini star SVG — smooth 4-pointed star matching the real logo
-  const geminiStar = (size, id) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1C7DFF"/><stop offset="100%" stop-color="#8A5CF7"/></linearGradient></defs><path d="M12 2 C11.5 7.5 7.5 11.5 2 12 C7.5 12.5 11.5 16.5 12 22 C12.5 16.5 16.5 12.5 22 12 C16.5 11.5 12.5 7.5 12 2 Z" fill="url(#${id})"/></svg>`;
-
-  // ChatGPT official logo path (white)
-  const CHATGPT_PATH = 'M22.28 9.82a5.98 5.98 0 00-.52-4.91 6.05 6.05 0 00-6.51-2.9A6.07 6.07 0 004.98 4.18a5.98 5.98 0 00-4 2.9 6.05 6.05 0 00.74 7.1 5.98 5.98 0 00.51 4.91 6.05 6.05 0 006.51 2.9A6.07 6.07 0 0013.26 24a6.06 6.06 0 005.77-4.21 5.99 5.99 0 004-2.9 6.06 6.06 0 00-.75-7.07zm-9.02 12.61a4.48 4.48 0 01-2.88-1.04l.14-.08 4.78-2.76a.79.79 0 00.39-.68V11.2l2.02 1.17a.07.07 0 01.04.05v5.58a4.5 4.5 0 01-4.49 4.43zm-9.66-4.13a4.47 4.47 0 01-.53-3.01l.14.08 4.78 2.76a.77.77 0 00.78 0l5.84-3.37v2.33a.08.08 0 01-.03.06L9.74 19.95a4.5 4.5 0 01-6.14-1.65zM2.34 7.9a4.49 4.49 0 012.37-1.97V11.6a.77.77 0 00.39.68l5.81 3.35-2.02 1.17a.08.08 0 01-.07 0L4.03 14.1A4.5 4.5 0 012.34 7.9zm16.6 3.86l-5.81-3.36 2.02-1.17a.08.08 0 01.07 0l4.83 2.79a4.49 4.49 0 01-.68 8.1V12.44a.79.79 0 00-.43-.68zm2.01-3.02l-.14-.09-4.77-2.78a.78.78 0 00-.79 0L9.41 9.23V6.9a.07.07 0 01.03-.06l4.83-2.79a4.5 4.5 0 016.68 4.66zM8.31 12.86l-2.02-1.16a.08.08 0 01-.04-.06V6.07a4.5 4.5 0 017.38-3.45l-.14.08-4.78 2.76a.79.79 0 00-.4.68zm1.1-2.37l2.6-1.5 2.61 1.5v3l-2.6 1.5-2.61-1.5z';
-  const chatGptSvg = (size, opacity = 1) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" style="opacity:${opacity};flex-shrink:0;"><path fill="white" d="${CHATGPT_PATH}"/></svg>`;
 
   // AI Folders: show ChatGPT page instead of Gemini
   const isAF         = EXTENSION === 'ai-folders';
@@ -1421,7 +1478,7 @@ async function run() {
         if (modeArg === 'both' && fs.existsSync(folderPath) && fs.existsSync(promptPath)) {
           // Image 1: side-by-side overview
           await compositeScreenshot(composePage, folderPath, promptPath, localeData,
-            path.join(OUT_DIR, `Promo_1_${locale.id}.png`));
+            path.join(OUT_DIR, `Promo_1_${locale.id}.png`), locale.id);
           // Image 2: folder mode close-up
           await compositeSingleScreenshot(composePage, folderPath, localeData.folderScreenTitle,
             path.join(OUT_DIR, `Promo_2_${locale.id}.png`));
