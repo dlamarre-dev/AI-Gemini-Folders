@@ -58,21 +58,9 @@ async function commitCwsEntry(token, github, itemId, entry, dailyRows = []) {
   const history = item.history;
   let changed   = false;
 
-  // ── monthly history entry ─────────────────────────────────────────────────
-  const idx = history.findIndex(e =>
-    entry.period_start
-      ? e.period_start === entry.period_start
-      : e.collected_at === entry.collected_at
-  );
-
-  if (idx >= 0) {
-    if (JSON.stringify(history[idx]) !== JSON.stringify(entry)) {
-      history[idx] = entry;
-      changed = true;
-    }
-  } else {
-    history.push(entry);
-    history.sort((a, b) => (a.period_start ?? a.collected_at) < (b.period_start ?? b.collected_at) ? -1 : 1);
+  // ── monthly snapshot (single entry, always the latest run) ──────────────
+  if (JSON.stringify(history[0]) !== JSON.stringify(entry)) {
+    item.history = [entry];
     changed = true;
   }
 
