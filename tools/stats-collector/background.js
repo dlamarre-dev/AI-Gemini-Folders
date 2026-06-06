@@ -94,21 +94,23 @@ async function captureAnalyticsCsv() {
     const t     = (el.textContent       || '').trim().toLowerCase();
     const lbl   = (el.getAttribute('aria-label') || '').toLowerCase();
     const title = (el.getAttribute('title')      || '').toLowerCase();
-    return t === 'export' || t === 'export csv' ||
-           lbl.includes('export') || title.includes('export') ||
-           lbl.includes('download csv');
+    return t === 'export' || t.includes('export csv') || t === 'download' || t.includes('download csv') ||
+           lbl.includes('export') || lbl.includes('download') ||
+           title.includes('export') || title.includes('download') ||
+           (t === 'csv') || lbl.includes('csv') || title.includes('csv');
   }
 
-  const candidates = Array.from(document.querySelectorAll('a, button, [role="button"]'))
+  const candidates = Array.from(document.querySelectorAll('a, button, [role="button"], [role="menuitem"]'))
     .filter(notHidden).filter(isExportEl);
 
   if (!candidates.length) {
-    const btnTexts = Array.from(document.querySelectorAll('button, [role="button"], a'))
-      .filter(notHidden).slice(0, 20)
+    const btnTexts = Array.from(document.querySelectorAll('button, [role="button"], [role="menuitem"], a[href]'))
+      .filter(notHidden).slice(0, 40)
       .map(el => ({
         tag: el.tagName,
-        text: (el.textContent || '').trim().slice(0, 40),
-        label: el.getAttribute('aria-label') || '',
+        text: (el.textContent || '').trim().slice(0, 50),
+        label: (el.getAttribute('aria-label') || '').slice(0, 50),
+        title: (el.getAttribute('title') || '').slice(0, 50),
       }));
     return { ok: false, step: 'no-export-element', btnTexts };
   }
@@ -391,7 +393,7 @@ async function runCollection(config, token, onProgress) {
         onProgress(`  ${src.label}: ${rows.length} rows`);
         csvArrays.push(rows);
       } catch (e) {
-        onProgress(`  ${src.label} CSV: failed — ${e.message.slice(0, 120)}`);
+        onProgress(`  ${src.label} CSV: failed — ${e.message.slice(0, 2000)}`);
       }
     }
     const dailyRows = csvArrays.length ? mergeByDate(...csvArrays) : [];
