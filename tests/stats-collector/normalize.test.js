@@ -5,7 +5,7 @@ const { SEL } = require('../../tools/stats-collector/lib/selectors');
 global.SEL = SEL;
 const {
   dayIndexToISO, cleanSvgText,
-  isTimeSeries, parseSvgBreakdown, parseAllBreakdowns,
+  isTimeSeries, parseSvgBreakdown, classifyBreakdown, parseAllBreakdowns, pickSection,
   parsePeriodTotals, parseListingRows, parseActiveVersions, parseDateRange,
 } = require('../../tools/stats-collector/lib/normalize');
 
@@ -100,6 +100,39 @@ describe('parseSvgBreakdown', () => {
   it('returns null when no percentage values are present', () => {
     const svg = makeSvg(['May 10, 2026', 'May 17', '60', '30', '0']);
     expect(parseSvgBreakdown(svg)).toBeNull();
+  });
+});
+
+// ── classifyBreakdown + pickSection ──────────────────────────────────────────
+
+describe('classifyBreakdown', () => {
+  it('identifies OS data by key names', () => {
+    expect(classifyBreakdown({ Windows: 76, 'Mac OS': 12, ChromeOS: 9, Other: 2 })).toBe('os');
+  });
+
+  it('identifies language data by parenthetical locale keys', () => {
+    expect(classifyBreakdown({ 'English (United States)': 15, Spanish: 26, Japanese: 12, Other: 49 })).toBe('language');
+  });
+
+  it('identifies country data as the default', () => {
+    expect(classifyBreakdown({ Spain: 24, Japan: 12, Brazil: 11, Other: 53 })).toBe('country');
+  });
+});
+
+describe('pickSection', () => {
+  const typed = [
+    { type: 'country',  data: { Spain: 24 } },
+    { type: 'os',       data: { Windows: 76 } },   // language chart missing
+    { type: 'country',  data: { Taiwan: 29 } },
+    { type: 'language', data: { 'Chinese (Taiwan)': 33 } },
+  ];
+
+  it('returns correct installs section when language chart is absent', () => {
+    expect(pickSection(typed, 0)).toEqual({ country: { Spain: 24 }, language: null, os: { Windows: 76 } });
+  });
+
+  it('returns correct uninstalls section', () => {
+    expect(pickSection(typed, 1)).toEqual({ country: { Taiwan: 29 }, language: { 'Chinese (Taiwan)': 33 }, os: null });
   });
 });
 
