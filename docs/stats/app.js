@@ -58,31 +58,36 @@ function renderBarChart(title, data, colorClass) {
 
 // ── time-series chart (uPlot) ─────────────────────────────────────────────────
 
-function renderTimeSeries(container, history) {
-  if (!history.length) return;
+function renderTimeSeries(container, data) {
+  if (!data.length) return;
 
-  const timestamps = history.map(e => new Date(e.period_start ?? e.collected_at).getTime() / 1000);
-  const installs   = history.map(e => e.installs);
-  const uninstalls = history.map(e => e.uninstalls);
-  const users      = history.map(e => e.weekly_users);
+  // Works with both daily rows {date, …} and history entries {period_start, collected_at, …}
+  const timestamps  = data.map(e => new Date(e.date ?? e.period_start ?? e.collected_at).getTime() / 1000);
+  const installs    = data.map(e => e.installs     ?? null);
+  const uninstalls  = data.map(e => e.uninstalls   ?? null);
+  const users       = data.map(e => e.weekly_users ?? null);
+  const impressions = data.map(e => e.impressions  ?? null);
 
-  const opts = {
+  const series     = [
+    {},
+    { label: 'Installs',     stroke: '#1a73e8', width: 2 },
+    { label: 'Uninstalls',   stroke: '#d93025', width: 2 },
+    { label: 'Weekly users', stroke: '#188038', width: 2 },
+  ];
+  const seriesData = [timestamps, installs, uninstalls, users];
+
+  if (impressions.some(v => v !== null)) {
+    series.push({ label: 'Impressions', stroke: '#e37400', width: 2 });
+    seriesData.push(impressions);
+  }
+
+  new uPlot({
     width: container.clientWidth || 600,
     height: 180,
-    series: [
-      {},
-      { label: 'Installs',   stroke: '#1a73e8', width: 2 },
-      { label: 'Uninstalls', stroke: '#d93025', width: 2 },
-      { label: 'Weekly users', stroke: '#188038', width: 2 },
-    ],
-    axes: [
-      { space: 60 },
-      { size: 50 },
-    ],
+    series,
+    axes: [{ space: 60 }, { size: 50 }],
     legend: { show: true },
-  };
-
-  new uPlot(opts, [timestamps, installs, uninstalls, users], container);
+  }, seriesData, container);
 }
 
 // ── item section ──────────────────────────────────────────────────────────────
@@ -123,11 +128,13 @@ function renderItem(itemId, itemData) {
     )
   );
 
-  // Time-series chart
+  // Time-series chart — prefer daily CSV data when available, fall back to history
+  const daily = (itemData.daily ?? []).slice().sort((a, b) => a.date < b.date ? -1 : 1);
+  const chartData = daily.length >= 2 ? daily : history;
   const chartWrap = el('div', { class: 'chart-wrap' });
   section.appendChild(el('div', { class: 'section-title' }, 'Trend'));
   section.appendChild(chartWrap);
-  setTimeout(() => renderTimeSeries(chartWrap, history), 0);
+  setTimeout(() => renderTimeSeries(chartWrap, chartData), 0);
 
   // Breakdown bar charts
   const bdRow = el('div', { class: 'breakdowns' });

@@ -20,7 +20,6 @@ async function _ghGet(token, owner, repo, branch, path) {
 async function _ghPut(token, owner, repo, branch, path, sha, obj, message) {
   const body = {
     message,
-    // btoa with encodeURIComponent handles non-ASCII characters (country names, etc.)
     content: btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2)))),
     branch,
   };
@@ -38,24 +37,28 @@ async function _ghPut(token, owner, repo, branch, path, sha, obj, message) {
 }
 
 /**
- * Merge a new monthly entry into cws.json and commit it.
- * Idempotent: re-running with the same data on the same date makes no commit.
+ * Merge a new monthly entry (and optional daily rows) into cws.json and commit.
+ * Idempotent: re-running with identical data makes no commit.
  *
- * @param {string} token    GitHub PAT
- * @param {object} github   { owner, repo, branch, cws_data_path }
- * @param {string} itemId   Extension item ID
- * @param {object} entry    Monthly snapshot (full schema object)
- * @returns {{ committed: boolean, reason?: string }}
+ * @param {string}   token      GitHub PAT
+ * @param {object}   github     { owner, repo, branch, cws_data_path }
+ * @param {string}   itemId     Extension item ID
+ * @param {object}   entry      Monthly snapshot (full schema object)
+ * @param {object[]} dailyRows  [{date, installs?, uninstalls?, weekly_users?, impressions?}]
+ * @returns {{ committed: boolean, reason?: string, dailyAdded?: number }}
  */
-async function commitCwsEntry(token, github, itemId, entry) {
+async function commitCwsEntry(token, github, itemId, entry, dailyRows = []) {
   const { owner, repo, branch, cws_data_path } = github;
   const { sha, content: existing } = await _ghGet(token, owner, repo, branch, cws_data_path);
 
   const db = existing ?? { schema: 1, items: {} };
   if (!db.items[itemId]) db.items[itemId] = { history: [] };
 
-  const history = db.items[itemId].history;
-  // Match by period_start when present (back-fill); fall back to collected_at.
+  const item    = db.items[itemId];
+  const history = item.history;
+  let changed   = false;
+
+  // ── monthly history entry ─────────────────────────────────────────────────
   const idx = history.findIndex(e =>
     entry.period_start
       ? e.period_start === entry.period_start
@@ -63,16 +66,33 @@ async function commitCwsEntry(token, github, itemId, entry) {
   );
 
   if (idx >= 0) {
-    if (JSON.stringify(history[idx]) === JSON.stringify(entry)) {
-      return { committed: false, reason: 'identical entry already exists' };
+    if (JSON.stringify(history[idx]) !== JSON.stringify(entry)) {
+      history[idx] = entry;
+      changed = true;
     }
-    history[idx] = entry;
   } else {
     history.push(entry);
     history.sort((a, b) => (a.period_start ?? a.collected_at) < (b.period_start ?? b.collected_at) ? -1 : 1);
+    changed = true;
   }
+
+  // ── daily rows (CSV-sourced) ──────────────────────────────────────────────
+  let dailyAdded = 0;
+  if (dailyRows.length > 0) {
+    const existingDaily = item.daily ?? [];
+    const knownDates    = new Set(existingDaily.map(r => r.date));
+    const toAdd         = dailyRows.filter(r => r.date && !knownDates.has(r.date));
+    if (toAdd.length > 0) {
+      item.daily = [...existingDaily, ...toAdd]
+        .sort((a, b) => a.date < b.date ? -1 : 1);
+      dailyAdded = toAdd.length;
+      changed    = true;
+    }
+  }
+
+  if (!changed) return { committed: false, reason: 'identical entry already exists' };
 
   const msg = `stats: CWS monthly snapshot ${entry.collected_at} (${itemId.slice(0, 8)}…)`;
   await _ghPut(token, owner, repo, branch, cws_data_path, sha, db, msg);
-  return { committed: true };
+  return { committed: true, dailyAdded };
 }

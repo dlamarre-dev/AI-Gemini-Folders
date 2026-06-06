@@ -1,7 +1,6 @@
-const patInput    = document.getElementById('pat');
-const runBtn      = document.getElementById('run');
-const backfillBtn = document.getElementById('backfill');
-const logEl       = document.getElementById('log');
+const patInput = document.getElementById('pat');
+const runBtn   = document.getElementById('run');
+const logEl    = document.getElementById('log');
 
 function appendLog(text, cls) {
   logEl.style.display = 'block';
@@ -20,14 +19,13 @@ async function loadConfig() {
 
 function setRunning(busy) {
   runBtn.disabled = busy;
-  backfillBtn.disabled = busy;
 }
 
 chrome.storage.local.get('github_pat', ({ github_pat }) => {
   if (github_pat) patInput.value = github_pat;
 });
 
-function startRun(msgType, extra = {}) {
+runBtn.addEventListener('click', () => {
   const token = patInput.value.trim();
   if (!token) { appendLog('Enter a GitHub PAT first.', 'err'); return; }
 
@@ -36,13 +34,14 @@ function startRun(msgType, extra = {}) {
   logEl.textContent = '';
   logEl.style.display = 'block';
   setRunning(true);
+  appendLog('Starting…');
 
   loadConfig()
     .then(config => {
       const onMsg = msg => { if (msg.type === 'PROGRESS') appendLog(msg.status); };
       chrome.runtime.onMessage.addListener(onMsg);
 
-      chrome.runtime.sendMessage({ type: msgType, config, token, ...extra }, resp => {
+      chrome.runtime.sendMessage({ type: 'START_COLLECTION', config, token }, resp => {
         chrome.runtime.onMessage.removeListener(onMsg);
         setRunning(false);
         if (!resp) { appendLog('No response from background.', 'err'); return; }
@@ -53,14 +52,4 @@ function startRun(msgType, extra = {}) {
       appendLog(e.message, 'err');
       setRunning(false);
     });
-}
-
-runBtn.addEventListener('click', () => {
-  appendLog('Starting…');
-  startRun('START_COLLECTION');
-});
-
-backfillBtn.addEventListener('click', () => {
-  appendLog('Starting back-fill (reads 5-year chart) — this will take a few minutes…');
-  startRun('START_BACKFILL');
 });
