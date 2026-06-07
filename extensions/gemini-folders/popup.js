@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // prompt list's insert (▶) button via window.insertPromptIntoActiveTab.
   window.insertPromptIntoActiveTab = async function (promptText) {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (!tab || !tab.url || !tab.url.includes('gemini.google.com')) {
+    if (!tab || !tab.url || new URL(tab.url).hostname !== 'gemini.google.com') {
       window.showCustomModal({
         title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
         type: 'alert'
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Smart title pre-filling
   let [currentTab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-  if (currentTab && currentTab.url && currentTab.url.includes("gemini.google.com")) {
+  if (currentTab && currentTab.url && new URL(currentTab.url).hostname === "gemini.google.com") {
     chrome.scripting.executeScript({
       target: { tabId: currentTab.id },
       args: [null],
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     isSavingFolder = true;
 
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (!tab.url.includes("gemini.google.com")) {
+    if (new URL(tab.url).hostname !== "gemini.google.com") {
       await window.showCustomModal({
         title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
         type: 'alert'

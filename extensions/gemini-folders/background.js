@@ -257,7 +257,7 @@ chrome.commands.onCommand.addListener(async (command) => {
       let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
       // 2. Check if we are on Gemini
-      if (!tab || !tab.url || !tab.url.includes("gemini.google.com")) {
+      if (!tab || !tab.url || new URL(tab.url).hostname !== "gemini.google.com") {
         return;
       }
 

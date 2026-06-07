@@ -541,6 +541,7 @@
   }
 
   function render(lang, animate) {
+    if (!NAMES[lang]) lang = "en";
     const isPrivacy = window.location.pathname.includes('privacy');
     const anchor = animate ? null : getScrollAnchor();
     applyLangMeta(lang);
