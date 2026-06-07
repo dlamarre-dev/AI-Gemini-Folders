@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Extension Stats</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uplot@1.6.31/dist/uPlot.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font: 14px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f8f9fa; color: #202124; margin: 0; padding: 24px 16px;
+    }
+    h1 { font-size: 18px; margin: 0 0 4px; }
+    .subtitle { color: #5f6368; font-size: 12px; margin: 0 0 28px; }
+
+    .item-section {
+      background: #fff; border-radius: 8px; padding: 20px 24px;
+      margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.12);
+    }
+    .item-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .item-name   { font-size: 16px; font-weight: 600; margin: 0; }
+    .item-period { font-size: 11px; color: #5f6368; }
+
+    .kpi-row  { display: flex; gap: 28px; flex-wrap: wrap; margin-bottom: 22px; }
+    .kpi      { display: flex; flex-direction: column; }
+    .kpi-val  { font-size: 30px; font-weight: 700; line-height: 1; }
+    .kpi-lbl  { font-size: 11px; color: #5f6368; margin-top: 3px; text-transform: uppercase; letter-spacing: .4px; }
+    .blue  { color: #1a73e8; }
+    .red   { color: #d93025; }
+    .green { color: #188038; }
+
+    .section-title {
+      font-size: 11px; font-weight: 600; color: #5f6368;
+      text-transform: uppercase; letter-spacing: .5px; margin: 0 0 8px;
+    }
+    .chart-wrap { margin-bottom: 22px; overflow-x: auto; }
+    .chart-note { font-size: 11px; color: #9aa0a6; font-style: italic; }
+
+    .breakdowns { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 20px; }
+    .breakdown .section-title { margin-bottom: 8px; }
+
+    .bar-row   { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 12px; }
+    .bar-label { width: 130px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 8px; background: #e8eaed; border-radius: 4px; overflow: hidden; }
+    .bar-fill  { height: 100%; border-radius: 4px; background: #1a73e8; }
+    .bar-fill.accent { background: #137333; }
+    .bar-pct   { width: 34px; text-align: right; color: #5f6368; flex-shrink: 0; font-size: 11px; }
+
+    #loading { text-align: center; margin-top: 60px; color: #5f6368; }
+    .err     { color: #d93025; text-align: center; margin-top: 40px; }
+    footer   { text-align: center; font-size: 11px; color: #9aa0a6; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <h1>Extension Stats</h1>
+  <p class="subtitle">Chrome Web Store · updated monthly</p>
+  <div id="loading">Loading…</div>
+  <div id="app"></div>
+  <footer id="footer" style="display:none"></footer>
+  <script src="https://cdn.jsdelivr.net/npm/uplot@1.6.31/dist/uPlot.iife.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
