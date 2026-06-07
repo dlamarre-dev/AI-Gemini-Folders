@@ -1,0 +1,5259 @@
+{
+  "schema": 1,
+  "items": {
+    "jffchdehoapigpmifkmleglfimjiilik": {
+      "history": [
+        {
+          "collected_at": "2026-06-06",
+          "period_start": "2026-05-07",
+          "period_end": "2026-06-05",
+          "installs": 716,
+          "uninstalls": 305,
+          "weekly_users": 602,
+          "impressions": 2330,
+          "installs_by_country": {
+            "United States": 17,
+            "Spain": 15,
+            "Japan": 11,
+            "Other": 56
+          },
+          "installs_by_language": {
+            "English (United States)": 24,
+            "Japanese": 13,
+            "Other": 50
+          },
+          "installs_by_os": {
+            "Windows": 76,
+            "Mac OS": 12,
+            "ChromeOS": 9,
+            "Other": 3
+          },
+          "uninstalls_by_country": {
+            "South Korea": 17,
+            "Japan": 14,
+            "Other": 55
+          },
+          "uninstalls_by_language": {
+            "Spanish": 22,
+            "English (United States)": 15,
+            "Korean": 14,
+            "Other": 49
+          },
+          "uninstalls_by_os": {
+            "Windows": 83,
+            "Mac OS": 15,
+            "Linux": 2,
+            "Other": 1
+          },
+          "users_by_country": {
+            "Spain": 24,
+            "Japan": 12,
+            "Brazil": 11,
+            "Other": 53
+          },
+          "users_by_language": {
+            "Spanish": 33,
+            "English (United States)": 15,
+            "Japanese": 13,
+            "Other": 38
+          },
+          "users_by_os": {
+            "Mac OS": 82,
+            "Linux": 15,
+            "Other": 1
+          },
+          "active_versions": [
+            "3.3.0.0",
+            "3.4.1.0",
+            "3.5.0.0",
+            "4.0.0.0",
+            "4.1.0.0",
+            "4.2.0.0",
+            "4.2.1.0",
+            "4.2.2.0"
+          ]
+        }
+      ],
+      "daily": [
+        {
+          "date": "2025-06-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-15",
+          "installs": 0,
+          "uninstalls": 1,
+          "weekly_users": 1,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-16",
+          "installs": 3,
+          "uninstalls": 1,
+          "weekly_users": 4,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-17",
+          "installs": 0,
+          "uninstalls": 1,
+          "weekly_users": 4,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 4,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-19",
+          "installs": 2,
+          "uninstalls": 2,
+          "weekly_users": 4,
+          "impressions": 18
+        },
+        {
+          "date": "2026-03-20",
+          "installs": 2,
+          "uninstalls": 0,
+          "weekly_users": 4,
+          "impressions": 5
+        },
+        {
+          "date": "2026-03-21",
+          "installs": 2,
+          "uninstalls": 0,
+          "weekly_users": 4,
+          "impressions": 6
+        },
+        {
+          "date": "2026-03-22",
+          "installs": 2,
+          "uninstalls": 2,
+          "weekly_users": 3,
+          "impressions": 11
+        },
+        {
+          "date": "2026-03-23",
+          "installs": 3,
+          "uninstalls": 0,
+          "weekly_users": 3,
+          "impressions": 16
+        },
+        {
+          "date": "2026-03-24",
+          "installs": 1,
+          "uninstalls": 2,
+          "weekly_users": 3,
+          "impressions": 17
+        },
+        {
+          "date": "2026-03-25",
+          "installs": 4,
+          "uninstalls": 0,
+          "weekly_users": 4,
+          "impressions": 14
+        },
+        {
+          "date": "2026-03-26",
+          "installs": 2,
+          "uninstalls": 1,
+          "weekly_users": 4,
+          "impressions": 20
+        },
+        {
+          "date": "2026-03-27",
+          "installs": 3,
+          "uninstalls": 2,
+          "weekly_users": 6,
+          "impressions": 22
+        },
+        {
+          "date": "2026-03-28",
+          "installs": 2,
+          "uninstalls": 0,
+          "weekly_users": 6,
+          "impressions": 25
+        },
+        {
+          "date": "2026-03-29",
+          "installs": 5,
+          "uninstalls": 2,
+          "weekly_users": 8,
+          "impressions": 30
+        },
+        {
+          "date": "2026-03-30",
+          "installs": 4,
+          "uninstalls": 2,
+          "weekly_users": 8,
+          "impressions": 35
+        },
+        {
+          "date": "2026-03-31",
+          "installs": 2,
+          "uninstalls": 0,
+          "weekly_users": 10,
+          "impressions": 24
+        },
+        {
+          "date": "2026-04-01",
+          "installs": 8,
+          "uninstalls": 5,
+          "weekly_users": 11,
+          "impressions": 41
+        },
+        {
+          "date": "2026-04-02",
+          "installs": 5,
+          "uninstalls": 1,
+          "weekly_users": 12,
+          "impressions": 31
+        },
+        {
+          "date": "2026-04-03",
+          "installs": 2,
+          "uninstalls": 0,
+          "weekly_users": 13,
+          "impressions": 15
+        },
+        {
+          "date": "2026-04-04",
+          "installs": 4,
+          "uninstalls": 4,
+          "weekly_users": 14,
+          "impressions": 13
+        },
+        {
+          "date": "2026-04-05",
+          "installs": 2,
+          "uninstalls": 0,
+          "weekly_users": 15,
+          "impressions": 34
+        },
+        {
+          "date": "2026-04-06",
+          "installs": 4,
+          "uninstalls": 1,
+          "weekly_users": 17,
+          "impressions": 27
+        },
+        {
+          "date": "2026-04-07",
+          "installs": 5,
+          "uninstalls": 1,
+          "weekly_users": 19,
+          "impressions": 41
+        },
+        {
+          "date": "2026-04-08",
+          "installs": 2,
+          "uninstalls": 2,
+          "weekly_users": 18,
+          "impressions": 40
+        },
+        {
+          "date": "2026-04-09",
+          "installs": 7,
+          "uninstalls": 2,
+          "weekly_users": 19,
+          "impressions": 39
+        },
+        {
+          "date": "2026-04-10",
+          "installs": 6,
+          "uninstalls": 2,
+          "weekly_users": 23,
+          "impressions": 21
+        },
+        {
+          "date": "2026-04-11",
+          "installs": 4,
+          "uninstalls": 4,
+          "weekly_users": 22,
+          "impressions": 25
+        },
+        {
+          "date": "2026-04-12",
+          "installs": 6,
+          "uninstalls": 3,
+          "weekly_users": 24,
+          "impressions": 27
+        },
+        {
+          "date": "2026-04-13",
+          "installs": 6,
+          "uninstalls": 2,
+          "weekly_users": 26,
+          "impressions": 48
+        },
+        {
+          "date": "2026-04-14",
+          "installs": 9,
+          "uninstalls": 3,
+          "weekly_users": 31,
+          "impressions": 62
+        },
+        {
+          "date": "2026-04-15",
+          "installs": 10,
+          "uninstalls": 2,
+          "weekly_users": 32,
+          "impressions": 30
+        },
+        {
+          "date": "2026-04-16",
+          "installs": 7,
+          "uninstalls": 1,
+          "weekly_users": 37,
+          "impressions": 39
+        },
+        {
+          "date": "2026-04-17",
+          "installs": 8,
+          "uninstalls": 3,
+          "weekly_users": 38,
+          "impressions": 83
+        },
+        {
+          "date": "2026-04-18",
+          "installs": 5,
+          "uninstalls": 2,
+          "weekly_users": 41,
+          "impressions": 56
+        },
+        {
+          "date": "2026-04-19",
+          "installs": 3,
+          "uninstalls": 1,
+          "weekly_users": 43,
+          "impressions": 58
+        },
+        {
+          "date": "2026-04-20",
+          "installs": 7,
+          "uninstalls": 7,
+          "weekly_users": 42,
+          "impressions": 112
+        },
+        {
+          "date": "2026-04-21",
+          "installs": 13,
+          "uninstalls": 6,
+          "weekly_users": 47,
+          "impressions": 81
+        },
+        {
+          "date": "2026-04-22",
+          "installs": 8,
+          "uninstalls": 2,
+          "weekly_users": 51,
+          "impressions": 92
+        },
+        {
+          "date": "2026-04-23",
+          "installs": 7,
+          "uninstalls": 1,
+          "weekly_users": 58,
+          "impressions": 100
+        },
+        {
+          "date": "2026-04-24",
+          "installs": 8,
+          "uninstalls": 4,
+          "weekly_users": 63,
+          "impressions": 95
+        },
+        {
+          "date": "2026-04-25",
+          "installs": 7,
+          "uninstalls": 2,
+          "weekly_users": 64,
+          "impressions": 90
+        },
+        {
+          "date": "2026-04-26",
+          "installs": 17,
+          "uninstalls": 11,
+          "weekly_users": 73,
+          "impressions": 75
+        },
+        {
+          "date": "2026-04-27",
+          "installs": 17,
+          "uninstalls": 7,
+          "weekly_users": 77,
+          "impressions": 122
+        },
+        {
+          "date": "2026-04-28",
+          "installs": 16,
+          "uninstalls": 10,
+          "weekly_users": 85,
+          "impressions": 155
+        },
+        {
+          "date": "2026-04-29",
+          "installs": 18,
+          "uninstalls": 7,
+          "weekly_users": 96,
+          "impressions": 114
+        },
+        {
+          "date": "2026-04-30",
+          "installs": 13,
+          "uninstalls": 7,
+          "weekly_users": 102,
+          "impressions": 98
+        },
+        {
+          "date": "2026-05-01",
+          "installs": 15,
+          "uninstalls": 3,
+          "weekly_users": 106,
+          "impressions": 84
+        },
+        {
+          "date": "2026-05-02",
+          "installs": 13,
+          "uninstalls": 5,
+          "weekly_users": 115,
+          "impressions": 68
+        },
+        {
+          "date": "2026-05-03",
+          "installs": 11,
+          "uninstalls": 5,
+          "weekly_users": 124,
+          "impressions": 104
+        },
+        {
+          "date": "2026-05-04",
+          "installs": 19,
+          "uninstalls": 4,
+          "weekly_users": 138,
+          "impressions": 118
+        },
+        {
+          "date": "2026-05-05",
+          "installs": 27,
+          "uninstalls": 6,
+          "weekly_users": 152,
+          "impressions": 140
+        },
+        {
+          "date": "2026-05-06",
+          "installs": 33,
+          "uninstalls": 17,
+          "weekly_users": 164,
+          "impressions": 121
+        },
+        {
+          "date": "2026-05-07",
+          "installs": 18,
+          "uninstalls": 6,
+          "weekly_users": 178,
+          "impressions": 132
+        },
+        {
+          "date": "2026-05-08",
+          "installs": 16,
+          "uninstalls": 3,
+          "weekly_users": 190,
+          "impressions": 116
+        },
+        {
+          "date": "2026-05-09",
+          "installs": 7,
+          "uninstalls": 1,
+          "weekly_users": 194,
+          "impressions": 78
+        },
+        {
+          "date": "2026-05-10",
+          "installs": 17,
+          "uninstalls": 7,
+          "weekly_users": 200,
+          "impressions": 96
+        },
+        {
+          "date": "2026-05-11",
+          "installs": 19,
+          "uninstalls": 9,
+          "weekly_users": 214,
+          "impressions": 139
+        },
+        {
+          "date": "2026-05-12",
+          "installs": 14,
+          "uninstalls": 6,
+          "weekly_users": 231,
+          "impressions": 158
+        },
+        {
+          "date": "2026-05-13",
+          "installs": 16,
+          "uninstalls": 6,
+          "weekly_users": 243,
+          "impressions": 123
+        },
+        {
+          "date": "2026-05-14",
+          "installs": 17,
+          "uninstalls": 10,
+          "weekly_users": 255,
+          "impressions": 136
+        },
+        {
+          "date": "2026-05-15",
+          "installs": 14,
+          "uninstalls": 4,
+          "weekly_users": 260,
+          "impressions": 117
+        },
+        {
+          "date": "2026-05-16",
+          "installs": 9,
+          "uninstalls": 4,
+          "weekly_users": 268,
+          "impressions": 91
+        },
+        {
+          "date": "2026-05-17",
+          "installs": 12,
+          "uninstalls": 5,
+          "weekly_users": 283,
+          "impressions": 96
+        },
+        {
+          "date": "2026-05-18",
+          "installs": 33,
+          "uninstalls": 9,
+          "weekly_users": 294,
+          "impressions": 104
+        },
+        {
+          "date": "2026-05-19",
+          "installs": 51,
+          "uninstalls": 27,
+          "weekly_users": 327,
+          "impressions": 276
+        },
+        {
+          "date": "2026-05-20",
+          "installs": 49,
+          "uninstalls": 27,
+          "weekly_users": 345,
+          "impressions": 217
+        },
+        {
+          "date": "2026-05-21",
+          "installs": 32,
+          "uninstalls": 20,
+          "weekly_users": 366,
+          "impressions": 148
+        },
+        {
+          "date": "2026-05-22",
+          "installs": 24,
+          "uninstalls": 10,
+          "weekly_users": 382,
+          "impressions": 86
+        },
+        {
+          "date": "2026-05-23",
+          "installs": 18,
+          "uninstalls": 8,
+          "weekly_users": 385,
+          "impressions": 88
+        },
+        {
+          "date": "2026-05-24",
+          "installs": 22,
+          "uninstalls": 9,
+          "weekly_users": 389,
+          "impressions": 119
+        },
+        {
+          "date": "2026-05-25",
+          "installs": 23,
+          "uninstalls": 12,
+          "weekly_users": 405,
+          "impressions": 127
+        },
+        {
+          "date": "2026-05-26",
+          "installs": 22,
+          "uninstalls": 7,
+          "weekly_users": 431,
+          "impressions": 175
+        },
+        {
+          "date": "2026-05-27",
+          "installs": 28,
+          "uninstalls": 3,
+          "weekly_users": 453,
+          "impressions": 173
+        },
+        {
+          "date": "2026-05-28",
+          "installs": 25,
+          "uninstalls": 17,
+          "weekly_users": 472,
+          "impressions": 205
+        },
+        {
+          "date": "2026-05-29",
+          "installs": 17,
+          "uninstalls": 8,
+          "weekly_users": 494,
+          "impressions": 201
+        },
+        {
+          "date": "2026-05-30",
+          "installs": 26,
+          "uninstalls": 8,
+          "weekly_users": 509,
+          "impressions": 163
+        },
+        {
+          "date": "2026-05-31",
+          "installs": 31,
+          "uninstalls": 12,
+          "weekly_users": 525,
+          "impressions": 221
+        },
+        {
+          "date": "2026-06-01",
+          "installs": 45,
+          "uninstalls": 20,
+          "weekly_users": 541,
+          "impressions": 292
+        },
+        {
+          "date": "2026-06-02",
+          "installs": 18,
+          "uninstalls": 8,
+          "weekly_users": 562,
+          "impressions": 220
+        },
+        {
+          "date": "2026-06-03",
+          "installs": 38,
+          "uninstalls": 14,
+          "weekly_users": 582,
+          "impressions": 272
+        },
+        {
+          "date": "2026-06-04",
+          "installs": 38,
+          "uninstalls": 17,
+          "weekly_users": 596,
+          "impressions": 287
+        },
+        {
+          "date": "2026-06-05",
+          "installs": 17,
+          "uninstalls": 8,
+          "weekly_users": 602,
+          "impressions": 218
+        }
+      ]
+    },
+    "kjmgfajofolnfeaahchpmkpecfimcppf": {
+      "history": [
+        {
+          "collected_at": "2026-06-06",
+          "period_start": "2026-05-07",
+          "period_end": "2026-06-05",
+          "installs": 59,
+          "uninstalls": 10,
+          "weekly_users": 22,
+          "impressions": 121,
+          "installs_by_country": {
+            "United States": 60,
+            "Japan": 7,
+            "Spain": 5,
+            "Other": 28
+          },
+          "installs_by_language": {
+            "Spanish": 18,
+            "English (United States)": 14,
+            "Korean": 9,
+            "Other": 59
+          },
+          "installs_by_os": {
+            "Windows": 56,
+            "ChromeOS": 32,
+            "Mac OS": 7,
+            "Other": 5
+          },
+          "uninstalls_by_country": {
+            "Taiwan": 25,
+            "Sweden": 13,
+            "Other": 38
+          },
+          "uninstalls_by_language": {
+            "Chinese (Taiwan)": 30,
+            "Other": 20
+          },
+          "uninstalls_by_os": {
+            "Windows": 70,
+            "Linux": 20,
+            "Mac OS": 10
+          },
+          "users_by_country": {
+            "Spain": 30,
+            "Canada": 17,
+            "South Korea": 9,
+            "Other": 44
+          },
+          "users_by_language": {
+            "Spanish": 33,
+            "French": 15,
+            "Korean": 9,
+            "Other": 42
+          },
+          "users_by_os": {
+            "Windows": 66,
+            "Mac OS": 28,
+            "ChromeOS": 6
+          },
+          "active_versions": [
+            "1.0.0.0",
+            "1.1.0.0"
+          ]
+        }
+      ],
+      "daily": [
+        {
+          "date": "2025-06-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-06-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-07-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-08-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-09-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-10-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-11-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2025-12-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-01-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-02-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-03-31",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-17",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-18",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-19",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-20",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-21",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-22",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-23",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-24",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-25",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-26",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-27",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-28",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-29",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-04-30",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-01",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-02",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-03",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-04",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-05",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-06",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-07",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-08",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-09",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-10",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-11",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-12",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-13",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-14",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-15",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-16",
+          "installs": 0,
+          "uninstalls": 0,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-17",
+          "installs": 0,
+          "uninstalls": 1,
+          "weekly_users": 0,
+          "impressions": 0
+        },
+        {
+          "date": "2026-05-18",
+          "installs": 3,
+          "uninstalls": 0,
+          "weekly_users": 1,
+          "impressions": 2
+        },
+        {
+          "date": "2026-05-19",
+          "installs": 1,
+          "uninstalls": 0,
+          "weekly_users": 1,
+          "impressions": 43
+        },
+        {
+          "date": "2026-05-20",
+          "installs": 5,
+          "uninstalls": 0,
+          "weekly_users": 1,
+          "impressions": 60
+        },
+        {
+          "date": "2026-05-21",
+          "installs": 2,
+          "uninstalls": 1,
+          "weekly_users": 3,
+          "impressions": 37
+        },
+        {
+          "date": "2026-05-22",
+          "installs": 4,
+          "uninstalls": 0,
+          "weekly_users": 4,
+          "impressions": 24
+        },
+        {
+          "date": "2026-05-23",
+          "installs": 2,
+          "uninstalls": 0,
+          "weekly_users": 4,
+          "impressions": 29
+        },
+        {
+          "date": "2026-05-24",
+          "installs": 4,
+          "uninstalls": 0,
+          "weekly_users": 6,
+          "impressions": 34
+        },
+        {
+          "date": "2026-05-25",
+          "installs": 6,
+          "uninstalls": 0,
+          "weekly_users": 11,
+          "impressions": 37
+        },
+        {
+          "date": "2026-05-26",
+          "installs": 1,
+          "uninstalls": 0,
+          "weekly_users": 11,
+          "impressions": 41
+        },
+        {
+          "date": "2026-05-27",
+          "installs": 3,
+          "uninstalls": 2,
+          "weekly_users": 11,
+          "impressions": 25
+        },
+        {
+          "date": "2026-05-28",
+          "installs": 5,
+          "uninstalls": 0,
+          "weekly_users": 13,
+          "impressions": 36
+        },
+        {
+          "date": "2026-05-29",
+          "installs": 1,
+          "uninstalls": 1,
+          "weekly_users": 12,
+          "impressions": 23
+        },
+        {
+          "date": "2026-05-30",
+          "installs": 2,
+          "uninstalls": 0,
+          "weekly_users": 12,
+          "impressions": 14
+        },
+        {
+          "date": "2026-05-31",
+          "installs": 3,
+          "uninstalls": 0,
+          "weekly_users": 16,
+          "impressions": 27
+        },
+        {
+          "date": "2026-06-01",
+          "installs": 5,
+          "uninstalls": 1,
+          "weekly_users": 20,
+          "impressions": 31
+        },
+        {
+          "date": "2026-06-02",
+          "installs": 3,
+          "uninstalls": 0,
+          "weekly_users": 23,
+          "impressions": 17
+        },
+        {
+          "date": "2026-06-03",
+          "installs": 3,
+          "uninstalls": 1,
+          "weekly_users": 24,
+          "impressions": 19
+        },
+        {
+          "date": "2026-06-04",
+          "installs": 3,
+          "uninstalls": 2,
+          "weekly_users": 23,
+          "impressions": 55
+        },
+        {
+          "date": "2026-06-05",
+          "installs": 3,
+          "uninstalls": 1,
+          "weekly_users": 22,
+          "impressions": 40
+        }
+      ]
+    }
+  }
+}

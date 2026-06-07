@@ -1,6 +1,12 @@
 dist/
 build/
 
+tools/stats-collector/config.json
+tools/ga4-puller/config.json
+tools/ga4-puller/service-account-key.json
+tools/ga4-puller/*.json
+!tools/ga4-puller/config.example.json
+
 *.zip
 *.tar.gz
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font: 13px/1.5 system-ui, sans-serif; padding: 14px; width: 340px; margin: 0; }
+    h2   { margin: 0 0 10px; font-size: 14px; }
+    label { display: block; font-size: 11px; color: #666; margin-bottom: 3px; }
+    input {
+      width: 100%; box-sizing: border-box; padding: 5px 7px;
+      border: 1px solid #ccc; border-radius: 3px; font: inherit; margin-bottom: 10px;
+    }
+    input.short { width: 60px; }
+    .actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    button {
+      padding: 6px 14px; background: #1a73e8; color: #fff;
+      border: none; border-radius: 3px; cursor: pointer; font: inherit;
+    }
+    button.secondary { background: #5f6368; }
+    button:disabled { background: #aaa; cursor: default; }
+    #log {
+      margin-top: 10px; font-size: 11px; font-family: monospace;
+      background: #f7f7f7; border-radius: 3px; padding: 7px;
+      max-height: 260px; overflow-y: auto; white-space: pre-wrap; word-break: break-all;
+      display: none;
+    }
+    .ok  { color: #1e7b34; }
+    .err { color: #b00020; }
+  </style>
+</head>
+<body>
+  <h2>CWS Stats Collector</h2>
+
+  <label for="pat">GitHub PAT <small>(stored locally, never synced)</small></label>
+  <input id="pat" type="password" placeholder="ghp_…" autocomplete="off">
+
+  <div class="actions">
+    <button id="run">Run monthly collection</button>
+  </div>
+
+  <div id="log"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
