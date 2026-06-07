@@ -569,7 +569,10 @@
     else { document.querySelectorAll(".reveal").forEach(el => el.classList.add("in")); }
     // dynamic lang-cloud clicks
     document.querySelectorAll("[data-setlang]").forEach(el =>
-      el.addEventListener("click", () => setLang(el.getAttribute("data-setlang"), false)));
+      el.addEventListener("click", () => {
+        const l = el.getAttribute("data-setlang");
+        if (LANG_ORDER.includes(l)) setLang(l, false);
+      }));
     if (!isPrivacy) runTriggerAnim();
   }
 
@@ -588,7 +591,10 @@
     menu.innerHTML = LANG_ORDER.map(l =>
       `<button class="lang-opt" data-lang="${l}"><span>${esc(NAMES[l])}</span><span class="code">${l.replace("_","-")}</span></button>`).join("");
     menu.querySelectorAll(".lang-opt").forEach(b =>
-      b.addEventListener("click", () => setLang(b.getAttribute("data-lang"), false)));
+      b.addEventListener("click", () => {
+        const l = b.getAttribute("data-lang");
+        if (LANG_ORDER.includes(l)) setLang(l, false);
+      }));
   }
   function updateMenuActive(lang) {
     document.querySelectorAll("#langMenu .lang-opt").forEach(b =>
