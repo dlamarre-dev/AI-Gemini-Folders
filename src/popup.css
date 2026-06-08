@@ -419,6 +419,9 @@
     #noResults { text-align: center; color: var(--muted-text); margin: 20px 0; font-size: 13px; display: none; }
 
     .footer-actions { margin-top: 16px; display: flex; justify-content: space-between; gap: 10px; border-top: 1px solid var(--border-color); padding-top: 12px; }
+
+    #kofiBtn:hover,
+    #githubLink:hover { opacity: 1 !important; }
     hr { border: 0; border-top: 1px solid var(--border-color); margin: 16px 0; opacity: 0.5; }
 
     /* --- Height correction and button alignment --- */

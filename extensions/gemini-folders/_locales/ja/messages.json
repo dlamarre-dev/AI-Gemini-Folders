@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "ダウンロード"
+  },
+  "kofiTooltip": {
+    "message": "コーヒーをおごってこの拡張機能をサポートしてください！"
   }
 }

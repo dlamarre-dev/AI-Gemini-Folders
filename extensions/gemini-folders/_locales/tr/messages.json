@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "İndir"
+  },
+  "kofiTooltip": {
+    "message": "Bu uzantıyı desteklemek için bana bir kahve ısmarlayın!"
   }
 }

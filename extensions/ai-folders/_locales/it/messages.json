@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Impossibile trovare il campo di testo in questa pagina. Prova a fare clic sull'editor prima, poi usa il pulsante di inserimento."
+  },
+  "kofiTooltip": {
+    "message": "Sostieni questa estensione offrendomi un caffè!"
   }
 }

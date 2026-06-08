@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Det gick inte att hitta textfältet på den här sidan. Försök att klicka i redigeraren först och använd sedan infogaknappen."
+  },
+  "kofiTooltip": {
+    "message": "Stöd det här tillägget genom att bjuda mig på kaffe!"
   }
 }

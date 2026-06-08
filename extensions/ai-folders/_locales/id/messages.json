@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemukan kotak teks di halaman ini. Coba klik editor terlebih dahulu, lalu gunakan tombol sisipkan."
+  },
+  "kofiTooltip": {
+    "message": "Dukung ekstensi ini dengan membelikan saya kopi!"
   }
 }

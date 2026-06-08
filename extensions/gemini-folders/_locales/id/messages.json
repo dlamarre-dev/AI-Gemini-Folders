@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Unduh"
+  },
+  "kofiTooltip": {
+    "message": "Dukung ekstensi ini dengan membelikan saya kopi!"
   }
 }

@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Finner ikke tekstfeltet på denne siden. Prøv å klikke i editoren først, og bruk deretter sett inn-knappen."
+  },
+  "kofiTooltip": {
+    "message": "Støtt denne utvidelsen ved å kjøpe meg en kopp kaffe!"
   }
 }

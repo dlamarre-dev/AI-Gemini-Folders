@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Pakua"
+  },
+  "kofiTooltip": {
+    "message": "Saidia ugani huu kwa kununulia kahawa!"
   }
 }

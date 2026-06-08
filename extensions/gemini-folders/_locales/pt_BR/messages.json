@@ -1,260 +1,263 @@
 {
-    "extName": {
-        "message": "Pastas Gemini"
-    },
-    "extDesc": {
-        "message": "Organize suas conversas do Gemini em pastas e gerencie uma biblioteca de prompts."
-    },
-    "appTitle": {
-        "message": "Pastas Gemini"
-    },
-    "searchPlaceholder": {
-        "message": "🔍 Pesquisar uma conversa..."
-    },
-    "promptSearchPlaceholder": {
-        "message": "🔍 Pesquisar um prompt..."
-    },
-    "folderPlaceholder": {
-        "message": "Nome da pasta (ex: Projetos)"
-    },
-    "chatPlaceholder": {
-        "message": "Título da conversa"
-    },
-    "saveBtn": {
-        "message": "Salvar"
-    },
-    "statusSaved": {
-        "message": "Conversa salva!"
-    },
-    "noResults": {
-        "message": "Nenhum resultado encontrado 🕵️"
-    },
-    "exportBtn": {
-        "message": "💾 Export"
-    },
-    "importBtn": {
-        "message": "📂 Import"
-    },
-    "alertNotGemini": {
-        "message": "Por favor, use esta extensão em uma página do Gemini."
-    },
-    "defaultFolder": {
-        "message": "Geral"
-    },
-    "defaultTitle": {
-        "message": "Nova conversa"
-    },
-    "promptRename": {
-        "message": "Novo nome da conversa:"
-    },
-    "alertEmptyExport": {
-        "message": "Suas pastas estão vazias, não há nada para exportar!"
-    },
-    "alertImportSuccess": {
-        "message": "Importação bem-sucedida! Seus dados foram mesclados com sucesso."
-    },
-    "alertImportError": {
-        "message": "Erro de importação. Certifique-se de que é um arquivo JSON válido desta extensão."
-    },
-    "btnRename": {
-        "message": "Renomear"
-    },
-    "btnDelete": {
-        "message": "Excluir"
-    },
-    "btnNewFolder": {
-        "message": "➕ Pasta"
-    },
-    "promptNewFolder": {
-        "message": "Nova pasta:"
-    },
-    "btnDeleteFolder": {
-        "message": "Excluir pasta"
-    },
-    "confirmDeleteFolder": {
-        "message": "Esta pasta contém conversas. Tem certeza de que deseja excluí-la?"
-    },
-    "btnPin": {
-        "message": "Fixar"
-    },
-    "btnUnpin": {
-        "message": "Desafixar"
-    },
-    "sortNewest": {
-        "message": "Mais recentes"
-    },
-    "sortOldest": {
-        "message": "Mais antigos"
-    },
-    "sortAlpha": {
-        "message": "De A a Z"
-    },
-    "ctxMenuSave": {
-        "message": "Salvar nas Pastas Gemini"
-    },
-    "ctxMenuNoFolder": {
-        "message": "(Nenhuma pasta - Abra a extensão)"
-    },
-    "btnToggleAdd": {
-        "message": "Adicionar uma conversa"
-    },
-    "btnCancel": {
-        "message": "Fechar"
-    },
-    "btnRenameFolder": {
-        "message": "Renomear pasta"
-    },
-    "promptRenameFolder": {
-        "message": "Novo nome:"
-    },
-    "errorFolderExists": {
-        "message": "Já existe uma pasta com este nome."
-    },
-    "storageCalc": {
-        "message": "Calculando espaço..."
-    },
-    "storageInfo": {
-        "message": "Armazenamento: {used} KB / {max} KB ({pct}%)"
-    },
-    "cmdQuickSave": {
-        "message": "Salvar conversa"
-    },
-    "quickSaveFolder": {
-        "message": "⚡ Salvamentos Rápidos"
-    },
-    "toastSaved": {
-        "message": "✅ Salvo no Pastas Gemini!"
-    },
-    "btnOpenGroup": {
-        "message": "Abrir em grupo de guias"
-    },
-    "confirmOpenManyTabs": {
-        "message": "Você realmente deseja abrir as guias selecionadas ({count}) ao mesmo tempo?"
-    },
-    "errorTabGroup": {
-        "message": "Erro: Não foi possível criar o grupo de guias. Você aceitou as novas permissões?"
-    },
-    "bulkSelected": {
-        "message": "Seleção: {count}"
-    },
-    "bulkMove": {
-        "message": "Mover para..."
-    },
-    "bulkDelete": {
-        "message": "Excluir"
-    },
-    "confirmBulkDelete": {
-        "message": "Tem certeza de que deseja excluir as conversas selecionadas ({count})?"
-    },
-    "bulkCancel": {
-        "message": "Cancelar seleção"
-    },
-    "masterFolderName": {
-        "message": "Pastas Gemini (Sync)"
-    },
-    "syncBookmarksTooltip": {
-        "message": "Cria uma pasta sincronizada nos seus favoritos do Chrome para acessar suas conversas no seu celular."
-    },
-    "reviewTitle": {
-        "message": "⭐ Você está gostando do Pastas Gemini?"
-    },
-    "reviewMessage": {
-        "message": "Seu apoio ajuda imensamente este projeto de código aberto!"
-    },
-    "reviewRateBtn": {
-        "message": "Avaliar 5 estrelas"
-    },
-    "reviewLaterBtn": {
-        "message": "Mais tarde"
-    },
-    "reviewNoBtn": {
-        "message": "Não, obrigado"
-    },
-    "modalBtnCancel": {
-        "message": "Cancelar"
-    },
-    "modalBtnConfirm": {
-        "message": "Confirmar"
-    },
-    "emojiTipPlaceholder": {
-        "message": "Dica: Inicie com emoji (Win+. / ⌘⌃Espaço)"
-    },
-    "toastAlreadySaved": {
-        "message": "⚠️ Já salvo!"
-    },
-    "folderModeTitle": {
-        "message": "Modo pastas"
-    },
-    "promptModeTitle": {
-        "message": "Modo prompts"
-    },
-    "promptCannotBeEmpty": {
-        "message": "O prompt não pode estar vazio!"
-    },
-    "promptSaved": {
-        "message": "Prompt salvo!"
-    },
-    "promptDuplicateWarning": {
-        "message": "Já existe um prompt com este título. Substituir?"
-    },
-    "promptNoSavedYet": {
-        "message": "Nenhum prompt salvo ainda."
-    },
-    "promptAddBtn": {
-        "message": "Adicionar prompt"
-    },
-    "promptCopyTitle": {
-        "message": "Copiar"
-    },
-    "promptDeleteTitle": {
-        "message": "Excluir"
-    },
-    "promptSetGemLink": {
-        "message": "Definir link Gem personalizado:"
-    },
-    "promptInvalidGemLink": {
-        "message": "Link inválido. Deve começar com https://gemini.google.com/"
-    },
-    "newConversationBtn": {
-        "message": "Nova conversa"
-    },
-    "promptTitlePlaceholder": {
-        "message": "Título do prompt"
-    },
-    "promptTextPlaceholder": {
-        "message": "Escreva seu prompt aqui..."
-    },
-    "enableCustomGemTooltip": {
-        "message": "Ativar Gem personalizado"
-    },
-    "setGemBtnTooltip": {
-        "message": "Definir link Gem personalizado"
-    },
-    "syncPromptsTooltip": {
-        "message": "Sincronizar prompts"
-    },
-    "promptRenamePrompt": {
-        "message": "Novo nome do prompt:"
-    },
-    "confirmDeletePrompt": {
-        "message": "Excluir este prompt?"
-    },
-    "promptInsertBtn": {
-        "message": "Inserir no Gemini"
-    },
-    "promptPinTitle": {
-        "message": "Fixar"
-    },
-    "storageFullError": {
-        "message": "⚠️ Armazenamento cheio — não salvo."
-    },
-    "afPromoTitle": {
-        "message": "Conheça Pastas IA"
-    },
-    "afPromoMessage": {
-        "message": "Você também usa outras IAs? Mude para Pastas IA e adicione ChatGPT, Claude, Copilot, DeepSeek, Perplexity e um LLM local às suas pastas."
-    },
-    "afPromoDownloadBtn": {
-        "message": "Baixar"
-    }
+  "extName": {
+    "message": "Pastas Gemini"
+  },
+  "extDesc": {
+    "message": "Organize suas conversas do Gemini em pastas e gerencie uma biblioteca de prompts."
+  },
+  "appTitle": {
+    "message": "Pastas Gemini"
+  },
+  "searchPlaceholder": {
+    "message": "🔍 Pesquisar uma conversa..."
+  },
+  "promptSearchPlaceholder": {
+    "message": "🔍 Pesquisar um prompt..."
+  },
+  "folderPlaceholder": {
+    "message": "Nome da pasta (ex: Projetos)"
+  },
+  "chatPlaceholder": {
+    "message": "Título da conversa"
+  },
+  "saveBtn": {
+    "message": "Salvar"
+  },
+  "statusSaved": {
+    "message": "Conversa salva!"
+  },
+  "noResults": {
+    "message": "Nenhum resultado encontrado 🕵️"
+  },
+  "exportBtn": {
+    "message": "💾 Export"
+  },
+  "importBtn": {
+    "message": "📂 Import"
+  },
+  "alertNotGemini": {
+    "message": "Por favor, use esta extensão em uma página do Gemini."
+  },
+  "defaultFolder": {
+    "message": "Geral"
+  },
+  "defaultTitle": {
+    "message": "Nova conversa"
+  },
+  "promptRename": {
+    "message": "Novo nome da conversa:"
+  },
+  "alertEmptyExport": {
+    "message": "Suas pastas estão vazias, não há nada para exportar!"
+  },
+  "alertImportSuccess": {
+    "message": "Importação bem-sucedida! Seus dados foram mesclados com sucesso."
+  },
+  "alertImportError": {
+    "message": "Erro de importação. Certifique-se de que é um arquivo JSON válido desta extensão."
+  },
+  "btnRename": {
+    "message": "Renomear"
+  },
+  "btnDelete": {
+    "message": "Excluir"
+  },
+  "btnNewFolder": {
+    "message": "➕ Pasta"
+  },
+  "promptNewFolder": {
+    "message": "Nova pasta:"
+  },
+  "btnDeleteFolder": {
+    "message": "Excluir pasta"
+  },
+  "confirmDeleteFolder": {
+    "message": "Esta pasta contém conversas. Tem certeza de que deseja excluí-la?"
+  },
+  "btnPin": {
+    "message": "Fixar"
+  },
+  "btnUnpin": {
+    "message": "Desafixar"
+  },
+  "sortNewest": {
+    "message": "Mais recentes"
+  },
+  "sortOldest": {
+    "message": "Mais antigos"
+  },
+  "sortAlpha": {
+    "message": "De A a Z"
+  },
+  "ctxMenuSave": {
+    "message": "Salvar nas Pastas Gemini"
+  },
+  "ctxMenuNoFolder": {
+    "message": "(Nenhuma pasta - Abra a extensão)"
+  },
+  "btnToggleAdd": {
+    "message": "Adicionar uma conversa"
+  },
+  "btnCancel": {
+    "message": "Fechar"
+  },
+  "btnRenameFolder": {
+    "message": "Renomear pasta"
+  },
+  "promptRenameFolder": {
+    "message": "Novo nome:"
+  },
+  "errorFolderExists": {
+    "message": "Já existe uma pasta com este nome."
+  },
+  "storageCalc": {
+    "message": "Calculando espaço..."
+  },
+  "storageInfo": {
+    "message": "Armazenamento: {used} KB / {max} KB ({pct}%)"
+  },
+  "cmdQuickSave": {
+    "message": "Salvar conversa"
+  },
+  "quickSaveFolder": {
+    "message": "⚡ Salvamentos Rápidos"
+  },
+  "toastSaved": {
+    "message": "✅ Salvo no Pastas Gemini!"
+  },
+  "btnOpenGroup": {
+    "message": "Abrir em grupo de guias"
+  },
+  "confirmOpenManyTabs": {
+    "message": "Você realmente deseja abrir as guias selecionadas ({count}) ao mesmo tempo?"
+  },
+  "errorTabGroup": {
+    "message": "Erro: Não foi possível criar o grupo de guias. Você aceitou as novas permissões?"
+  },
+  "bulkSelected": {
+    "message": "Seleção: {count}"
+  },
+  "bulkMove": {
+    "message": "Mover para..."
+  },
+  "bulkDelete": {
+    "message": "Excluir"
+  },
+  "confirmBulkDelete": {
+    "message": "Tem certeza de que deseja excluir as conversas selecionadas ({count})?"
+  },
+  "bulkCancel": {
+    "message": "Cancelar seleção"
+  },
+  "masterFolderName": {
+    "message": "Pastas Gemini (Sync)"
+  },
+  "syncBookmarksTooltip": {
+    "message": "Cria uma pasta sincronizada nos seus favoritos do Chrome para acessar suas conversas no seu celular."
+  },
+  "reviewTitle": {
+    "message": "⭐ Você está gostando do Pastas Gemini?"
+  },
+  "reviewMessage": {
+    "message": "Seu apoio ajuda imensamente este projeto de código aberto!"
+  },
+  "reviewRateBtn": {
+    "message": "Avaliar 5 estrelas"
+  },
+  "reviewLaterBtn": {
+    "message": "Mais tarde"
+  },
+  "reviewNoBtn": {
+    "message": "Não, obrigado"
+  },
+  "modalBtnCancel": {
+    "message": "Cancelar"
+  },
+  "modalBtnConfirm": {
+    "message": "Confirmar"
+  },
+  "emojiTipPlaceholder": {
+    "message": "Dica: Inicie com emoji (Win+. / ⌘⌃Espaço)"
+  },
+  "toastAlreadySaved": {
+    "message": "⚠️ Já salvo!"
+  },
+  "folderModeTitle": {
+    "message": "Modo pastas"
+  },
+  "promptModeTitle": {
+    "message": "Modo prompts"
+  },
+  "promptCannotBeEmpty": {
+    "message": "O prompt não pode estar vazio!"
+  },
+  "promptSaved": {
+    "message": "Prompt salvo!"
+  },
+  "promptDuplicateWarning": {
+    "message": "Já existe um prompt com este título. Substituir?"
+  },
+  "promptNoSavedYet": {
+    "message": "Nenhum prompt salvo ainda."
+  },
+  "promptAddBtn": {
+    "message": "Adicionar prompt"
+  },
+  "promptCopyTitle": {
+    "message": "Copiar"
+  },
+  "promptDeleteTitle": {
+    "message": "Excluir"
+  },
+  "promptSetGemLink": {
+    "message": "Definir link Gem personalizado:"
+  },
+  "promptInvalidGemLink": {
+    "message": "Link inválido. Deve começar com https://gemini.google.com/"
+  },
+  "newConversationBtn": {
+    "message": "Nova conversa"
+  },
+  "promptTitlePlaceholder": {
+    "message": "Título do prompt"
+  },
+  "promptTextPlaceholder": {
+    "message": "Escreva seu prompt aqui..."
+  },
+  "enableCustomGemTooltip": {
+    "message": "Ativar Gem personalizado"
+  },
+  "setGemBtnTooltip": {
+    "message": "Definir link Gem personalizado"
+  },
+  "syncPromptsTooltip": {
+    "message": "Sincronizar prompts"
+  },
+  "promptRenamePrompt": {
+    "message": "Novo nome do prompt:"
+  },
+  "confirmDeletePrompt": {
+    "message": "Excluir este prompt?"
+  },
+  "promptInsertBtn": {
+    "message": "Inserir no Gemini"
+  },
+  "promptPinTitle": {
+    "message": "Fixar"
+  },
+  "storageFullError": {
+    "message": "⚠️ Armazenamento cheio — não salvo."
+  },
+  "afPromoTitle": {
+    "message": "Conheça Pastas IA"
+  },
+  "afPromoMessage": {
+    "message": "Você também usa outras IAs? Mude para Pastas IA e adicione ChatGPT, Claude, Copilot, DeepSeek, Perplexity e um LLM local às suas pastas."
+  },
+  "afPromoDownloadBtn": {
+    "message": "Baixar"
+  },
+  "kofiTooltip": {
+    "message": "Apoie esta extensão comprando um café para mim!"
+  }
 }

@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Lae alla"
+  },
+  "kofiTooltip": {
+    "message": "Toeta seda laiendust, ostes mulle kohvi!"
   }
 }

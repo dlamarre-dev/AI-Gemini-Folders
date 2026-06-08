@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "I-download"
+  },
+  "kofiTooltip": {
+    "message": "Suportahan ang extension na ito sa pamamagitan ng pagbili mo ng kape para sa akin!"
   }
 }

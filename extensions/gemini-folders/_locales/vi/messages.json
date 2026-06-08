@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Tải xuống"
+  },
+  "kofiTooltip": {
+    "message": "Hãy ủng hộ tiện ích này bằng cách mời tôi một ly cà phê!"
   }
 }

@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Lataa"
+  },
+  "kofiTooltip": {
+    "message": "Tue tätä laajennusta ostamalla minulle kahvi!"
   }
 }

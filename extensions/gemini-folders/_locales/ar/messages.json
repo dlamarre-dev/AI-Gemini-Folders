@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "تحميل"
+  },
+  "kofiTooltip": {
+    "message": "ادعم هذه الإضافة بشراء قهوة لي!"
   }
 }

@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Изтегляне"
+  },
+  "kofiTooltip": {
+    "message": "Подкрепете това разширение, като ми купите кафе!"
   }
 }

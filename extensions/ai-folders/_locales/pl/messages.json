@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Nie można znaleźć pola tekstowego na tej stronie. Spróbuj najpierw kliknąć w edytor, a następnie użyj przycisku wstawiania."
+  },
+  "kofiTooltip": {
+    "message": "Wesprzyj to rozszerzenie, kupując mi kawę!"
   }
 }

@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Không tìm thấy ô nhập văn bản trên trang này. Hãy thử nhấp vào trình soạn thảo trước rồi sử dụng nút chèn."
+  },
+  "kofiTooltip": {
+    "message": "Hãy ủng hộ tiện ích này bằng cách mời tôi một ly cà phê!"
   }
 }

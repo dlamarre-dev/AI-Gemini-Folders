@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Haiwezekani kupata sehemu ya kuandika katika ukurasa huu. Jaribu kubonyeza kwenye kihariri kwanza, kisha utumie kitufe cha ingiza."
+  },
+  "kofiTooltip": {
+    "message": "Saidia ugani huu kwa kununulia kahawa!"
   }
 }

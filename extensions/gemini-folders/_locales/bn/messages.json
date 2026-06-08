@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "ডাউনলোড করুন"
+  },
+  "kofiTooltip": {
+    "message": "আমাকে এক কাপ কফি কিনে এই এক্সটেনশনকে সাপোর্ট করুন!"
   }
 }

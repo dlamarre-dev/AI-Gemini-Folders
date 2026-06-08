@@ -256,5 +256,8 @@
   },
   "storageFullError": {
     "message": "⚠️ Storage full — not saved."
+  },
+  "kofiTooltip": {
+    "message": "Support this extension by buying me a coffee!"
   }
 }

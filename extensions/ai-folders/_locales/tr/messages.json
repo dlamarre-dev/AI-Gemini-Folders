@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Bu sayfada metin giriş alanı bulunamadı. Önce düzenleyiciye tıklamayı deneyin, ardından ekle düğmesini kullanın."
+  },
+  "kofiTooltip": {
+    "message": "Bu uzantıyı desteklemek için bana bir kahve ısmarlayın!"
   }
 }

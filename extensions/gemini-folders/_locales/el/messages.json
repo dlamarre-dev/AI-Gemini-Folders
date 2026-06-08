@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Λήψη"
+  },
+  "kofiTooltip": {
+    "message": "Υποστηρίξτε αυτή την επέκταση αγοράζοντάς μου έναν καφέ!"
   }
 }

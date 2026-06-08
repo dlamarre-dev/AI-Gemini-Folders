@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Prenesi"
+  },
+  "kofiTooltip": {
+    "message": "Podprite to razširitev s tem, da mi kupite kavo!"
   }
 }

@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "הורדה"
+  },
+  "kofiTooltip": {
+    "message": "תמכו בתוסף זה על ידי קנייה לי קפה!"
   }
 }

@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Скачать"
+  },
+  "kofiTooltip": {
+    "message": "Поддержите это расширение, угостив меня кофе!"
   }
 }

@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."
+  },
+  "kofiTooltip": {
+    "message": "Atbalstiet šo paplašinājumu, nopērkot man kafiju!"
   }
 }

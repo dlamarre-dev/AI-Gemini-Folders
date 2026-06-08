@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemui medan teks pada halaman ini. Cuba klik pada editor terlebih dahulu, kemudian gunakan butang sisip."
+  },
+  "kofiTooltip": {
+    "message": "Sokong sambungan ini dengan membelikan saya kopi!"
   }
 }

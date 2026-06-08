@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Завантажити"
+  },
+  "kofiTooltip": {
+    "message": "Підтримайте це розширення, пригостивши мене кавою!"
   }
 }

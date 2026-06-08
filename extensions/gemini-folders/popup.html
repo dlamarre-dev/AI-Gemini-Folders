@@ -8,10 +8,15 @@
 <body>
   <h3 style="display: flex; justify-content: space-between; align-items: center; margin-top: 0;">
     <span style="display:flex;align-items:center;gap:6px;"><img src="icon.svg" alt="logo" style="width:18px;height:18px;flex-shrink:0;"> <span id="appTitle"></span></span>
-    <div id="modeToggle" class="mode-toggle">
-      <div class="mode-toggle-pill"></div>
-      <button id="modeFolderBtn" class="mode-toggle-btn mode-toggle-btn--active">📁</button>
-      <button id="modePromptBtn" class="mode-toggle-btn">📝</button>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <a id="kofiBtn" href="https://ko-fi.com/aifolders" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;opacity:0.65;transition:opacity 0.2s;text-decoration:none;" title="">
+        <img src="kofi.svg" alt="Ko-fi" style="width:20px;height:20px;flex-shrink:0;">
+      </a>
+      <div id="modeToggle" class="mode-toggle">
+        <div class="mode-toggle-pill"></div>
+        <button id="modeFolderBtn" class="mode-toggle-btn mode-toggle-btn--active">📁</button>
+        <button id="modePromptBtn" class="mode-toggle-btn">📝</button>
+      </div>
     </div>
   </h3>
 

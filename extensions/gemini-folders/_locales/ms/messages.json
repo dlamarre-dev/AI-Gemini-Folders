@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Muat turun"
+  },
+  "kofiTooltip": {
+    "message": "Sokong sambungan ini dengan membelikan saya kopi!"
   }
 }

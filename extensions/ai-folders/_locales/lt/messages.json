@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Nepavyko rasti teksto įvesties šiame puslapyje. Pirmiausia spustelėkite redaktorių, tada naudokite įterpimo mygtuką."
+  },
+  "kofiTooltip": {
+    "message": "Palaikykite šį plėtinį nupirkdami man kavos!"
   }
 }

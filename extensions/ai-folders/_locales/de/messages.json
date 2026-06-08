@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Das Texteingabefeld auf dieser Seite konnte nicht gefunden werden. Klicken Sie zuerst in den Editor und verwenden Sie dann die Einfügen-Schaltfläche."
+  },
+  "kofiTooltip": {
+    "message": "Unterstütze diese Erweiterung, indem du mir einen Kaffee kaufst!"
   }
 }

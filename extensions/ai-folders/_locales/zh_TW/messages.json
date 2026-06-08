@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "無法在此頁面找到文字輸入框。請先點擊編輯器，再使用插入按鈕。"
+  },
+  "kofiTooltip": {
+    "message": "透過請我喝杯咖啡來支持這個擴充功能！"
   }
 }

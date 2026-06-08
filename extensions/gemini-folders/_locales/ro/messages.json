@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Descarcă"
+  },
+  "kofiTooltip": {
+    "message": "Susțineți această extensie cumpărându-mi o cafea!"
   }
 }

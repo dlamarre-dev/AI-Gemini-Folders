@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Selle lehe tekstivälja ei leitud. Proovige esmalt redaktorisse klõpsata ja seejärel kasutage lisamisnuppu."
+  },
+  "kofiTooltip": {
+    "message": "Toeta seda laiendust, ostes mulle kohvi!"
   }
 }

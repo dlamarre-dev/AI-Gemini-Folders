@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "无法在此页面找到文本输入框。请先点击编辑器，然后再使用插入按钮。"
+  },
+  "kofiTooltip": {
+    "message": "通过请我喝杯咖啡来支持这个扩展！"
   }
 }

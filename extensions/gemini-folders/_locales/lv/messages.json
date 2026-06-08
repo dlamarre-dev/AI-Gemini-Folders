@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Lejupielādēt"
+  },
+  "kofiTooltip": {
+    "message": "Atbalstiet šo paplašinājumu, nopērkot man kafiju!"
   }
 }

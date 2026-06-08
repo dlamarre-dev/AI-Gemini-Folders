@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Hindi mahanap ang text input sa pahinang ito. Subukang mag-click sa editor muna, pagkatapos ay gamitin ang insert button."
+  },
+  "kofiTooltip": {
+    "message": "Suportahan ang extension na ito sa pamamagitan ng pagbili mo ng kape para sa akin!"
   }
 }

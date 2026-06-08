@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Kan het tekstinvoerveld op deze pagina niet vinden. Probeer eerst in de editor te klikken en gebruik dan de invoegknop."
+  },
+  "kofiTooltip": {
+    "message": "Steun deze extensie door me een kopje koffie te kopen!"
   }
 }

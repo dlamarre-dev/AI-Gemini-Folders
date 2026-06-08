@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Descargar"
+  },
+  "kofiTooltip": {
+    "message": "¡Apoya esta extensión comprándome un café!"
   }
 }

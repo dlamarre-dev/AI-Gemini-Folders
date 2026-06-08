@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Download"
+  },
+  "kofiTooltip": {
+    "message": "Støt denne udvidelse ved at købe mig en kop kaffe!"
   }
 }

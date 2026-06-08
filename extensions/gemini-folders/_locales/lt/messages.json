@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Atsisiųsti"
+  },
+  "kofiTooltip": {
+    "message": "Palaikykite šį plėtinį nupirkdami man kavos!"
   }
 }

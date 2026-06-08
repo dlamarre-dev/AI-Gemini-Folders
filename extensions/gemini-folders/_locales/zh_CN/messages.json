@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "下载"
+  },
+  "kofiTooltip": {
+    "message": "通过请我喝杯咖啡来支持这个扩展！"
   }
 }

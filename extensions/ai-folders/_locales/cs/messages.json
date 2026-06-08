@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Na této stránce nelze najít textové pole. Nejprve klikněte do editoru a poté použijte tlačítko Vložit."
+  },
+  "kofiTooltip": {
+    "message": "Podpořte toto rozšíření tím, že mi koupíte kávu!"
   }
 }

@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."
+  },
+  "kofiTooltip": {
+    "message": "Tue tätä laajennusta ostamalla minulle kahvi!"
   }
 }

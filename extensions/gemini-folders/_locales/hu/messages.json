@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Letöltés"
+  },
+  "kofiTooltip": {
+    "message": "Támogasd ezt a bővítményt azzal, hogy veszel nekem egy kávét!"
   }
 }

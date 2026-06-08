@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Na tejto stránke sa nepodarilo nájsť textové pole. Najprv kliknite do editora a potom použite tlačidlo vložiť."
+  },
+  "kofiTooltip": {
+    "message": "Podporte toto rozšírenie kúpou kávy pre mňa!"
   }
 }

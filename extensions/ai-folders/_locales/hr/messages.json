@@ -256,5 +256,8 @@
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Pokušajte kliknuti u uređivač, a zatim koristite gumb za umetanje."
+  },
+  "kofiTooltip": {
+    "message": "Podržite ovo proširenje kupnjom kave za mene!"
   }
 }

@@ -121,6 +121,10 @@ function initPopupCommon(config) {
   const githubLink = document.getElementById('githubLink');
   if (githubLink) githubLink.title = `GitHub - v${chrome.runtime.getManifest().version}`;
 
+  // --- Ko-fi donation link tooltip ---
+  const kofiBtn = document.getElementById('kofiBtn');
+  if (kofiBtn) kofiBtn.title = chrome.i18n.getMessage('kofiTooltip') || 'Support this extension by buying me a coffee!';
+
   // --- Folder sort menu ---
   const searchInput = document.getElementById('searchInput');
   const sortToggleBtn = document.getElementById('sortToggleBtn');

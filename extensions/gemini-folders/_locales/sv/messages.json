@@ -256,5 +256,8 @@
   },
   "afPromoDownloadBtn": {
     "message": "Ladda ner"
+  },
+  "kofiTooltip": {
+    "message": "Stöd det här tillägget genom att bjuda mig på kaffe!"
   }
 }
