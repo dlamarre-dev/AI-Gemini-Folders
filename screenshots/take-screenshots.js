@@ -378,21 +378,74 @@ async function compositeScreenshot(page, folderPath, promptPath, localeData, out
     ],
   } : null;
 
-  const svcColCss = svcItems ? `
-  .svc-col { position:absolute; top:${TITLE_H - 10}px; width:160px; height:${CANVAS_H - TITLE_H + 10}px; display:flex; flex-direction:column; justify-content:space-evenly; align-items:center; padding:0 0 40px; }
-  .svc-left  { left:23px; }
-  .svc-right { right:23px; }
-  .svc-item  { display:flex; flex-direction:column; align-items:center; gap:12px; padding:18px 0; width:144px; border-radius:22px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.13); border-top-color:rgba(255,255,255,0.2); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
-  .svc-name  { font-size:17px; font-weight:600; color:rgba(215,228,255,0.95); text-align:center; letter-spacing:.01em; text-shadow:0 1px 6px rgba(0,0,0,0.9); }
-  ` : '';
+  const svcColCss = '';
 
-  const svcColHtml = svcItems ? `
-  <div class="svc-col svc-left">
-    ${svcItems.left.map(s => `<div class="svc-item">${s.icon}<span class="svc-name">${s.name}</span></div>`).join('\n    ')}
-  </div>
-  <div class="svc-col svc-right">
-    ${svcItems.right.map(s => `<div class="svc-item">${s.icon}<span class="svc-name">${s.name}</span></div>`).join('\n    ')}
-  </div>` : '';
+  const svcColHtml = svcItems ? (() => {
+    const C = 'rgba(195,215,245,1)';
+    const mkChatGPT    = sz => `<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="${C}" xmlns="http://www.w3.org/2000/svg"><path d="${CHATGPT_PATH}"/></svg>`;
+    const mkGemini     = sz => `<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="${C}" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C11.5 7.5 7.5 11.5 2 12C7.5 12.5 11.5 16.5 12 22C12.5 16.5 16.5 12.5 22 12C16.5 11.5 12.5 7.5 12 2Z"/></svg>`;
+    const mkClaude     = sz => `<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="${C}" xmlns="http://www.w3.org/2000/svg"><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z"/></svg>`;
+    const mkCopilot    = sz => `<svg width="${sz}" height="${sz}" viewBox="0 0 24 26" fill="${C}" xmlns="http://www.w3.org/2000/svg"><path d="M17.533 1.829A2.528 2.528 0 0015.11 0h-.737a2.531 2.531 0 00-2.484 2.087l-1.263 6.937.314-1.08a2.528 2.528 0 012.424-1.833h4.284l1.797.706 1.731-.706h-.505a2.528 2.528 0 01-2.423-1.829l-.715-2.453z" transform="translate(0 1)"/><path d="M6.726 20.16A2.528 2.528 0 009.152 22h1.566c1.37 0 2.49-1.1 2.525-2.48l.17-6.69-.357 1.228a2.528 2.528 0 01-2.423 1.83h-4.32l-1.54-.842-1.667.843h.497c1.124 0 2.113.75 2.426 1.84l.697 2.432z" transform="translate(0 1)"/><path d="M15 0H6.252c-2.5 0-4 3.331-5 6.662-1.184 3.947-2.734 9.225 1.75 9.225H6.78c1.13 0 2.12-.753 2.43-1.847.657-2.317 1.809-6.359 2.713-9.436.46-1.563.842-2.906 1.43-3.742A1.97 1.97 0 0115 0" transform="translate(0 1)"/><path d="M9 22h8.749c2.5 0 4-3.332 5-6.663 1.184-3.948 2.734-9.227-1.75-9.227H17.22c-1.129 0-2.12.754-2.43 1.848a1149.2 1149.2 0 01-2.713 9.437c-.46 1.564-.842 2.907-1.43 3.743A1.97 1.97 0 019 22" transform="translate(0 1)"/></svg>`;
+    const mkDeepSeek   = sz => `<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="${C}" xmlns="http://www.w3.org/2000/svg"><path d="M23.748 4.651c-.254-.124-.364.113-.512.233-.051.04-.094.09-.137.137-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.155-.708-.311-.955-.65-.172-.24-.219-.509-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.094.172.187.129.323-.082.28-.18.553-.266.833-.055.179-.137.218-.328.14a5.5 5.5 0 0 1-1.737-1.179c-.857-.828-1.631-1.743-2.597-2.46a12 12 0 0 0-.689-.47c-.985-.957.13-1.743.387-1.836.27-.098.094-.433-.778-.428-.872.003-1.67.295-2.687.685a3 3 0 0 1-.465.136 9.6 9.6 0 0 0-2.883-.101c-1.885.21-3.39 1.1-4.497 2.622C.082 8.776-.231 10.854.152 13.02c.403 2.284 1.568 4.175 3.36 5.653 1.857 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.132-.284 4.994-1.86.47.234.962.328 1.78.398.629.058 1.235-.031 1.705-.129.735-.155.684-.836.418-.961-2.155-1.004-1.682-.595-2.112-.926 1.095-1.295 2.768-3.598 3.284-6.733.05-.346.115-.834.108-1.114-.004-.171.035-.238.23-.257a4.2 4.2 0 0 0 1.545-.475c1.397-.763 1.96-2.016 2.093-3.517.02-.23-.004-.467-.247-.588M11.58 18.168c-2.088-1.642-3.101-2.183-3.52-2.16-.39.024-.32.472-.234.763.09.288.207.487.371.74.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.168-1.361-.801-2.5-1.86-3.301-3.306-.775-1.393-1.225-2.888-1.299-4.482-.02-.385.094-.522.477-.592a4.7 4.7 0 0 1 1.53-.038c2.131.311 3.946 1.264 5.467 2.774.868.86 1.525 1.887 2.202 2.89.72 1.066 1.494 2.082 2.48 2.915.348.291.626.513.892.677-.802.09-2.14.109-3.055-.615zm1.001-6.44a.306.306 0 0 1 .415-.287.3.3 0 0 1 .113.074.3.3 0 0 1 .086.214c0 .17-.136.307-.308.307a.303.303 0 0 1-.306-.307m3.11 1.596c-.2.081-.4.151-.591.16a1.25 1.25 0 0 1-.798-.254c-.274-.23-.47-.358-.551-.758a1.7 1.7 0 0 1 .015-.588c.07-.327-.007-.537-.238-.727-.188-.156-.426-.199-.689-.199a.6.6 0 0 1-.254-.078.253.253 0 0 1-.114-.358a1 1 0 0 1 .192-.21c.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.392.451.462.576.685.915.176.264.336.536.446.848.066.194-.02.353-.25.45"/></svg>`;
+    const mkPerplexity = sz => `<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="${C}" xmlns="http://www.w3.org/2000/svg"><path d="M19.785 0v7.272H22.5V17.62h-2.935V24l-7.037-6.194v6.145h-1.091v-6.152L4.392 24v-6.465H1.5V7.188h2.884V0l7.053 6.494V.19h1.09v6.49L19.786 0zm-7.257 9.044v7.319l5.946 5.234V14.44l-5.946-5.397zm-1.099-.08l-5.946 5.398v7.235l5.946-5.234V8.965zm8.136 7.58h1.844V8.349H13.46l6.105 5.54v2.655zm-8.982-8.28H2.59v8.195h1.8v-2.576l6.192-5.62zM5.475 2.476v4.71h5.115l-5.115-4.71zm13.219 0l-5.115 4.71h5.115v-4.71z"/></svg>`;
+
+    const makers = [mkChatGPT, mkGemini, mkClaude, mkCopilot, mkDeepSeek, mkPerplexity];
+
+    // Deterministic pseudo-random scatter (seeded LCG — same output every run)
+    let seed = 29154;
+    const rand = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 0x100000000; };
+
+    const COUNT     = 14;  // attempt to place this many; some may be skipped if no room
+    const MAX_TRIES = 500;
+    const MARGIN    = 20;  // minimum gap between any two logo bounding boxes
+
+    // ChatGPT(0), Gemini(1), Claude(2) → big;  Copilot(3), DeepSeek(4), Perplexity(5) → small
+    const logoParams = [];
+    for (let i = 0; i < COUNT; i++) {
+      const makerIdx = i % makers.length;
+      const isBig    = makerIdx < 3;
+      logoParams.push({
+        sz:       isBig
+                    ? Math.round(280 + rand() * 130)        // 280–410 px
+                    : Math.round(130 + rand() * 100),       // 130–230 px
+        opacity:  +((0.05 + rand() * 0.07).toFixed(2)),    // 0.05–0.12
+        maker:    makers[makerIdx],
+        makerIdx,
+      });
+    }
+
+    // Place logos with rejection sampling — logos may extend up to 60% outside any canvas edge.
+    // A logo is SKIPPED (never force-placed) if no valid position is found, so there is zero overlap.
+    // Same-type logos also keep a minimum center-to-center distance so they never cluster together.
+    const placed      = [];
+    const placedTypes = [];
+    let bgHtml        = '';
+    for (const { sz, opacity, maker, makerIdx } of logoParams) {
+      const ow = Math.round(sz * 0.6);
+      let x, y, attempts = 0, valid = false;
+      do {
+        x = -ow + Math.round(rand() * (CANVAS_W - sz + 2 * ow));
+        y = -ow + Math.round(rand() * (CANVAS_H - sz + 2 * ow));
+        attempts++;
+        const cx = x + sz / 2, cy = y + sz / 2;
+        valid = !placed.some((p, pi) => {
+          if (x < p.x + p.sz + MARGIN && x + sz > p.x - MARGIN &&
+              y < p.y + p.sz + MARGIN && y + sz > p.y - MARGIN) return true;
+          if (placedTypes[pi] === makerIdx) {
+            const d = Math.hypot(cx - (p.x + p.sz / 2), cy - (p.y + p.sz / 2));
+            return d < (sz + p.sz) * 0.65;
+          }
+          return false;
+        });
+      } while (!valid && attempts < MAX_TRIES);
+      if (valid) {
+        placed.push({ x, y, sz });
+        placedTypes.push(makerIdx);
+        bgHtml += `<div style="position:absolute;left:${x}px;top:${y}px;opacity:${opacity};pointer-events:none;">${maker(sz)}</div>`;
+      }
+    }
+    return bgHtml;
+  })() : '';
 
   const html = `<!DOCTYPE html>
 <html>
@@ -489,6 +542,7 @@ async function compositeScreenshot(page, folderPath, promptPath, localeData, out
 </style>
 </head>
 <body>
+  ${svcColHtml}
   <div class="title">${localeData.title}</div>
 
   <div style="position:absolute;border-radius:50%;pointer-events:none;width:520px;height:520px;left:${leftX + Math.round(dispW / 2) - 260}px;top:${topY + Math.round(folderDispH / 2) - 260}px;background:radial-gradient(circle,rgba(100,50,230,0.22) 0%,rgba(60,80,220,0.1) 45%,transparent 70%);"></div>
@@ -503,7 +557,6 @@ async function compositeScreenshot(page, folderPath, promptPath, localeData, out
 
   <div class="mode-label label-folder">${folderText}</div>
   <div class="mode-label label-prompt">${promptText}</div>
-  ${svcColHtml}
 </body>
 </html>`;
 
