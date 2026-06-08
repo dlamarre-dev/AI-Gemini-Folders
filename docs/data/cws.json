@@ -2641,28 +2641,27 @@
     "kjmgfajofolnfeaahchpmkpecfimcppf": {
       "history": [
         {
-          "collected_at": "2026-06-06",
-          "period_start": "2026-05-07",
-          "period_end": "2026-06-05",
-          "installs": 59,
+          "collected_at": "2026-06-08",
+          "period_start": "2026-05-09",
+          "period_end": "2026-06-07",
+          "installs": 61,
           "uninstalls": 10,
-          "weekly_users": 22,
-          "impressions": 121,
+          "weekly_users": 23,
+          "impressions": 125,
           "installs_by_country": {
-            "United States": 60,
+            "Spain": 60,
             "Japan": 7,
-            "Spain": 5,
-            "Other": 28
+            "Other": 27
           },
           "installs_by_language": {
-            "Spanish": 18,
-            "English (United States)": 14,
-            "Korean": 9,
-            "Other": 59
+            "Spanish": 22,
+            "English (United States)": 13,
+            "Chinese (China)": 9,
+            "Other": 57
           },
           "installs_by_os": {
             "Windows": 56,
-            "ChromeOS": 32,
+            "ChromeOS": 33,
             "Mac OS": 7,
             "Other": 5
           },
@@ -2682,19 +2681,19 @@
           },
           "users_by_country": {
             "Spain": 30,
-            "Canada": 17,
+            "Canada": 16,
             "South Korea": 9,
             "Other": 44
           },
           "users_by_language": {
             "Spanish": 33,
-            "French": 15,
+            "French": 14,
             "Korean": 9,
-            "Other": 42
+            "Other": 43
           },
           "users_by_os": {
             "Windows": 66,
-            "Mac OS": 28,
+            "Mac OS": 27,
             "ChromeOS": 6
           },
           "active_versions": [
@@ -5258,6 +5257,12 @@
           "uninstalls": 1,
           "weekly_users": 22,
           "impressions": 40
+        },
+        {
+          "date": "2026-06-06",
+          "installs": 2,
+          "weekly_users": 23,
+          "impressions": 36
         }
       ]
     }
