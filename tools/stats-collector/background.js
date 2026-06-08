@@ -393,6 +393,8 @@ async function runCollection(config, token, onProgress) {
     (listing.items ?? []).map(({ id, weekly_users }) => [id, weekly_users])
   );
 
+  const commitBatch = [];
+
   for (const item of items) {
     const itemBase = `${CWS_BASE}/${pubId}/${item.id}`;
 
@@ -474,10 +476,16 @@ async function runCollection(config, token, onProgress) {
     const dailyRows = csvArrays.length ? mergeByDate(...csvArrays) : [];
     if (dailyRows.length) onProgress(`  merged: ${dailyRows.length} daily rows`);
 
-    onProgress(`${item.name}: committing…`);
-    const { committed, reason, dailyAdded } = await commitCwsEntry(token, github, item.id, entry, dailyRows);
+    commitBatch.push({ itemId: item.id, name: item.name, entry, dailyRows });
+  }
+
+  // ── single commit for all extensions ─────────────────────────────────────
+  onProgress('Committing all extensions…');
+  const commitResults = await commitAllCwsEntries(token, github, commitBatch);
+  for (const { itemId, committed, reason, dailyAdded } of commitResults) {
+    const item = items.find(i => i.id === itemId);
     const dailySuffix = dailyAdded ? ` +${dailyAdded} daily` : '';
-    onProgress(`${item.name}: ${committed ? `committed ✓${dailySuffix}` : `skipped (${reason})`}`);
+    onProgress(`${item?.name ?? itemId}: ${committed ? `committed ✓${dailySuffix}` : `skipped (${reason})`}`);
   }
 }
 
