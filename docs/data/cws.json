@@ -4,39 +4,39 @@
     "jffchdehoapigpmifkmleglfimjiilik": {
       "history": [
         {
-          "collected_at": "2026-06-06",
-          "period_start": "2026-05-07",
-          "period_end": "2026-06-05",
-          "installs": 716,
-          "uninstalls": 305,
-          "weekly_users": 602,
-          "impressions": 2330,
+          "collected_at": "2026-06-08",
+          "period_start": "2026-05-09",
+          "period_end": "2026-06-07",
+          "installs": 702,
+          "uninstalls": 301,
+          "weekly_users": 623,
+          "impressions": 2270,
           "installs_by_country": {
             "United States": 17,
             "Spain": 15,
             "Japan": 11,
-            "Other": 56
+            "Other": 57
           },
           "installs_by_language": {
             "English (United States)": 24,
             "Japanese": 13,
-            "Other": 50
+            "Other": 51
           },
           "installs_by_os": {
-            "Windows": 76,
+            "Windows": 77,
             "Mac OS": 12,
             "ChromeOS": 9,
-            "Other": 3
+            "Other": 2
           },
           "uninstalls_by_country": {
-            "South Korea": 17,
-            "Japan": 14,
-            "Other": 55
+            "Spain": 17,
+            "South Korea": 15,
+            "Japan": 13,
+            "Other": 56
           },
           "uninstalls_by_language": {
-            "Spanish": 22,
-            "English (United States)": 15,
-            "Korean": 14,
+            "English (United States)": 21,
+            "Korean": 15,
             "Other": 49
           },
           "uninstalls_by_os": {
@@ -46,24 +46,23 @@
             "Other": 1
           },
           "users_by_country": {
-            "Spain": 24,
+            "Spain": 23,
             "Japan": 12,
             "Brazil": 11,
-            "Other": 53
+            "Other": 54
           },
           "users_by_language": {
             "Spanish": 33,
             "English (United States)": 15,
             "Japanese": 13,
-            "Other": 38
+            "Other": 39
           },
           "users_by_os": {
-            "Mac OS": 82,
+            "Mac OS": 83,
             "Linux": 15,
             "Other": 1
           },
           "active_versions": [
-            "3.3.0.0",
             "3.4.1.0",
             "3.5.0.0",
             "4.0.0.0",
@@ -2629,6 +2628,13 @@
           "uninstalls": 8,
           "weekly_users": 602,
           "impressions": 218
+        },
+        {
+          "date": "2026-06-06",
+          "installs": 20,
+          "uninstalls": 5,
+          "weekly_users": 623,
+          "impressions": 198
         }
       ]
     },
