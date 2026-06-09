@@ -160,6 +160,55 @@ window.AF_MANUAL = {
   Object.keys(window.AF_MANUAL).forEach(l => {
     window.AF_MANUAL[l].compressionBody = COMPRESSION[l] || COMPRESSION.en;
   });
+
+  const KOFI_TOOLTIP = {
+    en:"Support this extension by buying me a coffee!",
+    fr:"Soutenez cette extension en m'offrant un café !",
+    es:"¡Apoya esta extensión comprándome un café!",
+    de:"Unterstütze diese Erweiterung, indem du mir einen Kaffee kaufst!",
+    it:"Sostieni questa estensione offrendomi un caffè!",
+    pt_BR:"Apoie esta extensão comprando um café para mim!",
+    pt_PT:"Apoie esta extensão comprando-me um café!",
+    nl:"Steun deze extensie door me een kopje koffie te kopen!",
+    pl:"Wesprzyj to rozszerzenie, kupując mi kawę!",
+    ru:"Поддержите это расширение, угостив меня кофе!",
+    uk:"Підтримайте це розширення, пригостивши мене кавою!",
+    cs:"Podpořte toto rozšíření tím, že mi koupíte kávu!",
+    sk:"Podporte toto rozšírenie kúpou kávy pre mňa!",
+    ja:"コーヒーをおごってこの拡張機能をサポートしてください！",
+    ko:"커피 한 잔 사줘서 이 확장 프로그램을 지원해 주세요!",
+    zh_CN:"通过请我喝杯咖啡来支持这个扩展！",
+    zh_TW:"透過請我喝杯咖啡來支持這個擴充功能！",
+    ar:"ادعم هذه الإضافة بشراء قهوة لي!",
+    he:"תמכו בתוסף זה על ידי קנייה לי קפה!",
+    tr:"Bu uzantıyı desteklemek için bana bir kahve ısmarlayın!",
+    sv:"Stöd det här tillägget genom att bjuda mig på kaffe!",
+    da:"Støt denne udvidelse ved at købe mig en kop kaffe!",
+    nb:"Støtt denne utvidelsen ved å kjøpe meg en kopp kaffe!",
+    fi:"Tue tätä laajennusta ostamalla minulle kahvi!",
+    el:"Υποστηρίξτε αυτή την επέκταση αγοράζοντάς μου έναν καφέ!",
+    ro:"Susțineți această extensie cumpărându-mi o cafea!",
+    hu:"Támogasd ezt a bővítményt azzal, hogy veszel nekem egy kávét!",
+    hr:"Podržite ovo proširenje kupnjom kave za mene!",
+    sr:"Подржите ово проширење тако што ћете ми купити кафу!",
+    bg:"Подкрепете това разширение, като ми купите кафе!",
+    sl:"Podprite to razširitev s tem, da mi kupite kavo!",
+    lt:"Palaikykite šį plėtinį nupirkdami man kavos!",
+    lv:"Atbalstiet šo paplašinājumu, nopērkot man kafiju!",
+    et:"Toeta seda laiendust, ostes mulle kohvi!",
+    ca:"Dóna suport a aquesta extensió comprant-me un cafè!",
+    id:"Dukung ekstensi ini dengan membelikan saya kopi!",
+    ms:"Sokong sambungan ini dengan membelikan saya kopi!",
+    vi:"Hãy ủng hộ tiện ích này bằng cách mời tôi một ly cà phê!",
+    th:"สนับสนุนส่วนขยายนี้ด้วยการซื้อกาแฟให้ฉัน!",
+    hi:"मुझे एक कॉफ़ी खरीदकर इस एक्सटेंशन को सपोर्ट करें!",
+    bn:"আমাকে এক কাপ কফি কিনে এই এক্সটেনশনকে সাপোর্ট করুন!",
+    sw:"Saidia ugani huu kwa kununulia kahawa!",
+    tl:"Suportahan ang extension na ito sa pamamagitan ng pagbili mo ng kape para sa akin!"
+  };
+  Object.keys(window.AF_MANUAL).forEach(l => {
+    window.AF_MANUAL[l].kofiTooltip = KOFI_TOOLTIP[l] || KOFI_TOOLTIP.en;
+  });
   Object.keys(window.AF_MANUAL).forEach(l => {
     const m = window.AF_MANUAL[l];
     m.servicesTitle = SVC_TITLE[l] || SVC_TITLE.en;

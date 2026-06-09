@@ -199,6 +199,7 @@
     return `
     <div class="container">
       <div class="hero-lang-row">
+        <a class="kofi-icon-btn" href="https://ko-fi.com/aifolders" target="_blank" rel="noopener" title="${esc(man(lang,'kofiTooltip'))}"><img src="site/assets/kofi.svg" alt="Ko-fi"></a>
         <div class="lang" id="langWrap">
           <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
             <span class="globe">🌐</span><span id="langLabel">${esc(NAMES[lang])}</span><span class="chev">▾</span>
@@ -380,6 +381,11 @@
           <span>${esc(man(lang,"openSource"))}</span><span class="sep"></span>
           <span>${esc(man(lang,"priv"))}</span>
         </div>
+        <div class="hero-kofi reveal d4">
+          <a class="kofi-full-btn" href="https://ko-fi.com/aifolders" target="_blank" rel="noopener">
+            <img src="site/assets/kofi.svg" alt="Ko-fi"><span>${esc(man(lang,'kofiTooltip'))}</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -405,6 +411,7 @@
     return `
     <div class="container">
       <div class="hero-lang-row">
+        <a class="kofi-icon-btn" href="https://ko-fi.com/aifolders" target="_blank" rel="noopener" title="${esc(man(lang,'kofiTooltip'))}"><img src="site/assets/kofi.svg" alt="Ko-fi"></a>
         <div class="lang" id="langWrap">
           <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
             <span class="globe">🌐</span><span id="langLabel">${esc(NAMES[lang])}</span><span class="chev">▾</span>

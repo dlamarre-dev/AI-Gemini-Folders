@@ -289,7 +289,17 @@ ul{padding:0;margin:0}
 }
 
 /* hero lang row — right-aligned just below nav */
-.hero-lang-row{display:flex;justify-content:flex-end;padding-top:14px}
+.hero-lang-row{display:flex;justify-content:flex-end;align-items:center;gap:8px;padding-top:14px}
+.kofi-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;
+  background:var(--card-2);border:1px solid var(--card-border);opacity:.65;transition:opacity .2s,background .2s,border-color .2s;flex-shrink:0}
+.kofi-icon-btn:hover{opacity:1;background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18)}
+.kofi-icon-btn img{width:20px;height:20px;display:block}
+.hero-kofi{display:flex;justify-content:center;padding:32px 0 8px}
+.kofi-full-btn{display:inline-flex;align-items:center;gap:12px;padding:11px 22px;border-radius:999px;
+  background:var(--card-2);border:1px solid var(--card-border);color:var(--muted);font-size:14px;font-weight:500;
+  text-decoration:none;opacity:.72;transition:opacity .2s,background .2s,border-color .2s,color .2s}
+.kofi-full-btn:hover{opacity:1;background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:var(--ink)}
+.kofi-full-btn img{width:22px;height:22px;display:block;flex-shrink:0}
 
 /* ============================================================ RTL refinements */
 [dir=rtl] .hero-sub,[dir=rtl] .sec-lead,[dir=rtl] .h2{text-align:start}
