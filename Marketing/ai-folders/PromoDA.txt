@@ -62,6 +62,7 @@ AI-mapper er et open source-projekt bygget med passion. Gennemsigtighed og respe
 
 
 📢 OPDATERINGER:
+Version 1.2.2 (Fejlrettelser og støtte): Fejlrettelser og intern refaktorering siden den sidste opdatering, for forbedret stabilitet. Hvis AI-mapper er nyttig for dig, kan du støtte dens udvikling ved at besøge Ko-fi-siden: https://ko-fi.com/aifolders — tak for din støtte!
 Version 1.2 (DeepSeek): Start nye DeepSeek-samtaler direkte fra Promptvisning, gem dem i mapper og injicér prompts.
 Version 1.1 (Prompt-udløser): Skriv # i et vilkårligt AI-chatfelt for at se dine gemte prompts filtreret i realtid. Brug ↓/↑ til at navigere gennem forslag, Mellemrum for at autofuldføre eller injicere — uden at åbne panelet.
 Version 1.0: Første udgivelse! Organiser samtaler fra Gemini, Claude, ChatGPT, Copilot og Perplexity i delte mapper. Komplet prompt-bibliotek med ét-klik-injektion, genveje til hurtig lagring, træk og slip, mobilsynkronisering, massehandlinger, fanegrupper og understøttelse af 43 sprog.

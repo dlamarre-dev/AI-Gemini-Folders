@@ -62,6 +62,7 @@ Foldery AI to projekt open source tworzony z pasją. Przejrzystość i poszanowa
 
 
 📢 AKTUALIZACJE:
+Wersja 1.2.2 (Poprawki błędów i wsparcie): Poprawki błędów i wewnętrzny refactoring od ostatniej aktualizacji, dla lepszej stabilności. Jeśli Foldery AI są dla Ciebie przydatne, możesz wesprzeć ich rozwój, odwiedzając stronę Ko-fi: https://ko-fi.com/aifolders — dziękujemy za wsparcie!
 Wersja 1.2 (DeepSeek): Rozpoczynaj nowe rozmowy na DeepSeek bezpośrednio z Trybu Promptów, zapisuj je w folderach i wstrzykuj prompty.
 Wersja 1.1 (Wyzwalacz Promptów): Wpisz # w dowolnym polu czatu AI, aby zobaczyć swoje prompty filtrowane w czasie rzeczywistym. Użyj ↓/↑ do nawigacji między sugestiami, Spacji do autouzupełniania lub wstrzyknięcia — bez otwierania panelu.
 Wersja 1.0: Pierwsze wydanie! Organizuj rozmowy z Gemini, Claude, ChatGPT, Copilot i Perplexity we wspólnych folderach. Pełna biblioteka promptów z wstawianiem jednym kliknięciem, skróty szybkiego zapisu, przeciąganie i upuszczanie, synchronizacja mobilna, akcje zbiorcze, grupy kart i obsługa 43 języków. Obsługa lokalnych LLM z konfigurowalnym URL (localhost i adresy LAN).

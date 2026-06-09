@@ -62,6 +62,7 @@ Dosare IA este un proiect open source dezvoltat cu pasiune. Transparența și re
 
 
 📢 ACTUALIZĂRI:
+Versiunea 1.2.2 (Remedieri și suport): Remedieri de erori și refactorizare internă de la ultima actualizare, pentru o stabilitate mai bună. Dacă Dosare IA vă este util, puteți susține dezvoltarea vizitând pagina Ko-fi: https://ko-fi.com/aifolders — vă mulțumim pentru sprijin!
 Versiunea 1.2 (DeepSeek): Lansați conversații noi pe DeepSeek direct din Modul Prompt, salvați-le în dosare și injectați prompturi.
 Versiunea 1.1 (Declanșatorul de Prompturi): Tastați # în orice câmp de chat AI pentru a vedea prompturile salvate filtrate în timp real. Folosiți ↓/↑ pentru a naviga prin sugestii, Spațiu pentru autocompletare sau injectare — fără a deschide vreodată panoul.
 Versiunea 1.0: Prima lansare! Organizați conversații din Gemini, Claude, ChatGPT, Copilot și Perplexity în dosare partajate. Bibliotecă completă de prompturi cu injectare în un clic, comenzi rapide de salvare, glisare și plasare, sincronizare mobilă, acțiuni în masă, grupuri de file și suport pentru 43 de limbi. Suport LLM local cu URL configurabil (localhost și adrese LAN).

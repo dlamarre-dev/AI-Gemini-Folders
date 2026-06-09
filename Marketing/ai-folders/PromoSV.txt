@@ -62,6 +62,7 @@ AI-mappar är ett öppen källkod-projekt byggt med passion. Transparens och res
 
 
 📢 UPPDATERINGAR:
+Version 1.2.2 (Buggfixar och support): Buggfixar och intern refaktorering sedan senaste uppdateringen, för förbättrad stabilitet. Om AI-mappar är till nytta för dig kan du stödja utvecklingen genom att besöka Ko-fi-sidan: https://ko-fi.com/aifolders — tack för ditt stöd!
 Version 1.2 (DeepSeek): Starta nya DeepSeek-konversationer direkt från Promptläge, spara dem i mappar och injicera promptar.
 Version 1.1 (Promptutlösare): Skriv # i valfritt AI-chattfält för att se dina sparade promptar filtrerade i realtid. Använd ↓/↑ för att navigera bland förslag, Blanksteg för att autokomplettera eller injicera — utan att öppna panelen.
 Version 1.0: Första utgåvan! Organisera konversationer från Gemini, Claude, ChatGPT, Copilot och Perplexity i delade mappar. Komplett promptbibliotek med ett-klicksinjektion, genvägar för snabbspara, dra och släpp, mobilsynkronisering, massåtgärder, flikgrupper och stöd för 43 språk.

@@ -62,6 +62,7 @@ AI-mappen is een open-sourceproject gebouwd met passie. Transparantie en respect
 
 
 📢 UPDATES:
+Versie 1.2.2 (Bugfixes en ondersteuning): Bugfixes en interne refactoring sinds de laatste update, voor verbeterde stabiliteit. Als AI-mappen u van nut is, kunt u de ontwikkeling ondersteunen door de Ko-fi-pagina te bezoeken: https://ko-fi.com/aifolders — bedankt voor uw steun!
 Versie 1.2 (DeepSeek): Start nieuwe DeepSeek-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts.
 Versie 1.1 (Prompt-trigger): Typ # in een willekeurig AI-chatveld om uw opgeslagen prompts in realtime gefilterd te zien. Gebruik ↓/↑ om door suggesties te navigeren, Spatie om automatisch aan te vullen of in te voegen — zonder het panel te openen.
 Versie 1.0: Eerste uitgave! Organiseer gesprekken van Gemini, Claude, ChatGPT, Copilot en Perplexity in gedeelde mappen. Volledige promptbibliotheek met één-klik-invoegen, snelopslagsnelkoppelingen, slepen en neerzetten, mobiele synchronisatie, bulkacties, tabgroepen en ondersteuning voor 43 talen. Lokale LLM-ondersteuning met configureerbare URL (localhost en LAN-adressen).

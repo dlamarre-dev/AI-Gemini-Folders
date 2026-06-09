@@ -62,6 +62,7 @@ AI složky jsou open source projekt vyvíjený s vášní. Transparentnost a res
 
 
 📢 AKTUALIZACE:
+Verze 1.2.2 (Opravy chyb a podpora): Opravy chyb a interní refaktoring od poslední aktualizace pro lepší stabilitu. Pokud vám AI složky pomáhají, můžete podpořit jejich vývoj návštěvou stránky Ko-fi: https://ko-fi.com/aifolders — děkujeme za vaši podporu!
 Verze 1.2 (DeepSeek): Zahajte nové konverzace na DeepSeek přímo z režimu výzev, ukládejte je do složek a vkládejte výzvy.
 Verze 1.1 (Spouštěč promptů): Zadejte # do libovolného pole chatu AI a zobrazte si uložené prompty filtrované v reálném čase. Pomocí ↓/↑ procházejte návrhy, mezerníkem je automaticky dokončete nebo vložte — bez otevření panelu.
 Verze 1.0: První vydání! Uspořádejte konverzace z Gemini, Claude, ChatGPT, Copilot a Perplexity do sdílených složek. Kompletní knihovna promptů s vkládáním jedním kliknutím, zkratky rychlého ukládání, přetahování, mobilní synchronizace, hromadné akce, skupiny karet a podpora 43 jazyků. Podpora lokálních LLM s konfigurovatelnou URL (localhost a LAN adresy).

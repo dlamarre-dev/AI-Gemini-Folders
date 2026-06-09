@@ -61,6 +61,7 @@ UI mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poš
 
 
 📢 AŽURIRANJA:
+Verzija 1.2.2 (Ispravci grešaka i podrška): Ispravci grešaka i unutarnje refaktoriranje od posljednjeg ažuriranja, za bolju stabilnost. Ako su ti UI mape korisne, možeš podržati njihov razvoj posjetom Ko-fi stranici: https://ko-fi.com/aifolders — hvala na podršci!
 Verzija 1.2 (DeepSeek): Pokrenite nove razgovore na DeepSeeku izravno iz načina upita, spremite ih u mape i ubacite upite.
 Verzija 1.1 (Okidač upita): Unesi # u bilo koje polje za chat s AI-jem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela.
 Verzija 1.0: Prvo izdanje! Organizirajte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u dijeljene mape. Potpuna biblioteka upita s umetanjem jednim klikom, prečaci za brzo spremanje, povuci i ispusti, mobilna sinkronizacija, skupne radnje, grupe kartica i podrška za 43 jezika.

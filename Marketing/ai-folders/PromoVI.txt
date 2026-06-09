@@ -62,6 +62,7 @@ Thư mục AI là dự án mã nguồn mở được xây dựng với niềm đ
 
 
 📢 CẬP NHẬT:
+Phiên bản 1.2.2 (Sửa lỗi & Hỗ trợ): Sửa lỗi và tái cấu trúc nội bộ kể từ lần cập nhật cuối, để đạt độ ổn định tốt hơn. Nếu Thư mục AI hữu ích với bạn, bạn có thể hỗ trợ phát triển bằng cách truy cập trang Ko-fi: https://ko-fi.com/aifolders — cảm ơn vì sự hỗ trợ của bạn!
 Phiên bản 1.2 (DeepSeek): Bắt đầu cuộc trò chuyện DeepSeek mới trực tiếp từ Chế độ Prompt, lưu vào thư mục và chèn prompt.
 Phiên bản 1.1 (Kích hoạt Prompt): Nhập # vào bất kỳ trường chat AI nào để xem các prompt đã lưu được lọc theo thời gian thực. Dùng ↓/↑ để điều hướng gợi ý, phím Cách để tự hoàn thành hoặc chèn — mà không cần mở bảng.
 Phiên bản 1.0: Ra mắt lần đầu! Tổ chức các cuộc trò chuyện từ Gemini, Claude, ChatGPT, Copilot và Perplexity vào các thư mục chung. Thư viện prompt đầy đủ với chèn một cú nhấp, phím tắt lưu nhanh, kéo và thả, đồng bộ di động, hành động hàng loạt, nhóm tab và hỗ trợ 43 ngôn ngữ. Hỗ trợ LLM cục bộ với URL có thể cấu hình (localhost và địa chỉ LAN).

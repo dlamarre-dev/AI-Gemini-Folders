@@ -62,6 +62,7 @@ Dossiers IA est un projet open source développé avec passion. La transparence 
 
 
 📢 MISES À JOUR :
+Version 1.2.2 (Correctifs & Soutien) : Correctifs de bogues et refactorisations internes depuis la dernière mise à jour, pour une meilleure stabilité. Si Dossiers IA vous est utile, vous pouvez soutenir son développement en visitant la page Ko-fi : https://ko-fi.com/aifolders — merci pour votre soutien !
 Version 1.2 (DeepSeek) : Lancez de nouvelles conversations DeepSeek directement depuis le Mode Prompts, sauvegardez-les dans des dossiers et injectez vos prompts.
 Version 1.1 (Déclenchement de prompt) : Tapez # dans n'importe quel champ de saisie IA pour voir vos prompts filtrés en temps réel. Utilisez ↓/↑ pour naviguer entre les suggestions, Espace pour autocompléter ou injecter — sans jamais ouvrir le panneau.
 Version 1.0 : Première publication ! Organisez vos conversations depuis Gemini, Claude, ChatGPT, Copilot et Perplexity dans des dossiers partagés. Bibliothèque de prompts complète avec injection en un clic, raccourcis de sauvegarde rapide, glisser-déposer, synchronisation mobile, actions groupées, groupes d'onglets et prise en charge de 43 langues. Support des LLM locaux avec URL configurable (localhost et adresses LAN).

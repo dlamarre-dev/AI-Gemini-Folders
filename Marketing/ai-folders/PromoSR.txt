@@ -61,6 +61,7 @@ VI fascikle je projekat otvorenog koda izgrađen sa strašću. Transparentnost i
 
 
 📢 AŽURIRANJA:
+Verzija 1.2.2 (Ispravke grešaka i podrška): Ispravke grešaka i interno refaktorisanje od poslednjeg ažuriranja, za bolju stabilnost. Ako su vam VI fascikle korisne, možete podržati razvoj posjetom stranici Ko-fi: https://ko-fi.com/aifolders — hvala vam na podršci!
 Verzija 1.2 (DeepSeek): Pokrenite nove razgovore na DeepSeeku direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove.
 Verzija 1.1 (Okidač promptova): Unesi # u bilo koje polje AI čavrljanja da u realnom vremenu vidiš filtrirane sačuvane promptove. Koristi ↓/↑ za navigaciju kroz predloge, razmak za autodovršavanje ili ubacivanje — bez otvaranja panela.
 Verzija 1.0: Prvo izdanje! Organizujte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u deljene fascikle. Potpuna biblioteka promptova sa ubacivanjem jednim klikom, prečice za brzo čuvanje, prevlačenje i puštanje, mobilna sinhronizacija, masovne radnje, grupe kartica i podrška za 43 jezika.

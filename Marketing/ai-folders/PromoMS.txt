@@ -61,6 +61,7 @@ Folder AI ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelus
 
 
 📢 KEMAS KINI:
+Versi 1.2.2 (Pembetulan Pepijat & Sokongan): Pembetulan pepijat dan penstrukturan semula dalaman sejak kemas kini terakhir, untuk kestabilan yang lebih baik. Jika Folder AI berguna kepada anda, anda boleh menyokong pembangunannya dengan melawati halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas sokongan anda!
 Versi 1.2 (DeepSeek): Mulakan perbualan DeepSeek baharu terus dari Mod Prompt, simpan dalam folder dan suntik prompt.
 Versi 1.1 (Pencetus Prompt): Taip # dalam mana-mana medan chat AI untuk melihat arahan tersimpan anda ditapis dalam masa nyata. Gunakan ↓/↑ untuk navigasi cadangan, Ruang untuk autoisi atau suntik — tanpa membuka panel.
 Versi 1.0: Keluaran pertama! Susun perbualan dari Gemini, Claude, ChatGPT, Copilot dan Perplexity dalam folder berkongsi. Pustaka arahan lengkap dengan suntikan satu klik, pintasan simpan pantas, seret dan lepas, penyegerakan mudah alih, tindakan pukal, kumpulan tab dan sokongan untuk 43 bahasa.

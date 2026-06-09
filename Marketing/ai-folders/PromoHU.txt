@@ -62,6 +62,7 @@ A MI mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az át
 
 
 📢 FRISSÍTÉSEK:
+1.2.2-es verzió (Hibajavítások és támogatás): Hibajavítások és belső átalakítások az utolsó frissítés óta, a jobb stabilitás érdekében. Ha a MI mappák hasznos Önnek, támogathatja fejlesztését a Ko-fi oldal felkeresésével: https://ko-fi.com/aifolders — köszönjük a támogatást!
 1.2-es verzió (DeepSeek): Indítson új DeepSeek-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat.
 1.1-es verzió (Prompt-kiváltó): Írjon # jelet bármely AI-chat mezőbe, hogy valós időben szűrve lássa mentett promptjait. Használja a ↓/↑ billentyűket a javaslatok közötti navigáláshoz, a szóközt az automatikus kiegészítéshez vagy beillesztéshez — a panel megnyitása nélkül.
 1.0-s verzió: Első kiadás! Rendszerezze a Gemini, Claude, ChatGPT, Copilot és Perplexity beszélgetéseit közös mappákban. Teljes prompt-könyvtár egy kattintásos beillesztéssel, gyors mentési parancsikonok, húzás és ejtés, mobilszinkronizáció, tömeges műveletek, lapcsoportok és 43 nyelv támogatása.

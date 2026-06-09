@@ -61,6 +61,7 @@ AI kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sin
 
 
 📢 UUENDUSED:
+Versioon 1.2.2 (Veaparandused ja toetus): Veaparandused ja sisemine refaktoring alates viimasest uuendusest, parema stabiilsuse tagamiseks. Kui AI kaustad on teile kasulik, saate selle arendust toetada, külastades Ko-fi lehte: https://ko-fi.com/aifolders — täname teie toetuse eest!
 Versioon 1.2 (DeepSeek): Alustage uusi DeepSeek vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid.
 Versioon 1.1 (Viipade käivitaja): Sisestage # mis tahes AI vestlusväljale, et näha salvestatud viipasid reaalajas filtreerituna. Kasutage ↓/↑ soovituste vahel liikumiseks, Tühikut automaatseks täitmiseks või lisamiseks — ilma paneeli avamata.
 Versioon 1.0: Esimene väljalase! Korraldage Gemini, Claude, ChatGPT, Copilot ja Perplexity vestlused jagatud kaustadesse. Täielik viipade teek ühe klõpsuga lisamisega, kiirsalvestuse otseteed, lohistamine, mobiilsünkroniseerimine, hulgioperatsioonid, vahelehtede rühmad ja tugi 43 keelele.

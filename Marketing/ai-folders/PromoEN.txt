@@ -62,6 +62,7 @@ Built with privacy at its core. It only requests access to the 6 supported AI si
 AI Folders is an open source project built with passion. Transparency and respect for your privacy are our top priorities. Are you a developer or just curious? Browse the code, follow the changelog, or contribute on GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 VERSION HISTORY:
+Version 1.2.2 (Bug Fixes & Support): Bug fixes and internal refactoring since the last update, for improved stability. If AI Folders is useful to you, you can support its development by visiting the Ko-fi page: https://ko-fi.com/aifolders — thank you for your support!
 Version 1.2 (DeepSeek): Launch new DeepSeek conversations directly from Prompt Mode, save and organize them in folders, and inject prompts.
 Version 1.1 (Prompt Trigger): Type # in any AI chat field to see your saved prompts filtered in real time. Use ↓/↑ to cycle through suggestions, Space to autocomplete or inject — without ever opening the panel.
 Version 1.0: Initial release! Organize conversations from Gemini, Claude, ChatGPT, Copilot, and Perplexity in shared folders. Full prompt library with one-click injection, quick-save shortcuts, drag & drop, mobile sync, bulk actions, tab groups, and support for 43 languages. Local LLM support with configurable URL (localhost and LAN addresses).

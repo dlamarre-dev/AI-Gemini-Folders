@@ -62,6 +62,7 @@ AI-kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvy
 
 
 📢 PÄIVITYKSET:
+Versio 1.2.2 (Vikakorjaukset ja tuki): Vikakorjauksia ja sisäistä refaktorointia edellisen päivityksen jälkeen, paremman vakauden saavuttamiseksi. Jos AI-kansiot on sinulle hyödyllinen, voit tukea sen kehittämistä vierailemalla Ko-fi-sivulla: https://ko-fi.com/aifolders — kiitos tuestasi!
 Versio 1.2 (DeepSeek): Aloita uusia DeepSeek-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet.
 Versio 1.1 (Kehotteen laukaisin): Kirjoita # mihin tahansa AI-chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia.
 Versio 1.0: Ensijulkaisu! Järjestä Geminin, Clauden, ChatGPT:n, Copilotin ja Perplexityn keskustelut jaetuiksi kansioiksi. Täydellinen kehotekirjasto yhdellä napsautuksella, pikaentallenteen pikanäppäimet, vedä ja pudota, mobiilisynkronointi, joukkotoiminnot, välilehtiryhmät ja tuki 43 kielelle.

@@ -62,6 +62,7 @@ Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e
 
 
 📢 AGGIORNAMENTI:
+Versione 1.2.2 (Correzioni e supporto): Correzioni di bug e refactoring interno dall'ultimo aggiornamento, per una maggiore stabilità. Se Cartelle IA ti è utile, puoi supportarne lo sviluppo visitando la pagina Ko-fi: https://ko-fi.com/aifolders — grazie per il tuo supporto!
 Versione 1.2 (DeepSeek): Avvia nuove conversazioni DeepSeek direttamente dalla Modalità Prompt, salvale in cartelle e inietta prompt.
 Versione 1.1 (Prompt Trigger): Digita # in qualsiasi campo chat AI per vedere i tuoi prompt filtrati in tempo reale. Usa ↓/↑ per navigare tra i suggerimenti, Spazio per autocompletare o iniettare — senza mai aprire il pannello.
 Versione 1.0: Prima pubblicazione! Organizza conversazioni da Gemini, Claude, ChatGPT, Copilot e Perplexity in cartelle condivise. Libreria prompt completa con iniezione in un clic, scorciatoie di salvataggio rapido, drag & drop, sincronizzazione mobile, azioni in blocco, gruppi di schede e supporto per 43 lingue. Supporto LLM locale con URL configurabile (localhost e indirizzi LAN).

@@ -62,6 +62,7 @@ Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal.
 
 
 📢 MGA UPDATE:
+Bersyon 1.2.2 (Mga Ayos sa Bug at Suporta): Mga ayos sa bug at panloob na refactoring mula noong huling update, para sa pinahusay na katatagan. Kung ang Mga AI Folder ay kapaki-pakinabang sa iyo, maaari mong suportahan ang pagbuo nito sa pamamagitan ng pagbisita sa Ko-fi page: https://ko-fi.com/aifolders — salamat sa iyong suporta!
 Bersyon 1.2 (DeepSeek): Magsimula ng mga bagong pag-uusap sa DeepSeek nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt.
 Bersyon 1.1 (Prompt Trigger): I-type ang # sa anumang AI chat field para makita ang iyong mga na-save na prompt na na-filter sa real time. Gamitin ang ↓/↑ para mag-navigate sa mga mungkahi, Space para mag-autocomplete o mag-inject — nang hindi binubuksan ang panel.
 Bersyon 1.0: Unang inilabas! Ayusin ang mga pag-uusap mula sa Gemini, Claude, ChatGPT, Copilot, at Perplexity sa mga ibinabahaging folder. Kumpletong prompt library na may one-click injection, mga shortcut ng mabilis na pag-save, drag at drop, mobile sync, bulk actions, tab groups, at suporta para sa 43 na wika.
