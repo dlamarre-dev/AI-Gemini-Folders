@@ -34,17 +34,15 @@ function el(tag, props = {}, ...children) {
 
 // ── bar chart (plain HTML) ────────────────────────────────────────────────────
 
-function renderBarChart(title, data, colorClass) {
+function renderBarChart(title, data) {
   if (!data) return null;
   const entries = Object.entries(data).sort((a, b) => b[1] - a[1]);
-  const max = entries[0]?.[1] ?? 1;
 
   const rows = entries.map(([label, pct]) =>
     el('div', { class: 'bar-row' },
       el('span', { class: 'bar-label', title: label }, label),
       el('div', { class: 'bar-track' },
-        el('div', { class: `bar-fill${colorClass ? ' ' + colorClass : ''}`,
-                    style: { width: `${(pct / max) * 100}%` } })
+        el('div', { class: 'bar-fill', style: { width: `${pct}%` } })
       ),
       el('span', { class: 'bar-pct' }, pct + '%')
     )
@@ -139,12 +137,12 @@ function renderItem(itemId, itemData) {
   // Breakdown bar charts
   const bdRow = el('div', { class: 'breakdowns' });
   const bds = [
-    renderBarChart('Installs by country',  latest.installs_by_country,  ''),
-    renderBarChart('Installs by OS',       latest.installs_by_os,       ''),
-    renderBarChart('Installs by language', latest.installs_by_language, 'accent'),
-    renderBarChart('Users by country',     latest.users_by_country,     ''),
-    renderBarChart('Users by OS',          latest.users_by_os,          ''),
-    renderBarChart('Users by language',    latest.users_by_language,    'accent'),
+    renderBarChart('Installs by country',  latest.installs_by_country),
+    renderBarChart('Installs by OS',       latest.installs_by_os),
+    renderBarChart('Installs by language', latest.installs_by_language),
+    renderBarChart('Users by country',     latest.users_by_country),
+    renderBarChart('Users by OS',          latest.users_by_os),
+    renderBarChart('Users by language',    latest.users_by_language),
   ].filter(Boolean);
 
   if (bds.length) {

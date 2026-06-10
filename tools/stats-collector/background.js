@@ -2,7 +2,7 @@
 // lib/github.js is loaded first (see manifest background.scripts), so
 // commitCwsEntry is available as a global here.
 
-const SETTLE_MS    = 3500;
+const SETTLE_MS    = 7000; // breakdown SVG charts (installs/uninstalls by country/lang/os) can render slowly
 const TAB_LOAD_MS  = 60000; // tab load timeout; CWS analytics can be slow
 const LOGIN_RE     = /accounts\.google|google\.com\/ServiceLogin|SignIn/i;
 const SCRAPE_FILES = ['lib/selectors.js', 'lib/normalize.js', 'content/scrape.js'];
