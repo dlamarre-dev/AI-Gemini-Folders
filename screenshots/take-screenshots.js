@@ -113,14 +113,14 @@ const BG_OVERLAY_HTML = `<div style="position:absolute;inset:0;pointer-events:no
   <svg style="position:absolute;left:0;top:0;" width="1280" height="800" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <filter id="gf-noise" color-interpolation-filters="linearRGB">
-        <feTurbulence type="fractalNoise" baseFrequency="0.55 0.25" numOctaves="4" seed="17" stitchTiles="stitch"/>
-        <feColorMatrix type="matrix" values="0 0 0 0 0.08  0 0 0 0 0.20  0 0 0 0 0.76  0 0 0 0.40 0"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.35 0.16" numOctaves="3" seed="17" stitchTiles="stitch"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.08  0 0 0 0 0.20  0 0 0 0 0.76  0 0 0 0.22 0"/>
       </filter>
     </defs>
     <rect width="1280" height="800" filter="url(#gf-noise)"/>
   </svg>
-  <div style="position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,0,0,0.72) 3px,rgba(0,0,0,0.72) 5px);"></div>
-  <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0px,transparent 79px,rgba(0,140,255,0.05) 79px,rgba(0,140,255,0.05) 80px);"></div>
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,rgba(0,0,0,0.4) 6px,transparent 12px);"></div>
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0px,rgba(0,140,255,0.06) 60px,transparent 120px);"></div>
 </div>`;
 
 // ─── Scattered AI logo background (AI Folders only) ──────────────────────────
@@ -179,7 +179,7 @@ const LOGOS_BG_HTML = EXTENSION === 'ai-folders' ? (() => {
       html += `<div style="position:absolute;left:${x}px;top:${y}px;opacity:${opacity};pointer-events:none;">${maker(sz)}</div>`;
     }
   }
-  return html;
+  return `<div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;direction:ltr;">${html}</div>`;
 })() : '';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
