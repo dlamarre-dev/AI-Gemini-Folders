@@ -54,16 +54,29 @@ function isTimeSeries(svgEl) {
  * SVG text structure:
  *   [ y-axis values...,  category names (N),  N% values ]
  *
- * Note: percentages are NOT deduplicated even when two categories tie on
- * the same rounded value (e.g. two entries both at "1%") — each is a
- * distinct, legitimate data point and must be kept.
+ * Long labels can be rendered as a separate truncated+concatenated node
+ * (e.g. "anglais (États-U...anglais (États-Unis)") immediately followed by
+ * the full label again — cleanSvgText reduces both to the same string, so
+ * that immediate repeat is dropped here. Percentages are NOT deduplicated
+ * this way: two categories tying on the same rounded value (e.g. two
+ * entries both at "1%") are distinct, legitimate data points and must be
+ * kept even though they're equal and adjacent.
  *
  * Returns null if the SVG doesn't match the expected pattern.
  */
 function parseSvgBreakdown(svgEl) {
-  const texts = Array.from(svgEl.querySelectorAll(SEL.SVG_TEXT_NODES))
-    .map(el => cleanSvgText(el.textContent.trim()))
+  const rawTexts = Array.from(svgEl.querySelectorAll(SEL.SVG_TEXT_NODES))
+    .map(el => el.textContent.trim())
     .filter(Boolean);
+
+  const texts = [];
+  for (let i = 0; i < rawTexts.length; i++) {
+    const cleaned = cleanSvgText(rawTexts[i]);
+    const isEllipsisDup = texts.length > 0
+      && cleaned === texts[texts.length - 1]
+      && (rawTexts[i].includes('...') || rawTexts[i - 1].includes('...'));
+    if (!isEllipsisDup) texts.push(cleaned);
+  }
 
   const firstPctIdx = texts.findIndex(t => t.endsWith('%'));
   if (firstPctIdx === -1) return null;
