@@ -11,12 +11,41 @@
           "uninstalls": 317,
           "weekly_users": 677,
           "impressions": 2360,
-          "installs_by_country": null,
-          "installs_by_language": null,
-          "installs_by_os": null,
-          "uninstalls_by_country": null,
-          "uninstalls_by_language": null,
-          "uninstalls_by_os": null,
+          "installs_by_country": {
+            "United States": 16,
+            "Spain": 15,
+            "Japan": 11,
+            "Other": 58
+          },
+          "installs_by_language": {
+            "Korean": 23,
+            "Japanese": 13,
+            "Other": 52
+          },
+          "installs_by_os": {
+            "Windows": 76,
+            "Mac OS": 13,
+            "ChromeOS": 8,
+            "Other": 3
+          },
+          "uninstalls_by_country": {
+            "Spain": 16,
+            "South Korea": 15,
+            "Japan": 13,
+            "Other": 56
+          },
+          "uninstalls_by_language": {
+            "Spanish": 20,
+            "English (United States)": 16,
+            "Korean": 15,
+            "Other": 49
+          },
+          "uninstalls_by_os": {
+            "Windows": 83,
+            "Mac OS": 15,
+            "Linux": 2,
+            "Other": 1
+          },
           "users_by_country": {
             "Spain": 23,
             "Japan": 12,
@@ -2640,15 +2669,34 @@
             "Japan": 7,
             "Other": 27
           },
-          "installs_by_language": null,
-          "installs_by_os": null,
+          "installs_by_language": {
+            "Spanish": 24,
+            "English (United States)": 17,
+            "Korean": 10,
+            "Other": 48
+          },
+          "installs_by_os": {
+            "Windows": 56,
+            "ChromeOS": 29,
+            "Mac OS": 9,
+            "Other": 5
+          },
           "uninstalls_by_country": {
             "Canada": 21,
             "Taiwan": 14,
             "Other": 43
           },
-          "uninstalls_by_language": null,
-          "uninstalls_by_os": null,
+          "uninstalls_by_language": {
+            "English (United States)": 44,
+            "Spanish": 25,
+            "English (United Kingdom)": 13,
+            "Other": 19
+          },
+          "uninstalls_by_os": {
+            "Windows": 69,
+            "Mac OS": 19,
+            "Linux": 13
+          },
           "users_by_country": {
             "Spain": 30,
             "Canada": 16,
