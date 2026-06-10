@@ -18,8 +18,8 @@
             "Other": 58
           },
           "installs_by_language": {
-            "Korean": 23,
-            "Japanese": 13,
+            "Japanese": 23,
+            "Korean": 13,
             "Other": 52
           },
           "installs_by_os": {
@@ -2689,7 +2689,7 @@
           "uninstalls_by_language": {
             "English (United States)": 44,
             "Spanish": 25,
-            "Chinese (Taiwan)": 13,
+            "English (United Kingdom)": 13,
             "Other": 19
           },
           "uninstalls_by_os": {
