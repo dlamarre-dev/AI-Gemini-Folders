@@ -49,47 +49,21 @@ function isTimeSeries(svgEl) {
 }
 
 /**
- * Collapse runs of consecutive identical strings, halving their length.
- *
- * Each text/value in the chart is duplicated by an adjacent accessibility
- * "title" node (text+title pairs), so every logical entry appears twice in
- * a row. A naive "drop consecutive duplicates" filter collapses a whole run
- * to a single item, which over-collapses when two *different* entries
- * happen to share the same value (e.g. two categories both rounding to the
- * same percentage) — their two text/title pairs merge into one run of 4
- * identical strings and get reduced to 1 instead of 2, shifting every
- * subsequent value out of alignment with its category.
- * Keeping half of each run (rounded up) preserves one copy per logical entry.
- */
-function collapseDoubledRuns(rawTexts) {
-  const out = [];
-  let i = 0;
-  while (i < rawTexts.length) {
-    let j = i + 1;
-    while (j < rawTexts.length && rawTexts[j] === rawTexts[i]) j++;
-    const runLen = j - i;
-    const keep = Math.ceil(runLen / 2);
-    for (let k = 0; k < keep; k++) out.push(rawTexts[i]);
-    i = j;
-  }
-  return out;
-}
-
-/**
  * Parse a single breakdown SVG (country / language / OS) into { category: pct% }.
  *
- * SVG text structure (after dedup):
+ * SVG text structure:
  *   [ y-axis values...,  category names (N),  N% values ]
+ *
+ * Note: percentages are NOT deduplicated even when two categories tie on
+ * the same rounded value (e.g. two entries both at "1%") — each is a
+ * distinct, legitimate data point and must be kept.
  *
  * Returns null if the SVG doesn't match the expected pattern.
  */
 function parseSvgBreakdown(svgEl) {
-  const rawTexts = Array.from(svgEl.querySelectorAll(SEL.SVG_TEXT_NODES))
+  const texts = Array.from(svgEl.querySelectorAll(SEL.SVG_TEXT_NODES))
     .map(el => cleanSvgText(el.textContent.trim()))
     .filter(Boolean);
-
-  // Collapse text/title duplicate pairs (see collapseDoubledRuns)
-  const texts = collapseDoubledRuns(rawTexts);
 
   const firstPctIdx = texts.findIndex(t => t.endsWith('%'));
   if (firstPctIdx === -1) return null;
@@ -209,7 +183,7 @@ function parseActiveVersions(doc) {
 
 if (typeof module !== 'undefined') {
   module.exports = {
-    dayIndexToISO, cleanSvgText, collapseDoubledRuns, parseDateRange,
+    dayIndexToISO, cleanSvgText, parseDateRange,
     isTimeSeries, parseSvgBreakdown, classifyBreakdown, parseAllBreakdowns, pickSection,
     parsePeriodTotals, parseListingRows, parseActiveVersions,
   };
