@@ -4,47 +4,19 @@
     "jffchdehoapigpmifkmleglfimjiilik": {
       "history": [
         {
-          "collected_at": "2026-06-08",
-          "period_start": "2026-05-09",
-          "period_end": "2026-06-07",
-          "installs": 702,
-          "uninstalls": 301,
-          "weekly_users": 623,
-          "impressions": 2270,
-          "installs_by_country": {
-            "United States": 17,
-            "Spain": 15,
-            "Japan": 11,
-            "Other": 57
-          },
-          "installs_by_language": {
-            "English (United States)": 24,
-            "Japanese": 13,
-            "Other": 51
-          },
-          "installs_by_os": {
-            "Windows": 77,
-            "Mac OS": 12,
-            "ChromeOS": 9,
-            "Other": 2
-          },
-          "uninstalls_by_country": {
-            "Spain": 17,
-            "South Korea": 15,
-            "Japan": 13,
-            "Other": 56
-          },
-          "uninstalls_by_language": {
-            "English (United States)": 21,
-            "Korean": 15,
-            "Other": 49
-          },
-          "uninstalls_by_os": {
-            "Windows": 83,
-            "Mac OS": 15,
-            "Linux": 2,
-            "Other": 1
-          },
+          "collected_at": "2026-06-10",
+          "period_start": "2026-05-11",
+          "period_end": "2026-06-09",
+          "installs": 741,
+          "uninstalls": 317,
+          "weekly_users": 677,
+          "impressions": 2360,
+          "installs_by_country": null,
+          "installs_by_language": null,
+          "installs_by_os": null,
+          "uninstalls_by_country": null,
+          "uninstalls_by_language": null,
+          "uninstalls_by_os": null,
           "users_by_country": {
             "Spain": 23,
             "Japan": 12,
@@ -52,10 +24,10 @@
             "Other": 54
           },
           "users_by_language": {
-            "Spanish": 33,
+            "Spanish": 32,
             "English (United States)": 15,
             "Japanese": 13,
-            "Other": 39
+            "Other": 40
           },
           "users_by_os": {
             "Mac OS": 83,
@@ -2635,70 +2607,69 @@
           "uninstalls": 5,
           "weekly_users": 623,
           "impressions": 198
+        },
+        {
+          "date": "2026-06-07",
+          "installs": 24,
+          "uninstalls": 9,
+          "weekly_users": 643,
+          "impressions": 325
+        },
+        {
+          "date": "2026-06-08",
+          "installs": 39,
+          "uninstalls": 15,
+          "weekly_users": 677,
+          "impressions": 418
         }
       ]
     },
     "kjmgfajofolnfeaahchpmkpecfimcppf": {
       "history": [
         {
-          "collected_at": "2026-06-08",
-          "period_start": "2026-05-09",
-          "period_end": "2026-06-07",
-          "installs": 61,
-          "uninstalls": 10,
-          "weekly_users": 23,
-          "impressions": 125,
+          "collected_at": "2026-06-10",
+          "period_start": "2026-05-11",
+          "period_end": "2026-06-09",
+          "installs": 75,
+          "uninstalls": 16,
+          "weekly_users": 26,
+          "impressions": 146,
           "installs_by_country": {
-            "Spain": 60,
+            "United States": 58,
+            "Spain": 8,
             "Japan": 7,
             "Other": 27
           },
-          "installs_by_language": {
-            "Spanish": 22,
-            "English (United States)": 13,
-            "Chinese (China)": 9,
-            "Other": 57
-          },
-          "installs_by_os": {
-            "Windows": 56,
-            "ChromeOS": 33,
-            "Mac OS": 7,
-            "Other": 5
-          },
+          "installs_by_language": null,
+          "installs_by_os": null,
           "uninstalls_by_country": {
-            "Taiwan": 25,
-            "Sweden": 13,
-            "Other": 38
+            "Canada": 21,
+            "Taiwan": 14,
+            "Other": 43
           },
-          "uninstalls_by_language": {
-            "Chinese (Taiwan)": 30,
-            "Other": 20
-          },
-          "uninstalls_by_os": {
-            "Windows": 70,
-            "Linux": 20,
-            "Mac OS": 10
-          },
+          "uninstalls_by_language": null,
+          "uninstalls_by_os": null,
           "users_by_country": {
             "Spain": 30,
             "Canada": 16,
-            "South Korea": 9,
+            "South Korea": 10,
             "Other": 44
           },
           "users_by_language": {
             "Spanish": 33,
-            "French": 14,
-            "Korean": 9,
-            "Other": 43
+            "French": 13,
+            "Korean": 10,
+            "Other": 44
           },
           "users_by_os": {
-            "Windows": 66,
-            "Mac OS": 27,
+            "Windows": 67,
+            "Mac OS": 28,
             "ChromeOS": 6
           },
           "active_versions": [
             "1.0.0.0",
-            "1.1.0.0"
+            "1.1.0.0",
+            "1.2.1.0"
           ]
         }
       ],
@@ -5263,6 +5234,20 @@
           "installs": 2,
           "weekly_users": 23,
           "impressions": 36
+        },
+        {
+          "date": "2026-06-07",
+          "installs": 4,
+          "uninstalls": 1,
+          "weekly_users": 23,
+          "impressions": 46
+        },
+        {
+          "date": "2026-06-08",
+          "installs": 10,
+          "uninstalls": 5,
+          "weekly_users": 26,
+          "impressions": 65
         }
       ]
     }
