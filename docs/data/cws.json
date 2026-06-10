@@ -18,8 +18,9 @@
             "Other": 58
           },
           "installs_by_language": {
-            "Japanese": 23,
+            "Spanish": 23,
             "Korean": 13,
+            "Japanese": 13,
             "Other": 52
           },
           "installs_by_os": {
@@ -59,8 +60,9 @@
             "Other": 40
           },
           "users_by_os": {
-            "Mac OS": 83,
-            "Linux": 15,
+            "Windows": 83,
+            "Mac OS": 15,
+            "Linux": 1,
             "Other": 1
           },
           "active_versions": [
@@ -2683,6 +2685,7 @@
           },
           "uninstalls_by_country": {
             "Canada": 21,
+            "Spain": 21,
             "Taiwan": 14,
             "Other": 43
           },
