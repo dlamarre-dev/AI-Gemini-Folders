@@ -10,6 +10,116 @@
 // Loaded as a classic script before popup.js; popup.js calls
 // initPopupCommon({ exportFilename }) from its DOMContentLoaded handler.
 
+// Applies the document language, RTL direction, and all the i18n text/title/
+// placeholder assignments that are identical in both extensions' popups.
+// Extension-specific labels (GF's gem button, new-conversation button, etc.)
+// stay in each popup.js. Call once at the start of DOMContentLoaded.
+function applyCommonI18n() {
+  // Reflect the UI language on the root element for a11y / hyphenation.
+  document.documentElement.lang = chrome.i18n.getUILanguage();
+
+  // RTL support — set dir="rtl" on body (not html) to avoid scroll-origin issues.
+  const uiLang = chrome.i18n.getUILanguage();
+  if (['ar', 'he', 'ur', 'fa'].some(l => uiLang.startsWith(l))) {
+    document.body.setAttribute('dir', 'rtl');
+  }
+
+  document.getElementById('appTitle').textContent = chrome.i18n.getMessage("appTitle");
+  document.getElementById('searchInput').placeholder = chrome.i18n.getMessage("searchPlaceholder");
+  document.getElementById('folderName').placeholder = chrome.i18n.getMessage("folderPlaceholder");
+  document.getElementById('chatTitle').placeholder = chrome.i18n.getMessage("chatPlaceholder");
+  document.getElementById('saveBtn').textContent = chrome.i18n.getMessage("saveBtn");
+  document.getElementById('status').textContent = chrome.i18n.getMessage("statusSaved");
+  document.getElementById('noResults').textContent = chrome.i18n.getMessage("noResults");
+  document.getElementById('exportBtn').textContent = chrome.i18n.getMessage("exportBtn");
+  document.getElementById('importBtn').textContent = chrome.i18n.getMessage("importBtn");
+  document.getElementById('toggleAddPanelBtn').textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");
+  document.getElementById('sortNewest').textContent = chrome.i18n.getMessage("sortNewest");
+  document.getElementById('sortOldest').textContent = chrome.i18n.getMessage("sortOldest");
+  document.getElementById('sortAlpha').textContent = chrome.i18n.getMessage("sortAlpha");
+  document.getElementById('promptSearchInput').placeholder = chrome.i18n.getMessage("promptSearchPlaceholder") || "🔍 Search a prompt...";
+  document.getElementById('promptSortNewest').textContent = chrome.i18n.getMessage("sortNewest");
+  document.getElementById('promptSortOldest').textContent = chrome.i18n.getMessage("sortOldest");
+  document.getElementById('promptSortAlpha').textContent = chrome.i18n.getMessage("sortAlpha");
+  document.getElementById('modeFolderBtn').title = chrome.i18n.getMessage("folderModeTitle") || "Folder Mode";
+  document.getElementById('modePromptBtn').title = chrome.i18n.getMessage("promptModeTitle") || "Prompt Mode";
+  document.getElementById('toggleAddPromptPanelBtn').textContent = "➕ " + (chrome.i18n.getMessage("promptAddBtn") || "Add Prompt");
+  document.getElementById('savePromptBtn').textContent = chrome.i18n.getMessage("saveBtn") || "Save";
+  document.getElementById('promptTitle').placeholder = chrome.i18n.getMessage("promptTitlePlaceholder") || "Prompt Title";
+  document.getElementById('promptText').placeholder = chrome.i18n.getMessage("promptTextPlaceholder") || "Write your prompt here...";
+  document.getElementById('newFolderBtn').title = chrome.i18n.getMessage("btnNewFolder");
+}
+window.applyCommonI18n = applyCommonI18n;
+
+// Wires the "Save current conversation" button. The per-extension differences
+// are injected via opts:
+//   opts.getSiteKey(tab)       -> a site key string, or null when unsupported
+//   opts.unsupportedMessageKey -> i18n key for the "wrong site" alert
+//   opts.tagSite               -> when true, stamps the entry with `site: siteKey`
+//                                 (AF tags per-service; GF stores no tag)
+function initSaveConversation(opts) {
+  const saveBtn = document.getElementById('saveBtn');
+  const folderNameInput = document.getElementById('folderName');
+  const chatTitleInput = document.getElementById('chatTitle');
+  const searchInput = document.getElementById('searchInput');
+  const statusDiv = document.getElementById('status');
+  const toggleAddPanelBtn = document.getElementById('toggleAddPanelBtn');
+  const addConversationPanel = document.getElementById('addConversationPanel');
+
+  let isSaving = false;
+  saveBtn.addEventListener('click', async () => {
+    if (isSaving) return;
+    isSaving = true;
+
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const siteKey = opts.getSiteKey(tab);
+    if (!siteKey) {
+      await window.showCustomModal({
+        title: chrome.i18n.getMessage(opts.unsupportedMessageKey) || "Please use this extension on a supported AI site.",
+        type: 'alert'
+      });
+      isSaving = false;
+      return;
+    }
+
+    const folderName = folderNameInput.value.trim() || chrome.i18n.getMessage("defaultFolder");
+    const finalChatTitle = chatTitleInput.value.trim() || chrome.i18n.getMessage("defaultTitle");
+    const chatUrl = tab.url;
+
+    loadData({ folders: {} }, (data) => {
+      let folders = data.folders;
+      if (!folders[folderName]) folders[folderName] = [];
+
+      const cleanTargetUrl = normalizeUrl(chatUrl);
+      const isDuplicate = folders[folderName].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
+      if (!isDuplicate) {
+        const chatEntry = { title: finalChatTitle, url: chatUrl, timestamp: Date.now() };
+        if (opts.tagSite) chatEntry.site = siteKey;
+        folders[folderName].push(chatEntry);
+      }
+
+      saveData({ folders }, (err) => {
+        isSaving = false;
+        if (err) {
+          statusDiv.textContent = chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.';
+          statusDiv.style.color = 'red';
+          statusDiv.style.display = "block";
+          setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, 4000);
+          return;
+        }
+        folderNameInput.value = "";
+        addConversationPanel.style.display = 'none';
+        toggleAddPanelBtn.textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");
+        searchInput.value = "";
+        statusDiv.style.display = "block";
+        setTimeout(() => { statusDiv.style.display = "none"; }, 2000);
+        if (window.displayFolders) window.displayFolders(folderName);
+      });
+    });
+  });
+}
+window.initSaveConversation = initSaveConversation;
+
 function initPopupCommon(config) {
   const exportFilename = (config && config.exportFilename) || 'folders_backup.json';
 

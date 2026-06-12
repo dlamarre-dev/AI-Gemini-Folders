@@ -11,48 +11,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     STATUS:  2000,
     PROMO:   4000,
   };
-  // RTL support — set dir="rtl" on body (not html) to avoid scroll-origin issues
-  const uiLang = chrome.i18n.getUILanguage();
-  if (['ar', 'he', 'ur', 'fa'].some(l => uiLang.startsWith(l))) {
-    document.body.setAttribute('dir', 'rtl');
-  }
+  // Shared language/RTL/i18n wiring (src/popup-core.js).
+  applyCommonI18n();
 
-  document.getElementById('appTitle').textContent = chrome.i18n.getMessage("appTitle");
-  document.getElementById('searchInput').placeholder = chrome.i18n.getMessage("searchPlaceholder");
-  document.getElementById('folderName').placeholder = chrome.i18n.getMessage("folderPlaceholder");
-  document.getElementById('chatTitle').placeholder = chrome.i18n.getMessage("chatPlaceholder");
-  document.getElementById('saveBtn').textContent = chrome.i18n.getMessage("saveBtn");
-  document.getElementById('status').textContent = chrome.i18n.getMessage("statusSaved");
-  document.getElementById('noResults').textContent = chrome.i18n.getMessage("noResults");
-  document.getElementById('exportBtn').textContent = chrome.i18n.getMessage("exportBtn");
-  document.getElementById('importBtn').textContent = chrome.i18n.getMessage("importBtn");
-  document.getElementById('toggleAddPanelBtn').textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");
-  document.getElementById('sortNewest').textContent = chrome.i18n.getMessage("sortNewest");
-  document.getElementById('sortOldest').textContent = chrome.i18n.getMessage("sortOldest");
-  document.getElementById('sortAlpha').textContent = chrome.i18n.getMessage("sortAlpha");
-  document.getElementById('promptSearchInput').placeholder = chrome.i18n.getMessage("promptSearchPlaceholder") || "🔍 Search a prompt...";
-  document.getElementById('promptSortNewest').textContent = chrome.i18n.getMessage("sortNewest");
-  document.getElementById('promptSortOldest').textContent = chrome.i18n.getMessage("sortOldest");
-  document.getElementById('promptSortAlpha').textContent = chrome.i18n.getMessage("sortAlpha");
-  document.getElementById('modeFolderBtn').title = chrome.i18n.getMessage("folderModeTitle") || "Folder Mode";
-  document.getElementById('modePromptBtn').title = chrome.i18n.getMessage("promptModeTitle") || "Prompt Mode";
+  // GF-specific labels not covered by the shared wiring.
   document.getElementById('newGeminiConvBtn').title = chrome.i18n.getMessage("newConversationBtn") || "New Conversation";
-  document.getElementById('toggleAddPromptPanelBtn').textContent = "➕ " + (chrome.i18n.getMessage("promptAddBtn") || "Add Prompt");
-  document.getElementById('savePromptBtn').textContent = chrome.i18n.getMessage("saveBtn") || "Save";
-  document.getElementById('promptTitle').placeholder = chrome.i18n.getMessage("promptTitlePlaceholder") || "Prompt Title";
-  document.getElementById('promptText').placeholder = chrome.i18n.getMessage("promptTextPlaceholder") || "Write your prompt here...";
   document.getElementById('gemBtn').title = chrome.i18n.getMessage("setGemBtnTooltip") || "Set custom Gem link";
   document.getElementById('syncPromptsLabel').title = chrome.i18n.getMessage("syncPromptsTooltip") || "Sync prompts";
 
-  const saveBtn = document.getElementById('saveBtn');
-  const folderNameInput = document.getElementById('folderName');
   const chatTitleInput = document.getElementById('chatTitle');
-  const searchInput = document.getElementById('searchInput');
-  const statusDiv = document.getElementById('status');
-  const newFolderBtn = document.getElementById('newFolderBtn');
-  newFolderBtn.title = chrome.i18n.getMessage("btnNewFolder");
-  const toggleAddPanelBtn = document.getElementById('toggleAddPanelBtn');
-  const addConversationPanel = document.getElementById('addConversationPanel');
 
   // --- Shared popup wiring: mode toggle, sort, mobile sync, export/import… (src/popup-core.js) ---
   initPopupCommon({ exportFilename: 'gemini_folders_backup.json' });
@@ -203,58 +170,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
 
-  // 1. Save
-  let isSavingFolder = false;
-  saveBtn.addEventListener('click', async () => {
-    if (isSavingFolder) return;
-    isSavingFolder = true;
-
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (new URL(tab.url).hostname !== "gemini.google.com") {
-      await window.showCustomModal({
-        title: chrome.i18n.getMessage("alertNotGemini") || "Please use this extension on a Gemini page.",
-        type: 'alert'
-      });
-      isSavingFolder = false;
-      return;
-    }
-
-    const folderName = folderNameInput.value.trim() || chrome.i18n.getMessage("defaultFolder");
-    const finalChatTitle = chatTitleInput.value.trim() || chrome.i18n.getMessage("defaultTitle");
-    const chatUrl = tab.url;
-
-    loadData({ folders: {} }, (data) => {
-      let folders = data.folders;
-      if (!folders[folderName]) folders[folderName] = [];
-
-      const cleanTargetUrl = normalizeUrl(chatUrl);
-      const isDuplicate = folders[folderName].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
-      if (!isDuplicate) {
-        folders[folderName].push({
-          title: finalChatTitle,
-          url: chatUrl,
-          timestamp: Date.now()
-        });
-      }
-
-      saveData({ folders: folders }, (err) => {
-        isSavingFolder = false;
-        if (err) {
-          statusDiv.textContent = chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.';
-          statusDiv.style.color = 'red';
-          statusDiv.style.display = "block";
-          setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, DELAY.PROMO);
-          return;
-        }
-        folderNameInput.value = "";
-        addConversationPanel.style.display = 'none';
-        toggleAddPanelBtn.textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");
-        searchInput.value = "";
-        statusDiv.style.display = "block";
-        setTimeout(() => { statusDiv.style.display = "none"; }, DELAY.STATUS);
-        if (window.displayFolders) window.displayFolders(folderName);
-      });
-    });
+  // --- Save conversation (shared flow; GF only accepts gemini.google.com and
+  //     stores no per-site tag) ---
+  initSaveConversation({
+    getSiteKey: (tab) => {
+      try { return new URL(tab?.url).hostname === 'gemini.google.com' ? 'gemini' : null; }
+      catch { return null; }
+    },
+    unsupportedMessageKey: 'alertNotGemini',
+    tagSite: false,
   });
 
 
