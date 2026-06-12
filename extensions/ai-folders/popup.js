@@ -174,58 +174,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
       return false;
     }
+    // Reuse the same injector as the #-trigger (utils.js, loaded before this
+    // file). Runs in the page MAIN world and shares the heuristic composer
+    // fallback and the Perplexity chip-clearing path, so the ▶ button and the
+    // # trigger behave identically across all sites.
     const results = await chrome.scripting.executeScript({
       target: { tabId: tab.id },
-      args: [promptText, editorSelectors],
-      func: (promptText, selectors) => {
-        // Try the focused element first if it matches, then cascade through selectors
-        const active = document.activeElement;
-        let editor = null;
-        for (const sel of selectors) {
-          try {
-            if (active && active.matches(sel)) { editor = active; break; }
-            const found = document.querySelector(sel);
-            if (found) { editor = found; break; }
-          } catch (_) { /* invalid selector — skip */ }
-        }
-        if (!editor) return false;
-        editor.focus();
-
-        // Contenteditable editors (Gemini Quill, Claude ProseMirror, ChatGPT, Perplexity)
-        if (editor.isContentEditable) {
-          const sel = window.getSelection();
-          const range = document.createRange();
-          range.selectNodeContents(editor);
-          sel.removeAllRanges();
-          sel.addRange(range);
-          const before = editor.textContent;
-          document.execCommand('insertText', false, promptText);
-          if (editor.textContent === before) {
-            editor.dispatchEvent(new InputEvent('beforeinput', {
-              bubbles: true, cancelable: true,
-              inputType: 'insertText', data: promptText
-            }));
-          }
-          return true;
-        }
-
-        // React-controlled textarea (Perplexity, Copilot) — must use native setter
-        if (editor.tagName === 'TEXTAREA' || editor.tagName === 'INPUT') {
-          const proto = editor.tagName === 'TEXTAREA'
-            ? window.HTMLTextAreaElement.prototype
-            : window.HTMLInputElement.prototype;
-          const nativeSetter = Object.getOwnPropertyDescriptor(proto, 'value')?.set;
-          if (nativeSetter) {
-            nativeSetter.call(editor, promptText);
-          } else {
-            editor.value = promptText;
-          }
-          editor.dispatchEvent(new Event('input', { bubbles: true }));
-          return true;
-        }
-
-        return false;
-      }
+      world: 'MAIN',
+      args: [promptText, editorSelectors, siteKey === 'perplexity'],
+      func: injectPromptIntoEditor,
     });
     if (results?.[0]?.result) return true;
     window.showCustomModal({
