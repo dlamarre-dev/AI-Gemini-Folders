@@ -319,18 +319,21 @@ async function screenshotMobileSyncFolder(page, extId, localeData, outPath) {
   await page.setViewportSize({ width: POPUP_WIDTH, height: bodyHeight });
 
   // Wait for all pending async storage callbacks to fire, then force-check last.
-  // Also inject a style override because appearance:none checkboxes don't always
-  // repaint after a programmatic .checked assignment.
+  // The footer toggle is a CSS switch that styles its own :checked state (accent
+  // track + knob slid right), so no style override is needed — but disable its
+  // slide transition so the screenshot captures the final "on" position rather
+  // than a mid-animation frame.
   await page.waitForTimeout(300);
   await page.evaluate(() => {
     const toggle = document.getElementById('syncBookmarksToggle');
     if (toggle) {
-      toggle.checked = true;
       const s = document.createElement('style');
-      s.textContent = '#syncBookmarksToggle { background-color: var(--accent-color, #1a73e8) !important; border-color: var(--accent-color, #1a73e8) !important; } #syncBookmarksToggle::after { content: "✓" !important; color: white !important; font-size: 9px !important; font-weight: bold !important; position: absolute !important; top: 50% !important; left: 50% !important; transform: translate(-50%,-50%) !important; display: block !important; }';
+      s.textContent = '#syncBookmarksToggle, #syncBookmarksToggle::after { transition: none !important; }';
       document.head.appendChild(s);
+      toggle.checked = true;
     }
   });
+  await page.waitForTimeout(50);
 
   await page.screenshot({ path: outPath, fullPage: false });
   console.log(`  ✅ Mobile Sync Folder: ${path.basename(outPath)}`);
