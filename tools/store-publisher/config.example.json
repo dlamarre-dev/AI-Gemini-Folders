@@ -1,9 +1,23 @@
 {
-  "_comment": "Copy to config.json and fill in your values. config.json is gitignored (publisher UUID + local absolute path). repo_root must point at the repo so the tool can read dist/<slug>/marketing_chrome/ via the native host.",
+  "_comment": "Copy to config.json and fill in your values. config.json is gitignored (publisher UUID, AMO API secret, local absolute path). repo_root must point at the repo so the tools can read dist/<slug>/marketing_*/. AMO credentials come from https://addons.mozilla.org/developers/addon/api/key/",
   "publisher_id": "YOUR_PUBLISHER_UUID_HERE",
   "repo_root": "C:\\path\\to\\GeminiFolders",
+  "amo": {
+    "jwt_issuer": "YOUR_AMO_JWT_ISSUER (user:…)",
+    "jwt_secret": "YOUR_AMO_JWT_SECRET"
+  },
   "items": [
-    { "id": "jffchdehoapigpmifkmleglfimjiilik", "name": "Gemini Folders", "slug": "gemini-folders" },
-    { "id": "kjmgfajofolnfeaahchpmkpecfimcppf", "name": "AI Folders", "slug": "ai-folders" }
+    {
+      "id": "jffchdehoapigpmifkmleglfimjiilik",
+      "name": "Gemini Folders",
+      "slug": "gemini-folders",
+      "amo_guid": "geminifolders@dlamarre-dev.github.io"
+    },
+    {
+      "id": "kjmgfajofolnfeaahchpmkpecfimcppf",
+      "name": "AI Folders",
+      "slug": "ai-folders",
+      "amo_guid": "aifolders@dlamarre-dev.github.io"
+    }
   ]
 }

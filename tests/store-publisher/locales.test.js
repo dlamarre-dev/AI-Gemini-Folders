@@ -22,6 +22,28 @@ describe('store-publisher locales', () => {
     expect(new Set(cws).size).toBe(LOCALES.length);
   });
 
+  test('amo codes map AMO prod languages, null elsewhere', () => {
+    const byInternal = Object.fromEntries(LOCALES.map(l => [l.internal, l.amo]));
+    expect(byInternal.en).toBe('en-US');
+    expect(byInternal.es).toBe('es-ES');
+    expect(byInternal.nb).toBe('nb-NO');
+    expect(byInternal.sv).toBe('sv-SE');
+    expect(byInternal.fr).toBe('fr');
+    expect(byInternal.pt_BR).toBe('pt-BR');
+    // Not in AMO's PROD_LANGUAGES — listing translations can't be saved.
+    for (const code of ['ar', 'bg', 'bn', 'ca', 'da', 'et', 'hi', 'id', 'lt', 'lv', 'ms', 'sr', 'sw', 'th', 'tl']) {
+      expect(byInternal[code]).toBeNull();
+    }
+    expect(LOCALES.filter(l => l.amo).length).toBe(28);
+  });
+
+  test('LOCALES rows stay parseable by amo_publish.py (one line per locale)', () => {
+    const src = fs.readFileSync(
+      path.join(__dirname, '..', '..', 'tools', 'store-publisher', 'lib', 'locales.js'), 'utf8');
+    const rows = src.match(/\{ internal: '[A-Za-z_]+',\s*cws: '[^']+',\s*amo: (null|'[^']+'),/g);
+    expect(rows).toHaveLength(LOCALES.length);
+  });
+
   test('cws codes diverge from repo notation where Google differs', () => {
     const byInternal = Object.fromEntries(LOCALES.map(l => [l.internal, l.cws]));
     expect(byInternal.nb).toBe('no');

@@ -1,7 +1,15 @@
 # Store Listing Publisher
 
-Firefox MV3 extension (dev-only operator tool, like `stats-collector`) that
-fills the Chrome Web Store **Store listing** draft from the marketing assets
+Two operator tools that push the `dist/` marketing assets to the stores:
+
+- **CWS** (Chrome Web Store): Firefox MV3 extension (like `stats-collector`)
+  that fills the Store listing *draft* by driving the dev-console page —
+  Google has no listing API. Described below.
+- **AMO** (addons.mozilla.org): `amo_publish.py`, a stdlib-only Python script
+  using the official add-ons API — no scraping. See "AMO publisher" at the
+  bottom.
+
+The CWS extension fills the **Store listing** draft from the marketing assets
 in `dist/`: for each of the 43 locales it replaces the detailed description
 with `dist/<slug>/marketing_chrome/Promo<XX>.txt`, and optionally replaces the
 5 localized screenshots with `dist/<slug>/marketing_chrome/screenshots/
@@ -68,13 +76,28 @@ text/role based, not class based, to survive cosmetic changes. If a step
 fails: click **Probe page**, read the dump, adjust the matching `page*`
 function, reload the temporary add-on, resume with `from:<locale>`.
 
-## Adding addons.mozilla.org later
+## AMO publisher (`amo_publish.py`)
 
-`background.js` only talks to a driver object. Create `stores/amo.js`
-exposing the same surface as `CwsDriver` (interface documented at the bottom
-of `stores/cws.js`: `listingUrl`, `isLoginUrl`, `marketingDirParts`,
-`languageNames`, `selectLanguage`, `setDescription`, screenshot ops…), add it
-to `DRIVERS` in `background.js`, list its host permission in `manifest.json`,
-and surface a store picker in the popup. AMO locale codes that diverge from
-the repo notation get their own column in `lib/locales.js`; the marketing dir
-is `dist/<slug>/marketing_firefox`.
+AMO has an official API, so the Firefox side is a plain Python script (stdlib
+only, hand-rolled JWT + multipart):
+
+```
+python amo_publish.py --item gemini-folders --texts --images          # dry-run
+python amo_publish.py --item gemini-folders --texts --images --apply  # write
+```
+
+- `--texts` PATCHes the listing description for every locale AMO supports,
+  in a single request, from `dist/<slug>/marketing_firefox/Promo<XX>.txt`.
+  AMO production only enables 42 languages: 28 of our 43 map (see the `amo`
+  column in `lib/locales.js`); the other 15 are skipped with a log line.
+  Locales omitted from the PATCH are left untouched on AMO.
+- `--images` deletes the listing previews and uploads `Promo_1..5_en.png`
+  with explicit positions. AMO previews are **not** localized — one set per
+  listing — so this runs once, not per locale.
+- Credentials: `"amo": {"jwt_issuer", "jwt_secret"}` in `config.json`, from
+  <https://addons.mozilla.org/developers/addon/api/key/>. Items are addressed
+  by their `amo_guid` (the gecko id from the Firefox manifest).
+
+**⚠ Unlike the CWS draft flow, AMO listing edits go live immediately** (no
+draft/review stage for metadata). The script is dry-run by default; `--apply`
+is the explicit switch. Check the listing after an apply.
