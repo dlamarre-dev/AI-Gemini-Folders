@@ -76,7 +76,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 ### Option 1: Official Stores (Recommended)
 
 **AI Folders:**
-👉 **[Install for Google Chrome](https://chromewebstore.google.com/detail/ai-folders/TODO)**
+👉 **[Install for Google Chrome](https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf)**
 👉 **[Install for Mozilla Firefox](https://addons.mozilla.org/firefox/addon/ai_folders/)**
 
 **Gemini Folders:**

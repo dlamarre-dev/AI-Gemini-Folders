@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput     = document.getElementById('searchInput');
 
   bulkCancelBtn.title = chrome.i18n.getMessage("bulkCancel") || "Cancel";
+  bulkDeleteBtn.title = chrome.i18n.getMessage("btnDelete") || "Delete";
 
   const placeholderText = () => chrome.i18n.getMessage("bulkMove") || "Move to...";
 
