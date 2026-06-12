@@ -189,10 +189,7 @@
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       width: 392px; /* widened from 360 so titles truncate less; total = 392+32 padding = 424 (see POPUP_WIDTH in screenshots/take-screenshots.js) */
-      /* Right/left padding 13/19 (was 16/16): nudges content 3px right — half the
-         6px scrollbar gutter reserved on the right — to re-center it. Total
-         horizontal padding stays 32px, so the overall width is unchanged. */
-      padding: 8px 13px 16px 19px;
+      padding: 8px 16px 16px 16px;
       margin: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -205,6 +202,15 @@
       scrollbar-gutter: stable;
       scrollbar-width: thin;
       scrollbar-color: rgba(0,0,0,0.15) transparent;
+    }
+
+    /* Chromium reserves a 6px ::-webkit-scrollbar gutter on the right, which
+       shifts content slightly left. Nudge it 3px right (half the gutter) to
+       re-center — but ONLY on engines with ::-webkit-scrollbar. Firefox's thin
+       scrollbar gutter has a different width, so the same nudge over-corrects
+       and pushes content right there; it keeps the symmetric 16/16 padding. */
+    @supports selector(::-webkit-scrollbar) {
+      body { padding-left: 19px; padding-right: 13px; }
     }
 
     h3 {
