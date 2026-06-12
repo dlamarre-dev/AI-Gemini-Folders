@@ -1,0 +1,70 @@
+/* popup-extra.css — AI Folders only.
+   Loaded after the shared popup.css (src/popup.css). Holds the styling that has
+   no equivalent in Gemini Folders: the per-service "new conversation" buttons,
+   the per-site brand color on saved conversations, and the site logo badge.
+
+   Note: AF used to ship a full copy of popup.css that overrode the shared one.
+   That copy had drifted from src/ (only stripped comments + a dead dark-mode
+   .site-new-conv-btn rule that the later base rule always overrode), so it was
+   removed in favor of inheriting src/popup.css plus this site-specific overlay. */
+
+/* ── Per-service "new conversation" buttons (prompt mode) ─────────────────── */
+.site-new-conv-btn {
+  width: 30px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--folder-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 5px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+.site-new-conv-btn:hover {
+  background: var(--folder-hover);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+.site-new-conv-btn:active { transform: translateY(0); }
+.site-new-conv-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Local LLM button — shows a configured state */
+.site-new-conv-btn--local.local-configured {
+  border-color: #6b7280;
+  background: rgba(107, 114, 128, 0.1);
+}
+
+/* ── Per-site brand color + logo badge on saved conversations ─────────────── */
+/* Color the conversation title text with the site's brand color */
+.chat-item[class*="site-"] .chat-link {
+  color: var(--site-color, var(--accent-color));
+}
+
+/* Site logo badge — sits between the checkbox and the chat title, like a favicon */
+.chat-site-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 0;
+  margin-right: 4px;
+  opacity: 0.8;
+}
+.chat-site-logo svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ChatGPT's brand color (#fff) is invisible on a light background.
+   Override link text and SVG fills to near-black in light mode. */
+@media (prefers-color-scheme: light) {
+  .chat-item.site-chatgpt .chat-link { color: #212121; }
+  .chat-item.site-chatgpt .chat-site-logo svg path,
+  .site-new-conv-btn[data-site="chatgpt"] svg path { fill: #212121; }
+}
