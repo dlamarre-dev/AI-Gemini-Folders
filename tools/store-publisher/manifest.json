@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Store Listing Publisher",
+  "version": "1.0",
+  "description": "Dev-only operator tool: fills the CWS store-listing draft (43 localized descriptions + screenshots) from dist/ marketing assets. Load via about:debugging in Firefox.",
+  "permissions": ["tabs", "scripting", "storage", "nativeMessaging"],
+  "host_permissions": [
+    "*://chrome.google.com/webstore/devconsole/*"
+  ],
+  "background": {
+    "scripts": ["lib/locales.js", "stores/cws.js", "background.js"]
+  },
+  "action": {
+    "default_title": "Store Listing Publisher",
+    "default_popup": "popup.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "store-publisher@dev.local",
+      "strict_min_version": "128.0"
+    }
+  }
+}

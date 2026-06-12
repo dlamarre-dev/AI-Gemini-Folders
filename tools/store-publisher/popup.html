@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font: 13px/1.5 system-ui, sans-serif; padding: 14px; width: 360px; margin: 0; }
+    h2   { margin: 0 0 10px; font-size: 14px; }
+    label { display: block; font-size: 11px; color: #666; margin-bottom: 3px; }
+    select, input[type="text"] {
+      width: 100%; box-sizing: border-box; padding: 5px 7px;
+      border: 1px solid #ccc; border-radius: 3px; font: inherit; margin-bottom: 10px;
+    }
+    .check { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; font-size: 12px; color: #333; }
+    .check input { margin: 0; }
+    .check small { color: #999; }
+    .actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 10px; }
+    button {
+      padding: 6px 14px; background: #1a73e8; color: #fff;
+      border: none; border-radius: 3px; cursor: pointer; font: inherit;
+    }
+    button.secondary { background: #5f6368; }
+    button:disabled { background: #aaa; cursor: default; }
+    #log {
+      margin-top: 10px; font-size: 11px; font-family: monospace;
+      background: #f7f7f7; border-radius: 3px; padding: 7px;
+      max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-all;
+      display: none;
+    }
+    .ok  { color: #1e7b34; }
+    .err { color: #b00020; }
+  </style>
+</head>
+<body>
+  <h2>Store Listing Publisher</h2>
+
+  <label for="item">Extension</label>
+  <select id="item"></select>
+
+  <div class="check"><input type="checkbox" id="optTexts" checked>
+    <span>Update detailed descriptions (43 locales)</span></div>
+  <div class="check"><input type="checkbox" id="optImages">
+    <span>Replace the 5 localized screenshots per locale</span></div>
+  <div class="check"><input type="checkbox" id="optGlobalImages">
+    <span>Replace international screenshots with EN set <small>(once per deploy)</small></span></div>
+  <div class="check"><input type="checkbox" id="optDryRun">
+    <span>Dry run <small>(navigate + locate fields, write nothing)</small></span></div>
+
+  <label for="filter">Locale filter <small>(empty = all · "fr,de" · "from:pl" to resume)</small></label>
+  <input id="filter" type="text" placeholder="all locales" autocomplete="off">
+
+  <div class="actions">
+    <button id="run">Run</button>
+    <button id="probe" class="secondary" title="Open the listing page and dump its structure to the log">Probe page</button>
+  </div>
+
+  <div id="log"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy to config.json and fill in your values. config.json is gitignored (publisher UUID + local absolute path). repo_root must point at the repo so the tool can read dist/<slug>/marketing_chrome/ via the native host.",
+  "publisher_id": "YOUR_PUBLISHER_UUID_HERE",
+  "repo_root": "C:\\path\\to\\GeminiFolders",
+  "items": [
+    { "id": "jffchdehoapigpmifkmleglfimjiilik", "name": "Gemini Folders", "slug": "gemini-folders" },
+    { "id": "kjmgfajofolnfeaahchpmkpecfimcppf", "name": "AI Folders", "slug": "ai-folders" }
+  ]
+}
