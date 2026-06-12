@@ -35,7 +35,7 @@
 
   <div id="folderModeContainer">
     <div style="display: flex; gap: 8px; margin-bottom: 10px; position: relative; align-items: center;">
-      <input type="text" id="searchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;">
+      <input type="search" id="searchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;">
       <div class="dropdown-container" style="height: 32px;">
         <button id="sortToggleBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">⇅</button>
         <div id="sortMenu" class="custom-dropdown">
@@ -77,7 +77,7 @@
 
   <div id="promptModeContainer" style="display: none;">
     <div style="display: flex; gap: 8px; margin-bottom: 10px; position: relative; align-items: center;">
-      <input type="text" id="promptSearchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;">
+      <input type="search" id="promptSearchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;">
       <div class="dropdown-container" style="height: 32px;">
         <button id="promptSortToggleBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">⇅</button>
         <div id="promptSortMenu" class="custom-dropdown">
@@ -115,11 +115,11 @@
 
   <div class="footer-actions" style="align-items: center;">
     <label id="syncBookmarksLabel" style="display: flex; align-items: center; gap: 4px; cursor: pointer; margin: 0;" title="Mobile sync">
-      <input type="checkbox" id="syncBookmarksToggle" class="chat-checkbox" style="margin: 0; cursor: pointer;">
+      <input type="checkbox" id="syncBookmarksToggle" class="switch-toggle" style="margin: 0; cursor: pointer;">
       <span style="font-size: 14px;">📱</span>
     </label>
     <label id="syncPromptsLabel" style="display: none; align-items: center; gap: 4px; cursor: pointer; margin: 0;">
-      <input type="checkbox" id="syncPromptsToggle" class="chat-checkbox" style="margin: 0; cursor: pointer;">
+      <input type="checkbox" id="syncPromptsToggle" class="switch-toggle" style="margin: 0; cursor: pointer;">
       <span style="font-size: 14px;">☁️</span>
     </label>
     <button id="exportBtn" class="secondary-btn"></button>
