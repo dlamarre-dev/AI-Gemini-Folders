@@ -339,6 +339,20 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
     }); // End of forEach
 
     noResultsDiv.style.display = (searchTerm && !hasResults) ? 'block' : 'none';
+
+    // First-run empty state: no folders at all (distinct from a search miss).
+    if (!searchTerm && sortedFolderNames.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'empty-state';
+      const icon = document.createElement('div');
+      icon.className = 'empty-state-icon';
+      icon.textContent = '📁';
+      const msg = document.createElement('div');
+      msg.textContent = chrome.i18n.getMessage('emptyFoldersHint')
+        || 'No folders yet — open a conversation on a supported AI site and save it with ➕ or the right-click menu.';
+      empty.append(icon, msg);
+      folderList.appendChild(empty);
+    }
   });
 }
 

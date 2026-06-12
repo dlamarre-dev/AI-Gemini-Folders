@@ -29,6 +29,9 @@
   "noResults": {
     "message": "No results found 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "No folders yet — open a conversation on a supported AI site and save it with ➕ or the right-click menu."
+  },
   "exportBtn": {
     "message": "💾 Export"
   },

@@ -115,6 +115,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       btn.addEventListener('mouseleave', () => {
         if (pressTimer !== null) { clearTimeout(pressTimer); pressTimer = null; }
       });
+      // Right-click is a second, more discoverable way to configure the URL
+      // (the long-press is easy to miss).
+      btn.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        openLocalUrlModal();
+      });
     } else {
       btn.addEventListener('click', () => {
         chrome.tabs.create({ url: site.newConvUrl });

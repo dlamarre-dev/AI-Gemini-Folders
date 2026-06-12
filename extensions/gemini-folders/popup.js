@@ -92,6 +92,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
   });
 
+  // Right-click is a second, more discoverable way to set the Gem link
+  // (the long-press is easy to miss).
+  gemBtn.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      openGemModal();
+  });
+
   // --- Prompt Mode UI (shared: src/prompts.js) ---
   initPromptsUI();
 
