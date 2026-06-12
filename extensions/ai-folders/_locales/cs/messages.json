@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Nebyly nalezeny žádné výsledky 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Zatím žádné složky — otevřete konverzaci na podporovaném webu s AI a uložte ji pomocí ➕ nebo nabídky pravého tlačítka."
+  },
+  "sortTooltip": {
+    "message": "Seřadit"
+  },
   "exportBtn": {
     "message": "💾 Export"
   },

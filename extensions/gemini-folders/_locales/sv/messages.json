@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Inga resultat 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Inga mappar än – öppna en Gemini-konversation och spara den med ➕ eller högerklicksmenyn."
+  },
+  "sortTooltip": {
+    "message": "Sortera"
+  },
   "exportBtn": {
     "message": "💾 Export"
   },

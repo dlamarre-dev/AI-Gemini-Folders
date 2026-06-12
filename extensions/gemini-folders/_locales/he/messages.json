@@ -29,6 +29,12 @@
   "noResults": {
     "message": "לא נמצאו תוצאות 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "אין עדיין תיקיות — פתחו שיחת Gemini ושמרו אותה באמצעות ➕ או תפריט הקליק הימני."
+  },
+  "sortTooltip": {
+    "message": "מיון"
+  },
   "exportBtn": {
     "message": "💾 ייצוא"
   },

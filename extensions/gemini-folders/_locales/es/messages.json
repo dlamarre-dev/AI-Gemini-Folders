@@ -29,6 +29,12 @@
   "noResults": {
     "message": "No se encontraron resultados 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Aún no hay carpetas: abre una conversación de Gemini y guárdala con ➕ o el menú del clic derecho."
+  },
+  "sortTooltip": {
+    "message": "Ordenar"
+  },
   "exportBtn": {
     "message": "💾 Exportar"
   },

@@ -29,6 +29,12 @@
   "noResults": {
     "message": "कोई परिणाम नहीं मिला 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "अभी तक कोई फ़ोल्डर नहीं — Gemini बातचीत खोलें और उसे ➕ या राइट-क्लिक मेनू से सहेजें।"
+  },
+  "sortTooltip": {
+    "message": "क्रमबद्ध करें"
+  },
   "exportBtn": {
     "message": "💾 निर्यात"
   },

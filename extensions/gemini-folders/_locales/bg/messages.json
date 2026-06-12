@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Няма резултати 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Все още няма папки — отворете разговор в Gemini и го запазете с ➕ или менюто с десен бутон."
+  },
+  "sortTooltip": {
+    "message": "Сортиране"
+  },
   "exportBtn": {
     "message": "💾 Експорт"
   },

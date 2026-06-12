@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Ingen resultater 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Ingen mapper ennå – åpne en samtale på et støttet KI-nettsted og lagre den med ➕ eller høyreklikkmenyen."
+  },
+  "sortTooltip": {
+    "message": "Sorter"
+  },
   "exportBtn": {
     "message": "💾 Eksport"
   },

@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Cap resultat 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Encara no hi ha carpetes — obre una conversa de Gemini i desa-la amb ➕ o el menú del clic dret."
+  },
+  "sortTooltip": {
+    "message": "Ordena"
+  },
   "exportBtn": {
     "message": "💾 Exportar"
   },

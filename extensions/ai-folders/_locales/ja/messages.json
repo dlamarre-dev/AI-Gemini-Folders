@@ -29,6 +29,12 @@
   "noResults": {
     "message": "結果が見つかりません 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "フォルダーがまだありません — 対応している AI サイトで会話を開き、➕ または右クリックメニューで保存してください。"
+  },
+  "sortTooltip": {
+    "message": "並べ替え"
+  },
   "exportBtn": {
     "message": "💾 エクスポート"
   },

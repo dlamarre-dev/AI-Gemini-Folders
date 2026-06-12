@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Keine Ergebnisse gefunden 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Noch keine Ordner – öffne eine Unterhaltung auf einer unterstützten KI-Website und speichere sie mit ➕ oder über das Rechtsklick-Menü."
+  },
+  "sortTooltip": {
+    "message": "Sortieren"
+  },
   "exportBtn": {
     "message": "💾 Export"
   },

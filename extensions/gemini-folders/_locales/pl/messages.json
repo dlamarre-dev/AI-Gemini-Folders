@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Brak wyników 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Brak folderów — otwórz rozmowę w Gemini i zapisz ją za pomocą ➕ lub menu prawego przycisku myszy."
+  },
+  "sortTooltip": {
+    "message": "Sortuj"
+  },
   "exportBtn": {
     "message": "💾 Eksport"
   },

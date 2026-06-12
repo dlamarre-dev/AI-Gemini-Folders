@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Nincs találat 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Még nincsenek mappák – nyiss meg egy Gemini-beszélgetést, és mentsd el a ➕ gombbal vagy a jobb gombos menüvel."
+  },
+  "sortTooltip": {
+    "message": "Rendezés"
+  },
   "exportBtn": {
     "message": "💾 Export"
   },

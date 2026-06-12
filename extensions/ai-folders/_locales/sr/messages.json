@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Nema rezultata 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Још нема фасцикли — отворите разговор на подржаном сајту вештачке интелигенције и сачувајте га помоћу ➕ или менија десног клика."
+  },
+  "sortTooltip": {
+    "message": "Сортирај"
+  },
   "exportBtn": {
     "message": "💾 Izvoz"
   },

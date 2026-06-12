@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Brak wyników 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Brak folderów — otwórz rozmowę na obsługiwanej stronie AI i zapisz ją za pomocą ➕ lub menu prawego przycisku myszy."
+  },
+  "sortTooltip": {
+    "message": "Sortuj"
+  },
   "exportBtn": {
     "message": "💾 Eksport"
   },

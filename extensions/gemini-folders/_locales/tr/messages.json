@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Sonuç bulunamadı 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Henüz klasör yok — bir Gemini sohbeti açın ve ➕ ile veya sağ tık menüsüyle kaydedin."
+  },
+  "sortTooltip": {
+    "message": "Sırala"
+  },
   "exportBtn": {
     "message": "💾 Dışa Aktar"
   },

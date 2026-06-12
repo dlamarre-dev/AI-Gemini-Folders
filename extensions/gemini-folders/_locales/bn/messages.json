@@ -29,6 +29,12 @@
   "noResults": {
     "message": "কোনো ফলাফল পাওয়া যায়নি 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "এখনও কোনো ফোল্ডার নেই — একটি Gemini কথোপকথন খুলুন এবং ➕ বা ডান-ক্লিক মেনু দিয়ে সেটি সংরক্ষণ করুন।"
+  },
+  "sortTooltip": {
+    "message": "সাজান"
+  },
   "exportBtn": {
     "message": "💾 রপ্তানি"
   },

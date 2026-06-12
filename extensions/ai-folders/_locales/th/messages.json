@@ -29,6 +29,12 @@
   "noResults": {
     "message": "ไม่พบผลลัพธ์ 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "ยังไม่มีโฟลเดอร์ — เปิดการสนทนาบนเว็บไซต์ AI ที่รองรับ แล้วบันทึกด้วย ➕ หรือเมนูคลิกขวา"
+  },
+  "sortTooltip": {
+    "message": "จัดเรียง"
+  },
   "exportBtn": {
     "message": "💾 ส่งออก"
   },

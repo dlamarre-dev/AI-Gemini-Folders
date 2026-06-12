@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Tulemusi ei leitud 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Kaustu veel pole — ava Gemini vestlus ja salvesta see nupuga ➕ või paremklõpsu menüüst."
+  },
+  "sortTooltip": {
+    "message": "Sordi"
+  },
   "exportBtn": {
     "message": "💾 Eksport"
   },

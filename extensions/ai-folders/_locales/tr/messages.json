@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Sonuç bulunamadı 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Henüz klasör yok — desteklenen bir yapay zekâ sitesinde bir sohbet açın ve ➕ ile veya sağ tık menüsüyle kaydedin."
+  },
+  "sortTooltip": {
+    "message": "Sırala"
+  },
   "exportBtn": {
     "message": "💾 Dışa Aktar"
   },

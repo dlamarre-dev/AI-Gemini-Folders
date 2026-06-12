@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Ei tuloksia 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Ei vielä kansioita – avaa keskustelu tuetussa tekoälypalvelussa ja tallenna se painikkeella ➕ tai hiiren oikean painikkeen valikosta."
+  },
+  "sortTooltip": {
+    "message": "Lajittele"
+  },
   "exportBtn": {
     "message": "💾 Vie"
   },

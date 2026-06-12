@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Walang nahanap na resulta 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Wala pang folder — magbukas ng usapan sa Gemini at i-save ito gamit ang ➕ o ang right-click menu."
+  },
+  "sortTooltip": {
+    "message": "Ayusin"
+  },
   "exportBtn": {
     "message": "💾 Export"
   },

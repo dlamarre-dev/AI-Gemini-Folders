@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Cap resultat 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Encara no hi ha carpetes — obre una conversa en un lloc d'IA compatible i desa-la amb ➕ o el menú del clic dret."
+  },
+  "sortTooltip": {
+    "message": "Ordena"
+  },
   "exportBtn": {
     "message": "💾 Exportar"
   },

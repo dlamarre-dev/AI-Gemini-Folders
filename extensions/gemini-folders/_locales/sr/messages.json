@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Nema rezultata 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Још нема фасцикли — отворите Gemini разговор и сачувајте га помоћу ➕ или менија десног клика."
+  },
+  "sortTooltip": {
+    "message": "Сортирај"
+  },
   "exportBtn": {
     "message": "💾 Izvoz"
   },

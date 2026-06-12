@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Rezultātu nav 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Vēl nav mapju — atveriet Gemini sarunu un saglabājiet to ar ➕ vai ar labā klikšķa izvēlni."
+  },
+  "sortTooltip": {
+    "message": "Kārtot"
+  },
   "exportBtn": {
     "message": "💾 Eksports"
   },

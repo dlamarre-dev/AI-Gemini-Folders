@@ -29,6 +29,12 @@
   "noResults": {
     "message": "未找到结果 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "还没有文件夹 — 打开一个 Gemini 对话，然后用 ➕ 或右键菜单保存它。"
+  },
+  "sortTooltip": {
+    "message": "排序"
+  },
   "exportBtn": {
     "message": "💾 导出"
   },

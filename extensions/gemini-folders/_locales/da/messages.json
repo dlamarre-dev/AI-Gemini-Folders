@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Ingen resultater 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Ingen mapper endnu – åbn en Gemini-samtale, og gem den med ➕ eller højrekliksmenuen."
+  },
+  "sortTooltip": {
+    "message": "Sortér"
+  },
   "exportBtn": {
     "message": "💾 Eksport"
   },

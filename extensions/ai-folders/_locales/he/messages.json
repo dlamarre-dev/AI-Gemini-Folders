@@ -29,6 +29,12 @@
   "noResults": {
     "message": "לא נמצאו תוצאות 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "אין עדיין תיקיות — פתחו שיחה באתר בינה מלאכותית נתמך ושמרו אותה באמצעות ➕ או תפריט הקליק הימני."
+  },
+  "sortTooltip": {
+    "message": "מיון"
+  },
   "exportBtn": {
     "message": "💾 ייצוא"
   },

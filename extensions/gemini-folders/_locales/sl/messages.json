@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Ni rezultatov 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Še ni map — odprite pogovor Gemini in ga shranite z ➕ ali z menijem desnega klika."
+  },
+  "sortTooltip": {
+    "message": "Razvrsti"
+  },
   "exportBtn": {
     "message": "💾 Izvoz"
   },

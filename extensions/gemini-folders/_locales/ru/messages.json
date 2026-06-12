@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Ничего не найдено 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Папок пока нет — откройте беседу в Gemini и сохраните её с помощью ➕ или меню правого клика."
+  },
+  "sortTooltip": {
+    "message": "Сортировка"
+  },
   "exportBtn": {
     "message": "💾 Экспорт"
   },

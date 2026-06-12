@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Tidak ada hasil 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Belum ada folder — buka percakapan Gemini dan simpan dengan ➕ atau menu klik kanan."
+  },
+  "sortTooltip": {
+    "message": "Urutkan"
+  },
   "exportBtn": {
     "message": "💾 Ekspor"
   },

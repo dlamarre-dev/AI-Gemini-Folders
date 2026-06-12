@@ -29,6 +29,12 @@
   "noResults": {
     "message": "找不到結果 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "還沒有資料夾 — 在支援的 AI 網站上開啟一個對話，然後用 ➕ 或右鍵選單儲存它。"
+  },
+  "sortTooltip": {
+    "message": "排序"
+  },
   "exportBtn": {
     "message": "💾 匯出"
   },

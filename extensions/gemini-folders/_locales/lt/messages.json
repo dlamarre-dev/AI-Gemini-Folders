@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Rezultatų nerasta 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Aplankų dar nėra — atidarykite Gemini pokalbį ir išsaugokite jį su ➕ arba dešiniojo pelės mygtuko meniu."
+  },
+  "sortTooltip": {
+    "message": "Rikiuoti"
+  },
   "exportBtn": {
     "message": "💾 Eksportas"
   },

@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Niciun rezultat găsit 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Încă niciun folder — deschide o conversație pe un site AI acceptat și salveaz-o cu ➕ sau din meniul clic dreapta."
+  },
+  "sortTooltip": {
+    "message": "Sortează"
+  },
   "exportBtn": {
     "message": "💾 Export"
   },

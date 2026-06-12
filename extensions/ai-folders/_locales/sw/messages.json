@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Hakuna matokeo 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Bado hakuna folda — fungua mazungumzo kwenye tovuti ya AI inayotumika na uyahifadhi kwa ➕ au menyu ya kubofya kulia."
+  },
+  "sortTooltip": {
+    "message": "Panga"
+  },
   "exportBtn": {
     "message": "💾 Hamisha"
   },

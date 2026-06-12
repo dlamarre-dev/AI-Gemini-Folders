@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Нічого не знайдено 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Папок ще немає — відкрийте розмову Gemini та збережіть її за допомогою ➕ або меню правої кнопки миші."
+  },
+  "sortTooltip": {
+    "message": "Сортувати"
+  },
   "exportBtn": {
     "message": "💾 Експорт"
   },

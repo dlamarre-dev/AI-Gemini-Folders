@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Rezultatų nerasta 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Aplankų dar nėra — atidarykite pokalbį palaikomoje DI svetainėje ir išsaugokite jį su ➕ arba dešiniojo pelės mygtuko meniu."
+  },
+  "sortTooltip": {
+    "message": "Rikiuoti"
+  },
   "exportBtn": {
     "message": "💾 Eksportas"
   },

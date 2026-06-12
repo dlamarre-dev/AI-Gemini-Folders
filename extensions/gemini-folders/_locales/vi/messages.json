@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Không tìm thấy kết quả 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Chưa có thư mục nào — mở một cuộc trò chuyện Gemini và lưu bằng ➕ hoặc menu chuột phải."
+  },
+  "sortTooltip": {
+    "message": "Sắp xếp"
+  },
   "exportBtn": {
     "message": "💾 Xuất"
   },

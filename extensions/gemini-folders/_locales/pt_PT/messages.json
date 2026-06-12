@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Nenhum resultado encontrado 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Ainda sem pastas — abra uma conversa do Gemini e guarde-a com ➕ ou pelo menu do botão direito."
+  },
+  "sortTooltip": {
+    "message": "Ordenar"
+  },
   "exportBtn": {
     "message": "💾 Export"
   },

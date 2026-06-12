@@ -29,6 +29,12 @@
   "noResults": {
     "message": "Geen resultaten gevonden 🕵️"
   },
+  "emptyFoldersHint": {
+    "message": "Nog geen mappen — open een Gemini-gesprek en sla het op met ➕ of het rechtermuisknopmenu."
+  },
+  "sortTooltip": {
+    "message": "Sorteren"
+  },
   "exportBtn": {
     "message": "💾 Export"
   },
