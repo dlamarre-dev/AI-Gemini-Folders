@@ -9,6 +9,8 @@ describe('getSiteByUrl', () => {
     ['https://gemini.google.com/app', 'gemini'],
     ['https://copilot.microsoft.com/', 'copilot'],
     ['https://chat.deepseek.com/', 'deepseek'],
+    ['https://grok.com/', 'grok'],
+    ['https://grok.com/chat/abc', 'grok'],
     ['https://perplexity.ai/', 'perplexity'],
     ['https://www.perplexity.ai/search', 'perplexity'],
   ])('%s -> %s', (url, key) => {
@@ -69,6 +71,16 @@ describe('extractAITitleLogic', () => {
   test('chatgpt: reads the active sidebar conversation link', () => {
     document.body.innerHTML = '<a aria-current="page"><p>Sidebar Title</p></a>';
     expect(extractAITitleLogic('chatgpt', 'fallback')).toBe('Sidebar Title');
+  });
+
+  test('grok: reads the active sidebar conversation link', () => {
+    document.body.innerHTML = '<a aria-current="page"><span>Grok Sidebar Title</span></a>';
+    expect(extractAITitleLogic('grok', 'fallback')).toBe('Grok Sidebar Title');
+  });
+
+  test('grok: ignores the generic site title and returns the fallback', () => {
+    document.title = 'Grok';
+    expect(extractAITitleLogic('grok', 'New conversation')).toBe('New conversation');
   });
 
   test('perplexity: reads the question <h1>', () => {

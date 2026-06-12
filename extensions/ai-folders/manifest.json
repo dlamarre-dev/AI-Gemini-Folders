@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extName__",
-  "version": "1.2.2",
+  "version": "1.5.0",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
   "permissions": ["activeTab", "storage", "scripting", "contextMenus", "tabGroups", "bookmarks"],
@@ -45,6 +45,8 @@
         "*://chatgpt.com/*",
         "*://copilot.microsoft.com/*",
         "*://chat.deepseek.com/*",
+        "*://grok.com/*",
+        "*://*.grok.com/*",
         "*://perplexity.ai/*",
         "*://*.perplexity.ai/*"
       ],
@@ -58,6 +60,8 @@
     "*://chatgpt.com/*",
     "*://copilot.microsoft.com/*",
     "*://chat.deepseek.com/*",
+    "*://grok.com/*",
+    "*://*.grok.com/*",
     "*://perplexity.ai/*",
     "*://*.perplexity.ai/*"
   ],

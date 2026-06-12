@@ -638,7 +638,7 @@ function insertSuggestionsInEditor(suggestions, selectors, extensionLabel, newFi
 // composer by heuristic — never a different field (that would steal the caret).
 // Consequence: while editing a *previous* message, the #-trigger is a no-op on
 // sites with specific selectors (ChatGPT / Gemini / Claude) but works in place on
-// sites with generic-fallback selectors (DeepSeek / Perplexity / local LLM). If a
+// sites with generic-fallback selectors (DeepSeek / Grok / Perplexity / local LLM). If a
 // site changes its DOM, the positional fallback keeps the main composer working
 // and logs a console warning. Both behaviours are harmless — neither hijacks the
 // main composer. Same targeting logic in insertSuggestionsInEditor.

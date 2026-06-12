@@ -10,6 +10,8 @@ const SUPPORTED_URL_PATTERNS = [
   "*://chatgpt.com/*",
   "*://copilot.microsoft.com/*",
   "*://chat.deepseek.com/*",
+  "*://grok.com/*",
+  "*://*.grok.com/*",
   "*://perplexity.ai/*",
   "*://*.perplexity.ai/*",
 ];
