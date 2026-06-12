@@ -196,7 +196,9 @@
       transition: background-color 0.2s ease;
       max-height: 576px; /* 600px Chrome popup max − 24px vertical padding (8+16) */
       overflow-y: auto;
-      scrollbar-gutter: stable; /* reserve scrollbar space always so content never shifts */
+      /* No scrollbar-gutter: a reserved gutter permanently pushed content left
+         and left a transparent strip on the right (the recurring 2px gap). The
+         thin 6px scrollbar sits at the edge only when content overflows. */
       scrollbar-width: thin;
       scrollbar-color: rgba(0,0,0,0.15) transparent;
     }
