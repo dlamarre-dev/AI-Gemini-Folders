@@ -211,6 +211,8 @@
        and pushes content right there; it keeps the symmetric 16/16 padding. */
     @supports selector(::-webkit-scrollbar) {
       body { padding-left: 19px; padding-right: 13px; }
+      /* RTL puts the scrollbar gutter on the LEFT — mirror the correction. */
+      body[dir="rtl"] { padding-left: 13px; padding-right: 19px; }
     }
 
     h3 {
@@ -953,4 +955,11 @@
     }
     body[dir="rtl"] .prompt-insert-btn {
       transform: scaleX(-1);
+    }
+    /* Switches mirror too: knob rests on the right, slides LEFT when checked. */
+    body[dir="rtl"] .switch-toggle::after {
+      left: 14px;
+    }
+    body[dir="rtl"] .switch-toggle:checked::after {
+      left: 2px;
     }
