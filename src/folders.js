@@ -76,6 +76,9 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
       folderHeader.className = 'folder-header';
       folderHeader.style.display = 'flex';
       folderHeader.style.justifyContent = 'space-between';
+      // Keyboard-accessible disclosure: the header acts as a button.
+      folderHeader.setAttribute('role', 'button');
+      folderHeader.setAttribute('tabindex', '0');
 
       const leftPart = document.createElement('div');
       leftPart.style.display = 'flex';
@@ -90,6 +93,16 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
       const folderIcon = customIcon ? customIcon : (isEmpty ? '📁' : '🗂️');
 
       leftPart.textContent = '';
+      // Expansion chevron — only for folders that have something to expand.
+      // Rotates via the .folder.is-open CSS rule.
+      if (!isEmpty) {
+        const chevron = document.createElement('span');
+        chevron.className = 'folder-chevron';
+        chevron.appendChild(new DOMParser().parseFromString(
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 6l6 6-6 6z"/></svg>',
+          'image/svg+xml').documentElement);
+        leftPart.appendChild(chevron);
+      }
       const iconSpan = document.createElement('span');
       iconSpan.className = 'folder-icon';
       iconSpan.textContent = folderIcon;
@@ -175,11 +188,19 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
 
       // Fix double-click bug by explicitly setting block or none upon creation
       folderContent.style.display = isFolderOpen ? 'block' : 'none';
+      if (!isEmpty) {
+        folderDiv.classList.toggle('is-open', isFolderOpen);
+        folderHeader.setAttribute('aria-expanded', String(isFolderOpen));
+      }
 
-      folderHeader.addEventListener('click', () => {
+      const toggleFolder = () => {
         folderNameInput.value = folderName;
         const isCurrentlyOpen = folderContent.style.display === 'block';
         folderContent.style.display = isCurrentlyOpen ? 'none' : 'block';
+        if (!isEmpty) {
+          folderDiv.classList.toggle('is-open', !isCurrentlyOpen);
+          folderHeader.setAttribute('aria-expanded', String(!isCurrentlyOpen));
+        }
 
         // Save new state in Chrome Sync only if not searching
         if (!searchTerm) {
@@ -194,6 +215,15 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
             }
             saveData({ openFolders: currentOpen });
           });
+        }
+      };
+      folderHeader.addEventListener('click', toggleFolder);
+      folderHeader.addEventListener('keydown', (e) => {
+        // Ignore keys bubbling up from the action buttons inside the header.
+        if (e.target !== folderHeader) return;
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleFolder();
         }
       });
       // ----------------------------------------------------------------

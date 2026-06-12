@@ -26,6 +26,9 @@ function buildPromptItem(title, p, openPrompts) {
   item.className = 'prompt-item' + (p.pinned ? ' prompt-item--pinned' : '');
   const header = document.createElement('div');
   header.className = 'prompt-header';
+  // Keyboard-accessible disclosure: the header acts as a button.
+  header.setAttribute('role', 'button');
+  header.setAttribute('tabindex', '0');
   const titleEl = document.createElement('div');
   titleEl.className = 'prompt-title';
   titleEl.textContent = title;
@@ -160,10 +163,12 @@ function buildPromptItem(title, p, openPrompts) {
 
   let isPromptOpen = openPrompts.includes(title);
   textArea.style.display = isPromptOpen ? 'block' : 'none';
+  header.setAttribute('aria-expanded', String(isPromptOpen));
 
-  header.addEventListener('click', () => {
+  const togglePrompt = () => {
     const isCurrentlyOpen = textArea.style.display === 'block';
     textArea.style.display = isCurrentlyOpen ? 'none' : 'block';
+    header.setAttribute('aria-expanded', String(!isCurrentlyOpen));
     if (!isCurrentlyOpen) autoResize(textArea);
 
     loadData({ openPrompts: [] }, (storageData) => {
@@ -175,6 +180,15 @@ function buildPromptItem(title, p, openPrompts) {
       }
       saveData({ openPrompts: currentOpen });
     });
+  };
+  header.addEventListener('click', togglePrompt);
+  header.addEventListener('keydown', (e) => {
+    // Ignore keys bubbling up from the action buttons inside the header.
+    if (e.target !== header) return;
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      togglePrompt();
+    }
   });
 
   item.appendChild(header);
@@ -334,6 +348,8 @@ function initPromptsUI() {
   loadData({ promptSortPref: 'dateDesc' }, (data) => {
     const activeItem = document.querySelector(`#promptSortMenu .dropdown-item[data-value="${data.promptSortPref}"]`);
     if (activeItem) activeItem.classList.add('active');
+    // Mark the toggle when a non-default order is active (dateDesc is the default).
+    promptSortToggleBtn.classList.toggle('has-custom-sort', data.promptSortPref !== 'dateDesc');
   });
 
   document.querySelectorAll('#promptSortMenu .dropdown-item').forEach(item => {
@@ -342,6 +358,7 @@ function initPromptsUI() {
       document.querySelectorAll('#promptSortMenu .dropdown-item').forEach(i => i.classList.remove('active'));
       item.classList.add('active');
       promptSortMenu.classList.remove('show');
+      promptSortToggleBtn.classList.toggle('has-custom-sort', value !== 'dateDesc');
       saveData({ promptSortPref: value }, () => displayPrompts());
     });
   });

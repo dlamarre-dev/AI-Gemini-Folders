@@ -26,7 +26,7 @@
         --accent-hover: #aecbf9;
         --delete-color: #f28b82;
         --input-bg: rgba(255,255,255,0.05);
-        --muted-text: rgba(255,255,255,0.50);
+        --muted-text: rgba(255,255,255,0.62); /* ≥4.5:1 on the dark bg (WCAG AA) */
         --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
         --shadow-hover: 0 4px 16px rgba(0,0,0,0.5);
       }
@@ -84,7 +84,7 @@
         background-color: rgba(255,255,255,0.06);
         border-color: rgba(255,255,255,0.12);
       }
-      input::placeholder { color: rgba(255,255,255,0.38); }
+      input::placeholder { color: rgba(255,255,255,0.50); }
       input:focus, select:focus {
         background-color: rgba(255,255,255,0.09);
         border-color: rgba(138,180,248,0.65);
@@ -355,6 +355,42 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    /* Expansion chevron — points right when closed, rotates down when open. */
+    .folder-chevron {
+      display: flex;
+      align-items: center;
+      margin-right: 4px;
+      color: var(--muted-text);
+      transition: transform 0.15s ease;
+      flex-shrink: 0;
+    }
+    .folder.is-open .folder-chevron { transform: rotate(90deg); }
+
+    /* Active-sort indicator: a small accent dot on the ⇅ toggle when a
+       non-default order is in effect. */
+    #sortToggleBtn, #promptSortToggleBtn { position: relative; }
+    #sortToggleBtn.has-custom-sort::after,
+    #promptSortToggleBtn.has-custom-sort::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-color);
+    }
+
+    /* Keyboard focus ring for interactive elements (mouse clicks stay ring-free). */
+    .folder-header:focus-visible,
+    .prompt-header:focus-visible,
+    button:focus-visible,
+    .dropdown-item:focus-visible,
+    .custom-dropdown-list li:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
     }
 
 

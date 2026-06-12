@@ -251,12 +251,15 @@ function initPopupCommon(config) {
   loadData({ sortPref: 'dateAsc' }, (data) => {
     const activeItem = document.querySelector(`#sortMenu .dropdown-item[data-value="${data.sortPref}"]`);
     if (activeItem) activeItem.classList.add('active');
+    // Mark the toggle when a non-default order is active (dateAsc is the default).
+    sortToggleBtn.classList.toggle('has-custom-sort', data.sortPref !== 'dateAsc');
   });
   sortItems.forEach(item => {
     item.addEventListener('click', () => {
       const selectedSort = item.getAttribute('data-value');
       sortItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
+      sortToggleBtn.classList.toggle('has-custom-sort', selectedSort !== 'dateAsc');
       saveData({ sortPref: selectedSort }, () => {
         let openFolders = [];
         document.querySelectorAll('.folder').forEach(folder => {
