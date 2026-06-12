@@ -136,15 +136,26 @@ def _node_env():
     return env
 
 
-def run_tests():
+def run_tests(assume_yes=False):
     """Runs Jest. Returns True if tests pass or the user chooses to continue."""
+
+    def confirm(question):
+        # Never block on input() when there's no TTY (CI). --yes forces a
+        # "continue anyway"; otherwise fail safe and abort the build.
+        if assume_yes:
+            print(f"   {question} -> yes (--yes)")
+            return True
+        if not sys.stdin.isatty():
+            print(f"   {question} -> no (non-interactive, aborting)")
+            return False
+        return input(f"   {question} [y/N] ").strip().lower() in ("y", "yes")
+
     if not os.path.isdir("node_modules"):
         print("📦 node_modules not found — running npm install...")
         install = subprocess.run("npm install", shell=True, env=_node_env())
         if install.returncode != 0:
             print("\n❌ npm install failed.")
-            answer = input("   Continue with the build anyway? [y/N] ").strip().lower()
-            return answer in ("y", "yes")
+            return confirm("Continue with the build anyway?")
         print()
 
     print("🧪 Running test suite...")
@@ -156,8 +167,7 @@ def run_tests():
         )
     except Exception as e:
         print(f"\n⚠️  Could not execute tests: {e}")
-        answer = input("   Continue with the build anyway? [y/N] ").strip().lower()
-        return answer in ("y", "yes")
+        return confirm("Continue with the build anyway?")
 
     output = (result.stdout + result.stderr).strip()
     if output:
@@ -168,8 +178,7 @@ def run_tests():
         return True
 
     print("\n⚠️  Some tests failed.")
-    answer = input("   Continue with the build anyway? [y/N] ").strip().lower()
-    return answer in ("y", "yes")
+    return confirm("Continue with the build anyway?")
 
 
 # ---------------------------------------------------------------------------
@@ -416,6 +425,11 @@ def main():
         default=None,
         help="Which extension to build (default: both)",
     )
+    parser.add_argument(
+        "--yes", "-y",
+        action="store_true",
+        help="Non-interactive: continue the build even if tests or npm install fail",
+    )
     args = parser.parse_args()
 
     targets = [args.extension] if args.extension else list(EXTENSION_CONFIG.keys())
@@ -445,7 +459,7 @@ def main():
         primary_version = json.load(f).get("version", "unknown")
     sync_package_version(primary_version)
 
-    if not run_tests():
+    if not run_tests(assume_yes=args.yes):
         print("🛑 Build cancelled.")
         sys.exit(1)
 
