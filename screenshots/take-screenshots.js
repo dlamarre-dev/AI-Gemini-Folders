@@ -83,7 +83,9 @@ const LOCALES = [
   { id: 'da',    chrome: 'da-DK'  },
 ];
 
-const POPUP_WIDTH = 392;
+// Total popup viewport width = body content width (392px) + 16px horizontal
+// padding on each side. Keep in sync with `body { width }` in src/popup.css.
+const POPUP_WIDTH = 424;
 
 const RTL_LOCALES = new Set(['ar', 'he', 'ur', 'fa']);
 

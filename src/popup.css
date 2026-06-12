@@ -188,7 +188,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      width: 360px;
+      width: 392px; /* widened from 360 so titles truncate less; total = 392+32 padding = 424 (see POPUP_WIDTH in screenshots/take-screenshots.js) */
       padding: 8px 16px 16px 16px;
       margin: 0;
       background-color: var(--bg-color);
