@@ -166,7 +166,7 @@
       /* ── Scrollbar (dark mode) ───────────────────────────────────────────── */
       ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.72); }
       ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.90); }
-      body { scrollbar-color: rgba(255,255,255,0.72) transparent; }
+      html { scrollbar-color: rgba(255,255,255,0.72) transparent; }
     }
 
     /* --- Base --- */
@@ -174,7 +174,17 @@
       margin: 0;
       padding: 0;
       background-color: var(--bg-color);
-      overflow-y: hidden; /* Prevent viewport scrollbar (causes transparent gap); body scrolls instead */
+      /* The document (html) is the scroll container, so the vertical scrollbar
+         sits at the popup's right edge — OUTSIDE the body's fixed width — and
+         never reflows the content when it appears. overflow-y: scroll reserves
+         it permanently so the body width is constant whether or not it shows.
+         overflow-x: hidden clips any sub-pixel horizontal overflow that would
+         otherwise make Chrome size the popup wider than the content (the right gap). */
+      max-height: 600px; /* Chrome popup max height */
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0,0,0,0.15) transparent;
     }
 
     /* Thin custom scrollbar */
@@ -194,13 +204,8 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.2s ease;
-      max-height: 576px; /* 600px Chrome popup max − 24px vertical padding (8+16) */
-      overflow-y: auto;
-      /* No scrollbar-gutter: a reserved gutter permanently pushed content left
-         and left a transparent strip on the right (the recurring 2px gap). The
-         thin 6px scrollbar sits at the edge only when content overflows. */
-      scrollbar-width: thin;
-      scrollbar-color: rgba(0,0,0,0.15) transparent;
+      /* No max-height / overflow here: html is the scroll container now, so the
+         body keeps a constant width regardless of the scrollbar. */
     }
 
     h3 {

@@ -84,8 +84,9 @@ const LOCALES = [
 ];
 
 // Total popup viewport width = body content width (392px) + 16px horizontal
-// padding on each side. Keep in sync with `body { width }` in src/popup.css.
-const POPUP_WIDTH = 424;
+// padding each side (424) + 6px for the html scrollbar that sits at the popup's
+// right edge. Keep in sync with `body { width }` / scrollbar in src/popup.css.
+const POPUP_WIDTH = 430;
 
 const RTL_LOCALES = new Set(['ar', 'he', 'ur', 'fa']);
 
