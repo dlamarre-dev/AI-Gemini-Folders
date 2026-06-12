@@ -2,7 +2,7 @@
 
 Tvarkykite visų mėgstamiausių AI įrankių pokalbius bendrose aplankuose, kurkite daugkartinio naudojimo raginimų biblioteką ir įterpkite šablonus tiesiogiai į bet kurį įvesties lauką — be kopijavimo ir įklijavimo.
 
-🌐 7 PALAIKOMOS DI PASLAUGOS
+🌐 8 PALAIKOMOS DI PASLAUGOS
 
 AI aplankai natūraliai integruojasi su visais pagrindiniais AI pokalbių asistentais ir su vietiniais LLM, kuriuos paleidžiate patys. Pokalbiai iš skirtingų platformų gali būti tame pačiame aplanke. Kiekvienas pokalbis rodo savo paslaugos spalvą ir logotipą, todėl visada žinote, iš kur jis atsirado.
 
@@ -54,14 +54,14 @@ Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo vi
 Raginimų paleidiklis: Įveskite #, kad iš karto pamatytumėte visus savo išsaugotus raginimus, arba toliau rašykite filtravimui realiuoju laiku. Paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens įterpimui.
 
 🔒 PRIVATUMAS IR SAUGUMAS
-Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie 6 palaikomų AI svetainių ir jūsų pasirenkamo vietinio LLM URL ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.
+Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie 7 palaikomų AI svetainių ir jūsų pasirenkamo vietinio LLM URL ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.
 
 🤝 ATVIROJO KODO PROJEKTAS
 AI aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pagarba jūsų privatumui yra mūsų aukščiausi prioritetai. Esi kūrėjas ar tiesiog smalsus? Naršyk kodą, sek pakeitimų žurnalą arba prisidėk prie „GitHub": https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ATNAUJINIMAI:
-Versija 1.2.2 (Klaidų taisymai ir palaikymas): Klaidų taisymai ir vidiniai pertvarkymai nuo paskutinio atnaujinimo, siekiant geresnio stabilumo. Jei AI aplankai jums naudingi, galite paremti jo kūrimą apsilankę Ko-fi puslapyje: https://ko-fi.com/aifolders — ačiū už jūsų palaikymą!
+Versija 1.5 (Grok): Pradėkite naujus Grok pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus. Platesnis skydelis, patobulinti valdikliai ir geresnis pasiekiamumas klaviatūra. Klaidų taisymai ir vidiniai pertvarkymai nuo paskutinio atnaujinimo, siekiant geresnio stabilumo. Jei AI aplankai jums naudingi, galite paremti jo kūrimą apsilankę Ko-fi puslapyje: https://ko-fi.com/aifolders — ačiū už jūsų palaikymą!
 Versija 1.2 (DeepSeek): Pradėkite naujus DeepSeek pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus.
 Versija 1.1 (Raginimų paleidiklis): Įveskite # bet kuriame AI pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio.
 Versija 1.0: Pirmasis leidimas! Tvarkykite pokalbius iš Gemini, Claude, ChatGPT, Copilot ir Perplexity bendrose aplankuose. Pilna raginimų biblioteka su vieno paspaudimo įterpimu, sparčiojo įrašymo spartieji klavišai, vilkimas ir numetimas, mobilioji sinchronizacija, masiniai veiksmai, skirtukų grupės ir palaikymas 43 kalbų.

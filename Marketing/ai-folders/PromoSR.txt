@@ -2,7 +2,7 @@
 
 Organizujte razgovore iz svih svojih omiljenih AI alata u deljene fascikle, izgradite biblioteku upita za višestruku upotrebu i ubacujte šablone direktno u bilo koje polje za unos — bez kopiranja i lepljenja.
 
-🌐 7 PODRŽANIH AI USLUGA
+🌐 8 PODRŽANIH AI USLUGA
 
 VI fascikle se izvorno integriše sa svim glavnim AI chat asistentima, kao i sa lokalnim LLM modelima koje sami pokrećete. Razgovori sa različitih platformi mogu da dele potpuno istu fasciklu. Svaki čet prikazuje boju i logotip svoje usluge, tako da uvek znate odakle dolazi.
 
@@ -54,14 +54,14 @@ Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
 Okidač prompta: Upiši # da odmah vidiš sve sačuvane promptove, ili nastavi da kucaš za filtriranje u realnom vremenu. Pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za ubacivanje.
 
 🔒 PRIVATNOST I SIGURNOST
-Izgrađeno s prioritetom privatnosti. Traži pristup samo 6 podržanih AI sajtova i vašem opcionom lokalnom LLM URL-u i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
+Izgrađeno s prioritetom privatnosti. Traži pristup samo 7 podržanih AI sajtova i vašem opcionom lokalnom LLM URL-u i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
 
 🤝 PROJEKAT OTVORENOG KODA
 VI fascikle je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AŽURIRANJA:
-Verzija 1.2.2 (Ispravke grešaka i podrška): Ispravke grešaka i interno refaktorisanje od poslednjeg ažuriranja, za bolju stabilnost. Ako su vam VI fascikle korisne, možete podržati razvoj posjetom stranici Ko-fi: https://ko-fi.com/aifolders — hvala vam na podršci!
+Verzija 1.5 (Grok): Pokrenite nove razgovore na Groku direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove. Širi panel, doterane kontrole i bolja pristupačnost tastaturom. Ispravke grešaka i interno refaktorisanje od poslednjeg ažuriranja, za bolju stabilnost. Ako su vam VI fascikle korisne, možete podržati razvoj posjetom stranici Ko-fi: https://ko-fi.com/aifolders — hvala vam na podršci!
 Verzija 1.2 (DeepSeek): Pokrenite nove razgovore na DeepSeeku direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove.
 Verzija 1.1 (Okidač promptova): Unesi # u bilo koje polje AI čavrljanja da u realnom vremenu vidiš filtrirane sačuvane promptove. Koristi ↓/↑ za navigaciju kroz predloge, razmak za autodovršavanje ili ubacivanje — bez otvaranja panela.
 Verzija 1.0: Prvo izdanje! Organizujte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u deljene fascikle. Potpuna biblioteka promptova sa ubacivanjem jednim klikom, prečice za brzo čuvanje, prevlačenje i puštanje, mobilna sinhronizacija, masovne radnje, grupe kartica i podrška za 43 jezika.

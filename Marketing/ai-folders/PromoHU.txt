@@ -2,7 +2,7 @@
 
 Szervezze az összes kedvenc AI-eszközéből származó beszélgetéseket közös mappákba, hozzon létre újra felhasználható prompt-könyvtárat, és illesszen be sablonokat közvetlenül bármely beviteli mezőbe — másolás-beillesztés nélkül.
 
-🌐 7 TÁMOGATOTT MI-SZOLGÁLTATÁS
+🌐 8 TÁMOGATOTT MI-SZOLGÁLTATÁS
 
 A MI mappák natívan integrálódik az összes nagyobb MI-csevegőasszisztenssel, valamint a saját maga által futtatott helyi LLM-ekkel. A különböző platformokról származó beszélgetések ugyanabban a mappában lehetnek. Minden csevegés a szolgáltatása színét és logóját jeleníti meg, így mindig tudja, honnan származik.
 
@@ -55,14 +55,14 @@ Prompt rögzítéséhez: kattintson a 📍 gombra — a lista tetejére kerül, 
 Prompt-aktiváló: Gépelje be a # jelet az összes mentett promptja azonnali megjelenítéséhez, vagy folytassa a gépelést a valós idejű szűréshez. Nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a beillesztéshez.
 
 🔒 ADATVÉDELEM ÉS BIZTONSÁG
-Az adatvédelmet alapelvként kezelve fejlesztve. Csak a 6 támogatott AI-oldal és az opcionális helyi LLM URL elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.
+Az adatvédelmet alapelvként kezelve fejlesztve. Csak a 7 támogatott AI-oldal és az opcionális helyi LLM URL elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.
 
 🤝 NYÍLT FORRÁSKÓDÚ PROJEKT
 A MI mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az átláthatóság és az adatvédelem tiszteletben tartása a legfontosabb prioritásaink. Fejlesztő, vagy csak kíváncsi? Böngéssze a kódot, kövesse a változásnaplót, vagy járuljon hozzá a GitHubon: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 FRISSÍTÉSEK:
-1.2.2-es verzió (Hibajavítások és támogatás): Hibajavítások és belső átalakítások az utolsó frissítés óta, a jobb stabilitás érdekében. Ha a MI mappák hasznos Önnek, támogathatja fejlesztését a Ko-fi oldal felkeresésével: https://ko-fi.com/aifolders — köszönjük a támogatást!
+1.5-ös verzió (Grok): Indítson új Grok-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat. Szélesebb panel, finomított kezelőelemek és jobb billentyűzetes hozzáférhetőség. Hibajavítások és belső átalakítások az utolsó frissítés óta, a jobb stabilitás érdekében. Ha a MI mappák hasznos Önnek, támogathatja fejlesztését a Ko-fi oldal felkeresésével: https://ko-fi.com/aifolders — köszönjük a támogatást!
 1.2-es verzió (DeepSeek): Indítson új DeepSeek-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat.
 1.1-es verzió (Prompt-kiváltó): Írjon # jelet bármely AI-chat mezőbe, hogy valós időben szűrve lássa mentett promptjait. Használja a ↓/↑ billentyűket a javaslatok közötti navigáláshoz, a szóközt az automatikus kiegészítéshez vagy beillesztéshez — a panel megnyitása nélkül.
 1.0-s verzió: Első kiadás! Rendszerezze a Gemini, Claude, ChatGPT, Copilot és Perplexity beszélgetéseit közös mappákban. Teljes prompt-könyvtár egy kattintásos beillesztéssel, gyors mentési parancsikonok, húzás és ejtés, mobilszinkronizáció, tömeges műveletek, lapcsoportok és 43 nyelv támogatása.

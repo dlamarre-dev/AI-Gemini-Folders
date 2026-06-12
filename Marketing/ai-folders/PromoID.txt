@@ -2,7 +2,7 @@
 
 Atur percakapan dari semua alat AI favorit Anda dalam folder bersama, bangun perpustakaan prompt yang dapat digunakan kembali, dan suntikkan templat langsung ke kolom input mana pun — tanpa perlu menyalin dan menempel.
 
-🌐 7 LAYANAN AI YANG DIDUKUNG
+🌐 8 LAYANAN AI YANG DIDUKUNG
 
 Folder AI terintegrasi secara native dengan semua asisten obrolan AI utama, serta LLM lokal yang Anda jalankan sendiri. Percakapan dari platform yang berbeda dapat berbagi folder yang sama persis. Setiap obrolan menampilkan warna dan logo layanannya, jadi Anda selalu tahu dari mana asalnya.
 
@@ -55,14 +55,14 @@ Untuk menyematkan prompt: klik 📍 — naik ke bagian atas daftar dan tetap mud
 Pemicu Prompt: Ketik # untuk langsung melihat semua prompt tersimpan Anda, atau lanjutkan mengetik untuk memfilter secara real time. Tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan.
 
 🔒 PRIVASI & KEAMANAN
-Dibangun dengan privasi sebagai inti. Hanya meminta akses ke 6 situs AI yang didukung dan URL LLM lokal opsional Anda dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui Chrome Sync: tidak ada server pihak ketiga, tidak ada telemetri.
+Dibangun dengan privasi sebagai inti. Hanya meminta akses ke 7 situs AI yang didukung dan URL LLM lokal opsional Anda dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui Chrome Sync: tidak ada server pihak ketiga, tidak ada telemetri.
 
 🤝 PROYEK OPEN SOURCE
 Folder AI adalah proyek open source yang dibangun dengan penuh semangat. Transparansi dan penghormatan terhadap privasi Anda adalah prioritas utama kami. Apakah Anda pengembang atau sekadar penasaran? Jelajahi kode, ikuti catatan perubahan, atau berkontribusi di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 PEMBARUAN:
-Versi 1.2.2 (Perbaikan Bug & Dukungan): Perbaikan bug dan refaktorisasi internal sejak pembaruan terakhir, untuk stabilitas yang lebih baik. Jika Folder AI bermanfaat bagi Anda, Anda dapat mendukung pengembangannya dengan mengunjungi halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas dukungan Anda!
+Versi 1.5 (Grok): Mulai percakapan Grok baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt. Panel lebih lebar, kontrol lebih rapi, dan aksesibilitas keyboard yang lebih baik. Perbaikan bug dan refaktorisasi internal sejak pembaruan terakhir, untuk stabilitas yang lebih baik. Jika Folder AI bermanfaat bagi Anda, Anda dapat mendukung pengembangannya dengan mengunjungi halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas dukungan Anda!
 Versi 1.2 (DeepSeek): Mulai percakapan DeepSeek baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt.
 Versi 1.1 (Pemicu Prompt): Ketik # di kolom chat AI mana pun untuk melihat prompt yang tersimpan difilter secara real time. Gunakan ↓/↑ untuk menavigasi saran, Spasi untuk melengkapi otomatis atau menyuntikkan — tanpa membuka panel.
 Versi 1.0: Rilis pertama! Atur percakapan dari Gemini, Claude, ChatGPT, Copilot, dan Perplexity dalam folder bersama. Pustaka prompt lengkap dengan injeksi satu klik, pintasan simpan cepat, drag & drop, sinkronisasi mobile, aksi massal, grup tab, dan dukungan 43 bahasa. Dukungan LLM lokal dengan URL yang dapat dikonfigurasi (localhost dan alamat LAN).

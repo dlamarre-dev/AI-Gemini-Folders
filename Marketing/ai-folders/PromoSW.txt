@@ -2,7 +2,7 @@
 
 Panga mazungumzo kutoka kwa zana zako zote unazozipenda za AI katika folda zilizoshirikiwa, jenga maktaba ya maagizo yanayoweza kutumika tena, na uweke violezo moja kwa moja katika uwanja wowote wa kuandika — bila kuhitaji kunakili na kubandika.
 
-🌐 HUDUMA 7 ZA AI ZINAZOTUMIKA
+🌐 HUDUMA 8 ZA AI ZINAZOTUMIKA
 
 Folda za AI huunganishwa kiasili na wasaidizi wakuu wote wa gumzo la AI, pamoja na LLM za ndani unazoendesha mwenyewe. Mazungumzo kutoka kwa majukwaa tofauti yanaweza kushiriki folda ile ile. Kila mazungumzo huonyesha rangi na nembo ya huduma yake, hivyo unajua kila wakati yametoka wapi.
 
@@ -55,14 +55,14 @@ Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi ku
 Kichocheo cha Kidokezo: Andika # ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa, au endelea kuandika ili kufilia kwa wakati halisi. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza.
 
 🔒 FARAGHA NA USALAMA
-Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa tovuti 6 za AI zinazoungwa mkono na URL yako ya hiari ya LLM ya ndani na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
+Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa tovuti 7 za AI zinazoungwa mkono na URL yako ya hiari ya LLM ya ndani na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
 
 🤝 MRADI WA CHANZO WAZI
 Folda za AI ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MASASISHO:
-Toleo 1.2.2 (Marekebisho ya Matatizo na Msaada): Marekebisho ya hitilafu na upyaji wa ndani tangu sasisho la mwisho, kwa uthabiti bora. Ikiwa Folda za AI ni muhimu kwako, unaweza kusaidia maendeleo kwa kutembelea ukurasa wa Ko-fi: https://ko-fi.com/aifolders — asante kwa msaada wako!
+Toleo 1.5 (Grok): Anza mazungumzo mapya ya Grok moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo. Paneli pana zaidi, vidhibiti vilivyoboreshwa na ufikivu bora wa kibodi. Marekebisho ya hitilafu na upyaji wa ndani tangu sasisho la mwisho, kwa uthabiti bora. Ikiwa Folda za AI ni muhimu kwako, unaweza kusaidia maendeleo kwa kutembelea ukurasa wa Ko-fi: https://ko-fi.com/aifolders — asante kwa msaada wako!
 Toleo 1.2 (DeepSeek): Anza mazungumzo mapya ya DeepSeek moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo.
 Toleo 1.1 (Kichocheo cha Kidokezo): Andika # katika uwanja wowote wa mazungumzo wa AI ili uone vidokezo vyako vilivyohifadhiwa vikichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.
 Toleo 1.0: Chapisho la kwanza! Panga mazungumzo kutoka Gemini, Claude, ChatGPT, Copilot na Perplexity katika folda zilizoshirikiwa. Maktaba kamili ya maagizo na sindano ya kubonyeza mara moja, njia za mkato za kuhifadhi haraka, buruta na uacha, usawazishaji wa simu, vitendo vya wingi, vikundi vya kichupo na usaidizi wa lugha 43.

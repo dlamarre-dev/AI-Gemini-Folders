@@ -2,7 +2,7 @@
 
 Organisieren Sie Gespräche aller Ihrer bevorzugten KI-Tools in gemeinsamen Ordnern, erstellen Sie eine Bibliothek wiederverwendbarer Prompts und injizieren Sie Vorlagen direkt in jedes Eingabefeld — ganz ohne Kopieren und Einfügen.
 
-🌐 7 UNTERSTÜTZTE KI-DIENSTE
+🌐 8 UNTERSTÜTZTE KI-DIENSTE
 
 KI-Ordner integriert sich nativ mit allen großen KI-Chat-Assistenten sowie mit den lokalen LLMs, die Sie selbst betreiben. Gespräche von verschiedenen Plattformen können denselben Ordner teilen. Jeder Chat zeigt die Farbe und das Logo seines Dienstes an, sodass Sie immer wissen, woher er stammt.
 
@@ -55,14 +55,14 @@ Prompt anheften: auf 📍 klicken — er rückt an die erste Stelle und bleibt i
 Prompt-Trigger: Geben Sie # ein, um sofort alle Ihre gespeicherten Prompts zu sehen, oder tippen Sie weiter, um in Echtzeit zu filtern. Drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur Injektion.
 
 🔒 DATENSCHUTZ & SICHERHEIT
-Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf die 6 unterstützten KI-Sites und Ihre optionale lokale LLM-URL an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
+Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf die 7 unterstützten KI-Sites und Ihre optionale lokale LLM-URL an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
 
 🤝 OPEN-SOURCE-PROJEKT
 KI-Ordner ist ein leidenschaftlich entwickeltes Open-Source-Projekt. Transparenz und Datenschutz haben höchste Priorität. Entwickler oder einfach neugierig? Code einsehen, Änderungsprotokoll verfolgen oder auf GitHub beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
-Version 1.2.2 (Fehlerbehebungen & Unterstützung): Fehlerbehebungen und interne Überarbeitungen seit dem letzten Update, für eine verbesserte Stabilität. Wenn KI-Ordner Ihnen nützlich ist, können Sie die Entwicklung unterstützen, indem Sie die Ko-fi-Seite besuchen: https://ko-fi.com/aifolders — vielen Dank für Ihre Unterstützung!
+Version 1.5 (Grok): Starten Sie neue Grok-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts. Breiteres Panel, verfeinerte Bedienelemente und bessere Tastaturzugänglichkeit. Fehlerbehebungen und interne Überarbeitungen seit dem letzten Update, für eine verbesserte Stabilität. Wenn KI-Ordner Ihnen nützlich ist, können Sie die Entwicklung unterstützen, indem Sie die Ko-fi-Seite besuchen: https://ko-fi.com/aifolders — vielen Dank für Ihre Unterstützung!
 Version 1.2 (DeepSeek): Starten Sie neue DeepSeek-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts.
 Version 1.1 (Prompt-Auslöser): Geben Sie # in ein beliebiges KI-Chat-Feld ein, um gespeicherte Prompts in Echtzeit gefiltert zu sehen. Verwenden Sie ↓/↑ zum Navigieren durch Vorschläge, Leertaste zum Autovervollständigen oder Einsetzen — ohne das Panel zu öffnen.
 Version 1.0: Erstveröffentlichung! Organisieren Sie Gespräche von Gemini, Claude, ChatGPT, Copilot und Perplexity in gemeinsamen Ordnern. Vollständige Prompt-Bibliothek mit Ein-Klick-Injektion, Schnellspeicher-Shortcuts, Drag & Drop, Mobile-Sync, Massenaktionen, Tab-Gruppen und Unterstützung für 43 Sprachen. Lokaler LLM-Support mit konfigurierbarer URL (localhost und LAN-Adressen).

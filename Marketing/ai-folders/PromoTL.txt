@@ -2,7 +2,7 @@
 
 Ayusin ang mga pag-uusap mula sa lahat ng iyong mga paboritong AI tool sa mga ibinabahaging folder, bumuo ng library ng mga prompt na magagamit muli, at mag-inject ng mga template nang direkta sa anumang input field — hindi na kailangang mag-copy-paste.
 
-🌐 7 SUPORTADONG AI SERVICE
+🌐 8 SUPORTADONG AI SERVICE
 
 Ang Mga AI Folder ay natively na nag-iintegrate sa lahat ng pangunahing AI chat assistant, at sa mga lokal na LLM na pinapatakbo mo mismo. Ang mga pag-uusap mula sa iba't ibang platform ay maaaring magbahagi ng eksaktong parehong folder. Ang bawat chat ay nagpapakita ng kulay at logo ng serbisyo nito, kaya alam mo lagi kung saan ito nanggaling.
 
@@ -55,14 +55,14 @@ Para i-pin ang isang prompt: i-click ang 📍 — lilipat ito sa tuktok ng lista
 Prompt Trigger: I-type ang # para agad makita ang lahat ng iyong naka-save na prompt, o magpatuloy na mag-type para mag-filter sa real time. Pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject.
 
 🔒 PRIVACY AT SEGURIDAD
-Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa 6 na sinusuportahang AI site at sa iyong opsyonal na lokal na LLM URL at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.
+Ginawa nang may privacy bilang pangunahing priyoridad. Humihingi lamang ng access sa 7 na sinusuportahang AI site at sa iyong opsyonal na lokal na LLM URL at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng Chrome Sync: walang third-party server, walang telemetry.
 
 🤝 OPEN SOURCE NA PROYEKTO
 Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal. Ang transparency at paggalang sa iyong privacy ang aming mga pangunahing priyoridad. Ikaw ba ay isang developer o basta lang curious? I-browse ang code, sundan ang changelog, o mag-contribute sa GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MGA UPDATE:
-Bersyon 1.2.2 (Mga Ayos sa Bug at Suporta): Mga ayos sa bug at panloob na refactoring mula noong huling update, para sa pinahusay na katatagan. Kung ang Mga AI Folder ay kapaki-pakinabang sa iyo, maaari mong suportahan ang pagbuo nito sa pamamagitan ng pagbisita sa Ko-fi page: https://ko-fi.com/aifolders — salamat sa iyong suporta!
+Bersyon 1.5 (Grok): Magsimula ng mga bagong pag-uusap sa Grok nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt. Mas malawak na panel, pinahusay na mga kontrol, at mas mahusay na keyboard accessibility. Mga ayos sa bug at panloob na refactoring mula noong huling update, para sa pinahusay na katatagan. Kung ang Mga AI Folder ay kapaki-pakinabang sa iyo, maaari mong suportahan ang pagbuo nito sa pamamagitan ng pagbisita sa Ko-fi page: https://ko-fi.com/aifolders — salamat sa iyong suporta!
 Bersyon 1.2 (DeepSeek): Magsimula ng mga bagong pag-uusap sa DeepSeek nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt.
 Bersyon 1.1 (Prompt Trigger): I-type ang # sa anumang AI chat field para makita ang iyong mga na-save na prompt na na-filter sa real time. Gamitin ang ↓/↑ para mag-navigate sa mga mungkahi, Space para mag-autocomplete o mag-inject — nang hindi binubuksan ang panel.
 Bersyon 1.0: Unang inilabas! Ayusin ang mga pag-uusap mula sa Gemini, Claude, ChatGPT, Copilot, at Perplexity sa mga ibinabahaging folder. Kumpletong prompt library na may one-click injection, mga shortcut ng mabilis na pag-save, drag at drop, mobile sync, bulk actions, tab groups, at suporta para sa 43 na wika.

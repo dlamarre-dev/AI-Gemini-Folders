@@ -2,7 +2,7 @@
 
 Järjestä kaikista suosikki-AI-työkaluistasi käydyt keskustelut jaetuiksi kansioiksi, rakenna uudelleenkäytettävien kehotteiden kirjasto ja lisää mallit suoraan mihin tahansa syöttökenttään — ilman kopiointia ja liittämistä.
 
-🌐 7 TUETTUA TEKOÄLYPALVELUA
+🌐 8 TUETTUA TEKOÄLYPALVELUA
 
 AI-kansiot integroituu natiivisti kaikkiin suuriin tekoälychat-avustajiin sekä itse käyttämiisi paikallisiin LLM-malleihin. Eri alustojen keskustelut voivat jakaa täsmälleen saman kansion. Jokainen keskustelu näyttää oman palvelunsa värin ja logon, joten tiedät aina, mistä se on peräisin.
 
@@ -55,14 +55,14 @@ Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy
 Kehoteliipaisin: Kirjoita # nähdäksesi välittömästi kaikki tallennetut kehotteesi, tai jatka kirjoittamista suodattaaksesi reaaliajassa. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa lisäämistä varten.
 
 🔒 YKSITYISYYS JA TURVALLISUUS
-Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain 6 tuettuun AI-sivustoon ja valinnaiseen paikalliseen LLM-URL-osoitteeseesi ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.
+Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain 7 tuettuun AI-sivustoon ja valinnaiseen paikalliseen LLM-URL-osoitteeseesi ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.
 
 🤝 AVOIN LÄHDEKOODIN PROJEKTI
 AI-kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvyys ja yksityisyytesi kunnioittaminen ovat korkeimpia prioriteettiamme. Oletko kehittäjä tai vain utelias? Selaa koodia, seuraa muutoslokia tai osallistu GitHubissa: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 PÄIVITYKSET:
-Versio 1.2.2 (Vikakorjaukset ja tuki): Vikakorjauksia ja sisäistä refaktorointia edellisen päivityksen jälkeen, paremman vakauden saavuttamiseksi. Jos AI-kansiot on sinulle hyödyllinen, voit tukea sen kehittämistä vierailemalla Ko-fi-sivulla: https://ko-fi.com/aifolders — kiitos tuestasi!
+Versio 1.5 (Grok): Aloita uusia Grok-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet. Leveämpi paneeli, viimeistellyt säätimet ja parempi näppäimistösaavutettavuus. Vikakorjauksia ja sisäistä refaktorointia edellisen päivityksen jälkeen, paremman vakauden saavuttamiseksi. Jos AI-kansiot on sinulle hyödyllinen, voit tukea sen kehittämistä vierailemalla Ko-fi-sivulla: https://ko-fi.com/aifolders — kiitos tuestasi!
 Versio 1.2 (DeepSeek): Aloita uusia DeepSeek-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet.
 Versio 1.1 (Kehotteen laukaisin): Kirjoita # mihin tahansa AI-chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia.
 Versio 1.0: Ensijulkaisu! Järjestä Geminin, Clauden, ChatGPT:n, Copilotin ja Perplexityn keskustelut jaetuiksi kansioiksi. Täydellinen kehotekirjasto yhdellä napsautuksella, pikaentallenteen pikanäppäimet, vedä ja pudota, mobiilisynkronointi, joukkotoiminnot, välilehtiryhmät ja tuki 43 kielelle.

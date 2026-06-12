@@ -56,12 +56,12 @@ Složky Gemini jsou open source projekt vyvíjený s vášní. Transparentnost a
 
 🤖 TAKÉ K DISPOZICI: AI složky — MULTIPLATFORMNÍ UPGRADE
 
-Zajímají vás Složky Gemini, ale také používáte ChatGPT, Claude, Copilot, Perplexity nebo lokální LLM? AI složky jsou přirozeným dalším krokem: jedno rozšíření pro organizaci konverzací napříč všemi vašimi AI nástroji, se stejným systémem složek, knihovnou promptů a injekcí jedním kliknutím, dostupnými ve Složky Gemini.
+Zajímají vás Složky Gemini, ale také používáte ChatGPT, Claude, Copilot, Grok, Perplexity nebo lokální LLM? AI složky jsou přirozeným dalším krokem: jedno rozšíření pro organizaci konverzací napříč všemi vašimi AI nástroji, se stejným systémem složek, knihovnou promptů a injekcí jedním kliknutím, dostupnými ve Složky Gemini.
 
 👉 Nainstalovat AI složky: __AF_STORE_URL__
 
 📢 AKTUALIZACE:
-Verze 4.2.3 (Opravy chyb a podpora): Opravy chyb a interní refaktoring od poslední aktualizace pro lepší stabilitu. Pokud vám Složky Gemini pomáhají, můžete podpořit jejich vývoj návštěvou stránky Ko-fi: https://ko-fi.com/aifolders — děkujeme za vaši podporu!
+Verze 4.5 (Rozhraní a stabilita): Širší panel, vylepšené ovládací prvky a lepší přístupnost z klávesnice. Opravy chyb a interní refaktoring od poslední aktualizace pro lepší stabilitu. Pokud vám Složky Gemini pomáhají, můžete podpořit jejich vývoj návštěvou stránky Ko-fi: https://ko-fi.com/aifolders — děkujeme za vaši podporu!
 Verze 4.2 (Spouštěč promptů): Zadejte # do pole chatu Gemini a zobrazte si uložené prompty filtrované v reálném čase. Pomocí ↓/↑ procházejte návrhy, mezerníkem je automaticky dokončete nebo vložte — bez otevření panelu.
 Verze 4.1 (Globální expanze a zpevnění): 16 nových jazyků přivádí Složky Gemini na 43 lokalizací po celém světě — severské jazyky, pobaltské státy a rozšířené evropské a jihovýchodoasijské pokrytí. Opravena race condition, která mohla při rychlých kliknutích tiše zahodit uložení. Vkládání výzev modernizováno pomocí InputEvent, nahrazení zastaralého execCommand. Importní kanál zabezpečen proti škodlivým URL v záložních souborech. Oprava kritické chyby zabezpečení dat: povolení synchronizace promptů při téměř plném úložišti mohlo tiše vymazat všechny uložené prompty. Úložiště nyní používá fragmentované zápisy, aby zůstalo v mezích Chrome, s jasnými chybovými hlášeními při zaplnění.
 Verze 4.0 (Knihovna výzev): Nejambicióznější aktualizace dosud! Složky Gemini získávají zcela nový režim výzev: ukládejte nejlepší výzvy, upravujte je na místě a vkládejte je přímo do Gemini jedním kliknutím. Přidáno: animovaný přepínač režimů, vyhledávání a řazení v režimu výzev, tlačítko vlastního Gem a nezávislá synchronizace výzev. Připnutí nejdůležitějších výzev na vrchol knihovny.

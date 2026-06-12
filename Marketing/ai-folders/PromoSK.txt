@@ -2,7 +2,7 @@
 
 Organizujte konverzácie zo všetkých vašich obľúbených AI nástrojov do zdieľaných priečinkov, vytvorte knižnicu opakovane použiteľných promptov a vkladajte šablóny priamo do ľubovoľného vstupného poľa — bez kopírovania a vkladania.
 
-🌐 7 PODPOROVANÝCH AI SLUŽIEB
+🌐 8 PODPOROVANÝCH AI SLUŽIEB
 
 AI priečinky sa natívne integrujú so všetkými hlavnými AI chatovacími asistentmi a s lokálnymi LLM, ktoré si spustíte sami. Konverzácie z rôznych platforiem môžu zdieľať úplne ten istý priečinok. Každý chat zobrazuje farbu a logo svojej služby, takže vždy viete, odkiaľ pochádza.
 
@@ -55,14 +55,14 @@ Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vž
 Spúšťač promptov: Napíšte # a okamžite uvidíte všetky svoje uložené prompty, alebo pokračujte v písaní pre filtrovanie v reálnom čase. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre vloženie.
 
 🔒 SÚKROMIE A BEZPEČNOSŤ
-Navrhnuté so súkromím v centre. Vyžaduje prístup iba k 6 podporovaným AI stránkam a vašej voliteľnej lokálnej LLM URL a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.
+Navrhnuté so súkromím v centre. Vyžaduje prístup iba k 7 podporovaným AI stránkam a vašej voliteľnej lokálnej LLM URL a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.
 
 🤝 OPEN SOURCE PROJEKT
 AI priečinky sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AKTUALIZÁCIE:
-Verzia 1.2.2 (Opravy chýb a podpora): Opravy chýb a interný refaktoring od poslednej aktualizácie, pre lepšiu stabilitu. Ak vám AI priečinky pomáhajú, môžete podporiť ich vývoj návštevou stránky Ko-fi: https://ko-fi.com/aifolders — ďakujeme za vašu podporu!
+Verzia 1.5 (Grok): Spustite nové konverzácie na Grok priamo z režimu výziev, ukladajte ich do priečinkov a vkladajte výzvy. Širší panel, vylepšené ovládacie prvky a lepšia prístupnosť z klávesnice. Opravy chýb a interný refaktoring od poslednej aktualizácie, pre lepšiu stabilitu. Ak vám AI priečinky pomáhajú, môžete podporiť ich vývoj návštevou stránky Ko-fi: https://ko-fi.com/aifolders — ďakujeme za vašu podporu!
 Verzia 1.2 (DeepSeek): Spustite nové konverzácie na DeepSeek priamo z režimu výziev, ukladajte ich do priečinkov a vkladajte výzvy.
 Verzia 1.1 (Spúšťač promptov): Zadajte # do ľubovoľného poľa chatu AI a zobrazte si uložené prompty filtrované v reálnom čase. Pomocou ↓/↑ prechádzajte návrhy, medzerníkom ich automaticky dokončite alebo vložte — bez otvorenia panela.
 Verzia 1.0: Prvé vydanie! Usporiadajte konverzácie z Gemini, Claude, ChatGPT, Copilot a Perplexity do zdieľaných priečinkov. Kompletná knižnica promptov s vkladaním jedným kliknutím, skratky rýchleho ukladania, drag & drop, mobilná synchronizácia, hromadné akcie, skupiny kariet a podpora 43 jazykov. Podpora lokálnych LLM s konfigurovateľnou URL (localhost a LAN adresy).

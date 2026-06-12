@@ -56,12 +56,12 @@ Gemini-mappen is een open-sourceproject gebouwd met passie. Transparantie en res
 
 🤖 OOK BESCHIKBAAR: AI-mappen — DE MULTI-PLATFORM UPGRADE
 
-Geïnteresseerd in Gemini-mappen maar gebruik je ook ChatGPT, Claude, Copilot, Perplexity of een lokaal LLM? AI-mappen is de logische volgende stap: één extensie om gesprekken te organiseren in al je AI-tools, met hetzelfde mappensysteem, de promptbibliotheek en de invoeg-met-één-klik die beschikbaar zijn in Gemini-mappen.
+Geïnteresseerd in Gemini-mappen maar gebruik je ook ChatGPT, Claude, Copilot, Grok, Perplexity of een lokaal LLM? AI-mappen is de logische volgende stap: één extensie om gesprekken te organiseren in al je AI-tools, met hetzelfde mappensysteem, de promptbibliotheek en de invoeg-met-één-klik die beschikbaar zijn in Gemini-mappen.
 
 👉 AI-mappen installeren: __AF_STORE_URL__
 
 📢 UPDATES:
-Versie 4.2.3 (Bugfixes en ondersteuning): Bugfixes en interne refactoring sinds de laatste update, voor verbeterde stabiliteit. Als Gemini-mappen u van nut is, kunt u de ontwikkeling ondersteunen door de Ko-fi-pagina te bezoeken: https://ko-fi.com/aifolders — bedankt voor uw steun!
+Versie 4.5 (Interface en stabiliteit): Breder paneel, verfijnde bedieningselementen en betere toetsenbordtoegankelijkheid. Bugfixes en interne refactoring sinds de laatste update, voor verbeterde stabiliteit. Als Gemini-mappen u van nut is, kunt u de ontwikkeling ondersteunen door de Ko-fi-pagina te bezoeken: https://ko-fi.com/aifolders — bedankt voor uw steun!
 Versie 4.2 (Prompt-trigger): Typ # in het chatveld van Gemini om uw opgeslagen prompts in realtime gefilterd te zien. Gebruik ↓/↑ om door suggesties te navigeren, Spatie om automatisch aan te vullen of in te voegen — zonder het panel te openen.
 Versie 4.1 (Globale uitbreiding en versterking): 16 nieuwe talen brengen Gemini-mappen naar 43 lokalisaties wereldwijd — Scandinavische talen, de Baltische staten en uitgebreide Europese en Zuidoost-Aziatische dekking. Een race condition opgelost die bij snelle klikken stilletjes een opslaan kon weggooien. Promptinjectie gemoderniseerd met InputEvent ter vervanging van de verouderde execCommand. Importpipeline gehardend tegen kwaadaardige URL's in back-upbestanden. Kritieke gegevensbeveiligingsfout opgelost: het inschakelen van prompt-synchronisatie met bijna vol opslaggeheugen kon alle opgeslagen prompts stilzwijgend verwijderen. De opslag gebruikt nu gefragmenteerde schrijfbewerkingen om binnen Chrome-limieten te blijven, met duidelijke foutmeldingen als het vol is.
 Versie 4.0 (Promptbibliotheek): De meest ambitieuze update tot nu toe! Gemini-mappen krijgt een gloednieuwe Promptmodus: sla uw beste prompts op, bewerk ze inline en voeg ze met één klik direct in Gemini in. Geanimeerde modusschakelaar, zoeken en sorteren in Promptmodus, aangepaste Gem-knop en onafhankelijke promptsynchronisatie toegevoegd. Zet essentiële prompts bovenaan uw bibliotheek vast.

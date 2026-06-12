@@ -2,7 +2,7 @@
 
 Tüm favori AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düzenleyin, yeniden kullanılabilir bir prompt kütüphanesi oluşturun ve şablonları herhangi bir giriş alanına doğrudan enjekte edin — kopyala yapıştır gerekmez.
 
-🌐 DESTEKLENEN 7 YZ HİZMETİ
+🌐 DESTEKLENEN 8 YZ HİZMETİ
 
 YZ Klasörleri, tüm büyük yapay zeka sohbet asistanlarıyla ve kendi çalıştırdığınız yerel LLM'lerle yerel olarak entegre olur. Farklı platformlardan gelen sohbetler tamamen aynı klasörü paylaşabilir. Her sohbet, kendi hizmetinin rengini ve logosunu gösterir, böylece nereden geldiğini her zaman bilirsiniz.
 
@@ -55,14 +55,14 @@ Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar
 İstem Tetikleyici: # yazın ve tüm kayıtlı istemlerinizi anında görün veya gerçek zamanlı filtrelemek için yazmaya devam edin. Benzersiz eşleşmede otomatik tamamlamak için, tam eşleşmede enjekte etmek için boşluk tuşuna basın.
 
 🔒 GİZLİLİK & GÜVENLİK
-Gizlilik öncelikli tasarım. Yalnızca desteklenen 6 AI sitesine ve isteğe bağlı yerel LLM URL'nize erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.
+Gizlilik öncelikli tasarım. Yalnızca desteklenen 7 AI sitesine ve isteğe bağlı yerel LLM URL'nize erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.
 
 🤝 AÇIK KAYNAK PROJE
 Gemini Klasörler, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 GÜNCELLEMELER:
-Sürüm 1.2.2 (Hata Düzeltmeleri ve Destek): Son güncellemeden bu yana hata düzeltmeleri ve dahili yeniden yapılandırma, geliştirilmiş kararlılık için. YZ Klasörleri işinize yarıyorsa, Ko-fi sayfasını ziyaret ederek geliştirmeyi destekleyebilirsiniz: https://ko-fi.com/aifolders — desteğiniz için teşekkürler!
+Sürüm 1.5 (Grok): Prompt Modundan doğrudan yeni Grok konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin. Daha geniş panel, iyileştirilmiş denetimler ve daha iyi klavye erişilebilirliği. Son güncellemeden bu yana hata düzeltmeleri ve dahili yeniden yapılandırma, geliştirilmiş kararlılık için. YZ Klasörleri işinize yarıyorsa, Ko-fi sayfasını ziyaret ederek geliştirmeyi destekleyebilirsiniz: https://ko-fi.com/aifolders — desteğiniz için teşekkürler!
 Sürüm 1.2 (DeepSeek): Prompt Modundan doğrudan yeni DeepSeek konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin.
 Sürüm 1.1 (Prompt Tetikleyici): Herhangi bir AI sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan.
 Sürüm 1.0: İlk yayın! Gemini, Claude, ChatGPT, Copilot ve Perplexity sohbetlerini paylaşılan klasörlerde düzenleyin. Tek tıkla ekleme özellikli tam prompt kütüphanesi, hızlı kaydetme kısayolları, sürükle ve bırak, mobil senkronizasyon, toplu işlemler, sekme grupları ve 43 dil desteği. Yapılandırılabilir URL (localhost ve LAN adresleri) ile yerel LLM desteği.

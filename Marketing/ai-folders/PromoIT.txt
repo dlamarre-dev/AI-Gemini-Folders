@@ -2,7 +2,7 @@
 
 Organizza conversazioni da tutti i tuoi strumenti AI preferiti in cartelle condivise, crea una libreria di prompt riutilizzabili e inietta modelli direttamente in qualsiasi campo di input — senza bisogno di copiare e incollare.
 
-🌐 7 SERVIZI AI SUPPORTATI
+🌐 8 SERVIZI AI SUPPORTATI
 
 Cartelle IA si integra in modo nativo con tutti i principali assistenti di chat IA e con i LLM locali che esegui tu stesso. Le conversazioni di piattaforme diverse possono condividere la stessa cartella. Ogni chat mostra il colore e il logo del suo servizio di origine, così sai sempre da dove proviene.
 
@@ -55,14 +55,14 @@ Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta s
 Attivatore di prompt: Digita # per vedere istantaneamente tutti i tuoi prompt salvati, o continua a digitare per filtrare in tempo reale. Premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare.
 
 🔒 PRIVACY E SICUREZZA
-Progettata con la privacy al centro. Richiede accesso solo ai 6 siti AI supportati e al tuo URL LLM locale opzionale, e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
+Progettata con la privacy al centro. Richiede accesso solo ai 7 siti AI supportati e al tuo URL LLM locale opzionale, e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
 
 🤝 PROGETTO OPEN SOURCE
 Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AGGIORNAMENTI:
-Versione 1.2.2 (Correzioni e supporto): Correzioni di bug e refactoring interno dall'ultimo aggiornamento, per una maggiore stabilità. Se Cartelle IA ti è utile, puoi supportarne lo sviluppo visitando la pagina Ko-fi: https://ko-fi.com/aifolders — grazie per il tuo supporto!
+Versione 1.5 (Grok): Avvia nuove conversazioni Grok direttamente dalla Modalità Prompt, salvale in cartelle e inietta prompt. Pannello più ampio, controlli rifiniti e migliore accessibilità da tastiera. Correzioni di bug e refactoring interno dall'ultimo aggiornamento, per una maggiore stabilità. Se Cartelle IA ti è utile, puoi supportarne lo sviluppo visitando la pagina Ko-fi: https://ko-fi.com/aifolders — grazie per il tuo supporto!
 Versione 1.2 (DeepSeek): Avvia nuove conversazioni DeepSeek direttamente dalla Modalità Prompt, salvale in cartelle e inietta prompt.
 Versione 1.1 (Prompt Trigger): Digita # in qualsiasi campo chat AI per vedere i tuoi prompt filtrati in tempo reale. Usa ↓/↑ per navigare tra i suggerimenti, Spazio per autocompletare o iniettare — senza mai aprire il pannello.
 Versione 1.0: Prima pubblicazione! Organizza conversazioni da Gemini, Claude, ChatGPT, Copilot e Perplexity in cartelle condivise. Libreria prompt completa con iniezione in un clic, scorciatoie di salvataggio rapido, drag & drop, sincronizzazione mobile, azioni in blocco, gruppi di schede e supporto per 43 lingue. Supporto LLM locale con URL configurabile (localhost e indirizzi LAN).

@@ -2,7 +2,7 @@
 
 Organiser samtaler fra alle favoritt-AI-verktøyene dine i delte mapper, bygg et bibliotek av gjenbrukbare prompter, og injiser maler direkte i et hvilket som helst inndatafelt — uten kopiering og innliming.
 
-🌐 7 STØTTEDE AI-TJENESTER
+🌐 8 STØTTEDE AI-TJENESTER
 
 AI-mapper integreres nativt med alle de store AI-chatassistentene, og med de lokale LLM-ene du kjører selv. Samtaler fra forskjellige plattformer kan dele nøyaktig samme mappe. Hver samtale viser fargen og logoen til sin egen tjeneste, slik at du alltid vet hvor den kommer fra.
 
@@ -55,14 +55,14 @@ For å feste en prompt: klikk 📍 – den flyttes øverst på listen og forblir
 Promptutløser: Skriv # for å umiddelbart se alle dine lagrede prompter, eller fortsett å skrive for å filtrere i sanntid. Trykk mellomrom på et unikt treff for autofullføring, eller på et eksakt treff for å injisere.
 
 🔒 PERSONVERN OG SIKKERHET
-Bygget med personvern i fokus. Tillegget ber bare om tilgang til de 6 støttede AI-nettstedene og din valgfrie lokale LLM-URL og leser bare den aktive fanen ved lagring av en samtale eller innsetting av en prompt. «Bokmerker»-tillatelsen brukes bare hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
+Bygget med personvern i fokus. Tillegget ber bare om tilgang til de 7 støttede AI-nettstedene og din valgfrie lokale LLM-URL og leser bare den aktive fanen ved lagring av en samtale eller innsetting av en prompt. «Bokmerker»-tillatelsen brukes bare hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
 
 🤝 ÅPEN KILDEKODE-PROSJEKT
 AI-mapper er et åpen kildekode-prosjekt bygget med lidenskap. Transparens og respekt for personvernet ditt er våre høyeste prioriteter. Er du en utvikler eller bare nysgjerrig? Bla gjennom koden, følg endringsloggen eller bidra på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 OPPDATERINGER:
-Versjon 1.2.2 (Feilrettinger og støtte): Feilrettinger og intern refaktorering siden siste oppdatering, for forbedret stabilitet. Hvis AI-mapper er nyttig for deg, kan du støtte utviklingen ved å besøke Ko-fi-siden: https://ko-fi.com/aifolders — takk for støtten!
+Versjon 1.5 (Grok): Start nye Grok-samtaler direkte fra Promptmodus, lagre dem i mapper og injiser prompter. Bredere panel, forbedrede kontroller og bedre tastaturtilgjengelighet. Feilrettinger og intern refaktorering siden siste oppdatering, for forbedret stabilitet. Hvis AI-mapper er nyttig for deg, kan du støtte utviklingen ved å besøke Ko-fi-siden: https://ko-fi.com/aifolders — takk for støtten!
 Versjon 1.2 (DeepSeek): Start nye DeepSeek-samtaler direkte fra Promptmodus, lagre dem i mapper og injiser prompter.
 Versjon 1.1 (Promptutløser): Skriv # i et AI-chatfelt for å se dine lagrede prompter filtrert i sanntid. Bruk ↓/↑ til å navigere gjennom forslag, Mellomrom for å autofullføre eller injisere — uten å åpne panelet.
 Versjon 1.0: Første utgivelse! Organiser samtaler fra Gemini, Claude, ChatGPT, Copilot og Perplexity i delte mapper. Fullstendig prompt-bibliotek med ett-klikks injeksjon, hurtiglagringssnarvei, dra og slipp, mobilsynkronisering, massehandlinger, fanegruppper og støtte for 43 språk.

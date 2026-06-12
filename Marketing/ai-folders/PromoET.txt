@@ -2,7 +2,7 @@
 
 Korraldage kõigi oma lemmik-AI-tööriistade vestlused jagatud kaustadesse, looge korduvkasutatavate käskluste teek ja lisage mallid otse mis tahes sisestusväljale — ilma kopeerimise ja kleepimiseta.
 
-🌐 7 TOETATUD TEHISINTELLEKTI TEENUST
+🌐 8 TOETATUD TEHISINTELLEKTI TEENUST
 
 AI kaustad integreerub natiivselt kõigi peamiste AI-vestlusassistentidega ning kohalike LLM-idega, mida ise käitate. Eri platvormide vestlused võivad asuda täpselt samas kaustas. Iga vestlus kuvab oma teenuse värvi ja logo, nii et te teate alati, kust see pärineb.
 
@@ -54,14 +54,14 @@ Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
 Viipete käivitaja: Sisestage #, et näha kohe kõiki oma salvestatud viipeid, või jätkake kirjutamist reaalajas filtreerimiseks. Vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral sisestamiseks.
 
 🔒 PRIVAATSUS JA TURVALISUS
-Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult 6 toetatud AI-saidile ja teie valikulisele kohalikule LLM-i URL-ile ning loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.
+Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult 7 toetatud AI-saidile ja teie valikulisele kohalikule LLM-i URL-ile ning loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.
 
 🤝 AVATUD LÄHTEKOODIGA PROJEKT
 AI kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UUENDUSED:
-Versioon 1.2.2 (Veaparandused ja toetus): Veaparandused ja sisemine refaktoring alates viimasest uuendusest, parema stabiilsuse tagamiseks. Kui AI kaustad on teile kasulik, saate selle arendust toetada, külastades Ko-fi lehte: https://ko-fi.com/aifolders — täname teie toetuse eest!
+Versioon 1.5 (Grok): Alustage uusi Grok vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid. Laiem paneel, viimistletud juhtelemendid ja parem klaviatuuriga ligipääsetavus. Veaparandused ja sisemine refaktoring alates viimasest uuendusest, parema stabiilsuse tagamiseks. Kui AI kaustad on teile kasulik, saate selle arendust toetada, külastades Ko-fi lehte: https://ko-fi.com/aifolders — täname teie toetuse eest!
 Versioon 1.2 (DeepSeek): Alustage uusi DeepSeek vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid.
 Versioon 1.1 (Viipade käivitaja): Sisestage # mis tahes AI vestlusväljale, et näha salvestatud viipasid reaalajas filtreerituna. Kasutage ↓/↑ soovituste vahel liikumiseks, Tühikut automaatseks täitmiseks või lisamiseks — ilma paneeli avamata.
 Versioon 1.0: Esimene väljalase! Korraldage Gemini, Claude, ChatGPT, Copilot ja Perplexity vestlused jagatud kaustadesse. Täielik viipade teek ühe klõpsuga lisamisega, kiirsalvestuse otseteed, lohistamine, mobiilsünkroniseerimine, hulgioperatsioonid, vahelehtede rühmad ja tugi 43 keelele.

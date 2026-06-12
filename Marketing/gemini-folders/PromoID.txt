@@ -56,12 +56,12 @@ Folder Gemini adalah proyek open source yang dibangun dengan penuh semangat. Tra
 
 🤖 JUGA TERSEDIA: Folder AI — UPGRADE MULTI-PLATFORM
 
-Tertarik dengan Folder Gemini tapi juga menggunakan ChatGPT, Claude, Copilot, Perplexity, atau LLM lokal? Folder AI adalah langkah alami berikutnya: satu ekstensi untuk mengorganisir percakapan di semua alat AI Anda, dengan sistem folder, pustaka prompt, dan injeksi satu klik yang sama tersedia di Folder Gemini.
+Tertarik dengan Folder Gemini tapi juga menggunakan ChatGPT, Claude, Copilot, Grok, Perplexity, atau LLM lokal? Folder AI adalah langkah alami berikutnya: satu ekstensi untuk mengorganisir percakapan di semua alat AI Anda, dengan sistem folder, pustaka prompt, dan injeksi satu klik yang sama tersedia di Folder Gemini.
 
 👉 Pasang Folder AI: __AF_STORE_URL__
 
 📢 PEMBARUAN:
-Versi 4.2.3 (Perbaikan Bug & Dukungan): Perbaikan bug dan refaktorisasi internal sejak pembaruan terakhir, untuk stabilitas yang lebih baik. Jika Folder Gemini bermanfaat bagi Anda, Anda dapat mendukung pengembangannya dengan mengunjungi halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas dukungan Anda!
+Versi 4.5 (Antarmuka & Stabilitas): Panel lebih lebar, kontrol lebih rapi, dan aksesibilitas keyboard yang lebih baik. Perbaikan bug dan refaktorisasi internal sejak pembaruan terakhir, untuk stabilitas yang lebih baik. Jika Folder Gemini bermanfaat bagi Anda, Anda dapat mendukung pengembangannya dengan mengunjungi halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas dukungan Anda!
 Versi 4.2 (Pemicu Prompt): Ketik # di kolom chat Gemini untuk melihat prompt yang tersimpan difilter secara real time. Gunakan ↓/↑ untuk menavigasi saran, Spasi untuk melengkapi otomatis atau menyuntikkan — tanpa membuka panel.
 Versi 4.1 (Ekspansi Global & Penguatan): 16 bahasa baru membawa Folder Gemini ke 43 lokalisasi di seluruh dunia — bahasa-bahasa Nordik, negara-negara Baltik dan cakupan Eropa dan Asia Tenggara yang diperluas. Memperbaiki race condition yang dapat diam-diam membuang penyimpanan saat klik cepat. Injeksi prompt dimodernisasi dengan InputEvent, menggantikan execCommand yang sudah usang. Pipeline impor diperkuat terhadap URL berbahaya dalam file cadangan. Perbaikan bug keamanan data kritis: mengaktifkan sinkronisasi prompt pada penyimpanan yang hampir penuh dapat menghapus semua prompt tersimpan secara diam-diam. Penyimpanan kini menggunakan penulisan terfragmentasi untuk tetap dalam batas Chrome, dengan pesan kesalahan yang jelas saat penuh.
 Versi 4.0 (Perpustakaan Prompt): Pembaruan paling ambisius sejauh ini! Folder Gemini mendapatkan Mode Prompt yang sepenuhnya baru: simpan prompt terbaik Anda, edit secara langsung, dan suntikkan langsung ke Gemini dengan satu klik. Ditambahkan tombol sakelar mode animasi, pencarian dan pengurutan di Mode Prompt, tombol Gem kustom, dan sinkronisasi prompt independen. Sematkan prompt penting Anda ke bagian atas perpustakaan.

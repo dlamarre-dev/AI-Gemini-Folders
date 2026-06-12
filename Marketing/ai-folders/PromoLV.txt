@@ -2,7 +2,7 @@
 
 Kārtojiet sarunas no visiem saviem iecienītākajiem AI rīkiem koplietotās mapēs, veidojiet atkārtoti izmantojamu uzvedņu bibliotēku un ievietojiet veidnes tieši jebkurā ievades laukā — bez kopēšanas un ielīmēšanas.
 
-🌐 7 ATBALSTĪTI MI PAKALPOJUMI
+🌐 8 ATBALSTĪTI MI PAKALPOJUMI
 
 AI mapes dabiski integrējas ar visiem galvenajiem AI tērzēšanas asistentiem un ar vietējiem LLM, kurus palaižat pats. Sarunas no dažādām platformām var atrasties vienā un tajā pašā mapē. Katra saruna parāda sava pakalpojuma krāsu un logotipu, tāpēc jūs vienmēr zināt, no kurienes tā nāk.
 
@@ -54,14 +54,14 @@ Uzvednes piespraudīšanai: noklikšķini 📍 – tā tiek pārvietota saraksta
 Uzvednes aktivizētājs: Ievadiet #, lai uzreiz redzētu visas saglabātās uzvednes, vai turpiniet rakstīt filtrēšanai reāllaikā. Nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā ievietošanai.
 
 🔒 PRIVĀTUMS UN DROŠĪBA
-Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai 6 atbalstītajām AI vietnēm un jūsu izvēles vietējam LLM URL un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot Chrome Sync: nav trešo pušu serveru, nav telemetrijas.
+Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai 7 atbalstītajām AI vietnēm un jūsu izvēles vietējam LLM URL un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot Chrome Sync: nav trešo pušu serveru, nav telemetrijas.
 
 🤝 ATVĒRTĀ PIRMKODA PROJEKTS
 AI mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība un cieņa pret tavu privātumu ir mūsu augstākās prioritātes. Vai esi izstrādātājs vai vienkārši ziņkārīgs? Pārlūkojiet kodu, sekojiet izmaiņu žurnālam vai piedalieties GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ATJAUNINĀJUMI:
-Versija 1.2.2 (Kļūdu labojumi un atbalsts): Kļūdu labojumi un iekšējā pārstrukturēšana kopš pēdējā atjauninājuma, uzlabotai stabilitātei. Ja AI mapes jums ir noderīgas, varat atbalstīt to izstrādi, apmeklējot Ko-fi lapu: https://ko-fi.com/aifolders — paldies par jūsu atbalstu!
+Versija 1.5 (Grok): Sāciet jaunas Grok sarunas tieši no uzvedņu režīma, saglabājiet tās mapēs un ievietojiet uzvednes. Platāks panelis, uzlabotas vadīklas un labāka piekļūstamība ar tastatūru. Kļūdu labojumi un iekšējā pārstrukturēšana kopš pēdējā atjauninājuma, uzlabotai stabilitātei. Ja AI mapes jums ir noderīgas, varat atbalstīt to izstrādi, apmeklējot Ko-fi lapu: https://ko-fi.com/aifolders — paldies par jūsu atbalstu!
 Versija 1.2 (DeepSeek): Sāciet jaunas DeepSeek sarunas tieši no uzvedņu režīma, saglabājiet tās mapēs un ievietojiet uzvednes.
 Versija 1.1 (Uzvedņu aktivizētājs): Ievadiet # jebkurā AI tērzēšanas laukā, lai reāllaikā filtrētu saglabātās uzvednes. Izmantojiet ↓/↑, lai pārvietotos starp ieteikumiem, Atstarpi automātiskai pabeigšanai vai ievietošanai — neatverot paneli.
 Versija 1.0: Pirmais laidiens! Kārtojiet sarunas no Gemini, Claude, ChatGPT, Copilot un Perplexity koplietotās mapēs. Pilna uzvedņu bibliotēka ar viena klikšķa ievietošanu, ātrās saglabāšanas īsinājumtaustiņi, vilkšana un nomešana, mobilo ierīču sinhronizācija, lielapjoma darbības, ciļņu grupas un atbalsts 43 valodām.

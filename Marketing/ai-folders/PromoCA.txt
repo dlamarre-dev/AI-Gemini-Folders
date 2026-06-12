@@ -2,7 +2,7 @@
 
 Organitza converses de totes les teves eines d'IA preferides en carpetes compartides, crea una biblioteca de prompts reutilitzables i injecta plantilles directament a qualsevol camp d'entrada — sense necessitat de copiar i enganxar.
 
-🌐 7 SERVEIS D'IA COMPATIBLES
+🌐 8 SERVEIS D'IA COMPATIBLES
 
 Carpetes IA s'integra de manera nativa amb tots els principals assistents de xat d'IA, així com amb els LLM locals que executes tu mateix. Les converses de plataformes diferents poden compartir exactament la mateixa carpeta. Cada xat mostra el color i el logotip del seu servei, de manera que sempre saps d'on prové.
 
@@ -53,14 +53,14 @@ Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
 Disparador de prompts: Escriu # per veure a l'instant tots els teus prompts desats, o continua escrivint per filtrar en temps real. Prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar.
 
 🔒 PRIVACITAT I SEGURETAT
-Construït amb la privacitat com a prioritat. Només sol·licita accés als 6 llocs d'IA compatibles i al teu URL de LLM local opcional i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
+Construït amb la privacitat com a prioritat. Només sol·licita accés als 7 llocs d'IA compatibles i al teu URL de LLM local opcional i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
 
 🤝 PROJECTE DE CODI OBERT
 Carpetes IA és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ACTUALITZACIONS:
-Versió 1.2.2 (Correccions i suport): Correccions d'errors i refactorització interna des de l'última actualització, per a una millor estabilitat. Si Carpetes IA us és útil, podeu donar suport al seu desenvolupament visitant la pàgina Ko-fi: https://ko-fi.com/aifolders — gràcies pel vostre suport!
+Versió 1.5 (Grok): Inicia noves converses a Grok directament des del Mode Prompt, desa-les en carpetes i injecta prompts. Panell més ample, controls refinats i millor accessibilitat amb el teclat. Correccions d'errors i refactorització interna des de l'última actualització, per a una millor estabilitat. Si Carpetes IA us és útil, podeu donar suport al seu desenvolupament visitant la pàgina Ko-fi: https://ko-fi.com/aifolders — gràcies pel vostre suport!
 Versió 1.2 (DeepSeek): Inicia noves converses a DeepSeek directament des del Mode Prompt, desa-les en carpetes i injecta prompts.
 Versió 1.1 (Disparador de Prompts): Escriu # a qualsevol camp de xat d'IA per veure els teus prompts filtrats en temps real. Usa ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell.
 Versió 1.0: Primera publicació! Organitzeu converses de Gemini, Claude, ChatGPT, Copilot i Perplexity en carpetes compartides. Biblioteca de prompts completa amb injecció d'un clic, dreceres de desament ràpid, arrossegar i deixar anar, sincronització mòbil, accions en bloc, grups de pestanyes i suport per a 43 idiomes.

@@ -56,12 +56,12 @@ Gemini-mappar är ett öppen källkod-projekt byggt med passion. Transparens och
 
 🤖 FINNS OCKSÅ: AI-mappar — MULTI-PLATTFORMS UPPGRADERINGEN
 
-Intresserad av Gemini-mappar men använder du också ChatGPT, Claude, Copilot, Perplexity eller en lokal LLM? AI-mappar är det naturliga nästa steget: ett tillägg för att organisera konversationer i alla dina AI-verktyg, med samma mappsystem, promptbibliotek och infogning med ett klick tillgängliga i Gemini-mappar.
+Intresserad av Gemini-mappar men använder du också ChatGPT, Claude, Copilot, Grok, Perplexity eller en lokal LLM? AI-mappar är det naturliga nästa steget: ett tillägg för att organisera konversationer i alla dina AI-verktyg, med samma mappsystem, promptbibliotek och infogning med ett klick tillgängliga i Gemini-mappar.
 
 👉 Installera AI-mappar: __AF_STORE_URL__
 
 📢 UPPDATERINGAR:
-Version 4.2.3 (Buggfixar och support): Buggfixar och intern refaktorering sedan senaste uppdateringen, för förbättrad stabilitet. Om Gemini-mappar är till nytta för dig kan du stödja utvecklingen genom att besöka Ko-fi-sidan: https://ko-fi.com/aifolders — tack för ditt stöd!
+Version 4.5 (Gränssnitt och stabilitet): Bredare panel, förfinade kontroller och bättre tangentbordstillgänglighet. Buggfixar och intern refaktorering sedan senaste uppdateringen, för förbättrad stabilitet. Om Gemini-mappar är till nytta för dig kan du stödja utvecklingen genom att besöka Ko-fi-sidan: https://ko-fi.com/aifolders — tack för ditt stöd!
 Version 4.2 (Promptutlösare): Skriv # i Geminis chattfält för att se dina sparade promptar filtrerade i realtid. Använd ↓/↑ för att navigera bland förslag, Blanksteg för att autokomplettera eller injicera — utan att öppna panelen.
 Version 4.1 (Global expansion och härdning): 16 nya språk tar Gemini-mappar till 43 lokaliseringar världen över — nordiska språk, de baltiska staterna och utökad europeisk och sydostasiatisk täckning. Åtgärdat ett race condition som tyst kunde tappa en sparning vid snabba klick. Promptinjicering moderniserad med InputEvent, som ersätter det inaktuella execCommand. Import-pipeline härdad mot skadliga URL:er i säkerhetskopior. Kritiskt datasäkerhetsfel åtgärdat: att aktivera prompt-synkronisering med nästan fullt lagringsutrymme kunde tyst radera alla sparade prompts. Lagringen använder nu fragmenterade skrivningar för att hålla sig inom Chromes gränser, med tydliga felmeddelanden när den är full.
 Version 4.0 (Promptbibliotek): Den mest ambitiösa uppdateringen hittills! Gemini-mappar får ett helt nytt Promptläge: spara dina bästa prompter, redigera dem inline och injicera dem direkt i Gemini med ett klick. Lade till animerat lägesreglage, sökning och sortering i Promptläge, anpassad Gem-knapp och oberoende promptsynkronisering.

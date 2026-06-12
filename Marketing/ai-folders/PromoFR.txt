@@ -2,7 +2,7 @@ Vos conversations IA sont éparpillées sur différents sites. Vous retapez touj
 
 Organisez les conversations de tous vos outils IA favoris dans des dossiers partagés, constituez une bibliothèque de modèles réutilisables et injectez des modèles directement dans n'importe quel champ de saisie — sans copier-coller.
 
-🌐 7 SERVICES IA PRIS EN CHARGE
+🌐 8 SERVICES IA PRIS EN CHARGE
 
 Dossiers IA s'intègre nativement avec tous les principaux assistants de chat IA, ainsi qu'avec les LLM locaux que vous exécutez vous-même. Les conversations de différentes plateformes peuvent partager le même dossier. Chaque discussion affiche la couleur et le logo de son service d'origine, pour que vous sachiez toujours d'où elle vient.
 
@@ -55,14 +55,14 @@ Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et 
 Déclenchement de prompt : tapez # pour voir instantanément tous vos prompts sauvegardés, ou continuez à taper pour filtrer en temps réel. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ
-Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'aux 6 sites IA pris en charge et à votre URL LLM local optionnelle, et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
+Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'aux 7 sites IA pris en charge et à votre URL LLM local optionnelle, et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
 
 🤝 PROJET OPEN SOURCE
 Dossiers IA est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Consultez le code, suivez l'historique ou contribuez sur GitHub : https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MISES À JOUR :
-Version 1.2.2 (Correctifs & Soutien) : Correctifs de bogues et refactorisations internes depuis la dernière mise à jour, pour une meilleure stabilité. Si Dossiers IA vous est utile, vous pouvez soutenir son développement en visitant la page Ko-fi : https://ko-fi.com/aifolders — merci pour votre soutien !
+Version 1.5 (Grok) : Lancez de nouvelles conversations Grok directement depuis le Mode Prompts, sauvegardez-les dans des dossiers et injectez vos prompts. Panneau élargi, contrôles raffinés et meilleure accessibilité clavier. Correctifs de bogues et refactorisations internes depuis la dernière mise à jour, pour une meilleure stabilité. Si Dossiers IA vous est utile, vous pouvez soutenir son développement en visitant la page Ko-fi : https://ko-fi.com/aifolders — merci pour votre soutien !
 Version 1.2 (DeepSeek) : Lancez de nouvelles conversations DeepSeek directement depuis le Mode Prompts, sauvegardez-les dans des dossiers et injectez vos prompts.
 Version 1.1 (Déclenchement de prompt) : Tapez # dans n'importe quel champ de saisie IA pour voir vos prompts filtrés en temps réel. Utilisez ↓/↑ pour naviguer entre les suggestions, Espace pour autocompléter ou injecter — sans jamais ouvrir le panneau.
 Version 1.0 : Première publication ! Organisez vos conversations depuis Gemini, Claude, ChatGPT, Copilot et Perplexity dans des dossiers partagés. Bibliothèque de prompts complète avec injection en un clic, raccourcis de sauvegarde rapide, glisser-déposer, synchronisation mobile, actions groupées, groupes d'onglets et prise en charge de 43 langues. Support des LLM locaux avec URL configurable (localhost et adresses LAN).

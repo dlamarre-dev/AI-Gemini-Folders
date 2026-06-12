@@ -56,12 +56,12 @@ Thư mục Gemini là dự án mã nguồn mở được xây dựng với niề
 
 🤖 CŨNG CÓ SẴN: Thư mục AI — BẢN NÂNG CẤP ĐA NỀN TẢNG
 
-Quan tâm đến Thư mục Gemini nhưng cũng dùng ChatGPT, Claude, Copilot, Perplexity hoặc LLM cục bộ? Thư mục AI là bước tiến tự nhiên tiếp theo: một tiện ích mở rộng để tổ chức các cuộc trò chuyện trên tất cả các công cụ AI, với hệ thống thư mục, thư viện gợi ý và chèn một cú nhấp chuột tương tự có trong Thư mục Gemini.
+Quan tâm đến Thư mục Gemini nhưng cũng dùng ChatGPT, Claude, Copilot, Grok, Perplexity hoặc LLM cục bộ? Thư mục AI là bước tiến tự nhiên tiếp theo: một tiện ích mở rộng để tổ chức các cuộc trò chuyện trên tất cả các công cụ AI, với hệ thống thư mục, thư viện gợi ý và chèn một cú nhấp chuột tương tự có trong Thư mục Gemini.
 
 👉 Cài đặt Thư mục AI: __AF_STORE_URL__
 
 📢 CẬP NHẬT:
-Phiên bản 4.2.3 (Sửa lỗi & Hỗ trợ): Sửa lỗi và tái cấu trúc nội bộ kể từ lần cập nhật cuối, để đạt độ ổn định tốt hơn. Nếu Thư mục Gemini hữu ích với bạn, bạn có thể hỗ trợ phát triển bằng cách truy cập trang Ko-fi: https://ko-fi.com/aifolders — cảm ơn vì sự hỗ trợ của bạn!
+Phiên bản 4.5 (Giao diện & Độ ổn định): Bảng điều khiển rộng hơn, các điều khiển tinh gọn hơn và khả năng truy cập bằng bàn phím tốt hơn. Sửa lỗi và tái cấu trúc nội bộ kể từ lần cập nhật cuối, để đạt độ ổn định tốt hơn. Nếu Thư mục Gemini hữu ích với bạn, bạn có thể hỗ trợ phát triển bằng cách truy cập trang Ko-fi: https://ko-fi.com/aifolders — cảm ơn vì sự hỗ trợ của bạn!
 Phiên bản 4.2 (Kích hoạt Prompt): Nhập # vào trường chat Gemini để xem các prompt đã lưu được lọc theo thời gian thực. Dùng ↓/↑ để điều hướng gợi ý, phím Cách để tự hoàn thành hoặc chèn — mà không cần mở bảng.
 Phiên bản 4.1 (Mở rộng toàn cầu & Tăng cường bảo mật): 16 ngôn ngữ mới đưa Thư mục Gemini lên 43 bản địa hóa trên toàn thế giới — các ngôn ngữ Bắc Âu, các quốc gia Baltic và phạm vi phủ sóng châu Âu và Đông Nam Á mở rộng. Sửa lỗi race condition có thể làm mất thao tác lưu khi nhấp nhanh. Hiện đại hóa việc chèn prompt bằng InputEvent, thay thế execCommand lỗi thời. Tăng cường pipeline nhập khẩu chống URL độc hại trong tệp sao lưu. Đã sửa lỗi bảo mật dữ liệu nghiêm trọng: bật đồng bộ hóa gợi ý khi bộ nhớ gần đầy có thể xóa âm thầm tất cả các gợi ý đã lưu. Bộ nhớ hiện sử dụng ghi phân mảnh để ở trong giới hạn Chrome, với thông báo lỗi rõ ràng khi đầy.
 Phiên bản 4.0 (Thư viện Prompt): Cập nhật tham vọng nhất từ trước đến nay! Thư mục Gemini có thêm Chế độ Prompt hoàn toàn mới: lưu các prompt tốt nhất, chỉnh sửa tại chỗ và chèn trực tiếp vào Gemini chỉ với một cú nhấp. Thêm nút chuyển đổi chế độ có hoạt ảnh, tìm kiếm và sắp xếp trong Chế độ Prompt, nút Gem tùy chỉnh và đồng bộ prompt độc lập. Ghim các prompt thiết yếu lên đầu thư viện.

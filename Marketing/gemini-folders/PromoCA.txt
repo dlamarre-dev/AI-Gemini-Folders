@@ -54,12 +54,12 @@ Carpetes Gemini és un projecte de codi obert construït amb passió. La transpa
 
 🤖 TAMBÉ DISPONIBLE: Carpetes IA — L'ACTUALITZACIÓ MULTIPLATAFORMA
 
-Interessat en Carpetes Gemini però també fas servir ChatGPT, Claude, Copilot, Perplexity o un LLM local? Carpetes IA és el pas natural següent: una única extensió per organitzar converses a través de totes les teves eines d'IA, amb el mateix sistema de carpetes, la biblioteca de prompts i la injecció amb un clic disponibles a Carpetes Gemini.
+Interessat en Carpetes Gemini però també fas servir ChatGPT, Claude, Copilot, Grok, Perplexity o un LLM local? Carpetes IA és el pas natural següent: una única extensió per organitzar converses a través de totes les teves eines d'IA, amb el mateix sistema de carpetes, la biblioteca de prompts i la injecció amb un clic disponibles a Carpetes Gemini.
 
 👉 Instal·lar Carpetes IA: __AF_STORE_URL__
 
 📢 ACTUALITZACIONS:
-Versió 4.2.3 (Correccions i suport): Correccions d'errors i refactorització interna des de l'última actualització, per a una millor estabilitat. Si Carpetes Gemini us és útil, podeu donar suport al seu desenvolupament visitant la pàgina Ko-fi: https://ko-fi.com/aifolders — gràcies pel vostre suport!
+Versió 4.5 (Interfície i estabilitat): Panell més ample, controls refinats i millor accessibilitat amb el teclat. Correccions d'errors i refactorització interna des de l'última actualització, per a una millor estabilitat. Si Carpetes Gemini us és útil, podeu donar suport al seu desenvolupament visitant la pàgina Ko-fi: https://ko-fi.com/aifolders — gràcies pel vostre suport!
 Versió 4.2 (Disparador de Prompts): Escriu # al camp de xat de Gemini per veure els teus prompts filtrats en temps real. Usa ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell.
 Versió 4.1 (Expansió global i enfortiment): 16 nous idiomes porten Carpetes Gemini a 43 localitzacions arreu del món — idiomes nòrdics, els estats bàltics i cobertura europea i del sud-est asiàtic ampliada. Corregida una condició de cursa que podia perdre silenciosament un desat en clics ràpids. Injecció de prompts modernitzada amb InputEvent, substituint l'execCommand obsolet. Pipeline d'importació endurit contra URL malicioses en fitxers de còpia de seguretat. S'ha corregit un error crític de seguretat de dades: activar la sincronització de prompts amb l'emmagatzematge quasi ple podia esborrar silenciosament tots els prompts desats. L'emmagatzematge ara utilitza escriptures fragmentades per mantenir-se dins dels límits de Chrome, amb missatges d'error clars quan és ple.
 Versió 4.0 (Biblioteca de prompts): L'actualització més ambiciosa fins ara! Mode prompts completament nou: desa els teus millors prompts, edita'ls en línia i injecta'ls directament a Gemini amb un sol clic.
