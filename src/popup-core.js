@@ -152,23 +152,23 @@ function initPopupCommon(config) {
         document.querySelectorAll('.folder').forEach(folder => {
           const content = folder.querySelector('.folder-content');
           if (content && content.style.display === 'block') {
-            openFolders.push(folder.querySelector('.folder-name').textContent);
+            openFolders.push(folder.dataset.folderName);
           }
         });
         if (window.displayFolders) window.displayFolders(openFolders, searchInput.value.toLowerCase());
       });
     });
+  });
 
-    // Re-sync bookmarks on init if the feature is enabled (runs once per sort item).
-    chrome.storage.sync.get(['syncBookmarksEnabled'], (syncData) => {
-      if (syncData.syncBookmarksEnabled) {
-        loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateAsc' }, (fullData) => {
-          if (typeof syncToBookmarksTree === 'function') {
-            syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref);
-          }
-        });
-      }
-    });
+  // Re-sync bookmarks on init if the feature is enabled (runs once, not per sort item).
+  chrome.storage.sync.get(['syncBookmarksEnabled'], (syncData) => {
+    if (syncData.syncBookmarksEnabled) {
+      loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateAsc' }, (fullData) => {
+        if (typeof syncToBookmarksTree === 'function') {
+          syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref);
+        }
+      });
+    }
   });
 
   // --- Initial folder render + search ---

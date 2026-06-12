@@ -46,6 +46,10 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
 
       const folderDiv = document.createElement('div');
       folderDiv.className = 'folder';
+      // Store the raw folder name (with any emoji prefix) so open/closed state can
+      // be re-collected from the DOM without relying on the displayed name, which
+      // strips the emoji prefix and would never match the stored key.
+      folderDiv.dataset.folderName = folderName;
 
       folderDiv.addEventListener('dragover', (e) => {
         e.preventDefault();
@@ -371,7 +375,7 @@ function moveChat(sourceFolder, targetFolder, chatUrl) {
     document.querySelectorAll('.folder').forEach(folder => {
       const content = folder.querySelector('.folder-content');
       if (content && content.style.display === 'block') {
-        openFolders.push(folder.querySelector('.folder-name').textContent);
+        openFolders.push(folder.dataset.folderName);
       }
     });
 

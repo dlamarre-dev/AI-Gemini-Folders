@@ -1,7 +1,7 @@
 // folders.js functions depend on globals from utils.js and the DOM.
 // We mock those globals here so tests run in isolation.
 
-const { deleteChat, moveChat, togglePin, renameFolder } = require('../src/folders');
+const { displayFolders, deleteChat, moveChat, togglePin, renameFolder } = require('../src/folders');
 
 // ---------------------------------------------------------------------------
 // Shared helpers
@@ -126,6 +126,40 @@ describe('moveChat', () => {
     moveChat('Dev', 'Research', 'https://gemini.google.com/app/nonexistent');
 
     expect(global.saveData).not.toHaveBeenCalled();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// displayFolders — open/closed state for folders with an emoji prefix
+// ---------------------------------------------------------------------------
+
+describe('displayFolders open-state (emoji prefix)', () => {
+  test('exposes the raw folder name (with emoji) via dataset.folderName', () => {
+    setupStorage({ '💻 Code': makeFolder(['Chat', 'aaa']) }, [], ['💻 Code']);
+
+    displayFolders(['💻 Code']);
+
+    const folderDiv = document.querySelector('.folder');
+    // dataset keeps the raw key, while the visible name strips the emoji prefix.
+    expect(folderDiv.dataset.folderName).toBe('💻 Code');
+    expect(folderDiv.querySelector('.folder-name').textContent).toBe('Code');
+  });
+
+  test('moveChat keeps an open emoji folder open (regression for DOM name read)', () => {
+    setupStorage(
+      { '💻 Code': makeFolder(['Chat 1', 'aaa']), Research: [] },
+      [],
+      ['💻 Code']
+    );
+
+    // Render so the DOM carries .folder divs with their open state + dataset.
+    displayFolders(['💻 Code']);
+    // moveChat re-collects the open folders from the DOM before saving.
+    moveChat('💻 Code', 'Research', 'https://gemini.google.com/app/aaa');
+
+    const calls = global.saveData.mock.calls;
+    const savedOpen = calls[calls.length - 1][0].openFolders;
+    expect(savedOpen).toContain('💻 Code');
   });
 });
 
