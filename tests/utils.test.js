@@ -334,6 +334,44 @@ describe('saveData', () => {
       done();
     });
   });
+
+  // finishSave only reads the bookmark settings (the gate before a full-tree
+  // rebuild) when the write can actually change the mirrored tree. We assert on
+  // that read instead of on syncToBookmarksTree so the test stays free of the
+  // bookmark API and its module-level in-flight flag.
+  function bookmarkSettingsChecked() {
+    return chrome.storage.sync.get.mock.calls.some(
+      (c) => Array.isArray(c[0]) && c[0].includes('syncBookmarksEnabled')
+    );
+  }
+
+  test('does not re-sync bookmarks for a UI-only write (openFolders)', (done) => {
+    saveData({ openFolders: ['Dev'] }, () => {
+      expect(bookmarkSettingsChecked()).toBe(false);
+      done();
+    });
+  });
+
+  test('re-syncs bookmarks when pins change', (done) => {
+    saveData({ pinnedFolders: ['Dev'] }, () => {
+      expect(bookmarkSettingsChecked()).toBe(true);
+      done();
+    });
+  });
+
+  test('re-syncs bookmarks when folders change', (done) => {
+    saveData({ folders: { Dev: [] } }, () => {
+      expect(bookmarkSettingsChecked()).toBe(true);
+      done();
+    });
+  });
+
+  test('re-syncs bookmarks when sort order changes', (done) => {
+    saveData({ sortPref: 'alphaAsc' }, () => {
+      expect(bookmarkSettingsChecked()).toBe(true);
+      done();
+    });
+  });
 });
 
 // ---------------------------------------------------------------------------

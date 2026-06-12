@@ -163,6 +163,13 @@ function saveData(dataToSave, callback) {
     // open/closed folders, sort preference, or sync toggles.
     const isContentSave = !!(dataToSave.folders || dataToSave.prompts);
 
+    // The bookmark mirror only reflects folders, pins and sort order. Skip the
+    // (expensive, full-tree) rebuild for pure UI-state writes like open/closed
+    // folders or open/closed prompts. NOTE: this is deliberately broader than
+    // isContentSave — pinning a folder or changing the sort order must still
+    // re-sync the bookmark order even though no conversation/prompt changed.
+    const affectsBookmarks = !!(dataToSave.folders || dataToSave.pinnedFolders || dataToSave.sortPref);
+
     // --- Folders → sync, split into chunks to stay under kQuotaBytesPerItem (8 192 B) ---
     if (dataToSave.folders) {
       const compressed = LZString.compressToUTF16(JSON.stringify(dataToSave.folders));
@@ -205,7 +212,7 @@ function saveData(dataToSave, callback) {
         }
         // Sync succeeded — now safe to remove the local backup of prompts that moved to sync.
         if (localCleanupAfterSync.length > 0) chrome.storage.local.remove(localCleanupAfterSync);
-        finishSave(callback, null, isContentSave);
+        finishSave(callback, null, isContentSave, affectsBookmarks);
       });
     };
 
@@ -232,15 +239,20 @@ function saveData(dataToSave, callback) {
 // countSave: when true (default), increment the saved-content counter that gates
 // the review prompt. Callers pass false for pure UI-state writes so toggling a
 // folder open or changing the sort order doesn't inflate the count.
-// Callers that don't check the param continue to work unchanged.
-function finishSave(callback, err = null, countSave = true) {
-  chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref'], (syncData) => {
-    if (syncData.syncBookmarksEnabled) {
-      loadData({ folders: {} }, (data) => {
-        syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateAsc');
-      });
-    }
-  });
+// affectsBookmarks: when true (default), re-mirror folders to bookmarks if the
+// mobile-sync feature is on. Callers pass false for UI-state writes that don't
+// change the bookmark tree (open/closed state) to avoid a full rebuild.
+// Callers that don't pass the extra params continue to work unchanged.
+function finishSave(callback, err = null, countSave = true, affectsBookmarks = true) {
+  if (affectsBookmarks) {
+    chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref'], (syncData) => {
+      if (syncData.syncBookmarksEnabled) {
+        loadData({ folders: {} }, (data) => {
+          syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateAsc');
+        });
+      }
+    });
+  }
 
   if (countSave) {
     chrome.storage.local.get(['usageStats'], (data) => {
