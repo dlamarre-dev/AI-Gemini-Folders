@@ -173,9 +173,15 @@ function initPopupCommon(config) {
 
   // --- Initial folder render + search ---
   if (window.displayFolders) window.displayFolders();
+  // Debounce: each render re-reads + decompresses all storage and rebuilds the
+  // list, so coalesce fast typing into one render.
+  let searchDebounce;
   searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
-    if (window.displayFolders) window.displayFolders(null, searchTerm);
+    clearTimeout(searchDebounce);
+    searchDebounce = setTimeout(() => {
+      if (window.displayFolders) window.displayFolders(null, searchTerm);
+    }, 150);
   });
 
   // --- Export ---

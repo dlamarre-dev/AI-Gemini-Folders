@@ -314,7 +314,13 @@ function initPromptsUI() {
   });
 
   // --- Prompt search ---
-  document.getElementById('promptSearchInput').addEventListener('input', () => displayPrompts());
+  // Debounce: displayPrompts re-reads + decompresses all storage and rebuilds
+  // the list on every call, so coalesce fast typing into one render.
+  let promptSearchDebounce;
+  document.getElementById('promptSearchInput').addEventListener('input', () => {
+    clearTimeout(promptSearchDebounce);
+    promptSearchDebounce = setTimeout(() => displayPrompts(), 150);
+  });
 
   // --- Prompt sort ---
   const promptSortToggleBtn = document.getElementById('promptSortToggleBtn');
