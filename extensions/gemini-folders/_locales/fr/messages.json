@@ -32,6 +32,9 @@
   "emptyFoldersHint": {
     "message": "Aucun dossier pour l'instant — ouvrez une conversation Gemini et enregistrez-la avec ➕ ou le menu clic droit."
   },
+  "sortTooltip": {
+    "message": "Trier"
+  },
   "exportBtn": {
     "message": "💾 Exporter"
   },

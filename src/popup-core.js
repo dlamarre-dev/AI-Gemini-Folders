@@ -48,6 +48,9 @@ function applyCommonI18n() {
   document.getElementById('promptTitle').placeholder = chrome.i18n.getMessage("promptTitlePlaceholder") || "Prompt Title";
   document.getElementById('promptText').placeholder = chrome.i18n.getMessage("promptTextPlaceholder") || "Write your prompt here...";
   document.getElementById('newFolderBtn').title = chrome.i18n.getMessage("btnNewFolder");
+  const sortTip = chrome.i18n.getMessage("sortTooltip") || "Sort";
+  document.getElementById('sortToggleBtn').title = sortTip;
+  document.getElementById('promptSortToggleBtn').title = sortTip;
 }
 window.applyCommonI18n = applyCommonI18n;
 

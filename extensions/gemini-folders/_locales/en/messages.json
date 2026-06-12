@@ -32,6 +32,9 @@
   "emptyFoldersHint": {
     "message": "No folders yet — open a Gemini conversation and save it with ➕ or the right-click menu."
   },
+  "sortTooltip": {
+    "message": "Sort"
+  },
   "exportBtn": {
     "message": "💾 Export"
   },
