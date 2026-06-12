@@ -247,10 +247,15 @@ async function screenshotFolderMode(page, extId, localeData, outPath) {
   await headers.nth(1).click();
   await page.waitForTimeout(300);
 
-  // Suppress all scrollbars so content height is natural (no empty space at bottom)
+  // Suppress all scrollbars so content height is natural (no empty space at bottom),
+  // and hide the active-sort indicator dot (sample data uses a non-default sort,
+  // but the dot is a transient UI affordance we don't want in marketing shots).
   await page.evaluate(() => {
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
+    const s = document.createElement('style');
+    s.textContent = '#sortToggleBtn::after, #promptSortToggleBtn::after { display: none !important; }';
+    document.head.appendChild(s);
     document.querySelectorAll('*').forEach(el => {
       const s = window.getComputedStyle(el);
       if (['scroll', 'auto'].includes(s.overflow) ||
@@ -328,7 +333,8 @@ async function screenshotMobileSyncFolder(page, extId, localeData, outPath) {
     const toggle = document.getElementById('syncBookmarksToggle');
     if (toggle) {
       const s = document.createElement('style');
-      s.textContent = '#syncBookmarksToggle, #syncBookmarksToggle::after { transition: none !important; }';
+      s.textContent = '#syncBookmarksToggle, #syncBookmarksToggle::after { transition: none !important; }'
+        + ' #sortToggleBtn::after, #promptSortToggleBtn::after { display: none !important; }';
       document.head.appendChild(s);
       toggle.checked = true;
     }
@@ -367,6 +373,10 @@ async function screenshotPromptMode(page, extId, localeData, outPath) {
     // Suppress all scrollbars
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
+    // Hide the active-sort indicator dot (transient affordance, not for promos).
+    const sortStyle = document.createElement('style');
+    sortStyle.textContent = '#sortToggleBtn::after, #promptSortToggleBtn::after { display: none !important; }';
+    document.head.appendChild(sortStyle);
     document.querySelectorAll('*').forEach(el => {
       const s = window.getComputedStyle(el);
       if (['scroll', 'auto'].includes(s.overflow) ||
