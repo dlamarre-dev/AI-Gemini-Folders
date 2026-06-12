@@ -10,7 +10,8 @@ It exists only to be run occasionally by a maintainer.
 
 ## What it checks
 
-For each site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Perplexity) it opens
+For each site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity) it
+opens
 the landing page in a background tab, waits for the SPA to hydrate, probes the
 DOM with the **production** `editorSelectors`, then closes the tab. Per site:
 
