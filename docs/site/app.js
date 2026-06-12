@@ -22,7 +22,8 @@
   const SERVICES = [
     { n: "ChatGPT", logo: "ChatGPT" }, { n: "Claude", logo: "Claude" },
     { n: "Gemini", logo: "Gemini" }, { n: "Copilot", logo: "Copilot" },
-    { n: "DeepSeek", logo: "DeepSeek" }, { n: "Perplexity", logo: "Perplexity" }
+    { n: "DeepSeek", logo: "DeepSeek" }, { n: "Grok", logo: "Grok" },
+    { n: "Perplexity", logo: "Perplexity" }
   ];
   const LOCAL_SVC = { logo: "Local", local: true };
 
@@ -130,7 +131,8 @@
       { s: SERVICES[2], p: { bottom: "22%", left: "-6%" } },// Gemini
       { s: SERVICES[3], p: { top: "40%", right: "-6%" } },  // Copilot
       { s: SERVICES[4], p: { bottom: "2%", right: "4%" } },  // DeepSeek
-      { s: SERVICES[5], p: { top: "-2%", right: "26%" } },  // Perplexity
+      { s: SERVICES[5], p: { top: "40%", left: "-6%" } },   // Grok
+      { s: SERVICES[6], p: { top: "-2%", right: "26%" } },  // Perplexity
       { s: LOCAL_SVC,   p: { bottom: "6%", left: "6%" } }    // Local LLM
     ];
     return items.map(({ s, p }) => {
