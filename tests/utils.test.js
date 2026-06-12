@@ -225,6 +225,22 @@ describe('loadData', () => {
     });
   });
 
+  test('reads openFolders from local storage', (done) => {
+    mockStorage({ local: { openFolders: ['Dev'] } });
+    loadData({ openFolders: [] }, (data) => {
+      expect(data.openFolders).toEqual(['Dev']);
+      done();
+    });
+  });
+
+  test('local openFolders wins over a stale synced copy', (done) => {
+    mockStorage({ sync: { openFolders: ['Old'] }, local: { openFolders: ['New'] } });
+    loadData({ openFolders: [] }, (data) => {
+      expect(data.openFolders).toEqual(['New']);
+      done();
+    });
+  });
+
   test('assembles prompt data from chunked sync keys', (done) => {
     const prompts = { 'Synced Prompt': { text: 'Synced', timestamp: 2000 } };
     const compressed = `C:${JSON.stringify(prompts)}`;
@@ -369,6 +385,20 @@ describe('saveData', () => {
   test('re-syncs bookmarks when sort order changes', (done) => {
     saveData({ sortPref: 'alphaAsc' }, () => {
       expect(bookmarkSettingsChecked()).toBe(true);
+      done();
+    });
+  });
+
+  test('routes openFolders to local storage and never to sync', (done) => {
+    saveData({ openFolders: ['Dev'] }, () => {
+      const wroteLocal = chrome.storage.local.set.mock.calls.some(
+        (c) => c[0] && Array.isArray(c[0].openFolders)
+      );
+      const wroteSync = chrome.storage.sync.set.mock.calls.some(
+        (c) => c[0] && 'openFolders' in c[0]
+      );
+      expect(wroteLocal).toBe(true);
+      expect(wroteSync).toBe(false);
       done();
     });
   });

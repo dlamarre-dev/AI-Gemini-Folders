@@ -18,6 +18,12 @@ const BOOKMARK_PROPAGATION_DELAY = 50;
 // plain key/value pairs alongside settings like sortPref/openFolders.
 const DATA_KEYS = ['folders', 'foldersDataCompressed', 'prompts', 'promptsDataCompressed'];
 
+// UI-state keys kept in storage.local instead of sync: they change on every
+// folder/prompt expand/collapse, which would otherwise burn the sync write
+// quota (chrome.storage.sync allows only ~1800 writes/hour, 120/min). They are
+// device-local by design — open/closed state no longer follows across devices.
+const LOCAL_UI_KEYS = ['openFolders', 'openPrompts'];
+
 // ---------------------------------------------------------------------------
 // Storage chunk helpers
 // ---------------------------------------------------------------------------
@@ -91,6 +97,12 @@ function loadData(defaults, callback) {
           }
         }
 
+        // open/closed UI state now lives in storage.local; let it win over any
+        // stale synced copy left behind by older versions.
+        for (const k of LOCAL_UI_KEYS) {
+          if (localResult[k] !== undefined) finalData[k] = localResult[k];
+        }
+
         // 1. Folders — chunked format (fdcN + fdc0..N) or legacy single key
         const rawFoldersData = assembleChunks(syncResult, 'fdc')
           ?? syncResult.foldersDataCompressed
@@ -151,9 +163,13 @@ function saveData(dataToSave, callback) {
     // Local keys to remove ONLY after sync.set confirms success, to prevent data loss on failure.
     const localCleanupAfterSync = [];
 
-    // Pass through all non-data keys (sortPref, openFolders, pinnedFolders, etc.) to sync as-is.
+    // Pass through non-data keys (sortPref, pinnedFolders, etc.) to sync as-is,
+    // except the device-local UI-state keys which go to storage.local.
     for (const [k, v] of Object.entries(dataToSave)) {
-      if (!DATA_KEYS.includes(k)) {
+      if (DATA_KEYS.includes(k)) continue;
+      if (LOCAL_UI_KEYS.includes(k)) {
+        localToSet[k] = v;
+      } else {
         syncToSet[k] = v;
       }
     }
@@ -204,6 +220,12 @@ function saveData(dataToSave, callback) {
     if (syncToRemove.length > 0) chrome.storage.sync.remove(syncToRemove);
 
     const doSyncSave = () => {
+      // Nothing to write to sync (e.g. a local-only UI-state save like expanding
+      // a folder) — skip the sync.set so it no longer counts against the quota.
+      if (Object.keys(syncToSet).length === 0) {
+        finishSave(callback, null, isContentSave, affectsBookmarks);
+        return;
+      }
       chrome.storage.sync.set(syncToSet, () => {
         if (chrome.runtime.lastError) {
           // Local data was NOT deleted (deferred cleanup never ran) — report error to caller.
