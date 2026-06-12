@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Нова розмова в DeepSeek"
   },
+  "newConv_grok": {
+    "message": "Нова розмова в Grok"
+  },
   "newConv_perplexity": {
     "message": "Нова розмова в Perplexity"
   },
@@ -258,7 +261,7 @@
     "message": "Вкажіть URL локальної LLM:"
   },
   "alertNotSupported": {
-    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek або Perplexity)."
+    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok або Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Не вдалося знайти поле введення тексту на цій сторінці. Спочатку натисніть на редактор, а потім скористайтеся кнопкою вставки."

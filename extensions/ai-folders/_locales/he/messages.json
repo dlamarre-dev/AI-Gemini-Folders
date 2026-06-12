@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "שיחת DeepSeek חדשה"
   },
+  "newConv_grok": {
+    "message": "שיחת Grok חדשה"
+  },
   "newConv_perplexity": {
     "message": "שיחת Perplexity חדשה"
   },
@@ -258,7 +261,7 @@
     "message": "הגדר כתובת URL של LLM מקומי:"
   },
   "alertNotSupported": {
-    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek או Perplexity)."
+    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok או Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "לא נמצא שדה הטקסט בדף זה. נסה ללחוץ תחילה בעורך ולאחר מכן השתמש בלחצן ההוספה."

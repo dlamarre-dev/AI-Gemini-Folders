@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Naujas DeepSeek pokalbis"
   },
+  "newConv_grok": {
+    "message": "Naujas Grok pokalbis"
+  },
   "newConv_perplexity": {
     "message": "Naujas Perplexity pokalbis"
   },
@@ -258,7 +261,7 @@
     "message": "Nustatyti vietinio LLM URL:"
   },
   "alertNotSupported": {
-    "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek arba Perplexity)."
+    "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok arba Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nepavyko rasti teksto įvesties šiame puslapyje. Pirmiausia spustelėkite redaktorių, tada naudokite įterpimo mygtuką."

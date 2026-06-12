@@ -258,7 +258,7 @@
     "message": "AI फ़ोल्डर खोजें"
   },
   "afPromoMessage": {
-    "message": "क्या आप अन्य AI भी उपयोग करते हैं? AI फ़ोल्डर पर स्विच करें और ChatGPT, Claude, Copilot, DeepSeek, Perplexity और एक लोकल LLM को अपने फ़ोल्डर में जोड़ें।"
+    "message": "क्या आप अन्य AI भी उपयोग करते हैं? AI फ़ोल्डर पर स्विच करें और ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity और एक लोकल LLM को अपने फ़ोल्डर में जोड़ें।"
   },
   "afPromoDownloadBtn": {
     "message": "डाउनलोड करें"

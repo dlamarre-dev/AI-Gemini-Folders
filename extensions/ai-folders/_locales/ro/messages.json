@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Conversație nouă în DeepSeek"
   },
+  "newConv_grok": {
+    "message": "Conversație nouă în Grok"
+  },
   "newConv_perplexity": {
     "message": "Conversație nouă în Perplexity"
   },
@@ -258,7 +261,7 @@
     "message": "Setați URL-ul LLM local:"
   },
   "alertNotSupported": {
-    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek sau Perplexity)."
+    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok sau Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nu s-a găsit câmpul de text pe această pagină. Încercați să faceți clic mai întâi în editor, apoi folosiți butonul de inserare."

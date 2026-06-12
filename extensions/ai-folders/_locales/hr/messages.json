@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Novi razgovor na DeepSeek"
   },
+  "newConv_grok": {
+    "message": "Novi razgovor na Grok"
+  },
   "newConv_perplexity": {
     "message": "Novi razgovor na Perplexity"
   },
@@ -258,7 +261,7 @@
     "message": "Postavi URL lokalnog LLM-a:"
   },
   "alertNotSupported": {
-    "message": "Koristite ovo proširenje na podržanoj AI stranici (Gemini, Claude, ChatGPT, Copilot, DeepSeek ili Perplexity)."
+    "message": "Koristite ovo proširenje na podržanoj AI stranici (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok ili Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Pokušajte kliknuti u uređivač, a zatim koristite gumb za umetanje."

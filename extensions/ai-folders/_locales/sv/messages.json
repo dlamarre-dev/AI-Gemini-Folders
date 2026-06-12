@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Ny DeepSeek-konversation"
   },
+  "newConv_grok": {
+    "message": "Ny Grok-konversation"
+  },
   "newConv_perplexity": {
     "message": "Ny Perplexity-konversation"
   },
@@ -258,7 +261,7 @@
     "message": "Ange lokal LLM-URL:"
   },
   "alertNotSupported": {
-    "message": "Använd den här utökningen på en AI-webbplats som stöds (Gemini, Claude, ChatGPT, Copilot, DeepSeek eller Perplexity)."
+    "message": "Använd den här utökningen på en AI-webbplats som stöds (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok eller Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Det gick inte att hitta textfältet på den här sidan. Försök att klicka i redigeraren först och använd sedan infogaknappen."

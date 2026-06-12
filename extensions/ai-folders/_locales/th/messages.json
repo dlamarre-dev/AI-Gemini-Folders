@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "บทสนทนา DeepSeek ใหม่"
   },
+  "newConv_grok": {
+    "message": "บทสนทนา Grok ใหม่"
+  },
   "newConv_perplexity": {
     "message": "บทสนทนา Perplexity ใหม่"
   },
@@ -258,7 +261,7 @@
     "message": "ตั้งค่า URL ของ LLM ในเครื่อง:"
   },
   "alertNotSupported": {
-    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek หรือ Perplexity)"
+    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok หรือ Perplexity)"
   },
   "alertEditorNotFound": {
     "message": "ไม่พบช่องป้อนข้อความในหน้านี้ ลองคลิกที่ตัวแก้ไขก่อน แล้วจึงใช้ปุ่มแทรก"

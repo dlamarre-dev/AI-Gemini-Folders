@@ -258,7 +258,7 @@
     "message": "Открийте ИИ папки"
   },
   "afPromoMessage": {
-    "message": "Използвате ли и други AI инструменти? Преминете към ИИ папки, за да добавите ChatGPT, Claude, Copilot, DeepSeek, Perplexity и локален модел към папките си."
+    "message": "Използвате ли и други AI инструменти? Преминете към ИИ папки, за да добавите ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity и локален модел към папките си."
   },
   "afPromoDownloadBtn": {
     "message": "Изтегляне"

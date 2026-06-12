@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "محادثة DeepSeek جديدة"
   },
+  "newConv_grok": {
+    "message": "محادثة Grok جديدة"
+  },
   "newConv_perplexity": {
     "message": "محادثة Perplexity جديدة"
   },
@@ -258,7 +261,7 @@
     "message": "تعيين عنوان URL للنموذج المحلي:"
   },
   "alertNotSupported": {
-    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Perplexity)."
+    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Grok أو Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."

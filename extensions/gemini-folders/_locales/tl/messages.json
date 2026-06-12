@@ -258,7 +258,7 @@
     "message": "Tuklasin ang Mga AI Folder"
   },
   "afPromoMessage": {
-    "message": "Gumagamit ka rin ng ibang mga AI? Lumipat sa Mga AI Folder para magdagdag ng ChatGPT, Claude, Copilot, DeepSeek, Perplexity, at lokal na LLM sa iyong mga folder."
+    "message": "Gumagamit ka rin ng ibang mga AI? Lumipat sa Mga AI Folder para magdagdag ng ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity, at lokal na LLM sa iyong mga folder."
   },
   "afPromoDownloadBtn": {
     "message": "I-download"

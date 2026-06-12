@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Nova conversa a DeepSeek"
   },
+  "newConv_grok": {
+    "message": "Nova conversa a Grok"
+  },
   "newConv_perplexity": {
     "message": "Nova conversa a Perplexity"
   },
@@ -258,7 +261,7 @@
     "message": "Establiu l'URL del LLM local:"
   },
   "alertNotSupported": {
-    "message": "Utilitzeu aquesta extensió en un lloc d'IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek o Perplexity)."
+    "message": "Utilitzeu aquesta extensió en un lloc d'IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok o Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "No s'ha pogut trobar el camp de text en aquesta pàgina. Proveu de fer clic a l'editor primer i després useu el botó d'inserció."

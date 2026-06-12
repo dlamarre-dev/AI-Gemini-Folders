@@ -258,7 +258,7 @@
     "message": "Ανακαλύψτε τα Φάκελοι ΤΝ"
   },
   "afPromoMessage": {
-    "message": "Χρησιμοποιείτε και άλλες AI υπηρεσίες; Μεταβείτε στα Φάκελοι ΤΝ για να προσθέσετε ChatGPT, Claude, Copilot, DeepSeek, Perplexity και τοπικό LLM στους φακέλους σας."
+    "message": "Χρησιμοποιείτε και άλλες AI υπηρεσίες; Μεταβείτε στα Φάκελοι ΤΝ για να προσθέσετε ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity και τοπικό LLM στους φακέλους σας."
   },
   "afPromoDownloadBtn": {
     "message": "Λήψη"

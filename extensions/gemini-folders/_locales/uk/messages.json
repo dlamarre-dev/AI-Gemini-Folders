@@ -258,7 +258,7 @@
     "message": "Відкрийте Теки ШІ"
   },
   "afPromoMessage": {
-    "message": "Ви також користуєтесь іншими ШІ-сервісами? Перейдіть на Теки ШІ, щоб додати ChatGPT, Claude, Copilot, DeepSeek, Perplexity та локальний LLM до своїх тек."
+    "message": "Ви також користуєтесь іншими ШІ-сервісами? Перейдіть на Теки ШІ, щоб додати ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity та локальний LLM до своїх тек."
   },
   "afPromoDownloadBtn": {
     "message": "Завантажити"

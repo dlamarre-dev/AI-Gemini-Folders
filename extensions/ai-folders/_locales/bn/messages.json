@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "নতুন DeepSeek কথোপকথন"
   },
+  "newConv_grok": {
+    "message": "নতুন Grok কথোপকথন"
+  },
   "newConv_perplexity": {
     "message": "নতুন Perplexity কথোপকথন"
   },
@@ -258,7 +261,7 @@
     "message": "স্থানীয় LLM URL সেট করুন:"
   },
   "alertNotSupported": {
-    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, বা Perplexity)।"
+    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, বা Perplexity)।"
   },
   "alertEditorNotFound": {
     "message": "এই পৃষ্ঠায় টেক্সট ইনপুট খুঁজে পাওয়া যায়নি। প্রথমে এডিটরে ক্লিক করুন, তারপর ইনসার্ট বাটন ব্যবহার করুন।"

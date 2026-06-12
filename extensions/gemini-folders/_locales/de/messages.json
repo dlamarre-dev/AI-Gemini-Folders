@@ -258,7 +258,7 @@
     "message": "KI-Ordner entdecken"
   },
   "afPromoMessage": {
-    "message": "Nutzen Sie auch andere KI-Dienste? Wechseln Sie zu KI-Ordner, um ChatGPT, Claude, Copilot, DeepSeek, Perplexity und ein lokales LLM zu Ihren Ordnern hinzuzufügen."
+    "message": "Nutzen Sie auch andere KI-Dienste? Wechseln Sie zu KI-Ordner, um ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity und ein lokales LLM zu Ihren Ordnern hinzuzufügen."
   },
   "afPromoDownloadBtn": {
     "message": "Herunterladen"

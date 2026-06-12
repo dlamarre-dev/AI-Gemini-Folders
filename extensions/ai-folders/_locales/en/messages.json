@@ -42,7 +42,7 @@
     "message": "📂 Import"
   },
   "alertNotSupported": {
-    "message": "Please use this extension on a supported AI site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, or Perplexity)."
+    "message": "Please use this extension on a supported AI site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, or Perplexity)."
   },
   "defaultFolder": {
     "message": "General"
@@ -232,6 +232,9 @@
   },
   "newConv_deepseek": {
     "message": "New DeepSeek conversation"
+  },
+  "newConv_grok": {
+    "message": "New Grok conversation"
   },
   "newConv_perplexity": {
     "message": "New Perplexity conversation"

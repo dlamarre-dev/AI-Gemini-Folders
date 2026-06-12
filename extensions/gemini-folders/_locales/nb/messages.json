@@ -258,7 +258,7 @@
     "message": "Oppdag AI-mapper"
   },
   "afPromoMessage": {
-    "message": "Bruker du også andre AI-tjenester? Bytt til AI-mapper for å legge til ChatGPT, Claude, Copilot, DeepSeek, Perplexity og en lokal LLM i mappene dine."
+    "message": "Bruker du også andre AI-tjenester? Bytt til AI-mapper for å legge til ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity og en lokal LLM i mappene dine."
   },
   "afPromoDownloadBtn": {
     "message": "Last ned"

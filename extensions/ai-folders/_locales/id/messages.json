@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Percakapan DeepSeek baru"
   },
+  "newConv_grok": {
+    "message": "Percakapan Grok baru"
+  },
   "newConv_perplexity": {
     "message": "Percakapan Perplexity baru"
   },
@@ -258,7 +261,7 @@
     "message": "Atur URL LLM lokal:"
   },
   "alertNotSupported": {
-    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, atau Perplexity)."
+    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, atau Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemukan kotak teks di halaman ini. Coba klik editor terlebih dahulu, lalu gunakan tombol sisipkan."

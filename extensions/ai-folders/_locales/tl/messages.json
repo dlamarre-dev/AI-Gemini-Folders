@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Bagong DeepSeek na pag-uusap"
   },
+  "newConv_grok": {
+    "message": "Bagong Grok na pag-uusap"
+  },
   "newConv_perplexity": {
     "message": "Bagong Perplexity na pag-uusap"
   },
@@ -258,7 +261,7 @@
     "message": "Itakda ang URL ng lokal na LLM:"
   },
   "alertNotSupported": {
-    "message": "Gamitin ang extension na ito sa isang sinusuportahang AI na site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, o Perplexity)."
+    "message": "Gamitin ang extension na ito sa isang sinusuportahang AI na site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, o Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Hindi mahanap ang text input sa pahinang ito. Subukang mag-click sa editor muna, pagkatapos ay gamitin ang insert button."

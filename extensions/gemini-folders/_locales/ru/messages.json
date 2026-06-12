@@ -258,7 +258,7 @@
     "message": "Откройте ИИ-папки"
   },
   "afPromoMessage": {
-    "message": "Вы также используете другие ИИ-сервисы? Перейдите на ИИ-папки, чтобы добавить ChatGPT, Claude, Copilot, DeepSeek, Perplexity и локальный LLM в свои папки."
+    "message": "Вы также используете другие ИИ-сервисы? Перейдите на ИИ-папки, чтобы добавить ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity и локальный LLM в свои папки."
   },
   "afPromoDownloadBtn": {
     "message": "Скачать"

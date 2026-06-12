@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Új DeepSeek-beszélgetés"
   },
+  "newConv_grok": {
+    "message": "Új Grok-beszélgetés"
+  },
   "newConv_perplexity": {
     "message": "Új Perplexity-beszélgetés"
   },
@@ -258,7 +261,7 @@
     "message": "Helyi LLM URL beállítása:"
   },
   "alertNotSupported": {
-    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek vagy Perplexity)."
+    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok vagy Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."

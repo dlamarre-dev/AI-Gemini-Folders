@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Нов разговор в DeepSeek"
   },
+  "newConv_grok": {
+    "message": "Нов разговор в Grok"
+  },
   "newConv_perplexity": {
     "message": "Нов разговор в Perplexity"
   },
@@ -258,7 +261,7 @@
     "message": "Задайте URL на локален LLM:"
   },
   "alertNotSupported": {
-    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek или Perplexity)."
+    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok или Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Не може да се намери текстовото поле на тази страница. Опитайте да кликнете в редактора първо, след което използвайте бутона за вмъкване."

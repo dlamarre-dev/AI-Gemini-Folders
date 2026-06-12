@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Nieuw DeepSeek-gesprek"
   },
+  "newConv_grok": {
+    "message": "Nieuw Grok-gesprek"
+  },
   "newConv_perplexity": {
     "message": "Nieuw Perplexity-gesprek"
   },
@@ -258,7 +261,7 @@
     "message": "Lokale LLM-URL instellen:"
   },
   "alertNotSupported": {
-    "message": "Gebruik deze extensie op een ondersteunde AI-site (Gemini, Claude, ChatGPT, Copilot, DeepSeek of Perplexity)."
+    "message": "Gebruik deze extensie op een ondersteunde AI-site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok of Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Kan het tekstinvoerveld op deze pagina niet vinden. Probeer eerst in de editor te klikken en gebruik dan de invoegknop."

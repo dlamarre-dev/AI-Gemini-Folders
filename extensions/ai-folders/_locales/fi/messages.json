@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Uusi DeepSeek-keskustelu"
   },
+  "newConv_grok": {
+    "message": "Uusi Grok-keskustelu"
+  },
   "newConv_perplexity": {
     "message": "Uusi Perplexity-keskustelu"
   },
@@ -258,7 +261,7 @@
     "message": "Aseta paikallisen LLM:n URL:"
   },
   "alertNotSupported": {
-    "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek tai Perplexity)."
+    "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok tai Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."

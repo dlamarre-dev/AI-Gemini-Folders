@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Uus DeepSeek vestlus"
   },
+  "newConv_grok": {
+    "message": "Uus Grok vestlus"
+  },
   "newConv_perplexity": {
     "message": "Uus Perplexity vestlus"
   },
@@ -258,7 +261,7 @@
     "message": "Seadista kohaliku LLM-i URL:"
   },
   "alertNotSupported": {
-    "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek või Perplexity)."
+    "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok või Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Selle lehe tekstivälja ei leitud. Proovige esmalt redaktorisse klõpsata ja seejärel kasutage lisamisnuppu."

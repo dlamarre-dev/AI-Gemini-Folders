@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Cuộc trò chuyện DeepSeek mới"
   },
+  "newConv_grok": {
+    "message": "Cuộc trò chuyện Grok mới"
+  },
   "newConv_perplexity": {
     "message": "Cuộc trò chuyện Perplexity mới"
   },
@@ -258,7 +261,7 @@
     "message": "Đặt URL LLM cục bộ:"
   },
   "alertNotSupported": {
-    "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek hoặc Perplexity)."
+    "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok hoặc Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Không tìm thấy ô nhập văn bản trên trang này. Hãy thử nhấp vào trình soạn thảo trước rồi sử dụng nút chèn."

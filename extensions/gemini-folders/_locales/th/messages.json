@@ -258,7 +258,7 @@
     "message": "ค้นพบ โฟลเดอร์ AI"
   },
   "afPromoMessage": {
-    "message": "คุณใช้ AI อื่นด้วยหรือเปล่า? เปลี่ยนไปใช้ โฟลเดอร์ AI เพื่อเพิ่ม ChatGPT, Claude, Copilot, DeepSeek, Perplexity และ LLM ในเครื่องลงในโฟลเดอร์ของคุณ"
+    "message": "คุณใช้ AI อื่นด้วยหรือเปล่า? เปลี่ยนไปใช้ โฟลเดอร์ AI เพื่อเพิ่ม ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity และ LLM ในเครื่องลงในโฟลเดอร์ของคุณ"
   },
   "afPromoDownloadBtn": {
     "message": "ดาวน์โหลด"

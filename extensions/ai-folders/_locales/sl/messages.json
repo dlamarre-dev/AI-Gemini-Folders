@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Nov pogovor z DeepSeek"
   },
+  "newConv_grok": {
+    "message": "Nov pogovor z Grok"
+  },
   "newConv_perplexity": {
     "message": "Nov pogovor s Perplexity"
   },
@@ -258,7 +261,7 @@
     "message": "Nastavi URL lokalnega LLM:"
   },
   "alertNotSupported": {
-    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek ali Perplexity)."
+    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok ali Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."

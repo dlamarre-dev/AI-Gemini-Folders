@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Jauna DeepSeek saruna"
   },
+  "newConv_grok": {
+    "message": "Jauna Grok saruna"
+  },
   "newConv_perplexity": {
     "message": "Jauna Perplexity saruna"
   },
@@ -258,7 +261,7 @@
     "message": "Iestatīt lokālā LLM URL:"
   },
   "alertNotSupported": {
-    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek vai Perplexity)."
+    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok vai Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."

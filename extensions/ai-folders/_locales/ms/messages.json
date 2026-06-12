@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Perbualan DeepSeek baharu"
   },
+  "newConv_grok": {
+    "message": "Perbualan Grok baharu"
+  },
   "newConv_perplexity": {
     "message": "Perbualan Perplexity baharu"
   },
@@ -258,7 +261,7 @@
     "message": "Tetapkan URL LLM tempatan:"
   },
   "alertNotSupported": {
-    "message": "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot, DeepSeek atau Perplexity)."
+    "message": "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok atau Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemui medan teks pada halaman ini. Cuba klik pada editor terlebih dahulu, kemudian gunakan butang sisip."

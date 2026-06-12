@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Nová konverzace v DeepSeek"
   },
+  "newConv_grok": {
+    "message": "Nová konverzace v Grok"
+  },
   "newConv_perplexity": {
     "message": "Nová konverzace v Perplexity"
   },
@@ -258,7 +261,7 @@
     "message": "Nastavit URL místního LLM:"
   },
   "alertNotSupported": {
-    "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek nebo Perplexity)."
+    "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok nebo Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Na této stránce nelze najít textové pole. Nejprve klikněte do editoru a poté použijte tlačítko Vložit."

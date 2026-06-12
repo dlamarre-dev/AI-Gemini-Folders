@@ -30,10 +30,10 @@
     "message": "Nema rezultata 🕵️"
   },
   "emptyFoldersHint": {
-    "message": "Још нема фасцикли — отворите разговор на подржаном сајту вештачке интелигенције и сачувајте га помоћу ➕ или менија десног клика."
+    "message": "Još nema fascikli — otvorite razgovor na podržanom sajtu veštačke inteligencije i sačuvajte ga pomoću ➕ ili menija desnog klika."
   },
   "sortTooltip": {
-    "message": "Сортирај"
+    "message": "Sortiraj"
   },
   "exportBtn": {
     "message": "💾 Izvoz"
@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Novi razgovor na DeepSeek"
   },
+  "newConv_grok": {
+    "message": "Novi razgovor na Grok"
+  },
   "newConv_perplexity": {
     "message": "Novi razgovor na Perplexity"
   },
@@ -258,12 +261,12 @@
     "message": "Podesite URL lokalnog LLM-a:"
   },
   "alertNotSupported": {
-    "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek ili Perplexity)."
+    "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok ili Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Prvo kliknite u uređivač, a zatim koristite dugme za ubacivanje."
   },
   "kofiTooltip": {
-    "message": "Подржите ово проширење тако што ћете ми купити кафу!"
+    "message": "Podržite ovo proširenje tako što ćete mi kupiti kafu!"
   }
 }

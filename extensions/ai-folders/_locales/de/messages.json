@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Neues DeepSeek-Gespräch"
   },
+  "newConv_grok": {
+    "message": "Neues Grok-Gespräch"
+  },
   "newConv_perplexity": {
     "message": "Neues Perplexity-Gespräch"
   },
@@ -258,7 +261,7 @@
     "message": "Lokale LLM-URL festlegen:"
   },
   "alertNotSupported": {
-    "message": "Bitte verwenden Sie diese Erweiterung auf einer unterstützten KI-Website (Gemini, Claude, ChatGPT, Copilot, DeepSeek oder Perplexity)."
+    "message": "Bitte verwenden Sie diese Erweiterung auf einer unterstützten KI-Website (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok oder Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Das Texteingabefeld auf dieser Seite konnte nicht gefunden werden. Klicken Sie zuerst in den Editor und verwenden Sie dann die Einfügen-Schaltfläche."

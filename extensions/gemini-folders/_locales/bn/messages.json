@@ -258,7 +258,7 @@
     "message": "AI ফোল্ডার আবিষ্কার করুন"
   },
   "afPromoMessage": {
-    "message": "আপনি কি অন্য AI-ও ব্যবহার করেন? AI ফোল্ডারে যান এবং আপনার ফোল্ডারে ChatGPT, Claude, Copilot, DeepSeek, Perplexity এবং একটি স্থানীয় LLM যোগ করুন।"
+    "message": "আপনি কি অন্য AI-ও ব্যবহার করেন? AI ফোল্ডারে যান এবং আপনার ফোল্ডারে ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity এবং একটি স্থানীয় LLM যোগ করুন।"
   },
   "afPromoDownloadBtn": {
     "message": "ডাউনলোড করুন"

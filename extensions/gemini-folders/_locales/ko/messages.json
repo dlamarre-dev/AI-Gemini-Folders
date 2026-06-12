@@ -258,7 +258,7 @@
     "message": "AI 폴더 알아보기"
   },
   "afPromoMessage": {
-    "message": "다른 AI도 사용하시나요? AI 폴더로 전환해서 ChatGPT, Claude, Copilot, DeepSeek, Perplexity, 로컬 LLM을 폴더에 추가하세요."
+    "message": "다른 AI도 사용하시나요? AI 폴더로 전환해서 ChatGPT, Claude, Copilot, DeepSeek, Grok, Perplexity, 로컬 LLM을 폴더에 추가하세요."
   },
   "afPromoDownloadBtn": {
     "message": "다운로드"

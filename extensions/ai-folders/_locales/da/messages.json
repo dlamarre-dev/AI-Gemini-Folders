@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "Ny DeepSeek-samtale"
   },
+  "newConv_grok": {
+    "message": "Ny Grok-samtale"
+  },
   "newConv_perplexity": {
     "message": "Ny Perplexity-samtale"
   },
@@ -258,7 +261,7 @@
     "message": "Indstil lokal LLM-URL:"
   },
   "alertNotSupported": {
-    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek eller Perplexity)."
+    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok eller Perplexity)."
   },
   "alertEditorNotFound": {
     "message": "Kunne ikke finde tekstfeltet på denne side. Prøv at klikke i editoren først, og brug derefter indsætknappen."

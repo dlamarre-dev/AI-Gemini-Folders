@@ -248,6 +248,9 @@
   "newConv_deepseek": {
     "message": "新增 DeepSeek 對話"
   },
+  "newConv_grok": {
+    "message": "新增 Grok 對話"
+  },
   "newConv_perplexity": {
     "message": "新增 Perplexity 對話"
   },
@@ -258,7 +261,7 @@
     "message": "設定本地 LLM URL："
   },
   "alertNotSupported": {
-    "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek 或 Perplexity）。"
+    "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok 或 Perplexity）。"
   },
   "alertEditorNotFound": {
     "message": "無法在此頁面找到文字輸入框。請先點擊編輯器，再使用插入按鈕。"
