@@ -86,21 +86,46 @@ function showCustomModal({ title, message = '', type = 'confirm', defaultValue =
 
     modal.style.display = 'flex';
 
-    const cleanup = () => {
-      modal.style.display = 'none';
-      btnConfirm.onclick = null;
-      btnCancel.onclick = null;
-    };
-
-    btnConfirm.onclick = () => {
+    const confirm = () => {
       cleanup();
       resolve(type === 'prompt' ? inputEl.value.trim() : true);
     };
 
-    btnCancel.onclick = () => {
+    const cancel = () => {
       cleanup();
       resolve(type === 'prompt' ? null : false);
     };
+
+    // Enter confirms (also from inside the prompt input), Escape cancels.
+    // Capture phase so we act before any field-level key handling.
+    const onKeydown = (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        confirm();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        cancel();
+      }
+    };
+
+    // Clicking the dimmed backdrop (not the dialog box itself) dismisses the modal.
+    const onOverlayClick = (e) => {
+      if (e.target === modal) cancel();
+    };
+
+    const cleanup = () => {
+      modal.style.display = 'none';
+      btnConfirm.onclick = null;
+      btnCancel.onclick = null;
+      document.removeEventListener('keydown', onKeydown, true);
+      modal.removeEventListener('click', onOverlayClick);
+    };
+
+    document.addEventListener('keydown', onKeydown, true);
+    modal.addEventListener('click', onOverlayClick);
+
+    btnConfirm.onclick = confirm;
+    btnCancel.onclick = cancel;
   });
 }
 
