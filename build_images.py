@@ -33,6 +33,10 @@ if hasattr(sys.stdout, 'buffer'):
 
 ROOT            = os.path.dirname(os.path.abspath(__file__))
 SCREENSHOTS_DIR = os.path.join(ROOT, 'screenshots')
+SITE_SHOTS_DIR  = os.path.join(ROOT, 'docs', 'site', 'assets', 'shots')
+
+# Promo composition number → website screenshot name (AI Folders only)
+SITE_SHOT_MAP = {'2': 'folder-mode', '3': 'prompt-mode', '4': 'mobile-sync'}
 
 VALID_EXTENSIONS = ['gemini-folders', 'ai-folders']
 
@@ -97,6 +101,22 @@ def step_screenshots(extension, mode, locales, out_dir):
         run(cmd, cwd=SCREENSHOTS_DIR,
             label=f'📸 [{extension}] Capturing all locales...')
 
+def step_sync_site_shots(out_dir, locales):
+    """Mirror the freshly composed AI Folders promos onto the website:
+    Promo_2/3/4_<locale>.png → docs/site/assets/shots/<mode>_<locale>.png."""
+    copied, missing = 0, []
+    for locale in locales:
+        for num, name in SITE_SHOT_MAP.items():
+            src = os.path.join(out_dir, f'Promo_{num}_{locale}.png')
+            if not os.path.isfile(src):
+                missing.append(os.path.basename(src))
+                continue
+            shutil.copy2(src, os.path.join(SITE_SHOTS_DIR, f'{name}_{locale}.png'))
+            copied += 1
+    print(f'\n🌐 Website shots synced: {copied} file(s) → {SITE_SHOTS_DIR}')
+    if missing:
+        print(f'   ⚠️ Missing source(s) skipped: {", ".join(missing)}')
+
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
@@ -152,6 +172,11 @@ def main():
 
     step_install_deps()
     step_screenshots(args.extension, args.mode, args.locale, out_dir)
+
+    # The website only showcases AI Folders, and only the composed promos
+    # (mode=both) produce the Promo_2/3/4 images it uses.
+    if args.extension == 'ai-folders' and args.mode == 'both':
+        step_sync_site_shots(out_dir, args.locale or VALID_LOCALES)
 
     print(f'\n✅ Done!  Output → {out_dir}')
 

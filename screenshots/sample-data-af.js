@@ -82,11 +82,11 @@ function make(locale) {
         { url: 'https://copilot.microsoft.com/c/bbb2',  title: resChat2, timestamp: NOW - 2 * DAY, site: 'copilot' },
         { url: 'https://claude.ai/chat/bbb3',           title: `${resChat1} — deep dive`, timestamp: NOW - 5 * DAY, site: 'claude' },
       ],
-      // Writing folder: Perplexity + Claude + Copilot
+      // Writing folder: Perplexity + Claude + Grok
       [writeFolder]: [
         { url: 'https://www.perplexity.ai/search/ccc1', title: writeChat1, timestamp: NOW - 1 * DAY, site: 'perplexity' },
         { url: 'https://claude.ai/chat/ccc2',        title: writeChat2, timestamp: NOW - 2 * DAY, site: 'claude' },
-        { url: 'https://copilot.microsoft.com/c/ccc3',         title: `${writeChat2} final`, timestamp: NOW - 3 * DAY, site: 'copilot' },
+        { url: 'https://grok.com/chat/ccc3',         title: `${writeChat2} final`, timestamp: NOW - 3 * DAY, site: 'grok' },
       ],
     },
     pinnedPrompts: [codeReviewer || 'Code Reviewer'],
