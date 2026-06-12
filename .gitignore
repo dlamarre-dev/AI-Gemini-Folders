@@ -13,6 +13,7 @@ tools/ga4-puller/*.json
 .DS_Store
 Thumbs.db
 .claude/
+CLAUDE.md
 
 node_modules/
 
