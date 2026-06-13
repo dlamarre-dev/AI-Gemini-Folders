@@ -10,7 +10,7 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
   if (typeof openFoldersArg === 'string') openFolders = [openFoldersArg];
   else if (Array.isArray(openFoldersArg)) openFolders = openFoldersArg;
   
-  loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateAsc', openFolders: [] }, (data) => {
+  loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc', openFolders: [] }, (data) => {
     folderList.textContent = "";
     const folders = data.folders;
     const pinnedFolders = data.pinnedFolders;

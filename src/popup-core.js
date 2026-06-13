@@ -210,7 +210,7 @@ function initPopupCommon(config) {
     const isEnabled = e.target.checked;
     chrome.storage.sync.set({ syncBookmarksEnabled: isEnabled }, () => {
       if (isEnabled) {
-        loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateAsc' }, (fullData) => {
+        loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc' }, (fullData) => {
           if (typeof syncToBookmarksTree === 'function') {
             syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref);
           }
@@ -251,18 +251,18 @@ function initPopupCommon(config) {
   document.addEventListener('click', () => {
     sortMenu.classList.remove('show');
   });
-  loadData({ sortPref: 'dateAsc' }, (data) => {
+  loadData({ sortPref: 'dateDesc' }, (data) => {
     const activeItem = document.querySelector(`#sortMenu .dropdown-item[data-value="${data.sortPref}"]`);
     if (activeItem) activeItem.classList.add('active');
-    // Mark the toggle when a non-default order is active (dateAsc is the default).
-    sortToggleBtn.classList.toggle('has-custom-sort', data.sortPref !== 'dateAsc');
+    // Mark the toggle when a non-default order is active (dateDesc is the default).
+    sortToggleBtn.classList.toggle('has-custom-sort', data.sortPref !== 'dateDesc');
   });
   sortItems.forEach(item => {
     item.addEventListener('click', () => {
       const selectedSort = item.getAttribute('data-value');
       sortItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
-      sortToggleBtn.classList.toggle('has-custom-sort', selectedSort !== 'dateAsc');
+      sortToggleBtn.classList.toggle('has-custom-sort', selectedSort !== 'dateDesc');
       saveData({ sortPref: selectedSort }, () => {
         let openFolders = [];
         document.querySelectorAll('.folder').forEach(folder => {
@@ -279,7 +279,7 @@ function initPopupCommon(config) {
   // Re-sync bookmarks on init if the feature is enabled (runs once, not per sort item).
   chrome.storage.sync.get(['syncBookmarksEnabled'], (syncData) => {
     if (syncData.syncBookmarksEnabled) {
-      loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateAsc' }, (fullData) => {
+      loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc' }, (fullData) => {
         if (typeof syncToBookmarksTree === 'function') {
           syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref);
         }

@@ -270,7 +270,7 @@ function finishSave(callback, err = null, countSave = true, affectsBookmarks = t
     chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref'], (syncData) => {
       if (syncData.syncBookmarksEnabled) {
         loadData({ folders: {} }, (data) => {
-          syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateAsc');
+          syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateDesc');
         });
       }
     });
@@ -290,7 +290,7 @@ function finishSave(callback, err = null, countSave = true, affectsBookmarks = t
 // --- BOOKMARKS SYNCHRONIZATION (MOBILE) ---
 let isSyncingToBookmarks = false;
 
-async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateAsc') {
+async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateDesc') {
   // 1. Stop if a sync is ongoing
   if (isSyncingToBookmarks) {
     return;
