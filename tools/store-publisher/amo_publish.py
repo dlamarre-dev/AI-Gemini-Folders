@@ -6,10 +6,12 @@ no DOM scraping is needed.
 
 Per supported locale it PATCHes the listing description with
 dist/<slug>/marketing_firefox/Promo<XX>.txt, and with --images it replaces the
-listing previews (screenshots) with the 5 EN images. AMO previews are NOT
-localized — there is a single set per listing — so the images step runs once,
-not per locale. Locales absent from AMO's production language list are
-skipped (see the `amo` column in lib/locales.js).
+listing previews (screenshots) with the 5 EN images followed by Promo_1 of every
+other locale (a single multilingual gallery showcasing the extension). AMO
+previews are NOT localized — there is one shared set per listing — so the images
+step runs once, not per locale. Locales absent from AMO's production language
+list are skipped for texts only (see the `amo` column in lib/locales.js); the
+preview gallery uses all locales' screenshots regardless.
 
 !! Unlike the CWS draft flow, AMO listing edits go LIVE IMMEDIATELY — there is
 no draft/review stage for listing metadata. The script is dry-run by default;
@@ -140,10 +142,14 @@ def update_texts(creds, guid, descriptions, apply):
     print(f"  description updated for {len(descriptions)} locales ✓")
 
 
-def update_images(creds, guid, addon, marketing_dir, apply):
+def update_images(creds, guid, addon, marketing_dir, locales, apply):
     previews = addon.get("previews", [])
-    files = [marketing_dir / "screenshots" / f"Promo_{i}_en.png"
-             for i in range(1, SCREENSHOTS_PER_LISTING + 1)]
+    shots = marketing_dir / "screenshots"
+    # The 5 English promos first, then Promo_1 of every other locale so the
+    # gallery showcases the extension across all supported languages.
+    files = [shots / f"Promo_{i}_en.png" for i in range(1, SCREENSHOTS_PER_LISTING + 1)]
+    files += [shots / f"Promo_1_{loc['internal']}.png"
+              for loc in locales if loc["internal"] != "en"]
     missing = [f.name for f in files if not f.exists()]
     if missing:
         sys.exit(f"Missing screenshot files: {missing}")
@@ -170,7 +176,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[1])
     ap.add_argument("--item", required=True, help="item slug from config.json (e.g. gemini-folders)")
     ap.add_argument("--texts", action="store_true", help="update localized descriptions")
-    ap.add_argument("--images", action="store_true", help="replace the listing previews with the EN screenshots")
+    ap.add_argument("--images", action="store_true", help="replace the listing previews with the EN screenshots + each locale's Promo_1")
     ap.add_argument("--apply", action="store_true",
                     help="actually write (default is dry-run). AMO changes go live immediately!")
     args = ap.parse_args()
@@ -201,7 +207,7 @@ def main():
         descriptions = build_descriptions(marketing_dir, locales)
         update_texts(creds, guid, descriptions, args.apply)
     if args.images:
-        update_images(creds, guid, addon, marketing_dir, args.apply)
+        update_images(creds, guid, addon, marketing_dir, locales, args.apply)
 
     print("Done." if args.apply else "Dry-run done — re-run with --apply to write (changes go live immediately).")
 
