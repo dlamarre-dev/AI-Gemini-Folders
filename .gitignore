@@ -4,6 +4,7 @@ build/
 tools/stats-collector/config.json
 tools/stats-collector/native/com.geminifoldersantigravity.filereader.json
 tools/store-publisher/config.json
+tools/store-publisher/.amo-previews-state.json
 tools/ga4-puller/config.json
 tools/ga4-puller/service-account-key.json
 tools/ga4-puller/*.json

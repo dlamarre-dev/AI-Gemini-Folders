@@ -41,8 +41,14 @@ from pathlib import Path
 
 API_BASE = "https://addons.mozilla.org/api/v5"
 TOOL_DIR = Path(__file__).resolve().parent
+# Records the screenshot set last uploaded per add-on, so an unchanged gallery
+# is skipped instead of torn down and re-uploaded (AMO throttles writes hard).
+STATE_FILE = TOOL_DIR / ".amo-previews-state.json"  # gitignored
 SCREENSHOTS_PER_LISTING = 5
-REQUEST_GAP_S = 1.0  # politeness delay between write requests
+REQUEST_GAP_S = 1.0   # initial delay before each write request (grows on throttle)
+MAX_PACE_S = 30.0     # cap for the adaptive pacing delay
+WRITE_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
+_pace_gap = REQUEST_GAP_S  # adaptive: bumped to the server's hinted rate on 429/503
 
 
 # ── locales (parsed from the shared JS table) ─────────────────────────────────
@@ -80,16 +86,27 @@ def make_jwt(issuer, secret):
     return f"{header}.{payload}.{sig}"
 
 
-def api_request(creds, method, path, json_body=None, multipart=None):
+def throttle_wait_s(err):
+    """Seconds to wait before retrying a 429/503, from the Retry-After header or
+    AMO's "Expected available in N seconds" body. Falls back to None (no hint)."""
+    retry_after = err.headers.get("Retry-After")
+    if retry_after and retry_after.strip().isdigit():
+        return int(retry_after)
+    body = getattr(err, "_amo_detail", "")
+    m = re.search(r"available in (\d+) second", body)
+    return int(m.group(1)) if m else None
+
+
+def api_request(creds, method, path, json_body=None, multipart=None, max_retries=6):
     """One authenticated API call. `multipart` = dict of name → str | (filename,
-    bytes) encoded as multipart/form-data. Returns parsed JSON (or None for 204)."""
+    bytes) encoded as multipart/form-data. Returns parsed JSON (or None for 204).
+    Retries on 429/503 (AMO throttling), honouring the server's retry delay."""
     url = path if path.startswith("http") else API_BASE + path
-    headers = {"Authorization": "JWT " + make_jwt(creds["jwt_issuer"], creds["jwt_secret"])}
-    data = None
+    base_headers, data = {}, None
 
     if json_body is not None:
         data = json.dumps(json_body).encode()
-        headers["Content-Type"] = "application/json"
+        base_headers["Content-Type"] = "application/json"
     elif multipart is not None:
         boundary = uuid.uuid4().hex
         parts = []
@@ -105,16 +122,38 @@ def api_request(creds, method, path, json_body=None, multipart=None):
                     f'--{boundary}\r\nContent-Disposition: form-data; name="{name}"'
                     f"\r\n\r\n{value}\r\n".encode())
         data = b"".join(parts) + f"--{boundary}--\r\n".encode()
-        headers["Content-Type"] = f"multipart/form-data; boundary={boundary}"
+        base_headers["Content-Type"] = f"multipart/form-data; boundary={boundary}"
 
-    req = urllib.request.Request(url, data=data, headers=headers, method=method)
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            body = resp.read()
-            return json.loads(body) if body else None
-    except urllib.error.HTTPError as e:
-        detail = e.read().decode("utf-8", "replace")[:2000]
-        sys.exit(f"API {method} {path} failed: HTTP {e.code}\n{detail}")
+    global _pace_gap
+    for attempt in range(max_retries + 1):
+        # Proactively pace writes at the rate the server last told us to use, so
+        # requests succeed first try instead of bouncing off the throttle. On a
+        # retry (attempt > 0) we already slept the server's hint below, so skip.
+        if method in WRITE_METHODS and attempt == 0 and _pace_gap:
+            time.sleep(_pace_gap)
+        # Fresh JWT (and jti) per attempt — tokens are short-lived.
+        headers = {**base_headers,
+                   "Authorization": "JWT " + make_jwt(creds["jwt_issuer"], creds["jwt_secret"])}
+        req = urllib.request.Request(url, data=data, headers=headers, method=method)
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                body = resp.read()
+                return json.loads(body) if body else None
+        except urllib.error.HTTPError as e:
+            e._amo_detail = e.read().decode("utf-8", "replace")[:2000]
+            if e.code in (429, 503) and attempt < max_retries:
+                hint = throttle_wait_s(e)
+                if hint:  # learn the server's rate so later writes pre-wait
+                    new_gap = min(max(_pace_gap, hint), MAX_PACE_S)
+                    if new_gap > _pace_gap:
+                        print(f"  pacing -> {new_gap:g}s/request (server throttle)")
+                        _pace_gap = new_gap
+                wait = min((hint or 5 * (attempt + 1)) + 1, 120)  # buffer + hard cap
+                print(f"  throttled (HTTP {e.code}); retrying in {wait}s "
+                      f"(attempt {attempt + 1}/{max_retries})")
+                time.sleep(wait)
+                continue
+            sys.exit(f"API {method} {path} failed: HTTP {e.code}\n{e._amo_detail}")
 
 
 # ── steps ─────────────────────────────────────────────────────────────────────
@@ -142,7 +181,30 @@ def update_texts(creds, guid, descriptions, apply):
     print(f"  description updated for {len(descriptions)} locales ✓")
 
 
-def update_images(creds, guid, addon, marketing_dir, locales, apply):
+def file_fingerprints(files):
+    """Ordered [{name, sha1}] over the screenshot files — content-based so it's
+    stable across rebuilds that only touch mtimes."""
+    return [{"name": f.name, "sha1": hashlib.sha1(f.read_bytes()).hexdigest()} for f in files]
+
+
+def load_previews_state():
+    try:
+        return json.loads(STATE_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def save_previews_state(guid, fingerprints):
+    state = load_previews_state()
+    state[guid] = {
+        "uploaded_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "count": len(fingerprints),
+        "files": fingerprints,
+    }
+    STATE_FILE.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
+
+
+def update_images(creds, guid, addon, marketing_dir, locales, apply, force):
     previews = addon.get("previews", [])
     shots = marketing_dir / "screenshots"
     # The 5 English promos first, then Promo_1 of every other locale so the
@@ -154,29 +216,60 @@ def update_images(creds, guid, addon, marketing_dir, locales, apply):
     if missing:
         sys.exit(f"Missing screenshot files: {missing}")
 
-    if not apply:
-        print(f"  would delete {len(previews)} existing previews, then upload: "
-              + ", ".join(f.name for f in files))
+    # Skip the whole teardown/re-upload when our recorded gallery already matches
+    # the local files AND the live preview count lines up. --force-images overrides.
+    fingerprints = file_fingerprints(files)
+    recorded = load_previews_state().get(guid)
+    in_sync = (recorded is not None
+               and recorded.get("files") == fingerprints
+               and len(previews) == len(files))
+    if in_sync and not force:
+        print(f"  previews already up to date ({len(files)} images, unchanged since "
+              f"{recorded.get('uploaded_at', '?')}) - skipping (use --force-images to redo)")
         return
 
+    if not apply:
+        if force and in_sync:
+            why = "forced (--force-images)"
+        elif recorded is None:
+            why = "no recorded state yet"
+        elif len(previews) != len(files):
+            why = f"live preview count {len(previews)} != expected {len(files)}"
+        else:
+            why = "screenshot contents changed"
+        print(f"  would delete {len(previews)} existing previews, then upload "
+              f"{len(files)} [{why}]: " + ", ".join(f.name for f in files))
+        return
+
+    # api_request paces writes itself (adaptive throttle handling), so no sleeps here.
     for p in previews:
         api_request(creds, "DELETE", f"/addons/addon/{guid}/previews/{p['id']}/")
         print(f"  deleted preview {p['id']}")
-        time.sleep(REQUEST_GAP_S)
     for position, f in enumerate(files, start=1):
         api_request(creds, "POST", f"/addons/addon/{guid}/previews/",
                     multipart={"image": (f.name, f.read_bytes()), "position": str(position)})
         print(f"  uploaded {f.name} (position {position}) ✓")
-        time.sleep(REQUEST_GAP_S)
+    # Record only after every upload succeeded (api_request exits on hard failure).
+    save_previews_state(guid, fingerprints)
+    print(f"  recorded gallery state ({len(files)} images) - future runs will skip if unchanged")
 
 
 # ── main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    # Never let a non-ASCII status char (✓, …) crash on a legacy code-page console.
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
+
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[1])
     ap.add_argument("--item", required=True, help="item slug from config.json (e.g. gemini-folders)")
     ap.add_argument("--texts", action="store_true", help="update localized descriptions")
     ap.add_argument("--images", action="store_true", help="replace the listing previews with the EN screenshots + each locale's Promo_1")
+    ap.add_argument("--force-images", action="store_true",
+                    help="re-upload previews even if the recorded gallery is unchanged")
     ap.add_argument("--apply", action="store_true",
                     help="actually write (default is dry-run). AMO changes go live immediately!")
     args = ap.parse_args()
@@ -207,7 +300,7 @@ def main():
         descriptions = build_descriptions(marketing_dir, locales)
         update_texts(creds, guid, descriptions, args.apply)
     if args.images:
-        update_images(creds, guid, addon, marketing_dir, locales, args.apply)
+        update_images(creds, guid, addon, marketing_dir, locales, args.apply, args.force_images)
 
     print("Done." if args.apply else "Dry-run done — re-run with --apply to write (changes go live immediately).")
 
