@@ -31,8 +31,11 @@ a Firefox native messaging host. Run once in PowerShell:
 & "tools\stats-collector\native\install-native-host.ps1"
 ```
 
-This writes one registry key under `HKCU\Software\Mozilla\NativeMessagingHosts`
-pointing at `native\filereader.py`. No admin rights required.
+This generates the host manifest from `com.geminifoldersantigravity.filereader.example.json`
+(injecting this machine's absolute path) and writes one registry key under
+`HKCU\Software\Mozilla\NativeMessagingHosts` pointing at it. The generated
+manifest is gitignored — only the `.example.json` template is committed. No
+admin rights required.
 
 ## Loading in Firefox
 
