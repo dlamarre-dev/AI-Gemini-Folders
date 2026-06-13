@@ -45,8 +45,10 @@ TOOL_DIR = Path(__file__).resolve().parent
 # is skipped instead of torn down and re-uploaded (AMO throttles writes hard).
 STATE_FILE = TOOL_DIR / ".amo-previews-state.json"  # gitignored
 SCREENSHOTS_PER_LISTING = 5
-REQUEST_GAP_S = 1.0   # initial delay before each write request (grows on throttle)
-MAX_PACE_S = 30.0     # cap for the adaptive pacing delay
+REQUEST_GAP_S = 1.0     # initial delay before each write request (grows on throttle)
+MAX_PACE_S = 30.0       # cap for the adaptive pacing delay
+AUTO_RETRY_CAP_S = 180  # longest we'll auto-sleep on a single throttle before retrying
+LONG_THROTTLE_S = 300   # above this hinted wait, bail with an ETA instead of sleeping
 WRITE_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
 _pace_gap = REQUEST_GAP_S  # adaptive: bumped to the server's hinted rate on 429/503
 
@@ -141,18 +143,26 @@ def api_request(creds, method, path, json_body=None, multipart=None, max_retries
                 return json.loads(body) if body else None
         except urllib.error.HTTPError as e:
             e._amo_detail = e.read().decode("utf-8", "replace")[:2000]
-            if e.code in (429, 503) and attempt < max_retries:
+            if e.code in (429, 503):
                 hint = throttle_wait_s(e)
-                if hint:  # learn the server's rate so later writes pre-wait
-                    new_gap = min(max(_pace_gap, hint), MAX_PACE_S)
-                    if new_gap > _pace_gap:
-                        print(f"  pacing -> {new_gap:g}s/request (server throttle)")
-                        _pace_gap = new_gap
-                wait = min((hint or 5 * (attempt + 1)) + 1, 120)  # buffer + hard cap
-                print(f"  throttled (HTTP {e.code}); retrying in {wait}s "
-                      f"(attempt {attempt + 1}/{max_retries})")
-                time.sleep(wait)
-                continue
+                # A long cooldown means the write quota is exhausted — don't sleep
+                # for ages in-process; tell the user when to come back and exit.
+                if hint and hint > LONG_THROTTLE_S:
+                    mins = max(1, round(hint / 60))
+                    sys.exit(f"AMO is throttling writes for ~{hint}s (~{mins} min): your API "
+                             f"write quota is temporarily exhausted (repeated runs). Re-run this "
+                             f"command in ~{mins} min — a single --texts PATCH is all it takes.")
+                if attempt < max_retries:
+                    if hint:  # learn the server's rate so later writes pre-wait
+                        new_gap = min(max(_pace_gap, hint), MAX_PACE_S)
+                        if new_gap > _pace_gap:
+                            print(f"  pacing -> {new_gap:g}s/request (server throttle)")
+                            _pace_gap = new_gap
+                    wait = min((hint or 5 * (attempt + 1)) + 1, AUTO_RETRY_CAP_S)
+                    print(f"  throttled (HTTP {e.code}); retrying in {wait}s "
+                          f"(attempt {attempt + 1}/{max_retries})")
+                    time.sleep(wait)
+                    continue
             sys.exit(f"API {method} {path} failed: HTTP {e.code}\n{e._amo_detail}")
 
 
