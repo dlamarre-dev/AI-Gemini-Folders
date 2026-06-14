@@ -54,6 +54,36 @@ function applyCommonI18n() {
 }
 window.applyCommonI18n = applyCommonI18n;
 
+// Adds a uniform clear (✕) button to a search input. Wraps the input in a
+// .search-wrap span and appends a .search-clear button that shows only when the
+// field holds text. Replaces the Chromium-only ::-webkit-search-cancel-button so
+// the control behaves identically on Firefox. Safe to call once per input.
+function setupClearableSearch(input) {
+  if (!input || input.parentElement.classList.contains('search-wrap')) return;
+  const wrap = document.createElement('span');
+  wrap.className = 'search-wrap';
+  input.parentNode.insertBefore(wrap, input);
+  wrap.appendChild(input);
+
+  const clearBtn = document.createElement('button');
+  clearBtn.type = 'button';
+  clearBtn.className = 'search-clear';
+  clearBtn.tabIndex = -1;            // mouse convenience only, like the native control
+  clearBtn.setAttribute('aria-hidden', 'true');
+  wrap.appendChild(clearBtn);
+
+  const sync = () => wrap.classList.toggle('has-text', input.value !== '');
+  input.addEventListener('input', sync);
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    // Notify the existing (debounced) search listeners so the list re-renders.
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    input.focus();
+  });
+  sync();
+}
+window.setupClearableSearch = setupClearableSearch;
+
 // Wires the "Save current conversation" button. The per-extension differences
 // are injected via opts:
 //   opts.getSiteKey(tab)       -> a site key string, or null when unsupported
@@ -240,6 +270,9 @@ function initPopupCommon(config) {
 
   // --- Folder sort menu ---
   const searchInput = document.getElementById('searchInput');
+  // Give both search fields a uniform clear (✕) button (Chromium + Firefox).
+  setupClearableSearch(searchInput);
+  setupClearableSearch(document.getElementById('promptSearchInput'));
   const sortToggleBtn = document.getElementById('sortToggleBtn');
   const sortMenu = document.getElementById('sortMenu');
   const sortItems = document.querySelectorAll('#sortMenu .dropdown-item');

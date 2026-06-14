@@ -296,20 +296,45 @@
       box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2); /* Modern focus halo */
     }
 
-    /* Themed clear (✕) button shown in the search fields when they hold text
-       (Chromium). Drawn with a mask so it follows the theme color. */
+    /* Hide the native Chromium clear button — we draw our own (see below) so the
+       control is identical on Firefox, which has no ::-webkit-search-cancel-button. */
     input[type="search"]::-webkit-search-cancel-button {
       -webkit-appearance: none;
       appearance: none;
-      height: 14px;
-      width: 14px;
-      margin-left: 6px;
+      display: none;
+    }
+
+    /* Custom clear (✕) button overlaid on the search fields, shown only when they
+       hold text. JS (setupClearableSearch) wraps each search input in .search-wrap
+       and toggles .has-text. Works the same on Chromium and Firefox. Drawn with a
+       mask so the glyph follows the theme color. */
+    .search-wrap { position: relative; display: flex; flex: 1 1 auto; min-width: 0; }
+    .search-wrap > input[type="search"] { flex: 1 1 auto; padding-right: 28px; }
+    .search-clear {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      border: none;
+      background: transparent;
       cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .search-wrap.has-text .search-clear { display: flex; }
+    .search-clear::before {
+      content: '';
+      width: 14px;
+      height: 14px;
       background-color: var(--muted-text);
       -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z'/%3E%3C/svg%3E") center / contain no-repeat;
               mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z'/%3E%3C/svg%3E") center / contain no-repeat;
     }
-    input[type="search"]::-webkit-search-cancel-button:hover { background-color: var(--text-color); }
+    .search-clear:hover::before { background-color: var(--text-color); }
 
     /* --- Buttons --- */
     button { font-family: inherit; cursor: pointer; transition: all 0.2s ease; }
@@ -942,6 +967,14 @@
     body[dir="rtl"] .custom-dropdown {
       right: auto;
       left: 0;
+    }
+    body[dir="rtl"] .search-wrap > input[type="search"] {
+      padding-right: 10px;
+      padding-left: 28px;
+    }
+    body[dir="rtl"] .search-clear {
+      right: auto;
+      left: 8px;
     }
     body[dir="rtl"] .chat-checkbox {
       margin: 0 0 0 8px;
