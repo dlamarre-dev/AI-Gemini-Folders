@@ -879,6 +879,10 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
     overflow: hidden; white-space: nowrap;
   }
   .bc-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+  /* Chevrons must not be bidi-mirrored: isolate them so the authored glyph
+     renders as-is (back points in the reading direction, breadcrumb separator
+     follows the descent). */
+  .chev { direction: ltr; unicode-bidi: isolate; flex-shrink: 0; }
 
   /* Bookmark rows */
   .bm-list { flex: 1; background: #fff; overflow: hidden; }
@@ -915,11 +919,11 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
   <div class="phone">
     <div class="phone-screen" dir="${phoneDir}">
       <div class="chrome-bar">
-        <span class="chrome-back">${backGlyph}</span>
-        <span class="chrome-title">${localeData.syncFolderName}</span>
+        <span class="chrome-back chev">${backGlyph}</span>
+        <span class="chrome-title"><bdi>${localeData.syncFolderName}</bdi></span>
         <span class="chrome-more">⋮</span>
       </div>
-      <div class="breadcrumb"><span>☆</span><span>${sepGlyph}</span><span class="bc-name">${localeData.syncFolderName}</span></div>
+      <div class="breadcrumb"><span class="bc-star">☆</span><span class="chev">${sepGlyph}</span><span class="bc-name"><bdi>${localeData.syncFolderName}</bdi></span></div>
       <div class="bm-list">${folderItems}</div>
     </div>
   </div>
