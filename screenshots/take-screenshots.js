@@ -754,6 +754,13 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
     .map(name => `<div class="bm-row"><span class="bm-icon">📁</span><span class="bm-name">${name}</span></div>`)
     .join('');
 
+  // Mirror the mock phone UI for RTL locales: dir="rtl" on the phone screen
+  // reverses the flex rows (back/title/more, icon+name) and aligns text to the
+  // right, and the chevron glyphs flip to point the other way.
+  const phoneDir   = isRTL ? 'rtl' : 'ltr';
+  const backGlyph  = isRTL ? '›' : '‹';
+  const sepGlyph   = isRTL ? '‹' : '›';
+
   // Phone font scales with phone width
   const phoneFontBase = Math.round(phoneW * 0.072);
   const phoneHeaderH  = Math.round(phoneH * 0.11);
@@ -869,8 +876,9 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
     color: #5f6368;
     gap: 4px;
     border-bottom: 1px solid #dadce0;
-    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    overflow: hidden; white-space: nowrap;
   }
+  .bc-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 
   /* Bookmark rows */
   .bm-list { flex: 1; background: #fff; overflow: hidden; }
@@ -905,13 +913,13 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
   <div class="sync-arrow">${isRTL ? '⟵' : '⟶'}</div>
 
   <div class="phone">
-    <div class="phone-screen">
+    <div class="phone-screen" dir="${phoneDir}">
       <div class="chrome-bar">
-        <span class="chrome-back">‹</span>
+        <span class="chrome-back">${backGlyph}</span>
         <span class="chrome-title">${localeData.syncFolderName}</span>
         <span class="chrome-more">⋮</span>
       </div>
-      <div class="breadcrumb">☆ &rsaquo; ${localeData.syncFolderName}</div>
+      <div class="breadcrumb"><span>☆</span><span>${sepGlyph}</span><span class="bc-name">${localeData.syncFolderName}</span></div>
       <div class="bm-list">${folderItems}</div>
     </div>
   </div>
