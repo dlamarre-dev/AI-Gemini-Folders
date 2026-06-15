@@ -4,7 +4,7 @@ Ayusin ang mga pag-uusap mula sa lahat ng iyong mga paboritong AI tool sa mga ib
 
 🌐 8 SUPORTADONG AI SERVICE
 
-Ang Mga AI Folder ay natively na nag-iintegrate sa lahat ng pangunahing AI chat assistant, at sa mga lokal na LLM na pinapatakbo mo mismo. Ang mga pag-uusap mula sa iba't ibang platform ay maaaring magbahagi ng eksaktong parehong folder. Ang bawat chat ay nagpapakita ng kulay at logo ng serbisyo nito, kaya alam mo lagi kung saan ito nanggaling.
+Ang Mga AI Folder ay natively na nag-iintegrate sa lahat ng pangunahing AI chat assistant, tulad ng Claude, ChatGPT at Gemini, at sa mga lokal na LLM na pinapatakbo mo mismo. Ang mga pag-uusap mula sa iba't ibang platform ay maaaring magbahagi ng eksaktong parehong folder. Ang bawat chat ay nagpapakita ng kulay at logo ng serbisyo nito, kaya alam mo lagi kung saan ito nanggaling.
 
 ✨ PROMPT MODE
 
@@ -62,6 +62,7 @@ Ang Mga AI Folder ay isang open source na proyektong ginawa nang may pagmamahal.
 
 
 📢 MGA UPDATE:
+Bersyon 1.5.1 (Mga Pagpapahusay): Ang mga folder ay isinasaayos na ngayon mula sa pinakabago bilang default, tulad ng iyong prompt library — nananatiling hindi nagbabago ang pagkakasunod-sunod na napili mo na dati. Inayos din ang clear (✕) button sa search box para gumana ito sa Firefox din.
 Bersyon 1.5 (Grok): Magsimula ng mga bagong pag-uusap sa Grok nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt. Mas malawak na panel, pinahusay na mga kontrol, at mas mahusay na keyboard accessibility. Mga ayos sa bug at panloob na refactoring mula noong huling update, para sa pinahusay na katatagan. Kung ang Mga AI Folder ay kapaki-pakinabang sa iyo, maaari mong suportahan ang pagbuo nito sa pamamagitan ng pagbisita sa Ko-fi page: https://ko-fi.com/aifolders — salamat sa iyong suporta!
 Bersyon 1.2 (DeepSeek): Magsimula ng mga bagong pag-uusap sa DeepSeek nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt.
 Bersyon 1.1 (Prompt Trigger): I-type ang # sa anumang AI chat field para makita ang iyong mga na-save na prompt na na-filter sa real time. Gamitin ang ↓/↑ para mag-navigate sa mga mungkahi, Space para mag-autocomplete o mag-inject — nang hindi binubuksan ang panel.

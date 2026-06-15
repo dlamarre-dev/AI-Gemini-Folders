@@ -4,7 +4,7 @@ Organizați conversații din toate instrumentele dvs. AI preferate în dosare pa
 
 🌐 8 SERVICII IA ACCEPTATE
 
-Dosare IA se integrează nativ cu toți principalii asistenți de chat IA, precum și cu LLM-urile locale pe care le rulați chiar dumneavoastră. Conversațiile de pe platforme diferite pot împărtăși exact același dosar. Fiecare conversație afișează culoarea și sigla serviciului său, astfel încât să știți întotdeauna de unde provine.
+Dosare IA se integrează nativ cu toți principalii asistenți de chat IA, cum ar fi Claude, ChatGPT și Gemini, precum și cu LLM-urile locale pe care le rulați chiar dumneavoastră. Conversațiile de pe platforme diferite pot împărtăși exact același dosar. Fiecare conversație afișează culoarea și sigla serviciului său, astfel încât să știți întotdeauna de unde provine.
 
 ✨ MODUL PROMPTURI
 
@@ -62,6 +62,7 @@ Dosare IA este un proiect open source dezvoltat cu pasiune. Transparența și re
 
 
 📢 ACTUALIZĂRI:
+Versiunea 1.5.1 (Îmbunătățiri): Folderele sunt acum sortate implicit de la cele mai noi, la fel ca biblioteca ta de prompturi — ordinea de sortare aleasă anterior rămâne neschimbată. A fost corectat și butonul de ștergere (✕) din câmpul de căutare, astfel încât funcționează și în Firefox.
 Versiunea 1.5 (Grok): Lansați conversații noi pe Grok direct din Modul Prompt, salvați-le în dosare și injectați prompturi. Panou mai lat, controale rafinate și accesibilitate îmbunătățită de la tastatură. Remedieri de erori și refactorizare internă de la ultima actualizare, pentru o stabilitate mai bună. Dacă Dosare IA vă este util, puteți susține dezvoltarea vizitând pagina Ko-fi: https://ko-fi.com/aifolders — vă mulțumim pentru sprijin!
 Versiunea 1.2 (DeepSeek): Lansați conversații noi pe DeepSeek direct din Modul Prompt, salvați-le în dosare și injectați prompturi.
 Versiunea 1.1 (Declanșatorul de Prompturi): Tastați # în orice câmp de chat AI pentru a vedea prompturile salvate filtrate în timp real. Folosiți ↓/↑ pentru a naviga prin sugestii, Spațiu pentru autocompletare sau injectare — fără a deschide vreodată panoul.

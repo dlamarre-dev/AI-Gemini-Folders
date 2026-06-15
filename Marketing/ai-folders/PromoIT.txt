@@ -4,7 +4,7 @@ Organizza conversazioni da tutti i tuoi strumenti AI preferiti in cartelle condi
 
 🌐 8 SERVIZI AI SUPPORTATI
 
-Cartelle IA si integra in modo nativo con tutti i principali assistenti di chat IA e con i LLM locali che esegui tu stesso. Le conversazioni di piattaforme diverse possono condividere la stessa cartella. Ogni chat mostra il colore e il logo del suo servizio di origine, così sai sempre da dove proviene.
+Cartelle IA si integra in modo nativo con tutti i principali assistenti di chat IA, come Claude, ChatGPT e Gemini, e con i LLM locali che esegui tu stesso. Le conversazioni di piattaforme diverse possono condividere la stessa cartella. Ogni chat mostra il colore e il logo del suo servizio di origine, così sai sempre da dove proviene.
 
 ✨ MODALITÀ PROMPT
 
@@ -62,6 +62,7 @@ Cartelle IA è un progetto open source sviluppato con passione. La trasparenza e
 
 
 📢 AGGIORNAMENTI:
+Versione 1.5.1 (Rifiniture): le cartelle ora sono ordinate dalla più recente alla meno recente per impostazione predefinita, come la tua libreria di prompt — l'ordinamento che avevi già scelto resta invariato. Corretto inoltre il pulsante di cancellazione (✕) nel campo di ricerca, che ora funziona anche su Firefox.
 Versione 1.5 (Grok): Avvia nuove conversazioni Grok direttamente dalla Modalità Prompt, salvale in cartelle e inietta prompt. Pannello più ampio, controlli rifiniti e migliore accessibilità da tastiera. Correzioni di bug e refactoring interno dall'ultimo aggiornamento, per una maggiore stabilità. Se Cartelle IA ti è utile, puoi supportarne lo sviluppo visitando la pagina Ko-fi: https://ko-fi.com/aifolders — grazie per il tuo supporto!
 Versione 1.2 (DeepSeek): Avvia nuove conversazioni DeepSeek direttamente dalla Modalità Prompt, salvale in cartelle e inietta prompt.
 Versione 1.1 (Prompt Trigger): Digita # in qualsiasi campo chat AI per vedere i tuoi prompt filtrati in tempo reale. Usa ↓/↑ per navigare tra i suggerimenti, Spazio per autocompletare o iniettare — senza mai aprire il pannello.

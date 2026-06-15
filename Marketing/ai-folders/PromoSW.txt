@@ -4,7 +4,7 @@ Panga mazungumzo kutoka kwa zana zako zote unazozipenda za AI katika folda ziliz
 
 🌐 HUDUMA 8 ZA AI ZINAZOTUMIKA
 
-Folda za AI huunganishwa kiasili na wasaidizi wakuu wote wa gumzo la AI, pamoja na LLM za ndani unazoendesha mwenyewe. Mazungumzo kutoka kwa majukwaa tofauti yanaweza kushiriki folda ile ile. Kila mazungumzo huonyesha rangi na nembo ya huduma yake, hivyo unajua kila wakati yametoka wapi.
+Folda za AI huunganishwa kiasili na wasaidizi wakuu wote wa gumzo la AI, kama vile Claude, ChatGPT na Gemini, pamoja na LLM za ndani unazoendesha mwenyewe. Mazungumzo kutoka kwa majukwaa tofauti yanaweza kushiriki folda ile ile. Kila mazungumzo huonyesha rangi na nembo ya huduma yake, hivyo unajua kila wakati yametoka wapi.
 
 ✨ HALI YA KIDOKEZO
 
@@ -62,6 +62,7 @@ Folda za AI ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu fa
 
 
 📢 MASASISHO:
+Toleo 1.5.1 (Maboresho): Folda sasa hupangwa kuanzia mpya zaidi kwa chaguo-msingi, sawa na maktaba yako ya vidokezo — mpangilio wa kupanga uliokwisha chagua hubaki bila kubadilika. Pia kitufe cha kufuta (✕) katika kisanduku cha kutafutia kimerekebishwa ili kifanye kazi katika Firefox pia.
 Toleo 1.5 (Grok): Anza mazungumzo mapya ya Grok moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo. Paneli pana zaidi, vidhibiti vilivyoboreshwa na ufikivu bora wa kibodi. Marekebisho ya hitilafu na upyaji wa ndani tangu sasisho la mwisho, kwa uthabiti bora. Ikiwa Folda za AI ni muhimu kwako, unaweza kusaidia maendeleo kwa kutembelea ukurasa wa Ko-fi: https://ko-fi.com/aifolders — asante kwa msaada wako!
 Toleo 1.2 (DeepSeek): Anza mazungumzo mapya ya DeepSeek moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo.
 Toleo 1.1 (Kichocheo cha Kidokezo): Andika # katika uwanja wowote wa mazungumzo wa AI ili uone vidokezo vyako vilivyohifadhiwa vikichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.

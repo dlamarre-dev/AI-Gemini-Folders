@@ -4,7 +4,7 @@ Organisieren Sie Gespräche aller Ihrer bevorzugten KI-Tools in gemeinsamen Ordn
 
 🌐 8 UNTERSTÜTZTE KI-DIENSTE
 
-KI-Ordner integriert sich nativ mit allen großen KI-Chat-Assistenten sowie mit den lokalen LLMs, die Sie selbst betreiben. Gespräche von verschiedenen Plattformen können denselben Ordner teilen. Jeder Chat zeigt die Farbe und das Logo seines Dienstes an, sodass Sie immer wissen, woher er stammt.
+KI-Ordner integriert sich nativ mit allen großen KI-Chat-Assistenten wie Claude, ChatGPT und Gemini sowie mit den lokalen LLMs, die Sie selbst betreiben. Gespräche von verschiedenen Plattformen können denselben Ordner teilen. Jeder Chat zeigt die Farbe und das Logo seines Dienstes an, sodass Sie immer wissen, woher er stammt.
 
 ✨ PROMPT-MODUS
 
@@ -62,6 +62,7 @@ KI-Ordner ist ein leidenschaftlich entwickeltes Open-Source-Projekt. Transparenz
 
 
 📢 UPDATES:
+Version 1.5.1 (Feinschliff): Ordner werden jetzt standardmäßig nach Neueste zuerst sortiert, passend zu Ihrer Prompt-Bibliothek — eine bereits gewählte Sortierung bleibt unverändert. Außerdem wurde die Löschen-Schaltfläche (✕) im Suchfeld korrigiert, sodass sie auch in Firefox funktioniert.
 Version 1.5 (Grok): Starten Sie neue Grok-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts. Breiteres Panel, verfeinerte Bedienelemente und bessere Tastaturzugänglichkeit. Fehlerbehebungen und interne Überarbeitungen seit dem letzten Update, für eine verbesserte Stabilität. Wenn KI-Ordner Ihnen nützlich ist, können Sie die Entwicklung unterstützen, indem Sie die Ko-fi-Seite besuchen: https://ko-fi.com/aifolders — vielen Dank für Ihre Unterstützung!
 Version 1.2 (DeepSeek): Starten Sie neue DeepSeek-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts.
 Version 1.1 (Prompt-Auslöser): Geben Sie # in ein beliebiges KI-Chat-Feld ein, um gespeicherte Prompts in Echtzeit gefiltert zu sehen. Verwenden Sie ↓/↑ zum Navigieren durch Vorschläge, Leertaste zum Autovervollständigen oder Einsetzen — ohne das Panel zu öffnen.

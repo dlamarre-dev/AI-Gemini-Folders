@@ -4,7 +4,7 @@ Organiser samtaler fra alle dine foretrukne AI-værktøjer i delte mapper, opbyg
 
 🌐 8 UNDERSTØTTEDE AI-TJENESTER
 
-AI-mapper integreres indbygget med alle de store AI-chatassistenter og med de lokale LLM'er, du selv kører. Samtaler fra forskellige platforme kan dele præcis den samme mappe. Hver chat viser farven og logoet for sin egen tjeneste, så du altid ved, hvor den kommer fra.
+AI-mapper integreres indbygget med alle de store AI-chatassistenter, såsom Claude, ChatGPT og Gemini, og med de lokale LLM'er, du selv kører. Samtaler fra forskellige platforme kan dele præcis den samme mappe. Hver chat viser farven og logoet for sin egen tjeneste, så du altid ved, hvor den kommer fra.
 
 ✨ PROMPTVISNING
 
@@ -62,6 +62,7 @@ AI-mapper er et open source-projekt bygget med passion. Gennemsigtighed og respe
 
 
 📢 OPDATERINGER:
+Version 1.5.1 (Finjusteringer): Mapper sorteres nu med nyeste først som standard, ligesom dit promptbibliotek — en sorteringsrækkefølge, du allerede har valgt, forbliver uændret. Desuden er ryd-knappen (✕) i søgefeltet rettet, så den også virker i Firefox.
 Version 1.5 (Grok): Start nye Grok-samtaler direkte fra Promptvisning, gem dem i mapper og injicér prompts. Bredere panel, forfinede kontroller og bedre tastaturtilgængelighed. Fejlrettelser og intern refaktorering siden den sidste opdatering, for forbedret stabilitet. Hvis AI-mapper er nyttig for dig, kan du støtte dens udvikling ved at besøge Ko-fi-siden: https://ko-fi.com/aifolders — tak for din støtte!
 Version 1.2 (DeepSeek): Start nye DeepSeek-samtaler direkte fra Promptvisning, gem dem i mapper og injicér prompts.
 Version 1.1 (Prompt-udløser): Skriv # i et vilkårligt AI-chatfelt for at se dine gemte prompts filtreret i realtid. Brug ↓/↑ til at navigere gennem forslag, Mellemrum for at autofuldføre eller injicere — uden at åbne panelet.

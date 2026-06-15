@@ -4,7 +4,7 @@ Tvarkykite visų mėgstamiausių AI įrankių pokalbius bendrose aplankuose, kur
 
 🌐 8 PALAIKOMOS DI PASLAUGOS
 
-AI aplankai natūraliai integruojasi su visais pagrindiniais AI pokalbių asistentais ir su vietiniais LLM, kuriuos paleidžiate patys. Pokalbiai iš skirtingų platformų gali būti tame pačiame aplanke. Kiekvienas pokalbis rodo savo paslaugos spalvą ir logotipą, todėl visada žinote, iš kur jis atsirado.
+AI aplankai natūraliai integruojasi su visais pagrindiniais AI pokalbių asistentais, tokiais kaip Claude, ChatGPT ir Gemini, ir su vietiniais LLM, kuriuos paleidžiate patys. Pokalbiai iš skirtingų platformų gali būti tame pačiame aplanke. Kiekvienas pokalbis rodo savo paslaugos spalvą ir logotipą, todėl visada žinote, iš kur jis atsirado.
 
 ✨ PROMPTŲ REŽIMAS
 
@@ -61,6 +61,7 @@ AI aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pa
 
 
 📢 ATNAUJINIMAI:
+Versija 1.5.1 (Patobulinimai): Aplankai dabar pagal numatytuosius nustatymus rikiuojami nuo naujausių, kaip ir jūsų užklausų biblioteka — anksčiau pasirinkta rikiavimo tvarka lieka nepakitusi. Taip pat ištaisytas išvalymo mygtukas (✕) paieškos laukelyje, todėl jis veikia ir „Firefox“ naršyklėje.
 Versija 1.5 (Grok): Pradėkite naujus Grok pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus. Platesnis skydelis, patobulinti valdikliai ir geresnis pasiekiamumas klaviatūra. Klaidų taisymai ir vidiniai pertvarkymai nuo paskutinio atnaujinimo, siekiant geresnio stabilumo. Jei AI aplankai jums naudingi, galite paremti jo kūrimą apsilankę Ko-fi puslapyje: https://ko-fi.com/aifolders — ačiū už jūsų palaikymą!
 Versija 1.2 (DeepSeek): Pradėkite naujus DeepSeek pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus.
 Versija 1.1 (Raginimų paleidiklis): Įveskite # bet kuriame AI pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio.

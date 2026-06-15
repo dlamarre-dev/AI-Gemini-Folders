@@ -4,7 +4,7 @@ Organize conversations from all your favorite AI tools into shared folders, buil
 
 🌐 8 SUPPORTED AI SERVICES
 
-AI Folders works natively across all the major AI chat assistants, and the local LLMs you run yourself. Conversations from different platforms share the exact same folder, and each chat shows its native service's color and logo so you always know where it came from.
+AI Folders works natively across all the major AI chat assistants, such as Claude, ChatGPT, Gemini and the local LLMs you run yourself. Conversations from different platforms share the exact same folder, and each chat shows its native service's color and logo so you always know where it came from.
 
 ✨ PROMPT MODE
 
@@ -62,6 +62,7 @@ Built with privacy at its core. It only requests access to the 7 supported AI si
 AI Folders is an open source project built with passion. Transparency and respect for your privacy are our top priorities. Are you a developer or just curious? Browse the code, follow the changelog, or contribute on GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 VERSION HISTORY:
+Version 1.5.1 (Refinements): Folders now sort newest-first by default, to match your prompt library — any sort order you've already chosen stays untouched. Also fixed the clear (✕) button in the search box so it works in Firefox too.
 Version 1.5 (Grok): Launch new Grok conversations directly from Prompt Mode, save and organize them in folders, and inject prompts. Wider panel, refined controls, and improved keyboard accessibility. Bug fixes and internal refactoring since the last update, for improved stability. If AI Folders is useful to you, you can support its development by visiting the Ko-fi page: https://ko-fi.com/aifolders — thank you for your support!
 Version 1.2 (DeepSeek): Launch new DeepSeek conversations directly from Prompt Mode, save and organize them in folders, and inject prompts.
 Version 1.1 (Prompt Trigger): Type # in any AI chat field to see your saved prompts filtered in real time. Use ↓/↑ to cycle through suggestions, Space to autocomplete or inject — without ever opening the panel.

@@ -4,7 +4,7 @@ Tüm favori AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düz
 
 🌐 DESTEKLENEN 8 YZ HİZMETİ
 
-YZ Klasörleri, tüm büyük yapay zeka sohbet asistanlarıyla ve kendi çalıştırdığınız yerel LLM'lerle yerel olarak entegre olur. Farklı platformlardan gelen sohbetler tamamen aynı klasörü paylaşabilir. Her sohbet, kendi hizmetinin rengini ve logosunu gösterir, böylece nereden geldiğini her zaman bilirsiniz.
+YZ Klasörleri, Claude, ChatGPT ve Gemini gibi tüm büyük yapay zeka sohbet asistanlarıyla ve kendi çalıştırdığınız yerel LLM'lerle yerel olarak entegre olur. Farklı platformlardan gelen sohbetler tamamen aynı klasörü paylaşabilir. Her sohbet, kendi hizmetinin rengini ve logosunu gösterir, böylece nereden geldiğini her zaman bilirsiniz.
 
 ✨ İSTEM MODU
 
@@ -62,6 +62,7 @@ Gemini Klasörler, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şef
 
 
 📢 GÜNCELLEMELER:
+Sürüm 1.5.1 (İyileştirmeler): Klasörler artık istem kitaplığınız gibi varsayılan olarak en yeniden eskiye sıralanıyor — daha önce seçtiğiniz sıralama düzeni değişmeden kalır. Ayrıca arama kutusundaki temizleme (✕) düğmesi düzeltildi, böylece Firefox'ta da çalışıyor.
 Sürüm 1.5 (Grok): Prompt Modundan doğrudan yeni Grok konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin. Daha geniş panel, iyileştirilmiş denetimler ve daha iyi klavye erişilebilirliği. Son güncellemeden bu yana hata düzeltmeleri ve dahili yeniden yapılandırma, geliştirilmiş kararlılık için. YZ Klasörleri işinize yarıyorsa, Ko-fi sayfasını ziyaret ederek geliştirmeyi destekleyebilirsiniz: https://ko-fi.com/aifolders — desteğiniz için teşekkürler!
 Sürüm 1.2 (DeepSeek): Prompt Modundan doğrudan yeni DeepSeek konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin.
 Sürüm 1.1 (Prompt Tetikleyici): Herhangi bir AI sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan.

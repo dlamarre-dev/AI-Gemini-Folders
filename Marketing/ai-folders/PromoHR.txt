@@ -4,7 +4,7 @@ Organiziraj razgovore iz svih tvojih omiljenih AI alata u dijeljene mape, izgrad
 
 🌐 8 PODRŽANIH AI USLUGA
 
-UI mape integrira se izvorno sa svim glavnim AI chat asistentima te s lokalnim LLM modelima koje sami pokrećete. Razgovori s različitih platformi mogu dijeliti potpuno istu mapu. Svaki chat prikazuje boju i logotip svoje usluge, tako da uvijek znaš odakle dolazi.
+UI mape integrira se izvorno sa svim glavnim AI chat asistentima, kao što su Claude, ChatGPT i Gemini, te s lokalnim LLM modelima koje sami pokrećete. Razgovori s različitih platformi mogu dijeliti potpuno istu mapu. Svaki chat prikazuje boju i logotip svoje usluge, tako da uvijek znaš odakle dolazi.
 
 ✨ NAČIN UPITA
 
@@ -61,6 +61,7 @@ UI mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poš
 
 
 📢 AŽURIRANJA:
+Verzija 1.5.1 (Poboljšanja): Mape se sada prema zadanim postavkama razvrstavaju od najnovijih, kao i vaša biblioteka prompta — već odabrani redoslijed razvrstavanja ostaje nepromijenjen. Ispravljen je i gumb za brisanje (✕) u polju za pretraživanje, pa sada radi i u Firefoxu.
 Verzija 1.5 (Grok): Pokrenite nove razgovore na Groku izravno iz načina upita, spremite ih u mape i ubacite upite. Širi panel, dotjerane kontrole i bolja pristupačnost tipkovnicom. Ispravci grešaka i unutarnje refaktoriranje od posljednjeg ažuriranja, za bolju stabilnost. Ako su ti UI mape korisne, možeš podržati njihov razvoj posjetom Ko-fi stranici: https://ko-fi.com/aifolders — hvala na podršci!
 Verzija 1.2 (DeepSeek): Pokrenite nove razgovore na DeepSeeku izravno iz načina upita, spremite ih u mape i ubacite upite.
 Verzija 1.1 (Okidač upita): Unesi # u bilo koje polje za chat s AI-jem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela.

@@ -4,7 +4,7 @@ Organitza converses de totes les teves eines d'IA preferides en carpetes compart
 
 🌐 8 SERVEIS D'IA COMPATIBLES
 
-Carpetes IA s'integra de manera nativa amb tots els principals assistents de xat d'IA, així com amb els LLM locals que executes tu mateix. Les converses de plataformes diferents poden compartir exactament la mateixa carpeta. Cada xat mostra el color i el logotip del seu servei, de manera que sempre saps d'on prové.
+Carpetes IA s'integra de manera nativa amb tots els principals assistents de xat d'IA, com ara Claude, ChatGPT i Gemini, així com amb els LLM locals que executes tu mateix. Les converses de plataformes diferents poden compartir exactament la mateixa carpeta. Cada xat mostra el color i el logotip del seu servei, de manera que sempre saps d'on prové.
 
 ✨ MODE PROMPTS
 
@@ -60,6 +60,7 @@ Carpetes IA és un projecte de codi obert construït amb passió. La transparèn
 
 
 📢 ACTUALITZACIONS:
+Versió 1.5.1 (Millores): Ara les carpetes s'ordenen de més recent a més antiga de manera predeterminada, igual que la teva biblioteca de prompts — qualsevol ordre que ja haguessis triat es manté sense canvis. També s'ha corregit el botó d'esborrat (✕) del camp de cerca perquè funcioni també al Firefox.
 Versió 1.5 (Grok): Inicia noves converses a Grok directament des del Mode Prompt, desa-les en carpetes i injecta prompts. Panell més ample, controls refinats i millor accessibilitat amb el teclat. Correccions d'errors i refactorització interna des de l'última actualització, per a una millor estabilitat. Si Carpetes IA us és útil, podeu donar suport al seu desenvolupament visitant la pàgina Ko-fi: https://ko-fi.com/aifolders — gràcies pel vostre suport!
 Versió 1.2 (DeepSeek): Inicia noves converses a DeepSeek directament des del Mode Prompt, desa-les en carpetes i injecta prompts.
 Versió 1.1 (Disparador de Prompts): Escriu # a qualsevol camp de xat d'IA per veure els teus prompts filtrats en temps real. Usa ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell.

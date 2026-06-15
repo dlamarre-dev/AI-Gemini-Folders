@@ -4,7 +4,7 @@ Organiseer gesprekken van al uw favoriete AI-tools in gedeelde mappen, bouw een 
 
 🌐 8 ONDERSTEUNDE AI-DIENSTEN
 
-AI-mappen integreert native met alle grote AI-chatassistenten en met de lokale LLM's die u zelf draait. Gesprekken van verschillende platforms kunnen exact dezelfde map delen. Elke chat toont de kleur en het logo van zijn eigen dienst, zodat u altijd weet waar het vandaan komt.
+AI-mappen integreert native met alle grote AI-chatassistenten, zoals Claude, ChatGPT en Gemini, en met de lokale LLM's die u zelf draait. Gesprekken van verschillende platforms kunnen exact dezelfde map delen. Elke chat toont de kleur en het logo van zijn eigen dienst, zodat u altijd weet waar het vandaan komt.
 
 ✨ PROMPTMODUS
 
@@ -62,6 +62,7 @@ AI-mappen is een open-sourceproject gebouwd met passie. Transparantie en respect
 
 
 📢 UPDATES:
+Versie 1.5.1 (Verfijningen): Mappen worden nu standaard van nieuw naar oud gesorteerd, net als je promptbibliotheek — een sorteervolgorde die je al had gekozen blijft ongewijzigd. Ook de wisknop (✕) in het zoekveld is gecorrigeerd, zodat die nu ook in Firefox werkt.
 Versie 1.5 (Grok): Start nieuwe Grok-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts. Breder paneel, verfijnde bedieningselementen en betere toetsenbordtoegankelijkheid. Bugfixes en interne refactoring sinds de laatste update, voor verbeterde stabiliteit. Als AI-mappen u van nut is, kunt u de ontwikkeling ondersteunen door de Ko-fi-pagina te bezoeken: https://ko-fi.com/aifolders — bedankt voor uw steun!
 Versie 1.2 (DeepSeek): Start nieuwe DeepSeek-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts.
 Versie 1.1 (Prompt-trigger): Typ # in een willekeurig AI-chatveld om uw opgeslagen prompts in realtime gefilterd te zien. Gebruik ↓/↑ om door suggesties te navigeren, Spatie om automatisch aan te vullen of in te voegen — zonder het panel te openen.

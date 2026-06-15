@@ -4,7 +4,7 @@ Organize conversas de todas as suas ferramentas de IA favoritas em pastas compar
 
 🌐 8 SERVIÇOS DE IA SUPORTADOS
 
-Pastas IA integra-se nativamente com todos os principais assistentes de chat de IA e com os LLMs locais que você mesmo executa. Conversas de plataformas diferentes podem compartilhar a mesma pasta. Cada chat exibe a cor e o logotipo do seu serviço de origem, para que você sempre saiba de onde ele veio.
+Pastas IA integra-se nativamente com todos os principais assistentes de chat de IA, como Claude, ChatGPT e Gemini, e com os LLMs locais que você mesmo executa. Conversas de plataformas diferentes podem compartilhar a mesma pasta. Cada chat exibe a cor e o logotipo do seu serviço de origem, para que você sempre saiba de onde ele veio.
 
 ✨ MODO PROMPTS
 
@@ -62,6 +62,7 @@ Pastas IA é um projeto open source desenvolvido com paixão. Transparência e r
 
 
 📢 ATUALIZAÇÕES:
+Versão 1.5.1 (Refinamentos): As pastas agora são ordenadas da mais recente para a mais antiga por padrão, como sua biblioteca de prompts — qualquer ordenação que você já tenha escolhido permanece inalterada. Também corrigimos o botão de limpar (✕) no campo de busca para que funcione também no Firefox.
 Versão 1.5 (Grok): Inicie novas conversas no Grok diretamente do Modo Prompt, salve-as em pastas e injete prompts. Painel mais largo, controles refinados e melhor acessibilidade pelo teclado. Correções de bugs e refatorações internas desde a última atualização, para maior estabilidade. Se Pastas IA é útil para você, pode apoiar o desenvolvimento visitando a página Ko-fi: https://ko-fi.com/aifolders — obrigado pelo seu apoio!
 Versão 1.2 (DeepSeek): Inicie novas conversas no DeepSeek diretamente do Modo Prompt, salve-as em pastas e injete prompts.
 Versão 1.1 (Gatilho de Prompt): Digite # em qualquer campo de chat de IA para ver seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel.

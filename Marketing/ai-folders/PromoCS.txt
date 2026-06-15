@@ -4,7 +4,7 @@ Organizujte konverzace ze všech vašich oblíbených AI nástrojů do sdílený
 
 🌐 8 PODPOROVANÝCH AI SLUŽEB
 
-AI složky se nativně integrují se všemi hlavními AI chatovacími asistenty a s lokálními LLM, které si spustíte sami. Konverzace z různých platforem mohou sdílet úplně stejnou složku. Každý chat zobrazuje barvu a logo své služby, takže vždy víte, odkud pochází.
+AI složky se nativně integrují se všemi hlavními AI chatovacími asistenty, jako jsou Claude, ChatGPT a Gemini, a s lokálními LLM, které si spustíte sami. Konverzace z různých platforem mohou sdílet úplně stejnou složku. Každý chat zobrazuje barvu a logo své služby, takže vždy víte, odkud pochází.
 
 ✨ REŽIM VÝZEV
 
@@ -62,6 +62,7 @@ AI složky jsou open source projekt vyvíjený s vášní. Transparentnost a res
 
 
 📢 AKTUALIZACE:
+Verze 1.5.1 (Vylepšení): Složky se nyní ve výchozím nastavení řadí od nejnovějších, stejně jako vaše knihovna promptů — již zvolené řazení zůstává beze změny. Opraveno bylo také tlačítko vymazání (✕) ve vyhledávacím poli, takže funguje i ve Firefoxu.
 Verze 1.5 (Grok): Zahajte nové konverzace na Grok přímo z režimu výzev, ukládejte je do složek a vkládejte výzvy. Širší panel, vylepšené ovládací prvky a lepší přístupnost z klávesnice. Opravy chyb a interní refaktoring od poslední aktualizace pro lepší stabilitu. Pokud vám AI složky pomáhají, můžete podpořit jejich vývoj návštěvou stránky Ko-fi: https://ko-fi.com/aifolders — děkujeme za vaši podporu!
 Verze 1.2 (DeepSeek): Zahajte nové konverzace na DeepSeek přímo z režimu výzev, ukládejte je do složek a vkládejte výzvy.
 Verze 1.1 (Spouštěč promptů): Zadejte # do libovolného pole chatu AI a zobrazte si uložené prompty filtrované v reálném čase. Pomocí ↓/↑ procházejte návrhy, mezerníkem je automaticky dokončete nebo vložte — bez otevření panelu.
