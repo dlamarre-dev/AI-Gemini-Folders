@@ -426,6 +426,7 @@
     <section class="privacy-page">
       <div class="container privacy-page-inner">
         <h1 class="h1">${esc(p.pageTitle)}</h1>
+        ${p.effectiveDate ? `<p class="privacy-updated">${esc(p.effectiveDate)}</p>` : ''}
         <p class="privacy-intro">${esc(p.intro)}</p>
 
         <h2 class="h3">${esc(p.s1Title)}</h2>
@@ -439,6 +440,10 @@
         <p>${esc(p.s2TelBody)}</p>
         <h3 class="privacy-point-title">${esc(p.s2StoreTitle)}</h3>
         <p>${esc(p.s2StoreBody)}</p>
+        ${p.s2MobileTitle ? `<h3 class="privacy-point-title">${esc(p.s2MobileTitle)}</h3>
+        <p>${esc(p.s2MobileBody)}</p>` : ''}
+        ${p.s2LocalTitle ? `<h3 class="privacy-point-title">${esc(p.s2LocalTitle)}</h3>
+        <p>${esc(p.s2LocalBody)}</p>` : ''}
         <h3 class="privacy-point-title">${esc(p.s2ServerTitle)}</h3>
         <p>${esc(p.s2ServerBody)}</p>
 
