@@ -1,7 +1,7 @@
 // folders.js functions depend on globals from utils.js and the DOM.
 // We mock those globals here so tests run in isolation.
 
-const { displayFolders, deleteChat, moveChat, togglePin, renameFolder } = require('../src/folders');
+const { displayFolders, deleteChat, moveChat, togglePin, renameFolder, renameChat, openFolderInTabGroup } = require('../src/folders');
 
 // ---------------------------------------------------------------------------
 // Shared helpers
@@ -241,5 +241,84 @@ describe('renameFolder', () => {
 
     expect(global.saveData).not.toHaveBeenCalled();
     expect(global.window.showCustomModal).toHaveBeenCalledTimes(2);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// renameChat
+// ---------------------------------------------------------------------------
+
+describe('renameChat', () => {
+  test('renames the conversation found by URL', async () => {
+    global.window.showCustomModal.mockResolvedValue('  Renamed  ');
+    setupStorage({ Work: makeFolder(['Old title', 'aaa']) });
+    const url = 'https://gemini.google.com/app/aaa';
+
+    await renameChat('Work', url, 'Old title');
+
+    const chat = savedFolders().Work.find((c) => c.url === url);
+    expect(chat.title).toBe('Renamed'); // trimmed
+  });
+
+  test('does nothing when cancelled (null)', async () => {
+    global.window.showCustomModal.mockResolvedValue(null);
+    setupStorage({ Work: makeFolder(['Old', 'aaa']) });
+
+    await renameChat('Work', 'https://gemini.google.com/app/aaa', 'Old');
+
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+
+  test('does nothing when the new name is blank', async () => {
+    global.window.showCustomModal.mockResolvedValue('   ');
+    setupStorage({ Work: makeFolder(['Old', 'aaa']) });
+
+    await renameChat('Work', 'https://gemini.google.com/app/aaa', 'Old');
+
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// openFolderInTabGroup
+// ---------------------------------------------------------------------------
+
+describe('openFolderInTabGroup', () => {
+  beforeEach(() => {
+    let id = 0;
+    chrome.tabs.create = jest.fn(() => Promise.resolve({ id: ++id }));
+    chrome.tabs.group = jest.fn(() => Promise.resolve(777));
+    chrome.tabs.update = jest.fn(() => Promise.resolve());
+    chrome.tabGroups.update = jest.fn(() => Promise.resolve());
+  });
+
+  test('opens every chat in a background tab, groups them, and focuses the first', async () => {
+    const chats = [{ url: 'https://a/1' }, { url: 'https://a/2' }];
+
+    await openFolderInTabGroup('My Folder', chats);
+
+    expect(chrome.tabs.create).toHaveBeenCalledTimes(2);
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: 'https://a/1', active: false });
+    expect(chrome.tabs.group).toHaveBeenCalledWith({ tabIds: [1, 2] });
+    expect(chrome.tabGroups.update).toHaveBeenCalledWith(
+      777,
+      expect.objectContaining({ title: 'My Folder', color: 'blue', collapsed: false })
+    );
+    expect(chrome.tabs.update).toHaveBeenCalledWith(1, { active: true });
+  });
+
+  test('is a no-op for an empty folder', async () => {
+    await openFolderInTabGroup('Empty', []);
+    expect(chrome.tabs.create).not.toHaveBeenCalled();
+  });
+
+  test('aborts before opening tabs when the >10-tab confirm is declined', async () => {
+    global.window.showCustomModal.mockResolvedValue(false);
+    const chats = Array.from({ length: 11 }, (_, i) => ({ url: `https://a/${i}` }));
+
+    await openFolderInTabGroup('Big', chats);
+
+    expect(global.window.showCustomModal).toHaveBeenCalled();
+    expect(chrome.tabs.create).not.toHaveBeenCalled();
   });
 });

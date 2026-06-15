@@ -756,6 +756,7 @@ if (typeof module !== 'undefined') {
     extractTitleLogic,
     isSafeUrl,
     normalizeUrl,
+    normalizePromptData,
     mergeImportData,
     findPromptsByPrefix,
     injectPromptIntoEditor,
