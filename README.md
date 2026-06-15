@@ -134,7 +134,8 @@ Both extensions are built with privacy in mind.
 * **Optional host permission (local LLM):** AI Folders declares a broad `optional_host_permissions` (`http://*/*`, `https://*/*`) because the local-LLM URL is user-defined and can't be known ahead of time. **Nothing is granted by default.** When you set a local LLM URL, the extension requests access to *only that single origin* via the browser's permission prompt, and revokes the previous origin if you change it. The broad declaration is the manifest pattern required to request a dynamic origin at runtime — it is not standing access to all sites.
 * The `bookmarks` permission is used strictly to manage the mobile sync folder when you enable that feature.
 * Tab content is read **only** when you explicitly save a conversation, solely to extract its title.
-* All data is stored in your browser’s built-in sync storage. **No third-party servers, no analytics, no tracking.** Your data is entirely yours.
+* **What is stored, and where:** your folder structure, the titles and links of saved conversations, and your prompts are kept in your browser’s own sync (Chrome Sync on Chrome, Firefox Sync on Firefox) and synced across your signed-in devices. The extensions **never** store the *content* of a conversation — only its title and link. With mobile sync enabled, that structure is also mirrored into your browser bookmarks (the only data written outside the extension’s own storage). **No third-party servers, no analytics, no tracking.**
+* Full policy: **[aifolders.xyz/privacy.html](https://aifolders.xyz/privacy.html)**
 
 ---
 
@@ -147,6 +148,21 @@ These follow from the extension reading each AI platform’s live page (no serve
 
 ---
 
+## 🧪 Development & Contributing
+
+The two extensions share one codebase in `src/`, with a thin per-extension overlay in `extensions/<ai-folders|gemini-folders>/` (manifest, popup, background, `site-config.js`, `_locales/`). `python build.py` merges them into `dist/<name>/{chrome,firefox}`.
+
+```bash
+npx jest            # run the test suite (~239 tests, jsdom)
+python build.py     # run tests, then build both extensions for Chrome + Firefox
+```
+
+`main` is protected: changes go through a pull request that must pass three CI checks (`test`, plus CodeQL `Analyze (javascript-typescript)` and `Analyze (actions)`). Please branch, open a PR, and let the checks run rather than pushing to `main` directly.
+
+> Adding a new UI string means adding the key to all 43 `_locales/*/messages.json` files of **both** extensions — reuse an existing key when you can.
+
+---
+
 ## 💻 Built With
 
 * HTML5 / CSS3
@@ -154,4 +170,5 @@ These follow from the extension reading each AI platform’s live page (no serve
 * WebExtensions API (Manifest V3)
 * Service Workers / Event Pages (Background Scripts)
 * LZ-String (Data Compression)
+* Jest (Unit Tests) · GitHub Actions + CodeQL (CI)
 * Python (Cross-browser Build Automation)
