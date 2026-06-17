@@ -489,6 +489,27 @@ async function runCollection(config, token, onProgress) {
   }
 }
 
+// ── persistent run log ──────────────────────────────────────────────────────
+// The popup window is destroyed whenever it loses focus, taking its in-DOM log
+// with it. So the background owns the log: every line is mirrored to
+// storage.local, which survives popup close (and service-worker restarts) and
+// is broadcast to the popup live via chrome.storage.onChanged. Starting a run
+// clears the buffer, so relaunching an action wipes the previous output.
+
+let runLog = [];
+
+function pushLog(text, cls, state) {
+  runLog.push(cls ? { text, cls } : { text });
+  const data = { run_log: runLog };
+  if (state) data.run_state = state;
+  chrome.storage.local.set(data);
+}
+
+function resetLog() {
+  runLog = [];
+  chrome.storage.local.set({ run_log: runLog, run_state: 'running' });
+}
+
 // ── message handler ───────────────────────────────────────────────────────────
 
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
@@ -496,12 +517,14 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
 
   const { config, token } = msg;
   (async () => {
+    resetLog();
+    pushLog('Starting…');
     try {
-      const progress = status =>
-        chrome.runtime.sendMessage({ type: 'PROGRESS', status }).catch(() => {});
-      await runCollection(config, token, progress);
+      await runCollection(config, token, status => pushLog(status));
+      pushLog('Done.', 'ok', 'done');
       sendResponse({ ok: true });
     } catch (e) {
+      pushLog('Error: ' + e.message, 'err', 'error');
       sendResponse({ ok: false, error: e.message });
     }
   })();
