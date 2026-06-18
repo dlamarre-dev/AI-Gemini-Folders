@@ -49,10 +49,13 @@ Para fixar um prompt: clique em 📍 — sobe para o topo da lista e fica sempre
 Ativador de Prompt: Escreva # para ver instantaneamente todos os seus prompts guardados, ou continue a escrever para filtrar em tempo real. Prima Espaço numa correspondência única para preenchimento automático, ou numa correspondência exata para injetar.
 
 🔒 PRIVACIDADE E SEGURANÇA
-Desenvolvida com a privacidade no centro. Solicita acesso apenas a gemini.google.com e lê o separador ativo apenas ao guardar uma conversa ou injetar um prompt. A permissão "Marcadores" é usada apenas se ativar a sincronização móvel. Armazenamento via Chrome Sync: sem servidores de terceiros, sem telemetria.
+Desenvolvida com a privacidade no centro. Solicita acesso apenas a gemini.google.com e lê o separador ativo apenas ao guardar uma conversa ou injetar um prompt. A permissão "Marcadores" é usada apenas se ativar a sincronização móvel. Armazenamento via sincronização do navegador: sem servidores de terceiros, sem telemetria, sem conta necessária.
 
-🤝 PROJETO OPEN SOURCE
-Pastas Gemini é um projeto open source desenvolvido com paixão. A transparência e o respeito pela sua privacidade são as nossas prioridades. É programador ou simplesmente curioso? Consulte o código, acompanhe o histórico de alterações ou contribua no GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Desenvolvida sobre o Manifest V3: o próprio navegador garante que nenhum código remoto pode ser carregado e que nenhuma execução dinâmica de scripts pode ocorrer — trata-se de uma restrição ao nível da plataforma, não de uma promessa do programador. A versão Firefox é publicada através do processo oficial de revisão de extensões da Mozilla (AMO).
+
+🤝 OPEN SOURCE E AUDITÁVEL
+Cada linha de código é pública no GitHub. Qualquer pessoa pode clonar o repositório, compilá-lo localmente e comparar os ficheiros resultantes com o que está instalado no seu navegador — sem necessidade de confiar em ninguém.
+Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 TAMBÉM DISPONÍVEL: Pastas IA — A EVOLUÇÃO MULTIPLATAFORMA
 

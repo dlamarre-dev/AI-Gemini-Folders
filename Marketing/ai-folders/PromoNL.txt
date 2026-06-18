@@ -55,10 +55,13 @@ Een prompt vastzetten: klik op 📍 — hij verplaatst naar boven en blijft gema
 Prompttrigger: Typ # om onmiddellijk al uw opgeslagen prompts te zien, of typ verder om in realtime te filteren. Druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om in te voegen.
 
 🔒 PRIVACY EN BEVEILIGING
-Gebouwd met privacy als kern. Vraagt alleen toegang tot de 7 ondersteunde AI-sites en uw optionele lokale LLM-URL en leest het actieve tabblad alleen bij het opslaan van een gesprek of het invoegen van een prompt. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via Chrome Sync: geen servers van derden, geen telemetrie.
+Gebouwd met privacy als kern. Vraagt alleen toegang tot de ondersteunde AI-sites en uw optionele lokale LLM-URL en leest het actieve tabblad alleen bij het opslaan van een gesprek of het invoegen van een prompt. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via browser sync: geen servers van derden, geen telemetrie, geen account vereist.
 
-🤝 OPEN-SOURCEPROJECT
-AI-mappen is een open-sourceproject gebouwd met passie. Transparantie en respect voor uw privacy zijn onze topprioriteiten. Bent u een ontwikkelaar of gewoon nieuwsgierig? Bekijk de code, volg het wijzigingenlogboek of draag bij op GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Gebouwd op Manifest V3: de browser zelf handhaaft dat er nooit externe code kan worden geladen en dat er geen dynamische scriptuitvoering kan plaatsvinden — dit is een platformbeperking, geen ontwikkelaarsbelofte. De Firefox-versie wordt gepubliceerd via Mozilla's officiële add-onbeoordelingsproces (AMO).
+
+🤝 OPEN SOURCE & CONTROLEERBAAR
+Elke regel code is openbaar op GitHub. Iedereen kan de repository klonen, het lokaal bouwen en de resulterende bestanden vergelijken met wat in hun browser is geïnstalleerd — geen blind vertrouwen vereist.
+Bekijk de code of draag bij: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:

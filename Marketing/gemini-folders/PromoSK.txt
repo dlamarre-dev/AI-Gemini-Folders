@@ -49,10 +49,13 @@ Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vž
 Spúšťač promptov: Napíšte # a okamžite uvidíte všetky svoje uložené prompty, alebo pokračujte v písaní pre filtrovanie v reálnom čase. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre vloženie.
 
 🔒 SÚKROMIE A BEZPEČNOSŤ
-Navrhnuté so súkromím v centre. Vyžaduje prístup iba k gemini.google.com a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez Chrome Sync: žiadne servery tretích strán, žiadna telemetria.
+Navrhnuté so súkromím v centre. Vyžaduje prístup iba k gemini.google.com a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez synchronizáciu prehliadača: žiadne servery tretích strán, žiadna telemetria, žiadny účet nie je potrebný.
 
-🤝 OPEN SOURCE PROJEKT
-Priečinky Gemini sú open source projektom vyvíjaným s vášňou. Transparentnosť a rešpektovanie vášho súkromia sú naše priority. Ste vývojár alebo len zvedavý? Prezrite si kód, sledujte históriu zmien alebo prispejte na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Postavené na Manifest V3: samotný prehliadač vynucuje, že žiadny vzdialený kód nemôže byť nikdy načítaný a nemôže dôjsť k žiadnemu dynamickému spúšťaniu skriptov — toto je obmedzenie na úrovni platformy, nie sľub vývojára. Verzia pre Firefox je zverejnená prostredníctvom oficiálneho procesu kontroly doplnkov Mozilla (AMO).
+
+🤝 OPEN SOURCE A AUDITOVATEĽNÝ
+Každý riadok kódu je verejný na GitHub. Každý môže klonovať repozitár, zostaviť ho lokálne a porovnať výsledné súbory s tým, čo je nainštalované v jeho prehliadači — bez nutnosti dôvery.
+Prezrite kód alebo prispejte: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 DOSTUPNÉ AJ: AI priečinky — MULTIPLATFORMOVÁ AKTUALIZÁCIA
 

@@ -49,10 +49,13 @@ Cấu hình 💎 để trỏ đến Gem tùy chỉnh của bạn.
 Trình kích hoạt Prompt: Nhập # để xem ngay lập tức tất cả prompt đã lưu, hoặc tiếp tục gõ để lọc theo thời gian thực. Nhấn Dấu cách trên kết quả khớp duy nhất để tự động hoàn thành, hoặc trên kết quả khớp chính xác để chèn.
 
 🔒 QUYỀN RIÊNG TƯ & BẢO MẬT
-Được xây dựng với quyền riêng tư là ưu tiên hàng đầu. Chỉ yêu cầu quyền truy cập vào gemini.google.com và chỉ đọc tab đang hoạt động khi lưu cuộc trò chuyện hoặc chèn prompt. Quyền "Dấu trang" chỉ được dùng nếu bạn bật đồng bộ di động. Lưu trữ qua Chrome Sync: không có máy chủ bên thứ ba, không theo dõi.
+Được xây dựng với quyền riêng tư là cốt lõi. Chỉ yêu cầu quyền truy cập vào gemini.google.com và chỉ đọc tab đang hoạt động khi lưu cuộc trò chuyện hoặc chèn prompt. Quyền "Dấu trang" chỉ được dùng nếu bạn bật đồng bộ di động. Lưu trữ qua browser sync: không có máy chủ bên thứ ba, không có telemetry, không cần tài khoản.
 
-🤝 DỰ ÁN MÃ NGUỒN MỞ
-Thư mục Gemini là dự án mã nguồn mở được xây dựng với niềm đam mê. Sự minh bạch và tôn trọng quyền riêng tư của bạn là ưu tiên hàng đầu của chúng tôi. Bạn là lập trình viên hay chỉ tò mò? Xem code, theo dõi nhật ký thay đổi hoặc đóng góp trên GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Được xây dựng trên Manifest V3: bản thân trình duyệt đảm bảo rằng không có mã từ xa nào có thể được tải và không có thực thi script động nào có thể xảy ra — đây là ràng buộc cấp nền tảng, không phải lời hứa của nhà phát triển. Phiên bản Firefox được xuất bản qua quy trình đánh giá add-on chính thức của Mozilla (AMO).
+
+🤝 MÃ NGUỒN MỞ & CÓ THỂ KIỂM CHỨNG
+Mọi dòng code đều công khai trên GitHub. Bất kỳ ai cũng có thể clone repository, build cục bộ, và so sánh các tệp kết quả với những gì được cài đặt trong trình duyệt của họ — không cần tin tưởng mù quáng.
+Xem code hoặc đóng góp: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 CŨNG CÓ SẴN: Thư mục AI — BẢN NÂNG CẤP ĐA NỀN TẢNG
 

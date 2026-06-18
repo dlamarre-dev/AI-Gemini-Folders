@@ -48,10 +48,13 @@ Za pripenjanje poziva: klikni 📍 – premakne se na vrh seznama.
 Sprožilec pozivov: Vnesite #, da takoj vidite vse shranjene pozive, ali nadaljujte tipkanje za filtriranje v realnem času. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za vstavljanje.
 
 🔒 ZASEBNOST IN VARNOST
-Zasnovano z upoštevanjem zasebnosti. Zahteva dostop samo do gemini.google.com in bere aktivni zavihek samo pri shranjevanju pogovora ali vstavljanju poziva. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek Chrome Sync: brez strežnikov tretjih oseb, brez telemetrije.
+Zasnovano z zasebnostjo v središču. Zahteva dostop samo do gemini.google.com ter bere aktivni zavihek samo pri shranjevanju pogovora ali vstavljanju poziva. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek sinhronizacije brskalnika: brez strežnikov tretjih oseb, brez telemetrije, brez zahtevanega računa.
 
-🤝 ODPRTOKODNI PROJEKT
-Mape Gemini je odprtokodni projekt, zgrajen s strastjo. Preglednost in spoštovanje tvoje zasebnosti sta naši najvišji prioriteti. Si razvijalec ali samo radoveden? Preglej kodo, sledi dnevniku sprememb ali prispevaj na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Zgrajeno na Manifest V3: brskalnik sam zagotavlja, da se nikoli ne more naložiti nobena oddaljena koda in da ne more priti do dinamičnega izvajanja skriptov — to je omejitev na ravni platforme, ne razvijalčevo obljubo. Različica za Firefox je objavljena prek Mozillinega uradnega postopka pregleda dodatkov (AMO).
+
+🤝 ODPRTOKODNI IN PREVERLJIV
+Vsaka vrstica kode je javna na GitHub-u. Vsakdo lahko klonira repozitorij, ga lokalno zgradi in primerja dobljene datoteke s tistim, kar je nameščeno v njihovem brskalniku — brez potrebe po zaupanju.
+Preglej kodo ali prispevaj: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 NA VOLJO TUDI: Mape AI — NADGRADNJA ZA VEČ PLATFORM
 

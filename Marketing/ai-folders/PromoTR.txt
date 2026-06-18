@@ -55,10 +55,13 @@ Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar
 İstem Tetikleyici: # yazın ve tüm kayıtlı istemlerinizi anında görün veya gerçek zamanlı filtrelemek için yazmaya devam edin. Benzersiz eşleşmede otomatik tamamlamak için, tam eşleşmede enjekte etmek için boşluk tuşuna basın.
 
 🔒 GİZLİLİK & GÜVENLİK
-Gizlilik öncelikli tasarım. Yalnızca desteklenen 7 AI sitesine ve isteğe bağlı yerel LLM URL'nize erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Chrome Sync üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok.
+Gizlilik öncelikli tasarım. Yalnızca desteklenen AI sitelerine ve isteğe bağlı yerel LLM URL'nize erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Tarayıcı senkronizasyonu üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok, hesap gerekmez.
 
-🤝 AÇIK KAYNAK PROJE
-Gemini Klasörler, tutku ile geliştirilmiş açık kaynaklı bir projedir. Şeffaflık ve gizliliğinize saygı en önceliklerimizdir. Geliştirici misiniz ya da sadece merak mı ediyorsunuz? Koda göz atın, değişiklik günlüğünü takip edin veya GitHub'da katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Manifest V3 üzerine inşa edilmiştir: tarayıcının kendisi, uzak kodun hiçbir zaman yüklenemeyeceğini ve dinamik betik yürütmesinin gerçekleşemeyeceğini zorunlu kılar — bu bir platform düzeyinde kısıtlamadır, geliştirici vaadi değildir. Firefox sürümü, Mozilla'nın resmi eklenti inceleme süreci (AMO) aracılığıyla yayımlanmaktadır.
+
+🤝 AÇIK KAYNAK & DENETLENEBİLİRLİK
+Her kod satırı GitHub'da herkese açıktır. Herkes depoyu klonlayabilir, yerel olarak derleyebilir ve elde edilen dosyaları tarayıcısında yüklü olanlarla karşılaştırabilir — güvene gerek yok.
+Koda göz atın veya katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 GÜNCELLEMELER:

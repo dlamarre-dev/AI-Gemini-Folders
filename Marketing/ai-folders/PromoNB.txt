@@ -55,10 +55,13 @@ For å feste en prompt: klikk 📍 – den flyttes øverst på listen og forblir
 Promptutløser: Skriv # for å umiddelbart se alle dine lagrede prompter, eller fortsett å skrive for å filtrere i sanntid. Trykk mellomrom på et unikt treff for autofullføring, eller på et eksakt treff for å injisere.
 
 🔒 PERSONVERN OG SIKKERHET
-Bygget med personvern i fokus. Tillegget ber bare om tilgang til de 7 støttede AI-nettstedene og din valgfrie lokale LLM-URL og leser bare den aktive fanen ved lagring av en samtale eller innsetting av en prompt. «Bokmerker»-tillatelsen brukes bare hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
+Bygget med personvern som grunnleggende prinsipp. Tillegget ber bare om tilgang til de støttede AI-nettstedene og din valgfrie lokale LLM-URL og leser bare den aktive fanen ved lagring av en samtale eller innsetting av en prompt. «Bokmerker»-tillatelsen brukes bare hvis du aktiverer mobilsynkronisering. Lagring via nettlesersynkronisering: ingen tredjepartsservere, ingen telemetri, ingen konto nødvendig.
 
-🤝 ÅPEN KILDEKODE-PROSJEKT
-AI-mapper er et åpen kildekode-prosjekt bygget med lidenskap. Transparens og respekt for personvernet ditt er våre høyeste prioriteter. Er du en utvikler eller bare nysgjerrig? Bla gjennom koden, følg endringsloggen eller bidra på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Bygget på Manifest V3: nettleseren selv håndhever at ingen ekstern kode noensinne kan lastes inn og at ingen dynamisk skriptkjøring kan forekomme — dette er en plattformbegrensning, ikke et utviklerløfte. Firefox-versjonen publiseres gjennom Mozillas offisielle tilleggsvurderingsprosess (AMO).
+
+🤝 ÅPEN KILDEKODE & VERIFISERBAR
+Hver eneste kodelinje er offentlig på GitHub. Alle kan klone arkivet, bygge det lokalt og sammenligne de resulterende filene med det som er installert i nettleseren deres — ingen blind tillit nødvendig.
+Bla gjennom koden eller bidra: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 OPPDATERINGER:

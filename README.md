@@ -135,6 +135,12 @@ Both extensions are built with privacy in mind.
 * The `bookmarks` permission is used strictly to manage the mobile sync folder when you enable that feature.
 * Tab content is read **only** when you explicitly save a conversation, solely to extract its title.
 * **What is stored, and where:** your folder structure, the titles and links of saved conversations, and your prompts are kept in your browser’s own sync (Chrome Sync on Chrome, Firefox Sync on Firefox) and synced across your signed-in devices. The extensions **never** store the *content* of a conversation — only its title and link. With mobile sync enabled, that structure is also mirrored into your browser bookmarks (the only data written outside the extension’s own storage). **No third-party servers, no analytics, no tracking.**
+**Verifiable guarantees:**
+* **Manifest V3 (platform-enforced):** Both extensions use MV3. The browser itself enforces that no remote code can be loaded and no dynamic script execution can occur in extension pages — regardless of any future update. You can verify this by checking `"manifest_version": 3` in the `manifest.json` of any installed extension.
+* **Mozilla AMO:** The Firefox versions are published through Mozilla's official add-on review process. Listed on [addons.mozilla.org](https://addons.mozilla.org).
+* **CodeQL scanning:** Every pull request is automatically scanned by GitHub CodeQL before it can merge.
+* **Auditable build:** Clone the repository, run `python build.py`, and compare the resulting files against your installed extension. No minification of business logic, no build-time substitutions.
+
 * Full policy: **[aifolders.xyz/privacy.html](https://aifolders.xyz/privacy.html)**
 
 ---

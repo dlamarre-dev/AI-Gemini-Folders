@@ -55,10 +55,13 @@ Para fixar um prompt: clique em 📍 — ele sobe para o topo da lista e fica se
 Gatilho de Prompt: Digite # para ver instantaneamente todos os seus prompts salvos, ou continue digitando para filtrar em tempo real. Pressione Espaço em uma correspondência única para autocompletar, ou em uma correspondência exata para injetar.
 
 🔒 PRIVACIDADE E SEGURANÇA
-Desenvolvida com a privacidade no centro. Solicita acesso apenas aos 7 sites de IA compatíveis e à sua URL de LLM local opcional, e lê a aba ativa somente ao salvar uma conversa ou injetar um prompt. A permissão "Favoritos" só é usada se você ativar a sincronização mobile. Armazenamento via Chrome Sync: sem servidores de terceiros, sem telemetria.
+Desenvolvida com a privacidade no centro. Solicita acesso apenas aos sites de IA compatíveis e à sua URL de LLM local opcional, e lê a aba ativa somente ao salvar uma conversa ou injetar um prompt. A permissão "Favoritos" só é usada se você ativar a sincronização mobile. Armazenamento via sincronização do navegador: sem servidores de terceiros, sem telemetria, sem conta necessária.
 
-🤝 PROJETO OPEN SOURCE
-Pastas IA é um projeto open source desenvolvido com paixão. Transparência e respeito à sua privacidade são nossas prioridades. É desenvolvedor ou simplesmente curioso? Consulte o código, acompanhe o histórico de alterações ou contribua no GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Desenvolvida sobre o Manifest V3: o próprio navegador garante que nenhum código remoto pode ser carregado e que nenhuma execução dinâmica de scripts pode ocorrer — esta é uma restrição em nível de plataforma, não uma promessa do desenvolvedor. A versão Firefox é publicada por meio do processo oficial de revisão de extensões da Mozilla (AMO).
+
+🤝 OPEN SOURCE E AUDITÁVEL
+Cada linha de código é pública no GitHub. Qualquer pessoa pode clonar o repositório, compilá-lo localmente e comparar os arquivos resultantes com o que está instalado no navegador — sem necessidade de confiar em ninguém.
+Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ATUALIZAÇÕES:
