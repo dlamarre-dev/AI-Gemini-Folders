@@ -49,10 +49,13 @@ Prompt anheften: auf 📍 klicken — er rückt an die erste Stelle und bleibt i
 Prompt-Trigger: Geben Sie # ein, um sofort alle Ihre gespeicherten Prompts zu sehen, oder tippen Sie weiter, um in Echtzeit zu filtern. Drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur Injektion.
 
 🔒 DATENSCHUTZ & SICHERHEIT
-Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf gemini.google.com an und liest den aktiven Tab nur beim Speichern oder Injizieren. Die Berechtigung „Lesezeichen" wird nur bei aktiver mobiler Synchronisierung verwendet. Speicherung über Chrome Sync: keine Drittanbieter-Server, keine Telemetrie.
+Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf gemini.google.com an und liest den aktiven Tab nur beim Speichern eines Gesprächs oder beim Injizieren eines Prompts. Die Berechtigung „Lesezeichen" wird nur verwendet, wenn Sie die mobile Synchronisierung aktivieren. Speicherung über Browser-Sync: keine Drittanbieter-Server, keine Telemetrie, kein Konto erforderlich.
 
-🤝 OPEN-SOURCE-PROJEKT
-Gemini-Ordner ist ein leidenschaftlich entwickeltes Open-Source-Projekt. Transparenz und Datenschutz haben höchste Priorität. Entwickler oder einfach neugierig? Code einsehen, Änderungsprotokoll verfolgen oder auf GitHub beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Entwickelt auf Basis von Manifest V3: Der Browser selbst erzwingt, dass kein externer Code jemals geladen und keine dynamische Skriptausführung durchgeführt werden kann — dies ist eine Plattform-Einschränkung, kein bloßes Entwicklerversprechen. Die Firefox-Version wird über Mozillas offiziellen Add-on-Prüfprozess (AMO) veröffentlicht.
+
+🤝 OPEN SOURCE & NACHVOLLZIEHBAR
+Jede Zeile Code ist öffentlich auf GitHub einsehbar. Jeder kann das Repository klonen, es lokal kompilieren und die resultierenden Dateien mit dem in seinem Browser installierten vergleichen — kein blindes Vertrauen erforderlich.
+Code einsehen oder beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 AUCH VERFÜGBAR: KI-Ordner — DAS MULTI-PLATTFORM-UPGRADE
 

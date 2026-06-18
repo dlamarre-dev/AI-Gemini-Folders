@@ -48,10 +48,13 @@ Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
 Okidač prompta: Upiši # da odmah vidiš sve sačuvane promptove, ili nastavi da kucaš za filtriranje u realnom vremenu. Pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za ubacivanje.
 
 🔒 PRIVATNOST I SIGURNOST
-Izgrađeno s prioritetom privatnosti. Traži pristup samo gemini.google.com i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem Chrome Sync: bez servera trećih strana, bez telemetrije.
+Izgrađeno s privatnošću u osnovi. Traži pristup samo gemini.google.com i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem sinhronizacije pregledača: bez servera trećih strana, bez telemetrije, bez potrebnog naloga.
 
-🤝 PROJEKAT OTVORENOG KODA
-Gemini Folderi je projekat otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti su naši najviši prioriteti. Jesi li programer ili si samo radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Izgrađeno na Manifest V3: sam pregledač osigurava da nikakav udaljeni kod nikada ne može biti učitan i da ne može doći do dinamičkog izvršavanja skripti — to je ograničenje na nivou platforme, a ne obećanje programera. Firefox verzija se objavljuje kroz Mozillin zvanični proces pregleda dodataka (AMO).
+
+🤝 OPEN SOURCE I PROVERLJIV
+Svaki red koda je javan na GitHub-u. Svako može klonirati repozitorijum, izgraditi ga lokalno i uporediti dobijene datoteke s onim što je instalirano u njihovom pregledaču — bez potrebe za poverenjem.
+Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 TAKOĐE DOSTUPNO: VI fascikle — NADOGRADNJA ZA VIŠE PLATFORMI
 

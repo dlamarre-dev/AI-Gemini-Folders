@@ -48,10 +48,13 @@ Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
 Viipete käivitaja: Sisestage #, et näha kohe kõiki oma salvestatud viipeid, või jätkake kirjutamist reaalajas filtreerimiseks. Vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral sisestamiseks.
 
 🔒 PRIVAATSUS JA TURVALISUS
-Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult gemini.google.com-ile ja loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine Chrome Synci kaudu: kolmandate osapoolte servereid pole, telemetriat pole.
+Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult gemini.google.com-ile ja loeb aktiivset vahekaarti ainult vestluse salvestamisel või prompti lisamisel. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine brauseri sünkroonimise kaudu: kolmandate osapoolte servereid pole, telemetriat pole, kontot pole vaja.
 
-🤝 AVATUD LÄHTEKOODIGA PROJEKT
-Gemini Kaustad on kirega ehitatud avatud lähtekoodiga projekt. Läbipaistvus ja sinu privaatsuse austamine on meie kõrgeimad prioriteedid. Kas oled arendaja või lihtsalt uudishimulik? Sirvi koodi, jälgi muudatuste logi või panusta GitHubis: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Ehitatud Manifest V3-le: brauser ise jõustab, et kaugkoodi ei saa kunagi laadida ja dünaamilist skripti täitmist ei saa toimuda — see on platvormi tasandi piirang, mitte arendaja lubadus. Firefoxi versioon avaldatakse Mozilla ametliku lisandmooduli ülevaatusprotsessi (AMO) kaudu.
+
+🤝 AVATUD LÄHTEKOOD JA AUDITEERITAVUS
+Iga koodirida on GitHubis avalik. Igaüks saab repositooriumi kloonida, selle lokaalselt üles ehitada ja tulemusfaile oma brauserisse installituga võrrelda — usaldust pole vaja.
+Sirvi koodi või panusta: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 SAADAVAL KA: AI kaustad — MITMIKPLATVORMI UUENDUS
 

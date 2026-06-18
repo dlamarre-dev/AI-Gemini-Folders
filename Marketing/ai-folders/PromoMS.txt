@@ -54,10 +54,13 @@ Untuk menyemat prompt: klik 📍 – ia berpindah ke bahagian atas senarai.
 Pencetus Prompt: Taip # untuk segera melihat semua prompt tersimpan anda, atau terus menaip untuk menapis secara masa nyata. Tekan Ruang pada padanan unik untuk melengkapkan secara automatik, atau pada padanan tepat untuk menyuntik.
 
 🔒 PRIVASI & KESELAMATAN
-Dibina dengan mengutamakan privasi. Hanya meminta akses ke 7 laman AI yang disokong dan URL LLM tempatan pilihan anda dan membaca tab aktif hanya semasa menyimpan perbualan atau menyisipkan prompt. Kebenaran «Penanda buku» hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui Chrome Sync: tiada pelayan pihak ketiga, tiada telemetri.
+Dibina dengan mengutamakan privasi sebagai teras. Hanya meminta akses ke laman AI yang disokong dan URL LLM tempatan pilihan anda, dan membaca tab aktif hanya semasa menyimpan perbualan atau menyisipkan prompt. Kebenaran "Penanda buku" hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui browser sync: tiada pelayan pihak ketiga, tiada telemetri, tiada akaun diperlukan.
 
-🤝 PROJEK SUMBER TERBUKA
-Folder AI ialah projek sumber terbuka yang dibina dengan penuh semangat. Ketelusan dan penghormatan terhadap privasi anda adalah keutamaan tertinggi kami. Anda pembangun atau sekadar ingin tahu? Semak kod, ikuti log perubahan atau sumbang di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Dibina atas Manifest V3: pelayar itu sendiri menguatkuasakan bahawa tiada kod jauh boleh dimuatkan dan tiada pelaksanaan skrip dinamik boleh berlaku — ini adalah kekangan peringkat platform, bukan janji pembangun. Versi Firefox diterbitkan melalui proses semakan add-on rasmi Mozilla (AMO).
+
+🤝 SUMBER TERBUKA & BOLEH DIAUDIT
+Setiap baris kod adalah awam di GitHub. Sesiapa boleh klon repositori, bina secara tempatan, dan bandingkan fail yang terhasil dengan apa yang dipasang dalam pelayar mereka — tiada kepercayaan buta diperlukan.
+Semak kod atau sumbang: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 KEMAS KINI:

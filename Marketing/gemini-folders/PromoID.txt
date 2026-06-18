@@ -49,10 +49,13 @@ Konfigurasikan 💎 untuk mengarah ke Gem kustom Anda.
 Pemicu Prompt: Ketik # untuk langsung melihat semua prompt tersimpan Anda, atau lanjutkan mengetik untuk memfilter secara real time. Tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan.
 
 🔒 PRIVASI & KEAMANAN
-Dibangun dengan privasi sebagai inti. Hanya meminta akses ke gemini.google.com dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui Chrome Sync: tidak ada server pihak ketiga, tidak ada telemetri.
+Dibangun dengan privasi sebagai inti. Hanya meminta akses ke gemini.google.com dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui browser sync: tidak ada server pihak ketiga, tidak ada telemetri, tidak perlu akun.
 
-🤝 PROYEK OPEN SOURCE
-Folder Gemini adalah proyek open source yang dibangun dengan penuh semangat. Transparansi dan penghormatan terhadap privasi Anda adalah prioritas utama kami. Apakah Anda pengembang atau sekadar penasaran? Jelajahi kode, ikuti catatan perubahan, atau berkontribusi di GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Dibangun di atas Manifest V3: browser itu sendiri memastikan bahwa tidak ada kode jarak jauh yang dapat dimuat dan tidak ada eksekusi skrip dinamis yang dapat terjadi — ini adalah batasan tingkat platform, bukan janji pengembang. Versi Firefox diterbitkan melalui proses tinjauan add-on resmi Mozilla (AMO).
+
+🤝 OPEN SOURCE & DAPAT DIAUDIT
+Setiap baris kode tersedia publik di GitHub. Siapa pun dapat mengkloning repositori, membangunnya secara lokal, dan membandingkan file yang dihasilkan dengan yang terpasang di browser mereka — tidak perlu kepercayaan buta.
+Jelajahi kode atau berkontribusi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 JUGA TERSEDIA: Folder AI — UPGRADE MULTI-PLATFORM
 

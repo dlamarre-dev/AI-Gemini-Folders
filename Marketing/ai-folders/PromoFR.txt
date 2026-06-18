@@ -55,10 +55,13 @@ Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et 
 Déclenchement de prompt : tapez # pour voir instantanément tous vos prompts sauvegardés, ou continuez à taper pour filtrer en temps réel. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ
-Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'aux 7 sites IA pris en charge et à votre URL LLM local optionnelle, et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via Chrome Sync : aucun serveur tiers, aucune télémétrie.
+Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'aux sites IA pris en charge et à votre URL LLM local optionnelle, et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via la synchronisation du navigateur : aucun serveur tiers, aucune télémétrie, aucun compte requis.
 
-🤝 PROJET OPEN SOURCE
-Dossiers IA est un projet open source développé avec passion. La transparence et le respect de votre vie privée sont nos priorités. Vous êtes développeur ou simplement curieux ? Consultez le code, suivez l'historique ou contribuez sur GitHub : https://github.com/dlamarre-dev/AI-Gemini-Folders
+Conçue sur Manifest V3 : le navigateur lui-même garantit qu'aucun code distant ne peut être chargé et qu'aucune exécution dynamique de script ne peut avoir lieu — il s'agit d'une contrainte au niveau de la plateforme, et non d'une promesse du développeur. La version Firefox est publiée via le processus officiel de révision des extensions de Mozilla (AMO).
+
+🤝 OPEN SOURCE & VÉRIFIABLE
+Chaque ligne de code est publique sur GitHub. N'importe qui peut cloner le dépôt, le compiler localement et comparer les fichiers obtenus avec ce qui est installé dans son navigateur — sans avoir à faire confiance à qui que ce soit.
+Parcourir le code ou contribuer : https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MISES À JOUR :

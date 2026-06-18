@@ -49,10 +49,13 @@ Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy
 Kehoteliipaisin: Kirjoita # nähdäksesi välittömästi kaikki tallennetut kehotteesi, tai jatka kirjoittamista suodattaaksesi reaaliajassa. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa lisäämistä varten.
 
 🔒 YKSITYISYYS JA TURVALLISUUS
-Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain gemini.google.com:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus Chromen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa.
+Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain gemini.google.com:iin ja lukee aktiivisen välilehden vain tallennettaessa keskustelua tai injektoitaessa promptia. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus selaimen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa, ei tiliä tarvita.
 
-🤝 AVOIN LÄHDEKOODIN PROJEKTI
-Gemini-kansiot on intohimolla rakennettu avoimen lähdekoodin projekti. Läpinäkyvyys ja yksityisyytesi kunnioittaminen ovat korkeimpia prioriteettiamme. Oletko kehittäjä tai vain utelias? Selaa koodia, seuraa muutoslokia tai osallistu GitHubissa: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Rakennettu Manifest V3:lle: selain itse valvoo, että etäkoodia ei voi koskaan ladata eikä dynaamista komentosarjan suoritusta voi tapahtua — tämä on alustatason rajoitus, ei kehittäjän lupaus. Firefox-versio julkaistaan Mozillan virallisen lisäosaarvioinnin (AMO) kautta.
+
+🤝 AVOIN LÄHDEKOODI JA TARKASTETTAVUUS
+Jokainen koodirivi on julkinen GitHubissa. Kuka tahansa voi kloonata repositorion, rakentaa sen paikallisesti ja verrata tuloksena saatuja tiedostoja selaimeen asennettuihin — luottamusta ei tarvita.
+Selaa koodia tai osallistu: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 MYÖS SAATAVILLA: AI-kansiot — MONIALUSTAINEN PÄIVITYS
 

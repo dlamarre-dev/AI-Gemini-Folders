@@ -55,10 +55,13 @@ Fastgørelse af en prompt: klik 📍 – den flyttes øverst på listen og er al
 Prompt-udløser: Skriv # for straks at se alle dine gemte prompter, eller fortsæt med at skrive for at filtrere i realtid. Tryk mellemrum på et unikt match for at autofuldføre, eller på et eksakt match for at injicere.
 
 🔒 PRIVATLIV OG SIKKERHED
-Bygget med privatlivets fred i fokus. Det anmoder kun om adgang til de 7 understøttede AI-sider og din valgfri lokale LLM-URL og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via Chrome Sync: ingen tredjepartsservere, ingen telemetri.
+Bygget med privatlivsbeskyttelse som kerneprincip. Det anmoder kun om adgang til de understøttede AI-sider og din valgfri lokale LLM-URL og læser kun den aktive fane ved lagring af en samtale eller indsætning af en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via browser sync: ingen tredjepartsservere, ingen telemetri, ingen konto påkrævet.
 
-🤝 OPEN SOURCE-PROJEKT
-AI-mapper er et open source-projekt bygget med passion. Gennemsigtighed og respekt for dit privatliv er vores højeste prioriteter. Er du en udvikler eller bare nysgerrig? Gennemse koden, følg ændringsloggen eller bidrag på GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Bygget på Manifest V3: browseren selv håndhæver, at der aldrig kan indlæses ekstern kode og at der ikke kan ske dynamisk scriptkørsel — dette er en platformsbegrænsning, ikke et udviklerløfte. Firefox-versionen udgives via Mozillas officielle add-on-gennemgangsproces (AMO).
+
+🤝 OPEN SOURCE & VERIFICERBAR
+Hver eneste kodelinje er offentlig på GitHub. Alle kan klone arkivet, bygge det lokalt og sammenligne de resulterende filer med det, der er installeret i deres browser — intet blindt tillid påkrævet.
+Gennemse koden eller bidrag: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 OPDATERINGER:

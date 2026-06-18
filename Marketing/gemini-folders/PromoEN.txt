@@ -49,10 +49,13 @@ To pin a prompt: click 📍 — it moves to the top of the list and stays within
 Prompt Trigger: Type # to instantly see all your saved prompts, or keep typing to filter in real time. Use ↓/↑ to cycle through suggestions. Press Space on a unique match to autocomplete, or on an exact match to inject.
 
 🔒 PRIVACY & SECURITY
-Built with privacy at its core. It only requests access to gemini.google.com and only reads the active tab when saving a conversation or injecting a prompt. The "Bookmarks" permission is only used if you enable mobile sync. Storage via Chrome Sync: no third-party servers, no telemetry.
+Built with privacy at its core. It only requests access to gemini.google.com and only reads the active tab when saving a conversation or injecting a prompt. The "Bookmarks" permission is only used if you enable mobile sync. Storage via browser sync: no third-party servers, no telemetry, no account required.
 
-🤝 OPEN SOURCE PROJECT
-Gemini Folders is an open source project built with passion. Transparency and respect for your privacy are our top priorities. Are you a developer or just curious? Browse the code, follow the changelog, or contribute on GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Built on Manifest V3: the browser itself enforces that no remote code can ever be loaded and no dynamic script execution can occur — this is a platform-level constraint, not a developer promise. The Firefox version is published through Mozilla's official add-on review process (AMO).
+
+🤝 OPEN SOURCE & AUDITABLE
+Every line of code is public on GitHub. Anyone can clone the repository, build it locally, and compare the resulting files against what is installed in their browser — no trust required.
+Browse the code or contribute: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 ALSO AVAILABLE: AI Folders — THE MULTI-PLATFORM UPGRADE
 

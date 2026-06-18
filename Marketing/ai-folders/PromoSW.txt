@@ -55,10 +55,13 @@ Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi ku
 Kichocheo cha Kidokezo: Andika # ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa, au endelea kuandika ili kufilia kwa wakati halisi. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza.
 
 🔒 FARAGHA NA USALAMA
-Imejengwa na faragha kama msingi. Huomba tu ufikiaji wa tovuti 7 za AI zinazoungwa mkono na URL yako ya hiari ya LLM ya ndani na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia Chrome Sync: hakuna seva za watu wengine, hakuna telemetri.
+Imejengwa na faragha kama msingi wake. Huomba tu ufikiaji wa tovuti za AI zinazoungwa mkono na URL yako ya hiari ya LLM ya ndani. Husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia browser sync: hakuna seva za watu wengine, hakuna telemetri, hakuna akaunti inayohitajika.
 
-🤝 MRADI WA CHANZO WAZI
-Folda za AI ni mradi wa chanzo wazi uliojengwa kwa shauku. Uwazi na kuheshimu faragha yako ni vipaumbele vyetu vya kwanza. Je, wewe ni msanidi programu au tu una udadisi? Angalia msimbo, fuata kumbukumbu ya mabadiliko, au changia kwenye GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Imejengwa juu ya Manifest V3: kivinjari chenyewe kinahakikisha kwamba hakuna msimbo wa mbali unaoeza kupakiwa wala utekelezaji wa hati za nguvu hauwezi kutokea — hii ni kizuizi cha kiwango cha jukwaa, si ahadi ya msanidi programu. Toleo la Firefox limechapishwa kupitia mchakato rasmi wa ukaguzi wa programu jalizi wa Mozilla (AMO).
+
+🤝 CHANZO WAZI NA INAYOWEZA KUKAGULIWA
+Kila mstari wa msimbo ni wa umma kwenye GitHub. Mtu yeyote anaweza kunakili hazina, kuijenga ndani ya kompyuta yake, na kulinganisha faili zinazotokana na zile zilizosakinishwa kwenye kivinjari chake — bila kuhitaji imani yoyote.
+Angalia msimbo au changia: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MASASISHO:

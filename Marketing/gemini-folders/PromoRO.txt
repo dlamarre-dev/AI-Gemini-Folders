@@ -49,10 +49,13 @@ Pentru a fixa un prompt: faceți clic pe 📍 — se mută în fruntea listei ș
 Declanșator de prompt: Tastați # pentru a vedea imediat toate prompturile salvate, sau continuați să tastați pentru a filtra în timp real. Apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru a injecta.
 
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
-Concepută cu confidențialitatea în centru. Solicită acces doar la gemini.google.com și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin Chrome Sync: fără servere terțe, fără telemetrie.
+Concepută cu confidențialitatea în centru. Solicită acces doar la gemini.google.com și citește fila activă numai la salvarea unei conversații sau injectarea unui prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin sincronizarea browserului: fără servere terțe, fără telemetrie, fără cont necesar.
 
-🤝 PROIECT OPEN SOURCE
-Foldere Gemini este un proiect open source dezvoltat cu pasiune. Transparența și respectul față de confidențialitatea dvs. sunt prioritățile noastre. Sunteți dezvoltator sau pur și simplu curios? Consultați codul, urmăriți istoricul modificărilor sau contribuiți pe GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Construită pe Manifest V3: browserul însuși garantează că niciun cod de la distanță nu poate fi încărcat și că nu poate avea loc nicio execuție dinamică de scripturi — aceasta este o restricție la nivel de platformă, nu o promisiune a dezvoltatorului. Versiunea Firefox este publicată prin procesul oficial de revizuire a extensiilor Mozilla (AMO).
+
+🤝 OPEN SOURCE ȘI AUDITABIL
+Fiecare linie de cod este publică pe GitHub. Oricine poate clona depozitul, îl poate compila local și poate compara fișierele rezultate cu ceea ce este instalat în browserul său — fără a fi necesară nicio încredere.
+Răsfoiți codul sau contribuiți: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 DE ASEMENEA DISPONIBIL: Dosare IA — ACTUALIZAREA MULTIPLATAFORMĂ
 

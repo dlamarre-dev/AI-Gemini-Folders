@@ -55,10 +55,13 @@ Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jes
 Wyzwalacz promptu: Wpisz #, aby natychmiast zobaczyć wszystkie swoje zapisane prompty, lub pisz dalej, aby filtrować w czasie rzeczywistym. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby wstawić.
 
 🔒 PRYWATNOŚĆ I BEZPIECZEŃSTWO
-Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do 7 obsługiwanych witryn AI i Twojego opcjonalnego lokalnego adresu URL LLM oraz odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez Chrome Sync: bez serwerów zewnętrznych, bez telemetrii.
+Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do obsługiwanych witryn AI i Twojego opcjonalnego lokalnego adresu URL LLM oraz odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez synchronizację przeglądarki: bez serwerów zewnętrznych, bez telemetrii, bez wymaganego konta.
 
-🤝 PROJEKT OPEN SOURCE
-Foldery AI to projekt open source tworzony z pasją. Przejrzystość i poszanowanie Twojej prywatności to nasze priorytety. Jesteś programistą lub po prostu ciekawskim? Przejrzyj kod, śledź historię zmian lub wnieś wkład na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Zbudowane na Manifest V3: sama przeglądarka wymusza, że żaden zdalny kod nie może zostać załadowany i żadne dynamiczne wykonanie skryptów nie może nastąpić — to ograniczenie na poziomie platformy, a nie obietnica programisty. Wersja Firefox jest publikowana w oficjalnym procesie przeglądu dodatków Mozilla (AMO).
+
+🤝 OPEN SOURCE I AUDYTOWALNY
+Każda linia kodu jest publiczna na GitHub. Każdy może sklonować repozytorium, zbudować je lokalnie i porównać wynikowe pliki z tym, co jest zainstalowane w przeglądarce — bez konieczności zaufania.
+Przeglądaj kod lub współtwórz: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AKTUALIZACJE:

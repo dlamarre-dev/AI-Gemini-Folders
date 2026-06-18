@@ -48,10 +48,13 @@ Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo vi
 Raginimų paleidiklis: Įveskite #, kad iš karto pamatytumėte visus savo išsaugotus raginimus, arba toliau rašykite filtravimui realiuoju laiku. Paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens įterpimui.
 
 🔒 PRIVATUMAS IR SAUGUMAS
-Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie gemini.google.com ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per „Chrome Sync": jokių trečiųjų šalių serverių, jokios telemetrijos.
+Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie gemini.google.com ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per naršyklės sinchronizavimą: jokių trečiųjų šalių serverių, jokios telemetrijos, paskyros nereikia.
 
-🤝 ATVIROJO KODO PROJEKTAS
-Gemini Aplankai – tai su aistra sukurtas atvirojo kodo projektas. Skaidrumas ir pagarba jūsų privatumui yra mūsų aukščiausi prioritetai. Esi kūrėjas ar tiesiog smalsus? Naršyk kodą, sek pakeitimų žurnalą arba prisidėk prie „GitHub": https://github.com/dlamarre-dev/AI-Gemini-Folders
+Sukurta remiantis Manifest V3: pati naršyklė užtikrina, kad niekada negali būti įkeltas nuotolinis kodas ir negali vykti dinaminis scenarijaus vykdymas — tai platformos lygio apribojimas, o ne kūrėjo pažadas. „Firefox" versija skelbiama per oficialų „Mozilla" priedų peržiūros procesą (AMO).
+
+🤝 ATVIRASIS KODAS IR AUDITUOJAMUMAS
+Kiekviena kodo eilutė yra vieša „GitHub". Kiekvienas gali klonuoti saugyklą, sukurti ją vietoje ir palyginti gautus failus su tuo, kas įdiegta jų naršyklėje — pasitikėjimo nereikia.
+Naršykite kodą arba prisidėkite: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 TAIP PAT GALIMA: AI aplankai — KELIŲ PLATFORMŲ ATNAUJINIMAS
 

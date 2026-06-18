@@ -48,10 +48,13 @@ Za prikvačivanje upita: klikni 📍 – premješta se na vrh popisa.
 Okidač upita: Upiši # da odmah vidiš sve svoje spremljene upite, ili nastavi tipkati za filtriranje u stvarnom vremenu. Pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za ubacivanje.
 
 🔒 PRIVATNOST I SIGURNOST
-Izgrađeno s prioritetom privatnosti. Traži pristup samo gemini.google.com i čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem Chrome Sync: bez poslužitelja trećih strana, bez telemetrije.
+Izgrađeno s privatnošću u središtu. Traži pristup samo gemini.google.com te čita aktivnu karticu samo pri spremanju razgovora ili ubacivanju upita. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem sinkronizacije preglednika: bez poslužitelja trećih strana, bez telemetrije, bez potrebe za računom.
 
-🤝 PROJEKT OTVORENOG KODA
-Gemini Mape je projekt otvorenog koda izgrađen sa strašću. Transparentnost i poštovanje tvoje privatnosti naši su najviši prioriteti. Jesi li programer ili si jednostavno radoznao? Pregledaj kod, prati dnevnik promjena ili doprinesi na GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Izgrađeno na Manifest V3: sam pregledník osigurava da se nikada ne može učitati nikakav udaljeni kod i da ne može doći do dinamičkog izvršavanja skripti — to je ograničenje na razini platforme, a ne obećanje razvojnog programera. Firefox verzija objavljuje se putem Mozillinog službenog procesa pregleda dodataka (AMO).
+
+🤝 OPEN SOURCE I PROVJERLJIV
+Svaki redak koda je javan na GitHub-u. Svatko može klonirati repozitorij, izgraditi ga lokalno i usporediti dobivene datoteke s onim što je instalirano u njihovom pregledniku — bez potrebe za povjerenjem.
+Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 DOSTUPNO I: UI mape — NADOGRADNJA ZA VIŠE PLATFORMI
 

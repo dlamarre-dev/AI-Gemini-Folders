@@ -54,10 +54,13 @@ Uzvednes piespraudīšanai: noklikšķini 📍 – tā tiek pārvietota saraksta
 Uzvednes aktivizētājs: Ievadiet #, lai uzreiz redzētu visas saglabātās uzvednes, vai turpiniet rakstīt filtrēšanai reāllaikā. Nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā ievietošanai.
 
 🔒 PRIVĀTUMS UN DROŠĪBA
-Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai 7 atbalstītajām AI vietnēm un jūsu izvēles vietējam LLM URL un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot Chrome Sync: nav trešo pušu serveru, nav telemetrijas.
+Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai atbalstītajām AI vietnēm un jūsu izvēles vietējam LLM URL un nolasa aktīvo cilni tikai saglabājot sarunu vai ievietojot uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot pārlūka sinhronizāciju: nav trešo pušu serveru, nav telemetrijas, nav nepieciešams konts.
 
-🤝 ATVĒRTĀ PIRMKODA PROJEKTS
-AI mapes ir ar aizrautību veidots atvērtā pirmkoda projekts. Pārredzamība un cieņa pret tavu privātumu ir mūsu augstākās prioritātes. Vai esi izstrādātājs vai vienkārši ziņkārīgs? Pārlūkojiet kodu, sekojiet izmaiņu žurnālam vai piedalieties GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Balstīts uz Manifest V3: pats pārlūks nodrošina, ka nekad nevar tikt ielādēts attālais kods un nevar notikt dinamiska skripta izpilde — tas ir platformas līmeņa ierobežojums, nevis izstrādātāja solījums. Firefox versija tiek publicēta caur Mozilla oficiālo papildinājumu pārskatīšanas procesu (AMO).
+
+🤝 ATVĒRTAIS PIRMKODS UN AUDITĒJAMĪBA
+Katrs koda rindkopa ir publiski pieejama GitHub. Ikviens var klonēt repozitoriju, to lokāli uzbūvēt un salīdzināt iegūtos failus ar to, kas ir instalēts viņu pārlūkā — uzticēšanās nav nepieciešama.
+Pārlūkojiet kodu vai piedalieties: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ATJAUNINĀJUMI:

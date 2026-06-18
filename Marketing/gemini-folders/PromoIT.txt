@@ -49,10 +49,13 @@ Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta s
 Attivatore di prompt: Digita # per vedere istantaneamente tutti i tuoi prompt salvati, o continua a digitare per filtrare in tempo reale. Premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare.
 
 🔒 PRIVACY E SICUREZZA
-Progettata con la privacy al centro. Richiede accesso solo a gemini.google.com e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite Chrome Sync: nessun server di terze parti, nessuna telemetria.
+Progettata con la privacy al centro. Richiede accesso solo a gemini.google.com e legge la scheda attiva solo al momento del salvataggio o dell'iniezione di un prompt. Il permesso "Segnalibri" viene usato solo se attivi la sincronizzazione mobile. Archiviazione tramite sincronizzazione del browser: nessun server di terze parti, nessuna telemetria, nessun account richiesto.
 
-🤝 PROGETTO OPEN SOURCE
-Cartelle Gemini è un progetto open source sviluppato con passione. La trasparenza e il rispetto della tua privacy sono le nostre priorità. Sei uno sviluppatore o semplicemente curioso? Consulta il codice, segui la cronologia delle modifiche o contribuisci su GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Sviluppata su Manifest V3: il browser stesso garantisce che nessun codice remoto possa mai essere caricato e che non possa verificarsi alcuna esecuzione dinamica di script — si tratta di un vincolo a livello di piattaforma, non di una promessa dello sviluppatore. La versione Firefox è pubblicata attraverso il processo ufficiale di revisione degli componenti aggiuntivi di Mozilla (AMO).
+
+🤝 OPEN SOURCE E VERIFICABILE
+Ogni riga di codice è pubblica su GitHub. Chiunque può clonare il repository, compilarlo localmente e confrontare i file risultanti con ciò che è installato nel proprio browser — senza necessità di fiducia.
+Sfogliare il codice o contribuire: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 DISPONIBILE ANCHE: Cartelle IA — L'AGGIORNAMENTO MULTIPIATTAFORMA
 

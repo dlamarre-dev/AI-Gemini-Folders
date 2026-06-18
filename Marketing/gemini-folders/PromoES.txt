@@ -49,10 +49,13 @@ Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siemp
 Disparador de prompts: Escribe # para ver al instante todos tus prompts guardados, o sigue escribiendo para filtrar en tiempo real. Pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar.
 
 🔒 PRIVACIDAD Y SEGURIDAD
-Diseñada con la privacidad en el centro. Solo solicita acceso a gemini.google.com y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía Chrome Sync: sin servidores de terceros, sin telemetría.
+Diseñada con la privacidad en el centro. Solo solicita acceso a gemini.google.com y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía sincronización del navegador: sin servidores de terceros, sin telemetría, sin cuenta necesaria.
 
-🤝 PROYECTO OPEN SOURCE
-Carpetas de Gemini es un proyecto open source desarrollado con pasión. La transparencia y el respeto a tu privacidad son nuestras prioridades. ¿Eres desarrollador o simplemente tienes curiosidad? Consulta el código, sigue el historial de cambios o contribuye en GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Desarrollada sobre Manifest V3: el propio navegador garantiza que nunca se puede cargar código remoto ni ejecutar scripts de forma dinámica — esta es una restricción a nivel de plataforma, no una promesa del desarrollador. La versión de Firefox se publica a través del proceso oficial de revisión de complementos de Mozilla (AMO).
+
+🤝 OPEN SOURCE Y AUDITABLE
+Cada línea de código es pública en GitHub. Cualquiera puede clonar el repositorio, compilarlo localmente y comparar los archivos resultantes con lo que está instalado en su navegador — sin necesidad de confianza.
+Explorar el código o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 TAMBIÉN DISPONIBLE: Carpetas IA — LA ACTUALIZACIÓN MULTIPLATAFORMA
 

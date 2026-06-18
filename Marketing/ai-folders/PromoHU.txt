@@ -55,10 +55,13 @@ Prompt rögzítéséhez: kattintson a 📍 gombra — a lista tetejére kerül, 
 Prompt-aktiváló: Gépelje be a # jelet az összes mentett promptja azonnali megjelenítéséhez, vagy folytassa a gépelést a valós idejű szűréshez. Nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a beillesztéshez.
 
 🔒 ADATVÉDELEM ÉS BIZTONSÁG
-Az adatvédelmet alapelvként kezelve fejlesztve. Csak a 7 támogatott AI-oldal és az opcionális helyi LLM URL elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás Chrome Sync-en keresztül: nincsenek harmadik feles szerverek, nincs telemetria.
+Az adatvédelmet alapelvként kezelve fejlesztve. Csak a támogatott AI-oldalak és az opcionális helyi LLM URL elérését kéri, és csak akkor olvassa az aktív lapot, amikor egy beszélgetést ment vagy promptot illeszt be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás böngésző-szinkronizáláson keresztül: nincsenek harmadik feles szerverek, nincs telemetria, nincs szükség fiókra.
 
-🤝 NYÍLT FORRÁSKÓDÚ PROJEKT
-A MI mappák egy szenvedéllyel fejlesztett nyílt forráskódú projekt. Az átláthatóság és az adatvédelem tiszteletben tartása a legfontosabb prioritásaink. Fejlesztő, vagy csak kíváncsi? Böngéssze a kódot, kövesse a változásnaplót, vagy járuljon hozzá a GitHubon: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Manifest V3-ra épül: maga a böngésző kényszeríti ki, hogy soha nem tölthetők be távoli kódok és nem hajtható végre dinamikus szkript — ez platformszintű korlát, nem fejlesztői ígéret. A Firefox verzió a Mozilla hivatalos kiegészítő-ellenőrzési folyamatán (AMO) keresztül kerül kiadásra.
+
+🤝 NYÍLT FORRÁSKÓD ÉS AUDITÁLHATÓSÁG
+Minden egyes kódsor nyilvános a GitHubon. Bárki klónozhatja a tárolót, helyben felépítheti, és összehasonlíthatja az eredményül kapott fájlokat a böngészőjébe telepített fájlokkal — nem szükséges bizalom.
+Böngésszen a kódban vagy járuljon hozzá: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 FRISSÍTÉSEK:

@@ -53,10 +53,13 @@ Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
 Disparador de prompts: Escriu # per veure a l'instant tots els teus prompts desats, o continua escrivint per filtrar en temps real. Prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar.
 
 🔒 PRIVACITAT I SEGURETAT
-Construït amb la privacitat com a prioritat. Només sol·licita accés als 7 llocs d'IA compatibles i al teu URL de LLM local opcional i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via Chrome Sync: cap servidor de tercers, cap telemetria.
+Construït amb la privacitat com a prioritat. Només sol·licita accés als llocs d'IA compatibles i al teu URL de LLM local opcional, i llegeix la pestanya activa únicament en desar una conversa o injectar un prompt. El permís «Marcadors» només s'utilitza si actives la sincronització mòbil. Emmagatzematge via sincronització del navegador: cap servidor de tercers, cap telemetria, cap compte necessari.
 
-🤝 PROJECTE DE CODI OBERT
-Carpetes IA és un projecte de codi obert construït amb passió. La transparència i el respecte per la teva privacitat són les nostres màximes prioritats. Ets desenvolupador/a o simplement tens curiositat? Explora el codi, segueix el registre de canvis o contribueix a GitHub: https://github.com/dlamarre-dev/AI-Gemini-Folders
+Construït sobre Manifest V3: el propi navegador garanteix que cap codi remot no pot ser carregat i que no pot produir-se cap execució dinàmica de scripts — es tracta d'una restricció a nivell de plataforma, no d'una promesa del desenvolupador. La versió de Firefox es publica a través del procés oficial de revisió de complements de Mozilla (AMO).
+
+🤝 CODI OBERT I AUDITABLE
+Cada línia de codi és pública a GitHub. Qualsevol persona pot clonar el repositori, compilar-lo localment i comparar els fitxers resultants amb el que té instal·lat al navegador — sense necessitat de confiar en ningú.
+Explorar el codi o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ACTUALITZACIONS:
