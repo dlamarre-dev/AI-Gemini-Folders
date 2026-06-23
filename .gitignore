@@ -23,3 +23,6 @@ __pycache__/
 
 .idea/
 *.iml
+
+# Hyperframes brag video — regenerable verification frames
+brag-output/composition/snapshots/

@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id":"lang","type":"string","label":"Language","default":"en"}]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1920px; height: 1080px; overflow: hidden;
+        background: #07080f;
+        font-family: system-ui, sans-serif;
+        color: #f4f5fa;
+        -webkit-font-smoothing: antialiased;
+      }
+      :root {
+        --grad: linear-gradient(108deg,#10a37f 0%,#20b2aa 22%,#3b86d9 46%,#8a6df0 68%,#d97757 100%);
+        --ink: #f4f5fa;
+        --muted: rgba(255,255,255,0.60);
+        --glass: rgba(20,25,45,0.55);
+        --glass-line: rgba(255,255,255,0.10);
+        --glass-top: rgba(255,255,255,0.20);
+        --accent: #8ab4f8;
+      }
+      #stage {
+        position: absolute; inset: 0; width: 1920px; height: 1080px;
+        background:
+          radial-gradient(120% 90% at 12% -10%, #1c1646 0%, #100f2c 40%, #090b16 74%, #07080f 100%);
+        overflow: hidden;
+      }
+      /* soft brand glow that breathes */
+      #glow {
+        position: absolute; left: 50%; top: 46%; width: 1400px; height: 1400px;
+        transform: translate(-50%,-50%);
+        background: radial-gradient(closest-side, rgba(138,109,240,0.20), rgba(59,134,217,0.10) 45%, transparent 72%);
+        filter: blur(8px); pointer-events: none; opacity: .55;
+      }
+      .scene {
+        position: absolute; inset: 0; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; opacity: 0;
+      }
+      /* ---------- generic chat sidebar (Scene 1) ---------- */
+      .chatwin {
+        width: 1080px; height: 760px; border-radius: 22px;
+        background: rgba(16,18,30,0.72);
+        border: 1px solid var(--glass-line); border-top-color: var(--glass-top);
+        box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+        display: flex; overflow: hidden;
+      }
+      .side {
+        width: 360px; background: rgba(10,12,22,0.85);
+        border-right: 1px solid var(--glass-line); padding: 22px 16px;
+        display: flex; flex-direction: column; gap: 12px;
+      }
+      .side .newbtn {
+        height: 46px; border-radius: 12px; border: 1px solid var(--glass-line);
+        display: flex; align-items: center; gap: 10px; padding: 0 16px;
+        color: var(--muted); font-size: 17px; font-weight: 600;
+      }
+      .side .lbl { font-size: 13px; color: rgba(255,255,255,0.35); margin: 8px 4px 2px; font-weight: 600; letter-spacing: .04em; }
+      .chatrow {
+        height: 44px; border-radius: 10px; padding: 0 14px; display: flex; align-items: center;
+        color: rgba(255,255,255,0.62); font-size: 16px; gap: 10px;
+      }
+      .chatrow::before { content: "💬"; filter: grayscale(1); opacity: .5; font-size: 14px; }
+      .chatrow.muteclr { color: rgba(255,255,255,0.42); }
+      .listscroll {
+        position: relative; flex: 1; overflow: hidden;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 54px, #000 88%, transparent 100%);
+        mask-image: linear-gradient(180deg, transparent 0, #000 54px, #000 88%, transparent 100%);
+      }
+      .main-pane { flex: 1; background: rgba(20,22,34,0.5); }
+      #s1-listwrap { position: relative; height: 100%; overflow: hidden; }
+      #s1-line {
+        position: absolute; left: 0; right: 0; top: 50%;
+        text-align: center; font-size: 62px; font-weight: 800; letter-spacing: -0.02em;
+        text-shadow: 0 6px 40px rgba(0,0,0,0.85);
+      }
+      #s1-line .dim { color: var(--muted); font-weight: 600; }
+      .s1-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,8,15,0) 0%, rgba(7,8,15,0.78) 60%); }
+
+      /* ---------- AI Folders popup (Scenes 2-3) ---------- */
+      .popup {
+        width: 640px; border-radius: 20px; background: var(--glass);
+        border: 1px solid var(--glass-line); border-top-color: var(--glass-top);
+        box-shadow: 0 40px 120px rgba(0,0,0,0.62); padding: 26px 26px 30px;
+        backdrop-filter: blur(8px);
+      }
+      .pop-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+      .pop-brand { display: flex; align-items: center; gap: 12px; font-size: 26px; font-weight: 800; letter-spacing: -0.01em; }
+      .pop-brand .star { width: 30px; height: 30px; }
+      .toggle {
+        position: relative; display: inline-flex; background: rgba(255,255,255,0.06);
+        border: 1px solid var(--glass-line); border-radius: 999px; padding: 5px; gap: 4px;
+      }
+      .toggle .pill {
+        position: absolute; top: 5px; left: 5px; width: 52px; height: 44px; border-radius: 999px;
+        background: linear-gradient(180deg,#8fb0fb,#6c97f2); box-shadow: 0 4px 14px rgba(94,134,255,0.5);
+      }
+      .toggle .tb { position: relative; width: 52px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 22px; z-index: 1; }
+      .searchbar {
+        height: 50px; border-radius: 12px; background: rgba(255,255,255,0.05);
+        border: 1px solid var(--glass-line); display: flex; align-items: center; padding: 0 16px;
+        color: var(--muted); font-size: 17px; gap: 10px; margin-bottom: 16px;
+      }
+      /* expanded folder block: header + conversation rows */
+      .folder-block { margin-bottom: 12px; }
+      .folder-head {
+        display: flex; align-items: center; gap: 13px; height: 54px; padding: 0 16px;
+        border-radius: 14px; background: rgba(20,25,45,0.6);
+        border: 1px solid var(--glass-line); border-top-color: var(--glass-top);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.32);
+      }
+      .folder-head .chev { color: var(--muted); font-size: 15px; }
+      .folder-head .emo { font-size: 22px; }
+      .folder-head .fname { font-size: 20px; font-weight: 600; flex: 1; }
+      .folder-head .count {
+        font-size: 13px; font-weight: 700; color: var(--accent);
+        background: rgba(138,180,248,0.14); border-radius: 999px; padding: 3px 11px;
+      }
+      .chat-items { padding: 5px 6px 0 28px; }
+      .chat-item2 {
+        display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 12px;
+        border-radius: 9px;
+      }
+      .chat-item2 .clogo { width: 20px; height: 20px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; opacity: 0.92; }
+      .chat-item2 .clogo svg { width: 20px; height: 20px; }
+      .chat-item2 .ctitle {
+        font-size: 16.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      }
+      .prompt-row {
+        display: flex; align-items: center; gap: 14px; height: 60px; padding: 0 18px; margin-bottom: 12px;
+        border-radius: 14px; background: rgba(20,25,45,0.55);
+        border: 1px solid var(--glass-line); border-left: 3px solid rgba(138,180,248,0.55);
+      }
+      .prompt-row .ptag { font-family: ui-monospace, monospace; font-size: 20px; font-weight: 600; color: var(--accent); }
+      .prompt-row .pname { font-size: 20px; font-weight: 600; flex: 1; }
+      .prompt-row .play { font-size: 20px; color: var(--accent); }
+      .cap {
+        margin-top: 26px; text-align: center; font-size: 40px; font-weight: 800; letter-spacing: -0.01em; opacity: 0;
+      }
+      .cap .mono { font-family: ui-monospace, monospace; background: linear-gradient(108deg,#3b86d9,#8a6df0); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+      /* Scene 3 composer */
+      .s3wrap { display: flex; align-items: center; gap: 46px; }
+      .arrow { font-size: 60px; color: var(--accent); opacity: .8; }
+      .composer {
+        width: 620px; border-radius: 20px; background: rgba(16,18,30,0.78);
+        border: 1px solid var(--glass-line); border-top-color: var(--glass-top);
+        box-shadow: 0 40px 120px rgba(0,0,0,0.55); padding: 24px 26px;
+      }
+      .composer .clabel { font-size: 15px; color: rgba(255,255,255,0.4); font-weight: 600; margin-bottom: 14px; letter-spacing: .04em; }
+      .composer .field {
+        min-height: 150px; border-radius: 14px; background: rgba(255,255,255,0.05);
+        border: 1px solid var(--glass-line); padding: 18px 18px; font-size: 23px; line-height: 1.5; color: var(--ink);
+      }
+      #compose-text .hash { font-family: ui-monospace, monospace; color: var(--accent); font-weight: 600; }
+      .caret { display: inline-block; width: 3px; height: 26px; background: var(--accent); margin-left: 2px; transform: translateY(4px); }
+      .composer .send { margin-top: 16px; display: flex; justify-content: flex-end; }
+      .composer .send .b { width: 58px; height: 58px; border-radius: 14px; background: linear-gradient(180deg,#8fb0fb,#6c97f2); display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 700; color: #0a0c18; }
+
+      /* ---------- Scene 4 logos ---------- */
+      #s4-cluster { display: flex; flex-direction: column; align-items: center; gap: 50px; }
+      .rail { position: relative; width: 1280px; height: 6px; border-radius: 999px; background: var(--grad); transform-origin: left center; box-shadow: 0 0 40px rgba(138,109,240,0.5); }
+      .logos { display: flex; align-items: center; gap: 30px; }
+      .logochip {
+        width: 132px; height: 132px; border-radius: 26px; display: flex; align-items: center; justify-content: center;
+        background: rgba(20,25,45,0.6); border: 1px solid var(--glass-line); border-top-color: var(--glass-top);
+        box-shadow: 0 16px 50px rgba(0,0,0,0.45);
+      }
+      .logochip svg, .logochip img { width: 74px; height: 74px; }
+      .logochip .lname { display: none; }
+
+      /* ---------- Scene 5 outro ---------- */
+      #s5 { gap: 0; }
+      .word {
+        font-size: 132px; font-weight: 900; letter-spacing: -0.03em; line-height: 1;
+        background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        display: flex; align-items: center; gap: 26px;
+      }
+      .word .star { width: 152px; height: 152px; -webkit-text-fill-color: initial; }
+      .tag { margin-top: 30px; font-size: 46px; font-weight: 600; color: var(--ink); opacity: 0; }
+      .chips { margin-top: 34px; display: flex; gap: 16px; opacity: 0; }
+      .chip {
+        font-size: 24px; font-weight: 600; color: var(--muted);
+        border: 1px solid var(--glass-line); border-radius: 999px; padding: 12px 24px; background: rgba(255,255,255,0.04);
+      }
+      .url { margin-top: 38px; font-size: 30px; font-weight: 700; letter-spacing: .01em; opacity: 0;
+        background: linear-gradient(108deg,#3b86d9,#8a6df0); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="20"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div id="stage" class="clip" data-start="0" data-duration="20" data-track-index="0">
+        <div id="glow" data-layout-allow-overflow></div>
+
+        <!-- ============ SCENE 1 — THE PILE ============ -->
+        <div id="s1" class="scene clip" data-layout-allow-overlap data-start="0" data-duration="3.4" data-track-index="1">
+          <div class="chatwin">
+            <div class="side" data-layout-allow-occlusion>
+              <div class="newbtn" id="s1-newchat">＋ New chat</div>
+              <div class="lbl" id="s1-recent">Recent</div>
+              <div class="listscroll">
+                <div id="s1-list" data-layout-allow-overflow></div>
+              </div>
+            </div>
+            <div class="main-pane"></div>
+          </div>
+          <div class="s1-veil"></div>
+          <div id="s1-line">Your AI chats.<br /><span class="dim">In endless lists.</span></div>
+        </div>
+
+        <!-- ============ SCENE 2 — FOLDERS ============ -->
+        <div id="s2" class="scene clip" data-layout-allow-overlap data-layout-allow-occlusion data-start="3" data-duration="4.9" data-track-index="2">
+          <div id="s2-card" class="popup">
+            <div class="pop-head">
+              <div class="pop-brand"><span class="star" id="star2"></span><span id="brand2">AI Folders</span></div>
+              <div class="toggle">
+                <div class="pill"></div>
+                <div class="tb">📁</div>
+                <div class="tb">📝</div>
+              </div>
+            </div>
+            <div class="searchbar" id="s2-search">🔍 Search folders…</div>
+            <div id="s2-folders"></div>
+          </div>
+          <div class="cap" id="s2-cap">All your AI chats, in folders.</div>
+        </div>
+
+        <!-- ============ SCENE 3 — PROMPT LIBRARY + INJECTION ============ -->
+        <div id="s3" class="scene clip" data-layout-allow-overlap data-start="7.5" data-duration="4.9" data-track-index="3">
+          <div class="s3wrap">
+            <div class="popup" style="width:520px;">
+              <div class="pop-head">
+                <div class="pop-brand"><span class="star" id="star3"></span><span id="brand3">AI Folders</span></div>
+                <div class="toggle">
+                  <div class="pill" id="s3-pill" style="left:57px;"></div>
+                  <div class="tb">📁</div>
+                  <div class="tb">📝</div>
+                </div>
+              </div>
+              <div class="searchbar" id="s3-search">🔍 Search prompts…</div>
+              <div class="prompt-row"><span class="ptag">#review</span><span class="pname"></span><span class="play">▶</span></div>
+              <div class="prompt-row" style="opacity:.55;"><span class="ptag">#summarize</span><span class="pname"></span><span class="play">▶</span></div>
+            </div>
+            <div class="arrow" id="s3-arrow">➜</div>
+            <div class="composer">
+              <div class="clabel" id="s3-clabel">CHAT — type a prompt name</div>
+              <div class="field"><span id="compose-text"></span><span class="caret" id="caret"></span></div>
+              <div class="send"><div class="b">↑</div></div>
+            </div>
+          </div>
+          <div class="cap" id="s3-cap">Type <span class="mono">#name</span>. Your prompt appears.</div>
+        </div>
+
+        <!-- ============ SCENE 4 — EVERY AI ============ -->
+        <div id="s4" class="scene clip" data-layout-allow-overlap data-start="12" data-duration="4.4" data-track-index="4">
+          <div id="s4-cluster">
+            <div class="rail" id="s4-rail"></div>
+            <div class="logos" id="s4-logos"></div>
+          </div>
+          <div class="cap" id="s4-cap" style="margin-top:54px;">One extension. Every AI.</div>
+        </div>
+
+        <!-- ============ SCENE 5 — OUTRO ============ -->
+        <div id="s5" class="scene clip" data-layout-allow-overlap data-start="16" data-duration="4" data-track-index="5">
+          <div class="word" id="s5-word"><span class="star" id="star5"></span><span id="brand5">AI Folders</span></div>
+          <div class="tag" id="s5-tag">Organize your AI conversations.</div>
+          <div class="chips" id="s5-chips">
+            <span class="chip">Free</span>
+            <span class="chip">Open source</span>
+            <span class="chip">Private</span>
+            <span class="chip">43 languages</span>
+          </div>
+          <div class="url" id="s5-url">aifolders.xyz</div>
+        </div>
+      </div>
+
+      <!-- ================= AUDIO (music only — no SFX) ================= -->
+      <audio id="music" data-start="0" data-duration="20" data-track-index="10" data-volume="0.16"
+        src="assets/music/happy-beats-business-moves-vol-1-by-ende-dot-app.mp3"></audio>
+    </div>
+
+    <script>
+      // ---- AI Folders brand mark (gradient folder, from extensions/ai-folders/icon.svg) ----
+      function afIcon(s) {
+        return `<svg viewBox="-8 -6 144 142" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="afg${s}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10a37f"/><stop offset="0.20" stop-color="#20b2aa"/><stop offset="0.40" stop-color="#3b86d9"/><stop offset="0.60" stop-color="#8a6df0"/><stop offset="0.80" stop-color="#d97757"/><stop offset="1" stop-color="#9aa0a6"/></linearGradient></defs><path d="M 8 38 Q 8 28 18 28 H 48 Q 52 28 54 31 L 60 39 H 110 Q 120 39 120 49 V 110 Q 120 120 110 120 H 18 Q 8 120 8 110 Z" fill="url(#afg${s})"/></svg>`;
+      }
+      const LOGOS = [
+        ["ChatGPT", `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g fill="#fff"><path d="M30.7,7.27L28.33,9.1c-1.605-2.067-4.068-3.209-6.697-3.092C17.313,6.2,14,9.953,14,14.277l0,9.143l10.5,6.12l-1,1.72l-11.706-6.827C11.302,24.146,11,23.62,11,23.051l0-8.687C11,8.1,16.129,2.79,22.39,3.007C25.669,3.12,28.68,4.663,30.7,7.27z"/><path d="M12.861,9.833l0.4,2.967c-2.592,0.357-4.813,1.919-6.026,4.254c-1.994,3.837-0.4,8.582,3.345,10.745l7.918,4.571l10.55-6.033l0.99,1.726l-11.765,6.724c-0.494,0.282-1.101,0.281-1.594-0.003l-7.523-4.343C3.73,27.308,1.696,20.211,5.014,14.898C6.752,12.114,9.594,10.279,12.861,9.833z"/><path d="M6.161,26.563l2.77,1.137c-0.987,2.423-0.745,5.128,0.671,7.346c2.326,3.645,7.233,4.638,10.977,2.476l7.918-4.572l0.05-12.153l1.99,0.006l-0.059,13.551c-0.002,0.569-0.307,1.094-0.8,1.379l-7.523,4.343c-5.425,3.132-12.588,1.345-15.531-4.185C5.083,32.994,4.914,29.616,6.161,26.563z"/><path d="M17.3,40.73l2.37-1.83c1.605,2.067,4.068,3.209,6.697,3.092C30.687,41.8,34,38.047,34,33.723l0-9.143l-10.5-6.12l1-1.72l11.706,6.827C36.698,23.854,37,24.38,37,24.949l0,8.687c0,6.264-5.13,11.574-11.39,11.358C22.331,44.88,19.32,43.337,17.3,40.73z"/><path d="M35.139,38.167l-0.4-2.967c2.592-0.357,4.813-1.919,6.026-4.254c1.994-3.837,0.4-8.582-3.345-10.745l-7.918-4.571l-10.55,6.033l-0.99-1.726l11.765-6.724c0.494-0.282,1.101-0.281,1.594,0.003l7.523,4.343c5.425,3.132,7.459,10.229,4.141,15.543C41.248,35.886,38.406,37.721,35.139,38.167z"/><path d="M41.839,21.437l-2.77-1.137c0.987-2.423,0.745-5.128-0.671-7.346c-2.326-3.645-7.233-4.638-10.977-2.476l-7.918,4.572l-0.05,12.153l-1.99-0.006l0.059-13.551c0.002-0.569,0.307-1.094,0.8-1.379l7.523-4.343c5.425-3.132,12.588-1.345,15.531,4.185C42.917,15.006,43.086,18.384,41.839,21.437z"/></g></svg>`],
+        ["Claude", `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#D97757" d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z"/></svg>`],
+        ["Gemini", `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M16 8.016A8.522 8.522 0 008.016 16h-.032A8.521 8.521 0 000 8.016v-.032A8.521 8.521 0 007.984 0h.032A8.522 8.522 0 0016 7.984v.032z"/></svg>`],
+        ["Copilot", `<svg viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg"><path fill="#0a84ff" d="M17.533 1.829A2.528 2.528 0 0015.11 0h-.737a2.531 2.531 0 00-2.484 2.087l-1.263 6.937.314-1.08a2.528 2.528 0 012.424-1.833h4.284l1.797.706 1.731-.706h-.505a2.528 2.528 0 01-2.423-1.829l-.715-2.453z" transform="translate(0 1)"/><path fill="#0a84ff" d="M6.726 20.16A2.528 2.528 0 009.152 22h1.566c1.37 0 2.49-1.1 2.525-2.48l.17-6.69-.357 1.228a2.528 2.528 0 01-2.423 1.83h-4.32l-1.54-.842-1.667.843h.497c1.124 0 2.113.75 2.426 1.84l.697 2.432z" transform="translate(0 1)"/><path fill="#22b8b0" d="M15 0H6.252c-2.5 0-4 3.331-5 6.662-1.184 3.947-2.734 9.225 1.75 9.225H6.78c1.13 0 2.12-.753 2.43-1.847.657-2.317 1.809-6.359 2.713-9.436.46-1.563.842-2.906 1.43-3.742A1.97 1.97 0 0115 0" transform="translate(0 1)"/><path fill="#22b8b0" d="M9 22h8.749c2.5 0 4-3.332 5-6.663 1.184-3.948 2.734-9.227-1.75-9.227H17.22c-1.129 0-2.12.754-2.43 1.848a1149.2 1149.2 0 01-2.713 9.437c-.46 1.564-.842 2.907-1.43 3.743A1.97 1.97 0 019 22" transform="translate(0 1)"/></svg>`],
+        ["DeepSeek", `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4D6BFE" d="M23.748 4.651c-.254-.124-.364.113-.512.233-.051.04-.094.09-.137.137-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.155-.708-.311-.955-.65-.172-.24-.219-.509-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.094.172.187.129.323-.082.28-.18.553-.266.833-.055.179-.137.218-.328.14a5.5 5.5 0 0 1-1.737-1.179c-.857-.828-1.631-1.743-2.597-2.46a12 12 0 0 0-.689-.47c-.985-.957.13-1.743.387-1.836.27-.098.094-.433-.778-.428-.872.003-1.67.295-2.687.685a3 3 0 0 1-.465.136 9.6 9.6 0 0 0-2.883-.101c-1.885.21-3.39 1.1-4.497 2.622C.082 8.776-.231 10.854.152 13.02c.403 2.284 1.568 4.175 3.36 5.653 1.857 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.132-.284 4.994-1.86.47.234.962.328 1.78.398.629.058 1.235-.031 1.705-.129.735-.155.684-.836.418-.961-2.155-1.004-1.682-.595-2.112-.926 1.095-1.295 2.768-3.598 3.284-6.733.05-.346.115-.834.108-1.114-.004-.171.035-.238.23-.257a4.2 4.2 0 0 0 1.545-.475c1.397-.763 1.96-2.016 2.093-3.517.02-.23-.004-.467-.247-.588M11.581 18.157c-2.089-1.642-3.102-2.183-3.521-2.16-.39.024-.32.471-.234.763.09.288.207.486.371.74.114.166.192.416-.113.602-.673.417-1.842-.14-1.897-.167-1.361-.802-2.5-1.86-3.301-3.307-.774-1.393-1.225-2.888-1.299-4.481-.02-.386.094-.522.477-.592a4.7 4.7 0 0 1 1.53-.039c2.131.312 3.946 1.265 5.467 2.774.868.86 1.525 1.887 2.202 2.891.72 1.066 1.494 2.082 2.48 2.915.348.291.625.512.892.677-.802.09-2.14.108-3.055-.616z"/></svg>`],
+        ["Grok", `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M9.27 15.29l7.978-5.897c.391-.29.949-.177 1.137.272.98 2.369.542 5.215-1.41 7.169-1.951 1.954-4.667 2.382-7.149 1.406l-2.711 1.257c3.889 2.661 8.611 2.003 11.562-.953 2.341-2.344 3.066-5.539 2.388-8.42l.006.007c-.983-4.232.242-5.924 2.75-9.383.06-.082.12-.164.179-.248l-3.301 3.305v-.01L9.267 15.292M7.623 16.723c-2.792-2.67-2.311-6.801.071-9.184 1.761-1.763 4.647-2.483 7.166-1.425l2.705-1.25a7.808 7.808 0 00-1.829-1A8.975 8.975 0 005.984 5.83c-2.533 2.536-3.33 6.436-1.962 9.764 1.022 2.487-.653 4.246-2.34 6.022-.599.63-1.199 1.259-1.682 1.925l7.62-6.815"/></svg>`],
+        ["Perplexity", `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#22B8CD" d="M19.785 0v7.272H22.5V17.62h-2.935V24l-7.037-6.194v6.145h-1.091v-6.152L4.392 24v-6.465H1.5V7.188h2.884V0l7.053 6.494V.19h1.09v6.49L19.786 0zm-7.257 9.044v7.319l5.946 5.234V14.44l-5.946-5.397zm-1.099-.08l-5.946 5.398v7.235l5.946-5.234V8.965zm8.136 7.58h1.844V8.349H13.46l6.105 5.54v2.655zm-8.982-8.28H2.59v8.195h1.8v-2.576l6.192-5.62zM5.475 2.476v4.71h5.115l-5.115-4.71zm13.219 0l-5.115 4.71h5.115v-4.71z"/></svg>`],
+        ["Local", `<svg viewBox="0 0 24 24" fill="none" stroke="#aab1c4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="13" rx="2"/><polyline points="1,20 23,20"/><path d="M5 20 C5 17 7 16 12 16 C17 16 19 17 19 20"/></svg>`],
+      ];
+
+      // ---- Localization: all on-screen copy, keyed by language ----
+      // UI chrome, folder/chat content, and the tagline reuse the project's own
+      // translations (sample-data-af.js, i18n-manual.js); captions/headline are
+      // translated to match. {tag} = the #name token (kept literal across languages).
+      const STRINGS = {
+        en: { brand:"AI Folders", newChat:"＋ New chat", recent:"Recent",
+          s1a:"Your AI chats.", s1b:"In endless lists.",
+          searchFolders:"Search folders…", searchPrompts:"Search prompts…",
+          folders:{dev:"Dev",research:"Research",writing:"Writing"},
+          chats:{dev1:"Refactor Node.js API",dev2:"Debug React hook",dev3:"Write unit tests",res1:"Market analysis 2025",res2:"Competitor overview",wri1:"Blog post — AI productivity",wri2:"Newsletter draft"},
+          s2cap:"All your AI chats, in folders.",
+          clabel:"CHAT — type a prompt name",
+          promptText:"Review this code for bugs, clarity, and edge cases before I ship.",
+          s3cap:"Type {tag}. Your prompt appears.",
+          s4cap:"One extension. Every AI.",
+          tagline:"Organize your AI conversations.",
+          chips:{free:"Free",os:"Open source",priv:"Private",langs:"43 languages"} },
+        fr: { brand:"Dossiers IA", newChat:"＋ Nouveau chat", recent:"Récentes",
+          s1a:"Vos conversations IA.", s1b:"Dans des listes sans fin.",
+          searchFolders:"Rechercher des dossiers…", searchPrompts:"Rechercher des prompts…",
+          folders:{dev:"Dev",research:"Recherche",writing:"Rédaction"},
+          chats:{dev1:"Refactoriser l'API Node.js",dev2:"Déboguer le hook React",dev3:"Écrire des tests unitaires",res1:"Analyse de marché 2025",res2:"Vue d'ensemble concurrents",wri1:"Article de blog — IA productive",wri2:"Brouillon newsletter"},
+          s2cap:"Toutes vos conversations IA, dans des dossiers.",
+          clabel:"CHAT — tapez un nom de prompt",
+          promptText:"Relis ce code : bugs, clarté et cas limites, avant que je le livre.",
+          s3cap:"Tapez {tag}. Votre prompt apparaît.",
+          s4cap:"Une extension. Toutes les IA.",
+          tagline:"Organisez vos conversations IA.",
+          chips:{free:"Gratuit",os:"Open source",priv:"Confidentiel",langs:"43 langues"} },
+        es: { brand:"Carpetas IA", newChat:"＋ Nuevo chat", recent:"Recientes",
+          s1a:"Tus chats de IA.", s1b:"En listas interminables.",
+          searchFolders:"Buscar carpetas…", searchPrompts:"Buscar prompts…",
+          folders:{dev:"Desarrollo",research:"Investigación",writing:"Escritura"},
+          chats:{dev1:"Refactorizar API Node.js",dev2:"Depurar hook React",dev3:"Escribir pruebas unitarias",res1:"Análisis de mercado 2025",res2:"Visión general competidores",wri1:"Post blog — productividad IA",wri2:"Borrador newsletter"},
+          s2cap:"Todos tus chats de IA, en carpetas.",
+          clabel:"CHAT — escribe el nombre de un prompt",
+          promptText:"Revisa este código: errores, claridad y casos límite antes de publicar.",
+          s3cap:"Escribe {tag}. Tu prompt aparece.",
+          s4cap:"Una extensión. Todas las IA.",
+          tagline:"Organiza tus conversaciones de IA.",
+          chips:{free:"Gratis",os:"Código abierto",priv:"Privado",langs:"43 idiomas"} },
+        pt_BR: { brand:"Pastas IA", newChat:"＋ Novo chat", recent:"Recentes",
+          s1a:"Suas conversas de IA.", s1b:"Em listas intermináveis.",
+          searchFolders:"Buscar pastas…", searchPrompts:"Buscar prompts…",
+          folders:{dev:"Dev",research:"Pesquisa",writing:"Escrita"},
+          chats:{dev1:"Refatorar API Node.js",dev2:"Depurar hook React",dev3:"Escrever testes unitários",res1:"Análise de mercado 2025",res2:"Visão geral dos concorrentes",wri1:"Post blog — produtividade IA",wri2:"Rascunho newsletter"},
+          s2cap:"Todas as suas conversas de IA, em pastas.",
+          clabel:"CHAT — digite o nome de um prompt",
+          promptText:"Revise este código: bugs, clareza e casos extremos antes de publicar.",
+          s3cap:"Digite {tag}. Seu prompt aparece.",
+          s4cap:"Uma extensão. Todas as IAs.",
+          tagline:"Organize suas conversas de IA.",
+          chips:{free:"Grátis",os:"Código aberto",priv:"Privado",langs:"43 idiomas"} },
+        de: { brand:"KI-Ordner", newChat:"＋ Neuer Chat", recent:"Letzte",
+          s1a:"Deine KI-Chats.", s1b:"In endlosen Listen.",
+          searchFolders:"Ordner suchen…", searchPrompts:"Prompts suchen…",
+          folders:{dev:"Entwicklung",research:"Recherche",writing:"Texte"},
+          chats:{dev1:"Node.js-API refaktorieren",dev2:"React-Hook debuggen",dev3:"Unit-Tests schreiben",res1:"Marktanalyse 2025",res2:"Wettbewerbsübersicht",wri1:"Blogartikel — KI-Produktivität",wri2:"Newsletter-Entwurf"},
+          s2cap:"Alle deine KI-Chats, in Ordnern.",
+          clabel:"CHAT — Prompt-Namen eingeben",
+          promptText:"Prüfe diesen Code auf Bugs, Klarheit und Edge-Cases, bevor ich ihn ausliefere.",
+          s3cap:"{tag} eingeben. Dein Prompt erscheint.",
+          s4cap:"Eine Erweiterung. Jede KI.",
+          tagline:"Organisiere deine KI-Gespräche.",
+          chips:{free:"Kostenlos",os:"Open Source",priv:"Privat",langs:"43 Sprachen"} },
+        it: { brand:"Cartelle IA", newChat:"＋ Nuova chat", recent:"Recenti",
+          s1a:"Le tue chat IA.", s1b:"In liste infinite.",
+          searchFolders:"Cerca cartelle…", searchPrompts:"Cerca prompt…",
+          folders:{dev:"Dev",research:"Ricerca",writing:"Scrittura"},
+          chats:{dev1:"Refactoring API Node.js",dev2:"Debug hook React",dev3:"Scrivere test unitari",res1:"Analisi di mercato 2025",res2:"Panoramica concorrenti",wri1:"Post blog — produttività IA",wri2:"Bozza newsletter"},
+          s2cap:"Tutte le tue chat IA, in cartelle.",
+          clabel:"CHAT — digita il nome di un prompt",
+          promptText:"Controlla questo codice: bug, chiarezza e casi limite prima del rilascio.",
+          s3cap:"Digita {tag}. Il tuo prompt appare.",
+          s4cap:"Un'estensione. Ogni IA.",
+          tagline:"Organizza le tue conversazioni IA.",
+          chips:{free:"Gratis",os:"Open source",priv:"Privato",langs:"43 lingue"} },
+        ja: { brand:"AI フォルダ", newChat:"＋ 新しいチャット", recent:"最近",
+          s1a:"あなたのAIチャット。", s1b:"終わりのないリストの中に。",
+          searchFolders:"フォルダを検索…", searchPrompts:"プロンプトを検索…",
+          folders:{dev:"開発",research:"リサーチ",writing:"ライティング"},
+          chats:{dev1:"Node.js API リファクタリング",dev2:"React フックのデバッグ",dev3:"単体テストを書く",res1:"市場分析 2025",res2:"競合他社概要",wri1:"ブログ記事 — AI 生産性",wri2:"ニュースレター下書き"},
+          s2cap:"すべてのAIチャットを、フォルダに。",
+          clabel:"チャット — プロンプト名を入力",
+          promptText:"このコードのバグ・明瞭さ・エッジケースを、リリース前にレビューして。",
+          s3cap:"{tag} と入力。プロンプトが表示されます。",
+          s4cap:"ひとつの拡張機能で、すべてのAIを。",
+          tagline:"AIとの会話を整理しよう。",
+          chips:{free:"無料",os:"オープンソース",priv:"プライバシー",langs:"43言語"} },
+        ko: { brand:"AI 폴더", newChat:"＋ 새 채팅", recent:"최근",
+          s1a:"당신의 AI 채팅.", s1b:"끝없는 목록 속에.",
+          searchFolders:"폴더 검색…", searchPrompts:"프롬프트 검색…",
+          folders:{dev:"개발",research:"연구",writing:"글쓰기"},
+          chats:{dev1:"Node.js API 리팩터링",dev2:"React 훅 디버깅",dev3:"단위 테스트 작성",res1:"시장 분석 2025",res2:"경쟁사 개요",wri1:"블로그 포스트 — AI 생산성",wri2:"뉴스레터 초안"},
+          s2cap:"모든 AI 채팅을, 폴더에.",
+          clabel:"채팅 — 프롬프트 이름 입력",
+          promptText:"배포 전에 이 코드의 버그, 명확성, 엣지 케이스를 검토해줘.",
+          s3cap:"{tag} 입력. 프롬프트가 나타납니다.",
+          s4cap:"하나의 확장 프로그램. 모든 AI.",
+          tagline:"AI 대화를 정리하세요.",
+          chips:{free:"무료",os:"오픈 소스",priv:"개인정보 보호",langs:"43개 언어"} },
+        zh_TW: { brand:"AI 資料夾", newChat:"＋ 新交談", recent:"最近",
+          s1a:"你的 AI 對話。", s1b:"散落在無盡的清單中。",
+          searchFolders:"搜尋資料夾…", searchPrompts:"搜尋提示詞…",
+          folders:{dev:"開發",research:"研究",writing:"寫作"},
+          chats:{dev1:"重構 Node.js API",dev2:"除錯 React Hook",dev3:"撰寫單元測試",res1:"2025 市場分析",res2:"競爭對手概覽",wri1:"部落格文章 — AI 生產力",wri2:"電子報草稿"},
+          s2cap:"所有 AI 對話，整理進資料夾。",
+          clabel:"聊天 — 輸入提示詞名稱",
+          promptText:"在我發布前，檢查這段程式碼的錯誤、清晰度和邊界情況。",
+          s3cap:"輸入 {tag}，提示詞立即出現。",
+          s4cap:"一個擴充功能，連結所有 AI。",
+          tagline:"整理你的 AI 對話。",
+          chips:{free:"免費",os:"開源",priv:"隱私優先",langs:"43 種語言"} },
+      };
+      const LANG = ((typeof window !== "undefined" && window.__hyperframes && window.__hyperframes.getVariables && window.__hyperframes.getVariables().lang) || "en");
+      const T = STRINGS[LANG] || STRINGS.en;
+      const c = T.chats;
+
+      document.getElementById("star2").innerHTML = afIcon("2");
+      document.getElementById("star3").innerHTML = afIcon("3");
+      document.getElementById("star5").innerHTML = afIcon("5");
+      const logosWrap = document.getElementById("s4-logos");
+      LOGOS.forEach(([name, svg], i) => {
+        const d = document.createElement("div");
+        d.className = "logochip";
+        d.id = "lg" + i;
+        d.innerHTML = svg;
+        logosWrap.appendChild(d);
+      });
+
+      // ---- Scene 2: expanded folders with real conversations (site logo + brand color, like the extension) ----
+      const LOGOMAP = Object.fromEntries(LOGOS.map(([n, s]) => [n, s]));
+      const SITE = {
+        chatgpt:    { logo: "ChatGPT",    color: "#f0f0f3" },
+        claude:     { logo: "Claude",     color: "#d97757" },
+        gemini:     { logo: "Gemini",     color: "#6ca7f5" },
+        copilot:    { logo: "Copilot",    color: "#4aa3e8" },
+        deepseek:   { logo: "DeepSeek",   color: "#7b90ff" },
+        grok:       { logo: "Grok",       color: "#ececee" },
+        perplexity: { logo: "Perplexity", color: "#34c5d6" },
+      };
+      const FOLDERS = [
+        { emo: "💻", name: T.folders.dev, chats: [
+          ["chatgpt", c.dev1],
+          ["claude", c.dev2],
+          ["deepseek", c.dev3],
+        ]},
+        { emo: "🔬", name: T.folders.research, chats: [
+          ["perplexity", c.res1],
+          ["copilot", c.res2],
+        ]},
+        { emo: "✍️", name: T.folders.writing, chats: [
+          ["gemini", c.wri1],
+          ["grok", c.wri2],
+        ]},
+      ];
+      const foldersWrap = document.getElementById("s2-folders");
+      FOLDERS.forEach((f, i) => {
+        const block = document.createElement("div");
+        block.className = "folder-block";
+        block.id = "fb" + i;
+        const rows = f.chats.map(([site, title]) => {
+          const s = SITE[site];
+          return `<div class="chat-item2"><span class="clogo">${LOGOMAP[s.logo]}</span><span class="ctitle" style="color:${s.color}">${title}</span></div>`;
+        }).join("");
+        block.innerHTML =
+          `<div class="folder-head"><span class="chev">▾</span><span class="emo">${f.emo}</span>` +
+          `<span class="fname">${f.name}</span></div>` +
+          `<div class="chat-items">${rows}</div>`;
+        foldersWrap.appendChild(block);
+      });
+
+      // ---- populate all static on-screen copy from the locale ----
+      function setTxt(id, txt) { const e = document.getElementById(id); if (e) e.textContent = txt; }
+      setTxt("s1-newchat", T.newChat);
+      setTxt("s1-recent", T.recent);
+      document.getElementById("s1-line").innerHTML = `${T.s1a}<br /><span class="dim">${T.s1b}</span>`;
+      (function buildS1List() {
+        const titles = [c.dev1, c.res1, c.wri1, c.dev2, c.res2, c.wri2, c.dev3];
+        const order = [0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4]; // 12 rows — an unsorted pile
+        const list = document.getElementById("s1-list");
+        order.forEach((i) => {
+          const d = document.createElement("div");
+          d.className = "chatrow";
+          d.textContent = titles[i];
+          list.appendChild(d);
+        });
+      })();
+      setTxt("brand2", T.brand);
+      setTxt("brand3", T.brand);
+      setTxt("brand5", T.brand);
+      setTxt("s2-search", "🔍 " + T.searchFolders);
+      setTxt("s3-search", "🔍 " + T.searchPrompts);
+      setTxt("s2-cap", T.s2cap);
+      setTxt("s4-cap", T.s4cap);
+      setTxt("s3-clabel", T.clabel);
+      document.getElementById("s3-cap").innerHTML = T.s3cap.replace("{tag}", '<span class="mono">#name</span>');
+      setTxt("s5-tag", T.tagline);
+      document.getElementById("s5-chips").innerHTML =
+        [T.chips.free, T.chips.os, T.chips.priv, T.chips.langs].map((x) => `<span class="chip">${x}</span>`).join("");
+
+      // ---- typed text helpers (deterministic) ----
+      const composeEl = document.getElementById("compose-text");
+      const HASH = "#review";
+      const PROMPT = T.promptText;
+      function setHash(n) {
+        const s = HASH.slice(0, Math.round(n));
+        composeEl.innerHTML = `<span class="hash">${s}</span>`;
+      }
+      function setPrompt(n) {
+        composeEl.innerHTML = PROMPT.slice(0, Math.round(n));
+      }
+
+      // ===================== TIMELINE =====================
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // initial states
+      gsap.set("#s1", { opacity: 1 });
+      gsap.set("#s1-line", { yPercent: -50, opacity: 0, y: 24 });
+      gsap.set(["#s2", "#s3", "#s4", "#s5"], { opacity: 0 });
+      gsap.set("#s2-card", { y: 36, scale: 0.97 });
+      gsap.set(["#fb0", "#fb1", "#fb2"], { opacity: 0, y: 22 });
+      gsap.set("#s2-cap", { opacity: 0, y: 10 });
+      gsap.set("#s3-cap", { opacity: 0, y: 10 });
+      gsap.set("#s3-pill", { left: 5 });
+      gsap.set("#s4-rail", { scaleX: 0 });
+      gsap.set("#s4-cap", { opacity: 0, y: 10 });
+      LOGOS.forEach((_, i) => gsap.set("#lg" + i, { opacity: 0, scale: 0.55, y: 14 }));
+      gsap.set("#s5-word", { opacity: 0, y: 34, scale: 0.9 });
+      gsap.set("#s5-tag", { opacity: 0, y: 14 });
+      gsap.set("#s5-chips", { opacity: 0, y: 14 });
+      gsap.set("#s5-url", { opacity: 0 });
+      setHash(0);
+
+      // breathing brand glow (gentle, continuous) — audio-reactive substitute
+      tl.to("#glow", { opacity: 0.85, scale: 1.06, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: 7 }, 0);
+
+      // ---- Scene 1 ----
+      tl.to("#s1-list", { y: -150, duration: 3.0, ease: "none" }, 0);
+      tl.to("#s1-line", { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.7);
+      tl.to("#s1", { opacity: 0, duration: 0.4, ease: "power1.in" }, 3.0);
+
+      // ---- Scene 2 ----
+      tl.to("#s2", { opacity: 1, duration: 0.4, ease: "power2.out" }, 3.0);
+      tl.to("#s2-card", { y: 0, scale: 1, duration: 0.55, ease: "power3.out" }, 3.0);
+      tl.to("#fb0", { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 4.0);  // beat-grid 4.02
+      tl.to("#fb1", { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 4.8);  // beat-grid 4.78
+      tl.to("#fb2", { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 5.6);  // beat-grid 5.53
+      tl.to("#s2-cap", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 6.4);
+      tl.to("#s2", { opacity: 0, duration: 0.4, ease: "power1.in" }, 7.5);
+
+      // ---- Scene 3 ----
+      tl.to("#s3", { opacity: 1, duration: 0.4, ease: "power2.out" }, 7.5);
+      tl.fromTo("#s3-pill", { left: 5 }, { left: 57, duration: 0.4, ease: "power3.inOut" }, 7.9);
+      // type #review
+      const h = { n: 0 };
+      tl.to(h, { n: HASH.length, duration: 0.7, ease: "none", onUpdate: () => setHash(h.n) }, 8.4);
+      // expand to full prompt
+      const p = { n: 0 };
+      tl.add(() => setPrompt(0), 9.35);
+      tl.to(p, { n: PROMPT.length, duration: 1.7, ease: "none", onUpdate: () => setPrompt(p.n) }, 9.4);
+      tl.to("#caret", { opacity: 0.15, duration: 0.45, ease: "power1.inOut", yoyo: true, repeat: 8 }, 7.9);
+      tl.to("#s3-cap", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 10.6);
+      tl.to("#s3", { opacity: 0, duration: 0.4, ease: "power1.in" }, 12.0);
+
+      // ---- Scene 4 ----
+      tl.to("#s4", { opacity: 1, duration: 0.4, ease: "power2.out" }, 12.0);
+      tl.to("#s4-rail", { scaleX: 1, duration: 1.3, ease: "power2.out" }, 12.05);
+      const L = [12.1, 12.4, 12.7, 13.0, 13.3, 13.6, 13.9, 14.2]; // beat-grid pops
+      LOGOS.forEach((_, i) => {
+        tl.to("#lg" + i, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(1.7)" }, L[i]);
+      });
+      tl.to("#s4-cap", { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 14.5);
+      tl.to("#s4", { opacity: 0, duration: 0.4, ease: "power1.in" }, 16.0);
+
+      // ---- Scene 5 ----
+      tl.to("#s5", { opacity: 1, duration: 0.4, ease: "power2.out" }, 16.0);
+      tl.to("#s5-word", { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.5)" }, 16.6); // lands ~17.0 — beat-locked 17.02
+      tl.to("#s5-tag", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 17.4);
+      tl.to("#s5-chips", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 18.0);
+      tl.to("#s5-url", { opacity: 1, duration: 0.45, ease: "power2.out" }, 18.7);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
