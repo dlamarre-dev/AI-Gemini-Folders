@@ -1,1 +1,17 @@
-AI Folders is now live — folders for your AI chats plus a reusable prompt library you fire into any chat box with #name. Works across ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok & Perplexity. Free, open source, private, 43 languages → aifolders.xyz
+EN — AI Folders is now live — folders for your AI chats plus a reusable prompt library you fire into any chat box with #name. Works across ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok & Perplexity. Free, open source, private, 43 languages → aifolders.xyz
+
+FR — Dossiers IA est disponible — des dossiers pour vos conversations IA et une bibliothèque de prompts réutilisables que vous insérez dans n'importe quel champ de saisie avec #nom. Fonctionne avec ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok et Perplexity. Gratuit, open source, confidentiel, 43 langues → aifolders.xyz
+
+ES — Carpetas IA ya está disponible — carpetas para tus chats de IA y una biblioteca de prompts reutilizables que insertas en cualquier campo de texto con #nombre. Funciona con ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok y Perplexity. Gratis, código abierto, privado, 43 idiomas → aifolders.xyz
+
+PT-BR — Pastas IA já está no ar — pastas para suas conversas de IA e uma biblioteca de prompts reutilizáveis que você insere em qualquer campo de texto com #nome. Funciona com ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok e Perplexity. Grátis, código aberto, privado, 43 idiomas → aifolders.xyz
+
+DE — KI-Ordner ist da — Ordner für deine KI-Chats und eine wiederverwendbare Prompt-Bibliothek, die du mit #name in jedes Eingabefeld einfügst. Funktioniert mit ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok und Perplexity. Kostenlos, Open Source, privat, 43 Sprachen → aifolders.xyz
+
+IT — Cartelle IA è ora disponibile — cartelle per le tue chat IA e una libreria di prompt riutilizzabili che inserisci in qualsiasi campo di testo con #nome. Funziona con ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok e Perplexity. Gratis, open source, privato, 43 lingue → aifolders.xyz
+
+JA — AI フォルダ、公開しました — AIチャットを整理するフォルダと、どの入力欄でも #名前 で呼び出せる再利用可能なプロンプトライブラリ。ChatGPT、Claude、Gemini、Copilot、DeepSeek、Grok、Perplexity に対応。無料・オープンソース・プライバシー重視・43言語 → aifolders.xyz
+
+KO — AI 폴더 출시 — AI 채팅을 정리하는 폴더와 어떤 입력창에서든 #이름으로 불러오는 재사용 프롬프트 라이브러리. ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok, Perplexity 지원. 무료·오픈 소스·개인정보 보호·43개 언어 → aifolders.xyz
+
+ZH-TW — AI 資料夾正式上線 — 為你的 AI 對話建立資料夾，並用 #名稱 在任何輸入框叫出可重複使用的提示詞庫。支援 ChatGPT、Claude、Gemini、Copilot、DeepSeek、Grok 與 Perplexity。免費、開源、隱私優先、43 種語言 → aifolders.xyz
