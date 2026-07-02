@@ -14,6 +14,22 @@ const SUPPORTED_URL_PATTERNS = [
   "*://*.grok.com/*",
   "*://perplexity.ai/*",
   "*://*.perplexity.ai/*",
+  "*://chat.z.ai/*",
+  "*://chat.qwen.ai/*",
+  "*://meta.ai/*",
+  "*://*.meta.ai/*",
+  "*://chat.mistral.ai/*",
+  "*://poe.com/*",
+  "*://*.poe.com/*",
+  "*://duck.ai/*",
+  "*://duckduckgo.com/*",
+  "*://you.com/*",
+  "*://*.you.com/*",
+  "*://pi.ai/*",
+  "*://*.pi.ai/*",
+  "*://character.ai/*",
+  "*://*.character.ai/*",
+  "*://ernie.baidu.com/*",
 ];
 
 // --- PROMPT TRIGGER: dynamic content script for local LLM ---

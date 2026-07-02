@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Нова розмова в Perplexity"
   },
+  "newConv_zai": {
+    "message": "Нова розмова в Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Нова розмова в Qwen"
+  },
+  "newConv_meta": {
+    "message": "Нова розмова в Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Нова розмова в Mistral"
+  },
+  "newConv_poe": {
+    "message": "Нова розмова в Poe"
+  },
+  "newConv_duckai": {
+    "message": "Нова розмова в Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Нова розмова в You.com"
+  },
+  "newConv_pi": {
+    "message": "Нова розмова в Pi"
+  },
+  "newConv_characterai": {
+    "message": "Нова розмова в Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Нова розмова в Ernie"
+  },
   "newConv_local": {
     "message": "Нова розмова з локальною LLM (утримуйте для налаштування URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Вкажіть URL локальної LLM:"
   },
   "alertNotSupported": {
-    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok або Perplexity)."
+    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI або Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Не вдалося знайти поле введення тексту на цій сторінці. Спочатку натисніть на редактор, а потім скористайтеся кнопкою вставки."

@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Uusi Perplexity-keskustelu"
   },
+  "newConv_zai": {
+    "message": "Uusi Z.ai-keskustelu"
+  },
+  "newConv_qwen": {
+    "message": "Uusi Qwen-keskustelu"
+  },
+  "newConv_meta": {
+    "message": "Uusi Meta AI-keskustelu"
+  },
+  "newConv_mistral": {
+    "message": "Uusi Mistral-keskustelu"
+  },
+  "newConv_poe": {
+    "message": "Uusi Poe-keskustelu"
+  },
+  "newConv_duckai": {
+    "message": "Uusi Duck.ai-keskustelu"
+  },
+  "newConv_you": {
+    "message": "Uusi You.com-keskustelu"
+  },
+  "newConv_pi": {
+    "message": "Uusi Pi-keskustelu"
+  },
+  "newConv_characterai": {
+    "message": "Uusi Character.AI-keskustelu"
+  },
+  "newConv_ernie": {
+    "message": "Uusi Ernie-keskustelu"
+  },
   "newConv_local": {
     "message": "Uusi paikallinen LLM-keskustelu (pidä painettuna URL:n määrittämiseksi)"
   },
@@ -261,7 +291,7 @@
     "message": "Aseta paikallisen LLM:n URL:"
   },
   "alertNotSupported": {
-    "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok tai Perplexity)."
+    "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI tai Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."

@@ -4,6 +4,10 @@ if (typeof importScripts === 'function') {
   importScripts('lz-string.min.js', 'utils.js', 'site-config.js');
 }
 
+// Gemini's Quill editor selectors — single source for the three injection
+// paths below (a selector fix must not have to land in three places).
+const GEMINI_EDITOR_SELECTORS = ['rich-textarea .ql-editor', '[contenteditable="true"].ql-editor'];
+
 // --- CONTEXT MENU ---
 
 // Serialize rebuilds: removeAll + create runs across async callbacks, so two
@@ -82,10 +86,15 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 });
 
 // Injected into the active Gemini tab to show a transient confirmation toast.
+// Text color follows the background's luminance (same helper as AI Folders).
 function showToast(msg, bgColor) {
+  const r = parseInt(bgColor.slice(1,3), 16) || 0;
+  const g = parseInt(bgColor.slice(3,5), 16) || 0;
+  const b = parseInt(bgColor.slice(5,7), 16) || 0;
+  const textColor = (0.299*r + 0.587*g + 0.114*b) / 255 > 0.6 ? '#000000' : '#ffffff';
   const toast = document.createElement('div');
   toast.textContent = msg;
-  toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:white; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
+  toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:${textColor}; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
   document.body.appendChild(toast);
   setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2500);
 }
@@ -149,7 +158,7 @@ async function handlePromptTriggerLookup(message, sender) {
   const matches = findPromptsByPrefix(data.prompts || {}, message.prefix);
   if (matches.length === 0) return { status: 'no_match' };
 
-  const selectors = ['rich-textarea .ql-editor', '[contenteditable="true"].ql-editor'];
+  const selectors = GEMINI_EDITOR_SELECTORS;
   const exact = matches.find(m => m.name.toLowerCase() === message.prefix.toLowerCase());
 
   try {
@@ -195,7 +204,7 @@ async function handlePromptTriggerLookup(message, sender) {
 
 async function handleSuggestUpdate(message, sender) {
   const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
-  const selectors = ['rich-textarea .ql-editor', '[contenteditable="true"].ql-editor'];
+  const selectors = GEMINI_EDITOR_SELECTORS;
   const names = message.prefix != null
     ? findPromptsByPrefix(data.prompts || {}, message.prefix).map(m => m.name)
     : [];
@@ -213,7 +222,7 @@ async function handleSuggestUpdate(message, sender) {
 }
 
 async function handleCycleTab(message, sender) {
-  const selectors = ['rich-textarea .ql-editor', '[contenteditable="true"].ql-editor'];
+  const selectors = GEMINI_EDITOR_SELECTORS;
   try {
     await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
@@ -299,16 +308,7 @@ chrome.commands.onCommand.addListener(async (command) => {
         await chrome.scripting.executeScript({
           target: { tabId: tab.id },
           args: [toastMsg, "#1a73e8"],
-          func: (msg, bgColor) => {
-            const toast = document.createElement('div');
-            toast.textContent = msg;
-            toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:white; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
-            document.body.appendChild(toast);
-            setTimeout(() => {
-              toast.style.opacity = '0';
-              setTimeout(() => toast.remove(), 500);
-            }, 2500);
-          }
+          func: showToast
         });
       } else {
         // DUPLICATE ERROR
@@ -317,16 +317,7 @@ chrome.commands.onCommand.addListener(async (command) => {
         await chrome.scripting.executeScript({
           target: { tabId: tab.id },
           args: [alreadySavedMsg, "#d93025"],
-          func: (msg, bgColor) => {
-            const toast = document.createElement('div');
-            toast.textContent = msg;
-            toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:white; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
-            document.body.appendChild(toast);
-            setTimeout(() => {
-              toast.style.opacity = '0';
-              setTimeout(() => toast.remove(), 500);
-            }, 2500);
-          }
+          func: showToast
         });
       }
     } catch (error) {

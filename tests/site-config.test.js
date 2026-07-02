@@ -13,8 +13,24 @@ describe('getSiteByUrl', () => {
     ['https://grok.com/chat/abc', 'grok'],
     ['https://perplexity.ai/', 'perplexity'],
     ['https://www.perplexity.ai/search', 'perplexity'],
+    ['https://chat.z.ai/c/abc', 'zai'],
+    ['https://chat.qwen.ai/c/abc', 'qwen'],
+    ['https://meta.ai/', 'meta'],
+    ['https://www.meta.ai/c/abc', 'meta'],
+    ['https://chat.mistral.ai/chat/abc', 'mistral'],
+    ['https://poe.com/chat/abc', 'poe'],
+    ['https://duckduckgo.com/?q=x&ia=chat', 'duckai'],
+    ['https://you.com/', 'you'],
+    ['https://pi.ai/talk', 'pi'],
+    ['https://character.ai/chat/abc', 'characterai'],
+    ['https://ernie.baidu.com/', 'ernie'],
   ])('%s -> %s', (url, key) => {
     expect(getSiteByUrl(url)).toBe(key);
+  });
+
+  test('the Mistral marketing site (not chat.) does not match', () => {
+    expect(getSiteByUrl('https://www.mistral.ai/')).toBeNull();
+    expect(getSiteByUrl('https://mistral.ai/news')).toBeNull();
   });
 
   test('a subdomain of a supported site matches', () => {
@@ -90,5 +106,26 @@ describe('extractAITitleLogic', () => {
 
   test('returns the fallback when no strategy yields a title', () => {
     expect(extractAITitleLogic('claude', 'My Fallback')).toBe('My Fallback');
+  });
+
+  // The newer sites share the generic chain: sidebar → title → first message.
+  test('zai: reads the active sidebar conversation link', () => {
+    document.body.innerHTML = '<a aria-current="page"><span>Z Chat Title</span></a>';
+    expect(extractAITitleLogic('zai', 'fallback')).toBe('Z Chat Title');
+  });
+
+  test('mistral: uses the document <title>, stripping the suffix', () => {
+    document.title = 'My Mistral Chat - Le Chat';
+    expect(extractAITitleLogic('mistral', 'fallback')).toBe('My Mistral Chat');
+  });
+
+  test('duckai: ignores the generic site title and returns the fallback', () => {
+    document.title = 'DuckDuckGo AI Chat';
+    expect(extractAITitleLogic('duckai', 'New conversation')).toBe('New conversation');
+  });
+
+  test('characterai: ignores the generic site title and returns the fallback', () => {
+    document.title = 'Character.AI';
+    expect(extractAITitleLogic('characterai', 'New conversation')).toBe('New conversation');
   });
 });

@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Nov pogovor s Perplexity"
   },
+  "newConv_zai": {
+    "message": "Nov pogovor z Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Nov pogovor z Qwen"
+  },
+  "newConv_meta": {
+    "message": "Nov pogovor z Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Nov pogovor z Mistral"
+  },
+  "newConv_poe": {
+    "message": "Nov pogovor z Poe"
+  },
+  "newConv_duckai": {
+    "message": "Nov pogovor z Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Nov pogovor z You.com"
+  },
+  "newConv_pi": {
+    "message": "Nov pogovor z Pi"
+  },
+  "newConv_characterai": {
+    "message": "Nov pogovor z Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Nov pogovor z Ernie"
+  },
   "newConv_local": {
     "message": "Nov pogovor z lokalnim LLM (pridržite za nastavitev URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Nastavi URL lokalnega LLM:"
   },
   "alertNotSupported": {
-    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok ali Perplexity)."
+    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI ali Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."

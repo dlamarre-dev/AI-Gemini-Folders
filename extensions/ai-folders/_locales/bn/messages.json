@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "নতুন Perplexity কথোপকথন"
   },
+  "newConv_zai": {
+    "message": "নতুন Z.ai কথোপকথন"
+  },
+  "newConv_qwen": {
+    "message": "নতুন Qwen কথোপকথন"
+  },
+  "newConv_meta": {
+    "message": "নতুন Meta AI কথোপকথন"
+  },
+  "newConv_mistral": {
+    "message": "নতুন Mistral কথোপকথন"
+  },
+  "newConv_poe": {
+    "message": "নতুন Poe কথোপকথন"
+  },
+  "newConv_duckai": {
+    "message": "নতুন Duck.ai কথোপকথন"
+  },
+  "newConv_you": {
+    "message": "নতুন You.com কথোপকথন"
+  },
+  "newConv_pi": {
+    "message": "নতুন Pi কথোপকথন"
+  },
+  "newConv_characterai": {
+    "message": "নতুন Character.AI কথোপকথন"
+  },
+  "newConv_ernie": {
+    "message": "নতুন Ernie কথোপকথন"
+  },
   "newConv_local": {
     "message": "নতুন স্থানীয় LLM কথোপকথন (URL কনফিগার করতে ধরে রাখুন)"
   },
@@ -261,7 +291,7 @@
     "message": "স্থানীয় LLM URL সেট করুন:"
   },
   "alertNotSupported": {
-    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, বা Perplexity)।"
+    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI, বা Ernie)।"
   },
   "alertEditorNotFound": {
     "message": "এই পৃষ্ঠায় টেক্সট ইনপুট খুঁজে পাওয়া যায়নি। প্রথমে এডিটরে ক্লিক করুন, তারপর ইনসার্ট বাটন ব্যবহার করুন।"

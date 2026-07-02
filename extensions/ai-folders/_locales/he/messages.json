@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "שיחת Perplexity חדשה"
   },
+  "newConv_zai": {
+    "message": "שיחת Z.ai חדשה"
+  },
+  "newConv_qwen": {
+    "message": "שיחת Qwen חדשה"
+  },
+  "newConv_meta": {
+    "message": "שיחת Meta AI חדשה"
+  },
+  "newConv_mistral": {
+    "message": "שיחת Mistral חדשה"
+  },
+  "newConv_poe": {
+    "message": "שיחת Poe חדשה"
+  },
+  "newConv_duckai": {
+    "message": "שיחת Duck.ai חדשה"
+  },
+  "newConv_you": {
+    "message": "שיחת You.com חדשה"
+  },
+  "newConv_pi": {
+    "message": "שיחת Pi חדשה"
+  },
+  "newConv_characterai": {
+    "message": "שיחת Character.AI חדשה"
+  },
+  "newConv_ernie": {
+    "message": "שיחת Ernie חדשה"
+  },
   "newConv_local": {
     "message": "שיחת LLM מקומית חדשה (לחץ לחיצה ארוכה להגדרת URL)"
   },
@@ -261,7 +291,7 @@
     "message": "הגדר כתובת URL של LLM מקומי:"
   },
   "alertNotSupported": {
-    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok או Perplexity)."
+    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI או Ernie)."
   },
   "alertEditorNotFound": {
     "message": "לא נמצא שדה הטקסט בדף זה. נסה ללחוץ תחילה בעורך ולאחר מכן השתמש בלחצן ההוספה."

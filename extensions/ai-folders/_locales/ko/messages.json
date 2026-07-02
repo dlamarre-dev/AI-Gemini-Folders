@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "새 Perplexity 대화"
   },
+  "newConv_zai": {
+    "message": "새 Z.ai 대화"
+  },
+  "newConv_qwen": {
+    "message": "새 Qwen 대화"
+  },
+  "newConv_meta": {
+    "message": "새 Meta AI 대화"
+  },
+  "newConv_mistral": {
+    "message": "새 Mistral 대화"
+  },
+  "newConv_poe": {
+    "message": "새 Poe 대화"
+  },
+  "newConv_duckai": {
+    "message": "새 Duck.ai 대화"
+  },
+  "newConv_you": {
+    "message": "새 You.com 대화"
+  },
+  "newConv_pi": {
+    "message": "새 Pi 대화"
+  },
+  "newConv_characterai": {
+    "message": "새 Character.AI 대화"
+  },
+  "newConv_ernie": {
+    "message": "새 Ernie 대화"
+  },
   "newConv_local": {
     "message": "새 로컬 LLM 대화 (URL 설정하려면 길게 누르세요)"
   },
@@ -261,7 +291,7 @@
     "message": "로컬 LLM URL 설정:"
   },
   "alertNotSupported": {
-    "message": "지원되는 AI 사이트(Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok 또는 Perplexity)에서 이 확장 프로그램을 사용하세요."
+    "message": "지원되는 AI 사이트(Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI 또는 Ernie)에서 이 확장 프로그램을 사용하세요."
   },
   "alertEditorNotFound": {
     "message": "이 페이지에서 텍스트 입력란을 찾을 수 없습니다. 먼저 편집기를 클릭한 후 삽입 버튼을 사용하세요."

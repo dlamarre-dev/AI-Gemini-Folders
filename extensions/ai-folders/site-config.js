@@ -1,6 +1,6 @@
 // site-config.js — AI Folders site registry
 // Provides:
-//   SITES              — metadata for all 7 supported sites
+//   SITES              — metadata for all supported sites (17 web platforms + local)
 //   getSiteByUrl(url)  — returns site key or null
 //   getChatSiteInfo    — hook for folders.js (window global)
 //   extractAITitleLogic — injected into page via executeScript
@@ -77,6 +77,108 @@ const SITES = {
     editorSelectors: ['textarea.resize-none', 'textarea[rows]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
     // Official Perplexity SVG mark
     logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.785 0v7.272H22.5V17.62h-2.935V24l-7.037-6.194v6.145h-1.091v-6.152L4.392 24v-6.465H1.5V7.188h2.884V0l7.053 6.494V.19h1.09v6.49L19.786 0zm-7.257 9.044v7.319l5.946 5.234V14.44l-5.946-5.397zm-1.099-.08l-5.946 5.398v7.235l5.946-5.234V8.965zm8.136 7.58h1.844V8.349H13.46l6.105 5.54v2.655zm-8.982-8.28H2.59v8.195h1.8v-2.576l6.192-5.62zM5.475 2.476v4.71h5.115l-5.115-4.71zm13.219 0l-5.115 4.71h5.115v-4.71z" fill="#22B8CD"/></svg>`,
+  },
+  zai: {
+    key: 'zai',
+    domain: 'chat.z.ai',
+    color: '#ffffff',
+    newConvUrl: 'https://chat.z.ai/',
+    // chat.z.ai is built on Open WebUI (#chat-input); selectors need live validation
+    editorSelectors: ['#chat-input', 'textarea#chat-input', '#chat-textarea', 'textarea[placeholder]', '[contenteditable="true"]'],
+    // Simplified "Z" mark; white fill to match Z.ai branding
+    // (light-theme override lives in popup-extra.css, same as ChatGPT/Grok)
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 4h14v2.8L9.8 17.2H19V20H5v-2.8L14.2 6.8H5V4z" fill="#ffffff"/></svg>`,
+  },
+  qwen: {
+    key: 'qwen',
+    domain: 'chat.qwen.ai',
+    color: '#615CED',
+    newConvUrl: 'https://chat.qwen.ai/',
+    // Qwen Chat composer; selectors need live validation
+    editorSelectors: ['#chat-input', 'textarea#chat-input', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // Simplified six-spoke Qwen asterisk mark
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#615CED" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/></svg>`,
+  },
+  meta: {
+    key: 'meta',
+    domain: 'meta.ai',
+    color: '#0064E0',
+    newConvUrl: 'https://www.meta.ai/',
+    // Meta AI uses a Lexical contenteditable composer; selectors need live validation
+    editorSelectors: ['div[contenteditable="true"][role="textbox"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // Simplified Meta infinity mark
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0064E0" stroke-width="2.2" stroke-linecap="round"><path d="M7 7.5c-2.6 0-4.5 3.6-4.5 6.5 0 1.9 1 2.9 2.4 2.9 1.8 0 3-2 4.6-5 1.6-3 2.9-4.4 4.9-4.4 2.7 0 5.1 3.3 5.1 6.4 0 1.9-1 3-2.4 3-1.8 0-3.1-2-4.6-5"/></svg>`,
+  },
+  mistral: {
+    key: 'mistral',
+    domain: 'chat.mistral.ai',
+    color: '#FA500F',
+    newConvUrl: 'https://chat.mistral.ai/chat',
+    // Le Chat uses a ProseMirror composer; selectors need live validation
+    editorSelectors: ['div.ProseMirror[contenteditable="true"]', 'textarea[name="message.text"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // Simplified pixel-flag "M" (official palette, yellow → red rows)
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"><rect x="0" y="0" width="4" height="4" fill="#FFD800"/><rect x="20" y="0" width="4" height="4" fill="#FFD800"/><rect x="0" y="4" width="8" height="4" fill="#FFAF00"/><rect x="16" y="4" width="8" height="4" fill="#FFAF00"/><rect x="0" y="8" width="4" height="4" fill="#FF8205"/><rect x="8" y="8" width="8" height="4" fill="#FF8205"/><rect x="20" y="8" width="4" height="4" fill="#FF8205"/><rect x="0" y="12" width="4" height="4" fill="#FA500F"/><rect x="20" y="12" width="4" height="4" fill="#FA500F"/><rect x="0" y="16" width="4" height="4" fill="#E10500"/><rect x="20" y="16" width="4" height="4" fill="#E10500"/></svg>`,
+  },
+  poe: {
+    key: 'poe',
+    domain: 'poe.com',
+    color: '#5D5CDE',
+    newConvUrl: 'https://poe.com/',
+    // Poe uses hashed CSS-module classes — match by class prefix; selectors need live validation
+    editorSelectors: ['textarea[class*="GrowingTextArea_textArea"]', 'footer textarea', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // Simplified Poe speech-bubble mark
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6 2 11c0 2.9 1.5 5.5 3.9 7.2L5 22l4.4-2.1c.8.2 1.7.3 2.6.3 5.5 0 10-4 10-9.2S17.5 2 12 2z" fill="#5D5CDE"/></svg>`,
+  },
+  duckai: {
+    key: 'duckai',
+    domain: 'duckduckgo.com',
+    color: '#DE5833',
+    newConvUrl: 'https://duck.ai/',
+    // Duck.ai (duckduckgo.com AI chat); selectors need live validation.
+    // Note: chats are stateless (no per-conversation URL) — mainly useful in Prompt mode.
+    editorSelectors: ['textarea[name="user-prompt"]', 'form textarea', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // Simplified DuckDuckGo duck mark
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#DE5833"/><path d="M10.2 6.2a4.6 4.6 0 0 0-3 4.4c0 3.4 1.9 6.4 4.3 7.9l1.2-.4c-2.1-1.6-3.4-4-3.4-6.9 0-1.9.8-3.4 2.2-4.2l-1.3-.8z" fill="#ffffff"/><circle cx="12.6" cy="8.4" r="2.6" fill="#ffffff"/><circle cx="12" cy="7.8" r=".6" fill="#DE5833"/><path d="M14.8 8.6l3.4.5-3.2 1.1z" fill="#FFCC33"/></svg>`,
+  },
+  you: {
+    key: 'you',
+    domain: 'you.com',
+    color: '#3B5BFF',
+    newConvUrl: 'https://you.com/',
+    // You.com chat composer; selectors need live validation
+    editorSelectors: ['#search-input-textarea', 'textarea[data-testid="youchat-input"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // Simplified "Y" mark
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 3h4.2L12 9l3.8-6H20l-6.4 9.6V21h-3.2v-8.4L4 3z" fill="#3B5BFF"/></svg>`,
+  },
+  pi: {
+    key: 'pi',
+    domain: 'pi.ai',
+    color: '#0FA47F',
+    newConvUrl: 'https://pi.ai/talk',
+    // Pi is one continuous conversation at /talk (no per-thread URLs); selectors need live validation
+    editorSelectors: ['textarea[placeholder]', 'main textarea', 'textarea', '[contenteditable="true"]'],
+    // Simplified "π" mark
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0FA47F" stroke-width="2.6" stroke-linecap="round"><path d="M4.5 7h15M8.5 7v10.5M15.5 7v8.5c0 1.6 1 2.3 2.7 1.8"/></svg>`,
+  },
+  characterai: {
+    key: 'characterai',
+    domain: 'character.ai',
+    color: '#3E77FF',
+    newConvUrl: 'https://character.ai/',
+    // Character.AI chat composer; selectors need live validation
+    editorSelectors: ['div[contenteditable="true"][role="textbox"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // Simplified "c." mark (Character.AI wordmark initial)
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3E77FF" stroke-width="3" stroke-linecap="round"><path d="M15.5 8.5a5 5 0 1 0 0 7"/><circle cx="18.5" cy="17" r="1.4" fill="#3E77FF" stroke="none"/></svg>`,
+  },
+  ernie: {
+    key: 'ernie',
+    domain: 'ernie.baidu.com',
+    color: '#4E6EF2',
+    newConvUrl: 'https://ernie.baidu.com/',
+    // Ernie Bot uses a custom rich-text editor; selectors need live validation
+    editorSelectors: ['div[contenteditable="true"][role="textbox"]', 'div[contenteditable="true"]', 'textarea[placeholder]', 'textarea'],
+    // Simplified four-point spark mark
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c1 4 3 6 7 7-4 1-6 3-7 7-1-4-3-6-7-7 4-1 6-3 7-7z" fill="#4E6EF2"/><path d="M18.5 14.5c.5 2 1.5 3 3.5 3.5-2 .5-3 1.5-3.5 3.5-.5-2-1.5-3-3.5-3.5 2-.5 3-1.5 3.5-3.5z" fill="#4E6EF2"/></svg>`,
   },
   local: {
     key: 'local',
@@ -228,6 +330,30 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       () => docTitle(new Set(['perplexity', 'perplexity ai', 'perplexity.ai', ''])),
       () => firstMsg('[data-testid="query-text"], .query, .prose p:first-child'),
     ];
+  } else {
+    // Newer sites share the generic strategy chain (sidebar link → document
+    // title → first user message); only the per-site generic-title ignore
+    // list differs. Promote a site to its own branch above if it needs a
+    // dedicated DOM strategy.
+    const genericIgnores = {
+      zai: ['z.ai', 'chat.z.ai', 'new chat'],
+      qwen: ['qwen', 'qwen chat', 'new chat'],
+      meta: ['meta ai', 'meta.ai', 'new conversation'],
+      mistral: ['le chat', 'le chat - mistral ai', 'mistral ai', 'new chat'],
+      poe: ['poe', 'new chat'],
+      duckai: ['duckduckgo ai chat', 'duckduckgo', 'ai chat', 'duck.ai'],
+      you: ['you.com', 'you', 'new chat'],
+      pi: ['pi', 'pi.ai', 'talk with pi', 'pi, your personal ai'],
+      characterai: ['character.ai', 'characterai', 'c.ai', 'new chat'],
+      ernie: ['ernie', 'ernie bot', '文心一言', '文心'],
+    }[siteKey];
+    if (genericIgnores) {
+      strategies = [
+        activeSidebarLink,
+        () => docTitle(new Set([...genericIgnores, ''])),
+        () => firstMsg('[data-message-author-role="user"], [class*="user"] [class*="message"], [class*="human"] p'),
+      ];
+    }
   }
 
   if (strategies) {

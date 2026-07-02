@@ -88,10 +88,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateLocalBtn();
   }
 
-  document.querySelectorAll('.site-new-conv-btn').forEach(btn => {
-    const siteKey = btn.getAttribute('data-site');
-    const site = SITES[siteKey];
-    if (!site) return;
+  // One button per SITES entry, in registry order ('local' is defined last).
+  // Generated rather than hardcoded in popup.html so the registry stays the
+  // single source of truth; the row wraps when the sites outgrow one line.
+  const siteNewConvRow = document.getElementById('siteNewConvRow');
+  Object.values(SITES).forEach(site => {
+    const siteKey = site.key;
+    const btn = document.createElement('button');
+    btn.className = 'site-new-conv-btn' + (siteKey === 'local' ? ' site-new-conv-btn--local' : '');
+    btn.setAttribute('data-site', siteKey);
+    // Keep the historical id scheme (newConvLocal is looked up by updateLocalBtn)
+    btn.id = 'newConv' + siteKey.charAt(0).toUpperCase() + siteKey.slice(1);
+    siteNewConvRow.appendChild(btn);
 
     btn.appendChild(new DOMParser().parseFromString(site.logoSvg, 'image/svg+xml').documentElement);
     btn.title = chrome.i18n.getMessage(`newConv_${siteKey}`) || `New ${siteKey} conversation`;

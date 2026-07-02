@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Jauna Perplexity saruna"
   },
+  "newConv_zai": {
+    "message": "Jauna Z.ai saruna"
+  },
+  "newConv_qwen": {
+    "message": "Jauna Qwen saruna"
+  },
+  "newConv_meta": {
+    "message": "Jauna Meta AI saruna"
+  },
+  "newConv_mistral": {
+    "message": "Jauna Mistral saruna"
+  },
+  "newConv_poe": {
+    "message": "Jauna Poe saruna"
+  },
+  "newConv_duckai": {
+    "message": "Jauna Duck.ai saruna"
+  },
+  "newConv_you": {
+    "message": "Jauna You.com saruna"
+  },
+  "newConv_pi": {
+    "message": "Jauna Pi saruna"
+  },
+  "newConv_characterai": {
+    "message": "Jauna Character.AI saruna"
+  },
+  "newConv_ernie": {
+    "message": "Jauna Ernie saruna"
+  },
   "newConv_local": {
     "message": "Jauna lokālā LLM saruna (turiet nospiestu, lai konfigurētu URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Iestatīt lokālā LLM URL:"
   },
   "alertNotSupported": {
-    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok vai Perplexity)."
+    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI vai Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."

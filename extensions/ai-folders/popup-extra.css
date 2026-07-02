@@ -9,6 +9,15 @@
    removed in favor of inheriting src/popup.css plus this site-specific overlay. */
 
 /* ── Per-service "new conversation" buttons (prompt mode) ─────────────────── */
+/* Dedicated row between the search field and the full-width "add prompt"
+   button; wraps onto extra lines as the site roster grows. */
+.site-new-conv-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+  align-items: center;
+}
 .site-new-conv-btn {
   width: 30px;
   height: 32px;
@@ -61,13 +70,16 @@
   height: 12px;
 }
 
-/* ChatGPT's and Grok's brand color (#fff) is invisible on a light background.
-   Override link text and SVG fills to near-black in light mode. */
+/* ChatGPT's, Grok's and Z.ai's brand color (#fff) is invisible on a light
+   background. Override link text and SVG fills to near-black in light mode. */
 @media (prefers-color-scheme: light) {
   .chat-item.site-chatgpt .chat-link,
-  .chat-item.site-grok .chat-link { color: #212121; }
+  .chat-item.site-grok .chat-link,
+  .chat-item.site-zai .chat-link { color: #212121; }
   .chat-item.site-chatgpt .chat-site-logo svg path,
   .site-new-conv-btn[data-site="chatgpt"] svg path,
   .chat-item.site-grok .chat-site-logo svg path,
-  .site-new-conv-btn[data-site="grok"] svg path { fill: #212121; }
+  .site-new-conv-btn[data-site="grok"] svg path,
+  .chat-item.site-zai .chat-site-logo svg path,
+  .site-new-conv-btn[data-site="zai"] svg path { fill: #212121; }
 }

@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Нов разговор в Perplexity"
   },
+  "newConv_zai": {
+    "message": "Нов разговор в Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Нов разговор в Qwen"
+  },
+  "newConv_meta": {
+    "message": "Нов разговор в Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Нов разговор в Mistral"
+  },
+  "newConv_poe": {
+    "message": "Нов разговор в Poe"
+  },
+  "newConv_duckai": {
+    "message": "Нов разговор в Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Нов разговор в You.com"
+  },
+  "newConv_pi": {
+    "message": "Нов разговор в Pi"
+  },
+  "newConv_characterai": {
+    "message": "Нов разговор в Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Нов разговор в Ernie"
+  },
   "newConv_local": {
     "message": "Нов локален LLM разговор (задръжте за конфигуриране на URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Задайте URL на локален LLM:"
   },
   "alertNotSupported": {
-    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok или Perplexity)."
+    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI или Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Не може да се намери текстовото поле на тази страница. Опитайте да кликнете в редактора първо, след което използвайте бутона за вмъкване."

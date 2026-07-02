@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Naujas Perplexity pokalbis"
   },
+  "newConv_zai": {
+    "message": "Naujas Z.ai pokalbis"
+  },
+  "newConv_qwen": {
+    "message": "Naujas Qwen pokalbis"
+  },
+  "newConv_meta": {
+    "message": "Naujas Meta AI pokalbis"
+  },
+  "newConv_mistral": {
+    "message": "Naujas Mistral pokalbis"
+  },
+  "newConv_poe": {
+    "message": "Naujas Poe pokalbis"
+  },
+  "newConv_duckai": {
+    "message": "Naujas Duck.ai pokalbis"
+  },
+  "newConv_you": {
+    "message": "Naujas You.com pokalbis"
+  },
+  "newConv_pi": {
+    "message": "Naujas Pi pokalbis"
+  },
+  "newConv_characterai": {
+    "message": "Naujas Character.AI pokalbis"
+  },
+  "newConv_ernie": {
+    "message": "Naujas Ernie pokalbis"
+  },
   "newConv_local": {
     "message": "Naujas vietinio LLM pokalbis (laikykite nuspaudę, kad nustatytumėte URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Nustatyti vietinio LLM URL:"
   },
   "alertNotSupported": {
-    "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok arba Perplexity)."
+    "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI arba Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Nepavyko rasti teksto įvesties šiame puslapyje. Pirmiausia spustelėkite redaktorių, tada naudokite įterpimo mygtuką."

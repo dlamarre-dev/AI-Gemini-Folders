@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Nova conversa no Perplexity"
   },
+  "newConv_zai": {
+    "message": "Nova conversa no Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Nova conversa no Qwen"
+  },
+  "newConv_meta": {
+    "message": "Nova conversa no Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Nova conversa no Mistral"
+  },
+  "newConv_poe": {
+    "message": "Nova conversa no Poe"
+  },
+  "newConv_duckai": {
+    "message": "Nova conversa no Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Nova conversa no You.com"
+  },
+  "newConv_pi": {
+    "message": "Nova conversa no Pi"
+  },
+  "newConv_characterai": {
+    "message": "Nova conversa no Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Nova conversa no Ernie"
+  },
   "newConv_local": {
     "message": "Nova conversa com LLM local (mantenha premido para configurar URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Definir URL do LLM local:"
   },
   "alertNotSupported": {
-    "message": "Utilize esta extensão num site de IA suportado (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok ou Perplexity)."
+    "message": "Utilize esta extensão num site de IA suportado (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI ou Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Não foi possível encontrar o campo de texto nesta página. Tente clicar no editor primeiro e utilize o botão de inserção."

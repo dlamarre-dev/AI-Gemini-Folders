@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Perbualan Perplexity baharu"
   },
+  "newConv_zai": {
+    "message": "Perbualan Z.ai baharu"
+  },
+  "newConv_qwen": {
+    "message": "Perbualan Qwen baharu"
+  },
+  "newConv_meta": {
+    "message": "Perbualan Meta AI baharu"
+  },
+  "newConv_mistral": {
+    "message": "Perbualan Mistral baharu"
+  },
+  "newConv_poe": {
+    "message": "Perbualan Poe baharu"
+  },
+  "newConv_duckai": {
+    "message": "Perbualan Duck.ai baharu"
+  },
+  "newConv_you": {
+    "message": "Perbualan You.com baharu"
+  },
+  "newConv_pi": {
+    "message": "Perbualan Pi baharu"
+  },
+  "newConv_characterai": {
+    "message": "Perbualan Character.AI baharu"
+  },
+  "newConv_ernie": {
+    "message": "Perbualan Ernie baharu"
+  },
   "newConv_local": {
     "message": "Perbualan LLM tempatan baharu (tahan untuk konfigurasi URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Tetapkan URL LLM tempatan:"
   },
   "alertNotSupported": {
-    "message": "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok atau Perplexity)."
+    "message": "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI atau Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemui medan teks pada halaman ini. Cuba klik pada editor terlebih dahulu, kemudian gunakan butang sisip."

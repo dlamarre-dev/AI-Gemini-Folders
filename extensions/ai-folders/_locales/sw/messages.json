@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Mazungumzo mapya ya Perplexity"
   },
+  "newConv_zai": {
+    "message": "Mazungumzo mapya ya Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Mazungumzo mapya ya Qwen"
+  },
+  "newConv_meta": {
+    "message": "Mazungumzo mapya ya Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Mazungumzo mapya ya Mistral"
+  },
+  "newConv_poe": {
+    "message": "Mazungumzo mapya ya Poe"
+  },
+  "newConv_duckai": {
+    "message": "Mazungumzo mapya ya Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Mazungumzo mapya ya You.com"
+  },
+  "newConv_pi": {
+    "message": "Mazungumzo mapya ya Pi"
+  },
+  "newConv_characterai": {
+    "message": "Mazungumzo mapya ya Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Mazungumzo mapya ya Ernie"
+  },
   "newConv_local": {
     "message": "Mazungumzo mapya ya LLM ya ndani (shikilia kubadilisha URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Weka URL ya LLM ya ndani:"
   },
   "alertNotSupported": {
-    "message": "Tafadhali tumia kiendelezi hiki kwenye tovuti ya AI inayotumika (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, au Perplexity)."
+    "message": "Tafadhali tumia kiendelezi hiki kwenye tovuti ya AI inayotumika (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI, au Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Haiwezekani kupata sehemu ya kuandika katika ukurasa huu. Jaribu kubonyeza kwenye kihariri kwanza, kisha utumie kitufe cha ingiza."

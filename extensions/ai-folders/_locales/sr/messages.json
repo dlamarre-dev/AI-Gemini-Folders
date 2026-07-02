@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Novi razgovor na Perplexity"
   },
+  "newConv_zai": {
+    "message": "Novi razgovor na Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Novi razgovor na Qwen"
+  },
+  "newConv_meta": {
+    "message": "Novi razgovor na Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Novi razgovor na Mistral"
+  },
+  "newConv_poe": {
+    "message": "Novi razgovor na Poe"
+  },
+  "newConv_duckai": {
+    "message": "Novi razgovor na Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Novi razgovor na You.com"
+  },
+  "newConv_pi": {
+    "message": "Novi razgovor na Pi"
+  },
+  "newConv_characterai": {
+    "message": "Novi razgovor na Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Novi razgovor na Ernie"
+  },
   "newConv_local": {
     "message": "Novi lokalni LLM razgovor (zadržite za konfiguraciju URL-a)"
   },
@@ -261,7 +291,7 @@
     "message": "Podesite URL lokalnog LLM-a:"
   },
   "alertNotSupported": {
-    "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok ili Perplexity)."
+    "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI ili Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Prvo kliknite u uređivač, a zatim koristite dugme za ubacivanje."

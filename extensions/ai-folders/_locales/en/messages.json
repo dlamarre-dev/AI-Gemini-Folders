@@ -42,7 +42,7 @@
     "message": "📂 Import"
   },
   "alertNotSupported": {
-    "message": "Please use this extension on a supported AI site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, or Perplexity)."
+    "message": "Please use this extension on a supported AI site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI, or Ernie)."
   },
   "defaultFolder": {
     "message": "General"
@@ -238,6 +238,36 @@
   },
   "newConv_perplexity": {
     "message": "New Perplexity conversation"
+  },
+  "newConv_zai": {
+    "message": "New Z.ai conversation"
+  },
+  "newConv_qwen": {
+    "message": "New Qwen conversation"
+  },
+  "newConv_meta": {
+    "message": "New Meta AI conversation"
+  },
+  "newConv_mistral": {
+    "message": "New Mistral conversation"
+  },
+  "newConv_poe": {
+    "message": "New Poe conversation"
+  },
+  "newConv_duckai": {
+    "message": "New Duck.ai conversation"
+  },
+  "newConv_you": {
+    "message": "New You.com conversation"
+  },
+  "newConv_pi": {
+    "message": "New Pi conversation"
+  },
+  "newConv_characterai": {
+    "message": "New Character.AI conversation"
+  },
+  "newConv_ernie": {
+    "message": "New Ernie conversation"
   },
   "newConv_local": {
     "message": "New Local LLM conversation (hold to configure URL)"

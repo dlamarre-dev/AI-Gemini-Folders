@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "新しい Perplexity の会話"
   },
+  "newConv_zai": {
+    "message": "新しい Z.ai の会話"
+  },
+  "newConv_qwen": {
+    "message": "新しい Qwen の会話"
+  },
+  "newConv_meta": {
+    "message": "新しい Meta AI の会話"
+  },
+  "newConv_mistral": {
+    "message": "新しい Mistral の会話"
+  },
+  "newConv_poe": {
+    "message": "新しい Poe の会話"
+  },
+  "newConv_duckai": {
+    "message": "新しい Duck.ai の会話"
+  },
+  "newConv_you": {
+    "message": "新しい You.com の会話"
+  },
+  "newConv_pi": {
+    "message": "新しい Pi の会話"
+  },
+  "newConv_characterai": {
+    "message": "新しい Character.AI の会話"
+  },
+  "newConv_ernie": {
+    "message": "新しい Ernie の会話"
+  },
   "newConv_local": {
     "message": "新しいローカル LLM の会話（長押しで URL を設定）"
   },
@@ -261,7 +291,7 @@
     "message": "ローカル LLM の URL を設定:"
   },
   "alertNotSupported": {
-    "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、または Perplexity）でご使用ください。"
+    "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Z.ai、Qwen、Meta AI、Mistral、Poe、Duck.ai、You.com、Pi、Character.AI、または Ernie）でご使用ください。"
   },
   "alertEditorNotFound": {
     "message": "このページでテキスト入力欄が見つかりませんでした。先にエディタをクリックしてから、挿入ボタンをご使用ください。"

@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "新增 Perplexity 對話"
   },
+  "newConv_zai": {
+    "message": "新增 Z.ai 對話"
+  },
+  "newConv_qwen": {
+    "message": "新增 Qwen 對話"
+  },
+  "newConv_meta": {
+    "message": "新增 Meta AI 對話"
+  },
+  "newConv_mistral": {
+    "message": "新增 Mistral 對話"
+  },
+  "newConv_poe": {
+    "message": "新增 Poe 對話"
+  },
+  "newConv_duckai": {
+    "message": "新增 Duck.ai 對話"
+  },
+  "newConv_you": {
+    "message": "新增 You.com 對話"
+  },
+  "newConv_pi": {
+    "message": "新增 Pi 對話"
+  },
+  "newConv_characterai": {
+    "message": "新增 Character.AI 對話"
+  },
+  "newConv_ernie": {
+    "message": "新增 Ernie 對話"
+  },
   "newConv_local": {
     "message": "新增本地 LLM 對話（長按以設定 URL）"
   },
@@ -261,7 +291,7 @@
     "message": "設定本地 LLM URL："
   },
   "alertNotSupported": {
-    "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok 或 Perplexity）。"
+    "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Z.ai、Qwen、Meta AI、Mistral、Poe、Duck.ai、You.com、Pi、Character.AI 或 Ernie）。"
   },
   "alertEditorNotFound": {
     "message": "無法在此頁面找到文字輸入框。請先點擊編輯器，再使用插入按鈕。"

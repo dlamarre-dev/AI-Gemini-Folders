@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Nový rozhovor v Perplexity"
   },
+  "newConv_zai": {
+    "message": "Nový rozhovor v Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Nový rozhovor v Qwen"
+  },
+  "newConv_meta": {
+    "message": "Nový rozhovor v Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Nový rozhovor v Mistral"
+  },
+  "newConv_poe": {
+    "message": "Nový rozhovor v Poe"
+  },
+  "newConv_duckai": {
+    "message": "Nový rozhovor v Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Nový rozhovor v You.com"
+  },
+  "newConv_pi": {
+    "message": "Nový rozhovor v Pi"
+  },
+  "newConv_characterai": {
+    "message": "Nový rozhovor v Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Nový rozhovor v Ernie"
+  },
   "newConv_local": {
     "message": "Nový rozhovor s lokálnym LLM (podržte pre konfiguráciu URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Nastaviť URL lokálneho LLM:"
   },
   "alertNotSupported": {
-    "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok alebo Perplexity)."
+    "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI alebo Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Na tejto stránke sa nepodarilo nájsť textové pole. Najprv kliknite do editora a potom použite tlačidlo vložiť."

@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Nowa rozmowa w Perplexity"
   },
+  "newConv_zai": {
+    "message": "Nowa rozmowa w Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Nowa rozmowa w Qwen"
+  },
+  "newConv_meta": {
+    "message": "Nowa rozmowa w Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Nowa rozmowa w Mistral"
+  },
+  "newConv_poe": {
+    "message": "Nowa rozmowa w Poe"
+  },
+  "newConv_duckai": {
+    "message": "Nowa rozmowa w Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Nowa rozmowa w You.com"
+  },
+  "newConv_pi": {
+    "message": "Nowa rozmowa w Pi"
+  },
+  "newConv_characterai": {
+    "message": "Nowa rozmowa w Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Nowa rozmowa w Ernie"
+  },
   "newConv_local": {
     "message": "Nowa rozmowa z lokalnym LLM (przytrzymaj, aby skonfigurować URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Ustaw URL lokalnego LLM:"
   },
   "alertNotSupported": {
-    "message": "Używaj tego rozszerzenia na obsługiwanej stronie AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok lub Perplexity)."
+    "message": "Używaj tego rozszerzenia na obsługiwanej stronie AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI lub Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Nie można znaleźć pola tekstowego na tej stronie. Spróbuj najpierw kliknąć w edytor, a następnie użyj przycisku wstawiania."
