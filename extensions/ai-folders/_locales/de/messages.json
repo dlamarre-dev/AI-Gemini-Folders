@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Neues Perplexity-Gespräch"
   },
+  "newConv_zai": {
+    "message": "Neues Z.ai-Gespräch"
+  },
+  "newConv_qwen": {
+    "message": "Neues Qwen-Gespräch"
+  },
+  "newConv_meta": {
+    "message": "Neues Meta AI-Gespräch"
+  },
+  "newConv_mistral": {
+    "message": "Neues Mistral-Gespräch"
+  },
+  "newConv_poe": {
+    "message": "Neues Poe-Gespräch"
+  },
+  "newConv_duckai": {
+    "message": "Neues Duck.ai-Gespräch"
+  },
+  "newConv_you": {
+    "message": "Neues You.com-Gespräch"
+  },
+  "newConv_pi": {
+    "message": "Neues Pi-Gespräch"
+  },
+  "newConv_characterai": {
+    "message": "Neues Character.AI-Gespräch"
+  },
+  "newConv_ernie": {
+    "message": "Neues Ernie-Gespräch"
+  },
   "newConv_local": {
     "message": "Neues lokales LLM-Gespräch (gedrückt halten zum Konfigurieren)"
   },
@@ -261,7 +291,7 @@
     "message": "Lokale LLM-URL festlegen:"
   },
   "alertNotSupported": {
-    "message": "Bitte verwenden Sie diese Erweiterung auf einer unterstützten KI-Website (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok oder Perplexity)."
+    "message": "Bitte verwenden Sie diese Erweiterung auf einer unterstützten KI-Website (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI oder Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Das Texteingabefeld auf dieser Seite konnte nicht gefunden werden. Klicken Sie zuerst in den Editor und verwenden Sie dann die Einfügen-Schaltfläche."

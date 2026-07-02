@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "محادثة Perplexity جديدة"
   },
+  "newConv_zai": {
+    "message": "محادثة Z.ai جديدة"
+  },
+  "newConv_qwen": {
+    "message": "محادثة Qwen جديدة"
+  },
+  "newConv_meta": {
+    "message": "محادثة Meta AI جديدة"
+  },
+  "newConv_mistral": {
+    "message": "محادثة Mistral جديدة"
+  },
+  "newConv_poe": {
+    "message": "محادثة Poe جديدة"
+  },
+  "newConv_duckai": {
+    "message": "محادثة Duck.ai جديدة"
+  },
+  "newConv_you": {
+    "message": "محادثة You.com جديدة"
+  },
+  "newConv_pi": {
+    "message": "محادثة Pi جديدة"
+  },
+  "newConv_characterai": {
+    "message": "محادثة Character.AI جديدة"
+  },
+  "newConv_ernie": {
+    "message": "محادثة Ernie جديدة"
+  },
   "newConv_local": {
     "message": "محادثة LLM محلية جديدة (اضغط مطوّلاً لتعيين الرابط)"
   },
@@ -261,7 +291,7 @@
     "message": "تعيين عنوان URL للنموذج المحلي:"
   },
   "alertNotSupported": {
-    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Grok أو Perplexity)."
+    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Grok أو Perplexity أو Z.ai أو Qwen أو Meta AI أو Mistral أو Poe أو Duck.ai أو You.com أو Pi أو Character.AI أو Ernie)."
   },
   "alertEditorNotFound": {
     "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."

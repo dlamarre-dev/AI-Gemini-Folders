@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "नई Perplexity बातचीत"
   },
+  "newConv_zai": {
+    "message": "नई Z.ai बातचीत"
+  },
+  "newConv_qwen": {
+    "message": "नई Qwen बातचीत"
+  },
+  "newConv_meta": {
+    "message": "नई Meta AI बातचीत"
+  },
+  "newConv_mistral": {
+    "message": "नई Mistral बातचीत"
+  },
+  "newConv_poe": {
+    "message": "नई Poe बातचीत"
+  },
+  "newConv_duckai": {
+    "message": "नई Duck.ai बातचीत"
+  },
+  "newConv_you": {
+    "message": "नई You.com बातचीत"
+  },
+  "newConv_pi": {
+    "message": "नई Pi बातचीत"
+  },
+  "newConv_characterai": {
+    "message": "नई Character.AI बातचीत"
+  },
+  "newConv_ernie": {
+    "message": "नई Ernie बातचीत"
+  },
   "newConv_local": {
     "message": "नई स्थानीय LLM बातचीत (URL कॉन्फ़िगर करने के लिए दबाए रखें)"
   },
@@ -261,7 +291,7 @@
     "message": "स्थानीय LLM URL सेट करें:"
   },
   "alertNotSupported": {
-    "message": "कृपया इस एक्सटेंशन को किसी समर्थित AI साइट पर उपयोग करें (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok या Perplexity)।"
+    "message": "कृपया इस एक्सटेंशन को किसी समर्थित AI साइट पर उपयोग करें (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI या Ernie)।"
   },
   "alertEditorNotFound": {
     "message": "इस पृष्ठ पर टेक्स्ट इनपुट नहीं मिला। पहले एडिटर में क्लिक करें, फिर इन्सर्ट बटन का उपयोग करें।"

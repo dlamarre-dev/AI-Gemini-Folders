@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Новый разговор в Perplexity"
   },
+  "newConv_zai": {
+    "message": "Новый разговор в Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Новый разговор в Qwen"
+  },
+  "newConv_meta": {
+    "message": "Новый разговор в Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Новый разговор в Mistral"
+  },
+  "newConv_poe": {
+    "message": "Новый разговор в Poe"
+  },
+  "newConv_duckai": {
+    "message": "Новый разговор в Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Новый разговор в You.com"
+  },
+  "newConv_pi": {
+    "message": "Новый разговор в Pi"
+  },
+  "newConv_characterai": {
+    "message": "Новый разговор в Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Новый разговор в Ernie"
+  },
   "newConv_local": {
     "message": "Новый разговор с локальной LLM (удерживайте для настройки URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Задать URL локальной LLM:"
   },
   "alertNotSupported": {
-    "message": "Пожалуйста, используйте это расширение на поддерживаемом AI-сайте (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok или Perplexity)."
+    "message": "Пожалуйста, используйте это расширение на поддерживаемом AI-сайте (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI или Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Не удалось найти поле ввода на этой странице. Сначала нажмите в редактор, затем используйте кнопку вставки."

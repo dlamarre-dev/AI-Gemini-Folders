@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Conversație nouă în Perplexity"
   },
+  "newConv_zai": {
+    "message": "Conversație nouă în Z.ai"
+  },
+  "newConv_qwen": {
+    "message": "Conversație nouă în Qwen"
+  },
+  "newConv_meta": {
+    "message": "Conversație nouă în Meta AI"
+  },
+  "newConv_mistral": {
+    "message": "Conversație nouă în Mistral"
+  },
+  "newConv_poe": {
+    "message": "Conversație nouă în Poe"
+  },
+  "newConv_duckai": {
+    "message": "Conversație nouă în Duck.ai"
+  },
+  "newConv_you": {
+    "message": "Conversație nouă în You.com"
+  },
+  "newConv_pi": {
+    "message": "Conversație nouă în Pi"
+  },
+  "newConv_characterai": {
+    "message": "Conversație nouă în Character.AI"
+  },
+  "newConv_ernie": {
+    "message": "Conversație nouă în Ernie"
+  },
   "newConv_local": {
     "message": "Conversație nouă cu LLM local (țineți apăsat pentru a configura URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Setați URL-ul LLM local:"
   },
   "alertNotSupported": {
-    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok sau Perplexity)."
+    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI sau Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Nu s-a găsit câmpul de text pe această pagină. Încercați să faceți clic mai întâi în editor, apoi folosiți butonul de inserare."

@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Uus Perplexity vestlus"
   },
+  "newConv_zai": {
+    "message": "Uus Z.ai vestlus"
+  },
+  "newConv_qwen": {
+    "message": "Uus Qwen vestlus"
+  },
+  "newConv_meta": {
+    "message": "Uus Meta AI vestlus"
+  },
+  "newConv_mistral": {
+    "message": "Uus Mistral vestlus"
+  },
+  "newConv_poe": {
+    "message": "Uus Poe vestlus"
+  },
+  "newConv_duckai": {
+    "message": "Uus Duck.ai vestlus"
+  },
+  "newConv_you": {
+    "message": "Uus You.com vestlus"
+  },
+  "newConv_pi": {
+    "message": "Uus Pi vestlus"
+  },
+  "newConv_characterai": {
+    "message": "Uus Character.AI vestlus"
+  },
+  "newConv_ernie": {
+    "message": "Uus Ernie vestlus"
+  },
   "newConv_local": {
     "message": "Uus kohaliku LLM-i vestlus (hoidke URL-i konfigureerimiseks)"
   },
@@ -261,7 +291,7 @@
     "message": "Seadista kohaliku LLM-i URL:"
   },
   "alertNotSupported": {
-    "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok või Perplexity)."
+    "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI või Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Selle lehe tekstivälja ei leitud. Proovige esmalt redaktorisse klõpsata ja seejärel kasutage lisamisnuppu."

@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Ny Perplexity-samtale"
   },
+  "newConv_zai": {
+    "message": "Ny Z.ai-samtale"
+  },
+  "newConv_qwen": {
+    "message": "Ny Qwen-samtale"
+  },
+  "newConv_meta": {
+    "message": "Ny Meta AI-samtale"
+  },
+  "newConv_mistral": {
+    "message": "Ny Mistral-samtale"
+  },
+  "newConv_poe": {
+    "message": "Ny Poe-samtale"
+  },
+  "newConv_duckai": {
+    "message": "Ny Duck.ai-samtale"
+  },
+  "newConv_you": {
+    "message": "Ny You.com-samtale"
+  },
+  "newConv_pi": {
+    "message": "Ny Pi-samtale"
+  },
+  "newConv_characterai": {
+    "message": "Ny Character.AI-samtale"
+  },
+  "newConv_ernie": {
+    "message": "Ny Ernie-samtale"
+  },
   "newConv_local": {
     "message": "Ny lokal LLM-samtale (hold nede for at konfigurere URL)"
   },
@@ -261,7 +291,7 @@
     "message": "Indstil lokal LLM-URL:"
   },
   "alertNotSupported": {
-    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok eller Perplexity)."
+    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI eller Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Kunne ikke finde tekstfeltet på denne side. Prøv at klikke i editoren først, og brug derefter indsætknappen."

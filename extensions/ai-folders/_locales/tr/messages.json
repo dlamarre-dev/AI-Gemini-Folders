@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "Yeni Perplexity sohbeti"
   },
+  "newConv_zai": {
+    "message": "Yeni Z.ai sohbeti"
+  },
+  "newConv_qwen": {
+    "message": "Yeni Qwen sohbeti"
+  },
+  "newConv_meta": {
+    "message": "Yeni Meta AI sohbeti"
+  },
+  "newConv_mistral": {
+    "message": "Yeni Mistral sohbeti"
+  },
+  "newConv_poe": {
+    "message": "Yeni Poe sohbeti"
+  },
+  "newConv_duckai": {
+    "message": "Yeni Duck.ai sohbeti"
+  },
+  "newConv_you": {
+    "message": "Yeni You.com sohbeti"
+  },
+  "newConv_pi": {
+    "message": "Yeni Pi sohbeti"
+  },
+  "newConv_characterai": {
+    "message": "Yeni Character.AI sohbeti"
+  },
+  "newConv_ernie": {
+    "message": "Yeni Ernie sohbeti"
+  },
   "newConv_local": {
     "message": "Yeni yerel LLM sohbeti (URL yapılandırmak için basılı tutun)"
   },
@@ -261,7 +291,7 @@
     "message": "Yerel LLM URL'sini ayarla:"
   },
   "alertNotSupported": {
-    "message": "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok veya Perplexity)."
+    "message": "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI veya Ernie)."
   },
   "alertEditorNotFound": {
     "message": "Bu sayfada metin giriş alanı bulunamadı. Önce düzenleyiciye tıklamayı deneyin, ardından ekle düğmesini kullanın."

@@ -254,8 +254,13 @@ def build_firefox(ext_name, version):
     }
     if "background" in manifest and "service_worker" in manifest["background"]:
         sw = manifest["background"].pop("service_worker")
-        extra = ["site-config.js"] if os.path.exists(os.path.join(dest, "site-config.js")) else []
-        manifest["background"]["scripts"] = ["lz-string.min.js", "utils.js"] + extra + [sw]
+        # Firefox has no importScripts-style service worker: list the worker's
+        # imports as background scripts. Parse them from the worker source so
+        # the list can't silently drift from the importScripts(...) call.
+        with open(os.path.join(dest, sw), "r", encoding="utf-8") as f:
+            m = re.search(r"importScripts\(([^)]*)\)", f.read())
+        imports = [s.strip().strip("'\"") for s in m.group(1).split(",") if s.strip()] if m else []
+        manifest["background"]["scripts"] = imports + [sw]
 
     # Only patch the quick-save shortcut (Ctrl+Shift+S → Alt+Shift+S).
     # Other commands (e.g. _execute_action) keep their original keys.
@@ -414,7 +419,10 @@ def build_firefox_extension():
         shutil.move(manifest_ff_path, manifest_default_path)
         print("✅ manifest.json replaced for Firefox site-diagnostics.")
     else:
-        print("⚠️ Warning : 'manifestFF.json' cannot be found in source folder.")
+        # Fail loudly: shipping a Chrome manifest in the Firefox diagnostics
+        # build would be a silently broken artifact.
+        print("❌ 'manifestFF.json' not found in tools/site-diagnostics — Firefox diagnostics build aborted.")
+        sys.exit(1)
 
 
 def main():
@@ -454,8 +462,11 @@ def main():
     if not targets:
         sys.exit(1)
 
-    # Version sync uses the first target's manifest
-    with open(manifest_path(targets[0]), "r", encoding="utf-8") as f:
+    # package.json tracks the Gemini Folders version. Always sync from GF's
+    # manifest (not targets[0]) so an AF-only build (-e ai-folders) doesn't
+    # re-stamp package.json with the AF version.
+    version_source = "gemini-folders" if os.path.exists(manifest_path("gemini-folders")) else targets[0]
+    with open(manifest_path(version_source), "r", encoding="utf-8") as f:
         primary_version = json.load(f).get("version", "unknown")
     sync_package_version(primary_version)
 

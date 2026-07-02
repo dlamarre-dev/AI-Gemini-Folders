@@ -254,6 +254,36 @@
   "newConv_perplexity": {
     "message": "บทสนทนา Perplexity ใหม่"
   },
+  "newConv_zai": {
+    "message": "บทสนทนา Z.ai ใหม่"
+  },
+  "newConv_qwen": {
+    "message": "บทสนทนา Qwen ใหม่"
+  },
+  "newConv_meta": {
+    "message": "บทสนทนา Meta AI ใหม่"
+  },
+  "newConv_mistral": {
+    "message": "บทสนทนา Mistral ใหม่"
+  },
+  "newConv_poe": {
+    "message": "บทสนทนา Poe ใหม่"
+  },
+  "newConv_duckai": {
+    "message": "บทสนทนา Duck.ai ใหม่"
+  },
+  "newConv_you": {
+    "message": "บทสนทนา You.com ใหม่"
+  },
+  "newConv_pi": {
+    "message": "บทสนทนา Pi ใหม่"
+  },
+  "newConv_characterai": {
+    "message": "บทสนทนา Character.AI ใหม่"
+  },
+  "newConv_ernie": {
+    "message": "บทสนทนา Ernie ใหม่"
+  },
   "newConv_local": {
     "message": "บทสนทนา LLM ในเครื่องใหม่ (กดค้างเพื่อตั้งค่า URL)"
   },
@@ -261,7 +291,7 @@
     "message": "ตั้งค่า URL ของ LLM ในเครื่อง:"
   },
   "alertNotSupported": {
-    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok หรือ Perplexity)"
+    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI หรือ Ernie)"
   },
   "alertEditorNotFound": {
     "message": "ไม่พบช่องป้อนข้อความในหน้านี้ ลองคลิกที่ตัวแก้ไขก่อน แล้วจึงใช้ปุ่มแทรก"
