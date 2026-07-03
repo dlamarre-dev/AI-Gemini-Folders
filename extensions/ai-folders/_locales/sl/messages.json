@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Nov pogovor z Character.AI"
   },
-  "newConv_ernie": {
-    "message": "Nov pogovor z Ernie"
-  },
   "newConv_local": {
     "message": "Nov pogovor z lokalnim LLM (pridržite za nastavitev URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Nastavi URL lokalnega LLM:"
   },
   "alertNotSupported": {
-    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI ali Ernie)."
+    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi ali Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."

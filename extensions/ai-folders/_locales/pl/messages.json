@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Nowa rozmowa w Character.AI"
   },
-  "newConv_ernie": {
-    "message": "Nowa rozmowa w Ernie"
-  },
   "newConv_local": {
     "message": "Nowa rozmowa z lokalnym LLM (przytrzymaj, aby skonfigurować URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Ustaw URL lokalnego LLM:"
   },
   "alertNotSupported": {
-    "message": "Używaj tego rozszerzenia na obsługiwanej stronie AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI lub Ernie)."
+    "message": "Używaj tego rozszerzenia na obsługiwanej stronie AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi lub Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Nie można znaleźć pola tekstowego na tej stronie. Spróbuj najpierw kliknąć w edytor, a następnie użyj przycisku wstawiania."

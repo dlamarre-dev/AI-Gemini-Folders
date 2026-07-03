@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Perbualan Character.AI baharu"
   },
-  "newConv_ernie": {
-    "message": "Perbualan Ernie baharu"
-  },
   "newConv_local": {
     "message": "Perbualan LLM tempatan baharu (tahan untuk konfigurasi URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Tetapkan URL LLM tempatan:"
   },
   "alertNotSupported": {
-    "message": "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI atau Ernie)."
+    "message": "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi atau Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemui medan teks pada halaman ini. Cuba klik pada editor terlebih dahulu, kemudian gunakan butang sisip."

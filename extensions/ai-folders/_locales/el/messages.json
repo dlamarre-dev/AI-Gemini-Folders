@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Νέα συνομιλία Character.AI"
   },
-  "newConv_ernie": {
-    "message": "Νέα συνομιλία Ernie"
-  },
   "newConv_local": {
     "message": "Νέα τοπική LLM συνομιλία (κρατήστε πατημένο για ρύθμιση URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Ορισμός URL τοπικού LLM:"
   },
   "alertNotSupported": {
-    "message": "Χρησιμοποιήστε αυτήν την επέκταση σε υποστηριζόμενο AI ιστότοπο (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI ή Ernie)."
+    "message": "Χρησιμοποιήστε αυτήν την επέκταση σε υποστηριζόμενο AI ιστότοπο (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi ή Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Δεν ήταν δυνατή η εύρεση του πεδίου κειμένου σε αυτή τη σελίδα. Κάντε κλικ στον επεξεργαστή πρώτα και μετά χρησιμοποιήστε το κουμπί εισαγωγής."

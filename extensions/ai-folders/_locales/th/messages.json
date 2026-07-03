@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "บทสนทนา Character.AI ใหม่"
   },
-  "newConv_ernie": {
-    "message": "บทสนทนา Ernie ใหม่"
-  },
   "newConv_local": {
     "message": "บทสนทนา LLM ในเครื่องใหม่ (กดค้างเพื่อตั้งค่า URL)"
   },
@@ -291,7 +288,7 @@
     "message": "ตั้งค่า URL ของ LLM ในเครื่อง:"
   },
   "alertNotSupported": {
-    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI หรือ Ernie)"
+    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi หรือ Character.AI)"
   },
   "alertEditorNotFound": {
     "message": "ไม่พบช่องป้อนข้อความในหน้านี้ ลองคลิกที่ตัวแก้ไขก่อน แล้วจึงใช้ปุ่มแทรก"

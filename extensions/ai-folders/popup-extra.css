@@ -43,6 +43,13 @@
   width: 16px;
   height: 16px;
 }
+/* The "c.ai" text logo is wide and flat — give it the full button width
+   so it renders as large as the square logos. */
+.site-new-conv-btn[data-site="characterai"] { padding: 5px 2px; }
+.site-new-conv-btn[data-site="characterai"] svg {
+  width: 24px;
+  height: 14px;
+}
 
 /* Local LLM button — shows a configured state */
 .site-new-conv-btn--local.local-configured {
@@ -71,7 +78,9 @@
 }
 
 /* ChatGPT's, Grok's and Z.ai's brand color (#fff) is invisible on a light
-   background. Override link text and SVG fills to near-black in light mode. */
+   background. Override link text — and the two all-white logos' SVG fills —
+   to near-black in light mode. (Z.ai's logo is self-contained dark-tile +
+   white Z, so only its link color needs the override.) */
 @media (prefers-color-scheme: light) {
   .chat-item.site-chatgpt .chat-link,
   .chat-item.site-grok .chat-link,
@@ -79,7 +88,5 @@
   .chat-item.site-chatgpt .chat-site-logo svg path,
   .site-new-conv-btn[data-site="chatgpt"] svg path,
   .chat-item.site-grok .chat-site-logo svg path,
-  .site-new-conv-btn[data-site="grok"] svg path,
-  .chat-item.site-zai .chat-site-logo svg path,
-  .site-new-conv-btn[data-site="zai"] svg path { fill: #212121; }
+  .site-new-conv-btn[data-site="grok"] svg path { fill: #212121; }
 }

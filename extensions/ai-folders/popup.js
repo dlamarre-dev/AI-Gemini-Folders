@@ -88,11 +88,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateLocalBtn();
   }
 
-  // One button per SITES entry, in registry order ('local' is defined last).
+  // One button per SITES entry, alphabetical by key with 'local' pinned last.
   // Generated rather than hardcoded in popup.html so the registry stays the
   // single source of truth; the row wraps when the sites outgrow one line.
   const siteNewConvRow = document.getElementById('siteNewConvRow');
-  Object.values(SITES).forEach(site => {
+  Object.values(SITES)
+    .sort((a, b) => (a.key === 'local') - (b.key === 'local') || a.key.localeCompare(b.key))
+    .forEach(site => {
     const siteKey = site.key;
     const btn = document.createElement('button');
     btn.className = 'site-new-conv-btn' + (siteKey === 'local' ? ' site-new-conv-btn--local' : '');
@@ -101,7 +103,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     btn.id = 'newConv' + siteKey.charAt(0).toUpperCase() + siteKey.slice(1);
     siteNewConvRow.appendChild(btn);
 
-    btn.appendChild(new DOMParser().parseFromString(site.logoSvg, 'image/svg+xml').documentElement);
+    // importNode instead of appending the foreign XML node directly: Chrome
+    // doesn't register <defs> paint servers (gradients) on adopted
+    // cross-document SVG nodes, which leaves gradient-only logos invisible.
+    btn.appendChild(document.importNode(
+      new DOMParser().parseFromString(site.logoSvg, 'image/svg+xml').documentElement, true));
     btn.title = chrome.i18n.getMessage(`newConv_${siteKey}`) || `New ${siteKey} conversation`;
 
     if (siteKey === 'local') {

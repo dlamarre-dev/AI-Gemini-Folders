@@ -23,7 +23,6 @@ describe('getSiteByUrl', () => {
     ['https://you.com/', 'you'],
     ['https://pi.ai/talk', 'pi'],
     ['https://character.ai/chat/abc', 'characterai'],
-    ['https://ernie.baidu.com/', 'ernie'],
   ])('%s -> %s', (url, key) => {
     expect(getSiteByUrl(url)).toBe(key);
   });

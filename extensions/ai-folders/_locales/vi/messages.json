@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Cuộc trò chuyện Character.AI mới"
   },
-  "newConv_ernie": {
-    "message": "Cuộc trò chuyện Ernie mới"
-  },
   "newConv_local": {
     "message": "Cuộc trò chuyện LLM cục bộ mới (giữ để cấu hình URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Đặt URL LLM cục bộ:"
   },
   "alertNotSupported": {
-    "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI hoặc Ernie)."
+    "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi hoặc Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Không tìm thấy ô nhập văn bản trên trang này. Hãy thử nhấp vào trình soạn thảo trước rồi sử dụng nút chèn."

@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Jauna Character.AI saruna"
   },
-  "newConv_ernie": {
-    "message": "Jauna Ernie saruna"
-  },
   "newConv_local": {
     "message": "Jauna lokālā LLM saruna (turiet nospiestu, lai konfigurētu URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Iestatīt lokālā LLM URL:"
   },
   "alertNotSupported": {
-    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI vai Ernie)."
+    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi vai Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."

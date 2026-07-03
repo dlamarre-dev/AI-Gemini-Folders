@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Uus Character.AI vestlus"
   },
-  "newConv_ernie": {
-    "message": "Uus Ernie vestlus"
-  },
   "newConv_local": {
     "message": "Uus kohaliku LLM-i vestlus (hoidke URL-i konfigureerimiseks)"
   },
@@ -291,7 +288,7 @@
     "message": "Seadista kohaliku LLM-i URL:"
   },
   "alertNotSupported": {
-    "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI või Ernie)."
+    "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi või Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Selle lehe tekstivälja ei leitud. Proovige esmalt redaktorisse klõpsata ja seejärel kasutage lisamisnuppu."

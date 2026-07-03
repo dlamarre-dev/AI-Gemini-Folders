@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Ny Character.AI-konversation"
   },
-  "newConv_ernie": {
-    "message": "Ny Ernie-konversation"
-  },
   "newConv_local": {
     "message": "Ny lokal LLM-konversation (håll intryckt för att konfigurera URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Ange lokal LLM-URL:"
   },
   "alertNotSupported": {
-    "message": "Använd den här utökningen på en AI-webbplats som stöds (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI eller Ernie)."
+    "message": "Använd den här utökningen på en AI-webbplats som stöds (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi eller Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Det gick inte att hitta textfältet på den här sidan. Försök att klicka i redigeraren först och använd sedan infogaknappen."

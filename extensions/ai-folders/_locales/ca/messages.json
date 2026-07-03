@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Nova conversa a Character.AI"
   },
-  "newConv_ernie": {
-    "message": "Nova conversa a Ernie"
-  },
   "newConv_local": {
     "message": "Nova conversa LLM local (manteniu premut per configurar l'URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Establiu l'URL del LLM local:"
   },
   "alertNotSupported": {
-    "message": "Utilitzeu aquesta extensió en un lloc d'IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI o Ernie)."
+    "message": "Utilitzeu aquesta extensió en un lloc d'IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi o Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "No s'ha pogut trobar el camp de text en aquesta pàgina. Proveu de fer clic a l'editor primer i després useu el botó d'inserció."

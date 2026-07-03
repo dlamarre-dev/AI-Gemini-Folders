@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Uusi Character.AI-keskustelu"
   },
-  "newConv_ernie": {
-    "message": "Uusi Ernie-keskustelu"
-  },
   "newConv_local": {
     "message": "Uusi paikallinen LLM-keskustelu (pidä painettuna URL:n määrittämiseksi)"
   },
@@ -291,7 +288,7 @@
     "message": "Aseta paikallisen LLM:n URL:"
   },
   "alertNotSupported": {
-    "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI tai Ernie)."
+    "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi tai Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."

@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Percakapan Character.AI baru"
   },
-  "newConv_ernie": {
-    "message": "Percakapan Ernie baru"
-  },
   "newConv_local": {
     "message": "Percakapan LLM lokal baru (tahan untuk mengonfigurasi URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Atur URL LLM lokal:"
   },
   "alertNotSupported": {
-    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI, atau Ernie)."
+    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, atau Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemukan kotak teks di halaman ini. Coba klik editor terlebih dahulu, lalu gunakan tombol sisipkan."

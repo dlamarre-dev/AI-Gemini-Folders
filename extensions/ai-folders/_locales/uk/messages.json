@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Нова розмова в Character.AI"
   },
-  "newConv_ernie": {
-    "message": "Нова розмова в Ernie"
-  },
   "newConv_local": {
     "message": "Нова розмова з локальною LLM (утримуйте для налаштування URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Вкажіть URL локальної LLM:"
   },
   "alertNotSupported": {
-    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI або Ernie)."
+    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi або Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Не вдалося знайти поле введення тексту на цій сторінці. Спочатку натисніть на редактор, а потім скористайтеся кнопкою вставки."
