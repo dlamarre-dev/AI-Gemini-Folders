@@ -288,7 +288,10 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
           if (siteInfo.logoSvg) {
             const logo = document.createElement('span');
             logo.className = 'chat-site-logo';
-            logo.appendChild(new DOMParser().parseFromString(siteInfo.logoSvg, 'image/svg+xml').documentElement);
+            // importNode: see popup.js — adopted cross-document SVG nodes lose
+            // their <defs> gradients in Chrome.
+            logo.appendChild(document.importNode(
+              new DOMParser().parseFromString(siteInfo.logoSvg, 'image/svg+xml').documentElement, true));
             chatItem.appendChild(logo);
           }
         }

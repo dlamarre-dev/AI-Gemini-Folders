@@ -1,6 +1,6 @@
 // site-config.js — AI Folders site registry
 // Provides:
-//   SITES              — metadata for all supported sites (17 web platforms + local)
+//   SITES              — metadata for all supported sites (16 web platforms + local)
 //   getSiteByUrl(url)  — returns site key or null
 //   getChatSiteInfo    — hook for folders.js (window global)
 //   extractAITitleLogic — injected into page via executeScript
@@ -13,7 +13,9 @@ const SITES = {
     newConvUrl: 'https://gemini.google.com/app',
     // Gemini uses a Quill editor inside a custom element
     editorSelectors: ['rich-textarea .ql-editor', '[contenteditable="true"].ql-editor'],
-    // Official Gemini SVG shape; solid fill (gradients via url() are unreliable in extension popup innerHTML)
+    // Official Gemini SVG shape, solid fill. The official radial-gradient fill
+    // was tried (2026-07) and stays invisible in the extension popup even when
+    // injected via document.importNode — don't retry gradient fills here.
     logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M16 8.016A8.522 8.522 0 008.016 16h-.032A8.521 8.521 0 000 8.016v-.032A8.521 8.521 0 007.984 0h.032A8.522 8.522 0 0016 7.984v.032z" fill="#4285F4"/></svg>`,
   },
   claude: {
@@ -43,7 +45,9 @@ const SITES = {
     newConvUrl: 'https://copilot.microsoft.com/',
     // Copilot uses a textarea inside a shadow-DOM web component; selectors need live validation
     editorSelectors: ['textarea#userInput', 'cib-text-input textarea', '#searchbox', 'textarea[name="q"]', 'textarea'],
-    // Official Microsoft Copilot SVG shape; solid fill (gradients via url() are unreliable in extension popup innerHTML)
+    // Official Microsoft Copilot SVG shape, solid fill. The full-color gradient
+    // version was tried (2026-07) and stays invisible in the extension popup
+    // even when injected via document.importNode — don't retry gradient fills here.
     logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.533 1.829A2.528 2.528 0 0015.11 0h-.737a2.531 2.531 0 00-2.484 2.087l-1.263 6.937.314-1.08a2.528 2.528 0 012.424-1.833h4.284l1.797.706 1.731-.706h-.505a2.528 2.528 0 01-2.423-1.829l-.715-2.453z" fill="#0078d4" transform="translate(0 1)"/><path d="M6.726 20.16A2.528 2.528 0 009.152 22h1.566c1.37 0 2.49-1.1 2.525-2.48l.17-6.69-.357 1.228a2.528 2.528 0 01-2.423 1.83h-4.32l-1.54-.842-1.667.843h.497c1.124 0 2.113.75 2.426 1.84l.697 2.432z" fill="#0078d4" transform="translate(0 1)"/><path d="M15 0H6.252c-2.5 0-4 3.331-5 6.662-1.184 3.947-2.734 9.225 1.75 9.225H6.78c1.13 0 2.12-.753 2.43-1.847.657-2.317 1.809-6.359 2.713-9.436.46-1.563.842-2.906 1.43-3.742A1.97 1.97 0 0115 0" fill="#0078d4" transform="translate(0 1)"/><path d="M9 22h8.749c2.5 0 4-3.332 5-6.663 1.184-3.948 2.734-9.227-1.75-9.227H17.22c-1.129 0-2.12.754-2.43 1.848a1149.2 1149.2 0 01-2.713 9.437c-.46 1.564-.842 2.907-1.43 3.743A1.97 1.97 0 019 22" fill="#0078d4" transform="translate(0 1)"/></svg>`,
   },
   deepseek: {
@@ -85,9 +89,8 @@ const SITES = {
     newConvUrl: 'https://chat.z.ai/',
     // chat.z.ai is built on Open WebUI (#chat-input); selectors need live validation
     editorSelectors: ['#chat-input', 'textarea#chat-input', '#chat-textarea', 'textarea[placeholder]', '[contenteditable="true"]'],
-    // Simplified "Z" mark; white fill to match Z.ai branding
-    // (light-theme override lives in popup-extra.css, same as ChatGPT/Grok)
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 4h14v2.8L9.8 17.2H19V20H5v-2.8L14.2 6.8H5V4z" fill="#ffffff"/></svg>`,
+    // Official Z.ai mark: dark rounded tile + white Z (self-contained on both themes)
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path fill="#2D2D2D" d="M24.51,28.51H5.49c-2.21,0-4-1.79-4-4V5.49c0-2.21,1.79-4,4-4h19.03c2.21,0,4,1.79,4,4v19.03C28.51,26.72,26.72,28.51,24.51,28.51z"/><path fill="#FFFFFF" d="M15.47,7.1l-1.3,1.85c-0.2,0.29-0.54,0.47-0.9,0.47h-7.1V7.09C6.16,7.1,15.47,7.1,15.47,7.1z"/><polygon fill="#FFFFFF" points="24.3,7.1 13.14,22.91 5.7,22.91 16.86,7.1"/><path fill="#FFFFFF" d="M14.53,22.91l1.31-1.86c0.2-0.29,0.54-0.47,0.9-0.47h7.09v2.33H14.53z"/></svg>`,
   },
   qwen: {
     key: 'qwen',
@@ -96,8 +99,8 @@ const SITES = {
     newConvUrl: 'https://chat.qwen.ai/',
     // Qwen Chat composer; selectors need live validation
     editorSelectors: ['#chat-input', 'textarea#chat-input', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
-    // Simplified six-spoke Qwen asterisk mark
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#615CED" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/></svg>`,
+    // Official Qwen mark (radial gradient + white inner star)
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none"><path d="M174.82 108.75L155.38 75L165.64 57.75C166.46 56.31 166.46 54.53 165.64 53.09L155.38 35.84C154.86 34.91 153.87 34.33 152.78 34.33H114.88L106.14 19.03C105.62 18.1 104.63 17.52 103.54 17.52H83.3C82.21 17.52 81.22 18.1 80.7 19.03L61.26 52.77H41.02C39.93 52.77 38.94 53.35 38.42 54.28L28.16 71.53C27.34 72.97 27.34 74.75 28.16 76.19L45.52 107.5L36.78 122.8C35.96 124.24 35.96 126.02 36.78 127.46L47.04 144.71C47.56 145.64 48.55 146.22 49.64 146.22H87.54L96.28 161.52C96.8 162.45 97.79 163.03 98.88 163.03H119.12C120.21 163.03 121.2 162.45 121.72 161.52L141.16 127.78H158.52C159.61 127.78 160.6 127.2 161.12 126.27L171.38 109.02C172.2 107.58 172.2 105.8 171.38 104.36L174.82 108.75Z" fill="#4C45BF"/><path d="M119.12 163.03H98.88L87.54 144.71H49.64L61.26 126.39H80.7L38.42 55.29H61.26L83.3 19.03L93.56 37.35L83.3 55.29H161.58L151.32 72.54L170.76 106.28H151.32L141.16 88.34L101.18 163.03H119.12Z" fill="white"/><path d="M127.86 79.83H76.14L101.18 122.11L127.86 79.83Z" fill="#4C45BF"/></svg>`,
   },
   meta: {
     key: 'meta',
@@ -106,8 +109,8 @@ const SITES = {
     newConvUrl: 'https://www.meta.ai/',
     // Meta AI uses a Lexical contenteditable composer; selectors need live validation
     editorSelectors: ['div[contenteditable="true"][role="textbox"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
-    // Simplified Meta infinity mark
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0064E0" stroke-width="2.2" stroke-linecap="round"><path d="M7 7.5c-2.6 0-4.5 3.6-4.5 6.5 0 1.9 1 2.9 2.4 2.9 1.8 0 3-2 4.6-5 1.6-3 2.9-4.4 4.9-4.4 2.7 0 5.1 3.3 5.1 6.4 0 1.9-1 3-2.4 3-1.8 0-3.1-2-4.6-5"/></svg>`,
+    // Official Meta infinity mark (wordmark dropped, brand gradients kept)
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 191"><path fill="#0081fb" d="m31.06,125.96c0,10.98 2.41,19.41 5.56,24.51 4.13,6.68 10.29,9.51 16.57,9.51 8.1,0 15.51-2.01 29.79-21.76 11.44-15.83 24.92-38.05 33.99-51.98l15.36-23.6c10.67-16.39 23.02-34.61 37.18-46.96 11.56-10.08 24.03-15.68 36.58-15.68 21.07,0 41.14,12.21 56.5,35.11 16.81,25.08 24.97,56.67 24.97,89.27 0,19.38-3.82,33.62-10.32,44.87-6.28,10.88-18.52,21.75-39.11,21.75l0-31.02c17.63,0 22.03-16.2 22.03-34.74 0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85,0-26.8,11.2-40.23,31.17-7.14,10.61-14.47,23.54-22.7,38.13l-9.06,16.05c-18.2,32.27-22.81,39.62-31.91,51.75-15.95,21.24-29.57,29.29-47.5,29.29-21.27,0-34.72-9.21-43.05-23.09-6.8-11.31-10.14-26.15-10.14-43.06z"/><path fill="#0064E1" d="m24.49,37.3c14.24-21.95 34.79-37.3 58.36-37.3 13.65,0 27.22,4.04 41.39,15.61 15.5,12.65 32.02,33.48 52.63,67.81l7.39,12.32c17.84,29.72 27.99,45.01 33.93,52.22 7.64,9.26 12.99,12.02 19.94,12.02 17.63,0 22.03-16.2 22.03-34.74l27.4-.86c0,19.38-3.82,33.62-10.32,44.87-6.28,10.88-18.52,21.75-39.11,21.75-12.8,0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71l-25.79-43.08c-12.94-21.62-24.81-37.74-31.68-45.04-7.39-7.85-16.89-17.33-32.05-17.33-12.27,0-22.69,8.61-31.41,21.78z"/><path fill="#0072EE" d="m82.35,31.23c-12.27,0-22.69,8.61-31.41,21.78-12.33,18.61-19.88,46.33-19.88,72.95 0,10.98 2.41,19.41 5.56,24.51l-26.48,17.44c-6.8-11.31-10.14-26.15-10.14-43.06 0-30.75 8.44-62.8 24.49-87.55 14.24-21.95 34.79-37.3 58.36-37.3z"/></svg>`,
   },
   mistral: {
     key: 'mistral',
@@ -116,8 +119,8 @@ const SITES = {
     newConvUrl: 'https://chat.mistral.ai/chat',
     // Le Chat uses a ProseMirror composer; selectors need live validation
     editorSelectors: ['div.ProseMirror[contenteditable="true"]', 'textarea[name="message.text"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
-    // Simplified pixel-flag "M" (official palette, yellow → red rows)
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"><rect x="0" y="0" width="4" height="4" fill="#FFD800"/><rect x="20" y="0" width="4" height="4" fill="#FFD800"/><rect x="0" y="4" width="8" height="4" fill="#FFAF00"/><rect x="16" y="4" width="8" height="4" fill="#FFAF00"/><rect x="0" y="8" width="4" height="4" fill="#FF8205"/><rect x="8" y="8" width="8" height="4" fill="#FF8205"/><rect x="20" y="8" width="4" height="4" fill="#FF8205"/><rect x="0" y="12" width="4" height="4" fill="#FA500F"/><rect x="20" y="12" width="4" height="4" fill="#FA500F"/><rect x="0" y="16" width="4" height="4" fill="#E10500"/><rect x="20" y="16" width="4" height="4" fill="#E10500"/></svg>`,
+    // Official Mistral pixel-flag "M" (clipPaths/transforms of the source file flattened)
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190.159 135.429"><path fill="#ffd800" d="M27.153 0h27.169v27.089H27.153zM135.815 0h27.169v27.089h-27.169z"/><path fill="#ffaf00" d="M27.153 27.091h54.329V54.18H27.153zM108.661 27.091h54.329V54.18h-54.329z"/><path fill="#ff8205" d="M27.153 54.168h135.819v27.089H27.153z"/><path fill="#fa500f" d="M27.153 81.259h27.169v27.09H27.153zM81.492 81.259h27.169v27.09H81.492zM135.815 81.259h27.169v27.09h-27.169z"/><path fill="#e10500" d="M-.001 108.339h81.489v27.09H-.001zM108.661 108.339h81.498v27.09h-81.498z"/></svg>`,
   },
   poe: {
     key: 'poe',
@@ -126,8 +129,10 @@ const SITES = {
     newConvUrl: 'https://poe.com/',
     // Poe uses hashed CSS-module classes — match by class prefix; selectors need live validation
     editorSelectors: ['textarea[class*="GrowingTextArea_textArea"]', 'footer textarea', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
-    // Simplified Poe speech-bubble mark
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6 2 11c0 2.9 1.5 5.5 3.9 7.2L5 22l4.4-2.1c.8.2 1.7.3 2.6.3 5.5 0 10-4 10-9.2S17.5 2 12 2z" fill="#5D5CDE"/></svg>`,
+    // Official Poe mark. The bubble uses currentColor so it self-adapts to the
+    // light/dark theme (inherits the button/item text color); the two swooshes
+    // keep their brand gradients.
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M20.708 6.876a1.412 1.412 0 00-1.029-.415h-.006a2.019 2.019 0 01-2.02-2.023A1.415 1.415 0 0016.254 3H4.871A1.412 1.412 0 003.47 4.434a2.026 2.026 0 01-2.025 2.025v.002A1.414 1.414 0 000 7.883v3.642a1.414 1.414 0 001.444 1.42 2.025 2.025 0 012.025 2.02v3.693a.5.5 0 00.89.313l2.051-2.567h9.843a1.412 1.412 0 001.4-1.434v-.002c0-1.12.904-2.025 2.026-2.025a1.412 1.412 0 001.446-1.42V7.88c0-.363-.14-.727-.417-1.005zm-2.42 4.687a2.025 2.025 0 01-2.025 2.005H4.861a2.025 2.025 0 01-2.025-2.005v-3.72A2.026 2.026 0 014.86 5.838h11.4a2.026 2.026 0 012.026 2.005v3.72h.002z"/><path d="M7.413 7.57A1.422 1.422 0 005.99 8.99v1.422a1.422 1.422 0 102.844 0V8.99c0-.784-.636-1.422-1.422-1.422zm6.297 0a1.422 1.422 0 00-1.422 1.421v1.422a1.422 1.422 0 102.844 0V8.99c0-.784-.636-1.422-1.422-1.422z"/><path d="M7.292 22.643l1.993-2.492h9.844a1.413 1.413 0 001.4-1.434 2.025 2.025 0 012.017-2.027h.01A1.409 1.409 0 0024 15.27v-3.594c0-.344-.113-.68-.324-.951l-.397-.519v4.127a1.415 1.415 0 01-1.444 1.42h-.007a2.026 2.026 0 00-2.018 2.025 1.415 1.415 0 01-1.402 1.436H8.565l-2.169 2.712a.574.574 0 00.896.715v.002z" fill="#6485FB"/><path d="M5.004 19.992l2.12-2.65h9.844a1.414 1.414 0 001.402-1.437c0-1.116.9-2.021 2.014-2.025h.012a1.413 1.413 0 001.443-1.422v-4.13l.52.68c.21.273.324.607.324.95v3.594a1.416 1.416 0 01-1.443 1.42h-.01a2.026 2.026 0 00-2.016 2.026 1.414 1.414 0 01-1.402 1.435H7.97l-1.916 2.4a.671.671 0 01-1.049-.839v-.002z" fill="#E748E9"/></svg>`,
   },
   duckai: {
     key: 'duckai',
@@ -137,8 +142,8 @@ const SITES = {
     // Duck.ai (duckduckgo.com AI chat); selectors need live validation.
     // Note: chats are stateless (no per-conversation URL) — mainly useful in Prompt mode.
     editorSelectors: ['textarea[name="user-prompt"]', 'form textarea', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
-    // Simplified DuckDuckGo duck mark
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#DE5833"/><path d="M10.2 6.2a4.6 4.6 0 0 0-3 4.4c0 3.4 1.9 6.4 4.3 7.9l1.2-.4c-2.1-1.6-3.4-4-3.4-6.9 0-1.9.8-3.4 2.2-4.2l-1.3-.8z" fill="#ffffff"/><circle cx="12.6" cy="8.4" r="2.6" fill="#ffffff"/><circle cx="12" cy="7.8" r=".6" fill="#DE5833"/><path d="M14.8 8.6l3.4.5-3.2 1.1z" fill="#FFCC33"/></svg>`,
+    // Official DuckDuckGo duck mark (wordmark cropped out, ids namespaced)
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="67.5 18.3 120.5 120.5"><path d="M183.855 77.948c0 32.201-25.321 58.306-56.557 58.306-31.234 0-56.555-26.104-56.555-58.306s25.321-58.305 56.555-58.305c31.236.001 56.557 26.104 56.557 58.305z" fill="#fff"/><path d="M179.717 78.348c0 28.828-23.369 52.201-52.199 52.201s-52.199-23.373-52.199-52.201 23.369-52.199 52.199-52.199 52.199 23.371 52.199 52.199zm7.461 0c0 32.947-26.713 59.66-59.66 59.66-32.947 0-59.66-26.713-59.66-59.66 0-32.947 26.713-59.66 59.66-59.66 32.947 0 59.66 26.712 59.66 59.66zm-4.922 0c0-30.229-24.51-54.736-54.738-54.736-30.227 0-54.738 24.508-54.738 54.736s24.512 54.736 54.738 54.736c30.228 0 54.738-24.508 54.738-54.736z" fill="#DE5833"/><defs><path id="af-duck-b" d="M179.922 78.207c0 28.895-23.506 52.4-52.404 52.4-28.893 0-52.396-23.508-52.396-52.4 0-28.891 23.506-52.396 52.396-52.396 28.898-.001 52.404 23.505 52.404 52.396z"/></defs><clipPath id="af-duck-c"><use xlink:href="#af-duck-b" overflow="visible"/></clipPath><g clip-path="url(#af-duck-c)"><path d="M148.482 154.541c-1.801-8.285-12.262-27.039-16.229-34.969-3.965-7.93-7.939-19.11-6.129-26.322.327-1.312-3.436-11.307-2.354-12.014 8.416-5.49 10.632.598 14.001-1.863 1.738-1.273 4.09 1.047 4.693-1.059 2.158-7.568-3.006-20.76-8.768-26.527-1.885-1.879-4.773-3.059-8.031-3.686-1.254-1.713-3.275-3.361-6.138-4.879-3.188-1.697-10.121-3.938-13.717-4.535-2.492-.41-3.055.287-4.119.461.992.088 5.699 2.414 6.615 2.549-.916.619-3.607-.029-5.324.742-.865.391-1.512 1.877-1.506 2.58 4.91-.496 12.574-.016 17.1 2-3.602.41-9.08.867-11.436 2.105-6.848 3.609-9.873 12.035-8.07 22.133 1.804 10.075 9.738 46.849 12.262 59.129 2.525 12.263-5.408 20.189-10.455 22.354l5.408.363-1.801 3.967c6.484.719 13.695-1.441 13.695-1.441-1.438 3.965-11.176 5.412-11.176 5.412s4.691 1.438 12.258-1.447c7.575-2.883 12.261-4.688 12.261-4.688l3.604 9.373 6.854-6.846 2.883 7.211c.012-.001 5.422-1.808 3.619-10.103z" fill="#d5d7d8"/><path d="M150.66 152.859c-1.795-8.289-12.256-27.043-16.227-34.976-3.969-7.935-7.934-19.112-6.129-26.321.334-1.309.34-6.668 1.428-7.379 8.41-5.494 7.812-.184 11.186-2.645 1.74-1.27 3.133-2.805 3.738-4.912 2.164-7.572-3.006-20.76-8.773-26.529-1.879-1.879-4.768-3.062-8.025-3.686-1.252-1.717-3.271-3.361-6.131-4.881-5.391-2.863-12.074-4.006-18.266-2.883.99.09 3.256 2.137 4.168 2.273-1.381.936-5.053.816-5.029 2.896 4.916-.492 10.303.285 14.834 2.297-3.602.41-6.955 1.299-9.311 2.543-6.854 3.602-8.656 10.812-6.854 20.914 1.807 10.096 9.742 46.868 12.256 59.127 2.527 12.258-5.402 20.188-10.449 22.352l5.408.359-1.801 3.973c6.484.718 13.695-1.442 13.695-1.442-1.438 3.972-11.176 5.405-11.176 5.405s4.686 1.443 12.258-1.444c7.578-2.883 12.268-4.685 12.268-4.685l3.602 9.373 6.854-6.85 2.889 7.211c-.009.006 5.396-1.799 3.587-10.09z" fill="#fff"/><path d="M109.211 70.074A3.786 3.786 0 0 1 113 66.287a3.786 3.786 0 0 1 3.785 3.787A3.785 3.785 0 0 1 113 73.861a3.784 3.784 0 0 1-3.789-3.787z" fill="#2d4f8e"/><path d="M113.697 68.812a.982.982 0 1 1 1.964 0 .985.985 0 0 1-.984.984.984.984 0 0 1-.98-.984z" fill="#fff"/><path d="M135.057 67.828a3.255 3.255 0 0 1 3.252-3.25 3.254 3.254 0 1 1-3.252 3.25z" fill="#2d4f8e"/><path d="M138.914 66.746c0-.463.379-.842.838-.842.477 0 .844.379.844.842a.834.834 0 0 1-.844.842.84.84 0 0 1-.838-.842z" fill="#fff"/><path d="M114.076 59.101s-2.854-1.291-5.629.453c-2.77 1.742-2.668 3.523-2.668 3.523s-1.473-3.283 2.453-4.891c3.93-1.61 5.844.915 5.844.915z" fill="#4A5AA5"/><path d="M140.268 58.841s-2.051-1.172-3.643-1.152c-3.268.043-4.162 1.488-4.162 1.488s.549-3.445 4.734-2.754c2.266.377 3.071 2.418 3.071 2.418z" fill="#4A5AA5"/></g><path d="M124.59 84.678c.379-2.291 6.299-6.625 10.49-6.887 4.201-.264 5.51-.205 9.01-1.043 3.508-.838 12.535-3.088 15.033-4.242 2.504-1.156 13.102.572 5.631 4.738-3.234 1.809-11.945 5.131-18.172 6.988-6.219 1.861-9.99-1.777-12.059 1.281-1.646 2.432-.334 5.762 7.098 6.453 10.037.93 19.66-4.52 20.719-1.625 1.064 2.895-8.625 6.508-14.527 6.623-5.891.111-17.775-3.896-19.553-5.137-1.785-1.239-4.164-4.13-3.67-7.149z" fill="#fdd20a"/><g><path d="M129.133 115.975s-14.1-7.521-14.33-4.47c-.238 3.056 0 15.509 1.643 16.451 1.646.938 13.395-6.108 13.395-6.108l-.708-5.873zM134.535 115.501s9.635-7.285 11.754-6.815c2.111.479 2.582 15.511.701 16.225-1.881.695-12.908-3.816-12.908-3.816l.453-5.594z" fill="#65bc46"/><path d="M125.719 116.771c0 4.931-.708 7.049 1.41 7.517 2.111.473 6.105 0 7.518-.938 1.41-.939.232-7.281-.234-8.465-.475-1.171-8.694-.228-8.694 1.886z" fill="#43a244"/><path d="M126.615 115.675c0 4.933-.707 7.05 1.41 7.519 2.109.475 6.104 0 7.518-.938 1.41-.941.232-7.279-.238-8.466-.471-1.172-8.69-.228-8.69 1.885z" fill="#65bc46"/></g><path d="M140.029 128.698a52.305 52.305 0 0 1-12.916 1.612c-4.715 0-9.282-.637-13.631-1.811l.05.413a52.241 52.241 0 0 0 13.582 1.796c4.511 0 8.89-.573 13.068-1.648l-.153-.362z" fill="#fff"/></svg>`,
   },
   you: {
     key: 'you',
@@ -147,18 +152,21 @@ const SITES = {
     newConvUrl: 'https://you.com/',
     // You.com chat composer; selectors need live validation
     editorSelectors: ['#search-input-textarea', 'textarea[data-testid="youchat-input"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
-    // Simplified "Y" mark
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 3h4.2L12 9l3.8-6H20l-6.4 9.6V21h-3.2v-8.4L4 3z" fill="#3B5BFF"/></svg>`,
+    // You.com mark (the hexagon of the official logo, wordmark dropped):
+    // rounded hexagon with the four-point star as a true cutout
+    // (fill-rule evenodd) so the button background shows through on both themes
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" fill="#6D6BEC" d="M10.7 1.95 Q12 1.2 13.3 1.95 L20.1 5.85 Q21.4 6.6 21.4 8.1 L21.4 15.9 Q21.4 17.4 20.1 18.15 L13.3 22.05 Q12 22.8 10.7 22.05 L3.9 18.15 Q2.6 17.4 2.6 15.9 L2.6 8.1 Q2.6 6.6 3.9 5.85 Z M12 1.2 C12.55 7.6 14.9 11.3 19.6 12 C14.9 12.7 12.55 16.4 12 22.8 C11.45 16.4 9.1 12.7 4.4 12 C9.1 11.3 11.45 7.6 12 1.2 Z"/></svg>`,
   },
   pi: {
     key: 'pi',
     domain: 'pi.ai',
-    color: '#0FA47F',
+    color: '#0E7460',
     newConvUrl: 'https://pi.ai/talk',
     // Pi is one continuous conversation at /talk (no per-thread URLs); selectors need live validation
     editorSelectors: ['textarea[placeholder]', 'main textarea', 'textarea', '[contenteditable="true"]'],
-    // Simplified "π" mark
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0FA47F" stroke-width="2.6" stroke-linecap="round"><path d="M4.5 7h15M8.5 7v10.5M15.5 7v8.5c0 1.6 1 2.3 2.7 1.8"/></svg>`,
+    // No official SVG available — the "Pi" wordmark approximated as serif text
+    // in the brand green (matches the official PNG app icon)
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><text x="12" y="17.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="700" fill="#0E7460">Pi</text></svg>`,
   },
   characterai: {
     key: 'characterai',
@@ -167,18 +175,11 @@ const SITES = {
     newConvUrl: 'https://character.ai/',
     // Character.AI chat composer; selectors need live validation
     editorSelectors: ['div[contenteditable="true"][role="textbox"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
-    // Simplified "c." mark (Character.AI wordmark initial)
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3E77FF" stroke-width="3" stroke-linecap="round"><path d="M15.5 8.5a5 5 0 1 0 0 7"/><circle cx="18.5" cy="17" r="1.4" fill="#3E77FF" stroke="none"/></svg>`,
-  },
-  ernie: {
-    key: 'ernie',
-    domain: 'ernie.baidu.com',
-    color: '#4E6EF2',
-    newConvUrl: 'https://ernie.baidu.com/',
-    // Ernie Bot uses a custom rich-text editor; selectors need live validation
-    editorSelectors: ['div[contenteditable="true"][role="textbox"]', 'div[contenteditable="true"]', 'textarea[placeholder]', 'textarea'],
-    // Simplified four-point spark mark
-    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c1 4 3 6 7 7-4 1-6 3-7 7-1-4-3-6-7-7 4-1 6-3 7-7z" fill="#4E6EF2"/><path d="M18.5 14.5c.5 2 1.5 3 3.5 3.5-2 .5-3 1.5-3.5 3.5-.5-2-1.5-3-3.5-3.5 2-.5 3-1.5 3.5-3.5z" fill="#4E6EF2"/></svg>`,
+    // The official mark is too wide for a square slot — "c.ai" rendered as text
+    // in the UI font instead; currentColor self-adapts to the light/dark theme.
+    // Wide viewBox + textLength let the button CSS give it the full slot width
+    // (popup-extra.css sizes this logo 24×14 instead of the default 16×16).
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><text x="12" y="11.5" text-anchor="middle" font-size="13" font-weight="700" textLength="23" lengthAdjust="spacingAndGlyphs" fill="currentColor">c.ai</text></svg>`,
   },
   local: {
     key: 'local',
@@ -345,7 +346,6 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       you: ['you.com', 'you', 'new chat'],
       pi: ['pi', 'pi.ai', 'talk with pi', 'pi, your personal ai'],
       characterai: ['character.ai', 'characterai', 'c.ai', 'new chat'],
-      ernie: ['ernie', 'ernie bot', '文心一言', '文心'],
     }[siteKey];
     if (genericIgnores) {
       strategies = [

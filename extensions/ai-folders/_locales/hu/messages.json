@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Új Character.AI-beszélgetés"
   },
-  "newConv_ernie": {
-    "message": "Új Ernie-beszélgetés"
-  },
   "newConv_local": {
     "message": "Új helyi LLM-beszélgetés (tartsa nyomva az URL konfigurálásához)"
   },
@@ -291,7 +288,7 @@
     "message": "Helyi LLM URL beállítása:"
   },
   "alertNotSupported": {
-    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI vagy Ernie)."
+    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi vagy Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."

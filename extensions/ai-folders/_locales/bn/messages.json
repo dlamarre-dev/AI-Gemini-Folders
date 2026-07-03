@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "নতুন Character.AI কথোপকথন"
   },
-  "newConv_ernie": {
-    "message": "নতুন Ernie কথোপকথন"
-  },
   "newConv_local": {
     "message": "নতুন স্থানীয় LLM কথোপকথন (URL কনফিগার করতে ধরে রাখুন)"
   },
@@ -291,7 +288,7 @@
     "message": "স্থানীয় LLM URL সেট করুন:"
   },
   "alertNotSupported": {
-    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI, বা Ernie)।"
+    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, বা Character.AI)।"
   },
   "alertEditorNotFound": {
     "message": "এই পৃষ্ঠায় টেক্সট ইনপুট খুঁজে পাওয়া যায়নি। প্রথমে এডিটরে ক্লিক করুন, তারপর ইনসার্ট বাটন ব্যবহার করুন।"

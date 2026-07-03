@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Нов разговор в Character.AI"
   },
-  "newConv_ernie": {
-    "message": "Нов разговор в Ernie"
-  },
   "newConv_local": {
     "message": "Нов локален LLM разговор (задръжте за конфигуриране на URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Задайте URL на локален LLM:"
   },
   "alertNotSupported": {
-    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI или Ernie)."
+    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi или Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Не може да се намери текстовото поле на тази страница. Опитайте да кликнете в редактора първо, след което използвайте бутона за вмъкване."

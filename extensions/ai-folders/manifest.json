@@ -63,8 +63,7 @@
         "*://pi.ai/*",
         "*://*.pi.ai/*",
         "*://character.ai/*",
-        "*://*.character.ai/*",
-        "*://ernie.baidu.com/*"
+        "*://*.character.ai/*"
       ],
       "js": ["lz-string.min.js", "prompt-trigger.js"],
       "run_at": "document_idle"
@@ -94,8 +93,7 @@
     "*://pi.ai/*",
     "*://*.pi.ai/*",
     "*://character.ai/*",
-    "*://*.character.ai/*",
-    "*://ernie.baidu.com/*"
+    "*://*.character.ai/*"
   ],
   "optional_host_permissions": [
     "http://*/*",

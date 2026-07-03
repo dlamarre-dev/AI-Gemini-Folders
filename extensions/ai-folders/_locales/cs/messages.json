@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Nová konverzace v Character.AI"
   },
-  "newConv_ernie": {
-    "message": "Nová konverzace v Ernie"
-  },
   "newConv_local": {
     "message": "Nová konverzace s místním LLM (podržte pro nastavení URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Nastavit URL místního LLM:"
   },
   "alertNotSupported": {
-    "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI nebo Ernie)."
+    "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi nebo Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Na této stránce nelze najít textové pole. Nejprve klikněte do editoru a poté použijte tlačítko Vložit."

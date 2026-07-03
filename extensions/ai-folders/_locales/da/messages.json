@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "Ny Character.AI-samtale"
   },
-  "newConv_ernie": {
-    "message": "Ny Ernie-samtale"
-  },
   "newConv_local": {
     "message": "Ny lokal LLM-samtale (hold nede for at konfigurere URL)"
   },
@@ -291,7 +288,7 @@
     "message": "Indstil lokal LLM-URL:"
   },
   "alertNotSupported": {
-    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI eller Ernie)."
+    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi eller Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Kunne ikke finde tekstfeltet på denne side. Prøv at klikke i editoren først, og brug derefter indsætknappen."

@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "שיחת Character.AI חדשה"
   },
-  "newConv_ernie": {
-    "message": "שיחת Ernie חדשה"
-  },
   "newConv_local": {
     "message": "שיחת LLM מקומית חדשה (לחץ לחיצה ארוכה להגדרת URL)"
   },
@@ -291,7 +288,7 @@
     "message": "הגדר כתובת URL של LLM מקומי:"
   },
   "alertNotSupported": {
-    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, Character.AI או Ernie)."
+    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi או Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "לא נמצא שדה הטקסט בדף זה. נסה ללחוץ תחילה בעורך ולאחר מכן השתמש בלחצן ההוספה."

@@ -281,9 +281,6 @@
   "newConv_characterai": {
     "message": "محادثة Character.AI جديدة"
   },
-  "newConv_ernie": {
-    "message": "محادثة Ernie جديدة"
-  },
   "newConv_local": {
     "message": "محادثة LLM محلية جديدة (اضغط مطوّلاً لتعيين الرابط)"
   },
@@ -291,7 +288,7 @@
     "message": "تعيين عنوان URL للنموذج المحلي:"
   },
   "alertNotSupported": {
-    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Grok أو Perplexity أو Z.ai أو Qwen أو Meta AI أو Mistral أو Poe أو Duck.ai أو You.com أو Pi أو Character.AI أو Ernie)."
+    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Grok أو Perplexity أو Z.ai أو Qwen أو Meta AI أو Mistral أو Poe أو Duck.ai أو You.com أو Pi أو Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."
