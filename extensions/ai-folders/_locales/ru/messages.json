@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Новый разговор в Perplexity"
   },
+  "newConv_baidu": {
+    "message": "Новый разговор в Baidu"
+  },
   "newConv_zai": {
     "message": "Новый разговор в Z.ai"
   },
@@ -288,7 +291,7 @@
     "message": "Задать URL локальной LLM:"
   },
   "alertNotSupported": {
-    "message": "Пожалуйста, используйте это расширение на поддерживаемом AI-сайте (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi или Character.AI)."
+    "message": "Пожалуйста, используйте это расширение на поддерживаемом AI-сайте (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi или Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Не удалось найти поле ввода на этой странице. Сначала нажмите в редактор, затем используйте кнопку вставки."

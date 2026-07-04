@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Nový rozhovor v Perplexity"
   },
+  "newConv_baidu": {
+    "message": "Nový rozhovor v Baidu"
+  },
   "newConv_zai": {
     "message": "Nový rozhovor v Z.ai"
   },
@@ -288,7 +291,7 @@
     "message": "Nastaviť URL lokálneho LLM:"
   },
   "alertNotSupported": {
-    "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi alebo Character.AI)."
+    "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi alebo Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Na tejto stránke sa nepodarilo nájsť textové pole. Najprv kliknite do editora a potom použite tlačidlo vložiť."

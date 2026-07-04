@@ -28,7 +28,8 @@
     "*://pi.ai/*",
     "*://*.pi.ai/*",
     "*://character.ai/*",
-    "*://*.character.ai/*"
+    "*://*.character.ai/*",
+    "*://chat.baidu.com/*"
   ],
   "background": {
     "service_worker": "background.js"

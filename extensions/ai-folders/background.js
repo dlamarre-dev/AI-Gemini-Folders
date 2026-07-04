@@ -28,7 +28,8 @@ const SUPPORTED_URL_PATTERNS = [
   "*://pi.ai/*",
   "*://*.pi.ai/*",
   "*://character.ai/*",
-  "*://*.character.ai/*"
+  "*://*.character.ai/*",
+  "*://chat.baidu.com/*",
 ];
 
 // --- PROMPT TRIGGER: dynamic content script for local LLM ---

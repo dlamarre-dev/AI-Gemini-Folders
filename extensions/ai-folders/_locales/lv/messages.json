@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Jauna Perplexity saruna"
   },
+  "newConv_baidu": {
+    "message": "Jauna Baidu saruna"
+  },
   "newConv_zai": {
     "message": "Jauna Z.ai saruna"
   },
@@ -288,7 +291,7 @@
     "message": "Iestatīt lokālā LLM URL:"
   },
   "alertNotSupported": {
-    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi vai Character.AI)."
+    "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi vai Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."

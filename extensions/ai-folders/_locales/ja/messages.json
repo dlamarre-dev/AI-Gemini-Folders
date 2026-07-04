@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "新しい Perplexity の会話"
   },
+  "newConv_baidu": {
+    "message": "新しい Baidu の会話"
+  },
   "newConv_zai": {
     "message": "新しい Z.ai の会話"
   },
@@ -288,7 +291,7 @@
     "message": "ローカル LLM の URL を設定:"
   },
   "alertNotSupported": {
-    "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Z.ai、Qwen、Meta AI、Mistral、Poe、Duck.ai、You.com、Pi、または Character.AI）でご使用ください。"
+    "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Baidu、Z.ai、Qwen、Meta AI、Mistral、Poe、Duck.ai、You.com、Pi、または Character.AI）でご使用ください。"
   },
   "alertEditorNotFound": {
     "message": "このページでテキスト入力欄が見つかりませんでした。先にエディタをクリックしてから、挿入ボタンをご使用ください。"

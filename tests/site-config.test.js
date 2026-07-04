@@ -23,6 +23,7 @@ describe('getSiteByUrl', () => {
     ['https://you.com/', 'you'],
     ['https://pi.ai/talk', 'pi'],
     ['https://character.ai/chat/abc', 'characterai'],
+    ['https://chat.baidu.com/', 'baidu'],
   ])('%s -> %s', (url, key) => {
     expect(getSiteByUrl(url)).toBe(key);
   });
@@ -30,6 +31,10 @@ describe('getSiteByUrl', () => {
   test('the Mistral marketing site (not chat.) does not match', () => {
     expect(getSiteByUrl('https://www.mistral.ai/')).toBeNull();
     expect(getSiteByUrl('https://mistral.ai/news')).toBeNull();
+  });
+
+  test('the Baidu search engine (not chat.) does not match', () => {
+    expect(getSiteByUrl('https://www.baidu.com/')).toBeNull();
   });
 
   test('a subdomain of a supported site matches', () => {

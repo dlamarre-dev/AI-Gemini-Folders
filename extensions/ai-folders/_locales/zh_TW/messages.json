@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "新增 Perplexity 對話"
   },
+  "newConv_baidu": {
+    "message": "新增 Baidu 對話"
+  },
   "newConv_zai": {
     "message": "新增 Z.ai 對話"
   },
@@ -288,7 +291,7 @@
     "message": "設定本地 LLM URL："
   },
   "alertNotSupported": {
-    "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Z.ai、Qwen、Meta AI、Mistral、Poe、Duck.ai、You.com、Pi 或 Character.AI）。"
+    "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Baidu、Z.ai、Qwen、Meta AI、Mistral、Poe、Duck.ai、You.com、Pi 或 Character.AI）。"
   },
   "alertEditorNotFound": {
     "message": "無法在此頁面找到文字輸入框。請先點擊編輯器，再使用插入按鈕。"

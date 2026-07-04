@@ -285,13 +285,15 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
         if (siteInfo) {
           chatItem.style.setProperty('--site-color', siteInfo.color);
           chatItem.classList.add(`site-${siteInfo.key}`);
-          if (siteInfo.logoSvg) {
+          if (siteInfo.logo) {
             const logo = document.createElement('span');
             logo.className = 'chat-site-logo';
-            // importNode: see popup.js — adopted cross-document SVG nodes lose
-            // their <defs> gradients in Chrome.
-            logo.appendChild(document.importNode(
-              new DOMParser().parseFromString(siteInfo.logoSvg, 'image/svg+xml').documentElement, true));
+            // Pre-rasterized PNG logos; theme-dependent ones ship a -light variant.
+            const logoImg = document.createElement('img');
+            logoImg.alt = '';
+            logoImg.src = (siteInfo.logoLight && window.matchMedia('(prefers-color-scheme: light)').matches)
+              ? siteInfo.logoLight : siteInfo.logo;
+            logo.appendChild(logoImg);
             chatItem.appendChild(logo);
           }
         }

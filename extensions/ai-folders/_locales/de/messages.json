@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Neues Perplexity-Gespräch"
   },
+  "newConv_baidu": {
+    "message": "Neues Baidu-Gespräch"
+  },
   "newConv_zai": {
     "message": "Neues Z.ai-Gespräch"
   },
@@ -288,7 +291,7 @@
     "message": "Lokale LLM-URL festlegen:"
   },
   "alertNotSupported": {
-    "message": "Bitte verwenden Sie diese Erweiterung auf einer unterstützten KI-Website (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi oder Character.AI)."
+    "message": "Bitte verwenden Sie diese Erweiterung auf einer unterstützten KI-Website (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi oder Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Das Texteingabefeld auf dieser Seite konnte nicht gefunden werden. Klicken Sie zuerst in den Editor und verwenden Sie dann die Einfügen-Schaltfläche."

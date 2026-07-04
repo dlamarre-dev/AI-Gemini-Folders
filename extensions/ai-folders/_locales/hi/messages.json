@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "नई Perplexity बातचीत"
   },
+  "newConv_baidu": {
+    "message": "नई Baidu बातचीत"
+  },
   "newConv_zai": {
     "message": "नई Z.ai बातचीत"
   },
@@ -288,7 +291,7 @@
     "message": "स्थानीय LLM URL सेट करें:"
   },
   "alertNotSupported": {
-    "message": "कृपया इस एक्सटेंशन को किसी समर्थित AI साइट पर उपयोग करें (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi या Character.AI)।"
+    "message": "कृपया इस एक्सटेंशन को किसी समर्थित AI साइट पर उपयोग करें (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi या Character.AI)।"
   },
   "alertEditorNotFound": {
     "message": "इस पृष्ठ पर टेक्स्ट इनपुट नहीं मिला। पहले एडिटर में क्लिक करें, फिर इन्सर्ट बटन का उपयोग करें।"

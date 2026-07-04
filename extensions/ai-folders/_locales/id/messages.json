@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Percakapan Perplexity baru"
   },
+  "newConv_baidu": {
+    "message": "Percakapan Baidu baru"
+  },
   "newConv_zai": {
     "message": "Percakapan Z.ai baru"
   },
@@ -288,7 +291,7 @@
     "message": "Atur URL LLM lokal:"
   },
   "alertNotSupported": {
-    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, atau Character.AI)."
+    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, atau Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemukan kotak teks di halaman ini. Coba klik editor terlebih dahulu, lalu gunakan tombol sisipkan."
