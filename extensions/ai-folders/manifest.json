@@ -57,13 +57,15 @@
         "*://poe.com/*",
         "*://*.poe.com/*",
         "*://duck.ai/*",
+    "*://*.duck.ai/*",
         "*://duckduckgo.com/*",
         "*://you.com/*",
         "*://*.you.com/*",
         "*://pi.ai/*",
         "*://*.pi.ai/*",
         "*://character.ai/*",
-        "*://*.character.ai/*"
+        "*://*.character.ai/*",
+    "*://chat.baidu.com/*"
       ],
       "js": ["lz-string.min.js", "prompt-trigger.js"],
       "run_at": "document_idle"
@@ -87,13 +89,15 @@
     "*://poe.com/*",
     "*://*.poe.com/*",
     "*://duck.ai/*",
+    "*://*.duck.ai/*",
     "*://duckduckgo.com/*",
     "*://you.com/*",
     "*://*.you.com/*",
     "*://pi.ai/*",
     "*://*.pi.ai/*",
     "*://character.ai/*",
-    "*://*.character.ai/*"
+    "*://*.character.ai/*",
+    "*://chat.baidu.com/*"
   ],
   "optional_host_permissions": [
     "http://*/*",

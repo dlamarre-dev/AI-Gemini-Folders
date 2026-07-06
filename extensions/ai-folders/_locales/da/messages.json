@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Ny Perplexity-samtale"
   },
+  "newConv_baidu": {
+    "message": "Ny Baidu-samtale"
+  },
   "newConv_zai": {
     "message": "Ny Z.ai-samtale"
   },
@@ -288,7 +291,7 @@
     "message": "Indstil lokal LLM-URL:"
   },
   "alertNotSupported": {
-    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi eller Character.AI)."
+    "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi eller Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Kunne ikke finde tekstfeltet på denne side. Prøv at klikke i editoren først, og brug derefter indsætknappen."

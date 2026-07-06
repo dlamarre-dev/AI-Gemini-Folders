@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Naujas Perplexity pokalbis"
   },
+  "newConv_baidu": {
+    "message": "Naujas Baidu pokalbis"
+  },
   "newConv_zai": {
     "message": "Naujas Z.ai pokalbis"
   },
@@ -288,7 +291,7 @@
     "message": "Nustatyti vietinio LLM URL:"
   },
   "alertNotSupported": {
-    "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi arba Character.AI)."
+    "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi arba Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Nepavyko rasti teksto įvesties šiame puslapyje. Pirmiausia spustelėkite redaktorių, tada naudokite įterpimo mygtuką."

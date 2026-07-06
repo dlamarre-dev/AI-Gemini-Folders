@@ -103,11 +103,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     btn.id = 'newConv' + siteKey.charAt(0).toUpperCase() + siteKey.slice(1);
     siteNewConvRow.appendChild(btn);
 
-    // importNode instead of appending the foreign XML node directly: Chrome
-    // doesn't register <defs> paint servers (gradients) on adopted
-    // cross-document SVG nodes, which leaves gradient-only logos invisible.
-    btn.appendChild(document.importNode(
-      new DOMParser().parseFromString(site.logoSvg, 'image/svg+xml').documentElement, true));
+    // Logos are pre-rasterized PNGs (tools/generate-site-icons.js); theme-
+    // dependent ones ship a -light variant picked here. PNGs also render the
+    // gradient marks that inline SVG injection couldn't display in the popup.
+    const logoImg = document.createElement('img');
+    logoImg.alt = '';
+    logoImg.src = (site.logoLight && window.matchMedia('(prefers-color-scheme: light)').matches)
+      ? site.logoLight : site.logo;
+    btn.appendChild(logoImg);
     btn.title = chrome.i18n.getMessage(`newConv_${siteKey}`) || `New ${siteKey} conversation`;
 
     if (siteKey === 'local') {
@@ -166,7 +169,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const results = await chrome.scripting.executeScript({
       target: { tabId: tab.id },
       world: 'MAIN',
-      args: [promptText, editorSelectors, siteKey === 'perplexity'],
+      args: [promptText, editorSelectors, !!SITES[siteKey]?.forceClear],
       func: injectPromptIntoEditor,
     });
     if (results?.[0]?.result) return true;

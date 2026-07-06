@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Mazungumzo mapya ya Perplexity"
   },
+  "newConv_baidu": {
+    "message": "Mazungumzo mapya ya Baidu"
+  },
   "newConv_zai": {
     "message": "Mazungumzo mapya ya Z.ai"
   },
@@ -288,7 +291,7 @@
     "message": "Weka URL ya LLM ya ndani:"
   },
   "alertNotSupported": {
-    "message": "Tafadhali tumia kiendelezi hiki kwenye tovuti ya AI inayotumika (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, au Character.AI)."
+    "message": "Tafadhali tumia kiendelezi hiki kwenye tovuti ya AI inayotumika (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, au Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Haiwezekani kupata sehemu ya kuandika katika ukurasa huu. Jaribu kubonyeza kwenye kihariri kwanza, kisha utumie kitufe cha ingiza."

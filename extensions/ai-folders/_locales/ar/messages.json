@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "محادثة Perplexity جديدة"
   },
+  "newConv_baidu": {
+    "message": "محادثة Baidu جديدة"
+  },
   "newConv_zai": {
     "message": "محادثة Z.ai جديدة"
   },
@@ -288,7 +291,7 @@
     "message": "تعيين عنوان URL للنموذج المحلي:"
   },
   "alertNotSupported": {
-    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Grok أو Perplexity أو Z.ai أو Qwen أو Meta AI أو Mistral أو Poe أو Duck.ai أو You.com أو Pi أو Character.AI)."
+    "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Grok أو Perplexity أو Baidu أو Z.ai أو Qwen أو Meta AI أو Mistral أو Poe أو Duck.ai أو You.com أو Pi أو Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."

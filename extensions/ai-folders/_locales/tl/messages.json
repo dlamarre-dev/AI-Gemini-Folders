@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Bagong Perplexity na pag-uusap"
   },
+  "newConv_baidu": {
+    "message": "Bagong Baidu na pag-uusap"
+  },
   "newConv_zai": {
     "message": "Bagong Z.ai na pag-uusap"
   },
@@ -288,7 +291,7 @@
     "message": "Itakda ang URL ng lokal na LLM:"
   },
   "alertNotSupported": {
-    "message": "Gamitin ang extension na ito sa isang sinusuportahang AI na site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, o Character.AI)."
+    "message": "Gamitin ang extension na ito sa isang sinusuportahang AI na site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, o Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Hindi mahanap ang text input sa pahinang ito. Subukang mag-click sa editor muna, pagkatapos ay gamitin ang insert button."

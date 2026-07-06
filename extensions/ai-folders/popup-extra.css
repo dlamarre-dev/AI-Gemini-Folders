@@ -9,14 +9,16 @@
    removed in favor of inheriting src/popup.css plus this site-specific overlay. */
 
 /* ── Per-service "new conversation" buttons (prompt mode) ─────────────────── */
-/* Dedicated row between the search field and the full-width "add prompt"
-   button; wraps onto extra lines as the site roster grows. */
+/* Dedicated rows between the search field and the full-width "add prompt"
+   button. A grid of fixed 30px tracks with space-between stretches the first
+   row edge-to-edge (same width as the saved-prompt list) while later rows
+   reuse the exact same column positions, so the spacing stays uniform. */
 .site-new-conv-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30px);
+  justify-content: space-between;
   gap: 4px;
   margin-bottom: 10px;
-  align-items: center;
 }
 .site-new-conv-btn {
   width: 30px;
@@ -39,14 +41,15 @@
   transform: translateY(-1px);
 }
 .site-new-conv-btn:active { transform: translateY(0); }
-.site-new-conv-btn svg {
+.site-new-conv-btn img {
   width: 16px;
   height: 16px;
+  object-fit: contain;
 }
 /* The "c.ai" text logo is wide and flat — give it the full button width
    so it renders as large as the square logos. */
 .site-new-conv-btn[data-site="characterai"] { padding: 5px 2px; }
-.site-new-conv-btn[data-site="characterai"] svg {
+.site-new-conv-btn[data-site="characterai"] img {
   width: 24px;
   height: 14px;
 }
@@ -72,21 +75,23 @@
   margin-right: 4px;
   opacity: 0.8;
 }
-.chat-site-logo svg {
+/* object-fit keeps non-square logos (the wide "c.ai" text) from stretching */
+.chat-site-logo img {
   width: 12px;
   height: 12px;
+  object-fit: contain;
 }
 
-/* ChatGPT's, Grok's and Z.ai's brand color (#fff) is invisible on a light
-   background. Override link text — and the two all-white logos' SVG fills —
-   to near-black in light mode. (Z.ai's logo is self-contained dark-tile +
-   white Z, so only its link color needs the override.) */
+/* Sites using the white/black title scheme (color: #fff in SITES) need a
+   near-black override in light mode; Baidu swaps its lightened dark-theme
+   blue for the true brand blue. (Logos need no CSS override — theme-dependent
+   logos ship a -light PNG variant picked at render time in popup.js /
+   folders.js.) */
 @media (prefers-color-scheme: light) {
   .chat-item.site-chatgpt .chat-link,
   .chat-item.site-grok .chat-link,
-  .chat-item.site-zai .chat-link { color: #212121; }
-  .chat-item.site-chatgpt .chat-site-logo svg path,
-  .site-new-conv-btn[data-site="chatgpt"] svg path,
-  .chat-item.site-grok .chat-site-logo svg path,
-  .site-new-conv-btn[data-site="grok"] svg path { fill: #212121; }
+  .chat-item.site-zai .chat-link,
+  .chat-item.site-duckai .chat-link,
+  .chat-item.site-characterai .chat-link { color: #212121; }
+  .chat-item.site-baidu .chat-link { color: #2932E1; }
 }

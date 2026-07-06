@@ -20,9 +20,11 @@ describe('getSiteByUrl', () => {
     ['https://chat.mistral.ai/chat/abc', 'mistral'],
     ['https://poe.com/chat/abc', 'poe'],
     ['https://duckduckgo.com/?q=x&ia=chat', 'duckai'],
+    ['https://duck.ai/', 'duckai'],
     ['https://you.com/', 'you'],
     ['https://pi.ai/talk', 'pi'],
     ['https://character.ai/chat/abc', 'characterai'],
+    ['https://chat.baidu.com/', 'baidu'],
   ])('%s -> %s', (url, key) => {
     expect(getSiteByUrl(url)).toBe(key);
   });
@@ -30,6 +32,10 @@ describe('getSiteByUrl', () => {
   test('the Mistral marketing site (not chat.) does not match', () => {
     expect(getSiteByUrl('https://www.mistral.ai/')).toBeNull();
     expect(getSiteByUrl('https://mistral.ai/news')).toBeNull();
+  });
+
+  test('the Baidu search engine (not chat.) does not match', () => {
+    expect(getSiteByUrl('https://www.baidu.com/')).toBeNull();
   });
 
   test('a subdomain of a supported site matches', () => {
@@ -126,5 +132,30 @@ describe('extractAITitleLogic', () => {
   test('characterai: ignores the generic site title and returns the fallback', () => {
     document.title = 'Character.AI';
     expect(extractAITitleLogic('characterai', 'New conversation')).toBe('New conversation');
+  });
+
+  test('baidu: reads the selected sidebar history item', () => {
+    document.body.innerHTML =
+      '<div class="chat-side-list-item">' +
+      '  <span class="history-item-text cos-space-mr-xxs">Autre conversation</span></div>' +
+      '<div class="chat-side-list-item chat-side-list-item-sample no-hover selected">' +
+      '  <div class="history-item-content"><div class="history-item-content-left">' +
+      '    <span class="history-item-text cos-space-mr-xxs">Hello how are you?</span>' +
+      '  </div></div></div>';
+    expect(extractAITitleLogic('baidu', 'fallback')).toBe('Hello how are you?');
+  });
+
+  test('baidu: ignores the generic Chinese site title and returns the fallback', () => {
+    document.title = '百度文心助手';
+    expect(extractAITitleLogic('baidu', 'New conversation')).toBe('New conversation');
+  });
+
+  test('baidu: a known-generic tab title (with suffix) yields "" so callers use their default', () => {
+    document.title = '百度文心助手 - 办公学习一站解决';
+    expect(extractAITitleLogic('baidu', '百度文心助手 - 办公学习一站解决')).toBe('');
+  });
+
+  test('the fallback tab title is cleaned of its " - suffix" before being used', () => {
+    expect(extractAITitleLogic('baidu', 'Ma vraie conversation - 百度文心助手')).toBe('Ma vraie conversation');
   });
 });

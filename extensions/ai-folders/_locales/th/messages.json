@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "บทสนทนา Perplexity ใหม่"
   },
+  "newConv_baidu": {
+    "message": "บทสนทนา Baidu ใหม่"
+  },
   "newConv_zai": {
     "message": "บทสนทนา Z.ai ใหม่"
   },
@@ -288,7 +291,7 @@
     "message": "ตั้งค่า URL ของ LLM ในเครื่อง:"
   },
   "alertNotSupported": {
-    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi หรือ Character.AI)"
+    "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi หรือ Character.AI)"
   },
   "alertEditorNotFound": {
     "message": "ไม่พบช่องป้อนข้อความในหน้านี้ ลองคลิกที่ตัวแก้ไขก่อน แล้วจึงใช้ปุ่มแทรก"

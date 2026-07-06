@@ -254,6 +254,9 @@
   "newConv_perplexity": {
     "message": "Uus Perplexity vestlus"
   },
+  "newConv_baidu": {
+    "message": "Uus Baidu vestlus"
+  },
   "newConv_zai": {
     "message": "Uus Z.ai vestlus"
   },
@@ -288,7 +291,7 @@
     "message": "Seadista kohaliku LLM-i URL:"
   },
   "alertNotSupported": {
-    "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi või Character.AI)."
+    "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi või Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Selle lehe tekstivälja ei leitud. Proovige esmalt redaktorisse klõpsata ja seejärel kasutage lisamisnuppu."
