@@ -23,7 +23,7 @@ past — "New chat", "New chat", "Untitled". One line: **"Your AI chats. One end
   (📁 Work, 📁 Research, 📁 Recipes, 📁 Code) — the messy list becomes order.
 - The **prompt library**: switch to 📝 mode, then `#review` + Space **types the saved
   prompt straight into a chat box** — the one-of-a-kind feature, shown as a real action.
-- **Every AI**: the seven brand logos arrive one by one along the brand gradient,
+- **Every AI**: the seventeen service logos arrive one by one along the brand gradient (two rows),
   plus a local-LLM chip. "One library. Every AI."
 
 ## Outro / punchline
@@ -57,7 +57,7 @@ These two are the centerpiece scenes (Scene 2 and Scene 3).
 
 ## Share copy (draft)
 AI Folders is now live — folders for your AI chats and a reusable prompt library across
-ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok & Perplexity. Free, open source, private.
+17 AI services — ChatGPT, Claude, Gemini, Mistral, Meta AI & more. Free, open source, private.
 
 ## Audio direction
 - Role: warm, clean corporate bed with a consistent light SFX layer (app-store).
@@ -107,8 +107,8 @@ Music: bed continues.
 Transition mood: clean wipe → Scene 4
 
 ### Scene 4 — Every AI — 4.0s
-Seven real brand logos arrive **one by one** along a glowing brand-gradient rail —
-ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok, Perplexity — plus a local-LLM chip.
+Seventeen real service logos arrive **one by one** along a glowing brand-gradient rail
+(two rows: ChatGPT, Claude, Gemini … Character.AI, Baidu) — plus a local-LLM chip.
 Caption holds after the set: **"One library. Every AI."**
 Sequential/interaction: yes — 7 logos pop in on the beat grid (~0.5s apart), hold full set.
 Audio intent: building, additive, momentum into the outro.
