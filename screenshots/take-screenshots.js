@@ -351,14 +351,16 @@ async function screenshotPromptMode(page, extId, localeData, outPath) {
   await page.reload();
   await waitForRender(page);
 
-  // Expand first two prompt items
+  // Expand only the second prompt item (the first stays collapsed to keep the
+  // capture under the 598px native-scale budget of the compositions)
   const promptHeaders = page.locator('.prompt-header');
-  await promptHeaders.nth(0).click();
-  await page.waitForTimeout(200);
   await promptHeaders.nth(1).click();
   await page.waitForTimeout(300);
 
-  // Remove the 200px autoResize cap; also trim trailing whitespace to avoid phantom empty lines
+  // The single expanded prompt shows its full text with natural padding (the
+  // collapsed first prompt frees the height needed to stay under the 598px
+  // native-scale budget of the compositions, in every locale).
+  // Trim trailing whitespace to avoid phantom empty lines.
   await page.evaluate(() => {
     document.querySelectorAll('.prompt-text-edit').forEach(ta => {
       ta.value = ta.value.trimEnd();
@@ -385,6 +387,14 @@ async function screenshotPromptMode(page, extId, localeData, outPath) {
 
   // Fit viewport to content — no clipping
   const bodyHeight = await page.evaluate(() => document.body.scrollHeight);
+  if (process.env.DEBUG_HEIGHTS) {
+    const dbg = await page.evaluate(() => ({
+      textEdits: [...document.querySelectorAll('.prompt-text-edit')].map(t => t.offsetHeight),
+      items: [...document.querySelectorAll('#promptList > *')].map(el => el.className.split(' ')[0] + ':' + el.offsetHeight),
+      rows: [...document.querySelectorAll('#promptModeContainer > *')].map(el => (el.id || el.className || el.tagName).toString().slice(0, 24) + ':' + el.offsetHeight),
+    }));
+    console.log('  DEBUG', JSON.stringify(dbg));
+  }
   await page.setViewportSize({ width: POPUP_WIDTH, height: bodyHeight });
 
   await page.screenshot({ path: outPath, fullPage: false });
