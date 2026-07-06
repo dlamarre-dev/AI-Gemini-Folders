@@ -105,6 +105,9 @@ const SITES = {
     newConvUrl: 'https://www.meta.ai/',
     // Meta AI uses a Lexical contenteditable composer; selectors need live validation
     editorSelectors: ['div[contenteditable="true"][role="textbox"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // Lexical mangles the multi-line inline-suggestion injection (newlines
+    // collapsed, '#' duplicated) — inject exact matches only, after clearing
+    forceClear: true,
     logo: 'icons/meta.png',
   },
   mistral: {
@@ -336,6 +339,24 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       () => docTitle(new Set(['perplexity', 'perplexity ai', 'perplexity.ai', ''])),
       () => firstMsg('[data-testid="query-text"], .query, .prose p:first-child'),
     ];
+  } else if (siteKey === 'meta') {
+    // No generic activeSidebarLink here: Meta's [aria-current] element is the
+    // sidebar date group header ("Today"), not the conversation entry.
+    fallbackIgnores = new Set(['meta ai', 'meta.ai', 'new conversation', 'today', 'yesterday', '']);
+    strategies = [
+      // Active conversation in the sidebar history:
+      // <a data-sidebar="menu-button" data-active="true"><span class="truncate">…
+      () => document.querySelector('a[data-sidebar="menu-button"][data-active="true"] .truncate')?.textContent?.trim() || null,
+      // Conversation title button in the page header:
+      // <button data-slot="button"><span class="truncate">… — filtered, since
+      // other header buttons share the same markup
+      () => {
+        const t = document.querySelector('header button[data-slot="button"] span.truncate')?.textContent?.trim();
+        return (t && t.length > 1 && !fallbackIgnores.has(t.toLowerCase())) ? t : null;
+      },
+      () => docTitle(fallbackIgnores),
+      () => firstMsg('[data-message-author-role="user"], [class*="user"] [class*="message"]'),
+    ];
   } else if (siteKey === 'baidu') {
     fallbackIgnores = new Set(['baidu', 'baidu chat', 'ai chat', '文心一言', '百度文心助手', '文心助手', 'new chat', '']);
     strategies = [
@@ -354,7 +375,6 @@ function extractAITitleLogic(siteKey, defaultFallback) {
     const genericIgnores = {
       zai: ['z.ai', 'chat.z.ai', 'new chat'],
       qwen: ['qwen', 'qwen chat', 'new chat'],
-      meta: ['meta ai', 'meta.ai', 'new conversation'],
       mistral: ['le chat', 'le chat - mistral ai', 'mistral ai', 'new chat'],
       poe: ['poe', 'new chat'],
       duckai: ['duckduckgo ai chat', 'duckduckgo', 'ai chat', 'duck.ai'],
