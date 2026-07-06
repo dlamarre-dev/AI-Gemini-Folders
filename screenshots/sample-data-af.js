@@ -108,10 +108,9 @@ function make(locale) {
         text: debugHelperText,
         timestamp: NOW - 10 * DAY,
       },
-      [blogOutline || 'Blog Outline']: {
-        text: 'Create a detailed blog post outline on the following topic. Include an engaging title, introduction hook, 5 main sections with sub-points, and a conclusion with a call to action.',
-        timestamp: NOW - 14 * DAY,
-      },
+      // (5th sample prompt removed 2026-07: the 1.6 prompt-mode popup gained a
+      // second row of service buttons; with 5 prompts the capture exceeded the
+      // 598px budget that keeps the popup at native scale in the compositions)
     },
   };
 }
