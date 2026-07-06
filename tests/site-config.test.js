@@ -134,6 +134,29 @@ describe('extractAITitleLogic', () => {
     expect(extractAITitleLogic('characterai', 'New conversation')).toBe('New conversation');
   });
 
+  test('meta: does NOT read the sidebar date group header ("Today")', () => {
+    document.body.innerHTML = '<a aria-current="page"><span>Today</span></a>';
+    expect(extractAITitleLogic('meta', 'fallback')).toBe('fallback');
+  });
+
+  test('meta: reads the active sidebar conversation link', () => {
+    document.body.innerHTML =
+      '<a href="/prompt/x" data-sidebar="menu-button"><span class="min-w-0 flex-1 truncate">Autre</span></a>' +
+      '<a href="/prompt/y" data-sidebar="menu-button" data-active="true"><span class="min-w-0 flex-1 truncate">Quick Hello</span></a>';
+    expect(extractAITitleLogic('meta', 'fallback')).toBe('Quick Hello');
+  });
+
+  test('meta: reads the header title button, skipping generic labels', () => {
+    document.body.innerHTML =
+      '<header><button data-slot="button"><span class="truncate">Quick Hello</span></button></header>';
+    expect(extractAITitleLogic('meta', 'fallback')).toBe('Quick Hello');
+  });
+
+  test('meta: uses the document <title> when it is a real conversation name', () => {
+    document.title = 'Trip planning - Meta AI';
+    expect(extractAITitleLogic('meta', 'fallback')).toBe('Trip planning');
+  });
+
   test('baidu: reads the selected sidebar history item', () => {
     document.body.innerHTML =
       '<div class="chat-side-list-item">' +
