@@ -157,6 +157,35 @@ describe('extractAITitleLogic', () => {
     expect(extractAITitleLogic('meta', 'fallback')).toBe('Trip planning');
   });
 
+  test('zai: reads the selected sidebar conversation button', () => {
+    document.body.innerHTML =
+      '<button draggable="false"><div class="flex"><div class="text-left truncate leading-5">Autre</div></div></button>' +
+      '<button draggable="false" data-selected="true" class="w-full flex">' +
+      '  <div class="flex self-center flex-1"><div dir="auto" class="text-left self-center min-w-0 w-full truncate leading-5">Hello Greeting</div></div></button>';
+    expect(extractAITitleLogic('zai', 'fallback')).toBe('Hello Greeting');
+  });
+
+  test('qwen: reads the active sidebar chat item', () => {
+    document.body.innerHTML =
+      '<div class="chat-item"><div class="chat-item-drag-link-content-tip-text">Autre</div></div>' +
+      '<div class="chat-item chat-item-active"><div class="chat-item-drag-link-content">' +
+      '  <div class="chat-item-drag-link-content-tip-text chat-item-drag-link-content-tip">Hello Conversation</div></div></div>';
+    expect(extractAITitleLogic('qwen', 'fallback')).toBe('Hello Conversation');
+  });
+
+  test('qwen: ignores the generic "Qwen Studio" document title', () => {
+    document.title = 'Qwen Studio';
+    expect(extractAITitleLogic('qwen', 'New conversation')).toBe('New conversation');
+  });
+
+  test('pi: reads the active sidebar conversation entry', () => {
+    document.body.innerHTML =
+      '<div role="button" class="flex items-center"><span class="text-body-s truncate">Autre</span></div>' +
+      '<div role="button" class="flex items-center bg-fill-default text-text-secondary">' +
+      '  <div><span class="text-body-s truncate text-text-secondary">Greetings from Pi</span></div></div>';
+    expect(extractAITitleLogic('pi', 'fallback')).toBe('Greetings from Pi');
+  });
+
   test('baidu: reads the selected sidebar history item', () => {
     document.body.innerHTML =
       '<div class="chat-side-list-item">' +

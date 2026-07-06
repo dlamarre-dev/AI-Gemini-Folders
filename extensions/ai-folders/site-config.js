@@ -357,6 +357,47 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       () => docTitle(fallbackIgnores),
       () => firstMsg('[data-message-author-role="user"], [class*="user"] [class*="message"]'),
     ];
+  } else if (siteKey === 'zai') {
+    fallbackIgnores = new Set(['z.ai', 'chat.z.ai', 'z.ai chat', 'new chat', '']);
+    strategies = [
+      // Sidebar entries are <button draggable="false"> elements (no links);
+      // the selected conversation carries data-selected="true", its title in
+      // a Tailwind <div class="… truncate …">
+      () => document.querySelector('button[data-selected="true"] .truncate')?.textContent?.trim() || null,
+      activeSidebarLink,
+      () => docTitle(fallbackIgnores),
+      () => firstMsg('[data-message-author-role="user"], [class*="user"] [class*="message"]'),
+    ];
+  } else if (siteKey === 'qwen') {
+    // The title only exists in the sidebar "All chats" list (the header shows
+    // the model name and document.title stays "Qwen Studio").
+    fallbackIgnores = new Set(['qwen', 'qwen chat', 'qwen studio', 'new chat', '']);
+    strategies = [
+      // Sidebar entry whose link matches the current conversation path; the
+      // title text lives in .chat-item-drag-link-content-tip-text
+      () => {
+        const path = window.location.pathname;
+        if (path.length <= 1) return null;
+        const link = document.querySelector(`a[href*="${path}"]`);
+        return link?.querySelector('.chat-item-drag-link-content-tip-text')?.textContent?.trim() || null;
+      },
+      // Fallback: an active-marked chat item, whatever the exact marker class
+      () => document.querySelector('[class*="active"] .chat-item-drag-link-content-tip-text')?.textContent?.trim() || null,
+      activeSidebarLink,
+      () => docTitle(fallbackIgnores),
+      () => firstMsg('[data-message-author-role="user"], [class*="user"] [class*="message"]'),
+    ];
+  } else if (siteKey === 'pi') {
+    fallbackIgnores = new Set(['pi', 'pi.ai', 'talk with pi', 'pi, your personal ai', '']);
+    strategies = [
+      // Active conversation entry in the sidebar: the selected row is a
+      // div[role="button"] carrying bg-fill-default (Tailwind), its title in
+      // <span class="text-body-s truncate …">
+      () => document.querySelector('div[role="button"].bg-fill-default span.truncate')?.textContent?.trim() || null,
+      activeSidebarLink,
+      () => docTitle(fallbackIgnores),
+      () => firstMsg('[data-message-author-role="user"], [class*="user"] [class*="message"]'),
+    ];
   } else if (siteKey === 'baidu') {
     fallbackIgnores = new Set(['baidu', 'baidu chat', 'ai chat', '文心一言', '百度文心助手', '文心助手', 'new chat', '']);
     strategies = [
@@ -373,13 +414,10 @@ function extractAITitleLogic(siteKey, defaultFallback) {
     // list differs. Promote a site to its own branch above if it needs a
     // dedicated DOM strategy.
     const genericIgnores = {
-      zai: ['z.ai', 'chat.z.ai', 'new chat'],
-      qwen: ['qwen', 'qwen chat', 'new chat'],
       mistral: ['le chat', 'le chat - mistral ai', 'mistral ai', 'new chat'],
       poe: ['poe', 'new chat'],
       duckai: ['duckduckgo ai chat', 'duckduckgo', 'ai chat', 'duck.ai'],
       you: ['you.com', 'you', 'new chat'],
-      pi: ['pi', 'pi.ai', 'talk with pi', 'pi, your personal ai'],
       characterai: ['character.ai', 'characterai', 'c.ai', 'new chat'],
     }[siteKey];
     if (genericIgnores) {
