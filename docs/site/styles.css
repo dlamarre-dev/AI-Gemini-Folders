@@ -307,7 +307,7 @@ ul{padding:0;margin:0}
 
 /* ============================================================ real logos */
 .svc-logo{display:inline-flex;align-items:center;justify-content:center;flex:none}
-.svc-logo svg{width:100%;height:100%;display:block}
+.svc-logo svg,.svc-logo img{width:100%;height:100%;display:block;object-fit:contain}
 .svc-pill .svc-logo{width:22px;height:22px}
 .hero-chip .svc-logo{width:18px;height:18px}
 .btn .ic svg,.browser .bi svg,.gemini-card .gmark svg,.oss-card .gh svg,.brand .mark svg,.afp-title .mk svg,.final .folder svg,.hero-art .folder svg{width:100%;height:100%;display:block}

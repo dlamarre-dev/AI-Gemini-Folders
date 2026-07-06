@@ -8,22 +8,34 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ## 🤖 AI Folders *(New)*
 
-**AI Folders** is the multi-platform evolution: it works across **ChatGPT, Claude, Perplexity, Copilot, DeepSeek, Grok, Gemini**, and local LLMs — all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
+**AI Folders** is the multi-platform evolution: it works across **17 AI services** — ChatGPT, Claude, Perplexity, Copilot, DeepSeek, Grok, Gemini, Mistral, Meta AI, Qwen, Z.ai, Poe, Duck.ai, You.com, Pi, Character.AI and Baidu — plus local LLMs, all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
 
 [![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-blue?logo=googlechrome)](https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf)
 [![Available on Firefox Add-ons](https://img.shields.io/badge/Firefox_Add--ons-Available-orange?logo=firefox)](https://addons.mozilla.org/firefox/addon/ai_folders/)
 
 ### Supported platforms
-| Platform | Folders | Quick Save | Prompt Injection |
-|---|---|---|---|
-| ChatGPT | ✅ | ✅ | ✅ |
-| Claude | ✅ | ✅ | ✅ |
-| Perplexity | ✅ | ✅ | ✅ |
-| Microsoft Copilot | ✅ | ✅ | ✅ |
-| DeepSeek | ✅ | ✅ | ✅ |
-| Grok | ✅ | ✅ | ✅ |
-| Google Gemini | ✅ | ✅ | ✅ |
+| Platform                       | Folders | Quick Save | Prompt Injection |
+|--------------------------------|---|---|---|
+| ChatGPT                        | ✅ | ✅ | ✅ |
+| Claude                         | ✅ | ✅ | ✅ |
+| Perplexity                     | ✅ | ✅ | ✅ *(exact-match trigger)* |
+| Microsoft Copilot              | ✅ | ✅ | ✅ |
+| DeepSeek                       | ✅ | ✅ | ✅ |
+| Grok                           | ✅ | ✅ | ✅ |
+| Google Gemini                  | ✅ | ✅ | ✅ |
+| Mistral (Vibe)                 | ✅ | ✅ | ✅ |
+| Meta AI                        | ✅ | ✅ | ✅ *(exact-match trigger)* |
+| Qwen                           | ✅ | ✅ | ✅ |
+| Z.ai                           | ✅ | ✅ | ✅ |
+| Poe                            | ✅ | ✅ | ✅ |
+| Duck.ai                        | ✅ | ✅ | ✅ |
+| You.com                        | ✅ | ✅ | ✅ |
+| Pi                             | ✅ | ✅ | ✅ |
+| Character.AI                   | ✅ | ✅ | ✅ |
+| Baidu Chat                     | ✅ | ✅ | ✅ *(exact-match trigger)* |
 | Local LLM *(configurable URL)* | ✅ | ✅ | ✅ *(Open WebUI & others)* |
+
+*(exact-match trigger)*: these composers turn `#word` into token chips or mangle multi-line suggestions, so the `#` trigger skips inline suggestions there — type the exact prompt name and press Space to inject.
 
 ---
 
@@ -118,7 +130,7 @@ This project uses a Python build pipeline to generate browser-specific versions.
 ### Prompt Mode
 1. Click the **📝** side of the pill toggle to switch to Prompt Mode.
 2. **Save a prompt:** Click **➕ Add Prompt**, enter a title and text, hit **Save**.
-3. **Quick inject via trigger:** Type `#` to instantly see all your saved prompts, or keep typing to filter in real time. Use **↓ / ↑** to cycle through suggestions. Press **Space** on a unique match to autocomplete (suggestion panel stays stable), or on an exact match to inject. *(Perplexity: suggestions disabled, type the exact prompt name and press Space.)*
+3. **Quick inject via trigger:** Type `#` to instantly see all your saved prompts, or keep typing to filter in real time. Use **↓ / ↑** to cycle through suggestions. Press **Space** on a unique match to autocomplete (suggestion panel stays stable), or on an exact match to inject. *(Perplexity, Meta AI, Baidu: suggestions disabled, type the exact prompt name and press Space.)*
 4. **Use a prompt via panel:** Click any saved prompt to expand it, then hit **▶** to inject it into the active AI tab.
 5. **New conversation:** *(AI Folders)* Use the per-service shortcut buttons in Prompt Mode (right-click the local-LLM button to set its URL). *(Gemini Folders)* Right-click 💎 to configure a custom Gem URL, click it to toggle, then 💬 to open a new conversation.
 6. Pin prompts with 📍, search and sort freely — all changes sync automatically.
@@ -130,7 +142,7 @@ This project uses a Python build pipeline to generate browser-specific versions.
 Both extensions are built with privacy in mind.
 
 * **Gemini Folders** only requests access to `gemini.google.com` and the context menu.
-* **AI Folders** requests access to the supported AI domains (`chatgpt.com`, `claude.ai`, `perplexity.ai`, `copilot.microsoft.com`, `chat.deepseek.com`, `grok.com`, `gemini.google.com`) and the context menu — and nothing else.
+* **AI Folders** requests access to the supported AI domains (`chatgpt.com`, `claude.ai`, `perplexity.ai`, `copilot.microsoft.com`, `chat.deepseek.com`, `grok.com`, `gemini.google.com`, `chat.mistral.ai`, `meta.ai`, `chat.qwen.ai`, `chat.z.ai`, `poe.com`, `duck.ai`, `duckduckgo.com`, `you.com`, `pi.ai`, `character.ai`, `chat.baidu.com`) and the context menu — and nothing else.
 * **Optional host permission (local LLM):** AI Folders declares a broad `optional_host_permissions` (`http://*/*`, `https://*/*`) because the local-LLM URL is user-defined and can't be known ahead of time. **Nothing is granted by default.** When you set a local LLM URL, the extension requests access to *only that single origin* via the browser's permission prompt, and revokes the previous origin if you change it. The broad declaration is the manifest pattern required to request a dynamic origin at runtime — it is not standing access to all sites.
 * The `bookmarks` permission is used strictly to manage the mobile sync folder when you enable that feature.
 * Tab content is read **only** when you explicitly save a conversation, solely to extract its title.
@@ -159,9 +171,11 @@ These follow from the extension reading each AI platform’s live page (no serve
 The two extensions share one codebase in `src/`, with a thin per-extension overlay in `extensions/<ai-folders|gemini-folders>/` (manifest, popup, background, `site-config.js`, `_locales/`). `python build.py` merges them into `dist/<name>/{chrome,firefox}`.
 
 ```bash
-npx jest            # run the test suite (~239 tests, jsdom)
+npx jest            # run the test suite (~270 tests, jsdom)
 python build.py     # run tests, then build both extensions for Chrome + Firefox
 ```
+
+Site logos are pre-rasterized PNGs (`extensions/ai-folders/icons/`), generated by `node tools/generate-site-icons.js` (needs Chrome) from the vector sources in `assets/site-logos/` — which are also the marks used by the website.
 
 `main` is protected: changes go through a pull request that must pass three CI checks (`test`, plus CodeQL `Analyze (javascript-typescript)` and `Analyze (actions)`). Please branch, open a PR, and let the checks run rather than pushing to `main` directly.
 

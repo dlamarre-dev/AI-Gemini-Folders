@@ -3,6 +3,9 @@
 // page (full chrome API access), not a popup, so it survives multi-tab probing.
 
 const SETTLE_MS = 4500; // extra wait after 'complete' for SPA hydration
+// Some SPAs (e.g. You.com) never mount their composer in a hidden tab
+// (rAF-throttled rendering) — retry with the tab briefly focused.
+const VISIBLE_SETTLE_MS = 2500;
 
 // Sites with a real domain + landing URL (excludes the user-configured local LLM).
 const SITES_TO_TEST = Object.values(SITES).filter(s => s.domain && s.newConvUrl);
@@ -66,16 +69,32 @@ async function runSite(site) {
   const tabUrl = async () => {
     try { const t = await chrome.tabs.get(tab.id); return t.url || ''; } catch (_) { return ''; }
   };
-  try {
-    tab = await chrome.tabs.create({ url: site.newConvUrl, active: false });
-    await waitForComplete(tab.id);
-    await new Promise(r => setTimeout(r, SETTLE_MS));
+  const probeTab = async () => {
     const results = await chrome.scripting.executeScript({
       target: { tabId: tab.id },
       args: [site.editorSelectors, site.domain],
       func: probe,
     });
-    return results?.[0]?.result ?? { error: 'No result (tab not scriptable).', href: await tabUrl() };
+    return results?.[0]?.result;
+  };
+  try {
+    tab = await chrome.tabs.create({ url: site.newConvUrl, active: false });
+    await waitForComplete(tab.id);
+    await new Promise(r => setTimeout(r, SETTLE_MS));
+    let result = await probeTab();
+
+    // Nothing found on the expected domain: the SPA may only hydrate in a
+    // focused tab — flash it to the foreground and probe again.
+    if (result && !result.error && !result.matchedSelector && !result.heuristicFound
+        && result.onExpectedDomain !== false) {
+      const diagTab = await chrome.tabs.getCurrent();
+      await chrome.tabs.update(tab.id, { active: true });
+      await new Promise(r => setTimeout(r, VISIBLE_SETTLE_MS));
+      const retry = await probeTab();
+      if (diagTab) { try { await chrome.tabs.update(diagTab.id, { active: true }); } catch (_) {} }
+      if (retry) { retry.neededFocus = true; result = retry; }
+    }
+    return result ?? { error: 'No result (tab not scriptable).', href: await tabUrl() };
   } catch (err) {
     // executeScript throws when the tab navigated to a domain we lack host access
     // for — typically a login page (e.g. Gemini → accounts.google.com). Surface the
@@ -96,10 +115,11 @@ function classify(r) {
     if (looksLikeLogin(r)) return { cls: 'login', icon: '🔒', label: 'NOT LOGGED IN?', detail: 'redirected to ' + r.href + ' — log in and re-run' };
     return { cls: 'error', icon: '❌', label: 'ERROR', detail: r.error };
   }
-  if (r.matchedSelector) return { cls: 'ok', icon: '🟢', label: 'OK', detail: 'matched: ' + r.matchedSelector };
+  const focusNote = r.neededFocus ? ' (page only hydrates in a focused tab)' : '';
+  if (r.matchedSelector) return { cls: 'ok', icon: '🟢', label: 'OK', detail: 'matched: ' + r.matchedSelector + focusNote };
   if (r.heuristicFound) return {
     cls: 'fallback', icon: '🟡', label: 'FALLBACK — selectors stale',
-    detail: 'No site selector matched; heuristic found ' + (r.heuristicDesc || 'a composer') + '. → update editorSelectors in site-config.js',
+    detail: 'No site selector matched; heuristic found ' + (r.heuristicDesc || 'a composer') + focusNote + '. → update editorSelectors in site-config.js',
   };
   if (looksLikeLogin(r)) return {
     cls: 'login', icon: '🔒', label: 'NOT LOGGED IN?', detail: 'on ' + r.hostname + ' — log in and re-run',

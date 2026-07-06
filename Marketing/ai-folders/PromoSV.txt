@@ -2,7 +2,7 @@
 
 Organisera konversationer från alla dina favorit-AI-verktyg i delade mappar, bygg ett bibliotek med återanvändbara promptar och injicera mallar direkt i valfritt inmatningsfält — utan att behöva kopiera och klistra in.
 
-🌐 8 AI-TJÄNSTER SOM STÖDS
+🌐 18 AI-TJÄNSTER SOM STÖDS
 
 AI-mappar integrerar nativt med alla större AI-chattassistenter, såsom Claude, ChatGPT och Gemini, och med de lokala LLM:er du kör själv. Konversationer från olika plattformar kan dela exakt samma mapp. Varje chatt visar färgen och logotypen för sin egen tjänst, så att du alltid vet varifrån den kommer.
 
@@ -65,6 +65,7 @@ Bläddra i koden eller bidra: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPPDATERINGAR:
+Version 1.6 (10 nya AI-tjänster): Spara konversationer och injicera promptar i tio fler AI-tjänster — bland annat Mistral, Meta AI, Qwen och Z.ai — med omdesignade tjänsteknappar och officiella logotyper.
 Version 1.5.1 (Finjusteringar): Mappar sorteras nu med nyast först som standard, i linje med ditt promptbibliotek — en sorteringsordning du redan valt lämnas oförändrad. Dessutom har rensningsknappen (✕) i sökfältet åtgärdats så att den även fungerar i Firefox.
 Version 1.5 (Grok): Starta nya Grok-konversationer direkt från Promptläge, spara dem i mappar och injicera promptar. Bredare panel, förfinade kontroller och bättre tangentbordstillgänglighet. Buggfixar och intern refaktorering sedan senaste uppdateringen, för förbättrad stabilitet. Om AI-mappar är till nytta för dig kan du stödja utvecklingen genom att besöka Ko-fi-sidan: https://ko-fi.com/aifolders — tack för ditt stöd!
 Version 1.2 (DeepSeek): Starta nya DeepSeek-konversationer direkt från Promptläge, spara dem i mappar och injicera promptar.

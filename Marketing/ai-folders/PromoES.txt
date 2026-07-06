@@ -2,7 +2,7 @@
 
 Organiza conversaciones de todas tus herramientas de IA favoritas en carpetas compartidas, crea una biblioteca de prompts reutilizables e inyecta plantillas directamente en cualquier campo de texto — sin necesidad de copiar y pegar.
 
-🌐 8 SERVICIOS DE IA COMPATIBLES
+🌐 18 SERVICIOS DE IA COMPATIBLES
 
 Carpetas IA se integra de forma nativa con todos los principales asistentes de chat de IA, como Claude, ChatGPT y Gemini, así como con los LLM locales que ejecutas tú mismo. Las conversaciones de diferentes plataformas pueden compartir la misma carpeta. Cada chat muestra el color y el logotipo de su servicio de origen, para que siempre sepas de dónde proviene.
 
@@ -65,6 +65,7 @@ Explorar el código o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 ACTUALIZACIONES:
+Versión 1.6 (10 nuevos servicios de IA): Guarda conversaciones e inyecta prompts en diez servicios de IA más — incluidos Mistral, Meta AI, Qwen y Z.ai — con botones de servicios rediseñados y logotipos oficiales.
 Versión 1.5.1 (Mejoras): Las carpetas ahora se ordenan de más reciente a más antigua de forma predeterminada, igual que tu biblioteca de prompts — el orden que ya hubieras elegido se mantiene sin cambios. También se corrigió el botón de borrado (✕) en el campo de búsqueda para que funcione también en Firefox.
 Versión 1.5 (Grok): Inicia nuevas conversaciones de Grok directamente desde el Modo Prompt, guárdalas en carpetas e inyecta prompts. Panel más ancho, controles refinados y mejor accesibilidad con el teclado. Correcciones de errores y refactorizaciones internas desde la última actualización, para una mayor estabilidad. Si Carpetas IA te es útil, puedes apoyar su desarrollo visitando la página Ko-fi: https://ko-fi.com/aifolders — ¡gracias por tu apoyo!
 Versión 1.2 (DeepSeek): Inicia nuevas conversaciones de DeepSeek directamente desde el Modo Prompt, guárdalas en carpetas e inyecta prompts.

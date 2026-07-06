@@ -2,7 +2,7 @@
 
 Organizirajte pogovore iz vseh svojih najljubših AI-orodij v skupne mape, zgradite knjižnico promptov za večkratno uporabo in vstavljajte predloge neposredno v katero koli vnosno polje — brez kopiranja in lepljenja.
 
-🌐 8 PODPRTIH STORITEV UI
+🌐 18 PODPRTIH STORITEV UI
 
 Mape AI se izvorno povezujejo z vsemi glavnimi klepetalnimi pomočniki UI, kot so Claude, ChatGPT in Gemini, ter z lokalnimi modeli LLM, ki jih poganjate sami. Pogovori z različnih platform si lahko delijo popolnoma isto mapo. Vsak klepet prikazuje barvo in logotip svoje storitve, tako da vedno veste, od kod prihaja.
 
@@ -64,6 +64,7 @@ Preglej kodo ali prispevaj: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 POSODOBITVE:
+Različica 1.6 (10 novih storitev AI): Shranjujte pogovore in vstavljajte pozive v desetih dodatnih storitvah AI — med njimi Mistral, Meta AI, Qwen in Z.ai — s prenovljenimi gumbi storitev in uradnimi logotipi.
 Različica 1.5.1 (Izboljšave): Mape so zdaj privzeto razvrščene od najnovejših, tako kot vaša knjižnica pozivov — že izbrani vrstni red razvrščanja ostane nespremenjen. Popravljen je tudi gumb za počiščenje (✕) v iskalnem polju, tako da deluje tudi v Firefoxu.
 Različica 1.5 (Grok): Zaženite nove pogovore na Groku neposredno iz načina pozivov, shranite jih v mape in vstavljajte pozive. Širša plošča, izpopolnjeni kontrolniki in boljša dostopnost s tipkovnico. Popravki napak in notranje prestrukturiranje od zadnje posodobitve, za boljšo stabilnost. Če so vam Mape AI v pomoč, lahko podprete razvoj z obiskom strani Ko-fi: https://ko-fi.com/aifolders — hvala za vašo podporo!
 Različica 1.2 (DeepSeek): Zaženite nove pogovore na DeepSeeku neposredno iz načina pozivov, shranite jih v mape in vstavljajte pozive.
