@@ -44,6 +44,7 @@
 .site-new-conv-btn img {
   width: 16px;
   height: 16px;
+  object-fit: contain;
 }
 /* The "c.ai" text logo is wide and flat — give it the full button width
    so it renders as large as the square logos. */
@@ -74,17 +75,23 @@
   margin-right: 4px;
   opacity: 0.8;
 }
+/* object-fit keeps non-square logos (the wide "c.ai" text) from stretching */
 .chat-site-logo img {
   width: 12px;
   height: 12px;
+  object-fit: contain;
 }
 
-/* ChatGPT's, Grok's and Z.ai's brand color (#fff) is invisible on a light
-   background: override the link text color in light mode. (Their logos need
-   no CSS override — theme-dependent logos ship a -light PNG variant picked
-   at render time in popup.js / folders.js.) */
+/* Sites using the white/black title scheme (color: #fff in SITES) need a
+   near-black override in light mode; Baidu swaps its lightened dark-theme
+   blue for the true brand blue. (Logos need no CSS override — theme-dependent
+   logos ship a -light PNG variant picked at render time in popup.js /
+   folders.js.) */
 @media (prefers-color-scheme: light) {
   .chat-item.site-chatgpt .chat-link,
   .chat-item.site-grok .chat-link,
-  .chat-item.site-zai .chat-link { color: #212121; }
+  .chat-item.site-zai .chat-link,
+  .chat-item.site-duckai .chat-link,
+  .chat-item.site-characterai .chat-link { color: #212121; }
+  .chat-item.site-baidu .chat-link { color: #2932E1; }
 }

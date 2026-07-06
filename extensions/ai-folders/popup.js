@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const results = await chrome.scripting.executeScript({
       target: { tabId: tab.id },
       world: 'MAIN',
-      args: [promptText, editorSelectors, siteKey === 'perplexity'],
+      args: [promptText, editorSelectors, !!SITES[siteKey]?.forceClear],
       func: injectPromptIntoEditor,
     });
     if (results?.[0]?.result) return true;

@@ -34,7 +34,8 @@ if (!CHROME) { console.error('Chrome not found — install it or add its path to
 
 // Theme colors mirror the popup: dark text #e8eaed, light text #212121.
 // `fillOverride` recolors explicit white fills (chatgpt/grok); `color` drives
-// currentColor logos (poe bubble, c.ai text).
+// currentColor logos (poe bubble, c.ai text); `recolor: [from, to]` swaps one
+// specific fill (baidu's brand blue is too dark for the dark theme).
 const DARK_TEXT = '#e8eaed';
 const LIGHT_TEXT = '#212121';
 
@@ -46,6 +47,10 @@ const SPECS = fs.readdirSync(SRC).filter(f => f.endsWith('.svg')).map(f => {
   if (key === 'poe' || key === 'characterai') {
     spec.variants[''] = { color: DARK_TEXT };
     spec.variants['-light'] = { color: LIGHT_TEXT };
+  }
+  if (key === 'baidu') {
+    spec.variants[''] = { recolor: ['#2932E1', '#4E5CF2'] };
+    spec.variants['-light'] = {};
   }
   return spec;
 });
@@ -61,6 +66,7 @@ for (const { key, w, h, variants } of SPECS) {
       body{width:${w}px;height:${h}px;color:${opts.color || DARK_TEXT}}
       svg{width:${w}px;height:${h}px;display:block}
       ${opts.fillOverride ? `svg [fill="white"],svg [fill="#ffffff"]{fill:${opts.fillOverride} !important}` : ''}
+      ${opts.recolor ? `svg [fill="${opts.recolor[0]}"]{fill:${opts.recolor[1]} !important}` : ''}
     </style></head><body>${svg}</body></html>`;
     const page = path.join(tmp, `${key}${suffix}.html`);
     fs.writeFileSync(page, html);

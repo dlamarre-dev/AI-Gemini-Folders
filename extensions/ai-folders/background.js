@@ -22,6 +22,7 @@ const SUPPORTED_URL_PATTERNS = [
   "*://poe.com/*",
   "*://*.poe.com/*",
   "*://duck.ai/*",
+  "*://*.duck.ai/*",
   "*://duckduckgo.com/*",
   "*://you.com/*",
   "*://*.you.com/*",
@@ -194,9 +195,10 @@ async function handlePromptTriggerLookup(message, sender) {
 
   const exact = matches.find(m => m.name.toLowerCase() === message.prefix.toLowerCase());
 
-  // Perplexity converts #word into non-selectable token chips; forceClear wipes
-  // those before injection. Also skip multi-match suggestions (corrupts content).
-  const forceClear = siteKey === 'perplexity';
+  // Some composers (Perplexity, Baidu) convert #word into non-selectable token
+  // chips; forceClear wipes those before injection. Also skip multi-match
+  // suggestions (corrupts content). Driven by the SITES registry.
+  const forceClear = !!SITES[siteKey]?.forceClear;
 
   // sender.tab may be absent for dynamically-registered scripts in Firefox;
   // fall back to the active tab in the current window.
@@ -229,7 +231,7 @@ async function handlePromptTriggerLookup(message, sender) {
         });
         return { status: r?.[0]?.result === true ? 'autocompleted' : 'no_match' };
       }
-      // forceClear sites (Perplexity) can't show suggestions — inject directly.
+      // forceClear sites can't show suggestions — inject directly.
       const r = await chrome.scripting.executeScript({
         target: { tabId },
         world: 'MAIN',
@@ -259,7 +261,7 @@ async function handleSuggestUpdate(message, sender) {
   const tabUrl = sender.tab?.url ?? sender.url;
   const siteKey = getSiteByUrl(tabUrl, localLlmUrl);
   const selectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
-  if (!selectors || siteKey === 'perplexity') return { status: 'cleared' };
+  if (!selectors || SITES[siteKey]?.forceClear) return { status: 'cleared' };
 
   const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
   const names = message.prefix != null
@@ -345,17 +347,20 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
     const siteKey = getSiteByUrl(tab.url, localLlmUrl);
     const targetFolder = info.menuItemId.replace("folder_", "");
-    const fallbackTitle = tab.title || chrome.i18n.getMessage("defaultTitle") || "New conversation";
+    const defaultTitle = chrome.i18n.getMessage("defaultTitle") || "New conversation";
     const siteColor = SITES[siteKey]?.color || "#1a73e8";
 
-    let finalTitle = fallbackTitle;
+    // Pass tab.title as the extractor's fallback candidate: it cleans it and
+    // returns '' when it's a known-generic site name, in which case we use
+    // the localized default instead of saving the site's own name as title.
+    let finalTitle = tab.title || defaultTitle;
     if (siteKey && siteKey !== 'local') {
       const results = await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        args: [siteKey, fallbackTitle],
+        args: [siteKey, tab.title || null],
         func: extractAITitleLogic
       });
-      if (results?.[0]?.result) finalTitle = results[0].result;
+      finalTitle = results?.[0]?.result || defaultTitle;
     }
 
     const data = await new Promise(resolve => loadData({ folders: {} }, resolve));
@@ -398,20 +403,21 @@ chrome.commands.onCommand.addListener(async (command) => {
     if (!siteKey) return;
 
     const targetFolder = chrome.i18n.getMessage("quickSaveFolder") || "⚡ Quick Saves";
-    const fallbackTitle = tab?.title || chrome.i18n.getMessage("defaultTitle") || "New conversation";
+    const defaultTitle = chrome.i18n.getMessage("defaultTitle") || "New conversation";
     const toastMsg = chrome.i18n.getMessage("toastSaved") || "✅ Saved!";
     const siteColor = SITES[siteKey]?.color || "#1a73e8";
 
-    // For local LLM: use the browser tab title directly
-    // Extract title via executeScript.
-    let finalTitle = fallbackTitle;
+    // For local LLM: use the browser tab title directly.
+    // Otherwise extract via executeScript; tab.title is only a candidate the
+    // extractor cleans/filters ('' → known-generic → use the localized default).
+    let finalTitle = tab?.title || defaultTitle;
     if (siteKey !== 'local') {
       const results = await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        args: [siteKey, fallbackTitle],
+        args: [siteKey, tab?.title || null],
         func: extractAITitleLogic
       });
-      if (results?.[0]?.result) finalTitle = results[0].result;
+      finalTitle = results?.[0]?.result || defaultTitle;
     }
 
     const data = await new Promise(resolve => loadData({ folders: {} }, resolve));

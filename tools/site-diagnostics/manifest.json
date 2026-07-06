@@ -22,6 +22,7 @@
     "*://poe.com/*",
     "*://*.poe.com/*",
     "*://duck.ai/*",
+    "*://*.duck.ai/*",
     "*://duckduckgo.com/*",
     "*://you.com/*",
     "*://*.you.com/*",

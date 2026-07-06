@@ -75,6 +75,9 @@ const SITES = {
     newConvUrl: 'https://www.perplexity.ai/',
     // Perplexity uses a React-controlled textarea; try specific then generic, fall back to contenteditable
     editorSelectors: ['textarea.resize-none', 'textarea[rows]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // The composer turns #word into non-selectable token chips: wipe the field
+    // before injecting and skip inline suggestions (background.js + popup.js)
+    forceClear: true,
     logo: 'icons/perplexity.png',
   },
   zai: {
@@ -125,8 +128,12 @@ const SITES = {
   },
   duckai: {
     key: 'duckai',
-    domain: 'duckduckgo.com',
-    color: '#DE5833',
+    // The chat is served on duck.ai directly AND under duckduckgo.com/?ia=chat
+    domain: 'duck.ai',
+    altDomains: ['duckduckgo.com'],
+    // White in dark mode / near-black in light mode (like ChatGPT), overridden
+    // in popup-extra.css — the brand orange reads poorly as a title tint
+    color: '#ffffff',
     newConvUrl: 'https://duck.ai/',
     // Duck.ai (duckduckgo.com AI chat); selectors need live validation.
     // Note: chats are stateless (no per-conversation URL) — mainly useful in Prompt mode.
@@ -154,7 +161,8 @@ const SITES = {
   characterai: {
     key: 'characterai',
     domain: 'character.ai',
-    color: '#3E77FF',
+    // White/black scheme like ChatGPT (light-mode override in popup-extra.css)
+    color: '#ffffff',
     newConvUrl: 'https://character.ai/',
     // Character.AI chat composer; selectors need live validation
     editorSelectors: ['div[contenteditable="true"][role="textbox"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
@@ -164,11 +172,17 @@ const SITES = {
   baidu: {
     key: 'baidu',
     domain: 'chat.baidu.com',
-    color: '#2932E1',
+    // Lightened brand blue — the official #2932E1 is too dark on the dark
+    // theme; light mode gets the true brand blue via popup-extra.css and the
+    // -light logo variant.
+    color: '#4E5CF2',
     newConvUrl: 'https://chat.baidu.com/',
     // Baidu Chat (usable in English) composer; selectors need live validation
     editorSelectors: ['#chat-input', 'textarea[placeholder]', 'div[contenteditable="true"]', 'textarea'],
+    // The composer tokenizes '#' like Perplexity does
+    forceClear: true,
     logo: 'icons/baidu.png',
+    logoLight: 'icons/baidu-light.png',
   },
   local: {
     key: 'local',
@@ -204,6 +218,7 @@ function getSiteByUrl(url, localUrl) {
   }
   for (const [key, site] of Object.entries(SITES)) {
     if (site.domain && (hostname === site.domain || hostname.endsWith('.' + site.domain))) return key;
+    if (site.altDomains?.some(d => hostname === d || hostname.endsWith('.' + d))) return key;
   }
   return null;
 }
@@ -254,6 +269,8 @@ function extractAITitleLogic(siteKey, defaultFallback) {
   };
 
   let strategies;
+  // Set by the generic branch: titles the final fallback must reject too
+  let fallbackIgnores = null;
 
   if (siteKey === 'gemini') {
     strategies = [
@@ -319,6 +336,16 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       () => docTitle(new Set(['perplexity', 'perplexity ai', 'perplexity.ai', ''])),
       () => firstMsg('[data-testid="query-text"], .query, .prose p:first-child'),
     ];
+  } else if (siteKey === 'baidu') {
+    fallbackIgnores = new Set(['baidu', 'baidu chat', 'ai chat', '文心一言', '百度文心助手', '文心助手', 'new chat', '']);
+    strategies = [
+      // Selected conversation in the sidebar history (对话历史):
+      // div.chat-side-list-item.selected > … > span.history-item-text
+      () => document.querySelector('.chat-side-list-item.selected .history-item-text')?.textContent?.trim() || null,
+      activeSidebarLink,
+      () => docTitle(fallbackIgnores),
+      () => firstMsg('[data-message-author-role="user"], [class*="user"] [class*="message"]'),
+    ];
   } else {
     // Newer sites share the generic strategy chain (sidebar link → document
     // title → first user message); only the per-site generic-title ignore
@@ -334,12 +361,12 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       you: ['you.com', 'you', 'new chat'],
       pi: ['pi', 'pi.ai', 'talk with pi', 'pi, your personal ai'],
       characterai: ['character.ai', 'characterai', 'c.ai', 'new chat'],
-      baidu: ['baidu', 'baidu chat', 'ai chat', '文心一言', 'new chat'],
     }[siteKey];
     if (genericIgnores) {
+      fallbackIgnores = new Set([...genericIgnores, '']);
       strategies = [
         activeSidebarLink,
-        () => docTitle(new Set([...genericIgnores, ''])),
+        () => docTitle(fallbackIgnores),
         () => firstMsg('[data-message-author-role="user"], [class*="user"] [class*="message"], [class*="human"] p'),
       ];
     }
@@ -353,7 +380,14 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       } catch (_) { /* skip failing strategies */ }
     }
   }
-  return defaultFallback || document.title.trim() || 'New conversation';
+  // The caller's fallback is usually tab.title — clean it like docTitle does,
+  // and reject known-generic values ('' tells callers to use their localized
+  // default) so a failed extraction doesn't save every conversation under the
+  // site's own name (e.g. Baidu titles every page 百度文心助手).
+  const fbRaw = (defaultFallback || document.title || '').trim();
+  const fb = fbRaw.split(' - ')[0].split(' | ')[0].split(' — ')[0].trim();
+  if (fallbackIgnores && (!fb || fallbackIgnores.has(fb.toLowerCase()))) return '';
+  return fb || 'New conversation';
 }
 
 if (typeof module !== 'undefined') {
