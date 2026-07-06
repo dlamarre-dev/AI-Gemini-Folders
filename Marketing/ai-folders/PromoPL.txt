@@ -2,7 +2,7 @@
 
 Organizuj rozmowy ze wszystkich swoich ulubionych narzędzi AI w wspólnych folderach, buduj bibliotekę wielokrotnie używanych promptów i wstrzykuj szablony bezpośrednio do dowolnego pola tekstowego — bez kopiowania i wklejania.
 
-🌐 8 OBSŁUGIWANYCH USŁUG AI
+🌐 18 OBSŁUGIWANYCH USŁUG AI
 
 Foldery AI integrują się natywnie ze wszystkimi głównymi asystentami czatu AI, takimi jak Claude, ChatGPT i Gemini, oraz z lokalnymi modelami LLM, które uruchamiasz samodzielnie. Rozmowy z różnych platform mogą znajdować się w tym samym folderze. Każdy czat wyświetla kolor i logo swojej usługi, dzięki czemu zawsze wiesz, skąd pochodzi.
 
@@ -65,6 +65,7 @@ Przeglądaj kod lub współtwórz: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 
 📢 AKTUALIZACJE:
+Wersja 1.6 (10 nowych usług AI): Zapisuj rozmowy i wstawiaj prompty w dziesięciu kolejnych usługach AI — w tym Mistral, Meta AI, Qwen i Z.ai — z przeprojektowanymi przyciskami usług i oficjalnymi logo.
 Wersja 1.5.1 (Udoskonalenia): Foldery są teraz domyślnie sortowane od najnowszych, tak jak biblioteka promptów — wybrana wcześniej kolejność sortowania pozostaje bez zmian. Poprawiono również przycisk czyszczenia (✕) w polu wyszukiwania, dzięki czemu działa także w Firefoksie.
 Wersja 1.5 (Grok): Rozpoczynaj nowe rozmowy na Grok bezpośrednio z Trybu Promptów, zapisuj je w folderach i wstrzykuj prompty. Szerszy panel, dopracowane elementy sterujące i lepsza dostępność z klawiatury. Poprawki błędów i wewnętrzny refactoring od ostatniej aktualizacji, dla lepszej stabilności. Jeśli Foldery AI są dla Ciebie przydatne, możesz wesprzeć ich rozwój, odwiedzając stronę Ko-fi: https://ko-fi.com/aifolders — dziękujemy za wsparcie!
 Wersja 1.2 (DeepSeek): Rozpoczynaj nowe rozmowy na DeepSeek bezpośrednio z Trybu Promptów, zapisuj je w folderach i wstrzykuj prompty.

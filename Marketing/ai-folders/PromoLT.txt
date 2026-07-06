@@ -2,7 +2,7 @@
 
 Tvarkykite visų mėgstamiausių AI įrankių pokalbius bendrose aplankuose, kurkite daugkartinio naudojimo raginimų biblioteką ir įterpkite šablonus tiesiogiai į bet kurį įvesties lauką — be kopijavimo ir įklijavimo.
 
-🌐 8 PALAIKOMOS DI PASLAUGOS
+🌐 18 PALAIKOMOS DI PASLAUGOS
 
 AI aplankai natūraliai integruojasi su visais pagrindiniais AI pokalbių asistentais, tokiais kaip Claude, ChatGPT ir Gemini, ir su vietiniais LLM, kuriuos paleidžiate patys. Pokalbiai iš skirtingų platformų gali būti tame pačiame aplanke. Kiekvienas pokalbis rodo savo paslaugos spalvą ir logotipą, todėl visada žinote, iš kur jis atsirado.
 
@@ -64,6 +64,7 @@ Naršykite kodą arba prisidėkite: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 
 📢 ATNAUJINIMAI:
+Versija 1.6 (10 naujų DI paslaugų): Išsaugokite pokalbius ir įterpkite užklausas dar dešimtyje DI paslaugų — įskaitant Mistral, Meta AI, Qwen ir Z.ai — su atnaujintais paslaugų mygtukais ir oficialiais logotipais.
 Versija 1.5.1 (Patobulinimai): Aplankai dabar pagal numatytuosius nustatymus rikiuojami nuo naujausių, kaip ir jūsų užklausų biblioteka — anksčiau pasirinkta rikiavimo tvarka lieka nepakitusi. Taip pat ištaisytas išvalymo mygtukas (✕) paieškos laukelyje, todėl jis veikia ir „Firefox“ naršyklėje.
 Versija 1.5 (Grok): Pradėkite naujus Grok pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus. Platesnis skydelis, patobulinti valdikliai ir geresnis pasiekiamumas klaviatūra. Klaidų taisymai ir vidiniai pertvarkymai nuo paskutinio atnaujinimo, siekiant geresnio stabilumo. Jei AI aplankai jums naudingi, galite paremti jo kūrimą apsilankę Ko-fi puslapyje: https://ko-fi.com/aifolders — ačiū už jūsų palaikymą!
 Versija 1.2 (DeepSeek): Pradėkite naujus DeepSeek pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus.

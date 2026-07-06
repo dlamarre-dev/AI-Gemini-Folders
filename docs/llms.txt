@@ -1,6 +1,6 @@
 # AI Folders
 
-> AI Folders is a free, open-source browser extension that organizes your AI conversations into custom folders and provides a reusable prompt library, available across ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok, Perplexity, and local LLMs.
+> AI Folders is a free, open-source browser extension that organizes your AI conversations into custom folders and provides a reusable prompt library, available across 17 AI services (ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok, Perplexity, Mistral, Meta AI, Qwen, Z.ai, Poe, Duck.ai, You.com, Pi, Character.AI, Baidu) and local LLMs.
 
 AI Folders solves the problem of losing track of conversations across multiple AI chat services. Users can save, categorize, and retrieve any conversation from a unified side-panel, and inject saved prompts directly into any AI chat with a keyboard shortcut.
 
@@ -8,7 +8,7 @@ AI Folders solves the problem of losing track of conversations across multiple A
 
 - **Folder organization**: Save AI conversations from any supported service into named folders with custom emoji labels
 - **Prompt library**: Store reusable prompts and inject them into any AI chat with one click or the `#PromptName` keyboard shortcut
-- **Multi-service support**: Works with ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok, Perplexity, and self-hosted local LLMs (Open WebUI, LM Studio, etc.)
+- **Multi-service support**: Works with 17 AI chat services (ChatGPT, Claude, Gemini, Mistral, Meta AI and more) plus self-hosted local LLMs (Open WebUI, LM Studio, etc.)
 - **Cloud sync**: Conversations and prompts sync across devices via the browser's built-in sync
 - **Mobile access**: Synced conversations appear in Chrome bookmarks, accessible on any phone
 - **Tab groups**: Open an entire folder as a Chrome tab group in one click
@@ -28,6 +28,16 @@ AI Folders solves the problem of losing track of conversations across multiple A
 - DeepSeek (chat.deepseek.com)
 - Grok (grok.com)
 - Perplexity (perplexity.ai)
+- Mistral Vibe (chat.mistral.ai)
+- Meta AI (meta.ai)
+- Qwen (chat.qwen.ai)
+- Z.ai (chat.z.ai)
+- Poe (poe.com)
+- Duck.ai (duck.ai / duckduckgo.com)
+- You.com (you.com)
+- Pi (pi.ai)
+- Character.AI (character.ai)
+- Baidu Chat (chat.baidu.com)
 - Local LLMs: Open WebUI, LM Studio, and any configurable URL
 
 ## Install

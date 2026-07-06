@@ -2,7 +2,7 @@ Vos conversations IA sont éparpillées sur différents sites. Vous retapez touj
 
 Organisez les conversations de tous vos outils IA favoris dans des dossiers partagés, constituez une bibliothèque de modèles réutilisables et injectez des modèles directement dans n'importe quel champ de saisie — sans copier-coller.
 
-🌐 8 SERVICES IA PRIS EN CHARGE
+🌐 18 SERVICES IA PRIS EN CHARGE
 
 Dossiers IA s'intègre nativement avec tous les principaux assistants de chat IA, tels que Claude, ChatGPT et Gemini, ainsi qu'avec les LLM locaux que vous exécutez vous-même. Les conversations de différentes plateformes peuvent partager le même dossier. Chaque discussion affiche la couleur et le logo de son service d'origine, pour que vous sachiez toujours d'où elle vient.
 
@@ -65,6 +65,7 @@ Parcourir le code ou contribuer : https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 MISES À JOUR :
+Version 1.6 (10 nouveaux services IA) : Sauvegardez vos conversations et injectez vos prompts sur dix services IA de plus — dont Mistral, Meta AI, Qwen et Z.ai — avec des boutons de services repensés et les logos officiels.
 Version 1.5.1 (Améliorations) : Les dossiers sont désormais triés du plus récent au plus ancien par défaut, comme votre bibliothèque de prompts — l'ordre de tri que vous aviez déjà choisi reste inchangé. Correction également du bouton d'effacement (✕) dans le champ de recherche, qui fonctionne désormais aussi sur Firefox.
 Version 1.5 (Grok) : Lancez de nouvelles conversations Grok directement depuis le Mode Prompts, sauvegardez-les dans des dossiers et injectez vos prompts. Panneau élargi, contrôles raffinés et meilleure accessibilité clavier. Correctifs de bogues et refactorisations internes depuis la dernière mise à jour, pour une meilleure stabilité. Si Dossiers IA vous est utile, vous pouvez soutenir son développement en visitant la page Ko-fi : https://ko-fi.com/aifolders — merci pour votre soutien !
 Version 1.2 (DeepSeek) : Lancez de nouvelles conversations DeepSeek directement depuis le Mode Prompts, sauvegardez-les dans des dossiers et injectez vos prompts.

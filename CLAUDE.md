@@ -68,7 +68,7 @@ extensions/ai-folders/       AF overlay (overrides/adds files on top of src/)
 extensions/gemini-folders/   GF overlay (same set, no popup-extra.css)
 
 tests/                       Jest suites (jsdom). setup.js mocks chrome.* + LZString.
-                             ~239 tests, ~65% coverage. Pure-logic + DOM behaviour.
+                             ~270 tests, ~65% coverage. Pure-logic + DOM behaviour.
                              Subdirs: stats-collector/, store-publisher/.
 
 Marketing/

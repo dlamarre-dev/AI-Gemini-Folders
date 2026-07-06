@@ -2,7 +2,7 @@
 
 Järjestä kaikista suosikki-AI-työkaluistasi käydyt keskustelut jaetuiksi kansioiksi, rakenna uudelleenkäytettävien kehotteiden kirjasto ja lisää mallit suoraan mihin tahansa syöttökenttään — ilman kopiointia ja liittämistä.
 
-🌐 8 TUETTUA TEKOÄLYPALVELUA
+🌐 18 TUETTUA TEKOÄLYPALVELUA
 
 AI-kansiot integroituu natiivisti kaikkiin suuriin tekoälychat-avustajiin, kuten Claude, ChatGPT ja Gemini, sekä itse käyttämiisi paikallisiin LLM-malleihin. Eri alustojen keskustelut voivat jakaa täsmälleen saman kansion. Jokainen keskustelu näyttää oman palvelunsa värin ja logon, joten tiedät aina, mistä se on peräisin.
 
@@ -65,6 +65,7 @@ Selaa koodia tai osallistu: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 PÄIVITYKSET:
+Versio 1.6 (10 uutta tekoälypalvelua): Tallenna keskusteluja ja syötä kehotteita kymmenessä uudessa tekoälypalvelussa — mukana Mistral, Meta AI, Qwen ja Z.ai — uudistetuilla palvelupainikkeilla ja virallisilla logoilla.
 Versio 1.5.1 (Hienosäädöt): Kansiot lajitellaan nyt oletuksena uusimmat ensin, samoin kuin kehotekirjastosi — jo valitsemasi lajittelujärjestys säilyy ennallaan. Lisäksi hakukentän tyhjennyspainike (✕) korjattiin, joten se toimii nyt myös Firefoxissa.
 Versio 1.5 (Grok): Aloita uusia Grok-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet. Leveämpi paneeli, viimeistellyt säätimet ja parempi näppäimistösaavutettavuus. Vikakorjauksia ja sisäistä refaktorointia edellisen päivityksen jälkeen, paremman vakauden saavuttamiseksi. Jos AI-kansiot on sinulle hyödyllinen, voit tukea sen kehittämistä vierailemalla Ko-fi-sivulla: https://ko-fi.com/aifolders — kiitos tuestasi!
 Versio 1.2 (DeepSeek): Aloita uusia DeepSeek-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet.

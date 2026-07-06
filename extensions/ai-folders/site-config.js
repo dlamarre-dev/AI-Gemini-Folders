@@ -115,7 +115,7 @@ const SITES = {
     domain: 'chat.mistral.ai',
     color: '#FA500F',
     newConvUrl: 'https://chat.mistral.ai/chat',
-    // Le Chat uses a ProseMirror composer; selectors need live validation
+    // Mistral (Vibe) uses a ProseMirror composer; selectors validated live 2026-07
     editorSelectors: ['div.ProseMirror[contenteditable="true"]', 'textarea[name="message.text"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
     logo: 'icons/mistral.png',
   },
@@ -138,8 +138,7 @@ const SITES = {
     // in popup-extra.css — the brand orange reads poorly as a title tint
     color: '#ffffff',
     newConvUrl: 'https://duck.ai/',
-    // Duck.ai (duckduckgo.com AI chat); selectors need live validation.
-    // Note: chats are stateless (no per-conversation URL) — mainly useful in Prompt mode.
+    // Duck.ai (duckduckgo.com AI chat); selectors validated live 2026-07
     editorSelectors: ['textarea[name="user-prompt"]', 'form textarea', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
     logo: 'icons/duckai.png',
   },
@@ -157,7 +156,7 @@ const SITES = {
     domain: 'pi.ai',
     color: '#0E7460',
     newConvUrl: 'https://pi.ai/talk',
-    // Pi is one continuous conversation at /talk (no per-thread URLs); selectors need live validation
+    // Pi chat at /talk; selectors validated live 2026-07
     editorSelectors: ['textarea[placeholder]', 'main textarea', 'textarea', '[contenteditable="true"]'],
     logo: 'icons/pi.png',
   },

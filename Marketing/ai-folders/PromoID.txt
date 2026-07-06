@@ -2,7 +2,7 @@
 
 Atur percakapan dari semua alat AI favorit Anda dalam folder bersama, bangun perpustakaan prompt yang dapat digunakan kembali, dan suntikkan templat langsung ke kolom input mana pun — tanpa perlu menyalin dan menempel.
 
-🌐 8 LAYANAN AI YANG DIDUKUNG
+🌐 18 LAYANAN AI YANG DIDUKUNG
 
 Folder AI terintegrasi secara native dengan semua asisten obrolan AI utama, seperti Claude, ChatGPT, dan Gemini, serta LLM lokal yang Anda jalankan sendiri. Percakapan dari platform yang berbeda dapat berbagi folder yang sama persis. Setiap obrolan menampilkan warna dan logo layanannya, jadi Anda selalu tahu dari mana asalnya.
 
@@ -65,6 +65,7 @@ Jelajahi kode atau berkontribusi: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 PEMBARUAN:
+Versi 1.6 (10 layanan AI baru): Simpan percakapan dan sisipkan prompt di sepuluh layanan AI lagi — termasuk Mistral, Meta AI, Qwen, dan Z.ai — dengan tombol layanan yang didesain ulang dan logo resmi.
 Versi 1.5.1 (Penyempurnaan): Folder kini diurutkan dari terbaru lebih dulu secara bawaan, selaras dengan pustaka prompt Anda — urutan pengurutan yang sudah Anda pilih tetap tidak berubah. Tombol hapus (✕) di kotak pencarian juga diperbaiki agar berfungsi di Firefox juga.
 Versi 1.5 (Grok): Mulai percakapan Grok baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt. Panel lebih lebar, kontrol lebih rapi, dan aksesibilitas keyboard yang lebih baik. Perbaikan bug dan refaktorisasi internal sejak pembaruan terakhir, untuk stabilitas yang lebih baik. Jika Folder AI bermanfaat bagi Anda, Anda dapat mendukung pengembangannya dengan mengunjungi halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas dukungan Anda!
 Versi 1.2 (DeepSeek): Mulai percakapan DeepSeek baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt.

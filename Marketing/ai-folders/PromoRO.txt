@@ -2,7 +2,7 @@
 
 Organizați conversații din toate instrumentele dvs. AI preferate în dosare partajate, construiți o bibliotecă de prompturi reutilizabile și injectați șabloane direct în orice câmp de introducere — fără a fi nevoie să copiați și să lipiți.
 
-🌐 8 SERVICII IA ACCEPTATE
+🌐 18 SERVICII IA ACCEPTATE
 
 Dosare IA se integrează nativ cu toți principalii asistenți de chat IA, cum ar fi Claude, ChatGPT și Gemini, precum și cu LLM-urile locale pe care le rulați chiar dumneavoastră. Conversațiile de pe platforme diferite pot împărtăși exact același dosar. Fiecare conversație afișează culoarea și sigla serviciului său, astfel încât să știți întotdeauna de unde provine.
 
@@ -65,6 +65,7 @@ Răsfoiți codul sau contribuiți: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 
 📢 ACTUALIZĂRI:
+Versiunea 1.6 (10 servicii AI noi): Salvați conversații și inserați prompturi în încă zece servicii AI — inclusiv Mistral, Meta AI, Qwen și Z.ai — cu butoane de servicii reproiectate și logouri oficiale.
 Versiunea 1.5.1 (Îmbunătățiri): Folderele sunt acum sortate implicit de la cele mai noi, la fel ca biblioteca ta de prompturi — ordinea de sortare aleasă anterior rămâne neschimbată. A fost corectat și butonul de ștergere (✕) din câmpul de căutare, astfel încât funcționează și în Firefox.
 Versiunea 1.5 (Grok): Lansați conversații noi pe Grok direct din Modul Prompt, salvați-le în dosare și injectați prompturi. Panou mai lat, controale rafinate și accesibilitate îmbunătățită de la tastatură. Remedieri de erori și refactorizare internă de la ultima actualizare, pentru o stabilitate mai bună. Dacă Dosare IA vă este util, puteți susține dezvoltarea vizitând pagina Ko-fi: https://ko-fi.com/aifolders — vă mulțumim pentru sprijin!
 Versiunea 1.2 (DeepSeek): Lansați conversații noi pe DeepSeek direct din Modul Prompt, salvați-le în dosare și injectați prompturi.

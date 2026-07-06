@@ -2,7 +2,7 @@
 
 Organize conversas de todas as suas ferramentas de IA favoritas em pastas partilhadas, crie uma biblioteca de prompts reutilizáveis e injete modelos diretamente em qualquer campo de texto — sem precisar de copiar e colar.
 
-🌐 8 SERVIÇOS DE IA SUPORTADOS
+🌐 18 SERVIÇOS DE IA SUPORTADOS
 
 Pastas IA integra-se nativamente com todos os principais assistentes de chat de IA, como Claude, ChatGPT e Gemini, e com os LLMs locais que executa você mesmo. As conversas de plataformas diferentes podem partilhar a mesma pasta. Cada chat apresenta a cor e o logótipo do seu serviço de origem, para que saiba sempre de onde veio.
 
@@ -65,6 +65,7 @@ Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 ATUALIZAÇÕES:
+Versão 1.6 (10 novos serviços de IA): Guarde conversas e injete prompts em mais dez serviços de IA — incluindo Mistral, Meta AI, Qwen e Z.ai — com botões de serviços redesenhados e logótipos oficiais.
 Versão 1.5.1 (Refinamentos): As pastas são agora ordenadas da mais recente para a mais antiga por predefinição, tal como a sua biblioteca de prompts — qualquer ordenação que já tenha escolhido permanece inalterada. Foi também corrigido o botão de limpar (✕) no campo de pesquisa, que passa a funcionar também no Firefox.
 Versão 1.5 (Grok): Inicie novas conversas no Grok diretamente do Modo Prompt, guarde-as em pastas e injete prompts. Painel mais largo, controlos refinados e melhor acessibilidade por teclado. Correções de erros e refatorações internas desde a última atualização, para maior estabilidade. Se Pastas IA lhe é útil, pode apoiar o desenvolvimento visitando a página Ko-fi: https://ko-fi.com/aifolders — obrigado pelo seu apoio!
 Versão 1.2 (DeepSeek): Inicie novas conversas no DeepSeek diretamente do Modo Prompt, guarde-as em pastas e injete prompts.
