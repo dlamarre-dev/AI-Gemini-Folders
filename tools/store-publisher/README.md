@@ -86,8 +86,11 @@ python amo_publish.py --item gemini-folders --texts --images          # dry-run
 python amo_publish.py --item gemini-folders --texts --images --apply  # write
 ```
 
-- `--texts` PATCHes the listing description for every locale AMO supports,
-  in a single request, from `dist/<slug>/marketing_firefox/Promo<XX>.txt`.
+- `--texts` PATCHes the listing description **and summary** for every locale
+  AMO supports, in a single request: the description from
+  `dist/<slug>/marketing_firefox/Promo<XX>.txt`, the summary from the
+  extension's own `extDesc` string (`dist/<slug>/firefox/_locales/…`, so the
+  two always stay in sync — the script validates AMO's 250-char summary cap).
   AMO production only enables 42 languages: 28 of our 43 map (see the `amo`
   column in `lib/locales.js`); the other 15 are skipped with a log line.
   Locales omitted from the PATCH are left untouched on AMO.
