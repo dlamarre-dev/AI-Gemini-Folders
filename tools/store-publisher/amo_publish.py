@@ -5,7 +5,9 @@ store-publisher extension, but API-based: AMO has an official add-ons API, so
 no DOM scraping is needed.
 
 Per supported locale it PATCHes the listing description with
-dist/<slug>/marketing_firefox/Promo<XX>.txt, and with --images it replaces the
+dist/<slug>/marketing_firefox/Promo<XX>.txt and the listing summary with the
+extension's own extDesc string (dist/<slug>/firefox/_locales — the Firefox
+build, so wording patches are included), and with --images it replaces the
 listing previews (screenshots) with the 5 EN images followed by Promo_1 of every
 other locale (a single multilingual gallery showcasing the extension). AMO
 previews are NOT localized — there is one shared set per listing — so the images
@@ -45,6 +47,7 @@ TOOL_DIR = Path(__file__).resolve().parent
 # is skipped instead of torn down and re-uploaded (AMO throttles writes hard).
 STATE_FILE = TOOL_DIR / ".amo-previews-state.json"  # gitignored
 SCREENSHOTS_PER_LISTING = 5
+AMO_SUMMARY_MAX = 250   # AMO rejects summaries above this length
 REQUEST_GAP_S = 1.0     # initial delay before each write request (grows on throttle)
 MAX_PACE_S = 30.0       # cap for the adaptive pacing delay
 AUTO_RETRY_CAP_S = 180  # longest we'll auto-sleep on a single throttle before retrying
@@ -181,14 +184,38 @@ def build_descriptions(marketing_dir, locales):
     return out
 
 
-def update_texts(creds, guid, descriptions, apply):
+def build_summaries(locales_dir, locales):
+    """Reads every supported locale's extDesc from the built Firefox _locales.
+    Returns {amo_code: text} — the AMO listing summary mirrors the extension's
+    own store summary string, so both update together."""
+    if not locales_dir.is_dir():
+        sys.exit(f"Locales dir not found: {locales_dir} — run `python build.py` first.")
+    out = {}
+    for loc in locales:
+        if not loc["amo"]:
+            continue
+        path = locales_dir / loc["internal"] / "messages.json"
+        msg = json.loads(path.read_text(encoding="utf-8-sig")).get("extDesc", {}).get("message", "").strip()
+        if not msg:
+            sys.exit(f"extDesc missing/empty in {path}")
+        if len(msg) > AMO_SUMMARY_MAX:
+            sys.exit(f"extDesc for {loc['internal']} is {len(msg)} chars (AMO summary max {AMO_SUMMARY_MAX}): {msg[:80]}…")
+        out[loc["amo"]] = msg
+    print(f"Summaries: {len(out)} locales from extDesc")
+    return out
+
+
+def update_texts(creds, guid, descriptions, summaries, apply):
     if not apply:
         for code, text in sorted(descriptions.items()):
-            print(f"  would send description[{code}]: {len(text)} chars")
+            print(f"  would send description[{code}]: {len(text)} chars"
+                  + (f", summary: {len(summaries[code])} chars" if code in summaries else ""))
         return
-    # One PATCH carries every locale; omitted locales stay untouched on AMO.
-    api_request(creds, "PATCH", f"/addons/addon/{guid}/", json_body={"description": descriptions})
-    print(f"  description updated for {len(descriptions)} locales ✓")
+    # One PATCH carries every locale and both fields; omitted locales stay
+    # untouched on AMO.
+    api_request(creds, "PATCH", f"/addons/addon/{guid}/",
+                json_body={"description": descriptions, "summary": summaries})
+    print(f"  description + summary updated for {len(descriptions)} locales ✓")
 
 
 def file_fingerprints(files):
@@ -296,6 +323,7 @@ def main():
         sys.exit(f'Item "{args.item}" not in config.json')
     guid = item["amo_guid"]
     marketing_dir = Path(config["repo_root"]) / "dist" / item["slug"] / "marketing_firefox"
+    locales_dir = Path(config["repo_root"]) / "dist" / item["slug"] / "firefox" / "_locales"
     locales = load_locales()
 
     print(f'{"APPLY" if args.apply else "DRY-RUN"} — {item["name"]} ({guid})')
@@ -308,7 +336,8 @@ def main():
 
     if args.texts:
         descriptions = build_descriptions(marketing_dir, locales)
-        update_texts(creds, guid, descriptions, args.apply)
+        summaries = build_summaries(locales_dir, locales)
+        update_texts(creds, guid, descriptions, summaries, args.apply)
     if args.images:
         update_images(creds, guid, addon, marketing_dir, locales, args.apply, args.force_images)
 
