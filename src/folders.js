@@ -530,8 +530,11 @@ async function openFolderInTabGroup(folderName, chats) {
   try {
     const tabIds = [];
 
-    // 1. Create all tabs in background
+    // 1. Create all tabs in background. Gate on isSafeUrl (defence-in-depth): the
+    //    import path already rejects unsafe URLs, but legacy/corrupt storage must
+    //    never reach chrome.tabs.create with a javascript:/data: URL.
     for (const chat of chats) {
+      if (!isSafeUrl(chat.url)) continue;
       const tab = await chrome.tabs.create({ url: chat.url, active: false });
       tabIds.push(tab.id);
     }

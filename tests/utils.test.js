@@ -511,6 +511,44 @@ describe('mergeImportData', () => {
     expect(folders.Good).toHaveLength(1);
   });
 
+  // JSON.parse creates OWN "__proto__"/"constructor" properties (unlike a JS object
+  // literal, which would set the prototype). This mirrors what the real import does
+  // when reading a hand-crafted/corrupt backup file. Without the isUnsafeKey guard,
+  // currentFolders["__proto__"] resolves to Object.prototype and `.some` throws,
+  // aborting the entire import.
+  test('skips a __proto__ folder key without throwing, keeping valid folders', async () => {
+    const importedData = JSON.parse(
+      '{"folders":{"__proto__":[{"title":"X","url":"https://gemini.google.com/app/x","timestamp":1}],' +
+      '"Good":[{"title":"C","url":"https://gemini.google.com/app/g","timestamp":2}]}}'
+    );
+    await expect(mergeImportData(importedData)).resolves.toBeUndefined();
+    const folders = savedFolders();
+    expect(folders.Good).toHaveLength(1);
+    expect(Object.prototype.hasOwnProperty.call(folders, '__proto__')).toBe(false);
+    // Prototype chain must be untouched (no pollution).
+    expect(({}).some).toBeUndefined();
+  });
+
+  test('skips a constructor folder key without throwing', async () => {
+    const importedData = JSON.parse(
+      '{"folders":{"constructor":[{"title":"X","url":"https://gemini.google.com/app/x","timestamp":1}],' +
+      '"Good":[{"title":"C","url":"https://gemini.google.com/app/g","timestamp":2}]}}'
+    );
+    await expect(mergeImportData(importedData)).resolves.toBeUndefined();
+    expect(savedFolders().Good).toHaveLength(1);
+  });
+
+  test('skips __proto__/constructor prompt keys without throwing', async () => {
+    const importedData = JSON.parse(
+      '{"folders":{},"prompts":{"__proto__":{"text":"bad","timestamp":1},' +
+      '"constructor":{"text":"bad2","timestamp":1},"Good":{"text":"ok","timestamp":2}}}'
+    );
+    await expect(mergeImportData(importedData)).resolves.toBeUndefined();
+    const prompts = savedPrompts();
+    expect(prompts.Good.text).toBe('ok');
+    expect(Object.prototype.hasOwnProperty.call(prompts, '__proto__')).toBe(false);
+  });
+
   test('skips malformed prompt entries, keeping valid ones', async () => {
     const importedData = {
       folders: {},

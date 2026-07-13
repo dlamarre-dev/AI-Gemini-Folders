@@ -312,6 +312,27 @@ describe('openFolderInTabGroup', () => {
     expect(chrome.tabs.create).not.toHaveBeenCalled();
   });
 
+  test('skips unsafe stored URLs, opening only the safe ones', async () => {
+    // Override the permissive default mock with the real http(s)-only check.
+    global.isSafeUrl = jest.fn((url) => {
+      try { return /^https?:$/.test(new URL(url).protocol); } catch { return false; }
+    });
+    const chats = [
+      { url: 'https://a/1' },
+      { url: 'javascript:alert(1)' }, // legacy/corrupt storage — must never open
+      { url: 'https://a/2' },
+    ];
+
+    await openFolderInTabGroup('Mixed', chats);
+
+    expect(chrome.tabs.create).toHaveBeenCalledTimes(2);
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: 'https://a/1', active: false });
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: 'https://a/2', active: false });
+    expect(chrome.tabs.create).not.toHaveBeenCalledWith(
+      expect.objectContaining({ url: 'javascript:alert(1)' })
+    );
+  });
+
   test('aborts before opening tabs when the >10-tab confirm is declined', async () => {
     global.window.showCustomModal.mockResolvedValue(false);
     const chats = Array.from({ length: 11 }, (_, i) => ({ url: `https://a/${i}` }));
