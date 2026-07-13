@@ -64,8 +64,8 @@ Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AŽURIRANJA:
-Верзија 1.6.1 (Безбедност и стабилност): Додатна заштита сачуваних линкова и увоза резервних копија, уз интерне поправке стабилности.
-Верзија 1.6 (10 нових AI услуга): Чувајте разговоре и убацујте промптове у десет додатних AI услуга — укључујући Mistral, Meta AI, Qwen и Z.ai — са редизајнираним дугмадима услуга и званичним логотипима.
+Verzija 1.6.1 (Bezbednost i stabilnost): Dodatna zaštita sačuvanih linkova i uvoza rezervnih kopija, uz interne popravke stabilnosti.
+Verzija 1.6 (10 novih AI usluga): Čuvajte razgovore i ubacujte promptove u deset dodatnih AI usluga — uključujući Mistral, Meta AI, Qwen i Z.ai — sa redizajniranim dugmadima usluga i zvaničnim logotipima.
 Verzija 1.5.1 (Poboljšanja): Fascikle se sada podrazumevano sortiraju od najnovijih, kao i vaša biblioteka promptova — već izabrani redosled sortiranja ostaje nepromenjen. Ispravljeno je i dugme za brisanje (✕) u polju za pretragu, pa sada radi i u Firefoxu.
 Verzija 1.5 (Grok): Pokrenite nove razgovore na Groku direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove. Širi panel, doterane kontrole i bolja pristupačnost tastaturom. Ispravke grešaka i interno refaktorisanje od poslednjeg ažuriranja, za bolju stabilnost. Ako su vam VI fascikle korisne, možete podržati razvoj posjetom stranici Ko-fi: https://ko-fi.com/aifolders — hvala vam na podršci!
 Verzija 1.2 (DeepSeek): Pokrenite nove razgovore na DeepSeeku direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove.
