@@ -181,7 +181,7 @@ async function handlePromptTriggerLookup(message, sender) {
       const r = await chrome.scripting.executeScript({
         target: { tabId: sender.tab.id },
         world: 'MAIN',
-        args: [[matches[0].name], selectors, chrome.i18n.getMessage('extName'), '#' + matches[0].name],
+        args: [[matches[0].name], selectors, chrome.i18n.getMessage('appTitle'), '#' + matches[0].name],
         func: insertSuggestionsInEditor,
       });
       return { status: r?.[0]?.result === true ? 'autocompleted' : 'no_match' };
@@ -191,7 +191,7 @@ async function handlePromptTriggerLookup(message, sender) {
     const suggResults = await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
       world: 'MAIN',
-      args: [matches.map(m => m.name), selectors, chrome.i18n.getMessage('extName')],
+      args: [matches.map(m => m.name), selectors, chrome.i18n.getMessage('appTitle')],
       func: insertSuggestionsInEditor,
     });
     // insertSuggestionsInEditor returns false for non-Quill editors → fall back to space.
@@ -212,7 +212,7 @@ async function handleSuggestUpdate(message, sender) {
     await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
       world: 'MAIN',
-      args: [names, selectors, chrome.i18n.getMessage('extName')],
+      args: [names, selectors, chrome.i18n.getMessage('appTitle')],
       func: insertSuggestionsInEditor,
     });
   } catch (err) {
@@ -227,7 +227,7 @@ async function handleCycleTab(message, sender) {
     await chrome.scripting.executeScript({
       target: { tabId: sender.tab.id },
       world: 'MAIN',
-      args: [message.allNames, selectors, chrome.i18n.getMessage('extName'), '#' + message.name],
+      args: [message.allNames, selectors, chrome.i18n.getMessage('appTitle'), '#' + message.name],
       func: insertSuggestionsInEditor,
     });
   } catch (err) {

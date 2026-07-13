@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extName__",
-  "version": "4.5.2",
+  "version": "4.5.3",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
   "permissions": [
@@ -22,7 +22,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "__MSG_extName__",
+    "default_title": "__MSG_appTitle__",
     "default_icon": {
       "16": "icon16.png",
       "48": "icon48.png",

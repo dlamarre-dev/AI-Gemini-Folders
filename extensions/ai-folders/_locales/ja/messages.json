@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "AI フォルダ"
+    "message": "AI フォルダ：会話とプロンプトを整理"
   },
   "extDesc": {
     "message": "AIとの会話をフォルダで整理し、プロンプトライブラリを活用 — ChatGPT、Claude、Geminiなど主要AIアシスタントに対応。"
