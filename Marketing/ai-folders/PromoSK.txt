@@ -65,6 +65,7 @@ Prezrite kód alebo prispejte: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AKTUALIZÁCIE:
+Verzia 1.6.1 (Zabezpečenie a stabilita): Ďalšia ochrana uložených odkazov a importu záloh a interné opravy stability.
 Verzia 1.6 (10 nových služieb AI): Ukladajte konverzácie a vkladajte prompty v desiatich ďalších službách AI — vrátane Mistral, Meta AI, Qwen a Z.ai — s prepracovanými tlačidlami služieb a oficiálnymi logami.
 Verzia 1.5.1 (Vylepšenia): Priečinky sa teraz predvolene zoraďujú od najnovších, rovnako ako vaša knižnica promptov — už zvolené zoradenie zostáva nezmenené. Opravené bolo aj tlačidlo vymazania (✕) vo vyhľadávacom poli, takže funguje aj vo Firefoxe.
 Verzia 1.5 (Grok): Spustite nové konverzácie na Grok priamo z režimu výziev, ukladajte ich do priečinkov a vkladajte výzvy. Širší panel, vylepšené ovládacie prvky a lepšia prístupnosť z klávesnice. Opravy chýb a interný refaktoring od poslednej aktualizácie, pre lepšiu stabilitu. Ak vám AI priečinky pomáhajú, môžete podporiť ich vývoj návštevou stránky Ko-fi: https://ko-fi.com/aifolders — ďakujeme za vašu podporu!

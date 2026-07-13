@@ -63,6 +63,7 @@ Interesē Gemini Mapes, bet izmantojat arī ChatGPT, Claude, Copilot, Grok, Perp
 👉 Instalēt AI mapes: __AF_STORE_URL__
 
 📢 ATJAUNINĀJUMI:
+Versija 4.5.3 (Drošība un stabilitāte): Papildu aizsardzība saglabātajām saitēm un rezerves kopiju importēšanai, kā arī iekšēji stabilitātes labojumi.
 Versija 4.5.1 (Uzlabojumi): Mapes tagad pēc noklusējuma tiek kārtotas no jaunākajām, tāpat kā jūsu uzvednu bibliotēka — jau izvēlētā kārtošanas secība paliek nemainīga. Tika izlabota arī notīrīšanas poga (✕) meklēšanas laukā, tāpēc tā darbojas arī pārlūkā Firefox.
 Versija 4.5 (Saskarne un stabilitāte): Platāks panelis, uzlabotas vadīklas un labāka piekļūstamība ar tastatūru. Kļūdu labojumi un iekšējā pārstrukturēšana kopš pēdējā atjauninājuma, uzlabotai stabilitātei. Ja Gemini Mapes jums ir noderīgas, varat atbalstīt to izstrādi, apmeklējot Ko-fi lapu: https://ko-fi.com/aifolders — paldies par jūsu atbalstu!
 Versija 4.2 (Uzvedņu aktivizētājs): Ievadiet # Gemini tērzēšanas laukā, lai reāllaikā filtrētu saglabātās uzvednes. Izmantojiet ↓/↑, lai pārvietotos starp ieteikumiem, Atstarpi automātiskai pabeigšanai vai ievietošanai — neatverot paneli.

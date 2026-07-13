@@ -62,6 +62,7 @@ Interessat en Carpetes Gemini però també fas servir ChatGPT, Claude, Copilot, 
 👉 Instal·lar Carpetes IA: __AF_STORE_URL__
 
 📢 ACTUALITZACIONS:
+Versió 4.5.3 (Seguretat i estabilitat): Proteccions addicionals per als enllaços desats i les importacions de còpies de seguretat, a més de correccions internes d'estabilitat.
 Versió 4.5.1 (Millores): Ara les carpetes s'ordenen de més recent a més antiga de manera predeterminada, igual que la teva biblioteca de prompts — qualsevol ordre que ja haguessis triat es manté sense canvis. També s'ha corregit el botó d'esborrat (✕) del camp de cerca perquè funcioni també al Firefox.
 Versió 4.5 (Interfície i estabilitat): Panell més ample, controls refinats i millor accessibilitat amb el teclat. Correccions d'errors i refactorització interna des de l'última actualització, per a una millor estabilitat. Si Carpetes Gemini us és útil, podeu donar suport al seu desenvolupament visitant la pàgina Ko-fi: https://ko-fi.com/aifolders — gràcies pel vostre suport!
 Versió 4.2 (Disparador de Prompts): Escriu # al camp de xat de Gemini per veure els teus prompts filtrats en temps real. Usa ↓/↑ per navegar pels suggeriments, Espai per autocompletar o injectar — sense obrir mai el panell.

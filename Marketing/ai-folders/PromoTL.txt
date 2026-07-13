@@ -65,6 +65,7 @@ I-browse ang code o mag-contribute: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 
 📢 MGA UPDATE:
+Bersyon 1.6.1 (Seguridad at katatagan): Karagdagang proteksyon para sa mga naka-save na link at pag-import ng backup, kasama ang mga panloob na pag-aayos sa katatagan.
 Bersyon 1.6 (10 bagong AI services): Mag-save ng mga usapan at mag-inject ng prompts sa sampung karagdagang AI services — kabilang ang Mistral, Meta AI, Qwen at Z.ai — na may bagong disenyo ng mga service button at opisyal na logo.
 Bersyon 1.5.1 (Mga Pagpapahusay): Ang mga folder ay isinasaayos na ngayon mula sa pinakabago bilang default, tulad ng iyong prompt library — nananatiling hindi nagbabago ang pagkakasunod-sunod na napili mo na dati. Inayos din ang clear (✕) button sa search box para gumana ito sa Firefox din.
 Bersyon 1.5 (Grok): Magsimula ng mga bagong pag-uusap sa Grok nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt. Mas malawak na panel, pinahusay na mga kontrol, at mas mahusay na keyboard accessibility. Mga ayos sa bug at panloob na refactoring mula noong huling update, para sa pinahusay na katatagan. Kung ang Mga AI Folder ay kapaki-pakinabang sa iyo, maaari mong suportahan ang pagbuo nito sa pamamagitan ng pagbisita sa Ko-fi page: https://ko-fi.com/aifolders — salamat sa iyong suporta!

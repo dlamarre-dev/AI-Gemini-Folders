@@ -65,6 +65,7 @@ Sfogliare il codice o contribuire: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 
 📢 AGGIORNAMENTI:
+Versione 1.6.1 (Sicurezza e stabilità): Protezioni aggiuntive per i link salvati e le importazioni di backup, oltre a correzioni interne di stabilità.
 Versione 1.6 (10 nuovi servizi IA): Salva conversazioni e inserisci prompt su dieci servizi IA in più — tra cui Mistral, Meta AI, Qwen e Z.ai — con pulsanti dei servizi ridisegnati e loghi ufficiali.
 Versione 1.5.1 (Rifiniture): le cartelle ora sono ordinate dalla più recente alla meno recente per impostazione predefinita, come la tua libreria di prompt — l'ordinamento che avevi già scelto resta invariato. Corretto inoltre il pulsante di cancellazione (✕) nel campo di ricerca, che ora funziona anche su Firefox.
 Versione 1.5 (Grok): Avvia nuove conversazioni Grok direttamente dalla Modalità Prompt, salvale in cartelle e inietta prompt. Pannello più ampio, controlli rifiniti e migliore accessibilità da tastiera. Correzioni di bug e refactoring interno dall'ultimo aggiornamento, per una maggiore stabilità. Se Cartelle IA ti è utile, puoi supportarne lo sviluppo visitando la pagina Ko-fi: https://ko-fi.com/aifolders — grazie per il tuo supporto!

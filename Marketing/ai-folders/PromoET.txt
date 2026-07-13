@@ -64,6 +64,7 @@ Sirvi koodi või panusta: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UUENDUSED:
+Versioon 1.6.1 (Turvalisus ja stabiilsus): Täiendav kaitse salvestatud linkidele ja varukoopiate importimisele ning sisemised stabiilsusparandused.
 Versioon 1.6 (10 uut AI-teenust): Salvesta vestlusi ja sisesta viipasid veel kümnes AI-teenuses — sealhulgas Mistral, Meta AI, Qwen ja Z.ai — uuendatud teenusenuppude ja ametlike logodega.
 Versioon 1.5.1 (Täiustused): Kaustad sorteeritakse nüüd vaikimisi uuemad enne, sarnaselt sinu viipade teegiga — juba valitud sortimisjärjestus jääb muutmata. Samuti parandati otsinguvälja kustutusnupp (✕), nii et see töötab nüüd ka Firefoxis.
 Versioon 1.5 (Grok): Alustage uusi Grok vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid. Laiem paneel, viimistletud juhtelemendid ja parem klaviatuuriga ligipääsetavus. Veaparandused ja sisemine refaktoring alates viimasest uuendusest, parema stabiilsuse tagamiseks. Kui AI kaustad on teile kasulik, saate selle arendust toetada, külastades Ko-fi lehte: https://ko-fi.com/aifolders — täname teie toetuse eest!

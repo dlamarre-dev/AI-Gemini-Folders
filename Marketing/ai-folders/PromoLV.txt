@@ -64,6 +64,7 @@ Pārlūkojiet kodu vai piedalieties: https://github.com/dlamarre-dev/AI-Gemini-F
 
 
 📢 ATJAUNINĀJUMI:
+Versija 1.6.1 (Drošība un stabilitāte): Papildu aizsardzība saglabātajām saitēm un rezerves kopiju importēšanai, kā arī iekšēji stabilitātes labojumi.
 Versija 1.6 (10 jauni AI pakalpojumi): Saglabājiet sarunas un ievietojiet uzvednes vēl desmit AI pakalpojumos — tostarp Mistral, Meta AI, Qwen un Z.ai — ar pārveidotām pakalpojumu pogām un oficiālajiem logotipiem.
 Versija 1.5.1 (Uzlabojumi): Mapes tagad pēc noklusējuma tiek kārtotas no jaunākajām, tāpat kā jūsu uzvednu bibliotēka — jau izvēlētā kārtošanas secība paliek nemainīga. Tika izlabota arī notīrīšanas poga (✕) meklēšanas laukā, tāpēc tā darbojas arī pārlūkā Firefox.
 Versija 1.5 (Grok): Sāciet jaunas Grok sarunas tieši no uzvedņu režīma, saglabājiet tās mapēs un ievietojiet uzvednes. Platāks panelis, uzlabotas vadīklas un labāka piekļūstamība ar tastatūru. Kļūdu labojumi un iekšējā pārstrukturēšana kopš pēdējā atjauninājuma, uzlabotai stabilitātei. Ja AI mapes jums ir noderīgas, varat atbalstīt to izstrādi, apmeklējot Ko-fi lapu: https://ko-fi.com/aifolders — paldies par jūsu atbalstu!

@@ -64,6 +64,7 @@ Interessiert an Gemini-Ordner, aber nutzen Sie auch ChatGPT, Claude, Copilot, Gr
 👉 KI-Ordner installieren: __AF_STORE_URL__
 
 📢 UPDATES:
+Version 4.5.3 (Sicherheit & Stabilität): Zusätzliche Schutzmaßnahmen für gespeicherte Links und Backup-Importe sowie interne Stabilitätskorrekturen.
 Version 4.5.1 (Feinschliff): Ordner werden jetzt standardmäßig nach Neueste zuerst sortiert, passend zu Ihrer Prompt-Bibliothek — eine bereits gewählte Sortierung bleibt unverändert. Außerdem wurde die Löschen-Schaltfläche (✕) im Suchfeld korrigiert, sodass sie auch in Firefox funktioniert.
 Version 4.5 (Oberfläche & Stabilität): Breiteres Panel, verfeinerte Bedienelemente und bessere Tastaturzugänglichkeit. Fehlerbehebungen und interne Überarbeitungen seit dem letzten Update, für eine verbesserte Stabilität. Wenn Gemini-Ordner Ihnen nützlich ist, können Sie die Entwicklung unterstützen, indem Sie die Ko-fi-Seite besuchen: https://ko-fi.com/aifolders — vielen Dank für Ihre Unterstützung!
 Version 4.2 (Prompt-Auslöser): Geben Sie # in das Eingabefeld von Gemini ein, um gespeicherte Prompts in Echtzeit gefiltert zu sehen. Verwenden Sie ↓/↑ zum Navigieren durch Vorschläge, Leertaste zum Autovervollständigen oder Einsetzen — ohne das Panel zu öffnen.

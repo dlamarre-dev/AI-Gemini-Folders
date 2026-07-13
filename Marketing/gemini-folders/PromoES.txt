@@ -64,6 +64,7 @@ Explorar el código o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 👉 Instalar Carpetas IA: __AF_STORE_URL__
 
 📢 ACTUALIZACIONES:
+Versión 4.5.3 (Seguridad y estabilidad): Protecciones adicionales para los enlaces guardados y las importaciones de copias de seguridad, además de correcciones internas de estabilidad.
 Versión 4.5.1 (Mejoras): Las carpetas ahora se ordenan de más reciente a más antigua de forma predeterminada, igual que tu biblioteca de prompts — el orden que ya hubieras elegido se mantiene sin cambios. También se corrigió el botón de borrado (✕) en el campo de búsqueda para que funcione también en Firefox.
 Versión 4.5 (Interfaz y estabilidad): Panel más ancho, controles refinados y mejor accesibilidad con el teclado. Correcciones de errores y refactorizaciones internas desde la última actualización, para una mayor estabilidad. Si Carpetas de Gemini te es útil, puedes apoyar su desarrollo visitando la página Ko-fi: https://ko-fi.com/aifolders — ¡gracias por tu apoyo!
 Versión 4.2 (Disparador de prompts): Escribe # en el campo de chat de Gemini para ver tus prompts filtrados en tiempo real. Usa ↓/↑ para navegar entre sugerencias, Espacio para autocompletar o inyectar — sin abrir jamás el panel.

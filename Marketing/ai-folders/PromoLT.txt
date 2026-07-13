@@ -64,6 +64,7 @@ Naršykite kodą arba prisidėkite: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 
 📢 ATNAUJINIMAI:
+Versija 1.6.1 (Sauga ir stabilumas): Papildoma išsaugotų nuorodų ir atsarginių kopijų importo apsauga bei vidiniai stabilumo pataisymai.
 Versija 1.6 (10 naujų DI paslaugų): Išsaugokite pokalbius ir įterpkite užklausas dar dešimtyje DI paslaugų — įskaitant Mistral, Meta AI, Qwen ir Z.ai — su atnaujintais paslaugų mygtukais ir oficialiais logotipais.
 Versija 1.5.1 (Patobulinimai): Aplankai dabar pagal numatytuosius nustatymus rikiuojami nuo naujausių, kaip ir jūsų užklausų biblioteka — anksčiau pasirinkta rikiavimo tvarka lieka nepakitusi. Taip pat ištaisytas išvalymo mygtukas (✕) paieškos laukelyje, todėl jis veikia ir „Firefox“ naršyklėje.
 Versija 1.5 (Grok): Pradėkite naujus Grok pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus. Platesnis skydelis, patobulinti valdikliai ir geresnis pasiekiamumas klaviatūra. Klaidų taisymai ir vidiniai pertvarkymai nuo paskutinio atnaujinimo, siekiant geresnio stabilumo. Jei AI aplankai jums naudingi, galite paremti jo kūrimą apsilankę Ko-fi puslapyje: https://ko-fi.com/aifolders — ačiū už jūsų palaikymą!

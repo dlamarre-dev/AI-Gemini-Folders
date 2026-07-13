@@ -64,6 +64,7 @@ Zaujímajú vás Priečinky Gemini, ale používate aj ChatGPT, Claude, Copilot,
 👉 Nainštalovať AI priečinky: __AF_STORE_URL__
 
 📢 AKTUALIZÁCIE:
+Verzia 4.5.3 (Zabezpečenie a stabilita): Ďalšia ochrana uložených odkazov a importu záloh a interné opravy stability.
 Verzia 4.5.1 (Vylepšenia): Priečinky sa teraz predvolene zoraďujú od najnovších, rovnako ako vaša knižnica promptov — už zvolené zoradenie zostáva nezmenené. Opravené bolo aj tlačidlo vymazania (✕) vo vyhľadávacom poli, takže funguje aj vo Firefoxe.
 Verzia 4.5 (Rozhranie a stabilita): Širší panel, vylepšené ovládacie prvky a lepšia prístupnosť z klávesnice. Opravy chýb a interný refaktoring od poslednej aktualizácie, pre lepšiu stabilitu. Ak vám Priečinky Gemini pomáhajú, môžete podporiť ich vývoj návštevou stránky Ko-fi: https://ko-fi.com/aifolders — ďakujeme za vašu podporu!
 Verzia 4.2 (Spúšťač promptov): Zadajte # do poľa chatu Gemini a zobrazte si uložené prompty filtrované v reálnom čase. Pomocou ↓/↑ prechádzajte návrhy, medzerníkom ich automaticky dokončite alebo vložte — bez otvorenia panela.

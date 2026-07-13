@@ -64,6 +64,7 @@ Semak kod atau sumbang: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 KEMAS KINI:
+Versi 1.6.1 (Keselamatan & kestabilan): Perlindungan tambahan untuk pautan tersimpan dan import sandaran, serta pembaikan kestabilan dalaman.
 Versi 1.6 (10 perkhidmatan AI baharu): Simpan perbualan dan masukkan prompt dalam sepuluh lagi perkhidmatan AI — termasuk Mistral, Meta AI, Qwen dan Z.ai — dengan butang perkhidmatan direka semula dan logo rasmi.
 Versi 1.5.1 (Penambahbaikan): Folder kini diisih dari terbaharu dahulu secara lalai, sejajar dengan pustaka gesaan anda — susunan isihan yang telah anda pilih sebelum ini kekal tidak berubah. Butang kosongkan (✕) dalam kotak carian turut dibaiki supaya berfungsi dalam Firefox juga.
 Versi 1.5 (Grok): Mulakan perbualan Grok baharu terus dari Mod Prompt, simpan dalam folder dan suntik prompt. Panel lebih lebar, kawalan lebih kemas dan kebolehcapaian papan kekunci yang lebih baik. Pembetulan pepijat dan penstrukturan semula dalaman sejak kemas kini terakhir, untuk kestabilan yang lebih baik. Jika Folder AI berguna kepada anda, anda boleh menyokong pembangunannya dengan melawati halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas sokongan anda!

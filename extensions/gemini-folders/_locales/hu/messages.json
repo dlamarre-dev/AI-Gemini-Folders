@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Gemini-mappák"
+    "message": "Gemini-mappák: csevegések és promptok rendezése"
   },
   "extDesc": {
     "message": "Rendszerezze Gemini-beszélgetéseit mappákba, és kezeljen egy személyes prompt-könyvtárat."

@@ -65,6 +65,7 @@ Böngésszen a kódban vagy járuljon hozzá: https://github.com/dlamarre-dev/AI
 
 
 📢 FRISSÍTÉSEK:
+1.6.1-es verzió (Biztonság és stabilitás): További védelem a mentett hivatkozásokhoz és a biztonsági mentések importjához, valamint belső stabilitási javítások.
 1.6-os verzió (10 új MI-szolgáltatás): Ments beszélgetéseket és illessz be promptokat tíz további MI-szolgáltatásban — köztük Mistral, Meta AI, Qwen és Z.ai — újratervezett szolgáltatásgombokkal és hivatalos logókkal.
 1.5.1-es verzió (Finomítások): A mappák mostantól alapértelmezetten a legújabbak elöl sorrend szerint rendeződnek, akárcsak a promptkönyvtárad — a korábban kiválasztott rendezési sorrend változatlan marad. Javítottuk a keresőmező törlés (✕) gombját is, így már a Firefoxban is működik.
 1.5-ös verzió (Grok): Indítson új Grok-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat. Szélesebb panel, finomított kezelőelemek és jobb billentyűzetes hozzáférhetőség. Hibajavítások és belső átalakítások az utolsó frissítés óta, a jobb stabilitás érdekében. Ha a MI mappák hasznos Önnek, támogathatja fejlesztését a Ko-fi oldal felkeresésével: https://ko-fi.com/aifolders — köszönjük a támogatást!

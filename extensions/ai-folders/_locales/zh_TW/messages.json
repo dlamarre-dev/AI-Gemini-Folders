@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "AI 資料夾"
+    "message": "AI 資料夾：整理對話與提示詞"
   },
   "extDesc": {
     "message": "將 AI 對話整理到資料夾，並管理提示詞庫——支援 ChatGPT、Claude、Gemini 等主流 AI 助手。"

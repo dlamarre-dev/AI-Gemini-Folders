@@ -65,6 +65,7 @@ Przeglądaj kod lub współtwórz: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 
 📢 AKTUALIZACJE:
+Wersja 1.6.1 (Bezpieczeństwo i stabilność): Dodatkowe zabezpieczenia zapisanych linków i importu kopii zapasowych oraz wewnętrzne poprawki stabilności.
 Wersja 1.6 (10 nowych usług AI): Zapisuj rozmowy i wstawiaj prompty w dziesięciu kolejnych usługach AI — w tym Mistral, Meta AI, Qwen i Z.ai — z przeprojektowanymi przyciskami usług i oficjalnymi logo.
 Wersja 1.5.1 (Udoskonalenia): Foldery są teraz domyślnie sortowane od najnowszych, tak jak biblioteka promptów — wybrana wcześniej kolejność sortowania pozostaje bez zmian. Poprawiono również przycisk czyszczenia (✕) w polu wyszukiwania, dzięki czemu działa także w Firefoksie.
 Wersja 1.5 (Grok): Rozpoczynaj nowe rozmowy na Grok bezpośrednio z Trybu Promptów, zapisuj je w folderach i wstrzykuj prompty. Szerszy panel, dopracowane elementy sterujące i lepsza dostępność z klawiatury. Poprawki błędów i wewnętrzny refactoring od ostatniej aktualizacji, dla lepszej stabilności. Jeśli Foldery AI są dla Ciebie przydatne, możesz wesprzeć ich rozwój, odwiedzając stronę Ko-fi: https://ko-fi.com/aifolders — dziękujemy za wsparcie!

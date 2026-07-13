@@ -64,6 +64,7 @@ Intresserad av Gemini-mappar men använder du också ChatGPT, Claude, Copilot, G
 👉 Installera AI-mappar: __AF_STORE_URL__
 
 📢 UPPDATERINGAR:
+Version 4.5.3 (Säkerhet och stabilitet): Extra skydd för sparade länkar och import av säkerhetskopior, plus interna stabilitetsfixar.
 Version 4.5.1 (Finjusteringar): Mappar sorteras nu med nyast först som standard, i linje med ditt promptbibliotek — en sorteringsordning du redan valt lämnas oförändrad. Dessutom har rensningsknappen (✕) i sökfältet åtgärdats så att den även fungerar i Firefox.
 Version 4.5 (Gränssnitt och stabilitet): Bredare panel, förfinade kontroller och bättre tangentbordstillgänglighet. Buggfixar och intern refaktorering sedan senaste uppdateringen, för förbättrad stabilitet. Om Gemini-mappar är till nytta för dig kan du stödja utvecklingen genom att besöka Ko-fi-sidan: https://ko-fi.com/aifolders — tack för ditt stöd!
 Version 4.2 (Promptutlösare): Skriv # i Geminis chattfält för att se dina sparade promptar filtrerade i realtid. Använd ↓/↑ för att navigera bland förslag, Blanksteg för att autokomplettera eller injicera — utan att öppna panelen.

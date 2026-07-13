@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "MI mappák"
+    "message": "MI mappák: csevegések és promptok rendezése"
   },
   "extDesc": {
     "message": "Rendszerezd az MI-beszélgetéseket mappákba prompt-könyvtárral — ChatGPT, Claude, Gemini és más MI-asszisztensekhez."
