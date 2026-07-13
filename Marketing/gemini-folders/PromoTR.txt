@@ -64,6 +64,7 @@ Gemini Klasörleri ilginizi çekiyor ama ChatGPT, Claude, Copilot, Grok, Perplex
 👉 YZ Klasörleri'ni yükle: __AF_STORE_URL__
 
 📢 GÜNCELLEMELER:
+Sürüm 4.5.3 (Güvenlik ve kararlılık): Kaydedilen bağlantılar ve yedek içe aktarmaları için ek korumalar, ayrıca dahili kararlılık düzeltmeleri.
 Sürüm 4.5.1 (İyileştirmeler): Klasörler artık istem kitaplığınız gibi varsayılan olarak en yeniden eskiye sıralanıyor — daha önce seçtiğiniz sıralama düzeni değişmeden kalır. Ayrıca arama kutusundaki temizleme (✕) düğmesi düzeltildi, böylece Firefox'ta da çalışıyor.
 Sürüm 4.5 (Arayüz ve Kararlılık): Daha geniş panel, iyileştirilmiş denetimler ve daha iyi klavye erişilebilirliği. Son güncellemeden bu yana hata düzeltmeleri ve dahili yeniden yapılandırma, geliştirilmiş kararlılık için. Gemini Klasörleri işinize yarıyorsa, Ko-fi sayfasını ziyaret ederek geliştirmeyi destekleyebilirsiniz: https://ko-fi.com/aifolders — desteğiniz için teşekkürler!
 Sürüm 4.2 (İstem Tetikleyici): Gemini sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan.

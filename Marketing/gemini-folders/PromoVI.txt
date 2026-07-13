@@ -64,6 +64,7 @@ Quan tâm đến Thư mục Gemini nhưng cũng dùng ChatGPT, Claude, Copilot, 
 👉 Cài đặt Thư mục AI: __AF_STORE_URL__
 
 📢 CẬP NHẬT:
+Phiên bản 4.5.3 (Bảo mật & ổn định): Tăng cường bảo vệ cho liên kết đã lưu và nhập tệp sao lưu, cùng các sửa lỗi ổn định nội bộ.
 Phiên bản 4.5.1 (Tinh chỉnh): Thư mục giờ được sắp xếp mới nhất trước theo mặc định, giống như thư viện prompt của bạn — thứ tự sắp xếp bạn đã chọn trước đó vẫn được giữ nguyên. Đồng thời đã sửa nút xóa (✕) trong ô tìm kiếm để nó cũng hoạt động trên Firefox.
 Phiên bản 4.5 (Giao diện & Độ ổn định): Bảng điều khiển rộng hơn, các điều khiển tinh gọn hơn và khả năng truy cập bằng bàn phím tốt hơn. Sửa lỗi và tái cấu trúc nội bộ kể từ lần cập nhật cuối, để đạt độ ổn định tốt hơn. Nếu Thư mục Gemini hữu ích với bạn, bạn có thể hỗ trợ phát triển bằng cách truy cập trang Ko-fi: https://ko-fi.com/aifolders — cảm ơn vì sự hỗ trợ của bạn!
 Phiên bản 4.2 (Kích hoạt Prompt): Nhập # vào trường chat Gemini để xem các prompt đã lưu được lọc theo thời gian thực. Dùng ↓/↑ để điều hướng gợi ý, phím Cách để tự hoàn thành hoặc chèn — mà không cần mở bảng.

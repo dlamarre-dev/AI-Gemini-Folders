@@ -64,6 +64,7 @@ Tertarik dengan Folder Gemini tapi juga menggunakan ChatGPT, Claude, Copilot, Gr
 👉 Pasang Folder AI: __AF_STORE_URL__
 
 📢 PEMBARUAN:
+Versi 4.5.3 (Keamanan & stabilitas): Perlindungan tambahan untuk tautan tersimpan dan impor cadangan, serta perbaikan stabilitas internal.
 Versi 4.5.1 (Penyempurnaan): Folder kini diurutkan dari terbaru lebih dulu secara bawaan, selaras dengan pustaka prompt Anda — urutan pengurutan yang sudah Anda pilih tetap tidak berubah. Tombol hapus (✕) di kotak pencarian juga diperbaiki agar berfungsi di Firefox juga.
 Versi 4.5 (Antarmuka & Stabilitas): Panel lebih lebar, kontrol lebih rapi, dan aksesibilitas keyboard yang lebih baik. Perbaikan bug dan refaktorisasi internal sejak pembaruan terakhir, untuk stabilitas yang lebih baik. Jika Folder Gemini bermanfaat bagi Anda, Anda dapat mendukung pengembangannya dengan mengunjungi halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas dukungan Anda!
 Versi 4.2 (Pemicu Prompt): Ketik # di kolom chat Gemini untuk melihat prompt yang tersimpan difilter secara real time. Gunakan ↓/↑ untuk menavigasi saran, Spasi untuk melengkapi otomatis atau menyuntikkan — tanpa membuka panel.

@@ -63,6 +63,7 @@ Explorar el codi o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ACTUALITZACIONS:
+Versió 1.6.1 (Seguretat i estabilitat): Proteccions addicionals per als enllaços desats i les importacions de còpies de seguretat, a més de correccions internes d'estabilitat.
 Versió 1.6 (10 nous serveis d'IA): Desa converses i injecta prompts en deu serveis d'IA més — incloent-hi Mistral, Meta AI, Qwen i Z.ai — amb botons de serveis redissenyats i logotips oficials.
 Versió 1.5.1 (Millores): Ara les carpetes s'ordenen de més recent a més antiga de manera predeterminada, igual que la teva biblioteca de prompts — qualsevol ordre que ja haguessis triat es manté sense canvis. També s'ha corregit el botó d'esborrat (✕) del camp de cerca perquè funcioni també al Firefox.
 Versió 1.5 (Grok): Inicia noves converses a Grok directament des del Mode Prompt, desa-les en carpetes i injecta prompts. Panell més ample, controls refinats i millor accessibilitat amb el teclat. Correccions d'errors i refactorització interna des de l'última actualització, per a una millor estabilitat. Si Carpetes IA us és útil, podeu donar suport al seu desenvolupament visitant la pàgina Ko-fi: https://ko-fi.com/aifolders — gràcies pel vostre suport!

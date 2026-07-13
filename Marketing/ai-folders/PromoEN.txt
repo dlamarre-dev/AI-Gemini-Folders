@@ -65,6 +65,7 @@ Every line of code is public on GitHub. Anyone can clone the repository, build i
 Browse the code or contribute: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 VERSION HISTORY:
+Version 1.6.1 (Security & Stability): Extra safeguards for stored links and backup imports, plus internal stability fixes.
 Version 1.6 (10 new AI services): Save conversations and inject prompts on ten more AI services — including Mistral, Meta AI, Qwen and Z.ai — with redesigned service buttons and official logos.
 Version 1.5.1 (Refinements): Folders now sort newest-first by default, to match your prompt library — any sort order you've already chosen stays untouched. Also fixed the clear (✕) button in the search box so it works in Firefox too.
 Version 1.5 (Grok): Launch new Grok conversations directly from Prompt Mode, save and organize them in folders, and inject prompts. Wider panel, refined controls, and improved keyboard accessibility. Bug fixes and internal refactoring since the last update, for improved stability. If AI Folders is useful to you, you can support its development by visiting the Ko-fi page: https://ko-fi.com/aifolders — thank you for your support!

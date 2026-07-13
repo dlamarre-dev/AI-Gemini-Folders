@@ -63,6 +63,7 @@ Domitės Gemini Aplankai, bet naudojate ir ChatGPT, Claude, Copilot, Grok, Perpl
 👉 Įdiekite AI aplankus: __AF_STORE_URL__
 
 📢 ATNAUJINIMAI:
+Versija 4.5.3 (Sauga ir stabilumas): Papildoma išsaugotų nuorodų ir atsarginių kopijų importo apsauga bei vidiniai stabilumo pataisymai.
 Versija 4.5.1 (Patobulinimai): Aplankai dabar pagal numatytuosius nustatymus rikiuojami nuo naujausių, kaip ir jūsų užklausų biblioteka — anksčiau pasirinkta rikiavimo tvarka lieka nepakitusi. Taip pat ištaisytas išvalymo mygtukas (✕) paieškos laukelyje, todėl jis veikia ir „Firefox“ naršyklėje.
 Versija 4.5 (Sąsaja ir stabilumas): Platesnis skydelis, patobulinti valdikliai ir geresnis pasiekiamumas klaviatūra. Klaidų taisymai ir vidiniai pertvarkymai nuo paskutinio atnaujinimo, siekiant geresnio stabilumo. Jei Gemini Aplankai jums naudingi, galite paremti jo kūrimą apsilankę Ko-fi puslapyje: https://ko-fi.com/aifolders — ačiū už jūsų palaikymą!
 Versija 4.2 (Raginimų paleidiklis): Įveskite # Gemini pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio.

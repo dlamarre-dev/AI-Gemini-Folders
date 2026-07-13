@@ -65,6 +65,7 @@ Code einsehen oder beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
+Version 1.6.1 (Sicherheit & Stabilität): Zusätzliche Schutzmaßnahmen für gespeicherte Links und Backup-Importe sowie interne Stabilitätskorrekturen.
 Version 1.6 (10 neue KI-Dienste): Speichere Unterhaltungen und füge Prompts auf zehn weiteren KI-Diensten ein — darunter Mistral, Meta AI, Qwen und Z.ai — mit neu gestalteten Dienst-Buttons und offiziellen Logos.
 Version 1.5.1 (Feinschliff): Ordner werden jetzt standardmäßig nach Neueste zuerst sortiert, passend zu Ihrer Prompt-Bibliothek — eine bereits gewählte Sortierung bleibt unverändert. Außerdem wurde die Löschen-Schaltfläche (✕) im Suchfeld korrigiert, sodass sie auch in Firefox funktioniert.
 Version 1.5 (Grok): Starten Sie neue Grok-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts. Breiteres Panel, verfeinerte Bedienelemente und bessere Tastaturzugänglichkeit. Fehlerbehebungen und interne Überarbeitungen seit dem letzten Update, für eine verbesserte Stabilität. Wenn KI-Ordner Ihnen nützlich ist, können Sie die Entwicklung unterstützen, indem Sie die Ko-fi-Seite besuchen: https://ko-fi.com/aifolders — vielen Dank für Ihre Unterstützung!

@@ -63,6 +63,7 @@ Zanima te Gemini Mape, ali koristiš i ChatGPT, Claude, Copilot, Grok, Perplexit
 👉 Instaliraj UI mape: __AF_STORE_URL__
 
 📢 AŽURIRANJA:
+Verzija 4.5.3 (Sigurnost i stabilnost): Dodatna zaštita spremljenih poveznica i uvoza sigurnosnih kopija te interni popravci stabilnosti.
 Verzija 4.5.1 (Poboljšanja): Mape se sada prema zadanim postavkama razvrstavaju od najnovijih, kao i vaša biblioteka prompta — već odabrani redoslijed razvrstavanja ostaje nepromijenjen. Ispravljen je i gumb za brisanje (✕) u polju za pretraživanje, pa sada radi i u Firefoxu.
 Verzija 4.5 (Sučelje i stabilnost): Širi panel, dotjerane kontrole i bolja pristupačnost tipkovnicom. Ispravci grešaka i unutarnje refaktoriranje od posljednjeg ažuriranja, za bolju stabilnost. Ako su ti Gemini Mape korisne, možeš podržati njihov razvoj posjetom Ko-fi stranici: https://ko-fi.com/aifolders — hvala na podršci!
 Verzija 4.2 (Okidač upita): Unesi # u polje za chat s Geminijem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela.

@@ -64,6 +64,7 @@ Interessado em Pastas Gemini mas também usa ChatGPT, Claude, Copilot, Grok, Per
 👉 Instalar Pastas IA: __AF_STORE_URL__
 
 📢 ATUALIZAÇÕES:
+Versão 4.5.3 (Segurança e estabilidade): Proteções adicionais para links salvos e importações de backup, além de correções internas de estabilidade.
 Versão 4.5.1 (Refinamentos): As pastas agora são ordenadas da mais recente para a mais antiga por padrão, como sua biblioteca de prompts — qualquer ordenação que você já tenha escolhido permanece inalterada. Também corrigimos o botão de limpar (✕) no campo de busca para que funcione também no Firefox.
 Versão 4.5 (Interface e estabilidade): Painel mais largo, controles refinados e melhor acessibilidade pelo teclado. Correções de bugs e refatorações internas desde a última atualização, para maior estabilidade. Se Pastas Gemini é útil para você, pode apoiar o desenvolvimento visitando a página Ko-fi: https://ko-fi.com/aifolders — obrigado pelo seu apoio!
 Versão 4.2 (Gatilho de Prompt): Digite # no campo de chat do Gemini para ver seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel.

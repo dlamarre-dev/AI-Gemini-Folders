@@ -65,6 +65,7 @@ Angalia msimbo au changia: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MASASISHO:
+Toleo 1.6.1 (Usalama na uthabiti): Ulinzi wa ziada kwa viungo vilivyohifadhiwa na uingizaji wa nakala rudufu, pamoja na marekebisho ya ndani ya uthabiti.
 Toleo 1.6 (huduma 10 mpya za AI): Hifadhi mazungumzo na uweke prompts katika huduma kumi zaidi za AI — zikiwemo Mistral, Meta AI, Qwen na Z.ai — pamoja na vitufe vya huduma vilivyoundwa upya na nembo rasmi.
 Toleo 1.5.1 (Maboresho): Folda sasa hupangwa kuanzia mpya zaidi kwa chaguo-msingi, sawa na maktaba yako ya vidokezo — mpangilio wa kupanga uliokwisha chagua hubaki bila kubadilika. Pia kitufe cha kufuta (✕) katika kisanduku cha kutafutia kimerekebishwa ili kifanye kazi katika Firefox pia.
 Toleo 1.5 (Grok): Anza mazungumzo mapya ya Grok moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo. Paneli pana zaidi, vidhibiti vilivyoboreshwa na ufikivu bora wa kibodi. Marekebisho ya hitilafu na upyaji wa ndani tangu sasisho la mwisho, kwa uthabiti bora. Ikiwa Folda za AI ni muhimu kwako, unaweza kusaidia maendeleo kwa kutembelea ukurasa wa Ko-fi: https://ko-fi.com/aifolders — asante kwa msaada wako!

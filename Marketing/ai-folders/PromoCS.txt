@@ -65,6 +65,7 @@ Prohlédněte kód nebo přispějte: https://github.com/dlamarre-dev/AI-Gemini-F
 
 
 📢 AKTUALIZACE:
+Verze 1.6.1 (Zabezpečení a stabilita): Další ochrana uložených odkazů a importu záloh a interní opravy stability.
 Verze 1.6 (10 nových služeb AI): Ukládejte konverzace a vkládejte prompty v deseti dalších službách AI — včetně Mistral, Meta AI, Qwen a Z.ai — s přepracovanými tlačítky služeb a oficiálními logy.
 Verze 1.5.1 (Vylepšení): Složky se nyní ve výchozím nastavení řadí od nejnovějších, stejně jako vaše knihovna promptů — již zvolené řazení zůstává beze změny. Opraveno bylo také tlačítko vymazání (✕) ve vyhledávacím poli, takže funguje i ve Firefoxu.
 Verze 1.5 (Grok): Zahajte nové konverzace na Grok přímo z režimu výzev, ukládejte je do složek a vkládejte výzvy. Širší panel, vylepšené ovládací prvky a lepší přístupnost z klávesnice. Opravy chyb a interní refaktoring od poslední aktualizace pro lepší stabilitu. Pokud vám AI složky pomáhají, můžete podpořit jejich vývoj návštěvou stránky Ko-fi: https://ko-fi.com/aifolders — děkujeme za vaši podporu!

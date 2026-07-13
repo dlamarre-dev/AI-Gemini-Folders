@@ -64,6 +64,7 @@ Interested in Gemini Folders but also use ChatGPT, Claude, Copilot, Grok, Perple
 👉 Install AI Folders: __AF_STORE_URL__
 
 📢 UPDATES:
+Version 4.5.3 (Security & Stability): Extra safeguards for stored links and backup imports, plus internal stability fixes.
 Version 4.5.1 (Refinements): Folders now sort newest-first by default, to match your prompt library — any sort order you've already chosen stays untouched. Also fixed the clear (✕) button in the search box so it works in Firefox too.
 Version 4.5 (Interface & Stability): Wider panel, refined controls, and improved keyboard accessibility. Bug fixes and internal refactoring since the last update, for improved stability. If Gemini Folders is useful to you, you can support its development by visiting the Ko-fi page: https://ko-fi.com/aifolders — thank you for your support!
 Version 4.2 (Prompt Trigger): Type # in Gemini's chat field to see your saved prompts filtered in real time. Use ↓/↑ to cycle through suggestions, Space to autocomplete or inject — without ever opening the panel.

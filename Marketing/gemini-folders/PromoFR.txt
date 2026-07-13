@@ -64,6 +64,7 @@ Intéressé par Dossiers Gemini mais vous utilisez aussi ChatGPT, Claude, Copilo
 👉 Installer Dossiers IA: __AF_STORE_URL__
 
 📢 MISES À JOUR :
+Version 4.5.3 (Sécurité et stabilité) : Protections renforcées pour les liens enregistrés et les imports de sauvegarde, avec des correctifs de stabilité internes.
 Version 4.5.1 (Améliorations) : Les dossiers sont désormais triés du plus récent au plus ancien par défaut, comme votre bibliothèque de prompts — l'ordre de tri que vous aviez déjà choisi reste inchangé. Correction également du bouton d'effacement (✕) dans le champ de recherche, qui fonctionne désormais aussi sur Firefox.
 Version 4.5 (Interface et stabilité) : Panneau élargi, contrôles raffinés et meilleure accessibilité clavier. Correctifs de bogues et refactorisations internes depuis la dernière mise à jour, pour une meilleure stabilité. Si Dossiers Gemini vous est utile, vous pouvez soutenir son développement en visitant la page Ko-fi : https://ko-fi.com/aifolders — merci pour votre soutien !
 Version 4.2 (Déclenchement de prompt) : Tapez # dans le champ de saisie de Gemini pour voir vos prompts filtrés en temps réel. Utilisez ↓/↑ pour naviguer entre les suggestions, Espace pour autocompléter ou injecter — sans jamais ouvrir le panneau.

@@ -65,6 +65,7 @@ Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 ATUALIZAÇÕES:
+Versão 1.6.1 (Segurança e estabilidade): Proteções adicionais para links salvos e importações de backup, além de correções internas de estabilidade.
 Versão 1.6 (10 novos serviços de IA): Salve conversas e injete prompts em mais dez serviços de IA — incluindo Mistral, Meta AI, Qwen e Z.ai — com botões de serviços redesenhados e logotipos oficiais.
 Versão 1.5.1 (Refinamentos): As pastas agora são ordenadas da mais recente para a mais antiga por padrão, como sua biblioteca de prompts — qualquer ordenação que você já tenha escolhido permanece inalterada. Também corrigimos o botão de limpar (✕) no campo de busca para que funcione também no Firefox.
 Versão 1.5 (Grok): Inicie novas conversas no Grok diretamente do Modo Prompt, salve-as em pastas e injete prompts. Painel mais largo, controles refinados e melhor acessibilidade pelo teclado. Correções de bugs e refatorações internas desde a última atualização, para maior estabilidade. Se Pastas IA é útil para você, pode apoiar o desenvolvimento visitando a página Ko-fi: https://ko-fi.com/aifolders — obrigado pelo seu apoio!

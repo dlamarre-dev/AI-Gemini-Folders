@@ -65,6 +65,7 @@ Koda göz atın veya katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini
 
 
 📢 GÜNCELLEMELER:
+Sürüm 1.6.1 (Güvenlik ve kararlılık): Kaydedilen bağlantılar ve yedek içe aktarmaları için ek korumalar, ayrıca dahili kararlılık düzeltmeleri.
 Sürüm 1.6 (10 yeni yapay zekâ hizmeti): On yeni yapay zekâ hizmetinde daha sohbetleri kaydedin ve promptları ekleyin — Mistral, Meta AI, Qwen ve Z.ai dahil — yeniden tasarlanmış hizmet düğmeleri ve resmî logolarla.
 Sürüm 1.5.1 (İyileştirmeler): Klasörler artık istem kitaplığınız gibi varsayılan olarak en yeniden eskiye sıralanıyor — daha önce seçtiğiniz sıralama düzeni değişmeden kalır. Ayrıca arama kutusundaki temizleme (✕) düğmesi düzeltildi, böylece Firefox'ta da çalışıyor.
 Sürüm 1.5 (Grok): Prompt Modundan doğrudan yeni Grok konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin. Daha geniş panel, iyileştirilmiş denetimler ve daha iyi klavye erişilebilirliği. Son güncellemeden bu yana hata düzeltmeleri ve dahili yeniden yapılandırma, geliştirilmiş kararlılık için. YZ Klasörleri işinize yarıyorsa, Ko-fi sayfasını ziyaret ederek geliştirmeyi destekleyebilirsiniz: https://ko-fi.com/aifolders — desteğiniz için teşekkürler!

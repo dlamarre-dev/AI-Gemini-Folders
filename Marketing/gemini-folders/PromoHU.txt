@@ -64,6 +64,7 @@ Böngésszen a kódban vagy járuljon hozzá: https://github.com/dlamarre-dev/AI
 👉 Telepítse a MI mappák alkalmazást: __AF_STORE_URL__
 
 📢 FRISSÍTÉSEK:
+4.5.3-as verzió (Biztonság és stabilitás): További védelem a mentett hivatkozásokhoz és a biztonsági mentések importjához, valamint belső stabilitási javítások.
 4.5.1-es verzió (Finomítások): A mappák mostantól alapértelmezetten a legújabbak elöl sorrend szerint rendeződnek, akárcsak a promptkönyvtárad — a korábban kiválasztott rendezési sorrend változatlan marad. Javítottuk a keresőmező törlés (✕) gombját is, így már a Firefoxban is működik.
 4.5-ös verzió (Felület és stabilitás): Szélesebb panel, finomított kezelőelemek és jobb billentyűzetes hozzáférhetőség. Hibajavítások és belső átalakítások az utolsó frissítés óta, a jobb stabilitás érdekében. Ha a Gemini-mappák hasznos Önnek, támogathatja fejlesztését a Ko-fi oldal felkeresésével: https://ko-fi.com/aifolders — köszönjük a támogatást!
 4.2-es verzió (Prompt-kiváltó): Írjon # jelet a Gemini chat mezőbe, hogy valós időben szűrve lássa mentett promptjait. Használja a ↓/↑ billentyűket a javaslatok közötti navigáláshoz, a szóközt az automatikus kiegészítéshez vagy beillesztéshez — a panel megnyitása nélkül.

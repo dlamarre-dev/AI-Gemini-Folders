@@ -64,6 +64,7 @@ Unavutiwa na Folda za Gemini lakini pia unatumia ChatGPT, Claude, Copilot, Grok,
 👉 Sakinisha Folda za AI: __AF_STORE_URL__
 
 📢 MASASISHO:
+Toleo 4.5.3 (Usalama na uthabiti): Ulinzi wa ziada kwa viungo vilivyohifadhiwa na uingizaji wa nakala rudufu, pamoja na marekebisho ya ndani ya uthabiti.
 Toleo 4.5.1 (Maboresho): Folda sasa hupangwa kuanzia mpya zaidi kwa chaguo-msingi, sawa na maktaba yako ya vidokezo — mpangilio wa kupanga uliokwisha chagua hubaki bila kubadilika. Pia kitufe cha kufuta (✕) katika kisanduku cha kutafutia kimerekebishwa ili kifanye kazi katika Firefox pia.
 Toleo 4.5 (Kiolesura na Uthabiti): Paneli pana zaidi, vidhibiti vilivyoboreshwa na ufikivu bora wa kibodi. Marekebisho ya hitilafu na upyaji wa ndani tangu sasisho la mwisho, kwa uthabiti bora. Ikiwa Folda za Gemini ni muhimu kwako, unaweza kusaidia maendeleo kwa kutembelea ukurasa wa Ko-fi: https://ko-fi.com/aifolders — asante kwa msaada wako!
 Toleo 4.2 (Kichocheo cha Kidokezo): Andika # katika uwanja wa mazungumzo wa Gemini ili uone maagizo yako yaliyohifadhiwa yakichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.

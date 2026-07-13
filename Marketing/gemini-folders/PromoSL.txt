@@ -63,6 +63,7 @@ Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Grok, Per
 👉 Namesti Mape AI: __AF_STORE_URL__
 
 📢 POSODOBITVE:
+Različica 4.5.3 (Varnost in stabilnost): Dodatna zaščita shranjenih povezav in uvoza varnostnih kopij ter notranji popravki stabilnosti.
 Različica 4.5.1 (Izboljšave): Mape so zdaj privzeto razvrščene od najnovejših, tako kot vaša knjižnica pozivov — že izbrani vrstni red razvrščanja ostane nespremenjen. Popravljen je tudi gumb za počiščenje (✕) v iskalnem polju, tako da deluje tudi v Firefoxu.
 Različica 4.5 (Vmesnik in stabilnost): Širša plošča, izpopolnjeni kontrolniki in boljša dostopnost s tipkovnico. Popravki napak in notranje prestrukturiranje od zadnje posodobitve, za boljšo stabilnost. Če so vam Mape Gemini v pomoč, lahko podprete razvoj z obiskom strani Ko-fi: https://ko-fi.com/aifolders — hvala za vašo podporo!
 Različica 4.2 (Sprožilec pozivov): Vnesite # v polje za klepet Gemini in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče.

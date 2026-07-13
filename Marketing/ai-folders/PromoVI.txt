@@ -65,6 +65,7 @@ Xem code hoặc đóng góp: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 CẬP NHẬT:
+Phiên bản 1.6.1 (Bảo mật & ổn định): Tăng cường bảo vệ cho liên kết đã lưu và nhập tệp sao lưu, cùng các sửa lỗi ổn định nội bộ.
 Phiên bản 1.6 (10 dịch vụ AI mới): Lưu cuộc trò chuyện và chèn prompt trên mười dịch vụ AI nữa — bao gồm Mistral, Meta AI, Qwen và Z.ai — với các nút dịch vụ được thiết kế lại và logo chính thức.
 Phiên bản 1.5.1 (Tinh chỉnh): Thư mục giờ được sắp xếp mới nhất trước theo mặc định, giống như thư viện prompt của bạn — thứ tự sắp xếp bạn đã chọn trước đó vẫn được giữ nguyên. Đồng thời đã sửa nút xóa (✕) trong ô tìm kiếm để nó cũng hoạt động trên Firefox.
 Phiên bản 1.5 (Grok): Bắt đầu cuộc trò chuyện Grok mới trực tiếp từ Chế độ Prompt, lưu vào thư mục và chèn prompt. Bảng điều khiển rộng hơn, các điều khiển tinh gọn hơn và khả năng truy cập bằng bàn phím tốt hơn. Sửa lỗi và tái cấu trúc nội bộ kể từ lần cập nhật cuối, để đạt độ ổn định tốt hơn. Nếu Thư mục AI hữu ích với bạn, bạn có thể hỗ trợ phát triển bằng cách truy cập trang Ko-fi: https://ko-fi.com/aifolders — cảm ơn vì sự hỗ trợ của bạn!

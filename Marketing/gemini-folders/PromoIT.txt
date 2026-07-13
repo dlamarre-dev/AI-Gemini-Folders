@@ -64,6 +64,7 @@ Interessato a Cartelle Gemini ma usi anche ChatGPT, Claude, Copilot, Grok, Perpl
 👉 Installa Cartelle IA: __AF_STORE_URL__
 
 📢 AGGIORNAMENTI:
+Versione 4.5.3 (Sicurezza e stabilità): Protezioni aggiuntive per i link salvati e le importazioni di backup, oltre a correzioni interne di stabilità.
 Versione 4.5.1 (Rifiniture): le cartelle ora sono ordinate dalla più recente alla meno recente per impostazione predefinita, come la tua libreria di prompt — l'ordinamento che avevi già scelto resta invariato. Corretto inoltre il pulsante di cancellazione (✕) nel campo di ricerca, che ora funziona anche su Firefox.
 Versione 4.5 (Interfaccia e stabilità): Pannello più ampio, controlli rifiniti e migliore accessibilità da tastiera. Correzioni di bug e refactoring interno dall'ultimo aggiornamento, per una maggiore stabilità. Se Cartelle Gemini ti è utile, puoi supportarne lo sviluppo visitando la pagina Ko-fi: https://ko-fi.com/aifolders — grazie per il tuo supporto!
 Versione 4.2 (Prompt Trigger): Digita # nel campo di chat di Gemini per vedere i tuoi prompt filtrati in tempo reale. Usa ↓/↑ per navigare tra i suggerimenti, Spazio per autocompletare o iniettare — senza mai aprire il pannello.

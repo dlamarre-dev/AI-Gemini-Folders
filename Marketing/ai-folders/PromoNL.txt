@@ -65,6 +65,7 @@ Bekijk de code of draag bij: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
+Versie 1.6.1 (Beveiliging en stabiliteit): Extra bescherming voor opgeslagen links en back-upimports, plus interne stabiliteitsverbeteringen.
 Versie 1.6 (10 nieuwe AI-diensten): Bewaar gesprekken en injecteer prompts op tien extra AI-diensten — waaronder Mistral, Meta AI, Qwen en Z.ai — met opnieuw ontworpen serviceknoppen en officiële logo's.
 Versie 1.5.1 (Verfijningen): Mappen worden nu standaard van nieuw naar oud gesorteerd, net als je promptbibliotheek — een sorteervolgorde die je al had gekozen blijft ongewijzigd. Ook de wisknop (✕) in het zoekveld is gecorrigeerd, zodat die nu ook in Firefox werkt.
 Versie 1.5 (Grok): Start nieuwe Grok-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts. Breder paneel, verfijnde bedieningselementen en betere toetsenbordtoegankelijkheid. Bugfixes en interne refactoring sinds de laatste update, voor verbeterde stabiliteit. Als AI-mappen u van nut is, kunt u de ontwikkeling ondersteunen door de Ko-fi-pagina te bezoeken: https://ko-fi.com/aifolders — bedankt voor uw steun!

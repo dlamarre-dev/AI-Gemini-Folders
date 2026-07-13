@@ -64,6 +64,7 @@ Geïnteresseerd in Gemini-mappen maar gebruik je ook ChatGPT, Claude, Copilot, G
 👉 AI-mappen installeren: __AF_STORE_URL__
 
 📢 UPDATES:
+Versie 4.5.3 (Beveiliging en stabiliteit): Extra bescherming voor opgeslagen links en back-upimports, plus interne stabiliteitsverbeteringen.
 Versie 4.5.1 (Verfijningen): Mappen worden nu standaard van nieuw naar oud gesorteerd, net als je promptbibliotheek — een sorteervolgorde die je al had gekozen blijft ongewijzigd. Ook de wisknop (✕) in het zoekveld is gecorrigeerd, zodat die nu ook in Firefox werkt.
 Versie 4.5 (Interface en stabiliteit): Breder paneel, verfijnde bedieningselementen en betere toetsenbordtoegankelijkheid. Bugfixes en interne refactoring sinds de laatste update, voor verbeterde stabiliteit. Als Gemini-mappen u van nut is, kunt u de ontwikkeling ondersteunen door de Ko-fi-pagina te bezoeken: https://ko-fi.com/aifolders — bedankt voor uw steun!
 Versie 4.2 (Prompt-trigger): Typ # in het chatveld van Gemini om uw opgeslagen prompts in realtime gefilterd te zien. Gebruik ↓/↑ om door suggesties te navigeren, Spatie om automatisch aan te vullen of in te voegen — zonder het panel te openen.
