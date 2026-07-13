@@ -336,6 +336,9 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
 
       for (let j = 0; j < chats.length; j++) {
         const chat = chats[j];
+        // Defence-in-depth: never mirror an unsafe URL into the bookmark tree,
+        // even if legacy/corrupt storage carries one (import already gates on this).
+        if (!isSafeUrl(chat.url)) continue;
         await new Promise(r => chrome.bookmarks.create({
           parentId: folderNode.id,
           title: chat.title,
@@ -405,6 +408,12 @@ function mergeImportData(importedData) {
       let currentPrompts = data.prompts || {};
 
       const isPlainObject = (v) => v && typeof v === 'object' && !Array.isArray(v);
+      // JSON.parse creates OWN "__proto__"/"constructor"/"prototype" properties, so
+      // Object.entries surfaces them here. Accessing currentFolders["__proto__"]
+      // resolves to Object.prototype (and ["constructor"] to the Object function),
+      // whose `.some`/`.push` don't exist — a single such key would throw and abort
+      // the whole import. Skip them: robustness, not prototype-pollution (guarded).
+      const isUnsafeKey = (k) => k === '__proto__' || k === 'constructor' || k === 'prototype';
 
       // --- BACKWARD COMPATIBILITY MANAGEMENT ---
       // Current format wraps content in { folders, pinnedFolders, prompts };
@@ -429,7 +438,7 @@ function mergeImportData(importedData) {
       // 1. Merge folders and conversations. Skip entries whose value isn't an
       //    array of chats, and validate each chat's shape before storing it.
       for (const [folderName, chats] of Object.entries(foldersToImport)) {
-        if (typeof folderName !== 'string' || !Array.isArray(chats)) continue;
+        if (typeof folderName !== 'string' || isUnsafeKey(folderName) || !Array.isArray(chats)) continue;
         if (!currentFolders[folderName]) currentFolders[folderName] = [];
         chats.forEach(importedChat => {
           if (isPlainObject(importedChat)
@@ -445,14 +454,14 @@ function mergeImportData(importedData) {
 
       // 2. Merge pins (without creating duplicates)
       pinsToImport.forEach(pin => {
-        if (typeof pin === 'string' && !currentPinned.includes(pin) && currentFolders[pin]) {
+        if (typeof pin === 'string' && !isUnsafeKey(pin) && !currentPinned.includes(pin) && currentFolders[pin]) {
           currentPinned.push(pin);
         }
       });
 
       // 3. Merge prompts
       for (const [promptTitle, promptData] of Object.entries(promptsToImport)) {
-        if (typeof promptTitle !== 'string') continue;
+        if (typeof promptTitle !== 'string' || isUnsafeKey(promptTitle)) continue;
         const normalized = normalizePromptData(promptData);
         if (!normalized) continue; // skip malformed prompt entries
         if (!currentPrompts[promptTitle]) {

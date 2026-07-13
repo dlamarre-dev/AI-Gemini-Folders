@@ -203,6 +203,22 @@ describe('syncToBookmarksTree', () => {
     expect(folderCreate.title).toBe('🚀 Launch');
   });
 
+  test('does not mirror an unsafe stored URL into the bookmark tree', async () => {
+    const folders = {
+      Dev: [
+        { title: 'safe', url: 'https://a/ok', timestamp: 2 },
+        { title: 'evil', url: 'javascript:alert(1)', timestamp: 1 },
+      ],
+    };
+
+    await syncToBookmarksTree(folders, [], 'dateDesc');
+
+    const chatCreates = chrome.bookmarks.create.mock.calls
+      .map((c) => c[0])
+      .filter((o) => o.url);
+    expect(chatCreates.map((o) => o.url)).toEqual(['https://a/ok']);
+  });
+
   test('a re-entrant call while a sync is in flight is ignored', async () => {
     const folders = { A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] };
     const first = syncToBookmarksTree(folders, [], 'dateDesc'); // holds the lock
