@@ -48,6 +48,7 @@ TOOL_DIR = Path(__file__).resolve().parent
 STATE_FILE = TOOL_DIR / ".amo-previews-state.json"  # gitignored
 SCREENSHOTS_PER_LISTING = 5
 AMO_SUMMARY_MAX = 250   # AMO rejects summaries above this length
+AMO_NAME_MAX = 50       # AMO rejects add-on names above this length
 REQUEST_GAP_S = 1.0     # initial delay before each write request (grows on throttle)
 MAX_PACE_S = 30.0       # cap for the adaptive pacing delay
 AUTO_RETRY_CAP_S = 180  # longest we'll auto-sleep on a single throttle before retrying
@@ -205,17 +206,53 @@ def build_summaries(locales_dir, locales):
     return out
 
 
-def update_texts(creds, guid, descriptions, summaries, apply):
+def build_names(locales_dir, locales):
+    """Reads every supported locale's extName from the built Firefox _locales.
+    Returns {amo_code: text} — the AMO listing name mirrors the extension's own
+    name string (manifest `name` = extName), so the store title tracks it."""
+    if not locales_dir.is_dir():
+        sys.exit(f"Locales dir not found: {locales_dir} — run `python build.py` first.")
+    out = {}
+    for loc in locales:
+        if not loc["amo"]:
+            continue
+        path = locales_dir / loc["internal"] / "messages.json"
+        msg = json.loads(path.read_text(encoding="utf-8-sig")).get("extName", {}).get("message", "").strip()
+        if not msg:
+            sys.exit(f"extName missing/empty in {path}")
+        if len(msg) > AMO_NAME_MAX:
+            sys.exit(f"extName for {loc['internal']} is {len(msg)} chars (AMO name max {AMO_NAME_MAX}): {msg[:80]}…")
+        out[loc["amo"]] = msg
+    print(f"Names: {len(out)} locales from extName")
+    return out
+
+
+def changed_only(new, current):
+    """Keeps only entries whose value differs from the live listing, so an
+    unchanged name/field isn't rewritten (AMO throttles writes and every edit
+    goes live immediately). `current` is the addon's localized field (or None)."""
+    cur = current if isinstance(current, dict) else {}
+    return {code: text for code, text in new.items() if cur.get(code) != text}
+
+
+def update_texts(creds, guid, descriptions, summaries, names, apply):
     if not apply:
         for code, text in sorted(descriptions.items()):
             print(f"  would send description[{code}]: {len(text)} chars"
                   + (f", summary: {len(summaries[code])} chars" if code in summaries else ""))
+        for code, name in sorted(names.items()):
+            print(f"  would send name[{code}]: {name!r}")
+        if not names:
+            print("  name: no changes vs the live listing — nothing to send")
         return
-    # One PATCH carries every locale and both fields; omitted locales stay
-    # untouched on AMO.
-    api_request(creds, "PATCH", f"/addons/addon/{guid}/",
-                json_body={"description": descriptions, "summary": summaries})
-    print(f"  description + summary updated for {len(descriptions)} locales ✓")
+    # One PATCH carries every locale and every field; omitted locales/fields stay
+    # untouched on AMO. `name` is sent only for locales that actually changed.
+    body = {"description": descriptions, "summary": summaries}
+    if names:
+        body["name"] = names
+    api_request(creds, "PATCH", f"/addons/addon/{guid}/", json_body=body)
+    print(f"  description + summary updated for {len(descriptions)} locales"
+          + (f"; name updated for {len(names)} locale(s) ✓" if names else "; name unchanged ✓"))
 
 
 def file_fingerprints(files):
@@ -337,7 +374,8 @@ def main():
     if args.texts:
         descriptions = build_descriptions(marketing_dir, locales)
         summaries = build_summaries(locales_dir, locales)
-        update_texts(creds, guid, descriptions, summaries, args.apply)
+        names = changed_only(build_names(locales_dir, locales), addon.get("name"))
+        update_texts(creds, guid, descriptions, summaries, names, args.apply)
     if args.images:
         update_images(creds, guid, addon, marketing_dir, locales, args.apply, args.force_images)
 
