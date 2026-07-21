@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "Нов разговор в Z.ai"
   },
+  "newConv_kimi": {
+    "message": "Нов разговор в Kimi"
+  },
   "newConv_qwen": {
     "message": "Нов разговор в Qwen"
   },
@@ -291,7 +294,7 @@
     "message": "Задайте URL на локален LLM:"
   },
   "alertNotSupported": {
-    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi или Character.AI)."
+    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi или Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Не може да се намери текстовото поле на тази страница. Опитайте да кликнете в редактора първо, след което използвайте бутона за вмъкване."

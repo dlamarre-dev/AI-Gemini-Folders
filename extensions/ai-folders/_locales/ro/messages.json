@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "Conversație nouă în Z.ai"
   },
+  "newConv_kimi": {
+    "message": "Conversație nouă în Kimi"
+  },
   "newConv_qwen": {
     "message": "Conversație nouă în Qwen"
   },
@@ -291,7 +294,7 @@
     "message": "Setați URL-ul LLM local:"
   },
   "alertNotSupported": {
-    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi sau Character.AI)."
+    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi sau Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Nu s-a găsit câmpul de text pe această pagină. Încercați să faceți clic mai întâi în editor, apoi folosiți butonul de inserare."

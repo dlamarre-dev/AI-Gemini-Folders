@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "Yeni Z.ai sohbeti"
   },
+  "newConv_kimi": {
+    "message": "Yeni Kimi sohbeti"
+  },
   "newConv_qwen": {
     "message": "Yeni Qwen sohbeti"
   },
@@ -291,7 +294,7 @@
     "message": "Yerel LLM URL'sini ayarla:"
   },
   "alertNotSupported": {
-    "message": "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi veya Character.AI)."
+    "message": "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi veya Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Bu sayfada metin giriş alanı bulunamadı. Önce düzenleyiciye tıklamayı deneyin, ardından ekle düğmesini kullanın."

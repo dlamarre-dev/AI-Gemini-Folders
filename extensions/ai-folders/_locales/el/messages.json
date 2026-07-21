@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "Νέα συνομιλία Z.ai"
   },
+  "newConv_kimi": {
+    "message": "Νέα συνομιλία Kimi"
+  },
   "newConv_qwen": {
     "message": "Νέα συνομιλία Qwen"
   },
@@ -291,7 +294,7 @@
     "message": "Ορισμός URL τοπικού LLM:"
   },
   "alertNotSupported": {
-    "message": "Χρησιμοποιήστε αυτήν την επέκταση σε υποστηριζόμενο AI ιστότοπο (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi ή Character.AI)."
+    "message": "Χρησιμοποιήστε αυτήν την επέκταση σε υποστηριζόμενο AI ιστότοπο (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi ή Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Δεν ήταν δυνατή η εύρεση του πεδίου κειμένου σε αυτή τη σελίδα. Κάντε κλικ στον επεξεργαστή πρώτα και μετά χρησιμοποιήστε το κουμπί εισαγωγής."

@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "Nová konverzace v Z.ai"
   },
+  "newConv_kimi": {
+    "message": "Nová konverzace v Kimi"
+  },
   "newConv_qwen": {
     "message": "Nová konverzace v Qwen"
   },
@@ -291,7 +294,7 @@
     "message": "Nastavit URL místního LLM:"
   },
   "alertNotSupported": {
-    "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi nebo Character.AI)."
+    "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi nebo Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Na této stránce nelze najít textové pole. Nejprve klikněte do editoru a poté použijte tlačítko Vložit."

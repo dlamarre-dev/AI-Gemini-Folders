@@ -15,6 +15,8 @@ const SUPPORTED_URL_PATTERNS = [
   "*://perplexity.ai/*",
   "*://*.perplexity.ai/*",
   "*://chat.z.ai/*",
+  "*://kimi.com/*",
+  "*://*.kimi.com/*",
   "*://chat.qwen.ai/*",
   "*://meta.ai/*",
   "*://*.meta.ai/*",

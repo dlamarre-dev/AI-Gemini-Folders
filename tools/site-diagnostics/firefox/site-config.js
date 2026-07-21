@@ -1,6 +1,6 @@
 // site-config.js — AI Folders site registry
 // Provides:
-//   SITES              — metadata for all supported sites (17 web platforms + local)
+//   SITES              — metadata for all supported sites (18 web platforms + local)
 //   getSiteByUrl(url)  — returns site key or null
 //   getChatSiteInfo    — hook for folders.js (window global)
 //   extractAITitleLogic — injected into page via executeScript
@@ -88,6 +88,15 @@ const SITES = {
     // chat.z.ai is built on Open WebUI (#chat-input); selectors need live validation
     editorSelectors: ['#chat-input', 'textarea#chat-input', '#chat-textarea', 'textarea[placeholder]', '[contenteditable="true"]'],
     logo: 'icons/zai.png',
+  },
+  kimi: {
+    key: 'kimi',
+    domain: 'kimi.com',
+    color: '#ffffff',
+    newConvUrl: 'https://www.kimi.com/',
+    // Kimi (Moonshot AI); www.kimi.com — composer selectors need live validation
+    editorSelectors: ['textarea[placeholder]', 'div[contenteditable="true"]', 'textarea', '[contenteditable="true"]'],
+    logo: 'icons/kimi.png',
   },
   qwen: {
     key: 'qwen',
@@ -416,6 +425,7 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       mistral: ['le chat', 'le chat - mistral ai', 'mistral ai', 'new chat'],
       poe: ['poe', 'new chat'],
       duckai: ['duckduckgo ai chat', 'duckduckgo', 'ai chat', 'duck.ai'],
+      kimi: ['kimi', 'kimi chat', 'moonshot', 'new chat'],
       you: ['you.com', 'you', 'new chat'],
       characterai: ['character.ai', 'characterai', 'c.ai', 'new chat'],
     }[siteKey];

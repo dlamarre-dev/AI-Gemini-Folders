@@ -13,10 +13,10 @@ Two Manifest V3 browser extensions (Chrome **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
 - **Gemini Folders (GF)** — Google Gemini only. Current version **4.5.2**.
-- **AI Folders (AF)** — 17 web platforms (Gemini, Claude, ChatGPT, Copilot,
-  DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe,
+- **AI Folders (AF)** — 18 web platforms (Gemini, Claude, ChatGPT, Copilot,
+  DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, You.com, Pi, Character.AI) **+ a user-configured local LLM**.
-  Current version **1.6.0**. The popup's per-site "new conversation" buttons
+  Current version **1.6.2**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs

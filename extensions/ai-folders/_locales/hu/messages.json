@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "Új Z.ai-beszélgetés"
   },
+  "newConv_kimi": {
+    "message": "Új Kimi-beszélgetés"
+  },
   "newConv_qwen": {
     "message": "Új Qwen-beszélgetés"
   },
@@ -291,7 +294,7 @@
     "message": "Helyi LLM URL beállítása:"
   },
   "alertNotSupported": {
-    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi vagy Character.AI)."
+    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi vagy Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."

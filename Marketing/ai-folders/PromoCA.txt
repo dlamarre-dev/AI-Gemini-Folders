@@ -2,7 +2,7 @@
 
 Organitza converses de totes les teves eines d'IA preferides en carpetes compartides, crea una biblioteca de prompts reutilitzables i injecta plantilles directament a qualsevol camp d'entrada — sense necessitat de copiar i enganxar.
 
-🌐 18 SERVEIS D'IA COMPATIBLES
+🌐 19 SERVEIS D'IA COMPATIBLES
 
 Carpetes IA s'integra de manera nativa amb tots els principals assistents de xat d'IA, com ara Claude, ChatGPT i Gemini, així com amb els LLM locals que executes tu mateix. Les converses de plataformes diferents poden compartir exactament la mateixa carpeta. Cada xat mostra el color i el logotip del seu servei, de manera que sempre saps d'on prové.
 
@@ -63,6 +63,7 @@ Explorar el codi o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ACTUALITZACIONS:
+Versió 1.6.2 (Kimi): Inicia noves converses a Kimi directament des del Mode Prompt, desa-les en carpetes i injecta prompts.
 Versió 1.6.1 (Seguretat i estabilitat): Proteccions addicionals per als enllaços desats i les importacions de còpies de seguretat, a més de correccions internes d'estabilitat.
 Versió 1.6 (10 nous serveis d'IA): Desa converses i injecta prompts en deu serveis d'IA més — incloent-hi Mistral, Meta AI, Qwen i Z.ai — amb botons de serveis redissenyats i logotips oficials.
 Versió 1.5.1 (Millores): Ara les carpetes s'ordenen de més recent a més antiga de manera predeterminada, igual que la teva biblioteca de prompts — qualsevol ordre que ja haguessis triat es manté sense canvis. També s'ha corregit el botó d'esborrat (✕) del camp de cerca perquè funcioni també al Firefox.

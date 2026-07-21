@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "Cuộc trò chuyện Z.ai mới"
   },
+  "newConv_kimi": {
+    "message": "Cuộc trò chuyện Kimi mới"
+  },
   "newConv_qwen": {
     "message": "Cuộc trò chuyện Qwen mới"
   },
@@ -291,7 +294,7 @@
     "message": "Đặt URL LLM cục bộ:"
   },
   "alertNotSupported": {
-    "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi hoặc Character.AI)."
+    "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi hoặc Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Không tìm thấy ô nhập văn bản trên trang này. Hãy thử nhấp vào trình soạn thảo trước rồi sử dụng nút chèn."

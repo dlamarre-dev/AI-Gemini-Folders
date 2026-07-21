@@ -14,6 +14,8 @@ describe('getSiteByUrl', () => {
     ['https://perplexity.ai/', 'perplexity'],
     ['https://www.perplexity.ai/search', 'perplexity'],
     ['https://chat.z.ai/c/abc', 'zai'],
+    ['https://www.kimi.com/', 'kimi'],
+    ['https://kimi.com/chat/abc', 'kimi'],
     ['https://chat.qwen.ai/c/abc', 'qwen'],
     ['https://meta.ai/', 'meta'],
     ['https://www.meta.ai/c/abc', 'meta'],

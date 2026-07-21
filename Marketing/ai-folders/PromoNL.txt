@@ -2,7 +2,7 @@
 
 Organiseer gesprekken van al uw favoriete AI-tools in gedeelde mappen, bouw een herbruikbare promptbibliotheek en injecteer sjablonen rechtstreeks in elk invoerveld — zonder kopiëren en plakken.
 
-🌐 18 ONDERSTEUNDE AI-DIENSTEN
+🌐 19 ONDERSTEUNDE AI-DIENSTEN
 
 AI-mappen integreert native met alle grote AI-chatassistenten, zoals Claude, ChatGPT en Gemini, en met de lokale LLM's die u zelf draait. Gesprekken van verschillende platforms kunnen exact dezelfde map delen. Elke chat toont de kleur en het logo van zijn eigen dienst, zodat u altijd weet waar het vandaan komt.
 
@@ -65,6 +65,7 @@ Bekijk de code of draag bij: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
+Versie 1.6.2 (Kimi): Start nieuwe Kimi-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts.
 Versie 1.6.1 (Beveiliging en stabiliteit): Extra bescherming voor opgeslagen links en back-upimports, plus interne stabiliteitsverbeteringen.
 Versie 1.6 (10 nieuwe AI-diensten): Bewaar gesprekken en injecteer prompts op tien extra AI-diensten — waaronder Mistral, Meta AI, Qwen en Z.ai — met opnieuw ontworpen serviceknoppen en officiële logo's.
 Versie 1.5.1 (Verfijningen): Mappen worden nu standaard van nieuw naar oud gesorteerd, net als je promptbibliotheek — een sorteervolgorde die je al had gekozen blijft ongewijzigd. Ook de wisknop (✕) in het zoekveld is gecorrigeerd, zodat die nu ook in Firefox werkt.

@@ -8,7 +8,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ## 🤖 AI Folders *(New)*
 
-**AI Folders** is the multi-platform evolution: it works across **17 AI services** — ChatGPT, Claude, Perplexity, Copilot, DeepSeek, Grok, Gemini, Mistral, Meta AI, Qwen, Z.ai, Poe, Duck.ai, You.com, Pi, Character.AI and Baidu — plus local LLMs, all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
+**AI Folders** is the multi-platform evolution: it works across **18 AI services** — ChatGPT, Claude, Perplexity, Copilot, DeepSeek, Grok, Gemini, Mistral, Meta AI, Qwen, Z.ai, Kimi, Poe, Duck.ai, You.com, Pi, Character.AI and Baidu — plus local LLMs, all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
 
 [![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-blue?logo=googlechrome)](https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf)
 [![Available on Firefox Add-ons](https://img.shields.io/badge/Firefox_Add--ons-Available-orange?logo=firefox)](https://addons.mozilla.org/firefox/addon/ai_folders/)
@@ -27,6 +27,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 | Meta AI                        | ✅ | ✅ | ✅ *(exact-match trigger)* |
 | Qwen                           | ✅ | ✅ | ✅ |
 | Z.ai                           | ✅ | ✅ | ✅ |
+| Kimi                           | ✅ | ✅ | ✅ |
 | Poe                            | ✅ | ✅ | ✅ |
 | Duck.ai                        | ✅ | ✅ | ✅ |
 | You.com                        | ✅ | ✅ | ✅ |
@@ -142,7 +143,7 @@ This project uses a Python build pipeline to generate browser-specific versions.
 Both extensions are built with privacy in mind.
 
 * **Gemini Folders** only requests access to `gemini.google.com` and the context menu.
-* **AI Folders** requests access to the supported AI domains (`chatgpt.com`, `claude.ai`, `perplexity.ai`, `copilot.microsoft.com`, `chat.deepseek.com`, `grok.com`, `gemini.google.com`, `chat.mistral.ai`, `meta.ai`, `chat.qwen.ai`, `chat.z.ai`, `poe.com`, `duck.ai`, `duckduckgo.com`, `you.com`, `pi.ai`, `character.ai`, `chat.baidu.com`) and the context menu — and nothing else.
+* **AI Folders** requests access to the supported AI domains (`chatgpt.com`, `claude.ai`, `perplexity.ai`, `copilot.microsoft.com`, `chat.deepseek.com`, `grok.com`, `gemini.google.com`, `chat.mistral.ai`, `meta.ai`, `chat.qwen.ai`, `chat.z.ai`, `kimi.com`, `poe.com`, `duck.ai`, `duckduckgo.com`, `you.com`, `pi.ai`, `character.ai`, `chat.baidu.com`) and the context menu — and nothing else.
 * **Optional host permission (local LLM):** AI Folders declares a broad `optional_host_permissions` (`http://*/*`, `https://*/*`) because the local-LLM URL is user-defined and can't be known ahead of time. **Nothing is granted by default.** When you set a local LLM URL, the extension requests access to *only that single origin* via the browser's permission prompt, and revokes the previous origin if you change it. The broad declaration is the manifest pattern required to request a dynamic origin at runtime — it is not standing access to all sites.
 * The `bookmarks` permission is used strictly to manage the mobile sync folder when you enable that feature.
 * Tab content is read **only** when you explicitly save a conversation, solely to extract its title.
