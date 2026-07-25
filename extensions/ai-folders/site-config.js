@@ -1,6 +1,6 @@
 // site-config.js — AI Folders site registry
 // Provides:
-//   SITES              — metadata for all supported sites (17 web platforms + local)
+//   SITES              — metadata for all supported sites (18 web platforms + local)
 //   getSiteByUrl(url)  — returns site key or null
 //   getChatSiteInfo    — hook for folders.js (window global)
 //   extractAITitleLogic — injected into page via executeScript
@@ -88,6 +88,29 @@ const SITES = {
     // chat.z.ai is built on Open WebUI (#chat-input); selectors need live validation
     editorSelectors: ['#chat-input', 'textarea#chat-input', '#chat-textarea', 'textarea[placeholder]', '[contenteditable="true"]'],
     logo: 'icons/zai.png',
+  },
+  kimi: {
+    key: 'kimi',
+    domain: 'kimi.com',
+    color: '#ffffff',
+    newConvUrl: 'https://www.kimi.com/',
+    // Kimi (Moonshot AI); www.kimi.com — a Vue shell around a Lexical composer:
+    // div.chat-input-editor[contenteditable][role=textbox][data-lexical-editor]
+    editorSelectors: [
+      'div.chat-input-editor[contenteditable="true"]',
+      'div[data-lexical-editor="true"][contenteditable="true"]',
+      'div[contenteditable="true"][role="textbox"]',
+      'textarea[placeholder]', 'textarea', '[contenteditable="true"]',
+    ],
+    // Same Lexical limitation as Meta AI: Lexical rebuilds its own model from
+    // beforeinput, so the multi-line suggestion block collapses onto one line
+    // (no break after the "#name" trigger) and the caret lands mid-text on the
+    // next keystroke. Skip the inline suggestions; exact/single matches still
+    // inject. Not forceClear — plain selectAll+delete+insertText is handled
+    // correctly by Lexical, while the destructive textContent wipe would desync
+    // its model.
+    noSuggestions: true,
+    logo: 'icons/kimi.png',
   },
   qwen: {
     key: 'qwen',
@@ -416,6 +439,7 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       mistral: ['le chat', 'le chat - mistral ai', 'mistral ai', 'new chat'],
       poe: ['poe', 'new chat'],
       duckai: ['duckduckgo ai chat', 'duckduckgo', 'ai chat', 'duck.ai'],
+      kimi: ['kimi', 'kimi chat', 'moonshot', 'new chat'],
       you: ['you.com', 'you', 'new chat'],
       characterai: ['character.ai', 'characterai', 'c.ai', 'new chat'],
     }[siteKey];

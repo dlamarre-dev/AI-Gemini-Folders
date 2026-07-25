@@ -42,7 +42,7 @@
     "message": "📂 Import"
   },
   "alertNotSupported": {
-    "message": "Please use this extension on a supported AI site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, or Character.AI)."
+    "message": "Please use this extension on a supported AI site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, or Character.AI)."
   },
   "defaultFolder": {
     "message": "General"
@@ -244,6 +244,9 @@
   },
   "newConv_zai": {
     "message": "New Z.ai conversation"
+  },
+  "newConv_kimi": {
+    "message": "New Kimi conversation"
   },
   "newConv_qwen": {
     "message": "New Qwen conversation"

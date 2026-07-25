@@ -707,6 +707,51 @@ function injectPromptIntoEditor(promptText, selectors, forceClear) {
       // Do NOT dispatch 'input' here: that would trigger a React re-render that
       // restores the chip from state, undoing the DOM clear we just performed.
     }
+    // Text as the user sees it (innerText keeps <p>/<br> as \n; jsdom has neither).
+    const readText = () => (editor.innerText ?? editor.textContent ?? '').trim();
+
+    // --- Lexical (Kimi): drive the editor's own API instead of execCommand ---
+    // Lexical owns its selection model and only adopts the DOM selection when the
+    // browser fires 'selectionchange' — an async task, so it lands after this
+    // function has returned. Every execCommand replace therefore runs against a
+    // selection Lexical believes is collapsed at the start of the field: the
+    // delete is a no-op and the prompt is inserted *before* the "#name" trigger
+    // instead of replacing it. Neither a synthetic 'selectionchange' nor repeated
+    // deletes fix that — the selection is the problem, so we bypass it and swap
+    // the whole editor state. The editor instance is exposed on its own root
+    // element, the same escape hatch used for Quill's __quill below.
+    // Skipped on forceClear sites (Meta AI): their chip-clearing path is
+    // validated live and must keep behaving exactly as it does today.
+    const lex = forceClear ? null : editor.__lexicalEditor;
+    if (lex && typeof lex.parseEditorState === 'function'
+            && typeof lex.setEditorState === 'function') {
+      try {
+        const json = lex.getEditorState().toJSON();
+        // Reuse the shape of the nodes already in the field: the serialized node
+        // format gained fields across Lexical versions, and cloning what this
+        // build just produced keeps us compatible with all of them.
+        const kids = json.root.children || [];
+        const paraProto = kids.find(c => c.type === 'paragraph')
+          || { type: 'paragraph', version: 1, format: '', indent: 0, direction: 'ltr' };
+        const textProto = (paraProto.children || []).find(c => c.type === 'text')
+          || { type: 'text', version: 1, detail: 0, format: 0, mode: 'normal', style: '' };
+        // Styling fields are reset to plain text so the prompt doesn't inherit
+        // whatever formatting the "#name" trigger happened to carry.
+        const mkText = line => Object.assign({}, textProto,
+          { text: line, detail: 0, format: 0, mode: 'normal', style: '' });
+        json.root.children = promptText.split('\n').map(line => Object.assign({}, paraProto,
+          { children: line === '' ? [] : [mkText(line)], textFormat: 0, textStyle: '' }));
+        lex.setEditorState(lex.parseEditorState(json));
+        // Caret at the end of the injected prompt, via Lexical's own focus API.
+        if (typeof lex.focus === 'function') {
+          lex.focus(undefined, { defaultSelection: 'rootEnd' });
+        }
+        // The state swap replaced the content outright — no execCommand needed,
+        // and re-running the path below would inject the prompt a second time.
+        return true;
+      } catch (_) { /* unexpected Lexical shape — fall through to execCommand */ }
+    }
+
     // Three-step replace: select all → delete → insert.
     document.execCommand('selectAll', false, null);
     document.execCommand('delete', false, null);
@@ -716,7 +761,14 @@ function injectPromptIntoEditor(promptText, selectors, forceClear) {
     // implementations revert DOM changes via their own state). Skipped when forceClear
     // is true (e.g. Perplexity): their beforeinput handler already acts on the
     // execCommand above, so dispatching it again causes double injection.
-    if (!forceClear && editor.textContent.trim() !== promptText.trim()) {
+    //
+    // The comparison is whitespace-normalized: block-based editors (Lexical on
+    // Kimi/Meta AI, ProseMirror on Claude/Mistral) render each line as its own
+    // <p>, so a multi-line prompt that landed *correctly* still reads back with
+    // different whitespace — a raw compare would take it for a failure and
+    // inject the prompt a second time.
+    const landed = readText().replace(/\s+/g, ' ');
+    if (!forceClear && landed !== promptText.replace(/\s+/g, ' ').trim()) {
       editor.dispatchEvent(new InputEvent('beforeinput', {
         bubbles: true, cancelable: true,
         inputType: 'insertText', data: promptText,

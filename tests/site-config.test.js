@@ -1,4 +1,4 @@
-const { getSiteByUrl, extractAITitleLogic } = require('../extensions/ai-folders/site-config.js');
+const { SITES, getSiteByUrl, extractAITitleLogic } = require('../extensions/ai-folders/site-config.js');
 
 // Site detection is core and brittle — it gates save, title extraction, and the
 // #-trigger. These lock down the URL → site-key mapping.
@@ -14,6 +14,8 @@ describe('getSiteByUrl', () => {
     ['https://perplexity.ai/', 'perplexity'],
     ['https://www.perplexity.ai/search', 'perplexity'],
     ['https://chat.z.ai/c/abc', 'zai'],
+    ['https://www.kimi.com/', 'kimi'],
+    ['https://kimi.com/chat/abc', 'kimi'],
     ['https://chat.qwen.ai/c/abc', 'qwen'],
     ['https://meta.ai/', 'meta'],
     ['https://www.meta.ai/c/abc', 'meta'],
@@ -62,6 +64,31 @@ describe('getSiteByUrl', () => {
 
   test('a supported site still wins when a local URL is also configured', () => {
     expect(getSiteByUrl('https://claude.ai/', 'http://localhost:3000')).toBe('claude');
+  });
+});
+
+// The #-trigger reads these two flags out of the registry (background.js), so a
+// silent rename/removal would bring back the bugs they encode.
+describe('composer flags', () => {
+  test('kimi targets its Lexical composer and opts out of inline suggestions', () => {
+    expect(SITES.kimi.editorSelectors[0]).toBe('div.chat-input-editor[contenteditable="true"]');
+    expect(SITES.kimi.noSuggestions).toBe(true);
+    // Not forceClear: the destructive textContent wipe desyncs Lexical's model.
+    expect(SITES.kimi.forceClear).toBeUndefined();
+  });
+
+  test('the chip-tokenizing composers still force a clear before injecting', () => {
+    expect(SITES.perplexity.forceClear).toBe(true);
+    expect(SITES.baidu.forceClear).toBe(true);
+    expect(SITES.meta.forceClear).toBe(true);
+  });
+
+  test('every editorSelectors entry is a valid CSS selector', () => {
+    for (const [key, site] of Object.entries(SITES)) {
+      for (const sel of site.editorSelectors ?? []) {
+        expect(() => document.querySelector(sel)).not.toThrow(`${key}: ${sel}`);
+      }
+    }
   });
 });
 

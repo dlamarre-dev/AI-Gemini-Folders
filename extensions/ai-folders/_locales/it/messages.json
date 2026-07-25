@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "Nuova conversazione Z.ai"
   },
+  "newConv_kimi": {
+    "message": "Nuova conversazione Kimi"
+  },
   "newConv_qwen": {
     "message": "Nuova conversazione Qwen"
   },
@@ -291,7 +294,7 @@
     "message": "Imposta URL LLM locale:"
   },
   "alertNotSupported": {
-    "message": "Usa questa estensione su un sito AI supportato (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi o Character.AI)."
+    "message": "Usa questa estensione su un sito AI supportato (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi o Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Impossibile trovare il campo di testo in questa pagina. Prova a fare clic sull'editor prima, poi usa il pulsante di inserimento."

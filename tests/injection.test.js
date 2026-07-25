@@ -75,6 +75,157 @@ describe('injectPromptIntoEditor (editor targeting)', () => {
   });
 });
 
+// Block-based composers (Lexical on Kimi / Meta AI, ProseMirror on Claude /
+// Mistral) render each line as its own <p>, so a correctly-injected multi-line
+// prompt reads back with different whitespace than the source string. The
+// insert fallback must not mistake that for a failed insert and fire a second
+// injection on top of the first.
+describe('injectPromptIntoEditor (block-based contenteditable)', () => {
+  let editor, injectedData;
+
+  // jsdom implements neither isContentEditable, innerText nor execCommand:
+  // stand in for a Lexical-style editor that splits the inserted text into <p>.
+  function makeBlockEditor({ ignoresInsertText = false } = {}) {
+    document.body.innerHTML = '<div id="composer" contenteditable="true" role="textbox"></div>';
+    editor = document.getElementById('composer');
+    Object.defineProperty(editor, 'isContentEditable', { value: true });
+    Object.defineProperty(editor, 'innerText', {
+      get: () => Array.from(editor.querySelectorAll('p')).map(p => p.textContent).join('\n'),
+    });
+    document.execCommand = jest.fn((cmd, _ui, value) => {
+      if (ignoresInsertText) return true; // React/ProseMirror reverting the DOM
+      if (cmd === 'delete') editor.innerHTML = '';
+      if (cmd === 'insertText') {
+        editor.innerHTML = '';
+        for (const line of String(value).split('\n')) {
+          const p = document.createElement('p');
+          p.textContent = line;
+          editor.appendChild(p);
+        }
+      }
+      return true;
+    });
+    injectedData = [];
+    editor.addEventListener('beforeinput', e => injectedData.push(e.data));
+  }
+
+  afterEach(() => { delete document.execCommand; });
+
+  test('a multi-line prompt lands once — the beforeinput fallback stays silent', () => {
+    makeBlockEditor();
+    expect(injectPromptIntoEditor('line one\nline two\nline three', ['#composer'])).toBe(true);
+    expect(Array.from(editor.querySelectorAll('p')).map(p => p.textContent))
+      .toEqual(['line one', 'line two', 'line three']);
+    expect(injectedData).toEqual([]); // no second injection
+  });
+
+  test('an editor that ignores insertText still gets the beforeinput fallback', () => {
+    makeBlockEditor({ ignoresInsertText: true });
+    expect(injectPromptIntoEditor('hello prompt', ['#composer'])).toBe(true);
+    expect(injectedData).toEqual(['hello prompt']);
+  });
+});
+
+// Lexical (Kimi) owns its selection model and adopts the DOM selection only on the
+// browser's async 'selectionchange', so an execCommand replace runs against a
+// selection it believes is collapsed at the start of the field: the delete is a
+// no-op and the prompt lands *before* the "#name" trigger. The injection must go
+// through the editor instance exposed on the root element instead.
+describe('injectPromptIntoEditor (Lexical composer)', () => {
+  let editor, lex, execSpy;
+
+  const para = line => ({
+    type: 'paragraph', version: 1, format: '', indent: 0, direction: 'ltr',
+    children: line === '' ? [] : [{
+      type: 'text', version: 1, detail: 0, format: 0, mode: 'normal', style: '', text: line,
+    }],
+  });
+
+  // Stands in for a Lexical editor: an authoritative serialized state rendered as
+  // one <p> per paragraph, plus execCommand behaving as it does on Kimi — the
+  // selection Lexical uses is collapsed at the start, so delete/selectAll are
+  // no-ops and insertText lands *before* the existing text.
+  function makeLexicalEditor({ trigger = '#name', unparsable = false } = {}) {
+    document.body.innerHTML = '<div id="composer" contenteditable="true" role="textbox"></div>';
+    editor = document.getElementById('composer');
+    Object.defineProperty(editor, 'isContentEditable', { value: true });
+    Object.defineProperty(editor, 'innerText', {
+      get: () => Array.from(editor.querySelectorAll('p')).map(p => p.textContent).join('\n'),
+    });
+
+    let state = { root: { type: 'root', version: 1, format: '', indent: 0, direction: 'ltr', children: [para(trigger)] } };
+    const render = () => {
+      editor.innerHTML = '';
+      for (const node of state.root.children) {
+        const p = document.createElement('p');
+        p.textContent = (node.children || []).map(c => c.text ?? '').join('');
+        editor.appendChild(p);
+      }
+    };
+    render();
+
+    lex = {
+      getEditorState: () => ({ toJSON: () => JSON.parse(JSON.stringify(state)) }),
+      parseEditorState: jest.fn(json => {
+        if (unparsable) throw new Error('unsupported serialized node');
+        return json;
+      }),
+      setEditorState: jest.fn(next => { state = next; render(); }),
+      focus: jest.fn(),
+    };
+    editor.__lexicalEditor = lex;
+
+    execSpy = jest.fn((cmd, _ui, value) => {
+      if (cmd === 'insertText') {
+        state.root.children = String(value).split('\n').map(para).concat(state.root.children);
+        render();
+      }
+      return true;
+    });
+    document.execCommand = execSpy;
+  }
+
+  afterEach(() => { delete document.execCommand; });
+
+  test('replaces the whole field — the "#name" trigger is gone', () => {
+    makeLexicalEditor();
+    expect(injectPromptIntoEditor('the prompt body', ['#composer'])).toBe(true);
+    expect(editor.innerText).toBe('the prompt body');
+    expect(execSpy).not.toHaveBeenCalled(); // execCommand never entered the picture
+    expect(lex.focus).toHaveBeenCalledWith(undefined, { defaultSelection: 'rootEnd' });
+  });
+
+  test('a multi-line prompt becomes one paragraph per line', () => {
+    makeLexicalEditor();
+    expect(injectPromptIntoEditor('line one\nline two\nline three', ['#composer'])).toBe(true);
+    expect(Array.from(editor.querySelectorAll('p')).map(p => p.textContent))
+      .toEqual(['line one', 'line two', 'line three']);
+  });
+
+  test('the injected text carries no formatting inherited from the trigger', () => {
+    makeLexicalEditor();
+    injectPromptIntoEditor('plain', ['#composer']);
+    const [[stateArg]] = lex.setEditorState.mock.calls;
+    expect(stateArg.root.children[0].children[0]).toMatchObject({
+      text: 'plain', format: 0, style: '', mode: 'normal', detail: 0,
+    });
+  });
+
+  test('an unexpected Lexical shape falls back to the execCommand path', () => {
+    makeLexicalEditor({ unparsable: true });
+    expect(injectPromptIntoEditor('the prompt body', ['#composer'])).toBe(true);
+    expect(lex.setEditorState).not.toHaveBeenCalled();
+    expect(execSpy).toHaveBeenCalledWith('insertText', false, 'the prompt body');
+  });
+
+  test('forceClear sites keep their validated execCommand path', () => {
+    makeLexicalEditor();
+    injectPromptIntoEditor('the prompt body', ['#composer'], true);
+    expect(lex.setEditorState).not.toHaveBeenCalled();
+    expect(execSpy).toHaveBeenCalledWith('insertText', false, 'the prompt body');
+  });
+});
+
 describe('insertSuggestionsInEditor (editor targeting)', () => {
   beforeEach(() => {
     document.body.innerHTML = '<textarea id="main"></textarea><textarea id="other"></textarea>';

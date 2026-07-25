@@ -91,6 +91,7 @@
   .chat-item.site-chatgpt .chat-link,
   .chat-item.site-grok .chat-link,
   .chat-item.site-zai .chat-link,
+  .chat-item.site-kimi .chat-link,
   .chat-item.site-duckai .chat-link,
   .chat-item.site-characterai .chat-link { color: #212121; }
   .chat-item.site-baidu .chat-link { color: #2932E1; }

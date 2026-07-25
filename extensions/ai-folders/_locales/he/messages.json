@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "שיחת Z.ai חדשה"
   },
+  "newConv_kimi": {
+    "message": "שיחת Kimi חדשה"
+  },
   "newConv_qwen": {
     "message": "שיחת Qwen חדשה"
   },
@@ -291,7 +294,7 @@
     "message": "הגדר כתובת URL של LLM מקומי:"
   },
   "alertNotSupported": {
-    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi או Character.AI)."
+    "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi או Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "לא נמצא שדה הטקסט בדף זה. נסה ללחוץ תחילה בעורך ולאחר מכן השתמש בלחצן ההוספה."

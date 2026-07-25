@@ -2,7 +2,7 @@
 
 Organiziraj razgovore iz svih tvojih omiljenih AI alata u dijeljene mape, izgradi knjižnicu upita za višekratnu upotrebu i ubacuj predloške izravno u bilo koje polje za unos — bez kopiranja i lijepljenja.
 
-🌐 18 PODRŽANIH AI USLUGA
+🌐 19 PODRŽANIH AI USLUGA
 
 UI mape integrira se izvorno sa svim glavnim AI chat asistentima, kao što su Claude, ChatGPT i Gemini, te s lokalnim LLM modelima koje sami pokrećete. Razgovori s različitih platformi mogu dijeliti potpuno istu mapu. Svaki chat prikazuje boju i logotip svoje usluge, tako da uvijek znaš odakle dolazi.
 
@@ -64,6 +64,7 @@ Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AŽURIRANJA:
+Verzija 1.6.2 (Kimi): Pokrenite nove razgovore na Kimiu izravno iz načina upita, spremite ih u mape i ubacite upite.
 Verzija 1.6.1 (Sigurnost i stabilnost): Dodatna zaštita spremljenih poveznica i uvoza sigurnosnih kopija te interni popravci stabilnosti.
 Verzija 1.6 (10 novih AI usluga): Spremajte razgovore i umećite promptove u deset dodatnih AI usluga — uključujući Mistral, Meta AI, Qwen i Z.ai — s redizajniranim gumbima usluga i službenim logotipima.
 Verzija 1.5.1 (Poboljšanja): Mape se sada prema zadanim postavkama razvrstavaju od najnovijih, kao i vaša biblioteka prompta — već odabrani redoslijed razvrstavanja ostaje nepromijenjen. Ispravljen je i gumb za brisanje (✕) u polju za pretraživanje, pa sada radi i u Firefoxu.

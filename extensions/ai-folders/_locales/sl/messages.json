@@ -260,6 +260,9 @@
   "newConv_zai": {
     "message": "Nov pogovor z Z.ai"
   },
+  "newConv_kimi": {
+    "message": "Nov pogovor z Kimi"
+  },
   "newConv_qwen": {
     "message": "Nov pogovor z Qwen"
   },
@@ -291,7 +294,7 @@
     "message": "Nastavi URL lokalnega LLM:"
   },
   "alertNotSupported": {
-    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi ali Character.AI)."
+    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi ali Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."

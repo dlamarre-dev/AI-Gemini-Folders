@@ -25,7 +25,8 @@
     { n: "DeepSeek", logo: "DeepSeek" }, { n: "Grok", logo: "Grok" },
     { n: "Perplexity", logo: "Perplexity" },
     { n: "Baidu", logo: "Baidu" }, { n: "Character.AI", logo: "CharacterAI" },
-    { n: "Duck.ai", logo: "DuckAI" }, { n: "Meta AI", logo: "MetaAI" },
+    { n: "Duck.ai", logo: "DuckAI" }, { n: "Kimi", logo: "Kimi" },
+    { n: "Meta AI", logo: "MetaAI" },
     { n: "Mistral", logo: "Mistral" }, { n: "Pi", logo: "Pi" },
     { n: "Poe", logo: "Poe" }, { n: "Qwen", logo: "Qwen" },
     { n: "You.com", logo: "You" }, { n: "Z.ai", logo: "Zai" }

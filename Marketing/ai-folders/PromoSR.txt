@@ -2,7 +2,7 @@
 
 Organizujte razgovore iz svih svojih omiljenih AI alata u deljene fascikle, izgradite biblioteku upita za višestruku upotrebu i ubacujte šablone direktno u bilo koje polje za unos — bez kopiranja i lepljenja.
 
-🌐 18 PODRŽANIH AI USLUGA
+🌐 19 PODRŽANIH AI USLUGA
 
 VI fascikle se izvorno integriše sa svim glavnim AI chat asistentima, kao što su Claude, ChatGPT i Gemini, kao i sa lokalnim LLM modelima koje sami pokrećete. Razgovori sa različitih platformi mogu da dele potpuno istu fasciklu. Svaki čet prikazuje boju i logotip svoje usluge, tako da uvek znate odakle dolazi.
 
@@ -64,6 +64,7 @@ Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AŽURIRANJA:
+Verzija 1.6.2 (Kimi): Pokrenite nove razgovore na Kimiu direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove.
 Verzija 1.6.1 (Bezbednost i stabilnost): Dodatna zaštita sačuvanih linkova i uvoza rezervnih kopija, uz interne popravke stabilnosti.
 Verzija 1.6 (10 novih AI usluga): Čuvajte razgovore i ubacujte promptove u deset dodatnih AI usluga — uključujući Mistral, Meta AI, Qwen i Z.ai — sa redizajniranim dugmadima usluga i zvaničnim logotipima.
 Verzija 1.5.1 (Poboljšanja): Fascikle se sada podrazumevano sortiraju od najnovijih, kao i vaša biblioteka promptova — već izabrani redosled sortiranja ostaje nepromenjen. Ispravljeno je i dugme za brisanje (✕) u polju za pretragu, pa sada radi i u Firefoxu.
