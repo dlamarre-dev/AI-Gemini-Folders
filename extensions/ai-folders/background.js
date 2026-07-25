@@ -201,6 +201,10 @@ async function handlePromptTriggerLookup(message, sender) {
   // chips; forceClear wipes those before injection. Also skip multi-match
   // suggestions (corrupts content). Driven by the SITES registry.
   const forceClear = !!SITES[siteKey]?.forceClear;
+  // Composers that mangle the multi-line suggestion block (Lexical: newlines
+  // collapsed, caret misplaced on the next keystroke) opt out of the inline
+  // suggestions only — injection itself still goes through unchanged.
+  const noSuggestions = forceClear || !!SITES[siteKey]?.noSuggestions;
 
   // sender.tab may be absent for dynamically-registered scripts in Firefox;
   // fall back to the active tab in the current window.
@@ -224,7 +228,7 @@ async function handlePromptTriggerLookup(message, sender) {
       // Single match: autocomplete by updating line 1 to #fullName while keeping
       // the suggestion structure stable (no flash). newFirstLine overrides line 1
       // inside insertSuggestionsInEditor without clearing the suggestion lines.
-      if (!forceClear) {
+      if (!noSuggestions) {
         const r = await chrome.scripting.executeScript({
           target: { tabId },
           world: 'MAIN',
@@ -233,7 +237,7 @@ async function handlePromptTriggerLookup(message, sender) {
         });
         return { status: r?.[0]?.result === true ? 'autocompleted' : 'no_match' };
       }
-      // forceClear sites can't show suggestions — inject directly.
+      // Sites without inline suggestions — inject directly.
       const r = await chrome.scripting.executeScript({
         target: { tabId },
         world: 'MAIN',
@@ -243,7 +247,7 @@ async function handlePromptTriggerLookup(message, sender) {
       return { status: r?.[0]?.result === true ? 'injected' : 'no_match' };
     }
 
-    if (forceClear) return { status: 'no_match' };
+    if (noSuggestions) return { status: 'no_match' };
 
     const suggResults = await chrome.scripting.executeScript({
       target: { tabId },
@@ -263,7 +267,11 @@ async function handleSuggestUpdate(message, sender) {
   const tabUrl = sender.tab?.url ?? sender.url;
   const siteKey = getSiteByUrl(tabUrl, localLlmUrl);
   const selectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
-  if (!selectors || SITES[siteKey]?.forceClear) return { status: 'cleared' };
+  // Sites opted out of inline suggestions must never be written to while typing:
+  // rewriting the field on every keystroke is what misplaces the caret there.
+  if (!selectors || SITES[siteKey]?.forceClear || SITES[siteKey]?.noSuggestions) {
+    return { status: 'cleared' };
+  }
 
   const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
   const names = message.prefix != null
@@ -290,6 +298,8 @@ async function handleCycleTab(message, sender) {
   const siteKey = getSiteByUrl(tabUrl, localLlmUrl);
   const selectors = siteKey ? SITES[siteKey]?.editorSelectors : null;
   if (!selectors) return { status: 'error' };
+  // No suggestion block is ever shown on these sites, so there is nothing to cycle.
+  if (SITES[siteKey]?.forceClear || SITES[siteKey]?.noSuggestions) return { status: 'error' };
   const tabId = sender.tab?.id ?? (await chrome.tabs.query({ active: true, currentWindow: true }))[0]?.id;
   if (!tabId) return { status: 'error' };
   try {

@@ -94,8 +94,22 @@ const SITES = {
     domain: 'kimi.com',
     color: '#ffffff',
     newConvUrl: 'https://www.kimi.com/',
-    // Kimi (Moonshot AI); www.kimi.com — composer selectors need live validation
-    editorSelectors: ['textarea[placeholder]', 'div[contenteditable="true"]', 'textarea', '[contenteditable="true"]'],
+    // Kimi (Moonshot AI); www.kimi.com — a Vue shell around a Lexical composer:
+    // div.chat-input-editor[contenteditable][role=textbox][data-lexical-editor]
+    editorSelectors: [
+      'div.chat-input-editor[contenteditable="true"]',
+      'div[data-lexical-editor="true"][contenteditable="true"]',
+      'div[contenteditable="true"][role="textbox"]',
+      'textarea[placeholder]', 'textarea', '[contenteditable="true"]',
+    ],
+    // Same Lexical limitation as Meta AI: Lexical rebuilds its own model from
+    // beforeinput, so the multi-line suggestion block collapses onto one line
+    // (no break after the "#name" trigger) and the caret lands mid-text on the
+    // next keystroke. Skip the inline suggestions; exact/single matches still
+    // inject. Not forceClear — plain selectAll+delete+insertText is handled
+    // correctly by Lexical, while the destructive textContent wipe would desync
+    // its model.
+    noSuggestions: true,
     logo: 'icons/kimi.png',
   },
   qwen: {
