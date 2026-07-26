@@ -803,6 +803,48 @@ function injectPromptIntoEditor(promptText, selectors, forceClear) {
   return false;
 }
 
+// ---------------------------------------------------------------------------
+// Uninstall survey URL (chrome.runtime.setUninstallURL)
+// ---------------------------------------------------------------------------
+
+// chrome.i18n.getUILanguage() returns BCP-47 tags ('pt-BR', 'zh-CN', 'en-US').
+// Only pt and zh have regional variants among the site's 43 locales; everything
+// else collapses to its base tag. Deliberately does NOT validate against the
+// list of 43 codes — that list belongs to the website (AF_LANGS), which does the
+// final check with an English fallback. Keeping it out of here avoids shipping a
+// second copy of the language list in the extension.
+function normalizeUiLang(raw) {
+  const [base, region] = String(raw || '').replace('_', '-').toLowerCase().split('-');
+  if (base === 'pt') return region === 'br' ? 'pt_BR' : 'pt_PT';
+  if (base === 'zh') return (region === 'tw' || region === 'hk' || region === 'mo') ? 'zh_TW' : 'zh_CN';
+  if (base === 'no') return 'nb';           // the site ships nb, not no
+  return base || 'en';
+}
+
+// Builds the URL the browser opens when the extension is removed. Pure by
+// design: the callers (both background.js) read storage/manifest and pass the
+// values in, so the whole thing stays unit-testable.
+//
+// The install *date* is sent, never a day count: the uninstall URL is set long
+// before it is opened, so a precomputed count would be stale. The page derives
+// the tenure itself. Date is UTC day-precision — no timestamp, nothing that
+// could single out a user.
+function buildUninstallUrl(base, opts) {
+  const o = opts || {};
+  const p = new URLSearchParams();
+  if (o.lang) p.set('l', normalizeUiLang(o.lang));
+  if (o.version) p.set('v', String(o.version));
+  if (o.browser) p.set('b', String(o.browser));
+  // Omitted rather than faked when unknown; 'ie' flags a date inferred at update
+  // time for users who were already installed when the survey shipped.
+  if (o.installedAt) {
+    p.set('i', new Date(o.installedAt).toISOString().slice(0, 10));
+    if (o.estimated) p.set('ie', '1');
+  }
+  p.set('o', String(Number(o.opens) || 0));
+  return base + '?' + p.toString();
+}
+
 if (typeof module !== 'undefined') {
   module.exports = {
     EMOJI_PREFIX_REGEX,
@@ -822,5 +864,7 @@ if (typeof module !== 'undefined') {
     findPromptsByPrefix,
     injectPromptIntoEditor,
     insertSuggestionsInEditor,
+    normalizeUiLang,
+    buildUninstallUrl,
   };
 }

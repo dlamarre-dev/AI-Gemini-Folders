@@ -63,15 +63,10 @@ Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Grok, Per
 👉 Namesti Mape AI: __AF_STORE_URL__
 
 📢 POSODOBITVE:
+Različica 4.5.4 (Anketa ob odstranitvi): Odstranitev razširitve zdaj odpre kratko neobvezno stran za povratne informacije v vašem jeziku in nič ni poslano, dokler je sami ne pošljete.
 Različica 4.5.3 (Varnost in stabilnost): Dodatna zaščita shranjenih povezav in uvoza varnostnih kopij ter notranji popravki stabilnosti.
 Različica 4.5.1 (Izboljšave): Mape so zdaj privzeto razvrščene od najnovejših, tako kot vaša knjižnica pozivov — že izbrani vrstni red razvrščanja ostane nespremenjen. Popravljen je tudi gumb za počiščenje (✕) v iskalnem polju, tako da deluje tudi v Firefoxu.
 Različica 4.5 (Vmesnik in stabilnost): Širša plošča, izpopolnjeni kontrolniki in boljša dostopnost s tipkovnico. Popravki napak in notranje prestrukturiranje od zadnje posodobitve, za boljšo stabilnost. Če so vam Mape Gemini v pomoč, lahko podprete razvoj z obiskom strani Ko-fi: https://ko-fi.com/aifolders — hvala za vašo podporo!
 Različica 4.2 (Sprožilec pozivov): Vnesite # v polje za klepet Gemini in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče.
 Različica 4.1 (Globalna razširitev in utrjevanje): 16 novih jezikov prinaša Mape Gemini na 43 lokalizacij po vsem svetu — severski jeziki, baltske države in razširjena evropska ter južnoazijska pokritost. Odpravljena race condition, ki je lahko pri hitrih klikih tiho zavrgla shranjevanje. Vstavljanje pozivov posodobljeno z InputEvent, ki nadomešča zastareli execCommand. Uvozni kanal utrjen proti zlonamernim URL-jem v varnostnih kopijah. Odpravljena kritična napaka varnosti podatkov: vklop sinhronizacije pozivov s skoraj polnim shranjevalnikom je lahko tiho izbrisal vse shranjene pozive. Shranjevalnik zdaj uporablja fragmentirane zapise, da ostane znotraj omejitev Chrome, z jasnimi sporočili o napakah ko je poln.
 Različica 4.0 (Knjižnica pozivov): Najna mbicioznejša posodobitev doslej! Mape Gemini dobijo popolnoma nov Način pozivov: shrani najboljše pozive, uredi jih na mestu in vstavi neposredno v Gemini z enim klikom.
-Različica 3.5 (Trdne osnove in izboljšana izkušnja): Velika notranja posodobitev za profesionalno zanesljivost!
-Različica 3.4.1 (Večplatformska moč in stabilnost): Uspešno preneseno na Mozilla Firefox z avtomatiziranim sistemom gradnje.
-Različica 3.3 (Premium dizajn in mednarodni): Novi dialogi Material 3, mobilna sinhronizacija in 10 novih jezikov!
-Različica 3.2 (Mobilno in odprtokodno): Pametna mobilna sinhronizacija prek zaznamkov Chrome in uradna odprtokodna izdaja.
-Različica 3.0 (Posodobitev produktivnosti): Bližnjice tipkovnice, večkratna izbira, skupine zavihkov, prilagojeni emojiji, stiskanje podatkov in vrstica shrambe.
-Različica 2.0: Velika prenova s Povleci in spusti, kontekstnim menijem, prilagojenim razvrščanjem, pripenjanjem in dizajnom Material 3.

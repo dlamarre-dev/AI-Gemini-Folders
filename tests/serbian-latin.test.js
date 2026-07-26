@@ -17,6 +17,12 @@ const SR_FILES = [
   'Marketing/gemini-folders/PromoSR.txt',
 ];
 
+// Not listed here: docs/site/uninstall-i18n.js. Its Serbian entry must be Latin
+// too (app.js transliterates AF_I18N / AF_MANUAL at load time, but nothing
+// transliterates that file) — however 42 of its other locales legitimately hold
+// Cyrillic, so a whole-file scan cannot express the rule. It is asserted on the
+// evaluated sr entry in tests/uninstall-i18n.test.js instead.
+
 describe('Serbian stays in Latin script', () => {
   test.each(SR_FILES)('%s contains no Cyrillic', (rel) => {
     const text = fs.readFileSync(path.join(ROOT, rel), 'utf8');

@@ -65,7 +65,7 @@ I-browse ang code o mag-contribute: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 
 📢 MGA UPDATE:
-Bersyon 1.6.2 (Kimi): Magsimula ng mga bagong pag-uusap sa Kimi nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt.
+Bersyon 1.6.2 (Kimi): Magsimula ng mga bagong pag-uusap sa Kimi nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt. Ang pag-alis ng extension ay nagbubukas na ngayon ng maikling opsyonal na pahina ng feedback sa wika mo, at walang ipinapadala maliban kung ikaw mismo ang magpadala.
 Bersyon 1.6.1 (Seguridad at katatagan): Karagdagang proteksyon para sa mga naka-save na link at pag-import ng backup, kasama ang mga panloob na pag-aayos sa katatagan.
 Bersyon 1.6 (10 bagong AI services): Mag-save ng mga usapan at mag-inject ng prompts sa sampung karagdagang AI services — kabilang ang Mistral, Meta AI, Qwen at Z.ai — na may bagong disenyo ng mga service button at opisyal na logo.
 Bersyon 1.5.1 (Mga Pagpapahusay): Ang mga folder ay isinasaayos na ngayon mula sa pinakabago bilang default, tulad ng iyong prompt library — nananatiling hindi nagbabago ang pagkakasunod-sunod na napili mo na dati. Inayos din ang clear (✕) button sa search box para gumana ito sa Firefox din.

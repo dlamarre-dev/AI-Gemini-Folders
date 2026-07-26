@@ -63,15 +63,10 @@ Domitės Gemini Aplankai, bet naudojate ir ChatGPT, Claude, Copilot, Grok, Perpl
 👉 Įdiekite AI aplankus: __AF_STORE_URL__
 
 📢 ATNAUJINIMAI:
+Versija 4.5.4 (Pašalinimo apklausa): Pašalinus plėtinį dabar atsidaro trumpas neprivalomas atsiliepimų puslapis jūsų kalba, ir nieko neišsiunčiama, nebent patys jį išsiųstumėte.
 Versija 4.5.3 (Sauga ir stabilumas): Papildoma išsaugotų nuorodų ir atsarginių kopijų importo apsauga bei vidiniai stabilumo pataisymai.
 Versija 4.5.1 (Patobulinimai): Aplankai dabar pagal numatytuosius nustatymus rikiuojami nuo naujausių, kaip ir jūsų užklausų biblioteka — anksčiau pasirinkta rikiavimo tvarka lieka nepakitusi. Taip pat ištaisytas išvalymo mygtukas (✕) paieškos laukelyje, todėl jis veikia ir „Firefox“ naršyklėje.
 Versija 4.5 (Sąsaja ir stabilumas): Platesnis skydelis, patobulinti valdikliai ir geresnis pasiekiamumas klaviatūra. Klaidų taisymai ir vidiniai pertvarkymai nuo paskutinio atnaujinimo, siekiant geresnio stabilumo. Jei Gemini Aplankai jums naudingi, galite paremti jo kūrimą apsilankę Ko-fi puslapyje: https://ko-fi.com/aifolders — ačiū už jūsų palaikymą!
 Versija 4.2 (Raginimų paleidiklis): Įveskite # Gemini pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio.
 Versija 4.1 (Globalus plėtimas ir stiprinimas): 16 naujų kalbų pakelia Gemini Aplankus iki 43 lokalizacijų visame pasaulyje — Šiaurės šalių kalbos, Baltijos valstybės ir išplėsta Europos bei Pietryčių Azijos aprėptis. Ištaisyta race condition, kuri esant greitus paspaudimus galėjo tyliai prarasti išsaugojimą. Prompt įterpimas modernizuotas naudojant InputEvent, pakeičiant pasenusį execCommand. Importo srautas apsaugotas nuo kenkėjiškų URL atsarginių kopijų failuose. Ištaisyta kritinė duomenų saugos klaida: įjungus raginimų sinchronizavimą beveik pilnoje saugykloje, visi išsaugoti raginimai galėjo būti tyliai ištrinti. Saugykla dabar naudoja suskaidytus įrašus, kad liktų Chrome ribose, rodydama aiškius klaidos pranešimus kai ji pilna.
 Versija 4.0 (Promptų biblioteka): Pats ambicingiausias atnaujinimas iki šiol! Gemini Aplankai gauna visiškai naują Promptų režimą: išsaugok geriausius promptus, redaguok juos tiesiogiai ir įterpk tiesiai į Gemini vienu paspaudimu.
-Versija 3.5 (Tvirti pagrindai ir patobulinta patirtis): Didelis vidinis atnaujinimas profesionaliam patikimumui!
-Versija 3.4.1 (Daugiaplatformė galia ir stabilumas): Sėkmingai perkelta į „Mozilla Firefox" su automatizuota kūrimo sistema.
-Versija 3.3 (Aukščiausios klasės dizainas ir tarptautinis): Nauji „Material 3" dialogai, mobiliojo ryšio sinchronizavimas ir 10 naujų kalbų!
-Versija 3.2 (Mobilusis ir atvirasis kodas): Išmanusis mobiliojo ryšio sinchronizavimas per „Chrome" žymes ir oficiali atvirojo kodo versija.
-Versija 3.0 (Produktyvumo atnaujinimas): Spartieji klavišai, kelių elementų pasirinkimas, skirtukų grupės, tinkintos emocijos, duomenų suspaudimas ir saugyklos juosta.
-Versija 2.0: Didelis pertvarkymas su Vilkimu ir nuleidimu, kontekstiniu meniu, tinkinamu rikiavimo, prisegimo ir „Material 3" dizainu.

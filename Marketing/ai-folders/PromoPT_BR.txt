@@ -65,7 +65,7 @@ Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 ATUALIZAÇÕES:
-Versão 1.6.2 (Kimi): Inicie novas conversas no Kimi diretamente do Modo Prompt, salve-as em pastas e injete prompts.
+Versão 1.6.2 (Kimi): Inicie novas conversas no Kimi diretamente do Modo Prompt, salve-as em pastas e injete prompts. Remover a extensão agora abre uma breve página de retorno opcional no seu idioma, e nada é enviado a menos que você mesmo envie.
 Versão 1.6.1 (Segurança e estabilidade): Proteções adicionais para links salvos e importações de backup, além de correções internas de estabilidade.
 Versão 1.6 (10 novos serviços de IA): Salve conversas e injete prompts em mais dez serviços de IA — incluindo Mistral, Meta AI, Qwen e Z.ai — com botões de serviços redesenhados e logotipos oficiais.
 Versão 1.5.1 (Refinamentos): As pastas agora são ordenadas da mais recente para a mais antiga por padrão, como sua biblioteca de prompts — qualquer ordenação que você já tenha escolhido permanece inalterada. Também corrigimos o botão de limpar (✕) no campo de busca para que funcione também no Firefox.

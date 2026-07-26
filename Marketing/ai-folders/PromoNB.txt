@@ -65,7 +65,7 @@ Bla gjennom koden eller bidra: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 OPPDATERINGER:
-Versjon 1.6.2 (Kimi): Start nye Kimi-samtaler direkte fra Promptmodus, lagre dem i mapper og injiser prompter.
+Versjon 1.6.2 (Kimi): Start nye Kimi-samtaler direkte fra Promptmodus, lagre dem i mapper og injiser prompter. Når du fjerner utvidelsen, åpnes nå en kort valgfri tilbakemeldingsside på ditt språk, og ingenting sendes med mindre du sender det selv.
 Versjon 1.6.1 (Sikkerhet og stabilitet): Ekstra beskyttelse for lagrede lenker og sikkerhetskopiimport, pluss interne stabilitetsrettelser.
 Versjon 1.6 (10 nye AI-tjenester): Lagre samtaler og sett inn prompter i ti flere AI-tjenester — blant annet Mistral, Meta AI, Qwen og Z.ai — med redesignede tjenesteknapper og offisielle logoer.
 Versjon 1.5.1 (Forbedringer): Mapper sorteres nå med nyeste først som standard, i tråd med promptbiblioteket ditt — en sorteringsrekkefølge du allerede har valgt, forblir uendret. I tillegg er tøm-knappen (✕) i søkefeltet rettet, slik at den også virker i Firefox.

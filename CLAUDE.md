@@ -12,7 +12,7 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.5.2**.
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.5.4**.
 - **AI Folders (AF)** — 18 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, You.com, Pi, Character.AI) **+ a user-configured local LLM**.
@@ -81,6 +81,9 @@ docs/                        Static GitHub Pages site (aifolders.xyz)
   site/privacy-i18n.js       Privacy policy text, 43 languages (window.AF_PRIVACY)
   site/app.js  styles.css    Page renderer + styles
   site/i18n-data.js  i18n-manual.js  logos.js
+  uninstall-ai-folders.html  Uninstall feedback survey, one page per extension
+  uninstall-gemini-folders.html   (noindex; see §9)
+  site/uninstall.js  uninstall-i18n.js  uninstall-forms.js
 
 tools/                       Maintainer tooling — NOT shipped in the extensions
   site-diagnostics/          Detects when a site's editor/title selectors break
@@ -224,3 +227,49 @@ The P1–P5 improvement plan is essentially complete. What's left:
   of name/URL keys. Would simplify renames/pins and enable the differential sync
   above, but requires a data migration — outside the "same features" scope; don't
   start without an explicit decision.
+
+---
+
+## 9. Uninstall feedback survey
+
+When the user removes an extension, the browser opens a short survey page on the
+website. Both halves are deliberately dumb: the extension only builds a URL, and
+the page only posts to a Google Form. **There is no database and no backend.**
+
+- **Extension side:** `buildUninstallUrl` (`src/utils.js`, unit-tested) + a
+  `refreshUninstallUrl` / `recordInstallDate` pair in **both** `background.js`
+  (not shared — fix bugs in both, §6). The URL carries `l` language, `v` version,
+  `b` browser, `i` install date (`YYYY-MM-DD`), `ie=1` when that date was only
+  inferred at update time, and `o` popup opens (`usageStats.opens`, `storage.local`).
+  The *date* is sent, never a day count — `setUninstallURL` is called long before
+  the page opens, so a count would be stale; the page derives the tenure. The URL
+  is re-signed on install/startup **and on every `usageStats` change**, so the
+  opens counter stays current.
+- **Page side:** `docs/uninstall-{ai,gemini}-folders.html` → `site/uninstall.js`
+  (+ `uninstall-i18n.js`, 43 languages, and `styles.css`'s `.uf-*` block). It
+  reuses `AF_LANGS` / `AF_RTL` / `AF_SCRIPT_FONT` from `i18n-manual.js` and the
+  `LOGOS.geminiFolders` mark; `app.js` and `i18n-data.js` are **not** loaded.
+- **`docs/site/uninstall-forms.js` is the only file to touch when the Forms are
+  (re)created** — form ids + one `entry.<N>` per question, obtained from the
+  Form's "Get pre-filled link". While the ids are still `PASTE_…`, the page warns
+  in the console and shows the user a normal thank-you.
+- **The Form is the schema.** Its checkbox options must be exactly
+  `not-what-expected`, `dont-understand-how`, `wanted-in-page-ui`, `found-bugs`,
+  `other` — the English keys, never the translated labels. Google silently drops a
+  response carrying an unknown option, and translated values would make the
+  response sheet unreadable. No question may be *required*, and "Collect email
+  addresses" must be OFF.
+- **The GF Form carries a sixth option, `switched-to-ai-folders`**, shown first on
+  the Gemini Folders page only (leaving for AI Folders is an upgrade, not a
+  grievance, and mixing it into the complaints would misread the numbers). Its
+  label names the *other* product — `SWITCH_REASON.afName` in `uninstall.js`
+  resolves `{p}` to the AF name even on the GF page. The AF page never sends this
+  value, so the AF Form must not offer it.
+- **Nothing is transmitted on page load** — the browser opens that URL without the
+  user asking, so only an explicit Send posts anything. Disclosed in the privacy
+  policy (`s1UninstallTitle` / `s1UninstallBody`, 43 languages) and in a note on
+  the page itself. Don't add anything that fires on load.
+- **Both pages are `noindex`, absent from `sitemap.xml`, and linked from nowhere.**
+  Do **not** add a `Disallow` to `robots.txt`: a disallowed URL can still be
+  indexed URL-only, whereas a crawlable `noindex` is honoured (GitHub Pages cannot
+  send `X-Robots-Tag`).

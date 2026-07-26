@@ -328,3 +328,54 @@ ul{padding:0;margin:0}
 .privacy-point-title{font-size:1rem;font-weight:600;margin-top:24px;margin-bottom:4px;color:var(--ink)}
 .privacy-page p{color:var(--muted);line-height:1.7;margin-bottom:12px}
 .privacy-page a{color:var(--violet-2)}
+
+
+/* ---- Uninstall feedback form (uninstall-*.html) ----
+   Reuses the privacy page's column, the .btn family and the .lang switcher;
+   only the form controls are new. Logical properties throughout so the RTL
+   locales (ar, he) need no overrides. */
+.uf-brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:17px;color:var(--muted);margin-bottom:22px}
+.uf-brand .uf-mark{width:34px;height:34px;flex:none}
+.uf-brand .uf-mark svg,.uf-brand .uf-mark img{width:100%;height:100%;display:block}
+.uf-hint{font-size:.9rem;color:var(--faint);margin:0 0 16px}
+
+.uf-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.uf-opt{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border-radius:12px;
+  background:var(--card);border:1px solid var(--card-border);color:var(--ink);line-height:1.5;
+  cursor:pointer;transition:background .14s,border-color .14s}
+.uf-opt:hover{background:var(--card-2);border-color:rgba(255,255,255,0.2)}
+.uf-opt:focus-within{border-color:var(--violet);box-shadow:0 0 0 3px rgba(138,109,240,0.22)}
+/* accent-color keeps the native checkbox (and its keyboard behaviour) while
+   matching the site's violet; color-scheme makes the unchecked box render dark
+   instead of as a white block on this dark page. Scoped to these controls rather
+   than :root so the rest of the site's rendering is untouched. */
+.uf-opt input{width:18px;height:18px;margin:2px 0 0;flex:none;accent-color:var(--violet);cursor:pointer;color-scheme:dark}
+.uf-opt:has(input:checked){background:rgba(138,109,240,0.13);border-color:rgba(138,109,240,0.42)}
+
+.uf-input,.uf-textarea{width:100%;padding:13px 15px;border-radius:12px;background:rgba(0,0,0,0.28);
+  border:1px solid var(--card-border);color:var(--ink);font:inherit;font-size:15px;line-height:1.6;
+  color-scheme:dark;transition:border-color .14s,box-shadow .14s}
+.uf-input::placeholder,.uf-textarea::placeholder{color:var(--faint)}
+.uf-input:focus,.uf-textarea:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px rgba(138,109,240,0.22)}
+.uf-textarea{resize:vertical;min-height:120px}
+
+.uf-privacy{margin:32px 0 28px;padding:16px 18px;border-radius:12px;
+  background:rgba(255,255,255,0.03);border:1px solid var(--line)}
+.uf-privacy-title{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--violet-2);margin-bottom:8px}
+.uf-privacy p{margin:0;font-size:.92rem;line-height:1.65}
+
+.uf-submit{min-width:160px}
+/* Honeypot: out of the layout and out of the a11y tree, but still fillable by a
+   bot that ignores both. Not display:none — some bots skip those. */
+.uf-hp{position:absolute;inset-inline-start:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+
+.uf-result{padding:8px 0 4px}
+.uf-result-title{margin-top:0}
+.uf-result:focus{outline:none}
+.uf-result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+
+@media (max-width:560px){
+  .uf-submit{width:100%}
+  .uf-result-actions .btn{width:100%}
+}

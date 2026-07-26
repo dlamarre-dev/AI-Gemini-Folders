@@ -440,6 +440,8 @@
         <p>${esc(p.s1NoTrackBody)}</p>
         <h3 class="privacy-point-title">${esc(p.s1LangTitle)}</h3>
         <p>${esc(p.s1LangBody)}</p>
+        ${p.s1UninstallTitle ? `<h3 class="privacy-point-title">${esc(p.s1UninstallTitle)}</h3>
+        <p>${esc(p.s1UninstallBody)}</p>` : ''}
 
         <h2 class="h3">${esc(p.s2Title)}</h2>
         <h3 class="privacy-point-title">${esc(p.s2TelTitle)}</h3>

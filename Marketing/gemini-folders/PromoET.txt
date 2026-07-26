@@ -63,15 +63,10 @@ Huvitab teid Gemini Kaustad, kuid kasutate ka ChatGPT-d, Claudi, Copiloti, Groki
 👉 Installi AI kaustad: __AF_STORE_URL__
 
 📢 UUENDUSED:
+Versioon 4.5.4 (Eemaldamise küsitlus): Laienduse eemaldamine avab nüüd lühikese valikulise tagasiside lehe teie keeles ja midagi ei saadeta, kui te seda ise ära ei saada.
 Versioon 4.5.3 (Turvalisus ja stabiilsus): Täiendav kaitse salvestatud linkidele ja varukoopiate importimisele ning sisemised stabiilsusparandused.
 Versioon 4.5.1 (Täiustused): Kaustad sorteeritakse nüüd vaikimisi uuemad enne, sarnaselt sinu viipade teegiga — juba valitud sortimisjärjestus jääb muutmata. Samuti parandati otsinguvälja kustutusnupp (✕), nii et see töötab nüüd ka Firefoxis.
 Versioon 4.5 (Liides ja stabiilsus): Laiem paneel, viimistletud juhtelemendid ja parem klaviatuuriga ligipääsetavus. Veaparandused ja sisemine refaktoring alates viimasest uuendusest, parema stabiilsuse tagamiseks. Kui Gemini Kaustad on teile kasulik, saate selle arendust toetada, külastades Ko-fi lehte: https://ko-fi.com/aifolders — täname teie toetuse eest!
 Versioon 4.2 (Viipade käivitaja): Sisestage # Gemini vestlusväljale, et näha salvestatud viipasid reaalajas filtreerituna. Kasutage ↓/↑ soovituste vahel liikumiseks, Tühikut automaatseks täitmiseks või lisamiseks — ilma paneeli avamata.
 Versioon 4.1 (Globaalne laienemine ja karastamine): 16 uut keelt viib Gemini Kaustad 43 lokalisatsioonini üle maailma — põhjamaised keeled, Balti riigid ning laiendatud Euroopa ja Kagu-Aasia katvus. Parandati race condition, mis võis kiirklõpsude korral salvestuse vaikselt kaotada. Prompti sisestamine moderniseeriti InputEvent-iga, asendades aegunud execCommand-i. Impordipipe hardeeriti varufailide pahatahtlike URL-ide vastu. Kriitilise andmeturbe vea parandus: käskude sünkroonimine peaaegu täis salvestusruumiga võis kõik salvestatud käsklused vaikselt kustutada. Salvestusruum kasutab nüüd tükeldatud kirjutisi, et jääda Chrome'i piiridesse, ning kuvab selgeid veateateid, kui ruum on täis.
 Versioon 4.0 (Promptide kogu): Seni ambitsioonikam uuendus! Gemini Kaustad saab täiesti uue Prompti režiimi: salvesta oma parimad promptid, redigeeri neid otse ja lisa need otse Geminisse ühe klikiga.
-Versioon 3.5 (Kindlad alused ja parem kogemus): Suur sisemine uuendus professionaalse töökindluse jaoks!
-Versioon 3.4.1 (Mitme platvormi jõud ja stabiilsus): Edukalt porditud Mozilla Firefoxile automaatse ehitussüsteemiga.
-Versioon 3.3 (Esmaklassiline disain ja rahvusvaheline): Uued Material 3 dialoogid, mobiilsünkroonimine ja 10 uut keelt!
-Versioon 3.2 (Mobiil ja avatud lähtekood): Nutikas mobiilsünkroonimine Chrome'i järjehoidjate kaudu ja ametlik avatud lähtekoodiga käivitamine.
-Versioon 3.0 (Tootlikkuse uuendus): Klaviatuuri otseteed, mitmikvalik, vahekaardi grupid, kohandatud emojid, andmete pakkimine ja salvestusriba.
-Versioon 2.0: Suuremahuline ümberkujundamine funktsioonidega Lohista ja kukuta, kontekstimenüü, kohandatud sortimine, kinnitamine ja Material 3 disain.

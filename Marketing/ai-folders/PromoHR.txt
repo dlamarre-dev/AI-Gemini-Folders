@@ -64,7 +64,7 @@ Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AŽURIRANJA:
-Verzija 1.6.2 (Kimi): Pokrenite nove razgovore na Kimiu izravno iz načina upita, spremite ih u mape i ubacite upite.
+Verzija 1.6.2 (Kimi): Pokrenite nove razgovore na Kimiu izravno iz načina upita, spremite ih u mape i ubacite upite. Uklanjanje proširenja sada otvara kratku neobaveznu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
 Verzija 1.6.1 (Sigurnost i stabilnost): Dodatna zaštita spremljenih poveznica i uvoza sigurnosnih kopija te interni popravci stabilnosti.
 Verzija 1.6 (10 novih AI usluga): Spremajte razgovore i umećite promptove u deset dodatnih AI usluga — uključujući Mistral, Meta AI, Qwen i Z.ai — s redizajniranim gumbima usluga i službenim logotipima.
 Verzija 1.5.1 (Poboljšanja): Mape se sada prema zadanim postavkama razvrstavaju od najnovijih, kao i vaša biblioteka prompta — već odabrani redoslijed razvrstavanja ostaje nepromijenjen. Ispravljen je i gumb za brisanje (✕) u polju za pretraživanje, pa sada radi i u Firefoxu.

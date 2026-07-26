@@ -63,15 +63,10 @@ Berminat dengan Folder Gemini tetapi juga menggunakan ChatGPT, Claude, Copilot, 
 👉 Pasang Folder AI: __AF_STORE_URL__
 
 📢 KEMAS KINI:
+Versi 4.5.4 (Kaji selidik pembuangan): Membuang sambungan kini membuka halaman maklum balas ringkas dan pilihan dalam bahasa anda, dan tiada apa-apa dihantar melainkan anda menghantarnya sendiri.
 Versi 4.5.3 (Keselamatan & kestabilan): Perlindungan tambahan untuk pautan tersimpan dan import sandaran, serta pembaikan kestabilan dalaman.
 Versi 4.5.1 (Penambahbaikan): Folder kini diisih dari terbaharu dahulu secara lalai, sejajar dengan pustaka gesaan anda — susunan isihan yang telah anda pilih sebelum ini kekal tidak berubah. Butang kosongkan (✕) dalam kotak carian turut dibaiki supaya berfungsi dalam Firefox juga.
 Versi 4.5 (Antara Muka & Kestabilan): Panel lebih lebar, kawalan lebih kemas dan kebolehcapaian papan kekunci yang lebih baik. Pembetulan pepijat dan penstrukturan semula dalaman sejak kemas kini terakhir, untuk kestabilan yang lebih baik. Jika Folder Gemini berguna kepada anda, anda boleh menyokong pembangunannya dengan melawati halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas sokongan anda!
 Versi 4.2 (Pencetus Prompt): Taip # dalam medan chat Gemini untuk melihat arahan tersimpan anda ditapis dalam masa nyata. Gunakan ↓/↑ untuk navigasi cadangan, Ruang untuk autoisi atau suntik — tanpa membuka panel.
 Versi 4.1 (Pengembangan Global & Penguatan): 16 bahasa baharu membawa Folder Gemini kepada 43 lokalisasi di seluruh dunia — bahasa-bahasa Nordik, negara-negara Baltik dan liputan Eropah dan Asia Tenggara yang diperluaskan. Diperbaiki race condition yang boleh menghilangkan penyimpanan secara senyap semasa klik pantas. Suntikan prompt dimodernkan dengan InputEvent, menggantikan execCommand yang lapuk. Pipeline import diperkukuh terhadap URL berbahaya dalam fail sandaran. Pembetulan pepijat keselamatan data kritikal: mengaktifkan penyegerakan gesaan pada storan yang hampir penuh boleh memadam semua gesaan tersimpan secara senyap. Storan kini menggunakan penulisan berpecah untuk kekal dalam had Chrome, dengan mesej ralat yang jelas apabila penuh.
 Versi 4.0 (Perpustakaan Prompt): Kemas kini paling bercita-cita tinggi setakat ini! Folder Gemini mendapat Mod Prompt baharu sepenuhnya: simpan prompt terbaik, sunting terus dan sisipkan ke Gemini dengan satu klik.
-Versi 3.5 (Asas kukuh & pengalaman dipertingkat): Kemas kini dalaman besar untuk keteguhan profesional!
-Versi 3.4.1 (Kuasa berbilang platform & kestabilan): Berjaya dipindahkan ke Mozilla Firefox dengan sistem binaan automatik.
-Versi 3.3 (Reka bentuk premium & antarabangsa): Dialog Material 3 baharu, penyegerakan mudah alih dan 10 bahasa baharu!
-Versi 3.2 (Mudah alih & sumber terbuka): Penyegerakan mudah alih pintar melalui penanda buku Chrome dan pelancaran sumber terbuka rasmi.
-Versi 3.0 (Kemas kini produktiviti): Pintasan papan kekunci, pilihan berbilang, kumpulan tab, emoji tersuai, pemampatan data dan bar storan.
-Versi 2.0: Reka bentuk semula besar dengan Seret dan lepas, menu konteks, pengisihan tersuai, pengesetan dan reka bentuk Material 3.
