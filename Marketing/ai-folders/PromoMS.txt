@@ -64,7 +64,7 @@ Semak kod atau sumbang: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 KEMAS KINI:
-Versi 1.6.2 (Kimi): Mulakan perbualan Kimi baharu terus dari Mod Prompt, simpan dalam folder dan suntik prompt.
+Versi 1.6.2 (Kimi): Mulakan perbualan Kimi baharu terus dari Mod Prompt, simpan dalam folder dan suntik prompt. Membuang sambungan kini membuka halaman maklum balas ringkas dan pilihan dalam bahasa anda, dan tiada apa-apa dihantar melainkan anda menghantarnya sendiri.
 Versi 1.6.1 (Keselamatan & kestabilan): Perlindungan tambahan untuk pautan tersimpan dan import sandaran, serta pembaikan kestabilan dalaman.
 Versi 1.6 (10 perkhidmatan AI baharu): Simpan perbualan dan masukkan prompt dalam sepuluh lagi perkhidmatan AI — termasuk Mistral, Meta AI, Qwen dan Z.ai — dengan butang perkhidmatan direka semula dan logo rasmi.
 Versi 1.5.1 (Penambahbaikan): Folder kini diisih dari terbaharu dahulu secara lalai, sejajar dengan pustaka gesaan anda — susunan isihan yang telah anda pilih sebelum ini kekal tidak berubah. Butang kosongkan (✕) dalam kotak carian turut dibaiki supaya berfungsi dalam Firefox juga.

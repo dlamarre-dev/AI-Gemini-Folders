@@ -64,15 +64,10 @@ Interesseret i Gemini Mapper men bruger du også ChatGPT, Claude, Copilot, Grok,
 👉 Installer AI-mapper: __AF_STORE_URL__
 
 📢 OPDATERINGER:
+Version 4.5.4 (Afinstallationsundersøgelse): Når du fjerner udvidelsen, åbnes nu en kort valgfri feedbackside på dit sprog, og intet sendes, medmindre du selv indsender den.
 Version 4.5.3 (Sikkerhed og stabilitet): Ekstra beskyttelse af gemte links og backup-import samt interne stabilitetsrettelser.
 Version 4.5.1 (Finjusteringer): Mapper sorteres nu med nyeste først som standard, ligesom dit promptbibliotek — en sorteringsrækkefølge, du allerede har valgt, forbliver uændret. Desuden er ryd-knappen (✕) i søgefeltet rettet, så den også virker i Firefox.
 Version 4.5 (Brugerflade og stabilitet): Bredere panel, forfinede kontroller og bedre tastaturtilgængelighed. Fejlrettelser og intern refaktorering siden den sidste opdatering, for forbedret stabilitet. Hvis Gemini Mapper er nyttig for dig, kan du støtte dens udvikling ved at besøge Ko-fi-siden: https://ko-fi.com/aifolders — tak for din støtte!
 Version 4.2 (Prompt-udløser): Skriv # i Geminis chatfelt for at se dine gemte prompts filtreret i realtid. Brug ↓/↑ til at navigere gennem forslag, Mellemrum for at autofuldføre eller injicere — uden at åbne panelet.
 Version 4.1 (Global udvidelse og hærdning): 16 nye sprog bringer Gemini Mapper til 43 oversættelser verden over — nordiske sprog, de baltiske stater og udvidet europæisk og sydøstasiatisk dækning. Rettet en race condition, der stille kunne miste en gem ved hurtige klik. Prompt-indsætning moderniseret med InputEvent, som erstatter den forældede execCommand. Import-pipeline hærdet mod ondsindede URL'er i sikkerhedskopifiler. Rettet en kritisk datasikkerhedsfejl: aktivering af prompt-synkronisering med næsten fuldt lager kunne lydløst slette alle gemte prompts. Lageret bruger nu fragmenterede skrivninger for at forblive inden for Chromes grænser, med klare fejlmeddelelser når det er fuldt.
 Version 4.0 (Promptbibliotek): Den mest ambitiøse opdatering hidtil! Gemini Mapper får en helt ny Promptvisning: gem dine bedste prompts, rediger dem inline og indsæt dem direkte i Gemini med ét klik. Tilføjet animeret tilstandsskifter, søgning og sortering i Promptvisning, tilpasset Gem-knap og uafhængig promptsynkronisering.
-Version 3.5 (Solide grundlag og forbedret oplevelse): En stor intern opdatering for professionel robusthed! Visuel advarsel om duplikatgem via tastaturgenvejen.
-Version 3.4.1 (Multiplattformsstyrke og stabilitet): Portet til Mozilla Firefox med et automatiseret byggesystem.
-Version 3.3 (Premium-design og international): Nye 100 % tilpassede Material 3-dialogbokse, mobilsynkronisering og 10 nye sprog!
-Version 3.2 (Mobil og open source): Smart mobilsynkronisering via Chrome-bogmærker og officiel open source-lancering.
-Version 3.0 (Produktivitetsopdatering): Tastaturgenveje, flervalg, fanegrupper, tilpassede emojis, datakomprimering og lagringslinje.
-Version 2.0: Større redesign med træk og slip, kontekstmenu, tilpasset sortering, fastgørelse og Material 3-design.

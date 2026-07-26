@@ -148,8 +148,55 @@ async function updateContextMenu() {
   });
 }
 
-chrome.runtime.onInstalled.addListener(() => { updateContextMenu(); updateLocalLlmContentScript(); });
-chrome.runtime.onStartup.addListener(() => { updateContextMenu(); updateLocalLlmContentScript(); });
+// --- UNINSTALL FEEDBACK SURVEY ---
+// The browser opens this page when the user removes the extension. It carries
+// non-identifying context (tenure, version, browser, UI language, popup opens)
+// as URL params; nothing is transmitted unless the user submits the form there.
+// Page: docs/uninstall-ai-folders.html. Helper: buildUninstallUrl (utils.js).
+const UNINSTALL_SURVEY_URL = 'https://aifolders.xyz/uninstall-ai-folders.html';
+
+// setUninstallURL captures the value at call time and the page may be opened
+// months later, so the URL is re-signed whenever the numbers it carries move.
+async function refreshUninstallUrl() {
+  try {
+    const { installedAt, installedAtEstimated, usageStats } =
+      await chrome.storage.local.get(['installedAt', 'installedAtEstimated', 'usageStats']);
+    await chrome.runtime.setUninstallURL(buildUninstallUrl(UNINSTALL_SURVEY_URL, {
+      installedAt,
+      estimated: installedAtEstimated,
+      opens: (usageStats || {}).opens,
+      version: chrome.runtime.getManifest().version,
+      lang: chrome.i18n.getUILanguage(),
+      browser: /Firefox/.test(navigator.userAgent) ? 'firefox' : 'chrome',
+    }));
+  } catch (_) { /* best-effort: never break the worker over the survey */ }
+}
+
+// reason === 'install' is the only case where the date is real. Anything else
+// means the extension was already installed when the survey shipped: stamp the
+// update date and flag it as estimated rather than report a wrong tenure.
+async function recordInstallDate(reason) {
+  try {
+    const { installedAt } = await chrome.storage.local.get(['installedAt']);
+    if (installedAt) return;
+    await chrome.storage.local.set({
+      installedAt: Date.now(),
+      installedAtEstimated: reason !== 'install',
+    });
+  } catch (_) {}
+}
+
+chrome.runtime.onInstalled.addListener(async (details) => {
+  updateContextMenu();
+  updateLocalLlmContentScript();
+  await recordInstallDate(details && details.reason);
+  refreshUninstallUrl();
+});
+chrome.runtime.onStartup.addListener(() => {
+  updateContextMenu();
+  updateLocalLlmContentScript();
+  refreshUninstallUrl();
+});
 
 // The popup closes when Chrome shows its permission dialog, so the permissions.request()
 // callback may never fire there. We activate the pending URL here instead.
@@ -177,6 +224,11 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   }
   if (namespace === 'sync' && changes.localLlmUrl) {
     updateLocalLlmContentScript();
+  }
+  // usageStats.opens is bumped on every popup open (src/ui.js) — keep the
+  // uninstall URL's counter in step with it.
+  if (namespace === 'local' && changes.usageStats) {
+    refreshUninstallUrl();
   }
 });
 

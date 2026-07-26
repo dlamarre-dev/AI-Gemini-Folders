@@ -63,15 +63,10 @@ Zainteresovani za Gemini Folderi, ali koristite i ChatGPT, Claude, Copilot, Grok
 👉 Instaliraj VI fascikle: __AF_STORE_URL__
 
 📢 AŽURIRANJA:
+Verzija 4.5.4 (Anketa pri deinstalaciji): Uklanjanje proširenja sada otvara kratku opcionu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
 Verzija 4.5.3 (Bezbednost i stabilnost): Dodatna zaštita sačuvanih linkova i uvoza rezervnih kopija, uz interne popravke stabilnosti.
 Verzija 4.5.1 (Poboljšanja): Fascikle se sada podrazumevano sortiraju od najnovijih, kao i vaša biblioteka promptova — već izabrani redosled sortiranja ostaje nepromenjen. Ispravljeno je i dugme za brisanje (✕) u polju za pretragu, pa sada radi i u Firefoxu.
 Verzija 4.5 (Interfejs i stabilnost): Širi panel, doterane kontrole i bolja pristupačnost tastaturom. Ispravke grešaka i interno refaktorisanje od poslednjeg ažuriranja, za bolju stabilnost. Ako su vam Gemini Folderi korisni, možete podržati razvoj posjetom stranici Ko-fi: https://ko-fi.com/aifolders — hvala vam na podršci!
 Verzija 4.2 (Okidač promptova): Unesi # u polje za razgovor sa Gemini da u realnom vremenu vidiš filtrirane sačuvane promptove. Koristi ↓/↑ za navigaciju kroz predloge, razmak za autodovršavanje ili ubacivanje — bez otvaranja panela.
 Verzija 4.1 (Globalna ekspanzija i ojačavanje): 16 novih jezika dovodi Gemini Foldere do 43 lokalizacije širom sveta — nordički jezici, baltičke države i proširena evropska i južnoazijska pokrivenost. Ispravljena race condition koja je mogla tiho izgubiti čuvanje pri brzim klikovima. Ubacivanje prompta modernizirano sa InputEvent, zamenjujući zastareli execCommand. Import pipeline ojačan protiv zlonamernih URL-ova u backup fajlovima. Ispravljena kritična greška bezbednosti podataka: aktiviranje sinhronizacije upita sa skoro punim skladištem moglo je tiho da obriše sve sačuvane upite. Skladište sada koristi fragmentirane zapise kako bi ostalo unutar Chrome ograničenja, sa jasnim porukama o grešci kada je puno.
 Verzija 4.0 (Biblioteka promptova): Najna mbicioznije ažuriranje do sada! Gemini Folderi dobijaju potpuno novi Mod promptova: sačuvaj najbolje promptove, uređuj ih na mestu i ubaci ih direktno u Gemini jednim klikom.
-Verzija 3.5 (Čvrsti temelji i poboljšano iskustvo): Veliko interno ažuriranje za profesionalnu pouzdanost!
-Verzija 3.4.1 (Višeplatformska snaga i stabilnost): Uspješno preneseno na Mozilla Firefox s automatizovanim sistemom izgradnje.
-Verzija 3.3 (Premium dizajn i međunarodni): Novi dialozi Material 3, mobilna sinhronizacija i 10 novih jezika!
-Verzija 3.2 (Mobilno i otvoreni kod): Pametna mobilna sinhronizacija putem Chrome obeleživača i zvanično lansiranje otvorenog koda.
-Verzija 3.0 (Ažuriranje produktivnosti): Prečice na tastaturi, višestruki odabir, grupe kartica, prilagođeni emojiji, kompresija podataka i traka skladišta.
-Verzija 2.0: Veliko redizajniranje s Prevuci i ispusti, kontekstnim menijem, prilagođenim sortiranjem, zakačivanjem i dizajnom Material 3.
