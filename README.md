@@ -27,7 +27,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 | Meta AI                        | ✅ | ✅ | ✅ *(exact-match trigger)* |
 | Qwen                           | ✅ | ✅ | ✅ |
 | Z.ai                           | ✅ | ✅ | ✅ |
-| Kimi                           | ✅ | ✅ | ✅ |
+| Kimi                           | ✅ | ✅ | ✅ *(exact-match trigger)* |
 | Poe                            | ✅ | ✅ | ✅ |
 | Duck.ai                        | ✅ | ✅ | ✅ |
 | You.com                        | ✅ | ✅ | ✅ |
