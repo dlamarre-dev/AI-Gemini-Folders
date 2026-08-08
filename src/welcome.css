@@ -162,25 +162,35 @@ img { max-width: 100%; display: block; }
 }
 .site-row.site-row-single img { width: 44px; height: 44px; border-radius: 11px; }
 
-/* Replica of the popup's add-conversation button (.main-btn in popup.css). */
+/* Replica of the popup's add-conversation button. It has to be indistinguishable
+   from the real one, so these are the values the real #toggleAddPanelBtn actually
+   *computes to* in dark mode — read out of the browser, not transcribed from the
+   source. That distinction matters: popup.css declares a `.main-btn` block inside
+   its `prefers-color-scheme: dark` media query (translucent blue, 1px border, blue
+   glow), but the plain `.main-btn` rule further down the file overrides every one
+   of those properties at equal specificity, so none of it ever applies. Copying the
+   source would have produced a button the user never sees.
+   The font is pinned too: popup.css sets its family on `body` and the button
+   inherits it, so this page's display font must not leak in. */
 .popup-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 32px;
-  padding: 0 14px;
+  padding: 0 10px;
+  border: none;
   border-radius: 8px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
   color: #fff;
-  background: rgba(100, 148, 240, 0.80);
-  border: 1px solid rgba(138, 180, 248, 0.35);
-  box-shadow: 0 2px 12px rgba(80, 120, 255, 0.20);
+  background: #8ab4f8;                    /* --accent-color, dark scheme */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* --shadow-sm, dark scheme */
 }
 
 /* --- Call to action: the site's .btn / .btn-primary --- */
-.cta-row { margin-top: 40px; }
+.cta-row { margin-top: 40px; text-align: center; }
 .btn {
   display: inline-flex;
   align-items: center;
