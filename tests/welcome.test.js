@@ -138,6 +138,29 @@ describe('welcome page rendering', () => {
     }
   });
 
+  // The step-3 button is a hand-copied replica of the popup's own, so it can drift
+  // the day someone restyles the popup. jsdom has no CSS engine to compare against,
+  // but pinning the two values the replica hardcodes is enough to catch it: if the
+  // popup's dark accent or card shadow changes, this fails and points here.
+  test('the add-button replica still matches the popup accent it copies', () => {
+    const popupCss = fs.readFileSync(path.join(ROOT, 'src/popup.css'), 'utf8');
+    const welcomeCss = fs.readFileSync(path.join(ROOT, 'src/welcome.css'), 'utf8');
+    const dark = popupCss.slice(popupCss.indexOf('@media (prefers-color-scheme: dark)'));
+    // Space after a comma is free variation in CSS but not in a string compare.
+    const tidy = (s) => s.replace(/\s+/g, ' ').replace(/,\s/g, ',').trim().toLowerCase();
+    const tokenOf = (name) => tidy(dark.match(new RegExp(`--${name}:\\s*([^;]+);`))[1]);
+
+    // Bounded to the rule body, so a later rule's background cannot stand in for it.
+    const start = welcomeCss.indexOf('.popup-btn {');
+    const replica = welcomeCss.slice(start, welcomeCss.indexOf('}', start));
+    expect(tidy(replica.match(/background:\s*([^;]+);/)[1])).toBe(tokenOf('accent-color'));
+    expect(tidy(replica.match(/box-shadow:\s*([^;]+);/)[1])).toBe(tokenOf('shadow-sm'));
+    // The popup sets its own family on body and the button inherits it; the page's
+    // display font must not leak into the replica.
+    expect(replica).toContain("font-family: 'Inter'");
+    expect(replica).toContain('font-weight: 600');
+  });
+
   test('the page never reaches the network or writes storage', () => {
     // It opens unprompted on install, so it must stay inert: no telemetry, no
     // "seen the welcome page" flag, nothing that could look like a phone-home.

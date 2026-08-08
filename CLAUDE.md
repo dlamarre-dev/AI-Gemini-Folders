@@ -337,6 +337,15 @@ a feature tour. Baselines to measure against are in §11.
   user-configured local LLM — are left out of a row that says "open a conversation
   on one of these". Step 3 is a CSS replica of the popup's own add-conversation
   button, localized, so it is recognizable once the popup opens.
+- **The replica copies the popup button's *computed* values, not its source.**
+  `popup.css` declares a `.main-btn` block inside its `prefers-color-scheme: dark`
+  media query (translucent blue, 1px border, blue glow) that the plain `.main-btn`
+  rule further down overrides at equal specificity — so **none of that dark block
+  ever applies**, and transcribing it would have produced a button no user sees.
+  Read the values out of the browser if you touch this. (The dead block is a real
+  popup.css wart; cleaning it belongs with the §8 CSS cleanup, not here.)
+  A test pins the replica to the popup's dark `--accent-color` / `--shadow-sm` so a
+  restyle of the popup fails loudly instead of drifting.
 - **Step 3's text quotes the popup's Save button through a `{b}` placeholder**, which
   `welcome.js` fills with this locale's `saveBtn`. Never hardcode the button name
   into a translation: the substitution is what stops the instruction from naming a
