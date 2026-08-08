@@ -324,7 +324,7 @@
     "message": "Gem den i en mappe"
   },
   "welcomeSaveBody": {
-    "message": "Klik på udvidelsens ikon, skriv et mappenavn og tryk på ➕. Højreklik på siden virker også."
+    "message": "Klik på udvidelsens ikon, skriv et mappenavn og tryk på {b}."
   },
   "welcomeCta": {
     "message": "Forstået"

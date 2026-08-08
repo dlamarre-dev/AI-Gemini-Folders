@@ -324,7 +324,7 @@
     "message": "儲存到資料夾"
   },
   "welcomeSaveBody": {
-    "message": "點擊擴充功能圖示，輸入資料夾名稱並按 ➕。在頁面上按右鍵也可以。"
+    "message": "點擊擴充功能圖示，輸入資料夾名稱，然後按「{b}」。"
   },
   "welcomeCta": {
     "message": "我瞭解了"

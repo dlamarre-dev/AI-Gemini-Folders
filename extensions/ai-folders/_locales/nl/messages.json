@@ -324,7 +324,7 @@
     "message": "Sla het op in een map"
   },
   "welcomeSaveBody": {
-    "message": "Klik op het pictogram van de extensie, typ een mapnaam en druk op ➕. Rechtsklikken op de pagina werkt ook."
+    "message": "Klik op het pictogram van de extensie, typ een mapnaam en klik op {b}."
   },
   "welcomeCta": {
     "message": "Duidelijk"

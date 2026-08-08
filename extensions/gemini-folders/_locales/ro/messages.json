@@ -288,7 +288,7 @@
     "message": "Salvează-o într-un folder"
   },
   "welcomeSaveBody": {
-    "message": "Dă clic pe pictograma extensiei, scrie un nume de folder și apasă ➕. Merge și clic dreapta pe pagină."
+    "message": "Dă clic pe pictograma extensiei, scrie un nume de folder și apasă {b}."
   },
   "welcomeCta": {
     "message": "Am înțeles"

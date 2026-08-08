@@ -288,7 +288,7 @@
     "message": "Lagre den i en mappe"
   },
   "welcomeSaveBody": {
-    "message": "Klikk på ikonet til utvidelsen, skriv et mappenavn og trykk ➕. Å høyreklikke på siden fungerer også."
+    "message": "Klikk på ikonet til utvidelsen, skriv et mappenavn og trykk {b}."
   },
   "welcomeCta": {
     "message": "Skjønner"

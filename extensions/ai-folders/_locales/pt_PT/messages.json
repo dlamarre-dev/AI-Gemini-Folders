@@ -324,7 +324,7 @@
     "message": "Guarde numa pasta"
   },
   "welcomeSaveBody": {
-    "message": "Clique no ícone da extensão, escreva um nome de pasta e prima ➕. Clicar com o botão direito na página também funciona."
+    "message": "Clique no ícone da extensão, escreva um nome de pasta e prima {b}."
   },
   "welcomeCta": {
     "message": "Compreendi"

@@ -324,7 +324,7 @@
     "message": "Saglabājiet to mapē"
   },
   "welcomeSaveBody": {
-    "message": "Noklikšķiniet uz paplašinājuma ikonas, ierakstiet mapes nosaukumu un nospiediet ➕. Darbojas arī labais klikšķis uz lapas."
+    "message": "Noklikšķiniet uz paplašinājuma ikonas, ierakstiet mapes nosaukumu un nospiediet “{b}”."
   },
   "welcomeCta": {
     "message": "Sapratu"

@@ -288,7 +288,7 @@
     "message": "Shranite ga v mapo"
   },
   "welcomeSaveBody": {
-    "message": "Kliknite ikono razširitve, vpišite ime mape in pritisnite ➕. Deluje tudi desni klik na stran."
+    "message": "Kliknite ikono razširitve, vpišite ime mape in pritisnite {b}."
   },
   "welcomeCta": {
     "message": "Razumem"

@@ -288,7 +288,7 @@
     "message": "Lưu vào một thư mục"
   },
   "welcomeSaveBody": {
-    "message": "Nhấp vào biểu tượng tiện ích, nhập tên thư mục và nhấn ➕. Nhấp chuột phải trên trang cũng được."
+    "message": "Nhấp vào biểu tượng tiện ích, nhập tên thư mục và nhấn {b}."
   },
   "welcomeCta": {
     "message": "Đã hiểu"

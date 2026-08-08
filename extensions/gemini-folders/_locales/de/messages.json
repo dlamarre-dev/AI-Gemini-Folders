@@ -288,7 +288,7 @@
     "message": "Speichere sie in einem Ordner"
   },
   "welcomeSaveBody": {
-    "message": "Klicke auf das Symbol der Erweiterung, gib einen Ordnernamen ein und drücke ➕. Ein Rechtsklick auf die Seite funktioniert auch."
+    "message": "Klicke auf das Symbol der Erweiterung, gib einen Ordnernamen ein und drücke {b}."
   },
   "welcomeCta": {
     "message": "Verstanden"

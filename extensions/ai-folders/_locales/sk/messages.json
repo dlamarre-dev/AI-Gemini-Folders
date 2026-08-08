@@ -324,7 +324,7 @@
     "message": "Uložte ju do priečinka"
   },
   "welcomeSaveBody": {
-    "message": "Kliknite na ikonu rozšírenia, napíšte názov priečinka a stlačte ➕. Funguje aj pravé kliknutie na stránku."
+    "message": "Kliknite na ikonu rozšírenia, napíšte názov priečinka a stlačte {b}."
   },
   "welcomeCta": {
     "message": "Rozumiem"

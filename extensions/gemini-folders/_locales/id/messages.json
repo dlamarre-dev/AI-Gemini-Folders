@@ -288,7 +288,7 @@
     "message": "Simpan ke dalam folder"
   },
   "welcomeSaveBody": {
-    "message": "Klik ikon ekstensi, tulis nama folder, lalu tekan ➕. Klik kanan pada halaman juga bisa."
+    "message": "Klik ikon ekstensi, tulis nama folder, lalu tekan {b}."
   },
   "welcomeCta": {
     "message": "Mengerti"

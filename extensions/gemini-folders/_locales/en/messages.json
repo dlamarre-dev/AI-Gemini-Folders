@@ -288,7 +288,7 @@
     "message": "Save it to a folder"
   },
   "welcomeSaveBody": {
-    "message": "Click the extension icon, type a folder name and press ➕. Right-clicking the page works too."
+    "message": "Click the extension icon, type a folder name and press {b}."
   },
   "welcomeCta": {
     "message": "Got it"

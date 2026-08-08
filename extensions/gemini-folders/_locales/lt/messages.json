@@ -288,7 +288,7 @@
     "message": "Išsaugokite jį aplanke"
   },
   "welcomeSaveBody": {
-    "message": "Spustelėkite plėtinio piktogramą, įrašykite aplanko pavadinimą ir paspauskite ➕. Veikia ir dešinysis pelės mygtukas puslapyje."
+    "message": "Spustelėkite plėtinio piktogramą, įrašykite aplanko pavadinimą ir paspauskite „{b}“."
   },
   "welcomeCta": {
     "message": "Supratau"
