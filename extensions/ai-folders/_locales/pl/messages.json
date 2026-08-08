@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Brak wyników 🕵️"
   },
+  "noResultsHint": {
+    "message": "Wyszukiwanie obejmuje tylko rozmowy, które już zapisałeś — najpierw zapisz jedną za pomocą ➕."
+  },
   "emptyFoldersHint": {
     "message": "Brak folderów — otwórz rozmowę na obsługiwanej stronie AI i zapisz ją za pomocą ➕ lub menu prawego przycisku myszy."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Wesprzyj to rozszerzenie, kupując mi kawę!"
+  },
+  "welcomeReady": {
+    "message": "Wszystko gotowe."
+  },
+  "welcomePinTitle": {
+    "message": "Przypnij je do paska narzędzi"
+  },
+  "welcomePinBody": {
+    "message": "Kliknij ikonę puzzla w prawym górnym rogu przeglądarki, a potem pinezkę obok tego rozszerzenia. Dopóki tego nie zrobisz, przeglądarka trzyma je ukryte w tym menu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Otwórz rozmowę"
+  },
+  "welcomeOpenBody": {
+    "message": "Otwórz rozmowę na jednej z obsługiwanych stron AI."
+  },
+  "welcomeSaveTitle": {
+    "message": "Zapisz ją w folderze"
+  },
+  "welcomeSaveBody": {
+    "message": "Kliknij ikonę rozszerzenia, wpisz nazwę folderu i naciśnij ➕. Kliknięcie strony prawym przyciskiem też działa."
+  },
+  "welcomeCta": {
+    "message": "Rozumiem"
   }
 }

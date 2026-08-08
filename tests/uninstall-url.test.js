@@ -37,6 +37,7 @@ describe('buildUninstallUrl', () => {
       lang: 'pt-BR',
       browser: 'firefox',
       opens: 63,
+      saves: 9,
     });
     expect(url.startsWith(BASE + '?')).toBe(true);
     const p = new URL(url).searchParams;
@@ -45,6 +46,7 @@ describe('buildUninstallUrl', () => {
     expect(p.get('l')).toBe('pt_BR');
     expect(p.get('b')).toBe('firefox');
     expect(p.get('o')).toBe('63');
+    expect(p.get('s')).toBe('9');
     expect(p.get('ie')).toBeNull();          // date is real → no estimate flag
   });
 
@@ -62,20 +64,26 @@ describe('buildUninstallUrl', () => {
     expect(p.has('ie')).toBe(false);
   });
 
-  test('a fresh profile reports zero opens instead of an empty value', () => {
-    expect(new URL(buildUninstallUrl(BASE, {})).searchParams.get('o')).toBe('0');
-    expect(new URL(buildUninstallUrl(BASE, { opens: undefined })).searchParams.get('o')).toBe('0');
+  // Zero is a finding, not a missing value: 'o=0' means the popup was never opened
+  // and 's=0' that nothing was ever saved. Both must be sent explicitly.
+  test('a fresh profile reports zero opens and zero saves instead of empty values', () => {
+    const fresh = new URL(buildUninstallUrl(BASE, {})).searchParams;
+    expect(fresh.get('o')).toBe('0');
+    expect(fresh.get('s')).toBe('0');
+    const undef = new URL(buildUninstallUrl(BASE, { opens: undefined, saves: undefined })).searchParams;
+    expect(undef.get('o')).toBe('0');
+    expect(undef.get('s')).toBe('0');
   });
 
-  test('nothing beyond the six known params ever ends up in the URL', () => {
+  test('nothing beyond the seven known params ever ends up in the URL', () => {
     const url = buildUninstallUrl(BASE, {
       installedAt: Date.UTC(2026, 0, 1), estimated: true, version: '4.5.3',
-      lang: 'fr', browser: 'chrome', opens: 12,
+      lang: 'fr', browser: 'chrome', opens: 12, saves: 3,
       // A caller passing extra state must not leak it into the URL.
       email: 'someone@example.com', folders: ['Work', 'Private'],
     });
     const keys = Array.from(new URL(url).searchParams.keys()).sort();
-    expect(keys).toEqual(['b', 'i', 'ie', 'l', 'o', 'v']);
+    expect(keys).toEqual(['b', 'i', 'ie', 'l', 'o', 's', 'v']);
     expect(url).not.toContain('example.com');
     expect(url).not.toContain('Private');
   });
@@ -89,7 +97,7 @@ describe('buildUninstallUrl', () => {
   test('stays far under the 1023-char setUninstallURL limit', () => {
     const url = buildUninstallUrl(BASE, {
       installedAt: Date.UTC(2020, 0, 1), estimated: true, version: '10.10.10',
-      lang: 'zh-TW', browser: 'firefox', opens: 999999,
+      lang: 'zh-TW', browser: 'firefox', opens: 999999, saves: 999999,
     });
     expect(url.length).toBeLessThan(200);
   });

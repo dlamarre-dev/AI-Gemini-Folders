@@ -96,6 +96,20 @@ describe('applyCommonI18n', () => {
     // sanity: a localized label was applied (mock returns the key)
     expect(document.getElementById('appTitle').textContent).toBe('appTitle');
   });
+
+  // The search-miss message carries a second line explaining that search only
+  // covers already-saved conversations (uninstall survey, 2026-08).
+  test('renders the no-results hint as a second line', () => {
+    chrome.i18n.getUILanguage = jest.fn(() => 'en');
+    window.applyCommonI18n();
+    const el = document.getElementById('noResults');
+    const hint = el.querySelector('.nr-hint');
+    expect(hint).not.toBeNull();
+    expect(hint.textContent).toBe('noResultsHint');
+    // The headline stays a direct text node, so the hint is not part of it.
+    expect(el.firstChild.nodeType).toBe(Node.TEXT_NODE);
+    expect(el.firstChild.textContent).toBe('noResults');
+  });
 });
 
 // ---------------------------------------------------------------------------

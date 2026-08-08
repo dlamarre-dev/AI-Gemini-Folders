@@ -165,6 +165,7 @@ async function refreshUninstallUrl() {
       installedAt,
       estimated: installedAtEstimated,
       opens: (usageStats || {}).opens,
+      saves: (usageStats || {}).saves,
       version: chrome.runtime.getManifest().version,
       lang: chrome.i18n.getUILanguage(),
       browser: /Firefox/.test(navigator.userAgent) ? 'firefox' : 'chrome',
@@ -186,11 +187,25 @@ async function recordInstallDate(reason) {
   } catch (_) {}
 }
 
+// --- FIRST-RUN PAGE ---
+// Chrome hides a freshly installed extension behind the puzzle icon, so nothing on
+// screen changes after installing. The uninstall survey (2026-08) found 23% of
+// people who removed Gemini Folders had never opened the popup once — they never
+// found it. This tab is that missing first step; its own step 1 is "pin it".
+// Fresh installs only: never on an update or a browser restart.
+function openWelcomeTab(reason) {
+  if (reason !== 'install') return;
+  try {
+    chrome.tabs.create({ url: chrome.runtime.getURL('welcome.html') });
+  } catch (_) { /* best-effort: a failed tab must not break the install */ }
+}
+
 chrome.runtime.onInstalled.addListener(async (details) => {
   updateContextMenu();
   updateLocalLlmContentScript();
   await recordInstallDate(details && details.reason);
   refreshUninstallUrl();
+  openWelcomeTab(details && details.reason);
 });
 chrome.runtime.onStartup.addListener(() => {
   updateContextMenu();

@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Keine Ergebnisse gefunden 🕵️"
   },
+  "noResultsHint": {
+    "message": "Die Suche umfasst nur Unterhaltungen, die du schon gespeichert hast – speichere zuerst eine mit ➕."
+  },
   "emptyFoldersHint": {
     "message": "Noch keine Ordner – öffne eine Gemini-Unterhaltung und speichere sie mit ➕ oder über das Rechtsklick-Menü."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Unterstütze diese Erweiterung, indem du mir einen Kaffee kaufst!"
+  },
+  "welcomeReady": {
+    "message": "Alles bereit."
+  },
+  "welcomePinTitle": {
+    "message": "Hefte sie an deine Symbolleiste"
+  },
+  "welcomePinBody": {
+    "message": "Klicke oben rechts im Browser auf das Puzzleteil-Symbol und dann auf die Stecknadel neben dieser Erweiterung. Solange du das nicht tust, bleibt sie in diesem Menü verborgen."
+  },
+  "welcomeOpenTitle": {
+    "message": "Öffne eine Unterhaltung"
+  },
+  "welcomeOpenBody": {
+    "message": "Öffne eine beliebige Unterhaltung auf Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Speichere sie in einem Ordner"
+  },
+  "welcomeSaveBody": {
+    "message": "Klicke auf das Symbol der Erweiterung, gib einen Ordnernamen ein und drücke ➕. Ein Rechtsklick auf die Seite funktioniert auch."
+  },
+  "welcomeCta": {
+    "message": "Verstanden"
   }
 }

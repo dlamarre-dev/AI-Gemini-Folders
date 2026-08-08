@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Aucun résultat trouvé 🕵️"
   },
+  "noResultsHint": {
+    "message": "La recherche ne couvre que les conversations déjà enregistrées — enregistrez-en une avec ➕ d'abord."
+  },
   "emptyFoldersHint": {
     "message": "Aucun dossier pour l'instant — ouvrez une conversation Gemini et enregistrez-la avec ➕ ou le menu clic droit."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Soutenez cette extension en m'offrant un café !"
+  },
+  "welcomeReady": {
+    "message": "Tout est prêt."
+  },
+  "welcomePinTitle": {
+    "message": "Épinglez-la à votre barre d'outils"
+  },
+  "welcomePinBody": {
+    "message": "Cliquez sur l'icône en forme de pièce de puzzle en haut à droite du navigateur, puis sur l'épingle à côté de cette extension. Sans cela, le navigateur la garde cachée dans ce menu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Ouvrez une conversation"
+  },
+  "welcomeOpenBody": {
+    "message": "Ouvrez n'importe quelle conversation sur Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Enregistrez-la dans un dossier"
+  },
+  "welcomeSaveBody": {
+    "message": "Cliquez sur l'icône de l'extension, saisissez un nom de dossier et appuyez sur ➕. Le clic droit sur la page fonctionne aussi."
+  },
+  "welcomeCta": {
+    "message": "J'ai compris"
   }
 }

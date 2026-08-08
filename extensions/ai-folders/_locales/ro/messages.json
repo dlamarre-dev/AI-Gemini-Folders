@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Niciun rezultat găsit 🕵️"
   },
+  "noResultsHint": {
+    "message": "Căutarea acoperă doar conversațiile pe care le-ai salvat deja — salvează una cu ➕ mai întâi."
+  },
   "emptyFoldersHint": {
     "message": "Încă niciun folder — deschide o conversație pe un site AI acceptat și salveaz-o cu ➕ sau din meniul clic dreapta."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Susțineți această extensie cumpărându-mi o cafea!"
+  },
+  "welcomeReady": {
+    "message": "Totul este pregătit."
+  },
+  "welcomePinTitle": {
+    "message": "Fixează-o în bara de instrumente"
+  },
+  "welcomePinBody": {
+    "message": "Dă clic pe pictograma în formă de piesă de puzzle din dreapta sus a browserului, apoi pe pioneza de lângă această extensie. Până atunci, browserul o ține ascunsă în acel meniu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Deschide o conversație"
+  },
+  "welcomeOpenBody": {
+    "message": "Deschide o conversație pe oricare dintre site-urile AI acceptate."
+  },
+  "welcomeSaveTitle": {
+    "message": "Salvează-o într-un folder"
+  },
+  "welcomeSaveBody": {
+    "message": "Dă clic pe pictograma extensiei, scrie un nume de folder și apasă ➕. Merge și clic dreapta pe pagină."
+  },
+  "welcomeCta": {
+    "message": "Am înțeles"
   }
 }

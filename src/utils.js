@@ -842,6 +842,10 @@ function buildUninstallUrl(base, opts) {
     if (o.estimated) p.set('ie', '1');
   }
   p.set('o', String(Number(o.opens) || 0));
+  // 's' is what makes 'o' interpretable: opens alone cannot tell "opened the popup
+  // four times and saved nothing" from "actually used it". saves === 0 means the
+  // user never got the core action to work.
+  p.set('s', String(Number(o.saves) || 0));
   return base + '?' + p.toString();
 }
 

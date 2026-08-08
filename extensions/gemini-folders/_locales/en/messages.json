@@ -29,6 +29,9 @@
   "noResults": {
     "message": "No results found 🕵️"
   },
+  "noResultsHint": {
+    "message": "Search only covers conversations you already saved — save one with ➕ first."
+  },
   "emptyFoldersHint": {
     "message": "No folders yet — open a Gemini conversation and save it with ➕ or the right-click menu."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Support this extension by buying me a coffee!"
+  },
+  "welcomeReady": {
+    "message": "You're all set."
+  },
+  "welcomePinTitle": {
+    "message": "Pin it to your toolbar"
+  },
+  "welcomePinBody": {
+    "message": "Click the puzzle-piece icon at the top right of the browser, then the pin beside this extension. Until you do, the browser keeps it hidden in that menu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Open a conversation"
+  },
+  "welcomeOpenBody": {
+    "message": "Open any conversation on Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Save it to a folder"
+  },
+  "welcomeSaveBody": {
+    "message": "Click the extension icon, type a folder name and press ➕. Right-clicking the page works too."
+  },
+  "welcomeCta": {
+    "message": "Got it"
   }
 }

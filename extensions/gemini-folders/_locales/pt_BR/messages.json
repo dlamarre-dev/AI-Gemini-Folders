@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Nenhum resultado encontrado 🕵️"
   },
+  "noResultsHint": {
+    "message": "A busca abrange apenas as conversas que você já salvou — salve uma com ➕ primeiro."
+  },
   "emptyFoldersHint": {
     "message": "Nenhuma pasta ainda — abra uma conversa do Gemini e salve-a com ➕ ou pelo menu do botão direito."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Apoie esta extensão comprando um café para mim!"
+  },
+  "welcomeReady": {
+    "message": "Tudo pronto."
+  },
+  "welcomePinTitle": {
+    "message": "Fixe na sua barra de ferramentas"
+  },
+  "welcomePinBody": {
+    "message": "Clique no ícone de peça de quebra-cabeça no canto superior direito do navegador e depois no alfinete ao lado desta extensão. Até você fazer isso, o navegador a mantém escondida nesse menu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Abra uma conversa"
+  },
+  "welcomeOpenBody": {
+    "message": "Abra qualquer conversa no Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Salve em uma pasta"
+  },
+  "welcomeSaveBody": {
+    "message": "Clique no ícone da extensão, digite um nome de pasta e aperte ➕. Clicar com o botão direito na página também funciona."
+  },
+  "welcomeCta": {
+    "message": "Entendi"
   }
 }

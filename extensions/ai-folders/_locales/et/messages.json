@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Tulemusi ei leitud 🕵️"
   },
+  "noResultsHint": {
+    "message": "Otsing hõlmab ainult vestlusi, mille olete juba salvestanud — salvestage esmalt üks nupuga ➕."
+  },
   "emptyFoldersHint": {
     "message": "Kaustu veel pole — ava vestlus toetatud tehisintellekti saidil ja salvesta see nupuga ➕ või paremklõpsu menüüst."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Toeta seda laiendust, ostes mulle kohvi!"
+  },
+  "welcomeReady": {
+    "message": "Kõik on valmis."
+  },
+  "welcomePinTitle": {
+    "message": "Kinnitage see tööriistaribale"
+  },
+  "welcomePinBody": {
+    "message": "Klõpsake brauseri paremas ülanurgas pusletüki ikoonil ja seejärel selle laienduse kõrval oleval nööpnõelal. Seni hoiab brauser seda selles menüüs peidus."
+  },
+  "welcomeOpenTitle": {
+    "message": "Avage vestlus"
+  },
+  "welcomeOpenBody": {
+    "message": "Avage vestlus mõnel toetatud tehisintellekti saidil."
+  },
+  "welcomeSaveTitle": {
+    "message": "Salvestage see kausta"
+  },
+  "welcomeSaveBody": {
+    "message": "Klõpsake laienduse ikoonil, sisestage kausta nimi ja vajutage ➕. Töötab ka paremklõps lehel."
+  },
+  "welcomeCta": {
+    "message": "Sain aru"
   }
 }

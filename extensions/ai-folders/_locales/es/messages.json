@@ -29,6 +29,9 @@
   "noResults": {
     "message": "No se encontraron resultados 🕵️"
   },
+  "noResultsHint": {
+    "message": "La búsqueda solo incluye las conversaciones que ya has guardado: guarda una con ➕ primero."
+  },
   "emptyFoldersHint": {
     "message": "Aún no hay carpetas: abre una conversación en un sitio de IA compatible y guárdala con ➕ o el menú del clic derecho."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "¡Apoya esta extensión comprándome un café!"
+  },
+  "welcomeReady": {
+    "message": "Todo listo."
+  },
+  "welcomePinTitle": {
+    "message": "Fíjala en tu barra de herramientas"
+  },
+  "welcomePinBody": {
+    "message": "Haz clic en el icono con forma de pieza de puzle arriba a la derecha del navegador y luego en la chincheta junto a esta extensión. Hasta que lo hagas, el navegador la mantiene oculta en ese menú."
+  },
+  "welcomeOpenTitle": {
+    "message": "Abre una conversación"
+  },
+  "welcomeOpenBody": {
+    "message": "Abre una conversación en cualquiera de los sitios de IA compatibles."
+  },
+  "welcomeSaveTitle": {
+    "message": "Guárdala en una carpeta"
+  },
+  "welcomeSaveBody": {
+    "message": "Haz clic en el icono de la extensión, escribe un nombre de carpeta y pulsa ➕. El clic derecho sobre la página también funciona."
+  },
+  "welcomeCta": {
+    "message": "Entendido"
   }
 }

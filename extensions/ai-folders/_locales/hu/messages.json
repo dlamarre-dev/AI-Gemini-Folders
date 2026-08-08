@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Nincs találat 🕵️"
   },
+  "noResultsHint": {
+    "message": "A keresés csak a már elmentett beszélgetésekre terjed ki – ments el egyet a ➕ gombbal."
+  },
   "emptyFoldersHint": {
     "message": "Még nincsenek mappák – nyiss meg egy beszélgetést egy támogatott MI-oldalon, és mentsd el a ➕ gombbal vagy a jobb gombos menüvel."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Támogasd ezt a bővítményt azzal, hogy veszel nekem egy kávét!"
+  },
+  "welcomeReady": {
+    "message": "Minden készen áll."
+  },
+  "welcomePinTitle": {
+    "message": "Rögzítsd az eszköztárra"
+  },
+  "welcomePinBody": {
+    "message": "Kattints a böngésző jobb felső sarkában lévő kirakósdarab ikonra, majd a kiegészítő melletti rajzszögre. Addig a böngésző elrejtve tartja abban a menüben."
+  },
+  "welcomeOpenTitle": {
+    "message": "Nyiss meg egy beszélgetést"
+  },
+  "welcomeOpenBody": {
+    "message": "Nyiss meg egy beszélgetést valamelyik támogatott MI-oldalon."
+  },
+  "welcomeSaveTitle": {
+    "message": "Mentsd el egy mappába"
+  },
+  "welcomeSaveBody": {
+    "message": "Kattints a kiegészítő ikonjára, írj be egy mappanevet, és nyomd meg a ➕ gombot. A jobb gombos kattintás az oldalon szintén működik."
+  },
+  "welcomeCta": {
+    "message": "Értem"
   }
 }

@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Ingen resultater 🕵️"
   },
+  "noResultsHint": {
+    "message": "Søket dekker bare samtaler du allerede har lagret – lagre en med ➕ først."
+  },
   "emptyFoldersHint": {
     "message": "Ingen mapper ennå – åpne en Gemini-samtale og lagre den med ➕ eller høyreklikkmenyen."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Støtt denne utvidelsen ved å kjøpe meg en kopp kaffe!"
+  },
+  "welcomeReady": {
+    "message": "Alt er klart."
+  },
+  "welcomePinTitle": {
+    "message": "Fest den til verktøylinjen"
+  },
+  "welcomePinBody": {
+    "message": "Klikk på puslespillbrikke-ikonet øverst til høyre i nettleseren, og deretter på nålen ved siden av denne utvidelsen. Fram til da holder nettleseren den skjult i den menyen."
+  },
+  "welcomeOpenTitle": {
+    "message": "Åpne en samtale"
+  },
+  "welcomeOpenBody": {
+    "message": "Åpne en hvilken som helst samtale på Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Lagre den i en mappe"
+  },
+  "welcomeSaveBody": {
+    "message": "Klikk på ikonet til utvidelsen, skriv et mappenavn og trykk ➕. Å høyreklikke på siden fungerer også."
+  },
+  "welcomeCta": {
+    "message": "Skjønner"
   }
 }

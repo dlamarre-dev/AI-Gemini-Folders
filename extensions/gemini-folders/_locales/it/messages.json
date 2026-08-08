@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Nessun risultato trovato 🕵️"
   },
+  "noResultsHint": {
+    "message": "La ricerca copre solo le conversazioni che hai già salvato: salvane una con ➕ prima."
+  },
   "emptyFoldersHint": {
     "message": "Ancora nessuna cartella: apri una conversazione di Gemini e salvala con ➕ o dal menu del tasto destro."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Sostieni questa estensione offrendomi un caffè!"
+  },
+  "welcomeReady": {
+    "message": "Tutto pronto."
+  },
+  "welcomePinTitle": {
+    "message": "Fissala nella barra degli strumenti"
+  },
+  "welcomePinBody": {
+    "message": "Clicca sull'icona a forma di tessera di puzzle in alto a destra nel browser, poi sulla puntina accanto a questa estensione. Fino a quel momento il browser la tiene nascosta in quel menu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Apri una conversazione"
+  },
+  "welcomeOpenBody": {
+    "message": "Apri una qualsiasi conversazione su Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Salvala in una cartella"
+  },
+  "welcomeSaveBody": {
+    "message": "Clicca sull'icona dell'estensione, scrivi il nome di una cartella e premi ➕. Funziona anche il tasto destro sulla pagina."
+  },
+  "welcomeCta": {
+    "message": "Ho capito"
   }
 }

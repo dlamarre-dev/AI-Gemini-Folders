@@ -57,6 +57,8 @@ src/                         Shared code (copied into every build)
   prompt-trigger.js          Content script: `#name` + Space trigger (isolated world)
   import.js / import.html    Standalone import page (Firefox can't open a file
                              picker from a popup)
+  welcome.html / .js / .css  First-run page, opened once on fresh install (see §10).
+                             Shared: all text comes from each extension's _locales
   popup.css                  Shared styles
   lz-string.min.js           Vendored LZString (excluded from coverage)
 
@@ -240,11 +242,17 @@ the page only posts to a Google Form. **There is no database and no backend.**
   `refreshUninstallUrl` / `recordInstallDate` pair in **both** `background.js`
   (not shared — fix bugs in both, §6). The URL carries `l` language, `v` version,
   `b` browser, `i` install date (`YYYY-MM-DD`), `ie=1` when that date was only
-  inferred at update time, and `o` popup opens (`usageStats.opens`, `storage.local`).
-  The *date* is sent, never a day count — `setUninstallURL` is called long before
-  the page opens, so a count would be stale; the page derives the tenure. The URL
-  is re-signed on install/startup **and on every `usageStats` change**, so the
-  opens counter stays current.
+  inferred at update time, `o` popup opens and `s` conversations saved (both from
+  `usageStats`, `storage.local`). The *date* is sent, never a day count —
+  `setUninstallURL` is called long before the page opens, so a count would be
+  stale; the page derives the tenure. The URL is re-signed on install/startup
+  **and on every `usageStats` change**, so both counters stay current.
+  `s` is the one that makes `o` interpretable: opens alone cannot separate "opened
+  the popup four times and saved nothing" from "actually used it".
+- **Both privacy strings enumerate the params exhaustively** — `privacyBody` in
+  `docs/site/uninstall-i18n.js` and `s1UninstallBody` in `docs/site/privacy-i18n.js`
+  ("six non-identifying details"). Adding a param means updating both, in all 43
+  languages, or the disclosure becomes false.
 - **Page side:** `docs/uninstall-{ai,gemini}-folders.html` → `site/uninstall.js`
   (+ `uninstall-i18n.js`, 43 languages, and `styles.css`'s `.uf-*` block). It
   reuses `AF_LANGS` / `AF_RTL` / `AF_SCRIPT_FONT` from `i18n-manual.js` and the
@@ -255,11 +263,16 @@ the page only posts to a Google Form. **There is no database and no backend.**
   in the console and shows the user a normal thank-you.
 - **The Form is the schema.** Its checkbox options must be exactly
   `not-what-expected`, `dont-understand-how`, `wanted-in-page-ui`, `found-bugs`,
-  `other` — the English keys, never the translated labels. Google silently drops a
+  `no-longer-needed`, `found-alternative`, `other` — the English keys, never the
+  translated labels. Google silently drops a
   response carrying an unknown option, and translated values would make the
   response sheet unreadable. No question may be *required*, and "Collect email
   addresses" must be OFF.
-- **The GF Form carries a sixth option, `switched-to-ai-folders`**, shown first on
+  **Order of operations when adding a reason or a field: update both Forms FIRST,
+  then ship the page.** `no-longer-needed` / `found-alternative` were added because
+  26% of the first 43 GF responses arrived with nothing checked and 5 of the 6
+  `other` boxes were left empty — the list was missing their reason.
+- **The GF Form carries an eighth option, `switched-to-ai-folders`**, shown first on
   the Gemini Folders page only (leaving for AI Folders is an upgrade, not a
   grievance, and mixing it into the complaints would misread the numbers). Its
   label names the *other* product — `SWITCH_REASON.afName` in `uninstall.js`
@@ -273,3 +286,71 @@ the page only posts to a Google Form. **There is no database and no backend.**
   Do **not** add a `Disallow` to `robots.txt`: a disallowed URL can still be
   indexed URL-only, whereas a crawlable `noindex` is honoured (GitHub Pages cannot
   send `X-Robots-Tag`).
+
+---
+
+## 10. First-run welcome page
+
+Opened in a tab **once, on fresh install only**, by `openWelcomeTab(details.reason)`
+in **both** `background.js` (not shared, §6 — `reason === 'install'`, never `update`
+or `onStartup`).
+
+**Why it exists — don't remove it without new data.** The first 43 Gemini Folders
+uninstall responses (27/07 → 07/08/2026, a 44% response rate against 97 CWS
+uninstalls, so representative) said the churn is in the first minute, not in the
+features: 77% uninstalled the same day, median 2 popup opens, and **23% had `o=0` —
+they never opened the popup at all**. Chrome hides a new extension behind the puzzle
+icon, so after installing, nothing on screen changes. Hence step 1 is "pin it", not
+a feature tour. Baselines to measure against are in §11.
+
+- **`src/welcome.html` + `welcome.js` + `welcome.css` are shared** by both
+  extensions. Every string comes from `chrome.i18n`, so the Gemini-vs-18-sites
+  wording lives in each extension's own `_locales`. Seven of the eight keys are
+  deliberately **product-neutral and byte-identical** between AF and GF; only
+  `welcomeOpenBody` differs. `tests/welcome.test.js` enforces both halves of that.
+  The product name is not a new key — the page reuses `appTitle`.
+- **`welcome.css` duplicates popup.css's palette tokens on purpose.** popup.css pins
+  `body { width: 392px; max-height: 576px }` and `html { overflow-y: hidden }`, which
+  a full browser tab must not inherit, and that block is explicitly fragile (§6).
+  Keep the two palettes in step if the popup's change.
+- **The illustrations are inline SVG, not screenshots.** A localized PNG per step
+  would be ~780 KB × 43 languages; the schematic stays sharp, follows the colour
+  scheme and needs no copy. The step-1 pin is Material `push_pin` — it must read as
+  a pushpin, since step 3 shows a real ➕ button and the two must not be confused.
+- **The page is inert**: no network, no storage writes, no "welcome seen" flag. It
+  opens unprompted, so anything that fired on load would look like a phone-home —
+  the same rule as the uninstall page (§9). A test asserts this.
+- No `manifest.json` entry is needed: the build copies the whole `src/` tree, and an
+  extension page opened via `chrome.runtime.getURL` needs no
+  `web_accessible_resources`.
+
+---
+
+## 11. Baselines for the 2026-08 anti-churn work
+
+Frozen 06/08/2026 over 30 days (08/07 → 06/08), so the welcome page and the survey
+changes can be judged on a comparable window. Re-measure ~30 days after release.
+
+| Metric | Source | GF | AF |
+|---|---|---|---|
+| Installs | CWS | 674 (22.5/day) | 113 (3.8/day) |
+| Uninstalls | CWS | 318 (10.6/day) | 40 (1.3/day) |
+| **Churn** | CWS | **47%** | 35% |
+| Net | CWS | +356 | +73 |
+| Share with `opens=0` | survey | **23%** | 1/7 |
+| `dont-understand-how` | survey | 12% | 1/7 |
+| Uninstalled same day | survey | 77% | 7/7 |
+
+Reading cautions:
+
+- GF churn was **already** falling before any change (52% → 42% between the two
+  fortnights). Don't claim that slope: compare GF's movement against AF's over the
+  same window, AF being a rough control (same code, same release, different audience).
+- AF is too small (40 uninstalls/month) for a change there to mean anything. Conclude
+  on GF; on AF only check for the absence of a regression.
+- **2026-07-30 reads 0 installs / 0 uninstalls on both extensions** — a CWS reporting
+  gap, not a real day. Exclude it from any daily average.
+- Once `s` (§9) has data, the decisive question becomes readable: among those who
+  leave with `saves > 0` (they did use it), what share ask for `wanted-in-page-ui`?
+  That number — not today's n=4 — decides whether the in-page UI is worth building
+  (§8's deferred item).

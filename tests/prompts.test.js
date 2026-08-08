@@ -86,10 +86,13 @@ describe('displayPrompts — search filter', () => {
     expect(titles()).toEqual(['Welcome']);
   });
 
-  test('shows the empty-state message when nothing matches', () => {
+  // A search miss must not claim the library is empty — that made the search look
+  // broken to users who did have prompts saved (uninstall survey, 2026-08).
+  test('shows the no-results message when nothing matches', () => {
     render('zzz');
     expect(listEl().querySelectorAll('.prompt-item')).toHaveLength(0);
-    expect(listEl().textContent).toContain('promptNoSavedYet');
+    expect(listEl().textContent).toContain('noResults');
+    expect(listEl().textContent).not.toContain('promptNoSavedYet');
   });
 
   test('suppresses the pinned divider while searching', () => {

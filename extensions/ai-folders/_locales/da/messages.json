@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Ingen resultater 🕵️"
   },
+  "noResultsHint": {
+    "message": "Søgningen dækker kun samtaler, du allerede har gemt – gem en med ➕ først."
+  },
   "emptyFoldersHint": {
     "message": "Ingen mapper endnu – åbn en samtale på et understøttet AI-websted, og gem den med ➕ eller højrekliksmenuen."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Støt denne udvidelse ved at købe mig en kop kaffe!"
+  },
+  "welcomeReady": {
+    "message": "Alt er klar."
+  },
+  "welcomePinTitle": {
+    "message": "Fastgør den til værktøjslinjen"
+  },
+  "welcomePinBody": {
+    "message": "Klik på puslespilsbrik-ikonet øverst til højre i browseren og derefter på nålen ved siden af denne udvidelse. Indtil da holder browseren den skjult i den menu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Åbn en samtale"
+  },
+  "welcomeOpenBody": {
+    "message": "Åbn en samtale på et af de understøttede AI-websteder."
+  },
+  "welcomeSaveTitle": {
+    "message": "Gem den i en mappe"
+  },
+  "welcomeSaveBody": {
+    "message": "Klik på udvidelsens ikon, skriv et mappenavn og tryk på ➕. Højreklik på siden virker også."
+  },
+  "welcomeCta": {
+    "message": "Forstået"
   }
 }

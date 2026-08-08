@@ -527,6 +527,7 @@
     /* --- Status Texts and Footer --- */
     #status { color: #1e8e3e; font-size: 12px; display: none; margin-top: 10px; margin-bottom: 0; text-align: center; font-weight: bold; }
     #noResults { text-align: center; color: var(--muted-text); margin: 20px 0; font-size: 13px; display: none; }
+    #noResults .nr-hint { margin-top: 6px; font-size: 12px; line-height: 1.45; opacity: 0.8; }
 
     /* First-run empty state for folder mode. */
     .empty-state {

@@ -29,6 +29,9 @@
   "noResults": {
     "message": "找不到結果 🕵️"
   },
+  "noResultsHint": {
+    "message": "搜尋僅涵蓋已儲存的對話 — 請先用 ➕ 儲存一個對話。"
+  },
   "emptyFoldersHint": {
     "message": "還沒有資料夾 — 開啟一個 Gemini 對話，然後用 ➕ 或右鍵選單儲存它。"
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "透過請我喝杯咖啡來支持這個擴充功能！"
+  },
+  "welcomeReady": {
+    "message": "一切就緒。"
+  },
+  "welcomePinTitle": {
+    "message": "把它固定到工具列"
+  },
+  "welcomePinBody": {
+    "message": "點擊瀏覽器右上角的拼圖圖示，然後點擊這個擴充功能旁邊的圖釘。在固定之前，瀏覽器會一直把它藏在那個選單裡。"
+  },
+  "welcomeOpenTitle": {
+    "message": "開啟一個對話"
+  },
+  "welcomeOpenBody": {
+    "message": "在 Gemini 上開啟任意一個對話。"
+  },
+  "welcomeSaveTitle": {
+    "message": "儲存到資料夾"
+  },
+  "welcomeSaveBody": {
+    "message": "點擊擴充功能圖示，輸入資料夾名稱並按 ➕。在頁面上按右鍵也可以。"
+  },
+  "welcomeCta": {
+    "message": "我瞭解了"
   }
 }

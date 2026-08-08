@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Ei tuloksia 🕵️"
   },
+  "noResultsHint": {
+    "message": "Haku kattaa vain jo tallennetut keskustelut – tallenna ensin yksi painikkeella ➕."
+  },
   "emptyFoldersHint": {
     "message": "Ei vielä kansioita – avaa Gemini-keskustelu ja tallenna se painikkeella ➕ tai hiiren oikean painikkeen valikosta."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Tue tätä laajennusta ostamalla minulle kahvi!"
+  },
+  "welcomeReady": {
+    "message": "Kaikki on valmiina."
+  },
+  "welcomePinTitle": {
+    "message": "Kiinnitä se työkalupalkkiin"
+  },
+  "welcomePinBody": {
+    "message": "Napsauta selaimen oikeassa yläkulmassa olevaa palapelin palan kuvaketta ja sitten tämän laajennuksen vieressä olevaa nuppineulaa. Siihen asti selain pitää sen piilossa tuossa valikossa."
+  },
+  "welcomeOpenTitle": {
+    "message": "Avaa keskustelu"
+  },
+  "welcomeOpenBody": {
+    "message": "Avaa mikä tahansa keskustelu Geminissä."
+  },
+  "welcomeSaveTitle": {
+    "message": "Tallenna se kansioon"
+  },
+  "welcomeSaveBody": {
+    "message": "Napsauta laajennuksen kuvaketta, kirjoita kansion nimi ja paina ➕. Myös sivun napsauttaminen hiiren oikealla painikkeella toimii."
+  },
+  "welcomeCta": {
+    "message": "Selvä"
   }
 }

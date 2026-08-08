@@ -220,9 +220,13 @@ function displayPrompts() {
       return (prompts[b].timestamp || 0) - (prompts[a].timestamp || 0);
     });
     if (titles.length === 0) {
+      // A search miss is not an empty library: saying "no prompts saved yet" while
+      // the user has prompts made the search look broken.
       const emptyMsg = Object.assign(document.createElement('div'), {
         style: 'text-align:center;color:var(--muted-text);font-size:13px;',
-        textContent: chrome.i18n.getMessage("promptNoSavedYet") || 'No prompts saved yet.',
+        textContent: searchQuery
+          ? (chrome.i18n.getMessage("noResults") || 'No results found 🕵️')
+          : (chrome.i18n.getMessage("promptNoSavedYet") || 'No prompts saved yet.'),
       });
       promptListDiv.replaceChildren(emptyMsg);
       return;

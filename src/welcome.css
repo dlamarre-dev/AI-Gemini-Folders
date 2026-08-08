@@ -1,0 +1,159 @@
+/* welcome.css — first-run page (src/welcome.html).
+
+   The palette tokens are duplicated from popup.css rather than imported: popup.css
+   pins `body { width: 392px; max-height: 576px }` and an `html { overflow-y: hidden }`
+   that a full browser tab must not inherit, and that block is explicitly fragile
+   (see CLAUDE.md §6 — do not touch its overflow rules). Copying ~13 variables is
+   cheaper than fighting it. Keep the two palettes in step if the popup's changes. */
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #202124;
+  --border-color: #dadce0;
+  --folder-bg: #f8f9fa;
+  --folder-hover: #f1f3f4;
+  --accent-color: #1a73e8;
+  --accent-hover: #1557b0;
+  --input-bg: #ffffff;
+  --muted-text: #5f6368;
+  --art-line: #dadce0;
+  --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg-color: #202124;
+    --text-color: #e8eaed;
+    --border-color: rgba(255,255,255,0.12);
+    --folder-bg: rgba(255,255,255,0.06);
+    --folder-hover: rgba(255,255,255,0.10);
+    --accent-color: #8ab4f8;
+    --accent-hover: #aecbf9;
+    --input-bg: rgba(255,255,255,0.05);
+    --muted-text: rgba(255,255,255,0.62);
+    --art-line: rgba(255,255,255,0.22);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
+  }
+}
+
+html { background-color: var(--bg-color); }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.55;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 24px 72px;
+}
+
+/* --- Header --- */
+.head { text-align: center; }
+.head-icon { width: 56px; height: 56px; }
+.head-title {
+  margin: 16px 0 4px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+.head-sub { margin: 0; color: var(--muted-text); font-size: 15px; }
+
+/* --- Steps --- */
+.steps {
+  list-style: none;
+  margin: 44px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 32px 1fr 200px;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--folder-bg);
+}
+
+.step-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.step-title { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+.step-body { margin: 0; font-size: 14px; color: var(--muted-text); }
+
+/* The first step carries the whole page: without a pinned toolbar button the
+   extension is invisible, which is what the survey data pointed at. */
+.step:first-child {
+  border-color: var(--accent-color);
+  background: var(--folder-hover);
+}
+
+/* --- Illustrations --- */
+.step-art { width: 200px; height: 96px; display: block; }
+.art-panel { fill: var(--input-bg); stroke: var(--art-line); stroke-width: 1.5; }
+.art-menu  { fill: var(--folder-hover); stroke: var(--art-line); stroke-width: 1; }
+.art-bar      { fill: var(--art-line); }
+.art-bar-dim  { fill: var(--art-line); opacity: 0.55; }
+.art-chip     { fill: var(--accent-color); }
+.art-chip-dim { fill: var(--art-line); opacity: 0.7; }
+.art-avatar   { fill: var(--art-line); opacity: 0.7; }
+.art-accent   { fill: var(--muted-text); }
+.art-input    { fill: var(--folder-hover); stroke: var(--art-line); stroke-width: 1; }
+.art-folder   { fill: var(--folder-hover); stroke: var(--accent-color); stroke-width: 1; }
+.art-chat     { fill: var(--input-bg); stroke: var(--art-line); stroke-width: 1; }
+.art-pin-hl   { fill: var(--accent-color); }
+.art-pin      { fill: var(--bg-color); }
+.art-plus     { fill: var(--accent-color); }
+.art-plus-glyph { stroke: var(--bg-color); stroke-width: 2.5; stroke-linecap: round; fill: none; }
+
+/* --- Call to action --- */
+.cta-row { margin-top: 36px; text-align: center; }
+.cta {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 30px;
+  border: none;
+  border-radius: 22px;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.15s ease;
+}
+.cta:hover { background: var(--accent-hover); }
+.cta:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
+
+/* Right-to-left locales: mirror the layout so the art stays on the outer edge. */
+[dir="rtl"] .step { grid-template-columns: 32px 1fr 200px; }
+
+/* Narrow windows: the illustration stacks under the text instead of squeezing it. */
+@media (max-width: 560px) {
+  .wrap { padding: 36px 16px 48px; }
+  .step { grid-template-columns: 32px 1fr; }
+  .step-art { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta { transition: none; }
+}
