@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Walang nahanap na resulta 🕵️"
   },
+  "noResultsHint": {
+    "message": "Ang paghahanap ay sa mga naka-save na usapan lang — mag-save muna ng isa gamit ang ➕."
+  },
   "emptyFoldersHint": {
     "message": "Wala pang folder — magbukas ng usapan sa Gemini at i-save ito gamit ang ➕ o ang right-click menu."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Suportahan ang extension na ito sa pamamagitan ng pagbili mo ng kape para sa akin!"
+  },
+  "welcomeReady": {
+    "message": "Handa na ang lahat."
+  },
+  "welcomePinTitle": {
+    "message": "I-pin ito sa toolbar mo"
+  },
+  "welcomePinBody": {
+    "message": "I-click ang icon na hugis piyesa ng puzzle sa kanang itaas ng browser, tapos ang pin sa tabi ng extension na ito. Hangga't hindi mo ito gagawin, itinatago ito ng browser sa menu na iyon."
+  },
+  "welcomeOpenTitle": {
+    "message": "Magbukas ng usapan"
+  },
+  "welcomeOpenBody": {
+    "message": "Magbukas ng kahit anong usapan sa Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "I-save ito sa isang folder"
+  },
+  "welcomeSaveBody": {
+    "message": "I-click ang icon ng extension, mag-type ng pangalan ng folder at pindutin ang ➕. Puwede rin ang right-click sa pahina."
+  },
+  "welcomeCta": {
+    "message": "Nakuha ko"
   }
 }

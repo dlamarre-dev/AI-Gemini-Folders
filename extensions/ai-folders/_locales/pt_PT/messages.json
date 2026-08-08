@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Nenhum resultado encontrado 🕵️"
   },
+  "noResultsHint": {
+    "message": "A pesquisa abrange apenas as conversas que já guardou — guarde uma com ➕ primeiro."
+  },
   "emptyFoldersHint": {
     "message": "Ainda sem pastas — abra uma conversa num site de IA compatível e guarde-a com ➕ ou pelo menu do botão direito."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Apoie esta extensão comprando-me um café!"
+  },
+  "welcomeReady": {
+    "message": "Está tudo pronto."
+  },
+  "welcomePinTitle": {
+    "message": "Fixe na sua barra de ferramentas"
+  },
+  "welcomePinBody": {
+    "message": "Clique no ícone em forma de peça de puzzle no canto superior direito do navegador e depois no alfinete ao lado desta extensão. Até o fazer, o navegador mantém-na escondida nesse menu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Abra uma conversa"
+  },
+  "welcomeOpenBody": {
+    "message": "Abra uma conversa em qualquer um dos sites de IA compatíveis."
+  },
+  "welcomeSaveTitle": {
+    "message": "Guarde numa pasta"
+  },
+  "welcomeSaveBody": {
+    "message": "Clique no ícone da extensão, escreva um nome de pasta e prima ➕. Clicar com o botão direito na página também funciona."
+  },
+  "welcomeCta": {
+    "message": "Compreendi"
   }
 }

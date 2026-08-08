@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Nema rezultata 🕵️"
   },
+  "noResultsHint": {
+    "message": "Pretraga obuhvata samo razgovore koje ste već sačuvali — prvo sačuvajte jedan pomoću ➕."
+  },
   "emptyFoldersHint": {
     "message": "Još nema fascikli — otvorite razgovor na podržanom sajtu veštačke inteligencije i sačuvajte ga pomoću ➕ ili menija desnog klika."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Podržite ovo proširenje tako što ćete mi kupiti kafu!"
+  },
+  "welcomeReady": {
+    "message": "Sve je spremno."
+  },
+  "welcomePinTitle": {
+    "message": "Prikačite ga na traku sa alatkama"
+  },
+  "welcomePinBody": {
+    "message": "Kliknite na ikonu dela slagalice u gornjem desnom uglu pregledača, a zatim na pribadaču uz ovo proširenje. Dok to ne uradite, pregledač ga drži skrivenim u tom meniju."
+  },
+  "welcomeOpenTitle": {
+    "message": "Otvorite razgovor"
+  },
+  "welcomeOpenBody": {
+    "message": "Otvorite razgovor na jednom od podržanih sajtova veštačke inteligencije."
+  },
+  "welcomeSaveTitle": {
+    "message": "Sačuvajte ga u fasciklu"
+  },
+  "welcomeSaveBody": {
+    "message": "Kliknite na ikonu proširenja, upišite naziv fascikle i pritisnite ➕. Radi i desni klik na stranicu."
+  },
+  "welcomeCta": {
+    "message": "Razumem"
   }
 }

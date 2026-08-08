@@ -30,7 +30,19 @@ function applyCommonI18n() {
   document.getElementById('chatTitle').placeholder = chrome.i18n.getMessage("chatPlaceholder");
   document.getElementById('saveBtn').textContent = chrome.i18n.getMessage("saveBtn");
   document.getElementById('status').textContent = chrome.i18n.getMessage("statusSaved");
-  document.getElementById('noResults').textContent = chrome.i18n.getMessage("noResults");
+  // Two lines: the headline, plus a hint that search only covers what was already
+  // saved. Users kept searching here for conversations from the site's own sidebar
+  // and concluded the extension was broken (uninstall survey, 2026-08).
+  const noResultsEl = document.getElementById('noResults');
+  const noResultsHint = Object.assign(document.createElement('div'), {
+    className: 'nr-hint',
+    textContent: chrome.i18n.getMessage("noResultsHint")
+      || "Search only covers conversations you already saved — save one with ➕ first.",
+  });
+  noResultsEl.replaceChildren(
+    document.createTextNode(chrome.i18n.getMessage("noResults")),
+    noResultsHint,
+  );
   document.getElementById('exportBtn').textContent = chrome.i18n.getMessage("exportBtn");
   document.getElementById('importBtn').textContent = chrome.i18n.getMessage("importBtn");
   document.getElementById('toggleAddPanelBtn').textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");

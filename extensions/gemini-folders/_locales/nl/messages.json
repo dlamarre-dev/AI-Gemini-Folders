@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Geen resultaten gevonden 🕵️"
   },
+  "noResultsHint": {
+    "message": "Zoeken werkt alleen in gesprekken die je al hebt opgeslagen — sla er eerst een op met ➕."
+  },
   "emptyFoldersHint": {
     "message": "Nog geen mappen — open een Gemini-gesprek en sla het op met ➕ of het rechtermuisknopmenu."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Steun deze extensie door me een kopje koffie te kopen!"
+  },
+  "welcomeReady": {
+    "message": "Alles staat klaar."
+  },
+  "welcomePinTitle": {
+    "message": "Zet hem vast op je werkbalk"
+  },
+  "welcomePinBody": {
+    "message": "Klik op het puzzelstukje rechtsboven in de browser en daarna op de speld naast deze extensie. Tot dan houdt de browser hem verborgen in dat menu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Open een gesprek"
+  },
+  "welcomeOpenBody": {
+    "message": "Open een willekeurig gesprek op Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Sla het op in een map"
+  },
+  "welcomeSaveBody": {
+    "message": "Klik op het pictogram van de extensie, typ een mapnaam en druk op ➕. Rechtsklikken op de pagina werkt ook."
+  },
+  "welcomeCta": {
+    "message": "Duidelijk"
   }
 }

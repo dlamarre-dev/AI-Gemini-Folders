@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Rezultatų nerasta 🕵️"
   },
+  "noResultsHint": {
+    "message": "Paieška apima tik jau išsaugotus pokalbius — pirmiausia išsaugokite vieną su ➕."
+  },
   "emptyFoldersHint": {
     "message": "Aplankų dar nėra — atidarykite Gemini pokalbį ir išsaugokite jį su ➕ arba dešiniojo pelės mygtuko meniu."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Palaikykite šį plėtinį nupirkdami man kavos!"
+  },
+  "welcomeReady": {
+    "message": "Viskas paruošta."
+  },
+  "welcomePinTitle": {
+    "message": "Prisekite jį prie įrankių juostos"
+  },
+  "welcomePinBody": {
+    "message": "Spustelėkite galvosūkio detalės piktogramą naršyklės viršuje dešinėje, tada smeigtuką prie šio plėtinio. Kol to nepadarysite, naršyklė laiko jį paslėptą tame meniu."
+  },
+  "welcomeOpenTitle": {
+    "message": "Atidarykite pokalbį"
+  },
+  "welcomeOpenBody": {
+    "message": "Atidarykite bet kurį pokalbį Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Išsaugokite jį aplanke"
+  },
+  "welcomeSaveBody": {
+    "message": "Spustelėkite plėtinio piktogramą, įrašykite aplanko pavadinimą ir paspauskite ➕. Veikia ir dešinysis pelės mygtukas puslapyje."
+  },
+  "welcomeCta": {
+    "message": "Supratau"
   }
 }

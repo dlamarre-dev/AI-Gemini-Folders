@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+  welcome.html — opened in a tab once, on fresh install only (background.js,
+  reason === 'install'). It exists because the uninstall survey (2026-08) showed
+  23% of people who removed Gemini Folders had never opened the popup even once:
+  Chrome hides new extensions behind the puzzle icon, so after installing, nothing
+  on screen changes and the product effectively never happened. Step 1 is therefore
+  "pin it", not "here are our features".
+
+  Shared by both extensions on purpose — every string comes from chrome.i18n, so
+  the Gemini-vs-18-sites wording lives in each extension's own _locales.
+  Nothing here talks to the network.
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="color-scheme" content="dark light">
+  <title>&nbsp;</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="head">
+      <img id="wIcon" class="head-icon" src="icon.svg" alt="">
+      <h1 id="wTitle" class="head-title"></h1>
+      <p id="wReady" class="head-sub"></p>
+    </header>
+
+    <ol class="steps">
+      <li class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h2 id="wPinTitle" class="step-title"></h2>
+          <p id="wPinBody" class="step-body"></p>
+        </div>
+        <!-- A schematic of the browser toolbar rather than a screenshot: it stays
+             sharp at any zoom, follows the colour scheme, needs no localized copy
+             per language, and adds no weight to the package. -->
+        <svg class="step-art" viewBox="0 0 200 96" role="img" aria-hidden="true">
+          <rect x="1" y="1" width="198" height="94" rx="8" class="art-panel"/>
+          <rect x="12" y="14" width="120" height="14" rx="7" class="art-bar"/>
+          <!-- puzzle icon -->
+          <g class="art-accent">
+            <path d="M148 14h10a3 3 0 0 1 3 3v4a3 3 0 0 0 3 3 3 3 0 0 1 0 6 3 3 0 0 0-3 3v4a3 3 0 0 1-3 3h-10a3 3 0 0 1-3-3v-4a3 3 0 0 0-3-3 3 3 0 0 1 0-6 3 3 0 0 0 3-3v-4a3 3 0 0 1 3-3z"/>
+          </g>
+          <circle cx="178" cy="21" r="7" class="art-avatar"/>
+          <!-- the dropdown it opens, with the pin highlighted -->
+          <rect x="112" y="42" width="78" height="44" rx="6" class="art-menu"/>
+          <rect x="120" y="50" width="10" height="10" rx="3" class="art-chip"/>
+          <rect x="136" y="53" width="30" height="4" rx="2" class="art-bar"/>
+          <g class="art-pin-hl">
+            <circle cx="178" cy="55" r="8"/>
+          </g>
+          <!-- Material "push_pin", 24px box scaled to 12 and centred on the circle.
+               Must read as a pushpin, not a cross: step 3 shows a real ➕ button and
+               the two must not look like the same control. -->
+          <g class="art-pin" transform="translate(172 49) scale(0.5)">
+            <path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z"/>
+          </g>
+          <rect x="120" y="68" width="10" height="10" rx="3" class="art-chip-dim"/>
+          <rect x="136" y="71" width="22" height="4" rx="2" class="art-bar-dim"/>
+        </svg>
+      </li>
+
+      <li class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h2 id="wOpenTitle" class="step-title"></h2>
+          <p id="wOpenBody" class="step-body"></p>
+        </div>
+        <svg class="step-art" viewBox="0 0 200 96" role="img" aria-hidden="true">
+          <rect x="1" y="1" width="198" height="94" rx="8" class="art-panel"/>
+          <rect x="12" y="12" width="46" height="72" rx="6" class="art-menu"/>
+          <rect x="18" y="20" width="34" height="4" rx="2" class="art-bar-dim"/>
+          <rect x="18" y="30" width="28" height="4" rx="2" class="art-bar-dim"/>
+          <rect x="18" y="40" width="32" height="4" rx="2" class="art-bar-dim"/>
+          <rect x="70" y="20" width="112" height="5" rx="2.5" class="art-bar"/>
+          <rect x="70" y="33" width="96" height="5" rx="2.5" class="art-bar"/>
+          <rect x="70" y="46" width="104" height="5" rx="2.5" class="art-bar-dim"/>
+          <rect x="70" y="66" width="112" height="18" rx="9" class="art-input"/>
+        </svg>
+      </li>
+
+      <li class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h2 id="wSaveTitle" class="step-title"></h2>
+          <p id="wSaveBody" class="step-body"></p>
+        </div>
+        <svg class="step-art" viewBox="0 0 200 96" role="img" aria-hidden="true">
+          <rect x="1" y="1" width="198" height="94" rx="8" class="art-panel"/>
+          <rect x="12" y="12" width="120" height="16" rx="8" class="art-input"/>
+          <g class="art-plus">
+            <circle cx="164" cy="20" r="14"/>
+          </g>
+          <path d="M164 13v14M157 20h14" class="art-plus-glyph"/>
+          <rect x="12" y="42" width="176" height="18" rx="6" class="art-folder"/>
+          <rect x="22" y="49" width="10" height="4" rx="2" class="art-bar"/>
+          <rect x="38" y="49" width="52" height="4" rx="2" class="art-bar"/>
+          <rect x="24" y="68" width="164" height="16" rx="6" class="art-chat"/>
+          <rect x="34" y="74" width="70" height="4" rx="2" class="art-bar-dim"/>
+        </svg>
+      </li>
+    </ol>
+
+    <div class="cta-row">
+      <button id="wCta" type="button" class="cta"></button>
+    </div>
+  </main>
+  <script src="welcome.js"></script>
+</body>
+</html>

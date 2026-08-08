@@ -29,6 +29,9 @@
   "noResults": {
     "message": "未找到结果 🕵️"
   },
+  "noResultsHint": {
+    "message": "搜索仅涵盖已保存的对话 — 请先用 ➕ 保存一个对话。"
+  },
   "emptyFoldersHint": {
     "message": "还没有文件夹 — 打开一个 Gemini 对话，然后用 ➕ 或右键菜单保存它。"
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "通过请我喝杯咖啡来支持这个扩展！"
+  },
+  "welcomeReady": {
+    "message": "一切就绪。"
+  },
+  "welcomePinTitle": {
+    "message": "把它固定到工具栏"
+  },
+  "welcomePinBody": {
+    "message": "点击浏览器右上角的拼图图标，然后点击这个扩展旁边的图钉。在固定之前，浏览器会一直把它藏在那个菜单里。"
+  },
+  "welcomeOpenTitle": {
+    "message": "打开一个对话"
+  },
+  "welcomeOpenBody": {
+    "message": "在 Gemini 上打开任意一个对话。"
+  },
+  "welcomeSaveTitle": {
+    "message": "保存到文件夹"
+  },
+  "welcomeSaveBody": {
+    "message": "点击扩展图标，输入文件夹名称并按 ➕。在页面上右键点击也可以。"
+  },
+  "welcomeCta": {
+    "message": "明白了"
   }
 }

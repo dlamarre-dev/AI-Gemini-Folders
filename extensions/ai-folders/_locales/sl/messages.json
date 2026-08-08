@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Ni rezultatov 🕵️"
   },
+  "noResultsHint": {
+    "message": "Iskanje zajema samo pogovore, ki ste jih že shranili — najprej shranite enega z ➕."
+  },
   "emptyFoldersHint": {
     "message": "Še ni map — odprite pogovor na podprtem spletnem mestu z UI in ga shranite z ➕ ali z menijem desnega klika."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Podprite to razširitev s tem, da mi kupite kavo!"
+  },
+  "welcomeReady": {
+    "message": "Vse je pripravljeno."
+  },
+  "welcomePinTitle": {
+    "message": "Pripnite ga v orodno vrstico"
+  },
+  "welcomePinBody": {
+    "message": "Kliknite ikono sestavljanke zgoraj desno v brskalniku, nato pa bucko ob tej razširitvi. Do takrat jo brskalnik ohranja skrito v tistem meniju."
+  },
+  "welcomeOpenTitle": {
+    "message": "Odprite pogovor"
+  },
+  "welcomeOpenBody": {
+    "message": "Odprite pogovor na katerem od podprtih spletnih mest z UI."
+  },
+  "welcomeSaveTitle": {
+    "message": "Shranite ga v mapo"
+  },
+  "welcomeSaveBody": {
+    "message": "Kliknite ikono razširitve, vpišite ime mape in pritisnite ➕. Deluje tudi desni klik na stran."
+  },
+  "welcomeCta": {
+    "message": "Razumem"
   }
 }

@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Nenašli sa žiadne výsledky 🕵️"
   },
+  "noResultsHint": {
+    "message": "Hľadanie zahŕňa len konverzácie, ktoré ste už uložili — najprv jednu uložte pomocou ➕."
+  },
   "emptyFoldersHint": {
     "message": "Zatiaľ žiadne priečinky — otvorte konverzáciu Gemini a uložte ju pomocou ➕ alebo ponuky po kliknutí pravým tlačidlom."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Podporte toto rozšírenie kúpou kávy pre mňa!"
+  },
+  "welcomeReady": {
+    "message": "Všetko je pripravené."
+  },
+  "welcomePinTitle": {
+    "message": "Pripnite si ho na lištu"
+  },
+  "welcomePinBody": {
+    "message": "Kliknite na ikonu puzzle vpravo nahore v prehliadači a potom na pripínačik vedľa tohto rozšírenia. Kým to neurobíte, prehliadač ho drží skryté v tej ponuke."
+  },
+  "welcomeOpenTitle": {
+    "message": "Otvorte konverzáciu"
+  },
+  "welcomeOpenBody": {
+    "message": "Otvorte akúkoľvek konverzáciu v Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Uložte ju do priečinka"
+  },
+  "welcomeSaveBody": {
+    "message": "Kliknite na ikonu rozšírenia, napíšte názov priečinka a stlačte ➕. Funguje aj pravé kliknutie na stránku."
+  },
+  "welcomeCta": {
+    "message": "Rozumiem"
   }
 }

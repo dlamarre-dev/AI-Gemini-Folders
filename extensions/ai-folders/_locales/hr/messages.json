@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Nema rezultata 🕵️"
   },
+  "noResultsHint": {
+    "message": "Pretraživanje obuhvaća samo razgovore koje ste već spremili — najprije spremite jedan pomoću ➕."
+  },
   "emptyFoldersHint": {
     "message": "Još nema mapa — otvorite razgovor na podržanom AI web-mjestu i spremite ga pomoću ➕ ili izbornika desnog klika."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Podržite ovo proširenje kupnjom kave za mene!"
+  },
+  "welcomeReady": {
+    "message": "Sve je spremno."
+  },
+  "welcomePinTitle": {
+    "message": "Prikvačite ga na alatnu traku"
+  },
+  "welcomePinBody": {
+    "message": "Kliknite ikonu dijela slagalice u gornjem desnom kutu pregljednika, a zatim pribadaču uz ovo proširenje. Dok to ne učinite, pregljednik ga drži skrivenim u tom izborniku."
+  },
+  "welcomeOpenTitle": {
+    "message": "Otvorite razgovor"
+  },
+  "welcomeOpenBody": {
+    "message": "Otvorite razgovor na jednom od podržanih AI web-mjesta."
+  },
+  "welcomeSaveTitle": {
+    "message": "Spremite ga u mapu"
+  },
+  "welcomeSaveBody": {
+    "message": "Kliknite ikonu proširenja, upišite naziv mape i pritisnite ➕. Radi i desni klik na stranicu."
+  },
+  "welcomeCta": {
+    "message": "Razumijem"
   }
 }

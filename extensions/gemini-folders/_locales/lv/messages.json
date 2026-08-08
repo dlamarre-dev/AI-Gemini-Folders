@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Rezultātu nav 🕵️"
   },
+  "noResultsHint": {
+    "message": "Meklēšana ietver tikai jau saglabātās sarunas — vispirms saglabājiet vienu ar ➕."
+  },
   "emptyFoldersHint": {
     "message": "Vēl nav mapju — atveriet Gemini sarunu un saglabājiet to ar ➕ vai ar labā klikšķa izvēlni."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Atbalstiet šo paplašinājumu, nopērkot man kafiju!"
+  },
+  "welcomeReady": {
+    "message": "Viss ir gatavs."
+  },
+  "welcomePinTitle": {
+    "message": "Piespraudiet to rīkjoslai"
+  },
+  "welcomePinBody": {
+    "message": "Noklikšķiniet uz puzles gabaliņa ikonas pārlūka augšējā labajā stūrī, tad uz spraudītes blakus šim paplašinājumam. Līdz tam pārlūks to tur paslēptu šajā izvēlnē."
+  },
+  "welcomeOpenTitle": {
+    "message": "Atveriet sarunu"
+  },
+  "welcomeOpenBody": {
+    "message": "Atveriet jebkuru sarunu Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Saglabājiet to mapē"
+  },
+  "welcomeSaveBody": {
+    "message": "Noklikšķiniet uz paplašinājuma ikonas, ierakstiet mapes nosaukumu un nospiediet ➕. Darbojas arī labais klikšķis uz lapas."
+  },
+  "welcomeCta": {
+    "message": "Sapratu"
   }
 }

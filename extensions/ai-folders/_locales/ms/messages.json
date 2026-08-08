@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Tiada hasil 🕵️"
   },
+  "noResultsHint": {
+    "message": "Carian hanya merangkumi perbualan yang telah anda simpan — simpan satu dengan ➕ dahulu."
+  },
   "emptyFoldersHint": {
     "message": "Belum ada folder — buka perbualan di tapak AI yang disokong dan simpannya dengan ➕ atau menu klik kanan."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Sokong sambungan ini dengan membelikan saya kopi!"
+  },
+  "welcomeReady": {
+    "message": "Semuanya sedia."
+  },
+  "welcomePinTitle": {
+    "message": "Sematkan pada bar alat anda"
+  },
+  "welcomePinBody": {
+    "message": "Klik ikon kepingan puzzle di kanan atas pelayar, kemudian pin di sebelah sambungan ini. Sebelum itu, pelayar menyimpannya tersembunyi dalam menu tersebut."
+  },
+  "welcomeOpenTitle": {
+    "message": "Buka satu perbualan"
+  },
+  "welcomeOpenBody": {
+    "message": "Buka perbualan di salah satu tapak AI yang disokong."
+  },
+  "welcomeSaveTitle": {
+    "message": "Simpan dalam folder"
+  },
+  "welcomeSaveBody": {
+    "message": "Klik ikon sambungan, tulis nama folder, kemudian tekan ➕. Klik kanan pada halaman juga berfungsi."
+  },
+  "welcomeCta": {
+    "message": "Faham"
   }
 }

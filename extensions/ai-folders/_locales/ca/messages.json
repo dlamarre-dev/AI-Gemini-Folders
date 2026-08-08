@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Cap resultat 🕵️"
   },
+  "noResultsHint": {
+    "message": "La cerca només inclou les converses que ja has desat — desa'n una amb ➕ primer."
+  },
   "emptyFoldersHint": {
     "message": "Encara no hi ha carpetes — obre una conversa en un lloc d'IA compatible i desa-la amb ➕ o el menú del clic dret."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Dóna suport a aquesta extensió comprant-me un cafè!"
+  },
+  "welcomeReady": {
+    "message": "Tot a punt."
+  },
+  "welcomePinTitle": {
+    "message": "Fixa-la a la barra d'eines"
+  },
+  "welcomePinBody": {
+    "message": "Fes clic a la icona de peça de trencaclosques a la part superior dreta del navegador i després a la xinxeta al costat d'aquesta extensió. Fins que no ho facis, el navegador la manté amagada en aquell menú."
+  },
+  "welcomeOpenTitle": {
+    "message": "Obre una conversa"
+  },
+  "welcomeOpenBody": {
+    "message": "Obre una conversa en qualsevol dels llocs d'IA compatibles."
+  },
+  "welcomeSaveTitle": {
+    "message": "Desa-la en una carpeta"
+  },
+  "welcomeSaveBody": {
+    "message": "Fes clic a la icona de l'extensió, escriu un nom de carpeta i prem ➕. El clic dret sobre la pàgina també funciona."
+  },
+  "welcomeCta": {
+    "message": "Entesos"
   }
 }

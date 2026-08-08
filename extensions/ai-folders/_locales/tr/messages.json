@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Sonuç bulunamadı 🕵️"
   },
+  "noResultsHint": {
+    "message": "Arama yalnızca kaydettiğiniz sohbetleri kapsar — önce ➕ ile bir sohbet kaydedin."
+  },
   "emptyFoldersHint": {
     "message": "Henüz klasör yok — desteklenen bir yapay zekâ sitesinde bir sohbet açın ve ➕ ile veya sağ tık menüsüyle kaydedin."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Bu uzantıyı desteklemek için bana bir kahve ısmarlayın!"
+  },
+  "welcomeReady": {
+    "message": "Her şey hazır."
+  },
+  "welcomePinTitle": {
+    "message": "Araç çubuğunuza sabitleyin"
+  },
+  "welcomePinBody": {
+    "message": "Tarayıcının sağ üst köşesindeki yapboz parçası simgesine, ardından bu uzantının yanındaki raptiyeye tıklayın. Bunu yapmadığınız sürece tarayıcı onu o menüde saklı tutar."
+  },
+  "welcomeOpenTitle": {
+    "message": "Bir sohbet açın"
+  },
+  "welcomeOpenBody": {
+    "message": "Desteklenen yapay zekâ sitelerinden birinde bir sohbet açın."
+  },
+  "welcomeSaveTitle": {
+    "message": "Bir klasöre kaydedin"
+  },
+  "welcomeSaveBody": {
+    "message": "Uzantı simgesine tıklayın, bir klasör adı yazın ve ➕ tuşuna basın. Sayfaya sağ tıklamak da işe yarar."
+  },
+  "welcomeCta": {
+    "message": "Anladım"
   }
 }

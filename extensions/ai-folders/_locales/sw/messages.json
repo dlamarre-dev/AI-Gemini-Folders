@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Hakuna matokeo 🕵️"
   },
+  "noResultsHint": {
+    "message": "Utafutaji unahusu mazungumzo uliyohifadhi tu — hifadhi mazungumzo kwa ➕ kwanza."
+  },
   "emptyFoldersHint": {
     "message": "Bado hakuna folda — fungua mazungumzo kwenye tovuti ya AI inayotumika na uyahifadhi kwa ➕ au menyu ya kubofya kulia."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Saidia ugani huu kwa kununulia kahawa!"
+  },
+  "welcomeReady": {
+    "message": "Kila kitu ki tayari."
+  },
+  "welcomePinTitle": {
+    "message": "Kibandike kwenye upau wa vidhibiti"
+  },
+  "welcomePinBody": {
+    "message": "Bofya aikoni ya kipande cha fumbo juu kulia kwenye kivinjari, kisha pini iliyo kando ya kiendelezi hiki. Hadi ufanye hivyo, kivinjari kinakificha kwenye menyu hiyo."
+  },
+  "welcomeOpenTitle": {
+    "message": "Fungua mazungumzo"
+  },
+  "welcomeOpenBody": {
+    "message": "Fungua mazungumzo kwenye tovuti yoyote ya AI inayotumika."
+  },
+  "welcomeSaveTitle": {
+    "message": "Yahifadhi kwenye folda"
+  },
+  "welcomeSaveBody": {
+    "message": "Bofya aikoni ya kiendelezi, andika jina la folda na ubonyeze ➕. Kubofya kulia kwenye ukurasa pia kunafanya kazi."
+  },
+  "welcomeCta": {
+    "message": "Nimeelewa"
   }
 }

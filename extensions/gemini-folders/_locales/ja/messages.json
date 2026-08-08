@@ -29,6 +29,9 @@
   "noResults": {
     "message": "結果が見つかりません 🕵️"
   },
+  "noResultsHint": {
+    "message": "検索は保存済みの会話のみが対象です — まず ➕ で会話を保存してください。"
+  },
   "emptyFoldersHint": {
     "message": "フォルダーがまだありません — Gemini の会話を開き、➕ または右クリックメニューで保存してください。"
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "コーヒーをおごってこの拡張機能をサポートしてください！"
+  },
+  "welcomeReady": {
+    "message": "準備ができました。"
+  },
+  "welcomePinTitle": {
+    "message": "ツールバーに固定してください"
+  },
+  "welcomePinBody": {
+    "message": "ブラウザー右上のパズルのピースのアイコンをクリックし、この拡張機能の横のピンをクリックします。固定するまで、ブラウザーはこの拡張機能をそのメニューの中に隠したままにします。"
+  },
+  "welcomeOpenTitle": {
+    "message": "会話を開く"
+  },
+  "welcomeOpenBody": {
+    "message": "Gemini で任意の会話を開きます。"
+  },
+  "welcomeSaveTitle": {
+    "message": "フォルダーに保存する"
+  },
+  "welcomeSaveBody": {
+    "message": "拡張機能のアイコンをクリックし、フォルダー名を入力して ➕ を押します。ページを右クリックする方法もあります。"
+  },
+  "welcomeCta": {
+    "message": "了解しました"
   }
 }

@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Tidak ada hasil 🕵️"
   },
+  "noResultsHint": {
+    "message": "Pencarian hanya mencakup percakapan yang sudah Anda simpan — simpan satu dengan ➕ dulu."
+  },
   "emptyFoldersHint": {
     "message": "Belum ada folder — buka percakapan Gemini dan simpan dengan ➕ atau menu klik kanan."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Dukung ekstensi ini dengan membelikan saya kopi!"
+  },
+  "welcomeReady": {
+    "message": "Semuanya siap."
+  },
+  "welcomePinTitle": {
+    "message": "Sematkan ke bilah alat Anda"
+  },
+  "welcomePinBody": {
+    "message": "Klik ikon kepingan puzzle di kanan atas peramban, lalu pin di samping ekstensi ini. Sebelum itu, peramban menyimpannya tersembunyi di menu tersebut."
+  },
+  "welcomeOpenTitle": {
+    "message": "Buka sebuah percakapan"
+  },
+  "welcomeOpenBody": {
+    "message": "Buka percakapan apa pun di Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Simpan ke dalam folder"
+  },
+  "welcomeSaveBody": {
+    "message": "Klik ikon ekstensi, tulis nama folder, lalu tekan ➕. Klik kanan pada halaman juga bisa."
+  },
+  "welcomeCta": {
+    "message": "Mengerti"
   }
 }

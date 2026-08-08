@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Inga resultat 🕵️"
   },
+  "noResultsHint": {
+    "message": "Sökningen omfattar bara konversationer du redan har sparat – spara en med ➕ först."
+  },
   "emptyFoldersHint": {
     "message": "Inga mappar än – öppna en konversation på en webbplats med stöd för AI och spara den med ➕ eller högerklicksmenyn."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Stöd det här tillägget genom att bjuda mig på kaffe!"
+  },
+  "welcomeReady": {
+    "message": "Allt är klart."
+  },
+  "welcomePinTitle": {
+    "message": "Fäst den i verktygsfältet"
+  },
+  "welcomePinBody": {
+    "message": "Klicka på pusselbits-ikonen längst upp till höger i webbläsaren och sedan på nålen bredvid det här tillägget. Innan du gör det håller webbläsaren det gömt i den menyn."
+  },
+  "welcomeOpenTitle": {
+    "message": "Öppna en konversation"
+  },
+  "welcomeOpenBody": {
+    "message": "Öppna en konversation på någon av de webbplatser med AI som stöds."
+  },
+  "welcomeSaveTitle": {
+    "message": "Spara den i en mapp"
+  },
+  "welcomeSaveBody": {
+    "message": "Klicka på tilläggets ikon, skriv ett mappnamn och tryck på ➕. Att högerklicka på sidan fungerar också."
+  },
+  "welcomeCta": {
+    "message": "Uppfattat"
   }
 }

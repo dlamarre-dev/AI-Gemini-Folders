@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Nebyly nalezeny žádné výsledky 🕵️"
   },
+  "noResultsHint": {
+    "message": "Hledání zahrnuje jen konverzace, které jste už uložili — nejprve jednu uložte pomocí ➕."
+  },
   "emptyFoldersHint": {
     "message": "Zatím žádné složky — otevřete konverzaci na podporovaném webu s AI a uložte ji pomocí ➕ nebo nabídky pravého tlačítka."
   },
@@ -301,5 +304,29 @@
   },
   "kofiTooltip": {
     "message": "Podpořte toto rozšíření tím, že mi koupíte kávu!"
+  },
+  "welcomeReady": {
+    "message": "Vše je připraveno."
+  },
+  "welcomePinTitle": {
+    "message": "Připněte si ho na lištu"
+  },
+  "welcomePinBody": {
+    "message": "Klikněte na ikonu puzzle vpravo nahoře v prohlížeči a pak na připínáček vedle tohoto rozšíření. Dokud to neuděláte, prohlížeč ho drží skryté v té nabídce."
+  },
+  "welcomeOpenTitle": {
+    "message": "Otevřete konverzaci"
+  },
+  "welcomeOpenBody": {
+    "message": "Otevřete konverzaci na některém z podporovaných webů s AI."
+  },
+  "welcomeSaveTitle": {
+    "message": "Uložte ji do složky"
+  },
+  "welcomeSaveBody": {
+    "message": "Klikněte na ikonu rozšíření, napište název složky a stiskněte ➕. Funguje i pravé kliknutí na stránku."
+  },
+  "welcomeCta": {
+    "message": "Rozumím"
   }
 }

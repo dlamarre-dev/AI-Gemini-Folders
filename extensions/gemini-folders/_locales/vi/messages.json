@@ -29,6 +29,9 @@
   "noResults": {
     "message": "Không tìm thấy kết quả 🕵️"
   },
+  "noResultsHint": {
+    "message": "Tìm kiếm chỉ áp dụng cho các cuộc trò chuyện bạn đã lưu — hãy lưu một cuộc bằng ➕ trước."
+  },
   "emptyFoldersHint": {
     "message": "Chưa có thư mục nào — mở một cuộc trò chuyện Gemini và lưu bằng ➕ hoặc menu chuột phải."
   },
@@ -265,5 +268,29 @@
   },
   "kofiTooltip": {
     "message": "Hãy ủng hộ tiện ích này bằng cách mời tôi một ly cà phê!"
+  },
+  "welcomeReady": {
+    "message": "Mọi thứ đã sẵn sàng."
+  },
+  "welcomePinTitle": {
+    "message": "Ghim nó vào thanh công cụ"
+  },
+  "welcomePinBody": {
+    "message": "Nhấp vào biểu tượng mảnh ghép ở góc trên bên phải của trình duyệt, rồi nhấp vào chiếc ghim bên cạnh tiện ích này. Trước khi bạn làm vậy, trình duyệt vẫn giữ nó ẩn trong menu đó."
+  },
+  "welcomeOpenTitle": {
+    "message": "Mở một cuộc trò chuyện"
+  },
+  "welcomeOpenBody": {
+    "message": "Mở bất kỳ cuộc trò chuyện nào trên Gemini."
+  },
+  "welcomeSaveTitle": {
+    "message": "Lưu vào một thư mục"
+  },
+  "welcomeSaveBody": {
+    "message": "Nhấp vào biểu tượng tiện ích, nhập tên thư mục và nhấn ➕. Nhấp chuột phải trên trang cũng được."
+  },
+  "welcomeCta": {
+    "message": "Đã hiểu"
   }
 }
