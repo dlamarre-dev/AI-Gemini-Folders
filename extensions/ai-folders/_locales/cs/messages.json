@@ -324,7 +324,7 @@
     "message": "Uložte ji do složky"
   },
   "welcomeSaveBody": {
-    "message": "Klikněte na ikonu rozšíření, napište název složky a stiskněte ➕. Funguje i pravé kliknutí na stránku."
+    "message": "Klikněte na ikonu rozšíření, napište název složky a stiskněte {b}."
   },
   "welcomeCta": {
     "message": "Rozumím"

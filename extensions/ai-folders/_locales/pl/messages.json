@@ -324,7 +324,7 @@
     "message": "Zapisz ją w folderze"
   },
   "welcomeSaveBody": {
-    "message": "Kliknij ikonę rozszerzenia, wpisz nazwę folderu i naciśnij ➕. Kliknięcie strony prawym przyciskiem też działa."
+    "message": "Kliknij ikonę rozszerzenia, wpisz nazwę folderu i naciśnij {b}."
   },
   "welcomeCta": {
     "message": "Rozumiem"

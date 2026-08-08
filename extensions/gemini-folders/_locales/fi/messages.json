@@ -288,7 +288,7 @@
     "message": "Tallenna se kansioon"
   },
   "welcomeSaveBody": {
-    "message": "Napsauta laajennuksen kuvaketta, kirjoita kansion nimi ja paina ➕. Myös sivun napsauttaminen hiiren oikealla painikkeella toimii."
+    "message": "Napsauta laajennuksen kuvaketta, kirjoita kansion nimi ja paina {b}."
   },
   "welcomeCta": {
     "message": "Selvä"

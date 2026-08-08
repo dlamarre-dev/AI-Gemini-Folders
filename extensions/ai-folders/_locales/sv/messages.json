@@ -324,7 +324,7 @@
     "message": "Spara den i en mapp"
   },
   "welcomeSaveBody": {
-    "message": "Klicka på tilläggets ikon, skriv ett mappnamn och tryck på ➕. Att högerklicka på sidan fungerar också."
+    "message": "Klicka på tilläggets ikon, skriv ett mappnamn och tryck på {b}."
   },
   "welcomeCta": {
     "message": "Uppfattat"

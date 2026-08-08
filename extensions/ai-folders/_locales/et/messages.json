@@ -324,7 +324,7 @@
     "message": "Salvestage see kausta"
   },
   "welcomeSaveBody": {
-    "message": "Klõpsake laienduse ikoonil, sisestage kausta nimi ja vajutage ➕. Töötab ka paremklõps lehel."
+    "message": "Klõpsake laienduse ikoonil, sisestage kausta nimi ja vajutage nuppu „{b}“."
   },
   "welcomeCta": {
     "message": "Sain aru"

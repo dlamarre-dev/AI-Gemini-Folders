@@ -288,7 +288,7 @@
     "message": "保存到文件夹"
   },
   "welcomeSaveBody": {
-    "message": "点击扩展图标，输入文件夹名称并按 ➕。在页面上右键点击也可以。"
+    "message": "点击扩展图标，输入文件夹名称，然后按「{b}」。"
   },
   "welcomeCta": {
     "message": "明白了"

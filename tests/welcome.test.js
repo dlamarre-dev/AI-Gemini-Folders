@@ -15,12 +15,16 @@ const WELCOME_KEYS = [
   'welcomeOpenBody', 'welcomeSaveTitle', 'welcomeSaveBody', 'welcomeCta',
 ];
 
-function load({ lang = 'en', missingI18n = false } = {}) {
+// `sites` stands in for the SITES registry that site-config.js defines as a global.
+// welcome.html loads that file with a <script> tag, which innerHTML never executes,
+// so the default here is "no registry" — the Gemini Folders case.
+function load({ lang = 'en', missingI18n = false, sites, messages } = {}) {
   jest.resetModules();
   chrome.i18n.getUILanguage = jest.fn(() => lang);
   chrome.i18n.getMessage = missingI18n
     ? jest.fn(() => '')          // a locale file that failed to load
-    : jest.fn((key) => key);
+    : jest.fn((key) => (messages && key in messages ? messages[key] : key));
+  if (sites) global.SITES = sites; else delete global.SITES;
   document.documentElement.removeAttribute('lang');
   document.body.removeAttribute('dir');
   // Only the <body> content — jsdom ignores <head> in innerHTML anyway.
@@ -29,7 +33,10 @@ function load({ lang = 'en', missingI18n = false } = {}) {
   document.dispatchEvent(new Event('DOMContentLoaded'));
 }
 
+afterEach(() => { delete global.SITES; });
+
 const txt = (id) => document.getElementById(id).textContent;
+const logos = () => Array.from(document.querySelectorAll('#wSites img')).map(el => el.getAttribute('src'));
 
 describe('welcome page rendering', () => {
   test('every slot gets its localized string', () => {
@@ -45,7 +52,37 @@ describe('welcome page rendering', () => {
     load();
     const titles = Array.from(document.querySelectorAll('.step-title')).map(el => el.id);
     expect(titles).toEqual(['wPinTitle', 'wOpenTitle', 'wSaveTitle']);
-    expect(document.querySelector('.step .step-num').textContent).toBe('1');
+  });
+
+  // The instruction quotes the popup's own Save label. Substituting at runtime is
+  // what keeps the two from ever disagreeing across 43 locales.
+  test('the save step quotes the popup Save button, never a literal placeholder', () => {
+    load({
+      lang: 'fr',
+      messages: {
+        welcomeSaveBody: 'type a name and press {b}.',
+        saveBtn: 'Sauvegarder',
+      },
+    });
+    expect(txt('wSaveBody')).toBe('type a name and press Sauvegarder.');
+    expect(txt('wSaveBody')).not.toContain('{b}');
+  });
+
+  test('every locale wires the placeholder, so none can hardcode a button name', () => {
+    const fs2 = require('fs');
+    for (const ext of ['ai-folders', 'gemini-folders']) {
+      const base = path.join(ROOT, 'extensions', ext, '_locales');
+      for (const loc of fs2.readdirSync(base)) {
+        const m = JSON.parse(fs2.readFileSync(path.join(base, loc, 'messages.json'), 'utf8'));
+        expect({ ext, loc, has: m.welcomeSaveBody.message.includes('{b}') })
+          .toEqual({ ext, loc, has: true });
+      }
+    }
+  });
+
+  test('the add-conversation replica is labelled the way the popup labels it', () => {
+    load();
+    expect(txt('wAddBtn')).toBe('➕ btnToggleAdd');
   });
 
   test('a locale that fails to load still renders readable English, never blanks', () => {
@@ -73,6 +110,32 @@ describe('welcome page rendering', () => {
     document.getElementById('wCta').click();
     expect(close).toHaveBeenCalled();
     close.mockRestore();
+  });
+
+  // AI Folders draws the row from its SITES registry; Gemini Folders has none.
+  test('the site row lists every supported site, local LLM excluded', () => {
+    load({
+      sites: {
+        gemini: { key: 'gemini', domain: 'gemini.google.com', logo: 'icons/gemini.png' },
+        claude: { key: 'claude', domain: 'claude.ai', logo: 'icons/claude.png' },
+        // The user-configured local LLM has no domain — it is not a site you go to.
+        local: { key: 'local', domain: null, logo: 'icons/local.png' },
+      },
+    });
+    expect(logos()).toEqual(['icons/gemini.png', 'icons/claude.png']);
+    expect(document.getElementById('wSites').classList.contains('site-row-single')).toBe(false);
+  });
+
+  test('with no registry it falls back to Gemini alone, shown larger', () => {
+    load();
+    expect(logos()).toEqual(['icons/gemini.png']);
+    expect(document.getElementById('wSites').classList.contains('site-row-single')).toBe(true);
+  });
+
+  test('both extensions ship the Gemini mark the fallback points at', () => {
+    for (const ext of ['ai-folders', 'gemini-folders']) {
+      expect(fs.existsSync(path.join(ROOT, 'extensions', ext, 'icons/gemini.png'))).toBe(true);
+    }
   });
 
   test('the page never reaches the network or writes storage', () => {

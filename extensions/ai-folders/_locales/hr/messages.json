@@ -324,7 +324,7 @@
     "message": "Spremite ga u mapu"
   },
   "welcomeSaveBody": {
-    "message": "Kliknite ikonu proširenja, upišite naziv mape i pritisnite ➕. Radi i desni klik na stranicu."
+    "message": "Kliknite ikonu proširenja, upišite naziv mape i pritisnite {b}."
   },
   "welcomeCta": {
     "message": "Razumijem"

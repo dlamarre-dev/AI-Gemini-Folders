@@ -1,9 +1,10 @@
 // welcome.js — first-run page wiring (src/welcome.html).
 //
-// Deliberately tiny: fill in the localized strings, mirror RTL, and let the CTA
-// close the tab. No storage writes, no network, no analytics — the page's only job
-// is to get the user to pin the toolbar button, which the uninstall survey
-// (2026-08) identified as the missing first step for 23% of churned installs.
+// Deliberately tiny: fill in the localized strings, build the two data-driven
+// illustrations, mirror RTL, and let the CTA close the tab. No storage writes, no
+// network, no analytics — the page's only job is to get the user to pin the
+// toolbar button, which the uninstall survey (2026-08) identified as the missing
+// first step for 23% of churned installs.
 
 // id -> message key. The Gemini-vs-supported-sites wording lives in each
 // extension's own _locales, so this file stays shared.
@@ -29,10 +30,15 @@ const FALLBACK = {
   welcomeOpenTitle: 'Open a conversation',
   welcomeOpenBody: 'Open a conversation on one of the supported AI sites.',
   welcomeSaveTitle: 'Save it to a folder',
-  welcomeSaveBody: 'Click the extension icon, type a folder name and press ➕. '
-    + 'Right-clicking the page works too.',
+  welcomeSaveBody: 'Click the extension icon, type a folder name and press {b}.',
   welcomeCta: 'Got it',
+  saveBtn: 'Save',
+  btnToggleAdd: 'Add conversation',
 };
+
+function msg(key) {
+  return chrome.i18n.getMessage(key) || FALLBACK[key] || '';
+}
 
 function applyI18n() {
   const uiLang = chrome.i18n.getUILanguage();
@@ -45,14 +51,57 @@ function applyI18n() {
 
   for (const [id, key] of Object.entries(TEXT)) {
     const el = document.getElementById(id);
-    if (el) el.textContent = chrome.i18n.getMessage(key) || FALLBACK[key] || '';
+    if (el) el.textContent = msg(key);
   }
-  // The tab title is not localized anywhere else; keep it in step with the heading.
-  document.title = chrome.i18n.getMessage('appTitle') || document.title;
+
+  // "{b}" is the popup's own Save button label. Substituted at runtime rather than
+  // written into each translation so the two can never drift: whatever the button
+  // says in this locale is exactly what the instruction quotes.
+  const save = document.getElementById('wSaveBody');
+  if (save) save.textContent = msg('welcomeSaveBody').split('{b}').join(msg('saveBtn'));
+
+  // The tab title is not localized anywhere else; keep it in step with the header.
+  document.title = msg('appTitle') || document.title;
+}
+
+// AI Folders ships a SITES registry in site-config.js; Gemini Folders has none
+// because it supports exactly one site. Entries without a domain (the
+// user-configured local LLM) are not sites you can go and open, so they are left
+// out of a row that says "open a conversation on one of these".
+function supportedSites() {
+  if (typeof SITES !== 'undefined' && SITES) {
+    return Object.values(SITES).filter(s => s && s.domain && s.logo);
+  }
+  return [{ key: 'gemini', logo: 'icons/gemini.png' }];
+}
+
+function buildSiteRow() {
+  const row = document.getElementById('wSites');
+  if (!row) return;
+  const sites = supportedSites();
+  // Idempotent: appending would otherwise duplicate the row if this ever ran twice.
+  row.replaceChildren();
+  // One site gets a single larger mark; a row of one 26px icon would look broken.
+  row.classList.toggle('site-row-single', sites.length === 1);
+  for (const site of sites) {
+    const img = document.createElement('img');
+    // Always the dark variant: this page has no light theme (see welcome.css).
+    img.src = site.logo;
+    img.alt = '';
+    row.appendChild(img);
+  }
+}
+
+function buildAddButton() {
+  const btn = document.getElementById('wAddBtn');
+  // Matches how the popup composes the same label (popup-core.js).
+  if (btn) btn.textContent = '➕ ' + msg('btnToggleAdd');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   applyI18n();
+  buildSiteRow();
+  buildAddButton();
   document.getElementById('wCta').addEventListener('click', () => {
     // Close this tab and leave the user where they were. window.close() is allowed
     // for a tab the extension opened itself; the tabs.remove path is the fallback

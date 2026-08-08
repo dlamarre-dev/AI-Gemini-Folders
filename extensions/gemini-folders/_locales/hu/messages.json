@@ -288,7 +288,7 @@
     "message": "Mentsd el egy mappába"
   },
   "welcomeSaveBody": {
-    "message": "Kattints a kiegészítő ikonjára, írj be egy mappanevet, és nyomd meg a ➕ gombot. A jobb gombos kattintás az oldalon szintén működik."
+    "message": "Kattints a kiegészítő ikonjára, írj be egy mappanevet, és nyomd meg a {b} gombot."
   },
   "welcomeCta": {
     "message": "Értem"

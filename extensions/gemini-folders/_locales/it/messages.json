@@ -288,7 +288,7 @@
     "message": "Salvala in una cartella"
   },
   "welcomeSaveBody": {
-    "message": "Clicca sull'icona dell'estensione, scrivi il nome di una cartella e premi ➕. Funziona anche il tasto destro sulla pagina."
+    "message": "Clicca sull'icona dell'estensione, scrivi il nome di una cartella e premi {b}."
   },
   "welcomeCta": {
     "message": "Ho capito"

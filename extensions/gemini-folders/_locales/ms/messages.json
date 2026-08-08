@@ -288,7 +288,7 @@
     "message": "Simpan dalam folder"
   },
   "welcomeSaveBody": {
-    "message": "Klik ikon sambungan, tulis nama folder, kemudian tekan ➕. Klik kanan pada halaman juga berfungsi."
+    "message": "Klik ikon sambungan, tulis nama folder, kemudian tekan {b}."
   },
   "welcomeCta": {
     "message": "Faham"

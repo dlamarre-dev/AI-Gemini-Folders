@@ -324,7 +324,7 @@
     "message": "Yahifadhi kwenye folda"
   },
   "welcomeSaveBody": {
-    "message": "Bofya aikoni ya kiendelezi, andika jina la folda na ubonyeze ➕. Kubofya kulia kwenye ukurasa pia kunafanya kazi."
+    "message": "Bofya aikoni ya kiendelezi, andika jina la folda, kisha bonyeza {b}."
   },
   "welcomeCta": {
     "message": "Nimeelewa"

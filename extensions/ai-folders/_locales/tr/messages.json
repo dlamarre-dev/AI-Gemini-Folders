@@ -324,7 +324,7 @@
     "message": "Bir klasöre kaydedin"
   },
   "welcomeSaveBody": {
-    "message": "Uzantı simgesine tıklayın, bir klasör adı yazın ve ➕ tuşuna basın. Sayfaya sağ tıklamak da işe yarar."
+    "message": "Uzantı simgesine tıklayın, bir klasör adı yazın ve {b} düğmesine basın."
   },
   "welcomeCta": {
     "message": "Anladım"

@@ -1,159 +1,225 @@
 /* welcome.css — first-run page (src/welcome.html).
 
-   The palette tokens are duplicated from popup.css rather than imported: popup.css
-   pins `body { width: 392px; max-height: 576px }` and an `html { overflow-y: hidden }`
-   that a full browser tab must not inherit, and that block is explicitly fragile
-   (see CLAUDE.md §6 — do not touch its overflow rules). Copying ~13 variables is
-   cheaper than fighting it. Keep the two palettes in step if the popup's changes. */
+   Deliberately styled after aifolders.xyz rather than after the popup: this is a
+   full browser tab, and it should read like the privacy and uninstall pages the
+   same user may see later. The tokens below are copied from docs/site/styles.css
+   — keep them in step if the site's change.
+
+   Two deliberate departures from the site:
+   - **Dark only.** aifolders.xyz has no light theme, so matching it means not
+     having one either. `color-scheme: dark` in the HTML keeps form controls and
+     scrollbars consistent.
+   - **No web font.** The site loads Schibsted Grotesk + a dozen Noto subsets from
+     Google Fonts; this page must stay inert (CLAUDE.md §10 — it opens unprompted,
+     so it makes no network requests). The site's stack is kept minus the hosted
+     font, so a locally installed copy is still used.
+
+   NOT importing popup.css on purpose: it pins `body { width: 392px;
+   max-height: 576px }` and `html { overflow-y: hidden }`, which a full tab must not
+   inherit, and that block is explicitly fragile (CLAUDE.md §6). */
 
 :root {
-  --bg-color: #ffffff;
-  --text-color: #202124;
-  --border-color: #dadce0;
-  --folder-bg: #f8f9fa;
-  --folder-hover: #f1f3f4;
-  --accent-color: #1a73e8;
-  --accent-hover: #1557b0;
-  --input-bg: #ffffff;
-  --muted-text: #5f6368;
-  --art-line: #dadce0;
-  --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --bg: #090b16;
+  --ink: #f4f5fa;
+  --muted: #b2b6c8;
+  --faint: #7d8298;
+  --line: rgba(255, 255, 255, 0.09);
+  --card: rgba(255, 255, 255, 0.038);
+  --card-2: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.10);
+  --card-border-top: rgba(255, 255, 255, 0.16);
+  --violet: #8a6df0;
+  --violet-2: #a78bff;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --font-display: 'Schibsted Grotesk', 'Noto Sans', system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --bg-color: #202124;
-    --text-color: #e8eaed;
-    --border-color: rgba(255,255,255,0.12);
-    --folder-bg: rgba(255,255,255,0.06);
-    --folder-hover: rgba(255,255,255,0.10);
-    --accent-color: #8ab4f8;
-    --accent-hover: #aecbf9;
-    --input-bg: rgba(255,255,255,0.05);
-    --muted-text: rgba(255,255,255,0.62);
-    --art-line: rgba(255,255,255,0.22);
-    --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
-  }
-}
-
-html { background-color: var(--bg-color); }
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.55;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+}
+
+img { max-width: 100%; display: block; }
+
+/* The site's signature: a violet glow bleeding out of the top-left corner. */
+.bg-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(120% 90% at 8% 0%, #1c1646 0%, #100f2c 38%, #090b16 72%, #07080f 100%);
 }
 
 .wrap {
   max-width: 720px;
   margin: 0 auto;
-  padding: 56px 24px 72px;
+  padding: 80px clamp(20px, 5vw, 56px) 96px;
 }
 
-/* --- Header --- */
-.head { text-align: center; }
-.head-icon { width: 56px; height: 56px; }
-.head-title {
-  margin: 16px 0 4px;
-  font-size: 26px;
+/* --- Header: same brand row / h1 rhythm as the privacy and uninstall pages --- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
   font-weight: 700;
-  letter-spacing: -0.2px;
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 22px;
 }
-.head-sub { margin: 0; color: var(--muted-text); font-size: 15px; }
+.brand-mark { width: 34px; height: 34px; flex: none; }
+.brand-mark img { width: 100%; height: 100%; }
+
+.h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 40px;
+}
 
 /* --- Steps --- */
 .steps {
   list-style: none;
-  margin: 44px 0 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  counter-reset: step;
 }
 
 .step {
   display: grid;
-  grid-template-columns: 32px 1fr 200px;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 18px;
-  padding: 20px;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  background: var(--folder-bg);
+  gap: 24px;
+  padding: 20px 22px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-top-color: var(--card-border-top);
+  box-shadow: var(--shadow-card);
 }
 
-.step-num {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+/* The number is a counter marker, not a coloured badge: the site has no such
+   component, and step 1 no longer needs a highlight to be read first. */
+.step-text { counter-increment: step; }
+.step-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 4px;
+}
+.step-title::before {
+  content: counter(step) ". ";
+  color: var(--violet-2);
+  font-variant-numeric: tabular-nums;
+}
+.step-body { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+
+/* --- Art column --- */
+.step-art {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: none;
+  max-width: 232px;
+}
+
+.glyph {
+  width: 38px;
+  height: 38px;
+  flex: none;
   display: grid;
   place-items: center;
-  background: var(--accent-color);
-  color: var(--bg-color);
-  font-size: 14px;
-  font-weight: 700;
+  border-radius: 10px;
+  background: var(--card-2);
+  border: 1px solid var(--card-border);
+}
+.glyph svg { width: 22px; height: 22px; fill: var(--muted); }
+.glyph-accent { background: rgba(138, 109, 240, 0.16); border-color: rgba(138, 109, 240, 0.42); }
+.glyph-accent svg { fill: var(--violet-2); }
+.glyph-sep { color: var(--faint); flex: none; }
+.glyph-sep svg { width: 16px; height: 16px; display: block; }
+
+/* Supported-site logos. Wraps to as many rows as it needs; Gemini Folders shows a
+   single, larger mark since it has exactly one site. */
+/* 200px fits exactly six 26px marks per row (6×26 + 5×8), so AI Folders' 18 sites
+   land as three full rows instead of a ragged wrap. */
+.site-row { flex-wrap: wrap; gap: 8px; width: 200px; }
+.site-row img {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  flex: none;
+}
+.site-row.site-row-single img { width: 44px; height: 44px; border-radius: 11px; }
+
+/* Replica of the popup's add-conversation button (.main-btn in popup.css). */
+.popup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #fff;
+  background: rgba(100, 148, 240, 0.80);
+  border: 1px solid rgba(138, 180, 248, 0.35);
+  box-shadow: 0 2px 12px rgba(80, 120, 255, 0.20);
 }
 
-.step-title { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
-.step-body { margin: 0; font-size: 14px; color: var(--muted-text); }
-
-/* The first step carries the whole page: without a pinned toolbar button the
-   extension is invisible, which is what the survey data pointed at. */
-.step:first-child {
-  border-color: var(--accent-color);
-  background: var(--folder-hover);
-}
-
-/* --- Illustrations --- */
-.step-art { width: 200px; height: 96px; display: block; }
-.art-panel { fill: var(--input-bg); stroke: var(--art-line); stroke-width: 1.5; }
-.art-menu  { fill: var(--folder-hover); stroke: var(--art-line); stroke-width: 1; }
-.art-bar      { fill: var(--art-line); }
-.art-bar-dim  { fill: var(--art-line); opacity: 0.55; }
-.art-chip     { fill: var(--accent-color); }
-.art-chip-dim { fill: var(--art-line); opacity: 0.7; }
-.art-avatar   { fill: var(--art-line); opacity: 0.7; }
-.art-accent   { fill: var(--muted-text); }
-.art-input    { fill: var(--folder-hover); stroke: var(--art-line); stroke-width: 1; }
-.art-folder   { fill: var(--folder-hover); stroke: var(--accent-color); stroke-width: 1; }
-.art-chat     { fill: var(--input-bg); stroke: var(--art-line); stroke-width: 1; }
-.art-pin-hl   { fill: var(--accent-color); }
-.art-pin      { fill: var(--bg-color); }
-.art-plus     { fill: var(--accent-color); }
-.art-plus-glyph { stroke: var(--bg-color); stroke-width: 2.5; stroke-linecap: round; fill: none; }
-
-/* --- Call to action --- */
-.cta-row { margin-top: 36px; text-align: center; }
-.cta {
+/* --- Call to action: the site's .btn / .btn-primary --- */
+.cta-row { margin-top: 40px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
   font: inherit;
+  font-weight: 700;
   font-size: 15px;
-  font-weight: 600;
-  padding: 11px 30px;
-  border: none;
-  border-radius: 22px;
-  background: var(--accent-color);
-  color: var(--bg-color);
+  padding: 13px 24px;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: background-color 0.15s ease;
+  border-radius: 13px;
+  border: 1px solid transparent;
+  transition: transform .15s, box-shadow .2s, background .2s;
+  white-space: nowrap;
 }
-.cta:hover { background: var(--accent-hover); }
-.cta:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: linear-gradient(180deg, #8fb0fb, #6c97f2);
+  color: #0a0c18;
+  box-shadow: 0 8px 26px rgba(94, 134, 255, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+.btn-primary:hover {
+  box-shadow: 0 12px 34px rgba(94, 134, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+.btn:focus-visible { outline: 2px solid var(--violet-2); outline-offset: 3px; }
 
-/* Right-to-left locales: mirror the layout so the art stays on the outer edge. */
-[dir="rtl"] .step { grid-template-columns: 32px 1fr 200px; }
+/* RTL (ar, he): the art column belongs on the outer edge either way, which the
+   logical `justify-content: flex-end` inside a mirrored grid already handles. The
+   arrow between the two glyphs is the one thing that must flip. */
+[dir="rtl"] .glyph-sep svg { transform: scaleX(-1); }
 
-/* Narrow windows: the illustration stacks under the text instead of squeezing it. */
-@media (max-width: 560px) {
-  .wrap { padding: 36px 16px 48px; }
-  .step { grid-template-columns: 32px 1fr; }
-  .step-art { display: none; }
+/* Narrow windows: the art drops under the text rather than squeezing it. */
+@media (max-width: 620px) {
+  .wrap { padding: 48px 18px 64px; }
+  .step { grid-template-columns: 1fr; gap: 16px; }
+  .step-art { justify-content: flex-start; max-width: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cta { transition: none; }
+  .btn, .btn-primary:hover { transition: none; transform: none; }
 }

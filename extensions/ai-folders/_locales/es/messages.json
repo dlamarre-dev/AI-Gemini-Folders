@@ -324,7 +324,7 @@
     "message": "Guárdala en una carpeta"
   },
   "welcomeSaveBody": {
-    "message": "Haz clic en el icono de la extensión, escribe un nombre de carpeta y pulsa ➕. El clic derecho sobre la página también funciona."
+    "message": "Haz clic en el icono de la extensión, escribe un nombre de carpeta y pulsa {b}."
   },
   "welcomeCta": {
     "message": "Entendido"

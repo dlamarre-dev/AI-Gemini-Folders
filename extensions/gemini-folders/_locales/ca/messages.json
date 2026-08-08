@@ -288,7 +288,7 @@
     "message": "Desa-la en una carpeta"
   },
   "welcomeSaveBody": {
-    "message": "Fes clic a la icona de l'extensió, escriu un nom de carpeta i prem ➕. El clic dret sobre la pàgina també funciona."
+    "message": "Fes clic a la icona de l'extensió, escriu un nom de carpeta i prem {b}."
   },
   "welcomeCta": {
     "message": "Entesos"
