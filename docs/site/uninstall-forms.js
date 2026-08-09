@@ -60,7 +60,7 @@ window.UF_FORMS = {
       reasons: 'entry.960754458', other: 'entry.834717989', comments: 'entry.279751166',
       days: 'entry.2071424621', daysExact: 'entry.868004239', opens: 'entry.1542013798',
       version: 'entry.712983012', browser: 'entry.1147186631', lang: 'entry.358917109',
-      saves: 'PASTE_SAVES_ENTRY_ID',
+      saves: 'entry.1695915143',
     },
   },
   gf: {
@@ -69,7 +69,7 @@ window.UF_FORMS = {
       reasons: 'entry.960754458', other: 'entry.834717989', comments: 'entry.279751166',
       days: 'entry.2071424621', daysExact: 'entry.868004239', opens: 'entry.1542013798',
       version: 'entry.712983012', browser: 'entry.1147186631', lang: 'entry.358917109',
-      saves: 'PASTE_SAVES_ENTRY_ID',
+      saves: 'entry.1010598432',
     },
   },
 };
