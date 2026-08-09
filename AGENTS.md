@@ -1,4 +1,4 @@
-# CLAUDE.md — Working guide for this repository
+# AGENTS.md — Working guide for this repository
 
 This file is the onboarding brief for an agent (or contributor) picking up a task
 here. It captures the project structure, the build/test/release procedures, the
@@ -13,7 +13,7 @@ Two Manifest V3 browser extensions (Chrome **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
 - **Gemini Folders (GF)** — Google Gemini only. Current version **4.5.4**.
-- **AI Folders (AF)** — 18 web platforms (Gemini, Claude, ChatGPT, Copilot,
+- **AI Folders (AF)** — 18 web platforms (Gemini, Codex, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, You.com, Pi, Character.AI) **+ a user-configured local LLM**.
   Current version **1.6.2**. The popup's per-site "new conversation" buttons
@@ -146,8 +146,8 @@ gh pr checks --watch                       # wait for the 3 checks to go green
 gh pr merge --squash --admin --delete-branch
 git checkout main && git pull --ff-only
 ```
-- End commit messages with: `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`
-- End PR bodies with the Claude Code footer.
+- End commit messages with: `Co-Authored-By: Codex Opus 4.8 <noreply@anthropic.com>`
+- End PR bodies with the Codex footer.
 - The repo is `dlamarre-dev/AI-Gemini-Folders`; `gh` is authenticated.
 
 ---
@@ -175,7 +175,7 @@ git checkout main && git pull --ff-only
   extensions. Prefer **reusing existing keys** wherever possible.
 - **Store text (`Marketing/`)** must never contain comma-separated brand lists
   (Chrome Web Store keyword-spam rejection, hit 3× historically). Prose such as
-  "platforms such as Claude, ChatGPT and Gemini" is fine; bare keyword lists are not.
+  "platforms such as Codex, ChatGPT and Gemini" is fine; bare keyword lists are not.
 - **~2px transparent gap on the right of the popup** at fractional Windows DPI
   (125/150%): a device-pixel rounding artifact, **outside the document → not
   fixable in CSS**. Disappears at 100% scaling. Accepted as-is. **Never** retry
@@ -320,13 +320,7 @@ the user actually sees. Five locales (et, hi, lt, ms, sw) have that file without
 key, so Firefox falls back to en-US there — quoting the English label is correct for
 them, not a gap. Serbian is the Latin transliteration of Firefox's Cyrillic label
 (§6 / `tests/serbian-latin.test.js`). The step-1 artwork stays puzzle → pin in both
-browsers — the pin is the *outcome*, which is what the step title promises — but the
-**puzzle glyph itself is per-browser**: `.ico-chrome` (Material Symbols `extension`,
-filled) and `.ico-firefox` (Firefox's outline puzzle, stroked) both ship in the HTML
-and `pickExtensionsGlyph()` removes the one that does not apply. Exactly one must
-survive or they stack inside the same 38px tile. The outline needs `fill: none` **and**
-its `stroke-width` declared in `welcome.css`: presentation attributes on the markup
-lose to any CSS rule, so `.glyph svg { fill }` would otherwise flood the shape.
+browsers: the pin is the *outcome*, which is what the step title promises.
 
 - **`src/welcome.html` + `welcome.js` + `welcome.css` are shared** by both
   extensions. Every string comes from `chrome.i18n`, so the Gemini-vs-18-sites

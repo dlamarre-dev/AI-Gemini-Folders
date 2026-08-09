@@ -42,8 +42,17 @@ function load({ lang = 'en', missingI18n = false, sites, messages, ua = REAL_UA 
   document.body.removeAttribute('dir');
   // Only the <body> content — jsdom ignores <head> in innerHTML anyway.
   document.body.innerHTML = HTML.replace(/[\s\S]*<body>/, '').replace(/<\/body>[\s\S]*/, '');
+
+  // Capture this module instance's DOMContentLoaded handler instead of dispatching
+  // the event: `document` outlives jest.resetModules(), so every previous load()
+  // would otherwise still be listening and re-run with ITS captured browser branch
+  // — the earlier Chrome pass would strip the Firefox glyph this one just rendered.
+  let onReady = null;
+  const spy = jest.spyOn(document, 'addEventListener')
+    .mockImplementation((type, fn) => { if (type === 'DOMContentLoaded') onReady = fn; });
   require('../src/welcome');
-  document.dispatchEvent(new Event('DOMContentLoaded'));
+  spy.mockRestore();
+  onReady();
 }
 
 afterEach(() => { delete global.SITES; setUa(REAL_UA); });
@@ -80,6 +89,30 @@ describe('welcome page rendering', () => {
     test('every other browser keeps the Chrome wording', () => {
       load();
       expect(txt('wPinBody')).toBe('welcomePinBody');
+    });
+
+    // Both browsers draw their extensions button differently; exactly one glyph
+    // must survive, or the two would stack inside the same 38px tile.
+    test('each browser keeps only its own extensions glyph', () => {
+      load({ ua: FIREFOX_UA });
+      expect(document.querySelector('.ico-firefox')).not.toBeNull();
+      expect(document.querySelector('.ico-chrome')).toBeNull();
+
+      load();
+      expect(document.querySelector('.ico-chrome')).not.toBeNull();
+      expect(document.querySelector('.ico-firefox')).toBeNull();
+    });
+
+    test('the outline glyph is stroked, not filled', () => {
+      // `.glyph svg { fill }` would flood the outline, so welcome.css has to
+      // override fill AND own the stroke width — a presentation attribute on the
+      // markup would lose to it.
+      const css = fs.readFileSync(path.join(ROOT, 'src/welcome.css'), 'utf8');
+      const rule = css.slice(css.indexOf('.glyph svg.ico-firefox {'));
+      const body = rule.slice(0, rule.indexOf('}'));
+      expect(body).toMatch(/fill:\s*none/);
+      expect(body).toMatch(/stroke:\s*var\(--muted\)/);
+      expect(body).toMatch(/stroke-width:/);
     });
 
     test('the Firefox text quotes Firefox\'s own Pin to Toolbar label', () => {

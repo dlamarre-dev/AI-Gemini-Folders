@@ -100,6 +100,13 @@ function buildSiteRow() {
   }
 }
 
+// The two browsers draw their extensions button differently, so the page ships both
+// glyphs and keeps only the one that matches — same branch as the pin wording.
+function pickExtensionsGlyph() {
+  const drop = document.querySelector(IS_FIREFOX ? '.ico-chrome' : '.ico-firefox');
+  if (drop) drop.remove();
+}
+
 function buildAddButton() {
   const btn = document.getElementById('wAddBtn');
   // Matches how the popup composes the same label (popup-core.js).
@@ -108,6 +115,7 @@ function buildAddButton() {
 
 document.addEventListener('DOMContentLoaded', () => {
   applyI18n();
+  pickExtensionsGlyph();
   buildSiteRow();
   buildAddButton();
   document.getElementById('wCta').addEventListener('click', () => {
