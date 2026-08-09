@@ -4,12 +4,12 @@
  * params go in, and what comes out is the rendered form and — only on an
  * explicit submit — the Google Form payload.
  *
- * @jest-environment-options {"url": "https://aifolders.xyz/uninstall-ai-folders.html?l=fr&v=1.6.2&b=chrome&i=2026-06-08&o=63"}
+ * @jest-environment-options {"url": "https://aifolders.xyz/uninstall-ai-folders.html?l=fr&v=1.6.2&b=chrome&i=2026-06-08&o=63&s=9"}
  */
 
 // 2026-06-08 → 2026-07-25 is 47 days; pinned so the tenure math is assertable.
 const NOW = Date.UTC(2026, 6, 25, 12, 0, 0);
-const FR_URL = '/uninstall-ai-folders.html?l=fr&v=1.6.2&b=chrome&i=2026-06-08&o=63';
+const FR_URL = '/uninstall-ai-folders.html?l=fr&v=1.6.2&b=chrome&i=2026-06-08&o=63&s=9';
 
 // Stands in for real ids from a Form's pre-filled link.
 const WIRED = {
@@ -18,6 +18,7 @@ const WIRED = {
     fields: {
       reasons: 'entry.1', other: 'entry.2', comments: 'entry.3', days: 'entry.4',
       daysExact: 'entry.5', opens: 'entry.6', version: 'entry.7', browser: 'entry.8', lang: 'entry.9',
+      saves: 'entry.10',
     },
   },
   gf: { formId: 'GF_FORM', fields: { reasons: 'entry.11', lang: 'entry.19', daysExact: 'entry.15' } },
@@ -97,10 +98,11 @@ describe('rendering', () => {
     expect(document.documentElement.getAttribute('dir')).toBe('rtl');
   });
 
-  test('the five reasons carry the stable English values the Form expects', () => {
+  test('the seven reasons carry the stable English values the Form expects', () => {
     load();
     expect(opts().map(el => el.value)).toEqual([
-      'not-what-expected', 'dont-understand-how', 'wanted-in-page-ui', 'found-bugs', 'other',
+      'not-what-expected', 'dont-understand-how', 'wanted-in-page-ui', 'found-bugs',
+      'no-longer-needed', 'found-alternative', 'other',
     ]);
     // ...and are shown with translated labels, not those values.
     expect(document.querySelector('.uf-opts').textContent).toContain('bogues');
@@ -110,7 +112,8 @@ describe('rendering', () => {
     load({ product: 'gf', search: '/uninstall-gemini-folders.html?l=fr' });
     expect(opts().map(el => el.value)).toEqual([
       'switched-to-ai-folders',
-      'not-what-expected', 'dont-understand-how', 'wanted-in-page-ui', 'found-bugs', 'other',
+      'not-what-expected', 'dont-understand-how', 'wanted-in-page-ui', 'found-bugs',
+      'no-longer-needed', 'found-alternative', 'other',
     ]);
     // The label must name AI Folders even though the page is about Gemini Folders.
     const first = document.querySelector('.uf-opt span').textContent;
@@ -138,7 +141,7 @@ describe('rendering', () => {
     });
 
     expect(opts().map(el => el.value)).not.toContain('switched-to-ai-folders');
-    expect(opts()).toHaveLength(5);
+    expect(opts()).toHaveLength(7);   // the GF-only option dropped, the rest intact
     // No checkbox is ever shown without a readable label.
     for (const el of opts()) {
       expect(el.closest('.uf-opt').textContent.trim()).not.toBe('');
@@ -181,10 +184,34 @@ describe('submission', () => {
     expect(b.get('entry.4')).toBe('47');                           // days, computed here
     expect(b.get('entry.5')).toBe('yes');                          // tenure is exact
     expect(b.get('entry.6')).toBe('63');                           // popup opens
+    expect(b.get('entry.10')).toBe('9');                           // conversations saved
     expect(b.get('entry.7')).toBe('1.6.2');
     expect(b.get('entry.8')).toBe('chrome');
     expect(b.get('entry.9')).toBe('fr');
     expect(b.get('fvv')).toBe('1');
+  });
+
+  // An entry key the Form does not know costs the WHOLE response, not just that
+  // field — so the page must stay shippable before the `saves` question exists.
+  test('the saves count is withheld until its Form question is wired up', async () => {
+    load();
+    window.UF_FORMS = {
+      af: { formId: 'AF_FORM', fields: { ...WIRED.af.fields, saves: 'PASTE_SAVES_ENTRY_ID' } },
+    };
+    await submit();
+    const b = body();
+    expect(b.has('PASTE_SAVES_ENTRY_ID')).toBe(false);
+    expect(b.has('entry.10')).toBe(false);
+    expect(b.get('entry.6')).toBe('63');   // the rest of the payload is unaffected
+  });
+
+  test('a Form config with no saves field at all still submits', async () => {
+    load();
+    const { saves, ...withoutSaves } = WIRED.af.fields;
+    window.UF_FORMS = { af: { formId: 'AF_FORM', fields: withoutSaves } };
+    await submit();
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+    expect(body().has('undefined')).toBe(false);
   });
 
   test('an empty answer is still accepted — everything is optional', async () => {

@@ -7,7 +7,10 @@
    presses Send:
      l  UI language      v  extension version     b  chrome | firefox
      i  install date (YYYY-MM-DD)                 ie 1 when that date is estimated
-     o  popup opens
+     o  popup opens        s  conversations saved
+
+   Adding a reason here means adding the same option to BOTH Google Forms first:
+   Google silently drops a whole response that carries an option it does not know.
 
    Responses go to a Google Form (no database to maintain), wired up in
    uninstall-forms.js. The Form is the schema: its checkbox options MUST be
@@ -32,6 +35,11 @@
     { value: 'dont-understand-how', key: 'optDontUnderstand' },
     { value: 'wanted-in-page-ui',   key: 'optWantedInPage' },
     { value: 'found-bugs',          key: 'optFoundBugs' },
+    // Added 2026-08: a quarter of respondents submitted with nothing checked and
+    // most who ticked 'other' left the text box empty — the list was missing their
+    // reason. These two are the usual suspects behind a silent 'other'.
+    { value: 'no-longer-needed',    key: 'optNoLongerNeeded' },
+    { value: 'found-alternative',   key: 'optFoundAlternative' },
     { value: 'other',               key: 'optOther' },
   ];
 
@@ -114,6 +122,9 @@
     days: tenureDays(),
     daysExact: params.get('ie') === '1' ? 'no' : 'yes',
     opens: params.get('o') || '',
+    // '0' is a string, so it survives the falsy check below and is reported: a
+    // zero here is the whole point (installed, never saved anything).
+    saves: params.get('s') || '',
     version: params.get('v') || '',
     browser: params.get('b') || '',
   };
@@ -259,6 +270,10 @@
     if (ctx.days != null) body.append(f.days, String(ctx.days));
     body.append(f.daysExact, ctx.daysExact);
     if (ctx.opens) body.append(f.opens, ctx.opens);
+    // Guarded on the field id too, so this page is safe to ship before the `saves`
+    // question exists on the Form: an entry key the Form does not know would cost
+    // us the whole response, not just this value.
+    if (ctx.saves && f.saves && f.saves.indexOf('PASTE') !== 0) body.append(f.saves, ctx.saves);
     if (ctx.version) body.append(f.version, ctx.version);
     if (ctx.browser) body.append(f.browser, ctx.browser);
     body.append(f.lang, current);
