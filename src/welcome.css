@@ -144,17 +144,20 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--card-border);
 }
 .glyph svg { width: 22px; height: 22px; fill: var(--muted); }
-/* Firefox's extensions glyph is an outline, not a solid. Its stroke width has to
-   be declared here and not left as a presentation attribute: any CSS rule beats a
-   presentation attribute, so `fill` above would otherwise flood the shape. Nudged
-   a little larger than the filled Material glyph so the two read at the same
-   visual weight in the 38px tile. */
+/* Firefox's extensions glyph is an outline, not a solid. The source art is a filled
+   silhouette, so `fill: none` + a stroke traces its perimeter — that is what makes
+   the outline. Both must be declared here rather than left as presentation
+   attributes on the markup: any CSS rule beats a presentation attribute, so the
+   `fill` above would otherwise flood the shape back into a solid.
+   stroke-width is in viewBox units (48 here), so 3 renders as 3/48 × 24px = 1.5px —
+   matching the weight of the filled Material glyph in the same 38px tile. Rescale it
+   if the artwork is ever swapped for one with a different viewBox. */
 .glyph svg.ico-firefox {
   width: 24px;
   height: 24px;
   fill: none;
   stroke: var(--muted);
-  stroke-width: 34;
+  stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
