@@ -26,3 +26,9 @@ __pycache__/
 
 # Hyperframes brag video — regenerable verification frames
 brag-output/composition/snapshots/
+
+# Per-agent copies of CLAUDE.md (e.g. AGENTS.md for Codex). Local-only: a second
+# copy in the repo drifts silently, and a blind name substitution has already
+# corrupted product facts in one (Claude the supported platform became "Codex").
+# CLAUDE.md is the single source of truth — regenerate the copy, don't commit it.
+AGENTS.md
