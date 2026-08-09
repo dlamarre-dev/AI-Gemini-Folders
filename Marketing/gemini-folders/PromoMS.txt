@@ -63,6 +63,7 @@ Berminat dengan Folder Gemini tetapi juga menggunakan ChatGPT, Claude, Copilot, 
 👉 Pasang Folder AI: __AF_STORE_URL__
 
 📢 KEMAS KINI:
+Versi 4.5.5 (Halaman aluan): Selepas pemasangan kini terbuka panduan ringkas: cara menyematkan sambungan dan menyimpan perbualan pertama anda. Carian juga menjelaskan bahawa ia hanya merangkumi perbualan yang telah disimpan.
 Versi 4.5.4 (Kaji selidik pembuangan): Membuang sambungan kini membuka halaman maklum balas ringkas dan pilihan dalam bahasa anda, dan tiada apa-apa dihantar melainkan anda menghantarnya sendiri.
 Versi 4.5.3 (Keselamatan & kestabilan): Perlindungan tambahan untuk pautan tersimpan dan import sandaran, serta pembaikan kestabilan dalaman.
 Versi 4.5.1 (Penambahbaikan): Folder kini diisih dari terbaharu dahulu secara lalai, sejajar dengan pustaka gesaan anda — susunan isihan yang telah anda pilih sebelum ini kekal tidak berubah. Butang kosongkan (✕) dalam kotak carian turut dibaiki supaya berfungsi dalam Firefox juga.

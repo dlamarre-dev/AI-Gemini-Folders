@@ -64,6 +64,7 @@ Interesado sa Mga Folder ng Gemini pero gumagamit din ng ChatGPT, Claude, Copilo
 👉 I-install ang Mga AI Folder: __AF_STORE_URL__
 
 📢 MGA UPDATE:
+Bersyon 4.5.5 (Pahina ng pagtanggap): Pagkatapos mag-install, may maikling gabay nang bumubukas: kung paano i-pin ang extension at i-save ang unang usapan mo. Malinaw ding sinasabi ng paghahanap na mga naka-save na usapan lang ang hinahanap nito.
 Bersyon 4.5.4 (Survey sa pag-alis): Ang pag-alis ng extension ay nagbubukas na ngayon ng maikling opsyonal na pahina ng feedback sa wika mo, at walang ipinapadala maliban kung ikaw mismo ang magpadala.
 Bersyon 4.5.3 (Seguridad at katatagan): Karagdagang proteksyon para sa mga naka-save na link at pag-import ng backup, kasama ang mga panloob na pag-aayos sa katatagan.
 Bersyon 4.5.1 (Mga Pagpapahusay): Ang mga folder ay isinasaayos na ngayon mula sa pinakabago bilang default, tulad ng iyong prompt library — nananatiling hindi nagbabago ang pagkakasunod-sunod na napili mo na dati. Inayos din ang clear (✕) button sa search box para gumana ito sa Firefox din.

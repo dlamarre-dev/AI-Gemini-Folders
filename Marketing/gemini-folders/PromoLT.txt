@@ -63,6 +63,7 @@ Domitės Gemini Aplankai, bet naudojate ir ChatGPT, Claude, Copilot, Grok, Perpl
 👉 Įdiekite AI aplankus: __AF_STORE_URL__
 
 📢 ATNAUJINIMAI:
+Versija 4.5.5 (Pasveikinimo puslapis): Po įdiegimo dabar atsidaro trumpas vadovas: kaip prisegti plėtinį ir išsaugoti pirmą pokalbį. Paieška taip pat aiškiai nurodo, kad apima tik jau išsaugotus pokalbius.
 Versija 4.5.4 (Pašalinimo apklausa): Pašalinus plėtinį dabar atsidaro trumpas neprivalomas atsiliepimų puslapis jūsų kalba, ir nieko neišsiunčiama, nebent patys jį išsiųstumėte.
 Versija 4.5.3 (Sauga ir stabilumas): Papildoma išsaugotų nuorodų ir atsarginių kopijų importo apsauga bei vidiniai stabilumo pataisymai.
 Versija 4.5.1 (Patobulinimai): Aplankai dabar pagal numatytuosius nustatymus rikiuojami nuo naujausių, kaip ir jūsų užklausų biblioteka — anksčiau pasirinkta rikiavimo tvarka lieka nepakitusi. Taip pat ištaisytas išvalymo mygtukas (✕) paieškos laukelyje, todėl jis veikia ir „Firefox“ naršyklėje.

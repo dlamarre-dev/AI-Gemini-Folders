@@ -64,6 +64,7 @@ Zaujímajú vás Priečinky Gemini, ale používate aj ChatGPT, Claude, Copilot,
 👉 Nainštalovať AI priečinky: __AF_STORE_URL__
 
 📢 AKTUALIZÁCIE:
+Verzia 4.5.5 (Uvítacia stránka): Po inštalácii sa teraz otvorí krátky sprievodca: ako si rozšírenie pripnúť a uložiť prvú konverzáciu. Hľadanie tiež jasne uvádza, že prehľadáva len už uložené konverzácie.
 Verzia 4.5.4 (Dotazník pri odinštalovaní): Odstránenie rozšírenia teraz otvorí krátku nepovinnú stránku spätnej väzby vo vašom jazyku a nič sa neodošle, kým ju sami nepošlete.
 Verzia 4.5.3 (Zabezpečenie a stabilita): Ďalšia ochrana uložených odkazov a importu záloh a interné opravy stability.
 Verzia 4.5.1 (Vylepšenia): Priečinky sa teraz predvolene zoraďujú od najnovších, rovnako ako vaša knižnica promptov — už zvolené zoradenie zostáva nezmenené. Opravené bolo aj tlačidlo vymazania (✕) vo vyhľadávacom poli, takže funguje aj vo Firefoxe.

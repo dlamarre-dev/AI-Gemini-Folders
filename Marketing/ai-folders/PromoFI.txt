@@ -65,6 +65,7 @@ Selaa koodia tai osallistu: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 PÄIVITYKSET:
+Versio 1.6.3 (Tervetuloa-sivu): Asennuksen jälkeen avautuu nyt lyhyt opas: miten laajennus kiinnitetään ja ensimmäinen keskustelu tallennetaan. Haku kertoo myös selvästi kattavansa vain jo tallennetut keskustelut.
 Versio 1.6.2 (Kimi): Aloita uusia Kimi-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet. Laajennuksen poistaminen avaa nyt lyhyen vapaaehtoisen palautesivun omalla kielelläsi, eikä mitään lähetetä, ellet lähetä sitä itse.
 Versio 1.6.1 (Turvallisuus ja vakaus): Lisäsuojaukset tallennetuille linkeille ja varmuuskopioiden tuonnille sekä sisäisiä vakautuskorjauksia.
 Versio 1.6 (10 uutta tekoälypalvelua): Tallenna keskusteluja ja syötä kehotteita kymmenessä uudessa tekoälypalvelussa — mukana Mistral, Meta AI, Qwen ja Z.ai — uudistetuilla palvelupainikkeilla ja virallisilla logoilla.

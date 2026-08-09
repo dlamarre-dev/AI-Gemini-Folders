@@ -64,6 +64,7 @@ Pārlūkojiet kodu vai piedalieties: https://github.com/dlamarre-dev/AI-Gemini-F
 
 
 📢 ATJAUNINĀJUMI:
+Versija 1.6.3 (Sveiciena lapa): Pēc instalēšanas tagad atveras īss ceļvedis: kā piespraust paplašinājumu un saglabāt pirmo sarunu. Meklēšana arī skaidri norāda, ka ietver tikai jau saglabātās sarunas.
 Versija 1.6.2 (Kimi): Sāciet jaunas Kimi sarunas tieši no uzvedņu režīma, saglabājiet tās mapēs un ievietojiet uzvednes. Paplašinājuma noņemšana tagad atver īsu neobligātu atsauksmju lapu jūsu valodā, un nekas netiek nosūtīts, ja vien jūs to pats nenosūtāt.
 Versija 1.6.1 (Drošība un stabilitāte): Papildu aizsardzība saglabātajām saitēm un rezerves kopiju importēšanai, kā arī iekšēji stabilitātes labojumi.
 Versija 1.6 (10 jauni AI pakalpojumi): Saglabājiet sarunas un ievietojiet uzvednes vēl desmit AI pakalpojumos — tostarp Mistral, Meta AI, Qwen un Z.ai — ar pārveidotām pakalpojumu pogām un oficiālajiem logotipiem.

@@ -65,6 +65,7 @@ Koda göz atın veya katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini
 
 
 📢 GÜNCELLEMELER:
+Sürüm 1.6.3 (Karşılama sayfası): Kurulumdan sonra artık kısa bir rehber açılıyor: uzantıyı nasıl sabitleyeceğiniz ve ilk sohbetinizi nasıl kaydedeceğiniz. Arama da yalnızca kaydedilmiş sohbetleri kapsadığını açıkça belirtiyor.
 Sürüm 1.6.2 (Kimi): Prompt Modundan doğrudan yeni Kimi konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin. Uzantıyı kaldırmak artık kendi dilinizde kısa ve isteğe bağlı bir geri bildirim sayfası açar ve siz göndermedikçe hiçbir şey gönderilmez.
 Sürüm 1.6.1 (Güvenlik ve kararlılık): Kaydedilen bağlantılar ve yedek içe aktarmaları için ek korumalar, ayrıca dahili kararlılık düzeltmeleri.
 Sürüm 1.6 (10 yeni yapay zekâ hizmeti): On yeni yapay zekâ hizmetinde daha sohbetleri kaydedin ve promptları ekleyin — Mistral, Meta AI, Qwen ve Z.ai dahil — yeniden tasarlanmış hizmet düğmeleri ve resmî logolarla.

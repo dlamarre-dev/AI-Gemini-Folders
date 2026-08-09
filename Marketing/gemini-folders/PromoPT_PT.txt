@@ -64,6 +64,7 @@ Interessado em Pastas Gemini mas também utiliza ChatGPT, Claude, Copilot, Grok,
 👉 Instalar Pastas IA: __AF_STORE_URL__
 
 📢 ATUALIZAÇÕES:
+Versão 4.5.5 (Página de boas-vindas): Após a instalação abre agora um guia rápido: como fixar a extensão e guardar a sua primeira conversa. A pesquisa também deixa claro que abrange apenas as conversas já guardadas.
 Versão 4.5.4 (Inquérito de desinstalação): Remover a extensão abre agora uma breve página de comentários opcional no seu idioma, e nada é enviado a menos que o envie você mesmo.
 Versão 4.5.3 (Segurança e estabilidade): Proteções adicionais para ligações guardadas e importações de cópias de segurança, além de correções internas de estabilidade.
 Versão 4.5.1 (Refinamentos): As pastas são agora ordenadas da mais recente para a mais antiga por predefinição, tal como a sua biblioteca de prompts — qualquer ordenação que já tenha escolhido permanece inalterada. Foi também corrigido o botão de limpar (✕) no campo de pesquisa, que passa a funcionar também no Firefox.

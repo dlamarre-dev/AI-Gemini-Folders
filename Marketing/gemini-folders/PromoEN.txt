@@ -64,6 +64,7 @@ Interested in Gemini Folders but also use ChatGPT, Claude, Copilot, Grok, Perple
 👉 Install AI Folders: __AF_STORE_URL__
 
 📢 UPDATES:
+Version 4.5.5 (Welcome Page): A short guide now opens after installing, showing how to pin the extension and save your first conversation. Search also makes clear it only looks through conversations you have already saved.
 Version 4.5.4 (Uninstall Survey): Removing the extension now opens a short optional feedback page in your language, and nothing is sent unless you submit it yourself.
 Version 4.5.3 (Security & Stability): Extra safeguards for stored links and backup imports, plus internal stability fixes.
 Version 4.5.1 (Refinements): Folders now sort newest-first by default, to match your prompt library — any sort order you've already chosen stays untouched. Also fixed the clear (✕) button in the search box so it works in Firefox too.

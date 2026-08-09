@@ -65,6 +65,7 @@ Bläddra i koden eller bidra: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPPDATERINGAR:
+Version 1.6.3 (Välkomstsida): Efter installationen öppnas nu en kort guide: hur du fäster tillägget och sparar din första konversation. Sökningen visar också tydligt att den bara omfattar sparade konversationer.
 Version 1.6.2 (Kimi): Starta nya Kimi-konversationer direkt från Promptläge, spara dem i mappar och injicera promptar. När du tar bort tillägget öppnas nu en kort valfri återkopplingssida på ditt språk, och inget skickas om du inte skickar det själv.
 Version 1.6.1 (Säkerhet och stabilitet): Extra skydd för sparade länkar och import av säkerhetskopior, plus interna stabilitetsfixar.
 Version 1.6 (10 nya AI-tjänster): Spara konversationer och injicera promptar i tio fler AI-tjänster — bland annat Mistral, Meta AI, Qwen och Z.ai — med omdesignade tjänsteknappar och officiella logotyper.

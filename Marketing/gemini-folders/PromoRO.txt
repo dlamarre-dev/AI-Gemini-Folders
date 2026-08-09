@@ -64,6 +64,7 @@ Interesat de Foldere Gemini, dar folosiți și ChatGPT, Claude, Copilot, Grok, P
 👉 Instalează Dosare IA: __AF_STORE_URL__
 
 📢 ACTUALIZĂRI:
+Versiunea 4.5.5 (Pagină de bun venit): După instalare se deschide acum un ghid scurt: cum să fixezi extensia și să salvezi prima conversație. Căutarea precizează de asemenea că acoperă doar conversațiile deja salvate.
 Versiunea 4.5.4 (Sondaj de dezinstalare): Eliminarea extensiei deschide acum o scurtă pagină de feedback opțională în limba ta, iar nimic nu este trimis decât dacă o trimiți tu.
 Versiunea 4.5.3 (Securitate și stabilitate): Protecții suplimentare pentru linkurile salvate și importurile din backup, plus corecții interne de stabilitate.
 Versiunea 4.5.1 (Îmbunătățiri): Folderele sunt acum sortate implicit de la cele mai noi, la fel ca biblioteca ta de prompturi — ordinea de sortare aleasă anterior rămâne neschimbată. A fost corectat și butonul de ștergere (✕) din câmpul de căutare, astfel încât funcționează și în Firefox.

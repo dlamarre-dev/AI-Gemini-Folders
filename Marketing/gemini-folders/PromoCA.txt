@@ -62,6 +62,7 @@ Interessat en Carpetes Gemini però també fas servir ChatGPT, Claude, Copilot, 
 👉 Instal·lar Carpetes IA: __AF_STORE_URL__
 
 📢 ACTUALITZACIONS:
+Versió 4.5.5 (Pàgina de benvinguda): Després de la instal·lació ara s'obre una guia breu: com fixar l'extensió i desar la primera conversa. La cerca també deixa clar que només inclou les converses ja desades.
 Versió 4.5.4 (Enquesta de desinstal·lació): En eliminar l'extensió ara s'obre una breu pàgina de comentaris opcional en el vostre idioma, i no s'envia res tret que l'envieu vosaltres mateixos.
 Versió 4.5.3 (Seguretat i estabilitat): Proteccions addicionals per als enllaços desats i les importacions de còpies de seguretat, a més de correccions internes d'estabilitat.
 Versió 4.5.1 (Millores): Ara les carpetes s'ordenen de més recent a més antiga de manera predeterminada, igual que la teva biblioteca de prompts — qualsevol ordre que ja haguessis triat es manté sense canvis. També s'ha corregit el botó d'esborrat (✕) del camp de cerca perquè funcioni també al Firefox.

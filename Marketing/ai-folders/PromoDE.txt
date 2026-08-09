@@ -65,6 +65,7 @@ Code einsehen oder beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
+Version 1.6.3 (Willkommensseite): Nach der Installation öffnet sich jetzt eine kurze Anleitung: wie du die Erweiterung anheftest und deine erste Unterhaltung speicherst. Die Suche macht außerdem deutlich, dass sie nur bereits gespeicherte Unterhaltungen durchsucht.
 Version 1.6.2 (Kimi): Starten Sie neue Kimi-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts. Beim Entfernen der Erweiterung öffnet sich nun eine kurze, freiwillige Feedback-Seite in Ihrer Sprache, und gesendet wird nur, was Sie selbst absenden.
 Version 1.6.1 (Sicherheit & Stabilität): Zusätzliche Schutzmaßnahmen für gespeicherte Links und Backup-Importe sowie interne Stabilitätskorrekturen.
 Version 1.6 (10 neue KI-Dienste): Speichere Unterhaltungen und füge Prompts auf zehn weiteren KI-Diensten ein — darunter Mistral, Meta AI, Qwen und Z.ai — mit neu gestalteten Dienst-Buttons und offiziellen Logos.

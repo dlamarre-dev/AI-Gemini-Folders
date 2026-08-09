@@ -65,6 +65,7 @@ Parcourir le code ou contribuer : https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 MISES À JOUR :
+Version 1.6.3 (Page de bienvenue) : Un court guide s'ouvre désormais après l'installation : comment épingler l'extension et enregistrer votre première conversation. La recherche indique aussi clairement qu'elle ne couvre que les conversations déjà enregistrées.
 Version 1.6.2 (Kimi) : Lancez de nouvelles conversations Kimi directement depuis le Mode Prompts, sauvegardez-les dans des dossiers et injectez vos prompts. Retirer l'extension ouvre désormais une courte page de retour facultative dans votre langue, et rien n'est envoyé à moins que vous ne l'envoyiez vous-même.
 Version 1.6.1 (Sécurité et stabilité) : Protections renforcées pour les liens enregistrés et les imports de sauvegarde, avec des correctifs de stabilité internes.
 Version 1.6 (10 nouveaux services IA) : Sauvegardez vos conversations et injectez vos prompts sur dix services IA de plus — dont Mistral, Meta AI, Qwen et Z.ai — avec des boutons de services repensés et les logos officiels.

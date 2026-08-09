@@ -63,6 +63,7 @@ Huvitab teid Gemini Kaustad, kuid kasutate ka ChatGPT-d, Claudi, Copiloti, Groki
 👉 Installi AI kaustad: __AF_STORE_URL__
 
 📢 UUENDUSED:
+Versioon 4.5.5 (Tervituslehekülg): Pärast paigaldamist avaneb nüüd lühike juhend: kuidas laiendus kinnitada ja esimene vestlus salvestada. Otsing annab samuti selgelt teada, et hõlmab ainult juba salvestatud vestlusi.
 Versioon 4.5.4 (Eemaldamise küsitlus): Laienduse eemaldamine avab nüüd lühikese valikulise tagasiside lehe teie keeles ja midagi ei saadeta, kui te seda ise ära ei saada.
 Versioon 4.5.3 (Turvalisus ja stabiilsus): Täiendav kaitse salvestatud linkidele ja varukoopiate importimisele ning sisemised stabiilsusparandused.
 Versioon 4.5.1 (Täiustused): Kaustad sorteeritakse nüüd vaikimisi uuemad enne, sarnaselt sinu viipade teegiga — juba valitud sortimisjärjestus jääb muutmata. Samuti parandati otsinguvälja kustutusnupp (✕), nii et see töötab nüüd ka Firefoxis.

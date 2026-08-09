@@ -65,6 +65,7 @@ I-browse ang code o mag-contribute: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 
 📢 MGA UPDATE:
+Bersyon 1.6.3 (Pahina ng pagtanggap): Pagkatapos mag-install, may maikling gabay nang bumubukas: kung paano i-pin ang extension at i-save ang unang usapan mo. Malinaw ding sinasabi ng paghahanap na mga naka-save na usapan lang ang hinahanap nito.
 Bersyon 1.6.2 (Kimi): Magsimula ng mga bagong pag-uusap sa Kimi nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt. Ang pag-alis ng extension ay nagbubukas na ngayon ng maikling opsyonal na pahina ng feedback sa wika mo, at walang ipinapadala maliban kung ikaw mismo ang magpadala.
 Bersyon 1.6.1 (Seguridad at katatagan): Karagdagang proteksyon para sa mga naka-save na link at pag-import ng backup, kasama ang mga panloob na pag-aayos sa katatagan.
 Bersyon 1.6 (10 bagong AI services): Mag-save ng mga usapan at mag-inject ng prompts sa sampung karagdagang AI services — kabilang ang Mistral, Meta AI, Qwen at Z.ai — na may bagong disenyo ng mga service button at opisyal na logo.
