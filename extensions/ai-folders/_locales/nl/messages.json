@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Klik op het puzzelstukje rechtsboven in de browser en daarna op de speld naast deze extensie. Tot dan houdt de browser hem verborgen in dat menu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klik op het pictogram Extensies rechtsboven in de browser, daarna op het tandwiel ⚙ naast deze extensie en kies ‘Aan werkbalk vastzetten’."
+  },
   "welcomeOpenTitle": {
     "message": "Open een gesprek"
   },

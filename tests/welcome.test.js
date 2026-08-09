@@ -10,16 +10,29 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const HTML = fs.readFileSync(path.join(ROOT, 'src/welcome.html'), 'utf8');
 
+// The eight keys that map onto a slot in the page (id = 'w' + the part after
+// "welcome"). welcomePinBodyFirefox is the ninth string but not a ninth slot: it
+// replaces welcomePinBody in the same element on Firefox.
 const WELCOME_KEYS = [
   'welcomeReady', 'welcomePinTitle', 'welcomePinBody', 'welcomeOpenTitle',
   'welcomeOpenBody', 'welcomeSaveTitle', 'welcomeSaveBody', 'welcomeCta',
 ];
+const ALL_KEYS = WELCOME_KEYS.concat('welcomePinBodyFirefox');
+const FIREFOX_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:128.0) Gecko/20100101 Firefox/128.0';
 
 // `sites` stands in for the SITES registry that site-config.js defines as a global.
 // welcome.html loads that file with a <script> tag, which innerHTML never executes,
 // so the default here is "no registry" — the Gemini Folders case.
-function load({ lang = 'en', missingI18n = false, sites, messages } = {}) {
+// IS_FIREFOX is computed when welcome.js loads, so the UA has to be in place
+// before the require — hence the override here rather than inside a test.
+const REAL_UA = navigator.userAgent;
+function setUa(ua) {
+  Object.defineProperty(navigator, 'userAgent', { value: ua, configurable: true });
+}
+
+function load({ lang = 'en', missingI18n = false, sites, messages, ua = REAL_UA } = {}) {
   jest.resetModules();
+  setUa(ua);
   chrome.i18n.getUILanguage = jest.fn(() => lang);
   chrome.i18n.getMessage = missingI18n
     ? jest.fn(() => '')          // a locale file that failed to load
@@ -33,7 +46,7 @@ function load({ lang = 'en', missingI18n = false, sites, messages } = {}) {
   document.dispatchEvent(new Event('DOMContentLoaded'));
 }
 
-afterEach(() => { delete global.SITES; });
+afterEach(() => { delete global.SITES; setUa(REAL_UA); });
 
 const txt = (id) => document.getElementById(id).textContent;
 const logos = () => Array.from(document.querySelectorAll('#wSites img')).map(el => el.getAttribute('src'));
@@ -52,6 +65,36 @@ describe('welcome page rendering', () => {
     load();
     const titles = Array.from(document.querySelectorAll('.step-title')).map(el => el.id);
     expect(titles).toEqual(['wPinTitle', 'wOpenTitle', 'wSaveTitle']);
+  });
+
+  // Firefox 109+ also parks a new extension in its unified Extensions panel, so the
+  // step stays — but the gesture is a gear menu, not a pin toggle.
+  describe('the pin step on Firefox', () => {
+    test('keeps the step and swaps in the Firefox wording', () => {
+      load({ ua: FIREFOX_UA });
+      expect(document.querySelectorAll('.step')).toHaveLength(3);
+      expect(txt('wPinBody')).toBe('welcomePinBodyFirefox');
+      expect(txt('wPinTitle')).toBe('welcomePinTitle');   // the title is shared
+    });
+
+    test('every other browser keeps the Chrome wording', () => {
+      load();
+      expect(txt('wPinBody')).toBe('welcomePinBody');
+    });
+
+    test('the Firefox text quotes Firefox\'s own Pin to Toolbar label', () => {
+      // Pulled from mozilla-l10n so the page names the menu entry the user sees.
+      // Spot-checked here; the full set lives in the locale files.
+      const read = (loc) => JSON.parse(fs.readFileSync(
+        path.join(ROOT, 'extensions/ai-folders/_locales', loc, 'messages.json'), 'utf8'));
+      expect(read('fr').welcomePinBodyFirefox.message).toContain('Épingler à la barre d’outils');
+      expect(read('de').welcomePinBodyFirefox.message).toContain('An Symbolleiste anheften');
+      expect(read('ja').welcomePinBodyFirefox.message).toContain('ツールバーにピン留め');
+      // Firefox ships no translation for these, so it shows English — and so do we.
+      for (const loc of ['et', 'hi', 'lt', 'ms', 'sw']) {
+        expect(read(loc).welcomePinBodyFirefox.message).toContain('Pin to Toolbar');
+      }
+    });
   });
 
   // The instruction quotes the popup's own Save label. Substituting at runtime is
@@ -181,7 +224,7 @@ describe('welcome strings ship in every locale', () => {
 
     test.each(locales)(`${ext}/%s carries every welcome key, none empty`, (loc) => {
       const msgs = JSON.parse(fs.readFileSync(path.join(base, loc, 'messages.json'), 'utf8'));
-      const bad = WELCOME_KEYS.filter(k => !msgs[k] || !String(msgs[k].message).trim());
+      const bad = ALL_KEYS.filter(k => !msgs[k] || !String(msgs[k].message).trim());
       expect({ loc, bad }).toEqual({ loc, bad: [] });
     });
   }
@@ -197,7 +240,7 @@ describe('welcome strings ship in every locale', () => {
     for (const loc of locales) {
       const af = read('ai-folders', loc);
       const gf = read('gemini-folders', loc);
-      for (const k of WELCOME_KEYS) {
+      for (const k of ALL_KEYS) {
         if (k === 'welcomeOpenBody') {
           if (af[k].message === gf[k].message) identicalOpenBody.push(loc);
         } else if (af[k].message !== gf[k].message) {

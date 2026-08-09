@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Noklikšķiniet uz puzles gabaliņa ikonas pārlūka augšējā labajā stūrī, tad uz spraudītes blakus šim paplašinājumam. Līdz tam pārlūks to tur paslēptu šajā izvēlnē."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Noklikšķiniet uz ikonas Paplašinājumi pārlūka augšējā labajā stūrī, tad uz zobrata ⚙ blakus šim paplašinājumam un izvēlieties “Piespraust rīkjoslai”."
+  },
   "welcomeOpenTitle": {
     "message": "Atveriet sarunu"
   },

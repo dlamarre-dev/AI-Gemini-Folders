@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Napsauta selaimen oikeassa yläkulmassa olevaa palapelin palan kuvaketta ja sitten tämän laajennuksen vieressä olevaa nuppineulaa. Siihen asti selain pitää sen piilossa tuossa valikossa."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Napsauta selaimen oikeassa yläkulmassa Laajennukset-kuvaketta, sitten tämän laajennuksen vieressä olevaa rataskuvaketta ⚙ ja valitse ”Kiinnitä työkalupalkkiin”."
+  },
   "welcomeOpenTitle": {
     "message": "Avaa keskustelu"
   },

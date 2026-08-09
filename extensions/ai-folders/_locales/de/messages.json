@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Klicke oben rechts im Browser auf das Puzzleteil-Symbol und dann auf die Stecknadel neben dieser Erweiterung. Solange du das nicht tust, bleibt sie in diesem Menü verborgen."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klicke oben rechts im Browser auf das Symbol „Erweiterungen“, dann auf das Zahnrad ⚙ neben dieser Erweiterung und wähle „An Symbolleiste anheften“."
+  },
   "welcomeOpenTitle": {
     "message": "Öffne eine Unterhaltung"
   },

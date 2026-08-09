@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "點擊瀏覽器右上角的拼圖圖示，然後點擊這個擴充功能旁邊的圖釘。在固定之前，瀏覽器會一直把它藏在那個選單裡。"
   },
+  "welcomePinBodyFirefox": {
+    "message": "點擊瀏覽器右上角的「擴充功能」圖示，然後點擊這個擴充功能旁邊的齒輪 ⚙，選擇「釘選至工具列」。"
+  },
   "welcomeOpenTitle": {
     "message": "開啟一個對話"
   },

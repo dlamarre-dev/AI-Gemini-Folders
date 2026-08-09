@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Klicka på pusselbits-ikonen längst upp till höger i webbläsaren och sedan på nålen bredvid det här tillägget. Innan du gör det håller webbläsaren det gömt i den menyn."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klicka på ikonen Tillägg längst upp till höger i webbläsaren, sedan på kugghjulet ⚙ bredvid det här tillägget och välj ”Fäst i verktygsfält”."
+  },
   "welcomeOpenTitle": {
     "message": "Öppna en konversation"
   },

@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Clicca sull'icona a forma di tessera di puzzle in alto a destra nel browser, poi sulla puntina accanto a questa estensione. Fino a quel momento il browser la tiene nascosta in quel menu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Clicca sull'icona Estensioni in alto a destra nel browser, poi sull'ingranaggio ⚙ accanto a questa estensione e scegli «Aggiungi alla barra degli strumenti»."
+  },
   "welcomeOpenTitle": {
     "message": "Apri una conversazione"
   },

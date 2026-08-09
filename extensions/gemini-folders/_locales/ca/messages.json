@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Fes clic a la icona de peça de trencaclosques a la part superior dreta del navegador i després a la xinxeta al costat d'aquesta extensió. Fins que no ho facis, el navegador la manté amagada en aquell menú."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Fes clic a la icona Extensions a la part superior dreta del navegador, després a l'engranatge ⚙ al costat d'aquesta extensió i tria «Fixa a la barra de tasques»."
+  },
   "welcomeOpenTitle": {
     "message": "Obre una conversa"
   },

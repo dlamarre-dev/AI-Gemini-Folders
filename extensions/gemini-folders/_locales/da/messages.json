@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Klik på puslespilsbrik-ikonet øverst til højre i browseren og derefter på nålen ved siden af denne udvidelse. Indtil da holder browseren den skjult i den menu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klik på ikonet Udvidelser øverst til højre i browseren, derefter på tandhjulet ⚙ ved siden af denne udvidelse og vælg “Fastgør til værktøjslinje”."
+  },
   "welcomeOpenTitle": {
     "message": "Åbn en samtale"
   },

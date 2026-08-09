@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Nhấp vào biểu tượng mảnh ghép ở góc trên bên phải của trình duyệt, rồi nhấp vào chiếc ghim bên cạnh tiện ích này. Trước khi bạn làm vậy, trình duyệt vẫn giữ nó ẩn trong menu đó."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Nhấp vào biểu tượng Tiện ích ở góc trên bên phải của trình duyệt, rồi vào bánh răng ⚙ bên cạnh tiện ích này và chọn \"Ghim vào thanh công cụ\"."
+  },
   "welcomeOpenTitle": {
     "message": "Mở một cuộc trò chuyện"
   },
