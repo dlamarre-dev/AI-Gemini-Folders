@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Spustelėkite galvosūkio detalės piktogramą naršyklės viršuje dešinėje, tada smeigtuką prie šio plėtinio. Kol to nepadarysite, naršyklė laiko jį paslėptą tame meniu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Spustelėkite Papildinių piktogramą naršyklės viršuje dešinėje, tada krumpliaratį ⚙ prie šio plėtinio ir pasirinkite „Pin to Toolbar“."
+  },
   "welcomeOpenTitle": {
     "message": "Atidarykite pokalbį"
   },
@@ -324,7 +327,7 @@
     "message": "Išsaugokite jį aplanke"
   },
   "welcomeSaveBody": {
-    "message": "Spustelėkite plėtinio piktogramą, įrašykite aplanko pavadinimą ir paspauskite ➕. Veikia ir dešinysis pelės mygtukas puslapyje."
+    "message": "Spustelėkite plėtinio piktogramą, įrašykite aplanko pavadinimą ir paspauskite „{b}“."
   },
   "welcomeCta": {
     "message": "Supratau"

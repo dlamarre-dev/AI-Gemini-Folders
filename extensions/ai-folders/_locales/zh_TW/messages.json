@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "點擊瀏覽器右上角的拼圖圖示，然後點擊這個擴充功能旁邊的圖釘。在固定之前，瀏覽器會一直把它藏在那個選單裡。"
   },
+  "welcomePinBodyFirefox": {
+    "message": "點擊瀏覽器右上角的「擴充功能」圖示，然後點擊這個擴充功能旁邊的齒輪 ⚙，選擇「釘選至工具列」。"
+  },
   "welcomeOpenTitle": {
     "message": "開啟一個對話"
   },
@@ -324,7 +327,7 @@
     "message": "儲存到資料夾"
   },
   "welcomeSaveBody": {
-    "message": "點擊擴充功能圖示，輸入資料夾名稱並按 ➕。在頁面上按右鍵也可以。"
+    "message": "點擊擴充功能圖示，輸入資料夾名稱，然後按「{b}」。"
   },
   "welcomeCta": {
     "message": "我瞭解了"

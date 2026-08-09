@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Napsauta selaimen oikeassa yläkulmassa olevaa palapelin palan kuvaketta ja sitten tämän laajennuksen vieressä olevaa nuppineulaa. Siihen asti selain pitää sen piilossa tuossa valikossa."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Napsauta selaimen oikeassa yläkulmassa Laajennukset-kuvaketta, sitten tämän laajennuksen vieressä olevaa rataskuvaketta ⚙ ja valitse ”Kiinnitä työkalupalkkiin”."
+  },
   "welcomeOpenTitle": {
     "message": "Avaa keskustelu"
   },
@@ -324,7 +327,7 @@
     "message": "Tallenna se kansioon"
   },
   "welcomeSaveBody": {
-    "message": "Napsauta laajennuksen kuvaketta, kirjoita kansion nimi ja paina ➕. Myös sivun napsauttaminen hiiren oikealla painikkeella toimii."
+    "message": "Napsauta laajennuksen kuvaketta, kirjoita kansion nimi ja paina {b}."
   },
   "welcomeCta": {
     "message": "Selvä"

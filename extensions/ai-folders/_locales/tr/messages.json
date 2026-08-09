@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Tarayıcının sağ üst köşesindeki yapboz parçası simgesine, ardından bu uzantının yanındaki raptiyeye tıklayın. Bunu yapmadığınız sürece tarayıcı onu o menüde saklı tutar."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Tarayıcının sağ üst köşesindeki Uzantılar simgesine tıklayın, ardından bu uzantının yanındaki dişliye ⚙ tıklayıp \"Araç çubuğuna sabitle\" seçeneğini seçin."
+  },
   "welcomeOpenTitle": {
     "message": "Bir sohbet açın"
   },
@@ -324,7 +327,7 @@
     "message": "Bir klasöre kaydedin"
   },
   "welcomeSaveBody": {
-    "message": "Uzantı simgesine tıklayın, bir klasör adı yazın ve ➕ tuşuna basın. Sayfaya sağ tıklamak da işe yarar."
+    "message": "Uzantı simgesine tıklayın, bir klasör adı yazın ve {b} düğmesine basın."
   },
   "welcomeCta": {
     "message": "Anladım"

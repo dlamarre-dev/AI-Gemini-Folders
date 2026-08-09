@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Kliknite ikono sestavljanke zgoraj desno v brskalniku, nato pa bucko ob tej razširitvi. Do takrat jo brskalnik ohranja skrito v tistem meniju."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Kliknite ikono Razširitve zgoraj desno v brskalniku, nato zobnik ⚙ ob tej razširitvi in izberite »Pripni v orodno vrstico«."
+  },
   "welcomeOpenTitle": {
     "message": "Odprite pogovor"
   },
@@ -324,7 +327,7 @@
     "message": "Shranite ga v mapo"
   },
   "welcomeSaveBody": {
-    "message": "Kliknite ikono razširitve, vpišite ime mape in pritisnite ➕. Deluje tudi desni klik na stran."
+    "message": "Kliknite ikono razširitve, vpišite ime mape in pritisnite {b}."
   },
   "welcomeCta": {
     "message": "Razumem"

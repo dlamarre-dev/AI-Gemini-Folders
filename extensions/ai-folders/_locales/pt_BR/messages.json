@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Clique no ícone de peça de quebra-cabeça no canto superior direito do navegador e depois no alfinete ao lado desta extensão. Até você fazer isso, o navegador a mantém escondida nesse menu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Clique no ícone Extensões no canto superior direito do navegador, depois na engrenagem ⚙ ao lado desta extensão e escolha \"Fixar na barra de ferramentas\"."
+  },
   "welcomeOpenTitle": {
     "message": "Abra uma conversa"
   },
@@ -324,7 +327,7 @@
     "message": "Salve em uma pasta"
   },
   "welcomeSaveBody": {
-    "message": "Clique no ícone da extensão, digite um nome de pasta e aperte ➕. Clicar com o botão direito na página também funciona."
+    "message": "Clique no ícone da extensão, digite um nome de pasta e aperte {b}."
   },
   "welcomeCta": {
     "message": "Entendi"

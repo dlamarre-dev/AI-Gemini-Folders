@@ -25,6 +25,9 @@ conversations into folders and provide a reusable prompt library:
   to them. The vector sources live in `assets/site-logos/` (reference for the
   website/screenshots/videos); regenerate the PNGs with
   `node tools/generate-site-icons.js` (needs Chrome) after changing one.
+  Gemini Folders has an `icons/` directory too, holding only `gemini.png` — the
+  welcome page's site row needs the real Gemini mark, which is not the same image
+  as GF's own `icon.svg` (§10). Keep the two `gemini.png` copies identical.
 
 Both are built from one shared codebase in `src/`, with a thin per-extension
 overlay in `extensions/<name>/`. The build merges the two.
@@ -58,7 +61,8 @@ src/                         Shared code (copied into every build)
   import.js / import.html    Standalone import page (Firefox can't open a file
                              picker from a popup)
   welcome.html / .js / .css  First-run page, opened once on fresh install (see §10).
-                             Shared: all text comes from each extension's _locales
+                             Shared; text from each extension's _locales, site logos
+                             from its site-config.js. Styled after aifolders.xyz
   popup.css                  Shared styles
   lz-string.min.js           Vendored LZString (excluded from coverage)
 
@@ -303,20 +307,70 @@ they never opened the popup at all**. Chrome hides a new extension behind the pu
 icon, so after installing, nothing on screen changes. Hence step 1 is "pin it", not
 a feature tour. Baselines to measure against are in §11.
 
+**Firefox needs step 1 too — do not remove it there.** Since Firefox 109 (Jan 2023)
+Firefox has its own unified Extensions panel and a newly installed extension lands
+*in the panel*, not on the toolbar, exactly like Chrome; the extensions that don't
+appear in that panel are precisely the pinned ones. Only the gesture differs, so
+`welcome.js` swaps `welcomePinBody` for `welcomePinBodyFirefox` on a `/Firefox/`
+user-agent (same test as `background.js`). That string quotes Firefox's **own**
+"Pin to Toolbar" label, taken from `mozilla-l10n/firefox-l10n`
+(`browser/browser/unifiedExtensions.ftl`, key
+`unified-extensions-context-menu-pin-to-toolbar`) so the page names the menu entry
+the user actually sees. Five locales (et, hi, lt, ms, sw) have that file without the
+key, so Firefox falls back to en-US there — quoting the English label is correct for
+them, not a gap. Serbian is the Latin transliteration of Firefox's Cyrillic label
+(§6 / `tests/serbian-latin.test.js`). The step-1 artwork stays puzzle → pin in both
+browsers — the pin is the *outcome*, which is what the step title promises — but the
+**puzzle glyph itself is per-browser**: `.ico-chrome` (Material Symbols `extension`,
+filled) and `.ico-firefox` (Firefox's outline puzzle, stroked) both ship in the HTML
+and `pickExtensionsGlyph()` removes the one that does not apply. Exactly one must
+survive or they stack inside the same 38px tile. The outline needs `fill: none` **and**
+its `stroke-width` declared in `welcome.css`: presentation attributes on the markup
+lose to any CSS rule, so `.glyph svg { fill }` would otherwise flood the shape.
+
 - **`src/welcome.html` + `welcome.js` + `welcome.css` are shared** by both
   extensions. Every string comes from `chrome.i18n`, so the Gemini-vs-18-sites
   wording lives in each extension's own `_locales`. Seven of the eight keys are
   deliberately **product-neutral and byte-identical** between AF and GF; only
   `welcomeOpenBody` differs. `tests/welcome.test.js` enforces both halves of that.
   The product name is not a new key — the page reuses `appTitle`.
-- **`welcome.css` duplicates popup.css's palette tokens on purpose.** popup.css pins
-  `body { width: 392px; max-height: 576px }` and `html { overflow-y: hidden }`, which
-  a full browser tab must not inherit, and that block is explicitly fragile (§6).
-  Keep the two palettes in step if the popup's change.
-- **The illustrations are inline SVG, not screenshots.** A localized PNG per step
-  would be ~780 KB × 43 languages; the schematic stays sharp, follows the colour
-  scheme and needs no copy. The step-1 pin is Material `push_pin` — it must read as
-  a pushpin, since step 3 shows a real ➕ button and the two must not be confused.
+- **It is styled after aifolders.xyz, not after the popup** (brand row → big `h1` →
+  translucent cards → violet accent → `.btn-primary`), so the extension's own tab
+  reads like the privacy and uninstall pages the same user may see later.
+  `welcome.css` copies the tokens from `docs/site/styles.css`; keep them in step.
+  Two deliberate departures:
+  - **Dark only.** The site has no light theme, so matching it means not having one.
+    Don't "fix" this by adding a light palette — that would stop matching the site.
+  - **No web font.** The site pulls Schibsted Grotesk + a dozen Noto subsets from
+    Google Fonts. This page must stay inert, so it keeps the site's stack minus the
+    hosted font and falls back to `system-ui`. Vendoring the woff2 would cost
+    ~80 KB × 2 extensions (latin + latin-ext, both needed for the 43 locales) — a
+    deliberate open question, not an oversight.
+  It does **not** import `popup.css`: that pins `body { width: 392px;
+  max-height: 576px }` and `html { overflow-y: hidden }`, which a full tab must not
+  inherit, and the block is explicitly fragile (§6).
+- **The three illustrations are real UI, not schematics.** Step 1 shows Chrome's own
+  toolbar glyphs — Material `extension` (the puzzle button) then Material `push_pin`
+  — because those two icons *are* the instruction. Step 2 shows the supported sites'
+  logos, built by `welcome.js` from each extension's `site-config.js`: `SITES`
+  entries that have a `domain` (AF), or Gemini alone when there is no registry (GF,
+  which therefore also ships `icons/gemini.png`). Entries without a domain — the
+  user-configured local LLM — are left out of a row that says "open a conversation
+  on one of these". Step 3 is a CSS replica of the popup's own add-conversation
+  button, localized, so it is recognizable once the popup opens.
+- **The replica copies the popup button's *computed* values, not its source.**
+  `popup.css` declares a `.main-btn` block inside its `prefers-color-scheme: dark`
+  media query (translucent blue, 1px border, blue glow) that the plain `.main-btn`
+  rule further down overrides at equal specificity — so **none of that dark block
+  ever applies**, and transcribing it would have produced a button no user sees.
+  Read the values out of the browser if you touch this. (The dead block is a real
+  popup.css wart; cleaning it belongs with the §8 CSS cleanup, not here.)
+  A test pins the replica to the popup's dark `--accent-color` / `--shadow-sm` so a
+  restyle of the popup fails loudly instead of drifting.
+- **Step 3's text quotes the popup's Save button through a `{b}` placeholder**, which
+  `welcome.js` fills with this locale's `saveBtn`. Never hardcode the button name
+  into a translation: the substitution is what stops the instruction from naming a
+  button the popup does not have. A test asserts all 43 × 2 keep the placeholder.
 - **The page is inert**: no network, no storage writes, no "welcome seen" flag. It
   opens unprompted, so anything that fired on load would look like a phone-home —
   the same rule as the uninstall page (§9). A test asserts this.

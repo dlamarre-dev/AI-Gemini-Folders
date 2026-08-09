@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Klõpsake brauseri paremas ülanurgas pusletüki ikoonil ja seejärel selle laienduse kõrval oleval nööpnõelal. Seni hoiab brauser seda selles menüüs peidus."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klõpsake brauseri paremas ülanurgas ikoonil Laiendused, seejärel selle laienduse kõrval oleval hammasrattal ⚙ ja valige „Pin to Toolbar“."
+  },
   "welcomeOpenTitle": {
     "message": "Avage vestlus"
   },
@@ -288,7 +291,7 @@
     "message": "Salvestage see kausta"
   },
   "welcomeSaveBody": {
-    "message": "Klõpsake laienduse ikoonil, sisestage kausta nimi ja vajutage ➕. Töötab ka paremklõps lehel."
+    "message": "Klõpsake laienduse ikoonil, sisestage kausta nimi ja vajutage nuppu „{b}“."
   },
   "welcomeCta": {
     "message": "Sain aru"

@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Kliknite ikonu dijela slagalice u gornjem desnom kutu pregljednika, a zatim pribadaču uz ovo proširenje. Dok to ne učinite, pregljednik ga drži skrivenim u tom izborniku."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Kliknite ikonu Proširenja u gornjem desnom kutu pregljednika, zatim zupčanik ⚙ uz ovo proširenje i odaberite „Prikvači na alatnu traku”."
+  },
   "welcomeOpenTitle": {
     "message": "Otvorite razgovor"
   },
@@ -288,7 +291,7 @@
     "message": "Spremite ga u mapu"
   },
   "welcomeSaveBody": {
-    "message": "Kliknite ikonu proširenja, upišite naziv mape i pritisnite ➕. Radi i desni klik na stranicu."
+    "message": "Kliknite ikonu proširenja, upišite naziv mape i pritisnite {b}."
   },
   "welcomeCta": {
     "message": "Razumijem"

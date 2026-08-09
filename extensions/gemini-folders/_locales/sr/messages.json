@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Kliknite na ikonu dela slagalice u gornjem desnom uglu pregledača, a zatim na pribadaču uz ovo proširenje. Dok to ne uradite, pregledač ga drži skrivenim u tom meniju."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Kliknite na ikonu Proširenja u gornjem desnom uglu pregledača, zatim na zupčanik ⚙ uz ovo proširenje i izaberite „Dodaj na traku sa alatkama”."
+  },
   "welcomeOpenTitle": {
     "message": "Otvorite razgovor"
   },
@@ -288,7 +291,7 @@
     "message": "Sačuvajte ga u fasciklu"
   },
   "welcomeSaveBody": {
-    "message": "Kliknite na ikonu proširenja, upišite naziv fascikle i pritisnite ➕. Radi i desni klik na stranicu."
+    "message": "Kliknite na ikonu proširenja, upišite naziv fascikle i pritisnite {b}."
   },
   "welcomeCta": {
     "message": "Razumem"

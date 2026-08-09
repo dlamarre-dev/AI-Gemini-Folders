@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Kliknij ikonę puzzla w prawym górnym rogu przeglądarki, a potem pinezkę obok tego rozszerzenia. Dopóki tego nie zrobisz, przeglądarka trzyma je ukryte w tym menu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Kliknij ikonę Rozszerzenia w prawym górnym rogu przeglądarki, następnie koło zębate ⚙ obok tego rozszerzenia i wybierz „Przypnij do paska narzędzi”."
+  },
   "welcomeOpenTitle": {
     "message": "Otwórz rozmowę"
   },
@@ -324,7 +327,7 @@
     "message": "Zapisz ją w folderze"
   },
   "welcomeSaveBody": {
-    "message": "Kliknij ikonę rozszerzenia, wpisz nazwę folderu i naciśnij ➕. Kliknięcie strony prawym przyciskiem też działa."
+    "message": "Kliknij ikonę rozszerzenia, wpisz nazwę folderu i naciśnij {b}."
   },
   "welcomeCta": {
     "message": "Rozumiem"

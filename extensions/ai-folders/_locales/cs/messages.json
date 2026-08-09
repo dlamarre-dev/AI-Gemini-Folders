@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Klikněte na ikonu puzzle vpravo nahoře v prohlížeči a pak na připínáček vedle tohoto rozšíření. Dokud to neuděláte, prohlížeč ho drží skryté v té nabídce."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klikněte na ikonu Rozšíření vpravo nahoře v prohlížeči, pak na ozubené kolo ⚙ vedle tohoto rozšíření a zvolte „Připnout na lištu“."
+  },
   "welcomeOpenTitle": {
     "message": "Otevřete konverzaci"
   },
@@ -324,7 +327,7 @@
     "message": "Uložte ji do složky"
   },
   "welcomeSaveBody": {
-    "message": "Klikněte na ikonu rozšíření, napište název složky a stiskněte ➕. Funguje i pravé kliknutí na stránku."
+    "message": "Klikněte na ikonu rozšíření, napište název složky a stiskněte {b}."
   },
   "welcomeCta": {
     "message": "Rozumím"

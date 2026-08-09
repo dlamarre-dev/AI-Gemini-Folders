@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Klik ikon kepingan puzzle di kanan atas pelayar, kemudian pin di sebelah sambungan ini. Sebelum itu, pelayar menyimpannya tersembunyi dalam menu tersebut."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klik ikon Sambungan di kanan atas pelayar, kemudian gear ⚙ di sebelah sambungan ini dan pilih \"Pin to Toolbar\"."
+  },
   "welcomeOpenTitle": {
     "message": "Buka satu perbualan"
   },
@@ -288,7 +291,7 @@
     "message": "Simpan dalam folder"
   },
   "welcomeSaveBody": {
-    "message": "Klik ikon sambungan, tulis nama folder, kemudian tekan ➕. Klik kanan pada halaman juga berfungsi."
+    "message": "Klik ikon sambungan, tulis nama folder, kemudian tekan {b}."
   },
   "welcomeCta": {
     "message": "Faham"

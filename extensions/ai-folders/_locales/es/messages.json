@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Haz clic en el icono con forma de pieza de puzle arriba a la derecha del navegador y luego en la chincheta junto a esta extensión. Hasta que lo hagas, el navegador la mantiene oculta en ese menú."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Haz clic en el icono Extensiones arriba a la derecha del navegador, luego en el engranaje ⚙ junto a esta extensión y elige «Fijar a la barra de herramientas»."
+  },
   "welcomeOpenTitle": {
     "message": "Abre una conversación"
   },
@@ -324,7 +327,7 @@
     "message": "Guárdala en una carpeta"
   },
   "welcomeSaveBody": {
-    "message": "Haz clic en el icono de la extensión, escribe un nombre de carpeta y pulsa ➕. El clic derecho sobre la página también funciona."
+    "message": "Haz clic en el icono de la extensión, escribe un nombre de carpeta y pulsa {b}."
   },
   "welcomeCta": {
     "message": "Entendido"

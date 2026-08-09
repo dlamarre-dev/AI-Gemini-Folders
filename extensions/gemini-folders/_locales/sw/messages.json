@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Bofya aikoni ya kipande cha fumbo juu kulia kwenye kivinjari, kisha pini iliyo kando ya kiendelezi hiki. Hadi ufanye hivyo, kivinjari kinakificha kwenye menyu hiyo."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Bofya aikoni ya Viendelezi juu kulia kwenye kivinjari, kisha gia ⚙ kando ya kiendelezi hiki na uchague \"Pin to Toolbar\"."
+  },
   "welcomeOpenTitle": {
     "message": "Fungua mazungumzo"
   },
@@ -288,7 +291,7 @@
     "message": "Yahifadhi kwenye folda"
   },
   "welcomeSaveBody": {
-    "message": "Bofya aikoni ya kiendelezi, andika jina la folda na ubonyeze ➕. Kubofya kulia kwenye ukurasa pia kunafanya kazi."
+    "message": "Bofya aikoni ya kiendelezi, andika jina la folda, kisha bonyeza {b}."
   },
   "welcomeCta": {
     "message": "Nimeelewa"

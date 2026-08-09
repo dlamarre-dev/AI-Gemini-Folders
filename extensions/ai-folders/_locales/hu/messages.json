@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Kattints a böngésző jobb felső sarkában lévő kirakósdarab ikonra, majd a kiegészítő melletti rajzszögre. Addig a böngésző elrejtve tartja abban a menüben."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Kattints a böngésző jobb felső sarkában a Kiegészítők ikonra, majd a kiegészítő melletti fogaskerékre ⚙, és válaszd a(z) „Rögzítés az eszköztárra” lehetőséget."
+  },
   "welcomeOpenTitle": {
     "message": "Nyiss meg egy beszélgetést"
   },
@@ -324,7 +327,7 @@
     "message": "Mentsd el egy mappába"
   },
   "welcomeSaveBody": {
-    "message": "Kattints a kiegészítő ikonjára, írj be egy mappanevet, és nyomd meg a ➕ gombot. A jobb gombos kattintás az oldalon szintén működik."
+    "message": "Kattints a kiegészítő ikonjára, írj be egy mappanevet, és nyomd meg a {b} gombot."
   },
   "welcomeCta": {
     "message": "Értem"

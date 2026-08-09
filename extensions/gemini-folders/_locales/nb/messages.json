@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Klikk på puslespillbrikke-ikonet øverst til høyre i nettleseren, og deretter på nålen ved siden av denne utvidelsen. Fram til da holder nettleseren den skjult i den menyen."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klikk på Utvidelser-ikonet øverst til høyre i nettleseren, deretter på tannhjulet ⚙ ved siden av denne utvidelsen og velg «Fest til verktøylinjen»."
+  },
   "welcomeOpenTitle": {
     "message": "Åpne en samtale"
   },
@@ -288,7 +291,7 @@
     "message": "Lagre den i en mappe"
   },
   "welcomeSaveBody": {
-    "message": "Klikk på ikonet til utvidelsen, skriv et mappenavn og trykk ➕. Å høyreklikke på siden fungerer også."
+    "message": "Klikk på ikonet til utvidelsen, skriv et mappenavn og trykk {b}."
   },
   "welcomeCta": {
     "message": "Skjønner"

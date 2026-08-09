@@ -5,108 +5,96 @@
   23% of people who removed Gemini Folders had never opened the popup even once:
   Chrome hides new extensions behind the puzzle icon, so after installing, nothing
   on screen changes and the product effectively never happened. Step 1 is therefore
-  "pin it", not "here are our features".
+  "pin it", not a feature tour.
+
+  Styled after aifolders.xyz (see welcome.css) so the extension's own pages, the
+  privacy page and the uninstall page all read as one product.
 
   Shared by both extensions on purpose — every string comes from chrome.i18n, so
-  the Gemini-vs-18-sites wording lives in each extension's own _locales.
+  the Gemini-vs-18-sites wording lives in each extension's own _locales, and the
+  site row is built from each extension's own site-config.js.
   Nothing here talks to the network.
 -->
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="color-scheme" content="dark light">
+  <meta name="color-scheme" content="dark">
   <title>&nbsp;</title>
   <link rel="stylesheet" href="welcome.css">
 </head>
 <body>
+  <div class="bg-field"></div>
+
   <main class="wrap">
-    <header class="head">
-      <img id="wIcon" class="head-icon" src="icon.svg" alt="">
-      <h1 id="wTitle" class="head-title"></h1>
-      <p id="wReady" class="head-sub"></p>
-    </header>
+    <div class="brand">
+      <span class="brand-mark"><img src="icon.svg" alt=""></span>
+      <span id="wTitle"></span>
+    </div>
+    <h1 class="h1" id="wReady"></h1>
 
     <ol class="steps">
       <li class="step">
-        <div class="step-num">1</div>
         <div class="step-text">
-          <h2 id="wPinTitle" class="step-title"></h2>
-          <p id="wPinBody" class="step-body"></p>
+          <h2 class="step-title" id="wPinTitle"></h2>
+          <p class="step-body" id="wPinBody"></p>
         </div>
-        <!-- A schematic of the browser toolbar rather than a screenshot: it stays
-             sharp at any zoom, follows the colour scheme, needs no localized copy
-             per language, and adds no weight to the package. -->
-        <svg class="step-art" viewBox="0 0 200 96" role="img" aria-hidden="true">
-          <rect x="1" y="1" width="198" height="94" rx="8" class="art-panel"/>
-          <rect x="12" y="14" width="120" height="14" rx="7" class="art-bar"/>
-          <!-- puzzle icon -->
-          <g class="art-accent">
-            <path d="M148 14h10a3 3 0 0 1 3 3v4a3 3 0 0 0 3 3 3 3 0 0 1 0 6 3 3 0 0 0-3 3v4a3 3 0 0 1-3 3h-10a3 3 0 0 1-3-3v-4a3 3 0 0 0-3-3 3 3 0 0 1 0-6 3 3 0 0 0 3-3v-4a3 3 0 0 1 3-3z"/>
-          </g>
-          <circle cx="178" cy="21" r="7" class="art-avatar"/>
-          <!-- the dropdown it opens, with the pin highlighted -->
-          <rect x="112" y="42" width="78" height="44" rx="6" class="art-menu"/>
-          <rect x="120" y="50" width="10" height="10" rx="3" class="art-chip"/>
-          <rect x="136" y="53" width="30" height="4" rx="2" class="art-bar"/>
-          <g class="art-pin-hl">
-            <circle cx="178" cy="55" r="8"/>
-          </g>
-          <!-- Material "push_pin", 24px box scaled to 12 and centred on the circle.
-               Must read as a pushpin, not a cross: step 3 shows a real ➕ button and
-               the two must not look like the same control. -->
-          <g class="art-pin" transform="translate(172 49) scale(0.5)">
-            <path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z"/>
-          </g>
-          <rect x="120" y="68" width="10" height="10" rx="3" class="art-chip-dim"/>
-          <rect x="136" y="71" width="22" height="4" rx="2" class="art-bar-dim"/>
-        </svg>
+        <div class="step-art">
+          <!-- The glyphs the browser itself uses, in order — that pairing is the
+               whole instruction. The extensions button differs per browser, so both
+               are here and welcome.js drops the one that does not apply:
+                 .ico-chrome  Material Symbols "extension", 24dp wght400 (hence the
+                              0 -960 960 960 viewBox — not a typo)
+                 .ico-firefox the outline puzzle Firefox shows for its Extensions
+                              panel; stroked rather than filled, styled in welcome.css
+               The pin beside them is Material Symbols "keep" and is shared. -->
+          <span class="glyph">
+            <svg class="ico-chrome" viewBox="0 -960 960 960" role="img" aria-hidden="true">
+              <path d="M200-200h520v-184l45-22q16-8 25.5-22t9.5-32q0-17-9.5-31.5T765-514l-45-21v-185H528l-10-68q-3-22-19.5-37T460-840q-23 0-39.5 15T401-788l-10 68H200v86q56 21 88 68t32 106q0 60-32 107t-88 68v85Zm0 80q-34 0-57-23t-23-57v-152q48 0 84-30.5t36-77.5q0-46-36-76t-84-32v-152q0-33 23.5-56.5T200-800h122q7-51 46-85.5t92-34.5q52 0 91 34.5t47 85.5h122q33 0 56.5 23.5T800-720v134q36 18 58 52t22 74q0 41-22 75t-58 51v134q0 34-23.5 57T720-120H200Zm300-340Z"/>
+            </svg>
+            <svg class="ico-firefox" viewBox="0 0 512 512" role="img" aria-hidden="true">
+              <path d="M413.66,246.1H386a2,2,0,0,1-2-2V166.86A38.86,38.86,0,0,0,345.14,128H267.9a2,2,0,0,1-2-2V98.34c0-27.14-21.5-49.86-48.64-50.33a49.53,49.53,0,0,0-50.4,49.51V126a2,2,0,0,1-2,2H87.62A39.74,39.74,0,0,0,48,167.62V238a2,2,0,0,0,2,2H76.91c29.37,0,53.68,25.48,54.09,54.85.42,29.87-23.51,57.15-53.29,57.15H50a2,2,0,0,0-2,2v70.38A39.74,39.74,0,0,0,87.62,464H158a2,2,0,0,0,2-2V441.07c0-30.28,24.75-56.35,55-57.06,30.1-.7,57,20.31,57,50.28V462a2,2,0,0,0,2,2h71.14A38.86,38.86,0,0,0,384,425.14v-78a2,2,0,0,1,2-2h28.48c27.63,0,49.52-22.67,49.52-50.4S440.8,246.1,413.66,246.1Z"/>
+            </svg>
+          </span>
+          <span class="glyph-sep" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="glyph glyph-accent">
+            <svg viewBox="0 -960 960 960" role="img" aria-hidden="true">
+              <path d="m640-480 80 80v80H520v240l-40 40-40-40v-240H240v-80l80-80v-280h-40v-80h400v80h-40v280Zm-286 80h252l-46-46v-314H400v314l-46 46Zm126 0Z"/>
+            </svg>
+          </span>
+        </div>
       </li>
 
       <li class="step">
-        <div class="step-num">2</div>
         <div class="step-text">
-          <h2 id="wOpenTitle" class="step-title"></h2>
-          <p id="wOpenBody" class="step-body"></p>
+          <h2 class="step-title" id="wOpenTitle"></h2>
+          <p class="step-body" id="wOpenBody"></p>
         </div>
-        <svg class="step-art" viewBox="0 0 200 96" role="img" aria-hidden="true">
-          <rect x="1" y="1" width="198" height="94" rx="8" class="art-panel"/>
-          <rect x="12" y="12" width="46" height="72" rx="6" class="art-menu"/>
-          <rect x="18" y="20" width="34" height="4" rx="2" class="art-bar-dim"/>
-          <rect x="18" y="30" width="28" height="4" rx="2" class="art-bar-dim"/>
-          <rect x="18" y="40" width="32" height="4" rx="2" class="art-bar-dim"/>
-          <rect x="70" y="20" width="112" height="5" rx="2.5" class="art-bar"/>
-          <rect x="70" y="33" width="96" height="5" rx="2.5" class="art-bar"/>
-          <rect x="70" y="46" width="104" height="5" rx="2.5" class="art-bar-dim"/>
-          <rect x="70" y="66" width="112" height="18" rx="9" class="art-input"/>
-        </svg>
+        <!-- Filled by welcome.js from site-config.js: every supported site for AI
+             Folders, Gemini alone for Gemini Folders. -->
+        <div class="step-art site-row" id="wSites"></div>
       </li>
 
       <li class="step">
-        <div class="step-num">3</div>
         <div class="step-text">
-          <h2 id="wSaveTitle" class="step-title"></h2>
-          <p id="wSaveBody" class="step-body"></p>
+          <h2 class="step-title" id="wSaveTitle"></h2>
+          <p class="step-body" id="wSaveBody"></p>
         </div>
-        <svg class="step-art" viewBox="0 0 200 96" role="img" aria-hidden="true">
-          <rect x="1" y="1" width="198" height="94" rx="8" class="art-panel"/>
-          <rect x="12" y="12" width="120" height="16" rx="8" class="art-input"/>
-          <g class="art-plus">
-            <circle cx="164" cy="20" r="14"/>
-          </g>
-          <path d="M164 13v14M157 20h14" class="art-plus-glyph"/>
-          <rect x="12" y="42" width="176" height="18" rx="6" class="art-folder"/>
-          <rect x="22" y="49" width="10" height="4" rx="2" class="art-bar"/>
-          <rect x="38" y="49" width="52" height="4" rx="2" class="art-bar"/>
-          <rect x="24" y="68" width="164" height="16" rx="6" class="art-chat"/>
-          <rect x="34" y="74" width="70" height="4" rx="2" class="art-bar-dim"/>
-        </svg>
+        <!-- A replica of the popup's own add-conversation button, localized, so the
+             user recognizes it when they open the popup. -->
+        <div class="step-art">
+          <span class="popup-btn" id="wAddBtn"></span>
+        </div>
       </li>
     </ol>
 
     <div class="cta-row">
-      <button id="wCta" type="button" class="cta"></button>
+      <button id="wCta" type="button" class="btn btn-primary"></button>
     </div>
   </main>
+
+  <script src="site-config.js"></script>
   <script src="welcome.js"></script>
 </body>
 </html>
