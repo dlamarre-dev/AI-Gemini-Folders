@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "点击浏览器右上角的拼图图标，然后点击这个扩展旁边的图钉。在固定之前，浏览器会一直把它藏在那个菜单里。"
   },
+  "welcomePinBodyFirefox": {
+    "message": "点击浏览器右上角的「扩展」图标，然后点击这个扩展旁边的齿轮 ⚙，选择「固定到工具栏」。"
+  },
   "welcomeOpenTitle": {
     "message": "打开一个对话"
   },

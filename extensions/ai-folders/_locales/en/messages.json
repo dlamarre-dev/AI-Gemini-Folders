@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "Click the puzzle-piece icon at the top right of the browser, then the pin beside this extension. Until you do, the browser keeps it hidden in that menu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Click the Extensions icon at the top right of the browser, then the gear ⚙ beside this extension and choose “Pin to Toolbar”."
+  },
   "welcomeOpenTitle": {
     "message": "Open a conversation"
   },

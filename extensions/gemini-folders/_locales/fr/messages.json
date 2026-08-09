@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Cliquez sur l'icône en forme de pièce de puzzle en haut à droite du navigateur, puis sur l'épingle à côté de cette extension. Sans cela, le navigateur la garde cachée dans ce menu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Cliquez sur l'icône Extensions en haut à droite du navigateur, puis sur l'engrenage ⚙ à côté de cette extension et choisissez « Épingler à la barre d’outils »."
+  },
   "welcomeOpenTitle": {
     "message": "Ouvrez une conversation"
   },

@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Klik ikon kepingan puzzle di kanan atas pelayar, kemudian pin di sebelah sambungan ini. Sebelum itu, pelayar menyimpannya tersembunyi dalam menu tersebut."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klik ikon Sambungan di kanan atas pelayar, kemudian gear ⚙ di sebelah sambungan ini dan pilih \"Pin to Toolbar\"."
+  },
   "welcomeOpenTitle": {
     "message": "Buka satu perbualan"
   },

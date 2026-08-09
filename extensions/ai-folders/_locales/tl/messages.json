@@ -314,6 +314,9 @@
   "welcomePinBody": {
     "message": "I-click ang icon na hugis piyesa ng puzzle sa kanang itaas ng browser, tapos ang pin sa tabi ng extension na ito. Hangga't hindi mo ito gagawin, itinatago ito ng browser sa menu na iyon."
   },
+  "welcomePinBodyFirefox": {
+    "message": "I-click ang icon ng Extensions sa kanang itaas ng browser, tapos ang gear ⚙ sa tabi ng extension na ito at piliin ang \"I-pin sa Toolbar\"."
+  },
   "welcomeOpenTitle": {
     "message": "Magbukas ng usapan"
   },

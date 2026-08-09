@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Klikněte na ikonu puzzle vpravo nahoře v prohlížeči a pak na připínáček vedle tohoto rozšíření. Dokud to neuděláte, prohlížeč ho drží skryté v té nabídce."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klikněte na ikonu Rozšíření vpravo nahoře v prohlížeči, pak na ozubené kolo ⚙ vedle tohoto rozšíření a zvolte „Připnout na lištu“."
+  },
   "welcomeOpenTitle": {
     "message": "Otevřete konverzaci"
   },

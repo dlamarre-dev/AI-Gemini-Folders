@@ -8,11 +8,17 @@
 
 // id -> message key. The Gemini-vs-supported-sites wording lives in each
 // extension's own _locales, so this file stays shared.
+// Firefox 109+ behaves like Chrome — a newly installed extension lands in the
+// unified Extensions panel rather than on the toolbar — so step 1 is needed there
+// too. Only the gesture differs: the panel row carries a gear that opens a context
+// menu, instead of Chrome's pin toggle. Same UA test as background.js.
+const IS_FIREFOX = /Firefox/.test(navigator.userAgent);
+
 const TEXT = {
   wTitle: 'appTitle',            // reused: no new key needed for the product name
   wReady: 'welcomeReady',
   wPinTitle: 'welcomePinTitle',
-  wPinBody: 'welcomePinBody',
+  wPinBody: IS_FIREFOX ? 'welcomePinBodyFirefox' : 'welcomePinBody',
   wOpenTitle: 'welcomeOpenTitle',
   wOpenBody: 'welcomeOpenBody',  // the one product-specific string
   wSaveTitle: 'welcomeSaveTitle',
@@ -27,6 +33,8 @@ const FALLBACK = {
   welcomePinTitle: 'Pin it to your toolbar',
   welcomePinBody: 'Click the puzzle icon at the top right of the browser, then the pin '
     + 'beside this extension. Until you do, the browser keeps it hidden in that menu.',
+  welcomePinBodyFirefox: 'Click the Extensions icon at the top right of the browser, then '
+    + 'the gear ⚙ beside this extension and choose “Pin to Toolbar”.',
   welcomeOpenTitle: 'Open a conversation',
   welcomeOpenBody: 'Open a conversation on one of the supported AI sites.',
   welcomeSaveTitle: 'Save it to a folder',

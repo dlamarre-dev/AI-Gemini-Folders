@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Clique no ícone em forma de peça de puzzle no canto superior direito do navegador e depois no alfinete ao lado desta extensão. Até o fazer, o navegador mantém-na escondida nesse menu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Clique no ícone Extensões no canto superior direito do navegador, depois na roda dentada ⚙ ao lado desta extensão e escolha «Afixar na barra de ferramentas»."
+  },
   "welcomeOpenTitle": {
     "message": "Abra uma conversa"
   },

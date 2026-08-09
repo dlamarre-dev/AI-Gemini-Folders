@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Dă clic pe pictograma în formă de piesă de puzzle din dreapta sus a browserului, apoi pe pioneza de lângă această extensie. Până atunci, browserul o ține ascunsă în acel meniu."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Dă clic pe pictograma Extensii din dreapta sus a browserului, apoi pe rotița ⚙ de lângă această extensie și alege „Fixează în bara de instrumente”."
+  },
   "welcomeOpenTitle": {
     "message": "Deschide o conversație"
   },

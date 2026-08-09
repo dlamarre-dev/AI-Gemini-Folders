@@ -278,6 +278,9 @@
   "welcomePinBody": {
     "message": "Klik ikon kepingan puzzle di kanan atas peramban, lalu pin di samping ekstensi ini. Sebelum itu, peramban menyimpannya tersembunyi di menu tersebut."
   },
+  "welcomePinBodyFirefox": {
+    "message": "Klik ikon Ekstensi di kanan atas peramban, lalu roda gigi ⚙ di samping ekstensi ini dan pilih \"Sematkan ke Bilah Alat\"."
+  },
   "welcomeOpenTitle": {
     "message": "Buka sebuah percakapan"
   },

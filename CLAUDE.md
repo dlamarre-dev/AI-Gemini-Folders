@@ -307,6 +307,21 @@ they never opened the popup at all**. Chrome hides a new extension behind the pu
 icon, so after installing, nothing on screen changes. Hence step 1 is "pin it", not
 a feature tour. Baselines to measure against are in §11.
 
+**Firefox needs step 1 too — do not remove it there.** Since Firefox 109 (Jan 2023)
+Firefox has its own unified Extensions panel and a newly installed extension lands
+*in the panel*, not on the toolbar, exactly like Chrome; the extensions that don't
+appear in that panel are precisely the pinned ones. Only the gesture differs, so
+`welcome.js` swaps `welcomePinBody` for `welcomePinBodyFirefox` on a `/Firefox/`
+user-agent (same test as `background.js`). That string quotes Firefox's **own**
+"Pin to Toolbar" label, taken from `mozilla-l10n/firefox-l10n`
+(`browser/browser/unifiedExtensions.ftl`, key
+`unified-extensions-context-menu-pin-to-toolbar`) so the page names the menu entry
+the user actually sees. Five locales (et, hi, lt, ms, sw) have that file without the
+key, so Firefox falls back to en-US there — quoting the English label is correct for
+them, not a gap. Serbian is the Latin transliteration of Firefox's Cyrillic label
+(§6 / `tests/serbian-latin.test.js`). The step-1 artwork stays puzzle → pin in both
+browsers: the pin is the *outcome*, which is what the step title promises.
+
 - **`src/welcome.html` + `welcome.js` + `welcome.css` are shared** by both
   extensions. Every string comes from `chrome.i18n`, so the Gemini-vs-18-sites
   wording lives in each extension's own `_locales`. Seven of the eight keys are
