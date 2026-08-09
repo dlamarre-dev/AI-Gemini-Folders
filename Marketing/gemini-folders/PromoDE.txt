@@ -64,6 +64,7 @@ Interessiert an Gemini-Ordner, aber nutzen Sie auch ChatGPT, Claude, Copilot, Gr
 👉 KI-Ordner installieren: __AF_STORE_URL__
 
 📢 UPDATES:
+Version 4.5.5 (Willkommensseite): Nach der Installation öffnet sich jetzt eine kurze Anleitung: wie du die Erweiterung anheftest und deine erste Unterhaltung speicherst. Die Suche macht außerdem deutlich, dass sie nur bereits gespeicherte Unterhaltungen durchsucht.
 Version 4.5.4 (Deinstallations-Umfrage): Beim Entfernen der Erweiterung öffnet sich nun eine kurze, freiwillige Feedback-Seite in Ihrer Sprache, und gesendet wird nur, was Sie selbst absenden.
 Version 4.5.3 (Sicherheit & Stabilität): Zusätzliche Schutzmaßnahmen für gespeicherte Links und Backup-Importe sowie interne Stabilitätskorrekturen.
 Version 4.5.1 (Feinschliff): Ordner werden jetzt standardmäßig nach Neueste zuerst sortiert, passend zu Ihrer Prompt-Bibliothek — eine bereits gewählte Sortierung bleibt unverändert. Außerdem wurde die Löschen-Schaltfläche (✕) im Suchfeld korrigiert, sodass sie auch in Firefox funktioniert.

@@ -64,6 +64,7 @@ Sirvi koodi või panusta: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UUENDUSED:
+Versioon 1.6.3 (Tervituslehekülg): Pärast paigaldamist avaneb nüüd lühike juhend: kuidas laiendus kinnitada ja esimene vestlus salvestada. Otsing annab samuti selgelt teada, et hõlmab ainult juba salvestatud vestlusi.
 Versioon 1.6.2 (Kimi): Alustage uusi Kimi vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid. Laienduse eemaldamine avab nüüd lühikese valikulise tagasiside lehe teie keeles ja midagi ei saadeta, kui te seda ise ära ei saada.
 Versioon 1.6.1 (Turvalisus ja stabiilsus): Täiendav kaitse salvestatud linkidele ja varukoopiate importimisele ning sisemised stabiilsusparandused.
 Versioon 1.6 (10 uut AI-teenust): Salvesta vestlusi ja sisesta viipasid veel kümnes AI-teenuses — sealhulgas Mistral, Meta AI, Qwen ja Z.ai — uuendatud teenusenuppude ja ametlike logodega.

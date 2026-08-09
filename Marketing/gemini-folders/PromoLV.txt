@@ -63,6 +63,7 @@ Interesē Gemini Mapes, bet izmantojat arī ChatGPT, Claude, Copilot, Grok, Perp
 👉 Instalēt AI mapes: __AF_STORE_URL__
 
 📢 ATJAUNINĀJUMI:
+Versija 4.5.5 (Sveiciena lapa): Pēc instalēšanas tagad atveras īss ceļvedis: kā piespraust paplašinājumu un saglabāt pirmo sarunu. Meklēšana arī skaidri norāda, ka ietver tikai jau saglabātās sarunas.
 Versija 4.5.4 (Atinstalēšanas aptauja): Paplašinājuma noņemšana tagad atver īsu neobligātu atsauksmju lapu jūsu valodā, un nekas netiek nosūtīts, ja vien jūs to pats nenosūtāt.
 Versija 4.5.3 (Drošība un stabilitāte): Papildu aizsardzība saglabātajām saitēm un rezerves kopiju importēšanai, kā arī iekšēji stabilitātes labojumi.
 Versija 4.5.1 (Uzlabojumi): Mapes tagad pēc noklusējuma tiek kārtotas no jaunākajām, tāpat kā jūsu uzvednu bibliotēka — jau izvēlētā kārtošanas secība paliek nemainīga. Tika izlabota arī notīrīšanas poga (✕) meklēšanas laukā, tāpēc tā darbojas arī pārlūkā Firefox.

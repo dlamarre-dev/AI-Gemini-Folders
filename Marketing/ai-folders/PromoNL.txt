@@ -65,6 +65,7 @@ Bekijk de code of draag bij: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
+Versie 1.6.3 (Welkomstpagina): Na installatie opent nu een korte uitleg: hoe je de extensie vastzet en je eerste gesprek opslaat. Zoeken maakt bovendien duidelijk dat het alleen al opgeslagen gesprekken doorzoekt.
 Versie 1.6.2 (Kimi): Start nieuwe Kimi-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts. Bij het verwijderen van de extensie opent nu een korte optionele feedbackpagina in je eigen taal, en er wordt niets verzonden tenzij je het zelf verstuurt.
 Versie 1.6.1 (Beveiliging en stabiliteit): Extra bescherming voor opgeslagen links en back-upimports, plus interne stabiliteitsverbeteringen.
 Versie 1.6 (10 nieuwe AI-diensten): Bewaar gesprekken en injecteer prompts op tien extra AI-diensten — waaronder Mistral, Meta AI, Qwen en Z.ai — met opnieuw ontworpen serviceknoppen en officiële logo's.

@@ -63,6 +63,7 @@ Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Grok, Per
 👉 Namesti Mape AI: __AF_STORE_URL__
 
 📢 POSODOBITVE:
+Različica 4.5.5 (Pozdravna stran): Po namestitvi se zdaj odpre kratek vodnik: kako pripeti razširitev in shraniti prvi pogovor. Iskanje tudi jasno pove, da zajema le že shranjene pogovore.
 Različica 4.5.4 (Anketa ob odstranitvi): Odstranitev razširitve zdaj odpre kratko neobvezno stran za povratne informacije v vašem jeziku in nič ni poslano, dokler je sami ne pošljete.
 Različica 4.5.3 (Varnost in stabilnost): Dodatna zaščita shranjenih povezav in uvoza varnostnih kopij ter notranji popravki stabilnosti.
 Različica 4.5.1 (Izboljšave): Mape so zdaj privzeto razvrščene od najnovejših, tako kot vaša knjižnica pozivov — že izbrani vrstni red razvrščanja ostane nespremenjen. Popravljen je tudi gumb za počiščenje (✕) v iskalnem polju, tako da deluje tudi v Firefoxu.

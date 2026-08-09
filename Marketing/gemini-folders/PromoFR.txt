@@ -64,6 +64,7 @@ Intéressé par Dossiers Gemini mais vous utilisez aussi ChatGPT, Claude, Copilo
 👉 Installer Dossiers IA: __AF_STORE_URL__
 
 📢 MISES À JOUR :
+Version 4.5.5 (Page de bienvenue) : Un court guide s'ouvre désormais après l'installation : comment épingler l'extension et enregistrer votre première conversation. La recherche indique aussi clairement qu'elle ne couvre que les conversations déjà enregistrées.
 Version 4.5.4 (Sondage de désinstallation) : Retirer l'extension ouvre désormais une courte page de retour facultative dans votre langue, et rien n'est envoyé à moins que vous ne l'envoyiez vous-même.
 Version 4.5.3 (Sécurité et stabilité) : Protections renforcées pour les liens enregistrés et les imports de sauvegarde, avec des correctifs de stabilité internes.
 Version 4.5.1 (Améliorations) : Les dossiers sont désormais triés du plus récent au plus ancien par défaut, comme votre bibliothèque de prompts — l'ordre de tri que vous aviez déjà choisi reste inchangé. Correction également du bouton d'effacement (✕) dans le champ de recherche, qui fonctionne désormais aussi sur Firefox.

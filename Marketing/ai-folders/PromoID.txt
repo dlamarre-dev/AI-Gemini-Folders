@@ -65,6 +65,7 @@ Jelajahi kode atau berkontribusi: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 PEMBARUAN:
+Versi 1.6.3 (Halaman selamat datang): Setelah pemasangan kini terbuka panduan singkat: cara menyematkan ekstensi dan menyimpan percakapan pertama Anda. Pencarian juga menegaskan bahwa hanya mencakup percakapan yang sudah disimpan.
 Versi 1.6.2 (Kimi): Mulai percakapan Kimi baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt. Menghapus ekstensi kini membuka halaman masukan singkat dan opsional dalam bahasa Anda, dan tidak ada yang dikirim kecuali Anda mengirimkannya sendiri.
 Versi 1.6.1 (Keamanan & stabilitas): Perlindungan tambahan untuk tautan tersimpan dan impor cadangan, serta perbaikan stabilitas internal.
 Versi 1.6 (10 layanan AI baru): Simpan percakapan dan sisipkan prompt di sepuluh layanan AI lagi — termasuk Mistral, Meta AI, Qwen, dan Z.ai — dengan tombol layanan yang didesain ulang dan logo resmi.

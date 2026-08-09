@@ -64,6 +64,7 @@ Kiinnostuitko Gemini-kansiot-laajennuksesta, mutta käytätkö myös ChatGPT:tä
 👉 Asenna AI-kansiot: __AF_STORE_URL__
 
 📢 PÄIVITYKSET:
+Versio 4.5.5 (Tervetuloa-sivu): Asennuksen jälkeen avautuu nyt lyhyt opas: miten laajennus kiinnitetään ja ensimmäinen keskustelu tallennetaan. Haku kertoo myös selvästi kattavansa vain jo tallennetut keskustelut.
 Versio 4.5.4 (Poistokysely): Laajennuksen poistaminen avaa nyt lyhyen vapaaehtoisen palautesivun omalla kielelläsi, eikä mitään lähetetä, ellet lähetä sitä itse.
 Versio 4.5.3 (Turvallisuus ja vakaus): Lisäsuojaukset tallennetuille linkeille ja varmuuskopioiden tuonnille sekä sisäisiä vakautuskorjauksia.
 Versio 4.5.1 (Hienosäädöt): Kansiot lajitellaan nyt oletuksena uusimmat ensin, samoin kuin kehotekirjastosi — jo valitsemasi lajittelujärjestys säilyy ennallaan. Lisäksi hakukentän tyhjennyspainike (✕) korjattiin, joten se toimii nyt myös Firefoxissa.

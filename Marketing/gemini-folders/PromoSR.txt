@@ -63,6 +63,7 @@ Zainteresovani za Gemini Folderi, ali koristite i ChatGPT, Claude, Copilot, Grok
 👉 Instaliraj VI fascikle: __AF_STORE_URL__
 
 📢 AŽURIRANJA:
+Verzija 4.5.5 (Stranica dobrodošlice): Nakon instalacije sada se otvara kratak vodič: kako prikačiti proširenje i sačuvati prvi razgovor. Pretraga takođe jasno navodi da obuhvata samo već sačuvane razgovore.
 Verzija 4.5.4 (Anketa pri deinstalaciji): Uklanjanje proširenja sada otvara kratku opcionu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
 Verzija 4.5.3 (Bezbednost i stabilnost): Dodatna zaštita sačuvanih linkova i uvoza rezervnih kopija, uz interne popravke stabilnosti.
 Verzija 4.5.1 (Poboljšanja): Fascikle se sada podrazumevano sortiraju od najnovijih, kao i vaša biblioteka promptova — već izabrani redosled sortiranja ostaje nepromenjen. Ispravljeno je i dugme za brisanje (✕) u polju za pretragu, pa sada radi i u Firefoxu.

@@ -64,6 +64,7 @@ Intresserad av Gemini-mappar men använder du också ChatGPT, Claude, Copilot, G
 👉 Installera AI-mappar: __AF_STORE_URL__
 
 📢 UPPDATERINGAR:
+Version 4.5.5 (Välkomstsida): Efter installationen öppnas nu en kort guide: hur du fäster tillägget och sparar din första konversation. Sökningen visar också tydligt att den bara omfattar sparade konversationer.
 Version 4.5.4 (Avinstallationsenkät): När du tar bort tillägget öppnas nu en kort valfri återkopplingssida på ditt språk, och inget skickas om du inte skickar det själv.
 Version 4.5.3 (Säkerhet och stabilitet): Extra skydd för sparade länkar och import av säkerhetskopior, plus interna stabilitetsfixar.
 Version 4.5.1 (Finjusteringar): Mappar sorteras nu med nyast först som standard, i linje med ditt promptbibliotek — en sorteringsordning du redan valt lämnas oförändrad. Dessutom har rensningsknappen (✕) i sökfältet åtgärdats så att den även fungerar i Firefox.

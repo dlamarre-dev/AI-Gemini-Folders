@@ -64,6 +64,7 @@ Interessert i Gemini Mapper men bruker du også ChatGPT, Claude, Copilot, Grok, 
 👉 Installer AI-mapper: __AF_STORE_URL__
 
 📢 OPPDATERINGER:
+Versjon 4.5.5 (Velkomstside): Etter installasjonen åpnes nå en kort veiledning: hvordan du fester utvidelsen og lagrer den første samtalen. Søket gjør det også tydelig at det bare dekker lagrede samtaler.
 Versjon 4.5.4 (Avinstallasjonsundersøkelse): Når du fjerner utvidelsen, åpnes nå en kort valgfri tilbakemeldingsside på ditt språk, og ingenting sendes med mindre du sender det selv.
 Versjon 4.5.3 (Sikkerhet og stabilitet): Ekstra beskyttelse for lagrede lenker og sikkerhetskopiimport, pluss interne stabilitetsrettelser.
 Versjon 4.5.1 (Forbedringer): Mapper sorteres nå med nyeste først som standard, i tråd med promptbiblioteket ditt — en sorteringsrekkefølge du allerede har valgt, forblir uendret. I tillegg er tøm-knappen (✕) i søkefeltet rettet, slik at den også virker i Firefox.

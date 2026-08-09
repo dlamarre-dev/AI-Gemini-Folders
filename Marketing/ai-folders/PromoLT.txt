@@ -64,6 +64,7 @@ Naršykite kodą arba prisidėkite: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 
 📢 ATNAUJINIMAI:
+Versija 1.6.3 (Pasveikinimo puslapis): Po įdiegimo dabar atsidaro trumpas vadovas: kaip prisegti plėtinį ir išsaugoti pirmą pokalbį. Paieška taip pat aiškiai nurodo, kad apima tik jau išsaugotus pokalbius.
 Versija 1.6.2 (Kimi): Pradėkite naujus Kimi pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus. Pašalinus plėtinį dabar atsidaro trumpas neprivalomas atsiliepimų puslapis jūsų kalba, ir nieko neišsiunčiama, nebent patys jį išsiųstumėte.
 Versija 1.6.1 (Sauga ir stabilumas): Papildoma išsaugotų nuorodų ir atsarginių kopijų importo apsauga bei vidiniai stabilumo pataisymai.
 Versija 1.6 (10 naujų DI paslaugų): Išsaugokite pokalbius ir įterpkite užklausas dar dešimtyje DI paslaugų — įskaitant Mistral, Meta AI, Qwen ir Z.ai — su atnaujintais paslaugų mygtukais ir oficialiais logotipais.

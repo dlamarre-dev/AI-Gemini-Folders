@@ -65,6 +65,7 @@ Every line of code is public on GitHub. Anyone can clone the repository, build i
 Browse the code or contribute: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 VERSION HISTORY:
+Version 1.6.3 (Welcome Page): A short guide now opens after installing, showing how to pin the extension and save your first conversation. Search also makes clear it only looks through conversations you have already saved.
 Version 1.6.2 (Kimi): Launch new Kimi conversations directly from Prompt Mode, save and organize them in folders, and inject prompts. Removing the extension now opens a short optional feedback page in your language, and nothing is sent unless you submit it yourself.
 Version 1.6.1 (Security & Stability): Extra safeguards for stored links and backup imports, plus internal stability fixes.
 Version 1.6 (10 new AI services): Save conversations and inject prompts on ten more AI services — including Mistral, Meta AI, Qwen and Z.ai — with redesigned service buttons and official logos.

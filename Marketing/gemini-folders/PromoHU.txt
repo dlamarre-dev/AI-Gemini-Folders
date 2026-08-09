@@ -64,6 +64,7 @@ Böngésszen a kódban vagy járuljon hozzá: https://github.com/dlamarre-dev/AI
 👉 Telepítse a MI mappák alkalmazást: __AF_STORE_URL__
 
 📢 FRISSÍTÉSEK:
+4.5.5-ös verzió (Üdvözlőoldal): A telepítés után most rövid útmutató nyílik meg: hogyan rögzítheti a kiegészítőt, és hogyan mentheti el az első beszélgetést. A keresés is egyértelművé teszi, hogy csak a már mentett beszélgetésekre terjed ki.
 4.5.4-es verzió (Eltávolítási kérdőív): A kiegészítő eltávolítása most egy rövid, nem kötelező visszajelzési oldalt nyit meg a saját nyelvén, és semmi nem kerül elküldésre, amíg Ön el nem küldi.
 4.5.3-as verzió (Biztonság és stabilitás): További védelem a mentett hivatkozásokhoz és a biztonsági mentések importjához, valamint belső stabilitási javítások.
 4.5.1-es verzió (Finomítások): A mappák mostantól alapértelmezetten a legújabbak elöl sorrend szerint rendeződnek, akárcsak a promptkönyvtárad — a korábban kiválasztott rendezési sorrend változatlan marad. Javítottuk a keresőmező törlés (✕) gombját is, így már a Firefoxban is működik.

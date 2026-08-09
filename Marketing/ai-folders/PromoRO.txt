@@ -65,6 +65,7 @@ Răsfoiți codul sau contribuiți: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 
 📢 ACTUALIZĂRI:
+Versiunea 1.6.3 (Pagină de bun venit): După instalare se deschide acum un ghid scurt: cum să fixezi extensia și să salvezi prima conversație. Căutarea precizează de asemenea că acoperă doar conversațiile deja salvate.
 Versiunea 1.6.2 (Kimi): Lansați conversații noi pe Kimi direct din Modul Prompt, salvați-le în dosare și injectați prompturi. Eliminarea extensiei deschide acum o scurtă pagină de feedback opțională în limba ta, iar nimic nu este trimis decât dacă o trimiți tu.
 Versiunea 1.6.1 (Securitate și stabilitate): Protecții suplimentare pentru linkurile salvate și importurile din backup, plus corecții interne de stabilitate.
 Versiunea 1.6 (10 servicii AI noi): Salvați conversații și inserați prompturi în încă zece servicii AI — inclusiv Mistral, Meta AI, Qwen și Z.ai — cu butoane de servicii reproiectate și logouri oficiale.

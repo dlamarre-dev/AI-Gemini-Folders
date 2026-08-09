@@ -63,6 +63,7 @@ Explorar el codi o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 ACTUALITZACIONS:
+Versió 1.6.3 (Pàgina de benvinguda): Després de la instal·lació ara s'obre una guia breu: com fixar l'extensió i desar la primera conversa. La cerca també deixa clar que només inclou les converses ja desades.
 Versió 1.6.2 (Kimi): Inicia noves converses a Kimi directament des del Mode Prompt, desa-les en carpetes i injecta prompts. En eliminar l'extensió ara s'obre una breu pàgina de comentaris opcional en el vostre idioma, i no s'envia res tret que l'envieu vosaltres mateixos.
 Versió 1.6.1 (Seguretat i estabilitat): Proteccions addicionals per als enllaços desats i les importacions de còpies de seguretat, a més de correccions internes d'estabilitat.
 Versió 1.6 (10 nous serveis d'IA): Desa converses i injecta prompts en deu serveis d'IA més — incloent-hi Mistral, Meta AI, Qwen i Z.ai — amb botons de serveis redissenyats i logotips oficials.

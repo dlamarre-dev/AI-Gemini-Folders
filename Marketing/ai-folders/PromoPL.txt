@@ -65,6 +65,7 @@ Przeglądaj kod lub współtwórz: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 
 📢 AKTUALIZACJE:
+Wersja 1.6.3 (Strona powitalna): Po instalacji otwiera się teraz krótki przewodnik: jak przypiąć rozszerzenie i zapisać pierwszą rozmowę. Wyszukiwanie jasno informuje też, że obejmuje tylko zapisane rozmowy.
 Wersja 1.6.2 (Kimi): Rozpoczynaj nowe rozmowy na Kimi bezpośrednio z Trybu Promptów, zapisuj je w folderach i wstrzykuj prompty. Usunięcie rozszerzenia otwiera teraz krótką, opcjonalną stronę opinii w Twoim języku, a nic nie jest wysyłane, dopóki sam jej nie wyślesz.
 Wersja 1.6.1 (Bezpieczeństwo i stabilność): Dodatkowe zabezpieczenia zapisanych linków i importu kopii zapasowych oraz wewnętrzne poprawki stabilności.
 Wersja 1.6 (10 nowych usług AI): Zapisuj rozmowy i wstawiaj prompty w dziesięciu kolejnych usługach AI — w tym Mistral, Meta AI, Qwen i Z.ai — z przeprojektowanymi przyciskami usług i oficjalnymi logo.

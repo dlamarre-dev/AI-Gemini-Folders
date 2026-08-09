@@ -65,6 +65,7 @@ Prohlédněte kód nebo přispějte: https://github.com/dlamarre-dev/AI-Gemini-F
 
 
 📢 AKTUALIZACE:
+Verze 1.6.3 (Uvítací stránka): Po instalaci se nyní otevře krátký průvodce: jak si rozšíření připnout a uložit první konverzaci. Hledání také jasně uvádí, že prohledává jen již uložené konverzace.
 Verze 1.6.2 (Kimi): Zahajte nové konverzace na Kimi přímo z režimu výzev, ukládejte je do složek a vkládejte výzvy. Odebrání rozšíření nyní otevře krátkou nepovinnou stránku pro zpětnou vazbu ve vašem jazyce a nic se neodešle, dokud ji sami nepošlete.
 Verze 1.6.1 (Zabezpečení a stabilita): Další ochrana uložených odkazů a importu záloh a interní opravy stability.
 Verze 1.6 (10 nových služeb AI): Ukládejte konverzace a vkládejte prompty v deseti dalších službách AI — včetně Mistral, Meta AI, Qwen a Z.ai — s přepracovanými tlačítky služeb a oficiálními logy.
