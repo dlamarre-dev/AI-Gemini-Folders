@@ -331,5 +331,11 @@
   },
   "welcomeCta": {
     "message": "Sain aru"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + klõps: kasuta viimast vahekaarti"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

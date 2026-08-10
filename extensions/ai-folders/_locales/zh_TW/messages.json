@@ -331,5 +331,11 @@
   },
   "welcomeCta": {
     "message": "我瞭解了"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + 點擊：重複使用上一個分頁"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

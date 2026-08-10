@@ -39,6 +39,7 @@ Hurtiggem: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller højreklik > «Gem i 
 Via udvidelsen: Klik på ikonet, vælg en mappe og gem.
 Mobil: Markér 📱 i sidefoden for at synkronisere dine mapper til din telefon.
 Brug afkrydsningsfelter til massehandlinger, åbn mapper som fanegrupper (📑), træk og slip for at reorganisere!
+Genåbning: klik på en samtale for at skifte til den fane, der allerede viser den; Ctrl+klik (eller Cmd+klik på Mac) genbruger din seneste fane i stedet for at åbne en ny.
 
 Promptvisning:
 Klik på 📝 på justeringsknappen øverst til højre i udvidelsen.
@@ -64,6 +65,7 @@ Interesseret i Gemini Mapper men bruger du også ChatGPT, Claude, Copilot, Grok,
 👉 Installer AI-mapper: __AF_STORE_URL__
 
 📢 OPDATERINGER:
+Version 4.5.6 (Færre faner): Et klik på en gemt samtale skifter nu til den fane, der allerede viser den, i stedet for at åbne en dublet. Ctrl+klik (eller Cmd+klik på Mac) genbruger din seneste fane.
 Version 4.5.5 (Velkomstside): Efter installationen åbnes nu en kort guide: hvordan du fastgør udvidelsen og gemmer din første samtale. Søgningen gør det også tydeligt, at den kun dækker gemte samtaler.
 Version 4.5.4 (Afinstallationsundersøgelse): Når du fjerner udvidelsen, åbnes nu en kort valgfri feedbackside på dit sprog, og intet sendes, medmindre du selv indsender den.
 Version 4.5.3 (Sikkerhed og stabilitet): Ekstra beskyttelse af gemte links og backup-import samt interne stabilitetsrettelser.

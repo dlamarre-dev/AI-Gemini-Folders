@@ -295,5 +295,11 @@
   },
   "welcomeCta": {
     "message": "Selvä"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + napsautus: käytä viimeistä välilehteä uudelleen"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

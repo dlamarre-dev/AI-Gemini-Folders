@@ -295,5 +295,11 @@
   },
   "welcomeCta": {
     "message": "Compreendi"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + clique: reutilizar o último separador"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

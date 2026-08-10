@@ -39,6 +39,7 @@ Mabilis na pag-save: Ctrl+Shift+S (o Cmd+Shift+S sa Mac), o right-click > "I-sav
 Sa pamamagitan ng extension: I-click ang icon, pumili ng folder, at i-save.
 Mobile: Lagyan ng tsek ang 📱 sa footer para i-sync ang iyong mga folder sa iyong telepono.
 Gumamit ng mga checkbox para sa bulk actions, buksan ang mga folder bilang Tab Groups (📑), mag-drag at drop para muling ayusin!
+Muling pagbukas: i-click ang isang usapan para lumipat sa tab na nagpapakita na nito; ang Ctrl+click (o Cmd+click sa Mac) ay gumagamit muli ng huling tab mo kaysa magbukas ng bago.
 
 Prompt Mode:
 I-click ang 📝 sa toggle button sa kanang itaas ng extension.
@@ -64,6 +65,7 @@ Interesado sa Mga Folder ng Gemini pero gumagamit din ng ChatGPT, Claude, Copilo
 👉 I-install ang Mga AI Folder: __AF_STORE_URL__
 
 📢 MGA UPDATE:
+Bersyon 4.5.6 (Mas kaunting tab): Ang pag-click sa naka-save na usapan ay lumilipat na ngayon sa tab na nagpapakita na nito, hindi na nagbubukas ng duplicate. Ang Ctrl+click (o Cmd+click sa Mac) ay gumagamit muli ng huling tab mo.
 Bersyon 4.5.5 (Pahina ng pagtanggap): Pagkatapos mag-install, may maikling gabay nang bumubukas: kung paano i-pin ang extension at i-save ang unang usapan mo. Malinaw ding sinasabi ng paghahanap na mga naka-save na usapan lang ang hinahanap nito.
 Bersyon 4.5.4 (Survey sa pag-alis): Ang pag-alis ng extension ay nagbubukas na ngayon ng maikling opsyonal na pahina ng feedback sa wika mo, at walang ipinapadala maliban kung ikaw mismo ang magpadala.
 Bersyon 4.5.3 (Seguridad at katatagan): Karagdagang proteksyon para sa mga naka-save na link at pag-import ng backup, kasama ang mga panloob na pag-aayos sa katatagan.

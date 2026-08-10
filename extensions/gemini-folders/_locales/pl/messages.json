@@ -295,5 +295,11 @@
   },
   "welcomeCta": {
     "message": "Rozumiem"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + kliknięcie: użyj ponownie ostatniej karty"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

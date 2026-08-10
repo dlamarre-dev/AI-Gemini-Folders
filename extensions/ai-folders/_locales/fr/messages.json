@@ -331,5 +331,11 @@
   },
   "welcomeCta": {
     "message": "J'ai compris"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + clic : réutiliser le dernier onglet"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

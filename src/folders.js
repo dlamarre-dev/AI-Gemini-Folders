@@ -302,18 +302,27 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
         link.className = 'chat-link';
         link.href = isSafeUrl(chat.url) ? chat.url : 'about:blank';
         link.target = '_blank';
-        link.title = chat.title;
+        // The title stays on the first line (it is what makes a truncated title
+        // readable); the second advertises the modifier-click gesture, which no
+        // one would find otherwise. This tooltip is the whole discoverability
+        // budget for it — there is deliberately no setting and no visible control.
+        // {k} is filled with the key this platform actually has, so the user reads
+        // "Cmd" on a Mac and "Ctrl" on Windows/Linux instead of having to pick.
+        const modKey = currentModifierKeyLabel();
+        link.title = chat.title + '\n' + (chrome.i18n.getMessage("chatLinkReuseHint")
+          || "{k}-click: reuse the last tab").replace('{k}', modKey);
         link.textContent = chat.title;
 
         // Plain click: reuse the tab already showing this conversation instead of
-        // spawning a duplicate. Middle-click (auxclick, never listened to) and
-        // Shift-click stay 100% native — that is the escape hatch, so keeping the
-        // href/target="_blank" above intact is load-bearing, not decorative.
+        // spawning a duplicate. Ctrl/Cmd-click: reuse the last tab we opened.
+        // Middle-click (auxclick, never listened to) and Shift-click stay 100%
+        // native — that is the escape hatch, so keeping the href/target="_blank"
+        // above intact is load-bearing, not decorative.
         link.addEventListener('click', (e) => {
           if (e.button !== 0 || e.shiftKey || e.altKey) return;
           if (link.href === 'about:blank') return;   // URL rejected by isSafeUrl
           e.preventDefault();
-          openConversation(chat.url);
+          openConversation(chat.url, { reuse: e.ctrlKey || e.metaKey });
         });
 
         link.setAttribute('draggable', 'false');
@@ -586,32 +595,105 @@ async function openFolderInTabGroup(folderName, chats) {
 // and welcome.html can never be matched.
 // The url: filter of tabs.query is off-limits for the same reason — it requires
 // "tabs". Filter in JS instead.
-async function findOpenConversationTab(url) {
-  let tabs;
+// Names the modifier key this platform actually has, for the {k} placeholder in
+// chatLinkReuseHint: Cmd on macOS, Ctrl on Windows/Linux. Naming both would make
+// the user work out which one is theirs, and hardcoding either into the 43
+// translations would be wrong on half the machines — hence the substitution.
+// The control key's *name* is localized (German keyboards are labelled "Strg"),
+// so it comes from the keyCtrl message; Command is called Cmd in every locale.
+// Pure in its inputs so both platforms are testable.
+function modifierKeyLabel(platformHint, ctrlLabel) {
+  return /Mac|iPhone|iPad/i.test(platformHint || '') ? 'Cmd' : (ctrlLabel || 'Ctrl');
+}
+
+function currentModifierKeyLabel() {
+  const nav = typeof navigator !== 'undefined' ? navigator : {};
+  // userAgentData.platform is the modern signal; platform/userAgent are the
+  // fallbacks (same user-agent sniffing style as welcome.js's Firefox check).
+  return modifierKeyLabel(
+    nav.userAgentData?.platform || nav.platform || nav.userAgent,
+    chrome.i18n.getMessage("keyCtrl"));
+}
+
+async function queryAllTabs() {
   try {
-    tabs = await chrome.tabs.query({});
+    const tabs = await chrome.tabs.query({});
+    return Array.isArray(tabs) ? tabs : [];
   } catch (error) {
-    return null;
+    return [];   // unreadable → behave as if nothing is open
   }
-  if (!Array.isArray(tabs)) return null;
+}
+
+// The tab already showing `url`, or null. Matching goes through normalizeUrl,
+// i.e. the same URL identity the save dedup and the import merge already use.
+function findTabShowingUrl(tabs, url) {
   const wanted = normalizeUrl(url);
   return tabs.find(t => t && t.url && isSafeUrl(t.url) && normalizeUrl(t.url) === wanted) || null;
 }
 
-// Opens a saved conversation: activates the tab already showing it, otherwise
-// opens a new one (the pre-existing behaviour).
-async function openConversation(url) {
+// Picks the tab a Ctrl/Cmd-click should navigate, or null to open a new one.
+//
+// A remembered tab id is never trusted on its own: it goes stale the moment the
+// tab closes and ids are recycled across a browser restart, so the worst failure
+// would be making a page the user cared about disappear. It is only a tiebreaker
+// inside a candidate set recomputed on every click — which collapses every
+// failure mode (tab closed, moved, navigated elsewhere, pinned, unreadable) into
+// the same "no candidate → new tab" branch.
+//
+// window.isSupportedTabUrl is provided by each extension (AF: getSiteByUrl;
+// GF: the gemini.google.com hostname). folders.js stays site-agnostic: without
+// the hook, reuse simply never fires.
+function pickReusableTab(tabs, activeTab, reuseTabId) {
+  const candidates = tabs.filter(t =>
+    t && t.url &&                              // readable ⇒ covered by host_permissions
+    isSafeUrl(t.url) &&                        // excludes chrome-extension:, about:, file:
+    !t.pinned &&                               // never touch a pinned tab
+    t.windowId === activeTab?.windowId &&      // current window only
+    window.isSupportedTabUrl?.(t.url)          // one of our sites
+  );
+  return candidates.find(t => t.id === reuseTabId)      // "the last tab"
+      || candidates.find(t => t.id === activeTab?.id)   // else the one being looked at
+      || null;
+}
+
+// Opens a saved conversation.
+//   default        activate the tab already showing it, else open a new one
+//   reuse: true    (Ctrl/Cmd-click) point the last tab we opened at it instead
+// Reuse is opt-in per click by design: the modifier IS the consent, which is why
+// there is no setting for it.
+async function openConversation(url, { reuse = false } = {}) {
   try {
-    const found = await findOpenConversationTab(url);
+    const tabs = await queryAllTabs();
+    const found = findTabShowingUrl(tabs, url);
+
     if (found) {
+      // Already open somewhere: activate it, even on a Ctrl/Cmd-click —
+      // navigating a second tab to a page that is already displayed would be
+      // pointless. This one may cross windows; reuse below may not.
       await chrome.tabs.update(found.id, { active: true });
       // Activating a tab in another window doesn't raise that window.
       // windows.update requires no permission.
       if (found.windowId != null && chrome.windows) {
         await chrome.windows.update(found.windowId, { focused: true });
       }
+      await rememberReusableTab(found.id);
     } else {
-      await chrome.tabs.create({ url });
+      let target = null;
+      if (reuse) {
+        const activeTab = (await chrome.tabs.query({ active: true, currentWindow: true }))?.[0];
+        const { reuseTabId } = await chrome.storage.local.get(['reuseTabId']) || {};
+        target = pickReusableTab(tabs, activeTab, reuseTabId);
+      }
+      if (target) {
+        await chrome.tabs.update(target.id, { url, active: true });
+        await rememberReusableTab(target.id);
+      } else {
+        // Remembering the tabs we create too is what makes the extension end up
+        // owning exactly one tab: the next Ctrl/Cmd-click reuses this one rather
+        // than hijacking a tab the user opened.
+        const tab = await chrome.tabs.create({ url });
+        await rememberReusableTab(tab?.id);
+      }
     }
   } catch (error) {
     // The tab died between the query and the update, or the API rejected.
@@ -620,6 +702,13 @@ async function openConversation(url) {
   // After the awaits, never before: tearing down the popup page can drop
   // in-flight extension API calls.
   window.close();
+}
+
+// storage.local, not sync: a tab id means nothing on another machine, and this
+// writes on every open (CLAUDE.md §7 — don't burn the sync write quota).
+async function rememberReusableTab(tabId) {
+  if (tabId == null) return;
+  try { await chrome.storage.local.set({ reuseTabId: tabId }); } catch (e) { /* non-fatal */ }
 }
 
 window.displayFolders = displayFolders;
@@ -642,7 +731,10 @@ if (typeof module !== 'undefined') {
     togglePin,
     renameFolder,
     openFolderInTabGroup,
-    findOpenConversationTab,
+    modifierKeyLabel,
+    queryAllTabs,
+    findTabShowingUrl,
+    pickReusableTab,
     openConversation,
   };
 }

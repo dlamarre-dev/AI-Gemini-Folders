@@ -39,6 +39,7 @@ Hifadhi ya haraka: Ctrl+Shift+S (au Cmd+Shift+S kwenye Mac), au bofya kulia > "H
 Kupitia kiendelezi: Bofya ikoni, chagua folda, na hifadhi.
 Simu: Weka alama 📱 kwenye kijachini ili kusawazisha folda zako na simu yako.
 Tumia masanduku ya kuchagua kwa vitendo vya wingi, fungua folda kama Vikundi vya Vichupo (📑), buruta na uweke ili kupanga upya!
+Kufungua tena: bofya mazungumzo ili kwenda kwenye kichupo kinachoyaonyesha tayari; Ctrl+bofya (au Cmd+bofya kwenye Mac) hutumia tena kichupo chako cha mwisho badala ya kufungua kipya.
 
 Hali ya Kidokezo:
 Bofya 📝 kwenye kitufe cha kubadilisha upande wa juu kulia wa kiendelezi.
@@ -64,6 +65,7 @@ Unavutiwa na Folda za Gemini lakini pia unatumia ChatGPT, Claude, Copilot, Grok,
 👉 Sakinisha Folda za AI: __AF_STORE_URL__
 
 📢 MASASISHO:
+Toleo 4.5.6 (Vichupo vichache): Kubofya mazungumzo yaliyohifadhiwa sasa hukupeleka kwenye kichupo kinachoyaonyesha tayari badala ya kufungua nakala. Ctrl+bofya (au Cmd+bofya kwenye Mac) hutumia tena kichupo chako cha mwisho.
 Toleo 4.5.5 (Ukurasa wa karibu): Baada ya kusakinisha sasa hufunguka mwongozo mfupi: jinsi ya kubandika kiendelezi na kuhifadhi mazungumzo yako ya kwanza. Utafutaji pia unaeleza wazi kuwa unahusu mazungumzo yaliyohifadhiwa tu.
 Toleo 4.5.4 (Utafiti wa kuondoa): Kuondoa kiendelezi sasa hufungua ukurasa mfupi wa maoni wa hiari kwa lugha yako, na hakuna kinachotumwa isipokuwa uitume mwenyewe.
 Toleo 4.5.3 (Usalama na uthabiti): Ulinzi wa ziada kwa viungo vilivyohifadhiwa na uingizaji wa nakala rudufu, pamoja na marekebisho ya ndani ya uthabiti.

@@ -45,6 +45,7 @@ Odprite ploščo: Ctrl+Shift+1 (ali Cmd+Shift+1 na Macu).
 Hitro shranjevanje: Ctrl+Shift+S (ali Cmd+Shift+S na Macu), ali desni klik > «Shrani v Mape AI».
 Prek razširitve: Klikni ikono, izberi mapo in shrani.
 Mobilno: Označi 📱 v nogi za sinhronizacijo map s telefonom.
+Ponovno odpiranje: kliknite pogovor, da preklopite na zavihek, ki ga že prikazuje; Ctrl+klik (ali Cmd+klik na Macu) znova uporabi zadnji zavihek, namesto da odpre nov.
 
 Način pozivov:
 Klikni 📝 na stikalu zgoraj desno v razširitvi.
@@ -64,6 +65,7 @@ Preglej kodo ali prispevaj: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 POSODOBITVE:
+Različica 1.6.4 (Manj zavihkov): Klik na shranjen pogovor zdaj preklopi na zavihek, ki ga že prikazuje, namesto da odpre dvojnik. Ctrl+klik (ali Cmd+klik na Macu) znova uporabi zadnji zavihek.
 Različica 1.6.3 (Pozdravna stran): Po namestitvi se zdaj odpre kratek vodnik: kako pripeti razširitev in shraniti prvi pogovor. Iskanje tudi jasno pove, da zajema le že shranjene pogovore.
 Različica 1.6.2 (Kimi): Zaženite nove pogovore na Kimiu neposredno iz načina pozivov, shranite jih v mape in vstavljajte pozive. Odstranitev razširitve zdaj odpre kratko neobvezno stran za povratne informacije v vašem jeziku in nič ni poslano, dokler je sami ne pošljete.
 Različica 1.6.1 (Varnost in stabilnost): Dodatna zaščita shranjenih povezav in uvoza varnostnih kopij ter notranji popravki stabilnosti.

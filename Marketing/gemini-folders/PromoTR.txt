@@ -39,6 +39,7 @@ Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "Gemini
 Uzantı üzerinden: Simgeye tıklayın, bir klasör seçin ve kaydedin.
 Mobil: Telefonunuzda klasörlerinizi senkronize etmek için alt bilgideki 📱 işaretini işaretleyin.
 Toplu işlemler için onay kutularını kullanın, klasörleri Sekme Grupları (📑) olarak açın, yeniden düzenlemek için sürükleyip bırakın!
+Yeniden açma: bir sohbete tıklayarak onu zaten gösteren sekmeye geçin; Ctrl+tık (veya Mac’te Cmd+tık) yeni bir sekme açmak yerine son sekmenizi yeniden kullanır.
 
 İstem Modu:
 Uzantının sağ üstündeki geçiş düğmesinde 📝'a tıklayın.
@@ -64,6 +65,7 @@ Gemini Klasörleri ilginizi çekiyor ama ChatGPT, Claude, Copilot, Grok, Perplex
 👉 YZ Klasörleri'ni yükle: __AF_STORE_URL__
 
 📢 GÜNCELLEMELER:
+Sürüm 4.5.6 (Daha az sekme): Kaydedilmiş bir sohbete tıklamak artık kopya açmak yerine onu zaten gösteren sekmeye geçiyor. Ctrl+tık (veya Mac’te Cmd+tık) son sekmenizi yeniden kullanır.
 Sürüm 4.5.5 (Karşılama sayfası): Kurulumdan sonra artık kısa bir rehber açılıyor: uzantıyı nasıl sabitleyeceğiniz ve ilk sohbetinizi nasıl kaydedeceğiniz. Arama da yalnızca kaydedilmiş sohbetleri kapsadığını açıkça belirtiyor.
 Sürüm 4.5.4 (Kaldırma anketi): Uzantıyı kaldırmak artık kendi dilinizde kısa ve isteğe bağlı bir geri bildirim sayfası açar ve siz göndermedikçe hiçbir şey gönderilmez.
 Sürüm 4.5.3 (Güvenlik ve kararlılık): Kaydedilen bağlantılar ve yedek içe aktarmaları için ek korumalar, ayrıca dahili kararlılık düzeltmeleri.

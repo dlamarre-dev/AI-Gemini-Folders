@@ -295,5 +295,11 @@
   },
   "welcomeCta": {
     "message": "Rozumiem"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + kliknutie: použiť poslednú kartu"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

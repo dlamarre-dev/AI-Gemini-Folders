@@ -46,6 +46,7 @@ Snel opslaan: Ctrl+Shift+S (of Cmd+Shift+S op Mac), of rechtsklikken > "Opslaan 
 Via de extensie: Klik op het pictogram, kies een map en sla op.
 Mobiel: Vink 📱 aan in de voettekst om uw mappen op uw telefoon te synchroniseren.
 Gebruik selectievakjes voor bulkacties, open mappen als tabgroepen (📑), sleep en zet neer om te reorganiseren!
+Opnieuw openen: klik op een gesprek om naar het tabblad te gaan dat het al toont; Ctrl+klik (of Cmd+klik op Mac) hergebruikt je laatste tabblad in plaats van een nieuw te openen.
 
 Promptmodus:
 Klik op 📝 op de schakelaarknop rechtsboven in de extensie.
@@ -65,6 +66,7 @@ Bekijk de code of draag bij: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
+Versie 1.6.4 (Minder tabbladen): Klikken op een opgeslagen gesprek gaat nu naar het tabblad dat het al toont in plaats van een duplicaat te openen. Ctrl+klik (of Cmd+klik op Mac) hergebruikt je laatste tabblad.
 Versie 1.6.3 (Welkomstpagina): Na installatie opent nu een korte uitleg: hoe je de extensie vastzet en je eerste gesprek opslaat. Zoeken maakt bovendien duidelijk dat het alleen al opgeslagen gesprekken doorzoekt.
 Versie 1.6.2 (Kimi): Start nieuwe Kimi-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts. Bij het verwijderen van de extensie opent nu een korte optionele feedbackpagina in je eigen taal, en er wordt niets verzonden tenzij je het zelf verstuurt.
 Versie 1.6.1 (Beveiliging en stabiliteit): Extra bescherming voor opgeslagen links en back-upimports, plus interne stabiliteitsverbeteringen.

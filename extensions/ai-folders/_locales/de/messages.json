@@ -331,5 +331,11 @@
   },
   "welcomeCta": {
     "message": "Verstanden"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + Klick: letzten Tab wiederverwenden"
+  },
+  "keyCtrl": {
+    "message": "Strg"
   }
 }

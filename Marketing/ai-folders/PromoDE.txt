@@ -46,6 +46,7 @@ Schnellspeicherung: Strg+Shift+S (oder Cmd+Shift+S auf Mac), oder Rechtsklick > 
 Über die Erweiterung: Symbol anklicken, Ordner wählen, speichern.
 Mobil: 📱 in der Fußzeile aktivieren, um Ordner auf dem Smartphone zu synchronisieren.
 Checkboxen für Massenaktionen, Ordner als Tabs öffnen (📑), per Drag & Drop reorganisieren!
+Wiederöffnen: Ein Klick auf eine Unterhaltung wechselt zum Tab, der sie bereits anzeigt; Strg+Klick (oder Cmd+Klick auf Mac) verwendet Ihren letzten Tab erneut, statt einen neuen zu öffnen.
 
 Prompt-Modus:
 Auf 📝 im Umschalter oben rechts in der Erweiterung klicken.
@@ -65,6 +66,7 @@ Code einsehen oder beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
+Version 1.6.4 (Weniger Tabs): Ein Klick auf eine gespeicherte Unterhaltung wechselt jetzt zum Tab, der sie bereits anzeigt, statt ein Duplikat zu öffnen. Strg+Klick (oder Cmd+Klick auf Mac) verwendet Ihren letzten Tab erneut.
 Version 1.6.3 (Willkommensseite): Nach der Installation öffnet sich jetzt eine kurze Anleitung: wie du die Erweiterung anheftest und deine erste Unterhaltung speicherst. Die Suche macht außerdem deutlich, dass sie nur bereits gespeicherte Unterhaltungen durchsucht.
 Version 1.6.2 (Kimi): Starten Sie neue Kimi-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts. Beim Entfernen der Erweiterung öffnet sich nun eine kurze, freiwillige Feedback-Seite in Ihrer Sprache, und gesendet wird nur, was Sie selbst absenden.
 Version 1.6.1 (Sicherheit & Stabilität): Zusätzliche Schutzmaßnahmen für gespeicherte Links und Backup-Importe sowie interne Stabilitätskorrekturen.

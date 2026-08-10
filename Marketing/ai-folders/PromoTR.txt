@@ -46,6 +46,7 @@ Hızlı kayıt: Ctrl+Shift+S (veya Mac'te Cmd+Shift+S) ya da sağ tık > "YZ Kla
 Uzantı üzerinden: Simgeye tıklayın, bir klasör seçin ve kaydedin.
 Mobil: Telefonunuzda klasörlerinizi senkronize etmek için alt bilgideki 📱 işaretini işaretleyin.
 Toplu işlemler için onay kutularını kullanın, klasörleri Sekme Grupları (📑) olarak açın, yeniden düzenlemek için sürükleyip bırakın!
+Yeniden açma: bir sohbete tıklayarak onu zaten gösteren sekmeye geçin; Ctrl+tık (veya Mac’te Cmd+tık) yeni bir sekme açmak yerine son sekmenizi yeniden kullanır.
 
 İstem Modu:
 Uzantının sağ üstündeki geçiş düğmesinde 📝'a tıklayın.
@@ -65,6 +66,7 @@ Koda göz atın veya katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini
 
 
 📢 GÜNCELLEMELER:
+Sürüm 1.6.4 (Daha az sekme): Kaydedilmiş bir sohbete tıklamak artık kopya açmak yerine onu zaten gösteren sekmeye geçiyor. Ctrl+tık (veya Mac’te Cmd+tık) son sekmenizi yeniden kullanır.
 Sürüm 1.6.3 (Karşılama sayfası): Kurulumdan sonra artık kısa bir rehber açılıyor: uzantıyı nasıl sabitleyeceğiniz ve ilk sohbetinizi nasıl kaydedeceğiniz. Arama da yalnızca kaydedilmiş sohbetleri kapsadığını açıkça belirtiyor.
 Sürüm 1.6.2 (Kimi): Prompt Modundan doğrudan yeni Kimi konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin. Uzantıyı kaldırmak artık kendi dilinizde kısa ve isteğe bağlı bir geri bildirim sayfası açar ve siz göndermedikçe hiçbir şey gönderilmez.
 Sürüm 1.6.1 (Güvenlik ve kararlılık): Kaydedilen bağlantılar ve yedek içe aktarmaları için ek korumalar, ayrıca dahili kararlılık düzeltmeleri.

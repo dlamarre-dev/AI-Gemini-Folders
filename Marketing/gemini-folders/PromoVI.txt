@@ -39,6 +39,7 @@ Lưu nhanh: Ctrl+Shift+S (hoặc Cmd+Shift+S trên Mac), hoặc nhấp chuột p
 Qua tiện ích: Nhấp biểu tượng, chọn thư mục và lưu.
 Di động: Tích 📱 ở chân trang để đồng bộ thư mục lên điện thoại.
 Dùng hộp kiểm cho thao tác hàng loạt, mở thư mục dưới dạng Nhóm tab (📑), kéo thả để sắp xếp lại!
+Mở lại: nhấp vào một cuộc trò chuyện để chuyển sang thẻ đang mở nó; Ctrl+nhấp (hoặc Cmd+nhấp trên Mac) dùng lại thẻ cuối cùng thay vì mở thẻ mới.
 
 Chế độ Prompt:
 Nhấp 📝 trên nút chuyển đổi ở góc trên bên phải tiện ích.
@@ -64,6 +65,7 @@ Quan tâm đến Thư mục Gemini nhưng cũng dùng ChatGPT, Claude, Copilot, 
 👉 Cài đặt Thư mục AI: __AF_STORE_URL__
 
 📢 CẬP NHẬT:
+Phiên bản 4.5.6 (Ít thẻ hơn): Nhấp vào một cuộc trò chuyện đã lưu giờ đây chuyển sang thẻ đang mở nó thay vì mở thẻ trùng lặp. Ctrl+nhấp (hoặc Cmd+nhấp trên Mac) dùng lại thẻ cuối cùng.
 Phiên bản 4.5.5 (Trang chào mừng): Sau khi cài đặt, một hướng dẫn ngắn sẽ mở ra: cách ghim tiện ích và lưu cuộc trò chuyện đầu tiên. Tìm kiếm cũng nói rõ chỉ áp dụng cho các cuộc trò chuyện đã lưu.
 Phiên bản 4.5.4 (Khảo sát khi xóa): Việc xóa tiện ích giờ đây sẽ mở một trang góp ý ngắn và không bắt buộc bằng ngôn ngữ của bạn, và không có gì được gửi trừ khi bạn tự gửi.
 Phiên bản 4.5.3 (Bảo mật & ổn định): Tăng cường bảo vệ cho liên kết đã lưu và nhập tệp sao lưu, cùng các sửa lỗi ổn định nội bộ.

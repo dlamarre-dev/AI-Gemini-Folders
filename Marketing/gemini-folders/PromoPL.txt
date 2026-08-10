@@ -39,6 +39,7 @@ Szybki zapis: Ctrl+Shift+S (lub Cmd+Shift+S na Mac), lub prawy przycisk > „Zap
 Przez rozszerzenie: Kliknij ikonę, wybierz folder, zapisz.
 Mobilny: Aktywuj 📱 w stopce, aby synchronizować foldery z telefonem.
 Używaj pól wyboru do akcji zbiorczych, otwieraj foldery jako Grupy kart (📑), przeciągaj, aby reorganizować!
+Ponowne otwieranie: kliknij rozmowę, aby przejść do karty, która już ją wyświetla; Ctrl+kliknięcie (lub Cmd+kliknięcie na Macu) ponownie wykorzystuje ostatnią kartę zamiast otwierać nową.
 
 Tryb Promptów:
 Kliknij 📝 na przełączniku w prawym górnym rogu rozszerzenia.
@@ -64,6 +65,7 @@ Zainteresowany Foldery Gemini, ale używasz też ChatGPT, Claude, Copilot, Grok,
 👉 Zainstaluj Foldery AI: __AF_STORE_URL__
 
 📢 AKTUALIZACJE:
+Wersja 4.5.6 (Mniej kart): Kliknięcie zapisanej rozmowy przenosi teraz do karty, która już ją wyświetla, zamiast otwierać duplikat. Ctrl+kliknięcie (lub Cmd+kliknięcie na Macu) ponownie wykorzystuje ostatnią kartę.
 Wersja 4.5.5 (Strona powitalna): Po instalacji otwiera się teraz krótki przewodnik: jak przypiąć rozszerzenie i zapisać pierwszą rozmowę. Wyszukiwanie jasno informuje też, że obejmuje tylko zapisane rozmowy.
 Wersja 4.5.4 (Ankieta po odinstalowaniu): Usunięcie rozszerzenia otwiera teraz krótką, opcjonalną stronę opinii w Twoim języku, a nic nie jest wysyłane, dopóki sam jej nie wyślesz.
 Wersja 4.5.3 (Bezpieczeństwo i stabilność): Dodatkowe zabezpieczenia zapisanych linków i importu kopii zapasowych oraz wewnętrzne poprawki stabilności.

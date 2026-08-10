@@ -45,6 +45,7 @@ Buka panel: Ctrl+Shift+1 (atau Cmd+Shift+1 di Mac).
 Simpan Pantas: Ctrl+Shift+S (atau Cmd+Shift+S pada Mac), atau klik kanan > «Simpan ke Folder AI».
 Melalui sambungan: Klik ikon, pilih folder dan simpan.
 Mudah alih: Tandakan 📱 di pengaki untuk menyegerakkan folder ke telefon anda.
+Membuka semula: klik perbualan untuk beralih ke tab yang sudah memaparkannya; Ctrl+klik (atau Cmd+klik pada Mac) menggunakan semula tab terakhir anda dan bukan membuka tab baharu.
 
 Mod Prompt:
 Klik 📝 pada suis di bahagian kanan atas sambungan.
@@ -64,6 +65,7 @@ Semak kod atau sumbang: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 KEMAS KINI:
+Versi 1.6.4 (Kurang tab): Mengklik perbualan yang disimpan kini beralih ke tab yang sudah memaparkannya, bukan membuka pendua. Ctrl+klik (atau Cmd+klik pada Mac) menggunakan semula tab terakhir anda.
 Versi 1.6.3 (Halaman aluan): Selepas pemasangan kini terbuka panduan ringkas: cara menyematkan sambungan dan menyimpan perbualan pertama anda. Carian juga menjelaskan bahawa ia hanya merangkumi perbualan yang telah disimpan.
 Versi 1.6.2 (Kimi): Mulakan perbualan Kimi baharu terus dari Mod Prompt, simpan dalam folder dan suntik prompt. Membuang sambungan kini membuka halaman maklum balas ringkas dan pilihan dalam bahasa anda, dan tiada apa-apa dihantar melainkan anda menghantarnya sendiri.
 Versi 1.6.1 (Keselamatan & kestabilan): Perlindungan tambahan untuk pautan tersimpan dan import sandaran, serta pembaikan kestabilan dalaman.

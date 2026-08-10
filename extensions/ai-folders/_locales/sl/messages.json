@@ -331,5 +331,11 @@
   },
   "welcomeCta": {
     "message": "Razumem"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + klik: znova uporabi zadnji zavihek"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

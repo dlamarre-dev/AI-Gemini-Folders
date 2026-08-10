@@ -45,6 +45,7 @@ Avage paneel: Ctrl+Shift+1 (või Cmd+Shift+1 Macis).
 Kiirsalvestus: Ctrl+Shift+S (või Cmd+Shift+S Macis) või paremklõps > «Salvesta AI kaustadesse».
 Laienduse kaudu: Klõpsa ikooni, vali kaust ja salvesta.
 Mobiil: Märgi 📱 jaluses kaustade sünkroonimiseks telefoniga.
+Taasavamine: klõpsa vestlusel, et minna vahekaardile, kus see on juba avatud; Ctrl+klõps (või Cmd+klõps Macis) kasutab viimast vahekaarti uuesti, mitte ei ava uut.
 
 Prompti režiim:
 Klõpsa 📝 laienduse paremas ülanurgas asuval lülitil.
@@ -64,6 +65,7 @@ Sirvi koodi või panusta: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UUENDUSED:
+Versioon 1.6.4 (Vähem vahekaarte): Salvestatud vestlusel klõpsamine läheb nüüd vahekaardile, kus see on juba avatud, duplikaadi avamise asemel. Ctrl+klõps (või Cmd+klõps Macis) kasutab viimast vahekaarti uuesti.
 Versioon 1.6.3 (Tervituslehekülg): Pärast paigaldamist avaneb nüüd lühike juhend: kuidas laiendus kinnitada ja esimene vestlus salvestada. Otsing annab samuti selgelt teada, et hõlmab ainult juba salvestatud vestlusi.
 Versioon 1.6.2 (Kimi): Alustage uusi Kimi vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid. Laienduse eemaldamine avab nüüd lühikese valikulise tagasiside lehe teie keeles ja midagi ei saadeta, kui te seda ise ära ei saada.
 Versioon 1.6.1 (Turvalisus ja stabiilsus): Täiendav kaitse salvestatud linkidele ja varukoopiate importimisele ning sisemised stabiilsusparandused.

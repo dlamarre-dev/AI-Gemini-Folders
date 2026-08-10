@@ -46,6 +46,7 @@ Guardar rapidamente: Ctrl+Shift+S (ou Cmd+Shift+S no Mac), ou clique direito > "
 Pela extensão: Clique no ícone, escolha uma pasta e guarde.
 Móvel: Ative 📱 no rodapé para sincronizar as suas pastas com o telemóvel.
 Use as caixas de verificação para ações em lote, abra pastas como Grupos de Separadores (📑), arraste para reorganizar!
+Reabertura: clique numa conversa para mudar para o separador que já a mostra; Ctrl+clique (ou Cmd+clique no Mac) reutiliza o seu último separador em vez de abrir um novo.
 
 Modo Prompts:
 Clique em 📝 no botão de alternância no canto superior direito da extensão.
@@ -65,6 +66,7 @@ Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 ATUALIZAÇÕES:
+Versão 1.6.4 (Menos separadores): Clicar numa conversa guardada muda agora para o separador que já a mostra em vez de abrir um duplicado. Ctrl+clique (ou Cmd+clique no Mac) reutiliza o seu último separador.
 Versão 1.6.3 (Página de boas-vindas): Após a instalação abre agora um guia rápido: como fixar a extensão e guardar a sua primeira conversa. A pesquisa também deixa claro que abrange apenas as conversas já guardadas.
 Versão 1.6.2 (Kimi): Inicie novas conversas no Kimi diretamente do Modo Prompt, guarde-as em pastas e injete prompts. Remover a extensão abre agora uma breve página de comentários opcional no seu idioma, e nada é enviado a menos que o envie você mesmo.
 Versão 1.6.1 (Segurança e estabilidade): Proteções adicionais para ligações guardadas e importações de cópias de segurança, além de correções internas de estabilidade.

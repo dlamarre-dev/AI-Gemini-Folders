@@ -1,7 +1,7 @@
 // folders.js functions depend on globals from utils.js and the DOM.
 // We mock those globals here so tests run in isolation.
 
-const { displayFolders, deleteChat, moveChat, togglePin, renameFolder, renameChat, openFolderInTabGroup, findOpenConversationTab, openConversation } = require('../src/folders');
+const { displayFolders, deleteChat, moveChat, togglePin, renameFolder, renameChat, openFolderInTabGroup, queryAllTabs, pickReusableTab, openConversation, modifierKeyLabel } = require('../src/folders');
 
 // ---------------------------------------------------------------------------
 // Shared helpers
@@ -359,6 +359,11 @@ describe('openConversation', () => {
     chrome.tabs.update = jest.fn(() => Promise.resolve());
     chrome.tabs.query = jest.fn(() => Promise.resolve([]));
     chrome.windows.update = jest.fn(() => Promise.resolve());
+    chrome.storage.local.get = jest.fn(() => Promise.resolve({}));
+    chrome.storage.local.set = jest.fn(() => Promise.resolve());
+    window.isSupportedTabUrl = (url) => {
+      try { return new URL(url).hostname === 'gemini.google.com'; } catch { return false; }
+    };
   });
 
   test('activates the tab already showing the conversation instead of duplicating it', async () => {
@@ -435,10 +440,15 @@ describe('openConversation', () => {
   test('falls back to a new tab when tabs.query is unavailable', async () => {
     chrome.tabs.query.mockRejectedValue(new Error('nope'));
 
-    expect(await findOpenConversationTab(URL_A)).toBeNull();
+    expect(await queryAllTabs()).toEqual([]);
 
     await openConversation(URL_A);
     expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+  });
+
+  test('remembers the tab it opened, so the next Ctrl/Cmd-click can reuse it', async () => {
+    await openConversation(URL_A);
+    expect(chrome.storage.local.set).toHaveBeenCalledWith({ reuseTabId: 99 });
   });
 
   test('closes the popup only after the tab work is done', async () => {
@@ -450,6 +460,228 @@ describe('openConversation', () => {
     await openConversation(URL_A);
 
     expect(order).toEqual(['update', 'close']);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// openConversation({ reuse: true }) — the Ctrl/Cmd-click path
+// ---------------------------------------------------------------------------
+
+describe('openConversation with reuse (Ctrl/Cmd-click)', () => {
+  const URL_A = 'https://gemini.google.com/app/aaa';
+  const OTHER = 'https://gemini.google.com/app/bbb';
+
+  // The reuse path issues two different queries: all tabs, then the active one.
+  function setTabs(allTabs, activeTab) {
+    chrome.tabs.query = jest.fn((q) =>
+      Promise.resolve(q && q.active ? (activeTab ? [activeTab] : []) : allTabs));
+  }
+
+  beforeEach(() => {
+    chrome.tabs.create = jest.fn(() => Promise.resolve({ id: 99 }));
+    chrome.tabs.update = jest.fn(() => Promise.resolve());
+    chrome.windows.update = jest.fn(() => Promise.resolve());
+    chrome.storage.local.get = jest.fn(() => Promise.resolve({}));
+    chrome.storage.local.set = jest.fn(() => Promise.resolve());
+    global.isSafeUrl = jest.fn((url) => {
+      try { return /^https?:$/.test(new URL(url).protocol); } catch { return false; }
+    });
+    window.isSupportedTabUrl = (url) => {
+      try { return new URL(url).hostname === 'gemini.google.com'; } catch { return false; }
+    };
+  });
+
+  test('navigates the remembered tab', async () => {
+    const remembered = { id: 5, windowId: 1, url: OTHER };
+    const active = { id: 8, windowId: 1, url: OTHER };
+    setTabs([remembered, active], active);
+    chrome.storage.local.get.mockResolvedValue({ reuseTabId: 5 });
+
+    await openConversation(URL_A, { reuse: true });
+
+    expect(chrome.tabs.update).toHaveBeenCalledWith(5, { url: URL_A, active: true });
+    expect(chrome.tabs.create).not.toHaveBeenCalled();
+  });
+
+  test('falls back to the tab being looked at when the remembered one is gone', async () => {
+    const active = { id: 8, windowId: 1, url: OTHER };
+    setTabs([active], active);
+    chrome.storage.local.get.mockResolvedValue({ reuseTabId: 5 });   // closed since
+
+    await openConversation(URL_A, { reuse: true });
+
+    expect(chrome.tabs.update).toHaveBeenCalledWith(8, { url: URL_A, active: true });
+  });
+
+  test('opens a new tab when the active tab is on an unsupported site', async () => {
+    const active = { id: 8, windowId: 1, url: 'https://github.com/some/pr' };
+    setTabs([active], active);
+
+    await openConversation(URL_A, { reuse: true });
+
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+    expect(chrome.storage.local.set).toHaveBeenCalledWith({ reuseTabId: 99 });
+  });
+
+  test('never navigates a candidate in another window', async () => {
+    const active = { id: 8, windowId: 1, url: 'https://github.com/some/pr' };
+    setTabs([{ id: 5, windowId: 42, url: OTHER }, active], active);
+    chrome.storage.local.get.mockResolvedValue({ reuseTabId: 5 });
+
+    await openConversation(URL_A, { reuse: true });
+
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+  });
+
+  test('never navigates a pinned tab', async () => {
+    const active = { id: 5, windowId: 1, url: OTHER, pinned: true };
+    setTabs([active], active);
+    chrome.storage.local.get.mockResolvedValue({ reuseTabId: 5 });
+
+    await openConversation(URL_A, { reuse: true });
+
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+  });
+
+  test('never navigates a tab whose URL we cannot read (no host permission)', async () => {
+    const active = { id: 5, windowId: 1 };   // url undefined
+    setTabs([active], active);
+    chrome.storage.local.get.mockResolvedValue({ reuseTabId: 5 });
+
+    await openConversation(URL_A, { reuse: true });
+
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+  });
+
+  test('never navigates an extension page even if it is the active tab', async () => {
+    const active = { id: 5, windowId: 1, url: 'chrome-extension://test-id/popup.html' };
+    setTabs([active], active);
+    chrome.storage.local.get.mockResolvedValue({ reuseTabId: 5 });
+
+    await openConversation(URL_A, { reuse: true });
+
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+  });
+
+  test('activates the existing tab rather than reusing when the conversation is already open', async () => {
+    const already = { id: 3, windowId: 1, url: URL_A };
+    const active = { id: 8, windowId: 1, url: OTHER };
+    setTabs([already, active], active);
+    chrome.storage.local.get.mockResolvedValue({ reuseTabId: 8 });
+
+    await openConversation(URL_A, { reuse: true });
+
+    expect(chrome.tabs.update).toHaveBeenCalledWith(3, { active: true });
+    expect(chrome.tabs.update).not.toHaveBeenCalledWith(8, expect.anything());
+  });
+
+  test('reuse never fires when the extension provides no site predicate', async () => {
+    delete window.isSupportedTabUrl;
+    const active = { id: 8, windowId: 1, url: OTHER };
+    setTabs([active], active);
+    chrome.storage.local.get.mockResolvedValue({ reuseTabId: 8 });
+
+    await openConversation(URL_A, { reuse: true });
+
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+  });
+
+  test('pickReusableTab prefers the remembered tab over the active one', () => {
+    const tabs = [
+      { id: 5, windowId: 1, url: OTHER },
+      { id: 8, windowId: 1, url: OTHER },
+    ];
+    expect(pickReusableTab(tabs, { id: 8, windowId: 1 }, 5).id).toBe(5);
+    expect(pickReusableTab(tabs, { id: 8, windowId: 1 }, undefined).id).toBe(8);
+    expect(pickReusableTab(tabs, { id: 99, windowId: 1 }, 77)).toBeNull();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// chatLinkReuseHint ships everywhere
+// ---------------------------------------------------------------------------
+
+describe('modifierKeyLabel', () => {
+  test.each([
+    ['macOS', 'Cmd'],
+    ['MacIntel', 'Cmd'],
+    ['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)', 'Cmd'],
+    ['Windows', 'Ctrl'],
+    ['Win32', 'Ctrl'],
+    ['Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 'Ctrl'],
+    ['Linux', 'Ctrl'],
+    ['Linux x86_64', 'Ctrl'],
+    ['Mozilla/5.0 (X11; Ubuntu; Linux x86_64)', 'Ctrl'],
+  ])('%s → %s', (hint, expected) => {
+    expect(modifierKeyLabel(hint, 'Ctrl')).toBe(expected);
+  });
+
+  test('falls back to Ctrl when the platform is unknown', () => {
+    // Better to name the key most users have than to name none.
+    expect(modifierKeyLabel(undefined, 'Ctrl')).toBe('Ctrl');
+    expect(modifierKeyLabel('', undefined)).toBe('Ctrl');
+  });
+
+  test('uses the localized control-key name (German keyboards say Strg)', () => {
+    expect(modifierKeyLabel('Win32', 'Strg')).toBe('Strg');
+    // macOS is "Cmd" in every locale, so the localized Ctrl name must not leak there.
+    expect(modifierKeyLabel('MacIntel', 'Strg')).toBe('Cmd');
+  });
+});
+
+describe('chatLinkReuseHint ships in every locale', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const ROOT = path.join(__dirname, '..');
+  const read = (ext, loc) => JSON.parse(fs.readFileSync(
+    path.join(ROOT, 'extensions', ext, '_locales', loc, 'messages.json'), 'utf8'));
+
+  for (const ext of ['ai-folders', 'gemini-folders']) {
+    const locales = fs.readdirSync(path.join(ROOT, 'extensions', ext, '_locales'));
+
+    test(`${ext} has the key in all 43 locales, none empty`, () => {
+      expect(locales).toHaveLength(43);
+      const bad = locales.filter(loc => {
+        const m = read(ext, loc).chatLinkReuseHint;
+        return !m || !String(m.message).trim();
+      });
+      expect(bad).toEqual([]);
+    });
+
+    test(`${ext} keeps the {k} placeholder and hardcodes no key name`, () => {
+      // The substitution is what lets the tooltip say "Cmd" on a Mac and "Ctrl"
+      // on Windows/Linux. A translation that spells either one out would be
+      // wrong on half the machines, so that is the failure this guards.
+      const bad = locales.filter(loc => {
+        const m = read(ext, loc).chatLinkReuseHint.message;
+        return !m.includes('{k}') || /Ctrl|Cmd|Command|⌘/i.test(m);
+      });
+      expect(bad).toEqual([]);
+    });
+  }
+
+  test.each(['ai-folders', 'gemini-folders'])('%s names the control key per locale', (ext) => {
+    const locales = fs.readdirSync(path.join(ROOT, 'extensions', ext, '_locales'));
+    const names = {};
+    for (const loc of locales) names[loc] = read(ext, loc).keyCtrl?.message;
+    // German keyboards are labelled "Strg", not "Ctrl" — the whole reason this is
+    // an i18n key instead of a literal. Every other locale uses "Ctrl".
+    expect(names.de).toBe('Strg');
+    const wrong = locales.filter(loc => loc !== 'de' && names[loc] !== 'Ctrl');
+    expect(wrong).toEqual([]);
+  });
+
+  test('the wording is product-neutral, so the two extensions cannot drift', () => {
+    const locales = fs.readdirSync(path.join(ROOT, 'extensions', 'ai-folders', '_locales'));
+    const drifted = locales.filter(loc =>
+      read('ai-folders', loc).chatLinkReuseHint.message
+        !== read('gemini-folders', loc).chatLinkReuseHint.message);
+    expect(drifted).toEqual([]);
   });
 });
 
@@ -477,6 +709,32 @@ describe('chat link click', () => {
     chrome.tabs.update = jest.fn(() => Promise.resolve());
     chrome.tabs.query = jest.fn(() => Promise.resolve([]));
     chrome.windows.update = jest.fn(() => Promise.resolve());
+    chrome.storage.local.get = jest.fn(() => Promise.resolve({}));
+    chrome.storage.local.set = jest.fn(() => Promise.resolve());
+  });
+
+  function stubHint(hint, ctrlName) {
+    chrome.i18n.getMessage = jest.fn((key) => {
+      if (key === 'chatLinkReuseHint') return hint;
+      if (key === 'keyCtrl') return ctrlName;
+      return key;
+    });
+  }
+
+  test('the tooltip keeps the title on its first line and advertises the gesture', () => {
+    stubHint('{k}-click: reuse the last tab', 'Ctrl');
+    const link = renderOneChat();
+    const [first, second] = link.title.split('\n');
+    expect(first).toBe('Chat 1');
+    // jsdom is not macOS, so {k} resolves to the control key's localized name.
+    expect(second).toBe('Ctrl-click: reuse the last tab');
+    expect(link.title).not.toContain('{k}');
+  });
+
+  test('the tooltip uses the locale\'s own control-key name', () => {
+    stubHint('{k} + Klick: letzten Tab wiederverwenden', 'Strg');
+    expect(renderOneChat().title.split('\n')[1])
+      .toBe('Strg + Klick: letzten Tab wiederverwenden');
   });
 
   test('keeps the href and target="_blank" (a11y + native middle-click)', () => {
@@ -500,6 +758,28 @@ describe('chat link click', () => {
     expect(chrome.tabs.query).not.toHaveBeenCalled();
     expect(chrome.tabs.create).not.toHaveBeenCalled();
     expect(chrome.tabs.update).not.toHaveBeenCalled();
+  });
+
+  test.each([
+    ['ctrl-click', { ctrlKey: true }],
+    ['cmd-click', { metaKey: true }],
+  ])('%s asks for tab reuse', async (_label, init) => {
+    // Nothing reusable here — we only assert the intent reached openConversation,
+    // which is observable as the extension handling the click itself.
+    const e = clickWith(renderOneChat(), init);
+    expect(e.defaultPrevented).toBe(true);
+    await new Promise(r => setTimeout(r, 0));
+    // Two queries (all tabs, then the active one) mark the reuse path;
+    // a plain click issues only one.
+    expect(chrome.tabs.query).toHaveBeenCalledTimes(2);
+    expect(chrome.tabs.query).toHaveBeenCalledWith({ active: true, currentWindow: true });
+  });
+
+  test('a plain click does not go looking for a tab to reuse', async () => {
+    clickWith(renderOneChat());
+    await new Promise(r => setTimeout(r, 0));
+    expect(chrome.tabs.query).toHaveBeenCalledTimes(1);
+    expect(chrome.tabs.query).toHaveBeenCalledWith({});
   });
 
   test('an unsafe stored URL is never sent to the tabs API', () => {

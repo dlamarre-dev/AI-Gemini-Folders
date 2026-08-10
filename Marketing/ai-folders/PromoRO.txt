@@ -46,6 +46,7 @@ Salvare rapidă: Ctrl+Shift+S (sau Cmd+Shift+S pe Mac), sau clic dreapta > „Sa
 Prin extensie: Faceți clic pe pictogramă, alegeți un folder, salvați.
 Mobil: Activați 📱 din subsol pentru a sincroniza folderele cu telefonul.
 Folosiți casetele de bifare pentru acțiuni în bloc, deschideți foldere ca File de grup (📑), trageți pentru a reorganiza!
+Redeschidere: dați clic pe o conversație pentru a trece la fila care o afișează deja; Ctrl+clic (sau Cmd+clic pe Mac) reutilizează ultima filă în loc să deschidă una nouă.
 
 Modul Prompturi:
 Faceți clic pe 📝 de pe butonul de comutare din colțul din dreapta sus al extensiei.
@@ -65,6 +66,7 @@ Răsfoiți codul sau contribuiți: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 
 📢 ACTUALIZĂRI:
+Versiunea 1.6.4 (Mai puține file): Un clic pe o conversație salvată trece acum la fila care o afișează deja, în loc să deschidă un duplicat. Ctrl+clic (sau Cmd+clic pe Mac) reutilizează ultima filă.
 Versiunea 1.6.3 (Pagină de bun venit): După instalare se deschide acum un ghid scurt: cum să fixezi extensia și să salvezi prima conversație. Căutarea precizează de asemenea că acoperă doar conversațiile deja salvate.
 Versiunea 1.6.2 (Kimi): Lansați conversații noi pe Kimi direct din Modul Prompt, salvați-le în dosare și injectați prompturi. Eliminarea extensiei deschide acum o scurtă pagină de feedback opțională în limba ta, iar nimic nu este trimis decât dacă o trimiți tu.
 Versiunea 1.6.1 (Securitate și stabilitate): Protecții suplimentare pentru linkurile salvate și importurile din backup, plus corecții interne de stabilitate.

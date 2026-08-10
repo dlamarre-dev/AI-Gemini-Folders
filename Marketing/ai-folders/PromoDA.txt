@@ -46,6 +46,7 @@ Hurtiggem: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller højreklik > «Gem i 
 Via udvidelsen: Klik på ikonet, vælg en mappe og gem.
 Mobil: Markér 📱 i sidefoden for at synkronisere dine mapper til din telefon.
 Brug afkrydsningsfelter til massehandlinger, åbn mapper som fanegrupper (📑), træk og slip for at reorganisere!
+Genåbning: klik på en samtale for at skifte til den fane, der allerede viser den; Ctrl+klik (eller Cmd+klik på Mac) genbruger din seneste fane i stedet for at åbne en ny.
 
 Promptvisning:
 Klik på 📝 på justeringsknappen øverst til højre i udvidelsen.
@@ -65,6 +66,7 @@ Gennemse koden eller bidrag: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 OPDATERINGER:
+Version 1.6.4 (Færre faner): Et klik på en gemt samtale skifter nu til den fane, der allerede viser den, i stedet for at åbne en dublet. Ctrl+klik (eller Cmd+klik på Mac) genbruger din seneste fane.
 Version 1.6.3 (Velkomstside): Efter installationen åbnes nu en kort guide: hvordan du fastgør udvidelsen og gemmer din første samtale. Søgningen gør det også tydeligt, at den kun dækker gemte samtaler.
 Version 1.6.2 (Kimi): Start nye Kimi-samtaler direkte fra Promptvisning, gem dem i mapper og injicér prompts. Når du fjerner udvidelsen, åbnes nu en kort valgfri feedbackside på dit sprog, og intet sendes, medmindre du selv indsender den.
 Version 1.6.1 (Sikkerhed og stabilitet): Ekstra beskyttelse af gemte links og backup-import samt interne stabilitetsrettelser.

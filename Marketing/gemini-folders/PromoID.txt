@@ -39,6 +39,7 @@ Simpan cepat: Ctrl+Shift+S (atau Cmd+Shift+S di Mac), atau klik kanan > "Simpan 
 Via ekstensi: Klik ikon, pilih folder, dan simpan.
 Mobile: Centang 📱 di footer untuk menyinkronkan folder Anda ke ponsel.
 Gunakan kotak centang untuk tindakan massal, buka folder sebagai Grup Tab (📑), seret dan lepas untuk menyusun ulang!
+Membuka kembali: klik percakapan untuk beralih ke tab yang sudah menampilkannya; Ctrl+klik (atau Cmd+klik di Mac) menggunakan kembali tab terakhir Anda daripada membuka tab baru.
 
 Mode Prompt:
 Klik 📝 pada tombol sakelar di kanan atas ekstensi.
@@ -64,6 +65,7 @@ Tertarik dengan Folder Gemini tapi juga menggunakan ChatGPT, Claude, Copilot, Gr
 👉 Pasang Folder AI: __AF_STORE_URL__
 
 📢 PEMBARUAN:
+Versi 4.5.6 (Lebih sedikit tab): Mengeklik percakapan yang tersimpan sekarang beralih ke tab yang sudah menampilkannya, bukan membuka duplikat. Ctrl+klik (atau Cmd+klik di Mac) menggunakan kembali tab terakhir Anda.
 Versi 4.5.5 (Halaman selamat datang): Setelah pemasangan kini terbuka panduan singkat: cara menyematkan ekstensi dan menyimpan percakapan pertama Anda. Pencarian juga menegaskan bahwa hanya mencakup percakapan yang sudah disimpan.
 Versi 4.5.4 (Survei penghapusan): Menghapus ekstensi kini membuka halaman masukan singkat dan opsional dalam bahasa Anda, dan tidak ada yang dikirim kecuali Anda mengirimkannya sendiri.
 Versi 4.5.3 (Keamanan & stabilitas): Perlindungan tambahan untuk tautan tersimpan dan impor cadangan, serta perbaikan stabilitas internal.

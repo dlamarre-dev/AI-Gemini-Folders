@@ -39,6 +39,7 @@ Rýchle uloženie: Ctrl+Shift+S (alebo Cmd+Shift+S na Mac), alebo pravý klik > 
 Cez rozšírenie: Kliknite na ikonu, vyberte priečinok, uložte.
 Mobilné: Aktivujte 📱 v päte stránky a synchronizujte priečinky s telefónom.
 Používajte zaškrtávacie políčka pre hromadné akcie, otvárajte priečinky ako skupiny kariet (📑), presuňte pre reorganizáciu!
+Opätovné otvorenie: kliknutím na konverzáciu prejdete na kartu, ktorá ju už zobrazuje; Ctrl+kliknutie (alebo Cmd+kliknutie na Macu) použije poslednú kartu namiesto otvorenia novej.
 
 Režim výziev:
 Kliknite na 📝 na prepínači v pravom hornom rohu rozšírenia.
@@ -64,6 +65,7 @@ Zaujímajú vás Priečinky Gemini, ale používate aj ChatGPT, Claude, Copilot,
 👉 Nainštalovať AI priečinky: __AF_STORE_URL__
 
 📢 AKTUALIZÁCIE:
+Verzia 4.5.6 (Menej kariet): Kliknutie na uloženú konverzáciu teraz prejde na kartu, ktorá ju už zobrazuje, namiesto otvorenia duplikátu. Ctrl+kliknutie (alebo Cmd+kliknutie na Macu) použije poslednú kartu.
 Verzia 4.5.5 (Uvítacia stránka): Po inštalácii sa teraz otvorí krátky sprievodca: ako si rozšírenie pripnúť a uložiť prvú konverzáciu. Hľadanie tiež jasne uvádza, že prehľadáva len už uložené konverzácie.
 Verzia 4.5.4 (Dotazník pri odinštalovaní): Odstránenie rozšírenia teraz otvorí krátku nepovinnú stránku spätnej väzby vo vašom jazyku a nič sa neodošle, kým ju sami nepošlete.
 Verzia 4.5.3 (Zabezpečenie a stabilita): Ďalšia ochrana uložených odkazov a importu záloh a interné opravy stability.

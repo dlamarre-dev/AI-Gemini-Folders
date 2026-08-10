@@ -46,6 +46,7 @@ Gyorsmentés: Ctrl+Shift+S (vagy Mac-en Cmd+Shift+S), vagy jobb kattintás > „
 A bővítményen keresztül: Kattintson az ikonra, válasszon mappát, és mentse el.
 Mobil: Jelölje be a 📱 ikont a láblécben a mappák telefonra szinkronizálásához.
 Használja a jelölőnégyzeteket tömeges műveletekhez, nyissa meg a mappákat lapcsoportként (📑), húzza-ejtse az átrendezéshez!
+Újranyitás: kattintson egy beszélgetésre, hogy arra a lapra váltson, amely már megjeleníti; a Ctrl+kattintás (vagy Cmd+kattintás Macen) az utolsó lapot használja újra, nem nyit újat.
 
 Promptüzemmód:
 Kattintson a 📝 gombra a bővítmény jobb felső sarkában lévő kapcsolón.
@@ -65,6 +66,7 @@ Böngésszen a kódban vagy járuljon hozzá: https://github.com/dlamarre-dev/AI
 
 
 📢 FRISSÍTÉSEK:
+1.6.4-es verzió (Kevesebb lap): A mentett beszélgetésre kattintva most arra a lapra vált, amely már megjeleníti, ahelyett hogy másolatot nyitna. A Ctrl+kattintás (vagy Cmd+kattintás Macen) az utolsó lapot használja újra.
 1.6.3-as verzió (Üdvözlőoldal): A telepítés után most rövid útmutató nyílik meg: hogyan rögzítheti a kiegészítőt, és hogyan mentheti el az első beszélgetést. A keresés is egyértelművé teszi, hogy csak a már mentett beszélgetésekre terjed ki.
 1.6.2-es verzió (Kimi): Indítson új Kimi-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat. A kiegészítő eltávolítása most egy rövid, nem kötelező visszajelzési oldalt nyit meg a saját nyelvén, és semmi nem kerül elküldésre, amíg Ön el nem küldi.
 1.6.1-es verzió (Biztonság és stabilitás): További védelem a mentett hivatkozásokhoz és a biztonsági mentések importjához, valamint belső stabilitási javítások.

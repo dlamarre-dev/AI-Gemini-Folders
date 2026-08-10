@@ -46,6 +46,7 @@ Rýchle uloženie: Ctrl+Shift+S (alebo Cmd+Shift+S na Mac), alebo pravý klik > 
 Cez rozšírenie: Kliknite na ikonu, vyberte priečinok, uložte.
 Mobilné: Aktivujte 📱 v päte stránky a synchronizujte priečinky s telefónom.
 Používajte zaškrtávacie políčka pre hromadné akcie, otvárajte priečinky ako skupiny kariet (📑), presuňte pre reorganizáciu!
+Opätovné otvorenie: kliknutím na konverzáciu prejdete na kartu, ktorá ju už zobrazuje; Ctrl+kliknutie (alebo Cmd+kliknutie na Macu) použije poslednú kartu namiesto otvorenia novej.
 
 Režim výziev:
 Kliknite na 📝 na prepínači v pravom hornom rohu rozšírenia.
@@ -65,6 +66,7 @@ Prezrite kód alebo prispejte: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AKTUALIZÁCIE:
+Verzia 1.6.4 (Menej kariet): Kliknutie na uloženú konverzáciu teraz prejde na kartu, ktorá ju už zobrazuje, namiesto otvorenia duplikátu. Ctrl+kliknutie (alebo Cmd+kliknutie na Macu) použije poslednú kartu.
 Verzia 1.6.3 (Uvítacia stránka): Po inštalácii sa teraz otvorí krátky sprievodca: ako si rozšírenie pripnúť a uložiť prvú konverzáciu. Hľadanie tiež jasne uvádza, že prehľadáva len už uložené konverzácie.
 Verzia 1.6.2 (Kimi): Spustite nové konverzácie na Kimi priamo z režimu výziev, ukladajte ich do priečinkov a vkladajte výzvy. Odstránenie rozšírenia teraz otvorí krátku nepovinnú stránku spätnej väzby vo vašom jazyku a nič sa neodošle, kým ju sami nepošlete.
 Verzia 1.6.1 (Zabezpečenie a stabilita): Ďalšia ochrana uložených odkazov a importu záloh a interné opravy stability.

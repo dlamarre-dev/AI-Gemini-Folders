@@ -295,5 +295,11 @@
   },
   "welcomeCta": {
     "message": "확인"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + 클릭: 마지막 탭 재사용"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

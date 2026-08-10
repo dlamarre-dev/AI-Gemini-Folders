@@ -295,5 +295,11 @@
   },
   "welcomeCta": {
     "message": "Mengerti"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + klik: gunakan kembali tab terakhir"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

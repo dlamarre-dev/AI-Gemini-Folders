@@ -39,6 +39,7 @@ Pikatallennus: Ctrl+Shift+S (tai Cmd+Shift+S Macissa) tai hiiren oikea painike >
 Lisäosan kautta: Napsauta kuvaketta, valitse kansio ja tallenna.
 Mobiili: Merkitse 📱 alatunnisteessa synkronoidaksesi kansiot puhelimeesi.
 Käytä valintaruutuja joukotoimintoja varten, avaa kansiot välilehtiryhmien (📑) avulla, raahaa ja pudota järjestelläksesi uudelleen!
+Uudelleen avaaminen: napsauta keskustelua siirtyäksesi välilehdelle, jolla se on jo avoinna; Ctrl+napsautus (tai Cmd+napsautus Macissa) käyttää viimeisintä välilehteä uudelleen uuden avaamisen sijaan.
 
 Prompttila:
 Napsauta 📝 lisäosan oikeassa yläkulmassa olevaa kytkintä.
@@ -64,6 +65,7 @@ Kiinnostuitko Gemini-kansiot-laajennuksesta, mutta käytätkö myös ChatGPT:tä
 👉 Asenna AI-kansiot: __AF_STORE_URL__
 
 📢 PÄIVITYKSET:
+Versio 4.5.6 (Vähemmän välilehtiä): Tallennetun keskustelun napsauttaminen siirtyy nyt välilehdelle, jolla se on jo avoinna, sen sijaan että avaisi kaksoiskappaleen. Ctrl+napsautus (tai Cmd+napsautus Macissa) käyttää viimeisintä välilehteä uudelleen.
 Versio 4.5.5 (Tervetuloa-sivu): Asennuksen jälkeen avautuu nyt lyhyt opas: miten laajennus kiinnitetään ja ensimmäinen keskustelu tallennetaan. Haku kertoo myös selvästi kattavansa vain jo tallennetut keskustelut.
 Versio 4.5.4 (Poistokysely): Laajennuksen poistaminen avaa nyt lyhyen vapaaehtoisen palautesivun omalla kielelläsi, eikä mitään lähetetä, ellet lähetä sitä itse.
 Versio 4.5.3 (Turvallisuus ja vakaus): Lisäsuojaukset tallennetuille linkeille ja varmuuskopioiden tuonnille sekä sisäisiä vakautuskorjauksia.

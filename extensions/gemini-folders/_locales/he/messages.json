@@ -295,5 +295,11 @@
   },
   "welcomeCta": {
     "message": "הבנתי"
+  },
+  "chatLinkReuseHint": {
+    "message": "{k} + לחיצה: שימוש חוזר בלשונית האחרונה"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

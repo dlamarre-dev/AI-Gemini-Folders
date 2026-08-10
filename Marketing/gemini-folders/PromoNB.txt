@@ -39,6 +39,7 @@ Hurtiglagring: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller høyreklikk > «L
 Via tillegget: Klikk på ikonet, velg en mappe og lagre.
 Mobil: Merk av for 📱 i bunnteksten for å synkronisere mappene til telefonen.
 Bruk avmerkingsbokser for bulkhandlinger, åpne mapper som fanegruppene (📑), dra og slipp for å omorganisere!
+Gjenåpning: klikk på en samtale for å bytte til fanen som allerede viser den; Ctrl+klikk (eller Cmd+klikk på Mac) gjenbruker den siste fanen i stedet for å åpne en ny.
 
 Promptmodus:
 Klikk på 📝 på bryteren øverst til høyre i tillegget.
@@ -64,6 +65,7 @@ Interessert i Gemini Mapper men bruker du også ChatGPT, Claude, Copilot, Grok, 
 👉 Installer AI-mapper: __AF_STORE_URL__
 
 📢 OPPDATERINGER:
+Versjon 4.5.6 (Færre faner): Et klikk på en lagret samtale bytter nå til fanen som allerede viser den, i stedet for å åpne en duplikat. Ctrl+klikk (eller Cmd+klikk på Mac) gjenbruker den siste fanen.
 Versjon 4.5.5 (Velkomstside): Etter installasjonen åpnes nå en kort veiledning: hvordan du fester utvidelsen og lagrer den første samtalen. Søket gjør det også tydelig at det bare dekker lagrede samtaler.
 Versjon 4.5.4 (Avinstallasjonsundersøkelse): Når du fjerner utvidelsen, åpnes nå en kort valgfri tilbakemeldingsside på ditt språk, og ingenting sendes med mindre du sender det selv.
 Versjon 4.5.3 (Sikkerhet og stabilitet): Ekstra beskyttelse for lagrede lenker og sikkerhetskopiimport, pluss interne stabilitetsrettelser.
