@@ -43,6 +43,10 @@ from pathlib import Path
 
 API_BASE = "https://addons.mozilla.org/api/v5"
 TOOL_DIR = Path(__file__).resolve().parent
+# The repo the script itself lives in (tools/store-publisher/ → tools/ → root),
+# so moving or renaming the checkout doesn't break anything. config.json may
+# still pin "repo_root" to read another checkout's dist/; see resolve_repo_root.
+REPO_ROOT = TOOL_DIR.parents[1]
 # Records the screenshot set last uploaded per add-on, so an unchanged gallery
 # is skipped instead of torn down and re-uploaded (AMO throttles writes hard).
 STATE_FILE = TOOL_DIR / ".amo-previews-state.json"  # gitignored
@@ -73,6 +77,21 @@ def load_locales():
 
 def promo_txt_name(internal):
     return "PromoCN.txt" if internal == "zh_CN" else f"Promo{internal.upper()}.txt"
+
+
+def resolve_repo_root(config):
+    """Where dist/ lives. Derived from this file's location by default — an
+    override in config.json is only for pointing at a different checkout."""
+    configured = (config.get("repo_root") or "").strip()
+    if not configured:
+        return REPO_ROOT
+    root = Path(configured).expanduser()
+    if not root.is_dir():
+        sys.exit(f'config.json "repo_root" points at a directory that does not exist:\n'
+                 f"  {root}\n"
+                 f"Drop the key to use the repo this script lives in ({REPO_ROOT}), "
+                 f"or fix the path.")
+    return root
 
 
 # ── AMO API client (JWT auth, stdlib HTTP) ────────────────────────────────────
@@ -174,6 +193,8 @@ def api_request(creds, method, path, json_body=None, multipart=None, max_retries
 
 def build_descriptions(marketing_dir, locales):
     """Reads every supported locale's promo text. Returns {amo_code: text}."""
+    if not marketing_dir.is_dir():
+        sys.exit(f"Marketing dir not found: {marketing_dir} — run `python build.py` first.")
     out, skipped = {}, []
     for loc in locales:
         if not loc["amo"]:
@@ -359,11 +380,13 @@ def main():
     if not item:
         sys.exit(f'Item "{args.item}" not in config.json')
     guid = item["amo_guid"]
-    marketing_dir = Path(config["repo_root"]) / "dist" / item["slug"] / "marketing_firefox"
-    locales_dir = Path(config["repo_root"]) / "dist" / item["slug"] / "firefox" / "_locales"
+    repo_root = resolve_repo_root(config)
+    marketing_dir = repo_root / "dist" / item["slug"] / "marketing_firefox"
+    locales_dir = repo_root / "dist" / item["slug"] / "firefox" / "_locales"
     locales = load_locales()
 
     print(f'{"APPLY" if args.apply else "DRY-RUN"} — {item["name"]} ({guid})')
+    print(f"Repo root: {repo_root}")
     addon = api_request(creds, "GET", f"/addons/addon/{guid}/")
     current_desc = addon.get("description") or {}
     if isinstance(current_desc, dict):

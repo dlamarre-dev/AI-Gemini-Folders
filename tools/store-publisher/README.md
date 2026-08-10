@@ -30,13 +30,19 @@ manual, by design.
 
 ## Setup (one-time)
 
-1. `cp config.example.json config.json` and fill in `publisher_id` and
-   `repo_root` (absolute path to this repo). `config.json` is gitignored.
+1. `cp config.example.json config.json` and fill in `publisher_id`.
+   `config.json` is gitignored. No repo path to fill in: the extension asks the
+   native host where the repo is (the host lives in it), and `amo_publish.py`
+   derives it from its own location — so the repo can be moved or renamed.
+   An optional `repo_root` still overrides both, to read another checkout.
 2. Native messaging host: the tool shares the stats-collector host
    (`filereader.py`, which also serves PNG bytes as base64). If you already
    installed it for stats-collector you have nothing to do — the host manifest
    now allowlists `store-publisher@dev.local` too. Otherwise run once:
    `tools\stats-collector\native\install-native-host.ps1`.
+   **Re-run that script after moving the repo**: the host manifest and the
+   registry entry record absolute paths, and this is the only thing a move
+   breaks. Both tools report the repo root they resolved at the start of a run.
 3. Load in Firefox: `about:debugging` → This Firefox → Load Temporary Add-on →
    select `tools/store-publisher/manifest.json`. Reload after each Firefox
    restart. Be signed into the Google account with publisher access in this

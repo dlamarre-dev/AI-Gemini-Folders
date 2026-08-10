@@ -16,15 +16,22 @@ const DRIVERS = { cws: CwsDriver };
 
 // ── native messaging (shared host with stats-collector) ───────────────────────
 
-// Binary reads arrive as a stream of {ok, chunk, done} messages: Firefox caps
-// native→extension messages at 1 MB and a screenshot's base64 exceeds that.
-function readFileNative(path, binary = false) {
+const NATIVE_HOST = 'com.geminifoldersantigravity.filereader';
+// The host manifest records an absolute path to filereader.bat, so moving the
+// repo invalidates it — that's what a connect failure usually means.
+const NATIVE_HINT = 'run tools/stats-collector/native/install-native-host.ps1 '
+  + '(re-run it after moving or renaming the repo).';
+
+// One request/response over the native host. Binary reads arrive as a stream of
+// {ok, chunk, done} messages: Firefox caps native→extension messages at 1 MB and
+// a screenshot's base64 exceeds that, so the chunks are joined back here.
+function nativeRequest(payload) {
   return new Promise((resolve, reject) => {
     let port;
     try {
-      port = chrome.runtime.connectNative('com.geminifoldersantigravity.filereader');
+      port = chrome.runtime.connectNative(NATIVE_HOST);
     } catch (e) {
-      reject(new Error('Native host unavailable — run tools/stats-collector/native/install-native-host.ps1 first. ' + e.message));
+      reject(new Error('Native host unavailable — ' + NATIVE_HINT + ' ' + e.message));
       return;
     }
     let settled = false;
@@ -36,20 +43,42 @@ function readFileNative(path, binary = false) {
     };
     const parts = [];
     port.onMessage.addListener(msg => {
-      if (!msg.ok) { finish(reject, new Error(`Native read error (${path}): ${msg.error}`)); return; }
-      if (msg.chunk !== undefined) {
-        parts.push(msg.chunk);
-        if (msg.done) finish(resolve, parts.join(''));
+      if (!msg.ok) {
+        finish(reject, new Error(`Native error (${payload.path ?? payload.cmd}): ${msg.error}`));
         return;
       }
-      finish(resolve, msg.content);
+      if (msg.chunk !== undefined) {
+        parts.push(msg.chunk);
+        if (msg.done) finish(resolve, { ...msg, content: parts.join('') });
+        return;
+      }
+      finish(resolve, msg);
     });
     port.onDisconnect.addListener(() => {
       const err = chrome.runtime.lastError?.message ?? 'disconnected';
-      finish(reject, new Error('Native host disconnected: ' + err));
+      finish(reject, new Error(`Native host disconnected: ${err} — ${NATIVE_HINT}`));
     });
-    port.postMessage(binary ? { path, binary: true } : { path });
+    port.postMessage(payload);
   });
+}
+
+function readFileNative(path, binary = false) {
+  return nativeRequest(binary ? { path, binary: true } : { path }).then(msg => msg.content);
+}
+
+// An extension only knows its moz-extension:// origin, never its own path on
+// disk, so the repo root comes from the native host — which does live inside the
+// repo. `repo_root` in config.json stays supported as an override (a checkout
+// elsewhere), but it is no longer required, so moving the repo breaks nothing.
+async function resolveRepoRoot(config) {
+  const configured = (config.repo_root || '').trim();
+  if (configured) return configured;
+  const { repo_root: root } = await nativeRequest({ cmd: 'repo_root' });
+  if (!root) {
+    throw new Error('Native host returned no repo root — update '
+      + 'tools/stats-collector/native/filereader.py, or set "repo_root" in config.json.');
+  }
+  return root;
 }
 
 // ── tab helpers ───────────────────────────────────────────────────────────────
@@ -185,7 +214,14 @@ async function runPublish(config, opts, onProgress) {
   if (!item) throw new Error(`Item "${opts.itemSlug}" not in config.json`);
 
   const locales = filterLocales(opts.localeFilter);
-  const marketingDir = joinPath(config.repo_root, driver.marketingDirParts(item));
+  // Resolved lazily: a pure probe touches no local file, so it must keep working
+  // even when the native host is unregistered (e.g. right after a repo move).
+  let marketingDir = null;
+  if (!opts.probeOnly) {
+    const repoRoot = await resolveRepoRoot(config);
+    marketingDir = joinPath(repoRoot, driver.marketingDirParts(item));
+    onProgress(`Repo root: ${repoRoot}`);
+  }
 
   // Pre-flight: read every promo text up front so a missing/stale dist file
   // aborts the run before the page is touched. (Skipped for a pure probe.)
