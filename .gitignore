@@ -16,6 +16,7 @@ Thumbs.db
 Marketing/reddit-launch-plan.md
 
 node_modules/
+coverage/
 
 __pycache__/
 *.pyc
