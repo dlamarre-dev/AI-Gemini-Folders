@@ -130,19 +130,21 @@ emits versioned `.zip` files. `dist/` is gitignored.
 ## 4. Git & CI procedure — DO NOT push to `main` directly
 
 `main` is protected: every change must go through a **pull request** that passes
-**3 required status checks** — `test`, `Analyze (javascript-typescript)`,
-`Analyze (actions)` (the two `Analyze` checks come from CodeQL *default setup*,
-configured on GitHub with no workflow file). Branch protection also requires **1
+**4 required status checks** — `test`, `Analyze (javascript-typescript)`,
+`Analyze (actions)`, `Analyze (python)` (the three `Analyze` checks come from
+CodeQL *default setup*, configured on GitHub with no workflow file; `python` was
+added to the required list on 09/08/2026, CodeQL having started scanning
+`build.py` and the `tools/` scripts). Branch protection also requires **1
 approving review**, which a solo maintainer cannot self-provide.
 
 Standard flow (the `--admin` on merge overrides *only* the impossible self-review;
-the 3 checks still gate the change):
+the 4 checks still gate the change):
 ```bash
 git checkout -b <branch>
 # ... commit work ...
 git push -u origin <branch>
 gh pr create --base main --fill
-gh pr checks --watch                       # wait for the 3 checks to go green
+gh pr checks --watch                       # wait for the 4 checks to go green
 gh pr merge --squash --admin --delete-branch
 git checkout main && git pull --ff-only
 ```
