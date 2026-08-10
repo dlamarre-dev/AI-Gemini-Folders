@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilizează ultima filă"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

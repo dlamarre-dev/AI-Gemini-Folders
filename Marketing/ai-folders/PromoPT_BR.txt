@@ -46,6 +46,7 @@ Salvar rapidamente: Ctrl+Shift+S (ou Cmd+Shift+S no Mac), ou clique direito > "S
 Pela extensão: Clique no ícone, escolha uma pasta e salve.
 Mobile: Ative 📱 no rodapé para sincronizar suas pastas com o celular.
 Use as caixas de seleção para ações em lote, abra pastas como Grupos de Abas (📑), arraste para reorganizar!
+Reabertura: clique em uma conversa para alternar para a aba que já a exibe; Ctrl+clique (ou Cmd+clique no Mac) reutiliza sua última aba em vez de abrir uma nova.
 
 Modo Prompts:
 Clique em 📝 no botão de alternância no canto superior direito da extensão.
@@ -65,6 +66,7 @@ Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 ATUALIZAÇÕES:
+Versão 1.6.4 (Menos abas): Clicar em uma conversa salva agora alterna para a aba que já a exibe em vez de abrir uma duplicada. Ctrl+clique (ou Cmd+clique no Mac) reutiliza sua última aba.
 Versão 1.6.3 (Página de boas-vindas): Após a instalação agora abre um guia rápido: como fixar a extensão e salvar sua primeira conversa. A busca também deixa claro que abrange apenas as conversas já salvas.
 Versão 1.6.2 (Kimi): Inicie novas conversas no Kimi diretamente do Modo Prompt, salve-as em pastas e injete prompts. Remover a extensão agora abre uma breve página de retorno opcional no seu idioma, e nada é enviado a menos que você mesmo envie.
 Versão 1.6.1 (Segurança e estabilidade): Proteções adicionais para links salvos e importações de backup, além de correções internas de estabilidade.

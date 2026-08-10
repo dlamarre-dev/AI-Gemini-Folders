@@ -46,6 +46,7 @@ Simpan cepat: Ctrl+Shift+S (atau Cmd+Shift+S di Mac), atau klik kanan > "Simpan 
 Via ekstensi: Klik ikon, pilih folder, dan simpan.
 Mobile: Centang 📱 di footer untuk menyinkronkan folder Anda ke ponsel.
 Gunakan kotak centang untuk tindakan massal, buka folder sebagai Grup Tab (📑), seret dan lepas untuk menyusun ulang!
+Membuka kembali: klik percakapan untuk beralih ke tab yang sudah menampilkannya; Ctrl+klik (atau Cmd+klik di Mac) menggunakan kembali tab terakhir Anda daripada membuka tab baru.
 
 Mode Prompt:
 Klik 📝 pada tombol sakelar di kanan atas ekstensi.
@@ -65,6 +66,7 @@ Jelajahi kode atau berkontribusi: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 PEMBARUAN:
+Versi 1.6.4 (Lebih sedikit tab): Mengeklik percakapan yang tersimpan sekarang beralih ke tab yang sudah menampilkannya, bukan membuka duplikat. Ctrl+klik (atau Cmd+klik di Mac) menggunakan kembali tab terakhir Anda.
 Versi 1.6.3 (Halaman selamat datang): Setelah pemasangan kini terbuka panduan singkat: cara menyematkan ekstensi dan menyimpan percakapan pertama Anda. Pencarian juga menegaskan bahwa hanya mencakup percakapan yang sudah disimpan.
 Versi 1.6.2 (Kimi): Mulai percakapan Kimi baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt. Menghapus ekstensi kini membuka halaman masukan singkat dan opsional dalam bahasa Anda, dan tidak ada yang dikirim kecuali Anda mengirimkannya sendiri.
 Versi 1.6.1 (Keamanan & stabilitas): Perlindungan tambahan untuk tautan tersimpan dan impor cadangan, serta perbaikan stabilitas internal.

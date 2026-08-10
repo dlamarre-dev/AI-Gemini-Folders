@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + klõps: kasuta viimast vahekaarti"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

@@ -39,6 +39,7 @@ Guardado rápido: Ctrl+Shift+S (o Cmd+Shift+S en Mac), o clic derecho > "Guardar
 Desde la extensión: Haz clic en el icono, elige una carpeta y guarda.
 Móvil: Activa 📱 en el pie de página para sincronizar tus carpetas con el teléfono.
 ¡Usa las casillas para acciones en lote, abre carpetas como Grupos de Pestañas (📑) y arrastra para reorganizar!
+Reapertura: haz clic en una conversación para cambiar a la pestaña que ya la muestra; Ctrl+clic (o Cmd+clic en Mac) reutiliza tu última pestaña en lugar de abrir una nueva.
 
 Modo Prompts:
 Haz clic en 📝 en el botón de alternancia en la esquina superior derecha de la extensión.
@@ -64,6 +65,7 @@ Explorar el código o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 👉 Instalar Carpetas IA: __AF_STORE_URL__
 
 📢 ACTUALIZACIONES:
+Versión 4.5.6 (Menos pestañas): Hacer clic en una conversación guardada ahora cambia a la pestaña que ya la muestra en lugar de abrir un duplicado. Ctrl+clic (o Cmd+clic en Mac) reutiliza tu última pestaña.
 Versión 4.5.5 (Página de bienvenida): Tras la instalación se abre ahora una breve guía: cómo fijar la extensión y guardar tu primera conversación. La búsqueda también deja claro que solo cubre las conversaciones ya guardadas.
 Versión 4.5.4 (Encuesta de desinstalación): Al eliminar la extensión ahora se abre una breve página de comentarios opcional en tu idioma, y no se envía nada a menos que la envíes tú mismo.
 Versión 4.5.3 (Seguridad y estabilidad): Protecciones adicionales para los enlaces guardados y las importaciones de copias de seguridad, además de correcciones internas de estabilidad.

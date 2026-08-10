@@ -58,6 +58,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 * ⚡ **Quick Save (Context Menu & Shortcuts):** Save the current conversation to any folder via right-click, or use the global keyboard shortcut (`Ctrl+Shift+S` on Chrome, `Alt+Shift+S` on Firefox) to send it instantly to a “⚡ Quick Saves” folder. Visual toast alerts confirm saves and flag duplicates.
 * 🛡️ **Bulletproof Database & Smart Deduplication:** Secure fallback architecture guards against corruption. Smart URL normalization prevents false duplicates even when AI platforms change their URL parameters.
 * ☑️ **Bulk Actions (Multi-Select):** Select multiple conversations at once via checkboxes to move or delete them in batches.
+* 🔁 **No Tab Pile-Up:** Clicking a saved conversation switches to the tab already showing it instead of opening a duplicate, and `Ctrl+click` (`Cmd+click` on Mac) reuses the last tab the extension opened rather than adding another. Middle-click and Shift-click keep their native behavior, and no extra permission is required.
 * 📑 **Tab Groups Integration:** Open an entire folder in one click — conversations open in native, color-coded browser Tab Groups (where supported).
 * 😃 **Custom Folder Emojis:** Start a folder name with an emoji (e.g., “💻 Code”) and it becomes the folder icon automatically.
 * ⇅ **Custom Sorting:** Sort folders and conversations by Newest, Oldest, or A-Z on the fly, with changes reflected instantly in mobile sync.
@@ -126,7 +127,8 @@ This project uses a Python build pipeline to generate browser-specific versions.
 2. **Quick save:** `Ctrl+Shift+S` (Chrome) / `Alt+Shift+S` (Firefox) to save to Quick Saves, or right-click → hover over the save menu.
 3. **Via the extension:** Click the toolbar icon or press `Ctrl+Shift+1` (`Cmd+Shift+1` on Mac) to open the panel. The title is auto-detected. Expand the add panel (➕), select or create a folder, and hit **Save**.
 4. **Mobile sync:** Click `📱` in the footer to mirror your folders in browser bookmarks.
-5. Drag & drop items, use checkboxes for bulk actions, open folders as Tab Groups, or pin favorites with 📌.
+5. **Reopen a conversation:** Click it to switch to the tab already showing it. `Ctrl+click` (`Cmd+click` on Mac) reuses the last tab instead of opening a new one; middle-click still opens a background tab.
+6. Drag & drop items, use checkboxes for bulk actions, open folders as Tab Groups, or pin favorites with 📌.
 
 ### Prompt Mode
 1. Click the **📝** side of the pill toggle to switch to Prompt Mode.

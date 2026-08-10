@@ -599,16 +599,20 @@ async function openFolderInTabGroup(folderName, chats) {
 // chatLinkReuseHint: Cmd on macOS, Ctrl on Windows/Linux. Naming both would make
 // the user work out which one is theirs, and hardcoding either into the 43
 // translations would be wrong on half the machines — hence the substitution.
-// Pure in its input so both platforms are testable.
-function modifierKeyLabel(platformHint) {
-  return /Mac|iPhone|iPad/i.test(platformHint || '') ? 'Cmd' : 'Ctrl';
+// The control key's *name* is localized (German keyboards are labelled "Strg"),
+// so it comes from the keyCtrl message; Command is called Cmd in every locale.
+// Pure in its inputs so both platforms are testable.
+function modifierKeyLabel(platformHint, ctrlLabel) {
+  return /Mac|iPhone|iPad/i.test(platformHint || '') ? 'Cmd' : (ctrlLabel || 'Ctrl');
 }
 
 function currentModifierKeyLabel() {
   const nav = typeof navigator !== 'undefined' ? navigator : {};
   // userAgentData.platform is the modern signal; platform/userAgent are the
   // fallbacks (same user-agent sniffing style as welcome.js's Firefox check).
-  return modifierKeyLabel(nav.userAgentData?.platform || nav.platform || nav.userAgent);
+  return modifierKeyLabel(
+    nav.userAgentData?.platform || nav.platform || nav.userAgent,
+    chrome.i18n.getMessage("keyCtrl"));
 }
 
 async function queryAllTabs() {

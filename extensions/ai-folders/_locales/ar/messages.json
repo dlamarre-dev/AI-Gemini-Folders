@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "نقر مع {k}: إعادة استخدام آخر علامة تبويب"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

@@ -38,6 +38,7 @@ Otvori panel: Ctrl+Shift+1 (ili Cmd+Shift+1 na Mac-u).
 Brzo čuvanje: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Sačuvaj u Gemini Foldere».
 Putem proširenja: Klikni ikonu, odaberi folder i sačuvaj.
 Mobilno: Označi 📱 u podnožju da sinhronizuješ foldere s telefonom.
+Ponovno otvaranje: kliknite razgovor da biste prešli na karticu koja ga već prikazuje; Ctrl+klik (ili Cmd+klik na Macu) ponovo koristi poslednju karticu umesto otvaranja nove.
 
 Mod promptova:
 Klikni 📝 na prekidaču gore desno u proširenju.
@@ -63,6 +64,7 @@ Zainteresovani za Gemini Folderi, ali koristite i ChatGPT, Claude, Copilot, Grok
 👉 Instaliraj VI fascikle: __AF_STORE_URL__
 
 📢 AŽURIRANJA:
+Verzija 4.5.6 (Manje kartica): Klik na sačuvan razgovor sada prelazi na karticu koja ga već prikazuje umesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovo koristi poslednju karticu.
 Verzija 4.5.5 (Stranica dobrodošlice): Nakon instalacije sada se otvara kratak vodič: kako prikačiti proširenje i sačuvati prvi razgovor. Pretraga takođe jasno navodi da obuhvata samo već sačuvane razgovore.
 Verzija 4.5.4 (Anketa pri deinstalaciji): Uklanjanje proširenja sada otvara kratku opcionu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
 Verzija 4.5.3 (Bezbednost i stabilnost): Dodatna zaštita sačuvanih linkova i uvoza rezervnih kopija, uz interne popravke stabilnosti.

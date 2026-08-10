@@ -12,11 +12,11 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.5.5**.
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.5.6**.
 - **AI Folders (AF)** — 18 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, You.com, Pi, Character.AI) **+ a user-configured local LLM**.
-  Current version **1.6.3**. The popup's per-site "new conversation" buttons
+  Current version **1.6.4**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -110,11 +110,15 @@ build_images.py              Regenerates marketing screenshots (release-time onl
 npx jest                 # full suite
 ```
 
-**Build** (runs Jest first; aborts if tests fail):
+**Build** (runs Jest first, then asks whether to continue if it fails):
 ```bash
-python build.py          # interactive
+python build.py          # interactive — a failing suite prompts, so it stops unless you say yes
 python build.py --yes    # non-interactive (also -y); use this in automation
 ```
+⚠️ **`--yes` answers that prompt for you**, so a failing suite does *not* abort the
+build (`run_tests` → `confirm`, build.py:180). A green `🎉 Build finished` is
+therefore **not** evidence that the tests passed — always run `npx jest`
+separately and read its summary.
 The build copies `src/` then overlays `extensions/<name>/` into
 `dist/<name>/{chrome,firefox}`, patches the manifest + locales for Firefox, and
 emits versioned `.zip` files. `dist/` is gitignored.

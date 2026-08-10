@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + tıklama: son sekmeyi yeniden kullan"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

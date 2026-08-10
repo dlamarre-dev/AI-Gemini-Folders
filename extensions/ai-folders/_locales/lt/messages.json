@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + spustelėjimas: naudoti paskutinį skirtuką"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

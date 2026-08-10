@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + คลิก: ใช้แท็บล่าสุดซ้ำ"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

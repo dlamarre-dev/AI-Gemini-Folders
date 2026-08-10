@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic : réutiliser le dernier onglet"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

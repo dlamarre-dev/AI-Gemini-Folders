@@ -39,6 +39,7 @@ Sauvegarde express : Ctrl+Shift+S (ou Cmd+Shift+S sur Mac), ou clic droit > "Sau
 Via l'extension : Cliquez sur l'icône, choisissez un dossier et sauvegardez.
 Mobile : Cochez 📱 dans le pied de page pour synchroniser vos dossiers sur votre téléphone.
 Cochez les cases pour des actions groupées, ouvrez des dossiers en onglets (📑), glissez-déposez pour réorganiser !
+Réouverture : cliquez sur une conversation pour basculer vers l’onglet qui l’affiche déjà ; Ctrl+clic (ou Cmd+clic sur Mac) réutilise votre dernier onglet au lieu d’en ouvrir un nouveau.
 
 Mode Prompts :
 Cliquez sur 📝 dans le bouton de bascule en haut à droite de l'extension.
@@ -64,6 +65,7 @@ Intéressé par Dossiers Gemini mais vous utilisez aussi ChatGPT, Claude, Copilo
 👉 Installer Dossiers IA: __AF_STORE_URL__
 
 📢 MISES À JOUR :
+Version 4.5.6 (Moins d’onglets) : Cliquer sur une conversation enregistrée bascule maintenant vers l’onglet qui l’affiche déjà au lieu d’ouvrir un doublon. Ctrl+clic (ou Cmd+clic sur Mac) réutilise votre dernier onglet.
 Version 4.5.5 (Page de bienvenue) : Un court guide s'ouvre désormais après l'installation : comment épingler l'extension et enregistrer votre première conversation. La recherche indique aussi clairement qu'elle ne couvre que les conversations déjà enregistrées.
 Version 4.5.4 (Sondage de désinstallation) : Retirer l'extension ouvre désormais une courte page de retour facultative dans votre langue, et rien n'est envoyé à moins que vous ne l'envoyiez vous-même.
 Version 4.5.3 (Sécurité et stabilité) : Protections renforcées pour les liens enregistrés et les imports de sauvegarde, avec des correctifs de stabilité internes.

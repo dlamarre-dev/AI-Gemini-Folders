@@ -618,13 +618,19 @@ describe('modifierKeyLabel', () => {
     ['Linux x86_64', 'Ctrl'],
     ['Mozilla/5.0 (X11; Ubuntu; Linux x86_64)', 'Ctrl'],
   ])('%s → %s', (hint, expected) => {
-    expect(modifierKeyLabel(hint)).toBe(expected);
+    expect(modifierKeyLabel(hint, 'Ctrl')).toBe(expected);
   });
 
   test('falls back to Ctrl when the platform is unknown', () => {
     // Better to name the key most users have than to name none.
-    expect(modifierKeyLabel(undefined)).toBe('Ctrl');
-    expect(modifierKeyLabel('')).toBe('Ctrl');
+    expect(modifierKeyLabel(undefined, 'Ctrl')).toBe('Ctrl');
+    expect(modifierKeyLabel('', undefined)).toBe('Ctrl');
+  });
+
+  test('uses the localized control-key name (German keyboards say Strg)', () => {
+    expect(modifierKeyLabel('Win32', 'Strg')).toBe('Strg');
+    // macOS is "Cmd" in every locale, so the localized Ctrl name must not leak there.
+    expect(modifierKeyLabel('MacIntel', 'Strg')).toBe('Cmd');
   });
 });
 
@@ -658,6 +664,17 @@ describe('chatLinkReuseHint ships in every locale', () => {
       expect(bad).toEqual([]);
     });
   }
+
+  test.each(['ai-folders', 'gemini-folders'])('%s names the control key per locale', (ext) => {
+    const locales = fs.readdirSync(path.join(ROOT, 'extensions', ext, '_locales'));
+    const names = {};
+    for (const loc of locales) names[loc] = read(ext, loc).keyCtrl?.message;
+    // German keyboards are labelled "Strg", not "Ctrl" — the whole reason this is
+    // an i18n key instead of a literal. Every other locale uses "Ctrl".
+    expect(names.de).toBe('Strg');
+    const wrong = locales.filter(loc => loc !== 'de' && names[loc] !== 'Ctrl');
+    expect(wrong).toEqual([]);
+  });
 
   test('the wording is product-neutral, so the two extensions cannot drift', () => {
     const locales = fs.readdirSync(path.join(ROOT, 'extensions', 'ai-folders', '_locales'));
@@ -696,15 +713,28 @@ describe('chat link click', () => {
     chrome.storage.local.set = jest.fn(() => Promise.resolve());
   });
 
+  function stubHint(hint, ctrlName) {
+    chrome.i18n.getMessage = jest.fn((key) => {
+      if (key === 'chatLinkReuseHint') return hint;
+      if (key === 'keyCtrl') return ctrlName;
+      return key;
+    });
+  }
+
   test('the tooltip keeps the title on its first line and advertises the gesture', () => {
-    chrome.i18n.getMessage = jest.fn((key) =>
-      key === 'chatLinkReuseHint' ? '{k}-click: reuse the last tab' : key);
+    stubHint('{k}-click: reuse the last tab', 'Ctrl');
     const link = renderOneChat();
     const [first, second] = link.title.split('\n');
     expect(first).toBe('Chat 1');
-    // jsdom is not macOS, so {k} resolves to Ctrl here.
+    // jsdom is not macOS, so {k} resolves to the control key's localized name.
     expect(second).toBe('Ctrl-click: reuse the last tab');
     expect(link.title).not.toContain('{k}');
+  });
+
+  test('the tooltip uses the locale\'s own control-key name', () => {
+    stubHint('{k} + Klick: letzten Tab wiederverwenden', 'Strg');
+    expect(renderOneChat().title.split('\n')[1])
+      .toBe('Strg + Klick: letzten Tab wiederverwenden');
   });
 
   test('keeps the href and target="_blank" (a11y + native middle-click)', () => {

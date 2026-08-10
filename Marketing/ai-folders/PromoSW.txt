@@ -46,6 +46,7 @@ Hifadhi ya haraka: Ctrl+Shift+S (au Cmd+Shift+S kwenye Mac), au bofya kulia > "H
 Kupitia kiendelezi: Bofya ikoni, chagua folda, na hifadhi.
 Simu: Weka alama 📱 kwenye kijachini ili kusawazisha folda zako na simu yako.
 Tumia masanduku ya kuchagua kwa vitendo vya wingi, fungua folda kama Vikundi vya Vichupo (📑), buruta na uweke ili kupanga upya!
+Kufungua tena: bofya mazungumzo ili kwenda kwenye kichupo kinachoyaonyesha tayari; Ctrl+bofya (au Cmd+bofya kwenye Mac) hutumia tena kichupo chako cha mwisho badala ya kufungua kipya.
 
 Hali ya Kidokezo:
 Bofya 📝 kwenye kitufe cha kubadilisha upande wa juu kulia wa kiendelezi.
@@ -65,6 +66,7 @@ Angalia msimbo au changia: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 MASASISHO:
+Toleo 1.6.4 (Vichupo vichache): Kubofya mazungumzo yaliyohifadhiwa sasa hukupeleka kwenye kichupo kinachoyaonyesha tayari badala ya kufungua nakala. Ctrl+bofya (au Cmd+bofya kwenye Mac) hutumia tena kichupo chako cha mwisho.
 Toleo 1.6.3 (Ukurasa wa karibu): Baada ya kusakinisha sasa hufunguka mwongozo mfupi: jinsi ya kubandika kiendelezi na kuhifadhi mazungumzo yako ya kwanza. Utafutaji pia unaeleza wazi kuwa unahusu mazungumzo yaliyohifadhiwa tu.
 Toleo 1.6.2 (Kimi): Anza mazungumzo mapya ya Kimi moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo. Kuondoa kiendelezi sasa hufungua ukurasa mfupi wa maoni wa hiari kwa lugha yako, na hakuna kinachotumwa isipokuwa uitume mwenyewe.
 Toleo 1.6.1 (Usalama na uthabiti): Ulinzi wa ziada kwa viungo vilivyohifadhiwa na uingizaji wa nakala rudufu, pamoja na marekebisho ya ndani ya uthabiti.

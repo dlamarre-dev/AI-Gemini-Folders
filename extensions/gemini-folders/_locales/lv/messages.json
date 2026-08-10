@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + klikšķis: izmantot pēdējo cilni"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

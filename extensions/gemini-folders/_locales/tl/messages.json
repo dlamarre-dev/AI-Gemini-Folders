@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + click: gamitin muli ang huling tab"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

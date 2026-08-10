@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: ponovno koristi posljednju karticu"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

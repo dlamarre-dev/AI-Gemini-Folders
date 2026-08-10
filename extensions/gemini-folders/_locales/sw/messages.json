@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + bofya: tumia tena kichupo cha mwisho"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

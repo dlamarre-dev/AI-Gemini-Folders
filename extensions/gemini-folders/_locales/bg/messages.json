@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + щракване: използване на последния раздел"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

@@ -46,6 +46,7 @@ Snabbspara: Ctrl+Shift+S (eller Cmd+Shift+S på Mac), eller högerklicka > «Spa
 Via tillägget: Klicka på ikonen, välj en mapp och spara.
 Mobil: Markera 📱 i sidfoten för att synkronisera dina mappar till telefonen.
 Använd kryssrutor för massåtgärder, öppna mappar som flikgrupper (📑), dra och släpp för att omorganisera!
+Öppna igen: klicka på en konversation för att växla till fliken som redan visar den; Ctrl+klick (eller Cmd+klick på Mac) återanvänder din senaste flik i stället för att öppna en ny.
 
 Promptläge:
 Klicka på 📝 på reglaget längst upp till höger i tillägget.
@@ -65,6 +66,7 @@ Bläddra i koden eller bidra: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPPDATERINGAR:
+Version 1.6.4 (Färre flikar): Ett klick på en sparad konversation växlar nu till fliken som redan visar den i stället för att öppna en dubblett. Ctrl+klick (eller Cmd+klick på Mac) återanvänder din senaste flik.
 Version 1.6.3 (Välkomstsida): Efter installationen öppnas nu en kort guide: hur du fäster tillägget och sparar din första konversation. Sökningen visar också tydligt att den bara omfattar sparade konversationer.
 Version 1.6.2 (Kimi): Starta nya Kimi-konversationer direkt från Promptläge, spara dem i mappar och injicera promptar. När du tar bort tillägget öppnas nu en kort valfri återkopplingssida på ditt språk, och inget skickas om du inte skickar det själv.
 Version 1.6.1 (Säkerhet och stabilitet): Extra skydd för sparade länkar och import av säkerhetskopior, plus interna stabilitetsfixar.

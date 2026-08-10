@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + kattintás: az utolsó lap újrahasználata"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + क्लिक: अंतिम टैब का पुनः उपयोग करें"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

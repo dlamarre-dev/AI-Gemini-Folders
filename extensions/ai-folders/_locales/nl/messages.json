@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: laatste tabblad hergebruiken"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

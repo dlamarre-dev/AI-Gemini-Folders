@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: znova uporabi zadnji zavihek"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

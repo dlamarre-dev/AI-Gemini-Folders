@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + kliknutí: použít poslední kartu"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

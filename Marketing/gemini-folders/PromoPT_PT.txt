@@ -39,6 +39,7 @@ Guardar rapidamente: Ctrl+Shift+S (ou Cmd+Shift+S no Mac), ou clique direito > "
 Pela extensão: Clique no ícone, escolha uma pasta e guarde.
 Móvel: Ative 📱 no rodapé para sincronizar as suas pastas com o telemóvel.
 Use as caixas de verificação para ações em lote, abra pastas como Grupos de Separadores (📑), arraste para reorganizar!
+Reabertura: clique numa conversa para mudar para o separador que já a mostra; Ctrl+clique (ou Cmd+clique no Mac) reutiliza o seu último separador em vez de abrir um novo.
 
 Modo Prompts:
 Clique em 📝 no botão de alternância no canto superior direito da extensão.
@@ -64,6 +65,7 @@ Interessado em Pastas Gemini mas também utiliza ChatGPT, Claude, Copilot, Grok,
 👉 Instalar Pastas IA: __AF_STORE_URL__
 
 📢 ATUALIZAÇÕES:
+Versão 4.5.6 (Menos separadores): Clicar numa conversa guardada muda agora para o separador que já a mostra em vez de abrir um duplicado. Ctrl+clique (ou Cmd+clique no Mac) reutiliza o seu último separador.
 Versão 4.5.5 (Página de boas-vindas): Após a instalação abre agora um guia rápido: como fixar a extensão e guardar a sua primeira conversa. A pesquisa também deixa claro que abrange apenas as conversas já guardadas.
 Versão 4.5.4 (Inquérito de desinstalação): Remover a extensão abre agora uma breve página de comentários opcional no seu idioma, e nada é enviado a menos que o envie você mesmo.
 Versão 4.5.3 (Segurança e estabilidade): Proteções adicionais para ligações guardadas e importações de cópias de segurança, além de correções internas de estabilidade.

@@ -46,6 +46,7 @@ Rychlé uložení: Ctrl+Shift+S (nebo Cmd+Shift+S na Macu), nebo pravý klik > �
 Přes rozšíření: Klikněte na ikonu, vyberte složku, uložte.
 Mobilní: Aktivujte 📱 v zápatí a synchronizujte složky s telefonem.
 Používejte zaškrtávací políčka pro hromadné akce, otevírejte složky jako skupiny karet (📑), přetahujte pro reorganizaci!
+Opětovné otevření: kliknutím na konverzaci přejdete na kartu, která ji už zobrazuje; Ctrl+kliknutí (nebo Cmd+kliknutí na Macu) použije poslední kartu místo otevření nové.
 
 Režim výzev:
 Klikněte na 📝 na přepínači v pravém horním rohu rozšíření.
@@ -65,6 +66,7 @@ Prohlédněte kód nebo přispějte: https://github.com/dlamarre-dev/AI-Gemini-F
 
 
 📢 AKTUALIZACE:
+Verze 1.6.4 (Méně karet): Kliknutí na uloženou konverzaci nyní přejde na kartu, která ji už zobrazuje, místo otevření duplikátu. Ctrl+kliknutí (nebo Cmd+kliknutí na Macu) použije poslední kartu.
 Verze 1.6.3 (Uvítací stránka): Po instalaci se nyní otevře krátký průvodce: jak si rozšíření připnout a uložit první konverzaci. Hledání také jasně uvádí, že prohledává jen již uložené konverzace.
 Verze 1.6.2 (Kimi): Zahajte nové konverzace na Kimi přímo z režimu výzev, ukládejte je do složek a vkládejte výzvy. Odebrání rozšíření nyní otevře krátkou nepovinnou stránku pro zpětnou vazbu ve vašem jazyce a nic se neodešle, dokud ji sami nepošlete.
 Verze 1.6.1 (Zabezpečení a stabilita): Další ochrana uložených odkazů a importu záloh a interní opravy stability.

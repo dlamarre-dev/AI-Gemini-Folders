@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + клік: використати останню вкладку"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

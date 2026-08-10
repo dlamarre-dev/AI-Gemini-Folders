@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + 点击：复用上一个标签页"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

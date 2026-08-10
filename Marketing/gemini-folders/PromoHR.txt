@@ -38,6 +38,7 @@ Otvori ploču: Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
 Brzo spremi: Ctrl+Shift+S (ili Cmd+Shift+S na Macu), ili desni klik > «Spremi u Gemini Mape».
 Putem dodatka: Klikni ikonu, odaberi mapu i spremi.
 Mobilno: Označi 📱 u podnožju za sinkronizaciju mapa s telefonom.
+Ponovno otvaranje: kliknite razgovor da prijeđete na karticu koja ga već prikazuje; Ctrl+klik (ili Cmd+klik na Macu) ponovno koristi posljednju karticu umjesto otvaranja nove.
 
 Način upita:
 Klikni 📝 na prekidaču gore desno u dodatku.
@@ -63,6 +64,7 @@ Zanima te Gemini Mape, ali koristiš i ChatGPT, Claude, Copilot, Grok, Perplexit
 👉 Instaliraj UI mape: __AF_STORE_URL__
 
 📢 AŽURIRANJA:
+Verzija 4.5.6 (Manje kartica): Klik na spremljeni razgovor sada prelazi na karticu koja ga već prikazuje umjesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovno koristi posljednju karticu.
 Verzija 4.5.5 (Stranica dobrodošlice): Nakon instalacije sada se otvara kratak vodič: kako prikvačiti proširenje i spremiti prvi razgovor. Pretraživanje također jasno navodi da obuhvaća samo već spremljene razgovore.
 Verzija 4.5.4 (Anketa pri deinstalaciji): Uklanjanje proširenja sada otvara kratku neobaveznu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
 Verzija 4.5.3 (Sigurnost i stabilnost): Dodatna zaštita spremljenih poveznica i uvoza sigurnosnih kopija te interni popravci stabilnosti.

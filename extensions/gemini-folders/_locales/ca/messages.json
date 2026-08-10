@@ -298,5 +298,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilitza la darrera pestanya"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

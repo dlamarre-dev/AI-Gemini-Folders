@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k}-click: reuse the last tab"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

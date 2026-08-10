@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + クリック: 最後のタブを再利用"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

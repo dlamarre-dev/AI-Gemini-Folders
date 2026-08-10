@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + nhấp: dùng lại thẻ cuối cùng"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

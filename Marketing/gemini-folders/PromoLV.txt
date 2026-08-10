@@ -38,6 +38,7 @@ Atvert paneli: Ctrl+Shift+1 (vai Cmd+Shift+1 uz Mac).
 Ātrā saglabāšana: Ctrl+Shift+S (vai Cmd+Shift+S Mac datorā), vai labais klikšķis > «Saglabāt Gemini Mapēs».
 Caur paplašinājumu: Noklikšķini uz ikonas, izvēlies mapi un saglabā.
 Mobilais: Atzīmē 📱 kājenē, lai sinhronizētu mapes ar tālruni.
+Atkārtota atvēršana: noklikšķiniet uz sarunas, lai pārietu uz cilni, kurā tā jau ir atvērta; Ctrl+klikšķis (vai Cmd+klikšķis Mac datorā) atkārtoti izmanto pēdējo cilni, nevis atver jaunu.
 
 Uzvedņu režīms:
 Noklikšķini uz 📝 uz slēdža paplašinājuma augšējā labajā stūrī.
@@ -63,6 +64,7 @@ Interesē Gemini Mapes, bet izmantojat arī ChatGPT, Claude, Copilot, Grok, Perp
 👉 Instalēt AI mapes: __AF_STORE_URL__
 
 📢 ATJAUNINĀJUMI:
+Versija 4.5.6 (Mazāk ciļņu): Noklikšķinot uz saglabātas sarunas, tagad tiek pārslēgts uz cilni, kurā tā jau ir atvērta, nevis atvērts dublikāts. Ctrl+klikšķis (vai Cmd+klikšķis Mac datorā) atkārtoti izmanto pēdējo cilni.
 Versija 4.5.5 (Sveiciena lapa): Pēc instalēšanas tagad atveras īss ceļvedis: kā piespraust paplašinājumu un saglabāt pirmo sarunu. Meklēšana arī skaidri norāda, ka ietver tikai jau saglabātās sarunas.
 Versija 4.5.4 (Atinstalēšanas aptauja): Paplašinājuma noņemšana tagad atver īsu neobligātu atsauksmju lapu jūsu valodā, un nekas netiek nosūtīts, ja vien jūs to pats nenosūtāt.
 Versija 4.5.3 (Drošība un stabilitāte): Papildu aizsardzība saglabātajām saitēm un rezerves kopiju importēšanai, kā arī iekšēji stabilitātes labojumi.

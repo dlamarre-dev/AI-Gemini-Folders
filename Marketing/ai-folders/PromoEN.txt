@@ -46,6 +46,7 @@ Quick save: Ctrl+Shift+S (or Cmd+Shift+S on Mac), or right-click > "Save to AI F
 Via the extension: Click the icon, choose a folder, and save.
 Mobile: Check 📱 in the footer to sync your folders to your phone.
 Use checkboxes for bulk actions, open folders as Tab Groups (📑), drag and drop to reorganize!
+Reopening: click a conversation to switch to the tab already showing it; Ctrl+click (or Cmd+click on Mac) reuses your last tab instead of opening a new one.
 
 Prompt Mode:
 Click 📝 on the toggle button in the top right of the extension.
@@ -65,6 +66,7 @@ Every line of code is public on GitHub. Anyone can clone the repository, build i
 Browse the code or contribute: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 VERSION HISTORY:
+Version 1.6.4 (Fewer Tabs): Clicking a saved conversation now switches to the tab already showing it instead of opening a duplicate. Ctrl+click (or Cmd+click on Mac) reuses your last tab.
 Version 1.6.3 (Welcome Page): A short guide now opens after installing, showing how to pin the extension and save your first conversation. Search also makes clear it only looks through conversations you have already saved.
 Version 1.6.2 (Kimi): Launch new Kimi conversations directly from Prompt Mode, save and organize them in folders, and inject prompts. Removing the extension now opens a short optional feedback page in your language, and nothing is sent unless you submit it yourself.
 Version 1.6.1 (Security & Stability): Extra safeguards for stored links and backup imports, plus internal stability fixes.

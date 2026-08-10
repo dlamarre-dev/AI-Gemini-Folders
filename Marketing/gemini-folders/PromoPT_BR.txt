@@ -39,6 +39,7 @@ Salvar rapidamente: Ctrl+Shift+S (ou Cmd+Shift+S no Mac), ou clique direito > "S
 Pela extensão: Clique no ícone, escolha uma pasta e salve.
 Mobile: Ative 📱 no rodapé para sincronizar suas pastas com o celular.
 Use as caixas de seleção para ações em lote, abra pastas como Grupos de Abas (📑), arraste para reorganizar!
+Reabertura: clique em uma conversa para alternar para a aba que já a exibe; Ctrl+clique (ou Cmd+clique no Mac) reutiliza sua última aba em vez de abrir uma nova.
 
 Modo Prompts:
 Clique em 📝 no botão de alternância no canto superior direito da extensão.
@@ -64,6 +65,7 @@ Interessado em Pastas Gemini mas também usa ChatGPT, Claude, Copilot, Grok, Per
 👉 Instalar Pastas IA: __AF_STORE_URL__
 
 📢 ATUALIZAÇÕES:
+Versão 4.5.6 (Menos abas): Clicar em uma conversa salva agora alterna para a aba que já a exibe em vez de abrir uma duplicada. Ctrl+clique (ou Cmd+clique no Mac) reutiliza sua última aba.
 Versão 4.5.5 (Página de boas-vindas): Após a instalação agora abre um guia rápido: como fixar a extensão e salvar sua primeira conversa. A busca também deixa claro que abrange apenas as conversas já salvas.
 Versão 4.5.4 (Pesquisa de desinstalação): Remover a extensão agora abre uma breve página de retorno opcional no seu idioma, e nada é enviado a menos que você mesmo envie.
 Versão 4.5.3 (Segurança e estabilidade): Proteções adicionais para links salvos e importações de backup, além de correções internas de estabilidade.

@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + klick: återanvänd den senaste fliken"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

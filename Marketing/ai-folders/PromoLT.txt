@@ -45,6 +45,7 @@ Atidaryti skydelį: Ctrl+Shift+1 (arba Cmd+Shift+1 „Mac").
 Greitas išsaugojimas: Ctrl+Shift+S (arba Cmd+Shift+S „Mac"), arba dešinysis spustelėjimas > «Išsaugoti Gemini Aplankuose».
 Per plėtinį: Spustelėk piktogramą, pasirink aplanką ir išsaugok.
 Mobilusis: Pažymėk 📱 poraštėje, kad sinchronizuotum aplankus su telefonu.
+Pakartotinis atidarymas: spustelėkite pokalbį, kad pereitumėte į skirtuką, kuriame jis jau atidarytas; Ctrl+spustelėjimas (arba Cmd+spustelėjimas Mac) pakartotinai naudoja paskutinį skirtuką, o ne atidaro naują.
 
 Promptų režimas:
 Spustelėk 📝 ant perjungiklio plėtinio viršutiniame dešiniajame kampe.
@@ -64,6 +65,7 @@ Naršykite kodą arba prisidėkite: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 
 📢 ATNAUJINIMAI:
+Versija 1.6.4 (Mažiau skirtukų): Spustelėjus išsaugotą pokalbį dabar pereinama į skirtuką, kuriame jis jau atidarytas, užuot atidarius dublikatą. Ctrl+spustelėjimas (arba Cmd+spustelėjimas Mac) pakartotinai naudoja paskutinį skirtuką.
 Versija 1.6.3 (Pasveikinimo puslapis): Po įdiegimo dabar atsidaro trumpas vadovas: kaip prisegti plėtinį ir išsaugoti pirmą pokalbį. Paieška taip pat aiškiai nurodo, kad apima tik jau išsaugotus pokalbius.
 Versija 1.6.2 (Kimi): Pradėkite naujus Kimi pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus. Pašalinus plėtinį dabar atsidaro trumpas neprivalomas atsiliepimų puslapis jūsų kalba, ir nieko neišsiunčiama, nebent patys jį išsiųstumėte.
 Versija 1.6.1 (Sauga ir stabilumas): Papildoma išsaugotų nuorodų ir atsarginių kopijų importo apsauga bei vidiniai stabilumo pataisymai.

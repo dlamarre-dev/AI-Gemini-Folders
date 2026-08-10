@@ -334,5 +334,8 @@
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilizar la última pestaña"
+  },
+  "keyCtrl": {
+    "message": "Ctrl"
   }
 }

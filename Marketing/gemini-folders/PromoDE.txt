@@ -39,6 +39,7 @@ Schnellspeicherung: Strg+Shift+S (oder Cmd+Shift+S auf Mac), oder Rechtsklick > 
 Über die Erweiterung: Symbol anklicken, Ordner wählen, speichern.
 Mobil: 📱 in der Fußzeile aktivieren, um Ordner auf dem Smartphone zu synchronisieren.
 Checkboxen für Massenaktionen, Ordner als Tabs öffnen (📑), per Drag & Drop reorganisieren!
+Wiederöffnen: Ein Klick auf eine Unterhaltung wechselt zum Tab, der sie bereits anzeigt; Strg+Klick (oder Cmd+Klick auf Mac) verwendet Ihren letzten Tab erneut, statt einen neuen zu öffnen.
 
 Prompt-Modus:
 Auf 📝 im Umschalter oben rechts in der Erweiterung klicken.
@@ -64,6 +65,7 @@ Interessiert an Gemini-Ordner, aber nutzen Sie auch ChatGPT, Claude, Copilot, Gr
 👉 KI-Ordner installieren: __AF_STORE_URL__
 
 📢 UPDATES:
+Version 4.5.6 (Weniger Tabs): Ein Klick auf eine gespeicherte Unterhaltung wechselt jetzt zum Tab, der sie bereits anzeigt, statt ein Duplikat zu öffnen. Strg+Klick (oder Cmd+Klick auf Mac) verwendet Ihren letzten Tab erneut.
 Version 4.5.5 (Willkommensseite): Nach der Installation öffnet sich jetzt eine kurze Anleitung: wie du die Erweiterung anheftest und deine erste Unterhaltung speicherst. Die Suche macht außerdem deutlich, dass sie nur bereits gespeicherte Unterhaltungen durchsucht.
 Version 4.5.4 (Deinstallations-Umfrage): Beim Entfernen der Erweiterung öffnet sich nun eine kurze, freiwillige Feedback-Seite in Ihrer Sprache, und gesendet wird nur, was Sie selbst absenden.
 Version 4.5.3 (Sicherheit & Stabilität): Zusätzliche Schutzmaßnahmen für gespeicherte Links und Backup-Importe sowie interne Stabilitätskorrekturen.
