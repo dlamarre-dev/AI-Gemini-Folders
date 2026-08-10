@@ -37,6 +37,9 @@ global.chrome = {
   tabGroups: {
     update: jest.fn(),
   },
+  windows: {
+    update: jest.fn(),
+  },
   i18n: {
     getMessage:    jest.fn((key) => key),
     getUILanguage: jest.fn(() => 'en'),

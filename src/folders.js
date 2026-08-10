@@ -305,6 +305,17 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
         link.title = chat.title;
         link.textContent = chat.title;
 
+        // Plain click: reuse the tab already showing this conversation instead of
+        // spawning a duplicate. Middle-click (auxclick, never listened to) and
+        // Shift-click stay 100% native — that is the escape hatch, so keeping the
+        // href/target="_blank" above intact is load-bearing, not decorative.
+        link.addEventListener('click', (e) => {
+          if (e.button !== 0 || e.shiftKey || e.altKey) return;
+          if (link.href === 'about:blank') return;   // URL rejected by isSafeUrl
+          e.preventDefault();
+          openConversation(chat.url);
+        });
+
         link.setAttribute('draggable', 'false');
 
         // Container for conversation buttons
@@ -563,7 +574,56 @@ async function openFolderInTabGroup(folderName, chats) {
   }
 }
 
+// Finds an open tab already showing `url`, or null.
+//
+// SECURITY INVARIANT — do not "fix" this by adding the "tabs" permission (it
+// triggers the "read your browsing history" warning and re-prompts every
+// installed user). Without it, chrome.tabs.query({}) still lists every tab but
+// only populates tab.url for hosts covered by host_permissions, so a tab whose
+// URL we cannot read is by construction not one of ours and is never touched.
+// The permission model does the filtering for us. isSafeUrl is the second
+// filter: it rejects chrome-extension:, so the popup's own page, import.html
+// and welcome.html can never be matched.
+// The url: filter of tabs.query is off-limits for the same reason — it requires
+// "tabs". Filter in JS instead.
+async function findOpenConversationTab(url) {
+  let tabs;
+  try {
+    tabs = await chrome.tabs.query({});
+  } catch (error) {
+    return null;
+  }
+  if (!Array.isArray(tabs)) return null;
+  const wanted = normalizeUrl(url);
+  return tabs.find(t => t && t.url && isSafeUrl(t.url) && normalizeUrl(t.url) === wanted) || null;
+}
+
+// Opens a saved conversation: activates the tab already showing it, otherwise
+// opens a new one (the pre-existing behaviour).
+async function openConversation(url) {
+  try {
+    const found = await findOpenConversationTab(url);
+    if (found) {
+      await chrome.tabs.update(found.id, { active: true });
+      // Activating a tab in another window doesn't raise that window.
+      // windows.update requires no permission.
+      if (found.windowId != null && chrome.windows) {
+        await chrome.windows.update(found.windowId, { focused: true });
+      }
+    } else {
+      await chrome.tabs.create({ url });
+    }
+  } catch (error) {
+    // The tab died between the query and the update, or the API rejected.
+    try { await chrome.tabs.create({ url }); } catch (e) { /* nothing left to try */ }
+  }
+  // After the awaits, never before: tearing down the popup page can drop
+  // in-flight extension API calls.
+  window.close();
+}
+
 window.displayFolders = displayFolders;
+window.openConversation = openConversation;
 
 if (typeof module !== 'undefined') {
   // In Node/Jest the sort helpers are globals in the browser (from utils.js),
@@ -582,6 +642,8 @@ if (typeof module !== 'undefined') {
     togglePin,
     renameFolder,
     openFolderInTabGroup,
+    findOpenConversationTab,
+    openConversation,
   };
 }
 

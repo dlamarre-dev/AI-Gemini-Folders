@@ -214,6 +214,18 @@ git checkout main && git pull --ff-only
   permission is requested **scoped to the entered origin only** (the broad
   `optional_host_permissions http(s)://*/*` is just the manifest pattern needed to
   request a dynamic origin at runtime — nothing is granted by default).
+- **Opening a saved conversation** (`openConversation` / `findOpenConversationTab`,
+  folders.js): a plain click activates the tab already showing that URL instead of
+  spawning a duplicate; middle-click and Shift-click are left 100% native, which is
+  why the `<a href target="_blank">` must stay. **Never add the `"tabs"` permission
+  for this** — it triggers the "read your browsing history" warning and re-prompts
+  every installed user. Without it `chrome.tabs.query({})` still lists every tab but
+  populates `tab.url` only for hosts in `host_permissions`, so a tab we cannot read
+  is by construction not ours and is never touched; `isSafeUrl` then excludes
+  `chrome-extension:` (the popup's own page, `import.html`, `welcome.html`). The
+  `url:` filter of `tabs.query` is off-limits for the same reason — filter in JS.
+  Consequence to accept, not fix: a local-LLM conversation (AF) and everything on
+  Firefox before the user grants host permissions degrade silently to "new tab".
 
 ---
 
