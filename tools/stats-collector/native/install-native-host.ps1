@@ -1,10 +1,13 @@
-# Registers the CWS Stats Collector native messaging host in Firefox.
-# Run once from this directory:  .\install-native-host.ps1
+# Registers the native messaging host (CWS Stats Collector + Store Publisher)
+# in Firefox. Run once from this directory:  .\install-native-host.ps1
 #
 # The native host manifest needs an absolute path to filereader.bat, which is
 # machine-specific. Rather than commit that path, we generate the manifest here
 # from the committed *.example.json template, then register it. The generated
 # manifest is gitignored.
+#
+# RE-RUN THIS AFTER MOVING OR RENAMING THE REPO: the manifest and the registry
+# value both point at the old location, and nothing else in the tools does.
 
 $templatePath = Join-Path $PSScriptRoot "com.geminifoldersantigravity.filereader.example.json"
 $manifestPath = Join-Path $PSScriptRoot "com.geminifoldersantigravity.filereader.json"

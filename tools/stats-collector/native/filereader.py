@@ -8,13 +8,20 @@ Protocol: each message is a 4-byte little-endian length prefix + UTF-8 JSON.
 Binary responses are streamed as {"ok", "chunk", "done"} messages: Firefox
 kills the connection on any native→extension message over 1 MB, and the
 base64 of a marketing screenshot exceeds that.
+
+It also answers {"cmd": "repo_root"} with the absolute path of the repo it
+lives in: an extension only knows its moz-extension:// origin, never its path
+on disk, so this is how the publisher finds dist/ without a hardcoded path.
 """
 import base64
 import sys
 import json
 import struct
+from pathlib import Path
 
 BINARY_CHUNK = 256 * 1024  # base64 chars per message, well under the 1 MB cap
+# <repo>/tools/stats-collector/native/filereader.py → up 3 levels.
+REPO_ROOT = str(Path(__file__).resolve().parents[3])
 
 
 def send(msg):
@@ -38,6 +45,9 @@ while True:
     if msg is None:
         break
     try:
+        if msg.get("cmd") == "repo_root":
+            send({"ok": True, "repo_root": REPO_ROOT})
+            continue
         path = msg["path"]
         if msg.get("binary"):
             with open(path, "rb") as f:

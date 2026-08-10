@@ -35,7 +35,8 @@ This generates the host manifest from `com.geminifoldersantigravity.filereader.e
 (injecting this machine's absolute path) and writes one registry key under
 `HKCU\Software\Mozilla\NativeMessagingHosts` pointing at it. The generated
 manifest is gitignored — only the `.example.json` template is committed. No
-admin rights required.
+admin rights required. **Re-run it after moving or renaming the repo**: both the
+manifest and the registry value record the old absolute path.
 
 ## Loading in Firefox
 
