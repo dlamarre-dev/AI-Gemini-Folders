@@ -1,7 +1,7 @@
 // folders.js functions depend on globals from utils.js and the DOM.
 // We mock those globals here so tests run in isolation.
 
-const { displayFolders, deleteChat, moveChat, togglePin, renameFolder, renameChat, openFolderInTabGroup } = require('../src/folders');
+const { displayFolders, deleteChat, moveChat, togglePin, renameFolder, renameChat, openFolderInTabGroup, findOpenConversationTab, openConversation } = require('../src/folders');
 
 // ---------------------------------------------------------------------------
 // Shared helpers
@@ -38,6 +38,9 @@ beforeEach(() => {
   global.normalizeUrl = jest.fn((url) => url.split('?')[0].split('#')[0]);
   global.isSafeUrl = jest.fn(() => true);
   global.window.showCustomModal = jest.fn();
+  // openConversation closes the popup when it is done; in jsdom the real
+  // window.close() would tear the test window down.
+  global.window.close = jest.fn();
 
   // Provide all DOM elements that displayFolders (called after each mutation)
   // reads at the top of its body. Without them it throws on null refs.
@@ -340,6 +343,172 @@ describe('openFolderInTabGroup', () => {
     await openFolderInTabGroup('Big', chats);
 
     expect(global.window.showCustomModal).toHaveBeenCalled();
+    expect(chrome.tabs.create).not.toHaveBeenCalled();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// openConversation / findOpenConversationTab
+// ---------------------------------------------------------------------------
+
+describe('openConversation', () => {
+  const URL_A = 'https://gemini.google.com/app/aaa';
+
+  beforeEach(() => {
+    chrome.tabs.create = jest.fn(() => Promise.resolve({ id: 99 }));
+    chrome.tabs.update = jest.fn(() => Promise.resolve());
+    chrome.tabs.query = jest.fn(() => Promise.resolve([]));
+    chrome.windows.update = jest.fn(() => Promise.resolve());
+  });
+
+  test('activates the tab already showing the conversation instead of duplicating it', async () => {
+    chrome.tabs.query.mockResolvedValue([
+      { id: 3, windowId: 1, url: 'https://gemini.google.com/app/other' },
+      { id: 7, windowId: 1, url: URL_A },
+    ]);
+
+    await openConversation(URL_A);
+
+    expect(chrome.tabs.update).toHaveBeenCalledWith(7, { active: true });
+    expect(chrome.tabs.create).not.toHaveBeenCalled();
+  });
+
+  test('matches ignoring query and hash (same identity as save dedup)', async () => {
+    chrome.tabs.query.mockResolvedValue([{ id: 7, windowId: 1, url: `${URL_A}?hl=fr#top` }]);
+
+    await openConversation(URL_A);
+
+    expect(chrome.tabs.update).toHaveBeenCalledWith(7, { active: true });
+    expect(chrome.tabs.create).not.toHaveBeenCalled();
+  });
+
+  test('raises the window when the matching tab lives in another one', async () => {
+    chrome.tabs.query.mockResolvedValue([{ id: 7, windowId: 42, url: URL_A }]);
+
+    await openConversation(URL_A);
+
+    expect(chrome.tabs.update).toHaveBeenCalledWith(7, { active: true });
+    expect(chrome.windows.update).toHaveBeenCalledWith(42, { focused: true });
+  });
+
+  test('opens a new tab when the conversation is not open anywhere', async () => {
+    chrome.tabs.query.mockResolvedValue([{ id: 3, windowId: 1, url: 'https://gemini.google.com/app/other' }]);
+
+    await openConversation(URL_A);
+
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+  });
+
+  test('never matches a tab whose URL we cannot read (no host permission)', async () => {
+    chrome.tabs.query.mockResolvedValue([{ id: 3, windowId: 1 }, { id: 4, windowId: 1, url: undefined }]);
+
+    await openConversation(URL_A);
+
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+  });
+
+  test('never matches an extension page (popup / import / welcome)', async () => {
+    // The real http(s)-only check: this is what excludes chrome-extension:.
+    global.isSafeUrl = jest.fn((url) => {
+      try { return /^https?:$/.test(new URL(url).protocol); } catch { return false; }
+    });
+    chrome.tabs.query.mockResolvedValue([
+      { id: 5, windowId: 1, url: 'chrome-extension://test-id/popup.html' },
+    ]);
+
+    await openConversation('chrome-extension://test-id/popup.html');
+
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+  });
+
+  test('falls back to a new tab when the matching tab dies mid-flight', async () => {
+    chrome.tabs.query.mockResolvedValue([{ id: 7, windowId: 1, url: URL_A }]);
+    chrome.tabs.update.mockRejectedValue(new Error('No tab with id: 7'));
+
+    await openConversation(URL_A);
+
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+  });
+
+  test('falls back to a new tab when tabs.query is unavailable', async () => {
+    chrome.tabs.query.mockRejectedValue(new Error('nope'));
+
+    expect(await findOpenConversationTab(URL_A)).toBeNull();
+
+    await openConversation(URL_A);
+    expect(chrome.tabs.create).toHaveBeenCalledWith({ url: URL_A });
+  });
+
+  test('closes the popup only after the tab work is done', async () => {
+    chrome.tabs.query.mockResolvedValue([{ id: 7, windowId: 1, url: URL_A }]);
+    const order = [];
+    chrome.tabs.update = jest.fn(() => { order.push('update'); return Promise.resolve(); });
+    global.window.close = jest.fn(() => order.push('close'));
+
+    await openConversation(URL_A);
+
+    expect(order).toEqual(['update', 'close']);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// .chat-link click handling
+// ---------------------------------------------------------------------------
+
+describe('chat link click', () => {
+  const URL_A = 'https://gemini.google.com/app/aaa';
+
+  function renderOneChat() {
+    setupStorage({ Dev: makeFolder(['Chat 1', 'aaa']) }, [], ['Dev']);
+    displayFolders(['Dev']);
+    return document.querySelector('.chat-link');
+  }
+
+  function clickWith(link, init = {}) {
+    const e = new window.MouseEvent('click', { bubbles: true, cancelable: true, ...init });
+    link.dispatchEvent(e);
+    return e;
+  }
+
+  beforeEach(() => {
+    chrome.tabs.create = jest.fn(() => Promise.resolve({ id: 99 }));
+    chrome.tabs.update = jest.fn(() => Promise.resolve());
+    chrome.tabs.query = jest.fn(() => Promise.resolve([]));
+    chrome.windows.update = jest.fn(() => Promise.resolve());
+  });
+
+  test('keeps the href and target="_blank" (a11y + native middle-click)', () => {
+    const link = renderOneChat();
+    expect(link.getAttribute('href')).toBe(URL_A);
+    expect(link.target).toBe('_blank');
+  });
+
+  test('a plain click is handled by the extension', () => {
+    const e = clickWith(renderOneChat());
+    expect(e.defaultPrevented).toBe(true);
+  });
+
+  test.each([
+    ['shift-click (native new window)', { shiftKey: true }],
+    ['alt-click', { altKey: true }],
+    ['middle-click', { button: 1 }],
+  ])('%s stays fully native', (_label, init) => {
+    const e = clickWith(renderOneChat(), init);
+    expect(e.defaultPrevented).toBe(false);
+    expect(chrome.tabs.query).not.toHaveBeenCalled();
+    expect(chrome.tabs.create).not.toHaveBeenCalled();
+    expect(chrome.tabs.update).not.toHaveBeenCalled();
+  });
+
+  test('an unsafe stored URL is never sent to the tabs API', () => {
+    global.isSafeUrl = jest.fn(() => false);   // href becomes about:blank
+    const link = renderOneChat();
+
+    expect(link.getAttribute('href')).toBe('about:blank');
+    clickWith(link);
+    expect(chrome.tabs.query).not.toHaveBeenCalled();
     expect(chrome.tabs.create).not.toHaveBeenCalled();
   });
 });
