@@ -297,6 +297,6 @@
     "message": "Nimeelewa"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + bofya: tumia tena kichupo cha mwisho"
+    "message": "{k} + bofya: tumia tena kichupo cha mwisho"
   }
 }

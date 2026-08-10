@@ -333,6 +333,6 @@
     "message": "Forstået"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + klik: genbrug den seneste fane"
+    "message": "{k} + klik: genbrug den seneste fane"
   }
 }

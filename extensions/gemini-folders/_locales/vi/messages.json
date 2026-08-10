@@ -297,6 +297,6 @@
     "message": "Đã hiểu"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + nhấp: dùng lại thẻ cuối cùng"
+    "message": "{k} + nhấp: dùng lại thẻ cuối cùng"
   }
 }

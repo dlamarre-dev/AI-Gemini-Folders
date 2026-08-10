@@ -333,6 +333,6 @@
     "message": "Got it"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd-click: reuse the last tab"
+    "message": "{k}-click: reuse the last tab"
   }
 }

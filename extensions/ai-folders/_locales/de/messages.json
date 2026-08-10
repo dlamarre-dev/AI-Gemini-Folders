@@ -333,6 +333,6 @@
     "message": "Verstanden"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + Klick: letzten Tab wiederverwenden"
+    "message": "{k} + Klick: letzten Tab wiederverwenden"
   }
 }

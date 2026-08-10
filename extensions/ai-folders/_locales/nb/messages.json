@@ -333,6 +333,6 @@
     "message": "Skjønner"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + klikk: gjenbruk den siste fanen"
+    "message": "{k} + klikk: gjenbruk den siste fanen"
   }
 }

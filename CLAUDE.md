@@ -221,7 +221,11 @@ git checkout main && git pull --ff-only
   which is why the `<a href target="_blank">` must stay. The modifier *is* the
   consent for overwriting a tab — that is why there is deliberately no setting, and
   why its only discoverability is the second line of the link's tooltip
-  (`chatLinkReuseHint`). A remembered tab id is never trusted on its own: it is only
+  (`chatLinkReuseHint`). That string carries a **`{k}` placeholder** filled by
+  `currentModifierKeyLabel()` with `Cmd` on macOS and `Ctrl` elsewhere — never
+  hardcode a key name into a translation, it would be wrong on half the machines
+  (a test asserts all 43 × 2 keep `{k}` and spell out neither key).
+  A remembered tab id is never trusted on its own: it is only
   a tiebreaker inside a candidate set recomputed per click (readable URL, not
   pinned, current window, `window.isSupportedTabUrl` — supplied per extension in
   `popup.js`, so folders.js stays site-agnostic). **Never add the `"tabs"` permission

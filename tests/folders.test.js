@@ -1,7 +1,7 @@
 // folders.js functions depend on globals from utils.js and the DOM.
 // We mock those globals here so tests run in isolation.
 
-const { displayFolders, deleteChat, moveChat, togglePin, renameFolder, renameChat, openFolderInTabGroup, queryAllTabs, pickReusableTab, openConversation } = require('../src/folders');
+const { displayFolders, deleteChat, moveChat, togglePin, renameFolder, renameChat, openFolderInTabGroup, queryAllTabs, pickReusableTab, openConversation, modifierKeyLabel } = require('../src/folders');
 
 // ---------------------------------------------------------------------------
 // Shared helpers
@@ -606,6 +606,28 @@ describe('openConversation with reuse (Ctrl/Cmd-click)', () => {
 // chatLinkReuseHint ships everywhere
 // ---------------------------------------------------------------------------
 
+describe('modifierKeyLabel', () => {
+  test.each([
+    ['macOS', 'Cmd'],
+    ['MacIntel', 'Cmd'],
+    ['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)', 'Cmd'],
+    ['Windows', 'Ctrl'],
+    ['Win32', 'Ctrl'],
+    ['Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 'Ctrl'],
+    ['Linux', 'Ctrl'],
+    ['Linux x86_64', 'Ctrl'],
+    ['Mozilla/5.0 (X11; Ubuntu; Linux x86_64)', 'Ctrl'],
+  ])('%s → %s', (hint, expected) => {
+    expect(modifierKeyLabel(hint)).toBe(expected);
+  });
+
+  test('falls back to Ctrl when the platform is unknown', () => {
+    // Better to name the key most users have than to name none.
+    expect(modifierKeyLabel(undefined)).toBe('Ctrl');
+    expect(modifierKeyLabel('')).toBe('Ctrl');
+  });
+});
+
 describe('chatLinkReuseHint ships in every locale', () => {
   const fs = require('fs');
   const path = require('path');
@@ -625,10 +647,14 @@ describe('chatLinkReuseHint ships in every locale', () => {
       expect(bad).toEqual([]);
     });
 
-    test(`${ext} names both modifiers, so no platform detection is needed`, () => {
-      const bad = locales.filter(loc =>
-        !/Ctrl/.test(read(ext, loc).chatLinkReuseHint.message) ||
-        !/Cmd/.test(read(ext, loc).chatLinkReuseHint.message));
+    test(`${ext} keeps the {k} placeholder and hardcodes no key name`, () => {
+      // The substitution is what lets the tooltip say "Cmd" on a Mac and "Ctrl"
+      // on Windows/Linux. A translation that spells either one out would be
+      // wrong on half the machines, so that is the failure this guards.
+      const bad = locales.filter(loc => {
+        const m = read(ext, loc).chatLinkReuseHint.message;
+        return !m.includes('{k}') || /Ctrl|Cmd|Command|⌘/i.test(m);
+      });
       expect(bad).toEqual([]);
     });
   }
@@ -672,11 +698,13 @@ describe('chat link click', () => {
 
   test('the tooltip keeps the title on its first line and advertises the gesture', () => {
     chrome.i18n.getMessage = jest.fn((key) =>
-      key === 'chatLinkReuseHint' ? 'Ctrl/Cmd-click: reuse the last tab' : key);
+      key === 'chatLinkReuseHint' ? '{k}-click: reuse the last tab' : key);
     const link = renderOneChat();
     const [first, second] = link.title.split('\n');
     expect(first).toBe('Chat 1');
-    expect(second).toBe('Ctrl/Cmd-click: reuse the last tab');
+    // jsdom is not macOS, so {k} resolves to Ctrl here.
+    expect(second).toBe('Ctrl-click: reuse the last tab');
+    expect(link.title).not.toContain('{k}');
   });
 
   test('keeps the href and target="_blank" (a11y + native middle-click)', () => {

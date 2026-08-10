@@ -303,11 +303,14 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
         link.href = isSafeUrl(chat.url) ? chat.url : 'about:blank';
         link.target = '_blank';
         // The title stays on the first line (it is what makes a truncated title
-        // readable); the second advertises the Ctrl/Cmd-click gesture, which no
+        // readable); the second advertises the modifier-click gesture, which no
         // one would find otherwise. This tooltip is the whole discoverability
         // budget for it — there is deliberately no setting and no visible control.
+        // {k} is filled with the key this platform actually has, so the user reads
+        // "Cmd" on a Mac and "Ctrl" on Windows/Linux instead of having to pick.
+        const modKey = currentModifierKeyLabel();
         link.title = chat.title + '\n' + (chrome.i18n.getMessage("chatLinkReuseHint")
-          || "Ctrl/Cmd-click: reuse the last tab");
+          || "{k}-click: reuse the last tab").replace('{k}', modKey);
         link.textContent = chat.title;
 
         // Plain click: reuse the tab already showing this conversation instead of
@@ -592,6 +595,22 @@ async function openFolderInTabGroup(folderName, chats) {
 // and welcome.html can never be matched.
 // The url: filter of tabs.query is off-limits for the same reason — it requires
 // "tabs". Filter in JS instead.
+// Names the modifier key this platform actually has, for the {k} placeholder in
+// chatLinkReuseHint: Cmd on macOS, Ctrl on Windows/Linux. Naming both would make
+// the user work out which one is theirs, and hardcoding either into the 43
+// translations would be wrong on half the machines — hence the substitution.
+// Pure in its input so both platforms are testable.
+function modifierKeyLabel(platformHint) {
+  return /Mac|iPhone|iPad/i.test(platformHint || '') ? 'Cmd' : 'Ctrl';
+}
+
+function currentModifierKeyLabel() {
+  const nav = typeof navigator !== 'undefined' ? navigator : {};
+  // userAgentData.platform is the modern signal; platform/userAgent are the
+  // fallbacks (same user-agent sniffing style as welcome.js's Firefox check).
+  return modifierKeyLabel(nav.userAgentData?.platform || nav.platform || nav.userAgent);
+}
+
 async function queryAllTabs() {
   try {
     const tabs = await chrome.tabs.query({});
@@ -708,6 +727,7 @@ if (typeof module !== 'undefined') {
     togglePin,
     renameFolder,
     openFolderInTabGroup,
+    modifierKeyLabel,
     queryAllTabs,
     findTabShowingUrl,
     pickReusableTab,

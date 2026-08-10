@@ -333,6 +333,6 @@
     "message": "Razumem"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + klik: znova uporabi zadnji zavihek"
+    "message": "{k} + klik: znova uporabi zadnji zavihek"
   }
 }

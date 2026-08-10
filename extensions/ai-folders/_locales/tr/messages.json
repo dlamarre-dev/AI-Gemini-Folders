@@ -333,6 +333,6 @@
     "message": "Anladım"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + tıklama: son sekmeyi yeniden kullan"
+    "message": "{k} + tıklama: son sekmeyi yeniden kullan"
   }
 }

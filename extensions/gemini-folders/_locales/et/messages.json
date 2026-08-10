@@ -297,6 +297,6 @@
     "message": "Sain aru"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + klõps: kasuta viimast vahekaarti"
+    "message": "{k} + klõps: kasuta viimast vahekaarti"
   }
 }

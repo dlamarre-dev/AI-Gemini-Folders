@@ -297,6 +297,6 @@
     "message": "Compreendi"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + clique: reutilizar o último separador"
+    "message": "{k} + clique: reutilizar o último separador"
   }
 }

@@ -297,6 +297,6 @@
     "message": "เข้าใจแล้ว"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + คลิก: ใช้แท็บล่าสุดซ้ำ"
+    "message": "{k} + คลิก: ใช้แท็บล่าสุดซ้ำ"
   }
 }

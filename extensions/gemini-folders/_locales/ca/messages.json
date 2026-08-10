@@ -297,6 +297,6 @@
     "message": "Entesos"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + clic: reutilitza la darrera pestanya"
+    "message": "{k} + clic: reutilitza la darrera pestanya"
   }
 }

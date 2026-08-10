@@ -297,6 +297,6 @@
     "message": "Mengerti"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + klik: gunakan kembali tab terakhir"
+    "message": "{k} + klik: gunakan kembali tab terakhir"
   }
 }

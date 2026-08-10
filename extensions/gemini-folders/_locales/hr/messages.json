@@ -297,6 +297,6 @@
     "message": "Razumijem"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + klik: ponovno koristi posljednju karticu"
+    "message": "{k} + klik: ponovno koristi posljednju karticu"
   }
 }

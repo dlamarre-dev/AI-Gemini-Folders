@@ -333,6 +333,6 @@
     "message": "Entendi"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + clique: reutilizar a última aba"
+    "message": "{k} + clique: reutilizar a última aba"
   }
 }

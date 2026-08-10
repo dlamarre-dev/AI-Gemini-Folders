@@ -297,6 +297,6 @@
     "message": "Ho capito"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + clic: riutilizza l'ultima scheda"
+    "message": "{k} + clic: riutilizza l'ultima scheda"
   }
 }

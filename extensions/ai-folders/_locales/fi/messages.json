@@ -333,6 +333,6 @@
     "message": "Selvä"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + napsautus: käytä viimeistä välilehteä uudelleen"
+    "message": "{k} + napsautus: käytä viimeistä välilehteä uudelleen"
   }
 }

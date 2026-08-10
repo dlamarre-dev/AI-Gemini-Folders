@@ -297,6 +297,6 @@
     "message": "Sapratu"
   },
   "chatLinkReuseHint": {
-    "message": "Ctrl/Cmd + klikšķis: izmantot pēdējo cilni"
+    "message": "{k} + klikšķis: izmantot pēdējo cilni"
   }
 }
