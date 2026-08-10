@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "הבנתי"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + לחיצה: שימוש חוזר בלשונית האחרונה"
   }
 }

@@ -331,5 +331,8 @@
   },
   "welcomeCta": {
     "message": "Κατάλαβα"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + κλικ: επαναχρησιμοποίηση της τελευταίας καρτέλας"
   }
 }

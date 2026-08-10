@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Uppfattat"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + klick: återanvänd den senaste fliken"
   }
 }

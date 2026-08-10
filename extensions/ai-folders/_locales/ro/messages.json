@@ -331,5 +331,8 @@
   },
   "welcomeCta": {
     "message": "Am înțeles"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + clic: reutilizează ultima filă"
   }
 }

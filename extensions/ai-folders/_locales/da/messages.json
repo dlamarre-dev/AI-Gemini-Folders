@@ -331,5 +331,8 @@
   },
   "welcomeCta": {
     "message": "Forstået"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + klik: genbrug den seneste fane"
   }
 }

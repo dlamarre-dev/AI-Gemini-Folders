@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Разбрах"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + щракване: използване на последния раздел"
   }
 }

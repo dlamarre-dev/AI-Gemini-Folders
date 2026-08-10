@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Entesos"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + clic: reutilitza la darrera pestanya"
   }
 }

@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "明白了"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + 点击：复用上一个标签页"
   }
 }

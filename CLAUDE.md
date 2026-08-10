@@ -214,10 +214,17 @@ git checkout main && git pull --ff-only
   permission is requested **scoped to the entered origin only** (the broad
   `optional_host_permissions http(s)://*/*` is just the manifest pattern needed to
   request a dynamic origin at runtime — nothing is granted by default).
-- **Opening a saved conversation** (`openConversation` / `findOpenConversationTab`,
+- **Opening a saved conversation** (`openConversation` / `pickReusableTab`,
   folders.js): a plain click activates the tab already showing that URL instead of
-  spawning a duplicate; middle-click and Shift-click are left 100% native, which is
-  why the `<a href target="_blank">` must stay. **Never add the `"tabs"` permission
+  spawning a duplicate; **Ctrl/Cmd-click reuses the last tab the extension opened**
+  (`reuseTabId`, `storage.local`); middle-click and Shift-click are left 100% native,
+  which is why the `<a href target="_blank">` must stay. The modifier *is* the
+  consent for overwriting a tab — that is why there is deliberately no setting, and
+  why its only discoverability is the second line of the link's tooltip
+  (`chatLinkReuseHint`). A remembered tab id is never trusted on its own: it is only
+  a tiebreaker inside a candidate set recomputed per click (readable URL, not
+  pinned, current window, `window.isSupportedTabUrl` — supplied per extension in
+  `popup.js`, so folders.js stays site-agnostic). **Never add the `"tabs"` permission
   for this** — it triggers the "read your browsing history" warning and re-prompts
   every installed user. Without it `chrome.tabs.query({})` still lists every tab but
   populates `tab.url` only for hosts in `host_permissions`, so a tab we cannot read

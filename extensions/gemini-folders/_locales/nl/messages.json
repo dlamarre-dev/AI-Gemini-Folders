@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Duidelijk"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + klik: laatste tabblad hergebruiken"
   }
 }

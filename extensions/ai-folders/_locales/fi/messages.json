@@ -331,5 +331,8 @@
   },
   "welcomeCta": {
     "message": "Selvä"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + napsautus: käytä viimeistä välilehteä uudelleen"
   }
 }

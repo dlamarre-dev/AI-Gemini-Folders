@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Faham"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + klik: guna semula tab terakhir"
   }
 }

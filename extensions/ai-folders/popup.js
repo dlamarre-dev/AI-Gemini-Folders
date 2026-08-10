@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateLocalBtn();
   });
 
+  // Which tabs openConversation (src/folders.js) may navigate on a Ctrl/Cmd-click.
+  // Closure over the live localLlmUrl so a tab on the user's local LLM counts
+  // once it is configured. folders.js stays site-agnostic; without this hook
+  // reuse never fires.
+  window.isSupportedTabUrl = (url) => !!getSiteByUrl(url, localLlmUrl);
+
   function updateLocalBtn() {
     const btn = document.getElementById('newConvLocal');
     if (btn) btn.classList.toggle('local-configured', !!localLlmUrl);

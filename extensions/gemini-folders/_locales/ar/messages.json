@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "فهمت"
+  },
+  "chatLinkReuseHint": {
+    "message": "نقر مع Ctrl/Cmd: إعادة استخدام آخر علامة تبويب"
   }
 }

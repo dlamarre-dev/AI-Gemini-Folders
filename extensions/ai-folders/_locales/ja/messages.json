@@ -331,5 +331,8 @@
   },
   "welcomeCta": {
     "message": "了解しました"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + クリック: 最後のタブを再利用"
   }
 }

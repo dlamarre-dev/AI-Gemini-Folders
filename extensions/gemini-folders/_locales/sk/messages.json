@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Rozumiem"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + kliknutie: použiť poslednú kartu"
   }
 }

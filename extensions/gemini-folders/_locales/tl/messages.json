@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Nakuha ko"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + click: gamitin muli ang huling tab"
   }
 }

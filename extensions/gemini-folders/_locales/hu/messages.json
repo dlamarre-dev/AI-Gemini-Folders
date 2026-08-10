@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Értem"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + kattintás: az utolsó lap újrahasználata"
   }
 }

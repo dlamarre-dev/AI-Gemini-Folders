@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Razumijem"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + klik: ponovno koristi posljednju karticu"
   }
 }

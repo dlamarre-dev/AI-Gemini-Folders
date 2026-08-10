@@ -331,5 +331,8 @@
   },
   "welcomeCta": {
     "message": "Ho capito"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + clic: riutilizza l'ultima scheda"
   }
 }

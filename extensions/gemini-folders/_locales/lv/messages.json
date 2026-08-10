@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Sapratu"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + klikšķis: izmantot pēdējo cilni"
   }
 }

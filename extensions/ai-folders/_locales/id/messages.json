@@ -331,5 +331,8 @@
   },
   "welcomeCta": {
     "message": "Mengerti"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + klik: gunakan kembali tab terakhir"
   }
 }

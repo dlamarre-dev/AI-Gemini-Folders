@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Nimeelewa"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + bofya: tumia tena kichupo cha mwisho"
   }
 }

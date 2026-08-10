@@ -331,5 +331,8 @@
   },
   "welcomeCta": {
     "message": "समझ गया"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + क्लिक: अंतिम टैब का पुनः उपयोग करें"
   }
 }

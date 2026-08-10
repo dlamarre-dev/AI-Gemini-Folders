@@ -331,5 +331,8 @@
   },
   "welcomeCta": {
     "message": "Supratau"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + spustelėjimas: naudoti paskutinį skirtuką"
   }
 }

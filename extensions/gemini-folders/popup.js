@@ -179,6 +179,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // --- Save conversation (shared flow; GF only accepts gemini.google.com and
   //     stores no per-site tag) ---
+  // Which tabs openConversation (src/folders.js) may navigate on a Ctrl/Cmd-click.
+  // folders.js stays site-agnostic; without this hook reuse never fires.
+  window.isSupportedTabUrl = (url) => {
+    try { return new URL(url).hostname === 'gemini.google.com'; }
+    catch { return false; }
+  };
+
   initSaveConversation({
     getSiteKey: (tab) => {
       try { return new URL(tab?.url).hostname === 'gemini.google.com' ? 'gemini' : null; }

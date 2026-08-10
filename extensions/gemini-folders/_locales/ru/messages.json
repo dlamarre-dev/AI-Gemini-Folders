@@ -295,5 +295,8 @@
   },
   "welcomeCta": {
     "message": "Понятно"
+  },
+  "chatLinkReuseHint": {
+    "message": "Ctrl/Cmd + клик: использовать последнюю вкладку"
   }
 }
