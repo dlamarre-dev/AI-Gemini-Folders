@@ -127,25 +127,49 @@ function initSaveConversation(opts) {
       return;
     }
 
-    const folderName = folderNameInput.value.trim() || chrome.i18n.getMessage("defaultFolder");
+    const typedFolder = folderNameInput.value.trim();
     const finalChatTitle = chatTitleInput.value.trim() || chrome.i18n.getMessage("defaultTitle");
     const chatUrl = tab.url;
+
+    const flashStatus = (messageKey, fallback, ms = 4000) => {
+      statusDiv.textContent = chrome.i18n.getMessage(messageKey) || fallback;
+      statusDiv.style.color = 'red';
+      statusDiv.style.display = "block";
+      setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, ms);
+    };
 
     // folders["__proto__"] is Object.prototype — truthy, so the guard below would
     // skip creating the array, and the .some() after it would throw and leave
     // isSaving stuck at true, killing the Save button for the rest of the session.
-    if (isUnsafeKey(folderName)) {
-      statusDiv.textContent = chrome.i18n.getMessage("reservedNameError") || 'That name is reserved — please choose another.';
-      statusDiv.style.color = 'red';
-      statusDiv.style.display = "block";
-      setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, 4000);
+    if (isUnsafeKey(typedFolder)) {
+      flashStatus("reservedNameError", 'That name is reserved — please choose another.');
       isSaving = false;
       return;
     }
 
-    loadData({ folders: {} }, (data) => {
+    loadData({ folders: {}, folderParents: {} }, (data) => {
       let folders = data.folders;
+      let folderParents = data.folderParents || {};
+
+      // "Parent/Child" in the box saves into that sub-folder, creating what is
+      // missing. An exact existing folder name always wins over the path
+      // reading, so a folder literally named "a/b" keeps working.
+      const resolved = resolveFolderPath(folders, folderParents, typedFolder);
+      if (resolved.error) {
+        flashStatus(resolved.error === 'nestTooDeep' ? "errorNestTooDeep" : "errorFolderExists",
+          resolved.error === 'nestTooDeep'
+            ? 'This folder already contains sub-folders. Only one level of nesting is supported.'
+            : 'A folder with this name already exists.');
+        isSaving = false;
+        return;
+      }
+
+      const folderName = resolved.name || chrome.i18n.getMessage("defaultFolder");
+      if (resolved.parent && !hasEntry(folders, resolved.parent)) folders[resolved.parent] = [];
       if (!hasEntry(folders, folderName)) folders[folderName] = [];
+      if (resolved.parent) {
+        folderParents = withFolderParent(folderParents, folderName, resolved.parent);
+      }
 
       const cleanTargetUrl = normalizeUrl(chatUrl);
       const isDuplicate = folders[folderName].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
@@ -155,10 +179,7 @@ function initSaveConversation(opts) {
         // anti-churn baselines read — and rebuilt the whole bookmark tree for
         // nothing. The background quick-save handlers already skip the write here.
         isSaving = false;
-        statusDiv.textContent = chrome.i18n.getMessage("toastAlreadySaved") || '⚠️ Already saved!';
-        statusDiv.style.color = 'red';
-        statusDiv.style.display = "block";
-        setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, 2000);
+        flashStatus("toastAlreadySaved", '⚠️ Already saved!', 2000);
         return;
       }
 
@@ -166,13 +187,15 @@ function initSaveConversation(opts) {
       if (opts.tagSite) chatEntry.site = siteKey;
       folders[folderName].push(chatEntry);
 
-      saveData({ folders }, (err) => {
+      // The nesting only rides along when this save actually created one; a
+      // plain save must not rewrite folderParents.
+      const payload = { folders };
+      if (resolved.parent) payload.folderParents = pruneFolderParents(folders, folderParents);
+
+      saveData(payload, (err) => {
         isSaving = false;
         if (err) {
-          statusDiv.textContent = chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.';
-          statusDiv.style.color = 'red';
-          statusDiv.style.display = "block";
-          setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, 4000);
+          flashStatus("storageFullError", '⚠️ Storage full — not saved.');
           return;
         }
         folderNameInput.value = "";
@@ -181,7 +204,9 @@ function initSaveConversation(opts) {
         searchInput.value = "";
         statusDiv.style.display = "block";
         setTimeout(() => { statusDiv.style.display = "none"; }, 2000);
-        if (window.displayFolders) window.displayFolders(folderName);
+        // Expand the parent too, or a conversation saved into a sub-folder
+        // lands inside a collapsed folder and looks lost.
+        if (window.displayFolders) window.displayFolders(folderOpenPath(folders, folderParents, folderName));
       });
     });
   });

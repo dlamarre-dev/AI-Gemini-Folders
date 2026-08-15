@@ -843,6 +843,17 @@ describe('nesting by drag & drop', () => {
     expect(lastSave().folderParents).toEqual({});
   });
 
+  test('dropping on the empty space under the list also moves it back', () => {
+    // Where the gesture naturally points. A drop on a folder card never gets
+    // here — those handlers stop propagation.
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+
+    dropOn(document.getElementById('folderList'), { kind: 'folder', sourceFolder: 'Clients' });
+
+    expect(lastSave().folderParents).toEqual({});
+  });
+
   test('the ⤴ button moves a sub-folder back to the top level', () => {
     setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
     displayFolders();

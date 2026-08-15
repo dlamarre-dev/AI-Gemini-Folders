@@ -1051,9 +1051,14 @@
        list fills the popup. */
     .root-drop-zone {
       display: none;
-      position: sticky;
+      /* Fixed, not sticky: the popup's scrolling ancestor is not #folderList,
+         so a sticky banner scrolls out of reach exactly when the list is long
+         enough for nesting to be worth it. Fixed keeps it one drag away. */
+      position: fixed;
       top: 0;
-      z-index: 2;
+      left: 0;
+      right: 0;
+      z-index: 20;
       margin-bottom: 6px;
       padding: 8px;
       text-align: center;

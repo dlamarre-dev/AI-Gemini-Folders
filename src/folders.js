@@ -50,14 +50,22 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
     });
     rootZone.addEventListener('dragleave', () => rootZone.classList.remove('drag-over'));
     rootZone.addEventListener('drop', (e) => {
-      e.preventDefault();
       rootZone.classList.remove('drag-over');
-      const dragData = e.dataTransfer.getData('text/plain');
-      if (!dragData) return;
-      const payload = JSON.parse(dragData);
-      if (payload.kind === 'folder') unnestFolder(payload.sourceFolder);
+      dropFolderAtRoot(e);
     });
     folderList.appendChild(rootZone);
+
+    // Empty space below the folders does the same thing — that is where the
+    // gesture naturally points. A drop on a folder card never reaches here:
+    // those handlers stop propagation. Wired once, since #folderList outlives
+    // the render and its listeners would otherwise stack up.
+    if (!folderList.dataset.rootDropWired) {
+      folderList.dataset.rootDropWired = '1';
+      folderList.addEventListener('dragover', (e) => {
+        if (dragState.kind === 'folder') e.preventDefault();
+      });
+      folderList.addEventListener('drop', dropFolderAtRoot);
+    }
 
     let hasPinned = false;
     let transitionDone = false;
@@ -616,6 +624,15 @@ function moveChat(sourceFolder, targetFolder, chatUrl) {
       displayFolders(openFolders, searchInput ? searchInput.value.toLowerCase() : "");
     });
   });
+}
+
+// Shared by the drop zone and by the empty space under the list.
+function dropFolderAtRoot(e) {
+  e.preventDefault();
+  const dragData = e.dataTransfer.getData('text/plain');
+  if (!dragData) return;
+  const payload = JSON.parse(dragData);
+  if (payload.kind === 'folder') unnestFolder(payload.sourceFolder);
 }
 
 // Which folders are expanded right now, read back from the DOM.
