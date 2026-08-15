@@ -67,7 +67,8 @@
         "*://*.pi.ai/*",
         "*://character.ai/*",
         "*://*.character.ai/*",
-    "*://chat.baidu.com/*"
+    "*://chat.baidu.com/*",
+        "*://wenxin.baidu.com/*"
       ],
       "js": ["lz-string.min.js", "prompt-trigger.js"],
       "run_at": "document_idle"
@@ -101,7 +102,8 @@
     "*://*.pi.ai/*",
     "*://character.ai/*",
     "*://*.character.ai/*",
-    "*://chat.baidu.com/*"
+    "*://chat.baidu.com/*",
+    "*://wenxin.baidu.com/*"
   ],
   "optional_host_permissions": [
     "http://*/*",

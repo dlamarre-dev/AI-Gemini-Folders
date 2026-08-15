@@ -196,12 +196,18 @@ const SITES = {
   },
   baidu: {
     key: 'baidu',
-    domain: 'chat.baidu.com',
+    // Baidu moved the chat product to wenxin.baidu.com (百度文心助手): as of
+    // 08/2026 chat.baidu.com 302s to wenxin.baidu.com/?enter_type=chat_site.
+    // wenxin is therefore the primary domain (the one the diagnostics tool
+    // expects to land on), and chat.baidu.com stays an alt so conversations
+    // saved before the move keep their site badge and title extraction.
+    domain: 'wenxin.baidu.com',
+    altDomains: ['chat.baidu.com'],
     // Lightened brand blue — the official #2932E1 is too dark on the dark
     // theme; light mode gets the true brand blue via popup-extra.css and the
     // -light logo variant.
     color: '#4E5CF2',
-    newConvUrl: 'https://chat.baidu.com/',
+    newConvUrl: 'https://wenxin.baidu.com/',
     // Baidu Chat (usable in English) composer; selectors need live validation
     editorSelectors: ['#chat-input', 'textarea[placeholder]', 'div[contenteditable="true"]', 'textarea'],
     // The composer tokenizes '#' like Perplexity does

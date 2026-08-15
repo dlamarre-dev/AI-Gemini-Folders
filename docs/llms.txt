@@ -38,7 +38,7 @@ AI Folders solves the problem of losing track of conversations across multiple A
 - You.com (you.com)
 - Pi (pi.ai)
 - Character.AI (character.ai)
-- Baidu Chat (chat.baidu.com)
+- Baidu Chat (wenxin.baidu.com, formerly chat.baidu.com)
 - Local LLMs: Open WebUI, LM Studio, and any configurable URL
 
 ## Install
