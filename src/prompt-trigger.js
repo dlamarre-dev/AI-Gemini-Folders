@@ -91,9 +91,31 @@
     return parseSuggestionNames(fieldText(el));
   }
 
-  // --- Space: inject prompt or show suggestions ---
+  // SECURITY: only real user keystrokes may drive the trigger.
+  //
+  // This content script shares the DOM with the page, so page JS can call
+  // dispatchEvent() to forge these keys. Without this gate, script running on a
+  // supported AI site could synthesize "#" + Space, receive the whole prompt
+  // list (findPromptsByPrefix matches every prompt on an empty prefix), read the
+  // titles back out of the composer, then request each one by name and read its
+  // full body — the entire prompt library, with no user interaction. The
+  // background's site check cannot stop this: the attacker IS the supported site.
+  //
+  // isTrusted is the fix, and it is complete: dispatchEvent() can never produce
+  // an event with isTrusted true. Never remove this without a replacement.
+  function isRealUserEvent(e) {
+    return e.isTrusted === true;
+  }
 
-  document.addEventListener('keydown', async (e) => {
+  // --- Space: inject prompt or show suggestions ---
+  //
+  // The four handlers below are separated from their listeners so the isTrusted
+  // gate lives in exactly one place per listener and the behaviour underneath
+  // stays unit-testable: jsdom cannot manufacture a trusted event, so tests drive
+  // the handlers directly and assert separately that dispatching a synthetic
+  // event through the real listener does nothing.
+
+  async function onSpaceKeydown(e) {
     if (e.key !== ' ') return;
 
     const el = document.activeElement;
@@ -146,24 +168,35 @@
       insertSpace(el);
     }
     // 'injected' / 'autocompleted': background already acted on the editor.
-  }, true); // capture phase — fires before the editor's own handlers
+  }
+
+  // capture phase — fires before the editor's own handlers
+  document.addEventListener('keydown', (e) => {
+    if (!isRealUserEvent(e)) return;
+    return onSpaceKeydown(e);
+  }, true);
 
   // Suppress the Space keyup that follows a triggered injection. In Firefox the
   // service worker is slow enough that keyup fires before executeScript completes,
   // giving apps (e.g. Perplexity) time to convert the #word text into a chip token.
   // The flag is cleared here so only the immediate sibling keyup is suppressed.
   let _blockNextSpaceKeyup = false;
-  document.addEventListener('keyup', (e) => {
+  function onSpaceKeyup(e) {
     if (e.key === ' ' && _blockNextSpaceKeyup) {
       _blockNextSpaceKeyup = false;
       e.stopImmediatePropagation();
       e.preventDefault();
     }
+  }
+
+  document.addEventListener('keyup', (e) => {
+    if (!isRealUserEvent(e)) return;
+    onSpaceKeyup(e);
   }, true);
 
   // --- ArrowDown / ArrowUp: cycle through visible suggestions ---
 
-  document.addEventListener('keydown', (e) => {
+  function onArrowKeydown(e) {
     if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
 
     const el = document.activeElement;
@@ -197,11 +230,16 @@
     try {
       chrome.runtime.sendMessage({ action: 'promptTriggerCycleTab', name: nextName, allNames: names });
     } catch (_) {}
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (!isRealUserEvent(e)) return;
+    onArrowKeydown(e);
   }, true);
 
   // --- Live update of suggestion line as the user types ---
 
-  document.addEventListener('keyup', (e) => {
+  function onTypingKeyup(e) {
     if (e.key === ' ') return; // handled by keydown above
     // Only react to keys that actually change content.
     if (e.key.length !== 1 && e.key !== 'Backspace' && e.key !== 'Delete') return;
@@ -224,10 +262,21 @@
         await chrome.runtime.sendMessage({ action: 'promptTriggerSuggestUpdate', prefix });
       } catch (_) {}
     }, 80);
+  }
+
+  document.addEventListener('keyup', (e) => {
+    if (!isRealUserEvent(e)) return;
+    onTypingKeyup(e);
   }, true);
 
   // Exposed for unit tests (Node only; `module` is undefined in the content script).
+  // The handlers are exported because jsdom cannot produce a trusted event, so the
+  // behaviour tests call them directly; the isTrusted gate itself is covered by
+  // dispatching real synthetic events and asserting nothing happens.
   if (typeof module !== 'undefined') {
-    module.exports = { classifyTriggerField, parseSuggestionNames, SUGG_LINE_RE, LABEL_RE };
+    module.exports = {
+      classifyTriggerField, parseSuggestionNames, SUGG_LINE_RE, LABEL_RE,
+      onSpaceKeydown, onSpaceKeyup, onArrowKeydown, onTypingKeyup,
+    };
   }
 })();

@@ -16,13 +16,29 @@ function focusedTextarea(value) {
   return ta;
 }
 
+// The listeners drop anything with isTrusted false, and jsdom cannot produce a
+// trusted event, so behaviour is driven through the exported handlers. The gate
+// itself is covered by the "synthetic events" block below, which dispatches real
+// events through the listeners and asserts nothing happens.
+const { onSpaceKeydown, onSpaceKeyup, onArrowKeydown, onTypingKeyup } = require('../src/prompt-trigger.js');
+
+const fakeEvent = (key) => ({
+  key,
+  preventDefault: jest.fn(),
+  stopImmediatePropagation: jest.fn(),
+});
+
 const press = (key) =>
-  document.getElementById('ta').dispatchEvent(
-    new KeyboardEvent('keydown', { key, bubbles: true })
-  );
+  (key === 'ArrowDown' || key === 'ArrowUp')
+    ? onArrowKeydown(fakeEvent(key))
+    : onSpaceKeydown(fakeEvent(key));
 const release = (key) =>
+  key === ' ' ? onSpaceKeyup(fakeEvent(key)) : onTypingKeyup(fakeEvent(key));
+
+// Real synthetic events, as hostile page JS would forge them.
+const dispatch = (type, key) =>
   document.getElementById('ta').dispatchEvent(
-    new KeyboardEvent('keyup', { key, bubbles: true })
+    new KeyboardEvent(type, { key, bubbles: true })
   );
 
 beforeEach(() => {
@@ -111,5 +127,56 @@ describe('Live suggestion update (debounced)', () => {
     release('e');
     jest.advanceTimersByTime(200);
     expect(chrome.runtime.sendMessage).not.toHaveBeenCalled();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// SECURITY: page-forged events must never reach the prompt library
+// ---------------------------------------------------------------------------
+
+describe('synthetic events are ignored (isTrusted gate)', () => {
+  afterEach(() => jest.useRealTimers());
+
+  // Without the gate, script on a supported AI site could forge these keys to
+  // enumerate every prompt title and then read each prompt's full body back out
+  // of the composer — the whole library, with no user interaction.
+  test('a forged Space on an injectable line asks for nothing', async () => {
+    focusedTextarea('#Review');
+    dispatch('keydown', ' ');
+    await flush();
+    expect(chrome.runtime.sendMessage).not.toHaveBeenCalled();
+  });
+
+  test('a forged bare "#" cannot enumerate the whole library', async () => {
+    // An empty prefix matches every prompt (findPromptsByPrefix uses startsWith),
+    // which is what made this the cheapest possible exfiltration primitive.
+    focusedTextarea('#');
+    dispatch('keydown', ' ');
+    await flush();
+    expect(chrome.runtime.sendMessage).not.toHaveBeenCalled();
+  });
+
+  test('forged arrow keys cannot cycle suggestions', () => {
+    focusedTextarea('#Review\n== Prompts ==\n#Review  #Refactor');
+    dispatch('keydown', 'ArrowDown');
+    dispatch('keydown', 'ArrowUp');
+    expect(chrome.runtime.sendMessage).not.toHaveBeenCalled();
+  });
+
+  test('forged typing cannot drive live suggestions', () => {
+    jest.useFakeTimers();
+    focusedTextarea('#Rev');
+    dispatch('keyup', 'v');
+    jest.advanceTimersByTime(500);
+    expect(chrome.runtime.sendMessage).not.toHaveBeenCalled();
+  });
+
+  test('a forged Space is not swallowed either — the page keeps its own event', () => {
+    // The suppression path must stay inert too, otherwise the gate would still
+    // let a page interfere with its own key handling through us.
+    focusedTextarea('#Review');
+    const e = new KeyboardEvent('keydown', { key: ' ', bubbles: true, cancelable: true });
+    document.getElementById('ta').dispatchEvent(e);
+    expect(e.defaultPrevented).toBe(false);
   });
 });
