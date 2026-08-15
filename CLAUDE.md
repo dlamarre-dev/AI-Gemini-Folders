@@ -198,7 +198,23 @@ git checkout main && git pull --ff-only
 
 - **Storage:** `loadData`/`saveData` (utils.js) transparently compress (LZString)
   and chunk content across `storage.sync` (quota ~100 KB total, 8 KB per item;
-  `makeChunks`/`assembleChunks`). UI open-state (`openFolders`/`openPrompts`) lives
+  `makeChunks`/`assembleChunks`).
+  **Write first, delete second — never the reverse.** The chunks and their
+  `fdcN`/`pdcN` pointer go out in a *single* `sync.set`, whose quota Chrome
+  evaluates as a unit, so that call is the commit point. Every superseded key is
+  removed in `runCleanup()`, only after that set confirms. Doing the removes first
+  (as the code did until 2026-08) loses data on a failed write: the shrink case
+  deletes the tail chunks, the set fails, the surviving pointer references keys
+  that are gone, `assembleChunks` returns garbage, and `loadData` silently falls
+  back to `{}` — every folder appears empty. **Do not "fix" this with generation-
+  prefixed chunks:** two generations coexisting doubles peak usage against a
+  *shared* 100 KB ceiling, so anyone above ~50 % would stop being able to save at
+  all — a worse regression than the bug, for a guarantee the single set already
+  gives. Errors must reach the caller: `saveData` passes a message for both sync
+  *and* local failures, `mergeImportData` rejects, and both `background.js` use
+  `saveDataAsync`/`saveOrReportError` so a failed quick-save shows
+  `storageFullError` instead of "✅ Saved!" (a service worker has no `window`, so
+  the modal fallback never fires there). UI open-state (`openFolders`/`openPrompts`) lives
   in `storage.local` — device-local, to avoid burning the sync write quota.
   `finishSave(..., affectsBookmarks)` only rebuilds the bookmark mirror when
   folders/pins/sort actually change. Default sort is `dateDesc` (newest-first) for

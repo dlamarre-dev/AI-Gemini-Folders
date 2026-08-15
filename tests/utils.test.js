@@ -351,6 +351,75 @@ describe('saveData', () => {
     });
   });
 
+  // -------------------------------------------------------------------------
+  // Write-before-delete: nothing is removed until the replacement has landed
+  // -------------------------------------------------------------------------
+
+  test("removes the superseded keys only AFTER the write is confirmed", (done) => {
+    const order = [];
+    chrome.storage.sync.remove.mockImplementation(() => order.push("remove"));
+    chrome.storage.sync.set.mockImplementationOnce((_, cb) => { order.push("set"); cb(); });
+
+    saveData({ folders: { Dev: [] } }, () => {
+      expect(order).toEqual(["set", "remove"]);
+      done();
+    });
+  });
+
+  test("deletes nothing when the write fails, so the old data stays readable", (done) => {
+    // The failure that used to destroy data: the shrink case removed the tail
+    // chunks first, the set then failed, and the surviving fdcN pointed at keys
+    // that no longer existed -> assembleChunks returned garbage -> loadData fell
+    // back to {} and every folder looked empty.
+    chrome.storage.sync.get.mockImplementation((keys, cb) =>
+      cb({ syncBookmarksEnabled: false, fdcN: 5 }));
+    chrome.storage.sync.set.mockImplementationOnce((_, cb) => {
+      chrome.runtime.lastError = { message: "QUOTA_BYTES quota exceeded" };
+      cb();
+      chrome.runtime.lastError = null;
+    });
+
+    saveData({ folders: { Dev: [] } }, (err) => {
+      expect(err).toBe("QUOTA_BYTES quota exceeded");
+      expect(chrome.storage.sync.remove).not.toHaveBeenCalled();
+      expect(chrome.storage.local.remove).not.toHaveBeenCalled();
+      done();
+    });
+  });
+
+  test("reports a local write failure instead of calling back empty", (done) => {
+    // callback() with no argument made every caller take its success branch.
+    chrome.storage.local.set.mockImplementationOnce((_, cb) => {
+      chrome.runtime.lastError = { message: "QUOTA_BYTES quota exceeded" };
+      cb();
+      chrome.runtime.lastError = null;
+    });
+
+    saveData({ openFolders: ["Dev"] }, (err) => {
+      expect(err).toBeTruthy();
+      expect(String(err)).toContain("QUOTA_BYTES");
+      done();
+    });
+  });
+
+  test("keeps the local prompts backup when the sync write fails", (done) => {
+    // Prompts moving to sync: the local copy is the only remaining backup until
+    // sync confirms, so a failed sync must not take it with it.
+    chrome.storage.sync.get.mockImplementation((keys, cb) =>
+      cb({ syncBookmarksEnabled: false, syncPromptsEnabled: true }));
+    chrome.storage.sync.set.mockImplementationOnce((_, cb) => {
+      chrome.runtime.lastError = { message: "QUOTA_BYTES quota exceeded" };
+      cb();
+      chrome.runtime.lastError = null;
+    });
+
+    saveData({ prompts: { P1: { text: "t", timestamp: 1 } } }, (err) => {
+      expect(err).toBeTruthy();
+      expect(chrome.storage.local.remove).not.toHaveBeenCalled();
+      done();
+    });
+  });
+
   // finishSave only reads the bookmark settings (the gate before a full-tree
   // rebuild) when the write can actually change the mirrored tree. We assert on
   // that read instead of on syncToBookmarksTree so the test stays free of the
@@ -492,6 +561,21 @@ describe('mergeImportData', () => {
     const syncArg = calls[calls.length - 1]?.[0];
     // pinnedFolders is stored uncompressed in sync
     expect(syncArg?.pinnedFolders ?? []).toContain('Dev');
+  });
+
+  test('rejects when the merged data cannot actually be saved', async () => {
+    // An import that hit the quota used to resolve, so both callers announced
+    // "Import successful!" while nothing had been written — the worst possible
+    // moment to be wrong, since the user is usually restoring a lost backup.
+    chrome.storage.sync.set.mockImplementationOnce((_, cb) => {
+      chrome.runtime.lastError = { message: 'QUOTA_BYTES quota exceeded' };
+      cb();
+      chrome.runtime.lastError = null;
+    });
+    const importedData = {
+      folders: { Dev: [{ title: 'Chat', url: 'https://gemini.google.com/app/x', timestamp: 1 }] },
+    };
+    await expect(mergeImportData(importedData)).rejects.toThrow(/QUOTA_BYTES/);
   });
 
   test('rejects array input', async () => {

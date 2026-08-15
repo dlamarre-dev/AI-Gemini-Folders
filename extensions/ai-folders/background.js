@@ -434,6 +434,20 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   return false;
 });
 
+// Saves and returns the error instead of throwing, so a failed write shows a
+// failure toast rather than "✅ Saved!". The old `new Promise(r => saveData(d, r))`
+// resolved *with* the error and dropped it; there is no window in a service
+// worker either, so utils.js's modal fallback never fires here.
+async function saveOrReportError(dataToSave) {
+  try {
+    await saveDataAsync(dataToSave);
+    return null;
+  } catch (err) {
+    console.error("Save failed:", err);
+    return err;
+  }
+}
+
 // --- TOAST ---
 
 const showToast = (msg, bgColor) => {
@@ -483,10 +497,12 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
       const chatEntry = { title: finalTitle, url: tab.url, timestamp: Date.now() };
       if (siteKey) chatEntry.site = siteKey;
       folders[targetFolder].push(chatEntry);
-      await new Promise(resolve => saveData({ folders }, resolve));
+      const saveError = await saveOrReportError({ folders });
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        args: [chrome.i18n.getMessage("toastSaved") || "✅ Saved!", siteColor],
+        args: saveError
+          ? [chrome.i18n.getMessage("storageFullError") || "⚠️ Storage full — not saved.", "#d93025"]
+          : [chrome.i18n.getMessage("toastSaved") || "✅ Saved!", siteColor],
         func: showToast
       });
     } else {
@@ -540,11 +556,13 @@ chrome.commands.onCommand.addListener(async (command) => {
       const chatEntry = { title: finalTitle, url: tab.url, timestamp: Date.now() };
       if (siteKey) chatEntry.site = siteKey;
       folders[targetFolder].push(chatEntry);
-      await new Promise(resolve => saveData({ folders }, resolve));
+      const saveError = await saveOrReportError({ folders });
 
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        args: [toastMsg, siteColor],
+        args: saveError
+          ? [chrome.i18n.getMessage("storageFullError") || "⚠️ Storage full — not saved.", "#d93025"]
+          : [toastMsg, siteColor],
         func: showToast
       });
     } else {
