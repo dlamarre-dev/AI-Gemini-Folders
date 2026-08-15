@@ -144,26 +144,27 @@ emits versioned `.zip` files. `dist/` is gitignored.
 ## 4. Git & CI procedure — DO NOT push to `main` directly
 
 `main` is protected: every change must go through a **pull request** that passes
-**4 required status checks** — `test`, `Analyze (javascript-typescript)`,
+**5 required status checks** — `test`, `build`, `Analyze (javascript-typescript)`,
 `Analyze (actions)`, `Analyze (python)` (the three `Analyze` checks come from
 CodeQL *default setup*, configured on GitHub with no workflow file; `python` was
 added to the required list on 09/08/2026, CodeQL having started scanning
 `build.py` and the `tools/` scripts). Branch protection also requires **1
 approving review**, which a solo maintainer cannot self-provide.
 
-`.github/workflows/test.yml` now also runs a **`build`** job (package both
-extensions for both browsers, then `tools/validate_build.py`, then fail if the
-build dirtied a tracked file). It is **not yet in the required list** — add it in
-the GitHub branch-protection settings to make packaging regressions blocking.
+The **`build`** job in `.github/workflows/test.yml` packages both extensions for
+both browsers, runs `tools/validate_build.py`, then fails if the build dirtied a
+tracked file. It was added to the required list on 15/08/2026, so a packaging
+regression — a dropped file, a drifted permission, a generated artifact left
+uncommitted — now blocks the merge instead of surfacing at release time.
 
 Standard flow (the `--admin` on merge overrides *only* the impossible self-review;
-the 4 checks still gate the change):
+the 5 checks still gate the change):
 ```bash
 git checkout -b <branch>
 # ... commit work ...
 git push -u origin <branch>
 gh pr create --base main --fill
-gh pr checks --watch                       # wait for the 4 checks to go green
+gh pr checks --watch                       # wait for the 5 checks to go green
 gh pr merge --squash --admin --delete-branch
 git checkout main && git pull --ff-only
 ```
