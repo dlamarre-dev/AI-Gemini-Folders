@@ -58,7 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!hasEntry(folders, targetFolder)) folders[targetFolder] = [];
 
       window.selectedChats.forEach(item => {
-        if (folders[item.folder]) {
+        // hasEntry, not truthiness: a folder legitimately named "toString" is
+        // an own property, but if it were removed meanwhile the lookup would
+        // fall back to the inherited function and .filter would throw.
+        if (hasEntry(folders, item.folder)) {
           folders[item.folder] = folders[item.folder].filter(c => c.url !== item.url);
         }
         const cleanTargetUrl = normalizeUrl(item.url);
@@ -143,7 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loadData({ folders: {} }, (data) => {
       let folders = data.folders;
       window.selectedChats.forEach(item => {
-        if (folders[item.folder]) {
+        // hasEntry, not truthiness: a folder legitimately named "toString" is
+        // an own property, but if it were removed meanwhile the lookup would
+        // fall back to the inherited function and .filter would throw.
+        if (hasEntry(folders, item.folder)) {
           folders[item.folder] = folders[item.folder].filter(c => c.url !== item.url);
         }
       });

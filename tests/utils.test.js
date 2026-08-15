@@ -499,6 +499,13 @@ describe('mergeImportData', () => {
     return JSON.parse(LZString.decompressFromUTF16(assembled));
   }
 
+  // pinnedFolders is a plain pass-through key, not chunked content.
+  function savedPins() {
+    const calls = chrome.storage.sync.set.mock.calls;
+    const arg = calls.map((c) => c[0]).reverse().find((a) => a && a.pinnedFolders);
+    return arg ? arg.pinnedFolders : null;
+  }
+
   function savedPrompts() {
     const calls = chrome.storage.local.set.mock.calls;
     const arg = calls.find((c) => c[0].promptsDataCompressed)?.[0];
@@ -613,24 +620,68 @@ describe('mergeImportData', () => {
     expect(({}).some).toBeUndefined();
   });
 
-  test('skips a constructor folder key without throwing', async () => {
-    const importedData = JSON.parse(
-      '{"folders":{"constructor":[{"title":"X","url":"https://gemini.google.com/app/x","timestamp":1}],' +
-      '"Good":[{"title":"C","url":"https://gemini.google.com/app/g","timestamp":2}]}}'
-    );
-    await expect(mergeImportData(importedData)).resolves.toBeUndefined();
-    expect(savedFolders().Good).toHaveLength(1);
-  });
+  test.each(['constructor', 'toString', 'valueOf', 'hasOwnProperty'])(
+    'imports a folder named %s like any other', async (name) => {
+      // These are inherited-but-truthy names, not unusable ones: only __proto__
+      // genuinely cannot be stored. The old tests asserted the other folders
+      // survived but never what became of this one.
+      const importedData = JSON.parse(
+        '{"folders":{"' + name + '":[{"title":"X","url":"https://gemini.google.com/app/x","timestamp":1}],' +
+        '"Good":[{"title":"C","url":"https://gemini.google.com/app/g","timestamp":2}]}}'
+      );
+      await expect(mergeImportData(importedData)).resolves.toBeUndefined();
+      const folders = savedFolders();
+      expect(folders.Good).toHaveLength(1);
+      expect(Object.prototype.hasOwnProperty.call(folders, name)).toBe(true);
+      expect(folders[name]).toHaveLength(1);
+      expect(folders[name][0].url).toBe('https://gemini.google.com/app/x');
+    });
 
-  test('skips __proto__/constructor prompt keys without throwing', async () => {
+  test('skips a __proto__ prompt key but imports the rest', async () => {
     const importedData = JSON.parse(
       '{"folders":{},"prompts":{"__proto__":{"text":"bad","timestamp":1},' +
-      '"constructor":{"text":"bad2","timestamp":1},"Good":{"text":"ok","timestamp":2}}}'
+      '"constructor":{"text":"ok2","timestamp":1},"Good":{"text":"ok","timestamp":2}}}'
     );
     await expect(mergeImportData(importedData)).resolves.toBeUndefined();
     const prompts = savedPrompts();
     expect(prompts.Good.text).toBe('ok');
     expect(Object.prototype.hasOwnProperty.call(prompts, '__proto__')).toBe(false);
+    // constructor is storable, so it must arrive under its own name.
+    expect(prompts.constructor.text).toBe('ok2');
+  });
+
+  test.each(['toString', 'constructor', 'valueOf'])(
+    'imports a prompt named %s under its own name, not suffixed', async (name) => {
+      // currentPrompts[name] is inherited and truthy, so the merge read it as a
+      // title collision and renamed the incoming prompt to "<name> (Imported)"
+      // with nothing to collide with.
+      const importedData = JSON.parse(
+        '{"folders":{},"prompts":{"' + name + '":{"text":"body","timestamp":1}}}'
+      );
+      await expect(mergeImportData(importedData)).resolves.toBeUndefined();
+      const prompts = savedPrompts();
+      expect(Object.prototype.hasOwnProperty.call(prompts, name)).toBe(true);
+      expect(prompts[name].text).toBe('body');
+      expect(Object.prototype.hasOwnProperty.call(prompts, name + ' (Imported)')).toBe(false);
+    });
+
+  test('a pin for a folder that does not exist is not imported', async () => {
+    // currentFolders["toString"] is inherited and truthy, so the pin passed the
+    // "does that folder exist?" test and landed in the pin list as an orphan.
+    const importedData = JSON.parse(
+      '{"folders":{"Good":[]},"pinnedFolders":["toString","valueOf","Good"]}'
+    );
+    await expect(mergeImportData(importedData)).resolves.toBeUndefined();
+    expect(savedPins()).toEqual(['Good']);
+  });
+
+  test('a pin for a folder named toString IS imported when that folder exists', async () => {
+    const importedData = JSON.parse(
+      '{"folders":{"toString":[{"title":"X","url":"https://gemini.google.com/app/x","timestamp":1}]},' +
+      '"pinnedFolders":["toString"]}'
+    );
+    await expect(mergeImportData(importedData)).resolves.toBeUndefined();
+    expect(savedPins()).toEqual(['toString']);
   });
 
   test('skips malformed prompt entries, keeping valid ones', async () => {

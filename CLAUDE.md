@@ -205,7 +205,10 @@ git checkout main && git pull --ff-only
 - **Data is keyed by folder name and conversation URL** (no stable IDs). Renames,
   pins and migrations are awkward by design (see TODO §8). Because those keys are
   user-typed names on ordinary objects, **every existence check must go through
-  `hasEntry(container, name)`** (`src/utils.js`), never plain truthiness.
+  `hasEntry(container, name)`** (`src/utils.js`), never plain truthiness — including
+  the import merge, where a truthy inherited name silently created orphan pins and
+  renamed incoming prompts to `<name> (Imported)` against a collision that did not
+  exist.
   `folders[name]` is truthy for *every* member of `Object.prototype`, so a folder
   called `toString` or `valueOf` skipped its "create if missing" guard and then
   threw on `.some()` — a blacklist can never be complete, which is why the old
