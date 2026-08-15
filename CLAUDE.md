@@ -110,15 +110,24 @@ build_images.py              Regenerates marketing screenshots (release-time onl
 npx jest                 # full suite
 ```
 
-**Build** (runs Jest first, then asks whether to continue if it fails):
+**Build** (runs Jest first and **aborts** if it fails):
 ```bash
-python build.py          # interactive — a failing suite prompts, so it stops unless you say yes
+python build.py          # interactive
 python build.py --yes    # non-interactive (also -y); use this in automation
+python build.py --force  # build anyway on a red suite — deliberate use only
 ```
-⚠️ **`--yes` answers that prompt for you**, so a failing suite does *not* abort the
-build (`run_tests` → `confirm`, build.py:180). A green `🎉 Build finished` is
-therefore **not** evidence that the tests passed — always run `npx jest`
-separately and read its summary.
+`--yes` only suppresses prompts; it does **not** wave through failing tests
+(it used to, which meant a green `🎉 Build finished` proved nothing). Overriding
+a red suite now takes the explicit `--force`.
+
+**Validate what was built:**
+```bash
+python tools/validate_build.py   # after build.py; exits 1 and lists every problem
+```
+Checks the four built manifests (version, **permission drift**, no `"tabs"`,
+Firefox gecko id), 43 locales with parseable `messages.json`, no unresolved
+`__PLACEHOLDER__`, and that each ZIP has a root manifest, `_locales`, and no
+`tools/`/`Marketing/`/`tests/` files. Run by CI's `build` job.
 The build copies `src/` then overlays `extensions/<name>/` into
 `dist/<name>/{chrome,firefox}`, patches the manifest + locales for Firefox, and
 emits versioned `.zip` files. `dist/` is gitignored.
@@ -140,6 +149,11 @@ CodeQL *default setup*, configured on GitHub with no workflow file; `python` was
 added to the required list on 09/08/2026, CodeQL having started scanning
 `build.py` and the `tools/` scripts). Branch protection also requires **1
 approving review**, which a solo maintainer cannot self-provide.
+
+`.github/workflows/test.yml` now also runs a **`build`** job (package both
+extensions for both browsers, then `tools/validate_build.py`, then fail if the
+build dirtied a tracked file). It is **not yet in the required list** — add it in
+the GitHub branch-protection settings to make packaging regressions blocking.
 
 Standard flow (the `--admin` on merge overrides *only* the impossible self-review;
 the 4 checks still gate the change):
