@@ -14,7 +14,7 @@ Dossiers IA s'intègre nativement avec tous les principaux assistants de chat IA
 🔀 Boutons Nouvelle Conversation : Lancez une nouvelle discussion sur l'un des services web pris en charge directement depuis le Mode Prompts, en un seul clic.
 📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
 ☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
-⌨️ Déclenchement de prompt avec suggestions en direct : Tapez # dans le champ de saisie de Gemini pour voir instantanément tous vos prompts sauvegardés — filtrés en temps réel au fil de la frappe. Utilisez ↓/↑ pour naviguer entre les suggestions, appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter directement.
+⌨️ Déclenchement de prompt avec suggestions en direct : Tapez # dans le champ de saisie de n'importe quelle IA pour voir instantanément tous vos prompts sauvegardés — filtrés en temps réel au fil de la frappe. Utilisez ↓/↑ pour naviguer entre les suggestions, appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter directement.
 
 🌟 FONCTIONNALITÉS DOSSIERS
 
@@ -56,9 +56,9 @@ Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et 
 Déclenchement de prompt : tapez # pour voir instantanément tous vos prompts sauvegardés, ou continuez à taper pour filtrer en temps réel. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ
-Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'aux sites IA pris en charge et à votre URL LLM local optionnelle, et ne lit l'onglet actif qu'au moment de la sauvegarde ou de l'injection d'un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via la synchronisation du navigateur : aucun serveur tiers, aucune télémétrie, aucun compte requis.
+Conçue avec la confidentialité au cœur de son fonctionnement. Elle ne demande l'accès qu'aux sites IA pris en charge et à votre URL LLM local optionnelle, et ne lit l'onglet actif que pour en lire le titre, l'enregistrer ou y insérer un prompt. La permission "Favoris" n'est utilisée que si vous activez la synchronisation mobile. Stockage via la synchronisation du navigateur : aucun serveur tiers, aucune télémétrie, aucun compte requis.
 
-Conçue sur Manifest V3 : le navigateur lui-même garantit qu'aucun code distant ne peut être chargé et qu'aucune exécution dynamique de script ne peut avoir lieu — il s'agit d'une contrainte au niveau de la plateforme, et non d'une promesse du développeur. La version Firefox est publiée via le processus officiel de révision des extensions de Mozilla (AMO).
+Conçue sur Manifest V3 : le navigateur lui-même garantit qu'aucun code distant ne peut être chargé — il s'agit d'une contrainte au niveau de la plateforme, et non d'une promesse du développeur. La version Firefox est publiée via le processus officiel de révision des extensions de Mozilla (AMO).
 
 🤝 OPEN SOURCE & VÉRIFIABLE
 Chaque ligne de code est publique sur GitHub. N'importe qui peut cloner le dépôt, le compiler localement et comparer les fichiers obtenus avec ce qui est installé dans son navigateur — sans avoir à faire confiance à qui que ce soit.

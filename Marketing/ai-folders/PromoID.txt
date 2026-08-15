@@ -14,7 +14,7 @@ Folder AI terintegrasi secara native dengan semua asisten obrolan AI utama, sepe
 🔀 Tombol Percakapan Baru: Mulai percakapan baru di salah satu layanan web yang didukung langsung dari Mode Prompt — dengan satu ketukan.
 ☁️ Sinkronisasi Prompt: Aktifkan sinkronisasi cloud untuk perpustakaan prompt Anda secara independen dari folder Anda.
 📌 Prompt yang Disematkan: Sematkan prompt penting Anda dengan satu klik agar tetap di bagian atas perpustakaan, dipisahkan dari yang lain oleh pemisah visual.
-⌨️ Pemicu Prompt dengan Saran Langsung: Ketik # di kolom chat Gemini untuk langsung melihat semua prompt tersimpan Anda — difilter secara real time saat Anda mengetik. Gunakan ↓/↑ untuk navigasi, tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan langsung.
+⌨️ Pemicu Prompt dengan Saran Langsung: Ketik # di kolom chat AI mana pun untuk langsung melihat semua prompt tersimpan Anda — difilter secara real time saat Anda mengetik. Gunakan ↓/↑ untuk navigasi, tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan langsung.
 
 🌟 FITUR FOLDER
 
@@ -56,9 +56,9 @@ Untuk menyematkan prompt: klik 📍 — naik ke bagian atas daftar dan tetap mud
 Pemicu Prompt: Ketik # untuk langsung melihat semua prompt tersimpan Anda, atau lanjutkan mengetik untuk memfilter secara real time. Tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan.
 
 🔒 PRIVASI & KEAMANAN
-Dibangun dengan privasi sebagai inti. Hanya meminta akses ke situs-situs AI yang didukung dan URL LLM lokal opsional Anda, dan hanya membaca tab aktif saat menyimpan percakapan atau menyuntikkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui browser sync: tidak ada server pihak ketiga, tidak ada telemetri, tidak perlu akun.
+Dibangun dengan privasi sebagai inti. Hanya meminta akses ke situs-situs AI yang didukung dan URL LLM lokal opsional Anda, dan membaca tab aktif hanya untuk membaca judul percakapan, menyimpannya, atau menyisipkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui browser sync: tidak ada server pihak ketiga, tidak ada telemetri, tidak perlu akun.
 
-Dibangun di atas Manifest V3: browser itu sendiri memastikan bahwa tidak ada kode jarak jauh yang dapat dimuat dan tidak ada eksekusi skrip dinamis yang dapat terjadi — ini adalah batasan tingkat platform, bukan janji pengembang. Versi Firefox diterbitkan melalui proses tinjauan add-on resmi Mozilla (AMO).
+Dibangun di atas Manifest V3: browser itu sendiri memastikan bahwa tidak ada kode jarak jauh yang dapat dimuat — ini adalah batasan tingkat platform, bukan janji pengembang. Versi Firefox diterbitkan melalui proses tinjauan add-on resmi Mozilla (AMO).
 
 🤝 OPEN SOURCE & DAPAT DIAUDIT
 Setiap baris kode tersedia publik di GitHub. Siapa pun dapat mengkloning repositori, membangunnya secara lokal, dan membandingkan file yang dihasilkan dengan yang terpasang di browser mereka — tidak perlu kepercayaan buta.

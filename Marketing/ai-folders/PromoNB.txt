@@ -14,7 +14,7 @@ AI-mapper integreres nativt med alle de store AI-chatassistentene, slik som Clau
 🔀 Ny samtale-knapper: Start en ny samtale på en av de støttede nettjenestene direkte fra Prompt-modus — med ett trykk.
 ☁️ Promptsynkronisering: Aktiver skysynkronisering for promptbiblioteket uavhengig av mappene.
 📌 Festede prompts: Fest viktige prompts øverst i biblioteket, atskilt fra resten med en visuell skillelinje.
-⌨️ Promptutløser med direkteforslag: Skriv # i Geminis chatfelt for å umiddelbart se alle dine lagrede prompter — filtrert i sanntid mens du skriver. Bruk ↓/↑ for å navigere, trykk mellomrom på et unikt treff for autofullføring, eller på et eksakt treff for å injisere direkte.
+⌨️ Promptutløser med direkteforslag: Skriv # i chatfeltet til en hvilken som helst KI for å umiddelbart se alle dine lagrede prompter — filtrert i sanntid mens du skriver. Bruk ↓/↑ for å navigere, trykk mellomrom på et unikt treff for autofullføring, eller på et eksakt treff for å injisere direkte.
 
 🌟 MAPPEFUNKSJONER
 
@@ -56,9 +56,9 @@ For å feste en prompt: klikk 📍 – den flyttes øverst på listen og forblir
 Promptutløser: Skriv # for å umiddelbart se alle dine lagrede prompter, eller fortsett å skrive for å filtrere i sanntid. Trykk mellomrom på et unikt treff for autofullføring, eller på et eksakt treff for å injisere.
 
 🔒 PERSONVERN OG SIKKERHET
-Bygget med personvern som grunnleggende prinsipp. Tillegget ber bare om tilgang til de støttede AI-nettstedene og din valgfrie lokale LLM-URL og leser bare den aktive fanen ved lagring av en samtale eller innsetting av en prompt. «Bokmerker»-tillatelsen brukes bare hvis du aktiverer mobilsynkronisering. Lagring via nettlesersynkronisering: ingen tredjepartsservere, ingen telemetri, ingen konto nødvendig.
+Bygget med personvern som grunnleggende prinsipp. Tillegget ber bare om tilgang til de støttede AI-nettstedene og din valgfrie lokale LLM-URL og leser bare den aktive fanen for å lese samtalens tittel, lagre den eller sette inn en prompt. «Bokmerker»-tillatelsen brukes bare hvis du aktiverer mobilsynkronisering. Lagring via nettlesersynkronisering: ingen tredjepartsservere, ingen telemetri, ingen konto nødvendig.
 
-Bygget på Manifest V3: nettleseren selv håndhever at ingen ekstern kode noensinne kan lastes inn og at ingen dynamisk skriptkjøring kan forekomme — dette er en plattformbegrensning, ikke et utviklerløfte. Firefox-versjonen publiseres gjennom Mozillas offisielle tilleggsvurderingsprosess (AMO).
+Bygget på Manifest V3: nettleseren selv håndhever at ingen ekstern kode noensinne kan lastes inn — dette er en plattformbegrensning, ikke et utviklerløfte. Firefox-versjonen publiseres gjennom Mozillas offisielle tilleggsvurderingsprosess (AMO).
 
 🤝 ÅPEN KILDEKODE & VERIFISERBAR
 Hver eneste kodelinje er offentlig på GitHub. Alle kan klone arkivet, bygge det lokalt og sammenligne de resulterende filene med det som er installert i nettleseren deres — ingen blind tillit nødvendig.

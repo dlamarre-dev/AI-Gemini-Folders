@@ -14,7 +14,7 @@ Carpetas IA se integra de forma nativa con todos los principales asistentes de c
 🔀 Botones de Nueva Conversación: Inicia una nueva conversación en cualquiera de los servicios web compatibles directamente desde el Modo Prompt — con un solo toque.
 ☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
 📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
-⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de Gemini para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Usa ↓/↑ para navegar entre sugerencias, pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente.
+⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de cualquier IA para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Usa ↓/↑ para navegar entre sugerencias, pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente.
 
 🌟 FUNCIONES DE CARPETAS
 
@@ -56,9 +56,9 @@ Para fijar un prompt: haz clic en 📍 — sube al principio de la lista y siemp
 Disparador de prompts: Escribe # para ver al instante todos tus prompts guardados, o sigue escribiendo para filtrar en tiempo real. Pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar.
 
 🔒 PRIVACIDAD Y SEGURIDAD
-Diseñada con la privacidad en el centro. Solo solicita acceso a los sitios de IA compatibles y a tu URL de LLM local opcional, y solo lee la pestaña activa al guardar una conversación o al inyectar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía sincronización del navegador: sin servidores de terceros, sin telemetría, sin cuenta necesaria.
+Diseñada con la privacidad en el centro. Solo solicita acceso a los sitios de IA compatibles y a tu URL de LLM local opcional, y solo lee la pestaña activa para leer el título de la conversación, guardarla o insertar un prompt. El permiso de "Marcadores" solo se usa si activas la sincronización móvil. Almacenamiento vía sincronización del navegador: sin servidores de terceros, sin telemetría, sin cuenta necesaria.
 
-Desarrollada sobre Manifest V3: el propio navegador garantiza que nunca se puede cargar código remoto ni ejecutar scripts de forma dinámica — esta es una restricción a nivel de plataforma, no una promesa del desarrollador. La versión de Firefox se publica a través del proceso oficial de revisión de complementos de Mozilla (AMO).
+Desarrollada sobre Manifest V3: el propio navegador garantiza que nunca se puede cargar código remoto — esta es una restricción a nivel de plataforma, no una promesa del desarrollador. La versión de Firefox se publica a través del proceso oficial de revisión de complementos de Mozilla (AMO).
 
 🤝 OPEN SOURCE Y AUDITABLE
 Cada línea de código es pública en GitHub. Cualquiera puede clonar el repositorio, compilarlo localmente y comparar los archivos resultantes con lo que está instalado en su navegador — sin necesidad de confianza.

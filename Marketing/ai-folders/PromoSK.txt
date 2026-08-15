@@ -14,7 +14,7 @@ AI priečinky sa natívne integrujú so všetkými hlavnými AI chatovacími asi
 🔀 Tlačidlá novej konverzácie: Spustite novú konverzáciu na ktorejkoľvek z podporovaných webových služieb priamo z režimu promptov — jedným klepnutím.
 ☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
 📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
-⌨️ Spúšťač promptov so živými návrhmi: Napíšte # do chatovacieho poľa Gemini a okamžite uvidíte všetky svoje uložené prompty — filtrované v reálnom čase pri písaní. Pomocou ↓/↑ prechádzajte návrhy, stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre priame vloženie.
+⌨️ Spúšťač promptov so živými návrhmi: Napíšte # do chatovacieho poľa ľubovoľnej AI a okamžite uvidíte všetky svoje uložené prompty — filtrované v reálnom čase pri písaní. Pomocou ↓/↑ prechádzajte návrhy, stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre priame vloženie.
 
 🌟 FUNKCIE PRIEČINKOV
 
@@ -56,9 +56,9 @@ Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vž
 Spúšťač promptov: Napíšte # a okamžite uvidíte všetky svoje uložené prompty, alebo pokračujte v písaní pre filtrovanie v reálnom čase. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre vloženie.
 
 🔒 SÚKROMIE A BEZPEČNOSŤ
-Navrhnuté so súkromím v centre. Vyžaduje prístup iba k podporovaným AI stránkam a vašej voliteľnej lokálnej LLM URL a číta aktívnu kartu iba pri ukladaní konverzácie alebo vkladaní výzvy. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez synchronizáciu prehliadača: žiadne servery tretích strán, žiadna telemetria, žiadny účet nie je potrebný.
+Navrhnuté so súkromím v centre. Vyžaduje prístup iba k podporovaným AI stránkam a vašej voliteľnej lokálnej LLM URL a číta aktívnu kartu iba preto, aby prečítala názov konverzácie, uložila ju alebo vložila výzvu. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez synchronizáciu prehliadača: žiadne servery tretích strán, žiadna telemetria, žiadny účet nie je potrebný.
 
-Postavené na Manifest V3: samotný prehliadač vynucuje, že žiadny vzdialený kód nemôže byť nikdy načítaný a nemôže dôjsť k žiadnemu dynamickému spúšťaniu skriptov — toto je obmedzenie na úrovni platformy, nie sľub vývojára. Verzia pre Firefox je zverejnená prostredníctvom oficiálneho procesu kontroly doplnkov Mozilla (AMO).
+Postavené na Manifest V3: samotný prehliadač vynucuje, že žiadny vzdialený kód nemôže byť nikdy načítaný — toto je obmedzenie na úrovni platformy, nie sľub vývojára. Verzia pre Firefox je zverejnená prostredníctvom oficiálneho procesu kontroly doplnkov Mozilla (AMO).
 
 🤝 OPEN SOURCE A AUDITOVATEĽNÝ
 Každý riadok kódu je verejný na GitHub. Každý môže klonovať repozitár, zostaviť ho lokálne a porovnať výsledné súbory s tým, čo je nainštalované v jeho prehliadači — bez nutnosti dôvery.

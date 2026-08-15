@@ -14,7 +14,7 @@ Folda za AI huunganishwa kiasili na wasaidizi wakuu wote wa gumzo la AI, kama vi
 🔀 Vitufe vya Mazungumzo Mapya: Anza mazungumzo mapya kwenye yoyote ya huduma za wavuti zinazoungwa mkono moja kwa moja kutoka Hali ya Maagizo — kwa mguso mmoja.
 ☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
 📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
-⌨️ Kichocheo cha Kidokezo na Mapendekezo ya Moja kwa Moja: Andika # katika uwanja wa gumzo wa Gemini ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa — vikifiliwa kwa wakati halisi unapoendelea kuandika. Tumia ↓/↑ kuvinjari, kisha bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza moja kwa moja.
+⌨️ Kichocheo cha Kidokezo na Mapendekezo ya Moja kwa Moja: Andika # katika uwanja wa gumzo wa AI yoyote ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa — vikifiliwa kwa wakati halisi unapoendelea kuandika. Tumia ↓/↑ kuvinjari, kisha bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza moja kwa moja.
 
 🌟 VIPENGELE VYA FOLDA
 
@@ -56,9 +56,9 @@ Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi ku
 Kichocheo cha Kidokezo: Andika # ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa, au endelea kuandika ili kufilia kwa wakati halisi. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza.
 
 🔒 FARAGHA NA USALAMA
-Imejengwa na faragha kama msingi wake. Huomba tu ufikiaji wa tovuti za AI zinazoungwa mkono na URL yako ya hiari ya LLM ya ndani. Husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia browser sync: hakuna seva za watu wengine, hakuna telemetri, hakuna akaunti inayohitajika.
+Imejengwa na faragha kama msingi wake. Huomba tu ufikiaji wa tovuti za AI zinazoungwa mkono na URL yako ya hiari ya LLM ya ndani. Husoma kichupo kinachofanya kazi tu ili kusoma kichwa cha mazungumzo, kukihifadhi au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia browser sync: hakuna seva za watu wengine, hakuna telemetri, hakuna akaunti inayohitajika.
 
-Imejengwa juu ya Manifest V3: kivinjari chenyewe kinahakikisha kwamba hakuna msimbo wa mbali unaoeza kupakiwa wala utekelezaji wa hati za nguvu hauwezi kutokea — hii ni kizuizi cha kiwango cha jukwaa, si ahadi ya msanidi programu. Toleo la Firefox limechapishwa kupitia mchakato rasmi wa ukaguzi wa programu jalizi wa Mozilla (AMO).
+Imejengwa juu ya Manifest V3: kivinjari chenyewe kinahakikisha kwamba hakuna msimbo wa mbali unaoeza kupakiwa — hii ni kizuizi cha kiwango cha jukwaa, si ahadi ya msanidi programu. Toleo la Firefox limechapishwa kupitia mchakato rasmi wa ukaguzi wa programu jalizi wa Mozilla (AMO).
 
 🤝 CHANZO WAZI NA INAYOWEZA KUKAGULIWA
 Kila mstari wa msimbo ni wa umma kwenye GitHub. Mtu yeyote anaweza kunakili hazina, kuijenga ndani ya kompyuta yake, na kulinganisha faili zinazotokana na zile zilizosakinishwa kwenye kivinjari chake — bila kuhitaji imani yoyote.

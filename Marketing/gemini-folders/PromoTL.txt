@@ -50,9 +50,9 @@ I-configure ang 💎 para ituro sa iyong custom na Gem.
 Prompt Trigger: I-type ang # para agad makita ang lahat ng iyong naka-save na prompt, o magpatuloy na mag-type para mag-filter sa real time. Pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject.
 
 🔒 PRIVACY AT SEGURIDAD
-Ginawa nang may privacy bilang pangunahing pundasyon. Humihingi lamang ng access sa gemini.google.com at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng browser sync: walang third-party server, walang telemetry, hindi kailangan ng account.
+Ginawa nang may privacy bilang pangunahing pundasyon. Humihingi lamang ng access sa gemini.google.com at binabasa lamang ang aktibong tab para basahin ang pamagat ng pag-uusap, i-save ito, o maglagay ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng browser sync: walang third-party server, walang telemetry, hindi kailangan ng account.
 
-Itinayo sa Manifest V3: ang browser mismo ang nagpapatupad na walang remote code ang maaaring ma-load at walang dynamic na script execution ang maaaring mangyari — ito ay isang platform-level na hadlang, hindi isang pangako ng developer. Ang bersyong Firefox ay inilathala sa pamamagitan ng opisyal na proseso ng pagsusuri ng add-on ng Mozilla (AMO).
+Itinayo sa Manifest V3: ang browser mismo ang nagpapatupad na walang remote code ang maaaring ma-load — ito ay isang platform-level na hadlang, hindi isang pangako ng developer. Ang bersyong Firefox ay inilathala sa pamamagitan ng opisyal na proseso ng pagsusuri ng add-on ng Mozilla (AMO).
 
 🤝 OPEN SOURCE AT MAAARING MA-AUDIT
 Bawat linya ng code ay pampubliko sa GitHub. Maaaring i-clone ng sinuman ang repository, buuin ito nang lokal, at ihambing ang mga resultang file sa kung ano ang naka-install sa kanilang browser — hindi kailangan ng walang kondisyong tiwala.

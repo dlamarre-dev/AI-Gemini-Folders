@@ -14,7 +14,7 @@ Foldery AI integrują się natywnie ze wszystkimi głównymi asystentami czatu A
 🔀 Przyciski Nowej Rozmowy: Rozpocznij nową rozmowę w dowolnym z obsługiwanych serwisów internetowych bezpośrednio z Trybu Promptów — jednym dotknięciem.
 ☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
 📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
-⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu Gemini, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Użyj ↓/↑ do nawigacji między sugestiami, naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić.
+⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu dowolnej AI, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Użyj ↓/↑ do nawigacji między sugestiami, naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić.
 
 🌟 FUNKCJE FOLDERÓW
 
@@ -56,9 +56,9 @@ Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jes
 Wyzwalacz promptu: Wpisz #, aby natychmiast zobaczyć wszystkie swoje zapisane prompty, lub pisz dalej, aby filtrować w czasie rzeczywistym. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby wstawić.
 
 🔒 PRYWATNOŚĆ I BEZPIECZEŃSTWO
-Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do obsługiwanych witryn AI i Twojego opcjonalnego lokalnego adresu URL LLM oraz odczytuje aktywną kartę tylko przy zapisywaniu rozmowy lub wstrzykiwaniu promptu. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez synchronizację przeglądarki: bez serwerów zewnętrznych, bez telemetrii, bez wymaganego konta.
+Zaprojektowane z prywatnością w centrum. Żąda dostępu tylko do obsługiwanych witryn AI i Twojego opcjonalnego lokalnego adresu URL LLM oraz odczytuje aktywną kartę wyłącznie po to, by odczytać tytuł rozmowy, zapisać ją lub wstawić prompt. Uprawnienie „Zakładki" jest używane tylko po włączeniu synchronizacji mobilnej. Przechowywanie przez synchronizację przeglądarki: bez serwerów zewnętrznych, bez telemetrii, bez wymaganego konta.
 
-Zbudowane na Manifest V3: sama przeglądarka wymusza, że żaden zdalny kod nie może zostać załadowany i żadne dynamiczne wykonanie skryptów nie może nastąpić — to ograniczenie na poziomie platformy, a nie obietnica programisty. Wersja Firefox jest publikowana w oficjalnym procesie przeglądu dodatków Mozilla (AMO).
+Zbudowane na Manifest V3: sama przeglądarka wymusza, że żaden zdalny kod nie może zostać załadowany — to ograniczenie na poziomie platformy, a nie obietnica programisty. Wersja Firefox jest publikowana w oficjalnym procesie przeglądu dodatków Mozilla (AMO).
 
 🤝 OPEN SOURCE I AUDYTOWALNY
 Każda linia kodu jest publiczna na GitHub. Każdy może sklonować repozytorium, zbudować je lokalnie i porównać wynikowe pliki z tym, co jest zainstalowane w przeglądarce — bez konieczności zaufania.

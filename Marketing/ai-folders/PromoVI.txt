@@ -14,7 +14,7 @@ Thư mục AI tích hợp tự nhiên với tất cả các trợ lý trò chuy�
 🔀 Nút Cuộc trò chuyện Mới: Bắt đầu cuộc trò chuyện mới trên bất kỳ dịch vụ web nào được hỗ trợ trực tiếp từ Chế độ Prompt — chỉ với một lần chạm.
 ☁️ Đồng bộ Prompt: Bật đồng bộ đám mây cho thư viện prompt độc lập với thư mục.
 📌 Ghim Prompt: Ghim các prompt thiết yếu bằng một cú nhấp để giữ chúng ở đầu thư viện, ngăn cách với phần còn lại bằng đường phân cách trực quan.
-⌨️ Trình kích hoạt Prompt với Gợi ý Trực tiếp: Nhập # vào trường trò chuyện của Gemini để xem ngay lập tức tất cả prompt đã lưu — được lọc theo thời gian thực khi bạn gõ. Dùng ↓/↑ để điều hướng, nhấn Dấu cách trên kết quả khớp duy nhất để tự động hoàn thành, hoặc trên kết quả khớp chính xác để chèn trực tiếp.
+⌨️ Trình kích hoạt Prompt với Gợi ý Trực tiếp: Nhập # vào trường trò chuyện của bất kỳ AI nào để xem ngay lập tức tất cả prompt đã lưu — được lọc theo thời gian thực khi bạn gõ. Dùng ↓/↑ để điều hướng, nhấn Dấu cách trên kết quả khớp duy nhất để tự động hoàn thành, hoặc trên kết quả khớp chính xác để chèn trực tiếp.
 
 🌟 TÍNH NĂNG THƯ MỤC
 
@@ -56,9 +56,9 @@ Nhấp 📍 để ghim prompt — nó di chuyển lên đầu danh sách và lu�
 Trình kích hoạt Prompt: Nhập # để xem ngay lập tức tất cả prompt đã lưu, hoặc tiếp tục gõ để lọc theo thời gian thực. Nhấn Dấu cách trên kết quả khớp duy nhất để tự động hoàn thành, hoặc trên kết quả khớp chính xác để chèn.
 
 🔒 QUYỀN RIÊNG TƯ & BẢO MẬT
-Được xây dựng với quyền riêng tư là cốt lõi. Chỉ yêu cầu quyền truy cập vào các trang web AI được hỗ trợ và URL LLM cục bộ tùy chọn của bạn, và chỉ đọc tab đang hoạt động khi lưu cuộc trò chuyện hoặc chèn prompt. Quyền "Dấu trang" chỉ được dùng nếu bạn bật đồng bộ di động. Lưu trữ qua browser sync: không có máy chủ bên thứ ba, không có telemetry, không cần tài khoản.
+Được xây dựng với quyền riêng tư là cốt lõi. Chỉ yêu cầu quyền truy cập vào các trang web AI được hỗ trợ và URL LLM cục bộ tùy chọn của bạn, và chỉ đọc tab đang hoạt động để đọc tiêu đề cuộc trò chuyện, lưu lại hoặc chèn prompt. Quyền "Dấu trang" chỉ được dùng nếu bạn bật đồng bộ di động. Lưu trữ qua browser sync: không có máy chủ bên thứ ba, không có telemetry, không cần tài khoản.
 
-Được xây dựng trên Manifest V3: bản thân trình duyệt đảm bảo rằng không có mã từ xa nào có thể được tải và không có thực thi script động nào có thể xảy ra — đây là ràng buộc cấp nền tảng, không phải lời hứa của nhà phát triển. Phiên bản Firefox được xuất bản qua quy trình đánh giá add-on chính thức của Mozilla (AMO).
+Được xây dựng trên Manifest V3: bản thân trình duyệt đảm bảo rằng không có mã từ xa nào có thể được tải — đây là ràng buộc cấp nền tảng, không phải lời hứa của nhà phát triển. Phiên bản Firefox được xuất bản qua quy trình đánh giá add-on chính thức của Mozilla (AMO).
 
 🤝 MÃ NGUỒN MỞ & CÓ THỂ KIỂM CHỨNG
 Mọi dòng code đều công khai trên GitHub. Bất kỳ ai cũng có thể clone repository, build cục bộ, và so sánh các tệp kết quả với những gì được cài đặt trong trình duyệt của họ — không cần tin tưởng mù quáng.

@@ -14,7 +14,7 @@ YZ Klasörleri, Claude, ChatGPT ve Gemini gibi tüm büyük yapay zeka sohbet as
 🔀 Yeni Konuşma Düğmeleri: Prompt Modundan doğrudan desteklenen web hizmetlerinden herhangi birinde tek dokunuşla yeni bir konuşma başlatın.
 ☁️ İstem Senkronizasyonu: Klasörlerinizden bağımsız olarak istem kütüphaneniz için bulut senkronunu etkinleştirin.
 📌 Sabitlenmiş İstemler: Tek tıkla temel istemlerinizi sabitleyin, kütüphanenizin en üstünde tutun; görsel bir ayırıcıyla diğerlerinden ayrılsın.
-⌨️ Canlı Önerili İstem Tetikleyici: Gemini'nin sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün — siz yazarken gerçek zamanlı olarak filtrelenir. ↓/↑ ile öneriler arasında gezinin; benzersiz eşleşmede otomatik tamamlamak veya tam eşleşmede enjekte etmek için boşluk tuşuna basın.
+⌨️ Canlı Önerili İstem Tetikleyici: herhangi bir yapay zekânın sohbet alanına # yazın ve tüm kayıtlı istemlerinizi anında görün — siz yazarken gerçek zamanlı olarak filtrelenir. ↓/↑ ile öneriler arasında gezinin; benzersiz eşleşmede otomatik tamamlamak veya tam eşleşmede enjekte etmek için boşluk tuşuna basın.
 
 🌟 KLASÖR ÖZELLİKLERİ
 
@@ -56,9 +56,9 @@ Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar
 İstem Tetikleyici: # yazın ve tüm kayıtlı istemlerinizi anında görün veya gerçek zamanlı filtrelemek için yazmaya devam edin. Benzersiz eşleşmede otomatik tamamlamak için, tam eşleşmede enjekte etmek için boşluk tuşuna basın.
 
 🔒 GİZLİLİK & GÜVENLİK
-Gizlilik öncelikli tasarım. Yalnızca desteklenen AI sitelerine ve isteğe bağlı yerel LLM URL'nize erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Tarayıcı senkronizasyonu üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok, hesap gerekmez.
+Gizlilik öncelikli tasarım. Yalnızca desteklenen AI sitelerine ve isteğe bağlı yerel LLM URL'nize erişim ister ve etkin sekmeyi yalnızca konuşmanın başlığını okumak, kaydetmek veya istem eklemek için okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Tarayıcı senkronizasyonu üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok, hesap gerekmez.
 
-Manifest V3 üzerine inşa edilmiştir: tarayıcının kendisi, uzak kodun hiçbir zaman yüklenemeyeceğini ve dinamik betik yürütmesinin gerçekleşemeyeceğini zorunlu kılar — bu bir platform düzeyinde kısıtlamadır, geliştirici vaadi değildir. Firefox sürümü, Mozilla'nın resmi eklenti inceleme süreci (AMO) aracılığıyla yayımlanmaktadır.
+Manifest V3 üzerine inşa edilmiştir: tarayıcının kendisi, uzak kodun hiçbir zaman yüklenemeyeceğinini zorunlu kılar — bu bir platform düzeyinde kısıtlamadır, geliştirici vaadi değildir. Firefox sürümü, Mozilla'nın resmi eklenti inceleme süreci (AMO) aracılığıyla yayımlanmaktadır.
 
 🤝 AÇIK KAYNAK & DENETLENEBİLİRLİK
 Her kod satırı GitHub'da herkese açıktır. Herkes depoyu klonlayabilir, yerel olarak derleyebilir ve elde edilen dosyaları tarayıcısında yüklü olanlarla karşılaştırabilir — güvene gerek yok.

@@ -14,7 +14,7 @@ VI fascikle se izvorno integriše sa svim glavnim AI chat asistentima, kao što 
 🔀 Dugmad za novi razgovor: Pokrenite novi razgovor na bilo kojem od podržanih veb servisa direktno iz režima promptova — jednim dodirom.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
-⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat Gemini da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
+⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat bilo kog AI da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
 
 🌟 FUNKCIJE FOLDERA
 
@@ -55,9 +55,9 @@ Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
 Okidač prompta: Upiši # da odmah vidiš sve sačuvane promptove, ili nastavi da kucaš za filtriranje u realnom vremenu. Pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za ubacivanje.
 
 🔒 PRIVATNOST I SIGURNOST
-Izgrađeno s privatnošću u osnovi. Traži pristup samo podržanim AI sajtovima i tvom opcionalnom lokalnom LLM URL-u i čita aktivnu karticu samo pri čuvanju razgovora ili ubacivanju prompta. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem sinhronizacije pregledača: bez servera trećih strana, bez telemetrije, bez potrebnog naloga.
+Izgrađeno s privatnošću u osnovi. Traži pristup samo podržanim AI sajtovima i tvom opcionalnom lokalnom LLM URL-u i čita aktivnu karticu samo da bi pročitao naslov razgovora, sačuvao ga ili ubacio prompt. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem sinhronizacije pregledača: bez servera trećih strana, bez telemetrije, bez potrebnog naloga.
 
-Izgrađeno na Manifest V3: sam pregledač osigurava da nikakav udaljeni kod nikada ne može biti učitan i da ne može doći do dinamičkog izvršavanja skripti — to je ograničenje na nivou platforme, a ne obećanje programera. Firefox verzija se objavljuje kroz Mozillin zvanični proces pregleda dodataka (AMO).
+Izgrađeno na Manifest V3: sam pregledač osigurava da nikakav udaljeni kod nikada ne može biti učitan — to je ograničenje na nivou platforme, a ne obećanje programera. Firefox verzija se objavljuje kroz Mozillin zvanični proces pregleda dodataka (AMO).
 
 🤝 OPEN SOURCE I PROVERLJIV
 Svaki red koda je javan na GitHub-u. Svako može klonirati repozitorijum, izgraditi ga lokalno i uporediti dobijene datoteke s onim što je instalirano u njihovom pregledaču — bez potrebe za poverenjem.

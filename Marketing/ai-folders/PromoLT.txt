@@ -14,7 +14,7 @@ AI aplankai natūraliai integruojasi su visais pagrindiniais AI pokalbių asiste
 🔀 Naujo pokalbio mygtukai: Pradėkite naują pokalbį bet kurioje iš palaikomų žiniatinklio paslaugų tiesiogiai iš raginimų režimo — vienu paspaudimu.
 ☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
 📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
-⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # Gemini pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Naudokite ↓/↑ naršymui, paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui.
+⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # bet kurio DI pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Naudokite ↓/↑ naršymui, paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui.
 
 🌟 APLANKŲ FUNKCIJOS
 
@@ -55,9 +55,9 @@ Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo vi
 Raginimų paleidiklis: Įveskite #, kad iš karto pamatytumėte visus savo išsaugotus raginimus, arba toliau rašykite filtravimui realiuoju laiku. Paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens įterpimui.
 
 🔒 PRIVATUMAS IR SAUGUMAS
-Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie palaikomų AI svetainių ir jūsų pasirenkamo vietinio LLM URL ir skaito aktyvų skirtuką tik išsaugant pokalbį ar įterpiant promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per naršyklės sinchronizavimą: jokių trečiųjų šalių serverių, jokios telemetrijos, paskyros nereikia.
+Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie palaikomų AI svetainių ir jūsų pasirenkamo vietinio LLM URL ir aktyvų skirtuką skaito tik tam, kad perskaitytų pokalbio pavadinimą, jį išsaugotų arba įterptų promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per naršyklės sinchronizavimą: jokių trečiųjų šalių serverių, jokios telemetrijos, paskyros nereikia.
 
-Sukurta remiantis Manifest V3: pati naršyklė užtikrina, kad niekada negali būti įkeltas nuotolinis kodas ir negali vykti dinaminis scenarijaus vykdymas — tai platformos lygio apribojimas, o ne kūrėjo pažadas. „Firefox" versija skelbiama per oficialų „Mozilla" priedų peržiūros procesą (AMO).
+Sukurta remiantis Manifest V3: pati naršyklė užtikrina, kad niekada negali būti įkeltas nuotolinis kodas — tai platformos lygio apribojimas, o ne kūrėjo pažadas. „Firefox" versija skelbiama per oficialų „Mozilla" priedų peržiūros procesą (AMO).
 
 🤝 ATVIRASIS KODAS IR AUDITUOJAMUMAS
 Kiekviena kodo eilutė yra vieša „GitHub". Kiekvienas gali klonuoti saugyklą, sukurti ją vietoje ir palyginti gautus failus su tuo, kas įdiegta jų naršyklėje — pasitikėjimo nereikia.
