@@ -80,8 +80,17 @@
   "btnDeleteFolder": {
     "message": "Izbriši mapu"
   },
+  "btnUnnestFolder": {
+    "message": "Izdvoji iz mape"
+  },
+  "dropToRootHint": {
+    "message": "Ispustite ovdje za izdvajanje iz mape"
+  },
   "confirmDeleteFolder": {
     "message": "Ova mapa sadrži razgovore. Želiš li je zaista izbrisati?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Ova mapa, njezinih {count} podmapa i svi njihovi razgovori bit će izbrisani. Jeste li sigurni?"
   },
   "btnPin": {
     "message": "Prikvači"
@@ -118,6 +127,9 @@
   },
   "errorFolderExists": {
     "message": "Mapa s ovim nazivom već postoji."
+  },
+  "errorNestTooDeep": {
+    "message": "Ova mapa već sadrži podmape. Podržana je samo jedna razina ugniježđivanja."
   },
   "storageCalc": {
     "message": "Izračunavanje prostora..."

@@ -80,8 +80,17 @@
   "btnDeleteFolder": {
     "message": "Tanggalin ang folder"
   },
+  "btnUnnestFolder": {
+    "message": "Ilabas sa folder"
+  },
+  "dropToRootHint": {
+    "message": "I-drop dito para ilabas sa folder"
+  },
   "confirmDeleteFolder": {
     "message": "Ang folder na ito ay may mga pag-uusap. Sigurado ka bang gusto mo itong tanggalin?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Buburahin ang folder na ito, ang {count} subfolder nito, at lahat ng usapan sa loob. Sigurado ka ba?"
   },
   "btnPin": {
     "message": "I-pin"
@@ -118,6 +127,9 @@
   },
   "errorFolderExists": {
     "message": "May folder na na may pangalang ito."
+  },
+  "errorNestTooDeep": {
+    "message": "May mga subfolder na ang folder na ito. Isang antas lang ng pagpapaloob ang suportado."
   },
   "storageCalc": {
     "message": "Kinakalkula ang espasyo..."

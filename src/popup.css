@@ -997,3 +997,53 @@
     body[dir="rtl"] .switch-toggle:checked::after {
       left: 2px;
     }
+
+    /* --- Sub-folders (one level) ------------------------------------------
+       Indentation is a MARGIN on the nested .folder, deliberately: the compact
+       block above sets padding/gap/width/height/font-size with !important on
+       .folder-header and .folder-content, so any padding-based indent would have
+       to out-specify and re-!important it — the fragile stacking CLAUDE.md §8
+       warns about. margin-inline-start is untouched by it and mirrors itself in
+       RTL for free. The nested card's background and border are left alone for
+       the same kind of reason: .folder's look is declared twice (light + dark),
+       so an override here would have to be written twice or drift. */
+    .folder .folder--child {
+      margin-inline-start: 12px;
+      margin-top: 4px;
+      border-radius: 8px;
+    }
+    .folder .folder--child .folder-name {
+      font-size: 13px;
+    }
+
+    /* Without this, dropping a CONVERSATION into a sub-folder fails silently:
+       the rule above kills pointer events on every descendant of a .folder while
+       a drag is in flight, and a nested .folder is now one of them. Restoring
+       auto on the child card only (not its own descendants) lets the event land
+       on the nested .folder itself — exactly how the root folders already work. */
+    body.is-dragging .folder .folder--child {
+      pointer-events: auto;
+    }
+
+    .folder.dragging-folder { opacity: 0.4; }
+    .folder.drag-invalid { border: 2px dashed var(--delete-color); background-color: rgba(217, 48, 37, 0.05); }
+
+    /* The way back to the top level, shown only while a sub-folder is dragged.
+       Sticky, because "empty space under the list" stops existing as soon as the
+       list fills the popup. */
+    .root-drop-zone {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      margin-bottom: 6px;
+      padding: 8px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted-text);
+      border: 2px dashed var(--border-color);
+      border-radius: 8px;
+      background-color: var(--folder-bg);
+    }
+    body.is-dragging-subfolder .root-drop-zone { display: block; }
+    .root-drop-zone.drag-over { border-color: var(--accent-color); color: var(--accent-color); }

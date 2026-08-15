@@ -80,8 +80,17 @@
   "btnDeleteFolder": {
     "message": "删除文件夹"
   },
+  "btnUnnestFolder": {
+    "message": "移出文件夹"
+  },
+  "dropToRootHint": {
+    "message": "拖放到此处可移出文件夹"
+  },
   "confirmDeleteFolder": {
     "message": "此文件夹包含对话。您确定要删除它吗？"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "此文件夹、其 {count} 个子文件夹及其中的所有对话都将被删除。确定吗？"
   },
   "btnPin": {
     "message": "置顶"
@@ -118,6 +127,9 @@
   },
   "errorFolderExists": {
     "message": "该名称的文件夹已存在。"
+  },
+  "errorNestTooDeep": {
+    "message": "此文件夹已包含子文件夹。仅支持一级嵌套。"
   },
   "storageCalc": {
     "message": "计算空间中..."

@@ -80,8 +80,17 @@
   "btnDeleteFolder": {
     "message": "Obriši folder"
   },
+  "btnUnnestFolder": {
+    "message": "Izvuci iz fascikle"
+  },
+  "dropToRootHint": {
+    "message": "Otpustite ovde da biste je izvukli iz fascikle"
+  },
   "confirmDeleteFolder": {
     "message": "Ovaj folder sadrži razgovore. Da li zaista želiš da ga obrišeš?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Ova fascikla, njenih {count} podfascikli i svi njihovi razgovori biće obrisani. Da li ste sigurni?"
   },
   "btnPin": {
     "message": "Zakači"
@@ -118,6 +127,9 @@
   },
   "errorFolderExists": {
     "message": "Folder s ovim nazivom već postoji."
+  },
+  "errorNestTooDeep": {
+    "message": "Ova fascikla već sadrži podfascikle. Podržan je samo jedan nivo ugnežđivanja."
   },
   "storageCalc": {
     "message": "Izračunavanje prostora..."

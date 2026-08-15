@@ -77,8 +77,17 @@
   "btnDeleteFolder": {
     "message": "Map verwijderen"
   },
+  "btnUnnestFolder": {
+    "message": "Uit de map halen"
+  },
+  "dropToRootHint": {
+    "message": "Laat hier los om uit de map te halen"
+  },
   "confirmDeleteFolder": {
     "message": "Deze map bevat gesprekken. Weet u zeker dat u hem wilt verwijderen?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Deze map, de {count} submappen en al hun gesprekken worden verwijderd. Weet je het zeker?"
   },
   "btnPin": {
     "message": "Vastzetten"
@@ -115,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Er bestaat al een map met deze naam."
+  },
+  "errorNestTooDeep": {
+    "message": "Deze map bevat al submappen. Er wordt maar één niveau ondersteund."
   },
   "storageCalc": {
     "message": "Ruimte berekenen..."

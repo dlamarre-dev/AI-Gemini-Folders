@@ -77,8 +77,17 @@
   "btnDeleteFolder": {
     "message": "حذف المجلد"
   },
+  "btnUnnestFolder": {
+    "message": "إخراج من المجلد"
+  },
+  "dropToRootHint": {
+    "message": "أفلِت هنا لإخراجه من مجلده"
+  },
   "confirmDeleteFolder": {
     "message": "يحتوي هذا المجلد على محادثات. هل أنت متأكد من حذفه؟"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "سيُحذف هذا المجلد و{count} من مجلداته الفرعية وجميع محادثاتها. هل أنت متأكد؟"
   },
   "btnPin": {
     "message": "تثبيت"
@@ -115,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "يوجد مجلد بهذا الاسم بالفعل."
+  },
+  "errorNestTooDeep": {
+    "message": "هذا المجلد يحتوي بالفعل على مجلدات فرعية. يُدعم مستوى واحد فقط من التداخل."
   },
   "storageCalc": {
     "message": "جارٍ حساب المساحة..."

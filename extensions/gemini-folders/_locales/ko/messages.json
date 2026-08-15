@@ -80,8 +80,17 @@
   "btnDeleteFolder": {
     "message": "폴더 삭제"
   },
+  "btnUnnestFolder": {
+    "message": "폴더에서 꺼내기"
+  },
+  "dropToRootHint": {
+    "message": "여기에 놓으면 폴더에서 꺼냅니다"
+  },
   "confirmDeleteFolder": {
     "message": "이 폴더에는 대화가 포함되어 있습니다. 정말 삭제하시겠습니까?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "이 폴더와 하위 폴더 {count}개, 그 안의 모든 대화가 삭제됩니다. 계속할까요?"
   },
   "btnPin": {
     "message": "고정"
@@ -118,6 +127,9 @@
   },
   "errorFolderExists": {
     "message": "이 이름의 폴더가 이미 존재합니다."
+  },
+  "errorNestTooDeep": {
+    "message": "이 폴더에는 이미 하위 폴더가 있습니다. 한 단계 중첩만 지원됩니다."
   },
   "storageCalc": {
     "message": "공간 계산 중..."

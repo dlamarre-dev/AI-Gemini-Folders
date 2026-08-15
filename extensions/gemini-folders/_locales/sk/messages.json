@@ -80,8 +80,17 @@
   "btnDeleteFolder": {
     "message": "Vymazať priečinok"
   },
+  "btnUnnestFolder": {
+    "message": "Presunúť mimo priečinka"
+  },
+  "dropToRootHint": {
+    "message": "Presunutím sem ho vyberiete z priečinka"
+  },
   "confirmDeleteFolder": {
     "message": "Tento priečinok obsahuje konverzácie. Naozaj ho chcete vymazať?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Tento priečinok, jeho {count} podpriečinkov a všetky ich konverzácie budú odstránené. Naozaj?"
   },
   "btnPin": {
     "message": "Pripnúť"
@@ -118,6 +127,9 @@
   },
   "errorFolderExists": {
     "message": "Priečinok s týmto názvom už existuje."
+  },
+  "errorNestTooDeep": {
+    "message": "Tento priečinok už obsahuje podpriečinky. Podporovaná je len jedna úroveň vnorenia."
   },
   "storageCalc": {
     "message": "Výpočet miesta..."

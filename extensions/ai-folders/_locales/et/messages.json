@@ -77,8 +77,17 @@
   "btnDeleteFolder": {
     "message": "Kustuta kaust"
   },
+  "btnUnnestFolder": {
+    "message": "Tõsta kaustast välja"
+  },
+  "dropToRootHint": {
+    "message": "Kaustast välja tõstmiseks kukuta siia"
+  },
   "confirmDeleteFolder": {
     "message": "See kaust sisaldab vestlusi. Kas oled kindel, et soovid selle kustutada?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "See kaust, selle {count} alamkausta ja kõik nende vestlused kustutatakse. Kas oled kindel?"
   },
   "btnPin": {
     "message": "Kinnita"
@@ -115,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Selle nimega kaust on juba olemas."
+  },
+  "errorNestTooDeep": {
+    "message": "See kaust sisaldab juba alamkaustu. Toetatud on ainult üks pesastustase."
   },
   "storageCalc": {
     "message": "Arvutan ruumi..."

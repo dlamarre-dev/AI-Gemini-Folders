@@ -77,8 +77,17 @@
   "btnDeleteFolder": {
     "message": "Ta bort mapp"
   },
+  "btnUnnestFolder": {
+    "message": "Flytta ut ur mappen"
+  },
+  "dropToRootHint": {
+    "message": "Släpp här för att flytta ut ur mappen"
+  },
   "confirmDeleteFolder": {
     "message": "Den här mappen innehåller konversationer. Är du säker på att du vill ta bort den?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Den här mappen, dess {count} undermappar och alla deras konversationer tas bort. Är du säker?"
   },
   "btnPin": {
     "message": "Fäst"
@@ -115,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "En mapp med det här namnet finns redan."
+  },
+  "errorNestTooDeep": {
+    "message": "Den här mappen innehåller redan undermappar. Endast en nivå stöds."
   },
   "storageCalc": {
     "message": "Beräknar utrymme..."

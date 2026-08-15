@@ -80,8 +80,17 @@
   "btnDeleteFolder": {
     "message": "फ़ोल्डर हटाएं"
   },
+  "btnUnnestFolder": {
+    "message": "फ़ोल्डर से बाहर निकालें"
+  },
+  "dropToRootHint": {
+    "message": "फ़ोल्डर से बाहर निकालने के लिए यहाँ छोड़ें"
+  },
   "confirmDeleteFolder": {
     "message": "इस फ़ोल्डर में बातचीत शामिल है। क्या आप वाकई इसे हटाना चाहते हैं?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "यह फ़ोल्डर, इसके {count} सबफ़ोल्डर और उनकी सभी बातचीत हटा दी जाएँगी. क्या आप निश्चित हैं?"
   },
   "btnPin": {
     "message": "पिन करें"
@@ -118,6 +127,9 @@
   },
   "errorFolderExists": {
     "message": "इस नाम का एक फ़ोल्डर पहले से मौजूद है।"
+  },
+  "errorNestTooDeep": {
+    "message": "इस फ़ोल्डर में पहले से सबफ़ोल्डर हैं. केवल एक स्तर की नेस्टिंग समर्थित है."
   },
   "storageCalc": {
     "message": "स्थान की गणना हो रही है..."

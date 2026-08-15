@@ -77,8 +77,17 @@
   "btnDeleteFolder": {
     "message": "刪除資料夾"
   },
+  "btnUnnestFolder": {
+    "message": "移出資料夾"
+  },
+  "dropToRootHint": {
+    "message": "拖放到此處可移出資料夾"
+  },
   "confirmDeleteFolder": {
     "message": "此資料夾包含對話。您確定要刪除它嗎？"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "此資料夾、其 {count} 個子資料夾及其中所有對話都將被刪除。確定嗎？"
   },
   "btnPin": {
     "message": "釘選"
@@ -115,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "已存在相同名稱的資料夾。"
+  },
+  "errorNestTooDeep": {
+    "message": "此資料夾已包含子資料夾。僅支援一層巢狀結構。"
   },
   "storageCalc": {
     "message": "計算空間中..."

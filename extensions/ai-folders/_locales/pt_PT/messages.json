@@ -77,8 +77,17 @@
   "btnDeleteFolder": {
     "message": "Eliminar pasta"
   },
+  "btnUnnestFolder": {
+    "message": "Tirar da pasta"
+  },
+  "dropToRootHint": {
+    "message": "Largue aqui para tirar da pasta"
+  },
   "confirmDeleteFolder": {
     "message": "Esta pasta contém conversas. Tem a certeza que a quer eliminar?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Esta pasta, as suas {count} subpastas e todas as respetivas conversas serão eliminadas. Tem a certeza?"
   },
   "btnPin": {
     "message": "Fixar"
@@ -115,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Já existe uma pasta com este nome."
+  },
+  "errorNestTooDeep": {
+    "message": "Esta pasta já contém subpastas. Só é suportado um nível de aninhamento."
   },
   "storageCalc": {
     "message": "A calcular espaço..."

@@ -77,8 +77,17 @@
   "btnDeleteFolder": {
     "message": "Hapus Folder"
   },
+  "btnUnnestFolder": {
+    "message": "Keluarkan dari folder"
+  },
+  "dropToRootHint": {
+    "message": "Lepaskan di sini untuk mengeluarkannya dari folder"
+  },
   "confirmDeleteFolder": {
     "message": "Folder ini berisi percakapan. Apakah Anda yakin ingin menghapusnya?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Folder ini, {count} subfoldernya, dan semua percakapan di dalamnya akan dihapus. Anda yakin?"
   },
   "btnPin": {
     "message": "Sematkan"
@@ -115,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Folder dengan nama ini sudah ada."
+  },
+  "errorNestTooDeep": {
+    "message": "Folder ini sudah berisi subfolder. Hanya satu tingkat penyarangan yang didukung."
   },
   "storageCalc": {
     "message": "Menghitung ruang..."

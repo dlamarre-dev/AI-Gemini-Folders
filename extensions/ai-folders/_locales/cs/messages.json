@@ -77,8 +77,17 @@
   "btnDeleteFolder": {
     "message": "Smazat složku"
   },
+  "btnUnnestFolder": {
+    "message": "Přesunout mimo složku"
+  },
+  "dropToRootHint": {
+    "message": "Přetažením sem ji přesunete mimo složku"
+  },
   "confirmDeleteFolder": {
     "message": "Tato složka obsahuje konverzace. Opravdu ji chcete smazat?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Tato složka, jejích {count} podsložek a všechny jejich konverzace budou smazány. Opravdu?"
   },
   "btnPin": {
     "message": "Připnout"
@@ -115,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Složka s tímto názvem již existuje."
+  },
+  "errorNestTooDeep": {
+    "message": "Tato složka již obsahuje podsložky. Podporována je pouze jedna úroveň vnoření."
   },
   "storageCalc": {
     "message": "Výpočet místa..."

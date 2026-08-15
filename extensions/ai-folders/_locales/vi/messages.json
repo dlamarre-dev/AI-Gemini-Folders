@@ -77,8 +77,17 @@
   "btnDeleteFolder": {
     "message": "Xóa thư mục"
   },
+  "btnUnnestFolder": {
+    "message": "Đưa ra khỏi thư mục"
+  },
+  "dropToRootHint": {
+    "message": "Thả vào đây để đưa ra khỏi thư mục"
+  },
   "confirmDeleteFolder": {
     "message": "Thư mục này có cuộc trò chuyện. Bạn có chắc muốn xóa không?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Thư mục này, {count} thư mục con và tất cả cuộc trò chuyện trong đó sẽ bị xóa. Bạn chắc chứ?"
   },
   "btnPin": {
     "message": "Ghim"
@@ -115,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Đã tồn tại thư mục với tên này."
+  },
+  "errorNestTooDeep": {
+    "message": "Thư mục này đã chứa thư mục con. Chỉ hỗ trợ một cấp lồng nhau."
   },
   "storageCalc": {
     "message": "Đang tính dung lượng..."
