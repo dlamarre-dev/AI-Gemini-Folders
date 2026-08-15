@@ -249,6 +249,36 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 
 // --- PROMPT TRIGGER (#prefix + Space → bash-like autocomplete/injection) ---
 
+// Defence in depth behind prompt-trigger.js's isTrusted gate. These handlers read
+// the user's prompt library and write it into the page's MAIN world, so they must
+// only ever answer our own content script running in a top-level document.
+// Not a substitute for the isTrusted check: the origin is the attacker's own in
+// that threat model. This only narrows who can reach the handler at all.
+function isTrustedSender(sender) {
+  if (!sender || sender.id !== chrome.runtime.id) return false;
+  // frameId is 0 for the main frame. Reject only when we positively know it is a
+  // subframe — some Firefox paths omit it, and none of these flows target iframes.
+  if (sender.frameId != null && sender.frameId !== 0) return false;
+  return true;
+}
+
+// The tab to inject into. sender.tab may be absent for dynamically-registered
+// content scripts in Firefox (the local-LLM path), hence the active-tab fallback —
+// but only when the active tab is the same origin that spoke, so a background tab
+// can never drive an injection into an unrelated one.
+async function resolveTriggerTabId(sender) {
+  if (sender.tab?.id != null) return sender.tab.id;
+  if (!sender.url) return null;
+  const [active] = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (!active?.url) return null;
+  try {
+    if (new URL(active.url).origin !== new URL(sender.url).origin) return null;
+  } catch (_) {
+    return null;
+  }
+  return active.id;
+}
+
 async function handlePromptTriggerLookup(message, sender) {
   const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
   // sender.tab may be absent for dynamically-registered content scripts in Firefox;
@@ -273,9 +303,7 @@ async function handlePromptTriggerLookup(message, sender) {
   // suggestions only — injection itself still goes through unchanged.
   const noSuggestions = forceClear || !!SITES[siteKey]?.noSuggestions;
 
-  // sender.tab may be absent for dynamically-registered scripts in Firefox;
-  // fall back to the active tab in the current window.
-  const tabId = sender.tab?.id ?? (await chrome.tabs.query({ active: true, currentWindow: true }))[0]?.id;
+  const tabId = await resolveTriggerTabId(sender);
   if (!tabId) return { status: 'no_match' };
 
   try {
@@ -344,7 +372,7 @@ async function handleSuggestUpdate(message, sender) {
   const names = message.prefix != null
     ? findPromptsByPrefix(data.prompts || {}, message.prefix).map(m => m.name)
     : [];
-  const tabId = sender.tab?.id ?? (await chrome.tabs.query({ active: true, currentWindow: true }))[0]?.id;
+  const tabId = await resolveTriggerTabId(sender);
   if (!tabId) return { status: 'cleared' };
   try {
     await chrome.scripting.executeScript({
@@ -367,7 +395,7 @@ async function handleCycleTab(message, sender) {
   if (!selectors) return { status: 'error' };
   // No suggestion block is ever shown on these sites, so there is nothing to cycle.
   if (SITES[siteKey]?.forceClear || SITES[siteKey]?.noSuggestions) return { status: 'error' };
-  const tabId = sender.tab?.id ?? (await chrome.tabs.query({ active: true, currentWindow: true }))[0]?.id;
+  const tabId = await resolveTriggerTabId(sender);
   if (!tabId) return { status: 'error' };
   try {
     await chrome.scripting.executeScript({
@@ -383,6 +411,7 @@ async function handleCycleTab(message, sender) {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (!isTrustedSender(sender)) return false;
   if (message.action === 'promptTriggerLookup') {
     handlePromptTriggerLookup(message, sender)
       .then(sendResponse)

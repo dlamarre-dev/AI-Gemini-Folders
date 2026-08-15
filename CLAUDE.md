@@ -208,6 +208,20 @@ git checkout main && git pull --ff-only
   via `chrome.scripting.executeScript({ world: 'MAIN', func: ... })`. The injected
   prompt text comes from the user's own storage, gated by `getSiteByUrl(sender.url)`
   — a page cannot drive it (no `externally_connectable`).
+  **Every listener starts with `isRealUserEvent(e)` (`e.isTrusted === true`) and that
+  is load-bearing security, not hygiene.** The content script shares the DOM with the
+  page, so script on a supported site could otherwise forge `#` + Space, get the whole
+  prompt list back (an empty prefix matches everything), read the titles out of the
+  composer, then request each body — the entire library, no user interaction. The
+  site check cannot help: the attacker *is* the supported site. `dispatchEvent` can
+  never set `isTrusted`, so the gate is complete. jsdom cannot make a trusted event
+  either, which is why the four handlers (`onSpaceKeydown` etc.) are exported and
+  tested directly while `tests/prompt-trigger-events.test.js` dispatches real
+  synthetic events to prove the gate holds. Behind it, both `background.js` add
+  `isTrustedSender` (own extension id, main frame only) and resolve the target tab
+  via `resolveTriggerTabId` — AF's active-tab fallback for Firefox's dynamically
+  registered local-LLM script only fires when the active tab is the **same origin**
+  that spoke, so a background tab can never drive an injection into another one.
 - **Title extraction:** `extractTitleLogic` + per-site strategies in
   `site-config.js`, run via `executeScript`. Falls back to a heuristic (lowest
   sizeable text field) and logs `console.warn("[Folders extension] …")` when a

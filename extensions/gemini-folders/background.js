@@ -215,7 +215,35 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 
 // --- PROMPT TRIGGER (#prefix + Space → bash-like autocomplete/injection) ---
 
+// Defence in depth behind prompt-trigger.js's isTrusted gate. These handlers read
+// the user's prompt library and write it into the page's MAIN world, so they must
+// only ever answer our own content script running in a top-level Gemini document.
+// The manifest already scopes the content script to gemini.google.com; this makes
+// that guarantee explicit here rather than relying on it from a distance (AF has
+// carried the equivalent check since it gained multiple sites).
+function isTrustedSender(sender) {
+  if (!sender || sender.id !== chrome.runtime.id) return false;
+  // frameId is 0 for the main frame. Reject only when we positively know it is a
+  // subframe — some Firefox paths omit it, and none of these flows target iframes.
+  if (sender.frameId != null && sender.frameId !== 0) return false;
+  const url = sender.tab?.url ?? sender.url;
+  try {
+    if (new URL(url).hostname !== 'gemini.google.com') return false;
+  } catch (_) {
+    return false;
+  }
+  return true;
+}
+
+// sender.tab is present for manifest-declared content scripts; guard anyway so a
+// missing tab yields a clean no-op instead of a TypeError swallowed by try/catch.
+function resolveTriggerTabId(sender) {
+  return sender.tab?.id ?? null;
+}
+
 async function handlePromptTriggerLookup(message, sender) {
+  const tabId = resolveTriggerTabId(sender);
+  if (tabId == null) return { status: 'no_match' };
   const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
   const matches = findPromptsByPrefix(data.prompts || {}, message.prefix);
   if (matches.length === 0) return { status: 'no_match' };
@@ -227,7 +255,7 @@ async function handlePromptTriggerLookup(message, sender) {
     if (exact) {
       // Exact match → inject prompt content.
       const r = await chrome.scripting.executeScript({
-        target: { tabId: sender.tab.id },
+        target: { tabId },
         world: 'MAIN',
         args: [exact.text, selectors],
         func: injectPromptIntoEditor,
@@ -241,7 +269,7 @@ async function handlePromptTriggerLookup(message, sender) {
       // Single match: autocomplete by updating line 1 to #fullName while keeping
       // the suggestion structure stable (no flash).
       const r = await chrome.scripting.executeScript({
-        target: { tabId: sender.tab.id },
+        target: { tabId },
         world: 'MAIN',
         args: [[matches[0].name], selectors, chrome.i18n.getMessage('appTitle'), '#' + matches[0].name],
         func: insertSuggestionsInEditor,
@@ -251,7 +279,7 @@ async function handlePromptTriggerLookup(message, sender) {
 
     // Ambiguous prefix → show all matches on next line, cursor stays on first line.
     const suggResults = await chrome.scripting.executeScript({
-      target: { tabId: sender.tab.id },
+      target: { tabId },
       world: 'MAIN',
       args: [matches.map(m => m.name), selectors, chrome.i18n.getMessage('appTitle')],
       func: insertSuggestionsInEditor,
@@ -265,6 +293,8 @@ async function handlePromptTriggerLookup(message, sender) {
 }
 
 async function handleSuggestUpdate(message, sender) {
+  const tabId = resolveTriggerTabId(sender);
+  if (tabId == null) return { status: 'cleared' };
   const data = await new Promise(resolve => loadData({ prompts: {} }, resolve));
   const selectors = GEMINI_EDITOR_SELECTORS;
   const names = message.prefix != null
@@ -272,7 +302,7 @@ async function handleSuggestUpdate(message, sender) {
     : [];
   try {
     await chrome.scripting.executeScript({
-      target: { tabId: sender.tab.id },
+      target: { tabId },
       world: 'MAIN',
       args: [names, selectors, chrome.i18n.getMessage('appTitle')],
       func: insertSuggestionsInEditor,
@@ -284,10 +314,12 @@ async function handleSuggestUpdate(message, sender) {
 }
 
 async function handleCycleTab(message, sender) {
+  const tabId = resolveTriggerTabId(sender);
+  if (tabId == null) return { status: 'error' };
   const selectors = GEMINI_EDITOR_SELECTORS;
   try {
     await chrome.scripting.executeScript({
-      target: { tabId: sender.tab.id },
+      target: { tabId },
       world: 'MAIN',
       args: [message.allNames, selectors, chrome.i18n.getMessage('appTitle'), '#' + message.name],
       func: insertSuggestionsInEditor,
@@ -299,6 +331,7 @@ async function handleCycleTab(message, sender) {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (!isTrustedSender(sender)) return false;
   if (message.action === 'promptTriggerLookup') {
     handlePromptTriggerLookup(message, sender)
       .then(sendResponse)
