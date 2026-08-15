@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Questo nome è riservato: scegline un altro."
   }
 }

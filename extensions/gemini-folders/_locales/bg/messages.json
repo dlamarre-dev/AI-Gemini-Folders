@@ -301,5 +301,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Това име е запазено — изберете друго."
   }
 }

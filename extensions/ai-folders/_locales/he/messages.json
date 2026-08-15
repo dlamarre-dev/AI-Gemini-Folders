@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "השם הזה שמור — בחרו שם אחר."
   }
 }

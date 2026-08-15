@@ -1,4 +1,6 @@
 // popup-core.js shared wiring: the i18n/RTL pass, the cross-browser clearable
+// utils.js is a classic script in the popup, so its helpers are globals there.
+global.isUnsafeKey = require('../src/utils').isUnsafeKey;
 // search control (recent feature), and the "save current conversation" flow.
 
 require('../src/popup-core'); // defines window.applyCommonI18n / setupClearableSearch / initSaveConversation
@@ -165,7 +167,11 @@ describe('initSaveConversation', () => {
     expect(global.saveData).not.toHaveBeenCalled();
   });
 
-  test('does not duplicate a conversation already in the folder', async () => {
+  test('does not write at all for a conversation already in the folder', async () => {
+    // Re-saving a duplicate used to still call saveData with unchanged data,
+    // which counts as a content save: it bumped usageStats.saves (the 's' the
+    // uninstall survey reports and the anti-churn baselines read) and rebuilt
+    // the whole bookmark tree for nothing.
     chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
     global.loadData = jest.fn((defaults, cb) =>
       cb({ folders: { defaultFolder: [{ title: 'x', url: 'https://claude.ai/chat/1' }] } })
@@ -175,6 +181,47 @@ describe('initSaveConversation', () => {
     document.getElementById('saveBtn').click();
     await flush();
 
-    expect(savedFolders['defaultFolder']).toHaveLength(1);
+    expect(global.saveData).not.toHaveBeenCalled();
+    expect(document.getElementById('status').textContent).toBe('toastAlreadySaved');
+  });
+
+  test('a second click still works after a duplicate', async () => {
+    // The duplicate path must release the isSaving latch, or the Save button
+    // stays dead for the rest of the popup session.
+    chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
+    global.loadData = jest.fn((defaults, cb) =>
+      cb({ folders: { defaultFolder: [{ title: 'x', url: 'https://claude.ai/chat/1' }] } })
+    );
+    wire(() => 'claude');
+
+    document.getElementById('saveBtn').click();
+    await flush();
+    global.loadData = jest.fn((defaults, cb) => cb({ folders: {} }));
+    document.getElementById('saveBtn').click();
+    await flush();
+
+    expect(global.saveData).toHaveBeenCalled();
+  });
+
+  test('refuses a reserved folder name instead of wedging the Save button', async () => {
+    // folders["__proto__"] is Object.prototype: truthy, so the "create it if
+    // missing" guard was skipped and the .some() after it threw inside the
+    // loadData callback, leaving isSaving true forever.
+    chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
+    global.loadData = jest.fn((defaults, cb) => cb({ folders: {} }));
+    wire(() => 'claude');
+
+    document.getElementById('folderName').value = '__proto__';
+    document.getElementById('saveBtn').click();
+    await flush();
+
+    expect(global.saveData).not.toHaveBeenCalled();
+    expect(document.getElementById('status').textContent).toBe('reservedNameError');
+
+    // And the button still works afterwards.
+    document.getElementById('folderName').value = 'Work';
+    document.getElementById('saveBtn').click();
+    await flush();
+    expect(global.saveData).toHaveBeenCalled();
   });
 });

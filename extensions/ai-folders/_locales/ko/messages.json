@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "이 이름은 예약되어 있습니다. 다른 이름을 선택하세요."
   }
 }

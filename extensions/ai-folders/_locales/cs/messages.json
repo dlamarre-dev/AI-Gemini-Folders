@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Tento název je vyhrazený – zvolte prosím jiný."
   }
 }

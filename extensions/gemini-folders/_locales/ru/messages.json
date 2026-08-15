@@ -301,5 +301,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Это имя зарезервировано — выберите другое."
   }
 }

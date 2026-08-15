@@ -4,6 +4,10 @@
 
 require('../src/prompts'); // exposes window.displayPrompts
 
+// In the popup, utils.js is a classic script loaded first, so its helpers are
+// globals. Jest has no such loader — provide the one prompts.js reaches for.
+global.isUnsafeKey = require('../src/utils').isUnsafeKey;
+
 function setupStorage(prompts, { promptSortPref = 'dateDesc', openPrompts = [] } = {}) {
   global.loadData = jest.fn((defaults, cb) =>
     cb({
@@ -13,6 +17,23 @@ function setupStorage(prompts, { promptSortPref = 'dateDesc', openPrompts = [] }
     })
   );
   global.saveData = jest.fn((data, cb) => cb && cb());
+}
+
+// setupStorage replays the same initial data on every load, which cannot express
+// a sequence like "the flush wrote, then the rename read it back". This one keeps
+// state, the way real storage does.
+function setupStatefulStorage(prompts, { openPrompts = [] } = {}) {
+  const store = {
+    prompts: JSON.parse(JSON.stringify(prompts)),
+    openPrompts: [...openPrompts],
+    promptSortPref: 'dateDesc',
+  };
+  global.loadData = jest.fn((defaults, cb) => cb(JSON.parse(JSON.stringify(store))));
+  global.saveData = jest.fn((data, cb) => {
+    Object.assign(store, JSON.parse(JSON.stringify(data)));
+    if (cb) cb();
+  });
+  return store;
 }
 
 function render(searchValue = '') {
@@ -206,6 +227,86 @@ describe('buildPromptItem — actions', () => {
     jest.advanceTimersByTime(600); // PROMPT_DELAY.AUTOSAVE
     expect(lastSavedPrompts().MyPrompt.text).toBe('new body');
     jest.useRealTimers();
+  });
+
+  // --- Losing an edit was the actual bug, so these cover each way it happened ---
+
+  test('an unsaved edit is committed when the textarea loses focus', async () => {
+    setupStorage({ MyPrompt: { text: 'old', timestamp: 1 } });
+    render();
+    const ta = firstItem().querySelector('.prompt-text-edit');
+    ta.value = 'typed but not yet debounced';
+    ta.dispatchEvent(new Event('input'));
+    ta.dispatchEvent(new Event('blur'));
+    await flush();
+    expect(lastSavedPrompts().MyPrompt.text).toBe('typed but not yet debounced');
+  });
+
+  test('an unsaved edit is committed when the popup is dismissed', async () => {
+    // Closing the popup destroyed the document and the pending timer with it.
+    setupStorage({ MyPrompt: { text: 'old', timestamp: 1 } });
+    render();
+    const ta = firstItem().querySelector('.prompt-text-edit');
+    ta.value = 'unsaved on close';
+    ta.dispatchEvent(new Event('input'));
+    window.dispatchEvent(new Event('pagehide'));
+    await flush();
+    expect(lastSavedPrompts().MyPrompt.text).toBe('unsaved on close');
+  });
+
+  test('an unsaved edit survives a rename', async () => {
+    // doRename copies the STORED text, and the pending timer then looked up a
+    // title that no longer existed — so the edit vanished twice over.
+    const store = setupStatefulStorage({ MyPrompt: { text: 'old', timestamp: 1 } });
+    global.window.showCustomModal = jest.fn().mockResolvedValue('Renamed');
+    render();
+    const ta = firstItem().querySelector('.prompt-text-edit');
+    ta.value = 'edited then renamed';
+    ta.dispatchEvent(new Event('input'));
+    [...firstItem().querySelectorAll('.action-btn')]
+      .find((b) => b.textContent === '✏️')
+      .click();
+    await flush();
+    await flush();
+    await flush();
+    expect(store.prompts.Renamed.text).toBe('edited then renamed');
+    expect(store.prompts.MyPrompt).toBeUndefined();
+  });
+
+  test('an unsaved edit survives a re-render (search, mode switch, pin)', async () => {
+    setupStorage({ MyPrompt: { text: 'old', timestamp: 1 } });
+    render();
+    const ta = firstItem().querySelector('.prompt-text-edit');
+    ta.value = 'edited then re-rendered';
+    ta.dispatchEvent(new Event('input'));
+    render('my');   // a search keystroke rebuilds the whole list
+    await flush();
+    expect(lastSavedPrompts().MyPrompt.text).toBe('edited then re-rendered');
+  });
+
+  test('a reserved prompt title is refused instead of silently vanishing', async () => {
+    // prompts["__proto__"] = {...} hits the prototype setter, so the prompt is
+    // never created and JSON.stringify then serializes {}. The duplicate check
+    // is also always truthy, so the user first got a phantom overwrite prompt.
+    // initPromptsUI needs the add-prompt panel, which the list-only DOM lacks.
+    document.body.innerHTML += `
+      <input id="promptTitle" value="" />
+      <textarea id="promptText"></textarea>
+      <button id="savePromptBtn"></button>
+      <input type="checkbox" id="syncPromptsToggle" />
+      <div id="promptStatus"></div>
+      <button id="toggleAddPromptPanelBtn"></button>
+      <div id="addPromptPanel"></div>
+      <button id="promptSortToggleBtn"></button>
+      <div id="promptSortMenu"></div>`;
+    setupStorage({});
+    window.initPromptsUI();
+    document.getElementById('promptTitle').value = '__proto__';
+    document.getElementById('promptText').value = 'body';
+    document.getElementById('savePromptBtn').click();
+    await flush();
+    expect(global.saveData).not.toHaveBeenCalled();
+    expect(document.getElementById('promptStatus').textContent).toBe('reservedNameError');
   });
 
   test('toggling the header persists the open state', () => {

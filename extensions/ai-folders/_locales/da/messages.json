@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Dette navn er reserveret – vælg et andet."
   }
 }

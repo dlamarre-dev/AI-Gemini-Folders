@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Αυτό το όνομα είναι δεσμευμένο — επιλέξτε άλλο."
   }
 }

@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "এই নামটি সংরক্ষিত — অন্য একটি নাম বেছে নিন।"
   }
 }

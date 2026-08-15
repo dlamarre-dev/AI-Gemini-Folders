@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Nama itu dicadangkan — silakan pilih yang lain."
   }
 }

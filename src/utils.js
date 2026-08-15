@@ -398,6 +398,20 @@ function extractTitleLogic(strategies, defaultFallback) {
   return defaultFallback;
 }
 
+// Folders and prompts are keyed by user-typed names on ordinary objects, so a
+// name that collides with something on Object.prototype misbehaves badly:
+// folders["__proto__"] resolves to Object.prototype (truthy, so the "create it
+// if missing" guard is skipped) and the following .some()/.push() throws;
+// prompts["__proto__"] = {...} hits the prototype setter instead of creating a
+// property, so JSON.stringify serializes {} and the prompt disappears.
+// "constructor" behaves the same way.
+//
+// The import path has skipped these since it was hardened; this is the same
+// check, hoisted so creation and rename can reject them at the door too.
+function isUnsafeKey(k) {
+  return k === '__proto__' || k === 'constructor' || k === 'prototype';
+}
+
 function isSafeUrl(url) {
   try {
     return /^https?:$/.test(new URL(url).protocol);
@@ -441,12 +455,6 @@ function mergeImportData(importedData) {
       let currentPrompts = data.prompts || {};
 
       const isPlainObject = (v) => v && typeof v === 'object' && !Array.isArray(v);
-      // JSON.parse creates OWN "__proto__"/"constructor"/"prototype" properties, so
-      // Object.entries surfaces them here. Accessing currentFolders["__proto__"]
-      // resolves to Object.prototype (and ["constructor"] to the Object function),
-      // whose `.some`/`.push` don't exist — a single such key would throw and abort
-      // the whole import. Skip them: robustness, not prototype-pollution (guarded).
-      const isUnsafeKey = (k) => k === '__proto__' || k === 'constructor' || k === 'prototype';
 
       // --- BACKWARD COMPATIBILITY MANAGEMENT ---
       // Current format wraps content in { folders, pinnedFolders, prompts };
@@ -917,5 +925,6 @@ if (typeof module !== 'undefined') {
     normalizeUiLang,
     buildUninstallUrl,
     saveDataAsync,
+    isUnsafeKey,
   };
 }

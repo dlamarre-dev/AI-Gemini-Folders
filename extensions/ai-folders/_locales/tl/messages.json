@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Nakalaan ang pangalang iyan — pumili ng iba."
   }
 }

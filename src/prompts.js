@@ -21,6 +21,59 @@ function autoResize(ta) {
 
 const PROMPT_DELAY = { AUTOSAVE: 600, ICON: 1500 };
 
+// --- Inline-edit autosave -----------------------------------------------------
+//
+// Typing in a prompt used to arm a 600 ms timer owned by that textarea's closure,
+// and nothing else. Three ways that lost work silently:
+//   1. closing the popup destroyed the document, and the timer with it;
+//   2. renaming first moved the key, so the late callback looked up a title that
+//      no longer existed and gave up (rename also copied the *stored* text, not
+//      what was on screen);
+//   3. any re-render — pin, delete, search, mode toggle — rebuilt every node and
+//      orphaned its timer.
+// The edit now lives in one module-level slot that can be flushed on demand.
+// There is only ever one: editing a second prompt means the first lost focus.
+let _pendingEdit = null;   // { title, text, timer }
+
+// Commits the pending edit, if any, then runs `cb`. Safe to call unconditionally.
+function flushPendingEdit(cb) {
+  const pending = _pendingEdit;
+  if (!pending) { if (cb) cb(); return; }
+  clearTimeout(pending.timer);
+  _pendingEdit = null;
+  loadData({ prompts: {} }, (data) => {
+    // Gone (deleted, or renamed by something that did not flush first).
+    if (!data.prompts[pending.title]) { if (cb) cb(); return; }
+    data.prompts[pending.title].text = pending.text;
+    data.prompts[pending.title].timestamp = Date.now();
+    saveData({ prompts: data.prompts }, (err) => {
+      // The old autosave passed no callback at all, so a full quota lost the
+      // edit without a word.
+      if (err && window.showCustomModal) {
+        window.showCustomModal({
+          title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.',
+          type: 'alert',
+        });
+      }
+      if (cb) cb();
+    });
+  });
+}
+
+function queueEdit(title, text) {
+  // Switching prompts commits the previous one instead of dropping it.
+  if (_pendingEdit && _pendingEdit.title !== title) flushPendingEdit();
+  if (_pendingEdit) clearTimeout(_pendingEdit.timer);
+  _pendingEdit = { title, text, timer: setTimeout(() => flushPendingEdit(), PROMPT_DELAY.AUTOSAVE) };
+}
+
+// Best-effort save when the popup is dismissed. The document is torn down right
+// after, so the storage call may not complete — but the write is dispatched
+// synchronously here, which is strictly better than losing the edit outright.
+if (typeof window !== 'undefined' && window.addEventListener) {
+  window.addEventListener('pagehide', () => flushPendingEdit());
+}
+
 function buildPromptItem(title, p, openPrompts) {
   const item = document.createElement('div');
   item.className = 'prompt-item' + (p.pinned ? ' prompt-item--pinned' : '');
@@ -41,12 +94,12 @@ function buildPromptItem(title, p, openPrompts) {
   pinBtn.title = chrome.i18n.getMessage(p.pinned ? "btnUnpin" : "btnPin") || (p.pinned ? 'Unpin' : 'Pin');
   pinBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    loadData({ prompts: {} }, (data) => {
+    flushPendingEdit(() => loadData({ prompts: {} }, (data) => {
       if (data.prompts[title]) {
         data.prompts[title].pinned = !data.prompts[title].pinned;
         saveData({ prompts: data.prompts }, () => displayPrompts());
       }
-    });
+    }));
   });
 
   const sendSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
@@ -90,7 +143,16 @@ function buildPromptItem(title, p, openPrompts) {
     });
     if (!newTitle || newTitle.trim() === '' || newTitle.trim() === title) return;
     const trimmed = newTitle.trim();
-    loadData({ prompts: {}, openPrompts: [] }, (data) => {
+    if (isUnsafeKey(trimmed)) {
+      window.showCustomModal({
+        title: chrome.i18n.getMessage("reservedNameError") || 'That name is reserved — please choose another.',
+        type: 'alert',
+      });
+      return;
+    }
+    // Commit first: doRename copies the *stored* text, so an unflushed edit
+    // would be silently dropped, and the pending title is about to stop existing.
+    flushPendingEdit(() => loadData({ prompts: {}, openPrompts: [] }, (data) => {
       if (data.prompts[trimmed] && trimmed !== title) {
         window.showCustomModal({
           title: chrome.i18n.getMessage("promptDuplicateWarning") || "A prompt with this title already exists. Overwrite?",
@@ -110,7 +172,7 @@ function buildPromptItem(title, p, openPrompts) {
         if (idx !== -1) { open[idx] = newName; }
         saveData({ prompts: d.prompts, openPrompts: open }, () => displayPrompts());
       }
-    });
+    }));
   });
 
   const deleteBtn = document.createElement('button');
@@ -124,10 +186,10 @@ function buildPromptItem(title, p, openPrompts) {
       type: 'confirm'
     });
     if (!isSure) return;
-    loadData({ prompts: {} }, (data) => {
+    flushPendingEdit(() => loadData({ prompts: {} }, (data) => {
       delete data.prompts[title];
       saveData({ prompts: data.prompts }, () => displayPrompts());
-    });
+    }));
   });
 
   actions.appendChild(pinBtn);
@@ -144,20 +206,14 @@ function buildPromptItem(title, p, openPrompts) {
   textArea.setAttribute('writingsuggestions', 'false');
   textArea.setAttribute('spellcheck', 'false');
 
-  let saveTimeout;
   textArea.addEventListener('input', () => {
     autoResize(textArea);
-    clearTimeout(saveTimeout);
-    saveTimeout = setTimeout(() => {
-      loadData({ prompts: {} }, (data) => {
-        if (data.prompts[title]) {
-          data.prompts[title].text = textArea.value;
-          data.prompts[title].timestamp = Date.now();
-          saveData({ prompts: data.prompts });
-        }
-      });
-    }, PROMPT_DELAY.AUTOSAVE);
+    queueEdit(title, textArea.value);
   });
+
+  // Losing focus means the user is done with this box — commit immediately
+  // rather than gambling on the debounce outliving whatever they do next.
+  textArea.addEventListener('blur', () => flushPendingEdit());
 
   textArea.addEventListener('click', (e) => e.stopPropagation());
 
@@ -201,7 +257,10 @@ function displayPrompts() {
   const promptListDiv = document.getElementById('promptList');
   if (!promptListDiv) return;
   const searchQuery = (document.getElementById('promptSearchInput')?.value || '').toLowerCase().trim();
-  loadData({ prompts: {}, openPrompts: [], promptSortPref: 'dateDesc' }, (data) => {
+  // Every re-render replaces the whole list, so an uncommitted edit in one of the
+  // outgoing textareas would be thrown away — searching or switching modes
+  // mid-sentence used to be enough to lose it.
+  flushPendingEdit(() => loadData({ prompts: {}, openPrompts: [], promptSortPref: 'dateDesc' }, (data) => {
     promptListDiv.replaceChildren();
     const { prompts, openPrompts, promptSortPref: sortPref } = data;
     let titles = Object.keys(prompts);
@@ -241,7 +300,7 @@ function displayPrompts() {
       }
       promptListDiv.appendChild(buildPromptItem(title, p, openPrompts));
     });
-  });
+  }));
 }
 window.displayPrompts = displayPrompts;
 
@@ -288,6 +347,19 @@ function initPromptsUI() {
     isSavingPrompt = true;
 
     const title = promptTitleInput.value.trim() || 'Untitled Prompt';
+    // "__proto__" would hit Object.prototype's setter instead of creating a key:
+    // the duplicate check below is always truthy for it (so the user gets a
+    // phantom "already exists, overwrite?"), and JSON.stringify then serializes
+    // {} — the prompt simply vanishes. Same reserved names the import path has
+    // rejected since it was hardened (isUnsafeKey, utils.js).
+    if (isUnsafeKey(title)) {
+      promptStatusDiv.textContent = chrome.i18n.getMessage("reservedNameError") || 'That name is reserved — please choose another.';
+      promptStatusDiv.style.color = 'red';
+      promptStatusDiv.style.display = 'block';
+      setTimeout(() => promptStatusDiv.style.display = 'none', 2000);
+      isSavingPrompt = false;
+      return;
+    }
     const text = promptTextInput.value.trim();
     if (!text) {
       promptStatusDiv.textContent = chrome.i18n.getMessage("promptCannotBeEmpty") || 'Prompt cannot be empty!';
