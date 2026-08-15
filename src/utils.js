@@ -829,6 +829,15 @@ function normalizeUiLang(raw) {
 // before it is opened, so a precomputed count would be stale. The page derives
 // the tenure itself. Date is UTC day-precision — no timestamp, nothing that
 // could single out a user.
+//
+// PRIVACY: the values go in the URL *fragment*, never the query string. The
+// browser opens this page on its own when the extension is removed, so anything
+// in the query would already be in the request line — logged by the host, and
+// leaked onward via Referer — before the user had a say. Fragments are never
+// sent to the server, which is what makes the page's own promise ("nothing
+// leaves your device until you press Send") and the privacy policy's "its
+// address carries six non-identifying details" both literally true. Do not
+// "simplify" this back to '?'.
 function buildUninstallUrl(base, opts) {
   const o = opts || {};
   const p = new URLSearchParams();
@@ -846,7 +855,7 @@ function buildUninstallUrl(base, opts) {
   // four times and saved nothing" from "actually used it". saves === 0 means the
   // user never got the core action to work.
   p.set('s', String(Number(o.saves) || 0));
-  return base + '?' + p.toString();
+  return base + '#' + p.toString();
 }
 
 if (typeof module !== 'undefined') {

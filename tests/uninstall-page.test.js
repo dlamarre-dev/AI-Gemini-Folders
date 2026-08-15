@@ -4,12 +4,12 @@
  * params go in, and what comes out is the rendered form and — only on an
  * explicit submit — the Google Form payload.
  *
- * @jest-environment-options {"url": "https://aifolders.xyz/uninstall-ai-folders.html?l=fr&v=1.6.2&b=chrome&i=2026-06-08&o=63&s=9"}
+ * @jest-environment-options {"url": "https://aifolders.xyz/uninstall-ai-folders.html#l=fr&v=1.6.2&b=chrome&i=2026-06-08&o=63&s=9"}
  */
 
 // 2026-06-08 → 2026-07-25 is 47 days; pinned so the tenure math is assertable.
 const NOW = Date.UTC(2026, 6, 25, 12, 0, 0);
-const FR_URL = '/uninstall-ai-folders.html?l=fr&v=1.6.2&b=chrome&i=2026-06-08&o=63&s=9';
+const FR_URL = '/uninstall-ai-folders.html#l=fr&v=1.6.2&b=chrome&i=2026-06-08&o=63&s=9';
 
 // Stands in for real ids from a Form's pre-filled link.
 const WIRED = {
@@ -353,5 +353,51 @@ describe('submission', () => {
     global.fetch.mockClear();
     await submit();
     expect(global.fetch).toHaveBeenCalledTimes(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Where the context is read from
+// ---------------------------------------------------------------------------
+
+describe('URL context source', () => {
+  // The extension puts the context in the fragment so that opening this page —
+  // which the browser does unprompted, on removal — transmits nothing. The page
+  // must therefore read the fragment, and must keep reading the query for a
+  // while: setUninstallURL captured its value long before the page opens, so an
+  // extension that has not run since the switch still holds a '?' URL.
+  test('reads the context from the fragment', async () => {
+    load({ search: '/uninstall-ai-folders.html#l=en&i=2026-06-08&o=63&s=9&v=1.6.4&b=chrome' });
+    window.UF_FORMS = WIRED;
+    await submit();
+    expect(body().get('entry.4')).toBe('47');     // tenure derived from 'i'
+    expect(body().get('entry.6')).toBe('63');     // opens
+    expect(body().get('entry.10')).toBe('9');     // saves
+    expect(body().get('entry.7')).toBe('1.6.4');  // version
+  });
+
+  test('still reads a legacy query-string URL', async () => {
+    load({ search: '/uninstall-ai-folders.html?l=en&i=2026-06-08&o=63&s=9&v=1.6.4&b=chrome' });
+    window.UF_FORMS = WIRED;
+    await submit();
+    expect(body().get('entry.4')).toBe('47');
+    expect(body().get('entry.6')).toBe('63');
+    expect(body().get('entry.10')).toBe('9');
+  });
+
+  test('the fragment wins when both are present', async () => {
+    load({ search: '/uninstall-ai-folders.html?o=1&s=1#o=63&s=9&l=en' });
+    window.UF_FORMS = WIRED;
+    await submit();
+    expect(body().get('entry.6')).toBe('63');
+    expect(body().get('entry.10')).toBe('9');
+  });
+
+  test('a bare page with no context still renders and submits', async () => {
+    load({ search: '/uninstall-ai-folders.html' });
+    window.UF_FORMS = WIRED;
+    expect(opts().length).toBeGreaterThan(0);
+    await submit();
+    expect(body().has('entry.4')).toBe(false);
   });
 });

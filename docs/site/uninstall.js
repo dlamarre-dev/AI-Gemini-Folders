@@ -90,7 +90,15 @@
 
   // --- URL context -----------------------------------------------------------
 
-  const params = new URLSearchParams(window.location.search);
+  // Read the fragment, not the query: the browser opens this page unprompted, so
+  // anything in the query string would have been transmitted to the host before
+  // the user consented to anything. Fragments never leave the browser.
+  // The query is still accepted as a fallback — setUninstallURL captures its value
+  // long before the page opens, so an extension that has not run since the switch
+  // still holds a '?' URL. Remove the fallback once that has aged out.
+  const params = new URLSearchParams(
+    window.location.hash.slice(1) || window.location.search
+  );
 
   // The extension already normalizes the tag ('pt-BR' → 'pt_BR'); this also
   // covers hand-typed URLs and direct visits with no param at all.

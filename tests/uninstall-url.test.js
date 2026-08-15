@@ -6,6 +6,9 @@ const { buildUninstallUrl, normalizeUiLang } = require('../src/utils');
 
 const BASE = 'https://aifolders.xyz/uninstall-ai-folders.html';
 
+// The context rides in the fragment, so searchParams would always be empty here.
+const hashParams = (url) => new URLSearchParams(new URL(url).hash.slice(1));
+
 describe('normalizeUiLang', () => {
   // chrome.i18n.getUILanguage() returns BCP-47; the site's locale codes use '_'
   // and only pt/zh keep a region.
@@ -39,8 +42,8 @@ describe('buildUninstallUrl', () => {
       opens: 63,
       saves: 9,
     });
-    expect(url.startsWith(BASE + '?')).toBe(true);
-    const p = new URL(url).searchParams;
+    expect(url.startsWith(BASE + '#')).toBe(true);
+    const p = hashParams(url);
     expect(p.get('i')).toBe('2026-06-08');   // day precision, no timestamp
     expect(p.get('v')).toBe('1.6.2');
     expect(p.get('l')).toBe('pt_BR');
@@ -51,15 +54,15 @@ describe('buildUninstallUrl', () => {
   });
 
   test('an inferred install date is flagged, never passed off as exact', () => {
-    const p = new URL(buildUninstallUrl(BASE, {
+    const p = hashParams(buildUninstallUrl(BASE, {
       installedAt: Date.UTC(2026, 6, 25), estimated: true,
-    })).searchParams;
+    }));
     expect(p.get('i')).toBe('2026-07-25');
     expect(p.get('ie')).toBe('1');
   });
 
   test('an unknown install date is omitted rather than faked', () => {
-    const p = new URL(buildUninstallUrl(BASE, { version: '1.6.2' })).searchParams;
+    const p = hashParams(buildUninstallUrl(BASE, { version: '1.6.2' }));
     expect(p.has('i')).toBe(false);
     expect(p.has('ie')).toBe(false);
   });
@@ -67,10 +70,10 @@ describe('buildUninstallUrl', () => {
   // Zero is a finding, not a missing value: 'o=0' means the popup was never opened
   // and 's=0' that nothing was ever saved. Both must be sent explicitly.
   test('a fresh profile reports zero opens and zero saves instead of empty values', () => {
-    const fresh = new URL(buildUninstallUrl(BASE, {})).searchParams;
+    const fresh = hashParams(buildUninstallUrl(BASE, {}));
     expect(fresh.get('o')).toBe('0');
     expect(fresh.get('s')).toBe('0');
-    const undef = new URL(buildUninstallUrl(BASE, { opens: undefined, saves: undefined })).searchParams;
+    const undef = hashParams(buildUninstallUrl(BASE, { opens: undefined, saves: undefined }));
     expect(undef.get('o')).toBe('0');
     expect(undef.get('s')).toBe('0');
   });
@@ -82,7 +85,7 @@ describe('buildUninstallUrl', () => {
       // A caller passing extra state must not leak it into the URL.
       email: 'someone@example.com', folders: ['Work', 'Private'],
     });
-    const keys = Array.from(new URL(url).searchParams.keys()).sort();
+    const keys = Array.from(hashParams(url).keys()).sort();
     expect(keys).toEqual(['b', 'i', 'ie', 'l', 'o', 's', 'v']);
     expect(url).not.toContain('example.com');
     expect(url).not.toContain('Private');
@@ -91,7 +94,26 @@ describe('buildUninstallUrl', () => {
   test('values are URL-encoded, so a stray character cannot break the query', () => {
     const url = buildUninstallUrl(BASE, { version: '1.0 &beta=1', browser: 'chrome' });
     expect(url).not.toContain('&beta=1');
-    expect(new URL(url).searchParams.get('v')).toBe('1.0 &beta=1');
+    expect(hashParams(url).get('v')).toBe('1.0 &beta=1');
+  });
+
+  // The privacy guarantee itself. The browser opens this URL on its own when the
+  // extension is removed, so anything in the query string would already be in the
+  // request line — logged by the host, leaked onward via Referer — before the user
+  // agreed to anything. Fragments are never sent to a server, which is what makes
+  // the page's "nothing leaves your device until you press Send" literally true.
+  test('nothing is transmitted on load: the query string stays empty', () => {
+    const url = buildUninstallUrl(BASE, {
+      installedAt: Date.UTC(2026, 5, 8), version: '1.6.4', lang: 'fr',
+      browser: 'chrome', opens: 63, saves: 9,
+    });
+    const parsed = new URL(url);
+    expect(parsed.search).toBe('');
+    expect(Array.from(parsed.searchParams.keys())).toEqual([]);
+    // Everything before the '#' is the bare page address, nothing else.
+    expect(url.split('#')[0]).toBe(BASE);
+    // And the values really are present — in the half that never leaves the browser.
+    expect(hashParams(url).get('s')).toBe('9');
   });
 
   test('stays far under the 1023-char setUninstallURL limit', () => {
