@@ -503,9 +503,12 @@ function mergeImportData(importedData) {
         });
       }
 
-      // 2. Merge pins (without creating duplicates)
+      // 2. Merge pins (without creating duplicates). hasEntry, not truthiness:
+      //    currentFolders['toString'] is inherited and truthy, so a backup could
+      //    pin a folder that does not exist and leave an orphan in the pin list.
       pinsToImport.forEach(pin => {
-        if (typeof pin === 'string' && !isUnsafeKey(pin) && !currentPinned.includes(pin) && currentFolders[pin]) {
+        if (typeof pin === 'string' && !isUnsafeKey(pin) && !currentPinned.includes(pin)
+            && hasEntry(currentFolders, pin)) {
           currentPinned.push(pin);
         }
       });
@@ -515,7 +518,10 @@ function mergeImportData(importedData) {
         if (typeof promptTitle !== 'string' || isUnsafeKey(promptTitle)) continue;
         const normalized = normalizePromptData(promptData);
         if (!normalized) continue; // skip malformed prompt entries
-        if (!currentPrompts[promptTitle]) {
+        // hasEntry, not truthiness: currentPrompts['toString'] is inherited and
+        // truthy, so importing a prompt by that name looked like a collision and
+        // arrived renamed to "toString (Imported)" with nothing to collide with.
+        if (!hasEntry(currentPrompts, promptTitle)) {
           currentPrompts[promptTitle] = normalized;
         } else {
           // Title conflict: keep the existing prompt and suffix-import the incoming one to avoid silent data loss
