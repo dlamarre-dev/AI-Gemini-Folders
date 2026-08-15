@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!targetFolder) return;
     closeDropdown();
 
-    loadData({ folders: {}, openFolders: [] }, (data) => {
+    loadData({ folders: {}, openFolders: [], folderParents: {} }, (data) => {
       let folders    = data.folders;
       let openFolders = data.openFolders;
 
@@ -72,6 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (!openFolders.includes(targetFolder)) openFolders.push(targetFolder);
+      // …and the parent, or conversations moved into a sub-folder land inside a
+      // collapsed folder and look lost.
+      const targetParent = getFolderParent(folders, data.folderParents || {}, targetFolder);
+      if (targetParent && !openFolders.includes(targetParent)) openFolders.push(targetParent);
 
       saveData({ folders: folders, openFolders: openFolders }, () => {
         window.selectedChats = [];
@@ -97,20 +101,32 @@ document.addEventListener('DOMContentLoaded', () => {
       bulkMoveTrigger.textContent = placeholderText();
       bulkMoveList.innerHTML = '';
 
-      loadData({ folders: {} }, (data) => {
-        Object.keys(data.folders).sort().forEach(folder => {
+      loadData({ folders: {}, folderParents: {} }, (data) => {
+        const folderParents = data.folderParents || {};
+
+        const addItem = (folder, isChild) => {
           const match = folder.match(EMOJI_PREFIX_REGEX);
           const icon = match ? match[1] : '📁';
           const displayName = match ? folder.slice(match[0].length) : folder;
 
           const li = document.createElement('li');
-          li.textContent = `${icon} ${displayName}`;
+          // Sub-folders are shown under their parent and marked, but the list
+          // stays FLAT: makeMenuAccessible drives roving focus off
+          // querySelectorAll('li'), so a nested <ul> would break the keyboard.
+          li.textContent = isChild ? `↳ ${icon} ${displayName}` : `${icon} ${displayName}`;
+          if (isChild) li.classList.add('is-child');
           // Focusable and announced: these were click-only <li>, so the folder
           // list was unreachable without a mouse.
           li.setAttribute('role', 'menuitem');
           li.setAttribute('tabindex', '-1');
           li.addEventListener('click', (e) => { e.stopPropagation(); moveTo(folder); });
           bulkMoveList.appendChild(li);
+        };
+
+        getRootFolderNames(data.folders, folderParents).sort().forEach(root => {
+          addItem(root, false);
+          getChildFolders(data.folders, folderParents, root).sort()
+            .forEach(child => addItem(child, true));
         });
       });
     } else {
