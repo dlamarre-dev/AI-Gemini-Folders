@@ -245,3 +245,86 @@ describe('makeMenuAccessible', () => {
     jest.useRealTimers();
   });
 });
+
+describe('makeMenuAccessible — audit follow-ups', () => {
+  function mountMenu(options) {
+    document.body.innerHTML = `
+      <button id="tog"></button>
+      <div id="menu">
+        <div class="dropdown-item" data-value="a"></div>
+        <div class="dropdown-item active" data-value="b"></div>
+        <div class="dropdown-item" data-value="c"></div>
+      </div>`;
+    const tog = $('tog');
+    const menu = $('menu');
+    tog.addEventListener('click', () => menu.classList.toggle('show'));
+    window.makeMenuAccessible(tog, menu, () => menu.querySelectorAll('.dropdown-item'), options);
+    return { tog, menu, items: [...menu.querySelectorAll('.dropdown-item')] };
+  }
+
+  // Enter/Space fire the button's native click, which opens the menu — but focus
+  // stayed on the toggle while every item is tabindex="-1", so the menu was open
+  // with nowhere to go.
+  test('a keyboard-activated click moves focus onto the first option', () => {
+    jest.useFakeTimers();
+    const { tog, menu, items } = mountMenu();
+    tog.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 0 }));
+    jest.advanceTimersByTime(1);
+    expect(menu.classList.contains('show')).toBe(true);
+    expect(document.activeElement).toBe(items[0]);
+    jest.useRealTimers();
+  });
+
+  test('a real mouse click leaves focus where it was', () => {
+    jest.useFakeTimers();
+    const { tog, items } = mountMenu();
+    tog.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1 }));
+    jest.advanceTimersByTime(1);
+    expect(document.activeElement).not.toBe(items[0]);
+    jest.useRealTimers();
+  });
+
+  // The bulk-move list stops propagation on its <li> clicks, so the document
+  // listener never saw them and aria-expanded stayed "true" on a closed menu.
+  test('aria-expanded is corrected even when the item click stops propagation', () => {
+    jest.useFakeTimers();
+    const { tog, menu, items } = mountMenu();
+    tog.click();
+    jest.advanceTimersByTime(1);
+    expect(tog.getAttribute('aria-expanded')).toBe('true');
+
+    items[1].addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.remove('show');
+    });
+    items[1].click();
+    jest.advanceTimersByTime(1);
+
+    expect(menu.classList.contains('show')).toBe(false);
+    expect(tog.getAttribute('aria-expanded')).toBe('false');
+    jest.useRealTimers();
+  });
+
+  test('a single-choice menu exposes which option is selected', () => {
+    const { items } = mountMenu({ radio: true });
+    expect(items.map(i => i.getAttribute('role'))).toEqual(
+      ['menuitemradio', 'menuitemradio', 'menuitemradio']);
+    expect(items.map(i => i.getAttribute('aria-checked'))).toEqual(['false', 'true', 'false']);
+  });
+
+  test('aria-checked follows the selection when it changes', async () => {
+    const { items } = mountMenu({ radio: true });
+    // How the real menus mark a choice: swap the .active class.
+    items[1].classList.remove('active');
+    items[2].classList.add('active');
+    // MutationObserver callbacks are delivered as microtasks.
+    await Promise.resolve();
+    expect(items.map(i => i.getAttribute('aria-checked'))).toEqual(['false', 'false', 'true']);
+  });
+
+  test('a plain menu stays menuitem with no checked state', () => {
+    const { items } = mountMenu();
+    expect(items[0].getAttribute('role')).toBe('menuitem');
+    expect(items[0].hasAttribute('aria-checked')).toBe(false);
+  });
+});

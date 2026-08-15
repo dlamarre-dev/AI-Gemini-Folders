@@ -197,7 +197,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
       const data = await new Promise(resolve => loadData({ folders: {} }, resolve));
       let folders = data.folders || {};
 
-      if (!folders[targetFolder]) folders[targetFolder] = [];
+      if (!hasEntry(folders, targetFolder)) folders[targetFolder] = [];
       const cleanTargetUrl = normalizeUrl(tab.url);
       const isDuplicate = folders[targetFolder].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
       if (!isDuplicate) {
@@ -402,7 +402,7 @@ chrome.commands.onCommand.addListener(async (command) => {
       const data = await new Promise(resolve => loadData({ folders: {} }, resolve));
 
       let folders = data.folders || {};
-      if (!folders[targetFolder]) folders[targetFolder] = [];
+      if (!hasEntry(folders, targetFolder)) folders[targetFolder] = [];
 
       const cleanTargetUrl = normalizeUrl(tab.url);
       const isDuplicate = folders[targetFolder].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);

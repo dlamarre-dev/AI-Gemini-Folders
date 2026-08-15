@@ -37,6 +37,7 @@ function savedPins() {
 beforeEach(() => {
   global.normalizeUrl = jest.fn((url) => url.split('?')[0].split('#')[0]);
   global.isUnsafeKey = require('../src/utils').isUnsafeKey;
+global.hasEntry = require('../src/utils').hasEntry;
   global.isSafeUrl = jest.fn(() => true);
   global.window.showCustomModal = jest.fn();
   // openConversation closes the popup when it is done; in jsdom the real

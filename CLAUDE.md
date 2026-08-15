@@ -116,9 +116,10 @@ python build.py          # interactive
 python build.py --yes    # non-interactive (also -y); use this in automation
 python build.py --force  # build anyway on a red suite — deliberate use only
 ```
-`--yes` only suppresses prompts; it does **not** wave through failing tests
-(it used to, which meant a green `🎉 Build finished` proved nothing). Overriding
-a red suite now takes the explicit `--force`.
+`--yes` only suppresses prompts; it does **not** wave through a test gate that
+did not pass (it used to, which meant a green `🎉 Build finished` proved nothing).
+That covers **both** a red suite and a suite that could not be executed at all —
+the second case tells you even less than the first. Only `--force` continues.
 
 **Validate what was built:**
 ```bash
@@ -203,13 +204,16 @@ git checkout main && git pull --ff-only
   `scrollbar-gutter` in `popup.css` without a separate reason.
 - **Data is keyed by folder name and conversation URL** (no stable IDs). Renames,
   pins and migrations are awkward by design (see TODO §8). Because those keys are
-  user-typed names on ordinary objects, **every creation and rename path must
-  reject `isUnsafeKey` names** (`__proto__`, `constructor`, `prototype` —
-  `src/utils.js`, shown to the user as `reservedNameError`). `folders['__proto__']`
-  is `Object.prototype`: truthy, so the "create if missing" guard is skipped and
-  the next `.some()` throws; `prompts['__proto__'] = {…}` hits the prototype setter
-  so the prompt is never created and `JSON.stringify` emits `{}`. `moveChat` needs
-  no guard — its target comes from folders that can no longer be created.
+  user-typed names on ordinary objects, **every existence check must go through
+  `hasEntry(container, name)`** (`src/utils.js`), never plain truthiness.
+  `folders[name]` is truthy for *every* member of `Object.prototype`, so a folder
+  called `toString` or `valueOf` skipped its "create if missing" guard and then
+  threw on `.some()` — a blacklist can never be complete, which is why the old
+  three-name `isUnsafeKey` was the wrong shape of fix. With an ownership test
+  those names simply work as ordinary titles. `isUnsafeKey` now rejects exactly
+  one name, `__proto__`: assigning it invokes the prototype setter instead of
+  creating a property, so the entry is never stored and `JSON.stringify` emits
+  `{}`. Rejection is surfaced as `reservedNameError`.
 - **Marketing screenshots** are regenerated only at release time
   (`python build_images.py`), not on every change.
 
@@ -270,12 +274,29 @@ git checkout main && git pull --ff-only
   the open/close state**: each caller keeps its own show/hide code. It supports
   the two conventions in use — a `.show` class or the `hidden` attribute —
   detected once at wiring time (`usesHidden`); testing `!menu.hidden` on a plain
-  `<div>` is always true and would make the menu look permanently open.
+  `<div>` is always true and would make the menu look permanently open. Pass
+  `{ radio: true }` for a single-choice menu (both sort menus): items become
+  `menuitemradio` and `aria-checked` tracks the `.active` class via a
+  MutationObserver, because that class is applied asynchronously by `loadData`.
+  `aria-expanded` is re-synced from a **capture** listener on the menu — the
+  bulk-move `<li>` stops propagation, so a bubble listener never sees the click.
+  Keyboard-opened menus move focus to the first item, detected with
+  `e.detail === 0`; `preventDefault` is not usable there since it would suppress
+  the very click that opens the menu.
   `showCustomModal` carries `role="dialog"`/`aria-modal`/`aria-labelledby`, traps
   Tab and restores focus to the opener. Its focusable scan filters on inline
   `style.display`, **not `offsetParent`**, which is always null under jsdom.
   Folder and prompt headers already had `tabindex="0"` + `keydown` — that is the
   pattern to copy for anything new.
+- **Prompt autosave:** inline edits go through one module-level slot committed by
+  `flushPendingEdit` (`src/prompts.js`), called on blur, on `pagehide`, before
+  rename/delete/pin and at the top of `displayPrompts`. **Its callback must not
+  run until every queued commit has finished writing** — commits are serialized on
+  a promise chain, because clearing the slot is synchronous while the load/save
+  that follows is not: blur then Pin used to let Pin read the pre-edit text and
+  save it back over the edit. Callers with nothing pending still get a synchronous
+  callback, so re-renders are unaffected. Tests must use genuinely async storage
+  mocks to see this; the synchronous ones hide every ordering bug.
 - **Security posture:** folder/conversation titles render via `textContent` (no
   XSS); `link.href` is gated by `isSafeUrl` (falls back to `about:blank`); import
   is validated (`isSafeUrl` + shape checks + chunked writes); the local-LLM

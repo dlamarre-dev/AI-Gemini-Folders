@@ -1,6 +1,7 @@
 // popup-core.js shared wiring: the i18n/RTL pass, the cross-browser clearable
 // utils.js is a classic script in the popup, so its helpers are globals there.
 global.isUnsafeKey = require('../src/utils').isUnsafeKey;
+global.hasEntry = require('../src/utils').hasEntry;
 // search control (recent feature), and the "save current conversation" flow.
 
 require('../src/popup-core'); // defines window.applyCommonI18n / setupClearableSearch / initSaveConversation
@@ -202,6 +203,25 @@ describe('initSaveConversation', () => {
 
     expect(global.saveData).toHaveBeenCalled();
   });
+
+  test.each(['toString', 'valueOf', 'hasOwnProperty', 'constructor'])(
+    'saves into a folder named %s like any other', async (name) => {
+      // folders[name] is inherited and truthy for every Object.prototype member,
+      // so the "create it if missing" guard was skipped and the .some() after it
+      // threw. Blacklisting three names could never cover this; the guard is an
+      // ownership test now, which also makes these usable folder titles.
+      chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
+      global.loadData = jest.fn((defaults, cb) => cb({ folders: {} }));
+      wire(() => 'claude');
+
+      document.getElementById('folderName').value = name;
+      document.getElementById('saveBtn').click();
+      await flush();
+
+      expect(global.saveData).toHaveBeenCalled();
+      expect(savedFolders[name]).toHaveLength(1);
+      expect(savedFolders[name][0].url).toBe('https://claude.ai/chat/1');
+    });
 
   test('refuses a reserved folder name instead of wedging the Save button', async () => {
     // folders["__proto__"] is Object.prototype: truthy, so the "create it if

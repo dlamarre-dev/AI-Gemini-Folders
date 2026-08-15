@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let folders    = data.folders;
       let openFolders = data.openFolders;
 
-      if (!folders[targetFolder]) folders[targetFolder] = [];
+      if (!hasEntry(folders, targetFolder)) folders[targetFolder] = [];
 
       window.selectedChats.forEach(item => {
         if (folders[item.folder]) {

@@ -189,9 +189,17 @@ function showCustomModal({ title, message = '', type = 'confirm', defaultValue =
 //
 // Open state is read from the existing `.show` class rather than owned here, so
 // each caller keeps its own show/hide logic untouched.
-function makeMenuAccessible(toggleBtn, menu, getItems) {
+//
+// options.radio marks the menu as a single-choice group (the sort menus):
+// items become menuitemradio and their aria-checked mirrors options.selectedClass
+// (default 'active'), so a screen reader can tell which ordering is in effect —
+// with role="menuitem" the current choice was visual only.
+function makeMenuAccessible(toggleBtn, menu, getItems, options) {
   if (!toggleBtn || !menu) return;
 
+  const opts = options || {};
+  const isRadioGroup = !!opts.radio;
+  const selectedClass = opts.selectedClass || 'active';
   const items = () => Array.from(getItems ? getItems() : menu.children);
   // Two conventions in the codebase: the sort menus toggle a `.show` class, the
   // bulk-move list toggles the `hidden` attribute. Pick one at wiring time —
@@ -200,12 +208,27 @@ function makeMenuAccessible(toggleBtn, menu, getItems) {
   const usesHidden = menu.hasAttribute('hidden');
   const isOpen = () => usesHidden ? !menu.hidden : menu.classList.contains('show');
 
+  const itemRole = isRadioGroup ? 'menuitemradio' : 'menuitem';
   toggleBtn.setAttribute('aria-haspopup', 'menu');
   toggleBtn.setAttribute('aria-expanded', 'false');
   menu.setAttribute('role', 'menu');
-  for (const item of items()) {
-    item.setAttribute('role', 'menuitem');
-    item.setAttribute('tabindex', '-1');
+  const tagItems = () => {
+    for (const item of items()) {
+      item.setAttribute('role', itemRole);
+      item.setAttribute('tabindex', '-1');
+      if (isRadioGroup) {
+        item.setAttribute('aria-checked', String(item.classList.contains(selectedClass)));
+      }
+    }
+  };
+  tagItems();
+
+  // The selected class is applied asynchronously (loadData) and again on every
+  // choice, so watch for it instead of asking each caller to report it.
+  if (isRadioGroup && typeof MutationObserver !== 'undefined') {
+    new MutationObserver(tagItems).observe(menu, {
+      attributes: true, attributeFilter: ['class'], subtree: true, childList: true,
+    });
   }
 
   // The class/hidden flip happens in the caller's own click handler, so mirror
@@ -213,6 +236,10 @@ function makeMenuAccessible(toggleBtn, menu, getItems) {
   const syncExpanded = () => toggleBtn.setAttribute('aria-expanded', String(isOpen()));
   toggleBtn.addEventListener('click', () => setTimeout(syncExpanded, 0));
   document.addEventListener('click', () => setTimeout(syncExpanded, 0));
+  // Choosing an item closes the menu, but the bulk-move list stops propagation
+  // on its <li> clicks, so the document listener above never sees them and
+  // aria-expanded stayed "true" on a closed menu. Capture fires regardless.
+  menu.addEventListener('click', () => setTimeout(syncExpanded, 0), true);
 
   const focusItem = (i) => {
     const list = items();
@@ -238,6 +265,17 @@ function makeMenuAccessible(toggleBtn, menu, getItems) {
       e.preventDefault();
       close(true);
     }
+  });
+
+  // Enter and Space fire the button's native click, which opens the menu — but
+  // focus stayed on the toggle while every item is tabindex="-1", so the menu
+  // was open with nowhere to go. The WAI pattern puts focus on the first item.
+  // detail === 0 marks a keyboard-generated click, so a real mouse click still
+  // leaves focus alone. preventDefault is not an option here: it would suppress
+  // the very click that opens the menu.
+  toggleBtn.addEventListener('click', (e) => {
+    if (e.detail !== 0) return;
+    setTimeout(() => { if (isOpen()) focusItem(0); }, 0);
   });
 
   menu.addEventListener('keydown', (e) => {

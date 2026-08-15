@@ -146,17 +146,20 @@ def run_tests(assume_yes=False, force=False):
     explicit --force, whose name says what it does.
     """
 
-    def confirm(question, overridable=True):
-        if overridable and force:
+    def confirm(question):
+        """Only --force (or a human typing yes) may continue past a failure.
+
+        --yes means "don't prompt me", not "ship it regardless": answering yes on
+        its behalf is what made a green 'Build finished' meaningless. Every
+        question here is about a test gate that did not pass — including the case
+        where the suite could not be executed at all, which tells us even less
+        than a red suite does.
+        """
+        if force:
             print(f"   {question} -> yes (--force)")
             return True
-        if not overridable:
-            return False
-        if assume_yes:
-            print(f"   {question} -> yes (--yes)")
-            return True
-        if not sys.stdin.isatty():
-            print(f"   {question} -> no (non-interactive, aborting)")
+        if assume_yes or not sys.stdin.isatty():
+            print(f"   {question} -> no. Re-run with --force to build anyway.")
             return False
         return input(f"   {question} [y/N] ").strip().lower() in ("y", "yes")
 
@@ -189,13 +192,7 @@ def run_tests(assume_yes=False, force=False):
 
     # A red suite is fail-closed: only --force (or an interactive "yes") gets past.
     print("\n⚠️  Some tests failed.")
-    if force:
-        print("   Continuing anyway (--force).")
-        return True
-    if not sys.stdin.isatty():
-        print("   Aborting. Re-run with --force to build on a failing suite.")
-        return False
-    return input("   Continue with the build anyway? [y/N] ").strip().lower() in ("y", "yes")
+    return confirm("Continue with the build anyway?")
 
 
 # ---------------------------------------------------------------------------

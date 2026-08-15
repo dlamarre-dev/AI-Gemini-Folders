@@ -398,18 +398,28 @@ function extractTitleLogic(strategies, defaultFallback) {
   return defaultFallback;
 }
 
-// Folders and prompts are keyed by user-typed names on ordinary objects, so a
-// name that collides with something on Object.prototype misbehaves badly:
-// folders["__proto__"] resolves to Object.prototype (truthy, so the "create it
-// if missing" guard is skipped) and the following .some()/.push() throws;
-// prompts["__proto__"] = {...} hits the prototype setter instead of creating a
-// property, so JSON.stringify serializes {} and the prompt disappears.
-// "constructor" behaves the same way.
+// Does this container really hold an entry called `name`?
 //
-// The import path has skipped these since it was hardened; this is the same
-// check, hoisted so creation and rename can reject them at the door too.
+// Folders and prompts are keyed by user-typed names on ordinary objects, so
+// `folders[name]` is truthy for EVERY member of Object.prototype — not just the
+// three that used to be blacklisted here. A folder named "toString", "valueOf"
+// or "hasOwnProperty" therefore skipped its "create it if missing" guard and
+// then threw on `.some()`, wedging the save button exactly like "__proto__"
+// did. Blacklisting was the wrong shape of fix: the list can never be complete.
+//
+// An ownership test is complete, and it also makes those names simply *work* as
+// ordinary folder titles instead of being refused.
+function hasEntry(container, name) {
+  return !!container && Object.prototype.hasOwnProperty.call(container, name);
+}
+
+// The one name an ownership check cannot rescue: assigning to "__proto__" on a
+// plain object invokes the prototype setter instead of creating a property, so
+// the entry is never stored and JSON.stringify emits {} — the folder or prompt
+// silently disappears. Every other inherited name is fine once lookups go
+// through hasEntry, so this is now a list of exactly one.
 function isUnsafeKey(k) {
-  return k === '__proto__' || k === 'constructor' || k === 'prototype';
+  return k === '__proto__';
 }
 
 function isSafeUrl(url) {
@@ -480,7 +490,7 @@ function mergeImportData(importedData) {
       //    array of chats, and validate each chat's shape before storing it.
       for (const [folderName, chats] of Object.entries(foldersToImport)) {
         if (typeof folderName !== 'string' || isUnsafeKey(folderName) || !Array.isArray(chats)) continue;
-        if (!currentFolders[folderName]) currentFolders[folderName] = [];
+        if (!hasEntry(currentFolders, folderName)) currentFolders[folderName] = [];
         chats.forEach(importedChat => {
           if (isPlainObject(importedChat)
               && typeof importedChat.title === 'string'
@@ -926,5 +936,6 @@ if (typeof module !== 'undefined') {
     buildUninstallUrl,
     saveDataAsync,
     isUnsafeKey,
+    hasEntry,
   };
 }
