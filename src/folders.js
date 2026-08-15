@@ -430,7 +430,7 @@ function moveChat(sourceFolder, targetFolder, chatUrl) {
     const chatToMove = folders[sourceFolder].splice(realIndex, 1)[0];
 
     // Ensure target folder exists
-    if (!folders[targetFolder]) folders[targetFolder] = [];
+    if (!hasEntry(folders, targetFolder)) folders[targetFolder] = [];
 
     // Prevent duplicates in target folder
     const cleanTargetUrl = normalizeUrl(chatToMove.url);
@@ -511,7 +511,7 @@ async function renameFolder(oldName) {
     let pinned = data.pinnedFolders;
 
     // Check we are not overwriting another folder
-    if (folders[trimmedNewName]) {
+    if (hasEntry(folders, trimmedNewName)) {
       await window.showCustomModal({
         title: chrome.i18n.getMessage("errorFolderExists") || "A folder with this name already exists.",
         type: 'alert'

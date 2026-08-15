@@ -35,29 +35,56 @@ const PROMPT_DELAY = { AUTOSAVE: 600, ICON: 1500 };
 // There is only ever one: editing a second prompt means the first lost focus.
 let _pendingEdit = null;   // { title, text, timer }
 
-// Commits the pending edit, if any, then runs `cb`. Safe to call unconditionally.
-function flushPendingEdit(cb) {
+// Writes still running. Clearing _pendingEdit is synchronous but the load/save
+// that follows is not, so without this a caller that flushed and then read
+// storage could read it *before* the write it just triggered had landed — blur
+// followed by a click on Pin was enough to resurrect the old text.
+let _commitChain = Promise.resolve();
+let _commitsInFlight = 0;
+
+function commitPendingEdit() {
   const pending = _pendingEdit;
-  if (!pending) { if (cb) cb(); return; }
+  if (!pending) return Promise.resolve();
   clearTimeout(pending.timer);
   _pendingEdit = null;
-  loadData({ prompts: {} }, (data) => {
-    // Gone (deleted, or renamed by something that did not flush first).
-    if (!data.prompts[pending.title]) { if (cb) cb(); return; }
-    data.prompts[pending.title].text = pending.text;
-    data.prompts[pending.title].timestamp = Date.now();
-    saveData({ prompts: data.prompts }, (err) => {
-      // The old autosave passed no callback at all, so a full quota lost the
-      // edit without a word.
-      if (err && window.showCustomModal) {
-        window.showCustomModal({
-          title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.',
-          type: 'alert',
-        });
-      }
-      if (cb) cb();
+  return new Promise((resolve) => {
+    loadData({ prompts: {} }, (data) => {
+      // Gone (deleted, or renamed by something that did not flush first).
+      if (!hasEntry(data.prompts, pending.title)) { resolve(); return; }
+      data.prompts[pending.title].text = pending.text;
+      data.prompts[pending.title].timestamp = Date.now();
+      saveData({ prompts: data.prompts }, (err) => {
+        // The old autosave passed no callback at all, so a full quota lost the
+        // edit without a word.
+        if (err && window.showCustomModal) {
+          window.showCustomModal({
+            title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.',
+            type: 'alert',
+          });
+        }
+        resolve();
+      });
     });
   });
+}
+
+// Commits the pending edit, if any, then runs `cb`. Safe to call unconditionally.
+//
+// `cb` runs only once every commit already queued has finished writing, so a
+// caller may read storage inside it and be sure of seeing the edit. When there
+// is nothing pending and nothing in flight the callback still runs
+// synchronously — most callers are just re-rendering, and making them all
+// asynchronous would be a needless behaviour change.
+function flushPendingEdit(cb) {
+  const runCb = () => { if (cb) { try { cb(); } catch (e) { console.error(e); } } };
+  if (!_pendingEdit && _commitsInFlight === 0) { runCb(); return; }
+
+  _commitsInFlight++;
+  _commitChain = _commitChain
+    .then(commitPendingEdit)
+    .catch((e) => { console.error('Prompt autosave failed:', e); })
+    .then(() => { _commitsInFlight--; });
+  _commitChain.then(runCb);
 }
 
 function queueEdit(title, text) {
@@ -67,11 +94,28 @@ function queueEdit(title, text) {
   _pendingEdit = { title, text, timer: setTimeout(() => flushPendingEdit(), PROMPT_DELAY.AUTOSAVE) };
 }
 
-// Best-effort save when the popup is dismissed. The document is torn down right
-// after, so the storage call may not complete — but the write is dispatched
-// synchronously here, which is strictly better than losing the edit outright.
+// Last-ditch save when the popup is dismissed. Genuinely best-effort: the write
+// goes through async storage APIs and the document is torn down immediately
+// after, so it may not land. `blur` is the path that actually saves — it fires
+// first whenever focus moves — and this only covers closing the popup with the
+// caret still in the box.
 if (typeof window !== 'undefined' && window.addEventListener) {
   window.addEventListener('pagehide', () => flushPendingEdit());
+}
+
+// Exposed for unit tests only (Node; `module` is undefined in the popup). The
+// autosave state lives for one popup session in production, but a test file
+// shares one module instance across every test — without this, an edit left
+// pending by one test leaks into the next. Same pattern as prompt-trigger.js.
+if (typeof module !== 'undefined') {
+  module.exports = {
+    resetAutosaveState() {
+      if (_pendingEdit) clearTimeout(_pendingEdit.timer);
+      _pendingEdit = null;
+      _commitChain = Promise.resolve();
+      _commitsInFlight = 0;
+    },
+  };
 }
 
 function buildPromptItem(title, p, openPrompts) {
@@ -95,7 +139,7 @@ function buildPromptItem(title, p, openPrompts) {
   pinBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     flushPendingEdit(() => loadData({ prompts: {} }, (data) => {
-      if (data.prompts[title]) {
+      if (hasEntry(data.prompts, title)) {
         data.prompts[title].pinned = !data.prompts[title].pinned;
         saveData({ prompts: data.prompts }, () => displayPrompts());
       }
@@ -153,7 +197,7 @@ function buildPromptItem(title, p, openPrompts) {
     // Commit first: doRename copies the *stored* text, so an unflushed edit
     // would be silently dropped, and the pending title is about to stop existing.
     flushPendingEdit(() => loadData({ prompts: {}, openPrompts: [] }, (data) => {
-      if (data.prompts[trimmed] && trimmed !== title) {
+      if (hasEntry(data.prompts, trimmed) && trimmed !== title) {
         window.showCustomModal({
           title: chrome.i18n.getMessage("promptDuplicateWarning") || "A prompt with this title already exists. Overwrite?",
           type: 'confirm',
@@ -371,7 +415,7 @@ function initPromptsUI() {
     }
 
     loadData({ prompts: {} }, async (data) => {
-      if (data.prompts[title]) {
+      if (hasEntry(data.prompts, title)) {
         const confirmed = await window.showCustomModal({
           title: chrome.i18n.getMessage("promptDuplicateWarning") || "A prompt with this title already exists. Overwrite?",
           type: 'confirm'
@@ -423,8 +467,9 @@ function initPromptsUI() {
 
   // Keyboard + screen-reader access for the sort options (src/ui.js).
   if (window.makeMenuAccessible) {
+    // A single-choice group: aria-checked follows the .active class.
     window.makeMenuAccessible(promptSortToggleBtn, promptSortMenu,
-      () => promptSortMenu.querySelectorAll('.dropdown-item'));
+      () => promptSortMenu.querySelectorAll('.dropdown-item'), { radio: true });
   }
 
   loadData({ promptSortPref: 'dateDesc' }, (data) => {

@@ -2,11 +2,12 @@
 // alpha sort, the live search filter (title + body) and the pinned/unpinned
 // divider. Mirrors the displayFolders coverage in folders.test.js.
 
-require('../src/prompts'); // exposes window.displayPrompts
+const { resetAutosaveState } = require('../src/prompts'); // also exposes window.displayPrompts
 
 // In the popup, utils.js is a classic script loaded first, so its helpers are
 // globals. Jest has no such loader — provide the one prompts.js reaches for.
 global.isUnsafeKey = require('../src/utils').isUnsafeKey;
+global.hasEntry = require('../src/utils').hasEntry;
 
 function setupStorage(prompts, { promptSortPref = 'dateDesc', openPrompts = [] } = {}) {
   global.loadData = jest.fn((defaults, cb) =>
@@ -36,6 +37,22 @@ function setupStatefulStorage(prompts, { openPrompts = [] } = {}) {
   return store;
 }
 
+// Storage with REAL async callbacks. The default mocks resolve synchronously,
+// which hides any ordering bug: a caller could read storage before the write it
+// just triggered had landed and the test would never notice.
+function setupAsyncStorage(prompts, { openPrompts = [] } = {}) {
+  const store = {
+    prompts: JSON.parse(JSON.stringify(prompts)),
+    openPrompts: [...openPrompts],
+    promptSortPref: 'dateDesc',
+  };
+  global.loadData = jest.fn((defaults, cb) =>
+    setTimeout(() => cb(JSON.parse(JSON.stringify(store))), 0));
+  global.saveData = jest.fn((data, cb) =>
+    setTimeout(() => { Object.assign(store, JSON.parse(JSON.stringify(data))); if (cb) cb(); }, 0));
+  return store;
+}
+
 function render(searchValue = '') {
   document.getElementById('promptSearchInput').value = searchValue;
   window.displayPrompts();
@@ -45,7 +62,10 @@ const listEl = () => document.getElementById('promptList');
 const titles = () =>
   [...listEl().querySelectorAll('.prompt-title')].map((el) => el.textContent);
 
+afterEach(() => { jest.useRealTimers(); });
+
 beforeEach(() => {
+  resetAutosaveState();
   document.body.innerHTML = `
     <input id="promptSearchInput" value="" />
     <div id="promptList"></div>`;
@@ -217,7 +237,7 @@ describe('buildPromptItem — actions', () => {
     expect(saved.MyPrompt).toBeUndefined();
   });
 
-  test('editing the textarea auto-saves after the debounce', () => {
+  test('editing the textarea auto-saves after the debounce', async () => {
     jest.useFakeTimers();
     setupStorage({ MyPrompt: { text: 'old', timestamp: 1 } });
     render();
@@ -225,8 +245,9 @@ describe('buildPromptItem — actions', () => {
     ta.value = 'new body';
     ta.dispatchEvent(new Event('input'));
     jest.advanceTimersByTime(600); // PROMPT_DELAY.AUTOSAVE
+    // The commit is queued on a promise chain, so let the microtasks run.
+    for (let i = 0; i < 4; i++) await Promise.resolve();
     expect(lastSavedPrompts().MyPrompt.text).toBe('new body');
-    jest.useRealTimers();
   });
 
   // --- Losing an edit was the actual bug, so these cover each way it happened ---
@@ -316,4 +337,88 @@ describe('buildPromptItem — actions', () => {
     const lastOpen = global.saveData.mock.calls.at(-1)[0].openPrompts;
     expect(lastOpen).toContain('MyPrompt');
   });
+});
+
+// ---------------------------------------------------------------------------
+// The flush must actually finish before the next action reads storage
+// ---------------------------------------------------------------------------
+
+describe('autosave ordering with asynchronous storage', () => {
+  const settle = async () => { for (let i = 0; i < 12; i++) await new Promise(r => setTimeout(r, 0)); };
+
+  beforeEach(() => { global.window.showCustomModal = jest.fn(); });
+
+  test('an edit is not resurrected by a pin that runs right after the blur', async () => {
+    // Clearing _pendingEdit is synchronous but the write that follows is not.
+    // Pin flushed, saw nothing pending, loaded the OLD text and saved it back
+    // over the edit — reproducible only with async callbacks.
+    const store = setupAsyncStorage({ MyPrompt: { text: 'old', timestamp: 1 } });
+    render();
+    await settle();
+    const ta = firstItem().querySelector('.prompt-text-edit');
+    ta.value = 'edited';
+    ta.dispatchEvent(new Event('input'));
+    ta.dispatchEvent(new Event('blur'));
+    firstItem().querySelector('.pin-btn').click();   // immediately, mid-flight
+    await settle();
+
+    expect(store.prompts.MyPrompt.text).toBe('edited');
+    expect(store.prompts.MyPrompt.pinned).toBe(true);
+  });
+
+  test('an edit is not resurrected by a delete of another prompt', async () => {
+    const store = setupAsyncStorage({
+      MyPrompt: { text: 'old', timestamp: 1 },
+      Other: { text: 'o', timestamp: 2 },
+    });
+    global.window.showCustomModal = jest.fn().mockResolvedValue(true);
+    render();
+    await settle();
+    const ta = itemByTitle('MyPrompt').querySelector('.prompt-text-edit');
+    ta.value = 'edited';
+    ta.dispatchEvent(new Event('input'));
+    ta.dispatchEvent(new Event('blur'));
+    itemByTitle('Other').querySelector('.delete-btn').click();
+    await settle();
+
+    expect(store.prompts.MyPrompt.text).toBe('edited');
+    expect(store.prompts.Other).toBeUndefined();
+  });
+
+  test('two flushes in a row do not race each other', async () => {
+    const store = setupAsyncStorage({ MyPrompt: { text: 'old', timestamp: 1 } });
+    render();
+    await settle();
+    const ta = firstItem().querySelector('.prompt-text-edit');
+    ta.value = 'first';
+    ta.dispatchEvent(new Event('input'));
+    ta.dispatchEvent(new Event('blur'));
+    ta.value = 'second';
+    ta.dispatchEvent(new Event('input'));
+    ta.dispatchEvent(new Event('blur'));
+    await settle();
+
+    expect(store.prompts.MyPrompt.text).toBe('second');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Inherited property names must not wedge anything
+// ---------------------------------------------------------------------------
+
+describe('prompt titles that collide with Object.prototype', () => {
+  const settle = async () => { for (let i = 0; i < 8; i++) await new Promise(r => setTimeout(r, 0)); };
+
+  test.each(['toString', 'valueOf', 'hasOwnProperty', 'constructor'])(
+    'a prompt named %s round-trips like any other', async (name) => {
+      // These used to pass the reserved-name check and then behave as if the
+      // prompt already existed, because prompts[name] is inherited and truthy.
+      const store = setupAsyncStorage({ [name]: { text: 'body', timestamp: 1 } });
+      render();
+      await settle();
+      expect(titles()).toContain(name);
+      firstItem().querySelector('.pin-btn').click();
+      await settle();
+      expect(store.prompts[name].pinned).toBe(true);
+    });
 });

@@ -6,6 +6,7 @@ const EMOJI_PREFIX_REGEX =
   /^((?:\p{Emoji_Presentation}|\p{Extended_Pictographic})️?)\s*/u;
 
 require('../src/bulk-actions');
+global.hasEntry = require('../src/utils').hasEntry;
 
 function mountDOM() {
   document.body.innerHTML = `

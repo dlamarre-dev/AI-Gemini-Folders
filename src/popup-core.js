@@ -145,7 +145,7 @@ function initSaveConversation(opts) {
 
     loadData({ folders: {} }, (data) => {
       let folders = data.folders;
-      if (!folders[folderName]) folders[folderName] = [];
+      if (!hasEntry(folders, folderName)) folders[folderName] = [];
 
       const cleanTargetUrl = normalizeUrl(chatUrl);
       const isDuplicate = folders[folderName].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
@@ -261,7 +261,7 @@ function initPopupCommon(config) {
         return;
       }
       loadData({ folders: {} }, (data) => {
-        if (!data.folders[name.trim()]) {
+        if (!hasEntry(data.folders, name.trim())) {
           data.folders[name.trim()] = [];
           saveData({ folders: data.folders }, (err) => {
             if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
@@ -328,8 +328,9 @@ function initPopupCommon(config) {
 
   // Keyboard + screen-reader access for the sort options (src/ui.js).
   if (window.makeMenuAccessible) {
+    // A single-choice group: aria-checked follows the .active class.
     window.makeMenuAccessible(sortToggleBtn, sortMenu,
-      () => sortMenu.querySelectorAll('.dropdown-item'));
+      () => sortMenu.querySelectorAll('.dropdown-item'), { radio: true });
   }
   document.addEventListener('click', () => {
     sortMenu.classList.remove('show');
