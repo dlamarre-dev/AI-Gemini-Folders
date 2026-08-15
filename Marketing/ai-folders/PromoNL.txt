@@ -14,7 +14,7 @@ AI-mappen integreert native met alle grote AI-chatassistenten, zoals Claude, Cha
 🔀 Knoppen Nieuw Gesprek: Start een nieuw gesprek op een van de ondersteunde webdiensten direct vanuit de Promptmodus — met één tik.
 ☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
 📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
-⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van Gemini om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
+⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van een willekeurige AI om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
 
 🌟 MAPFUNCTIES
 
@@ -56,9 +56,9 @@ Een prompt vastzetten: klik op 📍 — hij verplaatst naar boven en blijft gema
 Prompttrigger: Typ # om onmiddellijk al uw opgeslagen prompts te zien, of typ verder om in realtime te filteren. Druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om in te voegen.
 
 🔒 PRIVACY EN BEVEILIGING
-Gebouwd met privacy als kern. Vraagt alleen toegang tot de ondersteunde AI-sites en uw optionele lokale LLM-URL en leest het actieve tabblad alleen bij het opslaan van een gesprek of het invoegen van een prompt. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via browser sync: geen servers van derden, geen telemetrie, geen account vereist.
+Gebouwd met privacy als kern. Vraagt alleen toegang tot de ondersteunde AI-sites en uw optionele lokale LLM-URL en leest het actieve tabblad alleen om de titel van het gesprek te lezen, het op te slaan of er een prompt in te voegen. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via browser sync: geen servers van derden, geen telemetrie, geen account vereist.
 
-Gebouwd op Manifest V3: de browser zelf handhaaft dat er nooit externe code kan worden geladen en dat er geen dynamische scriptuitvoering kan plaatsvinden — dit is een platformbeperking, geen ontwikkelaarsbelofte. De Firefox-versie wordt gepubliceerd via Mozilla's officiële add-onbeoordelingsproces (AMO).
+Gebouwd op Manifest V3: de browser zelf handhaaft dat er nooit externe code kan worden geladen — dit is een platformbeperking, geen ontwikkelaarsbelofte. De Firefox-versie wordt gepubliceerd via Mozilla's officiële add-onbeoordelingsproces (AMO).
 
 🤝 OPEN SOURCE & CONTROLEERBAAR
 Elke regel code is openbaar op GitHub. Iedereen kan de repository klonen, het lokaal bouwen en de resulterende bestanden vergelijken met wat in hun browser is geïnstalleerd — geen blind vertrouwen vereist.

@@ -50,9 +50,9 @@ Sanidi 💎 ili kuelekeza kwenye Gem yako maalum.
 Kichocheo cha Kidokezo: Andika # ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa, au endelea kuandika ili kufilia kwa wakati halisi. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza.
 
 🔒 FARAGHA NA USALAMA
-Imejengwa na faragha kama msingi wake. Huomba tu ufikiaji wa gemini.google.com na husoma kichupo kinachofanya kazi tu wakati wa kuhifadhi mazungumzo au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia browser sync: hakuna seva za watu wengine, hakuna telemetri, hakuna akaunti inayohitajika.
+Imejengwa na faragha kama msingi wake. Huomba tu ufikiaji wa gemini.google.com na husoma kichupo kinachofanya kazi tu ili kusoma kichwa cha mazungumzo, kukihifadhi au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia browser sync: hakuna seva za watu wengine, hakuna telemetri, hakuna akaunti inayohitajika.
 
-Imejengwa juu ya Manifest V3: kivinjari chenyewe kinahakikisha kwamba hakuna msimbo wa mbali unaoeza kupakiwa wala utekelezaji wa hati za nguvu hauwezi kutokea — hii ni kizuizi cha kiwango cha jukwaa, si ahadi ya msanidi programu. Toleo la Firefox limechapishwa kupitia mchakato rasmi wa ukaguzi wa programu jalizi wa Mozilla (AMO).
+Imejengwa juu ya Manifest V3: kivinjari chenyewe kinahakikisha kwamba hakuna msimbo wa mbali unaoeza kupakiwa — hii ni kizuizi cha kiwango cha jukwaa, si ahadi ya msanidi programu. Toleo la Firefox limechapishwa kupitia mchakato rasmi wa ukaguzi wa programu jalizi wa Mozilla (AMO).
 
 🤝 CHANZO WAZI NA INAYOWEZA KUKAGULIWA
 Kila mstari wa msimbo ni wa umma kwenye GitHub. Mtu yeyote anaweza kunakili hazina, kuijenga ndani ya kompyuta yake, na kulinganisha faili zinazotokana na zile zilizosakinishwa kwenye kivinjari chake — bila kuhitaji imani yoyote.

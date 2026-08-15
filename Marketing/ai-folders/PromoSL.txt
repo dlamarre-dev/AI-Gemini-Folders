@@ -14,7 +14,7 @@ Mape AI se izvorno povezujejo z vsemi glavnimi klepetalnimi pomočniki UI, kot s
 🔀 Gumbi za novo pogovor: Začnite nov pogovor na kateri koli od podprtih spletnih storitev neposredno iz načina pozivov — z enim dotikom.
 ☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
 📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
-⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Uporabite ↓/↑ za krmarjenje, pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
+⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet katere koli UI, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Uporabite ↓/↑ za krmarjenje, pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
 
 🌟 FUNKCIJE MAP
 
@@ -55,9 +55,9 @@ Za pripenjanje poziva: klikni 📍 – premakne se na vrh seznama.
 Sprožilec pozivov: Vnesite #, da takoj vidite vse shranjene pozive, ali nadaljujte tipkanje za filtriranje v realnem času. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za vstavljanje.
 
 🔒 ZASEBNOST IN VARNOST
-Zasnovano z zasebnostjo v središču. Zahteva dostop samo do podprtih AI spletnih mest in vašega izbirnega lokalnega LLM URL-ja ter bere aktivni zavihek samo pri shranjevanju pogovora ali vstavljanju poziva. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek sinhronizacije brskalnika: brez strežnikov tretjih oseb, brez telemetrije, brez zahtevanega računa.
+Zasnovano z zasebnostjo v središču. Zahteva dostop samo do podprtih AI spletnih mest in vašega izbirnega lokalnega LLM URL-ja ter aktivni zavihek bere samo zato, da prebere naslov pogovora, ga shrani ali vstavi poziv. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek sinhronizacije brskalnika: brez strežnikov tretjih oseb, brez telemetrije, brez zahtevanega računa.
 
-Zgrajeno na Manifest V3: brskalnik sam zagotavlja, da se nikoli ne more naložiti nobena oddaljena koda in da ne more priti do dinamičnega izvajanja skriptov — to je omejitev na ravni platforme, ne razvijalčevo obljubo. Različica za Firefox je objavljena prek Mozillinega uradnega postopka pregleda dodatkov (AMO).
+Zgrajeno na Manifest V3: brskalnik sam zagotavlja, da se nikoli ne more naložiti nobena oddaljena koda — to je omejitev na ravni platforme, ne razvijalčevo obljubo. Različica za Firefox je objavljena prek Mozillinega uradnega postopka pregleda dodatkov (AMO).
 
 🤝 ODPRTOKODNI IN PREVERLJIV
 Vsaka vrstica kode je javna na GitHub-u. Vsakdo lahko klonira repozitorij, ga lokalno zgradi in primerja dobljene datoteke s tistim, kar je nameščeno v njihovem brskalniku — brez potrebe po zaupanju.

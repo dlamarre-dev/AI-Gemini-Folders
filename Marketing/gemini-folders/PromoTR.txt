@@ -50,9 +50,9 @@ Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar
 İstem Tetikleyici: # yazın ve tüm kayıtlı istemlerinizi anında görün veya gerçek zamanlı filtrelemek için yazmaya devam edin. Benzersiz eşleşmede otomatik tamamlamak için, tam eşleşmede enjekte etmek için boşluk tuşuna basın.
 
 🔒 GİZLİLİK & GÜVENLİK
-Gizlilik öncelikli tasarım. Yalnızca gemini.google.com'a erişim ister ve yalnızca konuşma kaydederken veya istem enjekte ederken etkin sekmeyi okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Tarayıcı senkronizasyonu üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok, hesap gerekmez.
+Gizlilik öncelikli tasarım. Yalnızca gemini.google.com'a erişim ister ve etkin sekmeyi yalnızca konuşmanın başlığını okumak, kaydetmek veya istem eklemek için okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Tarayıcı senkronizasyonu üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok, hesap gerekmez.
 
-Manifest V3 üzerine inşa edilmiştir: tarayıcının kendisi, uzak kodun hiçbir zaman yüklenemeyeceğini ve dinamik betik yürütmesinin gerçekleşemeyeceğini zorunlu kılar — bu bir platform düzeyinde kısıtlamadır, geliştirici vaadi değildir. Firefox sürümü, Mozilla'nın resmi eklenti inceleme süreci (AMO) aracılığıyla yayımlanmaktadır.
+Manifest V3 üzerine inşa edilmiştir: tarayıcının kendisi, uzak kodun hiçbir zaman yüklenemeyeceğinini zorunlu kılar — bu bir platform düzeyinde kısıtlamadır, geliştirici vaadi değildir. Firefox sürümü, Mozilla'nın resmi eklenti inceleme süreci (AMO) aracılığıyla yayımlanmaktadır.
 
 🤝 AÇIK KAYNAK & DENETLENEBİLİRLİK
 Her kod satırı GitHub'da herkese açıktır. Herkes depoyu klonlayabilir, yerel olarak derleyebilir ve elde edilen dosyaları tarayıcısında yüklü olanlarla karşılaştırabilir — güvene gerek yok.

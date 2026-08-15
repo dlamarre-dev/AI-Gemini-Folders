@@ -14,7 +14,7 @@ Ang Mga AI Folder ay natively na nag-iintegrate sa lahat ng pangunahing AI chat 
 🔀 Mga Pindutan ng Bagong Pag-uusap: Magsimula ng bagong pag-uusap sa alinman sa mga sinusuportahang web service nang direkta mula sa Prompt Mode — sa isang tap.
 ☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
 📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
-⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng Gemini para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
+⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng kahit anong AI para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
 
 🌟 MGA FEATURE NG FOLDER
 
@@ -56,9 +56,9 @@ Para i-pin ang isang prompt: i-click ang 📍 — lilipat ito sa tuktok ng lista
 Prompt Trigger: I-type ang # para agad makita ang lahat ng iyong naka-save na prompt, o magpatuloy na mag-type para mag-filter sa real time. Pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject.
 
 🔒 PRIVACY AT SEGURIDAD
-Ginawa nang may privacy bilang pangunahing pundasyon. Humihingi lamang ng access sa mga sinusuportahang AI site at sa iyong opsyonal na lokal na LLM URL, at binabasa lamang ang aktibong tab kapag nag-save ng pag-uusap o nag-inject ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng browser sync: walang third-party server, walang telemetry, hindi kailangan ng account.
+Ginawa nang may privacy bilang pangunahing pundasyon. Humihingi lamang ng access sa mga sinusuportahang AI site at sa iyong opsyonal na lokal na LLM URL, at binabasa lamang ang aktibong tab para basahin ang pamagat ng pag-uusap, i-save ito, o maglagay ng prompt. Ang pahintulot na "Bookmarks" ay ginagamit lamang kung ino-enable mo ang mobile sync. Storage sa pamamagitan ng browser sync: walang third-party server, walang telemetry, hindi kailangan ng account.
 
-Itinayo sa Manifest V3: ang browser mismo ang nagpapatupad na walang remote code ang maaaring ma-load at walang dynamic na script execution ang maaaring mangyari — ito ay isang platform-level na hadlang, hindi isang pangako ng developer. Ang bersyong Firefox ay inilathala sa pamamagitan ng opisyal na proseso ng pagsusuri ng add-on ng Mozilla (AMO).
+Itinayo sa Manifest V3: ang browser mismo ang nagpapatupad na walang remote code ang maaaring ma-load — ito ay isang platform-level na hadlang, hindi isang pangako ng developer. Ang bersyong Firefox ay inilathala sa pamamagitan ng opisyal na proseso ng pagsusuri ng add-on ng Mozilla (AMO).
 
 🤝 OPEN SOURCE AT MAAARING MA-AUDIT
 Bawat linya ng code ay pampubliko sa GitHub. Maaaring i-clone ng sinuman ang repository, buuin ito nang lokal, at ihambing ang mga resultang file sa kung ano ang naka-install sa kanilang browser — hindi kailangan ng walang kondisyong tiwala.
