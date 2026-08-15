@@ -389,6 +389,13 @@ describe('saveData', () => {
 
   test("reports a local write failure instead of calling back empty", (done) => {
     // callback() with no argument made every caller take its success branch.
+    // The console spies are not decoration: this path is the only place a
+    // service-worker save reports a failure at all (there is no window there, so
+    // the modal fallback never fires), so the log IS the user-visible signal —
+    // and capturing it keeps a deliberately simulated quota error from printing
+    // a scary "QUOTA_BYTES quota exceeded" block in every build.
+    const errSpy = jest.spyOn(console, "error").mockImplementation(() => {});
+    const warnSpy = jest.spyOn(console, "warn").mockImplementation(() => {});
     chrome.storage.local.set.mockImplementationOnce((_, cb) => {
       chrome.runtime.lastError = { message: "QUOTA_BYTES quota exceeded" };
       cb();
@@ -398,6 +405,16 @@ describe('saveData', () => {
     saveData({ openFolders: ["Dev"] }, (err) => {
       expect(err).toBeTruthy();
       expect(String(err)).toContain("QUOTA_BYTES");
+      expect(errSpy).toHaveBeenCalledWith(
+        "Local storage write failed:",
+        expect.objectContaining({ message: "QUOTA_BYTES quota exceeded" })
+      );
+      // No window in a service worker, so the warn is the whole report there.
+      expect(warnSpy).toHaveBeenCalledWith(
+        expect.stringContaining("QUOTA_BYTES quota exceeded")
+      );
+      errSpy.mockRestore();
+      warnSpy.mockRestore();
       done();
     });
   });
