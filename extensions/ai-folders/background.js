@@ -33,6 +33,7 @@ const SUPPORTED_URL_PATTERNS = [
   "*://character.ai/*",
   "*://*.character.ai/*",
   "*://chat.baidu.com/*",
+  "*://wenxin.baidu.com/*",
 ];
 
 // --- PROMPT TRIGGER: dynamic content script for local LLM ---

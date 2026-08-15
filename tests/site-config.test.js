@@ -27,6 +27,10 @@ describe('getSiteByUrl', () => {
     ['https://pi.ai/talk', 'pi'],
     ['https://character.ai/chat/abc', 'characterai'],
     ['https://chat.baidu.com/', 'baidu'],
+    // chat.baidu.com now 302s here; both must resolve to the same site key so
+    // conversations saved before and after the move behave identically.
+    ['https://wenxin.baidu.com/?enter_type=chat_site', 'baidu'],
+    ['https://wenxin.baidu.com/chat/0', 'baidu'],
   ])('%s -> %s', (url, key) => {
     expect(getSiteByUrl(url)).toBe(key);
   });
@@ -64,6 +68,31 @@ describe('getSiteByUrl', () => {
 
   test('a supported site still wins when a local URL is also configured', () => {
     expect(getSiteByUrl('https://claude.ai/', 'http://localhost:3000')).toBe('claude');
+  });
+});
+
+// A site the registry knows but the manifest cannot touch fails at runtime with
+// "Cannot access contents of url … must request permission to access this host"
+// — invisible to every other test. Baidu shipped in that state after it moved to
+// wenxin.baidu.com, so the three lists are checked against the registry here.
+describe('host permissions cover every registered domain', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const extDir = path.join(__dirname, '..', 'extensions', 'ai-folders');
+  const manifest = JSON.parse(fs.readFileSync(path.join(extDir, 'manifest.json'), 'utf8'));
+  const backgroundSrc = fs.readFileSync(path.join(extDir, 'background.js'), 'utf8');
+  const contentMatches = manifest.content_scripts[0].matches;
+
+  // The local LLM is deliberately absent: its origin is granted at runtime.
+  const domains = Object.values(SITES)
+    .flatMap(s => [s.domain, ...(s.altDomains ?? [])])
+    .filter(Boolean);
+
+  test.each(domains)('%s is reachable', (domain) => {
+    const pattern = `*://${domain}/*`;
+    expect(manifest.host_permissions).toContain(pattern);
+    expect(contentMatches).toContain(pattern);
+    expect(backgroundSrc).toContain(pattern);
   });
 });
 

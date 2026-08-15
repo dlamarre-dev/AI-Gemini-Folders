@@ -346,6 +346,26 @@ The P1–P5 improvement plan is essentially complete. What's left:
   `syncToBookmarksTree` deletes and recreates the whole bookmark tree on every
   content save; a diff (create/delete/move only what changed) would cut mobile-sync
   churn. Non-trivial (partial-state handling) — only worth it if users complain.
+- **Site watch list** (checked 15/08/2026 with `tools/site-diagnostics`):
+  - **You.com — kept, but untestable.** The consumer chat is closed to new
+    subscribers, so its selectors can no longer be validated live. You.com turned
+    its unlimited free plan into a 25-query Pro trial on **03/04/2026**
+    (support.you.com, "Changes to You.com's Free plan") and `you.com/pricing` now
+    lists **API plans only** — the consumer product is being wound down in
+    practice. **No end-of-support date has been announced anywhere public**
+    (checked the support KB, the pricing page, Wikipedia and the trade press), so
+    there is no date to schedule a removal against. Re-check ~02/2027, or sooner
+    if a user reports the site dead; removing it means the
+    `you` entry in `site-config.js`, its host permissions in `manifest.json` +
+    `background.js`, its icons, the README/`llms.txt`/`docs/site` service lists,
+    and the store text.
+  - **Baidu moved to `wenxin.baidu.com`** (08/2026). `chat.baidu.com` 302s there,
+    which the manifest could not follow — hence the `wenxin` host permission and
+    `altDomains: ['chat.baidu.com']`. A test now asserts every `SITES` domain and
+    altDomain has a host permission, a content-script match and a
+    `SUPPORTED_URL_PATTERNS` entry, so the next move fails in CI instead of in the
+    field. Baidu's `editorSelectors` and the sidebar title strategy still need a
+    live re-run on the new domain.
 - **(P5 — discuss with David first)** Stable IDs for folders/conversations instead
   of name/URL keys. Would simplify renames/pins and enable the differential sync
   above, but requires a data migration — outside the "same features" scope; don't
