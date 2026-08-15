@@ -160,8 +160,9 @@ function saveData(dataToSave, callback) {
     const syncToSet = {};
     const syncToRemove = [];
     const localToSet = {};
-    // Local keys to remove ONLY after sync.set confirms success, to prevent data loss on failure.
-    const localCleanupAfterSync = [];
+    // Keys superseded by this save. NOTHING here is deleted until every write has
+    // been confirmed — see runCleanup below.
+    const localToRemove = [];
 
     // Pass through non-data keys (sortPref, pinnedFolders, etc.) to sync as-is,
     // except the device-local UI-state keys which go to storage.local.
@@ -199,15 +200,15 @@ function saveData(dataToSave, callback) {
     if (dataToSave.prompts) {
       const compressed = LZString.compressToUTF16(JSON.stringify(dataToSave.prompts));
       syncToRemove.push('prompts');
-      chrome.storage.local.remove(['prompts']);
+      localToRemove.push('prompts');
 
       if (isPromptsSyncEnabled) {
         Object.assign(syncToSet, makeChunks(compressed, 'pdc'));
         const newN = syncToSet.pdcN;
         for (let i = newN; i < (syncState.pdcN || 0); i++) syncToRemove.push('pdc' + i);
         syncToRemove.push('promptsDataCompressed'); // remove legacy sync key
-        // Defer local cleanup: only delete local copy after sync confirms success.
-        localCleanupAfterSync.push('promptsDataCompressed');
+        // The local copy is the only remaining backup until sync confirms.
+        localToRemove.push('promptsDataCompressed');
       } else {
         localToSet.promptsDataCompressed = compressed;
         const oldSyncPdcN = syncState.pdcN || 0;
@@ -216,24 +217,41 @@ function saveData(dataToSave, callback) {
       }
     }
 
-    // Fire-and-forget removes (Chrome queues ops, so these land before the subsequent set).
-    if (syncToRemove.length > 0) chrome.storage.sync.remove(syncToRemove);
+    // Delete the superseded keys only once the replacement has actually landed.
+    //
+    // These removes used to fire here, before the set, on the assumption that
+    // Chrome queues operations in order. That holds — but ordering was never the
+    // problem: if the set then FAILS (quota, write-rate), the old chunks are
+    // already gone while the surviving fdcN still points at them. assembleChunks
+    // concatenates the missing keys as '', LZString fails to decompress, and
+    // loadData silently falls back to {} — every folder appears empty. The same
+    // reasoning already governed the local copy of prompts moving to sync; it
+    // simply was never applied to the sync side.
+    //
+    // Safe to fire-and-forget once we are here: a failed cleanup only leaves a
+    // stale chunk behind, and assembleChunks reads 0..N-1, so it is never seen.
+    const runCleanup = () => {
+      if (syncToRemove.length > 0) chrome.storage.sync.remove(syncToRemove);
+      if (localToRemove.length > 0) chrome.storage.local.remove(localToRemove);
+    };
 
     const doSyncSave = () => {
       // Nothing to write to sync (e.g. a local-only UI-state save like expanding
       // a folder) — skip the sync.set so it no longer counts against the quota.
       if (Object.keys(syncToSet).length === 0) {
+        runCleanup();
         finishSave(callback, null, isContentSave, affectsBookmarks);
         return;
       }
+      // The new chunks AND their fdcN/pdcN pointer go out in this one set, whose
+      // quota check Chrome evaluates as a unit — so this call is the commit point.
       chrome.storage.sync.set(syncToSet, () => {
         if (chrome.runtime.lastError) {
-          // Local data was NOT deleted (deferred cleanup never ran) — report error to caller.
+          // Nothing was deleted, so the previous state is still intact and readable.
           if (callback) callback(chrome.runtime.lastError.message || 'Storage error');
           return;
         }
-        // Sync succeeded — now safe to remove the local backup of prompts that moved to sync.
-        if (localCleanupAfterSync.length > 0) chrome.storage.local.remove(localCleanupAfterSync);
+        runCleanup();
         finishSave(callback, null, isContentSave, affectsBookmarks);
       });
     };
@@ -246,7 +264,10 @@ function saveData(dataToSave, callback) {
           if (typeof window !== 'undefined' && window.showCustomModal) {
             window.showCustomModal({ title: localErrMsg, type: 'alert' });
           } else { console.warn(localErrMsg); }
-          if (callback) callback();
+          // Report the failure: callers check `err` to decide between a success
+          // message and an error one, so calling back empty made a failed write
+          // look like a successful save.
+          if (callback) callback(localErrMsg);
           return;
         }
         doSyncSave();
@@ -254,6 +275,18 @@ function saveData(dataToSave, callback) {
     } else {
       doSyncSave();
     }
+  });
+}
+
+// Promise wrapper around saveData that REJECTS on a storage failure. Both
+// background.js used `new Promise(resolve => saveData(data, resolve))`, which
+// resolves *with* the error string and then discards it — so a quota-failed
+// quick-save still showed "✅ Saved!". There is no window in a service worker
+// either, so utils.js's modal fallback never fires there: the write failed
+// completely silently. Use this instead of hand-rolling the wrapper.
+function saveDataAsync(dataToSave) {
+  return new Promise((resolve, reject) => {
+    saveData(dataToSave, (err) => (err ? reject(new Error(err)) : resolve()));
   });
 }
 
@@ -474,9 +507,13 @@ function mergeImportData(importedData) {
         }
       }
 
-      // Final save
-      saveData({ folders: currentFolders, pinnedFolders: currentPinned, prompts: currentPrompts }, () => {
-        resolve();
+      // Final save. Reject on a storage failure instead of resolving blindly:
+      // an import that hit the quota was reporting "Import successful!" while
+      // nothing had been written — the worst possible moment to be wrong, since
+      // the user is likely restoring a backup after losing data.
+      saveData({ folders: currentFolders, pinnedFolders: currentPinned, prompts: currentPrompts }, (err) => {
+        if (err) reject(new Error(err));
+        else resolve();
       });
     });
   });
@@ -879,5 +916,6 @@ if (typeof module !== 'undefined') {
     insertSuggestionsInEditor,
     normalizeUiLang,
     buildUninstallUrl,
+    saveDataAsync,
   };
 }

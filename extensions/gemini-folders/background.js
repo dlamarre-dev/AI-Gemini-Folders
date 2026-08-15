@@ -148,6 +148,20 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   }
 });
 
+// Saves and returns the error instead of throwing, so a failed write shows a
+// failure toast rather than "✅ Saved!". The old `new Promise(r => saveData(d, r))`
+// resolved *with* the error and dropped it; there is no window in a service
+// worker either, so utils.js's modal fallback never fires here.
+async function saveOrReportError(dataToSave) {
+  try {
+    await saveDataAsync(dataToSave);
+    return null;
+  } catch (err) {
+    console.error("Save failed:", err);
+    return err;
+  }
+}
+
 // Injected into the active Gemini tab to show a transient confirmation toast.
 // Text color follows the background's luminance (same helper as AI Folders).
 function showToast(msg, bgColor) {
@@ -193,11 +207,13 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
           timestamp: Date.now()
         });
 
-        await new Promise(resolve => saveData({ folders: folders }, resolve));
+        const saveError = await saveOrReportError({ folders: folders });
 
         await chrome.scripting.executeScript({
           target: { tabId: tab.id },
-          args: [chrome.i18n.getMessage("toastSaved") || "✅ Saved!", "#1a73e8"],
+          args: saveError
+            ? [chrome.i18n.getMessage("storageFullError") || "⚠️ Storage full — not saved.", "#d93025"]
+            : [chrome.i18n.getMessage("toastSaved") || "✅ Saved!", "#1a73e8"],
           func: showToast
         });
       } else {
@@ -398,12 +414,13 @@ chrome.commands.onCommand.addListener(async (command) => {
           timestamp: Date.now()
         });
 
-        await new Promise(resolve => saveData({ folders: folders }, resolve));
+        const saveError = await saveOrReportError({ folders: folders });
 
-        // SUCCESS
         await chrome.scripting.executeScript({
           target: { tabId: tab.id },
-          args: [toastMsg, "#1a73e8"],
+          args: saveError
+            ? [chrome.i18n.getMessage("storageFullError") || "⚠️ Storage full — not saved.", "#d93025"]
+            : [toastMsg, "#1a73e8"],
           func: showToast
         });
       } else {
