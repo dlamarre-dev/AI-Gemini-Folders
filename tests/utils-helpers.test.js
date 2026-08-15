@@ -219,6 +219,42 @@ describe('syncToBookmarksTree', () => {
     expect(chatCreates.map((o) => o.url)).toEqual(['https://a/ok']);
   });
 
+  test('mirrors a sub-folder INSIDE its parent, after the parent conversations', async () => {
+    const folders = {
+      Work: [{ title: 'w1', url: 'https://a/w1', timestamp: 5 }],
+      Clients: [{ title: 'c1', url: 'https://a/c1', timestamp: 9 }],
+    };
+
+    await syncToBookmarksTree(folders, [], 'dateDesc', { Clients: 'Work' });
+
+    // Clients is a child, so it never appears at the top level…
+    expect(order).toEqual([
+      'remove:stale',
+      'create:folder(masterFolderName)',
+      'create:folder(Work)',
+      'create:chat(w1)',
+      'create:folder(Clients)',
+      'create:chat(c1)',
+    ]);
+
+    // …it hangs off Work, at the index right after Work's own conversation.
+    // The mock hands out ids in creation order: master=node0, Work=node1.
+    const creates = chrome.bookmarks.create.mock.calls.map((c) => c[0]);
+    const work = creates.find((o) => o.title === 'Work');
+    const clients = creates.find((o) => o.title === 'Clients');
+    expect(work.parentId).toBe('node0');
+    expect(clients.parentId).toBe('node1');
+    expect(clients.index).toBe(1);
+  });
+
+  test('an orphaned nesting entry mirrors at the top level rather than vanishing', async () => {
+    const folders = { Solo: [{ title: 's', url: 'https://a/s', timestamp: 1 }] };
+
+    await syncToBookmarksTree(folders, [], 'dateDesc', { Solo: 'DeletedParent' });
+
+    expect(order).toContain('create:folder(Solo)');
+  });
+
   test('a re-entrant call while a sync is in flight is ignored', async () => {
     const folders = { A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] };
     const first = syncToBookmarksTree(folders, [], 'dateDesc'); // holds the lock

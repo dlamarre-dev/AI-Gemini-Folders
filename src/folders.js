@@ -734,6 +734,13 @@ if (typeof module !== 'undefined') {
   if (typeof sortFolderNames === 'undefined') global.sortFolderNames = _u.sortFolderNames;
   if (typeof sortChats === 'undefined') global.sortChats = _u.sortChats;
   if (typeof EMOJI_PREFIX_REGEX === 'undefined') global.EMOJI_PREFIX_REGEX = _u.EMOJI_PREFIX_REGEX;
+  // Folder-nesting helpers, same reason: globals in the browser, module-scoped here.
+  for (const name of ['getFolderParent', 'getChildFolders', 'getRootFolderNames',
+    'folderSubtreeNames', 'sortedChildFolders', 'sortedRootFolders', 'flattenFolderChats',
+    'canNestFolder', 'withFolderParent', 'pruneFolderParents', 'folderDisplayPath',
+    'folderOpenPath', 'folderSearchState']) {
+    if (typeof global[name] === 'undefined') global[name] = _u[name];
+  }
 
   module.exports = {
     displayFolders,
