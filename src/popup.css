@@ -1025,6 +1025,24 @@
       pointer-events: auto;
     }
 
+    /* A FOLDER drag is the mirror image of a conversation drag: the element
+       being dragged is a .folder-header, which `body.is-dragging .folder *`
+       would make non-hit-testable the instant the drag started — the very
+       problem the `.dragging` exception above solves for chat items. So folder
+       drags use their own class and neutralize only what would otherwise
+       retarget the events mid-card: the header's contents and the chat rows.
+       Headers and cards themselves stay live, which is what carries the drop. */
+    body.is-dragging-folder .folder-header *,
+    body.is-dragging-folder .chat-item {
+      pointer-events: none;
+    }
+
+    /* Drag handles should not start a text selection instead of a drag. */
+    .folder-header {
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
     .folder.dragging-folder { opacity: 0.4; }
     .folder.drag-invalid { border: 2px dashed var(--delete-color); background-color: rgba(217, 48, 37, 0.05); }
 

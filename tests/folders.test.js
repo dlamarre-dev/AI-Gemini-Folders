@@ -639,6 +639,13 @@ function dropOn(el, payload) {
   return event;
 }
 
+function dragStartOn(el) {
+  const event = new Event('dragstart', { bubbles: true, cancelable: true });
+  event.dataTransfer = makeDataTransfer({});
+  el.dispatchEvent(event);
+  return event;
+}
+
 const folderEl = (name) => document.querySelector(`.folder[data-folder-name="${name}"]`);
 const lastSave = () => global.saveData.mock.calls[global.saveData.mock.calls.length - 1][0];
 
@@ -749,6 +756,30 @@ describe('nesting by drag & drop', () => {
     expect(lastSave().folderParents).toEqual({ Personal: 'Work' });
     // The parent is force-opened, or the folder just dragged would vanish.
     expect(lastSave().openFolders).toContain('Work');
+  });
+
+  test('dragging a folder never marks the body as a conversation drag', () => {
+    // `body.is-dragging` neutralizes pointer events on EVERY descendant of a
+    // .folder, and the element being dragged here IS one (the header). Setting
+    // it made the drag source stop being hit-testable the moment the drag
+    // started, and folders could not be dragged at all in Chrome.
+    setupStorage({ Work: [], Personal: [] }, []);
+    displayFolders();
+
+    dragStartOn(folderEl('Personal').querySelector('.folder-header'));
+
+    expect(document.body.classList.contains('is-dragging')).toBe(false);
+    expect(document.body.classList.contains('is-dragging-folder')).toBe(true);
+    expect(folderEl('Personal').classList.contains('dragging-folder')).toBe(true);
+  });
+
+  test('dragging a SUB-folder also reveals the way back to the top level', () => {
+    setupStorage({ Work: [], Clients: [] }, [], ['Work'], { Clients: 'Work' });
+    displayFolders();
+
+    dragStartOn(folderEl('Clients').querySelector('.folder-header'));
+
+    expect(document.body.classList.contains('is-dragging-subfolder')).toBe(true);
   });
 
   test('a folder that already has sub-folders is refused, with an explanation', () => {

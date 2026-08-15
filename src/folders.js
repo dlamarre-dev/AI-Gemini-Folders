@@ -363,7 +363,12 @@ function buildFolderElement(folderName, ctx, isChild) {
     e.stopPropagation();
     dragState = { kind: 'folder', folder: folderName };
     folderDiv.classList.add('dragging-folder', 'is-source-folder');
-    document.body.classList.add('is-dragging');
+    // NOT `is-dragging`: that class neutralizes pointer events on every
+    // descendant of a .folder, and the header being dragged is one of them —
+    // the drag source would stop being hit-testable the instant it started.
+    // (That is what the `.dragging` exception exists for on chat items.)
+    // Folder drags get their own class, which never touches a header.
+    document.body.classList.add('is-dragging-folder');
     // The root drop zone only makes sense for a folder that is nested.
     if (isChild) document.body.classList.add('is-dragging-subfolder');
     e.dataTransfer.setData('text/plain', JSON.stringify({ kind: 'folder', sourceFolder: folderName }));
@@ -372,7 +377,7 @@ function buildFolderElement(folderName, ctx, isChild) {
   folderHeader.addEventListener('dragend', () => {
     dragState = { kind: null, folder: null };
     folderDiv.classList.remove('dragging-folder', 'is-source-folder');
-    document.body.classList.remove('is-dragging', 'is-dragging-subfolder');
+    document.body.classList.remove('is-dragging-folder', 'is-dragging-subfolder');
   });
   // ----------------------------------------------------------------
 
