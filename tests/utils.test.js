@@ -575,6 +575,62 @@ describe('mergeImportData', () => {
     expect(savedFolders().Dev).toHaveLength(1);
   });
 
+  // The nesting map is merged after the folders, so both ends can be checked
+  // against the merged result. A backup must never be able to create a second
+  // level, a cycle, or a pointer to a folder that isn't there.
+  function savedParents() {
+    const calls = chrome.storage.sync.set.mock.calls;
+    const arg = calls.map((c) => c[0]).reverse().find((a) => a && a.folderParents);
+    return arg ? arg.folderParents : null;
+  }
+
+  test('imports the folder nesting from a backup', async () => {
+    const chat = (u) => [{ title: 'c', url: `https://gemini.google.com/app/${u}`, timestamp: 1 }];
+    await mergeImportData({
+      folders: { Work: chat('a'), Clients: chat('b') },
+      folderParents: { Clients: 'Work' },
+    });
+    expect(savedParents()).toEqual({ Clients: 'Work' });
+  });
+
+  test('drops nesting entries that point at a folder the backup does not carry', async () => {
+    const chat = (u) => [{ title: 'c', url: `https://gemini.google.com/app/${u}`, timestamp: 1 }];
+    await mergeImportData({
+      folders: { Clients: chat('b') },
+      folderParents: { Clients: 'Ghost' },
+    });
+    expect(savedParents()).toEqual({});
+  });
+
+  test('refuses a backup that would create a second level or a cycle', async () => {
+    const chat = (u) => [{ title: 'c', url: `https://gemini.google.com/app/${u}`, timestamp: 1 }];
+    await mergeImportData({
+      folders: { A: chat('a'), B: chat('b'), C: chat('c'), D: chat('d') },
+      folderParents: { B: 'A', C: 'B', D: 'D' },
+    });
+    expect(savedParents()).toEqual({ B: 'A' });
+  });
+
+  test('a local placement wins over the backup', async () => {
+    const existing = { Work: [], Personal: [], Clients: [] };
+    chrome.storage.sync.get
+      .mockImplementationOnce((_, cb) => cb({
+        foldersDataCompressed: `C:${JSON.stringify(existing)}`,
+        folderParents: { Clients: 'Personal' },
+      }))
+      .mockImplementation((_, cb) => cb({ syncPromptsEnabled: false, syncBookmarksEnabled: false }));
+
+    await mergeImportData({ folders: existing, folderParents: { Clients: 'Work' } });
+    expect(savedParents()).toEqual({ Clients: 'Personal' });
+  });
+
+  test('an old backup with no nesting map imports everything at the top level', async () => {
+    await mergeImportData({
+      folders: { Dev: [{ title: 'Chat', url: 'https://gemini.google.com/app/abc', timestamp: 1 }] },
+    });
+    expect(savedParents()).toEqual({});
+  });
+
   test('imports pins from backup', async () => {
     const importedData = {
       folders: { Dev: [{ title: 'Chat', url: 'https://gemini.google.com/app/abc', timestamp: 1 }] },

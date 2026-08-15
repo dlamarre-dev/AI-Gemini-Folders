@@ -387,7 +387,9 @@ function initPopupCommon(config) {
   // --- Export ---
   const exportBtn = document.getElementById('exportBtn');
   exportBtn.addEventListener('click', async () => {
-    loadData({ folders: {}, pinnedFolders: [], prompts: {} }, async (data) => {
+    // folderParents is listed only so a user with no sub-folders still exports a
+    // predictable {} — loadData already copies whatever is in storage.
+    loadData({ folders: {}, pinnedFolders: [], prompts: {}, folderParents: {} }, async (data) => {
       if (Object.keys(data.folders).length === 0 && Object.keys(data.prompts).length === 0) {
         await window.showCustomModal({
           title: chrome.i18n.getMessage("alertEmptyExport") || "Your folders and prompts are empty, nothing to export!",

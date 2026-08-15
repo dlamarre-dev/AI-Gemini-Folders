@@ -15,12 +15,13 @@ function makeFolder(...chats) {
   }));
 }
 
-function setupStorage(folders, pinnedFolders = [], openFolders = []) {
+function setupStorage(folders, pinnedFolders = [], openFolders = [], folderParents = {}) {
   global.loadData = jest.fn((defaults, cb) =>
     cb({
       folders: JSON.parse(JSON.stringify(folders)),
       pinnedFolders: [...pinnedFolders],
       openFolders: [...openFolders],
+      folderParents: { ...folderParents },
     })
   );
   global.saveData = jest.fn((data, cb) => cb && cb());

@@ -84,6 +84,270 @@ function sortChats(chats, sortPref) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Folder nesting — ONE level (root → sub-folder), stored in `folderParents`
+// ---------------------------------------------------------------------------
+//
+// `folderParents` is a plain sync key, sibling of `pinnedFolders`:
+//     { [childFolderName]: parentFolderName }     absent entry = root folder
+//
+// It is deliberately NOT stored on the folder itself: `folders[name]` is a bare
+// array and every consumer relies on Array.isArray() holding, so turning it into
+// an object would mean a data migration — which this codebase has no mechanism
+// for. A missing key simply defaults to {} through loadData, exactly like
+// pinnedFolders, so old installs and old backups need no conversion.
+//
+// Child→parent rather than parent→children: a parent→children map can express
+// "this folder has two parents", a child→parent map cannot.
+//
+// Nesting never touches `pinnedFolders`. A pinned folder dragged into another
+// keeps its pin dormant (the pin button is not rendered on a sub-folder, and
+// children are sorted with no pin list) and gets it back the moment it returns
+// to the top level. That is a requirement, and it holds by doing nothing.
+
+// Does this folder carry a usable parent entry? Non-recursive on purpose: with a
+// corrupt a→b/b→a pair, recursion would never terminate. Here both folders
+// simply read as nested-under-something and getFolderParent sends both back to
+// the root level, which is visible and repairable by the user.
+function hasParentEntry(folders, folderParents, name) {
+  if (!folderParents || !hasEntry(folderParents, name)) return false;
+  const parent = folderParents[name];
+  return typeof parent === 'string' && parent !== name && hasEntry(folders, parent);
+}
+
+// The folder's parent, or null when it is (or must be treated as) a root folder.
+// Returns null for an ORPHAN — a recorded parent that no longer exists — without
+// deleting anything: a read must not write, and the parent may come back from
+// another device on the next sync, which should restore the nesting.
+function getFolderParent(folders, folderParents, name) {
+  if (!hasParentEntry(folders, folderParents, name)) return null;
+  const parent = folderParents[name];
+  // The parent is itself nested: honouring this would be depth 2. Drop the
+  // grandchild to the top level rather than silently rendering a third level.
+  if (hasParentEntry(folders, folderParents, parent)) return null;
+  return parent;
+}
+
+function getChildFolders(folders, folderParents, name) {
+  if (!folders) return [];
+  return Object.keys(folders).filter(n => getFolderParent(folders, folderParents, n) === name);
+}
+
+function getRootFolderNames(folders, folderParents) {
+  if (!folders) return [];
+  return Object.keys(folders).filter(n => getFolderParent(folders, folderParents, n) === null);
+}
+
+// The folder plus its children — what a delete must remove, in one list.
+function folderSubtreeNames(folders, folderParents, name) {
+  return [name, ...getChildFolders(folders, folderParents, name)];
+}
+
+// A shallow { name: chats } view of a subset, so the existing sortFolderNames can
+// order a subset without being modified (and without its callers changing).
+function pickFolders(folders, names) {
+  const subset = {};
+  for (const n of names) if (hasEntry(folders, n)) subset[n] = folders[n];
+  return subset;
+}
+
+// Children in display order. The pin list is deliberately NOT passed: a dormant
+// pin on a nested folder must not reorder its siblings.
+function sortedChildFolders(folders, folderParents, name, sortPref) {
+  return sortFolderNames(pickFolders(folders, getChildFolders(folders, folderParents, name)), [], sortPref);
+}
+
+// Every conversation under a folder: its own first, then each child's, each set
+// sorted by the current preference. Used by the tab-group button and by the root
+// sort below.
+function flattenFolderChats(folders, folderParents, name, sortPref) {
+  const own = Array.isArray(folders[name]) ? sortChats(folders[name], sortPref) : [];
+  const out = [...own];
+  for (const child of sortedChildFolders(folders, folderParents, name, sortPref)) {
+    if (Array.isArray(folders[child])) out.push(...sortChats(folders[child], sortPref));
+  }
+  return out;
+}
+
+// Root folders in display order. Each root is ranked on its WHOLE subtree, so a
+// parent whose only recent activity happened inside a sub-folder still sorts as
+// recent under dateDesc instead of sinking to the bottom.
+function sortedRootFolders(folders, folderParents, pinnedFolders, sortPref) {
+  const view = {};
+  for (const name of getRootFolderNames(folders, folderParents)) {
+    view[name] = flattenFolderChats(folders, folderParents, name, sortPref);
+  }
+  return sortFolderNames(view, pinnedFolders, sortPref);
+}
+
+// May `child` be dropped into `parent`? Returns { ok: true } or a reason the
+// caller turns into a message: 'missing' | 'self' | 'depth' | 'already'.
+function canNestFolder(folders, folderParents, child, parent) {
+  if (typeof child !== 'string' || typeof parent !== 'string') return { ok: false, reason: 'missing' };
+  if (child === parent) return { ok: false, reason: 'self' };
+  if (isUnsafeKey(child) || isUnsafeKey(parent)) return { ok: false, reason: 'missing' };
+  if (!hasEntry(folders, child) || !hasEntry(folders, parent)) return { ok: false, reason: 'missing' };
+  // Only one level: the target must be a root folder, and the dragged folder
+  // must not already be a parent itself.
+  if (getFolderParent(folders, folderParents, parent) !== null) return { ok: false, reason: 'depth' };
+  if (getChildFolders(folders, folderParents, child).length > 0) return { ok: false, reason: 'depth' };
+  if (getFolderParent(folders, folderParents, child) === parent) return { ok: false, reason: 'already' };
+  return { ok: true };
+}
+
+// New map with `child` nested under `parent`, or moved back to the top level
+// when parent is null. Pure — the caller decides when to persist.
+function withFolderParent(folderParents, child, parent) {
+  const next = { ...(folderParents || {}) };
+  if (typeof child !== 'string' || isUnsafeKey(child)) return next;
+  if (parent === null || parent === undefined) delete next[child];
+  else next[child] = parent;
+  return next;
+}
+
+// Self-healing copy: drops orphans, self-references and depth-2 entries. Run it
+// before every save that carries folderParents, so a parent deleted on another
+// device cannot leave the map growing forever.
+function pruneFolderParents(folders, folderParents) {
+  const next = {};
+  for (const child of Object.keys(folderParents || {})) {
+    if (!hasEntry(folders, child)) continue;
+    const parent = getFolderParent(folders, folderParents, child);
+    if (parent !== null) next[child] = parent;
+  }
+  return next;
+}
+
+// "Parent/Child" for the folder-name box, or just the name at the top level.
+// Raw names on both sides (emoji prefixes included) so the value round-trips
+// through resolveFolderPath — the input already carries the raw name today.
+function folderDisplayPath(folders, folderParents, name) {
+  const parent = getFolderParent(folders, folderParents, name);
+  return parent ? `${parent}/${name}` : name;
+}
+
+// Which folders must be expanded for `name` to be visible after a re-render.
+function folderOpenPath(folders, folderParents, name) {
+  const parent = getFolderParent(folders, folderParents, name);
+  return parent ? [parent, name] : [name];
+}
+
+// What the folder-name box means. Returns
+//   { name, parent, created: string[], error: null | 'nestTooDeep' | 'exists' }
+// with name === null when the caller should fall back to its own default.
+//
+// Rule 1 is load-bearing: an existing folder literally named "a/b" must keep
+// working, so an exact match always beats the path interpretation. Every cut
+// point is tried, not just the first, so a name containing a slash on either
+// side still resolves.
+function resolveFolderPath(folders, folderParents, typed) {
+  const value = (typed || '').trim();
+  const empty = { name: null, parent: null, created: [], error: null };
+  if (!value) return empty;
+
+  if (hasEntry(folders, value)) {
+    return { name: value, parent: getFolderParent(folders, folderParents, value), created: [], error: null };
+  }
+
+  const cuts = [];
+  for (let i = value.indexOf('/'); i !== -1; i = value.indexOf('/', i + 1)) {
+    const left = value.slice(0, i).trim();
+    const right = value.slice(i + 1).trim();
+    if (!left || !right || isUnsafeKey(left) || isUnsafeKey(right)) continue;
+    cuts.push({ left, right });
+  }
+
+  // An existing pair wins over creating anything.
+  for (const { left, right } of cuts) {
+    if (hasEntry(folders, left) && hasEntry(folders, right)
+        && getFolderParent(folders, folderParents, right) === left) {
+      return { name: right, parent: left, created: [], error: null };
+    }
+  }
+
+  if (cuts.length > 0) {
+    const { left, right } = cuts[0];
+    if (getFolderParent(folders, folderParents, left) !== null) {
+      return { name: null, parent: null, created: [], error: 'nestTooDeep' };
+    }
+    // The child name is taken somewhere else — refuse rather than silently
+    // re-parenting a folder the user did not drag.
+    if (hasEntry(folders, right)) {
+      return { name: null, parent: null, created: [], error: 'exists' };
+    }
+    const created = [];
+    if (!hasEntry(folders, left)) created.push(left);
+    created.push(right);
+    return { name: right, parent: left, created, error: null };
+  }
+
+  return { name: value, parent: null, created: hasEntry(folders, value) ? [] : [value], error: null };
+}
+
+// What a search term makes visible for one folder — computed without the DOM so
+// it can be unit-tested. `show` false means the folder is filtered out entirely;
+// `showAllChats` means the folder itself matched, so all of its conversations
+// stay visible (the pre-existing behaviour for a name match).
+//
+// A root must also surface when only a CHILD matches: the parent is filtered
+// first, so without that clause a matching sub-folder would be unreachable.
+function folderSearchState(folders, folderParents, name, term) {
+  const needle = (term || '').toLowerCase();
+  if (!needle) return { show: true, showAllChats: true };
+
+  const nameMatches = (n) => n.toLowerCase().includes(needle);
+  const chatMatches = (n) => Array.isArray(folders[n])
+    && folders[n].some(c => (c.title || '').toLowerCase().includes(needle));
+
+  const parent = getFolderParent(folders, folderParents, name);
+  const self = nameMatches(name);
+
+  if (parent) {
+    const viaParent = nameMatches(parent);
+    return { show: viaParent || self || chatMatches(name), showAllChats: viaParent || self };
+  }
+
+  const viaChild = getChildFolders(folders, folderParents, name)
+    .some(child => nameMatches(child) || chatMatches(child));
+  return { show: self || chatMatches(name) || viaChild, showAllChats: self };
+}
+
+// The two-level context menu, as data. Both background.js build their menu from
+// this so the two copies (deliberately unshared, CLAUDE.md §6) cannot drift, and
+// so the shape is unit-testable — there is no test suite for background.js.
+//
+// A contextMenus item that has children is not clickable itself, hence the
+// explicit "save here" entry under a parent. Ids stay `folder_<name>` at BOTH
+// levels: folder names are unique keys of one flat object, so the id already
+// identifies the target unambiguously and survives a service-worker restart.
+// Only the submenu containers take a `sub_` prefix, which the click handler
+// never accepts as a save target.
+function buildContextMenuModel(folders, folderParents, opts = {}) {
+  const rootId = opts.rootId;
+  const saveHereTitle = opts.saveHereTitle || '';
+  const label = (name) => {
+    const match = name.match(EMOJI_PREFIX_REGEX);
+    return match ? `${match[1]} ${name.replace(EMOJI_PREFIX_REGEX, '')}` : `📁 ${name}`;
+  };
+
+  const items = [];
+  for (const root of getRootFolderNames(folders, folderParents).sort()) {
+    const children = getChildFolders(folders, folderParents, root).sort();
+    if (children.length === 0) {
+      items.push({ id: `folder_${root}`, parentId: rootId, title: label(root) });
+      continue;
+    }
+    const subId = `sub_${root}`;
+    items.push({ id: subId, parentId: rootId, title: label(root) });
+    items.push({ id: `folder_${root}`, parentId: subId, title: saveHereTitle });
+    items.push({ id: `sep_${root}`, parentId: subId, type: 'separator' });
+    for (const child of children) {
+      items.push({ id: `folder_${child}`, parentId: subId, title: label(child) });
+    }
+  }
+  return items;
+}
+
 function loadData(defaults, callback) {
   chrome.storage.sync.get(null, (syncResult) => {
     chrome.storage.local.get(null, (localResult) => {
@@ -185,7 +449,12 @@ function saveData(dataToSave, callback) {
     // folders or open/closed prompts. NOTE: this is deliberately broader than
     // isContentSave — pinning a folder or changing the sort order must still
     // re-sync the bookmark order even though no conversation/prompt changed.
-    const affectsBookmarks = !!(dataToSave.folders || dataToSave.pinnedFolders || dataToSave.sortPref);
+    // folderParents belongs here for the same reason: nesting a folder rewrites
+    // the shape of the mirrored tree while writing no `folders` at all, so
+    // without it the bookmark tree would keep showing the old layout until the
+    // next conversation was saved.
+    const affectsBookmarks = !!(dataToSave.folders || dataToSave.pinnedFolders
+      || dataToSave.sortPref || dataToSave.folderParents);
 
     // --- Folders → sync, split into chunks to stay under kQuotaBytesPerItem (8 192 B) ---
     if (dataToSave.folders) {
@@ -300,10 +569,11 @@ function saveDataAsync(dataToSave) {
 // Callers that don't pass the extra params continue to work unchanged.
 function finishSave(callback, err = null, countSave = true, affectsBookmarks = true) {
   if (affectsBookmarks) {
-    chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref'], (syncData) => {
+    chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref', 'folderParents'], (syncData) => {
       if (syncData.syncBookmarksEnabled) {
         loadData({ folders: {} }, (data) => {
-          syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateDesc');
+          syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateDesc',
+            syncData.folderParents || {});
         });
       }
     });
@@ -323,7 +593,7 @@ function finishSave(callback, err = null, countSave = true, affectsBookmarks = t
 // --- BOOKMARKS SYNCHRONIZATION (MOBILE) ---
 let isSyncingToBookmarks = false;
 
-async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateDesc') {
+async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateDesc', folderParents = {}) {
   // 1. Stop if a sync is ongoing
   if (isSyncingToBookmarks) {
     return;
@@ -350,25 +620,27 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
     // 4. Master folder creation
     const masterNode = await new Promise(r => chrome.bookmarks.create({ title: MASTER_FOLDER_NAME }, r));
 
-    // 5. Folder and bookmark creation loop (sorted)
-    const finalOrder = sortFolderNames(folders, pinnedFolders, sortPref);
-    for (let i = 0; i < finalOrder.length; i++) {
-      const folderName = finalOrder[i];
+    // 5. Folder and bookmark creation loop (sorted).
+    //
+    // The mirror is nested exactly like the popup: a sub-folder becomes a real
+    // bookmark folder inside its parent, after the parent's own conversations.
+    // Flattening it to "Parent / Child" at the top level would both lose the
+    // layout the feature exists to give and collide on names.
+    const createFolderNode = async (parentId, folderName, index) => {
       const match = folderName.match(EMOJI_PREFIX_REGEX);
       const displayFolderName = match
         ? `${match[1]} ${folderName.slice(match[0].length)}`
         : folderName;
 
       const folderNode = await new Promise(r => chrome.bookmarks.create({
-        parentId: masterNode.id,
+        parentId,
         title: displayFolderName,
-        index: i
+        index
       }, r));
 
-      const chats = sortChats(folders[folderName], sortPref);
-
-      for (let j = 0; j < chats.length; j++) {
-        const chat = chats[j];
+      const chats = sortChats(folders[folderName] || [], sortPref);
+      let childIndex = 0;
+      for (const chat of chats) {
         // Defence-in-depth: never mirror an unsafe URL into the bookmark tree,
         // even if legacy/corrupt storage carries one (import already gates on this).
         if (!isSafeUrl(chat.url)) continue;
@@ -376,8 +648,22 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
           parentId: folderNode.id,
           title: chat.title,
           url: chat.url,
-          index: j
+          index: childIndex++
         }, r));
+      }
+      return { folderNode, nextIndex: childIndex };
+    };
+
+    const finalOrder = sortedRootFolders(folders, folderParents, pinnedFolders, sortPref);
+    for (let i = 0; i < finalOrder.length; i++) {
+      const folderName = finalOrder[i];
+      const { folderNode, nextIndex } = await createFolderNode(masterNode.id, folderName, i);
+
+      // Sub-folders continue the parent's index sequence, so they land after its
+      // conversations rather than being interleaved with them.
+      let subIndex = nextIndex;
+      for (const child of sortedChildFolders(folders, folderParents, folderName, sortPref)) {
+        await createFolderNode(folderNode.id, child, subIndex++);
       }
     }
   } catch (error) {
@@ -459,10 +745,11 @@ function mergeImportData(importedData) {
       return reject(new Error("Invalid Format"));
     }
 
-    loadData({ folders: {}, pinnedFolders: [], prompts: {} }, (data) => {
+    loadData({ folders: {}, pinnedFolders: [], prompts: {}, folderParents: {} }, (data) => {
       let currentFolders = data.folders || {};
       let currentPinned = data.pinnedFolders || [];
       let currentPrompts = data.prompts || {};
+      let currentParents = data.folderParents || {};
 
       const isPlainObject = (v) => v && typeof v === 'object' && !Array.isArray(v);
 
@@ -472,6 +759,7 @@ function mergeImportData(importedData) {
       let foldersToImport = {};
       let pinsToImport = [];
       let promptsToImport = {};
+      let parentsToImport = {};
 
       if (isPlainObject(importedData.folders)) {
         foldersToImport = importedData.folders;
@@ -480,6 +768,11 @@ function mergeImportData(importedData) {
         }
         if (isPlainObject(importedData.prompts)) {
           promptsToImport = importedData.prompts;
+        }
+        // Backups written before nesting existed simply carry no map: everything
+        // they contain imports at the top level, which is what it was.
+        if (isPlainObject(importedData.folderParents)) {
+          parentsToImport = importedData.folderParents;
         }
       } else if (!('folders' in importedData) && !('prompts' in importedData)) {
         // Legacy flat format: the object itself maps folder names to chat arrays.
@@ -531,11 +824,27 @@ function mergeImportData(importedData) {
         }
       }
 
+      // 4. Merge the nesting, AFTER the folders so both ends can be checked
+      //    against the merged result. An entry is taken only when it is safe on
+      //    its own terms; a folder that already has a local placement keeps it,
+      //    the same "existing entry wins" policy the prompt merge uses.
+      for (const [child, parent] of Object.entries(parentsToImport)) {
+        if (typeof child !== 'string' || typeof parent !== 'string') continue;
+        if (hasEntry(currentParents, child)) continue;
+        if (!canNestFolder(currentFolders, currentParents, child, parent).ok) continue;
+        currentParents[child] = parent;
+      }
+
       // Final save. Reject on a storage failure instead of resolving blindly:
       // an import that hit the quota was reporting "Import successful!" while
       // nothing had been written — the worst possible moment to be wrong, since
       // the user is likely restoring a backup after losing data.
-      saveData({ folders: currentFolders, pinnedFolders: currentPinned, prompts: currentPrompts }, (err) => {
+      saveData({
+        folders: currentFolders,
+        pinnedFolders: currentPinned,
+        prompts: currentPrompts,
+        folderParents: pruneFolderParents(currentFolders, currentParents),
+      }, (err) => {
         if (err) reject(new Error(err));
         else resolve();
       });
@@ -926,6 +1235,22 @@ if (typeof module !== 'undefined') {
     makeChunks,
     sortFolderNames,
     sortChats,
+    getFolderParent,
+    getChildFolders,
+    getRootFolderNames,
+    folderSubtreeNames,
+    pickFolders,
+    sortedChildFolders,
+    sortedRootFolders,
+    flattenFolderChats,
+    canNestFolder,
+    withFolderParent,
+    pruneFolderParents,
+    folderDisplayPath,
+    folderOpenPath,
+    resolveFolderPath,
+    folderSearchState,
+    buildContextMenuModel,
     loadData,
     saveData,
     finishSave,
