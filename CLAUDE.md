@@ -263,6 +263,19 @@ git checkout main && git pull --ff-only
   `site-config.js`, run via `executeScript`. Falls back to a heuristic (lowest
   sizeable text field) and logs `console.warn("[Folders extension] …")` when a
   selector stops matching.
+- **Keyboard access:** custom dropdowns go through `makeMenuAccessible`
+  (`src/ui.js`) — the sort menus in `popup-core.js`/`prompts.js` and the
+  bulk-move list in `bulk-actions.js`. It adds the WAI menu-button roles, roving
+  arrow-key focus, Enter/Space to choose and Escape to close, **without owning
+  the open/close state**: each caller keeps its own show/hide code. It supports
+  the two conventions in use — a `.show` class or the `hidden` attribute —
+  detected once at wiring time (`usesHidden`); testing `!menu.hidden` on a plain
+  `<div>` is always true and would make the menu look permanently open.
+  `showCustomModal` carries `role="dialog"`/`aria-modal`/`aria-labelledby`, traps
+  Tab and restores focus to the opener. Its focusable scan filters on inline
+  `style.display`, **not `offsetParent`**, which is always null under jsdom.
+  Folder and prompt headers already had `tabindex="0"` + `keydown` — that is the
+  pattern to copy for anything new.
 - **Security posture:** folder/conversation titles render via `textContent` (no
   XSS); `link.href` is gated by `isSafeUrl` (falls back to `about:blank`); import
   is validated (`isSafeUrl` + shape checks + chunked writes); the local-LLM
