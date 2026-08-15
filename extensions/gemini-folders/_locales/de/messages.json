@@ -301,5 +301,8 @@
   },
   "keyCtrl": {
     "message": "Strg"
+  },
+  "reservedNameError": {
+    "message": "Dieser Name ist reserviert – bitte wählen Sie einen anderen."
   }
 }

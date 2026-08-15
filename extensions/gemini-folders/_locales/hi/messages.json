@@ -301,5 +301,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "यह नाम सुरक्षित है — कृपया दूसरा नाम चुनें।"
   }
 }

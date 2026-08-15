@@ -188,7 +188,14 @@ git checkout main && git pull --ff-only
   scrollbar/overflow CSS variants for it; don't touch `overflow-y` /
   `scrollbar-gutter` in `popup.css` without a separate reason.
 - **Data is keyed by folder name and conversation URL** (no stable IDs). Renames,
-  pins and migrations are awkward by design (see TODO §8).
+  pins and migrations are awkward by design (see TODO §8). Because those keys are
+  user-typed names on ordinary objects, **every creation and rename path must
+  reject `isUnsafeKey` names** (`__proto__`, `constructor`, `prototype` —
+  `src/utils.js`, shown to the user as `reservedNameError`). `folders['__proto__']`
+  is `Object.prototype`: truthy, so the "create if missing" guard is skipped and
+  the next `.some()` throws; `prompts['__proto__'] = {…}` hits the prototype setter
+  so the prompt is never created and `JSON.stringify` emits `{}`. `moveChat` needs
+  no guard — its target comes from folders that can no longer be created.
 - **Marketing screenshots** are regenerated only at release time
   (`python build_images.py`), not on every change.
 
@@ -473,6 +480,10 @@ Reading cautions:
   on GF; on AF only check for the absence of a regression.
 - **2026-07-30 reads 0 installs / 0 uninstalls on both extensions** — a CWS reporting
   gap, not a real day. Exclude it from any daily average.
+- **`s` is discontinuous from the tab-reuse release onward.** Until then, saving a
+  conversation that was already in the folder still wrote and still incremented
+  the counter, so older `s` values are inflated by re-saves. The number is now
+  right, but **do not compare averages across that boundary**.
 - Once `s` (§9) has data, the decisive question becomes readable: among those who
   leave with `saves > 0` (they did use it), what share ask for `wanted-in-page-ui`?
   That number — not today's n=4 — decides whether the in-page UI is worth building

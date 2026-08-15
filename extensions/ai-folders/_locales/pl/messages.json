@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Ta nazwa jest zarezerwowana — wybierz inną."
   }
 }

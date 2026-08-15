@@ -301,5 +301,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Tên này đã được dành riêng — vui lòng chọn tên khác."
   }
 }

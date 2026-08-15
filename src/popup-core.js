@@ -131,17 +131,40 @@ function initSaveConversation(opts) {
     const finalChatTitle = chatTitleInput.value.trim() || chrome.i18n.getMessage("defaultTitle");
     const chatUrl = tab.url;
 
+    // folders["__proto__"] is Object.prototype — truthy, so the guard below would
+    // skip creating the array, and the .some() after it would throw and leave
+    // isSaving stuck at true, killing the Save button for the rest of the session.
+    if (isUnsafeKey(folderName)) {
+      statusDiv.textContent = chrome.i18n.getMessage("reservedNameError") || 'That name is reserved — please choose another.';
+      statusDiv.style.color = 'red';
+      statusDiv.style.display = "block";
+      setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, 4000);
+      isSaving = false;
+      return;
+    }
+
     loadData({ folders: {} }, (data) => {
       let folders = data.folders;
       if (!folders[folderName]) folders[folderName] = [];
 
       const cleanTargetUrl = normalizeUrl(chatUrl);
       const isDuplicate = folders[folderName].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
-      if (!isDuplicate) {
-        const chatEntry = { title: finalChatTitle, url: chatUrl, timestamp: Date.now() };
-        if (opts.tagSite) chatEntry.site = siteKey;
-        folders[folderName].push(chatEntry);
+      if (isDuplicate) {
+        // Writing unchanged data back counted as a content save: it bumped
+        // usageStats.saves — the 's' the uninstall survey reports and the
+        // anti-churn baselines read — and rebuilt the whole bookmark tree for
+        // nothing. The background quick-save handlers already skip the write here.
+        isSaving = false;
+        statusDiv.textContent = chrome.i18n.getMessage("toastAlreadySaved") || '⚠️ Already saved!';
+        statusDiv.style.color = 'red';
+        statusDiv.style.display = "block";
+        setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, 2000);
+        return;
       }
+
+      const chatEntry = { title: finalChatTitle, url: chatUrl, timestamp: Date.now() };
+      if (opts.tagSite) chatEntry.site = siteKey;
+      folders[folderName].push(chatEntry);
 
       saveData({ folders }, (err) => {
         isSaving = false;
@@ -228,6 +251,15 @@ function initPopupCommon(config) {
       placeholder: chrome.i18n.getMessage("emojiTipPlaceholder") || "Tip: Start with an emoji! (Win+. or Cmd+Ctrl+Space)"
     });
     if (name && name.trim()) {
+      // Without this, "__proto__" looks like an existing folder (Object.prototype
+      // is truthy) so nothing is created and the modal closes as if it worked.
+      if (isUnsafeKey(name.trim())) {
+        window.showCustomModal({
+          title: chrome.i18n.getMessage("reservedNameError") || 'That name is reserved — please choose another.',
+          type: 'alert',
+        });
+        return;
+      }
       loadData({ folders: {} }, (data) => {
         if (!data.folders[name.trim()]) {
           data.folders[name.trim()] = [];

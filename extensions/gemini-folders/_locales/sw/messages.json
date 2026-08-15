@@ -301,5 +301,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Jina hilo limehifadhiwa — tafadhali chagua jingine."
   }
 }

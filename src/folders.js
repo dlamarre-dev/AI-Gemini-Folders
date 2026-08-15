@@ -494,6 +494,18 @@ async function renameFolder(oldName) {
 
   const trimmedNewName = newName.trim();
 
+  // Renaming TO one of these currently reports "already exists" by accident
+  // (Object.prototype is truthy), which is the right refusal for the wrong
+  // reason — and the assignment below would reassign the object's prototype.
+  // Say what is actually going on instead.
+  if (isUnsafeKey(trimmedNewName)) {
+    await window.showCustomModal({
+      title: chrome.i18n.getMessage("reservedNameError") || 'That name is reserved — please choose another.',
+      type: 'alert',
+    });
+    return;
+  }
+
   loadData({ folders: {}, pinnedFolders: [] }, async (data) => {
     let folders = data.folders;
     let pinned = data.pinnedFolders;

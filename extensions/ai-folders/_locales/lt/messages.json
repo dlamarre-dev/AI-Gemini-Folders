@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Šis pavadinimas rezervuotas – pasirinkite kitą."
   }
 }

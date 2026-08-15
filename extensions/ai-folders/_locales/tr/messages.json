@@ -337,5 +337,8 @@
   },
   "keyCtrl": {
     "message": "Ctrl"
+  },
+  "reservedNameError": {
+    "message": "Bu ad ayrılmıştır — lütfen başka bir ad seçin."
   }
 }
