@@ -115,7 +115,7 @@ async function updateContextMenu() {
       documentUrlPatterns: patterns
     });
 
-    loadData({ folders: {} }, (data) => {
+    loadData({ folders: {}, folderParents: {} }, (data) => {
       const folderNames = Object.keys(data.folders);
 
       if (folderNames.length === 0) {
@@ -127,18 +127,14 @@ async function updateContextMenu() {
           enabled: false
         });
       } else {
-        folderNames.sort().forEach(folder => {
-          const match = folder.match(EMOJI_PREFIX_REGEX);
-          const menuTitle = match
-            ? `${match[1]} ${folder.replace(EMOJI_PREFIX_REGEX, '')}`
-            : `📁 ${folder}`;
-
-          chrome.contextMenus.create({
-            id: `folder_${folder}`,
-            parentId: "ai-folders-parent",
-            title: menuTitle,
-            contexts: ["page"]
-          });
+        // Two levels: a root folder with sub-folders becomes a submenu that
+        // still lets you save into the parent itself. The model is built in
+        // utils.js so this file and its Gemini Folders twin cannot drift.
+        buildContextMenuModel(data.folders, data.folderParents || {}, {
+          rootId: "ai-folders-parent",
+          saveHereTitle: chrome.i18n.getMessage("ctxMenuSave"),
+        }).forEach(item => {
+          chrome.contextMenus.create({ ...item, contexts: ["page"] });
         });
       }
 
@@ -235,8 +231,12 @@ chrome.permissions.onAdded.addListener(async (permissions) => {
   } catch (_) {}
 });
 chrome.storage.onChanged.addListener((changes, namespace) => {
+  // folderParents belongs here: nesting a folder rewrites the second level of
+  // this menu while writing no `folders` at all, so the menu would otherwise
+  // stay stale until the next conversation was saved.
   if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed
-      || changes.localLlmUrl || Object.keys(changes).some(k => k.startsWith('fdc')))) {
+      || changes.folderParents || changes.localLlmUrl
+      || Object.keys(changes).some(k => k.startsWith('fdc')))) {
     updateContextMenu();
   }
   if (namespace === 'sync' && changes.localLlmUrl) {
@@ -466,11 +466,14 @@ const showToast = (msg, bgColor) => {
 // --- CONTEXT MENU ---
 
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
-  if (info.parentMenuItemId !== "ai-folders-parent") return;
+  // Not a parentMenuItemId check any more: a sub-folder's parent is the
+  // `sub_<name>` container, not the root item. The id carries the target, which
+  // is what survives a service-worker restart; `sub_` ids are never save targets.
+  if (typeof info.menuItemId !== 'string' || !info.menuItemId.startsWith('folder_')) return;
   try {
     const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
     const siteKey = getSiteByUrl(tab.url, localLlmUrl);
-    const targetFolder = info.menuItemId.replace("folder_", "");
+    const targetFolder = info.menuItemId.slice('folder_'.length);
     const defaultTitle = chrome.i18n.getMessage("defaultTitle") || "New conversation";
     const siteColor = SITES[siteKey]?.color || "#1a73e8";
 

@@ -828,6 +828,11 @@
     .custom-dropdown-list li:hover {
       background: var(--folder-hover);
     }
+    /* Sub-folders in the bulk-move list: indented, but still plain <li> siblings
+       — makeMenuAccessible walks a flat querySelectorAll('li'). */
+    .custom-dropdown-list li.is-child {
+      padding-inline-start: 24px;
+    }
     .custom-dropdown-list li:first-child { border-radius: 4px 4px 0 0; }
     .custom-dropdown-list li:last-child  { border-radius: 0 0 4px 4px; }
 
