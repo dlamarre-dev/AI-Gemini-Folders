@@ -325,6 +325,12 @@ function initPopupCommon(config) {
     e.stopPropagation();
     sortMenu.classList.toggle('show');
   });
+
+  // Keyboard + screen-reader access for the sort options (src/ui.js).
+  if (window.makeMenuAccessible) {
+    window.makeMenuAccessible(sortToggleBtn, sortMenu,
+      () => sortMenu.querySelectorAll('.dropdown-item'));
+  }
   document.addEventListener('click', () => {
     sortMenu.classList.remove('show');
   });

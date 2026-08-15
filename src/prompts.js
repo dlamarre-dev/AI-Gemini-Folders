@@ -421,6 +421,12 @@ function initPromptsUI() {
     promptSortMenu.classList.toggle('show');
   });
 
+  // Keyboard + screen-reader access for the sort options (src/ui.js).
+  if (window.makeMenuAccessible) {
+    window.makeMenuAccessible(promptSortToggleBtn, promptSortMenu,
+      () => promptSortMenu.querySelectorAll('.dropdown-item'));
+  }
+
   loadData({ promptSortPref: 'dateDesc' }, (data) => {
     const activeItem = document.querySelector(`#promptSortMenu .dropdown-item[data-value="${data.promptSortPref}"]`);
     if (activeItem) activeItem.classList.add('active');

@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     bulkMoveList.hidden ? openDropdown() : closeDropdown();
   });
 
+  // Keyboard + screen-reader access for the folder list (src/ui.js).
+  if (window.makeMenuAccessible) {
+    window.makeMenuAccessible(bulkMoveTrigger, bulkMoveList,
+      () => bulkMoveList.querySelectorAll('li'));
+  }
+
   // Close on click outside
   document.addEventListener('click', () => {
     if (!bulkMoveList.hidden) closeDropdown();
@@ -96,6 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const li = document.createElement('li');
           li.textContent = `${icon} ${displayName}`;
+          // Focusable and announced: these were click-only <li>, so the folder
+          // list was unreachable without a mouse.
+          li.setAttribute('role', 'menuitem');
+          li.setAttribute('tabindex', '-1');
           li.addEventListener('click', (e) => { e.stopPropagation(); moveTo(folder); });
           bulkMoveList.appendChild(li);
         });
