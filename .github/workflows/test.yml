@@ -26,3 +26,41 @@ jobs:
 
       - name: Run test suite
         run: npm test
+
+  # CI used to stop at the tests, so a regression in build.py — a dropped file,
+  # a permission that drifted, an unresolved placeholder — could only be caught
+  # by hand at release time. This packages both extensions for both browsers and
+  # inspects the artifacts. build.py re-runs Jest itself and is now fail-closed,
+  # so this job also proves the test gate still blocks a red suite.
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build all extensions
+        run: python build.py --yes
+
+      - name: Validate the built artifacts
+        run: python tools/validate_build.py
+
+      - name: Fail if the build left the tree dirty
+        run: |
+          # build.py stamps package.json/package-lock.json from the manifest. If
+          # that changes anything here, the committed versions were out of sync.
+          git diff --exit-code || {
+            echo "::error::build.py modified tracked files — commit the version sync"
+            exit 1
+          }

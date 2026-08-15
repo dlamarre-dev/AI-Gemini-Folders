@@ -136,12 +136,22 @@ def _node_env():
     return env
 
 
-def run_tests(assume_yes=False):
-    """Runs Jest. Returns True if tests pass or the user chooses to continue."""
+def run_tests(assume_yes=False, force=False):
+    """Runs Jest. Returns True if tests pass or the user chooses to continue.
 
-    def confirm(question):
-        # Never block on input() when there's no TTY (CI). --yes forces a
-        # "continue anyway"; otherwise fail safe and abort the build.
+    --yes only answers "is it OK to keep going without a TTY" questions. It does
+    NOT wave through a red suite: that used to mean a green "Build finished"
+    was no evidence the tests passed, which is exactly backwards for the flag
+    every automated invocation uses. Overriding a failing suite now takes the
+    explicit --force, whose name says what it does.
+    """
+
+    def confirm(question, overridable=True):
+        if overridable and force:
+            print(f"   {question} -> yes (--force)")
+            return True
+        if not overridable:
+            return False
         if assume_yes:
             print(f"   {question} -> yes (--yes)")
             return True
@@ -177,8 +187,15 @@ def run_tests(assume_yes=False):
         print("✅ All tests passed.\n")
         return True
 
+    # A red suite is fail-closed: only --force (or an interactive "yes") gets past.
     print("\n⚠️  Some tests failed.")
-    return confirm("Continue with the build anyway?")
+    if force:
+        print("   Continuing anyway (--force).")
+        return True
+    if not sys.stdin.isatty():
+        print("   Aborting. Re-run with --force to build on a failing suite.")
+        return False
+    return input("   Continue with the build anyway? [y/N] ").strip().lower() in ("y", "yes")
 
 
 # ---------------------------------------------------------------------------
@@ -436,7 +453,12 @@ def main():
     parser.add_argument(
         "--yes", "-y",
         action="store_true",
-        help="Non-interactive: continue the build even if tests or npm install fail",
+        help="Non-interactive: do not prompt (does NOT override a failing test suite)",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Build even if the test suite fails. Use deliberately, never in automation.",
     )
     args = parser.parse_args()
 
@@ -470,7 +492,7 @@ def main():
         primary_version = json.load(f).get("version", "unknown")
     sync_package_version(primary_version)
 
-    if not run_tests(assume_yes=args.yes):
+    if not run_tests(assume_yes=args.yes, force=args.force):
         print("🛑 Build cancelled.")
         sys.exit(1)
 
