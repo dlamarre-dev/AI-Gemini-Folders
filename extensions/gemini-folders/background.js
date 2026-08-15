@@ -78,7 +78,8 @@ function updateContextMenu() {
 // --- UNINSTALL FEEDBACK SURVEY ---
 // The browser opens this page when the user removes the extension. It carries
 // non-identifying context (tenure, version, browser, UI language, popup opens)
-// as URL params; nothing is transmitted unless the user submits the form there.
+// in the URL *fragment* — never the query, so opening the page transmits nothing;
+// only an explicit submit on the page sends anything. See buildUninstallUrl.
 // Page: docs/uninstall-gemini-folders.html. Helper: buildUninstallUrl (utils.js).
 const UNINSTALL_SURVEY_URL = 'https://aifolders.xyz/uninstall-gemini-folders.html';
 

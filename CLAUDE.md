@@ -290,7 +290,17 @@ the page only posts to a Google Form. **There is no database and no backend.**
   (not shared — fix bugs in both, §6). The URL carries `l` language, `v` version,
   `b` browser, `i` install date (`YYYY-MM-DD`), `ie=1` when that date was only
   inferred at update time, `o` popup opens and `s` conversations saved (both from
-  `usageStats`, `storage.local`). The *date* is sent, never a day count —
+  `usageStats`, `storage.local`), **all in the URL fragment (`#`), never the query
+  string**. The browser opens this page unprompted, so anything in the query would
+  already be in the request line — in the host's logs and leaked onward via
+  `Referer` — before the user consented. Fragments are never sent to a server,
+  which is exactly what makes `privacyBody`'s "Nothing leaves your device until you
+  press Send" literally true, and keeps `s1UninstallBody`'s "its address carries
+  six non-identifying details" true as well. **Never move these back to `?`.**
+  `docs/site/uninstall.js` reads the fragment and falls back to the query, because
+  `setUninstallURL` captured its value long before the page opens and an extension
+  that has not run since the switch still holds a `?` URL; drop the fallback once
+  that has aged out. The *date* is sent, never a day count —
   `setUninstallURL` is called long before the page opens, so a count would be
   stale; the page derives the tenure. The URL is re-signed on install/startup
   **and on every `usageStats` change**, so both counters stay current.
