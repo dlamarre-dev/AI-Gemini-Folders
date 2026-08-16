@@ -21,6 +21,7 @@ Avec la version 4.0, Dossiers Gemini devient votre véritable cockpit Gemini : o
 📑 Groupes d'onglets (Tab Groups) : Ouvrez tout un dossier en un clic dans un groupe d'onglets Chrome natif et coloré.
 😃 Émojis personnalisés : Commencez le nom de votre dossier par un émoji (ex : "💻 Code") pour remplacer l'icône par défaut.
 🖱️ Drag & Drop : Réorganisez votre espace de travail en glissant-déposant vos conversations d'un dossier à l'autre.
+🗂️ Sous-dossiers : Glissez un dossier sur un autre pour le placer à l'intérieur. Ouvrez le dossier parent en groupe d'onglets et tout ce qu'il contient s'ouvre avec lui.
 📱 Synchronisation Mobile : Un interrupteur génère un dossier miroir dans vos favoris Chrome, reproduisant parfaitement votre arborescence et votre ordre de tri sur votre téléphone.
 🗜️ Compression ultra-efficace : Compresse automatiquement vos données (LZString) pour maximiser le stockage natif de Chrome et sauvegarder des centaines de conversations.
 📊 Traqueur de stockage : Une barre de progression visuelle indique votre espace cloud disponible en temps réel.

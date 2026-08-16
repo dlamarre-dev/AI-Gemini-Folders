@@ -24,6 +24,7 @@ AI mapes dabiski integrējas ar visiem galvenajiem AI tērzēšanas asistentiem,
 📑 Cilņu grupas integrācija: Atver visu mapi ar vienu klikšķi kā vietējo, krāsaino Chrome cilņu grupu.
 😃 Pielāgoti mapes emodzi: Sāc mapes nosaukumu ar emodzi (piem. «💻 Kods»), lai aizstātu noklusējuma mapes ikonu.
 🖱️ Vilkt un nomest: Pārvieto sarunas starp mapēm.
+🗂️ Apakšmapes: Velciet vienu mapi uz citas, lai ievietotu to iekšā. Atveriet vecākmapi kā ciļņu grupu, un atvērsies viss tās saturs.
 📱 Mobilā sinhronizācija: Spoguļo mapju struktūru Chrome grāmatzīmēs piekļuvei no tālruņa.
 🗜️ Ārkārtīgi efektīva saspiešana: Automātiski saspiež datus (LZString), lai maksimizētu Chrome glabātuvi.
 📊 Krātuves izsekotājs: Vizuāls norises rādītājs reālajā laikā parāda pieejamo mākoņa glabātuvi.

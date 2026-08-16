@@ -173,6 +173,10 @@
         <div class="afp-fhead">💻 Dev <span class="icns">📌 ✎ 🗑</span></div>
         <div class="afp-chat"><span class="cb"></span>Refactor Node.js API</div>
         <div class="afp-chat"><span class="cb"></span>Debug React hook</div>
+        <div class="afp-folder afp-folder--child">
+          <div class="afp-fhead">🐞 Bugs <span class="icns">⤴ ✎ 🗑</span></div>
+          <div class="afp-chat"><span class="cb"></span>Race condition in worker</div>
+        </div>
       </div>
       <div class="afp-folder">
         <div class="afp-fhead">🔬 ${ue("defaultFolder") || "Research"} <span class="icns">📌 ✎ 🗑</span></div>

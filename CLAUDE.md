@@ -301,6 +301,44 @@ git checkout main && git pull --ff-only
   save it back over the edit. Callers with nothing pending still get a synchronous
   callback, so re-renders are unaffected. Tests must use genuinely async storage
   mocks to see this; the synchronous ones hide every ordering bug.
+- **Sub-folders (one level):** nesting lives in a **sibling sync key**,
+  `folderParents: { child: parent }`, never on the folder itself — `folders[name]`
+  is a bare array and every consumer relies on `Array.isArray` holding, so moving
+  it into an object would need the migration this codebase has no mechanism for.
+  An absent key defaults to `{}` through `loadData` exactly like `pinnedFolders`,
+  so old installs and old backups need no conversion, and an old build ignores
+  the key instead of dropping it. Child→parent rather than parent→children: a
+  parent→children map can express "this folder has two parents", this cannot.
+  Child *order* is never stored — it is derived by `sortFolderNames`, same as at
+  root. **All the invariants live in `getFolderParent` / `canNestFolder` /
+  `pruneFolderParents` (`src/utils.js`)**; nothing else should re-derive them.
+  Depth is capped at one twice over: by `canNestFolder` on write, and by
+  `buildFolderElement(name, ctx, isChild)` on read, where a child is built with
+  `isChild = true` and never asks for children of its own — there is no recursion
+  to bound. An **orphan** (parent deleted on another device) reads as a root
+  folder without being deleted: a read must not write, and the parent may come
+  back on the next sync; `pruneFolderParents` cleans up on the write side.
+  **Nesting never touches `pinnedFolders`** — that is what makes a pin dormant
+  while nested and live again at the top level, and it holds by doing nothing:
+  the pin button is not rendered on a child, and children are sorted with an
+  empty pin list so a dormant pin cannot reorder siblings.
+  Consequences to know: `affectsBookmarks` (`saveData`) must fire on
+  `folderParents` and both `background.js` must rebuild their menu on it, because
+  nesting writes **no** `folders` at all; and folder names stay globally unique,
+  so two parents cannot both hold a sub-folder called "Notes" — a direct
+  consequence of the name-as-key design (§6) and the strongest argument yet for
+  the stable-IDs item in §8.
+  **Drag & drop:** the drag source is the `.folder-header`, and folder drags use
+  `body.is-dragging-folder`, **not** `is-dragging` — the latter neutralizes
+  pointer events on every descendant of a `.folder`, which includes the header
+  being dragged, so the source stopped being hit-testable the instant the drag
+  began and folders could not be dragged at all. (`body.is-dragging .dragging`
+  exists for exactly the same reason on chat items.) `body.is-dragging .folder
+  .folder--child` restores pointer events so a **conversation** can still be
+  dropped into a sub-folder. Un-nesting is handled on the **document**: anywhere
+  outside a folder card, since cards stop propagation. Indentation is a
+  `margin-inline-start` on the nested card — never padding, which would have to
+  out-`!important` the fragile compact block (§8).
 - **Security posture:** folder/conversation titles render via `textContent` (no
   XSS); `link.href` is gated by `isSafeUrl` (falls back to `about:blank`); import
   is validated (`isSafeUrl` + shape checks + chunked writes); the local-LLM

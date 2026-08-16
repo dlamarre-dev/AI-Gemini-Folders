@@ -24,6 +24,7 @@ AI-mappar integrerar nativt med alla större AI-chattassistenter, såsom Claude,
 📑 Flikgruppsintegration: Öppna en hel mapp med ett klick som en inbyggd, färgkodad Chrome-flikgrupp.
 😃 Anpassade mappemojis: Starta mappnamnet med en emoji (t.ex. «💻 Kod») för att ersätta standardmappikonen.
 🖱️ Dra och släpp: Flytta konversationer intuitivt mellan mappar.
+🗂️ Undermappar: Dra en mapp ovanpå en annan för att lägga den inuti. Öppna den överordnade mappen som en flikgrupp så öppnas allt innehåll med den.
 📱 Mobilsynkronisering: En knapp skapar en spegelmapp i dina Chrome-bokmärken, som perfekt återger din mappstruktur och sorteringsordning på telefonen.
 🗜️ Ultraeffektiv komprimering: Komprimerar data automatiskt (LZString) för att maximera Chromes inbyggda lagringskapacitet.
 📊 Lagringsspårare: En visuell förloppsindikator visar tillgängligt molnlagring i realtid med detaljerade verktygstips.

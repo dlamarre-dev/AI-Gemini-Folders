@@ -24,6 +24,7 @@ Foldery AI integrują się natywnie ze wszystkimi głównymi asystentami czatu A
 📑 Integracja z Grupami kart: Otwórz cały folder jednym kliknięciem jako natywną, kolorową Grupę kart Chrome.
 😃 Niestandardowe emoji: Zacznij nazwę folderu od emoji (np. „💻 Kod"), aby zastąpić domyślną ikonę.
 🖱️ Przeciągnij i Upuść: Reorganizuj swoje miejsce pracy, przeciągając rozmowy między folderami.
+🗂️ Podfoldery: Przeciągnij folder na inny, aby umieścić go w środku. Otwórz folder nadrzędny jako grupę kart, a otworzy się wszystko, co zawiera.
 📱 Synchronizacja Mobilna: Przełącznik generuje lustrzany folder w zakładkach Chrome, doskonale odwzorowując strukturę folderów i kolejność sortowania na telefonie.
 🗜️ Ultraefektywna kompresja: Automatycznie kompresuje Twoje dane (LZString), aby zmaksymalizować natywne przechowywanie Chrome i zapisać setki rozmów.
 📊 Wskaźnik miejsca: Wizualny pasek postępu pokazuje dostępne miejsce w chmurze w czasie rzeczywistym.

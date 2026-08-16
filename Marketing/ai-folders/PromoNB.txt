@@ -24,6 +24,7 @@ AI-mapper integreres nativt med alle de store AI-chatassistentene, slik som Clau
 📑 Fanegruppeintegrasjon: Åpne en hel mappe med ett klikk som en innebygd, fargekodet Chrome-fanegruppe.
 😃 Egendefinerte mappeemojier: Start mappenavnet med en emoji (f.eks. «💻 Kode») for å erstatte standardmappeikonet.
 🖱️ Dra og slipp: Flytt samtaler intuitivt mellom mapper.
+🗂️ Undermapper: Dra en mappe oppå en annen for å legge den inni. Åpne foreldermappen som en fanegruppe, og alt innholdet åpnes med den.
 📱 Mobilsynkronisering: En bryterknapp oppretter en speilmappe i Chrome-bokmerkene dine, som perfekt gjengir mappestrukturen og sorteringsrekkefølgen din på telefonen.
 🗜️ Svært effektiv komprimering: Komprimerer data automatisk (LZString) for å maksimere Chromes innebygde lagringskapasitet.
 📊 Lagringssporer: En visuell fremdriftslinje viser tilgjengelig skylagring i sanntid med detaljerte verktøytips.

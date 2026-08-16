@@ -21,6 +21,7 @@ Mit Version 4.0 wird Gemini-Ordner zu Ihrem echten Gemini-Cockpit: Organisieren 
 📑 Tab-Gruppen-Integration: Öffnen Sie einen ganzen Ordner per Klick als native, farbcodierte Chrome-Tab-Gruppe.
 😃 Benutzerdefinierte Emojis: Beginnen Sie Ihren Ordnernamen mit einem Emoji (z. B. „💻 Code"), um das Standardsymbol zu ersetzen.
 🖱️ Drag & Drop: Reorganisieren Sie Ihren Arbeitsbereich durch Ziehen von Gesprächen zwischen Ordnern.
+🗂️ Unterordner: Ziehen Sie einen Ordner auf einen anderen, um ihn darin abzulegen. Öffnen Sie den übergeordneten Ordner als Tab-Gruppe und alles darin öffnet sich mit.
 📱 Mobile Synchronisierung: Ein Schalter erstellt einen Spiegelordner in Ihren Chrome-Lesezeichen, der Ihre Struktur und Sortierung auf dem Smartphone wiedergibt.
 🗜️ Ultra-effiziente Komprimierung: Komprimiert Ihre Daten automatisch (LZString), um den nativen Chrome-Speicher zu maximieren.
 📊 Speicher-Tracker: Ein visueller Fortschrittsbalken zeigt Ihren verfügbaren Cloud-Speicher in Echtzeit.

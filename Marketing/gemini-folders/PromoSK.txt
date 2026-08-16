@@ -21,6 +21,7 @@ S verziou 4.0 sa Priečinky Gemini stávajú vaším skutočným kokpitom pre Ge
 📑 Integrácia skupín kariet: Otvorte celý priečinok jedným kliknutím ako natívnu farebnú skupinu kariet Chrome.
 😃 Vlastné emoji: Začnite názov priečinka emojom (napr. „💻 Kód") a predvolená ikona sa nahradí.
 🖱️ Drag & Drop: Preorganizujte pracovný priestor presunutím konverzácií medzi priečinkami.
+🗂️ Podpriečinky: Presuňte priečinok na iný a vložte ho dovnútra. Otvorte nadradený priečinok ako skupinu kariet a otvorí sa všetko, čo obsahuje.
 📱 Mobilná synchronizácia: Prepínač vytvorí zrkadlový priečinok v záložkách Chrome, ktorý dokonale reprodukuje štruktúru priečinkov a poradie triedenia na telefóne.
 🗜️ Ultraefektívna kompresia: Automaticky komprimuje dáta (LZString), čím maximalizuje natívne úložisko Chrome a umožňuje uložiť stovky konverzácií.
 📊 Sledovač úložiska: Vizuálna lišta priebehu zobrazuje dostupné cloudové úložisko v reálnom čase.

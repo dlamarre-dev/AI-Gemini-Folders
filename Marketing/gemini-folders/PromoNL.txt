@@ -21,6 +21,7 @@ Met versie 4.0 wordt Gemini-mappen uw echte Gemini-cockpit: organiseer gesprekke
 📑 Tabgroepintegratie: Open een volledige map met één klik als een native, kleurgecodeerde Chrome-tabgroep.
 😃 Aangepaste map-emoji's: Begin uw mapnaam met een emoji (bijv. "💻 Code") om het standaard mappictogram te vervangen.
 🖱️ Slepen en neerzetten: Herorganiseer uw werkruimte door gesprekken tussen mappen te slepen.
+🗂️ Submappen: Sleep een map op een andere om hem erin te plaatsen. Open de bovenliggende map als tabbladgroep en alles erin gaat mee open.
 📱 Mobiele synchronisatie: Een schakelaar maakt een spiegelmap aan in uw Chrome-bladwijzers, waarmee uw mapstructuur en aangepaste sorteervolgorde perfect op uw telefoon worden gereproduceerd.
 🗜️ Ultraëfficiënte compressie: Comprimeert uw gegevens automatisch (LZString) om de native opslag van Chrome te maximaliseren en honderden gesprekken op te slaan.
 📊 Opslagmeter: Een strakke visuele voortgangsbalk toont uw beschikbare cloudopslag in realtime.

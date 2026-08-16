@@ -24,6 +24,7 @@ Folder AI terintegrasi secara native dengan semua asisten obrolan AI utama, sepe
 📑 Integrasi Grup Tab: Buka seluruh folder dalam satu klik sebagai Grup Tab Chrome asli dengan kode warna.
 😃 Emoji Folder Khusus: Mulai nama folder dengan emoji (mis. "💻 Kode") untuk mengganti ikon folder default.
 🖱️ Seret & Lepas: Susun ulang ruang kerja Anda dengan menyeret percakapan antar folder.
+🗂️ Subfolder: Seret satu folder ke folder lain untuk menempatkannya di dalamnya. Buka folder induk sebagai grup tab dan semua isinya ikut terbuka.
 📱 Sinkronisasi Mobile: Sakelar menghasilkan folder cermin di bookmark Chrome Anda, mereproduksi struktur folder dan urutan pengurutan kustom Anda di ponsel dengan sempurna.
 🗜️ Kompresi Ultra-Efisien: Otomatis mengompresi data Anda (LZString) untuk memaksimalkan penyimpanan asli Chrome dan menyimpan ratusan percakapan.
 📊 Pelacak Penyimpanan: Bilah kemajuan visual yang elegan menampilkan penyimpanan cloud yang tersedia secara real time.

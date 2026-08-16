@@ -7,13 +7,14 @@ AI Folders solves the problem of losing track of conversations across multiple A
 ## Key features
 
 - **Folder organization**: Save AI conversations from any supported service into named folders with custom emoji labels
+- **Sub-folders**: Drag a folder onto another to nest it one level deep; a parent opens its whole subtree as a tab group and deletes with its sub-folders
 - **Prompt library**: Store reusable prompts and inject them into any AI chat with one click or the `#PromptName` keyboard shortcut
 - **Multi-service support**: Works with 18 AI chat services (ChatGPT, Claude, Gemini, Mistral, Meta AI and more) plus self-hosted local LLMs (Open WebUI, LM Studio, etc.)
 - **Cloud sync**: Conversations and prompts sync across devices via the browser's built-in sync
 - **Mobile access**: Synced conversations appear in Chrome bookmarks, accessible on any phone
 - **Tab groups**: Open an entire folder as a Chrome tab group in one click
 - **Bulk actions**: Select, move, or delete multiple conversations at once
-- **Drag and drop**: Reorder conversations and move them between folders
+- **Drag and drop**: Move conversations between folders, and folders into one another
 - **Right-click save**: Save any conversation via the browser context menu without opening the extension
 - **Import / Export**: Full JSON backup and restore
 - **43 languages**: Full UI localization including Arabic and Hebrew (RTL)

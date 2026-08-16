@@ -24,6 +24,7 @@ AI složky se nativně integrují se všemi hlavními AI chatovacími asistenty,
 📑 Integrace skupin karet: Otevřete celou složku jedním kliknutím jako nativní barevnou skupinu karet Chrome.
 😃 Vlastní emoji: Začněte název složky emojí (např. „💻 Kód") a výchozí ikona se nahradí.
 🖱️ Přetažení: Přeorganizujte pracovní prostor přetažením konverzací mezi složkami.
+🗂️ Podsložky: Přetáhněte složku na jinou a vnořte ji dovnitř. Otevřete nadřazenou složku jako skupinu panelů a otevře se s ní vše, co obsahuje.
 📱 Mobilní synchronizace: Přepínač vytvoří zrcadlovou složku v záložkách Chrome, která dokonale reprodukuje strukturu složek a pořadí řazení v telefonu.
 🗜️ Ultraefektivní komprese: Automaticky komprimuje data (LZString), čímž maximalizuje nativní úložiště Chrome a umožňuje uložit stovky konverzací.
 📊 Sledovač úložiště: Vizuální lišta průběhu zobrazuje dostupné cloudové úložiště v reálném čase.

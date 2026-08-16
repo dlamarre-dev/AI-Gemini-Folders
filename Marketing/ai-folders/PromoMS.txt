@@ -24,6 +24,7 @@ Folder AI berintegrasi secara asli dengan semua pembantu sembang AI utama, seper
 📑 Integrasi kumpulan tab: Buka keseluruhan folder dengan satu klik sebagai kumpulan tab Chrome asli.
 😃 Emoji folder tersuai: Mulakan nama folder dengan emoji (cth. «💻 Kod») untuk menggantikan ikon folder lalai.
 🖱️ Seret dan lepas: Pindahkan perbualan antara folder.
+🗂️ Subfolder: Seret satu folder ke atas folder lain untuk meletakkannya di dalam. Buka folder induk sebagai kumpulan tab dan semua kandungannya turut dibuka.
 📱 Penyegerakan mudah alih: Mencerminkan struktur folder anda dalam penanda buku Chrome untuk akses dari telefon.
 🗜️ Pemampatan sangat cekap: Memampatkan data secara automatik (LZString) untuk memaksimumkan storan Chrome.
 📊 Penjejak storan: Bar kemajuan visual menunjukkan storan awan yang tersedia dalam masa nyata.

@@ -21,6 +21,7 @@ Com a versão 4.0, Pastas Gemini torna-se o seu verdadeiro cockpit do Gemini: or
 📑 Integração com Grupos de Separadores: Abra uma pasta inteira com um clique como um Grupo de Separadores nativo e com código de cores do Chrome.
 😃 Emojis personalizados: Comece o nome da pasta com um emoji (ex.: "💻 Código") para substituir o ícone predefinido.
 🖱️ Arrastar e Largar: Reorganize o seu espaço de trabalho arrastando conversas entre pastas.
+🗂️ Subpastas: Arraste uma pasta para cima de outra para a colocar lá dentro. Abra a pasta principal como grupo de separadores e tudo o que contém abre com ela.
 📱 Sincronização Móvel: Um interruptor gera uma pasta espelho nos seus marcadores do Chrome, reproduzindo perfeitamente a sua estrutura de pastas e ordem de classificação no telemóvel.
 🗜️ Compressão ultra-eficiente: Comprime automaticamente os seus dados (LZString) para maximizar o armazenamento nativo do Chrome e guardar centenas de conversas.
 📊 Monitor de armazenamento: Uma barra de progresso visual exibe o seu espaço na nuvem disponível em tempo real.
