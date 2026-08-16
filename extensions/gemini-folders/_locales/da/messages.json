@@ -80,8 +80,14 @@
   "btnDeleteFolder": {
     "message": "Slet mappe"
   },
+  "btnUnnestFolder": {
+    "message": "Flyt ud af mappen"
+  },
   "confirmDeleteFolder": {
     "message": "Denne mappe indeholder samtaler. Er du sikker på, at du vil slette den?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Denne mappe, dens {count} undermapper og alle deres samtaler slettes. Er du sikker?"
   },
   "btnPin": {
     "message": "Fastgør"
@@ -118,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Der findes allerede en mappe med dette navn."
+  },
+  "errorNestTooDeep": {
+    "message": "Denne mappe indeholder allerede undermapper. Kun ét niveau af undermapper understøttes."
   },
   "storageCalc": {
     "message": "Beregner plads..."

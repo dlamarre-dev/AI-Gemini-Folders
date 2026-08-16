@@ -80,8 +80,14 @@
   "btnDeleteFolder": {
     "message": "Futa folda"
   },
+  "btnUnnestFolder": {
+    "message": "Toa kwenye folda"
+  },
   "confirmDeleteFolder": {
     "message": "Folda hii ina mazungumzo. Je, una uhakika unataka kuifuta?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Folda hii, folda zake ndogo {count} na mazungumzo yake yote yatafutwa. Una uhakika?"
   },
   "btnPin": {
     "message": "Bandika"
@@ -118,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Folda yenye jina hili tayari ipo."
+  },
+  "errorNestTooDeep": {
+    "message": "Folda hii tayari ina folda ndogo. Kiwango kimoja tu cha kupachika kinatumika."
   },
   "storageCalc": {
     "message": "Inahesabu nafasi..."

@@ -121,6 +121,7 @@ describe('applyCommonI18n', () => {
 
 describe('initSaveConversation', () => {
   let savedFolders;
+  let savedParents;
   beforeEach(() => {
     document.body.innerHTML = `
       <button id="saveBtn"></button>
@@ -133,7 +134,12 @@ describe('initSaveConversation', () => {
     global.normalizeUrl = jest.fn((u) => u.split('?')[0].split('#')[0]);
     global.window.showCustomModal = jest.fn().mockResolvedValue(true);
     global.window.displayFolders = jest.fn();
-    global.saveData = jest.fn((data, cb) => { savedFolders = data.folders; cb && cb(); });
+    global.saveData = jest.fn((data, cb) => { savedFolders = data.folders; savedParents = data.folderParents; cb && cb(); });
+    // Nesting helpers are globals from utils.js in the browser.
+    const utils = require('../src/utils');
+    for (const name of ['resolveFolderPath', 'withFolderParent', 'pruneFolderParents', 'folderOpenPath', 'getFolderParent']) {
+      global[name] = utils[name];
+    }
   });
 
   function wire(getSiteKey, tagSite = false) {
@@ -151,7 +157,69 @@ describe('initSaveConversation', () => {
     const entries = savedFolders['defaultFolder']; // i18n mock returns the key
     expect(entries).toHaveLength(1);
     expect(entries[0]).toMatchObject({ url: 'https://claude.ai/chat/1', site: 'claude' });
-    expect(window.displayFolders).toHaveBeenCalledWith('defaultFolder');
+    expect(window.displayFolders).toHaveBeenCalledWith(['defaultFolder']);
+  });
+
+  // The folder box is pre-filled with "Parent/Child" when a sub-folder is
+  // clicked, so the save has to read it back the same way — otherwise it
+  // silently creates a top-level folder literally called "Parent/Child".
+  test('saves into an existing sub-folder written as Parent/Child', async () => {
+    chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
+    global.loadData = jest.fn((defaults, cb) =>
+      cb({ folders: { Work: [], Clients: [] }, folderParents: { Clients: 'Work' } }));
+    wire(() => 'claude');
+
+    document.getElementById('folderName').value = 'Work/Clients';
+    document.getElementById('saveBtn').click();
+    await flush();
+
+    expect(savedFolders.Clients).toHaveLength(1);
+    expect(savedFolders['Work/Clients']).toBeUndefined();
+    // The parent is expanded too, or the conversation lands out of sight.
+    expect(window.displayFolders).toHaveBeenCalledWith(['Work', 'Clients']);
+  });
+
+  test('creates the sub-folder (and its parent) when they do not exist yet', async () => {
+    chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
+    global.loadData = jest.fn((defaults, cb) => cb({ folders: {}, folderParents: {} }));
+    wire(() => 'claude');
+
+    document.getElementById('folderName').value = 'Studies/Math';
+    document.getElementById('saveBtn').click();
+    await flush();
+
+    expect(savedFolders.Studies).toEqual([]);
+    expect(savedFolders.Math).toHaveLength(1);
+    expect(savedParents).toEqual({ Math: 'Studies' });
+  });
+
+  test('a folder literally named a/b still wins over the path reading', async () => {
+    chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
+    global.loadData = jest.fn((defaults, cb) =>
+      cb({ folders: { 'a/b': [], a: [], b: [] }, folderParents: {} }));
+    wire(() => 'claude');
+
+    document.getElementById('folderName').value = 'a/b';
+    document.getElementById('saveBtn').click();
+    await flush();
+
+    expect(savedFolders['a/b']).toHaveLength(1);
+    expect(savedFolders.b).toHaveLength(0);
+    expect(savedParents).toBeUndefined();   // a plain save must not rewrite the nesting
+  });
+
+  test('refuses a second level instead of creating one', async () => {
+    chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
+    global.loadData = jest.fn((defaults, cb) =>
+      cb({ folders: { Work: [], Clients: [] }, folderParents: { Clients: 'Work' } }));
+    wire(() => 'claude');
+
+    document.getElementById('folderName').value = 'Clients/Deeper';
+    document.getElementById('saveBtn').click();
+    await flush();
+
+    expect(global.saveData).not.toHaveBeenCalled();
+    expect(document.getElementById('status').textContent).toBe('errorNestTooDeep');
   });
 
   test('alerts and does not save on an unsupported site', async () => {

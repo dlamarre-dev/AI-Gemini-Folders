@@ -80,8 +80,14 @@
   "btnDeleteFolder": {
     "message": "Delete folder"
   },
+  "btnUnnestFolder": {
+    "message": "Move out of its folder"
+  },
   "confirmDeleteFolder": {
     "message": "This folder contains conversations. Are you sure you want to delete it?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "This folder, its {count} sub-folder(s) and all their conversations will be deleted. Are you sure?"
   },
   "btnPin": {
     "message": "Pin"
@@ -118,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "A folder with this name already exists."
+  },
+  "errorNestTooDeep": {
+    "message": "This folder already contains sub-folders. Only one level of nesting is supported."
   },
   "storageCalc": {
     "message": "Calculating space..."

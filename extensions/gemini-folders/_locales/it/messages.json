@@ -80,8 +80,14 @@
   "btnDeleteFolder": {
     "message": "Elimina cartella"
   },
+  "btnUnnestFolder": {
+    "message": "Sposta fuori dalla cartella"
+  },
   "confirmDeleteFolder": {
     "message": "Questa cartella contiene conversazioni. Vuoi davvero eliminarla?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Questa cartella, le sue {count} sottocartelle e tutte le loro conversazioni verranno eliminate. Vuoi continuare?"
   },
   "btnPin": {
     "message": "Fissa"
@@ -118,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Esiste già una cartella con questo nome."
+  },
+  "errorNestTooDeep": {
+    "message": "Questa cartella contiene già sottocartelle. È supportato un solo livello di annidamento."
   },
   "storageCalc": {
     "message": "Calcolo spazio..."

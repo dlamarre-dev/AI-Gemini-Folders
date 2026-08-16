@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Klasörü Sil"
   },
+  "btnUnnestFolder": {
+    "message": "Klasörden çıkar"
+  },
   "confirmDeleteFolder": {
     "message": "Bu klasör konuşmalar içeriyor. Silmek istediğinizden emin misiniz?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Bu klasör, {count} alt klasörü ve içindeki tüm sohbetler silinecek. Emin misiniz?"
   },
   "btnPin": {
     "message": "Sabitle"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Bu isimde bir klasör zaten mevcut."
+  },
+  "errorNestTooDeep": {
+    "message": "Bu klasör zaten alt klasörler içeriyor. Yalnızca tek düzey iç içe yerleştirme desteklenir."
   },
   "storageCalc": {
     "message": "Alan hesaplanıyor..."

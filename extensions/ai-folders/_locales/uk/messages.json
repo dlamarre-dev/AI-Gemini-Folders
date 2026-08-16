@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Видалити теку"
   },
+  "btnUnnestFolder": {
+    "message": "Винести з теки"
+  },
   "confirmDeleteFolder": {
     "message": "Ця тека містить розмови. Ви впевнені, що хочете видалити її?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Цю теку, її вкладені теки ({count}) і всі їхні розмови буде видалено. Продовжити?"
   },
   "btnPin": {
     "message": "Закріпити"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Тека з такою назвою вже існує."
+  },
+  "errorNestTooDeep": {
+    "message": "Ця тека вже містить вкладені теки. Підтримується лише один рівень вкладення."
   },
   "storageCalc": {
     "message": "Обчислення місця..."

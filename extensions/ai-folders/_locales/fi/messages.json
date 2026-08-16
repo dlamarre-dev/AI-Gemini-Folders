@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Poista kansio"
   },
+  "btnUnnestFolder": {
+    "message": "Siirrä pois kansiosta"
+  },
   "confirmDeleteFolder": {
     "message": "Tässä kansiossa on keskusteluja. Haluatko varmasti poistaa sen?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Tämä kansio, sen {count} alikansiota ja kaikki niiden keskustelut poistetaan. Oletko varma?"
   },
   "btnPin": {
     "message": "Kiinnitä"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Samanniminen kansio on jo olemassa."
+  },
+  "errorNestTooDeep": {
+    "message": "Tässä kansiossa on jo alikansioita. Vain yksi sisäkkäisyystaso on tuettu."
   },
   "storageCalc": {
     "message": "Lasketaan tilaa..."

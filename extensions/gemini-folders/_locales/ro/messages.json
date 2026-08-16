@@ -80,8 +80,14 @@
   "btnDeleteFolder": {
     "message": "Șterge folderul"
   },
+  "btnUnnestFolder": {
+    "message": "Scoate din dosar"
+  },
   "confirmDeleteFolder": {
     "message": "Acest folder conține conversații. Sigur doriți să-l ștergeți?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Acest dosar, cele {count} subdosare ale sale și toate conversațiile lor vor fi șterse. Sigur?"
   },
   "btnPin": {
     "message": "Fixează"
@@ -118,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Un folder cu acest nume există deja."
+  },
+  "errorNestTooDeep": {
+    "message": "Acest dosar conține deja subdosare. Este acceptat un singur nivel de imbricare."
   },
   "storageCalc": {
     "message": "Calculare spațiu..."

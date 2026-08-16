@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Dzēst mapi"
   },
+  "btnUnnestFolder": {
+    "message": "Izņemt no mapes"
+  },
   "confirmDeleteFolder": {
     "message": "Šajā mapē ir sarunas. Vai tiešām vēlies to dzēst?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Šī mape, tās {count} apakšmapes un visas to sarunas tiks dzēstas. Vai tiešām?"
   },
   "btnPin": {
     "message": "Piespraust"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Mape ar šādu nosaukumu jau pastāv."
+  },
+  "errorNestTooDeep": {
+    "message": "Šajā mapē jau ir apakšmapes. Tiek atbalstīts tikai viens ligzdošanas līmenis."
   },
   "storageCalc": {
     "message": "Aprēķina vietu..."

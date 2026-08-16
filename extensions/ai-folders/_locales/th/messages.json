@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "ลบโฟลเดอร์"
   },
+  "btnUnnestFolder": {
+    "message": "ย้ายออกจากโฟลเดอร์"
+  },
   "confirmDeleteFolder": {
     "message": "โฟลเดอร์นี้มีการสนทนาอยู่ คุณแน่ใจหรือไม่ว่าต้องการลบ?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "โฟลเดอร์นี้ โฟลเดอร์ย่อย {count} รายการ และการสนทนาทั้งหมดในนั้นจะถูกลบ ยืนยันหรือไม่"
   },
   "btnPin": {
     "message": "ปักหมุด"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "มีโฟลเดอร์ที่ใช้ชื่อนี้อยู่แล้ว"
+  },
+  "errorNestTooDeep": {
+    "message": "โฟลเดอร์นี้มีโฟลเดอร์ย่อยอยู่แล้ว รองรับการซ้อนเพียงระดับเดียว"
   },
   "storageCalc": {
     "message": "กำลังคำนวณพื้นที่..."

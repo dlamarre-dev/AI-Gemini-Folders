@@ -80,8 +80,14 @@
   "btnDeleteFolder": {
     "message": "Изтрий папка"
   },
+  "btnUnnestFolder": {
+    "message": "Извеждане от папката"
+  },
   "confirmDeleteFolder": {
     "message": "Тази папка съдържа разговори. Сигурни ли сте, че искате да я изтриете?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Тази папка, нейните {count} подпапки и всички техни разговори ще бъдат изтрити. Сигурни ли сте?"
   },
   "btnPin": {
     "message": "Закачи"
@@ -118,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Папка с това име вече съществува."
+  },
+  "errorNestTooDeep": {
+    "message": "Тази папка вече съдържа подпапки. Поддържа се само едно ниво на вложеност."
   },
   "storageCalc": {
     "message": "Изчисляване на пространството..."

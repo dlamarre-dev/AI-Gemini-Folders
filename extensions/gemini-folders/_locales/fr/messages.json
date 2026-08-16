@@ -80,8 +80,14 @@
   "btnDeleteFolder": {
     "message": "Supprimer le dossier"
   },
+  "btnUnnestFolder": {
+    "message": "Sortir du dossier"
+  },
   "confirmDeleteFolder": {
     "message": "Ce dossier contient des conversations. Voulez-vous vraiment le supprimer?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Ce dossier, ses {count} sous-dossiers et toutes leurs conversations seront supprimés. Voulez-vous continuer?"
   },
   "btnPin": {
     "message": "Épingler"
@@ -118,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "Un dossier avec ce nom existe déjà."
+  },
+  "errorNestTooDeep": {
+    "message": "Ce dossier contient déjà des sous-dossiers. Un seul niveau d'imbrication est pris en charge."
   },
   "storageCalc": {
     "message": "Calcul de l'espace..."

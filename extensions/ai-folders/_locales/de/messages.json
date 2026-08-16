@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Ordner löschen"
   },
+  "btnUnnestFolder": {
+    "message": "Aus dem Ordner herausnehmen"
+  },
   "confirmDeleteFolder": {
     "message": "Dieser Ordner enthält Unterhaltungen. Möchtest du ihn wirklich löschen?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Dieser Ordner, seine {count} Unterordner und alle darin enthaltenen Unterhaltungen werden gelöscht. Sind Sie sicher?"
   },
   "btnPin": {
     "message": "Anheften"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Ein Ordner mit diesem Namen existiert bereits."
+  },
+  "errorNestTooDeep": {
+    "message": "Dieser Ordner enthält bereits Unterordner. Es wird nur eine Verschachtelungsebene unterstützt."
   },
   "storageCalc": {
     "message": "Speicher wird berechnet..."

@@ -1,7 +1,7 @@
 // folders.js functions depend on globals from utils.js and the DOM.
 // We mock those globals here so tests run in isolation.
 
-const { displayFolders, deleteChat, moveChat, togglePin, renameFolder, renameChat, openFolderInTabGroup, queryAllTabs, pickReusableTab, openConversation, modifierKeyLabel } = require('../src/folders');
+const { displayFolders, deleteChat, moveChat, nestFolder, unnestFolder, togglePin, renameFolder, renameChat, openFolderInTabGroup, queryAllTabs, pickReusableTab, openConversation, modifierKeyLabel } = require('../src/folders');
 
 // ---------------------------------------------------------------------------
 // Shared helpers
@@ -44,6 +44,9 @@ global.hasEntry = require('../src/utils').hasEntry;
   // openConversation closes the popup when it is done; in jsdom the real
   // window.close() would tear the test window down.
   global.window.close = jest.fn();
+  // No drag in flight at the start of a test: the module-level drag state
+  // outlives a single test, exactly as it outlives a re-render in the popup.
+  document.dispatchEvent(new Event('dragend'));
 
   // Provide all DOM elements that displayFolders (called after each mutation)
   // reads at the top of its body. Without them it throws on null refs.
@@ -608,6 +611,468 @@ describe('openConversation with reuse (Ctrl/Cmd-click)', () => {
 // ---------------------------------------------------------------------------
 // chatLinkReuseHint ships everywhere
 // ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Sub-folders (one level of nesting)
+// ---------------------------------------------------------------------------
+
+// jsdom has no drag & drop, so a DataTransfer stand-in carries the payload the
+// handlers actually read. Note it does NOT reproduce `getData() === ''` during
+// dragover — that is exactly why the hover feedback reads the module-level drag
+// state instead of the payload, and why only `drop` is driven here.
+function makeDataTransfer(payload) {
+  const store = { 'text/plain': JSON.stringify(payload) };
+  return {
+    setData: (type, value) => { store[type] = value; },
+    getData: (type) => store[type] || '',
+    effectAllowed: '',
+  };
+}
+
+// Handlers wired to a click are async and awaited internally; a single
+// Promise.resolve() only advances one step of the chain.
+async function flushMicrotasks(turns = 30) {
+  for (let i = 0; i < turns; i++) await Promise.resolve();
+}
+
+function dropOn(el, payload) {
+  const event = new Event('drop', { bubbles: true, cancelable: true });
+  event.dataTransfer = makeDataTransfer(payload);
+  el.dispatchEvent(event);
+  return event;
+}
+
+function dragOverOn(el) {
+  const event = new Event('dragover', { bubbles: true, cancelable: true });
+  event.dataTransfer = makeDataTransfer({});
+  el.dispatchEvent(event);
+  return event;
+}
+
+function dragStartOn(el) {
+  const event = new Event('dragstart', { bubbles: true, cancelable: true });
+  event.dataTransfer = makeDataTransfer({});
+  el.dispatchEvent(event);
+  return event;
+}
+
+const folderEl = (name) => document.querySelector(`.folder[data-folder-name="${name}"]`);
+const lastSave = () => global.saveData.mock.calls[global.saveData.mock.calls.length - 1][0];
+
+describe('sub-folder rendering', () => {
+  test('a child renders inside its parent, after the conversations', () => {
+    setupStorage(
+      { Work: makeFolder(['W1', 'aaa']), Clients: makeFolder(['C1', 'bbb']) },
+      [], ['Work'], { Clients: 'Work' }
+    );
+
+    displayFolders();
+
+    // Only the root is a direct child of the list.
+    const topLevel = document.querySelectorAll('#folderList > .folder');
+    expect([...topLevel].map(f => f.dataset.folderName)).toEqual(['Work']);
+
+    const content = folderEl('Work').querySelector(':scope > .folder-content');
+    const kinds = [...content.children].map(c => c.className.split(' ')[0]);
+    expect(kinds).toEqual(['chat-item', 'folder']);   // conversations first, then the sub-folder
+    expect(content.querySelector('.folder--child').dataset.folderName).toBe('Clients');
+  });
+
+  test('a sub-folder has no pin button but offers the way back out', () => {
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+
+    displayFolders();
+
+    const child = folderEl('Clients');
+    expect(child.querySelector('.pin-btn')).toBeNull();
+    expect(child.querySelector('.unnest-btn')).not.toBeNull();
+    expect(folderEl('Work').querySelector('.folder-header .pin-btn')).not.toBeNull();
+  });
+
+  test('a parent holding only sub-folders still expands', () => {
+    setupStorage({ Work: [], Clients: makeFolder(['C1', 'bbb']) }, [], [], { Clients: 'Work' });
+
+    displayFolders();
+
+    const parent = folderEl('Work');
+    expect(parent.querySelector('.folder-chevron')).not.toBeNull();
+    expect(parent.querySelector(':scope > .folder-content')).not.toBeNull();
+    // …and it is not drawn as an empty folder.
+    expect(parent.querySelector('.folder-icon').textContent).toBe('🗂️');
+  });
+
+  test('an empty folder with no children still has nothing to expand', () => {
+    setupStorage({ Work: [] }, []);
+
+    displayFolders();
+
+    expect(folderEl('Work').querySelector('.folder-chevron')).toBeNull();
+    expect(folderEl('Work').querySelector(':scope > .folder-content')).toBeNull();
+  });
+
+  test('an orphaned child (parent deleted elsewhere) renders at the top level', () => {
+    setupStorage({ Clients: makeFolder(['C1', 'bbb']) }, [], [], { Clients: 'Gone' });
+
+    displayFolders();
+
+    expect(document.querySelectorAll('#folderList > .folder')).toHaveLength(1);
+    expect(folderEl('Clients').className).not.toContain('folder--child');
+  });
+
+  test('the folder-name box is pre-filled with the full path', () => {
+    setupStorage({ Work: [], Clients: makeFolder(['C1', 'bbb']) }, [], [], { Clients: 'Work' });
+
+    displayFolders();
+    folderEl('Clients').querySelector('.folder-header').click();
+
+    expect(document.getElementById('folderName').value).toBe('Work/Clients');
+  });
+
+  test('search surfaces a matching sub-folder through a parent that does not match', () => {
+    setupStorage(
+      { Work: makeFolder(['W1', 'aaa']), Clients: makeFolder(['C1', 'bbb']), Other: [] },
+      [], [], { Clients: 'Work' }
+    );
+
+    displayFolders(null, 'client');
+
+    expect(folderEl('Work')).not.toBeNull();
+    expect(folderEl('Clients')).not.toBeNull();
+    expect(folderEl('Other')).toBeNull();
+    expect(document.getElementById('noResults').style.display).toBe('none');
+  });
+
+  test('search surfaces a parent whose sub-folder holds the matching conversation', () => {
+    setupStorage(
+      { Work: makeFolder(['W1', 'aaa']), Clients: makeFolder(['acme onboarding', 'bbb']) },
+      [], [], { Clients: 'Work' }
+    );
+
+    displayFolders(null, 'acme');
+
+    expect(folderEl('Work')).not.toBeNull();
+    const childChats = folderEl('Clients').querySelectorAll('.chat-item');
+    expect(childChats).toHaveLength(1);
+  });
+});
+
+describe('nesting by drag & drop', () => {
+  test('dropping a folder on another one nests it', () => {
+    setupStorage({ Work: [], Personal: [] }, [], []);
+    displayFolders();
+
+    dropOn(folderEl('Work'), { kind: 'folder', sourceFolder: 'Personal' });
+
+    expect(lastSave().folderParents).toEqual({ Personal: 'Work' });
+    // The parent is force-opened, or the folder just dragged would vanish.
+    expect(lastSave().openFolders).toContain('Work');
+  });
+
+  test('dragging a folder never marks the body as a conversation drag', () => {
+    // `body.is-dragging` neutralizes pointer events on EVERY descendant of a
+    // .folder, and the element being dragged here IS one (the header). Setting
+    // it made the drag source stop being hit-testable the moment the drag
+    // started, and folders could not be dragged at all in Chrome.
+    setupStorage({ Work: [], Personal: [] }, []);
+    displayFolders();
+
+    dragStartOn(folderEl('Personal').querySelector('.folder-header'));
+
+    expect(document.body.classList.contains('is-dragging')).toBe(false);
+    expect(document.body.classList.contains('is-dragging-folder')).toBe(true);
+    expect(folderEl('Personal').classList.contains('dragging-folder')).toBe(true);
+  });
+
+  test('dragging a SUB-folder also reveals the way back to the top level', () => {
+    setupStorage({ Work: [], Clients: [] }, [], ['Work'], { Clients: 'Work' });
+    displayFolders();
+
+    dragStartOn(folderEl('Clients').querySelector('.folder-header'));
+
+    expect(document.body.classList.contains('is-dragging-subfolder')).toBe(true);
+  });
+
+  test('a folder that already has sub-folders is refused, with an explanation', () => {
+    setupStorage({ Work: [], Clients: [], Personal: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+
+    dropOn(folderEl('Personal'), { kind: 'folder', sourceFolder: 'Work' });
+
+    expect(global.saveData).not.toHaveBeenCalled();
+    expect(global.window.showCustomModal).toHaveBeenCalledWith(
+      expect.objectContaining({ type: 'alert', title: 'errorNestTooDeep' })
+    );
+  });
+
+  test('dropping onto a sub-folder is refused (one level only)', () => {
+    setupStorage({ Work: [], Clients: [], Personal: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+
+    dropOn(folderEl('Clients'), { kind: 'folder', sourceFolder: 'Personal' });
+
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+
+  test('a conversation dropped on a SUB-folder still moves', () => {
+    // Guards the CSS trap: `body.is-dragging .folder *` also matches a nested
+    // .folder, so the drop target must stay live for chat drags.
+    setupStorage(
+      { Work: [], Clients: [], Personal: makeFolder(['P1', 'aaa']) },
+      [], [], { Clients: 'Work' }
+    );
+    displayFolders();
+
+    dropOn(folderEl('Clients'), {
+      kind: 'chat', sourceFolder: 'Personal', chatUrl: 'https://gemini.google.com/app/aaa',
+    });
+
+    expect(lastSave().folders.Clients).toHaveLength(1);
+    expect(lastSave().folders.Personal).toHaveLength(0);
+    // The parent opens too, or the conversation lands out of sight.
+    expect(lastSave().openFolders).toEqual(expect.arrayContaining(['Clients', 'Work']));
+  });
+
+  test('a payload with no kind is still treated as a conversation', () => {
+    // A drag started before an update can outlive the re-render.
+    setupStorage({ Work: [], Personal: makeFolder(['P1', 'aaa']) }, []);
+    displayFolders();
+
+    dropOn(folderEl('Work'), {
+      sourceFolder: 'Personal', chatUrl: 'https://gemini.google.com/app/aaa',
+    });
+
+    expect(lastSave().folders.Work).toHaveLength(1);
+  });
+
+  // Anywhere outside a folder card is the way out — the list's own gaps, but
+  // also above it, below it and either side of it. A drop on a folder card
+  // never reaches the document: those handlers stop propagation.
+  test.each([
+    ['the folder section', () => document.getElementById('folderList')],
+    ['the area above the list', () => document.getElementById('searchInput')],
+    ['the bare popup background', () => document.body],
+  ])('dropping on %s moves the sub-folder back out', (_label, target) => {
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+    dragStartOn(folderEl('Clients').querySelector('.folder-header'));
+
+    dropOn(target(), { kind: 'folder', sourceFolder: 'Clients' });
+
+    expect(lastSave().folderParents).toEqual({});
+  });
+
+  test('the popup-wide cue appears only while a folder is being dragged', () => {
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+
+    // No drag in flight: dragging a text selection across the popup must not
+    // make it look like a drop target.
+    dragOverOn(document.body);
+    expect(document.body.classList.contains('drop-to-root')).toBe(false);
+
+    dragStartOn(folderEl('Clients').querySelector('.folder-header'));
+    dragOverOn(document.body);
+    expect(document.body.classList.contains('drop-to-root')).toBe(true);
+
+    // Over a folder card, that card is the target — not the popup.
+    dragOverOn(folderEl('Work'));
+    expect(document.body.classList.contains('drop-to-root')).toBe(false);
+
+    document.dispatchEvent(new Event('dragend'));
+    expect(document.body.classList.contains('drop-to-root')).toBe(false);
+  });
+
+  test('a drop outside a folder does nothing when no folder is being dragged', () => {
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+
+    dropOn(document.body, { kind: 'chat', sourceFolder: 'Work', chatUrl: 'https://a/1' });
+
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+
+  test('the document listeners are wired once, not once per render', () => {
+    // The document outlives displayFolders, so re-wiring on every render would
+    // stack handlers and fire the un-nest save several times for one drop.
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+    displayFolders();
+    displayFolders();
+    dragStartOn(folderEl('Clients').querySelector('.folder-header'));
+
+    dropOn(document.getElementById('folderList'), { kind: 'folder', sourceFolder: 'Clients' });
+
+    expect(global.saveData).toHaveBeenCalledTimes(1);
+  });
+
+  test('the ⤴ button moves a sub-folder back to the top level', () => {
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+
+    folderEl('Clients').querySelector('.unnest-btn').click();
+
+    expect(lastSave().folderParents).toEqual({});
+  });
+});
+
+describe('pins and nesting', () => {
+  test('nesting a pinned folder leaves its pin untouched', () => {
+    setupStorage({ Work: [], Clients: [] }, ['Clients'], []);
+    displayFolders();
+
+    dropOn(folderEl('Work'), { kind: 'folder', sourceFolder: 'Clients' });
+
+    expect(lastSave().pinnedFolders).toBeUndefined();   // the pin list is not rewritten
+    expect(lastSave().folderParents).toEqual({ Clients: 'Work' });
+  });
+
+  test('the dormant pin is live again once the folder is back at the top level', () => {
+    setupStorage({ Work: [], Clients: [], Zeta: [] }, ['Clients'], [], { Clients: 'Work' });
+
+    displayFolders();
+    // Nested: no pin button, and it does not sort to the top.
+    expect(folderEl('Clients').querySelector('.pin-btn')).toBeNull();
+    expect([...document.querySelectorAll('#folderList > .folder')].map(f => f.dataset.folderName))
+      .toEqual(['Work', 'Zeta']);
+
+    setupStorage({ Work: [], Clients: [], Zeta: [] }, ['Clients'], [], {});
+    displayFolders();
+
+    expect(folderEl('Clients').querySelector('.pin-btn').className).toContain('is-pinned');
+    expect([...document.querySelectorAll('#folderList > .folder')].map(f => f.dataset.folderName)[0])
+      .toBe('Clients');
+  });
+
+  test('togglePin refuses a sub-folder even if a stale DOM asks for it', () => {
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+
+    togglePin('Clients');
+
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+});
+
+describe('deleting and renaming with sub-folders', () => {
+  test('deleting a parent takes its sub-folders, their pins and their entries', async () => {
+    global.window.showCustomModal.mockResolvedValue(true);
+    setupStorage(
+      { Work: makeFolder(['W1', 'aaa']), Clients: makeFolder(['C1', 'bbb']), Other: [] },
+      ['Work', 'Clients'], [], { Clients: 'Work' }
+    );
+    displayFolders();
+
+    folderEl('Work').querySelector('.delete-btn').click();
+    await flushMicrotasks();
+
+    expect(Object.keys(lastSave().folders)).toEqual(['Other']);
+    expect(lastSave().pinnedFolders).toEqual([]);
+    expect(lastSave().folderParents).toEqual({});
+  });
+
+  test('an EMPTY parent still asks for confirmation, naming how many it takes', async () => {
+    // The shared mock returns the key itself, so give this one key a real
+    // sentence — the point here is that {count} gets substituted.
+    const realGetMessage = chrome.i18n.getMessage;
+    chrome.i18n.getMessage = jest.fn((key) =>
+      key === 'confirmDeleteFolderSub' ? 'Delete this folder and its {count} sub-folder(s)?' : key);
+    try {
+      global.window.showCustomModal.mockResolvedValue(false);
+      setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+      displayFolders();
+
+      folderEl('Work').querySelector('.delete-btn').click();
+      await flushMicrotasks();
+
+      expect(global.window.showCustomModal).toHaveBeenCalledWith(
+        { type: 'confirm', title: 'Delete this folder and its 1 sub-folder(s)?' }
+      );
+      expect(global.saveData).not.toHaveBeenCalled();
+    } finally {
+      chrome.i18n.getMessage = realGetMessage;
+    }
+  });
+
+  test('renaming a parent follows through to its children', async () => {
+    global.window.showCustomModal.mockResolvedValue('Job');
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+
+    await renameFolder('Work');
+
+    expect(lastSave().folderParents).toEqual({ Clients: 'Job' });
+  });
+
+  test('renaming a child moves its entry rather than un-nesting it', async () => {
+    global.window.showCustomModal.mockResolvedValue('Accounts');
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+
+    await renameFolder('Clients');
+
+    expect(lastSave().folderParents).toEqual({ Accounts: 'Work' });
+  });
+});
+
+describe('tab group with sub-folders', () => {
+  beforeEach(() => {
+    let id = 0;
+    chrome.tabs.create = jest.fn(() => Promise.resolve({ id: ++id }));
+    chrome.tabs.group = jest.fn(() => Promise.resolve(777));
+    chrome.tabs.update = jest.fn(() => Promise.resolve());
+    chrome.tabGroups.update = jest.fn(() => Promise.resolve());
+  });
+
+  test('a root folder opens its whole subtree, a sub-folder only itself', async () => {
+    setupStorage(
+      { Work: makeFolder(['W1', 'aaa']), Clients: makeFolder(['C1', 'bbb'], ['C2', 'ccc']) },
+      [], [], { Clients: 'Work' }
+    );
+    displayFolders();
+
+    folderEl('Work').querySelector('.open-group-btn').click();
+    await flushMicrotasks();
+    expect(chrome.tabs.create).toHaveBeenCalledTimes(3);
+
+    chrome.tabs.create.mockClear();
+    folderEl('Clients').querySelector('.open-group-btn').click();
+    await flushMicrotasks();
+    expect(chrome.tabs.create).toHaveBeenCalledTimes(2);
+  });
+});
+
+describe('sub-folder strings ship in every locale', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const NEW_KEYS = ['btnUnnestFolder', 'confirmDeleteFolderSub', 'errorNestTooDeep'];
+
+  for (const ext of ['ai-folders', 'gemini-folders']) {
+    const dir = path.join(__dirname, '..', 'extensions', ext, '_locales');
+    const locales = fs.readdirSync(dir);
+
+    test(`${ext} has all three keys in its 43 locales, none empty`, () => {
+      expect(locales).toHaveLength(43);
+      for (const locale of locales) {
+        const messages = JSON.parse(fs.readFileSync(path.join(dir, locale, 'messages.json'), 'utf8'));
+        for (const key of NEW_KEYS) {
+          expect(messages[key] && messages[key].message.trim()).toBeTruthy();
+        }
+        // The count is substituted in JS: a translation that drops the token
+        // would silently print the sentence without the number.
+        expect(messages.confirmDeleteFolderSub.message).toContain('{count}');
+      }
+    });
+  }
+
+  test('the wording is product-neutral, so the two extensions cannot drift', () => {
+    const read = (ext, locale) => JSON.parse(fs.readFileSync(
+      path.join(__dirname, '..', 'extensions', ext, '_locales', locale, 'messages.json'), 'utf8'));
+    for (const locale of fs.readdirSync(path.join(__dirname, '..', 'extensions', 'ai-folders', '_locales'))) {
+      const af = read('ai-folders', locale);
+      const gf = read('gemini-folders', locale);
+      for (const key of NEW_KEYS) {
+        expect(af[key].message).toBe(gf[key].message);
+      }
+    }
+  });
+});
 
 describe('modifierKeyLabel', () => {
   test.each([

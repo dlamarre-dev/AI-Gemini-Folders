@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Usuń folder"
   },
+  "btnUnnestFolder": {
+    "message": "Przenieś poza folder"
+  },
   "confirmDeleteFolder": {
     "message": "Ten folder zawiera konwersacje. Czy na pewno chcesz go usunąć?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Ten folder, jego {count} podfolderów i wszystkie ich rozmowy zostaną usunięte. Na pewno?"
   },
   "btnPin": {
     "message": "Przypnij"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Folder o tej nazwie już istnieje."
+  },
+  "errorNestTooDeep": {
+    "message": "Ten folder zawiera już podfoldery. Obsługiwany jest tylko jeden poziom zagnieżdżenia."
   },
   "storageCalc": {
     "message": "Obliczanie miejsca..."

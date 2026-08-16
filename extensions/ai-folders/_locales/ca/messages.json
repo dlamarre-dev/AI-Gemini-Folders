@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Elimina la carpeta"
   },
+  "btnUnnestFolder": {
+    "message": "Treure de la carpeta"
+  },
   "confirmDeleteFolder": {
     "message": "Aquesta carpeta conté converses. Estàs segur que vols eliminar-la?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "S'eliminaran aquesta carpeta, les seves {count} subcarpetes i totes les seves converses. Segur?"
   },
   "btnPin": {
     "message": "Fixa"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Ja existeix una carpeta amb aquest nom."
+  },
+  "errorNestTooDeep": {
+    "message": "Aquesta carpeta ja conté subcarpetes. Només s'admet un nivell d'imbricació."
   },
   "storageCalc": {
     "message": "Calculant espai..."

@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Удалить папку"
   },
+  "btnUnnestFolder": {
+    "message": "Вынести из папки"
+  },
   "confirmDeleteFolder": {
     "message": "Эта папка содержит беседы. Вы уверены, что хотите ее удалить?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Эта папка, её вложенные папки ({count}) и все их беседы будут удалены. Продолжить?"
   },
   "btnPin": {
     "message": "Закрепить"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Папка с таким именем уже существует."
+  },
+  "errorNestTooDeep": {
+    "message": "В этой папке уже есть вложенные папки. Поддерживается только один уровень вложенности."
   },
   "storageCalc": {
     "message": "Вычисление места..."

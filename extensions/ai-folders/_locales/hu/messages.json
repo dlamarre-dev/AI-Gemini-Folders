@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Mappa törlése"
   },
+  "btnUnnestFolder": {
+    "message": "Kiemelés a mappából"
+  },
   "confirmDeleteFolder": {
     "message": "Ez a mappa beszélgetéseket tartalmaz. Biztosan törölni szeretné?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Ez a mappa, a(z) {count} almappája és azok összes beszélgetése törlődik. Biztos benne?"
   },
   "btnPin": {
     "message": "Rögzítés"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Már létezik ilyen nevű mappa."
+  },
+  "errorNestTooDeep": {
+    "message": "Ez a mappa már tartalmaz almappákat. Csak egy szintű beágyazás támogatott."
   },
   "storageCalc": {
     "message": "Tárhely kiszámítása..."

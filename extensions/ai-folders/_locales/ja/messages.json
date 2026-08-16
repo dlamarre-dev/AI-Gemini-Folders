@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "フォルダを削除"
   },
+  "btnUnnestFolder": {
+    "message": "フォルダから出す"
+  },
   "confirmDeleteFolder": {
     "message": "このフォルダには会話が含まれています。本当に削除しますか？"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "このフォルダ、{count} 個のサブフォルダ、およびそれらのすべての会話が削除されます。よろしいですか？"
   },
   "btnPin": {
     "message": "ピン留め"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "この名前のフォルダはすでに存在します。"
+  },
+  "errorNestTooDeep": {
+    "message": "このフォルダにはすでにサブフォルダがあります。入れ子は 1 階層までです。"
   },
   "storageCalc": {
     "message": "容量を計算中..."

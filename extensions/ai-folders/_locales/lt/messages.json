@@ -77,8 +77,14 @@
   "btnDeleteFolder": {
     "message": "Ištrinti aplanką"
   },
+  "btnUnnestFolder": {
+    "message": "Iškelti iš aplanko"
+  },
   "confirmDeleteFolder": {
     "message": "Šiame aplanke yra pokalbių. Ar tikrai nori jį ištrinti?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "Šis aplankas, jo {count} poaplankiai ir visi juose esantys pokalbiai bus ištrinti. Ar tikrai?"
   },
   "btnPin": {
     "message": "Prisegti"
@@ -115,6 +121,9 @@
   },
   "errorFolderExists": {
     "message": "Aplankas tokiu pavadinimu jau egzistuoja."
+  },
+  "errorNestTooDeep": {
+    "message": "Šiame aplanke jau yra poaplankių. Palaikomas tik vienas įdėjimo lygis."
   },
   "storageCalc": {
     "message": "Skaičiuojama vieta..."

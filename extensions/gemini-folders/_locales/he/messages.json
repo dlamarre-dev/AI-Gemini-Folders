@@ -80,8 +80,14 @@
   "btnDeleteFolder": {
     "message": "מחק תיקייה"
   },
+  "btnUnnestFolder": {
+    "message": "הוצאה מהתיקייה"
+  },
   "confirmDeleteFolder": {
     "message": "תיקייה זו מכילה שיחות. האם למחוק אותה?"
+  },
+  "confirmDeleteFolderSub": {
+    "message": "תיקייה זו, {count} תיקיות המשנה שלה וכל השיחות שבהן יימחקו. להמשיך?"
   },
   "btnPin": {
     "message": "נעץ"
@@ -118,6 +124,9 @@
   },
   "errorFolderExists": {
     "message": "תיקייה עם שם זה כבר קיימת."
+  },
+  "errorNestTooDeep": {
+    "message": "תיקייה זו כבר מכילה תיקיות משנה. נתמכת רמת קינון אחת בלבד."
   },
   "storageCalc": {
     "message": "מחשב מקום..."
