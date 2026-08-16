@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Treure de la carpeta"
   },
-  "dropToRootHint": {
-    "message": "Deixeu-la anar aquí per treure-la de la carpeta"
-  },
   "confirmDeleteFolder": {
     "message": "Aquesta carpeta conté converses. Estàs segur que vols eliminar-la?"
   },

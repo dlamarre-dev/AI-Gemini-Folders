@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "ย้ายออกจากโฟลเดอร์"
   },
-  "dropToRootHint": {
-    "message": "วางที่นี่เพื่อย้ายออกจากโฟลเดอร์"
-  },
   "confirmDeleteFolder": {
     "message": "โฟลเดอร์นี้มีการสนทนาอยู่ คุณแน่ใจหรือไม่ว่าต้องการลบ?"
   },

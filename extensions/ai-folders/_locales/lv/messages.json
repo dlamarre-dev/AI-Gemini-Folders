@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Izņemt no mapes"
   },
-  "dropToRootHint": {
-    "message": "Nometiet šeit, lai izņemtu no mapes"
-  },
   "confirmDeleteFolder": {
     "message": "Šajā mapē ir sarunas. Vai tiešām vēlies to dzēst?"
   },

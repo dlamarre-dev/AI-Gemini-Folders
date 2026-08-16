@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Sposta fuori dalla cartella"
   },
-  "dropToRootHint": {
-    "message": "Rilascia qui per spostarla fuori dalla cartella"
-  },
   "confirmDeleteFolder": {
     "message": "Questa cartella contiene conversazioni. Vuoi davvero eliminarla?"
   },

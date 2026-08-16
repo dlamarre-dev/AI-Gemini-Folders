@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "फ़ोल्डर से बाहर निकालें"
   },
-  "dropToRootHint": {
-    "message": "फ़ोल्डर से बाहर निकालने के लिए यहाँ छोड़ें"
-  },
   "confirmDeleteFolder": {
     "message": "इस फ़ोल्डर में बातचीत शामिल है। क्या आप वाकई इसे हटाना चाहते हैं?"
   },

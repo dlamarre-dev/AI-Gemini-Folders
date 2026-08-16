@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "Tõsta kaustast välja"
   },
-  "dropToRootHint": {
-    "message": "Kaustast välja tõstmiseks kukuta siia"
-  },
   "confirmDeleteFolder": {
     "message": "See kaust sisaldab vestlusi. Kas oled kindel, et soovid selle kustutada?"
   },

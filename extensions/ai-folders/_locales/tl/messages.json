@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Ilabas sa folder"
   },
-  "dropToRootHint": {
-    "message": "I-drop dito para ilabas sa folder"
-  },
   "confirmDeleteFolder": {
     "message": "Ang folder na ito ay may mga pag-uusap. Sigurado ka bang gusto mo itong tanggalin?"
   },

@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Винести з теки"
   },
-  "dropToRootHint": {
-    "message": "Перетягніть сюди, щоб винести з теки"
-  },
   "confirmDeleteFolder": {
     "message": "Ця тека містить розмови. Ви впевнені, що хочете видалити її?"
   },

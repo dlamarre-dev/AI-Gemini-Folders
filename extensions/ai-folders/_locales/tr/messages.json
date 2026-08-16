@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Klasörden çıkar"
   },
-  "dropToRootHint": {
-    "message": "Klasörden çıkarmak için buraya bırakın"
-  },
   "confirmDeleteFolder": {
     "message": "Bu klasör konuşmalar içeriyor. Silmek istediğinizden emin misiniz?"
   },

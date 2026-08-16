@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "Toa kwenye folda"
   },
-  "dropToRootHint": {
-    "message": "Achia hapa ili kuitoa kwenye folda"
-  },
   "confirmDeleteFolder": {
     "message": "Folda hii ina mazungumzo. Je, una uhakika unataka kuifuta?"
   },

@@ -5,6 +5,17 @@
 // drop target should light up — this is read instead. The popup is a single
 // document, so one module-level value is enough.
 let dragState = { kind: null, folder: null };
+let dragEndWired = false;
+
+// One safety net for the whole document: a drag that ends anywhere — including
+// cancelled outside the popup, where the source element's own dragend may never
+// run — must clear the state, or the folder section would keep offering itself
+// as a drop target for the next unrelated drag.
+function wireGlobalDragEnd() {
+  if (dragEndWired) return;
+  dragEndWired = true;
+  document.addEventListener('dragend', () => { dragState = { kind: null, folder: null }; });
+}
 
 function displayFolders(openFoldersArg = [], searchTerm = "") {
   const folderList = document.getElementById('folderList');
@@ -37,34 +48,27 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
     // parent, inside the parent's content area.
     const rootFolderNames = sortedRootFolders(folders, folderParents, pinnedFolders, sortPref);
 
-    // The way out of a folder, for the drag gesture. Sticky at the top of the
-    // list and only shown while a sub-folder is being dragged: "empty space
-    // below the folders" stops existing as soon as the list fills the popup.
-    const rootZone = document.createElement('div');
-    rootZone.className = 'root-drop-zone';
-    rootZone.textContent = chrome.i18n.getMessage("dropToRootHint") || "Drop here to move out of its folder";
-    rootZone.addEventListener('dragover', (e) => {
-      if (dragState.kind !== 'folder') return;
-      e.preventDefault();
-      rootZone.classList.add('drag-over');
-    });
-    rootZone.addEventListener('dragleave', () => rootZone.classList.remove('drag-over'));
-    rootZone.addEventListener('drop', (e) => {
-      rootZone.classList.remove('drag-over');
-      dropFolderAtRoot(e);
-    });
-    folderList.appendChild(rootZone);
-
-    // Empty space below the folders does the same thing — that is where the
-    // gesture naturally points. A drop on a folder card never reaches here:
-    // those handlers stop propagation. Wired once, since #folderList outlives
-    // the render and its listeners would otherwise stack up.
+    // The way out of a folder IS the folder section: dropping anywhere that is
+    // not a specific folder — the gaps between cards, the space under the last
+    // one — moves the dragged sub-folder back to the top level. A drop on a
+    // folder card never reaches here, since those handlers stop propagation.
+    // Wired once: #folderList outlives the render, so its listeners would
+    // otherwise stack up on every re-render.
+    wireGlobalDragEnd();
     if (!folderList.dataset.rootDropWired) {
       folderList.dataset.rootDropWired = '1';
       folderList.addEventListener('dragover', (e) => {
-        if (dragState.kind === 'folder') e.preventDefault();
+        if (dragState.kind !== 'folder') return;
+        e.preventDefault();
+        folderList.classList.add('drag-over');
       });
-      folderList.addEventListener('drop', dropFolderAtRoot);
+      // Also fires when the pointer moves from the section onto a folder card,
+      // which is exactly when this target stops being the one that would win.
+      folderList.addEventListener('dragleave', () => folderList.classList.remove('drag-over'));
+      folderList.addEventListener('drop', (e) => {
+        folderList.classList.remove('drag-over');
+        dropFolderAtRoot(e);
+      });
     }
 
     let hasPinned = false;

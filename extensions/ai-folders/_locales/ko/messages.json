@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "폴더에서 꺼내기"
   },
-  "dropToRootHint": {
-    "message": "여기에 놓으면 폴더에서 꺼냅니다"
-  },
   "confirmDeleteFolder": {
     "message": "이 폴더에는 대화가 포함되어 있습니다. 정말 삭제하시겠습니까?"
   },

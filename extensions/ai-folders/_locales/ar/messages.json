@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "إخراج من المجلد"
   },
-  "dropToRootHint": {
-    "message": "أفلِت هنا لإخراجه من مجلده"
-  },
   "confirmDeleteFolder": {
     "message": "يحتوي هذا المجلد على محادثات. هل أنت متأكد من حذفه؟"
   },

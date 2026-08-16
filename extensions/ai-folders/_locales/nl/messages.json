@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Uit de map halen"
   },
-  "dropToRootHint": {
-    "message": "Laat hier los om uit de map te halen"
-  },
   "confirmDeleteFolder": {
     "message": "Deze map bevat gesprekken. Weet u zeker dat u hem wilt verwijderen?"
   },

@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "הוצאה מהתיקייה"
   },
-  "dropToRootHint": {
-    "message": "שחררו כאן כדי להוציא מהתיקייה"
-  },
   "confirmDeleteFolder": {
     "message": "תיקייה זו מכילה שיחות. האם למחוק אותה?"
   },

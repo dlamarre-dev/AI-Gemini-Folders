@@ -1046,27 +1046,19 @@
     .folder.dragging-folder { opacity: 0.4; }
     .folder.drag-invalid { border: 2px dashed var(--delete-color); background-color: rgba(217, 48, 37, 0.05); }
 
-    /* The way back to the top level, shown only while a sub-folder is dragged.
-       Sticky, because "empty space under the list" stops existing as soon as the
-       list fills the popup. */
-    .root-drop-zone {
-      display: none;
-      /* Fixed, not sticky: the popup's scrolling ancestor is not #folderList,
-         so a sticky banner scrolls out of reach exactly when the list is long
-         enough for nesting to be worth it. Fixed keeps it one drag away. */
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
-      margin-bottom: 6px;
-      padding: 8px;
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted-text);
-      border: 2px dashed var(--border-color);
+    /* The way back to the top level is the folder section itself: while a
+       sub-folder is dragged, the whole section is outlined, and dropping
+       anywhere that is not a specific folder takes it out of its parent.
+       An outline rather than a border, so nothing reflows mid-drag — the
+       pointer must not have the layout moving under it. */
+    body.is-dragging-subfolder #folderList {
+      outline: 2px dashed var(--border-color);
+      outline-offset: 4px;
       border-radius: 8px;
-      background-color: var(--folder-bg);
+      /* Guarantees somewhere to drop even with one or two folders. */
+      min-height: 140px;
     }
-    body.is-dragging-subfolder .root-drop-zone { display: block; }
-    .root-drop-zone.drag-over { border-color: var(--accent-color); color: var(--accent-color); }
+    body.is-dragging-subfolder #folderList.drag-over {
+      outline-color: var(--accent-color);
+      background-color: rgba(26, 115, 232, 0.05);
+    }

@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "Iškelti iš aplanko"
   },
-  "dropToRootHint": {
-    "message": "Vilkite čia, kad iškeltumėte iš aplanko"
-  },
   "confirmDeleteFolder": {
     "message": "Šiame aplanke yra pokalbių. Ar tikrai nori jį ištrinti?"
   },

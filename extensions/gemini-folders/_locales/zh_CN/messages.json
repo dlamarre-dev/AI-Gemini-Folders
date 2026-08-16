@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "移出文件夹"
   },
-  "dropToRootHint": {
-    "message": "拖放到此处可移出文件夹"
-  },
   "confirmDeleteFolder": {
     "message": "此文件夹包含对话。您确定要删除它吗？"
   },

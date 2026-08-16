@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "Přesunout mimo složku"
   },
-  "dropToRootHint": {
-    "message": "Přetažením sem ji přesunete mimo složku"
-  },
   "confirmDeleteFolder": {
     "message": "Tato složka obsahuje konverzace. Opravdu ji chcete smazat?"
   },

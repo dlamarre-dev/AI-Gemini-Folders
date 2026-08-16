@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Scoate din dosar"
   },
-  "dropToRootHint": {
-    "message": "Plasați aici pentru a-l scoate din dosar"
-  },
   "confirmDeleteFolder": {
     "message": "Acest folder conține conversații. Sigur doriți să-l ștergeți?"
   },

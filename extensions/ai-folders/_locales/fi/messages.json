@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Siirrä pois kansiosta"
   },
-  "dropToRootHint": {
-    "message": "Pudota tähän siirtääksesi pois kansiosta"
-  },
   "confirmDeleteFolder": {
     "message": "Tässä kansiossa on keskusteluja. Haluatko varmasti poistaa sen?"
   },

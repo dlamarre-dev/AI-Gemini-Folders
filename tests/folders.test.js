@@ -44,6 +44,9 @@ global.hasEntry = require('../src/utils').hasEntry;
   // openConversation closes the popup when it is done; in jsdom the real
   // window.close() would tear the test window down.
   global.window.close = jest.fn();
+  // No drag in flight at the start of a test: the module-level drag state
+  // outlives a single test, exactly as it outlives a re-render in the popup.
+  document.dispatchEvent(new Event('dragend'));
 
   // Provide all DOM elements that displayFolders (called after each mutation)
   // reads at the top of its body. Without them it throws on null refs.
@@ -639,6 +642,13 @@ function dropOn(el, payload) {
   return event;
 }
 
+function dragOverOn(el) {
+  const event = new Event('dragover', { bubbles: true, cancelable: true });
+  event.dataTransfer = makeDataTransfer({});
+  el.dispatchEvent(event);
+  return event;
+}
+
 function dragStartOn(el) {
   const event = new Event('dragstart', { bubbles: true, cancelable: true });
   event.dataTransfer = makeDataTransfer({});
@@ -834,24 +844,47 @@ describe('nesting by drag & drop', () => {
     expect(lastSave().folders.Work).toHaveLength(1);
   });
 
-  test('the root drop zone moves a sub-folder back to the top level', () => {
-    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
-    displayFolders();
-
-    dropOn(document.querySelector('.root-drop-zone'), { kind: 'folder', sourceFolder: 'Clients' });
-
-    expect(lastSave().folderParents).toEqual({});
-  });
-
-  test('dropping on the empty space under the list also moves it back', () => {
-    // Where the gesture naturally points. A drop on a folder card never gets
-    // here — those handlers stop propagation.
+  test('dropping on the folder section, clear of any folder, moves it back out', () => {
+    // The section itself is the way out: the gaps between cards and the space
+    // under the last one. A drop on a folder card never gets here — those
+    // handlers stop propagation.
     setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
     displayFolders();
 
     dropOn(document.getElementById('folderList'), { kind: 'folder', sourceFolder: 'Clients' });
 
     expect(lastSave().folderParents).toEqual({});
+  });
+
+  test('the section highlights only while a folder is being dragged', () => {
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+    const list = document.getElementById('folderList');
+
+    // No drag in flight: dragging a text selection over the list must not make
+    // it look like a drop target.
+    dragOverOn(list);
+    expect(list.classList.contains('drag-over')).toBe(false);
+
+    dragStartOn(folderEl('Clients').querySelector('.folder-header'));
+    dragOverOn(list);
+    expect(list.classList.contains('drag-over')).toBe(true);
+
+    list.dispatchEvent(new Event('dragleave', { bubbles: true }));
+    expect(list.classList.contains('drag-over')).toBe(false);
+  });
+
+  test('the section listeners are wired once, not once per render', () => {
+    // #folderList outlives displayFolders, so re-wiring on every render would
+    // stack up handlers and fire the un-nest save several times per drop.
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+    displayFolders();
+    displayFolders();
+
+    dropOn(document.getElementById('folderList'), { kind: 'folder', sourceFolder: 'Clients' });
+
+    expect(global.saveData).toHaveBeenCalledTimes(1);
   });
 
   test('the ⤴ button moves a sub-folder back to the top level', () => {
@@ -990,13 +1023,13 @@ describe('tab group with sub-folders', () => {
 describe('sub-folder strings ship in every locale', () => {
   const fs = require('fs');
   const path = require('path');
-  const NEW_KEYS = ['btnUnnestFolder', 'confirmDeleteFolderSub', 'dropToRootHint', 'errorNestTooDeep'];
+  const NEW_KEYS = ['btnUnnestFolder', 'confirmDeleteFolderSub', 'errorNestTooDeep'];
 
   for (const ext of ['ai-folders', 'gemini-folders']) {
     const dir = path.join(__dirname, '..', 'extensions', ext, '_locales');
     const locales = fs.readdirSync(dir);
 
-    test(`${ext} has all four keys in its 43 locales, none empty`, () => {
+    test(`${ext} has all three keys in its 43 locales, none empty`, () => {
       expect(locales).toHaveLength(43);
       for (const locale of locales) {
         const messages = JSON.parse(fs.readFileSync(path.join(dir, locale, 'messages.json'), 'utf8'));

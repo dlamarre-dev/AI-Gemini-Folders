@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Flyt ud af mappen"
   },
-  "dropToRootHint": {
-    "message": "Slip her for at flytte ud af mappen"
-  },
   "confirmDeleteFolder": {
     "message": "Denne mappe indeholder samtaler. Er du sikker på, at du vil slette den?"
   },

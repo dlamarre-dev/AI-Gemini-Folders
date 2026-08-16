@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "Keluarkan daripada folder"
   },
-  "dropToRootHint": {
-    "message": "Lepaskan di sini untuk mengeluarkannya daripada folder"
-  },
   "confirmDeleteFolder": {
     "message": "Folder ini mengandungi perbualan. Adakah anda pasti ingin memadamnya?"
   },

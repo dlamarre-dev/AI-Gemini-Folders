@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Đưa ra khỏi thư mục"
   },
-  "dropToRootHint": {
-    "message": "Thả vào đây để đưa ra khỏi thư mục"
-  },
   "confirmDeleteFolder": {
     "message": "Thư mục này có cuộc trò chuyện. Bạn có chắc muốn xóa không?"
   },

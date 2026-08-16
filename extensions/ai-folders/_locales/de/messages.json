@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Aus dem Ordner herausnehmen"
   },
-  "dropToRootHint": {
-    "message": "Hier ablegen, um aus dem Ordner herauszunehmen"
-  },
   "confirmDeleteFolder": {
     "message": "Dieser Ordner enthält Unterhaltungen. Möchtest du ihn wirklich löschen?"
   },

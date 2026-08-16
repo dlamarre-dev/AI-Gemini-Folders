@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Sortir du dossier"
   },
-  "dropToRootHint": {
-    "message": "Déposez ici pour sortir du dossier"
-  },
   "confirmDeleteFolder": {
     "message": "Ce dossier contient des conversations. Voulez-vous vraiment le supprimer?"
   },

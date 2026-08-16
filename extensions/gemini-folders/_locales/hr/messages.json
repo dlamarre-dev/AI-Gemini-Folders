@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "Izdvoji iz mape"
   },
-  "dropToRootHint": {
-    "message": "Ispustite ovdje za izdvajanje iz mape"
-  },
   "confirmDeleteFolder": {
     "message": "Ova mapa sadrži razgovore. Želiš li je zaista izbrisati?"
   },

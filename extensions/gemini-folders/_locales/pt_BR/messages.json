@@ -83,9 +83,6 @@
   "btnUnnestFolder": {
     "message": "Tirar da pasta"
   },
-  "dropToRootHint": {
-    "message": "Solte aqui para tirar da pasta"
-  },
   "confirmDeleteFolder": {
     "message": "Esta pasta contém conversas. Tem certeza de que deseja excluí-la?"
   },

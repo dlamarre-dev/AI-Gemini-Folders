@@ -80,9 +80,6 @@
   "btnUnnestFolder": {
     "message": "Presunúť mimo priečinka"
   },
-  "dropToRootHint": {
-    "message": "Presunutím sem ho vyberiete z priečinka"
-  },
   "confirmDeleteFolder": {
     "message": "Tento priečinok obsahuje konverzácie. Naozaj ho chcete vymazať?"
   },
