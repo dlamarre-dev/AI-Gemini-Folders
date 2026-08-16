@@ -5,16 +5,40 @@
 // drop target should light up — this is read instead. The popup is a single
 // document, so one module-level value is enough.
 let dragState = { kind: null, folder: null };
-let dragEndWired = false;
+let globalDragWired = false;
 
-// One safety net for the whole document: a drag that ends anywhere — including
-// cancelled outside the popup, where the source element's own dragend may never
-// run — must clear the state, or the folder section would keep offering itself
-// as a drop target for the next unrelated drag.
-function wireGlobalDragEnd() {
-  if (dragEndWired) return;
-  dragEndWired = true;
-  document.addEventListener('dragend', () => { dragState = { kind: null, folder: null }; });
+// The way out of a folder is the whole popup: anywhere that is not a specific
+// folder — above the list, below it, either side, the gaps between cards —
+// drops the dragged sub-folder back at the top level. Folder cards stop
+// propagation, so their own drop still wins wherever it applies.
+//
+// Wired on the document, once. Re-wiring per render would stack listeners and
+// fire the un-nest save several times for one drop; and the document is also
+// the only place that reliably sees a drag ending outside the popup, where the
+// source element's own dragend may never run — a stale drag state would leave
+// the popup offering itself as a drop target during the next, unrelated drag.
+function wireGlobalDragHandlers() {
+  if (globalDragWired) return;
+  globalDragWired = true;
+
+  document.addEventListener('dragover', (e) => {
+    if (dragState.kind !== 'folder') return;
+    // Also stops the browser from pasting the drag payload into whatever input
+    // the pointer happens to be over.
+    e.preventDefault();
+    document.body.classList.add('drop-to-root');
+  });
+
+  document.addEventListener('drop', (e) => {
+    document.body.classList.remove('drop-to-root');
+    if (dragState.kind !== 'folder') return;
+    dropFolderAtRoot(e);
+  });
+
+  document.addEventListener('dragend', () => {
+    dragState = { kind: null, folder: null };
+    document.body.classList.remove('drop-to-root');
+  });
 }
 
 function displayFolders(openFoldersArg = [], searchTerm = "") {
@@ -48,28 +72,7 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
     // parent, inside the parent's content area.
     const rootFolderNames = sortedRootFolders(folders, folderParents, pinnedFolders, sortPref);
 
-    // The way out of a folder IS the folder section: dropping anywhere that is
-    // not a specific folder — the gaps between cards, the space under the last
-    // one — moves the dragged sub-folder back to the top level. A drop on a
-    // folder card never reaches here, since those handlers stop propagation.
-    // Wired once: #folderList outlives the render, so its listeners would
-    // otherwise stack up on every re-render.
-    wireGlobalDragEnd();
-    if (!folderList.dataset.rootDropWired) {
-      folderList.dataset.rootDropWired = '1';
-      folderList.addEventListener('dragover', (e) => {
-        if (dragState.kind !== 'folder') return;
-        e.preventDefault();
-        folderList.classList.add('drag-over');
-      });
-      // Also fires when the pointer moves from the section onto a folder card,
-      // which is exactly when this target stops being the one that would win.
-      folderList.addEventListener('dragleave', () => folderList.classList.remove('drag-over'));
-      folderList.addEventListener('drop', (e) => {
-        folderList.classList.remove('drag-over');
-        dropFolderAtRoot(e);
-      });
-    }
+    wireGlobalDragHandlers();
 
     let hasPinned = false;
     let transitionDone = false;
@@ -145,6 +148,9 @@ function buildFolderElement(folderName, ctx, isChild) {
     // parent already received dragleave when the pointer entered the child, so
     // its own highlight is cleared by then.
     e.stopPropagation();
+    // stopPropagation keeps the document-level handler from running here, so
+    // this is the only place that can turn the popup-wide cue back off.
+    document.body.classList.remove('drop-to-root');
     if (folderDiv.classList.contains('is-source-folder')) return;
     // getData() is empty during dragover by spec, so the hover feedback reads
     // the module-level drag state instead of the payload.

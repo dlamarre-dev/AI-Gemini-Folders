@@ -844,43 +844,61 @@ describe('nesting by drag & drop', () => {
     expect(lastSave().folders.Work).toHaveLength(1);
   });
 
-  test('dropping on the folder section, clear of any folder, moves it back out', () => {
-    // The section itself is the way out: the gaps between cards and the space
-    // under the last one. A drop on a folder card never gets here — those
-    // handlers stop propagation.
+  // Anywhere outside a folder card is the way out — the list's own gaps, but
+  // also above it, below it and either side of it. A drop on a folder card
+  // never reaches the document: those handlers stop propagation.
+  test.each([
+    ['the folder section', () => document.getElementById('folderList')],
+    ['the area above the list', () => document.getElementById('searchInput')],
+    ['the bare popup background', () => document.body],
+  ])('dropping on %s moves the sub-folder back out', (_label, target) => {
     setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
     displayFolders();
+    dragStartOn(folderEl('Clients').querySelector('.folder-header'));
 
-    dropOn(document.getElementById('folderList'), { kind: 'folder', sourceFolder: 'Clients' });
+    dropOn(target(), { kind: 'folder', sourceFolder: 'Clients' });
 
     expect(lastSave().folderParents).toEqual({});
   });
 
-  test('the section highlights only while a folder is being dragged', () => {
+  test('the popup-wide cue appears only while a folder is being dragged', () => {
     setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
     displayFolders();
-    const list = document.getElementById('folderList');
 
-    // No drag in flight: dragging a text selection over the list must not make
-    // it look like a drop target.
-    dragOverOn(list);
-    expect(list.classList.contains('drag-over')).toBe(false);
+    // No drag in flight: dragging a text selection across the popup must not
+    // make it look like a drop target.
+    dragOverOn(document.body);
+    expect(document.body.classList.contains('drop-to-root')).toBe(false);
 
     dragStartOn(folderEl('Clients').querySelector('.folder-header'));
-    dragOverOn(list);
-    expect(list.classList.contains('drag-over')).toBe(true);
+    dragOverOn(document.body);
+    expect(document.body.classList.contains('drop-to-root')).toBe(true);
 
-    list.dispatchEvent(new Event('dragleave', { bubbles: true }));
-    expect(list.classList.contains('drag-over')).toBe(false);
+    // Over a folder card, that card is the target — not the popup.
+    dragOverOn(folderEl('Work'));
+    expect(document.body.classList.contains('drop-to-root')).toBe(false);
+
+    document.dispatchEvent(new Event('dragend'));
+    expect(document.body.classList.contains('drop-to-root')).toBe(false);
   });
 
-  test('the section listeners are wired once, not once per render', () => {
-    // #folderList outlives displayFolders, so re-wiring on every render would
-    // stack up handlers and fire the un-nest save several times per drop.
+  test('a drop outside a folder does nothing when no folder is being dragged', () => {
+    setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
+    displayFolders();
+
+    dropOn(document.body, { kind: 'chat', sourceFolder: 'Work', chatUrl: 'https://a/1' });
+
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+
+  test('the document listeners are wired once, not once per render', () => {
+    // The document outlives displayFolders, so re-wiring on every render would
+    // stack handlers and fire the un-nest save several times for one drop.
     setupStorage({ Work: [], Clients: [] }, [], [], { Clients: 'Work' });
     displayFolders();
     displayFolders();
     displayFolders();
+    dragStartOn(folderEl('Clients').querySelector('.folder-header'));
 
     dropOn(document.getElementById('folderList'), { kind: 'folder', sourceFolder: 'Clients' });
 

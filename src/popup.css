@@ -1046,19 +1046,16 @@
     .folder.dragging-folder { opacity: 0.4; }
     .folder.drag-invalid { border: 2px dashed var(--delete-color); background-color: rgba(217, 48, 37, 0.05); }
 
-    /* The way back to the top level is the folder section itself: while a
-       sub-folder is dragged, the whole section is outlined, and dropping
-       anywhere that is not a specific folder takes it out of its parent.
-       An outline rather than a border, so nothing reflows mid-drag — the
-       pointer must not have the layout moving under it. */
-    body.is-dragging-subfolder #folderList {
+    /* The way back to the top level is the whole popup: while a sub-folder is
+       dragged, everything outside a folder card is a valid drop — above the
+       list, below it, either side, the gaps between cards.
+       An outline, not a border, and no inserted element: nothing may reflow
+       mid-drag, because the layout must not move under the pointer. */
+    body.is-dragging-subfolder {
       outline: 2px dashed var(--border-color);
-      outline-offset: 4px;
-      border-radius: 8px;
-      /* Guarantees somewhere to drop even with one or two folders. */
-      min-height: 140px;
+      outline-offset: -6px;
     }
-    body.is-dragging-subfolder #folderList.drag-over {
+    body.is-dragging-subfolder.drop-to-root {
       outline-color: var(--accent-color);
-      background-color: rgba(26, 115, 232, 0.05);
+      background-color: rgba(26, 115, 232, 0.04);
     }
