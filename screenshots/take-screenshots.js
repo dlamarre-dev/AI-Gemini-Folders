@@ -311,13 +311,20 @@ async function screenshotMobileSyncFolder(page, extId, localeData, outPath) {
   await page.goto(`chrome-extension://${extId}/popup.html`);
   await waitForRender(page);
 
-  const { folders, pinnedFolders, prompts } = localeData;
-  await page.evaluate(({ folders, pinnedFolders, prompts }) => {
+  const { folders, pinnedFolders, prompts, folderParents = {} } = localeData;
+  await page.evaluate(({ folders, pinnedFolders, prompts, folderParents }) => {
     return Promise.all([
-      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, sortPref: 'dateDesc', syncBookmarksEnabled: true }, r)),
-      new Promise(r => chrome.storage.local.set({ prompts, promptSortPref: 'dateDesc', lastMode: 'folder' }, r)),
+      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, folderParents, sortPref: 'dateDesc', syncBookmarksEnabled: true }, r)),
+      // openFolders reset for the same reason as in screenshotFolderMode: the
+      // clicks below toggle, and the folder captures leave folders open. Inheriting
+      // their state made this shot CLOSE what they had opened — the popup came out
+      // with every folder collapsed, which is what made it look too small.
+      new Promise(r => chrome.storage.local.set({
+        prompts, promptSortPref: 'dateDesc', lastMode: 'folder', openFolders: [],
+        usageStats: { opens: 0, saves: 0 }, afPromoState: { status: 'dismissed' },
+      }, r)),
     ]);
-  }, { folders, pinnedFolders, prompts });
+  }, { folders, pinnedFolders, prompts, folderParents });
 
   await page.reload();
   await waitForRender(page);
@@ -328,14 +335,15 @@ async function screenshotMobileSyncFolder(page, extId, localeData, outPath) {
     throw new Error('No .folder-header found for mobile sync screenshot.');
   }
 
-  // Root folders by structure, not by flat index — same reason as
-  // screenshotFolderMode: a sub-folder's header is a .folder-header too.
+  // Every ROOT folder open, sub-folders left closed. This shot exists to show the
+  // bookmark mirror beside the popup, so the popup should carry as much of the
+  // structure as it can; the sub-folder stays collapsed because the phone list
+  // beside it is what shows the nesting here.
   const roots = page.locator('#folderList > .folder');
-  await roots.nth(0).locator(':scope > .folder-header').click();
-  await page.waitForTimeout(200);
-  if (await roots.count() > 1) {
-    await roots.nth(1).locator(':scope > .folder-header').click();
-    await page.waitForTimeout(300);
+  const rootCount = await roots.count();
+  for (let i = 0; i < rootCount; i++) {
+    await roots.nth(i).locator(':scope > .folder-header').click();
+    await page.waitForTimeout(200);
   }
 
   // Capture checkbox position before hiding scrollbars
@@ -801,9 +809,19 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
     circleHTML = `<div class="sync-highlight"></div>`;
   }
 
-  // Phone screen content — folder list mirroring the extension
+  // Phone screen content — folder list mirroring the extension, nesting included:
+  // syncToBookmarksTree puts a sub-folder inside its parent's bookmark folder, so
+  // listing it flat here would promise a structure the sync does not create. Roots
+  // first, each followed by its own children, indented.
+  const nested = localeData.folderParents || {};
+  const bmRow = (name, isChild) =>
+    `<div class="bm-row${isChild ? ' bm-row--child' : ''}"><span class="bm-icon">📁</span><span class="bm-name">${name}</span></div>`;
   const folderItems = Object.keys(localeData.folders)
-    .map(name => `<div class="bm-row"><span class="bm-icon">📁</span><span class="bm-name">${name}</span></div>`)
+    .filter(name => !nested[name])
+    .map(root => bmRow(root, false) + Object.keys(localeData.folders)
+      .filter(name => nested[name] === root)
+      .map(child => bmRow(child, true))
+      .join(''))
     .join('');
 
   // Mirror the mock phone UI for RTL locales: dir="rtl" on the phone screen
@@ -945,6 +963,9 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
     border-bottom: 1px solid #f1f3f4;
     gap: ${Math.round(phoneW * 0.04)}px;
   }
+  /* A sub-folder sits inside its parent's bookmark folder — padding-inline-start
+     so the indent flips with the phone screen's dir="rtl". */
+  .bm-row--child { padding-inline-start: ${Math.round(phoneW * 0.14)}px; }
   .bm-icon { font-size: ${Math.round(phoneFontBase * 1.1)}px; flex-shrink: 0; }
   .bm-name {
     font-size: ${Math.round(phoneFontBase * 0.88)}px; color: #202124;
