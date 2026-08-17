@@ -389,7 +389,11 @@ async function screenshotMobileSyncFolder(page, extId, localeData, outPath) {
   return checkboxBox;
 }
 
-async function screenshotPromptMode(page, extId, localeData, outPath) {
+// expandFirst opens the pinned prompt as well. Only image 1 asks for it: there the
+// prompt popup sits beside the folder popup, and with one prompt expanded it ended
+// noticeably shorter, leaving the two cards misaligned. Image 3 keeps a single
+// expanded prompt — it stands alone, so its own height is the only budget it has.
+async function screenshotPromptMode(page, extId, localeData, outPath, { expandFirst = false } = {}) {
   await page.goto(`chrome-extension://${extId}/popup.html`);
   await waitForRender(page);
 
@@ -401,11 +405,15 @@ async function screenshotPromptMode(page, extId, localeData, outPath) {
   await page.reload();
   await waitForRender(page);
 
-  // Expand only the second prompt item (the first stays collapsed to keep the
-  // capture under the 598px native-scale budget of the compositions)
+  // Expand the second prompt item, and the first only when asked: on its own, the
+  // capture has to stay under the 598px native-scale budget of the compositions.
   const promptHeaders = page.locator('.prompt-header');
   await promptHeaders.nth(1).click();
   await page.waitForTimeout(300);
+  if (expandFirst) {
+    await promptHeaders.nth(0).click();
+    await page.waitForTimeout(300);
+  }
 
   // The single expanded prompt shows its full text with natural padding (the
   // collapsed first prompt frees the height needed to stay under the 598px
@@ -1628,7 +1636,13 @@ async function run() {
           await screenshotFolderMode(page, extId, localeData, folderPath);
         }
         if (modeArg === 'both' || modeArg === 'prompt') {
-          await screenshotPromptMode(page, extId, localeData, promptPath);
+          // This dark capture feeds image 1, where the prompt popup is judged against
+          // the folder popup beside it. Gemini Folders needs a second expanded prompt
+          // to match: its popup has no service-button rows, which is what already
+          // makes AI Folders' prompt pane the taller of the two — expanding a second
+          // prompt there overshoots instead.
+          await screenshotPromptMode(page, extId, localeData, promptPath,
+            { expandFirst: EXTENSION === 'gemini-folders' });
         }
         if (modeArg === 'both' && fs.existsSync(folderPath) && fs.existsSync(promptPath)) {
           // Image 1: side-by-side overview
