@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Faham"
   },
+  "whatsNewHeading": {
+    "message": "Apa yang baharu"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Folder dalam folder"
+  },
+  "whatsNewNestedBody": {
+    "message": "Seret satu folder ke atas folder lain untuk meletakkannya di dalam. Buka folder induk sebagai kumpulan tab dan semua kandungannya turut dibuka."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Kurangkan tab"
+  },
+  "whatsNewReuseBody": {
+    "message": "Mengklik perbualan yang disimpan akan bertukar ke tab yang sudah memaparkannya. {k}+klik menggunakan semula tab terakhir yang dibuka sambungan ini, bukan menambah tab baharu."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat masih berfungsi"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu memindahkan sembangnya ke alamat baharu. Penyimpanan dan penyisipan prompt berfungsi semula di sana."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: guna semula tab terakhir"
   },

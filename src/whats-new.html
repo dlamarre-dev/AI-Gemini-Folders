@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+  whats-new.html — opened in a tab once, on update to a release that has something
+  to say (background.js, reason === 'update' gated on WHATS_NEW_VERSION). Minor
+  releases bump nothing here and open no tab.
+
+  It exists because two of the three things 1.7.0 / 4.6.0 delivers were finished in
+  1.6.4 / 4.5.6 — versions that were never published — so no user has ever seen
+  them, and a feature nobody knows about is a feature nobody uses.
+
+  Same shell, stylesheet and rules as welcome.html: shared by both extensions,
+  every string from chrome.i18n, dark-only (welcome.css), and nothing here talks to
+  the network or writes storage. The cards are features, not steps, so the numbered
+  markers are switched off via .cards.
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="color-scheme" content="dark">
+  <title>&nbsp;</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <div class="bg-field"></div>
+
+  <main class="wrap">
+    <div class="brand">
+      <span class="brand-mark"><img src="icon.svg" alt=""></span>
+      <span id="nTitle"></span>
+      <!-- Read from the manifest, so it can never disagree with what is installed. -->
+      <span class="version-chip" id="nVersion"></span>
+    </div>
+    <h1 class="h1" id="nHeading"></h1>
+
+    <ul class="steps cards">
+      <li class="step">
+        <div class="step-text">
+          <h2 class="step-title" id="nNestedTitle"></h2>
+          <p class="step-body" id="nNestedBody"></p>
+        </div>
+        <!-- A folder holding a folder, in the popup's own shape: the parent's card
+             with a smaller one nested inside it, indented like the real thing. -->
+        <div class="step-art">
+          <span class="mini-folder">
+            <span class="mini-row"><span class="mini-ico">🗂️</span><span class="mini-bar"></span></span>
+            <span class="mini-row mini-row--chat"><span class="mini-bar mini-bar--sm"></span></span>
+            <span class="mini-folder mini-folder--child">
+              <span class="mini-row"><span class="mini-ico">📁</span><span class="mini-bar mini-bar--sm"></span></span>
+            </span>
+          </span>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-text">
+          <h2 class="step-title" id="nReuseTitle"></h2>
+          <p class="step-body" id="nReuseBody"></p>
+        </div>
+        <!-- The gesture itself: the key this platform actually has, plus a click.
+             The pointer is drawn from plain lines rather than lifted from an icon
+             set, so nothing in the shipped package carries an attribution
+             requirement (same reasoning as welcome.html's Firefox puzzle). -->
+        <div class="step-art">
+          <span class="keycap" id="nModKey"></span>
+          <span class="glyph-sep glyph-plus" aria-hidden="true">+</span>
+          <span class="glyph">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path d="M6 3 L6 19 L10.5 14.5 L13.5 21 L16 20 L13 13.5 L19.5 13.5 Z"/>
+            </svg>
+          </span>
+        </div>
+      </li>
+
+      <!-- AI Folders only: whats-new.js removes this card when the site registry has
+           no Baidu entry, which is exactly what tells the two products apart here. -->
+      <li class="step" id="nBaiduCard">
+        <div class="step-text">
+          <h2 class="step-title" id="nBaiduTitle"></h2>
+          <p class="step-body" id="nBaiduBody"></p>
+        </div>
+        <div class="step-art">
+          <span class="site-row site-row-single" id="nBaiduLogo"></span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="cta-row">
+      <button id="nCta" type="button" class="btn btn-primary"></button>
+    </div>
+  </main>
+
+  <script src="site-config.js"></script>
+  <script src="utils.js"></script>
+  <script src="whats-new.js"></script>
+</body>
+</html>

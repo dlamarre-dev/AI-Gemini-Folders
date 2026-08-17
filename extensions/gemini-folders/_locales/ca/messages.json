@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Entesos"
   },
+  "whatsNewHeading": {
+    "message": "Novetats"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Carpetes dins de carpetes"
+  },
+  "whatsNewNestedBody": {
+    "message": "Arrossegueu una carpeta sobre una altra per posar-la a dins. Obriu la carpeta principal com a grup de pestanyes i s'obrirà tot el que conté."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Menys pestanyes"
+  },
+  "whatsNewReuseBody": {
+    "message": "En clicar una conversa desada, es passa a la pestanya que ja la mostra. {k}+clic reutilitza l'última pestanya que ha obert l'extensió en lloc d'afegir-ne una altra."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilitza la darrera pestanya"
   },

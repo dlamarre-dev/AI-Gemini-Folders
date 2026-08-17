@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Értem"
   },
+  "whatsNewHeading": {
+    "message": "Újdonságok"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Mappák a mappákban"
+  },
+  "whatsNewNestedBody": {
+    "message": "Húzzon egy mappát egy másikra, hogy abba helyezze. Nyissa meg a szülőmappát lapcsoportként, és minden tartalma vele együtt megnyílik."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Kevesebb lap"
+  },
+  "whatsNewReuseBody": {
+    "message": "Egy mentett beszélgetésre kattintva a program arra a lapra vált, amely már megjeleníti. A {k}+kattintás a bővítő által utoljára megnyitott lapot használja újra, új helyett."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "A Baidu Chat továbbra is működik"
+  },
+  "whatsNewBaiduBody": {
+    "message": "A Baidu új címre helyezte a csevegését. A mentés és a promptbeszúrás ott ismét működik."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + kattintás: az utolsó lap újrahasználata"
   },

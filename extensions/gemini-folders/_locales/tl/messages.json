@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Nakuha ko"
   },
+  "whatsNewHeading": {
+    "message": "Ano ang bago"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Mga folder sa loob ng folder"
+  },
+  "whatsNewNestedBody": {
+    "message": "I-drag ang isang folder papunta sa isa pa para ilagay ito sa loob. Buksan ang parent folder bilang tab group at bubukas din ang lahat ng nasa loob nito."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Mas kaunting tab"
+  },
+  "whatsNewReuseBody": {
+    "message": "Ang pag-click sa naka-save na usapan ay lumilipat sa tab na nagpapakita na nito. Ang {k}+click ay muling gumagamit ng huling tab na binuksan ng extension kaysa magdagdag ng bago."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + click: gamitin muli ang huling tab"
   },

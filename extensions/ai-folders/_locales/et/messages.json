@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Sain aru"
   },
+  "whatsNewHeading": {
+    "message": "Mis on uut"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Kaustad kaustade sees"
+  },
+  "whatsNewNestedBody": {
+    "message": "Lohista üks kaust teise peale, et see sinna paigutada. Ava ülemkaust vahekaardirühmana ja kogu selle sisu avaneb koos sellega."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Vähem vahekaarte"
+  },
+  "whatsNewReuseBody": {
+    "message": "Salvestatud vestlusel klõpsamine viib vahekaardile, kus see juba avatud on. {k}+klõps kasutab uuesti viimast laienduse avatud vahekaarti, lisamata uut."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat töötab edasi"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu kolis oma vestluse uuele aadressile. Salvestamine ja promptide sisestamine töötavad seal taas."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klõps: kasuta viimast vahekaarti"
   },

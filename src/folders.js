@@ -878,26 +878,6 @@ async function openFolderInTabGroup(folderName, chats) {
 // and welcome.html can never be matched.
 // The url: filter of tabs.query is off-limits for the same reason — it requires
 // "tabs". Filter in JS instead.
-// Names the modifier key this platform actually has, for the {k} placeholder in
-// chatLinkReuseHint: Cmd on macOS, Ctrl on Windows/Linux. Naming both would make
-// the user work out which one is theirs, and hardcoding either into the 43
-// translations would be wrong on half the machines — hence the substitution.
-// The control key's *name* is localized (German keyboards are labelled "Strg"),
-// so it comes from the keyCtrl message; Command is called Cmd in every locale.
-// Pure in its inputs so both platforms are testable.
-function modifierKeyLabel(platformHint, ctrlLabel) {
-  return /Mac|iPhone|iPad/i.test(platformHint || '') ? 'Cmd' : (ctrlLabel || 'Ctrl');
-}
-
-function currentModifierKeyLabel() {
-  const nav = typeof navigator !== 'undefined' ? navigator : {};
-  // userAgentData.platform is the modern signal; platform/userAgent are the
-  // fallbacks (same user-agent sniffing style as welcome.js's Firefox check).
-  return modifierKeyLabel(
-    nav.userAgentData?.platform || nav.platform || nav.userAgent,
-    chrome.i18n.getMessage("keyCtrl"));
-}
-
 async function queryAllTabs() {
   try {
     const tabs = await chrome.tabs.query({});
@@ -1009,7 +989,8 @@ if (typeof module !== 'undefined') {
   for (const name of ['getFolderParent', 'getChildFolders', 'getRootFolderNames',
     'folderSubtreeNames', 'sortedChildFolders', 'sortedRootFolders', 'flattenFolderChats',
     'canNestFolder', 'withFolderParent', 'pruneFolderParents', 'folderDisplayPath',
-    'folderOpenPath', 'folderSearchState']) {
+    'folderOpenPath', 'folderSearchState',
+    'modifierKeyLabel', 'currentModifierKeyLabel']) {
     if (typeof global[name] === 'undefined') global[name] = _u[name];
   }
 
@@ -1024,7 +1005,8 @@ if (typeof module !== 'undefined') {
     togglePin,
     renameFolder,
     openFolderInTabGroup,
-    modifierKeyLabel,
+    // Re-exported from utils.js, where it now lives (whats-new.js needs it too).
+    modifierKeyLabel: _u.modifierKeyLabel,
     queryAllTabs,
     findTabShowingUrl,
     pickReusableTab,

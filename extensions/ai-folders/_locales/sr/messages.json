@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Razumem"
   },
+  "whatsNewHeading": {
+    "message": "Šta je novo"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Fascikle u fasciklama"
+  },
+  "whatsNewNestedBody": {
+    "message": "Prevucite jednu fasciklu na drugu da biste je smestili unutra. Otvorite nadređenu fasciklu kao grupu kartica i otvoriće se sve što sadrži."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Manje kartica"
+  },
+  "whatsNewReuseBody": {
+    "message": "Klik na sačuvani razgovor prebacuje na karticu koja ga već prikazuje. {k}+klik ponovo koristi poslednju karticu koju je proširenje otvorilo umesto da doda novu."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat i dalje radi"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu je premestio svoj čet na novu adresu. Čuvanje i ubacivanje promptova tamo ponovo rade."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: ponovo koristi poslednju karticu"
   },

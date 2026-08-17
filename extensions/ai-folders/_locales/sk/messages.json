@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Rozumiem"
   },
+  "whatsNewHeading": {
+    "message": "Čo je nové"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Priečinky v priečinkoch"
+  },
+  "whatsNewNestedBody": {
+    "message": "Presuňte priečinok na iný a vložte ho dovnútra. Otvorte nadradený priečinok ako skupinu kariet a otvorí sa všetko, čo obsahuje."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Menej kariet"
+  },
+  "whatsNewReuseBody": {
+    "message": "Kliknutie na uloženú konverzáciu prepne na kartu, ktorá ju už zobrazuje. {k}+kliknutie znova použije poslednú kartu otvorenú rozšírením namiesto pridania novej."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat funguje ďalej"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu presunul svoj chat na novú adresu. Ukladanie a vkladanie výziev tam opäť fungujú."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + kliknutie: použiť poslednú kartu"
   },
