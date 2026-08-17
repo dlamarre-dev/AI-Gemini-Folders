@@ -313,3 +313,105 @@ describe('initSaveConversation', () => {
     expect(global.saveData).toHaveBeenCalled();
   });
 });
+
+// ---------------------------------------------------------------------------
+// New folder button
+// ---------------------------------------------------------------------------
+
+// Creating a folder whose name was taken used to do nothing at all — the modal
+// closed as if it had worked. What is worth locking down is that the refusal is
+// now visible AND that nothing is written, since silence was the whole bug.
+describe('new folder button', () => {
+  // Every id initPopupCommon dereferences; same fixture style as applyCommonI18n.
+  const IDS = [
+    'newFolderBtn', 'searchInput', 'sortToggleBtn', 'sortMenu', 'modeFolderBtn',
+    'modePromptBtn', 'folderModeContainer', 'promptModeContainer', 'promptSearchInput',
+    'toggleAddPanelBtn', 'addConversationPanel', 'exportBtn', 'importBtn', 'importFile',
+    'syncBookmarksToggle', 'syncBookmarksLabel', 'syncPromptsLabel', 'githubLink', 'kofiBtn',
+  ];
+
+  let modals;
+
+  function wire(folders) {
+    modals = [];
+    document.body.innerHTML = IDS.map((id) => `<div id="${id}"></div>`).join('');
+    global.loadData = jest.fn((defaults, cb) => cb({ folders: JSON.parse(JSON.stringify(folders)) }));
+    global.saveData = jest.fn((data, cb) => cb && cb());
+    global.window.displayFolders = jest.fn();
+    global.window.displayPrompts = jest.fn();
+    // The prompt returns whatever the test typed; alerts are recorded.
+    global.window.showCustomModal = jest.fn((opts) => {
+      modals.push(opts);
+      return Promise.resolve(opts.type === 'prompt' ? typed : true);
+    });
+    chrome.storage.sync.get = jest.fn((_keys, cb) => cb && cb({}));
+    chrome.storage.sync.set = jest.fn((_v, cb) => cb && cb());
+    window.initPopupCommon({});
+  }
+
+  let typed = '';
+  const alerts = () => modals.filter((m) => m.type === 'alert').map((m) => m.title);
+
+  async function typeName(name, folders) {
+    typed = name;
+    wire(folders);
+    // initPopupCommon renders once while wiring; clear so every assertion below
+    // is about what the click did.
+    global.saveData.mockClear();
+    window.displayFolders.mockClear();
+    modals = [];
+    document.getElementById('newFolderBtn').click();
+    await flush();
+  }
+
+  test('a free name creates the folder and re-renders', async () => {
+    await typeName('Ideas', { Dev: [] });
+
+    expect(global.saveData).toHaveBeenCalled();
+    expect(Object.keys(global.saveData.mock.calls[0][0].folders)).toEqual(['Dev', 'Ideas']);
+    expect(window.displayFolders).toHaveBeenCalled();
+    expect(alerts()).toEqual([]);
+  });
+
+  test('a name already taken is refused, and nothing is written', async () => {
+    await typeName('Dev', { Dev: [] });
+
+    expect(alerts()).toEqual(['errorFolderExists']);
+    // The bug was silence, so the absence of a write is the thing to assert.
+    expect(global.saveData).not.toHaveBeenCalled();
+    expect(window.displayFolders).not.toHaveBeenCalled();
+  });
+
+  test('a name taken by a SUB-folder is refused the same way', async () => {
+    // Folder names are one flat namespace, so the collision is real even though
+    // the other folder is nested out of sight under its parent.
+    await typeName('Bugs', { Dev: [], Bugs: [] });
+
+    expect(alerts()).toEqual(['errorFolderExists']);
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+
+  test('an inherited name is a usable folder title, not a collision', async () => {
+    // folders['toString'] is truthy on every object; hasEntry is what makes this
+    // an ordinary name rather than a permanent "already exists".
+    await typeName('toString', { Dev: [] });
+
+    expect(alerts()).toEqual([]);
+    expect(global.saveData.mock.calls[0][0].folders.toString).toEqual([]);
+  });
+
+  test('__proto__ still gets the reserved-name message, not the collision one', async () => {
+    await typeName('__proto__', { Dev: [] });
+
+    expect(alerts()).toEqual(['reservedNameError']);
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+
+  test.each([['a cancelled prompt', null], ['a whitespace-only name', '   ']])(
+    '%s does nothing, silently', async (_label, value) => {
+      await typeName(value, { Dev: [] });
+
+      expect(alerts()).toEqual([]);
+      expect(global.saveData).not.toHaveBeenCalled();
+    });
+});
