@@ -286,13 +286,22 @@ function initPopupCommon(config) {
         return;
       }
       loadData({ folders: {} }, (data) => {
-        if (!hasEntry(data.folders, name.trim())) {
-          data.folders[name.trim()] = [];
-          saveData({ folders: data.folders }, (err) => {
-            if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
-            if (window.displayFolders) window.displayFolders();
+        // Say so, instead of closing the modal as if it had worked. Same refusal
+        // and same message as renaming onto an existing name (folders.js).
+        // Folder names are one flat namespace, so this also catches a name taken
+        // by a sub-folder — which the user may not see at the top level.
+        if (hasEntry(data.folders, name.trim())) {
+          window.showCustomModal({
+            title: chrome.i18n.getMessage("errorFolderExists") || "A folder with this name already exists.",
+            type: 'alert',
           });
+          return;
         }
+        data.folders[name.trim()] = [];
+        saveData({ folders: data.folders }, (err) => {
+          if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
+          if (window.displayFolders) window.displayFolders();
+        });
       });
     }
   });
