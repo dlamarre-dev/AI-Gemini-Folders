@@ -24,6 +24,7 @@ AI Folders works natively across all the major AI chat assistants, such as Claud
 📑 Tab Groups Integration: Open an entire folder in a single click as a native, color-coded Chrome Tab Group.
 😃 Custom Folder Emojis: Start your folder name with an emoji (e.g., "💻 Code") to replace the default folder icon.
 🖱️ Drag & Drop: Reorganize your workspace by dragging conversations between folders.
+🗂️ Sub-Folders: Drag a folder onto another one to place it inside. Open the parent as a Tab Group and everything it contains opens with it.
 📱 Mobile Sync: A toggle generates a mirror folder in your Chrome bookmarks, perfectly reproducing your folder structure and custom sort order on your phone.
 🗜️ Ultra-Efficient Compression: Automatically compresses your data (LZString) to maximize Chrome's native storage and save hundreds of conversations.
 📊 Storage Tracker: A sleek visual progress bar shows your available cloud storage in real time.

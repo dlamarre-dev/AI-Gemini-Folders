@@ -24,6 +24,7 @@ UI mape integrira se izvorno sa svim glavnim AI chat asistentima, kao što su Cl
 📑 Integracija grupa kartica: Otvori cijelu mapu jednim klikom kao izvornu, bojama kodiranu grupu kartica Chrome.
 😃 Prilagođeni emoji mape: Počni naziv mape s emojijem (npr. «💻 Kod»), da zamijeniš zadanu ikonu mape.
 🖱️ Povuci i ispusti: Premještaj razgovore između mapa.
+🗂️ Podmape: Povucite mapu na drugu kako biste je smjestili unutra. Otvorite nadređenu mapu kao grupu kartica i otvorit će se sve što sadrži.
 📱 Mobilna sinkronizacija: Zrcali strukturu mapa u Chrome oznakama za pristup s telefona.
 🗜️ Iznimno učinkovita kompresija: Automatski komprimira podatke (LZString) za maksimiziranje pohrane Chrome.
 📊 Praćenje pohrane: Vizualna traka napretka prikazuje raspoloživu pohranu u oblaku u stvarnom vremenu.

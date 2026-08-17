@@ -21,6 +21,7 @@ S verzijom 4.0 Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgo
 📑 Integracija grupa kartica: Otvori cijeli folder jednim klikom kao nativnu, šifriranu bojom grupu kartica Chrome.
 😃 Prilagođeni emoji foldera: Počni naziv foldera s emojijem (npr. «💻 Kod»), da zamijeniš podrazumijevanu ikonu foldera.
 🖱️ Prevuci i ispusti: Premještaj razgovore između foldera.
+🗂️ Podfascikle: Prevucite jednu fasciklu na drugu da biste je smestili unutra. Otvorite nadređenu fasciklu kao grupu kartica i otvoriće se sve što sadrži.
 📱 Mobilna sinhronizacija: Zrcali strukturu foldera u Chrome obeleživačima za pristup s telefona.
 🗜️ Izuzetno efikasna kompresija: Automatski komprimuje podatke (LZString) za maksimiziranje skladišta Chrome.
 📊 Praćenje skladišta: Vizuelna traka napretka prikazuje raspoloživo skladište u oblaku u realnom vremenu.

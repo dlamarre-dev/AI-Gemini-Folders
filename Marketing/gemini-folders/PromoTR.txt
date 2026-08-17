@@ -21,6 +21,7 @@ Sürüm 4.0 ile Gemini Klasörler, gerçek Gemini kokpitiniz haline geliyor: kon
 📑 Sekme Grupları Entegrasyonu: Tüm bir klasörü tek tıklamayla yerel, renk kodlu Chrome Sekme Grubu olarak açın.
 😃 Özel Klasör Emojileri: Klasör adınıza emoji ile başlayın (ör. "💻 Kod") ve varsayılan klasör simgesini değiştirin.
 🖱️ Sürükle & Bırak: Konuşmaları klasörler arasında sürükleyerek çalışma alanınızı yeniden düzenleyin.
+🗂️ Alt Klasörler: Bir klasörü diğerinin üzerine sürükleyerek içine yerleştirin. Üst klasörü sekme grubu olarak açtığınızda içindeki her şey de birlikte açılır.
 📱 Mobil Senkronizasyon: Bir geçiş düğmesi, Chrome yer imlerinizde yansıma klasörü oluşturur ve klasör yapınızı ile özel sıralama düzeninizi telefonunuzda mükemmel şekilde yeniden üretir.
 🗜️ Ultra Verimli Sıkıştırma: Verilerinizi otomatik olarak sıkıştırır (LZString), Chrome'un yerel depolamasını en üst düzeye çıkarır ve yüzlerce konuşma kaydeder.
 📊 Depolama İzleyici: Şık bir görsel ilerleme çubuğu, kullanılabilir bulut depolama alanınızı gerçek zamanlı gösterir.

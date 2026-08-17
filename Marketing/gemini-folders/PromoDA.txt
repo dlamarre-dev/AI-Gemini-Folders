@@ -21,6 +21,7 @@ Med version 4.0 bliver Gemini Mapper dit sande Gemini-cockpit: organiser samtale
 📑 Fanegruppeintegration: Åbn en hel mappe med ét klik som en indbygget, farvekodet Chrome-fanegruppe.
 😃 Tilpassede mappeemojis: Start mappenavnet med en emoji (f.eks. «💻 Kode») for at erstatte standardmappeikonet.
 🖱️ Træk og slip: Flyt samtaler intuitivt mellem mapper.
+🗂️ Undermapper: Træk en mappe over på en anden for at lægge den ind i den. Åbn overmappen som en fanegruppe, og alt indholdet åbnes med den.
 📱 Mobilsynkronisering: En knap opretter en spejlmappe i dine Chrome-bogmærker, der perfekt gengiver din mappestruktur og sorteringsrækkefølge på telefonen.
 🗜️ Ultraeffektiv komprimering: Komprimerer data automatisk (LZString) for at maksimere Chromes indbyggede lagringskapacitet.
 📊 Lagringssporer: En visuel fremskridtsindikator viser tilgængeligt skylager i realtid med detaljerede værktøjstip.

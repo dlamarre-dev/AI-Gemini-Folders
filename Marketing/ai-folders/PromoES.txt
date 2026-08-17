@@ -24,6 +24,7 @@ Carpetas IA se integra de forma nativa con todos los principales asistentes de c
 📑 Integración con Grupos de Pestañas: Abre toda una carpeta de un clic en un Grupo de Pestañas nativo y con código de colores de Chrome.
 😃 Emojis personalizados: Comienza el nombre de tu carpeta con un emoji (p. ej., "💻 Código") para reemplazar el icono predeterminado.
 🖱️ Arrastrar y Soltar: Reorganiza tu espacio de trabajo arrastrando conversaciones entre carpetas.
+🗂️ Subcarpetas: Arrastra una carpeta sobre otra para meterla dentro. Abre la carpeta principal como grupo de pestañas y se abrirá todo lo que contiene.
 📱 Sincronización Móvil: Un interruptor genera una carpeta espejo en tus marcadores de Chrome, reproduciendo perfectamente tu estructura y orden de clasificación en el teléfono.
 🗜️ Compresión ultraeficiente: Comprime automáticamente tus datos (LZString) para maximizar el almacenamiento nativo de Chrome y guardar cientos de conversaciones.
 📊 Monitor de almacenamiento: Una barra de progreso visual muestra tu almacenamiento en la nube disponible en tiempo real.

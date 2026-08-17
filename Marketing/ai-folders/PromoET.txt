@@ -24,6 +24,7 @@ AI kaustad integreerub natiivselt kõigi peamiste AI-vestlusassistentidega, nagu
 📑 Vahekaardi grupi integratsioon: Ava terve kaust ühe klikiga natiivsena, värvikodeeritud Chrome'i vahekaardi grupina.
 😃 Kohandatud kausta emojid: Alusta kausta nime emojiga (nt «💻 Kood»), et asendada vaikimisi kausta ikoon.
 🖱️ Lohista ja kukuta: Liiguta vestlusi kaustade vahel.
+🗂️ Alamkaustad: Lohista üks kaust teise peale, et see sinna paigutada. Ava ülemkaust vahekaardirühmana ja kogu selle sisu avaneb koos sellega.
 📱 Mobiilsünkroonimine: Peegeldab sinu kaustade struktuuri Chrome'i järjehoidjates telefonis juurdepääsuks.
 🗜️ Ülitõhus pakkimine: Pakkib andmed automaatselt (LZString), et maksimeerida Chrome'i salvestusruumi.
 📊 Salvestusruumi jälgija: Visuaalne edenemisriba näitab saadaolevat pilvsalvestusruumi reaalajas.

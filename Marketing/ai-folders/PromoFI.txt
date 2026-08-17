@@ -24,6 +24,7 @@ AI-kansiot integroituu natiivisti kaikkiin suuriin tekoälychat-avustajiin, kute
 📑 Välilehtiryhmäintegraatio: Avaa kokonainen kansio yhdellä napsautuksella natiivin, värikoodatun Chrome-välilehtiryhmänä.
 😃 Mukautetut kansion emojit: Aloita kansion nimi emojilla (esim. «💻 Koodi») korvataksesi oletuskansion kuvakkeen.
 🖱️ Raahaa ja pudota: Siirrä keskusteluja intuitiivisesti kansioiden välillä.
+🗂️ Alikansiot: Vedä kansio toisen päälle sijoittaaksesi sen sen sisään. Avaa yläkansio välilehtiryhmänä, niin kaikki sen sisältö avautuu mukana.
 📱 Mobiilisynkronointi: Kytkimellä luodaan peilimappe Chrome-kirjanmerkkeihin, joka toistaa täydellisesti kansiosi rakenteen ja lajittelujärjestyksen puhelimessa.
 🗜️ Erittäin tehokas pakkaus: Pakkaa tiedot automaattisesti (LZString) maksimoidaksesi Chromen sisäisen tallennuskapasiteetin.
 📊 Tallennustilan seuranta: Visuaalinen edistymispalkki näyttää käytettävissä olevan pilvitallennuksen reaaliajassa.

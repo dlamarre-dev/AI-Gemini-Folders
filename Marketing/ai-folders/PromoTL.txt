@@ -24,6 +24,7 @@ Ang Mga AI Folder ay natively na nag-iintegrate sa lahat ng pangunahing AI chat 
 📑 Tab Groups Integration: Buksan ang isang buong folder sa isang click bilang isang native, color-coded na Chrome Tab Group.
 😃 Custom Folder Emoji: Simulan ang pangalan ng iyong folder ng emoji (hal. "💻 Code") para palitan ang default na folder icon.
 🖱️ Drag at Drop: Muling ayusin ang iyong workspace sa pamamagitan ng pag-drag ng mga pag-uusap sa pagitan ng mga folder.
+🗂️ Mga Subfolder: I-drag ang isang folder papunta sa isa pa para ilagay ito sa loob. Buksan ang parent folder bilang tab group at bubukas din ang lahat ng nasa loob nito.
 📱 Mobile Sync: Ang isang toggle ay gumagawa ng mirror folder sa iyong mga Chrome bookmark, na perpektong nire-reproduce ang iyong folder structure at custom sort order sa iyong telepono.
 🗜️ Ultra-Efficient Compression: Awtomatikong kino-compress ang iyong data (LZString) para ma-maximize ang native storage ng Chrome at ma-save ang daan-daang pag-uusap.
 📊 Storage Tracker: Ang isang eleganteng visual progress bar ay nagpapakita ng iyong available na cloud storage sa real time.

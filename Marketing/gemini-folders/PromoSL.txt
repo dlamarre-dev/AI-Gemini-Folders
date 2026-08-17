@@ -21,6 +21,7 @@ Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj po
 📑 Integracija skupin zavihkov: Odpri celotno mapo z enim klikom kot izvorno, barvno kodirano skupino zavihkov Chrome.
 😃 Prilagojeni emoji map: Začni ime mape z emojijem (npr. «💻 Koda»), da zamenjal privzeto ikono mape.
 🖱️ Povleci in spusti: Premakni pogovore med mapami.
+🗂️ Podmape: Povlecite mapo na drugo, da jo postavite vanjo. Odprite nadrejeno mapo kot skupino zavihkov in odprlo se bo vse, kar vsebuje.
 📱 Mobilna sinhronizacija: Zrcali strukturo map v zaznamkih Chrome za dostop s telefona.
 🗜️ Izjemno učinkovita stiskanje: Samodejno stisne podatke (LZString) za maksimiziranje shrambe Chrome.
 📊 Sledilnik shrambe: Vizualna vrstica napredka kaže razpoložljivo shrambo v oblaku v realnem času.

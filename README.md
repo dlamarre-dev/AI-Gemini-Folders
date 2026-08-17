@@ -63,6 +63,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 * 😃 **Custom Folder Emojis:** Start a folder name with an emoji (e.g., “💻 Code”) and it becomes the folder icon automatically.
 * ⇅ **Custom Sorting:** Sort folders and conversations by Newest, Oldest, or A-Z on the fly, with changes reflected instantly in mobile sync.
 * 🖱️ **Drag & Drop:** Move conversations between folders intuitively.
+* 🗂️ **Sub-Folders:** Drag a folder onto another to nest it one level deep. Sub-folders collapse, sort and search like any other folder; opening a parent as a Tab Group opens its whole subtree, and deleting it takes its sub-folders with it. Drag a sub-folder anywhere outside a folder — or press ⤴ in its header — to move it back to the top level. Folder names stay unique across the whole library, so two parents cannot both hold a sub-folder called “Notes”.
 * 🗜️ **Ultra-Efficient Compression:** LZString compression maximizes browser sync storage so you can save hundreds of conversations securely.
 * 📊 **Storage Tracker:** A visual progress bar shows available cloud storage in real-time with detailed tooltips.
 * 🎨 **Modern Material UI:** Custom Material 3 modal dialogs (with Enter / Escape / backdrop-click support), switch-style footer toggles, ultra-compact footer, collapsible Add panel, and clean hover effects.
@@ -128,7 +129,8 @@ This project uses a Python build pipeline to generate browser-specific versions.
 3. **Via the extension:** Click the toolbar icon or press `Ctrl+Shift+1` (`Cmd+Shift+1` on Mac) to open the panel. The title is auto-detected. Expand the add panel (➕), select or create a folder, and hit **Save**.
 4. **Mobile sync:** Click `📱` in the footer to mirror your folders in browser bookmarks.
 5. **Reopen a conversation:** Click it to switch to the tab already showing it. `Ctrl+click` (`Cmd+click` on Mac) reuses the last tab instead of opening a new one; middle-click still opens a background tab.
-6. Drag & drop items, use checkboxes for bulk actions, open folders as Tab Groups, or pin favorites with 📌.
+6. **Sub-folders:** Drag a folder onto another to nest it (one level). Type `Parent/Child` in the folder box, or pick the sub-folder from the right-click menu, to save straight into it. Drag it anywhere outside a folder — or press ⤴ — to bring it back to the top level.
+7. Drag & drop items, use checkboxes for bulk actions, open folders as Tab Groups, or pin favorites with 📌.
 
 ### Prompt Mode
 1. Click the **📝** side of the pill toggle to switch to Prompt Mode.

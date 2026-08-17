@@ -21,6 +21,7 @@ Con la versione 4.0, Cartelle Gemini diventa il tuo vero cockpit per Gemini: org
 📑 Integrazione Gruppi di schede: Apri un'intera cartella con un clic in un Gruppo di schede nativo di Chrome, con codice colore.
 😃 Emoji personalizzate: Inizia il nome della cartella con un'emoji (es. "💻 Codice") per sostituire l'icona predefinita.
 🖱️ Trascina e Rilascia: Riorganizza il tuo spazio di lavoro trascinando le conversazioni tra le cartelle.
+🗂️ Sottocartelle: Trascina una cartella su un'altra per inserirla al suo interno. Apri la cartella principale come gruppo di schede e si apre tutto ciò che contiene.
 📱 Sincronizzazione Mobile: Un interruttore genera una cartella specchio nei segnalibri di Chrome, riproducendo perfettamente la tua struttura e l'ordine di ordinamento sul telefono.
 🗜️ Compressione ultra-efficiente: Comprime automaticamente i tuoi dati (LZString) per massimizzare lo spazio di archiviazione nativo di Chrome.
 📊 Monitor dello spazio: Una barra di avanzamento visiva mostra lo spazio cloud disponibile in tempo reale.

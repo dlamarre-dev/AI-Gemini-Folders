@@ -21,6 +21,7 @@ Với phiên bản 4.0, Thư mục Gemini trở thành buồng lái Gemini thự
 📑 Tích hợp Nhóm tab: Mở toàn bộ thư mục chỉ với một cú nhấp dưới dạng Nhóm tab Chrome gốc có màu sắc.
 😃 Emoji thư mục tùy chỉnh: Bắt đầu tên thư mục bằng emoji (vd: "💻 Code") để thay thế biểu tượng thư mục mặc định.
 🖱️ Kéo & Thả: Sắp xếp lại không gian làm việc bằng cách kéo cuộc trò chuyện giữa các thư mục.
+🗂️ Thư mục con: Kéo một thư mục lên thư mục khác để đặt vào bên trong. Mở thư mục cha dưới dạng nhóm thẻ và mọi thứ bên trong cũng mở theo.
 📱 Đồng bộ di động: Một nút chuyển đổi tạo thư mục gương trong dấu trang Chrome, tái tạo hoàn hảo cấu trúc thư mục và thứ tự sắp xếp tùy chỉnh trên điện thoại.
 🗜️ Nén siêu hiệu quả: Tự động nén dữ liệu (LZString) để tối đa hóa bộ nhớ gốc của Chrome và lưu hàng trăm cuộc trò chuyện.
 📊 Theo dõi bộ nhớ: Thanh tiến trình trực quan hiển thị dung lượng đám mây khả dụng theo thời gian thực.

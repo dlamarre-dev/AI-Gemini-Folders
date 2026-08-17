@@ -24,6 +24,7 @@ Folda za AI huunganishwa kiasili na wasaidizi wakuu wote wa gumzo la AI, kama vi
 📑 Ujumuishaji wa Kikundi cha Vichupo: Fungua folda nzima kwa kubofya mara moja kama Kikundi cha Vichupo cha Chrome chenye rangi.
 😃 Emoji Maalum za Folda: Anza jina la folda yako na emoji (mfano: "💻 Msimbo") ili kubadilisha ikoni ya kawaida ya folda.
 🖱️ Buruta na Uweke: Panga upya nafasi yako ya kazi kwa kuburuta mazungumzo kati ya folda.
+🗂️ Folda ndogo: Buruta folda moja juu ya nyingine ili kuiweka ndani yake. Fungua folda mama kama kikundi cha vichupo na kila kilichomo hufunguka pamoja nayo.
 📱 Usawazishaji wa Simu: Kitufe cha kubadilisha huunda folda inayoakisi katika alamisho za Chrome yako, ikizalisha upya muundo wako wa folda na mpangilio maalum wa kusortia kwenye simu yako.
 🗜️ Mfinyazo wa Ufanisi wa Juu: Hufinyaza data yako kiotomatiki (LZString) ili kuongeza hifadhi ya asili ya Chrome na kuhifadhi mazungumzo mamia.
 📊 Kifuatiliaji cha Hifadhi: Mwambaa wa maendeleo wa kuona unaonyesha hifadhi yako ya wingu inayopatikana kwa wakati halisi.

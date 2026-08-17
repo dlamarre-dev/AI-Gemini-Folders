@@ -21,6 +21,7 @@ Amb la versió 4.0, Carpetes Gemini és el teu veritable cockpit de Gemini: orga
 📑 Integració de grups de pestanyes: Obre una carpeta sencera amb un clic com a grup de pestanyes de Chrome.
 😃 Emojis de carpeta personalitzats: Comença el nom de la carpeta amb un emoji (p. ex. «💻 Codi») per substituir la icona de carpeta predeterminada.
 🖱️ Arrossega i deixa anar: Mou les converses entre carpetes.
+🗂️ Subcarpetes: Arrossegueu una carpeta sobre una altra per posar-la a dins. Obriu la carpeta principal com a grup de pestanyes i s'obrirà tot el que conté.
 📱 Sincronització mòbil: Crea una carpeta mirall als marcadors de Chrome per accedir-hi des del telèfon.
 🗜️ Compressió ultraeficient: Comprimeix les dades automàticament (LZString) per maximitzar l'emmagatzematge de Chrome.
 📊 Indicador d'emmagatzematge: Una barra de progrés visual mostra l'emmagatzematge al núvol disponible en temps real.

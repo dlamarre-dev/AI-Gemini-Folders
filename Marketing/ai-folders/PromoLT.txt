@@ -24,6 +24,7 @@ AI aplankai natūraliai integruojasi su visais pagrindiniais AI pokalbių asiste
 📑 Skirtukų grupės integracija: Atidaryti visą aplanką vienu spustelėjimu kaip natyvią, spalvinę „Chrome" skirtukų grupę.
 😃 Tinkintos aplanko emocijos: Pradėk aplanko pavadinimą nuo emocijų (pvz. «💻 Kodas»), kad pakeistum numatytąją aplanko piktogramą.
 🖱️ Vilkimas ir nuleidimas: Perkėlk pokalbius tarp aplankų.
+🗂️ Poaplankiai: Vilkite vieną aplanką ant kito, kad įdėtumėte jį į vidų. Atverkite pirminį aplanką kaip kortelių grupę – atsivers visas jo turinys.
 📱 Mobiliojo ryšio sinchronizavimas: Atspindi aplankų struktūrą „Chrome" žymėse, kad galėtum pasiekti iš telefono.
 🗜️ Itin efektyvus suspaudimas: Automatiškai suspaudžia duomenis (LZString), kad maksimaliai išnaudotų „Chrome" saugyklą.
 📊 Saugyklos stebėjimo priemonė: Vaizdinis eigos rodiklis realiuoju laiku rodo turimą debesijos saugyklą.

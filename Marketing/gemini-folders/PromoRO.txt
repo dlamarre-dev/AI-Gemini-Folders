@@ -21,6 +21,7 @@ Cu versiunea 4.0, Foldere Gemini devine adevăratul dvs. cockpit Gemini: organiz
 📑 Integrare Grupuri de File: Deschideți un întreg folder cu un clic ca un Grup de File nativ Chrome, cu coduri de culori.
 😃 Emoji personalizate: Începeți numele folderului cu un emoji (ex.: „💻 Cod") pentru a înlocui pictograma implicită.
 🖱️ Glisare și Plasare: Reorganizați spațiul de lucru trăgând conversațiile între foldere.
+🗂️ Subdosare: Trageți un dosar peste altul pentru a-l plasa în interior. Deschideți dosarul principal ca grup de file și se deschide tot ce conține.
 📱 Sincronizare Mobilă: Un comutator generează un folder oglindă în marcajele Chrome, reproducând perfect structura de foldere și ordinea de sortare pe telefon.
 🗜️ Compresie ultra-eficientă: Comprimă automat datele (LZString) pentru a maximiza stocarea nativă Chrome și a salva sute de conversații.
 📊 Urmăritor de stocare: O bară de progres vizuală indică spațiul de stocare cloud disponibil în timp real.
