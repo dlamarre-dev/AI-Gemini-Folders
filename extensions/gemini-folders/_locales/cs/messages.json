@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Rozumím"
   },
+  "whatsNewHeading": {
+    "message": "Co je nového"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Složky ve složkách"
+  },
+  "whatsNewNestedBody": {
+    "message": "Přetáhněte složku na jinou a vnořte ji dovnitř. Otevřete nadřazenou složku jako skupinu panelů a otevře se s ní vše, co obsahuje."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Méně panelů"
+  },
+  "whatsNewReuseBody": {
+    "message": "Kliknutí na uloženou konverzaci přepne na panel, který ji už zobrazuje. {k}+kliknutí znovu použije poslední panel otevřený rozšířením, místo aby přidalo další."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + kliknutí: použít poslední kartu"
   },

@@ -198,12 +198,37 @@ function openWelcomeTab(reason) {
   } catch (_) { /* best-effort: a failed tab must not break the install */ }
 }
 
+// --- WHAT'S NEW PAGE ---
+// Opened once on update, and only for a release that has something to explain.
+// The gate is this constant: leave it alone for a minor version and no tab opens.
+//
+// It exists because 1.6.4 / 4.5.6 were finished but never published, so their tab-
+// reuse gesture has never been seen by anyone — a feature nobody knows about is a
+// feature nobody uses.
+//
+// The seen-marker is not redundant with the version check: reloading an unpacked
+// extension also fires onInstalled with reason 'update', which would reopen the tab
+// on every dev cycle, and a reinstall over the same version would too.
+const WHATS_NEW_VERSION = '1.7.0';
+
+async function openWhatsNewTab(reason) {
+  if (reason !== 'update') return;
+  try {
+    if (chrome.runtime.getManifest().version !== WHATS_NEW_VERSION) return;
+    const { whatsNewSeenFor } = await chrome.storage.local.get(['whatsNewSeenFor']);
+    if (whatsNewSeenFor === WHATS_NEW_VERSION) return;
+    await chrome.storage.local.set({ whatsNewSeenFor: WHATS_NEW_VERSION });
+    chrome.tabs.create({ url: chrome.runtime.getURL('whats-new.html') });
+  } catch (_) { /* best-effort: a failed tab must not break the update */ }
+}
+
 chrome.runtime.onInstalled.addListener(async (details) => {
   updateContextMenu();
   updateLocalLlmContentScript();
   await recordInstallDate(details && details.reason);
   refreshUninstallUrl();
   openWelcomeTab(details && details.reason);
+  openWhatsNewTab(details && details.reason);
 });
 chrome.runtime.onStartup.addListener(() => {
   updateContextMenu();

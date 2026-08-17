@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Đã hiểu"
   },
+  "whatsNewHeading": {
+    "message": "Có gì mới"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Thư mục trong thư mục"
+  },
+  "whatsNewNestedBody": {
+    "message": "Kéo một thư mục lên thư mục khác để đặt vào bên trong. Mở thư mục cha dưới dạng nhóm thẻ và mọi thứ bên trong cũng mở theo."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Ít thẻ hơn"
+  },
+  "whatsNewReuseBody": {
+    "message": "Nhấp vào một cuộc trò chuyện đã lưu sẽ chuyển sang thẻ đang mở nó. {k}+nhấp sẽ dùng lại thẻ mà tiện ích mở gần nhất thay vì thêm thẻ mới."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat vẫn hoạt động"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu đã chuyển phần chat sang địa chỉ mới. Việc lưu và chèn prompt hoạt động trở lại ở đó."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + nhấp: dùng lại thẻ cuối cùng"
   },

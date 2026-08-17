@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "了解しました"
   },
+  "whatsNewHeading": {
+    "message": "新着情報"
+  },
+  "whatsNewNestedTitle": {
+    "message": "フォルダの中のフォルダ"
+  },
+  "whatsNewNestedBody": {
+    "message": "フォルダを別のフォルダにドラッグすると、その中に入ります。親フォルダをタブグループで開けば、中身もまとめて開きます。"
+  },
+  "whatsNewReuseTitle": {
+    "message": "タブを増やさない"
+  },
+  "whatsNewReuseBody": {
+    "message": "保存した会話をクリックすると、すでに表示しているタブに切り替わります。{k}+クリックなら、新しいタブを増やさずに拡張機能が最後に開いたタブを再利用します。"
+  },
   "chatLinkReuseHint": {
     "message": "{k} + クリック: 最後のタブを再利用"
   },

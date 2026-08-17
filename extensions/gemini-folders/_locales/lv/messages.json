@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Sapratu"
   },
+  "whatsNewHeading": {
+    "message": "Kas jauns"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Mapes mapēs"
+  },
+  "whatsNewNestedBody": {
+    "message": "Velciet vienu mapi uz citas, lai ievietotu to iekšā. Atveriet vecākmapi kā ciļņu grupu, un atvērsies viss tās saturs."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Mazāk ciļņu"
+  },
+  "whatsNewReuseBody": {
+    "message": "Noklikšķinot uz saglabātas sarunas, tiek atvērta cilne, kurā tā jau ir redzama. {k}+klikšķis atkārtoti izmanto pēdējo paplašinājuma atvērto cilni, nevis pievieno jaunu."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klikšķis: izmantot pēdējo cilni"
   },

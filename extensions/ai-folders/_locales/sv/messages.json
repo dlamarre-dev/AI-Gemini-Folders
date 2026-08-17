@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Uppfattat"
   },
+  "whatsNewHeading": {
+    "message": "Nyheter"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Mappar i mappar"
+  },
+  "whatsNewNestedBody": {
+    "message": "Dra en mapp ovanpå en annan för att lägga den inuti. Öppna den överordnade mappen som en flikgrupp så öppnas allt innehåll med den."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Färre flikar"
+  },
+  "whatsNewReuseBody": {
+    "message": "Ett klick på en sparad konversation växlar till fliken som redan visar den. {k}+klick återanvänder den senaste fliken som tillägget öppnade i stället för att lägga till en ny."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat fungerar fortfarande"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu har flyttat sin chatt till en ny adress. Sparande och infogning av prompter fungerar där igen."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klick: återanvänd den senaste fliken"
   },

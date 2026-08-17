@@ -716,6 +716,30 @@ function isSafeUrl(url) {
   }
 }
 
+// Names the modifier key this platform actually has, for the {k} placeholder in
+// chatLinkReuseHint (folders.js) and in the what's-new page: Cmd on macOS, Ctrl on
+// Windows/Linux. Naming both would make the user work out which one is theirs, and
+// hardcoding either into the 43 translations would be wrong on half the machines —
+// hence the substitution. The control key's *name* is localized (German keyboards
+// are labelled "Strg"), so it comes from the keyCtrl message; Command is called
+// Cmd in every locale.
+//
+// Lives here rather than in folders.js because whats-new.js needs it too and must
+// not load the whole folder renderer to get it. Pure in its inputs so both
+// platforms are testable.
+function modifierKeyLabel(platformHint, ctrlLabel) {
+  return /Mac|iPhone|iPad/i.test(platformHint || '') ? 'Cmd' : (ctrlLabel || 'Ctrl');
+}
+
+function currentModifierKeyLabel() {
+  const nav = typeof navigator !== 'undefined' ? navigator : {};
+  // userAgentData.platform is the modern signal; platform/userAgent are the
+  // fallbacks (same user-agent sniffing style as welcome.js's Firefox check).
+  return modifierKeyLabel(
+    nav.userAgentData?.platform || nav.platform || nav.userAgent,
+    chrome.i18n.getMessage("keyCtrl"));
+}
+
 function normalizeUrl(rawUrl) {
   try {
     const urlObj = new URL(rawUrl);
@@ -1257,6 +1281,8 @@ if (typeof module !== 'undefined') {
     syncToBookmarksTree,
     extractTitleLogic,
     isSafeUrl,
+    modifierKeyLabel,
+    currentModifierKeyLabel,
     normalizeUrl,
     normalizePromptData,
     mergeImportData,

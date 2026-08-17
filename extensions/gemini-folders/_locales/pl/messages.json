@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Rozumiem"
   },
+  "whatsNewHeading": {
+    "message": "Co nowego"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Foldery w folderach"
+  },
+  "whatsNewNestedBody": {
+    "message": "Przeciągnij folder na inny, aby umieścić go w środku. Otwórz folder nadrzędny jako grupę kart, a otworzy się wszystko, co zawiera."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Mniej kart"
+  },
+  "whatsNewReuseBody": {
+    "message": "Kliknięcie zapisanej rozmowy przenosi do karty, która już ją pokazuje. {k}+kliknięcie ponownie używa ostatniej karty otwartej przez rozszerzenie, zamiast dodawać nową."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + kliknięcie: użyj ponownie ostatniej karty"
   },

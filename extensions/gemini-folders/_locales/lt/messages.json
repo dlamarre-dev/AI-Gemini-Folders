@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Supratau"
   },
+  "whatsNewHeading": {
+    "message": "Kas nauja"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Aplankai aplankuose"
+  },
+  "whatsNewNestedBody": {
+    "message": "Vilkite vieną aplanką ant kito, kad įdėtumėte jį į vidų. Atverkite pirminį aplanką kaip kortelių grupę – atsivers visas jo turinys."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Mažiau kortelių"
+  },
+  "whatsNewReuseBody": {
+    "message": "Paspaudus išsaugotą pokalbį, pereinama į kortelę, kurioje jis jau atvertas. {k}+spustelėjimas pakartotinai naudoja paskutinę plėtinio atvertą kortelę, o ne prideda naują."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + spustelėjimas: naudoti paskutinį skirtuką"
   },

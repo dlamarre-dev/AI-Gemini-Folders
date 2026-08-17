@@ -10,7 +10,20 @@ const {
   sortChats,
   normalizePromptData,
   syncToBookmarksTree,
+  modifierKeyLabel,
 } = require('../src/utils');
+
+// modifierKeyLabel moved here from folders.js so the what's-new page can name the
+// modifier key without loading the folder renderer. Its platform matrix is covered
+// in tests/folders.test.js through the re-export; what matters here is that the
+// canonical copy lives in utils and still behaves.
+describe('modifierKeyLabel (canonical copy)', () => {
+  test('Cmd on Apple platforms, the localized Ctrl name elsewhere', () => {
+    expect(modifierKeyLabel('MacIntel', 'Strg')).toBe('Cmd');
+    expect(modifierKeyLabel('Win32', 'Strg')).toBe('Strg');
+    expect(modifierKeyLabel(undefined, undefined)).toBe('Ctrl');
+  });
+});
 
 // ---------------------------------------------------------------------------
 // assembleChunks / makeChunks

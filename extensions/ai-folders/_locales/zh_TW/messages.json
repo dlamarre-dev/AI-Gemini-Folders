@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "我瞭解了"
   },
+  "whatsNewHeading": {
+    "message": "新功能"
+  },
+  "whatsNewNestedTitle": {
+    "message": "資料夾套資料夾"
+  },
+  "whatsNewNestedBody": {
+    "message": "將一個資料夾拖曳到另一個上即可放入其中。以分頁群組開啟父資料夾，裡面的所有內容也會一併開啟。"
+  },
+  "whatsNewReuseTitle": {
+    "message": "更少分頁"
+  },
+  "whatsNewReuseBody": {
+    "message": "點擊已儲存的對話會切換到已顯示它的分頁。{k}+點擊則重複使用擴充功能上次開啟的分頁，而不是再開一個。"
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat 依然可用"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu 已將聊天搬遷到新網址。儲存與提示詞插入在那裡恢復正常。"
+  },
   "chatLinkReuseHint": {
     "message": "{k} + 點擊：重複使用上一個分頁"
   },

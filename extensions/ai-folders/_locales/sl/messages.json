@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Razumem"
   },
+  "whatsNewHeading": {
+    "message": "Kaj je novega"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Mape v mapah"
+  },
+  "whatsNewNestedBody": {
+    "message": "Povlecite mapo na drugo, da jo postavite vanjo. Odprite nadrejeno mapo kot skupino zavihkov in odprlo se bo vse, kar vsebuje."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Manj zavihkov"
+  },
+  "whatsNewReuseBody": {
+    "message": "Klik na shranjen pogovor preklopi na zavihek, ki ga že prikazuje. {k}+klik znova uporabi zadnji zavihek, ki ga je odprla razširitev, namesto da bi dodal novega."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat še naprej deluje"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu je svoj klepet preselil na nov naslov. Shranjevanje in vstavljanje pozivov tam znova delujeta."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: znova uporabi zadnji zavihek"
   },

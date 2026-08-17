@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Razumijem"
   },
+  "whatsNewHeading": {
+    "message": "Što je novo"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Mape unutar mapa"
+  },
+  "whatsNewNestedBody": {
+    "message": "Povucite mapu na drugu kako biste je smjestili unutra. Otvorite nadređenu mapu kao grupu kartica i otvorit će se sve što sadrži."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Manje kartica"
+  },
+  "whatsNewReuseBody": {
+    "message": "Klik na spremljeni razgovor prebacuje na karticu koja ga već prikazuje. {k}+klik ponovno koristi posljednju karticu koju je proširenje otvorilo umjesto da doda novu."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat i dalje radi"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu je premjestio svoj chat na novu adresu. Spremanje i umetanje upita tamo ponovno rade."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: ponovno koristi posljednju karticu"
   },

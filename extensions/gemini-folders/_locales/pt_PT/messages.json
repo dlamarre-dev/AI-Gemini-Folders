@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Compreendi"
   },
+  "whatsNewHeading": {
+    "message": "Novidades"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Pastas dentro de pastas"
+  },
+  "whatsNewNestedBody": {
+    "message": "Arraste uma pasta para cima de outra para a colocar lá dentro. Abra a pasta principal como grupo de separadores e tudo o que contém abre com ela."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Menos separadores"
+  },
+  "whatsNewReuseBody": {
+    "message": "Clicar numa conversa guardada muda para o separador que já a mostra. {k}+clique reutiliza o último separador que a extensão abriu em vez de acrescentar outro."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clique: reutilizar o último separador"
   },

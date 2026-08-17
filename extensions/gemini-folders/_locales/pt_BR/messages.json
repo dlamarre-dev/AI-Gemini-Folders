@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Entendi"
   },
+  "whatsNewHeading": {
+    "message": "Novidades"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Pastas dentro de pastas"
+  },
+  "whatsNewNestedBody": {
+    "message": "Arraste uma pasta sobre outra para colocá-la dentro. Abra a pasta principal como grupo de guias e tudo o que ela contém abre junto."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Menos abas"
+  },
+  "whatsNewReuseBody": {
+    "message": "Clicar em uma conversa salva alterna para a aba que já a exibe. {k}+clique reutiliza a última aba que a extensão abriu em vez de adicionar outra."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clique: reutilizar a última aba"
   },

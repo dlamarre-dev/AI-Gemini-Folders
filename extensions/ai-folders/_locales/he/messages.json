@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "הבנתי"
   },
+  "whatsNewHeading": {
+    "message": "מה חדש"
+  },
+  "whatsNewNestedTitle": {
+    "message": "תיקיות בתוך תיקיות"
+  },
+  "whatsNewNestedBody": {
+    "message": "גררו תיקייה על גבי אחרת כדי למקם אותה בתוכה. פתחו את תיקיית האב כקבוצת לשוניות וכל מה שבתוכה ייפתח יחד איתה."
+  },
+  "whatsNewReuseTitle": {
+    "message": "פחות לשוניות"
+  },
+  "whatsNewReuseBody": {
+    "message": "לחיצה על שיחה שמורה עוברת ללשונית שכבר מציגה אותה. לחיצה עם {k} עושה שימוש חוזר בלשונית האחרונה שההרחבה פתחה במקום להוסיף עוד אחת."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat עדיין עובד"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu העביר את הצ'אט שלו לכתובת חדשה. השמירה והזרקת הפרומפטים פועלות שם שוב."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + לחיצה: שימוש חוזר בלשונית האחרונה"
   },

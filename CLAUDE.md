@@ -564,6 +564,35 @@ lose to any CSS rule, so `.glyph svg { fill }` would otherwise flood the shape.
   extension page opened via `chrome.runtime.getURL` needs no
   `web_accessible_resources`.
 
+### 10b. What's-new page (`src/whats-new.html` + `whats-new.js`)
+
+Same shell, same stylesheet (`welcome.css`), same rules as §10 — shared by both
+extensions, every string from `chrome.i18n`, dark-only, inert. It reuses `appTitle`
+and `welcomeCta` rather than adding keys, and shows the installed version from
+`chrome.runtime.getManifest()` so the chip can never disagree with reality.
+
+- **Opened on update, gated on a constant**: `WHATS_NEW_VERSION` in *each*
+  `background.js` (not shared, §6). The page opens only when
+  `reason === 'update'` **and** the manifest version equals that constant, so a
+  minor release with nothing to explain simply leaves the constant alone. A test
+  asserts the constant equals the manifest version, or the next release would
+  reopen notes that no longer describe it.
+- **`whatsNewSeenFor` (storage.local) is not redundant** with that check: reloading
+  an unpacked extension also fires `onInstalled` with `reason === 'update'`, which
+  would reopen the tab on every dev cycle, and so would reinstalling over the same
+  version. This is the one deliberate difference from the welcome page, which needs
+  no flag because a fresh install happens once.
+- **The Baidu card is AI Folders only, decided by the site registry** (`SITES.baidu`),
+  not by a per-product flag — the same data-driven detection `welcome.js` uses to
+  fall back to Gemini alone. Its two strings therefore live in **AF's `_locales`
+  only**: a string Gemini Folders can never show would be dead weight in 43 files.
+- **`{k}` in `whatsNewReuseBody`** is filled by `currentModifierKeyLabel()`, which
+  moved from `folders.js` to `utils.js` for this page (folders.js re-exports it, so
+  its tests are unchanged). Never hardcode `Cmd` or `Ctrl` into a translation — a
+  test rejects both words in all 43 × 2.
+- **The cards are features, not steps**: `.cards` switches off `welcome.css`'s
+  counter markers. Numbering them would read as instructions to follow.
+
 ---
 
 ## 11. Baselines for the 2026-08 anti-churn work
