@@ -309,9 +309,12 @@ function initPopupCommon(config) {
     const isEnabled = e.target.checked;
     chrome.storage.sync.set({ syncBookmarksEnabled: isEnabled }, () => {
       if (isEnabled) {
-        loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc' }, (fullData) => {
+        loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc', folderParents: {} }, (fullData) => {
           if (typeof syncToBookmarksTree === 'function') {
-            syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref);
+            // folderParents is not optional here in practice: without it the mirror
+            // comes out flat, with every sub-folder beside its parent instead of
+            // inside it — and this is the call that builds the tree the first time.
+            syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref, fullData.folderParents);
           }
         });
       } else {
@@ -388,9 +391,9 @@ function initPopupCommon(config) {
   // Re-sync bookmarks on init if the feature is enabled (runs once, not per sort item).
   chrome.storage.sync.get(['syncBookmarksEnabled'], (syncData) => {
     if (syncData.syncBookmarksEnabled) {
-      loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc' }, (fullData) => {
+      loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc', folderParents: {} }, (fullData) => {
         if (typeof syncToBookmarksTree === 'function') {
-          syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref);
+          syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref, fullData.folderParents);
         }
       });
     }
