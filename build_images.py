@@ -3,6 +3,12 @@
 """
 Build marketing screenshots for Gemini Folders or AI Folders.
 
+Prerequisite: Playwright's own Chromium, matching the version pinned in
+screenshots/package-lock.json. `npm install` does NOT fetch it, and a cache left
+by a newer Playwright does not count — the launcher looks for one exact build
+number and fails with "Please run the following command to download new browsers".
+  cd screenshots && npx playwright install chromium
+
 Usage:
   python build_images.py                                  # GF, all locales
   python build_images.py --extension ai-folders           # AF, all locales
@@ -13,11 +19,15 @@ Usage:
   python build_images.py --extension ai-folders --build --locale en
 
 Output per locale (mode=both):
-  Marketing/<extension>/screenshots/Promo_1_<locale>.png  — side-by-side overview
-  Marketing/<extension>/screenshots/Promo_2_<locale>.png  — folder mode close-up
-  Marketing/<extension>/screenshots/Promo_3_<locale>.png  — prompt mode close-up
-  Marketing/<extension>/screenshots/Promo_4_<locale>.png  — mobile sync mockup
-  Marketing/<extension>/screenshots/Promo_5_<locale>.png  — context menu
+  Marketing/<extension>/screenshots/Promo_1_<locale>.png  — side-by-side overview (dark)
+  Marketing/<extension>/screenshots/Promo_2_<locale>.png  — folder mode close-up (light)
+  Marketing/<extension>/screenshots/Promo_3_<locale>.png  — prompt mode close-up (light)
+  Marketing/<extension>/screenshots/Promo_4_<locale>.png  — mobile sync mockup (dark)
+  Marketing/<extension>/screenshots/Promo_5_<locale>.png  — context menu (dark)
+
+Images 2 and 3 show the light theme so the listing advertises both appearances.
+The website has no light theme, so it takes its two close-ups from the dark
+_site_*.png intermediates instead (see step_sync_site_shots).
 """
 
 import argparse
@@ -35,8 +45,15 @@ ROOT            = os.path.dirname(os.path.abspath(__file__))
 SCREENSHOTS_DIR = os.path.join(ROOT, 'screenshots')
 SITE_SHOTS_DIR  = os.path.join(ROOT, 'docs', 'site', 'assets', 'shots')
 
-# Promo composition number → website screenshot name (AI Folders only)
-SITE_SHOT_MAP = {'2': 'folder-mode', '3': 'prompt-mode', '4': 'mobile-sync'}
+# Website screenshot name → the composed file it comes from (AI Folders only).
+# folder-mode and prompt-mode read the dark _site_* intermediates rather than
+# Promo_2/3, which now show the light theme: aifolders.xyz is dark-only, so a light
+# popup on it would look like a mistake rather than a feature.
+SITE_SHOT_MAP = {
+    'folder-mode': '_site_folder-mode',
+    'prompt-mode': '_site_prompt-mode',
+    'mobile-sync': 'Promo_4',
+}
 
 VALID_EXTENSIONS = ['gemini-folders', 'ai-folders']
 
@@ -103,17 +120,26 @@ def step_screenshots(extension, mode, locales, out_dir):
 
 def step_sync_site_shots(out_dir, locales):
     """Mirror the freshly composed AI Folders promos onto the website:
-    Promo_2/3/4_<locale>.png → docs/site/assets/shots/<mode>_<locale>.png."""
-    copied, missing = 0, []
+    <source>_<locale>.png → docs/site/assets/shots/<name>_<locale>.png.
+
+    The _site_* sources are intermediates that exist only for this copy, so they are
+    removed afterwards — Marketing/ must hold the five store images and nothing else.
+    """
+    copied, missing, dropped = 0, [], 0
     for locale in locales:
-        for num, name in SITE_SHOT_MAP.items():
-            src = os.path.join(out_dir, f'Promo_{num}_{locale}.png')
+        for name, source in SITE_SHOT_MAP.items():
+            src = os.path.join(out_dir, f'{source}_{locale}.png')
             if not os.path.isfile(src):
                 missing.append(os.path.basename(src))
                 continue
             shutil.copy2(src, os.path.join(SITE_SHOTS_DIR, f'{name}_{locale}.png'))
             copied += 1
+            if source.startswith('_site_'):
+                os.remove(src)
+                dropped += 1
     print(f'\n🌐 Website shots synced: {copied} file(s) → {SITE_SHOTS_DIR}')
+    if dropped:
+        print(f'   🧹 Removed {dropped} intermediate(s) from {out_dir}')
     if missing:
         print(f'   ⚠️ Missing source(s) skipped: {", ".join(missing)}')
 
