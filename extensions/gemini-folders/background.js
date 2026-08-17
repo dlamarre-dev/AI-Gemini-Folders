@@ -146,7 +146,9 @@ chrome.runtime.onInstalled.addListener(async (details) => {
   await recordInstallDate(details && details.reason);
   refreshUninstallUrl();
   openWelcomeTab(details && details.reason);
-  openWhatsNewTab(details && details.reason);
+  // Awaited: the worker may be shut down once this listener resolves, and this
+  // one reads storage before it can open its tab.
+  await openWhatsNewTab(details && details.reason);
 });
 chrome.runtime.onStartup.addListener(() => { updateContextMenu(); refreshUninstallUrl(); });
 chrome.storage.onChanged.addListener((changes, namespace) => {
