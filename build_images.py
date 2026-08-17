@@ -3,6 +3,12 @@
 """
 Build marketing screenshots for Gemini Folders or AI Folders.
 
+Prerequisite: Playwright's own Chromium, matching the version pinned in
+screenshots/package-lock.json. `npm install` does NOT fetch it, and a cache left
+by a newer Playwright does not count — the launcher looks for one exact build
+number and fails with "Please run the following command to download new browsers".
+  cd screenshots && npx playwright install chromium
+
 Usage:
   python build_images.py                                  # GF, all locales
   python build_images.py --extension ai-folders           # AF, all locales
