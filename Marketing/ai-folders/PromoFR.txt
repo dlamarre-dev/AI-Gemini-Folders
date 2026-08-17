@@ -6,17 +6,7 @@ Organisez les conversations de tous vos outils IA favoris dans des dossiers part
 
 Dossiers IA s'intègre nativement avec tous les principaux assistants de chat IA, tels que Claude, ChatGPT et Gemini, ainsi qu'avec les LLM locaux que vous exécutez vous-même. Les conversations de différentes plateformes peuvent partager le même dossier. Chaque discussion affiche la couleur et le logo de son service d'origine, pour que vous sachiez toujours d'où elle vient.
 
-✨ MODE PROMPTS
-
-📝 Bibliothèque de prompts personnelle : Passez en mode Prompt d'un simple clic sur le bouton de bascule dans l'en-tête. Sauvegardez vos meilleurs prompts avec un titre et un texte complet, retrouvez-les instantanément grâce à la recherche et au tri (plus récents, plus anciens, A-Z).
-▶ Injection en un clic : Plus besoin de copier-coller. Cliquez sur le bouton lecture (▶) de n'importe quel prompt pour l'injecter directement dans le champ de saisie de l'IA active.
-✏️ Édition en place : Cliquez sur un prompt pour le déplier et modifiez son texte directement. Les changements se sauvegardent automatiquement et le tri se met à jour en conséquence.
-🔀 Boutons Nouvelle Conversation : Lancez une nouvelle discussion sur l'un des services web pris en charge directement depuis le Mode Prompts, en un seul clic.
-📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
-☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
-⌨️ Déclenchement de prompt avec suggestions en direct : Tapez # dans le champ de saisie de n'importe quelle IA pour voir instantanément tous vos prompts sauvegardés — filtrés en temps réel au fil de la frappe. Utilisez ↓/↑ pour naviguer entre les suggestions, appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter directement.
-
-🌟 FONCTIONNALITÉS DOSSIERS
+🌟 MODE DOSSIERS
 
 ⌨️ Raccourci instantané : Ouvrez le panneau à tout moment depuis n'importe quel onglet avec Ctrl+Shift+1 (ou Cmd+Shift+1 sur Mac).
 ⚡ Sauvegarde Rapide (Clic Droit & Raccourcis) : Sauvegardez la conversation via un simple clic droit, ou utilisez le raccourci clavier (Ctrl+Shift+S ou Cmd+Shift+S sur Mac) pour l'envoyer instantanément dans "⚡ Sauvegardes Rapides" — avec une alerte visuelle si elle est déjà sauvegardée !
@@ -38,6 +28,16 @@ Dossiers IA s'intègre nativement avec tous les principaux assistants de chat IA
 🏠 SUPPORT LLM LOCAL
 
 Vous utilisez un modèle IA local (Ollama, LM Studio, Jan ou autre) ? Configurez Dossiers IA avec votre URL locale — prend en charge localhost et les adresses LAN (192.168.x.x, noms d'hôtes personnalisés). La sauvegarde rapide et via le menu contextuel fonctionnent aussi sur les interfaces locales.
+✨ MODE PROMPTS
+
+📝 Bibliothèque de prompts personnelle : Passez en mode Prompt d'un simple clic sur le bouton de bascule dans l'en-tête. Sauvegardez vos meilleurs prompts avec un titre et un texte complet, retrouvez-les instantanément grâce à la recherche et au tri (plus récents, plus anciens, A-Z).
+▶ Injection en un clic : Plus besoin de copier-coller. Cliquez sur le bouton lecture (▶) de n'importe quel prompt pour l'injecter directement dans le champ de saisie de l'IA active.
+✏️ Édition en place : Cliquez sur un prompt pour le déplier et modifiez son texte directement. Les changements se sauvegardent automatiquement et le tri se met à jour en conséquence.
+🔀 Boutons Nouvelle Conversation : Lancez une nouvelle discussion sur l'un des services web pris en charge directement depuis le Mode Prompts, en un seul clic.
+📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
+☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
+⌨️ Déclenchement de prompt avec suggestions en direct : Tapez # dans le champ de saisie de n'importe quelle IA pour voir instantanément tous vos prompts sauvegardés — filtrés en temps réel au fil de la frappe. Utilisez ↓/↑ pour naviguer entre les suggestions, appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter directement.
+
 🛠️ COMMENT ÇA MARCHE ?
 
 Mode Dossiers :
@@ -67,7 +67,7 @@ Parcourir le code ou contribuer : https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 MISES À JOUR :
-Version 1.6.4 (Moins d’onglets) : Cliquer sur une conversation enregistrée bascule maintenant vers l’onglet qui l’affiche déjà au lieu d’ouvrir un doublon. Ctrl+clic (ou Cmd+clic sur Mac) réutilise votre dernier onglet.
+Version 1.7.0 (Sous-dossiers) : Glissez un dossier sur un autre pour le placer à l'intérieur. Ouvrez le dossier parent en groupe d'onglets et tout ce qu'il contient s'ouvre avec lui. Cliquer sur une conversation enregistrée bascule maintenant vers l’onglet qui l’affiche déjà au lieu d’ouvrir un doublon. Ctrl+clic (ou Cmd+clic sur Mac) réutilise votre dernier onglet. Baidu Chat a changé d'adresse ; l'enregistrement et l'insertion de prompts y fonctionnent de nouveau.
 Version 1.6.3 (Page de bienvenue) : Un court guide s'ouvre désormais après l'installation : comment épingler l'extension et enregistrer votre première conversation. La recherche indique aussi clairement qu'elle ne couvre que les conversations déjà enregistrées.
 Version 1.6.2 (Kimi) : Lancez de nouvelles conversations Kimi directement depuis le Mode Prompts, sauvegardez-les dans des dossiers et injectez vos prompts. Retirer l'extension ouvre désormais une courte page de retour facultative dans votre langue, et rien n'est envoyé à moins que vous ne l'envoyiez vous-même.
 Version 1.6.1 (Sécurité et stabilité) : Protections renforcées pour les liens enregistrés et les imports de sauvegarde, avec des correctifs de stabilité internes.

@@ -1,19 +1,9 @@
 ﻿Koristiš li Google Gemini svaki dan – za posao, kodiranje, pisanje ili istraživanje – ali neprestano iznova tipkaš iste upite, dok ti se najbolji razgovori gube u beskonačnoj povijesti?
 Gemini Mape (Gemini Folders) je dodatak koji ti treba.
 
-S verzijom 4.0 Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgovore u mape, izgradi knjižnicu upita za višekratnu upotrebu i ubacuj ih izravno u Gemini jednim klikom – bez kopiranja i lijepljenja.
+Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgovore u mape, izgradi knjižnicu upita za višekratnu upotrebu i ubacuj ih izravno u Gemini jednim klikom – bez kopiranja i lijepljenja.
 
-✨ NOVOST U V4.0 – NAČIN UPITA
-
-📝 Osobna knjižnica upita: Prebaci na Način upita jednim klikom na prekidač u zaglavlju. Spremi najbolje upite s naslovom i tekstom, pronađi ih odmah pretraživanjem i sortiranjem (najnovije, najstarije, A–Ž).
-▶ Ubacivanje jednim klikom: Klikni gumb za reprodukciju (▶) na spremljenome upitu kako bi ga ubacio izravno u polje za unos Gemini.
-✏️ Uređivanje na licu mjesta: Klikni za proširenje upita i uredi tekst izravno. Promjene se automatski spremaju nakon kratke pauze.
-💎 Prilagođena Gem veza: Konfiguriraj vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
-☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
-📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
-⌨️ Okidač upita s prijedlozima uživo: Upiši # u polje za chat Gemini da odmah vidiš sve svoje spremljene upite — filtrirane u stvarnom vremenu dok tipkaš. Koristi ↓/↑ za navigaciju, pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za izravno ubacivanje.
-
-🌟 ZNAČAJKE MAPA
+🌟 NAČIN MAPA
 
 ⌨️ Trenutna tipkovnička prečica: Otvori ploču odmah s bilo kojeg kartice pomoću Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
 ⚡ Brzo spremi (Desni klik i prečaci): Spremi trenutni razgovor jednostavnim desnim klikom ili koristi prečac na tipkovnici (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo spremi» – s vizualnim upozorenjem ako je već spremljeno!
@@ -30,6 +20,16 @@ S verzijom 4.0 Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgov
 🤖 Pametno prepoznavanje i pretraživanje: Automatsko predispunjavanje točnog naslova razgovora i traka za pretraživanje u stvarnom vremenu.
 ☁️ Sinkronizacija u oblaku i sigurnosne kopije: Pristup organizaciji na svim uređajima i izvoz podataka kao JSON.
 🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloški okvirima, automatski tamni način i podrška za 43 jezika!
+
+✨ NAČIN UPITA
+
+📝 Osobna knjižnica upita: Prebaci na Način upita jednim klikom na prekidač u zaglavlju. Spremi najbolje upite s naslovom i tekstom, pronađi ih odmah pretraživanjem i sortiranjem (najnovije, najstarije, A–Ž).
+▶ Ubacivanje jednim klikom: Klikni gumb za reprodukciju (▶) na spremljenome upitu kako bi ga ubacio izravno u polje za unos Gemini.
+✏️ Uređivanje na licu mjesta: Klikni za proširenje upita i uredi tekst izravno. Promjene se automatski spremaju nakon kratke pauze.
+💎 Prilagođena Gem veza: Konfiguriraj vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
+☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
+📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
+⌨️ Okidač upita s prijedlozima uživo: Upiši # u polje za chat Gemini da odmah vidiš sve svoje spremljene upite — filtrirane u stvarnom vremenu dok tipkaš. Koristi ↓/↑ za navigaciju, pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za izravno ubacivanje.
 
 🛠️ KAKO TO FUNKCIONIRA?
 
@@ -65,7 +65,7 @@ Zanima te Gemini Mape, ali koristiš i ChatGPT, Claude, Copilot, Grok, Perplexit
 👉 Instaliraj UI mape: __AF_STORE_URL__
 
 📢 AŽURIRANJA:
-Verzija 4.5.6 (Manje kartica): Klik na spremljeni razgovor sada prelazi na karticu koja ga već prikazuje umjesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovno koristi posljednju karticu.
+Verzija 4.6.0 (Podmape): Povucite mapu na drugu kako biste je smjestili unutra. Otvorite nadređenu mapu kao grupu kartica i otvorit će se sve što sadrži. Klik na spremljeni razgovor sada prelazi na karticu koja ga već prikazuje umjesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovno koristi posljednju karticu.
 Verzija 4.5.5 (Stranica dobrodošlice): Nakon instalacije sada se otvara kratak vodič: kako prikvačiti proširenje i spremiti prvi razgovor. Pretraživanje također jasno navodi da obuhvaća samo već spremljene razgovore.
 Verzija 4.5.4 (Anketa pri deinstalaciji): Uklanjanje proširenja sada otvara kratku neobaveznu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
 Verzija 4.5.3 (Sigurnost i stabilnost): Dodatna zaštita spremljenih poveznica i uvoza sigurnosnih kopija te interni popravci stabilnosti.

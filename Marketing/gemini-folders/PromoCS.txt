@@ -1,19 +1,9 @@
 ﻿Používáte Google Gemini každý den — pro práci, kód, psaní nebo výzkum — ale stále dokola píšete stejné výzvy a vaše nejlepší konverzace mizí v nekonečné historii?
 Složky Gemini (Gemini Folders) je rozšíření, které potřebujete.
 
-S verzí 4.0 se Složky Gemini stávají vaším skutečným kokpitem pro Gemini: organizujte konverzace do složek, vybudujte knihovnu opakovaně použitelných výzev a vkládejte je přímo do Gemini jedním kliknutím — bez kopírování a vkládání.
+Složky Gemini se stávají vaším skutečným kokpitem pro Gemini: organizujte konverzace do složek, vybudujte knihovnu opakovaně použitelných výzev a vkládejte je přímo do Gemini jedním kliknutím — bez kopírování a vkládání.
 
-✨ NOVINKA v4.0 — REŽIM VÝZEV
-
-📝 Osobní knihovna výzev: Přepněte do režimu výzev jedním kliknutím na přepínač v záhlaví. Ukládejte nejlepší výzvy s názvem a úplným textem a okamžitě je najděte díky vyhledávání a řazení (nejnovější, nejstarší, A-Z).
-▶ Vložení jedním kliknutím: Konec kopírování a vkládání. Klikněte na tlačítko přehrávání (▶) u uložené výzvy a vloží se přímo do vstupního pole Gemini. Rozšíření zjistí, zda jste na stránce Gemini, a pokud ne, upozorní vás.
-✏️ Úprava na místě: Klikněte na výzvu, rozbalte ji a přímo upravte text. Změny se automaticky uloží po krátkém okamžiku a pořadí řazení se odpovídajícím způsobem aktualizuje.
-💎 Vlastní odkaz Gem: Nastavte odkaz na váš oblíbený Gem a aktivujte ho kliknutím. Když je aktivní, tlačítko „Nová konverzace" otevře váš Gem místo výchozího chatu.
-☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
-📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
-⌨️ Spouštěč promptů s živými návrhy: Napište # do chatovacího pole Gemini a okamžitě uvidíte všechny své uložené prompty — filtrované v reálném čase při psaní. Pomocí ↓/↑ procházejte návrhy, stiskněte mezerník u jedinečné shody pro automatické doplnění nebo u přesné shody pro přímé vložení.
-
-🌟 FUNKCE SLOŽEK
+🌟 REŽIM SLOŽEK
 
 ⌨️ Okamžitá klávesová zkratka: Otevřete panel okamžitě z libovolné záložky pomocí Ctrl+Shift+1 (nebo Cmd+Shift+1 na Macu).
 ⚡ Rychlé uložení (Pravý klik a Zkratky): Uložte konverzaci jednoduchým pravým kliknutím nebo klávesovými zkratkami (Ctrl+Shift+S nebo Cmd+Shift+S na Macu) a okamžitě ji odešlete do „⚡ Rychlých uložení" — s vizuálním upozorněním, pokud je již uložena!
@@ -30,6 +20,16 @@ S verzí 4.0 se Složky Gemini stávají vaším skutečným kokpitem pro Gemini
 🤖 Inteligentní detekce a Vyhledávání: Automatické vyplnění přesného názvu konverzace a panel vyhledávání v reálném čase.
 ☁️ Cloudová synchronizace a Záloha: Přístup k organizaci na všech zařízeních a export dat v JSON.
 🎨 Dizajn Material 3 a Vícejazyčnost: Ultrakompaktní rozhraní s plně vlastními dialogovými okny, automatickým tmavým režimem a podporou 43 jazyků!
+
+✨ REŽIM VÝZEV
+
+📝 Osobní knihovna výzev: Přepněte do režimu výzev jedním kliknutím na přepínač v záhlaví. Ukládejte nejlepší výzvy s názvem a úplným textem a okamžitě je najděte díky vyhledávání a řazení (nejnovější, nejstarší, A-Z).
+▶ Vložení jedním kliknutím: Konec kopírování a vkládání. Klikněte na tlačítko přehrávání (▶) u uložené výzvy a vloží se přímo do vstupního pole Gemini. Rozšíření zjistí, zda jste na stránce Gemini, a pokud ne, upozorní vás.
+✏️ Úprava na místě: Klikněte na výzvu, rozbalte ji a přímo upravte text. Změny se automaticky uloží po krátkém okamžiku a pořadí řazení se odpovídajícím způsobem aktualizuje.
+💎 Vlastní odkaz Gem: Nastavte odkaz na váš oblíbený Gem a aktivujte ho kliknutím. Když je aktivní, tlačítko „Nová konverzace" otevře váš Gem místo výchozího chatu.
+☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
+📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
+⌨️ Spouštěč promptů s živými návrhy: Napište # do chatovacího pole Gemini a okamžitě uvidíte všechny své uložené prompty — filtrované v reálném čase při psaní. Pomocí ↓/↑ procházejte návrhy, stiskněte mezerník u jedinečné shody pro automatické doplnění nebo u přesné shody pro přímé vložení.
 
 🛠️ JAK TO FUNGUJE?
 
@@ -66,7 +66,7 @@ Zajímají vás Složky Gemini, ale také používáte ChatGPT, Claude, Copilot,
 👉 Nainstalovat AI složky: __AF_STORE_URL__
 
 📢 AKTUALIZACE:
-Verze 4.5.6 (Méně karet): Kliknutí na uloženou konverzaci nyní přejde na kartu, která ji už zobrazuje, místo otevření duplikátu. Ctrl+kliknutí (nebo Cmd+kliknutí na Macu) použije poslední kartu.
+Verze 4.6.0 (Podsložky): Přetáhněte složku na jinou a vnořte ji dovnitř. Otevřete nadřazenou složku jako skupinu panelů a otevře se s ní vše, co obsahuje. Kliknutí na uloženou konverzaci nyní přejde na kartu, která ji už zobrazuje, místo otevření duplikátu. Ctrl+kliknutí (nebo Cmd+kliknutí na Macu) použije poslední kartu.
 Verze 4.5.5 (Uvítací stránka): Po instalaci se nyní otevře krátký průvodce: jak si rozšíření připnout a uložit první konverzaci. Hledání také jasně uvádí, že prohledává jen již uložené konverzace.
 Verze 4.5.4 (Dotazník při odinstalaci): Odebrání rozšíření nyní otevře krátkou nepovinnou stránku pro zpětnou vazbu ve vašem jazyce a nic se neodešle, dokud ji sami nepošlete.
 Verze 4.5.3 (Zabezpečení a stabilita): Další ochrana uložených odkazů a importu záloh a interní opravy stability.

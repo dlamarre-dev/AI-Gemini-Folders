@@ -1,19 +1,9 @@
 ﻿Fas servir Google Gemini cada dia – per a feina, programació, escriptura o recerca – però continues reescrivint els mateixos prompts mentre les teves millors converses desapareixen en un historial interminable?
 Carpetes Gemini (Gemini Folders) és l'extensió que necessites.
 
-Amb la versió 4.0, Carpetes Gemini és el teu veritable cockpit de Gemini: organitza les converses en carpetes, crea una biblioteca de prompts reutilitzables i injecta'ls directament a Gemini amb un sol clic, sense copiar ni enganxar.
+Carpetes Gemini és el teu veritable cockpit de Gemini: organitza les converses en carpetes, crea una biblioteca de prompts reutilitzables i injecta'ls directament a Gemini amb un sol clic, sense copiar ni enganxar.
 
-✨ NOVETAT A V4.0 – MODE PROMPTS
-
-📝 Biblioteca de prompts personal: Canvia al Mode prompts amb un clic al commutador de la capçalera. Desa els teus millors prompts amb títol i text, i troba'ls al moment amb cerca i ordenació (més recents, més antics, A–Z).
-▶ Injecció amb un sol clic: Fes clic al botó de reproducció (▶) en qualsevol prompt desat per inserir-lo directament al camp d'entrada de Gemini.
-✏️ Edició en línia: Fes clic per expandir un prompt i edita el text directament. Els canvis es desen automàticament després d'una breu pausa.
-💎 Enllaç Gem personalitzat: Configura un enllaç al teu Gem favorit i activa'l/desactiva'l amb un clic.
-☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
-📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
-⌨️ Disparador de prompts amb suggeriments en viu: Escriu # al camp de xat de Gemini per veure a l'instant tots els teus prompts desats — filtrats en temps real mentre escrius. Usa ↓/↑ per navegar, prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
-
-🌟 FUNCIONS DE CARPETES
+🌟 MODE CARPETES
 
 ⌨️ Drecera de teclat instantània: Obre el panell instantàniament des de qualsevol pestanya amb Ctrl+Shift+1 (o Cmd+Shift+1 a Mac).
 ⚡ Desat ràpid (Clic dret i dreceres): Desa la conversa actual amb un simple clic dret, o utilitza la drecera de teclat (Ctrl+Maj+S o Cmd+Maj+S al Mac) per enviar-la a «⚡ Desat ràpid» – amb una alerta visual si ja estava desada!
@@ -30,6 +20,16 @@ Amb la versió 4.0, Carpetes Gemini és el teu veritable cockpit de Gemini: orga
 🤖 Detecció intel·ligent i cerca: Emplenament previ automàtic del títol exact de la conversa i una barra de cerca en temps real.
 ☁️ Sincronització al núvol i còpia de seguretat: Accés a l'organització a tots els dispositius i exportació de dades en JSON.
 🎨 Disseny Material 3 i multilingüe: Interfície ultracompacta amb diàlegs modals completament personalitzats, mode fosc automàtic i suport per a 43 idiomes!
+
+✨ MODE PROMPTS
+
+📝 Biblioteca de prompts personal: Canvia al Mode prompts amb un clic al commutador de la capçalera. Desa els teus millors prompts amb títol i text, i troba'ls al moment amb cerca i ordenació (més recents, més antics, A–Z).
+▶ Injecció amb un sol clic: Fes clic al botó de reproducció (▶) en qualsevol prompt desat per inserir-lo directament al camp d'entrada de Gemini.
+✏️ Edició en línia: Fes clic per expandir un prompt i edita el text directament. Els canvis es desen automàticament després d'una breu pausa.
+💎 Enllaç Gem personalitzat: Configura un enllaç al teu Gem favorit i activa'l/desactiva'l amb un clic.
+☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
+📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
+⌨️ Disparador de prompts amb suggeriments en viu: Escriu # al camp de xat de Gemini per veure a l'instant tots els teus prompts desats — filtrats en temps real mentre escrius. Usa ↓/↑ per navegar, prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
 
 🛠️ COM FUNCIONA?
 
@@ -64,7 +64,7 @@ Interessat en Carpetes Gemini però també fas servir ChatGPT, Claude, Copilot, 
 👉 Instal·lar Carpetes IA: __AF_STORE_URL__
 
 📢 ACTUALITZACIONS:
-Versió 4.5.6 (Menys pestanyes): Fer clic en una conversa guardada ara canvia a la pestanya que ja la mostra en lloc d’obrir un duplicat. Ctrl+clic (o Cmd+clic al Mac) reutilitza la teva darrera pestanya.
+Versió 4.6.0 (Subcarpetes): Arrossegueu una carpeta sobre una altra per posar-la a dins. Obriu la carpeta principal com a grup de pestanyes i s'obrirà tot el que conté. Fer clic en una conversa guardada ara canvia a la pestanya que ja la mostra en lloc d’obrir un duplicat. Ctrl+clic (o Cmd+clic al Mac) reutilitza la teva darrera pestanya.
 Versió 4.5.5 (Pàgina de benvinguda): Després de la instal·lació ara s'obre una guia breu: com fixar l'extensió i desar la primera conversa. La cerca també deixa clar que només inclou les converses ja desades.
 Versió 4.5.4 (Enquesta de desinstal·lació): En eliminar l'extensió ara s'obre una breu pàgina de comentaris opcional en el vostre idioma, i no s'envia res tret que l'envieu vosaltres mateixos.
 Versió 4.5.3 (Seguretat i estabilitat): Proteccions addicionals per als enllaços desats i les importacions de còpies de seguretat, a més de correccions internes d'estabilitat.

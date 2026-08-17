@@ -1,19 +1,9 @@
 ﻿Gebruikt u Google Gemini elke dag — voor werk, code, schrijven of onderzoek — maar typt u steeds dezelfde prompts opnieuw, terwijl uw beste gesprekken verdwijnen in een eindeloze geschiedenis?
 Gemini-mappen (Gemini Folders) is de extensie die u nodig heeft.
 
-Met versie 4.0 wordt Gemini-mappen uw echte Gemini-cockpit: organiseer gesprekken in mappen, bouw een bibliotheek van herbruikbare prompts en voeg ze met één klik direct in Gemini in — geen kopiëren en plakken vereist.
+Gemini-mappen wordt uw echte Gemini-cockpit: organiseer gesprekken in mappen, bouw een bibliotheek van herbruikbare prompts en voeg ze met één klik direct in Gemini in — geen kopiëren en plakken vereist.
 
-✨ NIEUW IN v4.0 — PROMPTMODUS
-
-📝 Persoonlijke promptbibliotheek: Schakel over naar Promptmodus met één klik op de schakelaar in de koptekst. Sla uw beste prompts op met een titel en volledige tekst en vind ze direct terug met zoeken en sorteren (nieuwste, oudste, A-Z).
-▶ Invoegen met één klik: Geen kopiëren en plakken meer. Klik op de afspeelknop (▶) van een opgeslagen prompt om deze direct in het invoerveld van Gemini in te voegen. De extensie detecteert of u op een Gemini-pagina bent en waarschuwt u indien niet.
-✏️ Inline bewerken: Klik op een prompt om deze uit te vouwen en de tekst direct te bewerken. Wijzigingen worden automatisch opgeslagen na een korte pauze en de sorteervolgorde wordt dienovereenkomstig bijgewerkt.
-💎 Aangepaste Gem-link: Stel een link in naar uw favoriete Gem en schakel deze in/uit met één klik. Wanneer actief, opent de knop "Nieuw gesprek" uw Gem in plaats van de standaard chat.
-☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
-📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
-⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van Gemini om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
-
-🌟 MAPFUNCTIES
+🌟 MAPPENMODUS
 
 ⌨️ Directe paneelsneltoets: Open het paneel direct vanuit elk tabblad met Ctrl+Shift+1 (of Cmd+Shift+1 op Mac).
 ⚡ Snel opslaan (rechtsklikken & sneltoetsen): Sla het huidige gesprek op met een eenvoudig rechtsklikken, of gebruik de sneltoets (Ctrl+Shift+S of Cmd+Shift+S op Mac) om het direct naar "⚡ Snelle opslag" te sturen — met een visuele melding als het al is opgeslagen!
@@ -30,6 +20,16 @@ Met versie 4.0 wordt Gemini-mappen uw echte Gemini-cockpit: organiseer gesprekke
 🤖 Slimme detectie en zoeken: Automatisch vooraf invullen van de exacte titel van uw gesprek en een realtime zoekbalk.
 ☁️ Cloudsynchronisatie en back-up: Toegang tot uw organisatie op al uw apparaten en exporteer uw gegevens als JSON.
 🎨 Material 3-ontwerp en meertalig: Ultracompact interface met volledig aangepaste modaldialoogvensters, automatische donkere modus en ondersteuning voor 43 talen!
+
+✨ PROMPTMODUS
+
+📝 Persoonlijke promptbibliotheek: Schakel over naar Promptmodus met één klik op de schakelaar in de koptekst. Sla uw beste prompts op met een titel en volledige tekst en vind ze direct terug met zoeken en sorteren (nieuwste, oudste, A-Z).
+▶ Invoegen met één klik: Geen kopiëren en plakken meer. Klik op de afspeelknop (▶) van een opgeslagen prompt om deze direct in het invoerveld van Gemini in te voegen. De extensie detecteert of u op een Gemini-pagina bent en waarschuwt u indien niet.
+✏️ Inline bewerken: Klik op een prompt om deze uit te vouwen en de tekst direct te bewerken. Wijzigingen worden automatisch opgeslagen na een korte pauze en de sorteervolgorde wordt dienovereenkomstig bijgewerkt.
+💎 Aangepaste Gem-link: Stel een link in naar uw favoriete Gem en schakel deze in/uit met één klik. Wanneer actief, opent de knop "Nieuw gesprek" uw Gem in plaats van de standaard chat.
+☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
+📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
+⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van Gemini om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
 
 🛠️ HOE WERKT HET?
 
@@ -66,7 +66,7 @@ Geïnteresseerd in Gemini-mappen maar gebruik je ook ChatGPT, Claude, Copilot, G
 👉 AI-mappen installeren: __AF_STORE_URL__
 
 📢 UPDATES:
-Versie 4.5.6 (Minder tabbladen): Klikken op een opgeslagen gesprek gaat nu naar het tabblad dat het al toont in plaats van een duplicaat te openen. Ctrl+klik (of Cmd+klik op Mac) hergebruikt je laatste tabblad.
+Versie 4.6.0 (Submappen): Sleep een map op een andere om hem erin te plaatsen. Open de bovenliggende map als tabbladgroep en alles erin gaat mee open. Klikken op een opgeslagen gesprek gaat nu naar het tabblad dat het al toont in plaats van een duplicaat te openen. Ctrl+klik (of Cmd+klik op Mac) hergebruikt je laatste tabblad.
 Versie 4.5.5 (Welkomstpagina): Na installatie opent nu een korte uitleg: hoe je de extensie vastzet en je eerste gesprek opslaat. Zoeken maakt bovendien duidelijk dat het alleen al opgeslagen gesprekken doorzoekt.
 Versie 4.5.4 (Verwijderenquête): Bij het verwijderen van de extensie opent nu een korte optionele feedbackpagina in je eigen taal, en er wordt niets verzonden tenzij je het zelf verstuurt.
 Versie 4.5.3 (Beveiliging en stabiliteit): Extra bescherming voor opgeslagen links en back-upimports, plus interne stabiliteitsverbeteringen.

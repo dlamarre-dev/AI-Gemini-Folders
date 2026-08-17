@@ -6,17 +6,7 @@ Organizați conversații din toate instrumentele dvs. AI preferate în dosare pa
 
 Dosare IA se integrează nativ cu toți principalii asistenți de chat IA, cum ar fi Claude, ChatGPT și Gemini, precum și cu LLM-urile locale pe care le rulați chiar dumneavoastră. Conversațiile de pe platforme diferite pot împărtăși exact același dosar. Fiecare conversație afișează culoarea și sigla serviciului său, astfel încât să știți întotdeauna de unde provine.
 
-✨ MODUL PROMPTURI
-
-📝 Bibliotecă personală de prompturi: Comutați la modul Prompturi cu un singur clic pe butonul de comutare din antet. Salvați cele mai bune prompturi cu titlu și text complet, apoi găsiți-le instantaneu cu căutare și sortare (cele mai noi, cele mai vechi, A-Z).
-▶ Injectare cu un clic: Nu mai este nevoie de copiere și lipire. Faceți clic pe butonul de redare (▶) al oricărui prompt salvat pentru a-l injecta direct în câmpul de introducere al oricărui AI acceptat.
-✏️ Editare în loc: Faceți clic pe un prompt pentru a-l extinde și edita textul direct. Modificările se salvează automat după o scurtă pauză, iar ordinea de sortare se actualizează corespunzător.
-🔀 Butoane Conversație Nouă: Lansați o conversație nouă pe oricare dintre serviciile web acceptate direct din Modul Prompt — cu o singură atingere.
-☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
-📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
-⌨️ Declanșator de prompt cu sugestii live: Tastați # în câmpul de chat al oricărei IA pentru a vedea imediat toate prompturile salvate — filtrate în timp real pe măsură ce tastați. Folosiți ↓/↑ pentru a naviga, apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru injectare directă.
-
-🌟 FUNCȚII FOLDERE
+🌟 MODUL FOLDERE
 
 ⌨️ Comandă rapidă instant pentru panou: Deschideți panoul instantaneu din orice filă cu Ctrl+Shift+1 (sau Cmd+Shift+1 pe Mac).
 ⚡ Salvare Rapidă (Clic Dreapta și Comenzi Rapide): Salvați conversația cu un simplu clic dreapta sau folosiți comanda rapidă de la tastatură (Ctrl+Shift+S sau Cmd+Shift+S pe Mac) pentru a o trimite instantaneu în „⚡ Salvări Rapide" — cu alertă vizuală dacă este deja salvată!
@@ -38,6 +28,16 @@ Dosare IA se integrează nativ cu toți principalii asistenți de chat IA, cum a
 🏠 SUPORT LLM LOCAL
 
 Folosiți un model AI local (Ollama, LM Studio, Jan sau altul)? Configurați Dosare IA cu URL-ul local — acceptă localhost și adrese LAN (192.168.x.x, nume de gazdă personalizate). Salvarea rapidă și din meniul contextual funcționează și pe interfețe locale.
+✨ MODUL PROMPTURI
+
+📝 Bibliotecă personală de prompturi: Comutați la modul Prompturi cu un singur clic pe butonul de comutare din antet. Salvați cele mai bune prompturi cu titlu și text complet, apoi găsiți-le instantaneu cu căutare și sortare (cele mai noi, cele mai vechi, A-Z).
+▶ Injectare cu un clic: Nu mai este nevoie de copiere și lipire. Faceți clic pe butonul de redare (▶) al oricărui prompt salvat pentru a-l injecta direct în câmpul de introducere al oricărui AI acceptat.
+✏️ Editare în loc: Faceți clic pe un prompt pentru a-l extinde și edita textul direct. Modificările se salvează automat după o scurtă pauză, iar ordinea de sortare se actualizează corespunzător.
+🔀 Butoane Conversație Nouă: Lansați o conversație nouă pe oricare dintre serviciile web acceptate direct din Modul Prompt — cu o singură atingere.
+☁️ Sincronizare prompturi: Activați sincronizarea în cloud pentru biblioteca de prompturi, independent de foldere.
+📌 Prompturi fixate: Fixați prompturile esențiale cu un singur clic pentru a le menține în fruntea bibliotecii, separate de celelalte printr-un separator vizual.
+⌨️ Declanșator de prompt cu sugestii live: Tastați # în câmpul de chat al oricărei IA pentru a vedea imediat toate prompturile salvate — filtrate în timp real pe măsură ce tastați. Folosiți ↓/↑ pentru a naviga, apăsați Spațiu la potrivirea unică pentru completare automată sau la potrivirea exactă pentru injectare directă.
+
 🛠️ CUM FUNCȚIONEAZĂ?
 
 Modul Foldere:
@@ -67,7 +67,7 @@ Răsfoiți codul sau contribuiți: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 
 📢 ACTUALIZĂRI:
-Versiunea 1.6.4 (Mai puține file): Un clic pe o conversație salvată trece acum la fila care o afișează deja, în loc să deschidă un duplicat. Ctrl+clic (sau Cmd+clic pe Mac) reutilizează ultima filă.
+Versiunea 1.7.0 (Subdosare): Trageți un dosar peste altul pentru a-l plasa în interior. Deschideți dosarul principal ca grup de file și se deschide tot ce conține. Un clic pe o conversație salvată trece acum la fila care o afișează deja, în loc să deschidă un duplicat. Ctrl+clic (sau Cmd+clic pe Mac) reutilizează ultima filă. Baidu Chat s-a mutat la o adresă nouă, unde salvarea și inserarea prompturilor funcționează din nou.
 Versiunea 1.6.3 (Pagină de bun venit): După instalare se deschide acum un ghid scurt: cum să fixezi extensia și să salvezi prima conversație. Căutarea precizează de asemenea că acoperă doar conversațiile deja salvate.
 Versiunea 1.6.2 (Kimi): Lansați conversații noi pe Kimi direct din Modul Prompt, salvați-le în dosare și injectați prompturi. Eliminarea extensiei deschide acum o scurtă pagină de feedback opțională în limba ta, iar nimic nu este trimis decât dacă o trimiți tu.
 Versiunea 1.6.1 (Securitate și stabilitate): Protecții suplimentare pentru linkurile salvate și importurile din backup, plus corecții interne de stabilitate.

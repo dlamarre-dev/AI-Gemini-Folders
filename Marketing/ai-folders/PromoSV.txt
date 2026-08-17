@@ -6,17 +6,7 @@ Organisera konversationer från alla dina favorit-AI-verktyg i delade mappar, by
 
 AI-mappar integrerar nativt med alla större AI-chattassistenter, såsom Claude, ChatGPT och Gemini, och med de lokala LLM:er du kör själv. Konversationer från olika plattformar kan dela exakt samma mapp. Varje chatt visar färgen och logotypen för sin egen tjänst, så att du alltid vet varifrån den kommer.
 
-✨ PROMPTLÄGE
-
-📝 Personligt promptbibliotek: Växla till Promptläge med ett klick på reglaget i sidhuvudet. Spara dina bästa prompter med titel och text, hitta dem direkt med sökning och sortering (nyaste, äldsta, A–Ö).
-▶ Injicering med ett klick: Klicka på uppspelningsknappen (▶) på en sparad prompt för att injicera den direkt i indatafältet för den aktiva AI:n.
-✏️ Inline-redigering: Klicka för att expandera en prompt och redigera texten direkt. Ändringar sparas automatiskt efter en kort paus.
-🔀 Knappar för ny konversation: Starta en ny konversation på någon av de webbtjänster som stöds direkt från Promptläge — med en tryckning.
-☁️ Promptsynkronisering: Aktivera molnsynkronisering för promptbiblioteket oberoende av mapparna.
-📌 Fästa prompter: Fäst viktiga prompter längst upp i biblioteket, åtskilda från resten med en visuell avdelare.
-⌨️ Promptutlösare med live-förslag: Skriv # i chattfältet hos vilken AI som helst för att omedelbart se alla dina sparade prompter — filtrerade i realtid medan du skriver. Använd ↓/↑ för att navigera, tryck på mellanslag vid en unik matchning för autofullbordning, eller vid en exakt matchning för direkt injektion.
-
-🌟 MAPPFUNKTIONER
+🌟 MAPPLÄGE
 
 ⌨️ Omedelbar panelgenväg: Öppna panelen omedelbart från valflik med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 ⚡ Snabbspara (Högerklick och genvägar): Spara den aktuella konversationen med ett enkelt högerklick, eller använd tangentbordsgenvägen (Ctrl+Shift+S eller Cmd+Shift+S på Mac) för att skicka den till «⚡ Snabbspar» – med en visuell varning om den redan är sparad!
@@ -38,6 +28,16 @@ AI-mappar integrerar nativt med alla större AI-chattassistenter, såsom Claude,
 🏠 STÖD FÖR LOKAL LLM
 
 Kör du en lokal AI-modell (Ollama, LM Studio, Jan eller annan)? Konfigurera AI-mappar med din lokala URL — stöder localhost och LAN-adresser (192.168.x.x, anpassade värdnamn). Snabbspara och kontextmenyspara fungerar även på lokala gränssnitt.
+✨ PROMPTLÄGE
+
+📝 Personligt promptbibliotek: Växla till Promptläge med ett klick på reglaget i sidhuvudet. Spara dina bästa prompter med titel och text, hitta dem direkt med sökning och sortering (nyaste, äldsta, A–Ö).
+▶ Injicering med ett klick: Klicka på uppspelningsknappen (▶) på en sparad prompt för att injicera den direkt i indatafältet för den aktiva AI:n.
+✏️ Inline-redigering: Klicka för att expandera en prompt och redigera texten direkt. Ändringar sparas automatiskt efter en kort paus.
+🔀 Knappar för ny konversation: Starta en ny konversation på någon av de webbtjänster som stöds direkt från Promptläge — med en tryckning.
+☁️ Promptsynkronisering: Aktivera molnsynkronisering för promptbiblioteket oberoende av mapparna.
+📌 Fästa prompter: Fäst viktiga prompter längst upp i biblioteket, åtskilda från resten med en visuell avdelare.
+⌨️ Promptutlösare med live-förslag: Skriv # i chattfältet hos vilken AI som helst för att omedelbart se alla dina sparade prompter — filtrerade i realtid medan du skriver. Använd ↓/↑ för att navigera, tryck på mellanslag vid en unik matchning för autofullbordning, eller vid en exakt matchning för direkt injektion.
+
 🛠️ HUR FUNGERAR DET?
 
 Mappläge:
@@ -67,7 +67,7 @@ Bläddra i koden eller bidra: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPPDATERINGAR:
-Version 1.6.4 (Färre flikar): Ett klick på en sparad konversation växlar nu till fliken som redan visar den i stället för att öppna en dubblett. Ctrl+klick (eller Cmd+klick på Mac) återanvänder din senaste flik.
+Version 1.7.0 (Undermappar): Dra en mapp ovanpå en annan för att lägga den inuti. Öppna den överordnade mappen som en flikgrupp så öppnas allt innehåll med den. Ett klick på en sparad konversation växlar nu till fliken som redan visar den i stället för att öppna en dubblett. Ctrl+klick (eller Cmd+klick på Mac) återanvänder din senaste flik. Baidu Chat har flyttat till en ny adress, där sparande och infogning av prompter fungerar igen.
 Version 1.6.3 (Välkomstsida): Efter installationen öppnas nu en kort guide: hur du fäster tillägget och sparar din första konversation. Sökningen visar också tydligt att den bara omfattar sparade konversationer.
 Version 1.6.2 (Kimi): Starta nya Kimi-konversationer direkt från Promptläge, spara dem i mappar och injicera promptar. När du tar bort tillägget öppnas nu en kort valfri återkopplingssida på ditt språk, och inget skickas om du inte skickar det själv.
 Version 1.6.1 (Säkerhet och stabilitet): Extra skydd för sparade länkar och import av säkerhetskopior, plus interna stabilitetsfixar.

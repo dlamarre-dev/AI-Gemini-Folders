@@ -6,17 +6,7 @@ Organiseer gesprekken van al uw favoriete AI-tools in gedeelde mappen, bouw een 
 
 AI-mappen integreert native met alle grote AI-chatassistenten, zoals Claude, ChatGPT en Gemini, en met de lokale LLM's die u zelf draait. Gesprekken van verschillende platforms kunnen exact dezelfde map delen. Elke chat toont de kleur en het logo van zijn eigen dienst, zodat u altijd weet waar het vandaan komt.
 
-✨ PROMPTMODUS
-
-📝 Persoonlijke promptbibliotheek: Schakel over naar Promptmodus met één klik op de schakelaar in de koptekst. Sla uw beste prompts op met een titel en volledige tekst en vind ze direct terug met zoeken en sorteren (nieuwste, oudste, A-Z).
-▶ Invoegen met één klik: Geen kopiëren en plakken meer. Klik op de afspeelknop (▶) van een opgeslagen prompt om deze direct rechtstreeks in het invoerveld van de actieve AI in te voegen.
-✏️ Inline bewerken: Klik op een prompt om deze uit te vouwen en de tekst direct te bewerken. Wijzigingen worden automatisch opgeslagen na een korte pauze en de sorteervolgorde wordt dienovereenkomstig bijgewerkt.
-🔀 Knoppen Nieuw Gesprek: Start een nieuw gesprek op een van de ondersteunde webdiensten direct vanuit de Promptmodus — met één tik.
-☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
-📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
-⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van een willekeurige AI om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
-
-🌟 MAPFUNCTIES
+🌟 MAPPENMODUS
 
 ⌨️ Directe paneelsneltoets: Open het paneel direct vanuit elk tabblad met Ctrl+Shift+1 (of Cmd+Shift+1 op Mac).
 ⚡ Snel opslaan (rechtsklikken & sneltoetsen): Sla het huidige gesprek op met een eenvoudig rechtsklikken, of gebruik de sneltoets (Ctrl+Shift+S of Cmd+Shift+S op Mac) om het direct naar "⚡ Snelle opslag" te sturen — met een visuele melding als het al is opgeslagen!
@@ -38,6 +28,16 @@ AI-mappen integreert native met alle grote AI-chatassistenten, zoals Claude, Cha
 🏠 LOKALE LLM-ONDERSTEUNING
 
 Gebruikt u een lokaal AI-model (Ollama, LM Studio, Jan of een ander)? Configureer AI-mappen met uw lokale URL — ondersteunt localhost en LAN-adressen (192.168.x.x, aangepaste hostnamen). Snel opslaan en opslaan via contextmenu werken ook op lokale interfaces.
+✨ PROMPTMODUS
+
+📝 Persoonlijke promptbibliotheek: Schakel over naar Promptmodus met één klik op de schakelaar in de koptekst. Sla uw beste prompts op met een titel en volledige tekst en vind ze direct terug met zoeken en sorteren (nieuwste, oudste, A-Z).
+▶ Invoegen met één klik: Geen kopiëren en plakken meer. Klik op de afspeelknop (▶) van een opgeslagen prompt om deze direct rechtstreeks in het invoerveld van de actieve AI in te voegen.
+✏️ Inline bewerken: Klik op een prompt om deze uit te vouwen en de tekst direct te bewerken. Wijzigingen worden automatisch opgeslagen na een korte pauze en de sorteervolgorde wordt dienovereenkomstig bijgewerkt.
+🔀 Knoppen Nieuw Gesprek: Start een nieuw gesprek op een van de ondersteunde webdiensten direct vanuit de Promptmodus — met één tik.
+☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
+📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
+⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van een willekeurige AI om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
+
 🛠️ HOE WERKT HET?
 
 Mappenmodus:
@@ -67,7 +67,7 @@ Bekijk de code of draag bij: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
-Versie 1.6.4 (Minder tabbladen): Klikken op een opgeslagen gesprek gaat nu naar het tabblad dat het al toont in plaats van een duplicaat te openen. Ctrl+klik (of Cmd+klik op Mac) hergebruikt je laatste tabblad.
+Versie 1.7.0 (Submappen): Sleep een map op een andere om hem erin te plaatsen. Open de bovenliggende map als tabbladgroep en alles erin gaat mee open. Klikken op een opgeslagen gesprek gaat nu naar het tabblad dat het al toont in plaats van een duplicaat te openen. Ctrl+klik (of Cmd+klik op Mac) hergebruikt je laatste tabblad. Baidu Chat is verhuisd naar een nieuw adres, waar opslaan en het invoegen van prompts weer werken.
 Versie 1.6.3 (Welkomstpagina): Na installatie opent nu een korte uitleg: hoe je de extensie vastzet en je eerste gesprek opslaat. Zoeken maakt bovendien duidelijk dat het alleen al opgeslagen gesprekken doorzoekt.
 Versie 1.6.2 (Kimi): Start nieuwe Kimi-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts. Bij het verwijderen van de extensie opent nu een korte optionele feedbackpagina in je eigen taal, en er wordt niets verzonden tenzij je het zelf verstuurt.
 Versie 1.6.1 (Beveiliging en stabiliteit): Extra bescherming voor opgeslagen links en back-upimports, plus interne stabiliteitsverbeteringen.

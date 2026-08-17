@@ -6,17 +6,7 @@ Organisieren Sie Gespräche aller Ihrer bevorzugten KI-Tools in gemeinsamen Ordn
 
 KI-Ordner integriert sich nativ mit allen großen KI-Chat-Assistenten wie Claude, ChatGPT und Gemini sowie mit den lokalen LLMs, die Sie selbst betreiben. Gespräche von verschiedenen Plattformen können denselben Ordner teilen. Jeder Chat zeigt die Farbe und das Logo seines Dienstes an, sodass Sie immer wissen, woher er stammt.
 
-✨ PROMPT-MODUS
-
-📝 Persönliche Prompt-Bibliothek: Wechseln Sie mit einem Klick auf den Umschalter in der Kopfzeile in den Prompt-Modus. Speichern Sie Ihre besten Prompts mit Titel und vollständigem Text und finden Sie sie sofort per Suche und Sortierung (Neueste, Älteste, A-Z).
-▶ Injection mit einem Klick: Kein Kopieren und Einfügen mehr. Klicken Sie auf die Wiedergabetaste (▶) eines Prompts, um ihn direkt in das Eingabefeld der aktiven KI zu injizieren.
-✏️ Direktbearbeitung: Klicken Sie auf einen Prompt, um ihn aufzuklappen und den Text direkt zu bearbeiten. Änderungen werden automatisch gespeichert und die Sortierung aktualisiert sich entsprechend.
-🔀 Neue-Konversation-Schaltflächen: Starten Sie direkt aus dem Prompt-Modus eine neue Unterhaltung auf einem der unterstützten Web-Dienste — mit einem einzigen Tippen.
-☁️ Prompt-Synchronisierung: Aktivieren Sie die Cloud-Sync für Ihre Prompt-Bibliothek, unabhängig von Ihren Ordnern.
-📌 Angeheftete Prompts: Heften Sie Ihre wichtigsten Prompts mit einem Klick oben an Ihre Bibliothek — durch einen visuellen Trenner von den übrigen getrennt.
-⌨️ Prompt-Trigger mit Live-Vorschlägen: Geben Sie # in das Chat-Feld einer beliebigen KI ein, um sofort alle Ihre gespeicherten Prompts zu sehen — in Echtzeit gefiltert während der Eingabe. Verwenden Sie ↓/↑ zum Navigieren, drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur direkten Injektion.
-
-🌟 ORDNER-FUNKTIONEN
+🌟 ORDNER-MODUS
 
 ⌨️ Sofortiges Tastaturkürzel: Öffnen Sie das Panel direkt von jedem Tab aus mit Strg+Shift+1 (oder Cmd+Shift+1 auf Mac).
 ⚡ Schnellspeicherung (Rechtsklick & Shortcuts): Speichern Sie das Gespräch per Rechtsklick oder mit dem Tastaturkürzel (Strg+Shift+S bzw. Cmd+Shift+S auf Mac) sofort in „⚡ Schnellspeicherungen" — mit visueller Warnung bei Duplikaten!
@@ -38,6 +28,16 @@ KI-Ordner integriert sich nativ mit allen großen KI-Chat-Assistenten wie Claude
 🏠 LOKALER LLM-SUPPORT
 
 Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie KI-Ordner mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung und Kontextmenü-Speicherung funktionieren auch auf lokalen Benutzeroberflächen.
+✨ PROMPT-MODUS
+
+📝 Persönliche Prompt-Bibliothek: Wechseln Sie mit einem Klick auf den Umschalter in der Kopfzeile in den Prompt-Modus. Speichern Sie Ihre besten Prompts mit Titel und vollständigem Text und finden Sie sie sofort per Suche und Sortierung (Neueste, Älteste, A-Z).
+▶ Injection mit einem Klick: Kein Kopieren und Einfügen mehr. Klicken Sie auf die Wiedergabetaste (▶) eines Prompts, um ihn direkt in das Eingabefeld der aktiven KI zu injizieren.
+✏️ Direktbearbeitung: Klicken Sie auf einen Prompt, um ihn aufzuklappen und den Text direkt zu bearbeiten. Änderungen werden automatisch gespeichert und die Sortierung aktualisiert sich entsprechend.
+🔀 Neue-Konversation-Schaltflächen: Starten Sie direkt aus dem Prompt-Modus eine neue Unterhaltung auf einem der unterstützten Web-Dienste — mit einem einzigen Tippen.
+☁️ Prompt-Synchronisierung: Aktivieren Sie die Cloud-Sync für Ihre Prompt-Bibliothek, unabhängig von Ihren Ordnern.
+📌 Angeheftete Prompts: Heften Sie Ihre wichtigsten Prompts mit einem Klick oben an Ihre Bibliothek — durch einen visuellen Trenner von den übrigen getrennt.
+⌨️ Prompt-Trigger mit Live-Vorschlägen: Geben Sie # in das Chat-Feld einer beliebigen KI ein, um sofort alle Ihre gespeicherten Prompts zu sehen — in Echtzeit gefiltert während der Eingabe. Verwenden Sie ↓/↑ zum Navigieren, drücken Sie Leertaste bei einem eindeutigen Treffer zur Autovervollständigung oder bei einer exakten Übereinstimmung zur direkten Injektion.
+
 🛠️ WIE FUNKTIONIERT ES?
 
 Ordner-Modus:
@@ -67,7 +67,7 @@ Code einsehen oder beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UPDATES:
-Version 1.6.4 (Weniger Tabs): Ein Klick auf eine gespeicherte Unterhaltung wechselt jetzt zum Tab, der sie bereits anzeigt, statt ein Duplikat zu öffnen. Strg+Klick (oder Cmd+Klick auf Mac) verwendet Ihren letzten Tab erneut.
+Version 1.7.0 (Unterordner): Ziehen Sie einen Ordner auf einen anderen, um ihn darin abzulegen. Öffnen Sie den übergeordneten Ordner als Tab-Gruppe und alles darin öffnet sich mit. Ein Klick auf eine gespeicherte Unterhaltung wechselt jetzt zum Tab, der sie bereits anzeigt, statt ein Duplikat zu öffnen. Strg+Klick (oder Cmd+Klick auf Mac) verwendet Ihren letzten Tab erneut. Baidu Chat ist auf eine neue Adresse umgezogen, wo Speichern und das Einfügen von Prompts wieder funktionieren.
 Version 1.6.3 (Willkommensseite): Nach der Installation öffnet sich jetzt eine kurze Anleitung: wie du die Erweiterung anheftest und deine erste Unterhaltung speicherst. Die Suche macht außerdem deutlich, dass sie nur bereits gespeicherte Unterhaltungen durchsucht.
 Version 1.6.2 (Kimi): Starten Sie neue Kimi-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts. Beim Entfernen der Erweiterung öffnet sich nun eine kurze, freiwillige Feedback-Seite in Ihrer Sprache, und gesendet wird nur, was Sie selbst absenden.
 Version 1.6.1 (Sicherheit & Stabilität): Zusätzliche Schutzmaßnahmen für gespeicherte Links und Backup-Importe sowie interne Stabilitätskorrekturen.

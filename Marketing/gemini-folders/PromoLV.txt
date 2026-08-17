@@ -1,19 +1,9 @@
 ﻿Vai izmanto Google Gemini katru dienu – darbam, kodēšanai, rakstīšanai vai pētīšanai – bet turpini rakstīt tos pašus uzdevumus no jauna, kamēr labākās sarunas pazūd bezgalīgajā vēsturē?
 Gemini Mapes (Gemini Folders) ir paplašinājums, kas tev nepieciešams.
 
-Ar versiju 4.0 Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sarunas mapēs, veido atkārtoti lietojamu uzvedņu bibliotēku un ievietojiet tās tieši Gemini ar vienu klikšķi – bez kopēšanas un ielīmēšanas.
+Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sarunas mapēs, veido atkārtoti lietojamu uzvedņu bibliotēku un ievietojiet tās tieši Gemini ar vienu klikšķi – bez kopēšanas un ielīmēšanas.
 
-✨ JAUNUMS V4.0 – UZVEDŅU REŽĪMS
-
-📝 Personīgā uzvedņu bibliotēka: Pārslēdzies uz Uzvedņu režīmu ar vienu klikšķi uz galvenes slēdža. Saglabā labākās uzvednes ar virsrakstu un tekstu, atrod tās uzreiz ar meklēšanu un kārtošanu (jaunākās, vecākās, A–Z).
-▶ Ievietošana ar vienu klikšķi: Noklikšķini uz atskaņošanas pogas (▶) uz saglabātas uzvednes, lai to ievietotu tieši Gemini ievades laukā.
-✏️ Tiešā rediģēšana: Noklikšķini, lai izvērstu uzvedni, un rediģē tekstu tieši. Izmaiņas tiek saglabātas automātiski pēc īsas pauzes.
-💎 Pielāgota Gem saite: Konfigurē saiti uz iecienīto Gem un ieslēdz/izslēdz to ar vienu klikšķi.
-☁️ Uzvedņu sinhronizācija: Iespējo mākoņa sinhronizāciju uzvedņu bibliotēkai neatkarīgi no mapēm.
-📌 Piespraustas uzvednes: Piespreudz svarīgas uzvednes bibliotēkas augšdaļā.
-⌨️ Uzvednes aktivizētājs ar tiešraides ieteikumiem: Ievadiet # Gemini tērzēšanas laukā, lai uzreiz redzētu visas saglabātās uzvednes — filtrētas reāllaikā, rakstot. Izmantojiet ↓/↑ navigācijai, nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā tiešai ievietošanai.
-
-🌟 MAPJU FUNKCIJAS
+🌟 MAPJU REŽĪMS
 
 ⌨️ Tūlītēja paneļa īsinājumtaustiņš: Atveriet paneli uzreiz no jebkuras cilnes ar Ctrl+Shift+1 (vai Cmd+Shift+1 uz Mac).
 ⚡ Ātrā saglabāšana (Labais klikšķis un saīsnes): Saglabā pašreizējo sarunu ar vienkāršu labo klikšķi vai izmanto tastatūras saīsni (Ctrl+Shift+S vai Cmd+Shift+S Mac datorā), lai to nosūtītu uz «⚡ Ātrā saglabāšana» – ar vizuālu brīdinājumu, ja tā jau ir saglabāta!
@@ -30,6 +20,16 @@ Ar versiju 4.0 Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sar
 🤖 Viedā noteikšana un meklēšana: Automātiska sarunas precīzā virsraksta aizpildīšana un reāllaika meklēšanas josla.
 ☁️ Mākoņa sinhronizācija un dublēšana: Piekļuve organizācijai visās ierīcēs un datu eksportēšana JSON formātā.
 🎨 Material 3 dizains un daudzvalodu: Īpaši kompakts interfeiss ar pilnībā pielāgotiem modālo dialogu logiem, automātisks tumšais režīms un atbalsts 43 valodām!
+
+✨ UZVEDŅU REŽĪMS
+
+📝 Personīgā uzvedņu bibliotēka: Pārslēdzies uz Uzvedņu režīmu ar vienu klikšķi uz galvenes slēdža. Saglabā labākās uzvednes ar virsrakstu un tekstu, atrod tās uzreiz ar meklēšanu un kārtošanu (jaunākās, vecākās, A–Z).
+▶ Ievietošana ar vienu klikšķi: Noklikšķini uz atskaņošanas pogas (▶) uz saglabātas uzvednes, lai to ievietotu tieši Gemini ievades laukā.
+✏️ Tiešā rediģēšana: Noklikšķini, lai izvērstu uzvedni, un rediģē tekstu tieši. Izmaiņas tiek saglabātas automātiski pēc īsas pauzes.
+💎 Pielāgota Gem saite: Konfigurē saiti uz iecienīto Gem un ieslēdz/izslēdz to ar vienu klikšķi.
+☁️ Uzvedņu sinhronizācija: Iespējo mākoņa sinhronizāciju uzvedņu bibliotēkai neatkarīgi no mapēm.
+📌 Piespraustas uzvednes: Piespreudz svarīgas uzvednes bibliotēkas augšdaļā.
+⌨️ Uzvednes aktivizētājs ar tiešraides ieteikumiem: Ievadiet # Gemini tērzēšanas laukā, lai uzreiz redzētu visas saglabātās uzvednes — filtrētas reāllaikā, rakstot. Izmantojiet ↓/↑ navigācijai, nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā tiešai ievietošanai.
 
 🛠️ KĀ TAS DARBOJAS?
 
@@ -65,7 +65,7 @@ Interesē Gemini Mapes, bet izmantojat arī ChatGPT, Claude, Copilot, Grok, Perp
 👉 Instalēt AI mapes: __AF_STORE_URL__
 
 📢 ATJAUNINĀJUMI:
-Versija 4.5.6 (Mazāk ciļņu): Noklikšķinot uz saglabātas sarunas, tagad tiek pārslēgts uz cilni, kurā tā jau ir atvērta, nevis atvērts dublikāts. Ctrl+klikšķis (vai Cmd+klikšķis Mac datorā) atkārtoti izmanto pēdējo cilni.
+Versija 4.6.0 (Apakšmapes): Velciet vienu mapi uz citas, lai ievietotu to iekšā. Atveriet vecākmapi kā ciļņu grupu, un atvērsies viss tās saturs. Noklikšķinot uz saglabātas sarunas, tagad tiek pārslēgts uz cilni, kurā tā jau ir atvērta, nevis atvērts dublikāts. Ctrl+klikšķis (vai Cmd+klikšķis Mac datorā) atkārtoti izmanto pēdējo cilni.
 Versija 4.5.5 (Sveiciena lapa): Pēc instalēšanas tagad atveras īss ceļvedis: kā piespraust paplašinājumu un saglabāt pirmo sarunu. Meklēšana arī skaidri norāda, ka ietver tikai jau saglabātās sarunas.
 Versija 4.5.4 (Atinstalēšanas aptauja): Paplašinājuma noņemšana tagad atver īsu neobligātu atsauksmju lapu jūsu valodā, un nekas netiek nosūtīts, ja vien jūs to pats nenosūtāt.
 Versija 4.5.3 (Drošība un stabilitāte): Papildu aizsardzība saglabātajām saitēm un rezerves kopiju importēšanai, kā arī iekšēji stabilitātes labojumi.

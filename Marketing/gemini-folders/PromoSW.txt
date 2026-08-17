@@ -1,19 +1,9 @@
 ﻿Je, unatumia Google Gemini kila siku — kwa kazi, msimbo, uandishi, au utafiti — lakini unajikuta ukiandika tena vidokezo vile vile, huku mazungumzo yako bora yakipotea katika historia isiyo na mwisho?
 Folda za Gemini (Gemini Folders) ni kiendelezi unachohitaji.
 
-Na toleo la 4.0, Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga mazungumzo katika folda, jenga maktaba ya vidokezo vinavyoweza kutumika tena, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja — bila kunakili na kubandika.
+Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga mazungumzo katika folda, jenga maktaba ya vidokezo vinavyoweza kutumika tena, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja — bila kunakili na kubandika.
 
-✨ KIPYA KATIKA v4.0 — HALI YA KIDOKEZO
-
-📝 Maktaba ya Kidokezo ya Kibinafsi: Badilika kwenda Hali ya Kidokezo kwa kubofya mara moja kwenye kitufe cha kubadilisha kilichoko kwenye kichwa. Hifadhi vidokezo vyako bora pamoja na kichwa na maandishi kamili, kisha vipate mara moja kwa kutumia utafutaji na upangaji (mpya zaidi, kongwe zaidi, A-Z).
-▶ Kuingiza kwa Kubofya Mara Moja: Hakuna tena kunakili na kubandika. Bofya kitufe cha kucheza (▶) kwenye kidokezo chochote kilichohifadhiwa ili kukiingiza moja kwa moja kwenye uwanja wa kuandika wa Gemini. Kiendelezi hugundua kama uko kwenye ukurasa wa Gemini na kukuarifu ikiwa la.
-✏️ Kuhariri Mahali Pake: Bofya kidokezo ili kukipanua na kuhariri maandishi moja kwa moja. Mabadiliko huhifadhiwa kiotomatiki baada ya muda mfupi na mpangilio wa kusortia husasishwa ipasavyo.
-💎 Kiungo Maalum cha Gem: Sanidi kiungo kwenda Gem unayoipenda na kiwashe/kizime kwa kubofya. Kinapowashwa, kitufe cha "Mazungumzo Mapya" kinafungua Gem yako badala ya gumzo la kawaida.
-☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
-📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
-⌨️ Kichocheo cha Kidokezo na Mapendekezo ya Moja kwa Moja: Andika # katika uwanja wa gumzo wa Gemini ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa — vikifiliwa kwa wakati halisi unapoendelea kuandika. Tumia ↓/↑ kuvinjari, kisha bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza moja kwa moja.
-
-🌟 VIPENGELE VYA FOLDA
+🌟 HALI YA FOLDA
 
 ⌨️ Mkato wa haraka wa jopo: Fungua jopo mara moja kutoka kichupo chochote na Ctrl+Shift+1 (au Cmd+Shift+1 kwenye Mac).
 ⚡ Hifadhi ya Haraka (Kubofya Kulia & Njia za Mkato): Hifadhi mazungumzo ya sasa kwa kubofya kulia rahisi, au tumia njia ya mkato ya kibodi (Ctrl+Shift+S au Cmd+Shift+S kwenye Mac) kutuma mara moja kwenye "⚡ Hifadhi ya Haraka" — pamoja na arifa ya kuona ikiwa tayari imehifadhiwa!
@@ -30,6 +20,16 @@ Na toleo la 4.0, Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga 
 🤖 Ugunduzi Mzuri na Utafutaji: Kujaza awali kiotomatiki kwa kichwa halisi cha mazungumzo yako na mwambaa wa utafutaji wa wakati halisi.
 ☁️ Usawazishaji wa Wingu na Hifadhinakala: Fikia upangaji wako kwenye vifaa vyako vyote na hamisha data yako kama JSON.
 🎨 Muundo wa Material 3 na Lugha Nyingi: Kiolesura cha kompakt sana chenye sanduku za mazungumzo maalum kabisa, hali ya giza kiotomatiki na msaada kwa lugha 43!
+
+✨ HALI YA KIDOKEZO
+
+📝 Maktaba ya Kidokezo ya Kibinafsi: Badilika kwenda Hali ya Kidokezo kwa kubofya mara moja kwenye kitufe cha kubadilisha kilichoko kwenye kichwa. Hifadhi vidokezo vyako bora pamoja na kichwa na maandishi kamili, kisha vipate mara moja kwa kutumia utafutaji na upangaji (mpya zaidi, kongwe zaidi, A-Z).
+▶ Kuingiza kwa Kubofya Mara Moja: Hakuna tena kunakili na kubandika. Bofya kitufe cha kucheza (▶) kwenye kidokezo chochote kilichohifadhiwa ili kukiingiza moja kwa moja kwenye uwanja wa kuandika wa Gemini. Kiendelezi hugundua kama uko kwenye ukurasa wa Gemini na kukuarifu ikiwa la.
+✏️ Kuhariri Mahali Pake: Bofya kidokezo ili kukipanua na kuhariri maandishi moja kwa moja. Mabadiliko huhifadhiwa kiotomatiki baada ya muda mfupi na mpangilio wa kusortia husasishwa ipasavyo.
+💎 Kiungo Maalum cha Gem: Sanidi kiungo kwenda Gem unayoipenda na kiwashe/kizime kwa kubofya. Kinapowashwa, kitufe cha "Mazungumzo Mapya" kinafungua Gem yako badala ya gumzo la kawaida.
+☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
+📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
+⌨️ Kichocheo cha Kidokezo na Mapendekezo ya Moja kwa Moja: Andika # katika uwanja wa gumzo wa Gemini ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa — vikifiliwa kwa wakati halisi unapoendelea kuandika. Tumia ↓/↑ kuvinjari, kisha bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza moja kwa moja.
 
 🛠️ INAVYOFANYA KAZI?
 
@@ -66,7 +66,7 @@ Unavutiwa na Folda za Gemini lakini pia unatumia ChatGPT, Claude, Copilot, Grok,
 👉 Sakinisha Folda za AI: __AF_STORE_URL__
 
 📢 MASASISHO:
-Toleo 4.5.6 (Vichupo vichache): Kubofya mazungumzo yaliyohifadhiwa sasa hukupeleka kwenye kichupo kinachoyaonyesha tayari badala ya kufungua nakala. Ctrl+bofya (au Cmd+bofya kwenye Mac) hutumia tena kichupo chako cha mwisho.
+Toleo 4.6.0 (Folda ndogo): Buruta folda moja juu ya nyingine ili kuiweka ndani yake. Fungua folda mama kama kikundi cha vichupo na kila kilichomo hufunguka pamoja nayo. Kubofya mazungumzo yaliyohifadhiwa sasa hukupeleka kwenye kichupo kinachoyaonyesha tayari badala ya kufungua nakala. Ctrl+bofya (au Cmd+bofya kwenye Mac) hutumia tena kichupo chako cha mwisho.
 Toleo 4.5.5 (Ukurasa wa karibu): Baada ya kusakinisha sasa hufunguka mwongozo mfupi: jinsi ya kubandika kiendelezi na kuhifadhi mazungumzo yako ya kwanza. Utafutaji pia unaeleza wazi kuwa unahusu mazungumzo yaliyohifadhiwa tu.
 Toleo 4.5.4 (Utafiti wa kuondoa): Kuondoa kiendelezi sasa hufungua ukurasa mfupi wa maoni wa hiari kwa lugha yako, na hakuna kinachotumwa isipokuwa uitume mwenyewe.
 Toleo 4.5.3 (Usalama na uthabiti): Ulinzi wa ziada kwa viungo vilivyohifadhiwa na uingizaji wa nakala rudufu, pamoja na marekebisho ya ndani ya uthabiti.

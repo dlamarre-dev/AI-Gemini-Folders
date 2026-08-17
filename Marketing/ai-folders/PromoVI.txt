@@ -6,17 +6,7 @@ Sắp xếp các cuộc trò chuyện từ tất cả các công cụ AI yêu th
 
 Thư mục AI tích hợp tự nhiên với tất cả các trợ lý trò chuyện AI hàng đầu, chẳng hạn như Claude, ChatGPT và Gemini, cùng các LLM cục bộ mà bạn tự chạy. Các cuộc trò chuyện từ những nền tảng khác nhau có thể nằm chung trong cùng một thư mục. Mỗi cuộc trò chuyện hiển thị màu sắc và logo của dịch vụ của nó, vì vậy bạn luôn biết nó đến từ đâu.
 
-✨ CHẾ ĐỘ PROMPT
-
-📝 Thư viện Prompt cá nhân: Chuyển sang Chế độ Prompt chỉ với một cú nhấp vào nút chuyển đổi ở tiêu đề. Lưu các prompt tốt nhất của bạn với tiêu đề và toàn bộ nội dung, sau đó tìm lại ngay lập tức với tính năng tìm kiếm và sắp xếp (mới nhất, cũ nhất, A-Z).
-▶ Chèn một cú nhấp: Không cần sao chép dán nữa. Nhấn nút phát (▶) trên bất kỳ prompt đã lưu nào để chèn trực tiếp vào ô nhập của AI đang hoạt động.
-✏️ Chỉnh sửa tại chỗ: Nhấp vào prompt để mở rộng và chỉnh sửa văn bản trực tiếp. Thay đổi được tự động lưu sau một khoảng dừng ngắn và thứ tự sắp xếp cập nhật theo.
-🔀 Nút Cuộc trò chuyện Mới: Bắt đầu cuộc trò chuyện mới trên bất kỳ dịch vụ web nào được hỗ trợ trực tiếp từ Chế độ Prompt — chỉ với một lần chạm.
-☁️ Đồng bộ Prompt: Bật đồng bộ đám mây cho thư viện prompt độc lập với thư mục.
-📌 Ghim Prompt: Ghim các prompt thiết yếu bằng một cú nhấp để giữ chúng ở đầu thư viện, ngăn cách với phần còn lại bằng đường phân cách trực quan.
-⌨️ Trình kích hoạt Prompt với Gợi ý Trực tiếp: Nhập # vào trường trò chuyện của bất kỳ AI nào để xem ngay lập tức tất cả prompt đã lưu — được lọc theo thời gian thực khi bạn gõ. Dùng ↓/↑ để điều hướng, nhấn Dấu cách trên kết quả khớp duy nhất để tự động hoàn thành, hoặc trên kết quả khớp chính xác để chèn trực tiếp.
-
-🌟 TÍNH NĂNG THƯ MỤC
+🌟 CHẾ ĐỘ THƯ MỤC
 
 ⌨️ Phím tắt bảng điều khiển tức thì: Mở bảng điều khiển ngay lập tức từ bất kỳ tab nào với Ctrl+Shift+1 (hoặc Cmd+Shift+1 trên Mac).
 ⚡ Lưu nhanh (Chuột phải & Phím tắt): Lưu cuộc trò chuyện hiện tại bằng cú nhấp chuột phải đơn giản, hoặc dùng phím tắt (Ctrl+Shift+S hoặc Cmd+Shift+S trên Mac) để gửi ngay vào "⚡ Lưu nhanh" — kèm cảnh báo trực quan nếu đã lưu trước đó!
@@ -38,6 +28,16 @@ Thư mục AI tích hợp tự nhiên với tất cả các trợ lý trò chuy�
 🏠 HỖ TRỢ LLM CỤC BỘ
 
 Đang chạy mô hình AI cục bộ (Ollama, LM Studio, Jan hoặc khác)? Cấu hình Thư mục AI với URL cục bộ của bạn — hỗ trợ localhost và địa chỉ LAN (192.168.x.x, tên máy chủ tùy chỉnh). Lưu nhanh và lưu qua menu ngữ cảnh cũng hoạt động trên giao diện cục bộ.
+✨ CHẾ ĐỘ PROMPT
+
+📝 Thư viện Prompt cá nhân: Chuyển sang Chế độ Prompt chỉ với một cú nhấp vào nút chuyển đổi ở tiêu đề. Lưu các prompt tốt nhất của bạn với tiêu đề và toàn bộ nội dung, sau đó tìm lại ngay lập tức với tính năng tìm kiếm và sắp xếp (mới nhất, cũ nhất, A-Z).
+▶ Chèn một cú nhấp: Không cần sao chép dán nữa. Nhấn nút phát (▶) trên bất kỳ prompt đã lưu nào để chèn trực tiếp vào ô nhập của AI đang hoạt động.
+✏️ Chỉnh sửa tại chỗ: Nhấp vào prompt để mở rộng và chỉnh sửa văn bản trực tiếp. Thay đổi được tự động lưu sau một khoảng dừng ngắn và thứ tự sắp xếp cập nhật theo.
+🔀 Nút Cuộc trò chuyện Mới: Bắt đầu cuộc trò chuyện mới trên bất kỳ dịch vụ web nào được hỗ trợ trực tiếp từ Chế độ Prompt — chỉ với một lần chạm.
+☁️ Đồng bộ Prompt: Bật đồng bộ đám mây cho thư viện prompt độc lập với thư mục.
+📌 Ghim Prompt: Ghim các prompt thiết yếu bằng một cú nhấp để giữ chúng ở đầu thư viện, ngăn cách với phần còn lại bằng đường phân cách trực quan.
+⌨️ Trình kích hoạt Prompt với Gợi ý Trực tiếp: Nhập # vào trường trò chuyện của bất kỳ AI nào để xem ngay lập tức tất cả prompt đã lưu — được lọc theo thời gian thực khi bạn gõ. Dùng ↓/↑ để điều hướng, nhấn Dấu cách trên kết quả khớp duy nhất để tự động hoàn thành, hoặc trên kết quả khớp chính xác để chèn trực tiếp.
+
 🛠️ CÁCH HOẠT ĐỘNG?
 
 Chế độ thư mục:
@@ -67,7 +67,7 @@ Xem code hoặc đóng góp: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 CẬP NHẬT:
-Phiên bản 1.6.4 (Ít thẻ hơn): Nhấp vào một cuộc trò chuyện đã lưu giờ đây chuyển sang thẻ đang mở nó thay vì mở thẻ trùng lặp. Ctrl+nhấp (hoặc Cmd+nhấp trên Mac) dùng lại thẻ cuối cùng.
+Phiên bản 1.7.0 (Thư mục con): Kéo một thư mục lên thư mục khác để đặt vào bên trong. Mở thư mục cha dưới dạng nhóm thẻ và mọi thứ bên trong cũng mở theo. Nhấp vào một cuộc trò chuyện đã lưu giờ đây chuyển sang thẻ đang mở nó thay vì mở thẻ trùng lặp. Ctrl+nhấp (hoặc Cmd+nhấp trên Mac) dùng lại thẻ cuối cùng. Baidu Chat đã chuyển sang địa chỉ mới, nơi việc lưu và chèn prompt hoạt động trở lại.
 Phiên bản 1.6.3 (Trang chào mừng): Sau khi cài đặt, một hướng dẫn ngắn sẽ mở ra: cách ghim tiện ích và lưu cuộc trò chuyện đầu tiên. Tìm kiếm cũng nói rõ chỉ áp dụng cho các cuộc trò chuyện đã lưu.
 Phiên bản 1.6.2 (Kimi): Bắt đầu cuộc trò chuyện Kimi mới trực tiếp từ Chế độ Prompt, lưu vào thư mục và chèn prompt. Việc xóa tiện ích giờ đây sẽ mở một trang góp ý ngắn và không bắt buộc bằng ngôn ngữ của bạn, và không có gì được gửi trừ khi bạn tự gửi.
 Phiên bản 1.6.1 (Bảo mật & ổn định): Tăng cường bảo vệ cho liên kết đã lưu và nhập tệp sao lưu, cùng các sửa lỗi ổn định nội bộ.
