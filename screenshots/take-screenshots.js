@@ -204,10 +204,10 @@ async function getExtensionId(context) {
 }
 
 async function injectSampleData(page, localeData) {
-  const { folders, pinnedFolders, prompts } = localeData;
-  await page.evaluate(({ folders, pinnedFolders, prompts }) => {
+  const { folders, pinnedFolders, prompts, folderParents = {} } = localeData;
+  await page.evaluate(({ folders, pinnedFolders, prompts, folderParents }) => {
     return Promise.all([
-      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, sortPref: 'dateDesc' }, r)),
+      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, folderParents, sortPref: 'dateDesc' }, r)),
       new Promise(r => chrome.storage.local.set({
         prompts, promptSortPref: 'dateDesc', syncBookmarksEnabled: false,
         // A marketing shot must show the product, never a banner asking the user for
@@ -219,7 +219,7 @@ async function injectSampleData(page, localeData) {
         afPromoState: { status: 'dismissed' },
       }, r)),
     ]);
-  }, { folders, pinnedFolders, prompts });
+  }, { folders, pinnedFolders, prompts, folderParents });
 }
 
 async function waitForRender(page) {
@@ -259,12 +259,24 @@ async function screenshotFolderMode(page, extId, localeData, outPath) {
     throw new Error('No .folder-header found — see _DEBUG screenshot.');
   }
 
-  // Expand first two folders
-  const headers = page.locator('.folder-header');
-  await headers.nth(0).click();
+  // Expand the first root folder, its sub-folder, and the next root folder.
+  //
+  // Addressed through the DOM structure rather than a flat '.folder-header' index:
+  // a sub-folder's header is itself a .folder-header sitting inside its parent, so
+  // nth(1) is the child, not the second root — the shot would then have every root
+  // but the first collapsed, in whichever locales happen to nest.
+  const roots = page.locator('#folderList > .folder');
+  await roots.nth(0).locator(':scope > .folder-header').click();
   await page.waitForTimeout(200);
-  await headers.nth(1).click();
-  await page.waitForTimeout(300);
+  const child = roots.nth(0).locator('.folder--child > .folder-header');
+  if (await child.count() > 0) {
+    await child.first().click();
+    await page.waitForTimeout(200);
+  }
+  if (await roots.count() > 1) {
+    await roots.nth(1).locator(':scope > .folder-header').click();
+    await page.waitForTimeout(300);
+  }
 
   // Suppress all scrollbars so content height is natural (no empty space at bottom),
   // and hide the active-sort indicator dot (sample data uses a non-default sort,
@@ -299,13 +311,20 @@ async function screenshotMobileSyncFolder(page, extId, localeData, outPath) {
   await page.goto(`chrome-extension://${extId}/popup.html`);
   await waitForRender(page);
 
-  const { folders, pinnedFolders, prompts } = localeData;
-  await page.evaluate(({ folders, pinnedFolders, prompts }) => {
+  const { folders, pinnedFolders, prompts, folderParents = {} } = localeData;
+  await page.evaluate(({ folders, pinnedFolders, prompts, folderParents }) => {
     return Promise.all([
-      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, sortPref: 'dateDesc', syncBookmarksEnabled: true }, r)),
-      new Promise(r => chrome.storage.local.set({ prompts, promptSortPref: 'dateDesc', lastMode: 'folder' }, r)),
+      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, folderParents, sortPref: 'dateDesc', syncBookmarksEnabled: true }, r)),
+      // openFolders reset for the same reason as in screenshotFolderMode: the
+      // clicks below toggle, and the folder captures leave folders open. Inheriting
+      // their state made this shot CLOSE what they had opened — the popup came out
+      // with every folder collapsed, which is what made it look too small.
+      new Promise(r => chrome.storage.local.set({
+        prompts, promptSortPref: 'dateDesc', lastMode: 'folder', openFolders: [],
+        usageStats: { opens: 0, saves: 0 }, afPromoState: { status: 'dismissed' },
+      }, r)),
     ]);
-  }, { folders, pinnedFolders, prompts });
+  }, { folders, pinnedFolders, prompts, folderParents });
 
   await page.reload();
   await waitForRender(page);
@@ -316,11 +335,16 @@ async function screenshotMobileSyncFolder(page, extId, localeData, outPath) {
     throw new Error('No .folder-header found for mobile sync screenshot.');
   }
 
-  const headers = page.locator('.folder-header');
-  await headers.nth(0).click();
-  await page.waitForTimeout(200);
-  await headers.nth(1).click();
-  await page.waitForTimeout(300);
+  // Every ROOT folder open, sub-folders left closed. This shot exists to show the
+  // bookmark mirror beside the popup, so the popup should carry as much of the
+  // structure as it can; the sub-folder stays collapsed because the phone list
+  // beside it is what shows the nesting here.
+  const roots = page.locator('#folderList > .folder');
+  const rootCount = await roots.count();
+  for (let i = 0; i < rootCount; i++) {
+    await roots.nth(i).locator(':scope > .folder-header').click();
+    await page.waitForTimeout(200);
+  }
 
   // Capture checkbox position before hiding scrollbars
   const syncLabel = page.locator('#syncBookmarksLabel');
@@ -365,7 +389,11 @@ async function screenshotMobileSyncFolder(page, extId, localeData, outPath) {
   return checkboxBox;
 }
 
-async function screenshotPromptMode(page, extId, localeData, outPath) {
+// expandFirst opens the pinned prompt as well. Only image 1 asks for it: there the
+// prompt popup sits beside the folder popup, and with one prompt expanded it ended
+// noticeably shorter, leaving the two cards misaligned. Image 3 keeps a single
+// expanded prompt — it stands alone, so its own height is the only budget it has.
+async function screenshotPromptMode(page, extId, localeData, outPath, { expandFirst = false } = {}) {
   await page.goto(`chrome-extension://${extId}/popup.html`);
   await waitForRender(page);
 
@@ -377,11 +405,15 @@ async function screenshotPromptMode(page, extId, localeData, outPath) {
   await page.reload();
   await waitForRender(page);
 
-  // Expand only the second prompt item (the first stays collapsed to keep the
-  // capture under the 598px native-scale budget of the compositions)
+  // Expand the second prompt item, and the first only when asked: on its own, the
+  // capture has to stay under the 598px native-scale budget of the compositions.
   const promptHeaders = page.locator('.prompt-header');
   await promptHeaders.nth(1).click();
   await page.waitForTimeout(300);
+  if (expandFirst) {
+    await promptHeaders.nth(0).click();
+    await page.waitForTimeout(300);
+  }
 
   // The single expanded prompt shows its full text with natural padding (the
   // collapsed first prompt frees the height needed to stay under the 598px
@@ -785,9 +817,19 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
     circleHTML = `<div class="sync-highlight"></div>`;
   }
 
-  // Phone screen content — folder list mirroring the extension
+  // Phone screen content — folder list mirroring the extension, nesting included:
+  // syncToBookmarksTree puts a sub-folder inside its parent's bookmark folder, so
+  // listing it flat here would promise a structure the sync does not create. Roots
+  // first, each followed by its own children, indented.
+  const nested = localeData.folderParents || {};
+  const bmRow = (name, isChild) =>
+    `<div class="bm-row${isChild ? ' bm-row--child' : ''}"><span class="bm-icon">📁</span><span class="bm-name">${name}</span></div>`;
   const folderItems = Object.keys(localeData.folders)
-    .map(name => `<div class="bm-row"><span class="bm-icon">📁</span><span class="bm-name">${name}</span></div>`)
+    .filter(name => !nested[name])
+    .map(root => bmRow(root, false) + Object.keys(localeData.folders)
+      .filter(name => nested[name] === root)
+      .map(child => bmRow(child, true))
+      .join(''))
     .join('');
 
   // Mirror the mock phone UI for RTL locales: dir="rtl" on the phone screen
@@ -929,6 +971,9 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
     border-bottom: 1px solid #f1f3f4;
     gap: ${Math.round(phoneW * 0.04)}px;
   }
+  /* A sub-folder sits inside its parent's bookmark folder — padding-inline-start
+     so the indent flips with the phone screen's dir="rtl". */
+  .bm-row--child { padding-inline-start: ${Math.round(phoneW * 0.14)}px; }
   .bm-icon { font-size: ${Math.round(phoneFontBase * 1.1)}px; flex-shrink: 0; }
   .bm-name {
     font-size: ${Math.round(phoneFontBase * 0.88)}px; color: #202124;
@@ -980,7 +1025,10 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   const CANVAS_H = 800;
   const TITLE_H  = 100;
 
-  const folderNames = Object.keys(localeData.folders);
+  // Root folders only: in the real menu a sub-folder is one level deeper, inside
+  // its parent's submenu, so listing it flat here would misdraw the feature.
+  const nested = localeData.folderParents || {};
+  const folderNames = Object.keys(localeData.folders).filter(name => !nested[name]);
 
   // Extension icon embedded as base64
   const iconPath = path.resolve(__dirname, `../dist/${EXTENSION}/chrome/icon48.png`);
@@ -1588,7 +1636,13 @@ async function run() {
           await screenshotFolderMode(page, extId, localeData, folderPath);
         }
         if (modeArg === 'both' || modeArg === 'prompt') {
-          await screenshotPromptMode(page, extId, localeData, promptPath);
+          // This dark capture feeds image 1, where the prompt popup is judged against
+          // the folder popup beside it. Gemini Folders needs a second expanded prompt
+          // to match: its popup has no service-button rows, which is what already
+          // makes AI Folders' prompt pane the taller of the two — expanding a second
+          // prompt there overshoots instead.
+          await screenshotPromptMode(page, extId, localeData, promptPath,
+            { expandFirst: EXTENSION === 'gemini-folders' });
         }
         if (modeArg === 'both' && fs.existsSync(folderPath) && fs.existsSync(promptPath)) {
           // Image 1: side-by-side overview

@@ -268,6 +268,33 @@ describe('syncToBookmarksTree', () => {
     expect(order).toContain('create:folder(Solo)');
   });
 
+  // The nesting argument is optional, which is exactly how two call sites came to
+  // forget it: saving a conversation mirrored the tree nested, while toggling the
+  // feature on rebuilt it flat, with every sub-folder beside its parent. Nothing
+  // failed loudly — the tree was simply wrong. So every caller is checked here.
+  test('every caller passes the nesting, or the mirror silently goes flat', () => {
+    const fs = require('fs');
+    const path = require('path');
+    const dir = path.join(__dirname, '..', 'src');
+    const callers = [];
+    for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.js'))) {
+      const source = fs.readFileSync(path.join(dir, file), 'utf8');
+      for (const match of source.matchAll(/syncToBookmarksTree\(/g)) {
+        const lineStart = source.lastIndexOf('\n', match.index) + 1;
+        const line = source.slice(lineStart, source.indexOf('\n', match.index));
+        // The definition and the prose that mentions it are not calls.
+        if (/function syncToBookmarksTree/.test(line) || /^\s*(\/\/|\*)/.test(line)) continue;
+        // The argument list, which may span lines (finishSave's does).
+        const args = source.slice(match.index, source.indexOf(');', match.index));
+        callers.push({ where: `${file}:${source.slice(0, match.index).split('\n').length}`, args });
+      }
+    }
+    expect(callers.length).toBeGreaterThan(0);
+    for (const { where, args } of callers) {
+      expect(`${where} → ${args.includes('folderParents')}`).toBe(`${where} → true`);
+    }
+  });
+
   test('a re-entrant call while a sync is in flight is ignored', async () => {
     const folders = { A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] };
     const first = syncToBookmarksTree(folders, [], 'dateDesc'); // holds the lock
