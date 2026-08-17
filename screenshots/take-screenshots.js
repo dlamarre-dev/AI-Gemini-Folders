@@ -9,11 +9,16 @@
  *   node take-screenshots.js --locale fr  → single locale
  *
  * Output (mode=both):
- *   Promo_1_<locale>.png  — Folder + Prompt side by side (overview)
- *   Promo_2_<locale>.png  — Folder mode, centered close-up
- *   Promo_3_<locale>.png  — Prompt mode, centered close-up
- *   Promo_4_<locale>.png  — Mobile sync: popup + phone bookmarks mockup
- *   Promo_5_<locale>.png  — Context menu: right-click → folder submenu
+ *   Promo_1_<locale>.png  — Folder + Prompt side by side (overview)     [dark]
+ *   Promo_2_<locale>.png  — Folder mode, centered close-up              [light]
+ *   Promo_3_<locale>.png  — Prompt mode, centered close-up              [light]
+ *   Promo_4_<locale>.png  — Mobile sync: popup + phone bookmarks mockup [dark]
+ *   Promo_5_<locale>.png  — Context menu: right-click → folder submenu  [dark]
+ *
+ * Images 2 and 3 are captured in light mode on purpose: the extension follows the
+ * system theme, and a listing of five dark screenshots never says so. The website
+ * is dark-only, so its own copies of those two close-ups are composed from the dark
+ * captures into _site_*.png, which build_images.py copies out and deletes.
  */
 
 const { chromium } = require('playwright');
@@ -203,7 +208,16 @@ async function injectSampleData(page, localeData) {
   await page.evaluate(({ folders, pinnedFolders, prompts }) => {
     return Promise.all([
       new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, sortPref: 'dateDesc' }, r)),
-      new Promise(r => chrome.storage.local.set({ prompts, promptSortPref: 'dateDesc', syncBookmarksEnabled: false }, r)),
+      new Promise(r => chrome.storage.local.set({
+        prompts, promptSortPref: 'dateDesc', syncBookmarksEnabled: false,
+        // A marketing shot must show the product, never a banner asking the user for
+        // something. Both the review prompt and Gemini Folders' cross-promo are gated
+        // on usageStats.opens, which every capture bumps — so a long enough run
+        // eventually photographs the banner instead. It stayed under the threshold by
+        // luck until the light-theme pass doubled the popup opens per locale.
+        usageStats: { opens: 0, saves: 0 },
+        afPromoState: { status: 'dismissed' },
+      }, r)),
     ]);
   }, { folders, pinnedFolders, prompts });
 }
@@ -226,6 +240,15 @@ async function screenshotFolderMode(page, extId, localeData, outPath) {
   await waitForRender(page);
 
   await injectSampleData(page, localeData);
+  // Start from a known state, because this now runs twice per locale (dark, then
+  // light) and both of those are remembered across runs:
+  //   lastMode  — screenshotPromptMode leaves it on 'prompt', so the wait below
+  //               would time out on the second pass (it did).
+  //   openFolders — the two clicks further down TOGGLE, so a folder left open by
+  //               the first pass would be closed by the second, and the shot would
+  //               show three collapsed folders and no conversations (it did).
+  await page.evaluate(() => new Promise(r =>
+    chrome.storage.local.set({ lastMode: 'folder', openFolders: [] }, r)));
   await page.reload();
   await waitForRender(page);
 
@@ -347,7 +370,10 @@ async function screenshotPromptMode(page, extId, localeData, outPath) {
   await waitForRender(page);
 
   await injectSampleData(page, localeData);
-  await page.evaluate(() => new Promise(r => chrome.storage.local.set({ lastMode: 'prompt' }, r)));
+  // openPrompts for the same reason as openFolders in screenshotFolderMode: the
+  // click below toggles, and this function runs twice per locale now.
+  await page.evaluate(() => new Promise(r =>
+    chrome.storage.local.set({ lastMode: 'prompt', openPrompts: [] }, r)));
   await page.reload();
   await waitForRender(page);
 
@@ -1568,12 +1594,42 @@ async function run() {
           // Image 1: side-by-side overview
           await compositeScreenshot(composePage, folderPath, promptPath, localeData,
             path.join(OUT_DIR, `Promo_1_${locale.id}.png`), locale.id);
+
+          // The website is dark-only, so its two close-ups are composed from the
+          // dark captures before the light pass below. build_images.py copies these
+          // into docs/site/assets/shots and then removes them. Only AI Folders is
+          // showcased there, so Gemini Folders never produces them.
+          if (EXTENSION === 'ai-folders') {
+            await compositeSingleScreenshot(composePage, folderPath, localeData.folderScreenTitle,
+              path.join(OUT_DIR, `_site_folder-mode_${locale.id}.png`));
+            await compositeSingleScreenshot(composePage, promptPath, localeData.promptScreenTitle,
+              path.join(OUT_DIR, `_site_prompt-mode_${locale.id}.png`));
+          }
+
+          // Images 2 and 3 show the LIGHT theme — the store listing gets one shot
+          // of each appearance instead of five of the same one.
+          //
+          // Re-navigating rather than only flipping the media feature is what makes
+          // this correct: AI Folders picks each site's logo variant at render time
+          // from matchMedia('(prefers-color-scheme: light)'), so a live toggle would
+          // leave dark logos sitting in a light popup.
+          const folderLightPath = path.join(OUT_DIR, `_raw_folder_light_${locale.id}.png`);
+          const promptLightPath = path.join(OUT_DIR, `_raw_prompt_light_${locale.id}.png`);
+          await page.emulateMedia({ colorScheme: 'light' });
+          await screenshotFolderMode(page, extId, localeData, folderLightPath);
+          await screenshotPromptMode(page, extId, localeData, promptLightPath);
+          // Back to dark for the mobile-sync and context-menu shots below.
+          await page.emulateMedia({ colorScheme: 'dark' });
+
           // Image 2: folder mode close-up
-          await compositeSingleScreenshot(composePage, folderPath, localeData.folderScreenTitle,
+          await compositeSingleScreenshot(composePage, folderLightPath, localeData.folderScreenTitle,
             path.join(OUT_DIR, `Promo_2_${locale.id}.png`));
           // Image 3: prompt mode close-up
-          await compositeSingleScreenshot(composePage, promptPath, localeData.promptScreenTitle,
+          await compositeSingleScreenshot(composePage, promptLightPath, localeData.promptScreenTitle,
             path.join(OUT_DIR, `Promo_3_${locale.id}.png`));
+          try { fs.unlinkSync(folderLightPath); } catch (_) {}
+          try { fs.unlinkSync(promptLightPath); } catch (_) {}
+
           // Image 4: mobile sync — separate screenshot with sync checkbox checked
           const mobileSyncPath = path.join(OUT_DIR, `_raw_mobile_sync_${locale.id}.png`);
           const checkboxBox = await screenshotMobileSyncFolder(page, extId, localeData, mobileSyncPath);
