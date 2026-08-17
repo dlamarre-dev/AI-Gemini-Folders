@@ -20,12 +20,13 @@ function mountDOM() {
   document.dispatchEvent(new Event('DOMContentLoaded'));
 }
 
-function setStorage(folders) {
+function setStorage(folders, folderParents = {}) {
   global.loadData = jest.fn((defaults, cb) =>
     cb({
       folders: JSON.parse(JSON.stringify(folders)),
       openFolders: [],
       pinnedFolders: [],
+      folderParents: { ...folderParents },
     })
   );
   global.saveData = jest.fn((data, cb) => cb && cb());
@@ -41,6 +42,10 @@ const flush = () => new Promise((r) => setTimeout(r, 0));
 beforeEach(() => {
   global.normalizeUrl = jest.fn((u) => u.split('?')[0].split('#')[0]);
   global.EMOJI_PREFIX_REGEX = EMOJI_PREFIX_REGEX;
+  const utils = require('../src/utils');
+  for (const name of ['getRootFolderNames', 'getChildFolders', 'getFolderParent']) {
+    global[name] = utils[name];
+  }
   global.window.displayFolders = jest.fn();
   global.window.showCustomModal = jest.fn();
   global.window.selectedChats = [];
@@ -111,6 +116,37 @@ describe('move (clicking a destination folder)', () => {
       .click();
 
     expect(lastSavedFolders().Dst).toHaveLength(1);
+  });
+});
+
+describe('sub-folders in the move list', () => {
+  test('children are listed under their parent, marked, and the list stays flat', () => {
+    setStorage({ Work: [], Clients: [], Personal: [] }, { Clients: 'Work' });
+    window.selectedChats = [{ folder: 'Personal', url: 'https://a/1', chatObj: {} }];
+
+    window.updateBulkActionBar();
+
+    const items = [...document.querySelectorAll('#bulkMoveList li')];
+    expect(items.map((li) => li.textContent)).toEqual(['📁 Personal', '📁 Work', '↳ 📁 Clients']);
+    expect(items[2].classList.contains('is-child')).toBe(true);
+    // Flat: makeMenuAccessible drives roving focus off querySelectorAll('li').
+    expect(document.querySelectorAll('#bulkMoveList ul')).toHaveLength(0);
+    expect(items.every((li) => li.getAttribute('role') === 'menuitem')).toBe(true);
+  });
+
+  test('moving into a sub-folder expands its parent too', async () => {
+    setStorage({ Work: [], Clients: [], Personal: [{ title: 'c', url: 'https://a/1' }] },
+      { Clients: 'Work' });
+    window.selectedChats = [{ folder: 'Personal', url: 'https://a/1', chatObj: { title: 'c', url: 'https://a/1' } }];
+    window.updateBulkActionBar();
+
+    [...document.querySelectorAll('#bulkMoveList li')]
+      .find((li) => li.textContent.includes('Clients')).click();
+    await flush();
+
+    const saved = global.saveData.mock.calls[global.saveData.mock.calls.length - 1][0];
+    expect(saved.folders.Clients).toHaveLength(1);
+    expect(saved.openFolders).toEqual(expect.arrayContaining(['Clients', 'Work']));
   });
 });
 

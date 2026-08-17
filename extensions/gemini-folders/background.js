@@ -33,7 +33,7 @@ function updateContextMenu() {
     });
 
     // Fetch the user's folders
-    loadData({ folders: {} }, (data) => {
+    loadData({ folders: {}, folderParents: {} }, (data) => {
       const folderNames = Object.keys(data.folders);
 
       if (folderNames.length === 0) {
@@ -45,26 +45,14 @@ function updateContextMenu() {
           enabled: false
         });
       } else {
-        // Create a submenu for each folder
-        folderNames.sort().forEach(folder => {
-          const emojiRegex = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})\s*/u;
-          const match = folder.match(emojiRegex);
-
-          let menuTitle = folder;
-          if (match) {
-            const customIcon = match[1];
-            const displayName = folder.replace(emojiRegex, '');
-            menuTitle = `${customIcon} ${displayName}`;
-          } else {
-            menuTitle = `📁 ${folder}`;
-          }
-
-          chrome.contextMenus.create({
-            id: `folder_${folder}`,
-            parentId: "gemini-folders-parent",
-            title: menuTitle,
-            contexts: ["page"]
-          });
+        // Two levels: a root folder with sub-folders becomes a submenu that
+        // still lets you save into the parent itself. The model is built in
+        // utils.js so this file and its AI Folders twin cannot drift.
+        buildContextMenuModel(data.folders, data.folderParents || {}, {
+          rootId: "gemini-folders-parent",
+          saveHereTitle: chrome.i18n.getMessage("ctxMenuSave"),
+        }).forEach(item => {
+          chrome.contextMenus.create({ ...item, contexts: ["page"] });
         });
       }
 
@@ -137,8 +125,11 @@ chrome.runtime.onInstalled.addListener(async (details) => {
 });
 chrome.runtime.onStartup.addListener(() => { updateContextMenu(); refreshUninstallUrl(); });
 chrome.storage.onChanged.addListener((changes, namespace) => {
+  // folderParents belongs here: nesting a folder rewrites the second level of
+  // this menu while writing no `folders` at all, so the menu would otherwise
+  // stay stale until the next conversation was saved.
   if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed
-      || Object.keys(changes).some(k => k.startsWith('fdc')))) {
+      || changes.folderParents || Object.keys(changes).some(k => k.startsWith('fdc')))) {
     updateContextMenu();
   }
   // usageStats.opens is bumped on every popup open (src/ui.js) — keep the
@@ -178,9 +169,12 @@ function showToast(msg, bgColor) {
 
 // 3. Listen for menu clicks
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
-  if (info.parentMenuItemId === "gemini-folders-parent") {
+  // Not a parentMenuItemId check any more: a sub-folder's parent is the
+  // `sub_<name>` container, not the root item. The id carries the target, which
+  // is what survives a service-worker restart; `sub_` ids are never save targets.
+  if (typeof info.menuItemId === 'string' && info.menuItemId.startsWith('folder_')) {
     try {
-      const targetFolder = info.menuItemId.replace("folder_", "");
+      const targetFolder = info.menuItemId.slice('folder_'.length);
       const fallbackTitle = chrome.i18n.getMessage("defaultTitle") || "New conversation";
 
       const results = await chrome.scripting.executeScript({
