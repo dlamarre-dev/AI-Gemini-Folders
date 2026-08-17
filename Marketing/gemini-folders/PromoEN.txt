@@ -1,19 +1,9 @@
 ﻿Do you use Google Gemini every day — for work, code, writing, or research — but keep retyping the same prompts, while your best conversations vanish into an endless history?
 Gemini Folders is the extension you need.
 
-With version 4.0, Gemini Folders becomes your true Gemini cockpit: organize your conversations into folders, build a library of reusable prompts, and inject them directly into Gemini with a single click — no copy-pasting required.
+Gemini Folders becomes your true Gemini cockpit: organize your conversations into folders, build a library of reusable prompts, and inject them directly into Gemini with a single click — no copy-pasting required.
 
-✨ NEW IN v4.0 — PROMPT MODE
-
-📝 Personal Prompt Library: Switch to Prompt Mode with a single click on the toggle in the header. Save your best prompts with a title and full text, then find them instantly with search and sort (newest, oldest, A-Z).
-▶ One-Click Injection: No more copy-pasting. Click the play button (▶) on any saved prompt to inject it directly into Gemini's input field. The extension detects whether you're on a Gemini page and notifies you if not.
-✏️ Inline Editing: Click a prompt to expand it and edit the text directly. Changes auto-save after a short pause and the sort order updates accordingly.
-💎 Custom Gem Link: Configure a link to your favorite Gem and toggle it on/off with a click. When active, the "New Conversation" button opens your Gem instead of the default chat.
-☁️ Prompt Sync: Enable cloud sync for your prompt library independently from your folders.
-📌 Pinned Prompts: Pin your essential prompts with one click to keep them at the top of your library, separated from the rest by a visual divider.
-⌨️ Prompt Trigger with Live Suggestions: Type # in Gemini's chat field to instantly see all your saved prompts — filtered in real time as you type. Use ↓/↑ to cycle through suggestions, press Space on a unique match to autocomplete, or on an exact match to inject directly.
-
-🌟 FOLDER FEATURES
+🌟 FOLDER MODE
 
 ⌨️ Instant Panel Shortcut: Open the panel instantly from any tab with Ctrl+Shift+1 (or Cmd+Shift+1 on Mac).
 ⚡ Quick Save (Right-Click & Shortcuts): Save the current conversation with a simple right-click, or use the keyboard shortcut (Ctrl+Shift+S or Cmd+Shift+S on Mac) to instantly send it to "⚡ Quick Saves" — with a visual alert if it's already saved!
@@ -29,7 +19,17 @@ With version 4.0, Gemini Folders becomes your true Gemini cockpit: organize your
 ⇅ Custom Sorting: Sort folders and conversations on the fly (Newest, Oldest, A-Z) with changes instantly reflected in your mobile sync.
 🤖 Smart Detection & Search: Automatic pre-fill of your conversation's exact title and a real-time search bar.
 ☁️ Cloud Sync & Backup: Access your organization on all your devices and export your data as JSON.
-🎨 Material 3 Design & Multilingual: Ultra-compact interface with fully custom modal dialogs, automatic dark mode, and support for 27 languages!
+🎨 Material 3 Design & Multilingual: Ultra-compact interface with fully custom modal dialogs, automatic dark mode, and support for 43 languages!
+
+✨ PROMPT MODE
+
+📝 Personal Prompt Library: Switch to Prompt Mode with a single click on the toggle in the header. Save your best prompts with a title and full text, then find them instantly with search and sort (newest, oldest, A-Z).
+▶ One-Click Injection: No more copy-pasting. Click the play button (▶) on any saved prompt to inject it directly into Gemini's input field. The extension detects whether you're on a Gemini page and notifies you if not.
+✏️ Inline Editing: Click a prompt to expand it and edit the text directly. Changes auto-save after a short pause and the sort order updates accordingly.
+💎 Custom Gem Link: Configure a link to your favorite Gem and toggle it on/off with a click. When active, the "New Conversation" button opens your Gem instead of the default chat.
+☁️ Prompt Sync: Enable cloud sync for your prompt library independently from your folders.
+📌 Pinned Prompts: Pin your essential prompts with one click to keep them at the top of your library, separated from the rest by a visual divider.
+⌨️ Prompt Trigger with Live Suggestions: Type # in Gemini's chat field to instantly see all your saved prompts — filtered in real time as you type. Use ↓/↑ to cycle through suggestions, press Space on a unique match to autocomplete, or on an exact match to inject directly.
 
 🛠️ HOW DOES IT WORK?
 
@@ -66,7 +66,7 @@ Interested in Gemini Folders but also use ChatGPT, Claude, Copilot, Grok, Perple
 👉 Install AI Folders: __AF_STORE_URL__
 
 📢 UPDATES:
-Version 4.5.6 (Fewer Tabs): Clicking a saved conversation now switches to the tab already showing it instead of opening a duplicate. Ctrl+click (or Cmd+click on Mac) reuses your last tab.
+Version 4.6.0 (Sub-Folders): Drag a folder onto another one to place it inside. Open the parent as a Tab Group and everything it contains opens with it. Clicking a saved conversation now switches to the tab already showing it instead of opening a duplicate. Ctrl+click (or Cmd+click on Mac) reuses your last tab.
 Version 4.5.5 (Welcome Page): A short guide now opens after installing, showing how to pin the extension and save your first conversation. Search also makes clear it only looks through conversations you have already saved.
 Version 4.5.4 (Uninstall Survey): Removing the extension now opens a short optional feedback page in your language, and nothing is sent unless you submit it yourself.
 Version 4.5.3 (Security & Stability): Extra safeguards for stored links and backup imports, plus internal stability fixes.

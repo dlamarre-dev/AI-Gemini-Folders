@@ -1,19 +1,9 @@
 ﻿Bruker du Google Gemini hver dag – til jobb, koding, skriving eller forskning – men skriver du de samme promptene på nytt igjen og igjen, mens de beste samtalene dine forsvinner i en endeløs historikk?
 Gemini Mapper (Gemini Folders) er tillegget du trenger.
 
-Med versjon 4.0 blir Gemini Mapper din sanne Gemini-cockpit: organiser samtaler i mapper, bygg et bibliotek med gjenbrukbare prompts, og sett dem direkte inn i Gemini med ett klikk – uten kopiering og liming.
+Gemini Mapper blir din sanne Gemini-cockpit: organiser samtaler i mapper, bygg et bibliotek med gjenbrukbare prompts, og sett dem direkte inn i Gemini med ett klikk – uten kopiering og liming.
 
-✨ NYTT I V4.0 – PROMPTMODUS
-
-📝 Personlig promptbibliotek: Bytt til Promptmodus med ett klikk på bryteren i overskriften. Lagre dine beste prompts med tittel og tekst, finn dem umiddelbart med søk og sortering (nyeste, eldste, A–Å).
-▶ Enklikksinnsetting: Klikk på avspillingsknappen (▶) på en lagret prompt for å sette den direkte inn i Geminis inndatafelt. Tillegget varsler deg hvis du ikke er på en Gemini-side.
-✏️ Redigering på stedet: Klikk for å utvide en prompt og rediger teksten direkte. Endringer lagres automatisk etter en kort pause.
-💎 Tilpasset Gem-lenke: Konfigurer en lenke til din favoritt-Gem og slå den av/på med ett klikk. Når den er aktiv, åpner «Ny samtale»-knappen din Gem i stedet for standard chat.
-☁️ Promptsynkronisering: Aktiver skysynkronisering for promptbiblioteket uavhengig av mappene.
-📌 Festede prompts: Fest viktige prompts øverst i biblioteket, atskilt fra resten med en visuell skillelinje.
-⌨️ Promptutløser med direkteforslag: Skriv # i Geminis chatfelt for å umiddelbart se alle dine lagrede prompter — filtrert i sanntid mens du skriver. Bruk ↓/↑ for å navigere, trykk mellomrom på et unikt treff for autofullføring, eller på et eksakt treff for å injisere direkte.
-
-🌟 MAPPEFUNKSJONER
+🌟 MAPPEMODUS
 
 ⌨️ Øyeblikkelig panelsnarvei: Åpne panelet øyeblikkelig fra hvilken som helst fane med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 ⚡ Hurtiglagring (Høyreklikk og snarveier): Lagre gjeldende samtale med et enkelt høyreklikk, eller bruk hurtigtasten (Ctrl+Shift+S eller Cmd+Shift+S på Mac) for å sende den til «⚡ Hurtiglagring» – med en visuell varsling hvis den allerede er lagret!
@@ -30,6 +20,16 @@ Med versjon 4.0 blir Gemini Mapper din sanne Gemini-cockpit: organiser samtaler 
 🤖 Smart oppdaging og søk: Automatisk forhåndsutfylling av samtalens nøyaktige tittel og et søkefelt i sanntid.
 ☁️ Skysynkronisering og sikkerhetskopiering: Tilgang til organiseringen på alle enheter og eksporter data som JSON.
 🎨 Material 3-design og flerspråklig: Ultrakompakt grensesnitt med fullstendig tilpassede modaldialogbokser, automatisk mørk modus og støtte for 43 språk!
+
+✨ PROMPTMODUS
+
+📝 Personlig promptbibliotek: Bytt til Promptmodus med ett klikk på bryteren i overskriften. Lagre dine beste prompts med tittel og tekst, finn dem umiddelbart med søk og sortering (nyeste, eldste, A–Å).
+▶ Enklikksinnsetting: Klikk på avspillingsknappen (▶) på en lagret prompt for å sette den direkte inn i Geminis inndatafelt. Tillegget varsler deg hvis du ikke er på en Gemini-side.
+✏️ Redigering på stedet: Klikk for å utvide en prompt og rediger teksten direkte. Endringer lagres automatisk etter en kort pause.
+💎 Tilpasset Gem-lenke: Konfigurer en lenke til din favoritt-Gem og slå den av/på med ett klikk. Når den er aktiv, åpner «Ny samtale»-knappen din Gem i stedet for standard chat.
+☁️ Promptsynkronisering: Aktiver skysynkronisering for promptbiblioteket uavhengig av mappene.
+📌 Festede prompts: Fest viktige prompts øverst i biblioteket, atskilt fra resten med en visuell skillelinje.
+⌨️ Promptutløser med direkteforslag: Skriv # i Geminis chatfelt for å umiddelbart se alle dine lagrede prompter — filtrert i sanntid mens du skriver. Bruk ↓/↑ for å navigere, trykk mellomrom på et unikt treff for autofullføring, eller på et eksakt treff for å injisere direkte.
 
 🛠️ HVORDAN FUNGERER DET?
 
@@ -66,7 +66,7 @@ Interessert i Gemini Mapper men bruker du også ChatGPT, Claude, Copilot, Grok, 
 👉 Installer AI-mapper: __AF_STORE_URL__
 
 📢 OPPDATERINGER:
-Versjon 4.5.6 (Færre faner): Et klikk på en lagret samtale bytter nå til fanen som allerede viser den, i stedet for å åpne en duplikat. Ctrl+klikk (eller Cmd+klikk på Mac) gjenbruker den siste fanen.
+Versjon 4.6.0 (Undermapper): Dra en mappe oppå en annen for å legge den inni. Åpne foreldermappen som en fanegruppe, og alt innholdet åpnes med den. Et klikk på en lagret samtale bytter nå til fanen som allerede viser den, i stedet for å åpne en duplikat. Ctrl+klikk (eller Cmd+klikk på Mac) gjenbruker den siste fanen.
 Versjon 4.5.5 (Velkomstside): Etter installasjonen åpnes nå en kort veiledning: hvordan du fester utvidelsen og lagrer den første samtalen. Søket gjør det også tydelig at det bare dekker lagrede samtaler.
 Versjon 4.5.4 (Avinstallasjonsundersøkelse): Når du fjerner utvidelsen, åpnes nå en kort valgfri tilbakemeldingsside på ditt språk, og ingenting sendes med mindre du sender det selv.
 Versjon 4.5.3 (Sikkerhet og stabilitet): Ekstra beskyttelse for lagrede lenker og sikkerhetskopiimport, pluss interne stabilitetsrettelser.

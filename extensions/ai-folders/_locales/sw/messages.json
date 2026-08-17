@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Nimeelewa"
   },
+  "whatsNewHeading": {
+    "message": "Yaliyo mapya"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Folda ndani ya folda"
+  },
+  "whatsNewNestedBody": {
+    "message": "Buruta folda moja juu ya nyingine ili kuiweka ndani yake. Fungua folda mama kama kikundi cha vichupo na kila kilichomo hufunguka pamoja nayo."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Vichupo vichache"
+  },
+  "whatsNewReuseBody": {
+    "message": "Kubofya mazungumzo yaliyohifadhiwa hukupeleka kwenye kichupo kinachoyaonyesha tayari. {k}+kubofya hutumia tena kichupo cha mwisho kilichofunguliwa na kiendelezi badala ya kuongeza kingine."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat bado inafanya kazi"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu ilihamisha gumzo lake kwenye anwani mpya. Kuhifadhi na kuingiza vidokezo hufanya kazi tena huko."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + bofya: tumia tena kichupo cha mwisho"
   },

@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "فهمت"
   },
+  "whatsNewHeading": {
+    "message": "ما الجديد"
+  },
+  "whatsNewNestedTitle": {
+    "message": "مجلدات داخل مجلدات"
+  },
+  "whatsNewNestedBody": {
+    "message": "اسحب مجلدًا فوق آخر ليصبح بداخله. افتح المجلد الأصل كمجموعة تبويبات وسيُفتح معه كل ما بداخله."
+  },
+  "whatsNewReuseTitle": {
+    "message": "عدد أقل من التبويبات"
+  },
+  "whatsNewReuseBody": {
+    "message": "النقر على محادثة محفوظة ينقلك إلى التبويب الذي يعرضها بالفعل. النقر مع {k} يعيد استخدام آخر تبويب فتحته الإضافة بدلاً من إضافة تبويب جديد."
+  },
   "chatLinkReuseHint": {
     "message": "نقر مع {k}: إعادة استخدام آخر علامة تبويب"
   },

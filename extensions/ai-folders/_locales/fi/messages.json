@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Selvä"
   },
+  "whatsNewHeading": {
+    "message": "Mitä uutta"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Kansioita kansioiden sisällä"
+  },
+  "whatsNewNestedBody": {
+    "message": "Vedä kansio toisen päälle sijoittaaksesi sen sen sisään. Avaa yläkansio välilehtiryhmänä, niin kaikki sen sisältö avautuu mukana."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Vähemmän välilehtiä"
+  },
+  "whatsNewReuseBody": {
+    "message": "Tallennetun keskustelun napsauttaminen siirtyy välilehteen, jossa se on jo avoinna. {k}+napsautus käyttää uudelleen laajennuksen viimeksi avaamaa välilehteä sen sijaan, että avaisi uuden."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat toimii jatkossakin"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu siirsi keskustelunsa uuteen osoitteeseen. Tallennus ja prompttien lisäys toimivat siellä jälleen."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + napsautus: käytä viimeistä välilehteä uudelleen"
   },

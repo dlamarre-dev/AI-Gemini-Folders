@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Verstanden"
   },
+  "whatsNewHeading": {
+    "message": "Was ist neu"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Ordner in Ordnern"
+  },
+  "whatsNewNestedBody": {
+    "message": "Ziehen Sie einen Ordner auf einen anderen, um ihn darin abzulegen. Öffnen Sie den übergeordneten Ordner als Tab-Gruppe und alles darin öffnet sich mit."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Weniger Tabs"
+  },
+  "whatsNewReuseBody": {
+    "message": "Ein Klick auf eine gespeicherte Unterhaltung wechselt zum Tab, der sie schon zeigt. {k}+Klick verwendet den letzten von der Erweiterung geöffneten Tab erneut, statt einen weiteren hinzuzufügen."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat funktioniert weiter"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu hat seinen Chat auf eine neue Adresse verschoben. Speichern und das Einfügen von Prompts funktionieren dort wieder."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + Klick: letzten Tab wiederverwenden"
   },

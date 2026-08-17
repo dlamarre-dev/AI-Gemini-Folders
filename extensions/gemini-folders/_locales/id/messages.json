@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Mengerti"
   },
+  "whatsNewHeading": {
+    "message": "Apa yang baru"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Folder di dalam folder"
+  },
+  "whatsNewNestedBody": {
+    "message": "Seret satu folder ke folder lain untuk menempatkannya di dalamnya. Buka folder induk sebagai grup tab dan semua isinya ikut terbuka."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Lebih sedikit tab"
+  },
+  "whatsNewReuseBody": {
+    "message": "Mengklik percakapan tersimpan akan beralih ke tab yang sudah menampilkannya. {k}+klik menggunakan kembali tab terakhir yang dibuka ekstensi, bukan menambah tab baru."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: gunakan kembali tab terakhir"
   },

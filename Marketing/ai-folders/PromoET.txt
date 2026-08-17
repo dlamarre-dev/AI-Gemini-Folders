@@ -6,17 +6,7 @@ Korraldage kõigi oma lemmik-AI-tööriistade vestlused jagatud kaustadesse, loo
 
 AI kaustad integreerub natiivselt kõigi peamiste AI-vestlusassistentidega, nagu Claude, ChatGPT ja Gemini, ning kohalike LLM-idega, mida ise käitate. Eri platvormide vestlused võivad asuda täpselt samas kaustas. Iga vestlus kuvab oma teenuse värvi ja logo, nii et te teate alati, kust see pärineb.
 
-✨ S – PROMPTI REŽIIM
-
-📝 Isiklik promptide kogu: Lülitu Prompti režiimile, klõpsates päise lülitit. Salvesta oma parimad promptid pealkirja ja tekstiga, leia need koheselt otsingu ja sortimisega (uusimad, vanimad, A–Z).
-▶ Lisa ühe klikiga: Klõpsa salvestatud prompti esitamisnuppu (▶), et lisada see otse aktiivse AI sisestusväljale.
-✏️ Otsene redigeerimine: Klõpsa prompti laiendamiseks ja redigeeri teksti otse. Muudatused salvestatakse automaatselt lühikese pausi järel.
-🔀 Uue vestluse nupud: Alustage uut vestlust mis tahes toetatud veebiteenuses otse viipade režiimist — ühe puudutusega.
-☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
-📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
-⌨️ Viipete käivitaja reaalajas soovitustega: Sisestage # mis tahes AI vestlusväljale, et näha kohe kõiki oma salvestatud viipeid — reaalajas filtreeritud kirjutamise ajal. Kasutage ↓/↑ navigeerimiseks, vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral otseseks sisestamiseks.
-
-🌟 KAUSTADE FUNKTSIOONID
+🌟 KAUSTADE REŽIIM
 
 ⌨️ Hetkelise paneeli otsetee: Avage paneel koheselt mis tahes vahekaardilt, kasutades Ctrl+Shift+1 (või Cmd+Shift+1 Macis).
 ⚡ Kiirsalvestus (Paremklõps ja otseteed): Salvesta praegune vestlus lihtsa paremklõpsuga või kasuta klaviatuuri otseteed (Ctrl+Shift+S või Cmd+Shift+S Macis), et saata see «⚡ Kiirsalvestus» kausta – visuaalse teavitusega, kui see on juba salvestatud!
@@ -38,6 +28,16 @@ AI kaustad integreerub natiivselt kõigi peamiste AI-vestlusassistentidega, nagu
 🏠 KOHALIKU LLM TUGI
 
 Kas kasutate kohalikku AI-mudelit (Ollama, LM Studio, Jan või muu)? Seadistage AI kaustad oma kohaliku URL-iga — toetab localhosti ja LAN-aadresse (192.168.x.x, kohandatud hostinimed). Kiirsalvestamine ja kontekstimenüüst salvestamine töötavad ka kohalikes liidestes.
+✨ S – PROMPTI REŽIIM
+
+📝 Isiklik promptide kogu: Lülitu Prompti režiimile, klõpsates päise lülitit. Salvesta oma parimad promptid pealkirja ja tekstiga, leia need koheselt otsingu ja sortimisega (uusimad, vanimad, A–Z).
+▶ Lisa ühe klikiga: Klõpsa salvestatud prompti esitamisnuppu (▶), et lisada see otse aktiivse AI sisestusväljale.
+✏️ Otsene redigeerimine: Klõpsa prompti laiendamiseks ja redigeeri teksti otse. Muudatused salvestatakse automaatselt lühikese pausi järel.
+🔀 Uue vestluse nupud: Alustage uut vestlust mis tahes toetatud veebiteenuses otse viipade režiimist — ühe puudutusega.
+☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
+📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
+⌨️ Viipete käivitaja reaalajas soovitustega: Sisestage # mis tahes AI vestlusväljale, et näha kohe kõiki oma salvestatud viipeid — reaalajas filtreeritud kirjutamise ajal. Kasutage ↓/↑ navigeerimiseks, vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral otseseks sisestamiseks.
+
 🛠️ KUIDAS SEE TÖÖTAB?
 
 Kaustade režiim:
@@ -66,7 +66,7 @@ Sirvi koodi või panusta: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 UUENDUSED:
-Versioon 1.6.4 (Vähem vahekaarte): Salvestatud vestlusel klõpsamine läheb nüüd vahekaardile, kus see on juba avatud, duplikaadi avamise asemel. Ctrl+klõps (või Cmd+klõps Macis) kasutab viimast vahekaarti uuesti.
+Versioon 1.7.0 (Alamkaustad): Lohista üks kaust teise peale, et see sinna paigutada. Ava ülemkaust vahekaardirühmana ja kogu selle sisu avaneb koos sellega. Salvestatud vestlusel klõpsamine läheb nüüd vahekaardile, kus see on juba avatud, duplikaadi avamise asemel. Ctrl+klõps (või Cmd+klõps Macis) kasutab viimast vahekaarti uuesti. Baidu Chat kolis uuele aadressile, kus salvestamine ja promptide sisestamine töötavad taas.
 Versioon 1.6.3 (Tervituslehekülg): Pärast paigaldamist avaneb nüüd lühike juhend: kuidas laiendus kinnitada ja esimene vestlus salvestada. Otsing annab samuti selgelt teada, et hõlmab ainult juba salvestatud vestlusi.
 Versioon 1.6.2 (Kimi): Alustage uusi Kimi vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid. Laienduse eemaldamine avab nüüd lühikese valikulise tagasiside lehe teie keeles ja midagi ei saadeta, kui te seda ise ära ei saada.
 Versioon 1.6.1 (Turvalisus ja stabiilsus): Täiendav kaitse salvestatud linkidele ja varukoopiate importimisele ning sisemised stabiilsusparandused.

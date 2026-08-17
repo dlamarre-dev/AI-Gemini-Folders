@@ -250,3 +250,65 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) {
   .btn, .btn-primary:hover { transition: none; transform: none; }
 }
+
+/* ── What's-new page (whats-new.html) ───────────────────────────────────────
+   Same shell, same cards. Only three things differ: the items are features
+   rather than steps, so the counter markers are off; the brand row carries the
+   installed version; and two small illustrations are local to this page. */
+.cards .step-title::before { content: none; }
+
+.version-chip {
+  margin-inline-start: 2px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--card-2);
+  border: 1px solid var(--card-border);
+  color: var(--faint);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* A key on a keyboard: whatever this platform calls its modifier. */
+.keycap {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 11px;
+  border-radius: 8px;
+  background: var(--card-2);
+  border: 1px solid var(--card-border);
+  border-bottom-width: 2px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.glyph-plus { font-size: 1rem; font-weight: 700; }
+
+/* A folder holding a folder, in the popup's own shape: the child is indented with
+   margin-inline-start, exactly like the real thing (CLAUDE.md §7). */
+.mini-folder {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 150px;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--card-2);
+  border: 1px solid var(--card-border);
+}
+.mini-folder--child {
+  width: auto;
+  margin-inline-start: 14px;
+  background: rgba(138, 109, 240, 0.14);
+  border-color: rgba(138, 109, 240, 0.40);
+}
+.mini-row { display: flex; align-items: center; gap: 6px; }
+.mini-row--chat { padding-inline-start: 6px; }
+.mini-ico { font-size: 0.8rem; line-height: 1; }
+.mini-bar {
+  height: 6px;
+  flex: 1;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.20);
+}
+.mini-bar--sm { flex: 0 0 58%; background: rgba(255, 255, 255, 0.13); }

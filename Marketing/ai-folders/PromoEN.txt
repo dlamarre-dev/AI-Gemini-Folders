@@ -6,17 +6,7 @@ Organize conversations from all your favorite AI tools into shared folders, buil
 
 AI Folders works natively across all the major AI chat assistants, such as Claude, ChatGPT, Gemini and the local LLMs you run yourself. Conversations from different platforms share the exact same folder, and each chat shows its native service's color and logo so you always know where it came from.
 
-✨ PROMPT MODE
-
-📝 Personal Prompt Library: Switch to Prompt Mode with a single click on the toggle in the header. Save your best prompts with a title and full text, then find them instantly with search and sort (newest, oldest, A-Z).
-▶ One-Click Injection: No more copy-pasting. Click the play button (▶) on any saved prompt to inject it directly into any supported AI's input field.
-✏️ Inline Editing: Click a prompt to expand it and edit the text directly. Changes auto-save after a short pause.
-🔀 New Conversation Buttons: Launch a fresh conversation on any of the supported web services directly from Prompt Mode with one tap.
-📌 Pinned Prompts: Pin your essential prompts to keep them at the top of your library, separated from the rest by a visual divider.
-☁️ Prompt Sync: Enable cloud sync for your prompt library independently from your folders.
-⌨️ Prompt Trigger with Live Suggestions: Type # in any AI's chat field to instantly see all your saved prompts — filtered in real time as you type. Use ↓/↑ to cycle through suggestions, press Space on a unique match to autocomplete, or on an exact match to inject directly. Works seamlessly across web platforms and local LLMs (limited support on Perplexity).
-
-🌟 FOLDER FEATURES
+🌟 FOLDER MODE
 
 ⌨️ Instant Panel Shortcut: Open the panel instantly from any tab with Ctrl+Shift+1 (or Cmd+Shift+1 on Mac).
 ⚡ Quick Save (Right-Click & Shortcuts): Save the current conversation with a simple right-click, or use the keyboard shortcut (Ctrl+Shift+S or Cmd+Shift+S on Mac) to instantly send it to "⚡ Quick Saves" — with a visual alert if it's already saved!
@@ -37,6 +27,16 @@ AI Folders works natively across all the major AI chat assistants, such as Claud
 🏠 LOCAL LLM SUPPORT
 
 Running a local AI model (Ollama, LM Studio, Jan, or any other)? Configure AI Folders with your local URL — supports localhost and LAN addresses (192.168.x.x, custom hostnames). Quick-save, context-menu save, and prompt injection all work on most local UIs (including Open WebUI).
+
+✨ PROMPT MODE
+
+📝 Personal Prompt Library: Switch to Prompt Mode with a single click on the toggle in the header. Save your best prompts with a title and full text, then find them instantly with search and sort (newest, oldest, A-Z).
+▶ One-Click Injection: No more copy-pasting. Click the play button (▶) on any saved prompt to inject it directly into any supported AI's input field.
+✏️ Inline Editing: Click a prompt to expand it and edit the text directly. Changes auto-save after a short pause.
+🔀 New Conversation Buttons: Launch a fresh conversation on any of the supported web services directly from Prompt Mode with one tap.
+📌 Pinned Prompts: Pin your essential prompts to keep them at the top of your library, separated from the rest by a visual divider.
+☁️ Prompt Sync: Enable cloud sync for your prompt library independently from your folders.
+⌨️ Prompt Trigger with Live Suggestions: Type # in any AI's chat field to instantly see all your saved prompts — filtered in real time as you type. Use ↓/↑ to cycle through suggestions, press Space on a unique match to autocomplete, or on an exact match to inject directly. Works seamlessly across web platforms and local LLMs (limited support on Perplexity).
 
 🛠️ HOW DOES IT WORK?
 
@@ -67,7 +67,7 @@ Every line of code is public on GitHub. Anyone can clone the repository, build i
 Browse the code or contribute: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 📢 VERSION HISTORY:
-Version 1.6.4 (Fewer Tabs): Clicking a saved conversation now switches to the tab already showing it instead of opening a duplicate. Ctrl+click (or Cmd+click on Mac) reuses your last tab.
+Version 1.7.0 (Sub-Folders): Drag a folder onto another one to place it inside. Open the parent as a Tab Group and everything it contains opens with it. Clicking a saved conversation now switches to the tab already showing it instead of opening a duplicate. Ctrl+click (or Cmd+click on Mac) reuses your last tab. Baidu Chat moved to a new address, where saving and prompt injection work again.
 Version 1.6.3 (Welcome Page): A short guide now opens after installing, showing how to pin the extension and save your first conversation. Search also makes clear it only looks through conversations you have already saved.
 Version 1.6.2 (Kimi): Launch new Kimi conversations directly from Prompt Mode, save and organize them in folders, and inject prompts. Removing the extension now opens a short optional feedback page in your language, and nothing is sent unless you submit it yourself.
 Version 1.6.1 (Security & Stability): Extra safeguards for stored links and backup imports, plus internal stability fixes.

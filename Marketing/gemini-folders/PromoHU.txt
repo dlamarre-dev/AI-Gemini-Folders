@@ -1,19 +1,9 @@
 ﻿Naponta használja a Google Geminit — munkához, kódoláshoz, íráshoz vagy kutatáshoz —, mégis újra és újra ugyanazokat a promptokat gépeli, miközben legjobb beszélgetései eltűnnek a végtelen előzményekben?
 Gemini-mappák (Gemini Folders) a bővítmény, amelyre szüksége van.
 
-A 4.0-s verzióval a Gemini-mappák valódi Gemini-kokpitjévé válik: rendszerezze a beszélgetéseket mappákba, építsen fel újrafelhasználható promptokból álló könyvtárat, és egyetlen kattintással illessze be őket közvetlenül a Geminibe — másolás-beillesztés nélkül.
+A Gemini-mappák valódi Gemini-kokpitjévé válik: rendszerezze a beszélgetéseket mappákba, építsen fel újrafelhasználható promptokból álló könyvtárat, és egyetlen kattintással illessze be őket közvetlenül a Geminibe — másolás-beillesztés nélkül.
 
-✨ ÚJDONSÁGOK a v4.0-ban — PROMPTÜZEMMÓD
-
-📝 Személyes promptkönyvtár: Váltson Promptüzemmódba egyetlen kattintással a fejlécben lévő kapcsolón. Mentse el legjobb promptjait cím és teljes szöveg megadásával, majd keresse meg őket azonnal kereséssel és rendezéssel (legújabb, legrégebbi, A–Z).
-▶ Egyetlen kattintásos beillesztés: Nincs több másolás-beillesztés. Kattintson a lejátszás gombra (▶) bármely mentett promptnál, hogy közvetlenül a Gemini beviteli mezőjébe illessze be. A bővítmény észleli, hogy Gemini-oldalon van-e, és értesíti, ha nem.
-✏️ Helyszíni szerkesztés: Kattintson egy promptra a kibontáshoz és a szöveg közvetlen szerkesztéséhez. A módosítások rövid szünet után automatikusan mentődnek, a rendezési sorrend frissül.
-💎 Egyéni Gem-hivatkozás: Állítson be hivatkozást kedvenc Gemjéhez, és kapcsolja be/ki egyetlen kattintással. Aktiválva az „Új beszélgetés" gomb az alapértelmezett csevegés helyett a Gemjét nyitja meg.
-☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
-📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
-⌨️ Prompt-aktiváló élő javaslatokkal: Gépelje be a # jelet a Gemini csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját — valós időben szűrve gépelés közben. Használja a ↓/↑ billentyűket a navigáláshoz, majd nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a közvetlen beillesztéshez.
-
-🌟 MAPPAFUNKCIÓK
+🌟 MAPPAÜZEMMÓD
 
 ⌨️ Azonnali panel-gyorsbillentyű: Nyissa meg a panelt azonnal bármely lapról a Ctrl+Shift+1 (vagy Mac-en Cmd+Shift+1) kombinációval.
 ⚡ Gyorsmentés (Jobb kattintás és billentyűparancsok): Mentse az aktuális beszélgetést egyszerű jobb kattintással, vagy használja a billentyűparancsot (Ctrl+Shift+S vagy Mac-en Cmd+Shift+S), hogy azonnal a „⚡ Gyorsmentések" közé küldje — vizuális figyelmeztetéssel, ha már mentve van!
@@ -30,6 +20,16 @@ A 4.0-s verzióval a Gemini-mappák valódi Gemini-kokpitjévé válik: rendszer
 🤖 Intelligens felismerés és keresés: A beszélgetés pontos címének automatikus előkitöltése és valós idejű keresősáv.
 ☁️ Felhőszinkronizálás és biztonsági mentés: Érje el rendszerezését minden eszközén, és exportálja adatait JSON formátumban.
 🎨 Material 3 dizájn és többnyelvűség: Ultrakompakt felület teljesen egyéni modális párbeszédpanelekkel, automatikus sötét móddal és 43 nyelv támogatásával!
+
+✨ ban — PROMPTÜZEMMÓD
+
+📝 Személyes promptkönyvtár: Váltson Promptüzemmódba egyetlen kattintással a fejlécben lévő kapcsolón. Mentse el legjobb promptjait cím és teljes szöveg megadásával, majd keresse meg őket azonnal kereséssel és rendezéssel (legújabb, legrégebbi, A–Z).
+▶ Egyetlen kattintásos beillesztés: Nincs több másolás-beillesztés. Kattintson a lejátszás gombra (▶) bármely mentett promptnál, hogy közvetlenül a Gemini beviteli mezőjébe illessze be. A bővítmény észleli, hogy Gemini-oldalon van-e, és értesíti, ha nem.
+✏️ Helyszíni szerkesztés: Kattintson egy promptra a kibontáshoz és a szöveg közvetlen szerkesztéséhez. A módosítások rövid szünet után automatikusan mentődnek, a rendezési sorrend frissül.
+💎 Egyéni Gem-hivatkozás: Állítson be hivatkozást kedvenc Gemjéhez, és kapcsolja be/ki egyetlen kattintással. Aktiválva az „Új beszélgetés" gomb az alapértelmezett csevegés helyett a Gemjét nyitja meg.
+☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
+📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
+⌨️ Prompt-aktiváló élő javaslatokkal: Gépelje be a # jelet a Gemini csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját — valós időben szűrve gépelés közben. Használja a ↓/↑ billentyűket a navigáláshoz, majd nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a közvetlen beillesztéshez.
 
 🛠️ HOGYAN MŰKÖDIK?
 
@@ -66,7 +66,7 @@ Böngésszen a kódban vagy járuljon hozzá: https://github.com/dlamarre-dev/AI
 👉 Telepítse a MI mappák alkalmazást: __AF_STORE_URL__
 
 📢 FRISSÍTÉSEK:
-4.5.6-os verzió (Kevesebb lap): A mentett beszélgetésre kattintva most arra a lapra vált, amely már megjeleníti, ahelyett hogy másolatot nyitna. A Ctrl+kattintás (vagy Cmd+kattintás Macen) az utolsó lapot használja újra.
+4.6.0-os verzió (Almappák): Húzzon egy mappát egy másikra, hogy abba helyezze. Nyissa meg a szülőmappát lapcsoportként, és minden tartalma vele együtt megnyílik. A mentett beszélgetésre kattintva most arra a lapra vált, amely már megjeleníti, ahelyett hogy másolatot nyitna. A Ctrl+kattintás (vagy Cmd+kattintás Macen) az utolsó lapot használja újra.
 4.5.5-ös verzió (Üdvözlőoldal): A telepítés után most rövid útmutató nyílik meg: hogyan rögzítheti a kiegészítőt, és hogyan mentheti el az első beszélgetést. A keresés is egyértelművé teszi, hogy csak a már mentett beszélgetésekre terjed ki.
 4.5.4-es verzió (Eltávolítási kérdőív): A kiegészítő eltávolítása most egy rövid, nem kötelező visszajelzési oldalt nyit meg a saját nyelvén, és semmi nem kerül elküldésre, amíg Ön el nem küldi.
 4.5.3-as verzió (Biztonság és stabilitás): További védelem a mentett hivatkozásokhoz és a biztonsági mentések importjához, valamint belső stabilitási javítások.

@@ -1,19 +1,9 @@
 ﻿Ginagamit mo ba ang Google Gemini araw-araw — para sa trabaho, code, pagsusulat, o pananaliksik — ngunit paulit-ulit kang nagta-type ng parehong mga prompt, habang nawawala ang iyong mga pinakamahusay na pag-uusap sa walang katapusang kasaysayan?
 Ang Mga Folder ng Gemini (Gemini Folders) ang extension na kailangan mo.
 
-Sa bersyon 4.0, ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockpit: ayusin ang mga pag-uusap sa mga folder, bumuo ng library ng mga reusable na prompt, at i-inject ang mga ito nang direkta sa Gemini sa isang click — hindi na kailangang mag-copy-paste.
+Ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockpit: ayusin ang mga pag-uusap sa mga folder, bumuo ng library ng mga reusable na prompt, at i-inject ang mga ito nang direkta sa Gemini sa isang click — hindi na kailangang mag-copy-paste.
 
-✨ BAGO SA v4.0 — PROMPT MODE
-
-📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).
-▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng Gemini. Nde-detect ng extension kung nasa Gemini page ka at inaabisuhan ka kung wala.
-✏️ Inline na Pag-edit: I-click ang isang prompt para palawakin ito at i-edit ang teksto nang direkta. Awtomatikong nase-save ang mga pagbabago pagkatapos ng maikling pause at ina-update ang sort order.
-💎 Custom Gem Link: Mag-configure ng link sa iyong paboritong Gem at i-toggle ito on/off sa isang click. Kapag aktibo, ang button na "Bagong Pag-uusap" ay nagbubukas ng iyong Gem sa halip na ang default na chat.
-☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
-📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
-⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng Gemini para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
-
-🌟 MGA FEATURE NG FOLDER
+🌟 FOLDER MODE
 
 ⌨️ Instant na panel shortcut: Buksan ang panel agad mula sa anumang tab gamit ang Ctrl+Shift+1 (o Cmd+Shift+1 sa Mac).
 ⚡ Mabilis na Pag-save (Right-Click at Shortcuts): I-save ang kasalukuyang pag-uusap sa pamamagitan ng simpleng right-click, o gamitin ang keyboard shortcut (Ctrl+Shift+S o Cmd+Shift+S sa Mac) para agad itong ipadala sa "⚡ Mabilis na Pag-save" — na may visual na alerto kung nai-save na ito!
@@ -30,6 +20,16 @@ Sa bersyon 4.0, ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockp
 🤖 Smart Detection at Search: Awtomatikong pre-fill ng eksaktong pamagat ng iyong pag-uusap at real-time na search bar.
 ☁️ Cloud Sync at Backup: I-access ang iyong organisasyon sa lahat ng iyong device at i-export ang iyong data bilang JSON.
 🎨 Material 3 Design at Multilingual: Ultra-compact na interface na may ganap na custom na modal dialog, awtomatikong dark mode, at suporta para sa 43 na wika!
+
+✨ PROMPT MODE
+
+📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).
+▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng Gemini. Nde-detect ng extension kung nasa Gemini page ka at inaabisuhan ka kung wala.
+✏️ Inline na Pag-edit: I-click ang isang prompt para palawakin ito at i-edit ang teksto nang direkta. Awtomatikong nase-save ang mga pagbabago pagkatapos ng maikling pause at ina-update ang sort order.
+💎 Custom Gem Link: Mag-configure ng link sa iyong paboritong Gem at i-toggle ito on/off sa isang click. Kapag aktibo, ang button na "Bagong Pag-uusap" ay nagbubukas ng iyong Gem sa halip na ang default na chat.
+☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
+📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
+⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng Gemini para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
 
 🛠️ PAANO ITO GUMAGANA?
 
@@ -66,7 +66,7 @@ Interesado sa Mga Folder ng Gemini pero gumagamit din ng ChatGPT, Claude, Copilo
 👉 I-install ang Mga AI Folder: __AF_STORE_URL__
 
 📢 MGA UPDATE:
-Bersyon 4.5.6 (Mas kaunting tab): Ang pag-click sa naka-save na usapan ay lumilipat na ngayon sa tab na nagpapakita na nito, hindi na nagbubukas ng duplicate. Ang Ctrl+click (o Cmd+click sa Mac) ay gumagamit muli ng huling tab mo.
+Bersyon 4.6.0 (Mga Subfolder): I-drag ang isang folder papunta sa isa pa para ilagay ito sa loob. Buksan ang parent folder bilang tab group at bubukas din ang lahat ng nasa loob nito. Ang pag-click sa naka-save na usapan ay lumilipat na ngayon sa tab na nagpapakita na nito, hindi na nagbubukas ng duplicate. Ang Ctrl+click (o Cmd+click sa Mac) ay gumagamit muli ng huling tab mo.
 Bersyon 4.5.5 (Pahina ng pagtanggap): Pagkatapos mag-install, may maikling gabay nang bumubukas: kung paano i-pin ang extension at i-save ang unang usapan mo. Malinaw ding sinasabi ng paghahanap na mga naka-save na usapan lang ang hinahanap nito.
 Bersyon 4.5.4 (Survey sa pag-alis): Ang pag-alis ng extension ay nagbubukas na ngayon ng maikling opsyonal na pahina ng feedback sa wika mo, at walang ipinapadala maliban kung ikaw mismo ang magpadala.
 Bersyon 4.5.3 (Seguridad at katatagan): Karagdagang proteksyon para sa mga naka-save na link at pag-import ng backup, kasama ang mga panloob na pag-aayos sa katatagan.

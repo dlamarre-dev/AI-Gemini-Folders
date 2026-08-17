@@ -1,19 +1,9 @@
 ﻿Naudoji Google Gemini kiekvieną dieną – darbui, kodavimui, rašymui ar tyrimams – bet vis iš naujo rašai tuos pačius promptus, o geriausi pokalbiai dingsta begalinėje istorijoje?
 Gemini Aplankai (Gemini Folders) – plėtinys, kurio reikia.
 
-Su versija 4.0 Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbius aplankuose, kurkite pakartotinai naudojamų promptų biblioteką ir įterpk juos tiesiai į Gemini vienu paspaudimu – jokio kopijavimo ir įklijavimo.
+Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbius aplankuose, kurkite pakartotinai naudojamų promptų biblioteką ir įterpk juos tiesiai į Gemini vienu paspaudimu – jokio kopijavimo ir įklijavimo.
 
-✨ NAUJIENA V4.0 – PROMPTŲ REŽIMAS
-
-📝 Asmeninė promptų biblioteka: Perjunk į Promptų režimą paspausdamas antraštės perjungiklį. Išsaugok geriausius promptus su pavadinimu ir tekstu, rask juos iš karto naudodamas paiešką ir rikiavimą (naujausi, seniausi, A–Ž).
-▶ Įterpimas vienu paspaudimu: Spustelėk paleidimo mygtuką (▶) ant išsaugoto prompto, kad jis būtų įterptas tiesiai į Gemini įvesties lauką.
-✏️ Tiesioginis redagavimas: Spustelėk norėdamas išplėsti promptą ir redaguok tekstą tiesiogiai. Pakeitimai automatiškai išsaugomi po trumpos pauzės.
-💎 Tinkintas Gem nuoroda: Sukonfigūruok nuorodą į mėgstamą Gem ir įjunk/išjunk ją vienu paspaudimu.
-☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
-📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
-⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # Gemini pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Naudokite ↓/↑ naršymui, paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui.
-
-🌟 APLANKŲ FUNKCIJOS
+🌟 APLANKŲ REŽIMAS
 
 ⌨️ Momentinis skydelio spartusis klavišas: Atidarykite skydelį akimirksniu iš bet kurio skirtuko su Ctrl+Shift+1 (arba Cmd+Shift+1 „Mac").
 ⚡ Greitas išsaugojimas (Dešinysis spustelėjimas ir spartieji klavišai): Išsaugok dabartinį pokalbį paprastu dešiniuoju spustelėjimu arba naudok sparčiąją klavišų kombinaciją (Ctrl+Shift+S arba Cmd+Shift+S „Mac") norėdamas jį siųsti į «⚡ Greitas išsaugojimas» – su vizualiniu įspėjimu, jei jis jau išsaugotas!
@@ -30,6 +20,16 @@ Su versija 4.0 Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbiu
 🤖 Išmanus aptikimas ir paieška: Automatinis tikslaus pokalbio pavadinimo pildymas ir realiojo laiko paieškos juosta.
 ☁️ Debesies sinchronizavimas ir atsarginės kopijos: Prieiga prie organizavimo visuose įrenginiuose ir duomenų eksportavimas JSON formatu.
 🎨 „Material 3" dizainas ir daugiakalbis: Itin kompaktiškas sąsaja su visiškai tinkintais modaliniais dialogo langais, automatinis tamsus režimas ir 43 kalbų palaikymas!
+
+✨ PROMPTŲ REŽIMAS
+
+📝 Asmeninė promptų biblioteka: Perjunk į Promptų režimą paspausdamas antraštės perjungiklį. Išsaugok geriausius promptus su pavadinimu ir tekstu, rask juos iš karto naudodamas paiešką ir rikiavimą (naujausi, seniausi, A–Ž).
+▶ Įterpimas vienu paspaudimu: Spustelėk paleidimo mygtuką (▶) ant išsaugoto prompto, kad jis būtų įterptas tiesiai į Gemini įvesties lauką.
+✏️ Tiesioginis redagavimas: Spustelėk norėdamas išplėsti promptą ir redaguok tekstą tiesiogiai. Pakeitimai automatiškai išsaugomi po trumpos pauzės.
+💎 Tinkintas Gem nuoroda: Sukonfigūruok nuorodą į mėgstamą Gem ir įjunk/išjunk ją vienu paspaudimu.
+☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
+📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
+⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # Gemini pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Naudokite ↓/↑ naršymui, paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui.
 
 🛠️ KAIP TAI VEIKIA?
 
@@ -65,7 +65,7 @@ Domitės Gemini Aplankai, bet naudojate ir ChatGPT, Claude, Copilot, Grok, Perpl
 👉 Įdiekite AI aplankus: __AF_STORE_URL__
 
 📢 ATNAUJINIMAI:
-Versija 4.5.6 (Mažiau skirtukų): Spustelėjus išsaugotą pokalbį dabar pereinama į skirtuką, kuriame jis jau atidarytas, užuot atidarius dublikatą. Ctrl+spustelėjimas (arba Cmd+spustelėjimas Mac) pakartotinai naudoja paskutinį skirtuką.
+Versija 4.6.0 (Poaplankiai): Vilkite vieną aplanką ant kito, kad įdėtumėte jį į vidų. Atverkite pirminį aplanką kaip kortelių grupę – atsivers visas jo turinys. Spustelėjus išsaugotą pokalbį dabar pereinama į skirtuką, kuriame jis jau atidarytas, užuot atidarius dublikatą. Ctrl+spustelėjimas (arba Cmd+spustelėjimas Mac) pakartotinai naudoja paskutinį skirtuką.
 Versija 4.5.5 (Pasveikinimo puslapis): Po įdiegimo dabar atsidaro trumpas vadovas: kaip prisegti plėtinį ir išsaugoti pirmą pokalbį. Paieška taip pat aiškiai nurodo, kad apima tik jau išsaugotus pokalbius.
 Versija 4.5.4 (Pašalinimo apklausa): Pašalinus plėtinį dabar atsidaro trumpas neprivalomas atsiliepimų puslapis jūsų kalba, ir nieko neišsiunčiama, nebent patys jį išsiųstumėte.
 Versija 4.5.3 (Sauga ir stabilumas): Papildoma išsaugotų nuorodų ir atsarginių kopijų importo apsauga bei vidiniai stabilumo pataisymai.

@@ -1,19 +1,9 @@
 ﻿¿Usas Google Gemini a diario — para trabajo, código, redacción o investigación — pero sigues reescribiendo los mismos prompts mientras tus mejores conversaciones desaparecen en un historial interminable?
 Carpetas de Gemini (Gemini Folders) es la extensión que necesitas.
 
-Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de Gemini: organiza tus conversaciones en carpetas, construye una biblioteca de prompts reutilizables e inyéctalos directamente en Gemini con un solo clic, sin copiar ni pegar.
+Carpetas de Gemini se convierte en tu verdadero cockpit de Gemini: organiza tus conversaciones en carpetas, construye una biblioteca de prompts reutilizables e inyéctalos directamente en Gemini con un solo clic, sin copiar ni pegar.
 
-✨ NOVEDAD en v4.0 — MODO PROMPTS
-
-📝 Biblioteca personal de prompts: Cambia al modo Prompt con un solo clic en el botón de alternancia del encabezado. Guarda tus mejores prompts con un título y texto completo, y encuéntralos al instante con búsqueda y ordenación (más recientes, más antiguos, A-Z).
-▶ Inyección con un clic: Se acabó copiar y pegar. Haz clic en el botón de reproducción (▶) de cualquier prompt guardado para inyectarlo directamente en el campo de texto de Gemini. La extensión detecta si estás en una página de Gemini y te avisa si no es así.
-✏️ Edición en línea: Haz clic en un prompt para desplegarlo y editar el texto directamente. Los cambios se guardan automáticamente tras una breve pausa y el orden se actualiza en consecuencia.
-💎 Enlace Gem personalizado: Configura un enlace a tu Gem favorito y actívalo con un clic. Cuando está activo, el botón "Nueva conversación" abre tu Gem en lugar del chat por defecto.
-☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
-📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
-⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de Gemini para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Usa ↓/↑ para navegar entre sugerencias, pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente.
-
-🌟 FUNCIONES DE CARPETAS
+🌟 MODO CARPETAS
 
 ⌨️ Atajo de teclado instantáneo: Abre el panel al instante desde cualquier pestaña con Ctrl+Shift+1 (o Cmd+Shift+1 en Mac).
 ⚡ Guardado Rápido (Clic derecho y Atajos): Guarda la conversación con un simple clic derecho, o usa el atajo de teclado (Ctrl+Shift+S o Cmd+Shift+S en Mac) para enviarla al instante a "⚡ Guardados Rápidos" — ¡con alerta visual si ya está guardada!
@@ -30,6 +20,16 @@ Con la versión 4.0, Carpetas de Gemini se convierte en tu verdadero cockpit de 
 🤖 Detección inteligente y Búsqueda: Relleno automático del título exacto de tu conversación y barra de búsqueda en tiempo real.
 ☁️ Sincronización en la nube y Copia de seguridad: Accede a tu organización desde todos tus dispositivos y exporta tus datos en JSON.
 🎨 Diseño Material 3 y Multilingüe: Interfaz ultracompacta con diálogos totalmente personalizados, modo oscuro automático y soporte para 43 idiomas.
+
+✨ MODO PROMPTS
+
+📝 Biblioteca personal de prompts: Cambia al modo Prompt con un solo clic en el botón de alternancia del encabezado. Guarda tus mejores prompts con un título y texto completo, y encuéntralos al instante con búsqueda y ordenación (más recientes, más antiguos, A-Z).
+▶ Inyección con un clic: Se acabó copiar y pegar. Haz clic en el botón de reproducción (▶) de cualquier prompt guardado para inyectarlo directamente en el campo de texto de Gemini. La extensión detecta si estás en una página de Gemini y te avisa si no es así.
+✏️ Edición en línea: Haz clic en un prompt para desplegarlo y editar el texto directamente. Los cambios se guardan automáticamente tras una breve pausa y el orden se actualiza en consecuencia.
+💎 Enlace Gem personalizado: Configura un enlace a tu Gem favorito y actívalo con un clic. Cuando está activo, el botón "Nueva conversación" abre tu Gem en lugar del chat por defecto.
+☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
+📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
+⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de Gemini para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Usa ↓/↑ para navegar entre sugerencias, pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente.
 
 🛠️ ¿CÓMO FUNCIONA?
 
@@ -66,7 +66,7 @@ Explorar el código o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 👉 Instalar Carpetas IA: __AF_STORE_URL__
 
 📢 ACTUALIZACIONES:
-Versión 4.5.6 (Menos pestañas): Hacer clic en una conversación guardada ahora cambia a la pestaña que ya la muestra en lugar de abrir un duplicado. Ctrl+clic (o Cmd+clic en Mac) reutiliza tu última pestaña.
+Versión 4.6.0 (Subcarpetas): Arrastra una carpeta sobre otra para meterla dentro. Abre la carpeta principal como grupo de pestañas y se abrirá todo lo que contiene. Hacer clic en una conversación guardada ahora cambia a la pestaña que ya la muestra en lugar de abrir un duplicado. Ctrl+clic (o Cmd+clic en Mac) reutiliza tu última pestaña.
 Versión 4.5.5 (Página de bienvenida): Tras la instalación se abre ahora una breve guía: cómo fijar la extensión y guardar tu primera conversación. La búsqueda también deja claro que solo cubre las conversaciones ya guardadas.
 Versión 4.5.4 (Encuesta de desinstalación): Al eliminar la extensión ahora se abre una breve página de comentarios opcional en tu idioma, y no se envía nada a menos que la envíes tú mismo.
 Versión 4.5.3 (Seguridad y estabilidad): Protecciones adicionales para los enlaces guardados y las importaciones de copias de seguridad, además de correcciones internas de estabilidad.

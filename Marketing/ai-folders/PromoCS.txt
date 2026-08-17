@@ -6,17 +6,7 @@ Organizujte konverzace ze všech vašich oblíbených AI nástrojů do sdílený
 
 AI složky se nativně integrují se všemi hlavními AI chatovacími asistenty, jako jsou Claude, ChatGPT a Gemini, a s lokálními LLM, které si spustíte sami. Konverzace z různých platforem mohou sdílet úplně stejnou složku. Každý chat zobrazuje barvu a logo své služby, takže vždy víte, odkud pochází.
 
-✨ REŽIM VÝZEV
-
-📝 Osobní knihovna výzev: Přepněte do režimu výzev jedním kliknutím na přepínač v záhlaví. Ukládejte nejlepší výzvy s názvem a úplným textem a okamžitě je najděte díky vyhledávání a řazení (nejnovější, nejstarší, A-Z).
-▶ Vložení jedním kliknutím: Konec kopírování a vkládání. Klikněte na tlačítko přehrávání (▶) u uložené výzvy a vloží se přímo do vstupního pole aktivní AI.
-✏️ Úprava na místě: Klikněte na výzvu, rozbalte ji a přímo upravte text. Změny se automaticky uloží po krátkém okamžiku a pořadí řazení se odpovídajícím způsobem aktualizuje.
-🔀 Tlačítka nové konverzace: Spusťte novou konverzaci na libovolné z podporovaných webových služeb přímo z režimu promptů — jedním klepnutím.
-☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
-📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
-⌨️ Spouštěč promptů s živými návrhy: Napište # do chatovacího pole libovolné AI a okamžitě uvidíte všechny své uložené prompty — filtrované v reálném čase při psaní. Pomocí ↓/↑ procházejte návrhy, stiskněte mezerník u jedinečné shody pro automatické doplnění nebo u přesné shody pro přímé vložení.
-
-🌟 FUNKCE SLOŽEK
+🌟 REŽIM SLOŽEK
 
 ⌨️ Okamžitá klávesová zkratka: Otevřete panel okamžitě z libovolné záložky pomocí Ctrl+Shift+1 (nebo Cmd+Shift+1 na Macu).
 ⚡ Rychlé uložení (Pravý klik a Zkratky): Uložte konverzaci jednoduchým pravým kliknutím nebo klávesovými zkratkami (Ctrl+Shift+S nebo Cmd+Shift+S na Macu) a okamžitě ji odešlete do „⚡ Rychlých uložení" — s vizuálním upozorněním, pokud je již uložena!
@@ -38,6 +28,16 @@ AI složky se nativně integrují se všemi hlavními AI chatovacími asistenty,
 🏠 PODPORA LOKÁLNÍHO LLM
 
 Používáte lokální AI model (Ollama, LM Studio, Jan nebo jiný)? Nakonfigurujte AI složky s místní URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastní názvy hostitelů). Rychlé ukládání a ukládání přes kontextové menu fungují i na lokálních rozhraních.
+✨ REŽIM VÝZEV
+
+📝 Osobní knihovna výzev: Přepněte do režimu výzev jedním kliknutím na přepínač v záhlaví. Ukládejte nejlepší výzvy s názvem a úplným textem a okamžitě je najděte díky vyhledávání a řazení (nejnovější, nejstarší, A-Z).
+▶ Vložení jedním kliknutím: Konec kopírování a vkládání. Klikněte na tlačítko přehrávání (▶) u uložené výzvy a vloží se přímo do vstupního pole aktivní AI.
+✏️ Úprava na místě: Klikněte na výzvu, rozbalte ji a přímo upravte text. Změny se automaticky uloží po krátkém okamžiku a pořadí řazení se odpovídajícím způsobem aktualizuje.
+🔀 Tlačítka nové konverzace: Spusťte novou konverzaci na libovolné z podporovaných webových služeb přímo z režimu promptů — jedním klepnutím.
+☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
+📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
+⌨️ Spouštěč promptů s živými návrhy: Napište # do chatovacího pole libovolné AI a okamžitě uvidíte všechny své uložené prompty — filtrované v reálném čase při psaní. Pomocí ↓/↑ procházejte návrhy, stiskněte mezerník u jedinečné shody pro automatické doplnění nebo u přesné shody pro přímé vložení.
+
 🛠️ JAK TO FUNGUJE?
 
 Režim složek:
@@ -67,7 +67,7 @@ Prohlédněte kód nebo přispějte: https://github.com/dlamarre-dev/AI-Gemini-F
 
 
 📢 AKTUALIZACE:
-Verze 1.6.4 (Méně karet): Kliknutí na uloženou konverzaci nyní přejde na kartu, která ji už zobrazuje, místo otevření duplikátu. Ctrl+kliknutí (nebo Cmd+kliknutí na Macu) použije poslední kartu.
+Verze 1.7.0 (Podsložky): Přetáhněte složku na jinou a vnořte ji dovnitř. Otevřete nadřazenou složku jako skupinu panelů a otevře se s ní vše, co obsahuje. Kliknutí na uloženou konverzaci nyní přejde na kartu, která ji už zobrazuje, místo otevření duplikátu. Ctrl+kliknutí (nebo Cmd+kliknutí na Macu) použije poslední kartu. Baidu Chat se přesunul na novou adresu, kde ukládání i vkládání výzev opět fungují.
 Verze 1.6.3 (Uvítací stránka): Po instalaci se nyní otevře krátký průvodce: jak si rozšíření připnout a uložit první konverzaci. Hledání také jasně uvádí, že prohledává jen již uložené konverzace.
 Verze 1.6.2 (Kimi): Zahajte nové konverzace na Kimi přímo z režimu výzev, ukládejte je do složek a vkládejte výzvy. Odebrání rozšíření nyní otevře krátkou nepovinnou stránku pro zpětnou vazbu ve vašem jazyce a nic se neodešle, dokud ji sami nepošlete.
 Verze 1.6.1 (Zabezpečení a stabilita): Další ochrana uložených odkazů a importu záloh a interní opravy stability.

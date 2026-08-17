@@ -6,17 +6,7 @@ Organiser samtaler fra alle dine foretrukne AI-værktøjer i delte mapper, opbyg
 
 AI-mapper integreres indbygget med alle de store AI-chatassistenter, såsom Claude, ChatGPT og Gemini, og med de lokale LLM'er, du selv kører. Samtaler fra forskellige platforme kan dele præcis den samme mappe. Hver chat viser farven og logoet for sin egen tjeneste, så du altid ved, hvor den kommer fra.
 
-✨ PROMPTVISNING
-
-📝 Personligt promptbibliotek: Skift til Promptvisning med ét klik på justeringsknappen i overskriften. Gem dine bedste prompts med titel og tekst, find dem øjeblikkeligt med søgning og sortering (nyeste, ældste, A–Å).
-▶ Indsætning med ét klik: Klik på afspilningsknappen (▶) på en gemt prompt for at indsætte den direkte i inputfeltet på den aktive AI.
-✏️ Inline-redigering: Klik for at udvide en prompt og rediger teksten direkte. Ændringer gemmes automatisk efter en kort pause.
-🔀 Knapper til ny samtale: Start en ny samtale på en af de understøttede webtjenester direkte fra Prompt-tilstand — med ét tryk.
-☁️ Promptsynkronisering: Aktivér skysynkronisering for promptbiblioteket uafhængigt af mapper.
-📌 Fastgjorte prompts: Fastgør vigtige prompts øverst i biblioteket, adskilt fra resten med en visuel separator.
-⌨️ Prompt-udløser med live-forslag: Skriv # i en vilkårlig AI-chats felt for straks at se alle dine gemte prompter — filtreret i realtid mens du skriver. Brug ↓/↑ til at navigere, tryk mellemrum på et unikt match for at autofuldføre, eller på et eksakt match for at injicere direkte.
-
-🌟 MAPPEFUNKTIONER
+🌟 MAPPEVISNING
 
 ⌨️ Øjeblikkelig panelogenvej: Åbn panelet øjeblikkeligt fra enhver fane med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 ⚡ Hurtiggem (Højreklik og genveje): Gem den aktuelle samtale med et simpelt højreklik, eller brug tastaturgenvejen (Ctrl+Shift+S eller Cmd+Shift+S på Mac) til at sende den til «⚡ Hurtiggem» – med en visuel advarsel, hvis den allerede er gemt!
@@ -38,6 +28,16 @@ AI-mapper integreres indbygget med alle de store AI-chatassistenter, såsom Clau
 🏠 UNDERSTØTTELSE AF LOKAL LLM
 
 Kører du en lokal AI-model (Ollama, LM Studio, Jan eller en anden)? Konfigurer AI-mapper med din lokale URL — understøtter localhost og LAN-adresser (192.168.x.x, brugerdefinerede værtsnavne). Hurtig lagring og genvejsmenu-lagring fungerer også på lokale brugergrænseflader.
+✨ PROMPTVISNING
+
+📝 Personligt promptbibliotek: Skift til Promptvisning med ét klik på justeringsknappen i overskriften. Gem dine bedste prompts med titel og tekst, find dem øjeblikkeligt med søgning og sortering (nyeste, ældste, A–Å).
+▶ Indsætning med ét klik: Klik på afspilningsknappen (▶) på en gemt prompt for at indsætte den direkte i inputfeltet på den aktive AI.
+✏️ Inline-redigering: Klik for at udvide en prompt og rediger teksten direkte. Ændringer gemmes automatisk efter en kort pause.
+🔀 Knapper til ny samtale: Start en ny samtale på en af de understøttede webtjenester direkte fra Prompt-tilstand — med ét tryk.
+☁️ Promptsynkronisering: Aktivér skysynkronisering for promptbiblioteket uafhængigt af mapper.
+📌 Fastgjorte prompts: Fastgør vigtige prompts øverst i biblioteket, adskilt fra resten med en visuel separator.
+⌨️ Prompt-udløser med live-forslag: Skriv # i en vilkårlig AI-chats felt for straks at se alle dine gemte prompter — filtreret i realtid mens du skriver. Brug ↓/↑ til at navigere, tryk mellemrum på et unikt match for at autofuldføre, eller på et eksakt match for at injicere direkte.
+
 🛠️ HVORDAN VIRKER DET?
 
 Mappevisning:
@@ -67,7 +67,7 @@ Gennemse koden eller bidrag: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 OPDATERINGER:
-Version 1.6.4 (Færre faner): Et klik på en gemt samtale skifter nu til den fane, der allerede viser den, i stedet for at åbne en dublet. Ctrl+klik (eller Cmd+klik på Mac) genbruger din seneste fane.
+Version 1.7.0 (Undermapper): Træk en mappe over på en anden for at lægge den ind i den. Åbn overmappen som en fanegruppe, og alt indholdet åbnes med den. Et klik på en gemt samtale skifter nu til den fane, der allerede viser den, i stedet for at åbne en dublet. Ctrl+klik (eller Cmd+klik på Mac) genbruger din seneste fane. Baidu Chat er flyttet til en ny adresse, hvor lagring og indsættelse af prompts fungerer igen.
 Version 1.6.3 (Velkomstside): Efter installationen åbnes nu en kort guide: hvordan du fastgør udvidelsen og gemmer din første samtale. Søgningen gør det også tydeligt, at den kun dækker gemte samtaler.
 Version 1.6.2 (Kimi): Start nye Kimi-samtaler direkte fra Promptvisning, gem dem i mapper og injicér prompts. Når du fjerner udvidelsen, åbnes nu en kort valgfri feedbackside på dit sprog, og intet sendes, medmindre du selv indsender den.
 Version 1.6.1 (Sikkerhed og stabilitet): Ekstra beskyttelse af gemte links og backup-import samt interne stabilitetsrettelser.

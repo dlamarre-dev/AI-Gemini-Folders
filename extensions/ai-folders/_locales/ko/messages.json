@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "확인"
   },
+  "whatsNewHeading": {
+    "message": "새로운 기능"
+  },
+  "whatsNewNestedTitle": {
+    "message": "폴더 안의 폴더"
+  },
+  "whatsNewNestedBody": {
+    "message": "폴더를 다른 폴더 위로 끌어다 놓으면 그 안에 들어갑니다. 상위 폴더를 탭 그룹으로 열면 안에 있는 것까지 함께 열립니다."
+  },
+  "whatsNewReuseTitle": {
+    "message": "탭 줄이기"
+  },
+  "whatsNewReuseBody": {
+    "message": "저장한 대화를 클릭하면 이미 그 대화를 표시하고 있는 탭으로 이동합니다. {k}+클릭은 새 탭을 추가하지 않고 확장 프로그램이 마지막으로 연 탭을 다시 사용합니다."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat은 계속 작동합니다"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu가 채팅을 새 주소로 옮겼습니다. 저장과 프롬프트 삽입이 거기서 다시 작동합니다."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + 클릭: 마지막 탭 재사용"
   },

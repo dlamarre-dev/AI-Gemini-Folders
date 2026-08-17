@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "明白了"
   },
+  "whatsNewHeading": {
+    "message": "新功能"
+  },
+  "whatsNewNestedTitle": {
+    "message": "文件夹套文件夹"
+  },
+  "whatsNewNestedBody": {
+    "message": "将一个文件夹拖到另一个上即可放入其中。以标签组方式打开父文件夹，其中的一切也会随之打开。"
+  },
+  "whatsNewReuseTitle": {
+    "message": "更少标签页"
+  },
+  "whatsNewReuseBody": {
+    "message": "点击已保存的会话会切换到已显示它的标签页。{k}+点击则复用扩展上次打开的标签页，而不是再开一个。"
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat 依然可用"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu 已把聊天迁移到新网址。保存和提示词插入在那里恢复正常。"
+  },
   "chatLinkReuseHint": {
     "message": "{k} + 点击：复用上一个标签页"
   },

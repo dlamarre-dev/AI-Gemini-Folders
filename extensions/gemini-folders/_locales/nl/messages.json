@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Duidelijk"
   },
+  "whatsNewHeading": {
+    "message": "Wat is er nieuw"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Mappen in mappen"
+  },
+  "whatsNewNestedBody": {
+    "message": "Sleep een map op een andere om hem erin te plaatsen. Open de bovenliggende map als tabbladgroep en alles erin gaat mee open."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Minder tabbladen"
+  },
+  "whatsNewReuseBody": {
+    "message": "Klikken op een opgeslagen gesprek schakelt naar het tabblad dat het al toont. {k}+klik hergebruikt het laatste tabblad dat deze extensie opende in plaats van er een toe te voegen."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: laatste tabblad hergebruiken"
   },

@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "J'ai compris"
   },
+  "whatsNewHeading": {
+    "message": "Quoi de neuf"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Des dossiers dans les dossiers"
+  },
+  "whatsNewNestedBody": {
+    "message": "Glissez un dossier sur un autre pour le placer à l'intérieur. Ouvrez le dossier parent en groupe d'onglets et tout ce qu'il contient s'ouvre avec lui."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Moins d'onglets"
+  },
+  "whatsNewReuseBody": {
+    "message": "Cliquer sur une conversation enregistrée bascule vers l'onglet qui l'affiche déjà. {k}+clic réutilise le dernier onglet ouvert par l'extension au lieu d'en ajouter un autre."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clic : réutiliser le dernier onglet"
   },

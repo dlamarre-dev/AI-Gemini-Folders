@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Am înțeles"
   },
+  "whatsNewHeading": {
+    "message": "Ce este nou"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Dosare în dosare"
+  },
+  "whatsNewNestedBody": {
+    "message": "Trageți un dosar peste altul pentru a-l plasa în interior. Deschideți dosarul principal ca grup de file și se deschide tot ce conține."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Mai puține file"
+  },
+  "whatsNewReuseBody": {
+    "message": "Un clic pe o conversație salvată comută la fila care o afișează deja. {k}+clic reutilizează ultima filă deschisă de extensie, în loc să adauge alta."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat funcționează în continuare"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu și-a mutat chatul la o adresă nouă. Salvarea și inserarea prompturilor funcționează din nou acolo."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilizează ultima filă"
   },

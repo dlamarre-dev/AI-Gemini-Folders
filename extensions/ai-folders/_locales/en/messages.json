@@ -341,6 +341,27 @@
   "welcomeCta": {
     "message": "Got it"
   },
+  "whatsNewHeading": {
+    "message": "What's new"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Folders inside folders"
+  },
+  "whatsNewNestedBody": {
+    "message": "Drag a folder onto another one to place it inside. Open the parent as a tab group and everything it contains opens with it."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Fewer tabs"
+  },
+  "whatsNewReuseBody": {
+    "message": "Clicking a saved conversation switches to the tab already showing it. {k}-click reuses the last tab this extension opened instead of adding another."
+  },
+  "whatsNewBaiduTitle": {
+    "message": "Baidu Chat still works"
+  },
+  "whatsNewBaiduBody": {
+    "message": "Baidu moved its chat to a new address. Saving and prompt injection work there again."
+  },
   "chatLinkReuseHint": {
     "message": "{k}-click: reuse the last tab"
   },

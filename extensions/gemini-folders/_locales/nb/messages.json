@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Skjønner"
   },
+  "whatsNewHeading": {
+    "message": "Hva er nytt"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Mapper i mapper"
+  },
+  "whatsNewNestedBody": {
+    "message": "Dra en mappe oppå en annen for å legge den inni. Åpne foreldermappen som en fanegruppe, og alt innholdet åpnes med den."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Færre faner"
+  },
+  "whatsNewReuseBody": {
+    "message": "Klikk på en lagret samtale bytter til fanen som allerede viser den. {k}+klikk gjenbruker den siste fanen utvidelsen åpnet, i stedet for å legge til en ny."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klikk: gjenbruk den siste fanen"
   },

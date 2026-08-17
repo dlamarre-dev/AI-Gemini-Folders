@@ -1,19 +1,9 @@
 ﻿Usi Google Gemini ogni giorno — per lavoro, codice, scrittura o ricerca — ma continui a riscrivere gli stessi prompt mentre le tue migliori conversazioni scompaiono in una cronologia infinita?
 Cartelle Gemini (Gemini Folders) è l'estensione che fa per te.
 
-Con la versione 4.0, Cartelle Gemini diventa il tuo vero cockpit per Gemini: organizza le conversazioni in cartelle, costruisci una libreria di prompt riutilizzabili e iniettali direttamente in Gemini con un solo clic, senza copia e incolla.
+Cartelle Gemini diventa il tuo vero cockpit per Gemini: organizza le conversazioni in cartelle, costruisci una libreria di prompt riutilizzabili e iniettali direttamente in Gemini con un solo clic, senza copia e incolla.
 
-✨ NOVITÀ in v4.0 — MODALITÀ PROMPT
-
-📝 Libreria di prompt personale: Passa alla modalità Prompt con un solo clic sull'interruttore nell'intestazione. Salva i tuoi migliori prompt con un titolo e il testo completo, poi trovali subito con ricerca e ordinamento (più recenti, più vecchi, A-Z).
-▶ Iniezione con un clic: Niente più copia e incolla. Clicca il pulsante di riproduzione (▶) su qualsiasi prompt salvato per iniettarlo direttamente nel campo di input di Gemini. L'estensione rileva se sei su una pagina Gemini e ti avvisa se non lo sei.
-✏️ Modifica in linea: Clicca un prompt per espanderlo e modifica il testo direttamente. Le modifiche si salvano automaticamente dopo una breve pausa e l'ordinamento si aggiorna di conseguenza.
-💎 Link Gem personalizzato: Configura un link al tuo Gem preferito e attivalo con un clic. Quando è attivo, il pulsante "Nuova conversazione" apre il tuo Gem invece della chat predefinita.
-☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
-📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
-⌨️ Attivatore di prompt con suggerimenti in tempo reale: Digita # nel campo chat di Gemini per vedere istantaneamente tutti i tuoi prompt salvati — filtrati in tempo reale mentre scrivi. Usa ↓/↑ per navigare tra i suggerimenti, premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare direttamente.
-
-🌟 FUNZIONALITÀ CARTELLE
+🌟 MODALITÀ CARTELLE
 
 ⌨️ Scorciatoia istantanea: Apri il pannello all'istante da qualsiasi scheda con Ctrl+Shift+1 (o Cmd+Shift+1 su Mac).
 ⚡ Salvataggio Rapido (Clic Destro e Scorciatoie): Salva la conversazione con un semplice clic destro, o usa la scorciatoia da tastiera (Ctrl+Shift+S o Cmd+Shift+S su Mac) per inviarla istantaneamente a "⚡ Salvataggi Rapidi" — con un avviso visivo se è già salvata!
@@ -30,6 +20,16 @@ Con la versione 4.0, Cartelle Gemini diventa il tuo vero cockpit per Gemini: org
 🤖 Rilevamento intelligente e Ricerca: Compilazione automatica del titolo esatto della conversazione e barra di ricerca in tempo reale.
 ☁️ Sincronizzazione Cloud e Backup: Accedi alla tua organizzazione su tutti i dispositivi ed esporta i dati in JSON.
 🎨 Design Material 3 e Multilingue: Interfaccia ultra-compatta con finestre di dialogo completamente personalizzate, modalità scura automatica e supporto per 43 lingue!
+
+✨ MODALITÀ PROMPT
+
+📝 Libreria di prompt personale: Passa alla modalità Prompt con un solo clic sull'interruttore nell'intestazione. Salva i tuoi migliori prompt con un titolo e il testo completo, poi trovali subito con ricerca e ordinamento (più recenti, più vecchi, A-Z).
+▶ Iniezione con un clic: Niente più copia e incolla. Clicca il pulsante di riproduzione (▶) su qualsiasi prompt salvato per iniettarlo direttamente nel campo di input di Gemini. L'estensione rileva se sei su una pagina Gemini e ti avvisa se non lo sei.
+✏️ Modifica in linea: Clicca un prompt per espanderlo e modifica il testo direttamente. Le modifiche si salvano automaticamente dopo una breve pausa e l'ordinamento si aggiorna di conseguenza.
+💎 Link Gem personalizzato: Configura un link al tuo Gem preferito e attivalo con un clic. Quando è attivo, il pulsante "Nuova conversazione" apre il tuo Gem invece della chat predefinita.
+☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
+📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
+⌨️ Attivatore di prompt con suggerimenti in tempo reale: Digita # nel campo chat di Gemini per vedere istantaneamente tutti i tuoi prompt salvati — filtrati in tempo reale mentre scrivi. Usa ↓/↑ per navigare tra i suggerimenti, premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare direttamente.
 
 🛠️ COME FUNZIONA?
 
@@ -66,7 +66,7 @@ Interessato a Cartelle Gemini ma usi anche ChatGPT, Claude, Copilot, Grok, Perpl
 👉 Installa Cartelle IA: __AF_STORE_URL__
 
 📢 AGGIORNAMENTI:
-Versione 4.5.6 (Meno schede): Fare clic su una conversazione salvata ora passa alla scheda che la mostra già invece di aprire un duplicato. Ctrl+clic (o Cmd+clic su Mac) riutilizza la tua ultima scheda.
+Versione 4.6.0 (Sottocartelle): Trascina una cartella su un'altra per inserirla al suo interno. Apri la cartella principale come gruppo di schede e si apre tutto ciò che contiene. Fare clic su una conversazione salvata ora passa alla scheda che la mostra già invece di aprire un duplicato. Ctrl+clic (o Cmd+clic su Mac) riutilizza la tua ultima scheda.
 Versione 4.5.5 (Pagina di benvenuto): Dopo l'installazione si apre ora una breve guida: come fissare l'estensione e salvare la prima conversazione. La ricerca chiarisce inoltre che copre solo le conversazioni già salvate.
 Versione 4.5.4 (Sondaggio di disinstallazione): La rimozione dell'estensione apre ora una breve pagina di riscontro facoltativa nella tua lingua e non viene inviato nulla a meno che non la invii tu.
 Versione 4.5.3 (Sicurezza e stabilità): Protezioni aggiuntive per i link salvati e le importazioni di backup, oltre a correzioni interne di stabilità.

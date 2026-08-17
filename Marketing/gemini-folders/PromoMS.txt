@@ -1,19 +1,9 @@
 ﻿Adakah anda menggunakan Google Gemini setiap hari – untuk kerja, pengekodan, penulisan atau penyelidikan – tetapi terus menaip semula prompt yang sama, manakala perbualan terbaik anda hilang dalam sejarah yang tidak berkesudahan?
 Folder Gemini (Gemini Folders) adalah sambungan yang anda perlukan.
 
-Dengan versi 4.0, Folder Gemini menjadi cockpit Gemini sebenar anda: susun perbualan dalam folder, bina perpustakaan prompt yang boleh digunakan semula dan masukkannya terus ke Gemini dengan satu klik – tanpa salin dan tampal.
+Folder Gemini menjadi cockpit Gemini sebenar anda: susun perbualan dalam folder, bina perpustakaan prompt yang boleh digunakan semula dan masukkannya terus ke Gemini dengan satu klik – tanpa salin dan tampal.
 
-✨ BAHARU DALAM V4.0 – MOD PROMPT
-
-📝 Perpustakaan prompt peribadi: Tukar ke Mod Prompt dengan satu klik pada suis di pengepala. Simpan prompt terbaik anda dengan tajuk dan teks, carinya serta-merta dengan carian dan pengisihan (terbaharu, terlama, A–Z).
-▶ Penyisipan satu klik: Klik butang main (▶) pada mana-mana prompt tersimpan untuk menyisipkannya terus ke medan input Gemini.
-✏️ Penyuntingan terus: Klik untuk mengembangkan prompt dan sunting teks terus. Perubahan disimpan secara automatik selepas jeda singkat.
-💎 Pautan Gem tersuai: Konfigurasi pautan ke Gem kegemaran anda dan hidupkan/matikan dengan satu klik.
-☁️ Penyegerakan prompt: Dayakan penyegerakan awan untuk perpustakaan prompt secara bebas daripada folder.
-📌 Prompt tersemat: Semat prompt penting di bahagian atas perpustakaan.
-⌨️ Pencetus Prompt dengan Cadangan Langsung: Taip # dalam medan sembang Gemini untuk segera melihat semua prompt tersimpan anda — ditapis secara masa nyata semasa anda menaip. Gunakan ↓/↑ untuk navigasi, tekan Ruang pada padanan unik untuk melengkapkan secara automatik, atau pada padanan tepat untuk menyuntik terus.
-
-🌟 CIRI-CIRI FOLDER
+🌟 MOD FOLDER
 
 ⌨️ Pintasan panel segera: Buka panel secara serta-merta dari mana-mana tab dengan Ctrl+Shift+1 (atau Cmd+Shift+1 di Mac).
 ⚡ Simpan Pantas (Klik kanan & pintasan): Simpan perbualan semasa dengan klik kanan mudah, atau gunakan pintasan papan kekunci (Ctrl+Shift+S atau Cmd+Shift+S pada Mac) untuk menghantarnya ke «⚡ Simpan Pantas» – dengan amaran visual jika sudah disimpan!
@@ -30,6 +20,16 @@ Dengan versi 4.0, Folder Gemini menjadi cockpit Gemini sebenar anda: susun perbu
 🤖 Pengesanan pintar & carian: Pra-pengisian automatik tajuk tepat perbualan dan bar carian masa nyata.
 ☁️ Penyegerakan awan & sandaran: Akses ke organisasi anda pada semua peranti dan eksport data sebagai JSON.
 🎨 Reka bentuk Material 3 & berbilang bahasa: Antara muka ultra-padat dengan dialog modal sepenuhnya tersuai, mod gelap automatik dan sokongan untuk 43 bahasa!
+
+✨ MOD PROMPT
+
+📝 Perpustakaan prompt peribadi: Tukar ke Mod Prompt dengan satu klik pada suis di pengepala. Simpan prompt terbaik anda dengan tajuk dan teks, carinya serta-merta dengan carian dan pengisihan (terbaharu, terlama, A–Z).
+▶ Penyisipan satu klik: Klik butang main (▶) pada mana-mana prompt tersimpan untuk menyisipkannya terus ke medan input Gemini.
+✏️ Penyuntingan terus: Klik untuk mengembangkan prompt dan sunting teks terus. Perubahan disimpan secara automatik selepas jeda singkat.
+💎 Pautan Gem tersuai: Konfigurasi pautan ke Gem kegemaran anda dan hidupkan/matikan dengan satu klik.
+☁️ Penyegerakan prompt: Dayakan penyegerakan awan untuk perpustakaan prompt secara bebas daripada folder.
+📌 Prompt tersemat: Semat prompt penting di bahagian atas perpustakaan.
+⌨️ Pencetus Prompt dengan Cadangan Langsung: Taip # dalam medan sembang Gemini untuk segera melihat semua prompt tersimpan anda — ditapis secara masa nyata semasa anda menaip. Gunakan ↓/↑ untuk navigasi, tekan Ruang pada padanan unik untuk melengkapkan secara automatik, atau pada padanan tepat untuk menyuntik terus.
 
 🛠️ BAGAIMANA IA BERFUNGSI?
 
@@ -65,7 +65,7 @@ Berminat dengan Folder Gemini tetapi juga menggunakan ChatGPT, Claude, Copilot, 
 👉 Pasang Folder AI: __AF_STORE_URL__
 
 📢 KEMAS KINI:
-Versi 4.5.6 (Kurang tab): Mengklik perbualan yang disimpan kini beralih ke tab yang sudah memaparkannya, bukan membuka pendua. Ctrl+klik (atau Cmd+klik pada Mac) menggunakan semula tab terakhir anda.
+Versi 4.6.0 (Subfolder): Seret satu folder ke atas folder lain untuk meletakkannya di dalam. Buka folder induk sebagai kumpulan tab dan semua kandungannya turut dibuka. Mengklik perbualan yang disimpan kini beralih ke tab yang sudah memaparkannya, bukan membuka pendua. Ctrl+klik (atau Cmd+klik pada Mac) menggunakan semula tab terakhir anda.
 Versi 4.5.5 (Halaman aluan): Selepas pemasangan kini terbuka panduan ringkas: cara menyematkan sambungan dan menyimpan perbualan pertama anda. Carian juga menjelaskan bahawa ia hanya merangkumi perbualan yang telah disimpan.
 Versi 4.5.4 (Kaji selidik pembuangan): Membuang sambungan kini membuka halaman maklum balas ringkas dan pilihan dalam bahasa anda, dan tiada apa-apa dihantar melainkan anda menghantarnya sendiri.
 Versi 4.5.3 (Keselamatan & kestabilan): Perlindungan tambahan untuk pautan tersimpan dan import sandaran, serta pembaikan kestabilan dalaman.

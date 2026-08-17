@@ -6,17 +6,7 @@ Organize conversas de todas as suas ferramentas de IA favoritas em pastas compar
 
 Pastas IA integra-se nativamente com todos os principais assistentes de chat de IA, como Claude, ChatGPT e Gemini, e com os LLMs locais que você mesmo executa. Conversas de plataformas diferentes podem compartilhar a mesma pasta. Cada chat exibe a cor e o logotipo do seu serviço de origem, para que você sempre saiba de onde ele veio.
 
-✨ MODO PROMPTS
-
-📝 Biblioteca pessoal de prompts: Mude para o Modo Prompt com um clique no botão de alternância no cabeçalho. Salve seus melhores prompts com um título e texto completo, e encontre-os instantaneamente com busca e ordenação (mais recentes, mais antigos, A-Z).
-▶ Injeção com um clique: Acabou o copiar e colar. Clique no botão de reprodução (▶) em qualquer prompt salvo para injetá-lo diretamente no campo de texto da IA ativa.
-✏️ Edição inline: Clique em um prompt para expandi-lo e editar o texto diretamente. As alterações são salvas automaticamente após uma breve pausa e a ordenação é atualizada em seguida.
-🔀 Botões de Nova Conversa: Inicie uma nova conversa em qualquer um dos serviços web compatíveis diretamente do Modo Prompt — com um único toque.
-☁️ Sincronização de prompts: Ative a sincronização na nuvem para sua biblioteca de prompts, de forma independente das suas pastas.
-📌 Prompts fixados: Fixe seus prompts essenciais com um clique para mantê-los no topo da biblioteca, separados dos demais por um divisor visual.
-⌨️ Gatilho de Prompt com Sugestões ao Vivo: Digite # no campo de chat de qualquer IA para ver instantaneamente todos os seus prompts salvos — filtrados em tempo real enquanto você digita. Use ↓/↑ para navegar entre sugestões, pressione Espaço em uma correspondência única para autocompletar, ou em uma correspondência exata para injetar diretamente.
-
-🌟 FUNÇÕES DE PASTAS
+🌟 MODO PASTAS
 
 ⌨️ Atalho instantâneo do painel: Abra o painel instantaneamente de qualquer aba com Ctrl+Shift+1 (ou Cmd+Shift+1 no Mac).
 ⚡ Salvar Rapidamente (Clique Direito e Atalhos): Salve a conversa com um simples clique direito, ou use o atalho de teclado (Ctrl+Shift+S ou Cmd+Shift+S no Mac) para enviá-la instantaneamente para "⚡ Salvamentos Rápidos" — com alerta visual se já estiver salva!
@@ -38,6 +28,16 @@ Pastas IA integra-se nativamente com todos os principais assistentes de chat de 
 🏠 SUPORTE A LLM LOCAL
 
 Está usando um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure o Pastas IA com sua URL local — suporta localhost e endereços LAN (192.168.x.x, hostnames personalizados). O salvamento rápido e pelo menu de contexto também funcionam em interfaces locais.
+✨ MODO PROMPTS
+
+📝 Biblioteca pessoal de prompts: Mude para o Modo Prompt com um clique no botão de alternância no cabeçalho. Salve seus melhores prompts com um título e texto completo, e encontre-os instantaneamente com busca e ordenação (mais recentes, mais antigos, A-Z).
+▶ Injeção com um clique: Acabou o copiar e colar. Clique no botão de reprodução (▶) em qualquer prompt salvo para injetá-lo diretamente no campo de texto da IA ativa.
+✏️ Edição inline: Clique em um prompt para expandi-lo e editar o texto diretamente. As alterações são salvas automaticamente após uma breve pausa e a ordenação é atualizada em seguida.
+🔀 Botões de Nova Conversa: Inicie uma nova conversa em qualquer um dos serviços web compatíveis diretamente do Modo Prompt — com um único toque.
+☁️ Sincronização de prompts: Ative a sincronização na nuvem para sua biblioteca de prompts, de forma independente das suas pastas.
+📌 Prompts fixados: Fixe seus prompts essenciais com um clique para mantê-los no topo da biblioteca, separados dos demais por um divisor visual.
+⌨️ Gatilho de Prompt com Sugestões ao Vivo: Digite # no campo de chat de qualquer IA para ver instantaneamente todos os seus prompts salvos — filtrados em tempo real enquanto você digita. Use ↓/↑ para navegar entre sugestões, pressione Espaço em uma correspondência única para autocompletar, ou em uma correspondência exata para injetar diretamente.
+
 🛠️ COMO FUNCIONA?
 
 Modo Pastas:
@@ -67,7 +67,7 @@ Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 ATUALIZAÇÕES:
-Versão 1.6.4 (Menos abas): Clicar em uma conversa salva agora alterna para a aba que já a exibe em vez de abrir uma duplicada. Ctrl+clique (ou Cmd+clique no Mac) reutiliza sua última aba.
+Versão 1.7.0 (Subpastas): Arraste uma pasta sobre outra para colocá-la dentro. Abra a pasta principal como grupo de guias e tudo o que ela contém abre junto. Clicar em uma conversa salva agora alterna para a aba que já a exibe em vez de abrir uma duplicada. Ctrl+clique (ou Cmd+clique no Mac) reutiliza sua última aba. O Baidu Chat mudou de endereço, e salvar e inserir prompts voltou a funcionar lá.
 Versão 1.6.3 (Página de boas-vindas): Após a instalação agora abre um guia rápido: como fixar a extensão e salvar sua primeira conversa. A busca também deixa claro que abrange apenas as conversas já salvas.
 Versão 1.6.2 (Kimi): Inicie novas conversas no Kimi diretamente do Modo Prompt, salve-as em pastas e injete prompts. Remover a extensão agora abre uma breve página de retorno opcional no seu idioma, e nada é enviado a menos que você mesmo envie.
 Versão 1.6.1 (Segurança e estabilidade): Proteções adicionais para links salvos e importações de backup, além de correções internas de estabilidade.

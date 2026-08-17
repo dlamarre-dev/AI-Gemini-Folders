@@ -305,6 +305,21 @@
   "welcomeCta": {
     "message": "Ho capito"
   },
+  "whatsNewHeading": {
+    "message": "Novità"
+  },
+  "whatsNewNestedTitle": {
+    "message": "Cartelle dentro le cartelle"
+  },
+  "whatsNewNestedBody": {
+    "message": "Trascina una cartella su un'altra per inserirla al suo interno. Apri la cartella principale come gruppo di schede e si apre tutto ciò che contiene."
+  },
+  "whatsNewReuseTitle": {
+    "message": "Meno schede"
+  },
+  "whatsNewReuseBody": {
+    "message": "Fare clic su una conversazione salvata passa alla scheda che la mostra già. {k}+clic riutilizza l'ultima scheda aperta dall'estensione invece di aggiungerne un'altra."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clic: riutilizza l'ultima scheda"
   },
