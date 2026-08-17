@@ -78,9 +78,11 @@
           <h2 class="step-title" id="nBaiduTitle"></h2>
           <p class="step-body" id="nBaiduBody"></p>
         </div>
-        <div class="step-art">
-          <span class="site-row site-row-single" id="nBaiduLogo"></span>
-        </div>
+        <!-- The classes go on the .step-art element itself, exactly as welcome.html
+             composes its site row: that element is the flex container whose
+             justify-content: flex-end right-aligns the mark. Nesting .site-row
+             inside it instead left-aligns the logo in a 200px inline box. -->
+        <div class="step-art site-row site-row-single" id="nBaiduLogo"></div>
       </li>
     </ul>
 

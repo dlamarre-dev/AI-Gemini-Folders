@@ -106,6 +106,12 @@ describe('what\'s-new page rendering', () => {
     const img = document.querySelector('#nBaiduLogo img');
     expect(img.getAttribute('src')).toBe('icons/baidu.png');
     expect(img.getAttribute('alt')).toBe('');
+    // The mark right-aligns like the welcome page's site row, which only happens
+    // when .site-row sits on the .step-art element itself — the flex container.
+    const row = document.getElementById('nBaiduLogo');
+    expect(row.classList.contains('step-art')).toBe(true);
+    expect(row.classList.contains('site-row')).toBe(true);
+    expect(row.querySelector('.site-row')).toBeNull();
   });
 
   test('a registry without Baidu also drops the card', () => {
