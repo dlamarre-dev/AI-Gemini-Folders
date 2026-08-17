@@ -1,19 +1,9 @@
 ﻿Používate Google Gemini každý deň — na prácu, kód, písanie alebo výskum — ale stále dookola píšete rovnaké výzvy a vaše najlepšie konverzácie miznú v nekonečnej histórii?
 Priečinky Gemini (Gemini Folders) je rozšírenie, ktoré potrebujete.
 
-S verziou 4.0 sa Priečinky Gemini stávajú vaším skutočným kokpitom pre Gemini: organizujte konverzácie do priečinkov, vybudujte knižnicu opakovane použiteľných výziev a vkladajte ich priamo do Gemini jedným kliknutím — bez kopírovania a vkladania.
+Priečinky Gemini sa stávajú vaším skutočným kokpitom pre Gemini: organizujte konverzácie do priečinkov, vybudujte knižnicu opakovane použiteľných výziev a vkladajte ich priamo do Gemini jedným kliknutím — bez kopírovania a vkladania.
 
-✨ NOVINKA v4.0 — REŽIM VÝZIEV
-
-📝 Osobná knižnica výziev: Prepnite do režimu výziev jedným kliknutím na prepínač v hlavičke. Ukladajte najlepšie výzvy s názvom a úplným textom a okamžite ich nájdite vďaka vyhľadávaniu a triedeniu (najnovšie, najstaršie, A-Z).
-▶ Vloženie jedným kliknutím: Koniec kopírovaním a vkladaním. Kliknite na tlačidlo prehrávania (▶) pri uloženej výzve a vloží sa priamo do vstupného poľa Gemini. Rozšírenie zistí, či ste na stránke Gemini, a ak nie, upozorní vás.
-✏️ Úprava na mieste: Kliknite na výzvu, rozbaľte ju a priamo upravte text. Zmeny sa automaticky uložia po krátkom okamihu a poradie triedenia sa zodpovedajúco aktualizuje.
-💎 Vlastný odkaz Gem: Nastavte odkaz na váš obľúbený Gem a aktivujte ho kliknutím. Keď je aktívny, tlačidlo „Nová konverzácia" otvorí váš Gem namiesto predvoleného chatu.
-☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
-📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
-⌨️ Spúšťač promptov so živými návrhmi: Napíšte # do chatovacieho poľa Gemini a okamžite uvidíte všetky svoje uložené prompty — filtrované v reálnom čase pri písaní. Pomocou ↓/↑ prechádzajte návrhy, stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre priame vloženie.
-
-🌟 FUNKCIE PRIEČINKOV
+🌟 REŽIM PRIEČINKOV
 
 ⌨️ Okamžitá klávesová skratka panela: Otvorte panel okamžite z ľubovoľnej záložky pomocou Ctrl+Shift+1 (alebo Cmd+Shift+1 na Macu).
 ⚡ Rýchle uloženie (Pravý klik a Skratky): Uložte konverzáciu jednoduchým pravým kliknutím alebo klávesovými skratkami (Ctrl+Shift+S alebo Cmd+Shift+S na Mac) a okamžite ju odošlite do „⚡ Rýchlych uložení" — s vizuálnym upozornením, ak je už uložená!
@@ -30,6 +20,16 @@ S verziou 4.0 sa Priečinky Gemini stávajú vaším skutočným kokpitom pre Ge
 🤖 Inteligentná detekcia a Vyhľadávanie: Automatické vyplnenie presného názvu konverzácie a panel vyhľadávania v reálnom čase.
 ☁️ Cloudová synchronizácia a Záloha: Prístup k organizácii na všetkých zariadeniach a export dát v JSON.
 🎨 Dizajn Material 3 a Viacjazyčnosť: Ultrakompaktné rozhranie s plne vlastnými dialógovými oknami, automatickým tmavým režimom a podporou 43 jazykov!
+
+✨ REŽIM VÝZIEV
+
+📝 Osobná knižnica výziev: Prepnite do režimu výziev jedným kliknutím na prepínač v hlavičke. Ukladajte najlepšie výzvy s názvom a úplným textom a okamžite ich nájdite vďaka vyhľadávaniu a triedeniu (najnovšie, najstaršie, A-Z).
+▶ Vloženie jedným kliknutím: Koniec kopírovaním a vkladaním. Kliknite na tlačidlo prehrávania (▶) pri uloženej výzve a vloží sa priamo do vstupného poľa Gemini. Rozšírenie zistí, či ste na stránke Gemini, a ak nie, upozorní vás.
+✏️ Úprava na mieste: Kliknite na výzvu, rozbaľte ju a priamo upravte text. Zmeny sa automaticky uložia po krátkom okamihu a poradie triedenia sa zodpovedajúco aktualizuje.
+💎 Vlastný odkaz Gem: Nastavte odkaz na váš obľúbený Gem a aktivujte ho kliknutím. Keď je aktívny, tlačidlo „Nová konverzácia" otvorí váš Gem namiesto predvoleného chatu.
+☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
+📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
+⌨️ Spúšťač promptov so živými návrhmi: Napíšte # do chatovacieho poľa Gemini a okamžite uvidíte všetky svoje uložené prompty — filtrované v reálnom čase pri písaní. Pomocou ↓/↑ prechádzajte návrhy, stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre priame vloženie.
 
 🛠️ AKO TO FUNGUJE?
 
@@ -66,7 +66,7 @@ Zaujímajú vás Priečinky Gemini, ale používate aj ChatGPT, Claude, Copilot,
 👉 Nainštalovať AI priečinky: __AF_STORE_URL__
 
 📢 AKTUALIZÁCIE:
-Verzia 4.5.6 (Menej kariet): Kliknutie na uloženú konverzáciu teraz prejde na kartu, ktorá ju už zobrazuje, namiesto otvorenia duplikátu. Ctrl+kliknutie (alebo Cmd+kliknutie na Macu) použije poslednú kartu.
+Verzia 4.6.0 (Podpriečinky): Presuňte priečinok na iný a vložte ho dovnútra. Otvorte nadradený priečinok ako skupinu kariet a otvorí sa všetko, čo obsahuje. Kliknutie na uloženú konverzáciu teraz prejde na kartu, ktorá ju už zobrazuje, namiesto otvorenia duplikátu. Ctrl+kliknutie (alebo Cmd+kliknutie na Macu) použije poslednú kartu.
 Verzia 4.5.5 (Uvítacia stránka): Po inštalácii sa teraz otvorí krátky sprievodca: ako si rozšírenie pripnúť a uložiť prvú konverzáciu. Hľadanie tiež jasne uvádza, že prehľadáva len už uložené konverzácie.
 Verzia 4.5.4 (Dotazník pri odinštalovaní): Odstránenie rozšírenia teraz otvorí krátku nepovinnú stránku spätnej väzby vo vašom jazyku a nič sa neodošle, kým ju sami nepošlete.
 Verzia 4.5.3 (Zabezpečenie a stabilita): Ďalšia ochrana uložených odkazov a importu záloh a interné opravy stability.

@@ -1,19 +1,9 @@
 ﻿Käytätkö Google Geminiä päivittäin – töihin, koodaukseen, kirjoittamiseen tai tutkimukseen – mutta kirjoitatko samat promptit uudelleen ja uudelleen, kun parhaat keskustelusi katoavat loputtomaan historiaasi?
 Gemini-kansiot (Gemini Folders) on lisäosa, jota tarvitset.
 
-Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi keskustelut kansioihin, rakenna uudelleenkäytettävien promptien kirjasto ja injektoi ne suoraan Geminiin yhdellä napsautuksella – ei kopiointia tai liittämistä.
+Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi keskustelut kansioihin, rakenna uudelleenkäytettävien promptien kirjasto ja injektoi ne suoraan Geminiin yhdellä napsautuksella – ei kopiointia tai liittämistä.
 
-✨ UUTTA V4.0:SSA – PROMPTTILA
-
-📝 Henkilökohtainen promptikirjasto: Vaihda Prompttilaan napsauttamalla otsikon kytkintä. Tallenna parhaat promptisi otsikolla ja tekstillä, löydä ne välittömästi hakemalla ja lajittelemalla (uusimmat, vanhimmat, A–Ö).
-▶ Injektio yhdellä napsautuksella: Napsauta tallennetun promptin toistopainiketta (▶) injektoidaksesi sen suoraan Geminin syöttökenttään. Laajennus ilmoittaa, jos et ole Gemini-sivulla.
-✏️ Inline-muokkaus: Napsauta laajentaaksesi promptin ja muokkaa tekstiä suoraan. Muutokset tallentuvat automaattisesti lyhyen tauon jälkeen.
-💎 Mukautettu Gem-linkki: Määritä linkki suosikki-Geemisi ja ota se käyttöön tai poista käytöstä yhdellä napsautuksella. Kun se on aktiivinen, «Uusi keskustelu» -painike avaa Geemisi oletuschattin sijaan.
-☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
-📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
-⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Käytä ↓/↑ selailuun, paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
-
-🌟 KANSIO-OMINAISUUDET
+🌟 KANSIOTILA
 
 ⌨️ Välitön pikanäppäin: Avaa paneeli välittömästi mistä tahansa välilehdestä painamalla Ctrl+Shift+1 (tai Cmd+Shift+1 Macissa).
 ⚡ Pikatallennus (Hiiren oikea painike ja pikakuvakkeet): Tallenna nykyinen keskustelu yksinkertaisella hiiren oikealla painikkeella tai käytä pikanäppäintä (Ctrl+Shift+S tai Cmd+Shift+S Macissa) lähettääksesi sen «⚡ Pikatallennus» -kansioon – visuaalisella ilmoituksella, jos se on jo tallennettu!
@@ -30,6 +20,16 @@ Version 4.0 myötä Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi kesku
 🤖 Älykäs tunnistus ja haku: Automaattinen keskustelun tarkan otsikon esitäyttö ja reaaliaikainen hakupalkki.
 ☁️ Pilvisynkronointi ja varmuuskopiointi: Pääsy järjestelyyn kaikilla laitteilla ja tietojen vienti JSON-muodossa.
 🎨 Material 3 -muotoilu ja monikielinen: Erittäin kompakti käyttöliittymä täysin mukautetuilla modaali-dialogeilla, automaattinen tumma tila ja tuki 43 kielelle!
+
+✨ PROMPTTILA
+
+📝 Henkilökohtainen promptikirjasto: Vaihda Prompttilaan napsauttamalla otsikon kytkintä. Tallenna parhaat promptisi otsikolla ja tekstillä, löydä ne välittömästi hakemalla ja lajittelemalla (uusimmat, vanhimmat, A–Ö).
+▶ Injektio yhdellä napsautuksella: Napsauta tallennetun promptin toistopainiketta (▶) injektoidaksesi sen suoraan Geminin syöttökenttään. Laajennus ilmoittaa, jos et ole Gemini-sivulla.
+✏️ Inline-muokkaus: Napsauta laajentaaksesi promptin ja muokkaa tekstiä suoraan. Muutokset tallentuvat automaattisesti lyhyen tauon jälkeen.
+💎 Mukautettu Gem-linkki: Määritä linkki suosikki-Geemisi ja ota se käyttöön tai poista käytöstä yhdellä napsautuksella. Kun se on aktiivinen, «Uusi keskustelu» -painike avaa Geemisi oletuschattin sijaan.
+☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
+📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
+⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Käytä ↓/↑ selailuun, paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
 
 🛠️ MITEN SE TOIMII?
 
@@ -66,7 +66,7 @@ Kiinnostuitko Gemini-kansiot-laajennuksesta, mutta käytätkö myös ChatGPT:tä
 👉 Asenna AI-kansiot: __AF_STORE_URL__
 
 📢 PÄIVITYKSET:
-Versio 4.5.6 (Vähemmän välilehtiä): Tallennetun keskustelun napsauttaminen siirtyy nyt välilehdelle, jolla se on jo avoinna, sen sijaan että avaisi kaksoiskappaleen. Ctrl+napsautus (tai Cmd+napsautus Macissa) käyttää viimeisintä välilehteä uudelleen.
+Versio 4.6.0 (Alikansiot): Vedä kansio toisen päälle sijoittaaksesi sen sen sisään. Avaa yläkansio välilehtiryhmänä, niin kaikki sen sisältö avautuu mukana. Tallennetun keskustelun napsauttaminen siirtyy nyt välilehdelle, jolla se on jo avoinna, sen sijaan että avaisi kaksoiskappaleen. Ctrl+napsautus (tai Cmd+napsautus Macissa) käyttää viimeisintä välilehteä uudelleen.
 Versio 4.5.5 (Tervetuloa-sivu): Asennuksen jälkeen avautuu nyt lyhyt opas: miten laajennus kiinnitetään ja ensimmäinen keskustelu tallennetaan. Haku kertoo myös selvästi kattavansa vain jo tallennetut keskustelut.
 Versio 4.5.4 (Poistokysely): Laajennuksen poistaminen avaa nyt lyhyen vapaaehtoisen palautesivun omalla kielelläsi, eikä mitään lähetetä, ellet lähetä sitä itse.
 Versio 4.5.3 (Turvallisuus ja vakaus): Lisäsuojaukset tallennetuille linkeille ja varmuuskopioiden tuonnille sekä sisäisiä vakautuskorjauksia.

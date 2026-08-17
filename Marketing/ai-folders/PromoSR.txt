@@ -6,17 +6,7 @@ Organizujte razgovore iz svih svojih omiljenih AI alata u deljene fascikle, izgr
 
 VI fascikle se izvorno integriše sa svim glavnim AI chat asistentima, kao što su Claude, ChatGPT i Gemini, kao i sa lokalnim LLM modelima koje sami pokrećete. Razgovori sa različitih platformi mogu da dele potpuno istu fasciklu. Svaki čet prikazuje boju i logotip svoje usluge, tako da uvek znate odakle dolazi.
 
-✨ MOD PROMPTOVA
-
-📝 Lična biblioteka promptova: Prebaci na Mod promptova jednim klikom na prekidač u zaglavlju. Sačuvaj najbolje promptove s naslovom i tekstom, pronađi ih odmah pretragom i sortiranjem (najnovije, najstarije, A–Ž).
-▶ Ubacivanje jednim klikom: Klikni dugme za reprodukciju (▶) na sačuvanom promptu da ga ubaciš direktno u polje za unos aktivnog AI-ja.
-✏️ Uređivanje na mestu: Klikni da proširiš prompt i uredi tekst direktno. Promene se automatski čuvaju nakon kratke pauze.
-🔀 Dugmad za novi razgovor: Pokrenite novi razgovor na bilo kojem od podržanih veb servisa direktno iz režima promptova — jednim dodirom.
-☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
-📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
-⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat bilo kog AI da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
-
-🌟 FUNKCIJE FOLDERA
+🌟 MOD FOLDERA
 
 ⌨️ Trenutna prečica za panel: Otvori panel odmah s bilo koje kartice pomoću Ctrl+Shift+1 (ili Cmd+Shift+1 na Mac-u).
 ⚡ Brzo čuvanje (Desni klik i prečice): Sačuvaj trenutni razgovor jednostavnim desnim klikom ili koristi prečicu na tastaturi (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo čuvanje» – s vizuelnim upozorenjem ako je već sačuvan!
@@ -38,6 +28,16 @@ VI fascikle se izvorno integriše sa svim glavnim AI chat asistentima, kao što 
 🏠 PODRŠKA ZA LOKALNI LLM
 
 Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite VI fascikle sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.
+✨ MOD PROMPTOVA
+
+📝 Lična biblioteka promptova: Prebaci na Mod promptova jednim klikom na prekidač u zaglavlju. Sačuvaj najbolje promptove s naslovom i tekstom, pronađi ih odmah pretragom i sortiranjem (najnovije, najstarije, A–Ž).
+▶ Ubacivanje jednim klikom: Klikni dugme za reprodukciju (▶) na sačuvanom promptu da ga ubaciš direktno u polje za unos aktivnog AI-ja.
+✏️ Uređivanje na mestu: Klikni da proširiš prompt i uredi tekst direktno. Promene se automatski čuvaju nakon kratke pauze.
+🔀 Dugmad za novi razgovor: Pokrenite novi razgovor na bilo kojem od podržanih veb servisa direktno iz režima promptova — jednim dodirom.
+☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
+📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
+⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat bilo kog AI da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
+
 🛠️ KAKO TO FUNKCIONIŠE?
 
 Mod foldera:
@@ -66,7 +66,7 @@ Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 AŽURIRANJA:
-Verzija 1.6.4 (Manje kartica): Klik na sačuvan razgovor sada prelazi na karticu koja ga već prikazuje umesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovo koristi poslednju karticu.
+Verzija 1.7.0 (Podfascikle): Prevucite jednu fasciklu na drugu da biste je smestili unutra. Otvorite nadređenu fasciklu kao grupu kartica i otvoriće se sve što sadrži. Klik na sačuvan razgovor sada prelazi na karticu koja ga već prikazuje umesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovo koristi poslednju karticu. Baidu Chat se preselio na novu adresu, gde čuvanje i ubacivanje promptova ponovo rade.
 Verzija 1.6.3 (Stranica dobrodošlice): Nakon instalacije sada se otvara kratak vodič: kako prikačiti proširenje i sačuvati prvi razgovor. Pretraga takođe jasno navodi da obuhvata samo već sačuvane razgovore.
 Verzija 1.6.2 (Kimi): Pokrenite nove razgovore na Kimiu direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove. Uklanjanje proširenja sada otvara kratku opcionu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
 Verzija 1.6.1 (Bezbednost i stabilnost): Dodatna zaštita sačuvanih linkova i uvoza rezervnih kopija, uz interne popravke stabilnosti.

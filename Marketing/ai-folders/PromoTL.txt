@@ -6,17 +6,7 @@ Ayusin ang mga pag-uusap mula sa lahat ng iyong mga paboritong AI tool sa mga ib
 
 Ang Mga AI Folder ay natively na nag-iintegrate sa lahat ng pangunahing AI chat assistant, tulad ng Claude, ChatGPT at Gemini, at sa mga lokal na LLM na pinapatakbo mo mismo. Ang mga pag-uusap mula sa iba't ibang platform ay maaaring magbahagi ng eksaktong parehong folder. Ang bawat chat ay nagpapakita ng kulay at logo ng serbisyo nito, kaya alam mo lagi kung saan ito nanggaling.
 
-✨ PROMPT MODE
-
-📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).
-▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng aktibong AI.
-✏️ Inline na Pag-edit: I-click ang isang prompt para palawakin ito at i-edit ang teksto nang direkta. Awtomatikong nase-save ang mga pagbabago pagkatapos ng maikling pause at ina-update ang sort order.
-🔀 Mga Pindutan ng Bagong Pag-uusap: Magsimula ng bagong pag-uusap sa alinman sa mga sinusuportahang web service nang direkta mula sa Prompt Mode — sa isang tap.
-☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
-📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
-⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng kahit anong AI para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
-
-🌟 MGA FEATURE NG FOLDER
+🌟 FOLDER MODE
 
 ⌨️ Instant na panel shortcut: Buksan ang panel agad mula sa anumang tab gamit ang Ctrl+Shift+1 (o Cmd+Shift+1 sa Mac).
 ⚡ Mabilis na Pag-save (Right-Click at Shortcuts): I-save ang kasalukuyang pag-uusap sa pamamagitan ng simpleng right-click, o gamitin ang keyboard shortcut (Ctrl+Shift+S o Cmd+Shift+S sa Mac) para agad itong ipadala sa "⚡ Mabilis na Pag-save" — na may visual na alerto kung nai-save na ito!
@@ -38,6 +28,16 @@ Ang Mga AI Folder ay natively na nag-iintegrate sa lahat ng pangunahing AI chat 
 🏠 SUPORTA SA LOKAL NA LLM
 
 Nagpapatakbo ng lokal na AI model (Ollama, LM Studio, Jan, o iba pa)? I-configure ang Mga AI Folder gamit ang iyong lokal na URL — sinusuportahan ang localhost at mga LAN address (192.168.x.x, mga custom na hostname). Gumagana rin ang mabilis na pag-save at pag-save sa pamamagitan ng context menu sa mga lokal na UI.
+✨ PROMPT MODE
+
+📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).
+▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng aktibong AI.
+✏️ Inline na Pag-edit: I-click ang isang prompt para palawakin ito at i-edit ang teksto nang direkta. Awtomatikong nase-save ang mga pagbabago pagkatapos ng maikling pause at ina-update ang sort order.
+🔀 Mga Pindutan ng Bagong Pag-uusap: Magsimula ng bagong pag-uusap sa alinman sa mga sinusuportahang web service nang direkta mula sa Prompt Mode — sa isang tap.
+☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
+📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
+⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng kahit anong AI para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
+
 🛠️ PAANO ITO GUMAGANA?
 
 Folder Mode:
@@ -67,7 +67,7 @@ I-browse ang code o mag-contribute: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 
 📢 MGA UPDATE:
-Bersyon 1.6.4 (Mas kaunting tab): Ang pag-click sa naka-save na usapan ay lumilipat na ngayon sa tab na nagpapakita na nito, hindi na nagbubukas ng duplicate. Ang Ctrl+click (o Cmd+click sa Mac) ay gumagamit muli ng huling tab mo.
+Bersyon 1.7.0 (Mga Subfolder): I-drag ang isang folder papunta sa isa pa para ilagay ito sa loob. Buksan ang parent folder bilang tab group at bubukas din ang lahat ng nasa loob nito. Ang pag-click sa naka-save na usapan ay lumilipat na ngayon sa tab na nagpapakita na nito, hindi na nagbubukas ng duplicate. Ang Ctrl+click (o Cmd+click sa Mac) ay gumagamit muli ng huling tab mo. Lumipat ang Baidu Chat sa bagong address, kung saan gumagana na muli ang pag-save at pagpasok ng prompt.
 Bersyon 1.6.3 (Pahina ng pagtanggap): Pagkatapos mag-install, may maikling gabay nang bumubukas: kung paano i-pin ang extension at i-save ang unang usapan mo. Malinaw ding sinasabi ng paghahanap na mga naka-save na usapan lang ang hinahanap nito.
 Bersyon 1.6.2 (Kimi): Magsimula ng mga bagong pag-uusap sa Kimi nang direkta mula sa Prompt Mode, i-save sa mga folder at mag-inject ng mga prompt. Ang pag-alis ng extension ay nagbubukas na ngayon ng maikling opsyonal na pahina ng feedback sa wika mo, at walang ipinapadala maliban kung ikaw mismo ang magpadala.
 Bersyon 1.6.1 (Seguridad at katatagan): Karagdagang proteksyon para sa mga naka-save na link at pag-import ng backup, kasama ang mga panloob na pag-aayos sa katatagan.

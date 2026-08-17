@@ -6,17 +6,7 @@ Järjestä kaikista suosikki-AI-työkaluistasi käydyt keskustelut jaetuiksi kan
 
 AI-kansiot integroituu natiivisti kaikkiin suuriin tekoälychat-avustajiin, kuten Claude, ChatGPT ja Gemini, sekä itse käyttämiisi paikallisiin LLM-malleihin. Eri alustojen keskustelut voivat jakaa täsmälleen saman kansion. Jokainen keskustelu näyttää oman palvelunsa värin ja logon, joten tiedät aina, mistä se on peräisin.
 
-✨ PROMPTTILA
-
-📝 Henkilökohtainen promptikirjasto: Vaihda Prompttilaan napsauttamalla otsikon kytkintä. Tallenna parhaat promptisi otsikolla ja tekstillä, löydä ne välittömästi hakemalla ja lajittelemalla (uusimmat, vanhimmat, A–Ö).
-▶ Injektio yhdellä napsautuksella: Napsauta tallennetun promptin toistopainiketta (▶) injektoidaksesi sen suoraan aktiivisen AI:n syöttökenttään.
-✏️ Inline-muokkaus: Napsauta laajentaaksesi promptin ja muokkaa tekstiä suoraan. Muutokset tallentuvat automaattisesti lyhyen tauon jälkeen.
-🔀 Uuden keskustelun painikkeet: Aloita uusi keskustelu missä tahansa tuetussa verkkopalvelussa suoraan Kehotetyökalusta — yhdellä napautuksella.
-☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
-📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
-⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # minkä tahansa tekoälyn chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Käytä ↓/↑ selailuun, paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
-
-🌟 KANSIO-OMINAISUUDET
+🌟 KANSIOTILA
 
 ⌨️ Välitön pikanäppäin: Avaa paneeli välittömästi mistä tahansa välilehdestä painamalla Ctrl+Shift+1 (tai Cmd+Shift+1 Macissa).
 ⚡ Pikatallennus (Hiiren oikea painike ja pikakuvakkeet): Tallenna nykyinen keskustelu yksinkertaisella hiiren oikealla painikkeella tai käytä pikanäppäintä (Ctrl+Shift+S tai Cmd+Shift+S Macissa) lähettääksesi sen «⚡ Pikatallennus» -kansioon – visuaalisella ilmoituksella, jos se on jo tallennettu!
@@ -38,6 +28,16 @@ AI-kansiot integroituu natiivisti kaikkiin suuriin tekoälychat-avustajiin, kute
 🏠 PAIKALLISEN LLM:N TUKI
 
 Käytätkö paikallista AI-mallia (Ollama, LM Studio, Jan tai muu)? Määritä AI-kansiot paikallisella URL-osoitteellasi — tukee localhostia ja LAN-osoitteita (192.168.x.x, mukautetut isäntänimet). Pikatallennus ja kontekstivalikosta tallennus toimivat myös paikallisissa käyttöliittymissä.
+✨ PROMPTTILA
+
+📝 Henkilökohtainen promptikirjasto: Vaihda Prompttilaan napsauttamalla otsikon kytkintä. Tallenna parhaat promptisi otsikolla ja tekstillä, löydä ne välittömästi hakemalla ja lajittelemalla (uusimmat, vanhimmat, A–Ö).
+▶ Injektio yhdellä napsautuksella: Napsauta tallennetun promptin toistopainiketta (▶) injektoidaksesi sen suoraan aktiivisen AI:n syöttökenttään.
+✏️ Inline-muokkaus: Napsauta laajentaaksesi promptin ja muokkaa tekstiä suoraan. Muutokset tallentuvat automaattisesti lyhyen tauon jälkeen.
+🔀 Uuden keskustelun painikkeet: Aloita uusi keskustelu missä tahansa tuetussa verkkopalvelussa suoraan Kehotetyökalusta — yhdellä napautuksella.
+☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
+📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
+⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # minkä tahansa tekoälyn chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Käytä ↓/↑ selailuun, paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
+
 🛠️ MITEN SE TOIMII?
 
 Kansiotila:
@@ -67,7 +67,7 @@ Selaa koodia tai osallistu: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 
 📢 PÄIVITYKSET:
-Versio 1.6.4 (Vähemmän välilehtiä): Tallennetun keskustelun napsauttaminen siirtyy nyt välilehdelle, jolla se on jo avoinna, sen sijaan että avaisi kaksoiskappaleen. Ctrl+napsautus (tai Cmd+napsautus Macissa) käyttää viimeisintä välilehteä uudelleen.
+Versio 1.7.0 (Alikansiot): Vedä kansio toisen päälle sijoittaaksesi sen sen sisään. Avaa yläkansio välilehtiryhmänä, niin kaikki sen sisältö avautuu mukana. Tallennetun keskustelun napsauttaminen siirtyy nyt välilehdelle, jolla se on jo avoinna, sen sijaan että avaisi kaksoiskappaleen. Ctrl+napsautus (tai Cmd+napsautus Macissa) käyttää viimeisintä välilehteä uudelleen. Baidu Chat siirtyi uuteen osoitteeseen, jossa tallennus ja prompttien lisäys toimivat jälleen.
 Versio 1.6.3 (Tervetuloa-sivu): Asennuksen jälkeen avautuu nyt lyhyt opas: miten laajennus kiinnitetään ja ensimmäinen keskustelu tallennetaan. Haku kertoo myös selvästi kattavansa vain jo tallennetut keskustelut.
 Versio 1.6.2 (Kimi): Aloita uusia Kimi-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet. Laajennuksen poistaminen avaa nyt lyhyen vapaaehtoisen palautesivun omalla kielelläsi, eikä mitään lähetetä, ellet lähetä sitä itse.
 Versio 1.6.1 (Turvallisuus ja vakaus): Lisäsuojaukset tallennetuille linkeille ja varmuuskopioiden tuonnille sekä sisäisiä vakautuskorjauksia.

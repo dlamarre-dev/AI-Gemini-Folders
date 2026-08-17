@@ -1,19 +1,9 @@
 ﻿Uporabljaš Google Gemini vsak dan – za delo, programiranje, pisanje ali raziskovanje – a znova in znova pišeš iste pozive, medtem ko se tvoji najboljši pogovori izgubijo v neskončni zgodovini?
 Mape Gemini (Gemini Folders) je razširitev, ki jo potrebuješ.
 
-Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj pogovore v mape, ustvari knjižnico pozivov za večkratno uporabo in jih vstavi neposredno v Gemini z enim klikom – brez kopiranja in lepljenja.
+Mape Gemini postanejo tvoj pravi Gemini cockpit: organiziraj pogovore v mape, ustvari knjižnico pozivov za večkratno uporabo in jih vstavi neposredno v Gemini z enim klikom – brez kopiranja in lepljenja.
 
-✨ NOVOST V V4.0 – NAČIN POZIVOV
-
-📝 Osebna knjižnica pozivov: Preklopi na Način pozivov z enim klikom na stikalo v glavi. Shrani najboljše pozive z naslovom in besedilom, takoj jih najdi z iskanjem in razvrščanjem (najnovejše, najstarejše, A–Ž).
-▶ Vstavljanje z enim klikom: Klikni gumb za predvajanje (▶) na katerem koli shranjenem pozivu, da ga vstaviš neposredno v vnosno polje Gemini.
-✏️ Urejanje na mestu: Klikni za razširitev poziva in uredi besedilo neposredno. Spremembe se samodejno shranijo po kratkem premoru.
-💎 Prilagojena povezava Gem: Nastavi povezavo do priljubljenega Gema in jo vklopi/izklopi z enim klikom.
-☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
-📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
-⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Uporabite ↓/↑ za krmarjenje, pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
-
-🌟 FUNKCIJE MAP
+🌟 NAČIN MAP
 
 ⌨️ Takojšnja bližnjica za ploščo: Odprite ploščo takoj iz katerega koli zavihka z Ctrl+Shift+1 (ali Cmd+Shift+1 na Macu).
 ⚡ Hitro shranjevanje (Desni klik in bližnjice): Shrani trenutni pogovor z enostavnim desnim klikom ali uporabi bližnjico tipkovnice (Ctrl+Shift+S ali Cmd+Shift+S na Macu), da ga pošlješ v «⚡ Hitro shranjevanje» – z vizualnim opozorilom, če je že shranjen!
@@ -30,6 +20,16 @@ Z različico 4.0 postanejo Mape Gemini tvoj pravi Gemini cockpit: organiziraj po
 🤖 Pametno zaznavanje in iskanje: Samodejno predizpolnjevanje natančnega naslova pogovora in iskalna vrstica v realnem času.
 ☁️ Sinhronizacija v oblaku in varnostne kopije: Dostop do organizacije na vseh napravah in izvoz podatkov kot JSON.
 🎨 Dizajn Material 3 in večjezičnost: Ultrakompakten vmesnik s popolnoma prilagojenimi modalnimi pogovornimi okni, samodejni temni način in podpora za 43 jezikov!
+
+✨ NAČIN POZIVOV
+
+📝 Osebna knjižnica pozivov: Preklopi na Način pozivov z enim klikom na stikalo v glavi. Shrani najboljše pozive z naslovom in besedilom, takoj jih najdi z iskanjem in razvrščanjem (najnovejše, najstarejše, A–Ž).
+▶ Vstavljanje z enim klikom: Klikni gumb za predvajanje (▶) na katerem koli shranjenem pozivu, da ga vstaviš neposredno v vnosno polje Gemini.
+✏️ Urejanje na mestu: Klikni za razširitev poziva in uredi besedilo neposredno. Spremembe se samodejno shranijo po kratkem premoru.
+💎 Prilagojena povezava Gem: Nastavi povezavo do priljubljenega Gema in jo vklopi/izklopi z enim klikom.
+☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
+📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
+⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Uporabite ↓/↑ za krmarjenje, pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
 
 🛠️ KAKO DELUJE?
 
@@ -65,7 +65,7 @@ Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Grok, Per
 👉 Namesti Mape AI: __AF_STORE_URL__
 
 📢 POSODOBITVE:
-Različica 4.5.6 (Manj zavihkov): Klik na shranjen pogovor zdaj preklopi na zavihek, ki ga že prikazuje, namesto da odpre dvojnik. Ctrl+klik (ali Cmd+klik na Macu) znova uporabi zadnji zavihek.
+Različica 4.6.0 (Podmape): Povlecite mapo na drugo, da jo postavite vanjo. Odprite nadrejeno mapo kot skupino zavihkov in odprlo se bo vse, kar vsebuje. Klik na shranjen pogovor zdaj preklopi na zavihek, ki ga že prikazuje, namesto da odpre dvojnik. Ctrl+klik (ali Cmd+klik na Macu) znova uporabi zadnji zavihek.
 Različica 4.5.5 (Pozdravna stran): Po namestitvi se zdaj odpre kratek vodnik: kako pripeti razširitev in shraniti prvi pogovor. Iskanje tudi jasno pove, da zajema le že shranjene pogovore.
 Različica 4.5.4 (Anketa ob odstranitvi): Odstranitev razširitve zdaj odpre kratko neobvezno stran za povratne informacije v vašem jeziku in nič ni poslano, dokler je sami ne pošljete.
 Različica 4.5.3 (Varnost in stabilnost): Dodatna zaščita shranjenih povezav in uvoza varnostnih kopij ter notranji popravki stabilnosti.

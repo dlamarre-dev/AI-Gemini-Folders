@@ -6,17 +6,7 @@ Organizuj rozmowy ze wszystkich swoich ulubionych narzędzi AI w wspólnych fold
 
 Foldery AI integrują się natywnie ze wszystkimi głównymi asystentami czatu AI, takimi jak Claude, ChatGPT i Gemini, oraz z lokalnymi modelami LLM, które uruchamiasz samodzielnie. Rozmowy z różnych platform mogą znajdować się w tym samym folderze. Każdy czat wyświetla kolor i logo swojej usługi, dzięki czemu zawsze wiesz, skąd pochodzi.
 
-✨ TRYB PROMPTÓW
-
-📝 Osobista biblioteka promptów: Przełącz się na tryb promptów jednym kliknięciem przełącznika w nagłówku. Zapisuj najlepsze prompty z tytułem i pełnym tekstem, a potem znajdź je błyskawicznie dzięki wyszukiwaniu i sortowaniu (najnowsze, najstarsze, A-Z).
-▶ Wstrzyknięcie jednym kliknięciem: Koniec z kopiowaniem i wklejaniem. Kliknij przycisk odtwarzania (▶) przy dowolnym zapisanym prompcie, aby wstrzyknąć go bezpośrednio w pole tekstowe aktywnej AI.
-✏️ Edycja w miejscu: Kliknij prompt, aby go rozwinąć i edytować tekst bezpośrednio. Zmiany zapisują się automatycznie po krótkiej chwili, a kolejność sortowania aktualizuje się odpowiednio.
-🔀 Przyciski Nowej Rozmowy: Rozpocznij nową rozmowę w dowolnym z obsługiwanych serwisów internetowych bezpośrednio z Trybu Promptów — jednym dotknięciem.
-☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
-📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
-⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu dowolnej AI, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Użyj ↓/↑ do nawigacji między sugestiami, naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić.
-
-🌟 FUNKCJE FOLDERÓW
+🌟 TRYB FOLDERÓW
 
 ⌨️ Natychmiastowy skrót do panelu: Otwórz panel natychmiast z dowolnej karty za pomocą Ctrl+Shift+1 (lub Cmd+Shift+1 na Macu).
 ⚡ Szybkie Zapisywanie (Prawy przycisk i Skróty): Zapisz rozmowę prawym przyciskiem myszy lub skrótem klawiszowym (Ctrl+Shift+S lub Cmd+Shift+S na Mac), aby natychmiast wysłać ją do „⚡ Szybkich Zapisów" — z wizualnym alertem, jeśli już jest zapisana!
@@ -38,6 +28,16 @@ Foldery AI integrują się natywnie ze wszystkimi głównymi asystentami czatu A
 🏠 WSPARCIE LOKALNEGO LLM
 
 Używasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj Foldery AI ze swoim lokalnym adresem URL — obsługuje localhost i adresy LAN (192.168.x.x, niestandardowe nazwy hostów). Szybkie zapisywanie i zapisywanie z menu kontekstowego działają również w lokalnych interfejsach.
+✨ TRYB PROMPTÓW
+
+📝 Osobista biblioteka promptów: Przełącz się na tryb promptów jednym kliknięciem przełącznika w nagłówku. Zapisuj najlepsze prompty z tytułem i pełnym tekstem, a potem znajdź je błyskawicznie dzięki wyszukiwaniu i sortowaniu (najnowsze, najstarsze, A-Z).
+▶ Wstrzyknięcie jednym kliknięciem: Koniec z kopiowaniem i wklejaniem. Kliknij przycisk odtwarzania (▶) przy dowolnym zapisanym prompcie, aby wstrzyknąć go bezpośrednio w pole tekstowe aktywnej AI.
+✏️ Edycja w miejscu: Kliknij prompt, aby go rozwinąć i edytować tekst bezpośrednio. Zmiany zapisują się automatycznie po krótkiej chwili, a kolejność sortowania aktualizuje się odpowiednio.
+🔀 Przyciski Nowej Rozmowy: Rozpocznij nową rozmowę w dowolnym z obsługiwanych serwisów internetowych bezpośrednio z Trybu Promptów — jednym dotknięciem.
+☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
+📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
+⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu dowolnej AI, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Użyj ↓/↑ do nawigacji między sugestiami, naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić.
+
 🛠️ JAK TO DZIAŁA?
 
 Tryb Folderów:
@@ -67,7 +67,7 @@ Przeglądaj kod lub współtwórz: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 
 📢 AKTUALIZACJE:
-Wersja 1.6.4 (Mniej kart): Kliknięcie zapisanej rozmowy przenosi teraz do karty, która już ją wyświetla, zamiast otwierać duplikat. Ctrl+kliknięcie (lub Cmd+kliknięcie na Macu) ponownie wykorzystuje ostatnią kartę.
+Wersja 1.7.0 (Podfoldery): Przeciągnij folder na inny, aby umieścić go w środku. Otwórz folder nadrzędny jako grupę kart, a otworzy się wszystko, co zawiera. Kliknięcie zapisanej rozmowy przenosi teraz do karty, która już ją wyświetla, zamiast otwierać duplikat. Ctrl+kliknięcie (lub Cmd+kliknięcie na Macu) ponownie wykorzystuje ostatnią kartę. Baidu Chat przeniósł się na nowy adres, gdzie zapisywanie i wstawianie promptów znów działają.
 Wersja 1.6.3 (Strona powitalna): Po instalacji otwiera się teraz krótki przewodnik: jak przypiąć rozszerzenie i zapisać pierwszą rozmowę. Wyszukiwanie jasno informuje też, że obejmuje tylko zapisane rozmowy.
 Wersja 1.6.2 (Kimi): Rozpoczynaj nowe rozmowy na Kimi bezpośrednio z Trybu Promptów, zapisuj je w folderach i wstrzykuj prompty. Usunięcie rozszerzenia otwiera teraz krótką, opcjonalną stronę opinii w Twoim języku, a nic nie jest wysyłane, dopóki sam jej nie wyślesz.
 Wersja 1.6.1 (Bezpieczeństwo i stabilność): Dodatkowe zabezpieczenia zapisanych linków i importu kopii zapasowych oraz wewnętrzne poprawki stabilności.

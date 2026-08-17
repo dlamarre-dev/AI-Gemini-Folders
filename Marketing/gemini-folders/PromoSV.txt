@@ -1,19 +1,9 @@
 ﻿Använder du Google Gemini varje dag – för arbete, kodning, skrivande eller forskning – men skriver du om samma prompter gång på gång, medan dina bästa konversationer försvinner i en ändlös historik?
 Gemini-mappar (Gemini Folders) är tillägget du behöver.
 
-Med version 4.0 blir Gemini-mappar din verkliga Gemini-cockpit: organisera konversationer i mappar, bygg ett bibliotek med återanvändbara prompter och injicera dem direkt i Gemini med ett enda klick – inget kopierande och klistrande.
+Gemini-mappar blir din verkliga Gemini-cockpit: organisera konversationer i mappar, bygg ett bibliotek med återanvändbara prompter och injicera dem direkt i Gemini med ett enda klick – inget kopierande och klistrande.
 
-✨ NYTT I V4.0 – PROMPTLÄGE
-
-📝 Personligt promptbibliotek: Växla till Promptläge med ett klick på reglaget i sidhuvudet. Spara dina bästa prompter med titel och text, hitta dem direkt med sökning och sortering (nyaste, äldsta, A–Ö).
-▶ Injicering med ett klick: Klicka på uppspelningsknappen (▶) på en sparad prompt för att injicera den direkt i Geminis inmatningsfält. Tillägget meddelar dig om du inte är på en Gemini-sida.
-✏️ Inline-redigering: Klicka för att expandera en prompt och redigera texten direkt. Ändringar sparas automatiskt efter en kort paus.
-💎 Anpassad Gem-länk: Konfigurera en länk till din favoritgem och slå på/av den med ett klick. När den är aktiv öppnar knappen «Ny konversation» din Gem i stället för standard-chatten.
-☁️ Promptsynkronisering: Aktivera molnsynkronisering för promptbiblioteket oberoende av mapparna.
-📌 Fästa prompter: Fäst viktiga prompter längst upp i biblioteket, åtskilda från resten med en visuell avdelare.
-⌨️ Promptutlösare med live-förslag: Skriv # i Geminis chattfält för att omedelbart se alla dina sparade prompter — filtrerade i realtid medan du skriver. Använd ↓/↑ för att navigera, tryck på mellanslag vid en unik matchning för autofullbordning, eller vid en exakt matchning för direkt injektion.
-
-🌟 MAPPFUNKTIONER
+🌟 MAPPLÄGE
 
 ⌨️ Omedelbar panelgenväg: Öppna panelen omedelbart från valflik med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
 ⚡ Snabbspara (Högerklick och genvägar): Spara den aktuella konversationen med ett enkelt högerklick, eller använd tangentbordsgenvägen (Ctrl+Shift+S eller Cmd+Shift+S på Mac) för att skicka den till «⚡ Snabbspar» – med en visuell varning om den redan är sparad!
@@ -30,6 +20,16 @@ Med version 4.0 blir Gemini-mappar din verkliga Gemini-cockpit: organisera konve
 🤖 Smart identifiering och sökning: Automatisk förifyllning av konversationens exakta titel och ett realtidssökfält.
 ☁️ Molnsynkronisering och säkerhetskopiering: Åtkomst till din organisation på alla enheter och exportera data som JSON.
 🎨 Material 3-design och flerspråkig: Ultrakompakt gränssnitt med helt anpassade modala dialogrutor, automatiskt mörkt läge och stöd för 43 språk!
+
+✨ PROMPTLÄGE
+
+📝 Personligt promptbibliotek: Växla till Promptläge med ett klick på reglaget i sidhuvudet. Spara dina bästa prompter med titel och text, hitta dem direkt med sökning och sortering (nyaste, äldsta, A–Ö).
+▶ Injicering med ett klick: Klicka på uppspelningsknappen (▶) på en sparad prompt för att injicera den direkt i Geminis inmatningsfält. Tillägget meddelar dig om du inte är på en Gemini-sida.
+✏️ Inline-redigering: Klicka för att expandera en prompt och redigera texten direkt. Ändringar sparas automatiskt efter en kort paus.
+💎 Anpassad Gem-länk: Konfigurera en länk till din favoritgem och slå på/av den med ett klick. När den är aktiv öppnar knappen «Ny konversation» din Gem i stället för standard-chatten.
+☁️ Promptsynkronisering: Aktivera molnsynkronisering för promptbiblioteket oberoende av mapparna.
+📌 Fästa prompter: Fäst viktiga prompter längst upp i biblioteket, åtskilda från resten med en visuell avdelare.
+⌨️ Promptutlösare med live-förslag: Skriv # i Geminis chattfält för att omedelbart se alla dina sparade prompter — filtrerade i realtid medan du skriver. Använd ↓/↑ för att navigera, tryck på mellanslag vid en unik matchning för autofullbordning, eller vid en exakt matchning för direkt injektion.
 
 🛠️ HUR FUNGERAR DET?
 
@@ -66,7 +66,7 @@ Intresserad av Gemini-mappar men använder du också ChatGPT, Claude, Copilot, G
 👉 Installera AI-mappar: __AF_STORE_URL__
 
 📢 UPPDATERINGAR:
-Version 4.5.6 (Färre flikar): Ett klick på en sparad konversation växlar nu till fliken som redan visar den i stället för att öppna en dubblett. Ctrl+klick (eller Cmd+klick på Mac) återanvänder din senaste flik.
+Version 4.6.0 (Undermappar): Dra en mapp ovanpå en annan för att lägga den inuti. Öppna den överordnade mappen som en flikgrupp så öppnas allt innehåll med den. Ett klick på en sparad konversation växlar nu till fliken som redan visar den i stället för att öppna en dubblett. Ctrl+klick (eller Cmd+klick på Mac) återanvänder din senaste flik.
 Version 4.5.5 (Välkomstsida): Efter installationen öppnas nu en kort guide: hur du fäster tillägget och sparar din första konversation. Sökningen visar också tydligt att den bara omfattar sparade konversationer.
 Version 4.5.4 (Avinstallationsenkät): När du tar bort tillägget öppnas nu en kort valfri återkopplingssida på ditt språk, och inget skickas om du inte skickar det själv.
 Version 4.5.3 (Säkerhet och stabilitet): Extra skydd för sparade länkar och import av säkerhetskopior, plus interna stabilitetsfixar.

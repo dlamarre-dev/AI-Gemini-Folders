@@ -1,19 +1,9 @@
 ﻿Koristiš li Google Gemini svaki dan – za posao, kodiranje, pisanje ili istraživanje – ali neprestano iznova kucaš iste promptove, dok ti se najbolji razgovori gube u beskonačnoj istoriji?
 Gemini Folderi (Gemini Folders) je proširenje koje ti treba.
 
-S verzijom 4.0 Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgovore u foldere, izgradite biblioteku promptova za višekratnu upotrebu i ubacuj ih direktno u Gemini jednim klikom – bez kopiranja i lepljenja.
+Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgovore u foldere, izgradite biblioteku promptova za višekratnu upotrebu i ubacuj ih direktno u Gemini jednim klikom – bez kopiranja i lepljenja.
 
-✨ NOVOST U V4.0 – MOD PROMPTOVA
-
-📝 Lična biblioteka promptova: Prebaci na Mod promptova jednim klikom na prekidač u zaglavlju. Sačuvaj najbolje promptove s naslovom i tekstom, pronađi ih odmah pretragom i sortiranjem (najnovije, najstarije, A–Ž).
-▶ Ubacivanje jednim klikom: Klikni dugme za reprodukciju (▶) na sačuvanom promptu da ga ubaciš direktno u polje za unos Gemini.
-✏️ Uređivanje na mestu: Klikni da proširiš prompt i uredi tekst direktno. Promene se automatski čuvaju nakon kratke pauze.
-💎 Prilagođena Gem veza: Konfiguriši vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
-☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
-📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
-⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat Gemini da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
-
-🌟 FUNKCIJE FOLDERA
+🌟 MOD FOLDERA
 
 ⌨️ Trenutna prečica za panel: Otvori panel odmah s bilo koje kartice pomoću Ctrl+Shift+1 (ili Cmd+Shift+1 na Mac-u).
 ⚡ Brzo čuvanje (Desni klik i prečice): Sačuvaj trenutni razgovor jednostavnim desnim klikom ili koristi prečicu na tastaturi (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo čuvanje» – s vizuelnim upozorenjem ako je već sačuvan!
@@ -30,6 +20,16 @@ S verzijom 4.0 Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgo
 🤖 Pametno prepoznavanje i pretraga: Automatsko prethodno popunjavanje tačnog naslova razgovora i traka za pretragu u realnom vremenu.
 ☁️ Sinhronizacija u oblaku i pravljenje rezervnih kopija: Pristup organizaciji na svim uređajima i izvoz podataka kao JSON.
 🎨 Dizajn Material 3 i višejezičan: Ultrakompaktno sučelje s potpuno prilagođenim modalnim dijaloškim okvirima, automatski tamni način i podrška za 43 jezika!
+
+✨ MOD PROMPTOVA
+
+📝 Lična biblioteka promptova: Prebaci na Mod promptova jednim klikom na prekidač u zaglavlju. Sačuvaj najbolje promptove s naslovom i tekstom, pronađi ih odmah pretragom i sortiranjem (najnovije, najstarije, A–Ž).
+▶ Ubacivanje jednim klikom: Klikni dugme za reprodukciju (▶) na sačuvanom promptu da ga ubaciš direktno u polje za unos Gemini.
+✏️ Uređivanje na mestu: Klikni da proširiš prompt i uredi tekst direktno. Promene se automatski čuvaju nakon kratke pauze.
+💎 Prilagođena Gem veza: Konfiguriši vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
+☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
+📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
+⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat Gemini da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
 
 🛠️ KAKO TO FUNKCIONIŠE?
 
@@ -65,7 +65,7 @@ Zainteresovani za Gemini Folderi, ali koristite i ChatGPT, Claude, Copilot, Grok
 👉 Instaliraj VI fascikle: __AF_STORE_URL__
 
 📢 AŽURIRANJA:
-Verzija 4.5.6 (Manje kartica): Klik na sačuvan razgovor sada prelazi na karticu koja ga već prikazuje umesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovo koristi poslednju karticu.
+Verzija 4.6.0 (Podfascikle): Prevucite jednu fasciklu na drugu da biste je smestili unutra. Otvorite nadređenu fasciklu kao grupu kartica i otvoriće se sve što sadrži. Klik na sačuvan razgovor sada prelazi na karticu koja ga već prikazuje umesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovo koristi poslednju karticu.
 Verzija 4.5.5 (Stranica dobrodošlice): Nakon instalacije sada se otvara kratak vodič: kako prikačiti proširenje i sačuvati prvi razgovor. Pretraga takođe jasno navodi da obuhvata samo već sačuvane razgovore.
 Verzija 4.5.4 (Anketa pri deinstalaciji): Uklanjanje proširenja sada otvara kratku opcionu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
 Verzija 4.5.3 (Bezbednost i stabilnost): Dodatna zaštita sačuvanih linkova i uvoza rezervnih kopija, uz interne popravke stabilnosti.

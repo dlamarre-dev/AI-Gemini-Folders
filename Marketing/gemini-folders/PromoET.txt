@@ -1,19 +1,9 @@
 ﻿Kasutad Google Gemini iga päev – töö, koodi kirjutamise, kirjutamise või uurimise jaoks – kuid kirjutad samu prompte uuesti ja uuesti, samal ajal kui sinu parimad vestlused kaovad lõpmatutesse ajaloohoidlatesse?
 Gemini Kaustad (Gemini Folders) on laiendus, mida vajad.
 
-Versiooniga 4.0 saab Gemini Kaustadest sinu tõeline Gemini cockpit: korralda vestlused kaustadesse, loo korduvkasutatavate promptide kogu ja lisa need otse Geminisse ühe klikiga – kopeerimine ja kleepimine pole vajalik.
+Gemini Kaustadest saab sinu tõeline Gemini cockpit: korralda vestlused kaustadesse, loo korduvkasutatavate promptide kogu ja lisa need otse Geminisse ühe klikiga – kopeerimine ja kleepimine pole vajalik.
 
-✨ UUS V4.0-S – PROMPTI REŽIIM
-
-📝 Isiklik promptide kogu: Lülitu Prompti režiimile, klõpsates päise lülitit. Salvesta oma parimad promptid pealkirja ja tekstiga, leia need koheselt otsingu ja sortimisega (uusimad, vanimad, A–Z).
-▶ Lisa ühe klikiga: Klõpsa salvestatud prompti esitamisnuppu (▶), et lisada see otse Gemini sisestusväljale.
-✏️ Otsene redigeerimine: Klõpsa prompti laiendamiseks ja redigeeri teksti otse. Muudatused salvestatakse automaatselt lühikese pausi järel.
-💎 Kohandatud Gem-link: Seadista link oma lemmikhelmele ja lülita see ühe klikiga sisse/välja.
-☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
-📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
-⌨️ Viipete käivitaja reaalajas soovitustega: Sisestage # Gemini vestlusväljale, et näha kohe kõiki oma salvestatud viipeid — reaalajas filtreeritud kirjutamise ajal. Kasutage ↓/↑ navigeerimiseks, vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral otseseks sisestamiseks.
-
-🌟 KAUSTADE FUNKTSIOONID
+🌟 KAUSTADE REŽIIM
 
 ⌨️ Hetkelise paneeli otsetee: Avage paneel koheselt mis tahes vahekaardilt, kasutades Ctrl+Shift+1 (või Cmd+Shift+1 Macis).
 ⚡ Kiirsalvestus (Paremklõps ja otseteed): Salvesta praegune vestlus lihtsa paremklõpsuga või kasuta klaviatuuri otseteed (Ctrl+Shift+S või Cmd+Shift+S Macis), et saata see «⚡ Kiirsalvestus» kausta – visuaalse teavitusega, kui see on juba salvestatud!
@@ -30,6 +20,16 @@ Versiooniga 4.0 saab Gemini Kaustadest sinu tõeline Gemini cockpit: korralda ve
 🤖 Nutikas tuvastamine ja otsing: Vestluse täpse pealkirja automaatne eeltäitmine ja reaalajas otsinguriiba.
 ☁️ Pilvsünkroonimine ja varundamine: Juurdepääs oma korraldusse kõigis seadmetes ja andmete eksport JSON-ina.
 🎨 Material 3 disain ja mitmekeelne: Ülimalt kompaktne liides täiesti kohandatud modaaldialoogi akendega, automaatne tume režiim ja tugi 43 keelele!
+
+✨ S – PROMPTI REŽIIM
+
+📝 Isiklik promptide kogu: Lülitu Prompti režiimile, klõpsates päise lülitit. Salvesta oma parimad promptid pealkirja ja tekstiga, leia need koheselt otsingu ja sortimisega (uusimad, vanimad, A–Z).
+▶ Lisa ühe klikiga: Klõpsa salvestatud prompti esitamisnuppu (▶), et lisada see otse Gemini sisestusväljale.
+✏️ Otsene redigeerimine: Klõpsa prompti laiendamiseks ja redigeeri teksti otse. Muudatused salvestatakse automaatselt lühikese pausi järel.
+💎 Kohandatud Gem-link: Seadista link oma lemmikhelmele ja lülita see ühe klikiga sisse/välja.
+☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
+📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
+⌨️ Viipete käivitaja reaalajas soovitustega: Sisestage # Gemini vestlusväljale, et näha kohe kõiki oma salvestatud viipeid — reaalajas filtreeritud kirjutamise ajal. Kasutage ↓/↑ navigeerimiseks, vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral otseseks sisestamiseks.
 
 🛠️ KUIDAS SEE TÖÖTAB?
 
@@ -65,7 +65,7 @@ Huvitab teid Gemini Kaustad, kuid kasutate ka ChatGPT-d, Claudi, Copiloti, Groki
 👉 Installi AI kaustad: __AF_STORE_URL__
 
 📢 UUENDUSED:
-Versioon 4.5.6 (Vähem vahekaarte): Salvestatud vestlusel klõpsamine läheb nüüd vahekaardile, kus see on juba avatud, duplikaadi avamise asemel. Ctrl+klõps (või Cmd+klõps Macis) kasutab viimast vahekaarti uuesti.
+Versioon 4.6.0 (Alamkaustad): Lohista üks kaust teise peale, et see sinna paigutada. Ava ülemkaust vahekaardirühmana ja kogu selle sisu avaneb koos sellega. Salvestatud vestlusel klõpsamine läheb nüüd vahekaardile, kus see on juba avatud, duplikaadi avamise asemel. Ctrl+klõps (või Cmd+klõps Macis) kasutab viimast vahekaarti uuesti.
 Versioon 4.5.5 (Tervituslehekülg): Pärast paigaldamist avaneb nüüd lühike juhend: kuidas laiendus kinnitada ja esimene vestlus salvestada. Otsing annab samuti selgelt teada, et hõlmab ainult juba salvestatud vestlusi.
 Versioon 4.5.4 (Eemaldamise küsitlus): Laienduse eemaldamine avab nüüd lühikese valikulise tagasiside lehe teie keeles ja midagi ei saadeta, kui te seda ise ära ei saada.
 Versioon 4.5.3 (Turvalisus ja stabiilsus): Täiendav kaitse salvestatud linkidele ja varukoopiate importimisele ning sisemised stabiilsusparandused.

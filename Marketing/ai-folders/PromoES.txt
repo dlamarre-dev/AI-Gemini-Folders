@@ -6,17 +6,7 @@ Organiza conversaciones de todas tus herramientas de IA favoritas en carpetas co
 
 Carpetas IA se integra de forma nativa con todos los principales asistentes de chat de IA, como Claude, ChatGPT y Gemini, así como con los LLM locales que ejecutas tú mismo. Las conversaciones de diferentes plataformas pueden compartir la misma carpeta. Cada chat muestra el color y el logotipo de su servicio de origen, para que siempre sepas de dónde proviene.
 
-✨ MODO PROMPTS
-
-📝 Biblioteca personal de prompts: Cambia al modo Prompt con un solo clic en el botón de alternancia del encabezado. Guarda tus mejores prompts con un título y texto completo, y encuéntralos al instante con búsqueda y ordenación (más recientes, más antiguos, A-Z).
-▶ Inyección con un clic: Se acabó copiar y pegar. Haz clic en el botón de reproducción (▶) de cualquier prompt guardado para inyectarlo directamente en el campo de texto de la IA activa.
-✏️ Edición en línea: Haz clic en un prompt para desplegarlo y editar el texto directamente. Los cambios se guardan automáticamente tras una breve pausa y el orden se actualiza en consecuencia.
-🔀 Botones de Nueva Conversación: Inicia una nueva conversación en cualquiera de los servicios web compatibles directamente desde el Modo Prompt — con un solo toque.
-☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
-📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
-⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de cualquier IA para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Usa ↓/↑ para navegar entre sugerencias, pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente.
-
-🌟 FUNCIONES DE CARPETAS
+🌟 MODO CARPETAS
 
 ⌨️ Atajo de teclado instantáneo: Abre el panel al instante desde cualquier pestaña con Ctrl+Shift+1 (o Cmd+Shift+1 en Mac).
 ⚡ Guardado Rápido (Clic derecho y Atajos): Guarda la conversación con un simple clic derecho, o usa el atajo de teclado (Ctrl+Shift+S o Cmd+Shift+S en Mac) para enviarla al instante a "⚡ Guardados Rápidos" — ¡con alerta visual si ya está guardada!
@@ -38,6 +28,16 @@ Carpetas IA se integra de forma nativa con todos los principales asistentes de c
 🏠 SOPORTE DE LLM LOCAL
 
 ¿Usas un modelo de IA local (Ollama, LM Studio, Jan u otro)? Configura Carpetas IA con tu URL local — compatible con localhost y direcciones LAN (192.168.x.x, nombres de host personalizados). El guardado rápido y el guardado por menú contextual también funcionan en interfaces locales.
+✨ MODO PROMPTS
+
+📝 Biblioteca personal de prompts: Cambia al modo Prompt con un solo clic en el botón de alternancia del encabezado. Guarda tus mejores prompts con un título y texto completo, y encuéntralos al instante con búsqueda y ordenación (más recientes, más antiguos, A-Z).
+▶ Inyección con un clic: Se acabó copiar y pegar. Haz clic en el botón de reproducción (▶) de cualquier prompt guardado para inyectarlo directamente en el campo de texto de la IA activa.
+✏️ Edición en línea: Haz clic en un prompt para desplegarlo y editar el texto directamente. Los cambios se guardan automáticamente tras una breve pausa y el orden se actualiza en consecuencia.
+🔀 Botones de Nueva Conversación: Inicia una nueva conversación en cualquiera de los servicios web compatibles directamente desde el Modo Prompt — con un solo toque.
+☁️ Sincronización de prompts: Activa la sincronización en la nube para tu biblioteca de prompts, de forma independiente a tus carpetas.
+📌 Prompts fijados: Fija tus prompts esenciales con un clic para mantenerlos en la parte superior de tu biblioteca, separados del resto por un divisor visual.
+⌨️ Disparador de prompts con sugerencias en vivo: Escribe # en el campo de chat de cualquier IA para ver al instante todos tus prompts guardados — filtrados en tiempo real mientras escribes. Usa ↓/↑ para navegar entre sugerencias, pulsa Espacio en una coincidencia única para autocompletar, o en una coincidencia exacta para inyectar directamente.
+
 🛠️ ¿CÓMO FUNCIONA?
 
 Modo Carpetas:
@@ -67,7 +67,7 @@ Explorar el código o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 
 📢 ACTUALIZACIONES:
-Versión 1.6.4 (Menos pestañas): Hacer clic en una conversación guardada ahora cambia a la pestaña que ya la muestra en lugar de abrir un duplicado. Ctrl+clic (o Cmd+clic en Mac) reutiliza tu última pestaña.
+Versión 1.7.0 (Subcarpetas): Arrastra una carpeta sobre otra para meterla dentro. Abre la carpeta principal como grupo de pestañas y se abrirá todo lo que contiene. Hacer clic en una conversación guardada ahora cambia a la pestaña que ya la muestra en lugar de abrir un duplicado. Ctrl+clic (o Cmd+clic en Mac) reutiliza tu última pestaña. Baidu Chat se ha mudado a una nueva dirección, donde guardar e insertar prompts vuelve a funcionar.
 Versión 1.6.3 (Página de bienvenida): Tras la instalación se abre ahora una breve guía: cómo fijar la extensión y guardar tu primera conversación. La búsqueda también deja claro que solo cubre las conversaciones ya guardadas.
 Versión 1.6.2 (Kimi): Inicia nuevas conversaciones de Kimi directamente desde el Modo Prompt, guárdalas en carpetas e inyecta prompts. Al eliminar la extensión ahora se abre una breve página de comentarios opcional en tu idioma, y no se envía nada a menos que la envíes tú mismo.
 Versión 1.6.1 (Seguridad y estabilidad): Protecciones adicionales para los enlaces guardados y las importaciones de copias de seguridad, además de correcciones internas de estabilidad.
