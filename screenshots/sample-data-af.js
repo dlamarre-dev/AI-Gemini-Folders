@@ -33,6 +33,8 @@ function make(locale) {
     syncFolderName = 'AI Folders (Sync)',
     research, writing, travel,
     dev         = 'Dev',
+    // Sub-folder of Dev, so the folder shots show the nesting (1.7.0 / 4.6.0).
+    bugs        = 'Bugs',
     // Conversation titles (English defaults, represent multi-site use)
     devChat1    = 'Refactor Node.js API',
     devChat2    = 'Debug React hook',
@@ -51,7 +53,7 @@ function make(locale) {
   } = locale;
 
   const devFolder = `💻 ${dev}`;
-  const resFolder = `🔬 ${research || 'Research'}`;
+  const bugsFolder = `🐞 ${bugs}`;
   const writeFolder = `✍️ ${writing || 'Writing'}`;
 
   return {
@@ -69,18 +71,18 @@ function make(locale) {
     devChat1, devChat2, resChat1, writeChat1,
     pinnedFolders: [devFolder],
     folders: {
-      // Dev folder: conversations from ChatGPT + Claude + Deepseek + Gemini
+      // Dev folder: conversations from ChatGPT + Deepseek + Gemini
       [devFolder]: [
         { url: 'https://chatgpt.com/c/aaa1',   title: devChat1,  timestamp: NOW - 1 * DAY, site: 'chatgpt' },
-        { url: 'https://claude.ai/chat/aaa2',   title: devChat2,  timestamp: NOW - 2 * DAY, site: 'claude' },
         { url: 'https://chat.deepseek.com/a/aaa3', title: devChat3,  timestamp: NOW - 3 * DAY, site: 'deepseek' },
         { url: 'https://gemini.google.com/app/aaa4', title: `${devChat1} v2`, timestamp: NOW - 4 * DAY, site: 'gemini' },
       ],
-      // Research folder: Perplexity + Copilot + Claude
-      [resFolder]: [
-        { url: 'https://www.perplexity.ai/search/bbb1', title: resChat1, timestamp: NOW - 1 * DAY, site: 'perplexity' },
-        { url: 'https://copilot.microsoft.com/c/bbb2',  title: resChat2, timestamp: NOW - 2 * DAY, site: 'copilot' },
-        { url: 'https://claude.ai/chat/bbb3',           title: `${resChat1} — deep dive`, timestamp: NOW - 5 * DAY, site: 'claude' },
+      // Nested under Dev, holding a real conversation — moved out of Dev rather
+      // than invented, so no locale needed a new title — because an empty
+      // sub-folder would not show what nesting is for. The Research folder came
+      // out to pay for the two rows this adds, keeping the popup the same height.
+      [bugsFolder]: [
+        { url: 'https://claude.ai/chat/aaa2',   title: devChat2,  timestamp: NOW - 2 * DAY, site: 'claude' },
       ],
       // Writing folder: Perplexity + Claude + Grok
       [writeFolder]: [
@@ -89,6 +91,7 @@ function make(locale) {
         { url: 'https://grok.com/chat/ccc3',         title: `${writeChat2} final`, timestamp: NOW - 3 * DAY, site: 'grok' },
       ],
     },
+    folderParents: { [bugsFolder]: devFolder },
     pinnedPrompts: [codeReviewer || 'Code Reviewer'],
     prompts: {
       [codeReviewer || 'Code Reviewer']: {
@@ -120,6 +123,7 @@ function make(locale) {
 const LOCALES = {
   en: make({ title: 'Organize your AI conversations', folderLabel: '📁 Folder Mode', promptLabel: '📝 Prompt Mode',
     dev: 'Dev', research: 'Research', writing: 'Writing',
+    bugs: 'Bugs',
     ctxMenuSaveLabel: 'Save to AI Folders', syncFolderName: 'AI Folders (Sync)',
     aiReply: "Here's a clean refactored version using async/await and proper error handling…",
     sidebarRecent: 'Recent',
@@ -134,6 +138,7 @@ const LOCALES = {
 
   fr: make({ title: 'Organisez vos conversations IA', folderLabel: '📁 Mode Dossiers', promptLabel: '📝 Mode Prompts',
     dev: 'Dev', research: 'Recherche', writing: 'Rédaction',
+    bugs: 'Bugs',
     ctxMenuSaveLabel: 'Sauvegarder dans Dossiers IA', syncFolderName: 'Dossiers IA (Sync)',
     aiReply: 'Voici une version refactorisée propre avec async/await et une gestion des erreurs…',
     sidebarRecent: 'Récentes',
@@ -154,6 +159,7 @@ const LOCALES = {
 
   de: make({ title: 'KI-Gespräche organisieren', folderLabel: '📁 Ordner-Modus', promptLabel: '📝 Prompt-Modus',
     dev: 'Entwicklung', research: 'Recherche', writing: 'Texte',
+    bugs: 'Fehler',
     ctxMenuSaveLabel: 'In KI-Ordner speichern', syncFolderName: 'KI-Ordner (Sync)',
     aiReply: 'Hier ist eine saubere Refaktorierung mit async/await und ordentlicher Fehlerbehandlung…',
     sidebarRecent: 'Letzte',
@@ -174,6 +180,7 @@ const LOCALES = {
 
   es: make({ title: 'Organiza tus conversaciones de IA', folderLabel: '📁 Modo Carpetas', promptLabel: '📝 Modo Prompts',
     dev: 'Desarrollo', research: 'Investigación', writing: 'Escritura',
+    bugs: 'Errores',
     ctxMenuSaveLabel: 'Guardar en Carpetas IA', syncFolderName: 'Carpetas IA (Sync)',
     aiReply: 'Aquí tienes una versión refactorizada usando async/await y manejo adecuado de errores…',
     sidebarRecent: 'Recientes',
@@ -194,6 +201,7 @@ const LOCALES = {
 
   it: make({ title: 'Organizza le tue conversazioni IA', folderLabel: '📁 Modalità Cartelle', promptLabel: '📝 Modalità Prompt',
     dev: 'Dev', research: 'Ricerca', writing: 'Scrittura',
+    bugs: 'Bug',
     ctxMenuSaveLabel: 'Salva in Cartelle IA', syncFolderName: 'Cartelle IA (Sync)',
     aiReply: 'Ecco una versione refactored pulita con async/await e gestione degli errori…',
     sidebarRecent: 'Recenti',
@@ -214,6 +222,7 @@ const LOCALES = {
 
   pt_BR: make({ title: 'Organize suas conversas de IA', folderLabel: '📁 Modo Pastas', promptLabel: '📝 Modo Prompts',
     dev: 'Dev', research: 'Pesquisa', writing: 'Escrita',
+    bugs: 'Bugs',
     ctxMenuSaveLabel: 'Salvar em Pastas IA', syncFolderName: 'Pastas IA (Sync)',
     aiReply: 'Aqui está uma versão refatorada usando async/await e tratamento de erros adequado…',
     sidebarRecent: 'Recentes',
@@ -234,6 +243,7 @@ const LOCALES = {
 
   pt_PT: make({ title: 'Organize as suas conversas de IA', folderLabel: '📁 Modo Pastas', promptLabel: '📝 Modo Prompts',
     dev: 'Dev', research: 'Pesquisa', writing: 'Redação',
+    bugs: 'Bugs',
     ctxMenuSaveLabel: 'Guardar nas Pastas IA', syncFolderName: 'Pastas IA (Sync)',
     aiReply: 'Aqui está uma versão refatorada limpa com async/await e tratamento de erros…',
     sidebarRecent: 'Recentes',
@@ -254,6 +264,7 @@ const LOCALES = {
 
   ru: make({ title: 'Организуйте беседы с ИИ', folderLabel: '📁 Режим папок', promptLabel: '📝 Режим промптов',
     dev: 'Разработка', research: 'Исследования', writing: 'Тексты',
+    bugs: 'Баги',
     ctxMenuSaveLabel: 'Сохранить в ИИ-папки', syncFolderName: 'ИИ-папки (Sync)',
     aiReply: 'Вот чистая рефакторинговая версия с async/await и правильной обработкой ошибок…',
     sidebarRecent: 'Последние',
@@ -274,6 +285,7 @@ const LOCALES = {
 
   pl: make({ title: 'Organizuj rozmowy z AI', folderLabel: '📁 Tryb folderów', promptLabel: '📝 Tryb promptów',
     dev: 'Dev', research: 'Badania', writing: 'Pisanie',
+    bugs: 'Błędy',
     ctxMenuSaveLabel: 'Zapisz w Folderach AI', syncFolderName: 'Foldery AI (Sync)',
     aiReply: 'Oto zrefaktoryzowana wersja z async/await i obsługą błędów…',
     sidebarRecent: 'Ostatnie',
@@ -294,6 +306,7 @@ const LOCALES = {
 
   zh_CN: make({ title: '整理您的 AI 对话', folderLabel: '📁 文件夹模式', promptLabel: '📝 提示词模式',
     dev: '开发', research: '研究', writing: '写作',
+    bugs: '缺陷',
     ctxMenuSaveLabel: '保存到 AI 文件夹', syncFolderName: 'AI 文件夹 (同步)',
     aiReply: '这是使用 async/await 的重构版本，包含完善的错误处理…',
     sidebarRecent: '最近',
@@ -314,6 +327,7 @@ const LOCALES = {
 
   ja: make({ title: 'AI の会話を整理しよう', folderLabel: '📁 フォルダモード', promptLabel: '📝 プロンプトモード',
     dev: '開発', research: 'リサーチ', writing: 'ライティング',
+    bugs: 'バグ',
     ctxMenuSaveLabel: 'AI フォルダに保存', syncFolderName: 'AI フォルダ (同期)',
     aiReply: 'async/await を使ったクリーンなリファクタリング例と適切なエラー処理です…',
     sidebarRecent: '最近',
@@ -334,6 +348,7 @@ const LOCALES = {
 
   ko: make({ title: 'AI 대화를 정리하세요', folderLabel: '📁 폴더 모드', promptLabel: '📝 프롬프트 모드',
     dev: '개발', research: '연구', writing: '글쓰기',
+    bugs: '버그',
     ctxMenuSaveLabel: 'AI 폴더에 저장', syncFolderName: 'AI 폴더 (동기화)',
     aiReply: 'async/await를 사용한 리팩터링된 버전과 오류 처리입니다…',
     sidebarRecent: '최근',
@@ -354,6 +369,7 @@ const LOCALES = {
 
   hi: make({ title: 'AI वार्तालाप व्यवस्थित करें', folderLabel: '📁 फ़ोल्डर मोड', promptLabel: '📝 प्रॉम्प्ट मोड',
     dev: 'कोड', research: 'शोध', writing: 'लेखन',
+    bugs: 'बग',
     ctxMenuSaveLabel: 'AI फ़ोल्डर में सहेजें', syncFolderName: 'AI फ़ोल्डर (Sync)',
     aiReply: 'async/await का उपयोग करके रिफैक्टर्ड कोड और एरर हैंडलिंग यहाँ है…',
     sidebarRecent: 'हाल का',
@@ -374,6 +390,7 @@ const LOCALES = {
 
   ro: make({ title: 'Organizați conversațiile IA', folderLabel: '📁 Mod Foldere', promptLabel: '📝 Mod Prompturi',
     dev: 'Dev', research: 'Cercetare', writing: 'Scriere',
+    bugs: 'Erori',
     ctxMenuSaveLabel: 'Salvează în Dosare IA', syncFolderName: 'Dosare IA (Sync)',
     aiReply: 'Iată o versiune refactorizată curată cu async/await și gestionarea erorilor…',
     sidebarRecent: 'Recente',
@@ -394,6 +411,7 @@ const LOCALES = {
 
   sk: make({ title: 'Organizujte konverzácie s AI', folderLabel: '📁 Režim priečinkov', promptLabel: '📝 Režim promptov',
     dev: 'Vývoj', research: 'Výskum', writing: 'Písanie',
+    bugs: 'Chyby',
     ctxMenuSaveLabel: 'Uložiť do AI priečinkov', syncFolderName: 'AI priečinky (Sync)',
     aiReply: 'Tu je čistá refaktorovaná verzia s async/await a spracovaním chýb…',
     sidebarRecent: 'Nedávne',
@@ -414,6 +432,7 @@ const LOCALES = {
 
   cs: make({ title: 'Organizujte konverzace s AI', folderLabel: '📁 Režim složek', promptLabel: '📝 Režim promptů',
     dev: 'Vývoj', research: 'Výzkum', writing: 'Psaní',
+    bugs: 'Chyby',
     ctxMenuSaveLabel: 'Uložit do AI složek', syncFolderName: 'AI složky (Sync)',
     aiReply: 'Zde je čistá refaktorovaná verze s async/await a zpracováním chyb…',
     sidebarRecent: 'Nedávné',
@@ -434,6 +453,7 @@ const LOCALES = {
 
   tr: make({ title: 'YZ konuşmalarınızı düzenleyin', folderLabel: '📁 Klasör Modu', promptLabel: '📝 İstem Modu',
     dev: 'Geliştirme', research: 'Araştırma', writing: 'Yazım',
+    bugs: 'Hatalar',
     ctxMenuSaveLabel: "YZ Klasörleri'ne Kaydet", syncFolderName: 'YZ Klasörleri (Sync)',
     aiReply: 'async/await ve uygun hata yönetimi kullanılarak yazılmış temiz bir yeniden düzenlenmiş sürüm…',
     sidebarRecent: 'Son',
@@ -454,6 +474,7 @@ const LOCALES = {
 
   id: make({ title: 'Susun percakapan AI Anda', folderLabel: '📁 Mode Folder', promptLabel: '📝 Mode Prompt',
     dev: 'Pengembangan', research: 'Riset', writing: 'Penulisan',
+    bugs: 'Bug',
     ctxMenuSaveLabel: 'Simpan ke Folder AI', syncFolderName: 'Folder AI (Sync)',
     aiReply: 'Berikut versi yang telah direfaktor dengan async/await dan penanganan error yang tepat…',
     sidebarRecent: 'Terbaru',
@@ -474,6 +495,7 @@ const LOCALES = {
 
   zh_TW: make({ title: '整理您的 AI 對話', folderLabel: '📁 資料夾模式', promptLabel: '📝 提示詞模式',
     dev: '開發', research: '研究', writing: '寫作',
+    bugs: '錯誤',
     ctxMenuSaveLabel: '儲存到 AI 資料夾', syncFolderName: 'AI 資料夾 (同步)',
     aiReply: '以下是使用 async/await 和適當錯誤處理的整理後版本…',
     sidebarRecent: '最近',
@@ -494,6 +516,7 @@ const LOCALES = {
 
   vi: make({ title: 'Sắp xếp các cuộc trò chuyện AI', folderLabel: '📁 Chế độ thư mục', promptLabel: '📝 Chế độ prompt',
     dev: 'Lập trình', research: 'Nghiên cứu', writing: 'Viết lách',
+    bugs: 'Lỗi',
     ctxMenuSaveLabel: 'Lưu vào Thư mục AI', syncFolderName: 'Thư mục AI (Sync)',
     aiReply: 'Đây là phiên bản đã được tái cấu trúc với async/await và xử lý lỗi phù hợp…',
     sidebarRecent: 'Gần đây',
@@ -514,6 +537,7 @@ const LOCALES = {
 
   bn: make({ title: 'আপনার AI কথোপকথন সংগঠিত করুন', folderLabel: '📁 ফোল্ডার মোড', promptLabel: '📝 প্রম্পট মোড',
     dev: 'ডেভেলপমেন্ট', research: 'গবেষণা', writing: 'লেখালেখি',
+    bugs: 'বাগ',
     ctxMenuSaveLabel: 'AI ফোল্ডারে সংরক্ষণ করুন', syncFolderName: 'AI ফোল্ডার (Sync)',
     aiReply: 'এখানে async/await এবং সঠিক এরর হ্যান্ডলিং সহ রিফ্যাক্টর করা সংস্করণ রয়েছে…',
     sidebarRecent: 'সাম্প্রতিক',
@@ -534,6 +558,7 @@ const LOCALES = {
 
   nl: make({ title: 'Organiseer uw AI-gesprekken', folderLabel: '📁 Mappenmodus', promptLabel: '📝 Promptmodus',
     dev: 'Ontwikkeling', research: 'Onderzoek', writing: 'Schrijven',
+    bugs: 'Bugs',
     ctxMenuSaveLabel: 'Opslaan in AI-mappen', syncFolderName: 'AI-mappen (Sync)',
     aiReply: 'Hier is de gerefactorde versie met async/await en correcte foutafhandeling…',
     sidebarRecent: 'Recent',
@@ -554,6 +579,7 @@ const LOCALES = {
 
   sw: make({ title: 'Panga mazungumzo yako ya AI', folderLabel: '📁 Hali ya Folda', promptLabel: '📝 Hali ya Kidokezo',
     dev: 'Maendeleo', research: 'Utafiti', writing: 'Uandishi',
+    bugs: 'Hitilafu',
     ctxMenuSaveLabel: 'Hifadhi kwenye Folda za AI', syncFolderName: 'Folda za AI (Sync)',
     aiReply: 'Hapa kuna toleo lililoimarishwa na async/await na kushughulikia makosa ipasavyo…',
     sidebarRecent: 'Hivi Karibuni',
@@ -574,6 +600,7 @@ const LOCALES = {
 
   tl: make({ title: 'Ayusin ang iyong mga pag-uusap sa AI', folderLabel: '📁 Folder Mode', promptLabel: '📝 Prompt Mode',
     dev: 'Pagbuo', research: 'Pananaliksik', writing: 'Pagsusulat',
+    bugs: 'Mga bug',
     ctxMenuSaveLabel: 'I-save sa Mga AI Folder', syncFolderName: 'Mga AI Folder (Sync)',
     aiReply: 'Narito ang refactored na bersyon na may async/await at wastong error handling…',
     sidebarRecent: 'Kamakailang',
@@ -594,6 +621,7 @@ const LOCALES = {
 
   th: make({ title: 'จัดระเบียบการสนทนา AI ของคุณ', folderLabel: '📁 โหมดโฟลเดอร์', promptLabel: '📝 โหมดพรอมต์',
     dev: 'การพัฒนา', research: 'การวิจัย', writing: 'การเขียน',
+    bugs: 'บั๊ก',
     ctxMenuSaveLabel: 'บันทึกไปยังโฟลเดอร์ AI', syncFolderName: 'โฟลเดอร์ AI (Sync)',
     aiReply: 'นี่คือเวอร์ชันที่ปรับปรุงใหม่โดยใช้ async/await และการจัดการข้อผิดพลาดที่เหมาะสม…',
     sidebarRecent: 'ล่าสุด',
@@ -614,6 +642,7 @@ const LOCALES = {
 
   hu: make({ title: 'Rendszerezze MI-beszélgetéseit', folderLabel: '📁 Mappaüzemmód', promptLabel: '📝 Promptüzemmód',
     dev: 'Fejlesztés', research: 'Kutatás', writing: 'Írás',
+    bugs: 'Hibák',
     ctxMenuSaveLabel: 'Mentés a MI-mappákba', syncFolderName: 'MI mappák (Sync)',
     aiReply: 'Íme az async/await és megfelelő hibakezeléssel refaktorált verzió…',
     sidebarRecent: 'Legújabb',
@@ -634,6 +663,7 @@ const LOCALES = {
 
   ar: make({ title: 'نظّم محادثات AI الخاصة بك', folderLabel: '📁 وضع المجلدات', promptLabel: '📝 وضع المطالبات',
     dev: 'التطوير', research: 'البحث', writing: 'الكتابة',
+    bugs: 'أخطاء',
     ctxMenuSaveLabel: 'حفظ في مجلدات AI', syncFolderName: 'مجلدات AI (مزامنة)',
     aiReply: 'إليك نسخة معاد هيكلتها نظيفة باستخدام async/await ومعالجة أخطاء مناسبة…',
     sidebarRecent: 'الأخيرة',
@@ -654,6 +684,7 @@ const LOCALES = {
 
   ms: make({ title: 'Susun perbualan AI anda', folderLabel: '📁 Mod Folder', promptLabel: '📝 Mod Prompt',
     dev: 'Pembangunan', research: 'Penyelidikan', writing: 'Penulisan',
+    bugs: 'Pepijat',
     ctxMenuSaveLabel: 'Simpan ke Folder AI', syncFolderName: 'Folder AI (Sync)',
     aiReply: 'Berikut adalah versi yang telah diubah suai dengan async/await dan pengendalian ralat yang betul…',
     sidebarRecent: 'Terkini',
@@ -674,6 +705,7 @@ const LOCALES = {
 
   sl: make({ title: 'Organiziraj svoje pogovore z AI', folderLabel: '📁 Način map', promptLabel: '📝 Način pozivov',
     dev: 'Razvoj', research: 'Raziskava', writing: 'Pisanje',
+    bugs: 'Napake',
     ctxMenuSaveLabel: 'Shrani v Mape AI', syncFolderName: 'Mape AI (Sync)',
     aiReply: 'Tukaj je čista predelana različica z async/await in ustreznim upravljanjem napak…',
     sidebarRecent: 'Nedavno',
@@ -694,6 +726,7 @@ const LOCALES = {
 
   bg: make({ title: 'Организирайте разговорите си с ИИ', folderLabel: '📁 Режим папки', promptLabel: '📝 Режим промпти',
     dev: 'Разработка', research: 'Изследване', writing: 'Писане',
+    bugs: 'Грешки',
     ctxMenuSaveLabel: 'Запази в ИИ папки', syncFolderName: 'ИИ папки (Sync)',
     aiReply: 'Ето чиста рефакторирана версия с async/await и правилна обработка на грешки…',
     sidebarRecent: 'Скорошни',
@@ -714,6 +747,7 @@ const LOCALES = {
 
   sr: make({ title: 'Organizuj VI razgovore', folderLabel: '📁 Mod foldera', promptLabel: '📝 Mod promptova',
     dev: 'Razvoj', research: 'Istraživanje', writing: 'Pisanje',
+    bugs: 'Bagovi',
     ctxMenuSaveLabel: 'Sačuvaj u VI fascikle', syncFolderName: 'VI fascikle (Sync)',
     aiReply: 'Evo čiste refaktorisane verzije s async/await i ispravnim upravljanjem greškama…',
     sidebarRecent: 'Nedavno',
@@ -734,6 +768,7 @@ const LOCALES = {
 
   hr: make({ title: 'Organiziraj UI razgovore', folderLabel: '📁 Način mapa', promptLabel: '📝 Način upita',
     dev: 'Razvoj', research: 'Istraživanje', writing: 'Pisanje',
+    bugs: 'Greške',
     ctxMenuSaveLabel: 'Spremi u UI mape', syncFolderName: 'UI mape (Sync)',
     aiReply: 'Evo čiste prerađene verzije s async/await i ispravnim upravljanjem pogreškama…',
     sidebarRecent: 'Nedavno',
@@ -754,6 +789,7 @@ const LOCALES = {
 
   et: make({ title: 'Korralda oma AI vestlused', folderLabel: '📁 Kaustade režiim', promptLabel: '📝 Prompti režiim',
     dev: 'Arendus', research: 'Uurimine', writing: 'Kirjutamine',
+    bugs: 'Vead',
     ctxMenuSaveLabel: 'Salvesta AI kaustadesse', syncFolderName: 'AI kaustad (Sync)',
     aiReply: 'Siin on puhas refaktoreeritud versioon async/awaiti ja nõuetekohase vigade käsitlusega…',
     sidebarRecent: 'Hiljutised',
@@ -774,6 +810,7 @@ const LOCALES = {
 
   lt: make({ title: 'Tvarkyk savo AI pokalbius', folderLabel: '📁 Aplankų režimas', promptLabel: '📝 Promptų režimas',
     dev: 'Plėtojimas', research: 'Tyrimas', writing: 'Rašymas',
+    bugs: 'Klaidos',
     ctxMenuSaveLabel: 'Išsaugoti AI aplankuose', syncFolderName: 'AI aplankai (Sync)',
     aiReply: 'Štai švariai refaktorinta versija su async/await ir tinkamu klaidų tvarkymu…',
     sidebarRecent: 'Neseniai',
@@ -794,6 +831,7 @@ const LOCALES = {
 
   lv: make({ title: 'Organizē savas AI sarunas', folderLabel: '📁 Mapju režīms', promptLabel: '📝 Uzvedņu režīms',
     dev: 'Izstrāde', research: 'Pētīšana', writing: 'Rakstīšana',
+    bugs: 'Kļūdas',
     ctxMenuSaveLabel: 'Saglabāt AI Mapēs', syncFolderName: 'AI mapes (Sync)',
     aiReply: 'Lūk, tīra pārstrukturēta versija ar async/await un pareizu kļūdu apstrādi…',
     sidebarRecent: 'Nesenie',
@@ -814,6 +852,7 @@ const LOCALES = {
 
   ca: make({ title: 'Organitza les teves converses de IA', folderLabel: '📁 Mode carpetes', promptLabel: '📝 Mode prompts',
     dev: 'Codi', research: 'Recerca', writing: 'Redacció',
+    bugs: 'Errors',
     ctxMenuSaveLabel: 'Desa a Carpetes IA', syncFolderName: 'Carpetes IA (Sync)',
     aiReply: "Aquí tens una versió refactoritzada neta amb async/await i gestió d'errors adequada…",
     sidebarRecent: 'Recents',
@@ -834,6 +873,7 @@ const LOCALES = {
 
   uk: make({ title: 'Організуйте свої розмови зі ШІ', folderLabel: '📁 Режим тек', promptLabel: '📝 Режим промптів',
     dev: 'Розробка', research: 'Дослідження', writing: 'Написання',
+    bugs: 'Баги',
     ctxMenuSaveLabel: 'Зберегти в Теки ШІ', syncFolderName: 'Теки ШІ (Sync)',
     aiReply: 'Ось чиста рефакторизована версія з async/await і правильною обробкою помилок…',
     sidebarRecent: 'Нещодавні',
@@ -854,6 +894,7 @@ const LOCALES = {
 
   el: make({ title: 'Οργανώστε τις συνομιλίες σας με ΤΝ', folderLabel: '📁 Λειτουργία φακέλων', promptLabel: '📝 Λειτουργία prompt',
     dev: 'Ανάπτυξη', research: 'Έρευνα', writing: 'Συγγραφή',
+    bugs: 'Σφάλματα',
     ctxMenuSaveLabel: 'Αποθήκευση στους Φακέλους ΤΝ', syncFolderName: 'Φάκελοι ΤΝ (Sync)',
     aiReply: 'Ορίστε μια καθαρή έκδοση με async/await και κατάλληλη διαχείριση σφαλμάτων…',
     sidebarRecent: 'Πρόσφατα',
@@ -874,6 +915,7 @@ const LOCALES = {
 
   he: make({ title: 'ארגן את שיחות ה-AI שלך', folderLabel: '📁 מצב תיקיות', promptLabel: '📝 מצב פרומפטים',
     dev: 'פיתוח', research: 'מחקר', writing: 'כתיבה',
+    bugs: 'באגים',
     ctxMenuSaveLabel: 'שמור בתיקיות AI', syncFolderName: 'תיקיות AI (Sync)',
     aiReply: 'הנה גרסה נקייה ומעוצבת מחדש עם async/await וטיפול שגיאות מתאים…',
     sidebarRecent: 'לאחרונה',
@@ -894,6 +936,7 @@ const LOCALES = {
 
   nb: make({ title: 'Organiser AI-samtalene dine', folderLabel: '📁 Mappemodus', promptLabel: '📝 Promptmodus',
     dev: 'Utvikling', research: 'Forskning', writing: 'Skriving',
+    bugs: 'Feil',
     ctxMenuSaveLabel: 'Lagre i AI-mapper', syncFolderName: 'AI-mapper (Sync)',
     aiReply: 'Her er en ren refaktorert versjon med async/await og riktig feilhåndtering…',
     sidebarRecent: 'Siste',
@@ -914,6 +957,7 @@ const LOCALES = {
 
   sv: make({ title: 'Organisera dina AI-konversationer', folderLabel: '📁 Mappläge', promptLabel: '📝 Promptläge',
     dev: 'Utveckling', research: 'Forskning', writing: 'Skrivande',
+    bugs: 'Buggar',
     ctxMenuSaveLabel: 'Spara i AI-mappar', syncFolderName: 'AI-mappar (Sync)',
     aiReply: 'Här är en ren refaktorerad version med async/await och korrekt felhantering…',
     sidebarRecent: 'Senaste',
@@ -934,6 +978,7 @@ const LOCALES = {
 
   fi: make({ title: 'Järjestä AI-keskustelusi', folderLabel: '📁 Kansiotila', promptLabel: '📝 Prompttila',
     dev: 'Kehitys', research: 'Tutkimus', writing: 'Kirjoittaminen',
+    bugs: 'Virheet',
     ctxMenuSaveLabel: 'Tallenna AI-kansioihin', syncFolderName: 'AI-kansiot (Sync)',
     aiReply: 'Tässä on siisti refaktoroitu versio, jossa käytetään async/awaitia ja asianmukaista virheenkäsittelyä…',
     sidebarRecent: 'Viimeisimmät',
@@ -954,6 +999,7 @@ const LOCALES = {
 
   da: make({ title: 'Organiser dine AI-samtaler', folderLabel: '📁 Mappevisning', promptLabel: '📝 Promptvisning',
     dev: 'Udvikling', research: 'Forskning', writing: 'Skrivning',
+    bugs: 'Fejl',
     ctxMenuSaveLabel: 'Gem i AI-mapper', syncFolderName: 'AI-mapper (Sync)',
     aiReply: 'Her er en ren refaktoreret version med async/await og korrekt fejlhåndtering…',
     sidebarRecent: 'Seneste',

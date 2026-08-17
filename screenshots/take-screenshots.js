@@ -204,10 +204,10 @@ async function getExtensionId(context) {
 }
 
 async function injectSampleData(page, localeData) {
-  const { folders, pinnedFolders, prompts } = localeData;
-  await page.evaluate(({ folders, pinnedFolders, prompts }) => {
+  const { folders, pinnedFolders, prompts, folderParents = {} } = localeData;
+  await page.evaluate(({ folders, pinnedFolders, prompts, folderParents }) => {
     return Promise.all([
-      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, sortPref: 'dateDesc' }, r)),
+      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, folderParents, sortPref: 'dateDesc' }, r)),
       new Promise(r => chrome.storage.local.set({
         prompts, promptSortPref: 'dateDesc', syncBookmarksEnabled: false,
         // A marketing shot must show the product, never a banner asking the user for
@@ -219,7 +219,7 @@ async function injectSampleData(page, localeData) {
         afPromoState: { status: 'dismissed' },
       }, r)),
     ]);
-  }, { folders, pinnedFolders, prompts });
+  }, { folders, pinnedFolders, prompts, folderParents });
 }
 
 async function waitForRender(page) {
@@ -259,12 +259,24 @@ async function screenshotFolderMode(page, extId, localeData, outPath) {
     throw new Error('No .folder-header found — see _DEBUG screenshot.');
   }
 
-  // Expand first two folders
-  const headers = page.locator('.folder-header');
-  await headers.nth(0).click();
+  // Expand the first root folder, its sub-folder, and the next root folder.
+  //
+  // Addressed through the DOM structure rather than a flat '.folder-header' index:
+  // a sub-folder's header is itself a .folder-header sitting inside its parent, so
+  // nth(1) is the child, not the second root — the shot would then have every root
+  // but the first collapsed, in whichever locales happen to nest.
+  const roots = page.locator('#folderList > .folder');
+  await roots.nth(0).locator(':scope > .folder-header').click();
   await page.waitForTimeout(200);
-  await headers.nth(1).click();
-  await page.waitForTimeout(300);
+  const child = roots.nth(0).locator('.folder--child > .folder-header');
+  if (await child.count() > 0) {
+    await child.first().click();
+    await page.waitForTimeout(200);
+  }
+  if (await roots.count() > 1) {
+    await roots.nth(1).locator(':scope > .folder-header').click();
+    await page.waitForTimeout(300);
+  }
 
   // Suppress all scrollbars so content height is natural (no empty space at bottom),
   // and hide the active-sort indicator dot (sample data uses a non-default sort,
@@ -316,11 +328,15 @@ async function screenshotMobileSyncFolder(page, extId, localeData, outPath) {
     throw new Error('No .folder-header found for mobile sync screenshot.');
   }
 
-  const headers = page.locator('.folder-header');
-  await headers.nth(0).click();
+  // Root folders by structure, not by flat index — same reason as
+  // screenshotFolderMode: a sub-folder's header is a .folder-header too.
+  const roots = page.locator('#folderList > .folder');
+  await roots.nth(0).locator(':scope > .folder-header').click();
   await page.waitForTimeout(200);
-  await headers.nth(1).click();
-  await page.waitForTimeout(300);
+  if (await roots.count() > 1) {
+    await roots.nth(1).locator(':scope > .folder-header').click();
+    await page.waitForTimeout(300);
+  }
 
   // Capture checkbox position before hiding scrollbars
   const syncLabel = page.locator('#syncBookmarksLabel');
@@ -980,7 +996,10 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   const CANVAS_H = 800;
   const TITLE_H  = 100;
 
-  const folderNames = Object.keys(localeData.folders);
+  // Root folders only: in the real menu a sub-folder is one level deeper, inside
+  // its parent's submenu, so listing it flat here would misdraw the feature.
+  const nested = localeData.folderParents || {};
+  const folderNames = Object.keys(localeData.folders).filter(name => !nested[name]);
 
   // Extension icon embedded as base64
   const iconPath = path.resolve(__dirname, `../dist/${EXTENSION}/chrome/icon48.png`);
