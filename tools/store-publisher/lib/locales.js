@@ -96,6 +96,18 @@ function filterLocales(filterText) {
   return result;
 }
 
+// Which options require walking the language dropdown. The detailed
+// description and the "Localized assets" screenshots are per-language; the
+// international screenshots live in the language-independent "Global assets"
+// card, so a global-only run has nothing to select and must not spend ~2 min
+// switching languages it will not write to.
+function needsLocaleWalk(opts) {
+  return !!(opts && (opts.updateTexts || opts.updateImages));
+}
+
 if (typeof module !== 'undefined') {
-  module.exports = { LOCALES, promoTxtName, screenshotName, SCREENSHOTS_PER_LOCALE, filterLocales };
+  module.exports = {
+    LOCALES, promoTxtName, screenshotName, SCREENSHOTS_PER_LOCALE,
+    filterLocales, needsLocaleWalk,
+  };
 }
