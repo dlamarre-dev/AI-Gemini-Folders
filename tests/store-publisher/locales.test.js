@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const {
   LOCALES, promoTxtName, screenshotName, SCREENSHOTS_PER_LOCALE, filterLocales,
+  needsLocaleWalk,
 } = require('../../tools/store-publisher/lib/locales');
 
 describe('store-publisher locales', () => {
@@ -87,6 +88,28 @@ describe('store-publisher locales', () => {
     test('unknown locales throw', () => {
       expect(() => filterLocales('xx')).toThrow(/Unknown locale/);
       expect(() => filterLocales('from:xx')).toThrow(/Unknown locale/);
+    });
+  });
+
+  // The international screenshots live in the language-independent "Global
+  // assets" card. A run that only replaces them must not walk the 43 languages:
+  // besides the wasted ~2 min, one unconfirmed language switch aborts the run
+  // before the global step it was asked to perform.
+  describe('needsLocaleWalk', () => {
+    test('true when a per-language step is selected', () => {
+      expect(needsLocaleWalk({ updateTexts: true })).toBe(true);
+      expect(needsLocaleWalk({ updateImages: true })).toBe(true);
+      expect(needsLocaleWalk({ updateTexts: true, updateImages: true })).toBe(true);
+      expect(needsLocaleWalk({ updateTexts: true, updateGlobalImages: true })).toBe(true);
+    });
+
+    test('false for international screenshots alone', () => {
+      expect(needsLocaleWalk({ updateGlobalImages: true })).toBe(false);
+    });
+
+    test('false when nothing is selected', () => {
+      expect(needsLocaleWalk({})).toBe(false);
+      expect(needsLocaleWalk(undefined)).toBe(false);
     });
   });
 });

@@ -57,11 +57,16 @@ Open the popup:
 - **Replace the 5 localized screenshots per locale** — deletes the existing
   ones then uploads `Promo_1..5_<locale>.png` in order.
 - **Replace international screenshots with EN set** — the global (non-localized)
-  screenshot slots; needed once per deployment only.
+  screenshot slots; needed once per deployment only. Ticked on its own it skips
+  the language walk entirely: that card is language-independent, so there is
+  nothing to select. (It used to switch through all 43 languages first, which
+  wasted ~2 min and could abort the run on an unconfirmed switch before ever
+  reaching the global card.)
 - **Dry run** — walks the 43 languages and locates every field/section without
   writing anything. **Run this first on a new console layout.**
 - **Locale filter** — empty = all; `fr,de` = just those; `from:pl` = resume an
-  aborted run at `pl`.
+  aborted run at `pl`. Ignored (with a log line) when no per-language step is
+  ticked. Ticking nothing at all is refused up front rather than opening a tab.
 - **Probe page** — opens the listing page and dumps its DOM structure
   (dropdowns, textareas, file inputs, sections, buttons) to the log. This is
   the debugging entry point when Google changes the page.

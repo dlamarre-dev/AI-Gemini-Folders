@@ -213,7 +213,18 @@ async function runPublish(config, opts, onProgress) {
   const item = config.items.find(i => i.slug === opts.itemSlug);
   if (!item) throw new Error(`Item "${opts.itemSlug}" not in config.json`);
 
+  // Nothing ticked would open a tab, walk 43 languages and write nothing.
+  if (!opts.probeOnly && !opts.updateTexts && !opts.updateImages && !opts.updateGlobalImages) {
+    throw new Error('Nothing selected — tick at least one of the description / localized '
+      + 'screenshots / international screenshots options, or use "Probe page".');
+  }
+
+  const walkLocales = needsLocaleWalk(opts);
+  // Parsed even when unused, so a bad filter is still rejected up front.
   const locales = filterLocales(opts.localeFilter);
+  if (!walkLocales && opts.localeFilter) {
+    onProgress(`Locale filter "${opts.localeFilter}" ignored — no per-language step selected.`);
+  }
   // Resolved lazily: a pure probe touches no local file, so it must keep working
   // even when the native host is unregistered (e.g. right after a repo move).
   let marketingDir = null;
@@ -259,14 +270,23 @@ async function runPublish(config, opts, onProgress) {
     return;
   }
 
-  for (const locale of locales) {
-    try {
-      await publishLocale(driver, tab.id, locale, texts[locale.internal], opts, marketingDir, onProgress);
-    } catch (e) {
-      if (e.detail) onProgress('Diagnostics: ' + fmtDetail(e.detail));
-      onProgress(`Aborted at locale "${locale.internal}". Fix the issue (see stores/${driver.id}.js), then resume with filter "from:${locale.internal}".`);
-      throw e;
+  // The language walk is only for what lives behind the language dropdown: the
+  // description and the "Localized assets" screenshots. Skipping it when neither
+  // is selected is not just a speed-up — a single unconfirmed language switch
+  // throws, and the global block below sits *after* this loop, so a global-only
+  // run could abort before ever reaching what it was asked to do.
+  if (walkLocales) {
+    for (const locale of locales) {
+      try {
+        await publishLocale(driver, tab.id, locale, texts[locale.internal], opts, marketingDir, onProgress);
+      } catch (e) {
+        if (e.detail) onProgress('Diagnostics: ' + fmtDetail(e.detail));
+        onProgress(`Aborted at locale "${locale.internal}". Fix the issue (see stores/${driver.id}.js), then resume with filter "from:${locale.internal}".`);
+        throw e;
+      }
     }
+  } else {
+    onProgress('No per-language step selected — skipping the language walk.');
   }
 
   // International / global screenshots: the "Global assets" card on the same
