@@ -75,7 +75,9 @@ extensions/gemini-folders/   GF overlay (same set, no popup-extra.css)
 
 tests/                       Jest suites (jsdom). setup.js mocks chrome.* + LZString.
                              ~270 tests, ~65% coverage. Pure-logic + DOM behaviour.
-                             Subdirs: stats-collector/, store-publisher/.
+                             Subdir: stats-collector/.
+  store-publisher-config.test.js  Guards store-publisher.config.json (see §12)
+  marketing-listings.test.js      Guards the claims in Marketing/*/Promo*.txt
 
 Marketing/
   ai-folders/  gemini-folders/   Promo<LANG>.txt (43 each) = store listing text,
@@ -94,7 +96,9 @@ docs/                        Static GitHub Pages site (aifolders.xyz)
 tools/                       Maintainer tooling — NOT shipped in the extensions
   site-diagnostics/          Detects when a site's editor/title selectors break
   stats-collector/           CWS stats reader (native messaging). Maintainer-only.
-  store-publisher/           CWS listing filler + amo_publish.py (AMO API)
+  (The store-listing publisher moved to its own repo — see §12.)
+
+store-publisher.config.json  This project's half of that tool's config (§12)
 
 build.py                     Build pipeline (see §3)
 build_images.py              Regenerates marketing screenshots (release-time only)
@@ -627,3 +631,45 @@ Reading cautions:
   leave with `saves > 0` (they did use it), what share ask for `wanted-in-page-ui`?
   That number — not today's n=4 — decides whether the in-page UI is worth building
   (§8's deferred item).
+
+---
+
+## 12. Publishing the store listings (external tool)
+
+The tool that fills the store listings — 43 localized descriptions and
+screenshots, per extension, per store — used to live in `tools/store-publisher/`.
+It is now its own public repo, because it was useful beyond this project once the
+project-specific parts became configuration:
+
+**https://github.com/dlamarre-dev/store-listing-publisher**
+
+What stayed here is `store-publisher.config.json`: this project's items, path
+templates and locale table. It is **committed on purpose**. The tool's own
+`config.json` (gitignored, in its own checkout) points at it with `"extends"` and
+adds only the three things that cannot live in a shared repo — the CWS publisher
+id, the AMO API secret, and `assets.root`, the path to this checkout.
+
+- **`tests/store-publisher-config.test.js` is the reason it is committed.** A
+  standalone publisher knows nothing about `extensions/*/_locales`, so nothing
+  over there can notice a 44th language added to the extensions but not to the
+  listing config — the publisher would just skip it, and that locale's store page
+  would silently keep the old text. That test is the only place that check can
+  live. **Adding a locale means adding it to `store-publisher.config.json` too.**
+- **The templates read `dist/`, not `Marketing/`.** `python build.py` is a hard
+  prerequisite of a publish run, not merely a build step: `dist/` is what carries
+  the Firefox wording patches (`Chrome`→`Firefox`, `Ctrl+Shift+S`→`Alt+Shift+S`)
+  and the `__AF_STORE_URL__` substitution. `build_images.py` regenerates the
+  screenshots it reads.
+- **`{LANG}` and the `fileCode` on `zh_CN`** are what make `PromoCN.txt`
+  reachable — the one filename in `dist/` that is not the uppercased internal
+  code. Don't add a second exception; add a `fileCode` to that locale's row.
+- **The native host is not shared any more.** `tools/stats-collector/native/`
+  serves stats only: its `binary` (chunked base64) and `cmd: repo_root` features
+  existed for the publisher and were removed with it, and its manifest no longer
+  allowlists that add-on's id. The publisher ships its own host, confined to
+  directories its installer records.
+- **Release order is unchanged:** upload the build zip by hand, `python
+  build.py`, run the publisher one extension at a time, then review and click
+  **Save draft** yourself. The CWS side never saves. The AMO side has no draft
+  stage at all — `amo_publish.py` is dry-run by default and `--apply` writes
+  live.
