@@ -1,27 +1,19 @@
 #!/usr/bin/env python3
 """
-Native messaging host shared by the CWS Stats Collector and the Store Listing
-Publisher. Reads local files and returns their content — text by default,
-base64 when the request carries "binary": true (used for PNG screenshots).
+Native messaging host for the CWS Stats Collector: reads a local file and
+returns its text. That is the whole job — the extension downloads a CSV from
+the dev console, and an extension cannot read its own download off disk.
+
 Protocol: each message is a 4-byte little-endian length prefix + UTF-8 JSON.
+Request {"path": "..."} -> {"ok": true, "content": "..."} or {"ok": false, "error"}.
 
-Binary responses are streamed as {"ok", "chunk", "done"} messages: Firefox
-kills the connection on any native→extension message over 1 MB, and the
-base64 of a marketing screenshot exceeds that.
-
-It also answers {"cmd": "repo_root"} with the absolute path of the repo it
-lives in: an extension only knows its moz-extension:// origin, never its path
-on disk, so this is how the publisher finds dist/ without a hardcoded path.
+It used to also serve base64 (chunked, for PNGs) and answer {"cmd": "repo_root"},
+both for the Store Listing Publisher, which shared this host. That tool now lives
+in its own repo with its own host, so those two features had no caller left.
 """
-import base64
-import sys
 import json
 import struct
-from pathlib import Path
-
-BINARY_CHUNK = 256 * 1024  # base64 chars per message, well under the 1 MB cap
-# <repo>/tools/stats-collector/native/filereader.py → up 3 levels.
-REPO_ROOT = str(Path(__file__).resolve().parents[3])
+import sys
 
 
 def send(msg):
@@ -45,21 +37,8 @@ while True:
     if msg is None:
         break
     try:
-        if msg.get("cmd") == "repo_root":
-            send({"ok": True, "repo_root": REPO_ROOT})
-            continue
-        path = msg["path"]
-        if msg.get("binary"):
-            with open(path, "rb") as f:
-                content = base64.b64encode(f.read()).decode("ascii")
-            chunks = [content[i:i + BINARY_CHUNK]
-                      for i in range(0, len(content), BINARY_CHUNK)] or [""]
-            for idx, chunk in enumerate(chunks):
-                send({"ok": True, "chunk": chunk, "done": idx == len(chunks) - 1})
-        else:
-            # utf-8-sig strips the BOM that Windows apps sometimes write
-            with open(path, "r", encoding="utf-8-sig") as f:
-                content = f.read()
-            send({"ok": True, "content": content})
+        # utf-8-sig strips the BOM that Windows apps sometimes write
+        with open(msg["path"], "r", encoding="utf-8-sig") as f:
+            send({"ok": True, "content": f.read()})
     except Exception as e:
         send({"ok": False, "error": str(e)})

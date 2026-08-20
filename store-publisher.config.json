@@ -1,0 +1,332 @@
+{
+  "_comment": [
+    "Configuration for the Store Listing Publisher, which lives in its own repo:",
+    "https://github.com/dlamarre-dev/store-listing-publisher",
+    "",
+    "This half is committed on purpose — it holds no credentials, and keeping it",
+    "here is what lets tests/store-publisher-config.test.js check that the locale",
+    "table still matches extensions/*/_locales. The tool config.json (gitignored,",
+    "in its own checkout) points at this file with \"extends\" and adds the three",
+    "things that cannot live here: the publisher id, the AMO secret, and",
+    "\"assets\": {\"root\": \"<path to this checkout>\"} — the one value that depends",
+    "on the machine rather than the project.",
+    "",
+    "The templates read the BUILT assets, so `python build.py` is a hard",
+    "prerequisite of a publish run and not merely a build step: dist/ is what",
+    "carries the Firefox wording patches and the __AF_STORE_URL__ substitution."
+  ],
+  "assets": {
+    "chrome": {
+      "description": "dist/{slug}/marketing_chrome/Promo{LANG}.txt",
+      "screenshot": "dist/{slug}/marketing_chrome/screenshots/Promo_{n}_{lang}.png",
+      "screenshotsPerListing": 5
+    },
+    "firefox": {
+      "description": "dist/{slug}/marketing_firefox/Promo{LANG}.txt",
+      "screenshot": "dist/{slug}/marketing_firefox/screenshots/Promo_{n}_{lang}.png",
+      "screenshotsPerListing": 5
+    }
+  },
+  "amo": {
+    "previewSet": "en-plus-first-per-locale",
+    "summarySource": {
+      "path": "dist/{slug}/firefox/_locales/{lang}/messages.json",
+      "key": "extDesc"
+    },
+    "nameSource": {
+      "path": "dist/{slug}/firefox/_locales/{lang}/messages.json",
+      "key": "extName"
+    }
+  },
+  "items": [
+    {
+      "id": "jffchdehoapigpmifkmleglfimjiilik",
+      "name": "Gemini Folders",
+      "slug": "gemini-folders",
+      "amo_guid": "geminifolders@dlamarre-dev.github.io"
+    },
+    {
+      "id": "kjmgfajofolnfeaahchpmkpecfimcppf",
+      "name": "AI Folders",
+      "slug": "ai-folders",
+      "amo_guid": "aifolders@dlamarre-dev.github.io"
+    }
+  ],
+  "locales": [
+    {
+      "internal": "ar",
+      "cws": "ar",
+      "amo": null,
+      "name": "Arabic"
+    },
+    {
+      "internal": "bg",
+      "cws": "bg",
+      "amo": null,
+      "name": "Bulgarian"
+    },
+    {
+      "internal": "bn",
+      "cws": "bn",
+      "amo": null,
+      "name": "Bengali"
+    },
+    {
+      "internal": "ca",
+      "cws": "ca",
+      "amo": null,
+      "name": "Catalan"
+    },
+    {
+      "internal": "cs",
+      "cws": "cs",
+      "amo": "cs",
+      "name": "Czech"
+    },
+    {
+      "internal": "da",
+      "cws": "da",
+      "amo": null,
+      "name": "Danish"
+    },
+    {
+      "internal": "de",
+      "cws": "de",
+      "amo": "de",
+      "name": "German"
+    },
+    {
+      "internal": "el",
+      "cws": "el",
+      "amo": "el",
+      "name": "Greek"
+    },
+    {
+      "internal": "en",
+      "cws": "en",
+      "amo": "en-US",
+      "name": "English",
+      "altNames": [
+        "English (United States)"
+      ]
+    },
+    {
+      "internal": "es",
+      "cws": "es",
+      "amo": "es-ES",
+      "name": "Spanish"
+    },
+    {
+      "internal": "et",
+      "cws": "et",
+      "amo": null,
+      "name": "Estonian"
+    },
+    {
+      "internal": "fi",
+      "cws": "fi",
+      "amo": "fi",
+      "name": "Finnish"
+    },
+    {
+      "internal": "fr",
+      "cws": "fr",
+      "amo": "fr",
+      "name": "French"
+    },
+    {
+      "internal": "he",
+      "cws": "iw",
+      "amo": "he",
+      "name": "Hebrew"
+    },
+    {
+      "internal": "hi",
+      "cws": "hi",
+      "amo": null,
+      "name": "Hindi"
+    },
+    {
+      "internal": "hr",
+      "cws": "hr",
+      "amo": "hr",
+      "name": "Croatian"
+    },
+    {
+      "internal": "hu",
+      "cws": "hu",
+      "amo": "hu",
+      "name": "Hungarian"
+    },
+    {
+      "internal": "id",
+      "cws": "id",
+      "amo": null,
+      "name": "Indonesian"
+    },
+    {
+      "internal": "it",
+      "cws": "it",
+      "amo": "it",
+      "name": "Italian"
+    },
+    {
+      "internal": "ja",
+      "cws": "ja",
+      "amo": "ja",
+      "name": "Japanese"
+    },
+    {
+      "internal": "ko",
+      "cws": "ko",
+      "amo": "ko",
+      "name": "Korean"
+    },
+    {
+      "internal": "lt",
+      "cws": "lt",
+      "amo": null,
+      "name": "Lithuanian"
+    },
+    {
+      "internal": "lv",
+      "cws": "lv",
+      "amo": null,
+      "name": "Latvian"
+    },
+    {
+      "internal": "ms",
+      "cws": "ms",
+      "amo": null,
+      "name": "Malay"
+    },
+    {
+      "internal": "nb",
+      "cws": "no",
+      "amo": "nb-NO",
+      "name": "Norwegian",
+      "altNames": [
+        "Norwegian Bokmål",
+        "Norwegian (Bokmål)"
+      ]
+    },
+    {
+      "internal": "nl",
+      "cws": "nl",
+      "amo": "nl",
+      "name": "Dutch"
+    },
+    {
+      "internal": "pl",
+      "cws": "pl",
+      "amo": "pl",
+      "name": "Polish"
+    },
+    {
+      "internal": "pt_BR",
+      "cws": "pt-BR",
+      "amo": "pt-BR",
+      "name": "Portuguese (Brazil)"
+    },
+    {
+      "internal": "pt_PT",
+      "cws": "pt-PT",
+      "amo": "pt-PT",
+      "name": "Portuguese (Portugal)"
+    },
+    {
+      "internal": "ro",
+      "cws": "ro",
+      "amo": "ro",
+      "name": "Romanian"
+    },
+    {
+      "internal": "ru",
+      "cws": "ru",
+      "amo": "ru",
+      "name": "Russian"
+    },
+    {
+      "internal": "sk",
+      "cws": "sk",
+      "amo": "sk",
+      "name": "Slovak"
+    },
+    {
+      "internal": "sl",
+      "cws": "sl",
+      "amo": "sl",
+      "name": "Slovenian"
+    },
+    {
+      "internal": "sr",
+      "cws": "sr",
+      "amo": null,
+      "name": "Serbian"
+    },
+    {
+      "internal": "sv",
+      "cws": "sv",
+      "amo": "sv-SE",
+      "name": "Swedish"
+    },
+    {
+      "internal": "sw",
+      "cws": "sw",
+      "amo": null,
+      "name": "Swahili"
+    },
+    {
+      "internal": "th",
+      "cws": "th",
+      "amo": null,
+      "name": "Thai"
+    },
+    {
+      "internal": "tl",
+      "cws": "fil",
+      "amo": null,
+      "name": "Filipino",
+      "altNames": [
+        "Tagalog"
+      ]
+    },
+    {
+      "internal": "tr",
+      "cws": "tr",
+      "amo": "tr",
+      "name": "Turkish"
+    },
+    {
+      "internal": "uk",
+      "cws": "uk",
+      "amo": "uk",
+      "name": "Ukrainian"
+    },
+    {
+      "internal": "vi",
+      "cws": "vi",
+      "amo": "vi",
+      "name": "Vietnamese"
+    },
+    {
+      "internal": "zh_CN",
+      "cws": "zh-CN",
+      "amo": "zh-CN",
+      "name": "Chinese (China)",
+      "altNames": [
+        "Chinese (Simplified)"
+      ],
+      "fileCode": "CN"
+    },
+    {
+      "internal": "zh_TW",
+      "cws": "zh-TW",
+      "amo": "zh-TW",
+      "name": "Chinese (Taiwan)",
+      "altNames": [
+        "Chinese (Traditional)"
+      ]
+    }
+  ]
+}
