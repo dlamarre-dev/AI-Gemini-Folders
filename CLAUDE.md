@@ -668,8 +668,47 @@ id, the AMO API secret, and `assets.root`, the path to this checkout.
   existed for the publisher and were removed with it, and its manifest no longer
   allowlists that add-on's id. The publisher ships its own host, confined to
   directories its installer records.
-- **Release order is unchanged:** upload the build zip by hand, `python
-  build.py`, run the publisher one extension at a time, then review and click
-  **Save draft** yourself. The CWS side never saves. The AMO side has no draft
-  stage at all — `amo_publish.py` is dry-run by default and `--apply` writes
-  live.
+
+### 12b. Release order
+
+The Chrome Web Store **does** have an API (v2), and the publisher uses it for
+the package and the publication lifecycle. It has **none** for the listing, so
+step 3 is not a step waiting to be automated — see below.
+
+```
+1. python build.py                                           # dist/ is the input to everything
+2. python cws/cws_publish.py --item <slug> --upload --apply   # uploads the zip → CWS draft
+3. the add-on fills the localized listing draft; Save draft by hand
+4. python cws/cws_publish.py --item <slug> --publish --apply  # submit for review
+5. python cws/cws_publish.py --item <slug> --status           # watch the review
+```
+
+Firefox is symmetric and entirely API-driven:
+
+```
+python amo/amo_publish.py --item <slug> --upload-version --apply
+python amo/amo_publish.py --item <slug> --texts --images --apply
+```
+
+- **`python build.py` is a hard prerequisite, not a build step.** Every path the
+  publisher reads is under `dist/`: the promo texts with their Firefox wording
+  patches, the screenshots, the `_locales` the AMO summary and name come from,
+  and the zips themselves.
+- **The CWS API cannot touch the listing.** Its discovery document defines five
+  methods (`media.upload`, `publish`, `fetchStatus`, `cancelSubmission`,
+  `setPublishedDeployPercentage`) and no field for a description, a screenshot
+  or a category; the official guide says the Store listing tab must be filled in
+  the dashboard. Step 3 will not disappear by automating harder. Don't go
+  looking for that API again — it is not in v1 either, and v1 sunsets
+  15/10/2026.
+- **Everything is dry-run by default**; `--apply` writes. Run without it first:
+  a dry-run of a CWS write makes no API call and needs no credentials, so it is
+  a free check that the package path resolved to the zip you just built.
+- **The AMO side has no draft stage** — listing edits go live the moment
+  `--apply` lands. The CWS side never saves at all; **Save draft** stays manual.
+- `--staged` holds a CWS release after approval so GF and AF can go out
+  together; `--rollout N` raises the percentage afterwards without a re-review.
+- **`store-publisher.config.json` carries the package templates**
+  (`dist/{slug}-chrome-v{version}.zip`) and a `versionSource` pointing at the
+  built manifest, so the version in the filename cannot disagree with the bytes.
+  Credentials and `assets.root` live in the tool's own gitignored config.
