@@ -79,6 +79,52 @@ describe('store-publisher.config.json', () => {
     }
   });
 
+  // The publisher uploads the package through each store's API, so it has to be
+  // able to find the zip build.py emits. {version} is read from the BUILT
+  // manifest, which is what stops the version in the filename from disagreeing
+  // with the bytes inside it.
+  test('the package templates match what build.py emits', () => {
+    for (const store of ['chrome', 'firefox']) {
+      const profile = config.assets[store];
+      expect(profile.package).toBe(`dist/{slug}-${store}-v{version}.zip`);
+      expect(profile.versionSource).toEqual({
+        path: `dist/{slug}/${store}/manifest.json`, key: 'version',
+      });
+    }
+  });
+
+  // Not a style check: a template that lost {version} or {slug} would resolve to
+  // one path for every item and release, and upload whichever build was there.
+  test('every package template keeps the placeholders that make it specific', () => {
+    for (const store of ['chrome', 'firefox']) {
+      expect(config.assets[store].package).toContain('{slug}');
+      expect(config.assets[store].package).toContain('{version}');
+      expect(config.assets[store].versionSource.path).toContain('{slug}');
+    }
+  });
+
+  // The string comparison above only says the config still says what it said.
+  // This binds it to the code that actually names the files: rename the zip in
+  // build.py and the publisher would look for a file that is never written.
+  describe('bound to what build.py actually emits', () => {
+    const buildPy = fs.readFileSync(path.join(ROOT, 'build.py'), 'utf8');
+
+    test('build.py still names the zips <prefix>-<browser>-v<version>.zip', () => {
+      for (const store of ['chrome', 'firefox']) {
+        expect(buildPy).toContain(
+          `f"{cfg['zip_prefix']}-${store}-v{version}.zip"`);
+      }
+    });
+
+    // The templates use {slug}; build.py uses zip_prefix. They are only
+    // interchangeable while those two strings agree, for every item.
+    test('each item’s slug is its zip_prefix in build.py', () => {
+      for (const item of config.items) {
+        expect(buildPy).toContain(`"zip_prefix":         "${item.slug}"`);
+      }
+    });
+  });
+
   // assets.root is the one machine-dependent value, so it belongs in the
   // operator's own gitignored config, not in a file the repo commits.
   test('no machine-specific path and no credential is committed here', () => {

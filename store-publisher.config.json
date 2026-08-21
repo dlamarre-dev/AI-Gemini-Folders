@@ -19,12 +19,22 @@
     "chrome": {
       "description": "dist/{slug}/marketing_chrome/Promo{LANG}.txt",
       "screenshot": "dist/{slug}/marketing_chrome/screenshots/Promo_{n}_{lang}.png",
-      "screenshotsPerListing": 5
+      "screenshotsPerListing": 5,
+      "package": "dist/{slug}-chrome-v{version}.zip",
+      "versionSource": {
+        "path": "dist/{slug}/chrome/manifest.json",
+        "key": "version"
+      }
     },
     "firefox": {
       "description": "dist/{slug}/marketing_firefox/Promo{LANG}.txt",
       "screenshot": "dist/{slug}/marketing_firefox/screenshots/Promo_{n}_{lang}.png",
-      "screenshotsPerListing": 5
+      "screenshotsPerListing": 5,
+      "package": "dist/{slug}-firefox-v{version}.zip",
+      "versionSource": {
+        "path": "dist/{slug}/firefox/manifest.json",
+        "key": "version"
+      }
     }
   },
   "amo": {
