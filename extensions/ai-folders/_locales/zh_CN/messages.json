@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "在 Chrome 书签中创建一个同步的文件夹，以便在手机上访问您的对话。"
   },
+  "syncFavoritesTooltip": {
+    "message": "在 Chrome 收藏夹中创建一个同步的文件夹，以便在手机上访问您的对话。"
+  },
   "reviewTitle": {
     "message": "⭐ 您喜欢 AI 文件夹吗？"
   },

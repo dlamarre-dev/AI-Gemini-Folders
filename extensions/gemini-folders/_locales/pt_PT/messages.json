@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Cria uma pasta sincronizada nos marcadores do Chrome para aceder às suas conversas no telemóvel."
   },
+  "syncFavoritesTooltip": {
+    "message": "Cria uma pasta sincronizada nos favoritos do Chrome para aceder às suas conversas no telemóvel."
+  },
   "reviewTitle": {
     "message": "⭐ Está a gostar das Pastas Gemini?"
   },

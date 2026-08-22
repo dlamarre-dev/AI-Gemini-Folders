@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Tworzy zsynchronizowany folder w zakładkach Chrome, aby uzyskać dostęp do konwersacji na telefonie."
   },
+  "syncFavoritesTooltip": {
+    "message": "Tworzy zsynchronizowany folder w ulubionych Chrome, aby uzyskać dostęp do konwersacji na telefonie."
+  },
   "reviewTitle": {
     "message": "⭐ Podobają Ci się Foldery AI?"
   },

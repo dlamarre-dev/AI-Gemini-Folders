@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Creează un folder sincronizat în marcajele Chrome pentru a accesa conversațiile pe telefon."
   },
+  "syncFavoritesTooltip": {
+    "message": "Creează un folder sincronizat în preferințele Chrome pentru a accesa conversațiile pe telefon."
+  },
   "reviewTitle": {
     "message": "⭐ Vă plac Folderele Gemini?"
   },

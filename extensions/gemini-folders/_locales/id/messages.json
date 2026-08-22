@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Membuat folder tersinkronisasi di bookmark Chrome Anda untuk mengakses percakapan di ponsel."
   },
+  "syncFavoritesTooltip": {
+    "message": "Membuat folder tersinkronisasi di favorit Chrome Anda untuk mengakses percakapan di ponsel."
+  },
   "reviewTitle": {
     "message": "⭐ Apakah Anda menyukai Folder Gemini?"
   },

@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Creates a synced folder in your Chrome bookmarks to access your conversations on your phone."
   },
+  "syncFavoritesTooltip": {
+    "message": "Creates a synced folder in your Chrome favorites to access your conversations on your phone."
+  },
   "reviewTitle": {
     "message": "⭐ Are you enjoying Gemini Folders?"
   },

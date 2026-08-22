@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Maakt een gesynchroniseerde map aan in uw Chrome-bladwijzers voor toegang tot uw gesprekken op uw telefoon."
   },
+  "syncFavoritesTooltip": {
+    "message": "Maakt een gesynchroniseerde map aan in uw Chrome-favorieten voor toegang tot uw gesprekken op uw telefoon."
+  },
   "reviewTitle": {
     "message": "⭐ Bevalt Gemini-mappen u?"
   },

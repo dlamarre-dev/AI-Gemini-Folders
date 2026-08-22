@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Telefonunuzdan konuşmalarınıza erişmek için Chrome yer imlerinizde senkronize edilmiş bir klasör oluşturur."
   },
+  "syncFavoritesTooltip": {
+    "message": "Telefonunuzdan konuşmalarınıza erişmek için Chrome sık kullanılanlarınızda senkronize edilmiş bir klasör oluşturur."
+  },
   "reviewTitle": {
     "message": "⭐ Gemini Klasörleri'ni beğeniyor musunuz?"
   },

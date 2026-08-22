@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Vytvoří synchronizovanou složku v záložkách Chrome pro přístup ke konverzacím v telefonu."
   },
+  "syncFavoritesTooltip": {
+    "message": "Vytvoří synchronizovanou složku v oblíbených položkách Chrome pro přístup ke konverzacím v telefonu."
+  },
   "reviewTitle": {
     "message": "⭐ Líbí se vám Složky Gemini?"
   },

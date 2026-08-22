@@ -164,6 +164,24 @@ follow from that and are easy to get wrong:
 - **`validate_build.py` now also walks `marketing_<target>/`.** It never did, and
   that was survivable only while every promo placeholder was always substituted.
   A promo file is store copy: a placeholder left in one is read by users.
+- **A target can swap in a whole alternative string, not just substitute words**
+  (`message_aliases`). Edge uses it for one thing: `chrome.bookmarks` manipulates
+  *Favorites* on Edge, so `syncBookmarksTooltip` was wrong twice over there —
+  wrong brand *and* wrong noun. The brand is language-independent; the noun is
+  not, so it lives as a second translated key, `syncFavoritesTooltip`, in all 43
+  locales of both extensions.
+  Two rules make it work. The stored variant **keeps "Chrome"**, so the brand
+  swap that runs after it does the branding and the two keys differ in exactly
+  one noun — which is what makes a translation reviewable at a glance. And the
+  key is listed in `BUILD_ONLY_MESSAGES`, so **every** target deletes it: a
+  string with two homes in 43 files is how translations drift apart.
+  The terms come from Microsoft's own Terminology Collection (the "A list of
+  shortcuts to frequently-accessed items" sense) — the Edge equivalent of §10
+  quoting Firefox's label out of `mozilla-l10n`. The **inflection is not
+  sourced**: 22 locales needed the surrounding case, article or noun class to
+  move with the noun, and 3 more (bg, th, uk) follow Edge's shipping UI where it
+  disagrees with the terminology export. Those are the ones to re-check if a
+  native speaker ever reports the tooltip reading oddly.
 
 ---
 

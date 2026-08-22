@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Sukuria sinchronizuotą aplanką Chrome žymėse, kad galėtum pasiekti pokalbius iš telefono."
   },
+  "syncFavoritesTooltip": {
+    "message": "Sukuria sinchronizuotą aplanką Chrome parankiniuose, kad galėtum pasiekti pokalbius iš telefono."
+  },
   "reviewTitle": {
     "message": "⭐ Ar tau patinka Gemini Aplankai?"
   },

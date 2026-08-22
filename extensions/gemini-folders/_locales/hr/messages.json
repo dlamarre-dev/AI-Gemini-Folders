@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Stvara sinkroniziranu mapu u Chrome oznakama za pristup razgovorima s telefona."
   },
+  "syncFavoritesTooltip": {
+    "message": "Stvara sinkroniziranu mapu u Chrome favoritima za pristup razgovorima s telefona."
+  },
   "reviewTitle": {
     "message": "⭐ Sviđa ti se Gemini Mape?"
   },

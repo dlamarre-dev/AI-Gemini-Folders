@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "在您的 Chrome 書籤中建立同步資料夾，以便在手機上存取您的對話。"
   },
+  "syncFavoritesTooltip": {
+    "message": "在您的 Chrome 我的最愛中建立同步資料夾，以便在手機上存取您的對話。"
+  },
   "reviewTitle": {
     "message": "⭐ 您喜歡 Gemini 資料夾嗎？"
   },

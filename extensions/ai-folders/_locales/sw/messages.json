@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Inaunda folda iliyosawazishwa katika alamisho za Chrome ili ufikie mazungumzo yako kwenye simu yako."
   },
+  "syncFavoritesTooltip": {
+    "message": "Inaunda folda iliyosawazishwa katika vipendwa vya Chrome ili ufikie mazungumzo yako kwenye simu yako."
+  },
   "reviewTitle": {
     "message": "⭐ Je, unafurahia Folda za AI?"
   },

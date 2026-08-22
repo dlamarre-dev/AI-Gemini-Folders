@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Loob sünkroonitud kausta Chrome'i järjehoidjatesse telefonis vestlustele juurdepääsuks."
   },
+  "syncFavoritesTooltip": {
+    "message": "Loob sünkroonitud kausta Chrome'i lemmikutesse telefonis vestlustele juurdepääsuks."
+  },
   "reviewTitle": {
     "message": "⭐ Kas sulle meeldib AI kaustad?"
   },

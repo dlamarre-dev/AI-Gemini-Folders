@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "휴대전화에서 대화에 액세스할 수 있도록 Chrome 북마크에 동기화된 폴더를 만듭니다."
   },
+  "syncFavoritesTooltip": {
+    "message": "휴대전화에서 대화에 액세스할 수 있도록 Chrome 즐겨찾기에 동기화된 폴더를 만듭니다."
+  },
   "reviewTitle": {
     "message": "⭐ Gemini 폴더가 마음에 드시나요?"
   },
