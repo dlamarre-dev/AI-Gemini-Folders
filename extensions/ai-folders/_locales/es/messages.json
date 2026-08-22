@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Crea una carpeta sincronizada en tus marcadores de Chrome para acceder a tus conversaciones en tu teléfono."
   },
+  "syncFavoritesTooltip": {
+    "message": "Crea una carpeta sincronizada en tus favoritos de Chrome para acceder a tus conversaciones en tu teléfono."
+  },
   "reviewTitle": {
     "message": "⭐ ¿Te gusta Carpetas IA?"
   },

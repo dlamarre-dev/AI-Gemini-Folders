@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Izveido sinhronizētu mapi Chrome grāmatzīmēs, lai piekļūtu sarunām no tālruņa."
   },
+  "syncFavoritesTooltip": {
+    "message": "Izveido sinhronizētu mapi Chrome izlasē, lai piekļūtu sarunām no tālruņa."
+  },
   "reviewTitle": {
     "message": "⭐ Vai tev patīk AI mapes?"
   },

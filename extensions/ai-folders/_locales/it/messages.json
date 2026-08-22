@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Crea una cartella sincronizzata nei preferiti di Chrome per accedere alle conversazioni dal telefono."
   },
+  "syncFavoritesTooltip": {
+    "message": "Crea una cartella sincronizzata nei preferiti di Chrome per accedere alle conversazioni dal telefono."
+  },
   "reviewTitle": {
     "message": "⭐ Ti piace Cartelle IA?"
   },

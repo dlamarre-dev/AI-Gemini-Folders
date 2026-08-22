@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Tạo thư mục đồng bộ trong dấu trang Chrome để truy cập cuộc trò chuyện trên điện thoại."
   },
+  "syncFavoritesTooltip": {
+    "message": "Tạo thư mục đồng bộ trong mục yêu thích Chrome để truy cập cuộc trò chuyện trên điện thoại."
+  },
   "reviewTitle": {
     "message": "⭐ Bạn có thích Thư mục AI không?"
   },

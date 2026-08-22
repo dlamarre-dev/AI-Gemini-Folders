@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Vytvorí synchronizovaný priečinok v záložkách Chrome pre prístup ku konverzáciám v telefóne."
   },
+  "syncFavoritesTooltip": {
+    "message": "Vytvorí synchronizovaný priečinok v obľúbených položkách Chrome pre prístup ku konverzáciám v telefóne."
+  },
   "reviewTitle": {
     "message": "⭐ Páčia sa vám Priečinky Gemini?"
   },

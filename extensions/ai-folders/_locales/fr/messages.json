@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Crée un dossier synchronisé dans vos favoris Chrome pour accéder à vos conversations sur votre téléphone."
   },
+  "syncFavoritesTooltip": {
+    "message": "Crée un dossier synchronisé dans vos favoris Chrome pour accéder à vos conversations sur votre téléphone."
+  },
   "reviewTitle": {
     "message": "⭐ Aimez-vous Dossiers IA ?"
   },

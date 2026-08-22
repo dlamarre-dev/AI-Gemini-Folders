@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Luo synkronoitu kansio Chrome-kirjanmerkkeihin, jotta voit käyttää keskusteluja puhelimellasi."
   },
+  "syncFavoritesTooltip": {
+    "message": "Luo synkronoitu kansio Chrome-suosikkeihin, jotta voit käyttää keskusteluja puhelimellasi."
+  },
   "reviewTitle": {
     "message": "⭐ Pidätkö Gemini-kansioista?"
   },

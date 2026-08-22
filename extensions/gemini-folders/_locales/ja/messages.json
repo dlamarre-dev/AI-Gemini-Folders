@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Chromeのブックマークに同期されたフォルダを作成し、スマートフォンから会話にアクセスできるようにします。"
   },
+  "syncFavoritesTooltip": {
+    "message": "Chromeのお気に入りに同期されたフォルダを作成し、スマートフォンから会話にアクセスできるようにします。"
+  },
   "reviewTitle": {
     "message": "⭐ Gemini フォルダ をお楽しみですか？"
   },

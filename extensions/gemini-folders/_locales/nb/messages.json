@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Oppretter en synkronisert mappe i Chrome-bokmerkene dine for tilgang til samtaler på telefonen."
   },
+  "syncFavoritesTooltip": {
+    "message": "Oppretter en synkronisert mappe i Chrome-favorittene dine for tilgang til samtaler på telefonen."
+  },
   "reviewTitle": {
     "message": "⭐ Liker du Gemini Mapper?"
   },

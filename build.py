@@ -53,6 +53,10 @@ EXTENSION_CONFIG = {
     },
 }
 
+# Messages that exist only to be swapped in for some target. They are never
+# shipped under their own name — patch_locales drops them from every build.
+BUILD_ONLY_MESSAGES = ["syncFavoritesTooltip"]
+
 # Spellings of the quick-save shortcut as they appear in translated strings and
 # promo texts. Firefox cannot bind Ctrl+Shift+S, so it swaps all of them.
 QUICK_SAVE_SPELLINGS = ["Ctrl+Shift+S", "Cmd+Shift+S", "Command+Shift+S",
@@ -76,6 +80,7 @@ TARGETS = {
         "label": "Chrome",
         "drop_files": "firefox_only_files",
         "text_swaps": [],
+        "message_aliases": {},
         "collapse_mac": False,
         "patch_manifest": None,
     },
@@ -89,6 +94,12 @@ TARGETS = {
         # required." A brand swap is language-independent, exactly like Firefox's.
         # The quick-save shortcut is NOT swapped: Edge shares Chrome's commands API.
         "text_swaps": [("Chrome", "Microsoft Edge")],
+        # Edge calls them Favorites, not bookmarks, and chrome.bookmarks really
+        # does manipulate Favorites there — so the tooltip was wrong twice over.
+        # The replacement runs BEFORE the brand swap, which is why the stored
+        # string still says "Chrome": the two keys then differ in exactly one
+        # noun, and reviewing a translation means reading one word.
+        "message_aliases": {"syncBookmarksTooltip": "syncFavoritesTooltip"},
         "collapse_mac": False,
         "patch_manifest": None,
     },
@@ -100,6 +111,7 @@ TARGETS = {
         "drop_files": None,
         "text_swaps": ([("Chrome", "Firefox")]
                        + [(sc, "Alt+Shift+S") for sc in QUICK_SAVE_SPELLINGS]),
+        "message_aliases": {},
         "collapse_mac": True,
         "patch_manifest": "firefox",
     },
@@ -371,12 +383,18 @@ def inject_popup_urls(dest, cfg, target_name):
 
 
 def patch_locales(dest, target):
-    """Applies the target's text swaps to every translated string."""
-    if not target["text_swaps"]:
-        return
+    """Swaps in the target's alternative strings, drops the build-only ones, and
+    applies its text swaps — in that order.
+
+    The order matters: an alias is stored with the brand still reading "Chrome"
+    so it differs from the string it replaces in exactly one word, and the brand
+    swap below is what turns it into the target's. Reversing the two would leave
+    "Chrome" in a target that must not mention it.
+    """
     locales_dir = os.path.join(dest, "_locales")
     if not os.path.exists(locales_dir):
         return
+    aliases = target.get("message_aliases") or {}
     for root, dirs, files in os.walk(locales_dir):
         if "messages.json" not in files:
             continue
@@ -385,6 +403,17 @@ def patch_locales(dest, target):
             messages = json.load(f)
 
         modified = False
+        for shipped, source in aliases.items():
+            if source in messages and shipped in messages:
+                messages[shipped]["message"] = messages[source]["message"]
+                modified = True
+
+        # Never ship a build-only key: it would be dead weight in 43 files and,
+        # worse, a second copy of a string that is supposed to have one home.
+        for key in BUILD_ONLY_MESSAGES:
+            if messages.pop(key, None) is not None:
+                modified = True
+
         for val in messages.values():
             if "message" not in val:
                 continue

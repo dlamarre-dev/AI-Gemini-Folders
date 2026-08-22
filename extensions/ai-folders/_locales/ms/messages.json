@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Mencipta folder tersinkron dalam penanda buku Chrome untuk mengakses perbualan pada telefon."
   },
+  "syncFavoritesTooltip": {
+    "message": "Mencipta folder tersinkron dalam kegemaran Chrome untuk mengakses perbualan pada telefon."
+  },
   "reviewTitle": {
     "message": "⭐ Adakah anda menyukai Gemini Folder?"
   },

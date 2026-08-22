@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Szinkronizált mappát hoz létre a Chrome-könyvjelzőkben, hogy telefonján is elérhesse a beszélgetéseit."
   },
+  "syncFavoritesTooltip": {
+    "message": "Szinkronizált mappát hoz létre a Chrome-kedvencekben, hogy telefonján is elérhesse a beszélgetéseit."
+  },
   "reviewTitle": {
     "message": "⭐ Tetszik a MI mappák?"
   },

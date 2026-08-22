@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Skapar en synkroniserad mapp i dina Chrome-bokmärken för åtkomst till konversationer på telefonen."
   },
+  "syncFavoritesTooltip": {
+    "message": "Skapar en synkroniserad mapp i dina Chrome-favoriter för åtkomst till konversationer på telefonen."
+  },
   "reviewTitle": {
     "message": "⭐ Gillar du Gemini-mappar?"
   },

@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "יוצר תיקייה מסונכרנת בסימניות Chrome לגישה לשיחות מהטלפון."
   },
+  "syncFavoritesTooltip": {
+    "message": "יוצר תיקייה מסונכרנת במועדפים של Chrome לגישה לשיחות מהטלפון."
+  },
   "reviewTitle": {
     "message": "⭐ נהנה מ-Gemini תיקיות?"
   },

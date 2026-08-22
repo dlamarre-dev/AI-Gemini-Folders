@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "ينشئ مجلداً متزامناً في إشاراتك المرجعية في Chrome للوصول إلى محادثاتك من هاتفك."
   },
+  "syncFavoritesTooltip": {
+    "message": "ينشئ مجلداً متزامناً في المفضلة لديك في Chrome للوصول إلى محادثاتك من هاتفك."
+  },
   "reviewTitle": {
     "message": "⭐ هل تستمتع بمجلدات AI؟"
   },

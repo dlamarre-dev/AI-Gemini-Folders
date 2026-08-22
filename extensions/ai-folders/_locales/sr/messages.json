@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Kreira sinhronizovani folder u Chrome obeleživačima za pristup razgovorima s telefona."
   },
+  "syncFavoritesTooltip": {
+    "message": "Kreira sinhronizovani folder u Chrome favoritima za pristup razgovorima s telefona."
+  },
   "reviewTitle": {
     "message": "⭐ Da li vam se sviđa VI fascikle?"
   },

@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Erstellt einen synchronisierten Ordner in Ihren Chrome-Lesezeichen, um auf Ihrem Telefon auf Ihre Unterhaltungen zuzugreifen."
   },
+  "syncFavoritesTooltip": {
+    "message": "Erstellt einen synchronisierten Ordner in Ihren Chrome-Favoriten, um auf Ihrem Telefon auf Ihre Unterhaltungen zuzugreifen."
+  },
   "reviewTitle": {
     "message": "⭐ Gefällt Ihnen Gemini-Ordner?"
   },

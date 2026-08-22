@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Crea una carpeta sincronitzada als marcadors de Chrome per accedir a les converses al telèfon."
   },
+  "syncFavoritesTooltip": {
+    "message": "Crea una carpeta sincronitzada als preferits de Chrome per accedir a les converses al telèfon."
+  },
   "reviewTitle": {
     "message": "⭐ T'agrada Gemini Carpetes?"
   },

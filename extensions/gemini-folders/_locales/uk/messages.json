@@ -173,6 +173,9 @@
   "syncBookmarksTooltip": {
     "message": "Створює синхронізовану теку в закладках Chrome для доступу до розмов з телефону."
   },
+  "syncFavoritesTooltip": {
+    "message": "Створює синхронізовану теку в обраному Chrome для доступу до розмов з телефону."
+  },
   "reviewTitle": {
     "message": "⭐ Вам подобаються Теки Gemini?"
   },

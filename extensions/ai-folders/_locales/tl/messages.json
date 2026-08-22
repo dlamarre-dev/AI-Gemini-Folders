@@ -170,6 +170,9 @@
   "syncBookmarksTooltip": {
     "message": "Gumagawa ng naka-sync na folder sa iyong mga Chrome bookmark para ma-access ang iyong mga pag-uusap sa iyong telepono."
   },
+  "syncFavoritesTooltip": {
+    "message": "Gumagawa ng naka-sync na folder sa iyong mga paborito sa Chrome para ma-access ang iyong mga pag-uusap sa iyong telepono."
+  },
   "reviewTitle": {
     "message": "⭐ Nag-eenjoy ka ba sa Mga AI Folder?"
   },
