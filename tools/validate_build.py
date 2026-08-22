@@ -20,7 +20,7 @@ import zipfile
 
 DIST = "dist"
 EXTENSIONS = ["ai-folders", "gemini-folders"]
-BROWSERS = ["chrome", "firefox"]
+BROWSERS = ["chrome", "edge", "firefox"]
 EXPECTED_LOCALES = 43
 
 failures = []
@@ -105,6 +105,28 @@ def check_placeholders(ext, browser):
                 fail(f"{ext}/{browser}/{os.path.relpath(path, root)}: unresolved {hit}")
 
 
+def check_marketing_placeholders(ext, browser):
+    """The promo texts ship as store copy, so a placeholder left in one is read
+    by users, not by a parser. Checked separately from the extension tree
+    because it lives beside it, in marketing_<browser>/."""
+    root = os.path.join(DIST, ext, f"marketing_{browser}")
+    if not os.path.isdir(root):
+        return
+    for dirpath, _dirs, files in os.walk(root):
+        for name in files:
+            if not name.endswith(".txt"):
+                continue
+            path = os.path.join(dirpath, name)
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    content = f.read()
+            except (UnicodeDecodeError, OSError):
+                continue
+            for hit in set(PLACEHOLDER.findall(content)):
+                fail(f"{ext}/marketing_{browser}/{os.path.relpath(path, root)}: "
+                     f"unresolved {hit}")
+
+
 def check_zip(ext, version):
     """The shipped archive must carry the extension and nothing else."""
     for browser in BROWSERS:
@@ -136,6 +158,7 @@ def main():
                 version = built.get("version")
             check_locales(ext, browser)
             check_placeholders(ext, browser)
+            check_marketing_placeholders(ext, browser)
         if version:
             check_zip(ext, version)
 
@@ -152,7 +175,8 @@ def main():
             print(f"   - {f}")
         return 1
 
-    print("✅ Build artifacts validated: manifests, permissions, locales, placeholders, archives.")
+    print(f"✅ Build artifacts validated for {len(BROWSERS)} targets: "
+          f"manifests, permissions, locales, placeholders, promo texts, archives.")
     return 0
 
 

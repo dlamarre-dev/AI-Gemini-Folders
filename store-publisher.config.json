@@ -26,6 +26,16 @@
         "key": "version"
       }
     },
+    "edge": {
+      "description": "dist/{slug}/marketing_edge/Promo{LANG}.txt",
+      "screenshot": "dist/{slug}/marketing_edge/screenshots/Promo_{n}_{lang}.png",
+      "screenshotsPerListing": 5,
+      "package": "dist/{slug}-edge-v{version}.zip",
+      "versionSource": {
+        "path": "dist/{slug}/edge/manifest.json",
+        "key": "version"
+      }
+    },
     "firefox": {
       "description": "dist/{slug}/marketing_firefox/Promo{LANG}.txt",
       "screenshot": "dist/{slug}/marketing_firefox/screenshots/Promo_{n}_{lang}.png",
