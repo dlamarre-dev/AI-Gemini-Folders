@@ -75,9 +75,40 @@ describe('app.js wiring', () => {
   });
 
   // Gradient ids collide when the same markup is inlined more than once, which
-  // is why Firefox's mark is an external <img>. Edge's mark has gradients too.
+  // is why Firefox's mark is an external <img>. Edge's carries six of them
+  // (a-f, single letters), so inlining it would be the worst case of that bug —
+  // as a separate document behind <img>, they cannot reach anything.
   test('the Edge mark is referenced as a file, like Firefox', () => {
     expect(LOGOS_SRC).toMatch(/edge:\s*`<img src="site\/assets\/edge\.svg"/);
     expect(fs.existsSync(path.join(ROOT, 'docs/site/assets/edge.svg'))).toBe(true);
+  });
+});
+
+// Every page that offers the store buttons must offer all of them. The nav is
+// hand-written HTML on each page rather than rendered from the STORES table, so
+// it is the one place a store can be forgotten on one page and not another —
+// which is exactly what happened to privacy.html.
+describe('nav buttons are on every page that has them', () => {
+  const pages = fs.readdirSync(path.join(ROOT, 'docs'))
+    .filter((f) => f.endsWith('.html'))
+    .map((f) => [f, fs.readFileSync(path.join(ROOT, 'docs', f), 'utf8')])
+    .filter(([, html]) => html.includes('id="navCtaLink"'));
+
+  test('at least one page carries them, or this suite proves nothing', () => {
+    expect(pages.length).toBeGreaterThan(0);
+  });
+
+  test.each(pages.map(([f]) => f))('%s offers Edge alongside Chrome and Firefox', (file) => {
+    const html = pages.find(([f]) => f === file)[1];
+    expect(html).toContain('id="navCtaFoxLink"');
+    expect(html).toContain('id="navCtaEdgeLink"');
+  });
+
+  // Ships hidden: app.js reveals it only once LINKS.edge is set, so a page
+  // cannot leak a dead button before the listing is certified.
+  test.each(pages.map(([f]) => f))('%s ships the Edge button hidden', (file) => {
+    const html = pages.find(([f]) => f === file)[1];
+    const tag = html.match(/<a[^>]*id="navCtaEdgeLink"[^>]*>/)[0];
+    expect(tag).toMatch(/\shidden\b/);
   });
 });
