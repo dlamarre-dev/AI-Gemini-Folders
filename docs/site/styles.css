@@ -279,11 +279,16 @@ ul{padding:0;margin:0}
   .split.rev .split-media{order:0}
   .shots{grid-template-columns:1fr}
 }
+/* Edge goes first: it is the newest button and the least expected, so it is
+   the one to drop when the header runs out of room. */
+@media (max-width:900px){#navCtaEdgeLink{display:none}}
 @media (max-width:720px){#navCtaFoxLink{display:none}}
 @media (max-width:560px){
   .feat-grid{grid-template-columns:1fr}
   .lang-menu{grid-template-columns:1fr}
-  .hero-cta .btn,.final-cta .btn{flex:1}
+  /* min-width so a third store wraps to its own line instead of squeezing
+     three labels into one row on a phone. */
+  .hero-cta .btn,.final-cta .btn{flex:1 1 auto;min-width:190px}
   .gemini-card{flex-wrap:nowrap;align-items:center;padding:20px 16px}
   .gemini-card .gmark{width:72px;height:72px;flex-shrink:0}
   .gemini-card .gbody{min-width:0;flex:1}

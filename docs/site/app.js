@@ -15,8 +15,25 @@
     firefox: "https://addons.mozilla.org/firefox/addon/ai_folders/",
     gemChrome: "https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik",
     gemFirefox: "https://addons.mozilla.org/firefox/addon/gemini_folders/",
+    // An Edge listing has no public URL until it clears certification, so these
+    // stay empty and every button below simply omits Edge. Filling them in turns
+    // the whole site on at once — hero, nav, Gemini card, both footers — because
+    // stores() is the only thing that decides.
+    edge: "",
+    gemEdge: "",
     github: "https://github.com/dlamarre-dev/AI-Gemini-Folders"
   };
+
+  // The store row, in the order it is offered. `key` is the AI Folders link,
+  // `gem` the Gemini Folders one; `cta` and `logo` are shared between them.
+  const STORES = [
+    { key: "chrome",  gem: "gemChrome",  cta: "ctaChrome",  logo: "chrome",  label: "Chrome" },
+    { key: "edge",    gem: "gemEdge",    cta: "ctaEdge",    logo: "edge",    label: "Microsoft Edge" },
+    { key: "firefox", gem: "gemFirefox", cta: "ctaFirefox", logo: "firefox", label: "Firefox" }
+  ];
+  // Only the stores we actually have a listing on. Called everywhere rather than
+  // hard-coding a pair, so a store arriving or leaving is one edit above.
+  const stores = (which) => STORES.filter(s => LINKS[which === "gem" ? s.gem : s.key]);
 
   // service registry — `logo` is the real brand SVG; `local` uses the localized label
   const SERVICES = [
@@ -59,8 +76,6 @@
     <g filter="url(#afds)"><path d="M 8 38 Q 8 28 18 28 H 48 Q 52 28 54 31 L 60 39 H 110 Q 120 39 120 49 V 110 Q 120 120 110 120 H 18 Q 8 120 8 110 Z" fill="url(#afg)"/></g>
   </svg>`;
 
-  const CHROME_IC = LOGOS.chrome;
-  const FOX_IC = LOGOS.firefox;
   const GH_IC = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-2c-2.9.6-3.5-1.3-3.5-1.3-.5-1.2-1.2-1.5-1.2-1.5-.9-.6 0-.6 0-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.1 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .6 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.7 5.1.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5Z"/></svg>`;
 
   // service name (localized for Local LLM) + its real logo wrapped in a chip box
@@ -229,8 +244,7 @@
           <h1 class="reveal d1"><span class="grad-text">${esc(man(lang,"heroTitle"))}</span></h1>
           <p class="hero-sub reveal d2">${esc(dpath(lang,"ui.extDesc"))}</p>
           <div class="hero-cta reveal d3">
-            <a class="btn btn-lg btn-primary" href="${LINKS.chrome}" target="_blank" rel="noopener"><span class="ic">${CHROME_IC}</span>${esc(man(lang,"ctaChrome"))}</a>
-            <a class="btn btn-lg btn-ghost" href="${LINKS.firefox}" target="_blank" rel="noopener"><span class="ic">${FOX_IC}</span>${esc(man(lang,"ctaFirefox"))}</a>
+            ${stores().map((s, i) => `<a class="btn btn-lg ${i === 0 ? "btn-primary" : "btn-ghost"}" href="${LINKS[s.key]}" target="_blank" rel="noopener"><span class="ic">${LOGOS[s.logo]}</span>${esc(man(lang, s.cta))}</a>`).join("")}
           </div>
           <div class="hero-trust reveal d4">
             <span>${esc(man(lang,"free"))}</span>
@@ -370,8 +384,7 @@
             <h3>${esc(man(lang,"heroTitle"))}</h3>
             <p>Google Gemini · ${esc(man(lang,"free"))} · ${esc(man(lang,"openSource"))}</p>
             <div class="hero-cta">
-              <a class="btn btn-md btn-primary" href="${LINKS.gemChrome}" target="_blank" rel="noopener">${esc(man(lang,"ctaChrome"))}</a>
-              <a class="btn btn-md btn-ghost" href="${LINKS.gemFirefox}" target="_blank" rel="noopener">${esc(man(lang,"ctaFirefox"))}</a>
+              ${stores("gem").map((s, i) => `<a class="btn btn-md ${i === 0 ? "btn-primary" : "btn-ghost"}" href="${LINKS[s.gem]}" target="_blank" rel="noopener">${esc(man(lang, s.cta))}</a>`).join("")}
             </div>
           </div>
         </div>
@@ -385,8 +398,7 @@
         <div class="folder reveal">${FOLDER_SVG}</div>
         <h2 class="reveal d1"><span class="grad-text">${esc(man(lang,"heroTitle"))}</span></h2>
         <div class="final-cta reveal d2">
-          <a class="btn btn-lg btn-primary" href="${LINKS.chrome}" target="_blank" rel="noopener"><span class="ic">${CHROME_IC}</span>${esc(man(lang,"ctaChrome"))}</a>
-          <a class="btn btn-lg btn-ghost" href="${LINKS.firefox}" target="_blank" rel="noopener"><span class="ic">${FOX_IC}</span>${esc(man(lang,"ctaFirefox"))}</a>
+          ${stores().map((s, i) => `<a class="btn btn-lg ${i === 0 ? "btn-primary" : "btn-ghost"}" href="${LINKS[s.key]}" target="_blank" rel="noopener"><span class="ic">${LOGOS[s.logo]}</span>${esc(man(lang, s.cta))}</a>`).join("")}
         </div>
         <div class="final-trust reveal d3">
           <span>${esc(man(lang,"free"))}</span><span class="sep"></span>
@@ -406,8 +418,7 @@
       <div class="container footer-inner">
         <div class="brand"><span class="mark">${FOLDER_SVG}</span>${esc(appName(lang))}</div>
         <div class="footer-links">
-          <a href="${LINKS.chrome}" target="_blank" rel="noopener">Chrome</a>
-          <a href="${LINKS.firefox}" target="_blank" rel="noopener">Firefox</a>
+          ${stores().map(s => `<a href="${LINKS[s.key]}" target="_blank" rel="noopener">${s.label}</a>`).join("")}
           <a href="${LINKS.github}" target="_blank" rel="noopener">GitHub</a>
           <a href="/privacy.html">${esc(priv_link(lang))}</a>
         </div>
@@ -472,8 +483,7 @@
       <div class="container footer-inner">
         <div class="brand"><span class="mark">${FOLDER_SVG}</span>${esc(appName(lang))}</div>
         <div class="footer-links">
-          <a href="${LINKS.chrome}" target="_blank" rel="noopener">Chrome</a>
-          <a href="${LINKS.firefox}" target="_blank" rel="noopener">Firefox</a>
+          ${stores().map(s => `<a href="${LINKS[s.key]}" target="_blank" rel="noopener">${s.label}</a>`).join("")}
           <a href="${LINKS.github}" target="_blank" rel="noopener">GitHub</a>
           <a href="/privacy.html" aria-current="page">${esc(priv_link(lang))}</a>
         </div>
@@ -580,6 +590,18 @@
     if (chromeBtn) chromeBtn.innerHTML = `<span class="ic">${LOGOS.chrome}</span>${esc(man(lang, "ctaChrome"))}`;
     const foxBtn = document.getElementById("navCtaFoxLink");
     if (foxBtn) foxBtn.innerHTML = `<span class="ic">${LOGOS.firefox}</span>${esc(man(lang, "ctaFirefox"))}`;
+    // The Edge nav button ships hidden and only appears once LINKS.edge is set,
+    // so an uncertified listing never leaves a dead button in the header.
+    const edgeBtn = document.getElementById("navCtaEdgeLink");
+    if (edgeBtn) {
+      if (LINKS.edge) {
+        edgeBtn.href = LINKS.edge;
+        edgeBtn.hidden = false;
+        edgeBtn.innerHTML = `<span class="ic">${LOGOS.edge}</span>${esc(man(lang, "ctaEdge"))}`;
+      } else {
+        edgeBtn.hidden = true;
+      }
+    }
     document.getElementById("langLabel").textContent = NAMES[lang];
     const brand = document.getElementById("brandName");
     if (brand) brand.textContent = appName(lang);

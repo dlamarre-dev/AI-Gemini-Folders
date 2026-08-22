@@ -752,3 +752,28 @@ python amo/amo_publish.py --item <slug> --texts --images --apply
   (`dist/{slug}-chrome-v{version}.zip`) and a `versionSource` pointing at the
   built manifest, so the version in the filename cannot disagree with the bytes.
   Credentials and `assets.root` live in the tool's own gitignored config.
+
+### 12c. When the Edge listing clears certification
+
+Everything Edge-facing is already built and **gated on a URL that does not exist
+yet**, because a listing has no public address until it is certified. Nothing
+below is a code change; each one is pasting the same URL into a place that is
+already waiting for it, and each turns something on by itself.
+
+1. `build.py` → `review_url_edge` and `af_download_url_edge` (GF only). The
+   review banner and the AI Folders promo banner are *removed* from the Edge
+   build while these are empty — `strip_block` — and come back on the next build.
+   The same emptiness drops the `__AF_STORE_URL__` promo line.
+2. `docs/site/app.js` → `LINKS.edge` and `LINKS.gemEdge`. One edit lights the
+   button in all five places at once (nav, hero, Gemini card, final CTA, both
+   footers), because `stores()` is the only thing that decides.
+3. `README.md` → the store badge and the install link, beside Chrome's and
+   Firefox's. Static files cannot be gated, which is why they were left out.
+4. `docs/llms.txt` → the Edge URL for both products, same reason.
+5. **Replace `docs/site/assets/edge.svg`.** It is a hand-drawn approximation of
+   the Edge mark, good enough to read at 20px but not Microsoft's own artwork.
+   The button does not render until step 2, so there is time — but do it before,
+   not after.
+
+Then re-run `python build.py` and check that the Edge popup has its review
+banner back, which is the cheapest proof that step 1 landed.
