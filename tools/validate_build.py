@@ -22,6 +22,12 @@ DIST = "dist"
 EXTENSIONS = ["ai-folders", "gemini-folders"]
 BROWSERS = ["chrome", "edge", "firefox"]
 EXPECTED_LOCALES = 43
+# Per-store cap on the listing description. Microsoft rejects anything over
+# 10,000 characters, and 15 of the 86 promo texts are naturally over it, so
+# build.py trims version-history lines off the tail for that target. This is the
+# check that the trim actually happened — a rejection here is cheap, a rejection
+# from Partner Center comes after a submission.
+DESCRIPTION_MAX = {"edge": 10000}
 
 failures = []
 
@@ -125,6 +131,10 @@ def check_marketing_placeholders(ext, browser):
             for hit in set(PLACEHOLDER.findall(content)):
                 fail(f"{ext}/marketing_{browser}/{os.path.relpath(path, root)}: "
                      f"unresolved {hit}")
+            limit = DESCRIPTION_MAX.get(browser)
+            if limit and name.lower().startswith("promo") and len(content) > limit:
+                fail(f"{ext}/marketing_{browser}/{name}: {len(content)} chars, "
+                     f"over the {limit} the store accepts")
 
 
 def check_zip(ext, version):
@@ -175,8 +185,8 @@ def main():
             print(f"   - {f}")
         return 1
 
-    print(f"✅ Build artifacts validated for {len(BROWSERS)} targets: "
-          f"manifests, permissions, locales, placeholders, promo texts, archives.")
+    print(f"✅ Build artifacts validated for {len(BROWSERS)} targets: manifests, "
+          f"permissions, locales, placeholders, promo texts and their length, archives.")
     return 0
 
 
