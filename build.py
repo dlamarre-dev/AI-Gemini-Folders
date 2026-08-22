@@ -32,8 +32,14 @@ EXTENSION_CONFIG = {
         "marketing_subdir":   "gemini-folders",
         "review_url_chrome":       "https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik/reviews",
         "review_url_firefox":      "https://addons.mozilla.org/firefox/addon/gemini_folders/reviews/",
+        # Empty until the Edge listing is published: the public URL carries an id
+        # Partner Center only assigns at publish time. An empty review URL makes
+        # build_target drop the banner rather than ship a dead link (see
+        # strip_review_banner); filling it in brings the banner back by itself.
+        "review_url_edge":         "",
         "af_download_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf",
         "af_download_url_firefox": "https://addons.mozilla.org/firefox/addon/ai_folders/",
+        "af_download_url_edge":    "",
     },
     "ai-folders": {
         "firefox_gecko_id":   "aifolders@dlamarre-dev.github.io",
@@ -43,6 +49,59 @@ EXTENSION_CONFIG = {
         "marketing_subdir":   "ai-folders",
         "review_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf/reviews",
         "review_url_firefox": "https://addons.mozilla.org/firefox/addon/ai_folders/reviews/",
+        "review_url_edge":    "",
+    },
+}
+
+# Spellings of the quick-save shortcut as they appear in translated strings and
+# promo texts. Firefox cannot bind Ctrl+Shift+S, so it swaps all of them.
+QUICK_SAVE_SPELLINGS = ["Ctrl+Shift+S", "Cmd+Shift+S", "Command+Shift+S",
+                        "⌘+Shift+S", "Strg+Shift+S"]
+
+# --- BUILD TARGETS ---
+# One entry per store target. Everything that differs between the builds lives
+# here as data, so build_target() is a single code path: adding a fourth store
+# means adding a row, not a fourth near-copy of the same 90 lines.
+#
+#   emoji / label     log lines only
+#   drop_files        which config key lists files to remove from the merged tree
+#   text_swaps        (old, new) pairs applied to _locales AND the promo texts
+#   collapse_mac      drop the now-redundant "(or X on Mac)" parenthetical
+#   patch_manifest    optional callable(manifest, dest, cfg)
+#
+# The per-target URLs are read as review_url_<target> / af_download_url_<target>.
+TARGETS = {
+    "chrome": {
+        "emoji": "🚀",
+        "label": "Chrome",
+        "drop_files": "firefox_only_files",
+        "text_swaps": [],
+        "collapse_mac": False,
+        "patch_manifest": None,
+    },
+    "edge": {
+        "emoji": "🌊",
+        "label": "Edge",
+        "drop_files": "firefox_only_files",
+        # Microsoft's port guide is explicit: "If Chrome is used in either the
+        # name or the description of your extension, rebrand the extension using
+        # Microsoft Edge. To pass the certification process, the changes are
+        # required." A brand swap is language-independent, exactly like Firefox's.
+        # The quick-save shortcut is NOT swapped: Edge shares Chrome's commands API.
+        "text_swaps": [("Chrome", "Microsoft Edge")],
+        "collapse_mac": False,
+        "patch_manifest": None,
+    },
+    "firefox": {
+        "emoji": "🦊",
+        "label": "Firefox",
+        # Firefox keeps import.html/js/css: it cannot open a file picker from a
+        # popup, so the standalone import page is its only route (src/popup-core.js).
+        "drop_files": None,
+        "text_swaps": ([("Chrome", "Firefox")]
+                       + [(sc, "Alt+Shift+S") for sc in QUICK_SAVE_SPELLINGS]),
+        "collapse_mac": True,
+        "patch_manifest": "firefox",
     },
 }
 
@@ -199,66 +258,61 @@ def run_tests(assume_yes=False, force=False):
 # Extension builds
 # ---------------------------------------------------------------------------
 
-def build_chrome(ext_name, version):
-    cfg = EXTENSION_CONFIG[ext_name]
-    print(f"🚀 [{cfg['display_name']}] Building Chrome...")
+def strip_block(html, element_id):
+    """Removes a whole `<div id="...">...</div>` block from popup.html.
 
-    dest = os.path.join(DIST_DIR, ext_name, "chrome")
-    merge_into(SRC_DIR, ext_dir(ext_name), dest)
+    Used when a target has no URL for what the block links to. A brand-new store
+    product has no public page: the id in its URL is only assigned at publish
+    time. A dead "Rate 5 stars" link is worse than no banner — especially inside
+    a package going through certification — and an unsubstituted
+    `__REVIEW_URL__` would ship the placeholder itself.
 
-    for f in cfg["firefox_only_files"]:
-        fp = os.path.join(dest, f)
-        if os.path.exists(fp):
-            os.remove(fp)
-
-    # --- Inject review URL + AF promo URL (GF only) ---
-    popup_path = os.path.join(dest, "popup.html")
-    if os.path.exists(popup_path):
-        with open(popup_path, "r", encoding="utf-8") as f:
-            html = f.read()
-        html = html.replace("__REVIEW_URL__", cfg["review_url_chrome"])
-        if "af_download_url_chrome" in cfg:
-            html = html.replace("__AF_DOWNLOAD_URL__", cfg["af_download_url_chrome"])
-            af_icon = os.path.join(ext_dir("ai-folders"), "icon48.png")
-            if os.path.exists(af_icon):
-                shutil.copy2(af_icon, os.path.join(dest, "af-icon.png"))
-        with open(popup_path, "w", encoding="utf-8") as f:
-            f.write(html)
-
-    mkt = marketing_dir(ext_name)
-    if mkt:
-        mkt_chrome = os.path.join(DIST_DIR, ext_name, "marketing_chrome")
-        shutil.copytree(mkt, mkt_chrome)
-        af_url = cfg.get("af_download_url_chrome", "")
-        if af_url:
-            for root_d, _, mkt_files in os.walk(mkt_chrome):
-                for fn in mkt_files:
-                    if not fn.endswith(".txt"):
-                        continue
-                    fp = os.path.join(root_d, fn)
-                    with open(fp, encoding="utf-8") as f:
-                        ct = f.read()
-                    if "__AF_STORE_URL__" in ct:
-                        with open(fp, "w", encoding="utf-8") as f:
-                            f.write(ct.replace("__AF_STORE_URL__", af_url))
-
-    zip_path = os.path.join(DIST_DIR, f"{cfg['zip_prefix']}-chrome-v{version}.zip")
-    make_zip(dest, zip_path)
-    print(f"✅ Chrome build: {zip_path}")
+    Closed by matching `<div>` depth rather than by a regex, so restyling the
+    block or changing its inner markup cannot silently cut the wrong thing.
+    Filling the URL back in restores the block on the next build.
+    """
+    start = html.find(f'<div id="{element_id}"')
+    if start == -1:
+        return html
+    depth, i = 0, start
+    while i < len(html):
+        nxt_open = html.find("<div", i)
+        nxt_close = html.find("</div>", i)
+        if nxt_close == -1:
+            return html                      # malformed: leave it alone
+        if nxt_open != -1 and nxt_open < nxt_close:
+            depth += 1
+            i = nxt_open + len("<div")
+        else:
+            depth -= 1
+            i = nxt_close + len("</div>")
+            if depth == 0:
+                return html[:start] + html[i:]
+    return html
 
 
-def build_firefox(ext_name, version):
-    cfg = EXTENSION_CONFIG[ext_name]
-    print(f"🦊 [{cfg['display_name']}] Building Firefox...")
+def apply_text_swaps(text, target, collapse=False):
+    """The per-target brand and shortcut substitutions. Returns (text, changed)."""
+    changed = False
+    for old, new in target["text_swaps"]:
+        if old in text:
+            text = text.replace(old, new)
+            changed = True
+    if collapse:
+        # On Firefox, Mac and PC share the shortcut, so any "(or Alt+Shift+S on
+        # Mac)" parenthetical is now redundant. Two shapes, depending on whether
+        # the first shortcut sits inside or outside the parens.
+        for pattern, repl in (
+            (r'(Alt\+Shift\+S)\s*[\(（][^)）]*Alt\+Shift\+S[^)）]*[\)）]', r'\1'),
+            (r'[\(（]Alt\+Shift\+S[^)）]*Alt\+Shift\+S[^)）]*[\)）]', r'(Alt+Shift+S)'),
+        ):
+            new_text = re.sub(pattern, repl, text)
+            if new_text != text:
+                text, changed = new_text, True
+    return text, changed
 
-    dest = os.path.join(DIST_DIR, ext_name, "firefox")
-    merge_into(SRC_DIR, ext_dir(ext_name), dest)
 
-    # --- 1. Patch manifest.json for Firefox ---
-    mfp = os.path.join(dest, "manifest.json")
-    with open(mfp, "r", encoding="utf-8") as f:
-        manifest = json.load(f)
-
+def patch_manifest_firefox(manifest, dest, cfg):
     manifest["browser_specific_settings"] = {
         "gecko": {
             "id": cfg["firefox_gecko_id"],
@@ -273,7 +327,7 @@ def build_firefox(ext_name, version):
         # the list can't silently drift from the importScripts(...) call.
         with open(os.path.join(dest, sw), "r", encoding="utf-8") as f:
             m = re.search(r"importScripts\(([^)]*)\)", f.read())
-        imports = [s.strip().strip("'\"") for s in m.group(1).split(",") if s.strip()] if m else []
+        imports = [x.strip().strip("'\"") for x in m.group(1).split(",") if x.strip()] if m else []
         manifest["background"]["scripts"] = imports + [sw]
 
     # Only patch the quick-save shortcut (Ctrl+Shift+S → Alt+Shift+S).
@@ -285,103 +339,131 @@ def build_firefox(ext_name, version):
                 if platform in qs["suggested_key"]:
                     qs["suggested_key"][platform] = "Alt+Shift+S"
 
-    with open(mfp, "w", encoding="utf-8") as f:
-        json.dump(manifest, f, indent=2, ensure_ascii=False)
 
-    # --- 2. Inject review URL + AF promo URL (GF only) ---
+MANIFEST_PATCHERS = {"firefox": patch_manifest_firefox}
+
+
+def inject_popup_urls(dest, cfg, target_name):
+    """Substitutes the store URLs, or removes the block that would link nowhere."""
     popup_path = os.path.join(dest, "popup.html")
-    if os.path.exists(popup_path):
-        with open(popup_path, "r", encoding="utf-8") as f:
-            html = f.read()
-        html = html.replace("__REVIEW_URL__", cfg["review_url_firefox"])
-        if "af_download_url_firefox" in cfg:
-            html = html.replace("__AF_DOWNLOAD_URL__", cfg["af_download_url_firefox"])
-            af_icon = os.path.join(ext_dir("ai-folders"), "icon48.png")
-            if os.path.exists(af_icon):
-                shutil.copy2(af_icon, os.path.join(dest, "af-icon.png"))
-        with open(popup_path, "w", encoding="utf-8") as f:
-            f.write(html)
+    if not os.path.exists(popup_path):
+        return
+    with open(popup_path, "r", encoding="utf-8") as f:
+        html = f.read()
 
-    # --- 4. Patch translations ---
+    review_url = cfg.get(f"review_url_{target_name}", "")
+    if review_url:
+        html = html.replace("__REVIEW_URL__", review_url)
+    else:
+        html = strip_block(html, "reviewBanner")
+
+    af_url = cfg.get(f"af_download_url_{target_name}", "")
+    if af_url:
+        html = html.replace("__AF_DOWNLOAD_URL__", af_url)
+        af_icon = os.path.join(ext_dir("ai-folders"), "icon48.png")
+        if os.path.exists(af_icon):
+            shutil.copy2(af_icon, os.path.join(dest, "af-icon.png"))
+    elif "__AF_DOWNLOAD_URL__" in html:
+        html = strip_block(html, "afPromoBanner")
+
+    with open(popup_path, "w", encoding="utf-8") as f:
+        f.write(html)
+
+
+def patch_locales(dest, target):
+    """Applies the target's text swaps to every translated string."""
+    if not target["text_swaps"]:
+        return
     locales_dir = os.path.join(dest, "_locales")
-    if os.path.exists(locales_dir):
-        for root, dirs, files in os.walk(locales_dir):
-            if "messages.json" not in files:
-                continue
-            msg_path = os.path.join(root, "messages.json")
-            with open(msg_path, "r", encoding="utf-8") as f:
-                messages = json.load(f)
+    if not os.path.exists(locales_dir):
+        return
+    for root, dirs, files in os.walk(locales_dir):
+        if "messages.json" not in files:
+            continue
+        msg_path = os.path.join(root, "messages.json")
+        with open(msg_path, "r", encoding="utf-8") as f:
+            messages = json.load(f)
 
-            modified = False
-            old_shortcuts = ["Ctrl+Shift+S", "Cmd+Shift+S", "Command+Shift+S", "⌘+Shift+S", "Strg+Shift+S"]
-            for val in messages.values():
-                if "message" not in val:
-                    continue
-                if "Chrome" in val["message"]:
-                    val["message"] = val["message"].replace("Chrome", "Firefox")
-                    modified = True
-                for sc in old_shortcuts:
-                    if sc in val["message"]:
-                        val["message"] = val["message"].replace(sc, "Alt+Shift+S")
-                        modified = True
+        modified = False
+        for val in messages.values():
+            if "message" not in val:
+                continue
+            # collapse=False: the "(or X on Mac)" cleanup is promo-text only.
+            val["message"], changed = apply_text_swaps(val["message"], target)
+            modified = modified or changed
+
+        if modified:
+            with open(msg_path, "w", encoding="utf-8") as f:
+                json.dump(messages, f, indent=2, ensure_ascii=False)
+
+
+def build_marketing(ext_name, cfg, target_name, target):
+    """Copies Marketing/<slug>/ to marketing_<target>/ and patches the promo texts."""
+    mkt = marketing_dir(ext_name)
+    if not mkt:
+        return
+    mkt_dest = os.path.join(DIST_DIR, ext_name, f"marketing_{target_name}")
+    shutil.copytree(mkt, mkt_dest)
+
+    af_url = cfg.get(f"af_download_url_{target_name}", "")
+    for root_dir, dirs, files in os.walk(mkt_dest):
+        for fn in files:
+            if not fn.endswith(".txt"):
+                continue
+            fp = os.path.join(root_dir, fn)
+            with open(fp, encoding="utf-8") as f:
+                content = f.read()
+
+            content, modified = apply_text_swaps(content, target,
+                                                 collapse=target["collapse_mac"])
+            if "__AF_STORE_URL__" in content:
+                if af_url:
+                    content = content.replace("__AF_STORE_URL__", af_url)
+                else:
+                    # No listing to point at on this store yet. Drop the line
+                    # rather than publish the placeholder — nothing here walks
+                    # marketing_*/ looking for unresolved placeholders, so this
+                    # would otherwise reach the store as literal text.
+                    content = "\n".join(ln for ln in content.split("\n")
+                                        if "__AF_STORE_URL__" not in ln)
+                modified = True
 
             if modified:
-                with open(msg_path, "w", encoding="utf-8") as f:
-                    json.dump(messages, f, indent=2, ensure_ascii=False)
+                with open(fp, "w", encoding="utf-8") as f:
+                    f.write(content)
 
-    # --- 5. Patch marketing text files ---
-    mkt = marketing_dir(ext_name)
-    if mkt:
-        print(f"📸 Processing marketing assets for Firefox...")
-        mkt_dest = os.path.join(DIST_DIR, ext_name, "marketing_firefox")
-        shutil.copytree(mkt, mkt_dest)
 
-        old_shortcuts = ["Ctrl+Shift+S", "Cmd+Shift+S", "Command+Shift+S", "⌘+Shift+S", "Strg+Shift+S"]
-        for root_dir, dirs, files in os.walk(mkt_dest):
-            for file in files:
-                if not file.endswith(".txt"):
-                    continue
-                fp = os.path.join(root_dir, file)
-                with open(fp, "r", encoding="utf-8") as f:
-                    content = f.read()
+def build_target(ext_name, version, target_name):
+    """Builds one store target. Every per-target difference is data in TARGETS."""
+    cfg = EXTENSION_CONFIG[ext_name]
+    target = TARGETS[target_name]
+    print(f"{target['emoji']} [{cfg['display_name']}] Building {target['label']}...")
 
-                modified = False
-                if "Chrome" in content:
-                    content = content.replace("Chrome", "Firefox")
-                    modified = True
-                for sc in old_shortcuts:
-                    if sc in content:
-                        content = content.replace(sc, "Alt+Shift+S")
-                        modified = True
-                # On Firefox, Mac and PC share the same shortcut, so any
-                # "(or Alt+Shift+S on Mac)" parenthetical is now redundant.
-                # Case 1: shortcut outside parens — "Alt+Shift+S (or Alt+Shift+S on Mac)"
-                new_content = re.sub(
-                    r'(Alt\+Shift\+S)\s*[\(（][^)）]*Alt\+Shift\+S[^)）]*[\)）]',
-                    r'\1', content
-                )
-                if new_content != content:
-                    content, modified = new_content, True
-                # Case 2: both shortcuts inside parens — "(Alt+Shift+S or Alt+Shift+S on Mac)"
-                new_content = re.sub(
-                    r'[\(（]Alt\+Shift\+S[^)）]*Alt\+Shift\+S[^)）]*[\)）]',
-                    r'(Alt+Shift+S)', content
-                )
-                if new_content != content:
-                    content, modified = new_content, True
+    dest = os.path.join(DIST_DIR, ext_name, target_name)
+    merge_into(SRC_DIR, ext_dir(ext_name), dest)
 
-                af_url = cfg.get("af_download_url_firefox", "")
-                if af_url and "__AF_STORE_URL__" in content:
-                    content = content.replace("__AF_STORE_URL__", af_url)
-                    modified = True
+    if target["drop_files"]:
+        for f in cfg.get(target["drop_files"], []):
+            fp = os.path.join(dest, f)
+            if os.path.exists(fp):
+                os.remove(fp)
 
-                if modified:
-                    with open(fp, "w", encoding="utf-8") as f:
-                        f.write(content)
+    patcher = MANIFEST_PATCHERS.get(target["patch_manifest"])
+    if patcher:
+        mfp = os.path.join(dest, "manifest.json")
+        with open(mfp, "r", encoding="utf-8") as f:
+            manifest = json.load(f)
+        patcher(manifest, dest, cfg)
+        with open(mfp, "w", encoding="utf-8") as f:
+            json.dump(manifest, f, indent=2, ensure_ascii=False)
 
-    zip_path = os.path.join(DIST_DIR, f"{cfg['zip_prefix']}-firefox-v{version}.zip")
+    inject_popup_urls(dest, cfg, target_name)
+    patch_locales(dest, target)
+    build_marketing(ext_name, cfg, target_name, target)
+
+    zip_path = os.path.join(DIST_DIR, f"{cfg['zip_prefix']}-{target_name}-v{version}.zip")
     make_zip(dest, zip_path)
-    print(f"✅ Firefox build: {zip_path}")
+    print(f"✅ {target['label']} build: {zip_path}")
 
 
 def build_extension(ext_name):
@@ -394,8 +476,8 @@ def build_extension(ext_name):
         version = json.load(f).get("version", "unknown")
 
     print(f"\n📦 {EXTENSION_CONFIG[ext_name]['display_name']} v{version}")
-    build_chrome(ext_name, version)
-    build_firefox(ext_name, version)
+    for target_name in TARGETS:
+        build_target(ext_name, version, target_name)
 
 
 # ---------------------------------------------------------------------------

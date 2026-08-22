@@ -70,8 +70,18 @@ describe('store-publisher.config.json', () => {
     expect(overrides).toEqual(['zh_CN']);
   });
 
+  // Every store this project publishes to. Kept in one place because the loops
+  // below all walk it, and because the build.py binding asserts build.py's own
+  // target table matches it exactly.
+  const STORES = ['chrome', 'edge', 'firefox'];
+
+  test('a profile exists for every store, and no store is left undeclared', () => {
+    expect(Object.keys(config.assets).sort()).toEqual([...STORES].sort());
+  });
+
   test('the path templates point at dist/, which build.py produces', () => {
-    for (const [store, dir] of [['chrome', 'marketing_chrome'], ['firefox', 'marketing_firefox']]) {
+    for (const store of STORES) {
+      const dir = `marketing_${store}`;
       const profile = config.assets[store];
       expect(profile.description).toBe(`dist/{slug}/${dir}/Promo{LANG}.txt`);
       expect(profile.screenshot).toBe(`dist/{slug}/${dir}/screenshots/Promo_{n}_{lang}.png`);
@@ -84,7 +94,7 @@ describe('store-publisher.config.json', () => {
   // manifest, which is what stops the version in the filename from disagreeing
   // with the bytes inside it.
   test('the package templates match what build.py emits', () => {
-    for (const store of ['chrome', 'firefox']) {
+    for (const store of STORES) {
       const profile = config.assets[store];
       expect(profile.package).toBe(`dist/{slug}-${store}-v{version}.zip`);
       expect(profile.versionSource).toEqual({
@@ -96,31 +106,49 @@ describe('store-publisher.config.json', () => {
   // Not a style check: a template that lost {version} or {slug} would resolve to
   // one path for every item and release, and upload whichever build was there.
   test('every package template keeps the placeholders that make it specific', () => {
-    for (const store of ['chrome', 'firefox']) {
+    for (const store of STORES) {
       expect(config.assets[store].package).toContain('{slug}');
       expect(config.assets[store].package).toContain('{version}');
       expect(config.assets[store].versionSource.path).toContain('{slug}');
     }
   });
 
-  // The string comparison above only says the config still says what it said.
-  // This binds it to the code that actually names the files: rename the zip in
+  // The comparisons above only say the config still says what it said. These
+  // bind it to the code that actually names the files: rename the zip in
   // build.py and the publisher would look for a file that is never written.
+  //
+  // This used to assert the literal `-chrome-` and `-firefox-` substrings and
+  // the exact indentation of zip_prefix. That worked while build.py had one
+  // hand-written function per target; generalizing it to a TARGETS table made
+  // those strings disappear, so the assertions were re-aimed at the general
+  // form. Same intention, mechanism that survives a third store.
   describe('bound to what build.py actually emits', () => {
     const buildPy = fs.readFileSync(path.join(ROOT, 'build.py'), 'utf8');
 
-    test('build.py still names the zips <prefix>-<browser>-v<version>.zip', () => {
-      for (const store of ['chrome', 'firefox']) {
-        expect(buildPy).toContain(
-          `f"{cfg['zip_prefix']}-${store}-v{version}.zip"`);
-      }
+    // The single f-string every target's archive is named by.
+    test('build.py names the zips <prefix>-<target>-v<version>.zip', () => {
+      expect(buildPy).toContain(
+        `f"{cfg['zip_prefix']}-{target_name}-v{version}.zip"`);
+    });
+
+    // The store profiles above are only meaningful if build.py actually builds
+    // those targets — a profile for a target build.py never emits would resolve
+    // to paths nothing writes.
+    test('build.py\'s TARGETS table is exactly the stores in the config', () => {
+      const table = buildPy.slice(buildPy.indexOf('TARGETS = {'));
+      const declared = [...table.slice(0, table.indexOf('\n}'))
+        .matchAll(/^ {4}"(\w+)": \{$/gm)].map(m => m[1]);
+      expect(declared.sort()).toEqual([...STORES].sort());
     });
 
     // The templates use {slug}; build.py uses zip_prefix. They are only
     // interchangeable while those two strings agree, for every item.
-    test('each item’s slug is its zip_prefix in build.py', () => {
+    // Whitespace-tolerant: the old form pinned the exact column, which made
+    // re-indenting EXTENSION_CONFIG a test failure for no reason.
+    test('each item\'s slug is its zip_prefix in build.py', () => {
       for (const item of config.items) {
-        expect(buildPy).toContain(`"zip_prefix":         "${item.slug}"`);
+        expect(buildPy).toMatch(
+          new RegExp(`"zip_prefix":\\s*"${item.slug}"`));
       }
     });
   });

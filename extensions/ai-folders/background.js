@@ -153,6 +153,23 @@ async function updateContextMenu() {
 // Page: docs/uninstall-ai-folders.html. Helper: buildUninstallUrl (utils.js).
 const UNINSTALL_SURVEY_URL = 'https://aifolders.xyz/uninstall-ai-folders.html';
 
+// Which browser this copy is running in, for the uninstall survey's `b=` param.
+//
+// Edge's user agent carries BOTH "Edg/" and "Chrome/", so Edge has to be tested
+// first — otherwise every Edge uninstall reports as Chrome, which is exactly the
+// distinction this field exists to make. Matching "Edg" rather than "Edge"
+// covers EdgA/ on Android and EdgiOS/ as well.
+//
+// Adding a value here is only half the job: the survey posts it to a Google
+// Form, and a Form field that is multiple-choice silently drops an option it
+// does not know (see CLAUDE.md §9 — the Form is the schema).
+function detectBrowser() {
+  const ua = navigator.userAgent;
+  if (/Firefox/.test(ua)) return 'firefox';
+  if (/Edg/.test(ua)) return 'edge';
+  return 'chrome';
+}
+
 // setUninstallURL captures the value at call time and the page may be opened
 // months later, so the URL is re-signed whenever the numbers it carries move.
 async function refreshUninstallUrl() {
@@ -166,7 +183,7 @@ async function refreshUninstallUrl() {
       saves: (usageStats || {}).saves,
       version: chrome.runtime.getManifest().version,
       lang: chrome.i18n.getUILanguage(),
-      browser: /Firefox/.test(navigator.userAgent) ? 'firefox' : 'chrome',
+      browser: detectBrowser(),
     }));
   } catch (_) { /* best-effort: never break the worker over the survey */ }
 }

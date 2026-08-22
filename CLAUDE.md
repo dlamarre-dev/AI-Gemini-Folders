@@ -9,7 +9,7 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 
 ## 1. What this repository is
 
-Two Manifest V3 browser extensions (Chrome **and** Firefox) that organize AI
+Two Manifest V3 browser extensions (Chrome, Edge **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
 - **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.0**.
@@ -129,12 +129,12 @@ the second case tells you even less than the first. Only `--force` continues.
 ```bash
 python tools/validate_build.py   # after build.py; exits 1 and lists every problem
 ```
-Checks the four built manifests (version, **permission drift**, no `"tabs"`,
+Checks the six built manifests (version, **permission drift**, no `"tabs"`,
 Firefox gecko id), 43 locales with parseable `messages.json`, no unresolved
 `__PLACEHOLDER__`, and that each ZIP has a root manifest, `_locales`, and no
 `tools/`/`Marketing/`/`tests/` files. Run by CI's `build` job.
 The build copies `src/` then overlays `extensions/<name>/` into
-`dist/<name>/{chrome,firefox}`, patches the manifest + locales for Firefox, and
+`dist/<name>/{chrome,edge,firefox}`, patches the manifest + locales per target, and
 emits versioned `.zip` files. `dist/` is gitignored.
 
 **Manual load (dev mode):**
@@ -142,6 +142,28 @@ emits versioned `.zip` files. `dist/` is gitignored.
   `dist/ai-folders/chrome/` or `dist/gemini-folders/chrome/`.
 - Firefox: `about:debugging` → This Firefox → Load Temporary Add-on →
   `manifest.json` inside `dist/<name>/firefox/`.
+- Edge: `edge://extensions` → Developer mode → Load unpacked → `dist/<name>/edge/`.
+
+**Adding a store target is a row in `TARGETS` (build.py), not a fourth build
+function.** `build_chrome` and `build_firefox` used to be two ~90 %-identical
+functions; everything that differs is now data — destination directory, zip
+suffix, files to drop, text swaps, and an optional manifest patcher. Three things
+follow from that and are easy to get wrong:
+
+- **Edge keeps `Ctrl+Shift+S`** (it shares Chrome's `commands` API) and gets no
+  gecko id. Its only swap is `Chrome` → `Microsoft Edge`, which is what
+  Microsoft's certification requires: *"If Chrome is used in either the name or
+  the description of your extension, rebrand the extension using Microsoft
+  Edge."* A brand swap is language-independent, exactly like the Firefox one.
+- **`review_url_<target>` and `af_download_url_<target>` may be empty**, because
+  a store URL only exists once the listing is published. `inject_popup_urls`
+  then *removes* the block that would link nowhere (`strip_block`) rather than
+  ship a dead link or an unsubstituted `__REVIEW_URL__`; `build_marketing` drops
+  the promo line carrying an unresolved `__AF_STORE_URL__` for the same reason.
+  Filling the URL in brings both back on the next build — nothing to remember.
+- **`validate_build.py` now also walks `marketing_<target>/`.** It never did, and
+  that was survivable only while every promo placeholder was always substituted.
+  A promo file is store copy: a placeholder left in one is read by users.
 
 ---
 
