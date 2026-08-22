@@ -770,10 +770,11 @@ already waiting for it, and each turns something on by itself.
 3. `README.md` → the store badge and the install link, beside Chrome's and
    Firefox's. Static files cannot be gated, which is why they were left out.
 4. `docs/llms.txt` → the Edge URL for both products, same reason.
-5. **Replace `docs/site/assets/edge.svg`.** It is a hand-drawn approximation of
-   the Edge mark, good enough to read at 20px but not Microsoft's own artwork.
-   The button does not render until step 2, so there is time — but do it before,
-   not after.
+The logo is already the real one (`docs/site/assets/edge.svg`, Microsoft's 2019
+mark). It carries six gradients whose ids are single letters — `a` to `f` — which
+is precisely why `logos.js` references it through an `<img>` like Firefox's
+rather than inlining it like Chrome's: as its own document, those ids cannot
+reach anything else on the page. **Do not inline it.**
 
 Then re-run `python build.py` and check that the Edge popup has its review
 banner back, which is the cheapest proof that step 1 landed.
