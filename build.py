@@ -53,6 +53,13 @@ EXTENSION_CONFIG = {
     },
 }
 
+# A line that is a version-history entry. Used to decide what may be dropped
+# when a store caps the description length: the history sits at the tail of every
+# promo text, oldest last, so trimming from the end costs the least. The word
+# itself is translated ("Bersyon" in Filipino), which is why this matches the
+# NUMBER instead — the one part that stays put in all 43 languages.
+HISTORY_LINE = re.compile(r"\d+\.\d")
+
 # Messages that exist only to be swapped in for some target. They are never
 # shipped under their own name — patch_locales drops them from every build.
 BUILD_ONLY_MESSAGES = ["syncFavoritesTooltip"]
@@ -81,6 +88,7 @@ TARGETS = {
         "drop_files": "firefox_only_files",
         "text_swaps": [],
         "message_aliases": {},
+        "description_max": None,
         "collapse_mac": False,
         "patch_manifest": None,
     },
@@ -94,6 +102,11 @@ TARGETS = {
         # required." A brand swap is language-independent, exactly like Firefox's.
         # The quick-save shortcut is NOT swapped: Edge shares Chrome's commands API.
         "text_swaps": [("Chrome", "Microsoft Edge")],
+        # Microsoft caps a store-listing description at 10,000 characters, and
+        # 15 of the 86 promo texts are over it — French by 755. Discovered before
+        # writing the listing driver rather than as a form error in the middle of
+        # a 43-language run.
+        "description_max": 10000,
         # Edge calls them Favorites, not bookmarks, and chrome.bookmarks really
         # does manipulate Favorites there — so the tooltip was wrong twice over.
         # The replacement runs BEFORE the brand swap, which is why the stored
@@ -112,6 +125,7 @@ TARGETS = {
         "text_swaps": ([("Chrome", "Firefox")]
                        + [(sc, "Alt+Shift+S") for sc in QUICK_SAVE_SPELLINGS]),
         "message_aliases": {},
+        "description_max": None,
         "collapse_mac": True,
         "patch_manifest": "firefox",
     },
@@ -426,6 +440,38 @@ def patch_locales(dest, target):
                 json.dump(messages, f, indent=2, ensure_ascii=False)
 
 
+def trim_description(text, limit, where):
+    """Drops version-history lines from the end until the text fits `limit`.
+
+    Stores cap the listing description, and the promo texts run past Edge's cap
+    in 15 of 86 files. Trimming from the tail is what costs least: the history is
+    the last block and its oldest entries are the least useful.
+
+    It refuses rather than truncates. If the line it is about to drop is not a
+    history entry, the text has run out of history and the next thing to go would
+    be a feature — so it stops and says so, instead of quietly publishing a
+    listing with its last paragraph missing.
+    """
+    if not limit or len(text) <= limit:
+        return text, 0
+
+    lines = text.split("\n")
+    dropped = 0
+    while len("\n".join(lines)) > limit:
+        while lines and not lines[-1].strip():
+            lines.pop()
+        if not lines:
+            sys.exit(f"{where}: nothing left to trim.")
+        if not HISTORY_LINE.search(lines[-1]):
+            sys.exit(f"{where}: {len(text)} chars, limit {limit}, and the next line "
+                     f"to drop is not version history:\n    {lines[-1][:120]}\n"
+                     f"Shorten the promo text itself rather than letting the build "
+                     f"eat a feature paragraph.")
+        lines.pop()
+        dropped += 1
+    return "\n".join(lines).rstrip() + "\n", dropped
+
+
 def build_marketing(ext_name, cfg, target_name, target):
     """Copies Marketing/<slug>/ to marketing_<target>/ and patches the promo texts."""
     mkt = marketing_dir(ext_name)
@@ -435,6 +481,7 @@ def build_marketing(ext_name, cfg, target_name, target):
     shutil.copytree(mkt, mkt_dest)
 
     af_url = cfg.get(f"af_download_url_{target_name}", "")
+    trimmed = []
     for root_dir, dirs, files in os.walk(mkt_dest):
         for fn in files:
             if not fn.endswith(".txt"):
@@ -457,9 +504,23 @@ def build_marketing(ext_name, cfg, target_name, target):
                                         if "__AF_STORE_URL__" not in ln)
                 modified = True
 
+            # Only the listing descriptions are capped; the screenshots dir and
+            # any other .txt beside them are not descriptions.
+            if fn.lower().startswith("promo"):
+                content, dropped = trim_description(
+                    content, target.get("description_max"),
+                    f"{ext_name}/{target_name}/{fn}")
+                if dropped:
+                    trimmed.append(f"{fn}(-{dropped})")
+                    modified = True
+
             if modified:
                 with open(fp, "w", encoding="utf-8") as f:
                     f.write(content)
+
+    if trimmed:
+        print(f"   trimmed to {target['description_max']} chars: "
+              f"{len(trimmed)} file(s) — {', '.join(sorted(trimmed))}")
 
 
 def build_target(ext_name, version, target_name):
