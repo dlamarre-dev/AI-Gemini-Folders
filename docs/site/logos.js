@@ -45,6 +45,10 @@ window.AF_LOGOS = {
   // gradient IDs can't collide across the multiple instances / re-renders.
   firefox: `<img src="site/assets/firefox.svg" alt="Firefox" class="logo-img">`,
 
+  // Edge mark — external <img> for the same reason as Firefox: its gradients
+  // carry ids, and inlining the same markup several times makes them collide.
+  edge: `<img src="site/assets/edge.svg" alt="Microsoft Edge" class="logo-img">`,
+
   // Gemini Folders product mark (blue→violet four-point star)
   geminiFolders: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="gfg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4a90e2"/><stop offset="100%" stop-color="#9013fe"/></linearGradient></defs><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z" fill="url(#gfg)"/></svg>`
 };

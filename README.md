@@ -53,9 +53,9 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ### 📁 Folder Manager
 
-* 📱 **Mobile Sync (Bookmarks Bridge):** Access your conversations on the go! Toggle mobile sync to create a smart, one-way synced folder in your browser bookmarks, mirroring your layout and **custom sort order** on your phone.
-* ⌨️ **Panel Shortcut:** Open the extension panel instantly from any tab with `Ctrl+Shift+1` on PC / `Cmd+Shift+1` on Mac (both Chrome and Firefox).
-* ⚡ **Quick Save (Context Menu & Shortcuts):** Save the current conversation to any folder via right-click, or use the global keyboard shortcut (`Ctrl+Shift+S` on Chrome, `Alt+Shift+S` on Firefox) to send it instantly to a “⚡ Quick Saves” folder. Visual toast alerts confirm saves and flag duplicates.
+* 📱 **Mobile Sync (Bookmarks Bridge):** Access your conversations on the go! Toggle mobile sync to create a smart, one-way synced folder in your browser bookmarks — Favorites, on Edge — mirroring your layout and **custom sort order** on your phone.
+* ⌨️ **Panel Shortcut:** Open the extension panel instantly from any tab with `Ctrl+Shift+1` on PC / `Cmd+Shift+1` on Mac (every supported browser).
+* ⚡ **Quick Save (Context Menu & Shortcuts):** Save the current conversation to any folder via right-click, or use the global keyboard shortcut (`Ctrl+Shift+S` on Chrome and Edge, `Alt+Shift+S` on Firefox) to send it instantly to a “⚡ Quick Saves” folder. Visual toast alerts confirm saves and flag duplicates.
 * 🛡️ **Bulletproof Database & Smart Deduplication:** Secure fallback architecture guards against corruption. Smart URL normalization prevents false duplicates even when AI platforms change their URL parameters.
 * ☑️ **Bulk Actions (Multi-Select):** Select multiple conversations at once via checkboxes to move or delete them in batches.
 * 🔁 **No Tab Pile-Up:** Clicking a saved conversation switches to the tab already showing it instead of opening a duplicate, and `Ctrl+click` (`Cmd+click` on Mac) reuses the last tab the extension opened rather than adding another. Middle-click and Shift-click keep their native behavior, and no extra permission is required.
@@ -102,7 +102,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ### Option 2: Developer Mode (Manual Installation)
 
-This project uses a Python build pipeline to generate browser-specific versions.
+This project uses a Python build pipeline to generate browser-specific versions — Chrome, Microsoft Edge and Firefox — from one shared source tree.
 
 **Prerequisites:** [Python 3](https://www.python.org/) and [Node.js](https://nodejs.org/).
 
@@ -115,7 +115,10 @@ This project uses a Python build pipeline to generate browser-specific versions.
 3. **For Chrome:** Go to `chrome://extensions/`, enable **Developer mode**, click **Load unpacked** and select:
    - AI Folders → `dist/ai-folders/chrome/`
    - Gemini Folders → `dist/gemini-folders/chrome/`
-4. **For Firefox:** Go to `about:debugging` → **This Firefox** → **Load Temporary Add-on...** and select the `manifest.json` inside:
+4. **For Microsoft Edge:** Go to `edge://extensions/`, enable **Developer mode**, click **Load unpacked** and select:
+   - AI Folders → `dist/ai-folders/edge/`
+   - Gemini Folders → `dist/gemini-folders/edge/`
+5. **For Firefox:** Go to `about:debugging` → **This Firefox** → **Load Temporary Add-on...** and select the `manifest.json` inside:
    - AI Folders → `dist/ai-folders/firefox/`
    - Gemini Folders → `dist/gemini-folders/firefox/`
 
@@ -125,7 +128,7 @@ This project uses a Python build pipeline to generate browser-specific versions.
 
 ### Folder Mode
 1. Open a conversation on any supported AI platform.
-2. **Quick save:** `Ctrl+Shift+S` (Chrome) / `Alt+Shift+S` (Firefox) to save to Quick Saves, or right-click → hover over the save menu.
+2. **Quick save:** `Ctrl+Shift+S` (Chrome, Edge) / `Alt+Shift+S` (Firefox) to save to Quick Saves, or right-click → hover over the save menu.
 3. **Via the extension:** Click the toolbar icon or press `Ctrl+Shift+1` (`Cmd+Shift+1` on Mac) to open the panel. The title is auto-detected. Expand the add panel (➕), select or create a folder, and hit **Save**.
 4. **Mobile sync:** Click `📱` in the footer to mirror your folders in browser bookmarks.
 5. **Reopen a conversation:** Click it to switch to the tab already showing it. `Ctrl+click` (`Cmd+click` on Mac) reuses the last tab instead of opening a new one; middle-click still opens a background tab.
