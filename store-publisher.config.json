@@ -89,7 +89,10 @@
       "internal": "bn",
       "cws": "bn",
       "amo": null,
-      "name": "Bengali"
+      "name": "Bengali",
+      "altNames": [
+        "Bangla"
+      ]
     },
     {
       "internal": "ca",
@@ -294,7 +297,10 @@
       "internal": "sw",
       "cws": "sw",
       "amo": null,
-      "name": "Swahili"
+      "name": "Swahili",
+      "altNames": [
+        "Kiswahili"
+      ]
     },
     {
       "internal": "th",

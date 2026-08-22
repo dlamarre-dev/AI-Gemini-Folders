@@ -59,6 +59,27 @@ describe('store-publisher.config.json', () => {
     expect(config.locales.filter(l => l.amo).length).toBe(28);
   });
 
+  // Store dropdowns do not agree on language names, and a lookup that only knows
+  // ours fails silently on exactly the locales that need an alias. Verified
+  // against a real Partner Center menu: it writes Bangla, Kiswahili and
+  // Norwegian (Bokmål) where we write Bengali, Swahili and Norwegian.
+  test('locales whose store name differs from ours carry an alias', () => {
+    const alts = Object.fromEntries(
+      config.locales.map((l) => [l.internal, l.altNames || []]));
+    expect(alts.bn).toContain('Bangla');
+    expect(alts.sw).toContain('Kiswahili');
+    expect(alts.nb).toContain('Norwegian (Bokmål)');
+  });
+
+  // Filipino is offered by the Chrome Web Store and not by Partner Center, so it
+  // is the one locale that can never have an Edge listing. Recorded here because
+  // a future "why is tl missing" is otherwise a research task from scratch.
+  test('Filipino is still configured, even though Edge does not offer it', () => {
+    const tl = config.locales.find((l) => l.internal === 'tl');
+    expect(tl.cws).toBe('fil');
+    expect(tl.name).toBe('Filipino');
+  });
+
   // The naming quirk that used to be a special case in the tool's code. The
   // publisher resolves {LANG} from fileCode when present, so these two facts
   // together are what makes dist/'s PromoCN.txt reachable.
