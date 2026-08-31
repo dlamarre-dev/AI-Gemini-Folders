@@ -53,7 +53,7 @@ Prompttrigger: Typ # om onmiddellijk al uw opgeslagen prompts te zien, of typ ve
 🔒 PRIVACY EN BEVEILIGING
 Gebouwd met privacy als kern. Vraagt alleen toegang tot gemini.google.com en leest het actieve tabblad alleen om de titel van het gesprek te lezen, het op te slaan of er een prompt in te voegen. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via browser sync: geen servers van derden, geen telemetrie, geen account vereist.
 
-Gebouwd op Manifest V3: de browser zelf handhaaft dat er nooit externe code kan worden geladen — dit is een platformbeperking, geen ontwikkelaarsbelofte. De Firefox-versie wordt gepubliceerd via Mozilla's officiële add-onbeoordelingsproces (AMO).
+Gebouwd op Manifest V3: de browser zelf handhaaft dat er nooit externe code kan worden geladen — dit is een platformbeperking, geen ontwikkelaarsbelofte.
 
 🤝 OPEN SOURCE & CONTROLEERBAAR
 Elke regel code is openbaar op GitHub. Iedereen kan de repository klonen, het lokaal bouwen en de resulterende bestanden vergelijken met wat in hun browser is geïnstalleerd — geen blind vertrouwen vereist.
@@ -64,14 +64,3 @@ Bekijk de code of draag bij: https://github.com/dlamarre-dev/AI-Gemini-Folders
 Geïnteresseerd in Gemini-mappen maar gebruik je ook ChatGPT, Claude, Copilot, Grok, Perplexity of een lokaal LLM? AI-mappen is de logische volgende stap: één extensie om gesprekken te organiseren in al je AI-tools, met hetzelfde mappensysteem, de promptbibliotheek en de invoeg-met-één-klik die beschikbaar zijn in Gemini-mappen.
 
 👉 AI-mappen installeren: __AF_STORE_URL__
-
-📢 UPDATES:
-Versie 4.6.0 (Submappen): Sleep een map op een andere om hem erin te plaatsen. Open de bovenliggende map als tabbladgroep en alles erin gaat mee open. Klikken op een opgeslagen gesprek gaat nu naar het tabblad dat het al toont in plaats van een duplicaat te openen. Ctrl+klik (of Cmd+klik op Mac) hergebruikt je laatste tabblad.
-Versie 4.5.5 (Welkomstpagina): Na installatie opent nu een korte uitleg: hoe je de extensie vastzet en je eerste gesprek opslaat. Zoeken maakt bovendien duidelijk dat het alleen al opgeslagen gesprekken doorzoekt.
-Versie 4.5.4 (Verwijderenquête): Bij het verwijderen van de extensie opent nu een korte optionele feedbackpagina in je eigen taal, en er wordt niets verzonden tenzij je het zelf verstuurt.
-Versie 4.5.3 (Beveiliging en stabiliteit): Extra bescherming voor opgeslagen links en back-upimports, plus interne stabiliteitsverbeteringen.
-Versie 4.5.1 (Verfijningen): Mappen worden nu standaard van nieuw naar oud gesorteerd, net als je promptbibliotheek — een sorteervolgorde die je al had gekozen blijft ongewijzigd. Ook de wisknop (✕) in het zoekveld is gecorrigeerd, zodat die nu ook in Firefox werkt.
-Versie 4.5 (Interface en stabiliteit): Breder paneel, verfijnde bedieningselementen en betere toetsenbordtoegankelijkheid. Bugfixes en interne refactoring sinds de laatste update, voor verbeterde stabiliteit. Als Gemini-mappen u van nut is, kunt u de ontwikkeling ondersteunen door de Ko-fi-pagina te bezoeken: https://ko-fi.com/aifolders — bedankt voor uw steun!
-Versie 4.2 (Prompt-trigger): Typ # in het chatveld van Gemini om uw opgeslagen prompts in realtime gefilterd te zien. Gebruik ↓/↑ om door suggesties te navigeren, Spatie om automatisch aan te vullen of in te voegen — zonder het panel te openen.
-Versie 4.1 (Globale uitbreiding en versterking): 16 nieuwe talen brengen Gemini-mappen naar 43 lokalisaties wereldwijd — Scandinavische talen, de Baltische staten en uitgebreide Europese en Zuidoost-Aziatische dekking. Een race condition opgelost die bij snelle klikken stilletjes een opslaan kon weggooien. Promptinjectie gemoderniseerd met InputEvent ter vervanging van de verouderde execCommand. Importpipeline gehardend tegen kwaadaardige URL's in back-upbestanden. Kritieke gegevensbeveiligingsfout opgelost: het inschakelen van prompt-synchronisatie met bijna vol opslaggeheugen kon alle opgeslagen prompts stilzwijgend verwijderen. De opslag gebruikt nu gefragmenteerde schrijfbewerkingen om binnen Chrome-limieten te blijven, met duidelijke foutmeldingen als het vol is.
-Versie 4.0 (Promptbibliotheek): De meest ambitieuze update tot nu toe! Gemini-mappen krijgt een gloednieuwe Promptmodus: sla uw beste prompts op, bewerk ze inline en voeg ze met één klik direct in Gemini in. Geanimeerde modusschakelaar, zoeken en sorteren in Promptmodus, aangepaste Gem-knop en onafhankelijke promptsynchronisatie toegevoegd. Zet essentiële prompts bovenaan uw bibliotheek vast.

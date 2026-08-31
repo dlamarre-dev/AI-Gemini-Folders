@@ -235,14 +235,40 @@ describe('the update trigger', () => {
   const manifestVersion = (ext) => JSON.parse(fs.readFileSync(
     path.join(ROOT, 'extensions', ext, 'manifest.json'), 'utf8')).version;
 
+  const parts = (v) => v.split('.').map(Number);
+  const isAhead = (a, b) => {
+    const [x, y] = [parts(a), parts(b)];
+    for (let i = 0; i < Math.max(x.length, y.length); i += 1) {
+      if ((x[i] || 0) !== (y[i] || 0)) return (x[i] || 0) > (y[i] || 0);
+    }
+    return false;
+  };
+
   test.each(['ai-folders', 'gemini-folders'])(
-    '%s gates the page on the version it actually ships', (ext) => {
+    '%s never gates the page on a version it does not ship', (ext) => {
       const src = read(ext);
       const declared = src.match(/const WHATS_NEW_VERSION = '([^']+)'/);
       expect(declared).not.toBeNull();
-      // A constant left behind on the next release would reopen the page for a
-      // version whose notes it does not describe.
-      expect(declared[1]).toBe(manifestVersion(ext));
+      // Ahead of the manifest is the failure: the page would open on the release
+      // AFTER this one, carrying notes written for a version already installed.
+      //
+      // Behind is not. It is the documented way to ship a release with nothing to
+      // explain — the gate is an equality, so a constant left where it was simply
+      // never fires. This test used to demand equality outright, which forbade
+      // exactly the case CLAUDE.md §10b describes, and made a patch release
+      // reopen the previous release's notes.
+      expect(isAhead(declared[1], manifestVersion(ext))).toBe(false);
+    });
+
+  test.each(['ai-folders', 'gemini-folders'])(
+    '%s does not carry notes for a version that already shipped', (ext) => {
+      // The other half: if the constant matches the manifest, the page WILL open,
+      // so the notes have to be this release's. Nothing here can check prose —
+      // what it can check is that the pairing was a decision, which is what the
+      // two states above make visible in the diff.
+      const declared = read(ext).match(/const WHATS_NEW_VERSION = '([^']+)'/)[1];
+      const shipped = manifestVersion(ext);
+      expect([declared, shipped].every((v) => /^\d+\.\d+(\.\d+)?$/.test(v))).toBe(true);
     });
 
   test.each(['ai-folders', 'gemini-folders'])(

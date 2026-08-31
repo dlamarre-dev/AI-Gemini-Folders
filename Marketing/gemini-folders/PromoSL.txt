@@ -52,7 +52,7 @@ Sprožilec pozivov: Vnesite #, da takoj vidite vse shranjene pozive, ali nadalju
 🔒 ZASEBNOST IN VARNOST
 Zasnovano z zasebnostjo v središču. Zahteva dostop samo do gemini.google.com ter aktivni zavihek bere samo zato, da prebere naslov pogovora, ga shrani ali vstavi poziv. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek sinhronizacije brskalnika: brez strežnikov tretjih oseb, brez telemetrije, brez zahtevanega računa.
 
-Zgrajeno na Manifest V3: brskalnik sam zagotavlja, da se nikoli ne more naložiti nobena oddaljena koda — to je omejitev na ravni platforme, ne razvijalčevo obljubo. Različica za Firefox je objavljena prek Mozillinega uradnega postopka pregleda dodatkov (AMO).
+Zgrajeno na Manifest V3: brskalnik sam zagotavlja, da se nikoli ne more naložiti nobena oddaljena koda — to je omejitev na ravni platforme, ne razvijalčevo obljubo.
 
 🤝 ODPRTOKODNI IN PREVERLJIV
 Vsaka vrstica kode je javna na GitHub-u. Vsakdo lahko klonira repozitorij, ga lokalno zgradi in primerja dobljene datoteke s tistim, kar je nameščeno v njihovem brskalniku — brez potrebe po zaupanju.
@@ -63,14 +63,3 @@ Preglej kodo ali prispevaj: https://github.com/dlamarre-dev/AI-Gemini-Folders
 Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Grok, Perplexity ali lokalni LLM? Mape AI so naravni naslednji korak: ena razširitev za organizacijo pogovorov v vseh vaših AI orodjih, z enakim sistemom map, knjižnico pozivov in vstavljanjem z enim klikom, ki so na voljo v Mape Gemini.
 
 👉 Namesti Mape AI: __AF_STORE_URL__
-
-📢 POSODOBITVE:
-Različica 4.6.0 (Podmape): Povlecite mapo na drugo, da jo postavite vanjo. Odprite nadrejeno mapo kot skupino zavihkov in odprlo se bo vse, kar vsebuje. Klik na shranjen pogovor zdaj preklopi na zavihek, ki ga že prikazuje, namesto da odpre dvojnik. Ctrl+klik (ali Cmd+klik na Macu) znova uporabi zadnji zavihek.
-Različica 4.5.5 (Pozdravna stran): Po namestitvi se zdaj odpre kratek vodnik: kako pripeti razširitev in shraniti prvi pogovor. Iskanje tudi jasno pove, da zajema le že shranjene pogovore.
-Različica 4.5.4 (Anketa ob odstranitvi): Odstranitev razširitve zdaj odpre kratko neobvezno stran za povratne informacije v vašem jeziku in nič ni poslano, dokler je sami ne pošljete.
-Različica 4.5.3 (Varnost in stabilnost): Dodatna zaščita shranjenih povezav in uvoza varnostnih kopij ter notranji popravki stabilnosti.
-Različica 4.5.1 (Izboljšave): Mape so zdaj privzeto razvrščene od najnovejših, tako kot vaša knjižnica pozivov — že izbrani vrstni red razvrščanja ostane nespremenjen. Popravljen je tudi gumb za počiščenje (✕) v iskalnem polju, tako da deluje tudi v Firefoxu.
-Različica 4.5 (Vmesnik in stabilnost): Širša plošča, izpopolnjeni kontrolniki in boljša dostopnost s tipkovnico. Popravki napak in notranje prestrukturiranje od zadnje posodobitve, za boljšo stabilnost. Če so vam Mape Gemini v pomoč, lahko podprete razvoj z obiskom strani Ko-fi: https://ko-fi.com/aifolders — hvala za vašo podporo!
-Različica 4.2 (Sprožilec pozivov): Vnesite # v polje za klepet Gemini in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče.
-Različica 4.1 (Globalna razširitev in utrjevanje): 16 novih jezikov prinaša Mape Gemini na 43 lokalizacij po vsem svetu — severski jeziki, baltske države in razširjena evropska ter južnoazijska pokritost. Odpravljena race condition, ki je lahko pri hitrih klikih tiho zavrgla shranjevanje. Vstavljanje pozivov posodobljeno z InputEvent, ki nadomešča zastareli execCommand. Uvozni kanal utrjen proti zlonamernim URL-jem v varnostnih kopijah. Odpravljena kritična napaka varnosti podatkov: vklop sinhronizacije pozivov s skoraj polnim shranjevalnikom je lahko tiho izbrisal vse shranjene pozive. Shranjevalnik zdaj uporablja fragmentirane zapise, da ostane znotraj omejitev Chrome, z jasnimi sporočili o napakah ko je poln.
-Različica 4.0 (Knjižnica pozivov): Najna mbicioznejša posodobitev doslej! Mape Gemini dobijo popolnoma nov Način pozivov: shrani najboljše pozive, uredi jih na mestu in vstavi neposredno v Gemini z enim klikom.

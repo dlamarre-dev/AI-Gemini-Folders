@@ -59,21 +59,8 @@ Pemicu Prompt: Ketik # untuk langsung melihat semua prompt tersimpan Anda, atau 
 🔒 PRIVASI & KEAMANAN
 Dibangun dengan privasi sebagai inti. Hanya meminta akses ke situs-situs AI yang didukung dan URL LLM lokal opsional Anda, dan membaca tab aktif hanya untuk membaca judul percakapan, menyimpannya, atau menyisipkan prompt. Izin "Bookmark" hanya digunakan jika Anda mengaktifkan sinkronisasi mobile. Penyimpanan melalui browser sync: tidak ada server pihak ketiga, tidak ada telemetri, tidak perlu akun.
 
-Dibangun di atas Manifest V3: browser itu sendiri memastikan bahwa tidak ada kode jarak jauh yang dapat dimuat — ini adalah batasan tingkat platform, bukan janji pengembang. Versi Firefox diterbitkan melalui proses tinjauan add-on resmi Mozilla (AMO).
+Dibangun di atas Manifest V3: browser itu sendiri memastikan bahwa tidak ada kode jarak jauh yang dapat dimuat — ini adalah batasan tingkat platform, bukan janji pengembang.
 
 🤝 OPEN SOURCE & DAPAT DIAUDIT
 Setiap baris kode tersedia publik di GitHub. Siapa pun dapat mengkloning repositori, membangunnya secara lokal, dan membandingkan file yang dihasilkan dengan yang terpasang di browser mereka — tidak perlu kepercayaan buta.
 Jelajahi kode atau berkontribusi: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 PEMBARUAN:
-Versi 1.7.0 (Subfolder): Seret satu folder ke folder lain untuk menempatkannya di dalamnya. Buka folder induk sebagai grup tab dan semua isinya ikut terbuka. Mengeklik percakapan yang tersimpan sekarang beralih ke tab yang sudah menampilkannya, bukan membuka duplikat. Ctrl+klik (atau Cmd+klik di Mac) menggunakan kembali tab terakhir Anda. Baidu Chat pindah ke alamat baru, tempat penyimpanan dan penyisipan prompt berfungsi kembali.
-Versi 1.6.3 (Halaman selamat datang): Setelah pemasangan kini terbuka panduan singkat: cara menyematkan ekstensi dan menyimpan percakapan pertama Anda. Pencarian juga menegaskan bahwa hanya mencakup percakapan yang sudah disimpan.
-Versi 1.6.2 (Kimi): Mulai percakapan Kimi baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt. Menghapus ekstensi kini membuka halaman masukan singkat dan opsional dalam bahasa Anda, dan tidak ada yang dikirim kecuali Anda mengirimkannya sendiri.
-Versi 1.6.1 (Keamanan & stabilitas): Perlindungan tambahan untuk tautan tersimpan dan impor cadangan, serta perbaikan stabilitas internal.
-Versi 1.6 (10 layanan AI baru): Simpan percakapan dan sisipkan prompt di sepuluh layanan AI lagi — termasuk Mistral, Meta AI, Qwen, dan Z.ai — dengan tombol layanan yang didesain ulang dan logo resmi.
-Versi 1.5.1 (Penyempurnaan): Folder kini diurutkan dari terbaru lebih dulu secara bawaan, selaras dengan pustaka prompt Anda — urutan pengurutan yang sudah Anda pilih tetap tidak berubah. Tombol hapus (✕) di kotak pencarian juga diperbaiki agar berfungsi di Firefox juga.
-Versi 1.5 (Grok): Mulai percakapan Grok baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt. Panel lebih lebar, kontrol lebih rapi, dan aksesibilitas keyboard yang lebih baik. Perbaikan bug dan refaktorisasi internal sejak pembaruan terakhir, untuk stabilitas yang lebih baik. Jika Folder AI bermanfaat bagi Anda, Anda dapat mendukung pengembangannya dengan mengunjungi halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas dukungan Anda!
-Versi 1.2 (DeepSeek): Mulai percakapan DeepSeek baru langsung dari Mode Prompt, simpan dalam folder, dan suntikkan prompt.
-Versi 1.1 (Pemicu Prompt): Ketik # di kolom chat AI mana pun untuk melihat prompt yang tersimpan difilter secara real time. Gunakan ↓/↑ untuk menavigasi saran, Spasi untuk melengkapi otomatis atau menyuntikkan — tanpa membuka panel.
-Versi 1.0: Rilis pertama! Atur percakapan dari Gemini, Claude, ChatGPT, Copilot, dan Perplexity dalam folder bersama. Pustaka prompt lengkap dengan injeksi satu klik, pintasan simpan cepat, drag & drop, sinkronisasi mobile, aksi massal, grup tab, dan dukungan 43 bahasa. Dukungan LLM lokal dengan URL yang dapat dikonfigurasi (localhost dan alamat LAN).

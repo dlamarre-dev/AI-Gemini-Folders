@@ -58,21 +58,8 @@ Okidač prompta: Upiši # da odmah vidiš sve sačuvane promptove, ili nastavi d
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s privatnošću u osnovi. Traži pristup samo podržanim AI sajtovima i tvom opcionalnom lokalnom LLM URL-u i čita aktivnu karticu samo da bi pročitao naslov razgovora, sačuvao ga ili ubacio prompt. Dozvola «Obeleživači» koristi se samo ako aktiviraš mobilnu sinhronizaciju. Čuvanje putem sinhronizacije pregledača: bez servera trećih strana, bez telemetrije, bez potrebnog naloga.
 
-Izgrađeno na Manifest V3: sam pregledač osigurava da nikakav udaljeni kod nikada ne može biti učitan — to je ograničenje na nivou platforme, a ne obećanje programera. Firefox verzija se objavljuje kroz Mozillin zvanični proces pregleda dodataka (AMO).
+Izgrađeno na Manifest V3: sam pregledač osigurava da nikakav udaljeni kod nikada ne može biti učitan — to je ograničenje na nivou platforme, a ne obećanje programera.
 
 🤝 OPEN SOURCE I PROVERLJIV
 Svaki red koda je javan na GitHub-u. Svako može klonirati repozitorijum, izgraditi ga lokalno i uporediti dobijene datoteke s onim što je instalirano u njihovom pregledaču — bez potrebe za poverenjem.
 Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 AŽURIRANJA:
-Verzija 1.7.0 (Podfascikle): Prevucite jednu fasciklu na drugu da biste je smestili unutra. Otvorite nadređenu fasciklu kao grupu kartica i otvoriće se sve što sadrži. Klik na sačuvan razgovor sada prelazi na karticu koja ga već prikazuje umesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovo koristi poslednju karticu. Baidu Chat se preselio na novu adresu, gde čuvanje i ubacivanje promptova ponovo rade.
-Verzija 1.6.3 (Stranica dobrodošlice): Nakon instalacije sada se otvara kratak vodič: kako prikačiti proširenje i sačuvati prvi razgovor. Pretraga takođe jasno navodi da obuhvata samo već sačuvane razgovore.
-Verzija 1.6.2 (Kimi): Pokrenite nove razgovore na Kimiu direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove. Uklanjanje proširenja sada otvara kratku opcionu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
-Verzija 1.6.1 (Bezbednost i stabilnost): Dodatna zaštita sačuvanih linkova i uvoza rezervnih kopija, uz interne popravke stabilnosti.
-Verzija 1.6 (10 novih AI usluga): Čuvajte razgovore i ubacujte promptove u deset dodatnih AI usluga — uključujući Mistral, Meta AI, Qwen i Z.ai — sa redizajniranim dugmadima usluga i zvaničnim logotipima.
-Verzija 1.5.1 (Poboljšanja): Fascikle se sada podrazumevano sortiraju od najnovijih, kao i vaša biblioteka promptova — već izabrani redosled sortiranja ostaje nepromenjen. Ispravljeno je i dugme za brisanje (✕) u polju za pretragu, pa sada radi i u Firefoxu.
-Verzija 1.5 (Grok): Pokrenite nove razgovore na Groku direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove. Širi panel, doterane kontrole i bolja pristupačnost tastaturom. Ispravke grešaka i interno refaktorisanje od poslednjeg ažuriranja, za bolju stabilnost. Ako su vam VI fascikle korisne, možete podržati razvoj posjetom stranici Ko-fi: https://ko-fi.com/aifolders — hvala vam na podršci!
-Verzija 1.2 (DeepSeek): Pokrenite nove razgovore na DeepSeeku direktno iz moda promptova, sačuvajte ih u foldere i ubacujte promptove.
-Verzija 1.1 (Okidač promptova): Unesi # u bilo koje polje AI čavrljanja da u realnom vremenu vidiš filtrirane sačuvane promptove. Koristi ↓/↑ za navigaciju kroz predloge, razmak za autodovršavanje ili ubacivanje — bez otvaranja panela.
-Verzija 1.0: Prvo izdanje! Organizujte razgovore iz Gemini, Claude, ChatGPT, Copilot i Perplexity u deljene fascikle. Potpuna biblioteka promptova sa ubacivanjem jednim klikom, prečice za brzo čuvanje, prevlačenje i puštanje, mobilna sinhronizacija, masovne radnje, grupe kartica i podrška za 43 jezika.

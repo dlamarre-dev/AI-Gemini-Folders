@@ -58,21 +58,8 @@ Sprožilec pozivov: Vnesite #, da takoj vidite vse shranjene pozive, ali nadalju
 🔒 ZASEBNOST IN VARNOST
 Zasnovano z zasebnostjo v središču. Zahteva dostop samo do podprtih AI spletnih mest in vašega izbirnega lokalnega LLM URL-ja ter aktivni zavihek bere samo zato, da prebere naslov pogovora, ga shrani ali vstavi poziv. Dovoljenje «Zaznamki» se uporablja samo, če omogočiš mobilno sinhronizacijo. Shranjevanje prek sinhronizacije brskalnika: brez strežnikov tretjih oseb, brez telemetrije, brez zahtevanega računa.
 
-Zgrajeno na Manifest V3: brskalnik sam zagotavlja, da se nikoli ne more naložiti nobena oddaljena koda — to je omejitev na ravni platforme, ne razvijalčevo obljubo. Različica za Firefox je objavljena prek Mozillinega uradnega postopka pregleda dodatkov (AMO).
+Zgrajeno na Manifest V3: brskalnik sam zagotavlja, da se nikoli ne more naložiti nobena oddaljena koda — to je omejitev na ravni platforme, ne razvijalčevo obljubo.
 
 🤝 ODPRTOKODNI IN PREVERLJIV
 Vsaka vrstica kode je javna na GitHub-u. Vsakdo lahko klonira repozitorij, ga lokalno zgradi in primerja dobljene datoteke s tistim, kar je nameščeno v njihovem brskalniku — brez potrebe po zaupanju.
 Preglej kodo ali prispevaj: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 POSODOBITVE:
-Različica 1.7.0 (Podmape): Povlecite mapo na drugo, da jo postavite vanjo. Odprite nadrejeno mapo kot skupino zavihkov in odprlo se bo vse, kar vsebuje. Klik na shranjen pogovor zdaj preklopi na zavihek, ki ga že prikazuje, namesto da odpre dvojnik. Ctrl+klik (ali Cmd+klik na Macu) znova uporabi zadnji zavihek. Baidu Chat se je preselil na nov naslov, kjer shranjevanje in vstavljanje pozivov znova delujeta.
-Različica 1.6.3 (Pozdravna stran): Po namestitvi se zdaj odpre kratek vodnik: kako pripeti razširitev in shraniti prvi pogovor. Iskanje tudi jasno pove, da zajema le že shranjene pogovore.
-Različica 1.6.2 (Kimi): Zaženite nove pogovore na Kimiu neposredno iz načina pozivov, shranite jih v mape in vstavljajte pozive. Odstranitev razširitve zdaj odpre kratko neobvezno stran za povratne informacije v vašem jeziku in nič ni poslano, dokler je sami ne pošljete.
-Različica 1.6.1 (Varnost in stabilnost): Dodatna zaščita shranjenih povezav in uvoza varnostnih kopij ter notranji popravki stabilnosti.
-Različica 1.6 (10 novih storitev AI): Shranjujte pogovore in vstavljajte pozive v desetih dodatnih storitvah AI — med njimi Mistral, Meta AI, Qwen in Z.ai — s prenovljenimi gumbi storitev in uradnimi logotipi.
-Različica 1.5.1 (Izboljšave): Mape so zdaj privzeto razvrščene od najnovejših, tako kot vaša knjižnica pozivov — že izbrani vrstni red razvrščanja ostane nespremenjen. Popravljen je tudi gumb za počiščenje (✕) v iskalnem polju, tako da deluje tudi v Firefoxu.
-Različica 1.5 (Grok): Zaženite nove pogovore na Groku neposredno iz načina pozivov, shranite jih v mape in vstavljajte pozive. Širša plošča, izpopolnjeni kontrolniki in boljša dostopnost s tipkovnico. Popravki napak in notranje prestrukturiranje od zadnje posodobitve, za boljšo stabilnost. Če so vam Mape AI v pomoč, lahko podprete razvoj z obiskom strani Ko-fi: https://ko-fi.com/aifolders — hvala za vašo podporo!
-Različica 1.2 (DeepSeek): Zaženite nove pogovore na DeepSeeku neposredno iz načina pozivov, shranite jih v mape in vstavljajte pozive.
-Različica 1.1 (Sprožilec pozivov): Vnesite # v katero koli polje za klepet AI in v realnem času glejte filtrirane shranjene pozive. Uporabite ↓/↑ za krmarjenje med predlogi, preslednico za samodejno dokončanje ali vstavljanje — brez odpiranja plošče.
-Različica 1.0: Prva izdaja! Organizirajte pogovore iz Gemini, Claude, ChatGPT, Copilot in Perplexity v skupne mape. Popolna knjižnica pozivov z vstavljanjem z enim klikom, bližnjice za hitro shranjevanje, povleci in spusti, mobilna sinhronizacija, množična dejanja, skupine zavihkov in podpora za 43 jezikov.

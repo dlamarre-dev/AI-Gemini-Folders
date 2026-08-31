@@ -58,21 +58,8 @@ Raginimų paleidiklis: Įveskite #, kad iš karto pamatytumėte visus savo išsa
 🔒 PRIVATUMAS IR SAUGUMAS
 Sukurta atsižvelgiant į privatumą. Prašo prieigos tik prie palaikomų AI svetainių ir jūsų pasirenkamo vietinio LLM URL ir aktyvų skirtuką skaito tik tam, kad perskaitytų pokalbio pavadinimą, jį išsaugotų arba įterptų promptą. «Žymių» leidimas naudojamas tik įjungus mobiliojo ryšio sinchronizavimą. Saugojimas per naršyklės sinchronizavimą: jokių trečiųjų šalių serverių, jokios telemetrijos, paskyros nereikia.
 
-Sukurta remiantis Manifest V3: pati naršyklė užtikrina, kad niekada negali būti įkeltas nuotolinis kodas — tai platformos lygio apribojimas, o ne kūrėjo pažadas. „Firefox" versija skelbiama per oficialų „Mozilla" priedų peržiūros procesą (AMO).
+Sukurta remiantis Manifest V3: pati naršyklė užtikrina, kad niekada negali būti įkeltas nuotolinis kodas — tai platformos lygio apribojimas, o ne kūrėjo pažadas.
 
 🤝 ATVIRASIS KODAS IR AUDITUOJAMUMAS
 Kiekviena kodo eilutė yra vieša „GitHub". Kiekvienas gali klonuoti saugyklą, sukurti ją vietoje ir palyginti gautus failus su tuo, kas įdiegta jų naršyklėje — pasitikėjimo nereikia.
 Naršykite kodą arba prisidėkite: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 ATNAUJINIMAI:
-Versija 1.7.0 (Poaplankiai): Vilkite vieną aplanką ant kito, kad įdėtumėte jį į vidų. Atverkite pirminį aplanką kaip kortelių grupę – atsivers visas jo turinys. Spustelėjus išsaugotą pokalbį dabar pereinama į skirtuką, kuriame jis jau atidarytas, užuot atidarius dublikatą. Ctrl+spustelėjimas (arba Cmd+spustelėjimas Mac) pakartotinai naudoja paskutinį skirtuką. Baidu Chat perėjo į naują adresą, kuriame vėl veikia išsaugojimas ir promptų įterpimas.
-Versija 1.6.3 (Pasveikinimo puslapis): Po įdiegimo dabar atsidaro trumpas vadovas: kaip prisegti plėtinį ir išsaugoti pirmą pokalbį. Paieška taip pat aiškiai nurodo, kad apima tik jau išsaugotus pokalbius.
-Versija 1.6.2 (Kimi): Pradėkite naujus Kimi pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus. Pašalinus plėtinį dabar atsidaro trumpas neprivalomas atsiliepimų puslapis jūsų kalba, ir nieko neišsiunčiama, nebent patys jį išsiųstumėte.
-Versija 1.6.1 (Sauga ir stabilumas): Papildoma išsaugotų nuorodų ir atsarginių kopijų importo apsauga bei vidiniai stabilumo pataisymai.
-Versija 1.6 (10 naujų DI paslaugų): Išsaugokite pokalbius ir įterpkite užklausas dar dešimtyje DI paslaugų — įskaitant Mistral, Meta AI, Qwen ir Z.ai — su atnaujintais paslaugų mygtukais ir oficialiais logotipais.
-Versija 1.5.1 (Patobulinimai): Aplankai dabar pagal numatytuosius nustatymus rikiuojami nuo naujausių, kaip ir jūsų užklausų biblioteka — anksčiau pasirinkta rikiavimo tvarka lieka nepakitusi. Taip pat ištaisytas išvalymo mygtukas (✕) paieškos laukelyje, todėl jis veikia ir „Firefox“ naršyklėje.
-Versija 1.5 (Grok): Pradėkite naujus Grok pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus. Platesnis skydelis, patobulinti valdikliai ir geresnis pasiekiamumas klaviatūra. Klaidų taisymai ir vidiniai pertvarkymai nuo paskutinio atnaujinimo, siekiant geresnio stabilumo. Jei AI aplankai jums naudingi, galite paremti jo kūrimą apsilankę Ko-fi puslapyje: https://ko-fi.com/aifolders — ačiū už jūsų palaikymą!
-Versija 1.2 (DeepSeek): Pradėkite naujus DeepSeek pokalbius tiesiogiai iš raginimų režimo, išsaugokite juos aplankuose ir įterpkite raginimus.
-Versija 1.1 (Raginimų paleidiklis): Įveskite # bet kuriame AI pokalbių lauke, kad realiuoju laiku matytumėte filtruotus išsaugotus raginimus. Naudokite ↓/↑ naršyti pasiūlymams, tarpą automatiškai užbaigti ar įterpti — neatidarant skydelio.
-Versija 1.0: Pirmasis leidimas! Tvarkykite pokalbius iš Gemini, Claude, ChatGPT, Copilot ir Perplexity bendrose aplankuose. Pilna raginimų biblioteka su vieno paspaudimo įterpimu, sparčiojo įrašymo spartieji klavišai, vilkimas ir numetimas, mobilioji sinchronizacija, masiniai veiksmai, skirtukų grupės ir palaikymas 43 kalbų.

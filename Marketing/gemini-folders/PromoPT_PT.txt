@@ -53,7 +53,7 @@ Ativador de Prompt: Escreva # para ver instantaneamente todos os seus prompts gu
 🔒 PRIVACIDADE E SEGURANÇA
 Desenvolvida com a privacidade no centro. Solicita acesso apenas a gemini.google.com e lê o separador ativo apenas para ler o título da conversa, guardá-la ou inserir um prompt. A permissão "Marcadores" é usada apenas se ativar a sincronização móvel. Armazenamento via sincronização do navegador: sem servidores de terceiros, sem telemetria, sem conta necessária.
 
-Desenvolvida sobre o Manifest V3: o próprio navegador garante que nenhum código remoto pode ser carregado — trata-se de uma restrição ao nível da plataforma, não de uma promessa do programador. A versão Firefox é publicada através do processo oficial de revisão de extensões da Mozilla (AMO).
+Desenvolvida sobre o Manifest V3: o próprio navegador garante que nenhum código remoto pode ser carregado — trata-se de uma restrição ao nível da plataforma, não de uma promessa do programador.
 
 🤝 OPEN SOURCE E AUDITÁVEL
 Cada linha de código é pública no GitHub. Qualquer pessoa pode clonar o repositório, compilá-lo localmente e comparar os ficheiros resultantes com o que está instalado no seu navegador — sem necessidade de confiar em ninguém.
@@ -64,14 +64,3 @@ Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 Interessado em Pastas Gemini mas também utiliza ChatGPT, Claude, Copilot, Grok, Perplexity ou um LLM local? Pastas IA é o passo seguinte natural: uma única extensão para organizar conversas em todas as suas ferramentas de IA, com o mesmo sistema de pastas, biblioteca de prompts e injeção com um clique disponíveis em Pastas Gemini.
 
 👉 Instalar Pastas IA: __AF_STORE_URL__
-
-📢 ATUALIZAÇÕES:
-Versão 4.6.0 (Subpastas): Arraste uma pasta para cima de outra para a colocar lá dentro. Abra a pasta principal como grupo de separadores e tudo o que contém abre com ela. Clicar numa conversa guardada muda agora para o separador que já a mostra em vez de abrir um duplicado. Ctrl+clique (ou Cmd+clique no Mac) reutiliza o seu último separador.
-Versão 4.5.5 (Página de boas-vindas): Após a instalação abre agora um guia rápido: como fixar a extensão e guardar a sua primeira conversa. A pesquisa também deixa claro que abrange apenas as conversas já guardadas.
-Versão 4.5.4 (Inquérito de desinstalação): Remover a extensão abre agora uma breve página de comentários opcional no seu idioma, e nada é enviado a menos que o envie você mesmo.
-Versão 4.5.3 (Segurança e estabilidade): Proteções adicionais para ligações guardadas e importações de cópias de segurança, além de correções internas de estabilidade.
-Versão 4.5.1 (Refinamentos): As pastas são agora ordenadas da mais recente para a mais antiga por predefinição, tal como a sua biblioteca de prompts — qualquer ordenação que já tenha escolhido permanece inalterada. Foi também corrigido o botão de limpar (✕) no campo de pesquisa, que passa a funcionar também no Firefox.
-Versão 4.5 (Interface e estabilidade): Painel mais largo, controlos refinados e melhor acessibilidade por teclado. Correções de erros e refatorações internas desde a última atualização, para maior estabilidade. Se Pastas Gemini lhe é útil, pode apoiar o desenvolvimento visitando a página Ko-fi: https://ko-fi.com/aifolders — obrigado pelo seu apoio!
-Versão 4.2 (Gatilho de Prompt): Escreva # no campo de chat do Gemini para ver os seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel.
-Versão 4.1 (Expansão global e reforço): 16 novos idiomas elevam o Pastas Gemini a 43 localizações em todo o mundo — idiomas nórdicos, os estados bálticos e cobertura europeia e do Sudeste Asiático alargada. Corrigida uma condição de corrida que podia descartar silenciosamente uma gravação em cliques rápidos. Injeção de prompts modernizada com InputEvent, em substituição do execCommand obsoleto. Pipeline de importação reforçado contra URLs maliciosos em ficheiros de cópia de segurança. Correção de um erro crítico de segurança de dados: ativar a sincronização de prompts com armazenamento quase cheio podia apagar silenciosamente todos os prompts guardados. O armazenamento usa agora escritas fragmentadas para se manter dentro dos limites do Chrome, com mensagens de erro claras quando está cheio.
-Versão 4.0 (Biblioteca de Prompts): A atualização mais ambiciosa até à data! Pastas Gemini estreia um novo Modo Prompts: guarde os seus melhores prompts, edite-os inline e injete-os diretamente no Gemini com um clique. Adicionado: alternância de modos animada, pesquisa e ordenação no Modo Prompts, botão Gem personalizado e sincronização independente de prompts. Fixe os seus prompts essenciais no topo da biblioteca.

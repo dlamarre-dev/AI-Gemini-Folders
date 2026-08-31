@@ -52,7 +52,7 @@ Okidač upita: Upiši # da odmah vidiš sve svoje spremljene upite, ili nastavi 
 🔒 PRIVATNOST I SIGURNOST
 Izgrađeno s privatnošću u središtu. Traži pristup samo gemini.google.com te čita aktivnu karticu samo kako bi pročitao naslov razgovora, spremio ga ili ubacio upit. Dozvola «Oznake» koristi se samo ako aktiviraš mobilnu sinkronizaciju. Pohrana putem sinkronizacije preglednika: bez poslužitelja trećih strana, bez telemetrije, bez potrebe za računom.
 
-Izgrađeno na Manifest V3: sam pregledník osigurava da se nikada ne može učitati nikakav udaljeni kod — to je ograničenje na razini platforme, a ne obećanje razvojnog programera. Firefox verzija objavljuje se putem Mozillinog službenog procesa pregleda dodataka (AMO).
+Izgrađeno na Manifest V3: sam pregledník osigurava da se nikada ne može učitati nikakav udaljeni kod — to je ograničenje na razini platforme, a ne obećanje razvojnog programera.
 
 🤝 OPEN SOURCE I PROVJERLJIV
 Svaki redak koda je javan na GitHub-u. Svatko može klonirati repozitorij, izgraditi ga lokalno i usporediti dobivene datoteke s onim što je instalirano u njihovom pregledniku — bez potrebe za povjerenjem.
@@ -63,14 +63,3 @@ Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 Zanima te Gemini Mape, ali koristiš i ChatGPT, Claude, Copilot, Grok, Perplexity ili lokalni LLM? UI mape su prirodni sljedeći korak: jedan dodatak za organiziranje razgovora u svim tvojim AI alatima, s istim sustavom mapa, bibliotekom upita i injektiranjem jednim klikom dostupnim u Gemini Mape.
 
 👉 Instaliraj UI mape: __AF_STORE_URL__
-
-📢 AŽURIRANJA:
-Verzija 4.6.0 (Podmape): Povucite mapu na drugu kako biste je smjestili unutra. Otvorite nadređenu mapu kao grupu kartica i otvorit će se sve što sadrži. Klik na spremljeni razgovor sada prelazi na karticu koja ga već prikazuje umjesto otvaranja duplikata. Ctrl+klik (ili Cmd+klik na Macu) ponovno koristi posljednju karticu.
-Verzija 4.5.5 (Stranica dobrodošlice): Nakon instalacije sada se otvara kratak vodič: kako prikvačiti proširenje i spremiti prvi razgovor. Pretraživanje također jasno navodi da obuhvaća samo već spremljene razgovore.
-Verzija 4.5.4 (Anketa pri deinstalaciji): Uklanjanje proširenja sada otvara kratku neobaveznu stranicu za povratne informacije na vašem jeziku, a ništa se ne šalje osim ako je sami ne pošaljete.
-Verzija 4.5.3 (Sigurnost i stabilnost): Dodatna zaštita spremljenih poveznica i uvoza sigurnosnih kopija te interni popravci stabilnosti.
-Verzija 4.5.1 (Poboljšanja): Mape se sada prema zadanim postavkama razvrstavaju od najnovijih, kao i vaša biblioteka prompta — već odabrani redoslijed razvrstavanja ostaje nepromijenjen. Ispravljen je i gumb za brisanje (✕) u polju za pretraživanje, pa sada radi i u Firefoxu.
-Verzija 4.5 (Sučelje i stabilnost): Širi panel, dotjerane kontrole i bolja pristupačnost tipkovnicom. Ispravci grešaka i unutarnje refaktoriranje od posljednjeg ažuriranja, za bolju stabilnost. Ako su ti Gemini Mape korisne, možeš podržati njihov razvoj posjetom Ko-fi stranici: https://ko-fi.com/aifolders — hvala na podršci!
-Verzija 4.2 (Okidač upita): Unesi # u polje za chat s Geminijem da u stvarnom vremenu vidiš filtrirane spremljene upite. Koristi ↓/↑ za navigaciju kroz prijedloge, Razmak za automatsko dovršavanje ili ubacivanje — bez otvaranja panela.
-Verzija 4.1 (Globalna ekspanzija i ojačavanje): 16 novih jezika dovodi Gemini Mape na 43 lokalizacije diljem svijeta — nordički jezici, baltičke države i proširena europska i jugoistočnoazijska pokrivenost. Ispravljen race condition koji je mogao tiho izgubiti spremanje pri brzim klikovima. Umetanje upita modernizirano s InputEvent, zamjenjujući zastarjeli execCommand. Import pipeline ojačan protiv zlonamjernih URL-ova u backup datotekama. Ispravljena kritična greška sigurnosti podataka: aktiviranje sinkronizacije upita s gotovo punom pohranom moglo je tiho izbrisati sve pohranjene upite. Pohrana sada koristi fragmentirane zapise kako bi ostala unutar Chrome ograničenja, s jasnim porukama o pogrešci kad je puna.
-Verzija 4.0 (Knjižnica upita): Najambicioznije ažuriranje do sada! Gemini Mape dobivaju potpuno novi Način upita: spremi najbolje upite, uredi ih na licu mjesta i ubaci ih izravno u Gemini jednim klikom.

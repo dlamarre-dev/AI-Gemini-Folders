@@ -53,7 +53,7 @@ Prompt-udløser: Skriv # for straks at se alle dine gemte prompter, eller forts�
 🔒 PRIVATLIV OG SIKKERHED
 Bygget med privatlivsbeskyttelse som kerneprincip. Det anmoder kun om adgang til gemini.google.com og læser kun den aktive fane for at læse samtalens titel, gemme den eller indsætte en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via browser sync: ingen tredjepartsservere, ingen telemetri, ingen konto påkrævet.
 
-Bygget på Manifest V3: browseren selv håndhæver, at der aldrig kan indlæses ekstern kode — dette er en platformsbegrænsning, ikke et udviklerløfte. Firefox-versionen udgives via Mozillas officielle add-on-gennemgangsproces (AMO).
+Bygget på Manifest V3: browseren selv håndhæver, at der aldrig kan indlæses ekstern kode — dette er en platformsbegrænsning, ikke et udviklerløfte.
 
 🤝 OPEN SOURCE & VERIFICERBAR
 Hver eneste kodelinje er offentlig på GitHub. Alle kan klone arkivet, bygge det lokalt og sammenligne de resulterende filer med det, der er installeret i deres browser — intet blindt tillid påkrævet.
@@ -64,14 +64,3 @@ Gennemse koden eller bidrag: https://github.com/dlamarre-dev/AI-Gemini-Folders
 Interesseret i Gemini Mapper men bruger du også ChatGPT, Claude, Copilot, Grok, Perplexity eller en lokal LLM? AI-mapper er det naturlige næste skridt: én udvidelse til at organisere samtaler på tværs af alle dine AI-værktøjer, med det samme mappesystem, prompt-bibliotek og indsættelse med ét klik, der er tilgængeligt i Gemini Mapper.
 
 👉 Installer AI-mapper: __AF_STORE_URL__
-
-📢 OPDATERINGER:
-Version 4.6.0 (Undermapper): Træk en mappe over på en anden for at lægge den ind i den. Åbn overmappen som en fanegruppe, og alt indholdet åbnes med den. Et klik på en gemt samtale skifter nu til den fane, der allerede viser den, i stedet for at åbne en dublet. Ctrl+klik (eller Cmd+klik på Mac) genbruger din seneste fane.
-Version 4.5.5 (Velkomstside): Efter installationen åbnes nu en kort guide: hvordan du fastgør udvidelsen og gemmer din første samtale. Søgningen gør det også tydeligt, at den kun dækker gemte samtaler.
-Version 4.5.4 (Afinstallationsundersøgelse): Når du fjerner udvidelsen, åbnes nu en kort valgfri feedbackside på dit sprog, og intet sendes, medmindre du selv indsender den.
-Version 4.5.3 (Sikkerhed og stabilitet): Ekstra beskyttelse af gemte links og backup-import samt interne stabilitetsrettelser.
-Version 4.5.1 (Finjusteringer): Mapper sorteres nu med nyeste først som standard, ligesom dit promptbibliotek — en sorteringsrækkefølge, du allerede har valgt, forbliver uændret. Desuden er ryd-knappen (✕) i søgefeltet rettet, så den også virker i Firefox.
-Version 4.5 (Brugerflade og stabilitet): Bredere panel, forfinede kontroller og bedre tastaturtilgængelighed. Fejlrettelser og intern refaktorering siden den sidste opdatering, for forbedret stabilitet. Hvis Gemini Mapper er nyttig for dig, kan du støtte dens udvikling ved at besøge Ko-fi-siden: https://ko-fi.com/aifolders — tak for din støtte!
-Version 4.2 (Prompt-udløser): Skriv # i Geminis chatfelt for at se dine gemte prompts filtreret i realtid. Brug ↓/↑ til at navigere gennem forslag, Mellemrum for at autofuldføre eller injicere — uden at åbne panelet.
-Version 4.1 (Global udvidelse og hærdning): 16 nye sprog bringer Gemini Mapper til 43 oversættelser verden over — nordiske sprog, de baltiske stater og udvidet europæisk og sydøstasiatisk dækning. Rettet en race condition, der stille kunne miste en gem ved hurtige klik. Prompt-indsætning moderniseret med InputEvent, som erstatter den forældede execCommand. Import-pipeline hærdet mod ondsindede URL'er i sikkerhedskopifiler. Rettet en kritisk datasikkerhedsfejl: aktivering af prompt-synkronisering med næsten fuldt lager kunne lydløst slette alle gemte prompts. Lageret bruger nu fragmenterede skrivninger for at forblive inden for Chromes grænser, med klare fejlmeddelelser når det er fuldt.
-Version 4.0 (Promptbibliotek): Den mest ambitiøse opdatering hidtil! Gemini Mapper får en helt ny Promptvisning: gem dine bedste prompts, rediger dem inline og indsæt dem direkte i Gemini med ét klik. Tilføjet animeret tilstandsskifter, søgning og sortering i Promptvisning, tilpasset Gem-knap og uafhængig promptsynkronisering.

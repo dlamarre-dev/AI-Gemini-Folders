@@ -52,7 +52,7 @@ Uzvednes aktivizētājs: Ievadiet #, lai uzreiz redzētu visas saglabātās uzve
 🔒 PRIVĀTUMS UN DROŠĪBA
 Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai gemini.google.com un aktīvo cilni nolasa tikai, lai nolasītu sarunas nosaukumu, to saglabātu vai ievietotu uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot pārlūka sinhronizāciju: nav trešo pušu serveru, nav telemetrijas, nav nepieciešams konts.
 
-Balstīts uz Manifest V3: pats pārlūks nodrošina, ka nekad nevar tikt ielādēts attālais kods — tas ir platformas līmeņa ierobežojums, nevis izstrādātāja solījums. Firefox versija tiek publicēta caur Mozilla oficiālo papildinājumu pārskatīšanas procesu (AMO).
+Balstīts uz Manifest V3: pats pārlūks nodrošina, ka nekad nevar tikt ielādēts attālais kods — tas ir platformas līmeņa ierobežojums, nevis izstrādātāja solījums.
 
 🤝 ATVĒRTAIS PIRMKODS UN AUDITĒJAMĪBA
 Katrs koda rindkopa ir publiski pieejama GitHub. Ikviens var klonēt repozitoriju, to lokāli uzbūvēt un salīdzināt iegūtos failus ar to, kas ir instalēts viņu pārlūkā — uzticēšanās nav nepieciešama.
@@ -63,14 +63,3 @@ Pārlūkojiet kodu vai piedalieties: https://github.com/dlamarre-dev/AI-Gemini-F
 Interesē Gemini Mapes, bet izmantojat arī ChatGPT, Claude, Copilot, Grok, Perplexity vai vietējo LLM? AI mapes ir dabiskais nākamais solis: viens paplašinājums sarunu organizēšanai visos jūsu AI rīkos, ar tādu pašu mapju sistēmu, uzvedņu bibliotēku un viena klikšķa ievietošanu, kas pieejams Gemini Mapes.
 
 👉 Instalēt AI mapes: __AF_STORE_URL__
-
-📢 ATJAUNINĀJUMI:
-Versija 4.6.0 (Apakšmapes): Velciet vienu mapi uz citas, lai ievietotu to iekšā. Atveriet vecākmapi kā ciļņu grupu, un atvērsies viss tās saturs. Noklikšķinot uz saglabātas sarunas, tagad tiek pārslēgts uz cilni, kurā tā jau ir atvērta, nevis atvērts dublikāts. Ctrl+klikšķis (vai Cmd+klikšķis Mac datorā) atkārtoti izmanto pēdējo cilni.
-Versija 4.5.5 (Sveiciena lapa): Pēc instalēšanas tagad atveras īss ceļvedis: kā piespraust paplašinājumu un saglabāt pirmo sarunu. Meklēšana arī skaidri norāda, ka ietver tikai jau saglabātās sarunas.
-Versija 4.5.4 (Atinstalēšanas aptauja): Paplašinājuma noņemšana tagad atver īsu neobligātu atsauksmju lapu jūsu valodā, un nekas netiek nosūtīts, ja vien jūs to pats nenosūtāt.
-Versija 4.5.3 (Drošība un stabilitāte): Papildu aizsardzība saglabātajām saitēm un rezerves kopiju importēšanai, kā arī iekšēji stabilitātes labojumi.
-Versija 4.5.1 (Uzlabojumi): Mapes tagad pēc noklusējuma tiek kārtotas no jaunākajām, tāpat kā jūsu uzvednu bibliotēka — jau izvēlētā kārtošanas secība paliek nemainīga. Tika izlabota arī notīrīšanas poga (✕) meklēšanas laukā, tāpēc tā darbojas arī pārlūkā Firefox.
-Versija 4.5 (Saskarne un stabilitāte): Platāks panelis, uzlabotas vadīklas un labāka piekļūstamība ar tastatūru. Kļūdu labojumi un iekšējā pārstrukturēšana kopš pēdējā atjauninājuma, uzlabotai stabilitātei. Ja Gemini Mapes jums ir noderīgas, varat atbalstīt to izstrādi, apmeklējot Ko-fi lapu: https://ko-fi.com/aifolders — paldies par jūsu atbalstu!
-Versija 4.2 (Uzvedņu aktivizētājs): Ievadiet # Gemini tērzēšanas laukā, lai reāllaikā filtrētu saglabātās uzvednes. Izmantojiet ↓/↑, lai pārvietotos starp ieteikumiem, Atstarpi automātiskai pabeigšanai vai ievietošanai — neatverot paneli.
-Versija 4.1 (Globālā paplašināšanās un nostiprināšana): 16 jaunas valodas ceļ Gemini Mapes līdz 43 lokalizācijām visā pasaulē — ziemeļvalstu valodas, Baltijas valstis un paplašināts Eiropas un Dienvidaustrumāzijas pārklājums. Novērsts sacensību nosacījums, kas strauju klikšķu gadījumā varēja klusi pazaudēt saglabājumu. Uzvednes ievietošana modernizēta ar InputEvent, aizstājot novecojušo execCommand. Importa cauruļvads nocietināts pret ļaunprātīgiem URL rezerves failos. Novērsta kritiska datu drošības kļūda: aktivējot uzvedņu sinhronizāciju gandrīz pilnā krātuvē, visas saglabātās uzvednes varēja tikt klusumā dzēstas. Krātuve tagad izmanto sadalītus ierakstus, lai paliktu Chrome robežās, parādot skaidrus kļūdu ziņojumus, kad tā ir pilna.
-Versija 4.0 (Uzvedņu bibliotēka): Līdz šim vērienīgākais atjauninājums! Gemini Mapes iegūst pilnīgi jaunu Uzvedņu režīmu: saglabā labākās uzvednes, rediģē tās tiešsaistē un ievietoj tieši Gemini ar vienu klikšķi.

@@ -59,21 +59,8 @@ Kehoteliipaisin: Kirjoita # nähdäksesi välittömästi kaikki tallennetut keho
 🔒 YKSITYISYYS JA TURVALLISUUS
 Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain tuettuihin AI-sivustoihin ja valinnaiseen paikalliseen LLM-URL-osoitteeseesi. Lukee aktiivisen välilehden vain lukeakseen keskustelun otsikon, tallentaakseen sen tai lisätäkseen promptin. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus selaimen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa, ei tiliä tarvita.
 
-Rakennettu Manifest V3:lle: selain itse valvoo, että etäkoodia ei voi koskaan ladata — tämä on alustatason rajoitus, ei kehittäjän lupaus. Firefox-versio julkaistaan Mozillan virallisen lisäosaarvioinnin (AMO) kautta.
+Rakennettu Manifest V3:lle: selain itse valvoo, että etäkoodia ei voi koskaan ladata — tämä on alustatason rajoitus, ei kehittäjän lupaus.
 
 🤝 AVOIN LÄHDEKOODI JA TARKASTETTAVUUS
 Jokainen koodirivi on julkinen GitHubissa. Kuka tahansa voi kloonata repositorion, rakentaa sen paikallisesti ja verrata tuloksena saatuja tiedostoja selaimeen asennettuihin — luottamusta ei tarvita.
 Selaa koodia tai osallistu: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 PÄIVITYKSET:
-Versio 1.7.0 (Alikansiot): Vedä kansio toisen päälle sijoittaaksesi sen sen sisään. Avaa yläkansio välilehtiryhmänä, niin kaikki sen sisältö avautuu mukana. Tallennetun keskustelun napsauttaminen siirtyy nyt välilehdelle, jolla se on jo avoinna, sen sijaan että avaisi kaksoiskappaleen. Ctrl+napsautus (tai Cmd+napsautus Macissa) käyttää viimeisintä välilehteä uudelleen. Baidu Chat siirtyi uuteen osoitteeseen, jossa tallennus ja prompttien lisäys toimivat jälleen.
-Versio 1.6.3 (Tervetuloa-sivu): Asennuksen jälkeen avautuu nyt lyhyt opas: miten laajennus kiinnitetään ja ensimmäinen keskustelu tallennetaan. Haku kertoo myös selvästi kattavansa vain jo tallennetut keskustelut.
-Versio 1.6.2 (Kimi): Aloita uusia Kimi-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet. Laajennuksen poistaminen avaa nyt lyhyen vapaaehtoisen palautesivun omalla kielelläsi, eikä mitään lähetetä, ellet lähetä sitä itse.
-Versio 1.6.1 (Turvallisuus ja vakaus): Lisäsuojaukset tallennetuille linkeille ja varmuuskopioiden tuonnille sekä sisäisiä vakautuskorjauksia.
-Versio 1.6 (10 uutta tekoälypalvelua): Tallenna keskusteluja ja syötä kehotteita kymmenessä uudessa tekoälypalvelussa — mukana Mistral, Meta AI, Qwen ja Z.ai — uudistetuilla palvelupainikkeilla ja virallisilla logoilla.
-Versio 1.5.1 (Hienosäädöt): Kansiot lajitellaan nyt oletuksena uusimmat ensin, samoin kuin kehotekirjastosi — jo valitsemasi lajittelujärjestys säilyy ennallaan. Lisäksi hakukentän tyhjennyspainike (✕) korjattiin, joten se toimii nyt myös Firefoxissa.
-Versio 1.5 (Grok): Aloita uusia Grok-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet. Leveämpi paneeli, viimeistellyt säätimet ja parempi näppäimistösaavutettavuus. Vikakorjauksia ja sisäistä refaktorointia edellisen päivityksen jälkeen, paremman vakauden saavuttamiseksi. Jos AI-kansiot on sinulle hyödyllinen, voit tukea sen kehittämistä vierailemalla Ko-fi-sivulla: https://ko-fi.com/aifolders — kiitos tuestasi!
-Versio 1.2 (DeepSeek): Aloita uusia DeepSeek-keskusteluja suoraan Kehotetyökalusta, tallenna ne kansioihin ja injektoi kehotteet.
-Versio 1.1 (Kehotteen laukaisin): Kirjoita # mihin tahansa AI-chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia.
-Versio 1.0: Ensijulkaisu! Järjestä Geminin, Clauden, ChatGPT:n, Copilotin ja Perplexityn keskustelut jaetuiksi kansioiksi. Täydellinen kehotekirjasto yhdellä napsautuksella, pikaentallenteen pikanäppäimet, vedä ja pudota, mobiilisynkronointi, joukkotoiminnot, välilehtiryhmät ja tuki 43 kielelle.

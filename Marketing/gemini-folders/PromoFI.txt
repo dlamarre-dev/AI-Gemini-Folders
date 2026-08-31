@@ -53,7 +53,7 @@ Kehoteliipaisin: Kirjoita # nähdäksesi välittömästi kaikki tallennetut keho
 🔒 YKSITYISYYS JA TURVALLISUUS
 Rakennettu yksityisyys etusijalla. Pyytää pääsyä vain gemini.google.com:iin ja lukee aktiivisen välilehden vain lukeakseen keskustelun otsikon, tallentaakseen sen tai lisätäkseen promptin. «Kirjanmerkit»-lupa käytetään vain, jos otat mobiilisynkronoinnin käyttöön. Tallennus selaimen synkronoinnin kautta: ei kolmannen osapuolen palvelimia, ei telemetriaa, ei tiliä tarvita.
 
-Rakennettu Manifest V3:lle: selain itse valvoo, että etäkoodia ei voi koskaan ladata — tämä on alustatason rajoitus, ei kehittäjän lupaus. Firefox-versio julkaistaan Mozillan virallisen lisäosaarvioinnin (AMO) kautta.
+Rakennettu Manifest V3:lle: selain itse valvoo, että etäkoodia ei voi koskaan ladata — tämä on alustatason rajoitus, ei kehittäjän lupaus.
 
 🤝 AVOIN LÄHDEKOODI JA TARKASTETTAVUUS
 Jokainen koodirivi on julkinen GitHubissa. Kuka tahansa voi kloonata repositorion, rakentaa sen paikallisesti ja verrata tuloksena saatuja tiedostoja selaimeen asennettuihin — luottamusta ei tarvita.
@@ -64,14 +64,3 @@ Selaa koodia tai osallistu: https://github.com/dlamarre-dev/AI-Gemini-Folders
 Kiinnostuitko Gemini-kansiot-laajennuksesta, mutta käytätkö myös ChatGPT:tä, Claudea, Copilotia, Grokia, Perplexityä tai paikallista LLM:ää? AI-kansiot on luonnollinen seuraava askel: yksi laajennus keskustelujen järjestämiseen kaikissa tekoälysovelluksissasi, samalla kansiojärjestelmällä, promptikirjastolla ja yhdellä napsautuksella tapahtuvalla syötöllä kuin Gemini-kansiot-laajennuksessa.
 
 👉 Asenna AI-kansiot: __AF_STORE_URL__
-
-📢 PÄIVITYKSET:
-Versio 4.6.0 (Alikansiot): Vedä kansio toisen päälle sijoittaaksesi sen sen sisään. Avaa yläkansio välilehtiryhmänä, niin kaikki sen sisältö avautuu mukana. Tallennetun keskustelun napsauttaminen siirtyy nyt välilehdelle, jolla se on jo avoinna, sen sijaan että avaisi kaksoiskappaleen. Ctrl+napsautus (tai Cmd+napsautus Macissa) käyttää viimeisintä välilehteä uudelleen.
-Versio 4.5.5 (Tervetuloa-sivu): Asennuksen jälkeen avautuu nyt lyhyt opas: miten laajennus kiinnitetään ja ensimmäinen keskustelu tallennetaan. Haku kertoo myös selvästi kattavansa vain jo tallennetut keskustelut.
-Versio 4.5.4 (Poistokysely): Laajennuksen poistaminen avaa nyt lyhyen vapaaehtoisen palautesivun omalla kielelläsi, eikä mitään lähetetä, ellet lähetä sitä itse.
-Versio 4.5.3 (Turvallisuus ja vakaus): Lisäsuojaukset tallennetuille linkeille ja varmuuskopioiden tuonnille sekä sisäisiä vakautuskorjauksia.
-Versio 4.5.1 (Hienosäädöt): Kansiot lajitellaan nyt oletuksena uusimmat ensin, samoin kuin kehotekirjastosi — jo valitsemasi lajittelujärjestys säilyy ennallaan. Lisäksi hakukentän tyhjennyspainike (✕) korjattiin, joten se toimii nyt myös Firefoxissa.
-Versio 4.5 (Käyttöliittymä ja vakaus): Leveämpi paneeli, viimeistellyt säätimet ja parempi näppäimistösaavutettavuus. Vikakorjauksia ja sisäistä refaktorointia edellisen päivityksen jälkeen, paremman vakauden saavuttamiseksi. Jos Gemini-kansiot on sinulle hyödyllinen, voit tukea sen kehittämistä vierailemalla Ko-fi-sivulla: https://ko-fi.com/aifolders — kiitos tuestasi!
-Versio 4.2 (Kehotteen laukaisin): Kirjoita # Geminin chat-kenttään nähdäksesi tallennetut kehotteesi suodatettuina reaaliajassa. Käytä ↓/↑ ehdotusten selailuun, välilyöntiä automaattitäydennykseen tai lisäämiseen — avaamatta paneelia.
-Versio 4.1 (Globaali laajennus ja kovettaminen): 16 uutta kieltä nostaa Gemini-kansiot 43 lokalisointiin maailmanlaajuisesti — pohjoismaiset kielet, Baltian maat sekä laajennettu eurooppalainen ja Kaakkois-Aasian kattavuus. Korjattu kilpailutilanne, joka saattoi hiljaa hävittää tallennuksen nopeiden napsautusten yhteydessä. Promptin syöttäminen modernisoitu InputEventillä korvaamaan vanhentunut execCommand. Tuontikanava kovetettu haittaohjelmallisia URL-osoitteita vastaan varmuuskopiotiedostoissa. Kriittinen tietoturvavika korjattu: kehotteiden synkronoinnin aktivointi lähes täydellä tallennustilalla saattoi äänettömästi poistaa kaikki tallennetut kehotteet. Tallennustila käyttää nyt paloiteltuja kirjoituksia pysyäkseen Chromen rajoissa, ja näyttää selkeitä virheilmoituksia kun tila on täynnä.
-Versio 4.0 (Promptikirjasto): Kunnianhimoisin päivitys tähän mennessä! Gemini-kansiot saa upouuden Prompttilan: tallenna parhaat promptisi, muokkaa niitä inlinen ja injektoi ne suoraan Geminiin yhdellä napsautuksella. Lisätty animoitu tilakytkин, haku ja lajittelu Prompttilassa, mukautettu Gem-painike ja itsenäinen promptisynkronointi.

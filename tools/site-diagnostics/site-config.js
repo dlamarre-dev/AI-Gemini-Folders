@@ -42,6 +42,12 @@ const SITES = {
   copilot: {
     key: 'copilot',
     domain: 'copilot.microsoft.com',
+    // Microsoft 365 Copilot — the tenant-bound chat an organisation's users are
+    // sent to — lives on its own host, so a work account never touches the
+    // consumer domain and the extension did nothing at all there (issue #82).
+    // An alt rather than a second site: same product, same title strategy, same
+    // editor; only the address differs by which account you signed in with.
+    altDomains: ['m365.cloud.microsoft'],
     color: '#0078d4',
     newConvUrl: 'https://copilot.microsoft.com/',
     // Copilot uses a textarea inside a shadow-DOM web component; selectors need live validation

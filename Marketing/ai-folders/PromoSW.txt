@@ -59,21 +59,8 @@ Kichocheo cha Kidokezo: Andika # ili kuona mara moja vidokezo vyako vyote vilivy
 🔒 FARAGHA NA USALAMA
 Imejengwa na faragha kama msingi wake. Huomba tu ufikiaji wa tovuti za AI zinazoungwa mkono na URL yako ya hiari ya LLM ya ndani. Husoma kichupo kinachofanya kazi tu ili kusoma kichwa cha mazungumzo, kukihifadhi au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia browser sync: hakuna seva za watu wengine, hakuna telemetri, hakuna akaunti inayohitajika.
 
-Imejengwa juu ya Manifest V3: kivinjari chenyewe kinahakikisha kwamba hakuna msimbo wa mbali unaoeza kupakiwa — hii ni kizuizi cha kiwango cha jukwaa, si ahadi ya msanidi programu. Toleo la Firefox limechapishwa kupitia mchakato rasmi wa ukaguzi wa programu jalizi wa Mozilla (AMO).
+Imejengwa juu ya Manifest V3: kivinjari chenyewe kinahakikisha kwamba hakuna msimbo wa mbali unaoeza kupakiwa — hii ni kizuizi cha kiwango cha jukwaa, si ahadi ya msanidi programu.
 
 🤝 CHANZO WAZI NA INAYOWEZA KUKAGULIWA
 Kila mstari wa msimbo ni wa umma kwenye GitHub. Mtu yeyote anaweza kunakili hazina, kuijenga ndani ya kompyuta yake, na kulinganisha faili zinazotokana na zile zilizosakinishwa kwenye kivinjari chake — bila kuhitaji imani yoyote.
 Angalia msimbo au changia: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 MASASISHO:
-Toleo 1.7.0 (Folda ndogo): Buruta folda moja juu ya nyingine ili kuiweka ndani yake. Fungua folda mama kama kikundi cha vichupo na kila kilichomo hufunguka pamoja nayo. Kubofya mazungumzo yaliyohifadhiwa sasa hukupeleka kwenye kichupo kinachoyaonyesha tayari badala ya kufungua nakala. Ctrl+bofya (au Cmd+bofya kwenye Mac) hutumia tena kichupo chako cha mwisho. Baidu Chat imehamia anwani mpya, ambapo kuhifadhi na kuingiza vidokezo hufanya kazi tena.
-Toleo 1.6.3 (Ukurasa wa karibu): Baada ya kusakinisha sasa hufunguka mwongozo mfupi: jinsi ya kubandika kiendelezi na kuhifadhi mazungumzo yako ya kwanza. Utafutaji pia unaeleza wazi kuwa unahusu mazungumzo yaliyohifadhiwa tu.
-Toleo 1.6.2 (Kimi): Anza mazungumzo mapya ya Kimi moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo. Kuondoa kiendelezi sasa hufungua ukurasa mfupi wa maoni wa hiari kwa lugha yako, na hakuna kinachotumwa isipokuwa uitume mwenyewe.
-Toleo 1.6.1 (Usalama na uthabiti): Ulinzi wa ziada kwa viungo vilivyohifadhiwa na uingizaji wa nakala rudufu, pamoja na marekebisho ya ndani ya uthabiti.
-Toleo 1.6 (huduma 10 mpya za AI): Hifadhi mazungumzo na uweke prompts katika huduma kumi zaidi za AI — zikiwemo Mistral, Meta AI, Qwen na Z.ai — pamoja na vitufe vya huduma vilivyoundwa upya na nembo rasmi.
-Toleo 1.5.1 (Maboresho): Folda sasa hupangwa kuanzia mpya zaidi kwa chaguo-msingi, sawa na maktaba yako ya vidokezo — mpangilio wa kupanga uliokwisha chagua hubaki bila kubadilika. Pia kitufe cha kufuta (✕) katika kisanduku cha kutafutia kimerekebishwa ili kifanye kazi katika Firefox pia.
-Toleo 1.5 (Grok): Anza mazungumzo mapya ya Grok moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo. Paneli pana zaidi, vidhibiti vilivyoboreshwa na ufikivu bora wa kibodi. Marekebisho ya hitilafu na upyaji wa ndani tangu sasisho la mwisho, kwa uthabiti bora. Ikiwa Folda za AI ni muhimu kwako, unaweza kusaidia maendeleo kwa kutembelea ukurasa wa Ko-fi: https://ko-fi.com/aifolders — asante kwa msaada wako!
-Toleo 1.2 (DeepSeek): Anza mazungumzo mapya ya DeepSeek moja kwa moja kutoka Hali ya Maagizo, yahifadhi kwenye folda na uweke maagizo.
-Toleo 1.1 (Kichocheo cha Kidokezo): Andika # katika uwanja wowote wa mazungumzo wa AI ili uone vidokezo vyako vilivyohifadhiwa vikichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.
-Toleo 1.0: Chapisho la kwanza! Panga mazungumzo kutoka Gemini, Claude, ChatGPT, Copilot na Perplexity katika folda zilizoshirikiwa. Maktaba kamili ya maagizo na sindano ya kubonyeza mara moja, njia za mkato za kuhifadhi haraka, buruta na uacha, usawazishaji wa simu, vitendo vya wingi, vikundi vya kichupo na usaidizi wa lugha 43.

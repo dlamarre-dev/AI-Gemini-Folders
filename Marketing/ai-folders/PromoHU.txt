@@ -59,21 +59,8 @@ Prompt-aktiváló: Gépelje be a # jelet az összes mentett promptja azonnali me
 🔒 ADATVÉDELEM ÉS BIZTONSÁG
 Az adatvédelmet alapelvként kezelve fejlesztve. Csak a támogatott AI-oldalak és az opcionális helyi LLM URL elérését kéri, és az aktív lapot csak azért olvassa, hogy kiolvassa a beszélgetés címét, elmentse azt, vagy promptot illesszen be. A „Könyvjelzők" engedélyt csak akkor használja, ha engedélyezi a mobilszinkronizálást. Tárolás böngésző-szinkronizáláson keresztül: nincsenek harmadik feles szerverek, nincs telemetria, nincs szükség fiókra.
 
-Manifest V3-ra épül: maga a böngésző kényszeríti ki, hogy soha nem tölthetők be távoli kódok — ez platformszintű korlát, nem fejlesztői ígéret. A Firefox verzió a Mozilla hivatalos kiegészítő-ellenőrzési folyamatán (AMO) keresztül kerül kiadásra.
+Manifest V3-ra épül: maga a böngésző kényszeríti ki, hogy soha nem tölthetők be távoli kódok — ez platformszintű korlát, nem fejlesztői ígéret.
 
 🤝 NYÍLT FORRÁSKÓD ÉS AUDITÁLHATÓSÁG
 Minden egyes kódsor nyilvános a GitHubon. Bárki klónozhatja a tárolót, helyben felépítheti, és összehasonlíthatja az eredményül kapott fájlokat a böngészőjébe telepített fájlokkal — nem szükséges bizalom.
 Böngésszen a kódban vagy járuljon hozzá: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 FRISSÍTÉSEK:
-1.7.0-es verzió (Almappák): Húzzon egy mappát egy másikra, hogy abba helyezze. Nyissa meg a szülőmappát lapcsoportként, és minden tartalma vele együtt megnyílik. A mentett beszélgetésre kattintva most arra a lapra vált, amely már megjeleníti, ahelyett hogy másolatot nyitna. A Ctrl+kattintás (vagy Cmd+kattintás Macen) az utolsó lapot használja újra. A Baidu Chat új címre került, ahol a mentés és a promptbeszúrás ismét működik.
-1.6.3-as verzió (Üdvözlőoldal): A telepítés után most rövid útmutató nyílik meg: hogyan rögzítheti a kiegészítőt, és hogyan mentheti el az első beszélgetést. A keresés is egyértelművé teszi, hogy csak a már mentett beszélgetésekre terjed ki.
-1.6.2-es verzió (Kimi): Indítson új Kimi-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat. A kiegészítő eltávolítása most egy rövid, nem kötelező visszajelzési oldalt nyit meg a saját nyelvén, és semmi nem kerül elküldésre, amíg Ön el nem küldi.
-1.6.1-es verzió (Biztonság és stabilitás): További védelem a mentett hivatkozásokhoz és a biztonsági mentések importjához, valamint belső stabilitási javítások.
-1.6-os verzió (10 új MI-szolgáltatás): Ments beszélgetéseket és illessz be promptokat tíz további MI-szolgáltatásban — köztük Mistral, Meta AI, Qwen és Z.ai — újratervezett szolgáltatásgombokkal és hivatalos logókkal.
-1.5.1-es verzió (Finomítások): A mappák mostantól alapértelmezetten a legújabbak elöl sorrend szerint rendeződnek, akárcsak a promptkönyvtárad — a korábban kiválasztott rendezési sorrend változatlan marad. Javítottuk a keresőmező törlés (✕) gombját is, így már a Firefoxban is működik.
-1.5-ös verzió (Grok): Indítson új Grok-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat. Szélesebb panel, finomított kezelőelemek és jobb billentyűzetes hozzáférhetőség. Hibajavítások és belső átalakítások az utolsó frissítés óta, a jobb stabilitás érdekében. Ha a MI mappák hasznos Önnek, támogathatja fejlesztését a Ko-fi oldal felkeresésével: https://ko-fi.com/aifolders — köszönjük a támogatást!
-1.2-es verzió (DeepSeek): Indítson új DeepSeek-beszélgetéseket közvetlenül a Prompt módból, mentse el mappákba és illesszen be promptokat.
-1.1-es verzió (Prompt-kiváltó): Írjon # jelet bármely AI-chat mezőbe, hogy valós időben szűrve lássa mentett promptjait. Használja a ↓/↑ billentyűket a javaslatok közötti navigáláshoz, a szóközt az automatikus kiegészítéshez vagy beillesztéshez — a panel megnyitása nélkül.
-1.0-s verzió: Első kiadás! Rendszerezze a Gemini, Claude, ChatGPT, Copilot és Perplexity beszélgetéseit közös mappákban. Teljes prompt-könyvtár egy kattintásos beillesztéssel, gyors mentési parancsikonok, húzás és ejtés, mobilszinkronizáció, tömeges műveletek, lapcsoportok és 43 nyelv támogatása.

@@ -59,21 +59,8 @@ Prompt-udløser: Skriv # for straks at se alle dine gemte prompter, eller forts�
 🔒 PRIVATLIV OG SIKKERHED
 Bygget med privatlivsbeskyttelse som kerneprincip. Det anmoder kun om adgang til de understøttede AI-sider og din valgfri lokale LLM-URL og læser kun den aktive fane for at læse samtalens titel, gemme den eller indsætte en prompt. «Bogmærker»-tilladelsen bruges kun, hvis du aktiverer mobilsynkronisering. Lagring via browser sync: ingen tredjepartsservere, ingen telemetri, ingen konto påkrævet.
 
-Bygget på Manifest V3: browseren selv håndhæver, at der aldrig kan indlæses ekstern kode — dette er en platformsbegrænsning, ikke et udviklerløfte. Firefox-versionen udgives via Mozillas officielle add-on-gennemgangsproces (AMO).
+Bygget på Manifest V3: browseren selv håndhæver, at der aldrig kan indlæses ekstern kode — dette er en platformsbegrænsning, ikke et udviklerløfte.
 
 🤝 OPEN SOURCE & VERIFICERBAR
 Hver eneste kodelinje er offentlig på GitHub. Alle kan klone arkivet, bygge det lokalt og sammenligne de resulterende filer med det, der er installeret i deres browser — intet blindt tillid påkrævet.
 Gennemse koden eller bidrag: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 OPDATERINGER:
-Version 1.7.0 (Undermapper): Træk en mappe over på en anden for at lægge den ind i den. Åbn overmappen som en fanegruppe, og alt indholdet åbnes med den. Et klik på en gemt samtale skifter nu til den fane, der allerede viser den, i stedet for at åbne en dublet. Ctrl+klik (eller Cmd+klik på Mac) genbruger din seneste fane. Baidu Chat er flyttet til en ny adresse, hvor lagring og indsættelse af prompts fungerer igen.
-Version 1.6.3 (Velkomstside): Efter installationen åbnes nu en kort guide: hvordan du fastgør udvidelsen og gemmer din første samtale. Søgningen gør det også tydeligt, at den kun dækker gemte samtaler.
-Version 1.6.2 (Kimi): Start nye Kimi-samtaler direkte fra Promptvisning, gem dem i mapper og injicér prompts. Når du fjerner udvidelsen, åbnes nu en kort valgfri feedbackside på dit sprog, og intet sendes, medmindre du selv indsender den.
-Version 1.6.1 (Sikkerhed og stabilitet): Ekstra beskyttelse af gemte links og backup-import samt interne stabilitetsrettelser.
-Version 1.6 (10 nye AI-tjenester): Gem samtaler og indsæt prompts i ti flere AI-tjenester — heriblandt Mistral, Meta AI, Qwen og Z.ai — med redesignede tjenesteknapper og officielle logoer.
-Version 1.5.1 (Finjusteringer): Mapper sorteres nu med nyeste først som standard, ligesom dit promptbibliotek — en sorteringsrækkefølge, du allerede har valgt, forbliver uændret. Desuden er ryd-knappen (✕) i søgefeltet rettet, så den også virker i Firefox.
-Version 1.5 (Grok): Start nye Grok-samtaler direkte fra Promptvisning, gem dem i mapper og injicér prompts. Bredere panel, forfinede kontroller og bedre tastaturtilgængelighed. Fejlrettelser og intern refaktorering siden den sidste opdatering, for forbedret stabilitet. Hvis AI-mapper er nyttig for dig, kan du støtte dens udvikling ved at besøge Ko-fi-siden: https://ko-fi.com/aifolders — tak for din støtte!
-Version 1.2 (DeepSeek): Start nye DeepSeek-samtaler direkte fra Promptvisning, gem dem i mapper og injicér prompts.
-Version 1.1 (Prompt-udløser): Skriv # i et vilkårligt AI-chatfelt for at se dine gemte prompts filtreret i realtid. Brug ↓/↑ til at navigere gennem forslag, Mellemrum for at autofuldføre eller injicere — uden at åbne panelet.
-Version 1.0: Første udgivelse! Organiser samtaler fra Gemini, Claude, ChatGPT, Copilot og Perplexity i delte mapper. Komplet prompt-bibliotek med ét-klik-injektion, genveje til hurtig lagring, træk og slip, mobilsynkronisering, massehandlinger, fanegrupper og understøttelse af 43 sprog.
