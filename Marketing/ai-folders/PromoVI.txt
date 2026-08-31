@@ -59,21 +59,8 @@ Trình kích hoạt Prompt: Nhập # để xem ngay lập tức tất cả promp
 🔒 QUYỀN RIÊNG TƯ & BẢO MẬT
 Được xây dựng với quyền riêng tư là cốt lõi. Chỉ yêu cầu quyền truy cập vào các trang web AI được hỗ trợ và URL LLM cục bộ tùy chọn của bạn, và chỉ đọc tab đang hoạt động để đọc tiêu đề cuộc trò chuyện, lưu lại hoặc chèn prompt. Quyền "Dấu trang" chỉ được dùng nếu bạn bật đồng bộ di động. Lưu trữ qua browser sync: không có máy chủ bên thứ ba, không có telemetry, không cần tài khoản.
 
-Được xây dựng trên Manifest V3: bản thân trình duyệt đảm bảo rằng không có mã từ xa nào có thể được tải — đây là ràng buộc cấp nền tảng, không phải lời hứa của nhà phát triển. Phiên bản Firefox được xuất bản qua quy trình đánh giá add-on chính thức của Mozilla (AMO).
+Được xây dựng trên Manifest V3: bản thân trình duyệt đảm bảo rằng không có mã từ xa nào có thể được tải — đây là ràng buộc cấp nền tảng, không phải lời hứa của nhà phát triển.
 
 🤝 MÃ NGUỒN MỞ & CÓ THỂ KIỂM CHỨNG
 Mọi dòng code đều công khai trên GitHub. Bất kỳ ai cũng có thể clone repository, build cục bộ, và so sánh các tệp kết quả với những gì được cài đặt trong trình duyệt của họ — không cần tin tưởng mù quáng.
 Xem code hoặc đóng góp: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 CẬP NHẬT:
-Phiên bản 1.7.0 (Thư mục con): Kéo một thư mục lên thư mục khác để đặt vào bên trong. Mở thư mục cha dưới dạng nhóm thẻ và mọi thứ bên trong cũng mở theo. Nhấp vào một cuộc trò chuyện đã lưu giờ đây chuyển sang thẻ đang mở nó thay vì mở thẻ trùng lặp. Ctrl+nhấp (hoặc Cmd+nhấp trên Mac) dùng lại thẻ cuối cùng. Baidu Chat đã chuyển sang địa chỉ mới, nơi việc lưu và chèn prompt hoạt động trở lại.
-Phiên bản 1.6.3 (Trang chào mừng): Sau khi cài đặt, một hướng dẫn ngắn sẽ mở ra: cách ghim tiện ích và lưu cuộc trò chuyện đầu tiên. Tìm kiếm cũng nói rõ chỉ áp dụng cho các cuộc trò chuyện đã lưu.
-Phiên bản 1.6.2 (Kimi): Bắt đầu cuộc trò chuyện Kimi mới trực tiếp từ Chế độ Prompt, lưu vào thư mục và chèn prompt. Việc xóa tiện ích giờ đây sẽ mở một trang góp ý ngắn và không bắt buộc bằng ngôn ngữ của bạn, và không có gì được gửi trừ khi bạn tự gửi.
-Phiên bản 1.6.1 (Bảo mật & ổn định): Tăng cường bảo vệ cho liên kết đã lưu và nhập tệp sao lưu, cùng các sửa lỗi ổn định nội bộ.
-Phiên bản 1.6 (10 dịch vụ AI mới): Lưu cuộc trò chuyện và chèn prompt trên mười dịch vụ AI nữa — bao gồm Mistral, Meta AI, Qwen và Z.ai — với các nút dịch vụ được thiết kế lại và logo chính thức.
-Phiên bản 1.5.1 (Tinh chỉnh): Thư mục giờ được sắp xếp mới nhất trước theo mặc định, giống như thư viện prompt của bạn — thứ tự sắp xếp bạn đã chọn trước đó vẫn được giữ nguyên. Đồng thời đã sửa nút xóa (✕) trong ô tìm kiếm để nó cũng hoạt động trên Firefox.
-Phiên bản 1.5 (Grok): Bắt đầu cuộc trò chuyện Grok mới trực tiếp từ Chế độ Prompt, lưu vào thư mục và chèn prompt. Bảng điều khiển rộng hơn, các điều khiển tinh gọn hơn và khả năng truy cập bằng bàn phím tốt hơn. Sửa lỗi và tái cấu trúc nội bộ kể từ lần cập nhật cuối, để đạt độ ổn định tốt hơn. Nếu Thư mục AI hữu ích với bạn, bạn có thể hỗ trợ phát triển bằng cách truy cập trang Ko-fi: https://ko-fi.com/aifolders — cảm ơn vì sự hỗ trợ của bạn!
-Phiên bản 1.2 (DeepSeek): Bắt đầu cuộc trò chuyện DeepSeek mới trực tiếp từ Chế độ Prompt, lưu vào thư mục và chèn prompt.
-Phiên bản 1.1 (Kích hoạt Prompt): Nhập # vào bất kỳ trường chat AI nào để xem các prompt đã lưu được lọc theo thời gian thực. Dùng ↓/↑ để điều hướng gợi ý, phím Cách để tự hoàn thành hoặc chèn — mà không cần mở bảng.
-Phiên bản 1.0: Ra mắt lần đầu! Tổ chức các cuộc trò chuyện từ Gemini, Claude, ChatGPT, Copilot và Perplexity vào các thư mục chung. Thư viện prompt đầy đủ với chèn một cú nhấp, phím tắt lưu nhanh, kéo và thả, đồng bộ di động, hành động hàng loạt, nhóm tab và hỗ trợ 43 ngôn ngữ. Hỗ trợ LLM cục bộ với URL có thể cấu hình (localhost và địa chỉ LAN).

@@ -53,7 +53,7 @@ Declanșator de prompt: Tastați # pentru a vedea imediat toate prompturile salv
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
 Concepută cu confidențialitatea în centru. Solicită acces doar la gemini.google.com și citește fila activă doar pentru a citi titlul conversației, a o salva sau a insera un prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin sincronizarea browserului: fără servere terțe, fără telemetrie, fără cont necesar.
 
-Construită pe Manifest V3: browserul însuși garantează că niciun cod de la distanță nu poate fi încărcat — aceasta este o restricție la nivel de platformă, nu o promisiune a dezvoltatorului. Versiunea Firefox este publicată prin procesul oficial de revizuire a extensiilor Mozilla (AMO).
+Construită pe Manifest V3: browserul însuși garantează că niciun cod de la distanță nu poate fi încărcat — aceasta este o restricție la nivel de platformă, nu o promisiune a dezvoltatorului.
 
 🤝 OPEN SOURCE ȘI AUDITABIL
 Fiecare linie de cod este publică pe GitHub. Oricine poate clona depozitul, îl poate compila local și poate compara fișierele rezultate cu ceea ce este instalat în browserul său — fără a fi necesară nicio încredere.
@@ -64,14 +64,3 @@ Răsfoiți codul sau contribuiți: https://github.com/dlamarre-dev/AI-Gemini-Fol
 Interesat de Foldere Gemini, dar folosiți și ChatGPT, Claude, Copilot, Grok, Perplexity sau un LLM local? Dosare IA este pasul natural următor: o singură extensie pentru organizarea conversațiilor în toate instrumentele dvs. AI, cu același sistem de dosare, bibliotecă de prompturi și injecție cu un singur clic disponibile în Foldere Gemini.
 
 👉 Instalează Dosare IA: __AF_STORE_URL__
-
-📢 ACTUALIZĂRI:
-Versiunea 4.6.0 (Subdosare): Trageți un dosar peste altul pentru a-l plasa în interior. Deschideți dosarul principal ca grup de file și se deschide tot ce conține. Un clic pe o conversație salvată trece acum la fila care o afișează deja, în loc să deschidă un duplicat. Ctrl+clic (sau Cmd+clic pe Mac) reutilizează ultima filă.
-Versiunea 4.5.5 (Pagină de bun venit): După instalare se deschide acum un ghid scurt: cum să fixezi extensia și să salvezi prima conversație. Căutarea precizează de asemenea că acoperă doar conversațiile deja salvate.
-Versiunea 4.5.4 (Sondaj de dezinstalare): Eliminarea extensiei deschide acum o scurtă pagină de feedback opțională în limba ta, iar nimic nu este trimis decât dacă o trimiți tu.
-Versiunea 4.5.3 (Securitate și stabilitate): Protecții suplimentare pentru linkurile salvate și importurile din backup, plus corecții interne de stabilitate.
-Versiunea 4.5.1 (Îmbunătățiri): Folderele sunt acum sortate implicit de la cele mai noi, la fel ca biblioteca ta de prompturi — ordinea de sortare aleasă anterior rămâne neschimbată. A fost corectat și butonul de ștergere (✕) din câmpul de căutare, astfel încât funcționează și în Firefox.
-Versiunea 4.5 (Interfață și stabilitate): Panou mai lat, controale rafinate și accesibilitate îmbunătățită de la tastatură. Remedieri de erori și refactorizare internă de la ultima actualizare, pentru o stabilitate mai bună. Dacă Foldere Gemini vă este util, puteți susține dezvoltarea vizitând pagina Ko-fi: https://ko-fi.com/aifolders — vă mulțumim pentru sprijin!
-Versiunea 4.2 (Declanșatorul de Prompturi): Tastați # în câmpul de chat al Gemini pentru a vedea prompturile salvate filtrate în timp real. Folosiți ↓/↑ pentru a naviga prin sugestii, Spațiu pentru autocompletare sau injectare — fără a deschide vreodată panoul.
-Versiunea 4.1 (Expansiune globală și consolidare): 16 limbi noi aduc Foldere Gemini la 43 de localizări în întreaga lume — limbi nordice, statele baltice și acoperire europeană și din Asia de Sud-Est extinsă. Corectată o condiție de cursă care putea pierde silențios o salvare la clicuri rapide. Injecția de prompturi modernizată cu InputEvent, înlocuind execCommand deprecat. Pipeline-ul de import întărit împotriva URL-urilor malițioase din fișierele de rezervă. Corectat un bug critic de securitate a datelor: activarea sincronizării prompturilor cu spațiu de stocare aproape plin putea șterge în liniște toate prompturile salvate. Spațiul de stocare folosește acum scrieri fragmentate pentru a rămâne în limitele Chrome, cu mesaje de eroare clare când este plin.
-Versiunea 4.0 (Biblioteca de Prompturi): Cea mai ambițioasă actualizare de până acum! Foldere Gemini primește un mod Prompturi complet nou: salvați cele mai bune prompturi, editați-le în loc și injectați-le direct în Gemini cu un clic. Adăugat: comutator de moduri animat, căutare și sortare în modul Prompturi, buton Gem personalizat și sincronizare independentă a prompturilor.

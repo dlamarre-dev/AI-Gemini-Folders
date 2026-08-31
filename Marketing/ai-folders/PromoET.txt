@@ -58,21 +58,8 @@ Viipete käivitaja: Sisestage #, et näha kohe kõiki oma salvestatud viipeid, v
 🔒 PRIVAATSUS JA TURVALISUS
 Ehitatud privaatsust silmas pidades. Küsib juurdepääsu ainult toetatud AI-saitidele ja teie valikulisele kohalikule LLM-i URL-ile ning loeb aktiivset vahekaarti ainult selleks, et lugeda vestluse pealkirja, see salvestada või prompt lisada. «Järjehoidjate» luba kasutatakse ainult mobiilsünkroonimise lubamisel. Salvestamine brauseri sünkroonimise kaudu: kolmandate osapoolte servereid pole, telemetriat pole, kontot pole vaja.
 
-Ehitatud Manifest V3-le: brauser ise jõustab, et kaugkoodi ei saa kunagi laadida — see on platvormi tasandi piirang, mitte arendaja lubadus. Firefoxi versioon avaldatakse Mozilla ametliku lisandmooduli ülevaatusprotsessi (AMO) kaudu.
+Ehitatud Manifest V3-le: brauser ise jõustab, et kaugkoodi ei saa kunagi laadida — see on platvormi tasandi piirang, mitte arendaja lubadus.
 
 🤝 AVATUD LÄHTEKOOD JA AUDITEERITAVUS
 Iga koodirida on GitHubis avalik. Igaüks saab repositooriumi kloonida, selle lokaalselt üles ehitada ja tulemusfaile oma brauserisse installituga võrrelda — usaldust pole vaja.
 Sirvi koodi või panusta: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 UUENDUSED:
-Versioon 1.7.0 (Alamkaustad): Lohista üks kaust teise peale, et see sinna paigutada. Ava ülemkaust vahekaardirühmana ja kogu selle sisu avaneb koos sellega. Salvestatud vestlusel klõpsamine läheb nüüd vahekaardile, kus see on juba avatud, duplikaadi avamise asemel. Ctrl+klõps (või Cmd+klõps Macis) kasutab viimast vahekaarti uuesti. Baidu Chat kolis uuele aadressile, kus salvestamine ja promptide sisestamine töötavad taas.
-Versioon 1.6.3 (Tervituslehekülg): Pärast paigaldamist avaneb nüüd lühike juhend: kuidas laiendus kinnitada ja esimene vestlus salvestada. Otsing annab samuti selgelt teada, et hõlmab ainult juba salvestatud vestlusi.
-Versioon 1.6.2 (Kimi): Alustage uusi Kimi vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid. Laienduse eemaldamine avab nüüd lühikese valikulise tagasiside lehe teie keeles ja midagi ei saadeta, kui te seda ise ära ei saada.
-Versioon 1.6.1 (Turvalisus ja stabiilsus): Täiendav kaitse salvestatud linkidele ja varukoopiate importimisele ning sisemised stabiilsusparandused.
-Versioon 1.6 (10 uut AI-teenust): Salvesta vestlusi ja sisesta viipasid veel kümnes AI-teenuses — sealhulgas Mistral, Meta AI, Qwen ja Z.ai — uuendatud teenusenuppude ja ametlike logodega.
-Versioon 1.5.1 (Täiustused): Kaustad sorteeritakse nüüd vaikimisi uuemad enne, sarnaselt sinu viipade teegiga — juba valitud sortimisjärjestus jääb muutmata. Samuti parandati otsinguvälja kustutusnupp (✕), nii et see töötab nüüd ka Firefoxis.
-Versioon 1.5 (Grok): Alustage uusi Grok vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid. Laiem paneel, viimistletud juhtelemendid ja parem klaviatuuriga ligipääsetavus. Veaparandused ja sisemine refaktoring alates viimasest uuendusest, parema stabiilsuse tagamiseks. Kui AI kaustad on teile kasulik, saate selle arendust toetada, külastades Ko-fi lehte: https://ko-fi.com/aifolders — täname teie toetuse eest!
-Versioon 1.2 (DeepSeek): Alustage uusi DeepSeek vestlusi otse viipade režiimist, salvestage need kaustadesse ja lisage viipasid.
-Versioon 1.1 (Viipade käivitaja): Sisestage # mis tahes AI vestlusväljale, et näha salvestatud viipasid reaalajas filtreerituna. Kasutage ↓/↑ soovituste vahel liikumiseks, Tühikut automaatseks täitmiseks või lisamiseks — ilma paneeli avamata.
-Versioon 1.0: Esimene väljalase! Korraldage Gemini, Claude, ChatGPT, Copilot ja Perplexity vestlused jagatud kaustadesse. Täielik viipade teek ühe klõpsuga lisamisega, kiirsalvestuse otseteed, lohistamine, mobiilsünkroniseerimine, hulgioperatsioonid, vahelehtede rühmad ja tugi 43 keelele.

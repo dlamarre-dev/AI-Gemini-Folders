@@ -58,21 +58,8 @@ Uzvednes aktivizētājs: Ievadiet #, lai uzreiz redzētu visas saglabātās uzve
 🔒 PRIVĀTUMS UN DROŠĪBA
 Izveidots, ievērojot privātumu. Pieprasa piekļuvi tikai atbalstītajām AI vietnēm un jūsu izvēles vietējam LLM URL un aktīvo cilni nolasa tikai, lai nolasītu sarunas nosaukumu, to saglabātu vai ievietotu uzvedni. «Grāmatzīmju» atļauja tiek izmantota tikai mobilo sinhronizāciju iespējojot. Saglabāšana, izmantojot pārlūka sinhronizāciju: nav trešo pušu serveru, nav telemetrijas, nav nepieciešams konts.
 
-Balstīts uz Manifest V3: pats pārlūks nodrošina, ka nekad nevar tikt ielādēts attālais kods — tas ir platformas līmeņa ierobežojums, nevis izstrādātāja solījums. Firefox versija tiek publicēta caur Mozilla oficiālo papildinājumu pārskatīšanas procesu (AMO).
+Balstīts uz Manifest V3: pats pārlūks nodrošina, ka nekad nevar tikt ielādēts attālais kods — tas ir platformas līmeņa ierobežojums, nevis izstrādātāja solījums.
 
 🤝 ATVĒRTAIS PIRMKODS UN AUDITĒJAMĪBA
 Katrs koda rindkopa ir publiski pieejama GitHub. Ikviens var klonēt repozitoriju, to lokāli uzbūvēt un salīdzināt iegūtos failus ar to, kas ir instalēts viņu pārlūkā — uzticēšanās nav nepieciešama.
 Pārlūkojiet kodu vai piedalieties: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 ATJAUNINĀJUMI:
-Versija 1.7.0 (Apakšmapes): Velciet vienu mapi uz citas, lai ievietotu to iekšā. Atveriet vecākmapi kā ciļņu grupu, un atvērsies viss tās saturs. Noklikšķinot uz saglabātas sarunas, tagad tiek pārslēgts uz cilni, kurā tā jau ir atvērta, nevis atvērts dublikāts. Ctrl+klikšķis (vai Cmd+klikšķis Mac datorā) atkārtoti izmanto pēdējo cilni. Baidu Chat pārcēlās uz jaunu adresi, kur atkal darbojas saglabāšana un uzvedņu ievietošana.
-Versija 1.6.3 (Sveiciena lapa): Pēc instalēšanas tagad atveras īss ceļvedis: kā piespraust paplašinājumu un saglabāt pirmo sarunu. Meklēšana arī skaidri norāda, ka ietver tikai jau saglabātās sarunas.
-Versija 1.6.2 (Kimi): Sāciet jaunas Kimi sarunas tieši no uzvedņu režīma, saglabājiet tās mapēs un ievietojiet uzvednes. Paplašinājuma noņemšana tagad atver īsu neobligātu atsauksmju lapu jūsu valodā, un nekas netiek nosūtīts, ja vien jūs to pats nenosūtāt.
-Versija 1.6.1 (Drošība un stabilitāte): Papildu aizsardzība saglabātajām saitēm un rezerves kopiju importēšanai, kā arī iekšēji stabilitātes labojumi.
-Versija 1.6 (10 jauni AI pakalpojumi): Saglabājiet sarunas un ievietojiet uzvednes vēl desmit AI pakalpojumos — tostarp Mistral, Meta AI, Qwen un Z.ai — ar pārveidotām pakalpojumu pogām un oficiālajiem logotipiem.
-Versija 1.5.1 (Uzlabojumi): Mapes tagad pēc noklusējuma tiek kārtotas no jaunākajām, tāpat kā jūsu uzvednu bibliotēka — jau izvēlētā kārtošanas secība paliek nemainīga. Tika izlabota arī notīrīšanas poga (✕) meklēšanas laukā, tāpēc tā darbojas arī pārlūkā Firefox.
-Versija 1.5 (Grok): Sāciet jaunas Grok sarunas tieši no uzvedņu režīma, saglabājiet tās mapēs un ievietojiet uzvednes. Platāks panelis, uzlabotas vadīklas un labāka piekļūstamība ar tastatūru. Kļūdu labojumi un iekšējā pārstrukturēšana kopš pēdējā atjauninājuma, uzlabotai stabilitātei. Ja AI mapes jums ir noderīgas, varat atbalstīt to izstrādi, apmeklējot Ko-fi lapu: https://ko-fi.com/aifolders — paldies par jūsu atbalstu!
-Versija 1.2 (DeepSeek): Sāciet jaunas DeepSeek sarunas tieši no uzvedņu režīma, saglabājiet tās mapēs un ievietojiet uzvednes.
-Versija 1.1 (Uzvedņu aktivizētājs): Ievadiet # jebkurā AI tērzēšanas laukā, lai reāllaikā filtrētu saglabātās uzvednes. Izmantojiet ↓/↑, lai pārvietotos starp ieteikumiem, Atstarpi automātiskai pabeigšanai vai ievietošanai — neatverot paneli.
-Versija 1.0: Pirmais laidiens! Kārtojiet sarunas no Gemini, Claude, ChatGPT, Copilot un Perplexity koplietotās mapēs. Pilna uzvedņu bibliotēka ar viena klikšķa ievietošanu, ātrās saglabāšanas īsinājumtaustiņi, vilkšana un nomešana, mobilo ierīču sinhronizācija, lielapjoma darbības, ciļņu grupas un atbalsts 43 valodām.

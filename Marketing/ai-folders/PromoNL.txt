@@ -59,21 +59,8 @@ Prompttrigger: Typ # om onmiddellijk al uw opgeslagen prompts te zien, of typ ve
 🔒 PRIVACY EN BEVEILIGING
 Gebouwd met privacy als kern. Vraagt alleen toegang tot de ondersteunde AI-sites en uw optionele lokale LLM-URL en leest het actieve tabblad alleen om de titel van het gesprek te lezen, het op te slaan of er een prompt in te voegen. De machtiging "Bladwijzers" wordt alleen gebruikt als u mobiele synchronisatie inschakelt. Opslag via browser sync: geen servers van derden, geen telemetrie, geen account vereist.
 
-Gebouwd op Manifest V3: de browser zelf handhaaft dat er nooit externe code kan worden geladen — dit is een platformbeperking, geen ontwikkelaarsbelofte. De Firefox-versie wordt gepubliceerd via Mozilla's officiële add-onbeoordelingsproces (AMO).
+Gebouwd op Manifest V3: de browser zelf handhaaft dat er nooit externe code kan worden geladen — dit is een platformbeperking, geen ontwikkelaarsbelofte.
 
 🤝 OPEN SOURCE & CONTROLEERBAAR
 Elke regel code is openbaar op GitHub. Iedereen kan de repository klonen, het lokaal bouwen en de resulterende bestanden vergelijken met wat in hun browser is geïnstalleerd — geen blind vertrouwen vereist.
 Bekijk de code of draag bij: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 UPDATES:
-Versie 1.7.0 (Submappen): Sleep een map op een andere om hem erin te plaatsen. Open de bovenliggende map als tabbladgroep en alles erin gaat mee open. Klikken op een opgeslagen gesprek gaat nu naar het tabblad dat het al toont in plaats van een duplicaat te openen. Ctrl+klik (of Cmd+klik op Mac) hergebruikt je laatste tabblad. Baidu Chat is verhuisd naar een nieuw adres, waar opslaan en het invoegen van prompts weer werken.
-Versie 1.6.3 (Welkomstpagina): Na installatie opent nu een korte uitleg: hoe je de extensie vastzet en je eerste gesprek opslaat. Zoeken maakt bovendien duidelijk dat het alleen al opgeslagen gesprekken doorzoekt.
-Versie 1.6.2 (Kimi): Start nieuwe Kimi-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts. Bij het verwijderen van de extensie opent nu een korte optionele feedbackpagina in je eigen taal, en er wordt niets verzonden tenzij je het zelf verstuurt.
-Versie 1.6.1 (Beveiliging en stabiliteit): Extra bescherming voor opgeslagen links en back-upimports, plus interne stabiliteitsverbeteringen.
-Versie 1.6 (10 nieuwe AI-diensten): Bewaar gesprekken en injecteer prompts op tien extra AI-diensten — waaronder Mistral, Meta AI, Qwen en Z.ai — met opnieuw ontworpen serviceknoppen en officiële logo's.
-Versie 1.5.1 (Verfijningen): Mappen worden nu standaard van nieuw naar oud gesorteerd, net als je promptbibliotheek — een sorteervolgorde die je al had gekozen blijft ongewijzigd. Ook de wisknop (✕) in het zoekveld is gecorrigeerd, zodat die nu ook in Firefox werkt.
-Versie 1.5 (Grok): Start nieuwe Grok-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts. Breder paneel, verfijnde bedieningselementen en betere toetsenbordtoegankelijkheid. Bugfixes en interne refactoring sinds de laatste update, voor verbeterde stabiliteit. Als AI-mappen u van nut is, kunt u de ontwikkeling ondersteunen door de Ko-fi-pagina te bezoeken: https://ko-fi.com/aifolders — bedankt voor uw steun!
-Versie 1.2 (DeepSeek): Start nieuwe DeepSeek-gesprekken direct vanuit de Promptmodus, sla ze op in mappen en injecteer prompts.
-Versie 1.1 (Prompt-trigger): Typ # in een willekeurig AI-chatveld om uw opgeslagen prompts in realtime gefilterd te zien. Gebruik ↓/↑ om door suggesties te navigeren, Spatie om automatisch aan te vullen of in te voegen — zonder het panel te openen.
-Versie 1.0: Eerste uitgave! Organiseer gesprekken van Gemini, Claude, ChatGPT, Copilot en Perplexity in gedeelde mappen. Volledige promptbibliotheek met één-klik-invoegen, snelopslagsnelkoppelingen, slepen en neerzetten, mobiele synchronisatie, bulkacties, tabgroepen en ondersteuning voor 43 talen. Lokale LLM-ondersteuning met configureerbare URL (localhost en LAN-adressen).

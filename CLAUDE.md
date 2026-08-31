@@ -12,11 +12,16 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome, Edge **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.0**.
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.1**.
 - **AI Folders (AF)** — 18 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, You.com, Pi, Character.AI) **+ a user-configured local LLM**.
-  Current version **1.7.0**. The popup's per-site "new conversation" buttons
+  Copilot covers two hosts: `copilot.microsoft.com` and, since 1.7.1,
+  `m365.cloud.microsoft` — where a work account's tenant-bound Microsoft 365
+  Copilot lives, so an organisation's users never touched the consumer domain and
+  the extension did nothing at all for them (issue #82). It is an `altDomains`
+  entry, not a second site: same product, same title strategy, same editor.
+  Current version **1.7.1**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -242,6 +247,14 @@ git checkout main && git pull --ff-only
 - **Store text (`Marketing/`)** must never contain comma-separated brand lists
   (Chrome Web Store keyword-spam rejection, hit 3× historically). Prose such as
   "platforms such as Claude, ChatGPT and Gemini" is fine; bare keyword lists are not.
+- **No version history and no rival browser in the promo texts** (removed 22/08/2026,
+  all 43 × 2). The history sat at the tail, nobody read that far, and on Edge it was
+  the first thing the 10,000-character cap ate anyway — the texts are now 5,600–7,500
+  chars, well clear of it. The sentence naming Mozilla's review process went for a
+  different reason: Microsoft's store does not want a competing browser named in a
+  listing, and the Manifest V3 guarantee before it is the substantive claim on its
+  own. `HISTORY_LINE` and `trim_description` (build.py) stay — they are the guard
+  that a future text cannot silently lose a feature paragraph to the cap.
 - **~2px transparent gap on the right of the popup** at fractional Windows DPI
   (125/150%): a device-pixel rounding artifact, **outside the document → not
   fixable in CSS**. Disappears at 100% scaling. Accepted as-is. **Never** retry
@@ -618,9 +631,15 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
 - **Opened on update, gated on a constant**: `WHATS_NEW_VERSION` in *each*
   `background.js` (not shared, §6). The page opens only when
   `reason === 'update'` **and** the manifest version equals that constant, so a
-  minor release with nothing to explain simply leaves the constant alone. A test
-  asserts the constant equals the manifest version, or the next release would
-  reopen notes that no longer describe it.
+  minor release with nothing to explain simply leaves the constant alone —
+  4.6.1 / 1.7.1 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
+  The test asserts the constant is **not ahead of** the manifest version, which is
+  the direction that breaks: a constant ahead fires on the release *after* this
+  one, carrying notes for a version already installed. It used to demand equality,
+  which forbade the very case this paragraph describes and made a patch release
+  reopen the previous release's notes. `tests/install-update-tabs.test.js` states
+  the shipped pair's outcome without hardcoding it — notes open exactly when the
+  two versions agree — so a release can be checked by reading one test.
 - **`whatsNewSeenFor` (storage.local) is not redundant** with that check: reloading
   an unpacked extension also fires `onInstalled` with `reason === 'update'`, which
   would reopen the tab on every dev cycle, and so would reinstalling over the same

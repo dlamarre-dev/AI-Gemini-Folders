@@ -59,21 +59,8 @@ Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar
 🔒 GİZLİLİK & GÜVENLİK
 Gizlilik öncelikli tasarım. Yalnızca desteklenen AI sitelerine ve isteğe bağlı yerel LLM URL'nize erişim ister ve etkin sekmeyi yalnızca konuşmanın başlığını okumak, kaydetmek veya istem eklemek için okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Tarayıcı senkronizasyonu üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok, hesap gerekmez.
 
-Manifest V3 üzerine inşa edilmiştir: tarayıcının kendisi, uzak kodun hiçbir zaman yüklenemeyeceğinini zorunlu kılar — bu bir platform düzeyinde kısıtlamadır, geliştirici vaadi değildir. Firefox sürümü, Mozilla'nın resmi eklenti inceleme süreci (AMO) aracılığıyla yayımlanmaktadır.
+Manifest V3 üzerine inşa edilmiştir: tarayıcının kendisi, uzak kodun hiçbir zaman yüklenemeyeceğinini zorunlu kılar — bu bir platform düzeyinde kısıtlamadır, geliştirici vaadi değildir.
 
 🤝 AÇIK KAYNAK & DENETLENEBİLİRLİK
 Her kod satırı GitHub'da herkese açıktır. Herkes depoyu klonlayabilir, yerel olarak derleyebilir ve elde edilen dosyaları tarayıcısında yüklü olanlarla karşılaştırabilir — güvene gerek yok.
 Koda göz atın veya katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 GÜNCELLEMELER:
-Sürüm 1.7.0 (Alt Klasörler): Bir klasörü diğerinin üzerine sürükleyerek içine yerleştirin. Üst klasörü sekme grubu olarak açtığınızda içindeki her şey de birlikte açılır. Kaydedilmiş bir sohbete tıklamak artık kopya açmak yerine onu zaten gösteren sekmeye geçiyor. Ctrl+tık (veya Mac’te Cmd+tık) son sekmenizi yeniden kullanır. Baidu Chat yeni bir adrese taşındı; kaydetme ve istem ekleme orada yeniden çalışıyor.
-Sürüm 1.6.3 (Karşılama sayfası): Kurulumdan sonra artık kısa bir rehber açılıyor: uzantıyı nasıl sabitleyeceğiniz ve ilk sohbetinizi nasıl kaydedeceğiniz. Arama da yalnızca kaydedilmiş sohbetleri kapsadığını açıkça belirtiyor.
-Sürüm 1.6.2 (Kimi): Prompt Modundan doğrudan yeni Kimi konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin. Uzantıyı kaldırmak artık kendi dilinizde kısa ve isteğe bağlı bir geri bildirim sayfası açar ve siz göndermedikçe hiçbir şey gönderilmez.
-Sürüm 1.6.1 (Güvenlik ve kararlılık): Kaydedilen bağlantılar ve yedek içe aktarmaları için ek korumalar, ayrıca dahili kararlılık düzeltmeleri.
-Sürüm 1.6 (10 yeni yapay zekâ hizmeti): On yeni yapay zekâ hizmetinde daha sohbetleri kaydedin ve promptları ekleyin — Mistral, Meta AI, Qwen ve Z.ai dahil — yeniden tasarlanmış hizmet düğmeleri ve resmî logolarla.
-Sürüm 1.5.1 (İyileştirmeler): Klasörler artık istem kitaplığınız gibi varsayılan olarak en yeniden eskiye sıralanıyor — daha önce seçtiğiniz sıralama düzeni değişmeden kalır. Ayrıca arama kutusundaki temizleme (✕) düğmesi düzeltildi, böylece Firefox'ta da çalışıyor.
-Sürüm 1.5 (Grok): Prompt Modundan doğrudan yeni Grok konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin. Daha geniş panel, iyileştirilmiş denetimler ve daha iyi klavye erişilebilirliği. Son güncellemeden bu yana hata düzeltmeleri ve dahili yeniden yapılandırma, geliştirilmiş kararlılık için. YZ Klasörleri işinize yarıyorsa, Ko-fi sayfasını ziyaret ederek geliştirmeyi destekleyebilirsiniz: https://ko-fi.com/aifolders — desteğiniz için teşekkürler!
-Sürüm 1.2 (DeepSeek): Prompt Modundan doğrudan yeni DeepSeek konuşmaları başlatın, klasörlere kaydedin ve prompt enjekte edin.
-Sürüm 1.1 (Prompt Tetikleyici): Herhangi bir AI sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan.
-Sürüm 1.0: İlk yayın! Gemini, Claude, ChatGPT, Copilot ve Perplexity sohbetlerini paylaşılan klasörlerde düzenleyin. Tek tıkla ekleme özellikli tam prompt kütüphanesi, hızlı kaydetme kısayolları, sürükle ve bırak, mobil senkronizasyon, toplu işlemler, sekme grupları ve 43 dil desteği. Yapılandırılabilir URL (localhost ve LAN adresleri) ile yerel LLM desteği.

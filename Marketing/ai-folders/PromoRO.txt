@@ -59,21 +59,8 @@ Declanșator de prompt: Tastați # pentru a vedea imediat toate prompturile salv
 🔒 CONFIDENȚIALITATE ȘI SECURITATE
 Concepută cu confidențialitatea în centru. Solicită acces doar la site-urile AI acceptate și la URL-ul dvs. LLM local opțional, și citește fila activă doar pentru a citi titlul conversației, a o salva sau a insera un prompt. Permisiunea „Marcaje" este utilizată numai dacă activați sincronizarea mobilă. Stocare prin sincronizarea browserului: fără servere terțe, fără telemetrie, fără cont necesar.
 
-Construită pe Manifest V3: browserul însuși garantează că niciun cod de la distanță nu poate fi încărcat — aceasta este o restricție la nivel de platformă, nu o promisiune a dezvoltatorului. Versiunea Firefox este publicată prin procesul oficial de revizuire a extensiilor Mozilla (AMO).
+Construită pe Manifest V3: browserul însuși garantează că niciun cod de la distanță nu poate fi încărcat — aceasta este o restricție la nivel de platformă, nu o promisiune a dezvoltatorului.
 
 🤝 OPEN SOURCE ȘI AUDITABIL
 Fiecare linie de cod este publică pe GitHub. Oricine poate clona depozitul, îl poate compila local și poate compara fișierele rezultate cu ceea ce este instalat în browserul său — fără a fi necesară nicio încredere.
 Răsfoiți codul sau contribuiți: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 ACTUALIZĂRI:
-Versiunea 1.7.0 (Subdosare): Trageți un dosar peste altul pentru a-l plasa în interior. Deschideți dosarul principal ca grup de file și se deschide tot ce conține. Un clic pe o conversație salvată trece acum la fila care o afișează deja, în loc să deschidă un duplicat. Ctrl+clic (sau Cmd+clic pe Mac) reutilizează ultima filă. Baidu Chat s-a mutat la o adresă nouă, unde salvarea și inserarea prompturilor funcționează din nou.
-Versiunea 1.6.3 (Pagină de bun venit): După instalare se deschide acum un ghid scurt: cum să fixezi extensia și să salvezi prima conversație. Căutarea precizează de asemenea că acoperă doar conversațiile deja salvate.
-Versiunea 1.6.2 (Kimi): Lansați conversații noi pe Kimi direct din Modul Prompt, salvați-le în dosare și injectați prompturi. Eliminarea extensiei deschide acum o scurtă pagină de feedback opțională în limba ta, iar nimic nu este trimis decât dacă o trimiți tu.
-Versiunea 1.6.1 (Securitate și stabilitate): Protecții suplimentare pentru linkurile salvate și importurile din backup, plus corecții interne de stabilitate.
-Versiunea 1.6 (10 servicii AI noi): Salvați conversații și inserați prompturi în încă zece servicii AI — inclusiv Mistral, Meta AI, Qwen și Z.ai — cu butoane de servicii reproiectate și logouri oficiale.
-Versiunea 1.5.1 (Îmbunătățiri): Folderele sunt acum sortate implicit de la cele mai noi, la fel ca biblioteca ta de prompturi — ordinea de sortare aleasă anterior rămâne neschimbată. A fost corectat și butonul de ștergere (✕) din câmpul de căutare, astfel încât funcționează și în Firefox.
-Versiunea 1.5 (Grok): Lansați conversații noi pe Grok direct din Modul Prompt, salvați-le în dosare și injectați prompturi. Panou mai lat, controale rafinate și accesibilitate îmbunătățită de la tastatură. Remedieri de erori și refactorizare internă de la ultima actualizare, pentru o stabilitate mai bună. Dacă Dosare IA vă este util, puteți susține dezvoltarea vizitând pagina Ko-fi: https://ko-fi.com/aifolders — vă mulțumim pentru sprijin!
-Versiunea 1.2 (DeepSeek): Lansați conversații noi pe DeepSeek direct din Modul Prompt, salvați-le în dosare și injectați prompturi.
-Versiunea 1.1 (Declanșatorul de Prompturi): Tastați # în orice câmp de chat AI pentru a vedea prompturile salvate filtrate în timp real. Folosiți ↓/↑ pentru a naviga prin sugestii, Spațiu pentru autocompletare sau injectare — fără a deschide vreodată panoul.
-Versiunea 1.0: Prima lansare! Organizați conversații din Gemini, Claude, ChatGPT, Copilot și Perplexity în dosare partajate. Bibliotecă completă de prompturi cu injectare în un clic, comenzi rapide de salvare, glisare și plasare, sincronizare mobilă, acțiuni în masă, grupuri de file și suport pentru 43 de limbi. Suport LLM local cu URL configurabil (localhost și adrese LAN).

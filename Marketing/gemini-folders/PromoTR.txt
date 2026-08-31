@@ -53,7 +53,7 @@ Bir istemi sabitlemek için: 📍'ya tıklayın — listenin en üstüne çıkar
 🔒 GİZLİLİK & GÜVENLİK
 Gizlilik öncelikli tasarım. Yalnızca gemini.google.com'a erişim ister ve etkin sekmeyi yalnızca konuşmanın başlığını okumak, kaydetmek veya istem eklemek için okur. "Yer İşaretleri" izni yalnızca mobil senkronizasyonu etkinleştirirseniz kullanılır. Tarayıcı senkronizasyonu üzerinden depolama: üçüncü taraf sunucu yok, telemetri yok, hesap gerekmez.
 
-Manifest V3 üzerine inşa edilmiştir: tarayıcının kendisi, uzak kodun hiçbir zaman yüklenemeyeceğinini zorunlu kılar — bu bir platform düzeyinde kısıtlamadır, geliştirici vaadi değildir. Firefox sürümü, Mozilla'nın resmi eklenti inceleme süreci (AMO) aracılığıyla yayımlanmaktadır.
+Manifest V3 üzerine inşa edilmiştir: tarayıcının kendisi, uzak kodun hiçbir zaman yüklenemeyeceğinini zorunlu kılar — bu bir platform düzeyinde kısıtlamadır, geliştirici vaadi değildir.
 
 🤝 AÇIK KAYNAK & DENETLENEBİLİRLİK
 Her kod satırı GitHub'da herkese açıktır. Herkes depoyu klonlayabilir, yerel olarak derleyebilir ve elde edilen dosyaları tarayıcısında yüklü olanlarla karşılaştırabilir — güvene gerek yok.
@@ -64,14 +64,3 @@ Koda göz atın veya katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini
 Gemini Klasörleri ilginizi çekiyor ama ChatGPT, Claude, Copilot, Grok, Perplexity veya yerel bir LLM de kullanıyor musunuz? YZ Klasörleri doğal bir sonraki adımdır: tüm AI araçlarınızdaki konuşmaları düzenlemek için tek bir uzantı; Gemini Klasörleri'nde bulunan aynı klasör sistemi, prompt kütüphanesi ve tek tıkla enjeksiyonuyla.
 
 👉 YZ Klasörleri'ni yükle: __AF_STORE_URL__
-
-📢 GÜNCELLEMELER:
-Sürüm 4.6.0 (Alt Klasörler): Bir klasörü diğerinin üzerine sürükleyerek içine yerleştirin. Üst klasörü sekme grubu olarak açtığınızda içindeki her şey de birlikte açılır. Kaydedilmiş bir sohbete tıklamak artık kopya açmak yerine onu zaten gösteren sekmeye geçiyor. Ctrl+tık (veya Mac’te Cmd+tık) son sekmenizi yeniden kullanır.
-Sürüm 4.5.5 (Karşılama sayfası): Kurulumdan sonra artık kısa bir rehber açılıyor: uzantıyı nasıl sabitleyeceğiniz ve ilk sohbetinizi nasıl kaydedeceğiniz. Arama da yalnızca kaydedilmiş sohbetleri kapsadığını açıkça belirtiyor.
-Sürüm 4.5.4 (Kaldırma anketi): Uzantıyı kaldırmak artık kendi dilinizde kısa ve isteğe bağlı bir geri bildirim sayfası açar ve siz göndermedikçe hiçbir şey gönderilmez.
-Sürüm 4.5.3 (Güvenlik ve kararlılık): Kaydedilen bağlantılar ve yedek içe aktarmaları için ek korumalar, ayrıca dahili kararlılık düzeltmeleri.
-Sürüm 4.5.1 (İyileştirmeler): Klasörler artık istem kitaplığınız gibi varsayılan olarak en yeniden eskiye sıralanıyor — daha önce seçtiğiniz sıralama düzeni değişmeden kalır. Ayrıca arama kutusundaki temizleme (✕) düğmesi düzeltildi, böylece Firefox'ta da çalışıyor.
-Sürüm 4.5 (Arayüz ve Kararlılık): Daha geniş panel, iyileştirilmiş denetimler ve daha iyi klavye erişilebilirliği. Son güncellemeden bu yana hata düzeltmeleri ve dahili yeniden yapılandırma, geliştirilmiş kararlılık için. Gemini Klasörleri işinize yarıyorsa, Ko-fi sayfasını ziyaret ederek geliştirmeyi destekleyebilirsiniz: https://ko-fi.com/aifolders — desteğiniz için teşekkürler!
-Sürüm 4.2 (İstem Tetikleyici): Gemini sohbet alanına # yazarak kayıtlı promptlarınızı gerçek zamanlı filtrelenmiş görün. Öneriler arasında gezinmek için ↓/↑ kullanın, otomatik tamamlamak veya eklemek için Boşluk — paneli açmadan.
-Sürüm 4.1 (Küresel Genişleme ve Güçlendirme): 16 yeni dil, Gemini Klasörleri dünya genelinde 43 yerelleştirmeye taşıyor — İskandinav dilleri, Baltık devletleri ve genişletilmiş Avrupa ve Güneydoğu Asya kapsamı. Hızlı tıklamalarda bir kaydetme işleminin sessizce kaybolmasına yol açabilecek yarış durumu düzeltildi. Kullanımdan kaldırılan execCommand'ın yerini InputEvent ile modern prompt enjeksiyonu aldı. Yedek dosyalardaki kötü amaçlı URL'lere karşı içe aktarma boru hattı güçlendirildi. Kritik veri güvenliği hatası düzeltildi: neredeyse dolu depolama alanında prompt senkronizasyonunu etkinleştirmek, tüm kayıtlı promptları sessizce silebiliyordu. Depolama artık Chrome sınırları içinde kalmak için parçalanmış yazımlar kullanıyor ve dolduğunda açık hata mesajları gösteriyor.
-Sürüm 4.0 (İstem Kütüphanesi): Şimdiye kadarki en iddialı güncelleme! Gemini Klasörler, yepyeni bir İstem Modu kazanıyor: en iyi istemlerinizi kaydedin, yerinde düzenleyin ve tek tıklamayla doğrudan Gemini'ye enjekte edin. Animasyonlu mod geçiş düğmesi, İstem Modu'nda arama ve sıralama, özel Gem düğmesi ve bağımsız istem senkronizasyonu eklendi. Temel istemlerinizi kütüphanenizin en üstüne sabitleyin.

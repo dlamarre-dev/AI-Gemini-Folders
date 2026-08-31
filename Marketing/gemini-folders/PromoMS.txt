@@ -52,7 +52,7 @@ Pencetus Prompt: Taip # untuk segera melihat semua prompt tersimpan anda, atau t
 🔒 PRIVASI & KESELAMATAN
 Dibina dengan mengutamakan privasi sebagai teras. Hanya meminta akses ke gemini.google.com dan membaca tab aktif hanya untuk membaca tajuk perbualan, menyimpannya atau menyisipkan prompt. Kebenaran "Penanda buku" hanya digunakan jika anda mendayakan penyegerakan mudah alih. Storan melalui browser sync: tiada pelayan pihak ketiga, tiada telemetri, tiada akaun diperlukan.
 
-Dibina atas Manifest V3: pelayar itu sendiri menguatkuasakan bahawa tiada kod jauh boleh dimuatkan — ini adalah kekangan peringkat platform, bukan janji pembangun. Versi Firefox diterbitkan melalui proses semakan add-on rasmi Mozilla (AMO).
+Dibina atas Manifest V3: pelayar itu sendiri menguatkuasakan bahawa tiada kod jauh boleh dimuatkan — ini adalah kekangan peringkat platform, bukan janji pembangun.
 
 🤝 SUMBER TERBUKA & BOLEH DIAUDIT
 Setiap baris kod adalah awam di GitHub. Sesiapa boleh klon repositori, bina secara tempatan, dan bandingkan fail yang terhasil dengan apa yang dipasang dalam pelayar mereka — tiada kepercayaan buta diperlukan.
@@ -63,14 +63,3 @@ Semak kod atau sumbang: https://github.com/dlamarre-dev/AI-Gemini-Folders
 Berminat dengan Folder Gemini tetapi juga menggunakan ChatGPT, Claude, Copilot, Grok, Perplexity atau LLM tempatan? Folder AI adalah langkah semula jadi seterusnya: satu sambungan untuk menyusun perbualan merentasi semua alat AI anda, dengan sistem folder, pustaka gesaan dan suntikan satu klik yang sama tersedia dalam Folder Gemini.
 
 👉 Pasang Folder AI: __AF_STORE_URL__
-
-📢 KEMAS KINI:
-Versi 4.6.0 (Subfolder): Seret satu folder ke atas folder lain untuk meletakkannya di dalam. Buka folder induk sebagai kumpulan tab dan semua kandungannya turut dibuka. Mengklik perbualan yang disimpan kini beralih ke tab yang sudah memaparkannya, bukan membuka pendua. Ctrl+klik (atau Cmd+klik pada Mac) menggunakan semula tab terakhir anda.
-Versi 4.5.5 (Halaman aluan): Selepas pemasangan kini terbuka panduan ringkas: cara menyematkan sambungan dan menyimpan perbualan pertama anda. Carian juga menjelaskan bahawa ia hanya merangkumi perbualan yang telah disimpan.
-Versi 4.5.4 (Kaji selidik pembuangan): Membuang sambungan kini membuka halaman maklum balas ringkas dan pilihan dalam bahasa anda, dan tiada apa-apa dihantar melainkan anda menghantarnya sendiri.
-Versi 4.5.3 (Keselamatan & kestabilan): Perlindungan tambahan untuk pautan tersimpan dan import sandaran, serta pembaikan kestabilan dalaman.
-Versi 4.5.1 (Penambahbaikan): Folder kini diisih dari terbaharu dahulu secara lalai, sejajar dengan pustaka gesaan anda — susunan isihan yang telah anda pilih sebelum ini kekal tidak berubah. Butang kosongkan (✕) dalam kotak carian turut dibaiki supaya berfungsi dalam Firefox juga.
-Versi 4.5 (Antara Muka & Kestabilan): Panel lebih lebar, kawalan lebih kemas dan kebolehcapaian papan kekunci yang lebih baik. Pembetulan pepijat dan penstrukturan semula dalaman sejak kemas kini terakhir, untuk kestabilan yang lebih baik. Jika Folder Gemini berguna kepada anda, anda boleh menyokong pembangunannya dengan melawati halaman Ko-fi: https://ko-fi.com/aifolders — terima kasih atas sokongan anda!
-Versi 4.2 (Pencetus Prompt): Taip # dalam medan chat Gemini untuk melihat arahan tersimpan anda ditapis dalam masa nyata. Gunakan ↓/↑ untuk navigasi cadangan, Ruang untuk autoisi atau suntik — tanpa membuka panel.
-Versi 4.1 (Pengembangan Global & Penguatan): 16 bahasa baharu membawa Folder Gemini kepada 43 lokalisasi di seluruh dunia — bahasa-bahasa Nordik, negara-negara Baltik dan liputan Eropah dan Asia Tenggara yang diperluaskan. Diperbaiki race condition yang boleh menghilangkan penyimpanan secara senyap semasa klik pantas. Suntikan prompt dimodernkan dengan InputEvent, menggantikan execCommand yang lapuk. Pipeline import diperkukuh terhadap URL berbahaya dalam fail sandaran. Pembetulan pepijat keselamatan data kritikal: mengaktifkan penyegerakan gesaan pada storan yang hampir penuh boleh memadam semua gesaan tersimpan secara senyap. Storan kini menggunakan penulisan berpecah untuk kekal dalam had Chrome, dengan mesej ralat yang jelas apabila penuh.
-Versi 4.0 (Perpustakaan Prompt): Kemas kini paling bercita-cita tinggi setakat ini! Folder Gemini mendapat Mod Prompt baharu sepenuhnya: simpan prompt terbaik, sunting terus dan sisipkan ke Gemini dengan satu klik.

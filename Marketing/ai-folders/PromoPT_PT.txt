@@ -59,21 +59,8 @@ Ativador de Prompt: Escreva # para ver instantaneamente todos os seus prompts gu
 🔒 PRIVACIDADE E SEGURANÇA
 Desenvolvida com a privacidade no centro. Solicita acesso apenas aos sites de IA suportados e ao seu URL de LLM local opcional, e lê o separador ativo apenas para ler o título da conversa, guardá-la ou inserir um prompt. A permissão "Marcadores" é usada apenas se ativar a sincronização móvel. Armazenamento via sincronização do navegador: sem servidores de terceiros, sem telemetria, sem conta necessária.
 
-Desenvolvida sobre o Manifest V3: o próprio navegador garante que nenhum código remoto pode ser carregado — trata-se de uma restrição ao nível da plataforma, não de uma promessa do programador. A versão Firefox é publicada através do processo oficial de revisão de extensões da Mozilla (AMO).
+Desenvolvida sobre o Manifest V3: o próprio navegador garante que nenhum código remoto pode ser carregado — trata-se de uma restrição ao nível da plataforma, não de uma promessa do programador.
 
 🤝 OPEN SOURCE E AUDITÁVEL
 Cada linha de código é pública no GitHub. Qualquer pessoa pode clonar o repositório, compilá-lo localmente e comparar os ficheiros resultantes com o que está instalado no seu navegador — sem necessidade de confiar em ninguém.
 Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 ATUALIZAÇÕES:
-Versão 1.7.0 (Subpastas): Arraste uma pasta para cima de outra para a colocar lá dentro. Abra a pasta principal como grupo de separadores e tudo o que contém abre com ela. Clicar numa conversa guardada muda agora para o separador que já a mostra em vez de abrir um duplicado. Ctrl+clique (ou Cmd+clique no Mac) reutiliza o seu último separador. O Baidu Chat mudou de endereço, e guardar e inserir prompts volta a funcionar lá.
-Versão 1.6.3 (Página de boas-vindas): Após a instalação abre agora um guia rápido: como fixar a extensão e guardar a sua primeira conversa. A pesquisa também deixa claro que abrange apenas as conversas já guardadas.
-Versão 1.6.2 (Kimi): Inicie novas conversas no Kimi diretamente do Modo Prompt, guarde-as em pastas e injete prompts. Remover a extensão abre agora uma breve página de comentários opcional no seu idioma, e nada é enviado a menos que o envie você mesmo.
-Versão 1.6.1 (Segurança e estabilidade): Proteções adicionais para ligações guardadas e importações de cópias de segurança, além de correções internas de estabilidade.
-Versão 1.6 (10 novos serviços de IA): Guarde conversas e injete prompts em mais dez serviços de IA — incluindo Mistral, Meta AI, Qwen e Z.ai — com botões de serviços redesenhados e logótipos oficiais.
-Versão 1.5.1 (Refinamentos): As pastas são agora ordenadas da mais recente para a mais antiga por predefinição, tal como a sua biblioteca de prompts — qualquer ordenação que já tenha escolhido permanece inalterada. Foi também corrigido o botão de limpar (✕) no campo de pesquisa, que passa a funcionar também no Firefox.
-Versão 1.5 (Grok): Inicie novas conversas no Grok diretamente do Modo Prompt, guarde-as em pastas e injete prompts. Painel mais largo, controlos refinados e melhor acessibilidade por teclado. Correções de erros e refatorações internas desde a última atualização, para maior estabilidade. Se Pastas IA lhe é útil, pode apoiar o desenvolvimento visitando a página Ko-fi: https://ko-fi.com/aifolders — obrigado pelo seu apoio!
-Versão 1.2 (DeepSeek): Inicie novas conversas no DeepSeek diretamente do Modo Prompt, guarde-as em pastas e injete prompts.
-Versão 1.1 (Gatilho de Prompt): Escreva # em qualquer campo de chat de IA para ver os seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel.
-Versão 1.0: Lançamento inicial! Organize conversas do Gemini, Claude, ChatGPT, Copilot e Perplexity em pastas partilhadas. Biblioteca de prompts completa com injeção com um clique, atalhos de gravação rápida, arrastar e largar, sincronização móvel, ações em massa, grupos de separadores e suporte para 43 idiomas. Suporte a LLM local com URL configurável (localhost e endereços LAN).

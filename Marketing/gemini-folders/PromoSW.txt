@@ -53,7 +53,7 @@ Kichocheo cha Kidokezo: Andika # ili kuona mara moja vidokezo vyako vyote vilivy
 🔒 FARAGHA NA USALAMA
 Imejengwa na faragha kama msingi wake. Huomba tu ufikiaji wa gemini.google.com na husoma kichupo kinachofanya kazi tu ili kusoma kichwa cha mazungumzo, kukihifadhi au kuingiza kidokezo. Ruhusa ya "Alamisho" hutumiwa tu ikiwa utawasha usawazishaji wa simu. Hifadhi kupitia browser sync: hakuna seva za watu wengine, hakuna telemetri, hakuna akaunti inayohitajika.
 
-Imejengwa juu ya Manifest V3: kivinjari chenyewe kinahakikisha kwamba hakuna msimbo wa mbali unaoeza kupakiwa — hii ni kizuizi cha kiwango cha jukwaa, si ahadi ya msanidi programu. Toleo la Firefox limechapishwa kupitia mchakato rasmi wa ukaguzi wa programu jalizi wa Mozilla (AMO).
+Imejengwa juu ya Manifest V3: kivinjari chenyewe kinahakikisha kwamba hakuna msimbo wa mbali unaoeza kupakiwa — hii ni kizuizi cha kiwango cha jukwaa, si ahadi ya msanidi programu.
 
 🤝 CHANZO WAZI NA INAYOWEZA KUKAGULIWA
 Kila mstari wa msimbo ni wa umma kwenye GitHub. Mtu yeyote anaweza kunakili hazina, kuijenga ndani ya kompyuta yake, na kulinganisha faili zinazotokana na zile zilizosakinishwa kwenye kivinjari chake — bila kuhitaji imani yoyote.
@@ -64,14 +64,3 @@ Angalia msimbo au changia: https://github.com/dlamarre-dev/AI-Gemini-Folders
 Unavutiwa na Folda za Gemini lakini pia unatumia ChatGPT, Claude, Copilot, Grok, Perplexity au LLM ya ndani? Folda za AI ni hatua ya asili inayofuata: kiendelezi kimoja cha kupanga mazungumzo katika zana zako zote za AI, na mfumo sawa wa folda, maktaba ya maagizo na uingizaji wa kubonyeza mara moja unaopatikana katika Folda za Gemini.
 
 👉 Sakinisha Folda za AI: __AF_STORE_URL__
-
-📢 MASASISHO:
-Toleo 4.6.0 (Folda ndogo): Buruta folda moja juu ya nyingine ili kuiweka ndani yake. Fungua folda mama kama kikundi cha vichupo na kila kilichomo hufunguka pamoja nayo. Kubofya mazungumzo yaliyohifadhiwa sasa hukupeleka kwenye kichupo kinachoyaonyesha tayari badala ya kufungua nakala. Ctrl+bofya (au Cmd+bofya kwenye Mac) hutumia tena kichupo chako cha mwisho.
-Toleo 4.5.5 (Ukurasa wa karibu): Baada ya kusakinisha sasa hufunguka mwongozo mfupi: jinsi ya kubandika kiendelezi na kuhifadhi mazungumzo yako ya kwanza. Utafutaji pia unaeleza wazi kuwa unahusu mazungumzo yaliyohifadhiwa tu.
-Toleo 4.5.4 (Utafiti wa kuondoa): Kuondoa kiendelezi sasa hufungua ukurasa mfupi wa maoni wa hiari kwa lugha yako, na hakuna kinachotumwa isipokuwa uitume mwenyewe.
-Toleo 4.5.3 (Usalama na uthabiti): Ulinzi wa ziada kwa viungo vilivyohifadhiwa na uingizaji wa nakala rudufu, pamoja na marekebisho ya ndani ya uthabiti.
-Toleo 4.5.1 (Maboresho): Folda sasa hupangwa kuanzia mpya zaidi kwa chaguo-msingi, sawa na maktaba yako ya vidokezo — mpangilio wa kupanga uliokwisha chagua hubaki bila kubadilika. Pia kitufe cha kufuta (✕) katika kisanduku cha kutafutia kimerekebishwa ili kifanye kazi katika Firefox pia.
-Toleo 4.5 (Kiolesura na Uthabiti): Paneli pana zaidi, vidhibiti vilivyoboreshwa na ufikivu bora wa kibodi. Marekebisho ya hitilafu na upyaji wa ndani tangu sasisho la mwisho, kwa uthabiti bora. Ikiwa Folda za Gemini ni muhimu kwako, unaweza kusaidia maendeleo kwa kutembelea ukurasa wa Ko-fi: https://ko-fi.com/aifolders — asante kwa msaada wako!
-Toleo 4.2 (Kichocheo cha Kidokezo): Andika # katika uwanja wa mazungumzo wa Gemini ili uone maagizo yako yaliyohifadhiwa yakichujwa kwa wakati halisi. Tumia ↓/↑ kuvinjari mapendekezo, Spacebar kukamilisha kiotomatiki au kuingiza — bila kufungua paneli.
-Toleo 4.1 (Upanuzi wa Kimataifa na Ugumu): Lugha 16 mpya zinaongeza Folda za Gemini hadi lokalizesheni 43 duniani kote — lugha za Nordiki, nchi za Baltic na chanjo iliyopanuliwa ya Ulaya na Asia ya Kusini-mashariki. Kurekebisha hali ya mbio ambayo ingeweza kupoteza kimya kimya uhifadhi wakati wa kubonyeza haraka. Uingizaji wa prompt umeboreshwa kwa InputEvent, ukibadilisha execCommand iliyopitwa na wakati. Mfumo wa uingizaji umeimarishwa dhidi ya URL hasidi katika faili za nakala rudufu. Hitilafu mbaya ya usalama wa data imetibiwa: kuwezesha usawazishaji wa maagizo kwenye hifadhi iliyojaa karibu kungeweza kufuta kimya kimya maagizo yote yaliyohifadhiwa. Hifadhi sasa inatumia uandishi wa vipande ili kukaa ndani ya mipaka ya Chrome, na ujumbe wa makosa wazi wakati imejaa.
-Toleo la 4.0 (Maktaba ya Vidokezo): Sasishwa lenye tamaa zaidi hadi sasa! Folda za Gemini inapata Hali ya Vidokezo mpya kabisa: hifadhi vidokezo vyako bora, viharirie mahali pake, na viingize moja kwa moja kwenye Gemini kwa kubofya mara moja. Kitufe cha kubadilisha hali chenye mwendo, utafutaji na upangaji katika Hali ya Vidokezo, kitufe maalum cha Gem na usawazishaji wa vidokezo usiotegemea vimeongezwa. Bandika vidokezo muhimu juu ya maktaba yako.

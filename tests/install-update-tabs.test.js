@@ -14,6 +14,10 @@ const manifestVersion = (ext) => JSON.parse(fs.readFileSync(
 
 // Loads a service worker the way the browser does — top level only registers
 // listeners — and hands back the onInstalled one.
+const notesVersion = (ext) => fs.readFileSync(
+  path.join(ROOT, 'extensions', ext, 'background.js'), 'utf8')
+  .match(/const WHATS_NEW_VERSION = '([^']+)'/)[1];
+
 function loadBackground(ext, { version = manifestVersion(ext) } = {}) {
   jest.resetModules();
 
@@ -59,23 +63,43 @@ describe.each(['ai-folders', 'gemini-folders'])('%s: install vs update', (ext) =
     expect(openedPages()).toEqual(['welcome.html']);
   });
 
-  test('an update to this version opens the what\'s-new page, and only that', async () => {
+  // Anchored on WHATS_NEW_VERSION rather than on the manifest, because these two
+  // are about the MECHANISM: an update to the version the notes were written for
+  // opens them. Anchoring them on the manifest quietly made them assert something
+  // else as well — that every release has notes — so a patch release with nothing
+  // to say broke them.
+  test('an update to the version the notes describe opens them, and only them',
+    async () => {
+      const onInstalled = loadBackground(ext, { version: notesVersion(ext) });
+
+      await onInstalled({ reason: 'update', previousVersion: '1.0.0' });
+
+      expect(openedPages()).toEqual(['whats-new.html']);
+    });
+
+  test('a second update event does not reopen it, the seen marker holds', async () => {
+    // Reloading an unpacked extension fires onInstalled with reason 'update' too.
+    const onInstalled = loadBackground(ext, { version: notesVersion(ext) });
+
+    await onInstalled({ reason: 'update' });
+    await onInstalled({ reason: 'update' });
+
+    expect(openedPages()).toEqual(['whats-new.html']);
+  });
+
+  // And this one says what the CURRENTLY SHIPPED pair does, without hardcoding
+  // which release we are on: notes open exactly when the two versions agree. It
+  // is the line to read when a release goes out and nobody can remember whether
+  // the page was meant to appear.
+  test('what the shipped version and the notes version add up to', async () => {
     const onInstalled = loadBackground(ext);
 
     await onInstalled({ reason: 'update', previousVersion: '1.0.0' });
 
-    expect(openedPages()).toEqual(['whats-new.html']);
+    expect(openedPages()).toEqual(
+      notesVersion(ext) === manifestVersion(ext) ? ['whats-new.html'] : []);
   });
 
-  test('a second update event does not reopen it — the seen marker holds', async () => {
-    // Reloading an unpacked extension fires onInstalled with reason 'update' too.
-    const onInstalled = loadBackground(ext);
-
-    await onInstalled({ reason: 'update' });
-    await onInstalled({ reason: 'update' });
-
-    expect(openedPages()).toEqual(['whats-new.html']);
-  });
 
   test('an update to a version with no release notes opens nothing', async () => {
     // WHATS_NEW_VERSION is left alone for a minor release; the page then belongs

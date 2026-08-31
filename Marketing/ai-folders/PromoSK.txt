@@ -59,21 +59,8 @@ Spúšťač promptov: Napíšte # a okamžite uvidíte všetky svoje uložené p
 🔒 SÚKROMIE A BEZPEČNOSŤ
 Navrhnuté so súkromím v centre. Vyžaduje prístup iba k podporovaným AI stránkam a vašej voliteľnej lokálnej LLM URL a číta aktívnu kartu iba preto, aby prečítala názov konverzácie, uložila ju alebo vložila výzvu. Povolenie „Záložky" sa používa iba ak aktivujete mobilnú synchronizáciu. Ukladanie cez synchronizáciu prehliadača: žiadne servery tretích strán, žiadna telemetria, žiadny účet nie je potrebný.
 
-Postavené na Manifest V3: samotný prehliadač vynucuje, že žiadny vzdialený kód nemôže byť nikdy načítaný — toto je obmedzenie na úrovni platformy, nie sľub vývojára. Verzia pre Firefox je zverejnená prostredníctvom oficiálneho procesu kontroly doplnkov Mozilla (AMO).
+Postavené na Manifest V3: samotný prehliadač vynucuje, že žiadny vzdialený kód nemôže byť nikdy načítaný — toto je obmedzenie na úrovni platformy, nie sľub vývojára.
 
 🤝 OPEN SOURCE A AUDITOVATEĽNÝ
 Každý riadok kódu je verejný na GitHub. Každý môže klonovať repozitár, zostaviť ho lokálne a porovnať výsledné súbory s tým, čo je nainštalované v jeho prehliadači — bez nutnosti dôvery.
 Prezrite kód alebo prispejte: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 AKTUALIZÁCIE:
-Verzia 1.7.0 (Podpriečinky): Presuňte priečinok na iný a vložte ho dovnútra. Otvorte nadradený priečinok ako skupinu kariet a otvorí sa všetko, čo obsahuje. Kliknutie na uloženú konverzáciu teraz prejde na kartu, ktorá ju už zobrazuje, namiesto otvorenia duplikátu. Ctrl+kliknutie (alebo Cmd+kliknutie na Macu) použije poslednú kartu. Baidu Chat sa presunul na novú adresu, kde ukladanie a vkladanie výziev opäť fungujú.
-Verzia 1.6.3 (Uvítacia stránka): Po inštalácii sa teraz otvorí krátky sprievodca: ako si rozšírenie pripnúť a uložiť prvú konverzáciu. Hľadanie tiež jasne uvádza, že prehľadáva len už uložené konverzácie.
-Verzia 1.6.2 (Kimi): Spustite nové konverzácie na Kimi priamo z režimu výziev, ukladajte ich do priečinkov a vkladajte výzvy. Odstránenie rozšírenia teraz otvorí krátku nepovinnú stránku spätnej väzby vo vašom jazyku a nič sa neodošle, kým ju sami nepošlete.
-Verzia 1.6.1 (Zabezpečenie a stabilita): Ďalšia ochrana uložených odkazov a importu záloh a interné opravy stability.
-Verzia 1.6 (10 nových služieb AI): Ukladajte konverzácie a vkladajte prompty v desiatich ďalších službách AI — vrátane Mistral, Meta AI, Qwen a Z.ai — s prepracovanými tlačidlami služieb a oficiálnymi logami.
-Verzia 1.5.1 (Vylepšenia): Priečinky sa teraz predvolene zoraďujú od najnovších, rovnako ako vaša knižnica promptov — už zvolené zoradenie zostáva nezmenené. Opravené bolo aj tlačidlo vymazania (✕) vo vyhľadávacom poli, takže funguje aj vo Firefoxe.
-Verzia 1.5 (Grok): Spustite nové konverzácie na Grok priamo z režimu výziev, ukladajte ich do priečinkov a vkladajte výzvy. Širší panel, vylepšené ovládacie prvky a lepšia prístupnosť z klávesnice. Opravy chýb a interný refaktoring od poslednej aktualizácie, pre lepšiu stabilitu. Ak vám AI priečinky pomáhajú, môžete podporiť ich vývoj návštevou stránky Ko-fi: https://ko-fi.com/aifolders — ďakujeme za vašu podporu!
-Verzia 1.2 (DeepSeek): Spustite nové konverzácie na DeepSeek priamo z režimu výziev, ukladajte ich do priečinkov a vkladajte výzvy.
-Verzia 1.1 (Spúšťač promptov): Zadajte # do ľubovoľného poľa chatu AI a zobrazte si uložené prompty filtrované v reálnom čase. Pomocou ↓/↑ prechádzajte návrhy, medzerníkom ich automaticky dokončite alebo vložte — bez otvorenia panela.
-Verzia 1.0: Prvé vydanie! Usporiadajte konverzácie z Gemini, Claude, ChatGPT, Copilot a Perplexity do zdieľaných priečinkov. Kompletná knižnica promptov s vkladaním jedným kliknutím, skratky rýchleho ukladania, drag & drop, mobilná synchronizácia, hromadné akcie, skupiny kariet a podpora 43 jazykov. Podpora lokálnych LLM s konfigurovateľnou URL (localhost a LAN adresy).

@@ -59,21 +59,8 @@ Prompt-Trigger: Geben Sie # ein, um sofort alle Ihre gespeicherten Prompts zu se
 🔒 DATENSCHUTZ & SICHERHEIT
 Mit Datenschutz als Kernprinzip entwickelt. Die Erweiterung fordert nur Zugriff auf die unterstützten KI-Sites und Ihre optionale lokale LLM-URL an und liest den aktiven Tab nur, um den Titel des Gesprächs zu lesen, es zu speichern oder einen Prompt einzufügen. Die Berechtigung „Lesezeichen" wird nur verwendet, wenn Sie die mobile Synchronisierung aktivieren. Speicherung über Browser-Sync: keine Drittanbieter-Server, keine Telemetrie, kein Konto erforderlich.
 
-Entwickelt auf Basis von Manifest V3: Der Browser selbst erzwingt, dass kein externer Code jemals geladen werden kann — dies ist eine Plattform-Einschränkung, kein bloßes Entwicklerversprechen. Die Firefox-Version wird über Mozillas offiziellen Add-on-Prüfprozess (AMO) veröffentlicht.
+Entwickelt auf Basis von Manifest V3: Der Browser selbst erzwingt, dass kein externer Code jemals geladen werden kann — dies ist eine Plattform-Einschränkung, kein bloßes Entwicklerversprechen.
 
 🤝 OPEN SOURCE & NACHVOLLZIEHBAR
 Jede Zeile Code ist öffentlich auf GitHub einsehbar. Jeder kann das Repository klonen, es lokal kompilieren und die resultierenden Dateien mit dem in seinem Browser installierten vergleichen — kein blindes Vertrauen erforderlich.
 Code einsehen oder beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 UPDATES:
-Version 1.7.0 (Unterordner): Ziehen Sie einen Ordner auf einen anderen, um ihn darin abzulegen. Öffnen Sie den übergeordneten Ordner als Tab-Gruppe und alles darin öffnet sich mit. Ein Klick auf eine gespeicherte Unterhaltung wechselt jetzt zum Tab, der sie bereits anzeigt, statt ein Duplikat zu öffnen. Strg+Klick (oder Cmd+Klick auf Mac) verwendet Ihren letzten Tab erneut. Baidu Chat ist auf eine neue Adresse umgezogen, wo Speichern und das Einfügen von Prompts wieder funktionieren.
-Version 1.6.3 (Willkommensseite): Nach der Installation öffnet sich jetzt eine kurze Anleitung: wie du die Erweiterung anheftest und deine erste Unterhaltung speicherst. Die Suche macht außerdem deutlich, dass sie nur bereits gespeicherte Unterhaltungen durchsucht.
-Version 1.6.2 (Kimi): Starten Sie neue Kimi-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts. Beim Entfernen der Erweiterung öffnet sich nun eine kurze, freiwillige Feedback-Seite in Ihrer Sprache, und gesendet wird nur, was Sie selbst absenden.
-Version 1.6.1 (Sicherheit & Stabilität): Zusätzliche Schutzmaßnahmen für gespeicherte Links und Backup-Importe sowie interne Stabilitätskorrekturen.
-Version 1.6 (10 neue KI-Dienste): Speichere Unterhaltungen und füge Prompts auf zehn weiteren KI-Diensten ein — darunter Mistral, Meta AI, Qwen und Z.ai — mit neu gestalteten Dienst-Buttons und offiziellen Logos.
-Version 1.5.1 (Feinschliff): Ordner werden jetzt standardmäßig nach Neueste zuerst sortiert, passend zu Ihrer Prompt-Bibliothek — eine bereits gewählte Sortierung bleibt unverändert. Außerdem wurde die Löschen-Schaltfläche (✕) im Suchfeld korrigiert, sodass sie auch in Firefox funktioniert.
-Version 1.5 (Grok): Starten Sie neue Grok-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts. Breiteres Panel, verfeinerte Bedienelemente und bessere Tastaturzugänglichkeit. Fehlerbehebungen und interne Überarbeitungen seit dem letzten Update, für eine verbesserte Stabilität. Wenn KI-Ordner Ihnen nützlich ist, können Sie die Entwicklung unterstützen, indem Sie die Ko-fi-Seite besuchen: https://ko-fi.com/aifolders — vielen Dank für Ihre Unterstützung!
-Version 1.2 (DeepSeek): Starten Sie neue DeepSeek-Gespräche direkt aus dem Prompt-Modus, speichern Sie sie in Ordnern und injizieren Sie Prompts.
-Version 1.1 (Prompt-Auslöser): Geben Sie # in ein beliebiges KI-Chat-Feld ein, um gespeicherte Prompts in Echtzeit gefiltert zu sehen. Verwenden Sie ↓/↑ zum Navigieren durch Vorschläge, Leertaste zum Autovervollständigen oder Einsetzen — ohne das Panel zu öffnen.
-Version 1.0: Erstveröffentlichung! Organisieren Sie Gespräche von Gemini, Claude, ChatGPT, Copilot und Perplexity in gemeinsamen Ordnern. Vollständige Prompt-Bibliothek mit Ein-Klick-Injektion, Schnellspeicher-Shortcuts, Drag & Drop, Mobile-Sync, Massenaktionen, Tab-Gruppen und Unterstützung für 43 Sprachen. Lokaler LLM-Support mit konfigurierbarer URL (localhost und LAN-Adressen).

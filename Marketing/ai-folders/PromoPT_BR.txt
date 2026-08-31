@@ -59,21 +59,8 @@ Gatilho de Prompt: Digite # para ver instantaneamente todos os seus prompts salv
 🔒 PRIVACIDADE E SEGURANÇA
 Desenvolvida com a privacidade no centro. Solicita acesso apenas aos sites de IA compatíveis e à sua URL de LLM local opcional, e lê a aba ativa apenas para ler o título da conversa, salvá-la ou inserir um prompt. A permissão "Favoritos" só é usada se você ativar a sincronização mobile. Armazenamento via sincronização do navegador: sem servidores de terceiros, sem telemetria, sem conta necessária.
 
-Desenvolvida sobre o Manifest V3: o próprio navegador garante que nenhum código remoto pode ser carregado — esta é uma restrição em nível de plataforma, não uma promessa do desenvolvedor. A versão Firefox é publicada por meio do processo oficial de revisão de extensões da Mozilla (AMO).
+Desenvolvida sobre o Manifest V3: o próprio navegador garante que nenhum código remoto pode ser carregado — esta é uma restrição em nível de plataforma, não uma promessa do desenvolvedor.
 
 🤝 OPEN SOURCE E AUDITÁVEL
 Cada linha de código é pública no GitHub. Qualquer pessoa pode clonar o repositório, compilá-lo localmente e comparar os arquivos resultantes com o que está instalado no navegador — sem necessidade de confiar em ninguém.
 Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
-
-
-📢 ATUALIZAÇÕES:
-Versão 1.7.0 (Subpastas): Arraste uma pasta sobre outra para colocá-la dentro. Abra a pasta principal como grupo de guias e tudo o que ela contém abre junto. Clicar em uma conversa salva agora alterna para a aba que já a exibe em vez de abrir uma duplicada. Ctrl+clique (ou Cmd+clique no Mac) reutiliza sua última aba. O Baidu Chat mudou de endereço, e salvar e inserir prompts voltou a funcionar lá.
-Versão 1.6.3 (Página de boas-vindas): Após a instalação agora abre um guia rápido: como fixar a extensão e salvar sua primeira conversa. A busca também deixa claro que abrange apenas as conversas já salvas.
-Versão 1.6.2 (Kimi): Inicie novas conversas no Kimi diretamente do Modo Prompt, salve-as em pastas e injete prompts. Remover a extensão agora abre uma breve página de retorno opcional no seu idioma, e nada é enviado a menos que você mesmo envie.
-Versão 1.6.1 (Segurança e estabilidade): Proteções adicionais para links salvos e importações de backup, além de correções internas de estabilidade.
-Versão 1.6 (10 novos serviços de IA): Salve conversas e injete prompts em mais dez serviços de IA — incluindo Mistral, Meta AI, Qwen e Z.ai — com botões de serviços redesenhados e logotipos oficiais.
-Versão 1.5.1 (Refinamentos): As pastas agora são ordenadas da mais recente para a mais antiga por padrão, como sua biblioteca de prompts — qualquer ordenação que você já tenha escolhido permanece inalterada. Também corrigimos o botão de limpar (✕) no campo de busca para que funcione também no Firefox.
-Versão 1.5 (Grok): Inicie novas conversas no Grok diretamente do Modo Prompt, salve-as em pastas e injete prompts. Painel mais largo, controles refinados e melhor acessibilidade pelo teclado. Correções de bugs e refatorações internas desde a última atualização, para maior estabilidade. Se Pastas IA é útil para você, pode apoiar o desenvolvimento visitando a página Ko-fi: https://ko-fi.com/aifolders — obrigado pelo seu apoio!
-Versão 1.2 (DeepSeek): Inicie novas conversas no DeepSeek diretamente do Modo Prompt, salve-as em pastas e injete prompts.
-Versão 1.1 (Gatilho de Prompt): Digite # em qualquer campo de chat de IA para ver seus prompts filtrados em tempo real. Use ↓/↑ para navegar entre sugestões, Espaço para autocompletar ou injetar — sem abrir o painel.
-Versão 1.0: Lançamento inicial! Organize conversas do Gemini, Claude, ChatGPT, Copilot e Perplexity em pastas compartilhadas. Biblioteca de prompts completa com injeção em um clique, atalhos de salvamento rápido, arrastar e soltar, sincronização mobile, ações em massa, grupos de abas e suporte para 43 idiomas. Suporte a LLM local com URL configurável (localhost e endereços LAN).
