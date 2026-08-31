@@ -169,7 +169,13 @@ follow from that and are easy to get wrong:
   a store URL only exists once the listing is published. `inject_popup_urls`
   then *removes* the block that would link nowhere (`strip_block`) rather than
   ship a dead link or an unsubstituted `__REVIEW_URL__`; `build_marketing` drops
-  the promo line carrying an unresolved `__AF_STORE_URL__` for the same reason.
+  the **whole cross-promotion section** carrying an unresolved `__AF_STORE_URL__`
+  (`drop_cross_promo`) for the same reason. Whole, not just the link line: that is
+  what it used to do, and it left the heading and the pitch behind. It went
+  unnoticed while the version history followed them; once the history was removed
+  (§6) the Edge listing simply ended on "AI Folders is the natural next step" with
+  nothing to click. `validate_build.py` fails a promo text whose last emoji
+  heading has no link under it, so the orphan cannot come back quietly.
   Filling the URL in brings both back on the next build — nothing to remember.
 - **`validate_build.py` now also walks `marketing_<target>/`.** It never did, and
   that was survivable only while every promo placeholder was always substituted.
@@ -787,7 +793,9 @@ already waiting for it, and each turns something on by itself.
 1. `build.py` → `review_url_edge` and `af_download_url_edge` (GF only). The
    review banner and the AI Folders promo banner are *removed* from the Edge
    build while these are empty — `strip_block` — and come back on the next build.
-   The same emptiness drops the `__AF_STORE_URL__` promo line.
+   The same emptiness drops the whole `__AF_STORE_URL__` cross-promotion section
+   from the Edge promo texts — filling the URL in brings it back on the next
+   build, in all 43 languages, with no other edit.
 2. `docs/site/app.js` → `LINKS.edge` and `LINKS.gemEdge`. One edit lights the
    button in all five places at once (nav, hero, Gemini card, final CTA, both
    footers), because `stores()` is the only thing that decides.

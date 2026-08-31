@@ -29,6 +29,10 @@ EXPECTED_LOCALES = 43
 # from Partner Center comes after a submission.
 DESCRIPTION_MAX = {"edge": 10000}
 
+# The heading of the "also available" cross-promotion, matched by its emoji: the
+# wording is translated 43 ways and the emoji is not.
+CROSS_PROMO_HEADING = "🤖"
+
 failures = []
 
 
@@ -135,6 +139,25 @@ def check_marketing_placeholders(ext, browser):
             if limit and name.lower().startswith("promo") and len(content) > limit:
                 fail(f"{ext}/marketing_{browser}/{name}: {len(content)} chars, "
                      f"over the {limit} the store accepts")
+
+            # A section that pitches something and then offers no way to get it.
+            #
+            # The cross-promotion is dropped whole on a store where the other
+            # product has no listing yet (build.py, drop_cross_promo); dropping
+            # only its link leaves the heading and the pitch behind, which is what
+            # the build used to do. It went unnoticed while the version history
+            # followed and the gap sat mid-document — with the history gone, the
+            # listing simply ended on an invitation with nothing to click.
+            #
+            # Headings are emoji-led here, so the check is too: the wording is
+            # translated 43 ways and the emoji is not.
+            if name.lower().startswith("promo"):
+                lines = content.split(chr(10))
+                heads = [i for i, ln in enumerate(lines) if CROSS_PROMO_HEADING in ln]
+                if heads and not any("http" in ln for ln in lines[heads[-1]:]):
+                    fail(f"{ext}/marketing_{browser}/{name}: ends on a "
+                         f"'{lines[heads[-1]][:40]}' section with no link in it — "
+                         f"a pitch with nothing to act on")
 
 
 def check_zip(ext, version):

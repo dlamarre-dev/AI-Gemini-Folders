@@ -60,6 +60,10 @@ EXTENSION_CONFIG = {
 # NUMBER instead — the one part that stays put in all 43 languages.
 HISTORY_LINE = re.compile(r"\d+\.\d")
 
+# The heading of the "also available" cross-promotion, as an emoji rather than as
+# a word: the wording is translated 43 ways and the emoji is not.
+CROSS_PROMO_HEADING = "\U0001f916"
+
 # Messages that exist only to be swapped in for some target. They are never
 # shipped under their own name — patch_locales drops them from every build.
 BUILD_ONLY_MESSAGES = ["syncFavoritesTooltip"]
@@ -284,6 +288,42 @@ def run_tests(assume_yes=False, force=False):
 # Extension builds
 # ---------------------------------------------------------------------------
 
+def drop_cross_promo(text, where):
+    """Removes the whole "also available" section when there is no store URL yet.
+
+    The popup's equivalent is strip_block: a brand-new store product has no public
+    page until it is published, so the link cannot be written and the block that
+    would carry it is removed instead.
+
+    Dropping only the line with the placeholder — which is what this used to do —
+    leaves the heading and the pitch behind. That was survivable while the version
+    history followed them and the amputation sat mid-document; with the history
+    gone (see CLAUDE.md §6) the listing now ENDS on "AI Folders is the natural next
+    step" and no way to get it, which is worse than not mentioning it at all.
+
+    The section is found from the placeholder backwards to the nearest heading
+    above it, headings being the emoji-led lines this text is built from. The emoji
+    is the marker because it is the one part that survives translation — the same
+    reason the version history is found by its megaphone. It appears twice per
+    file, once as a feature bullet and once as this heading, so the LAST one before
+    the link is the one that starts the section.
+    """
+    lines = text.split("\n")
+    link = next(i for i, ln in enumerate(lines) if "__AF_STORE_URL__" in ln)
+    heads = [i for i, ln in enumerate(lines[:link]) if CROSS_PROMO_HEADING in ln]
+    if not heads:
+        sys.exit(f"{where}: no {CROSS_PROMO_HEADING} heading above the "
+                 f"__AF_STORE_URL__ link, so the cross-promotion section cannot be "
+                 f"located. Dropping the link alone would publish a heading and a "
+                 f"pitch with no way to act on them.")
+    start = heads[-1]
+    # The blank line that separated it from the section above goes too, or the
+    # text ends on one.
+    while start > 0 and not lines[start - 1].strip():
+        start -= 1
+    return "\n".join(lines[:start] + lines[link + 1:]).rstrip() + "\n"
+
+
 def strip_block(html, element_id):
     """Removes a whole `<div id="...">...</div>` block from popup.html.
 
@@ -496,12 +536,7 @@ def build_marketing(ext_name, cfg, target_name, target):
                 if af_url:
                     content = content.replace("__AF_STORE_URL__", af_url)
                 else:
-                    # No listing to point at on this store yet. Drop the line
-                    # rather than publish the placeholder — nothing here walks
-                    # marketing_*/ looking for unresolved placeholders, so this
-                    # would otherwise reach the store as literal text.
-                    content = "\n".join(ln for ln in content.split("\n")
-                                        if "__AF_STORE_URL__" not in ln)
+                    content = drop_cross_promo(content, f"{ext_name}/{fn}")
                 modified = True
 
             # Only the listing descriptions are capped; the screenshots dir and
