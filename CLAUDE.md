@@ -86,8 +86,13 @@ tests/                       Jest suites (jsdom). setup.js mocks chrome.* + LZSt
 
 Marketing/
   ai-folders/  gemini-folders/   Promo<LANG>.txt (43 each) = store listing text,
-                                  screenshots/, DEVELOPMENT_STORY.md
-  (Generators were removed — edit Promo*.txt and _locales by hand.)
+                                  screenshots/, promo tiles, icon-300x300*.png,
+                                  DEVELOPMENT_STORY.md
+  (Generators were removed — edit Promo*.txt and _locales by hand. The one
+   exception is the 300x300 store logo: `node tools/generate-store-icon.js`
+   re-renders it from each extension's own icon.svg, so the listing and the
+   installed button cannot drift apart. Partner Center takes that size; the
+   extension ships 16/48/128, none close enough to upscale.)
 
 docs/                        Static GitHub Pages site (aifolders.xyz)
   privacy.html               Renders from site/privacy-i18n.js via site/app.js
