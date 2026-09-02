@@ -28,6 +28,7 @@ Thư mục AI tích hợp tự nhiên với tất cả các trợ lý trò chuy�
 🏠 HỖ TRỢ LLM CỤC BỘ
 
 Đang chạy mô hình AI cục bộ (Ollama, LM Studio, Jan hoặc khác)? Cấu hình Thư mục AI với URL cục bộ của bạn — hỗ trợ localhost và địa chỉ LAN (192.168.x.x, tên máy chủ tùy chỉnh). Lưu nhanh và lưu qua menu ngữ cảnh cũng hoạt động trên giao diện cục bộ.
+
 ✨ CHẾ ĐỘ PROMPT
 
 📝 Thư viện Prompt cá nhân: Chuyển sang Chế độ Prompt chỉ với một cú nhấp vào nút chuyển đổi ở tiêu đề. Lưu các prompt tốt nhất của bạn với tiêu đề và toàn bộ nội dung, sau đó tìm lại ngay lập tức với tính năng tìm kiếm và sắp xếp (mới nhất, cũ nhất, A-Z).

@@ -28,6 +28,7 @@ KI-Ordner integriert sich nativ mit allen großen KI-Chat-Assistenten wie Claude
 🏠 LOKALER LLM-SUPPORT
 
 Verwenden Sie ein lokales KI-Modell (Ollama, LM Studio, Jan oder ein anderes)? Konfigurieren Sie KI-Ordner mit Ihrer lokalen URL — unterstützt localhost und LAN-Adressen (192.168.x.x, benutzerdefinierte Hostnamen). Schnellspeicherung und Kontextmenü-Speicherung funktionieren auch auf lokalen Benutzeroberflächen.
+
 ✨ PROMPT-MODUS
 
 📝 Persönliche Prompt-Bibliothek: Wechseln Sie mit einem Klick auf den Umschalter in der Kopfzeile in den Prompt-Modus. Speichern Sie Ihre besten Prompts mit Titel und vollständigem Text und finden Sie sie sofort per Suche und Sortierung (Neueste, Älteste, A-Z).

@@ -28,6 +28,7 @@ AI mapes dabiski integrējas ar visiem galvenajiem AI tērzēšanas asistentiem,
 🏠 VIETĒJĀ LLM ATBALSTS
 
 Vai izmantojat vietējo AI modeli (Ollama, LM Studio, Jan vai citu)? Konfigurējiet AI mapes ar savu vietējo URL — atbalsta localhost un LAN adreses (192.168.x.x, pielāgoti resursdatoru nosaukumi). Ātrā saglabāšana un saglabāšana konteksta izvēlnē darbojas arī vietējās saskarnēs.
+
 ✨ UZVEDŅU REŽĪMS
 
 📝 Personīgā uzvedņu bibliotēka: Pārslēdzies uz Uzvedņu režīmu ar vienu klikšķi uz galvenes slēdža. Saglabā labākās uzvednes ar virsrakstu un tekstu, atrod tās uzreiz ar meklēšanu un kārtošanu (jaunākās, vecākās, A–Z).

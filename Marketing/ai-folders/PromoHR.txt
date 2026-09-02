@@ -28,6 +28,7 @@ UI mape integrira se izvorno sa svim glavnim AI chat asistentima, kao što su Cl
 🏠 PODRŠKA ZA LOKALNI LLM
 
 Koristiš lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfiguriraj UI mape s tvojim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođeni nazivi domaćina). Brzo spremanje i spremanje putem kontekstnog izbornika rade i na lokalnim sučeljima.
+
 ✨ NAČIN UPITA
 
 📝 Osobna knjižnica upita: Prebaci na Način upita jednim klikom na prekidač u zaglavlju. Spremi najbolje upite s naslovom i tekstom, pronađi ih odmah pretraživanjem i sortiranjem (najnovije, najstarije, A–Ž).

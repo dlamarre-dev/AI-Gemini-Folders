@@ -12,7 +12,7 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome, Edge **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.1**.
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.2**.
 - **AI Folders (AF)** — 18 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, You.com, Pi, Character.AI) **+ a user-configured local LLM**.
@@ -21,7 +21,7 @@ conversations into folders and provide a reusable prompt library:
   Copilot lives, so an organisation's users never touched the consumer domain and
   the extension did nothing at all for them (issue #82). It is an `altDomains`
   entry, not a second site: same product, same title strategy, same editor.
-  Current version **1.7.1**. The popup's per-site "new conversation" buttons
+  Current version **1.7.2**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -643,7 +643,7 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   `background.js` (not shared, §6). The page opens only when
   `reason === 'update'` **and** the manifest version equals that constant, so a
   minor release with nothing to explain simply leaves the constant alone —
-  4.6.1 / 1.7.1 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
+  4.6.2 / 1.7.2 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
   The test asserts the constant is **not ahead of** the manifest version, which is
   the direction that breaks: a constant ahead fires on the release *after* this
   one, carrying notes for a version already installed. It used to demand equality,
@@ -783,30 +783,38 @@ python amo/amo_publish.py --item <slug> --texts --images --apply
   built manifest, so the version in the filename cannot disagree with the bytes.
   Credentials and `assets.root` live in the tool's own gitignored config.
 
-### 12c. When the Edge listing clears certification
+### 12c. The Edge listings are live
 
-Everything Edge-facing is already built and **gated on a URL that does not exist
-yet**, because a listing has no public address until it is certified. Nothing
-below is a code change; each one is pasting the same URL into a place that is
-already waiting for it, and each turns something on by itself.
+Both cleared certification on 31/08/2026:
 
-1. `build.py` → `review_url_edge` and `af_download_url_edge` (GF only). The
-   review banner and the AI Folders promo banner are *removed* from the Edge
-   build while these are empty — `strip_block` — and come back on the next build.
-   The same emptiness drops the whole `__AF_STORE_URL__` cross-promotion section
-   from the Edge promo texts — filling the URL in brings it back on the next
-   build, in all 43 languages, with no other edit.
-2. `docs/site/app.js` → `LINKS.edge` and `LINKS.gemEdge`. One edit lights the
-   button in all five places at once (nav, hero, Gemini card, final CTA, both
-   footers), because `stores()` is the only thing that decides.
-3. `README.md` → the store badge and the install link, beside Chrome's and
-   Firefox's. Static files cannot be gated, which is why they were left out.
-4. `docs/llms.txt` → the Edge URL for both products, same reason.
-The logo is already the real one (`docs/site/assets/edge.svg`, Microsoft's 2019
+- Gemini Folders — <https://microsoftedge.microsoft.com/addons/detail/dossiers-gemini-organise/ggippfdnnpodobohgekkjlfdgnkbccge>
+- AI Folders — <https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan>
+
+Everything that had been built and left gated on those URLs turned on by pasting
+them in, which was the point of gating rather than branching:
+
+1. `build.py` → `review_url_edge` (both) and `af_download_url_edge` (GF). The
+   review banner and the AI Folders promo banner come back into the Edge popup,
+   and the whole `__AF_STORE_URL__` cross-promotion section returns to the Edge
+   promo texts, in all 43 languages. **Edge has no separate reviews page** — they
+   sit at the bottom of the listing — so `review_url_edge` is the listing itself,
+   unlike Chrome's and Firefox's `/reviews` paths.
+2. `docs/site/app.js` → `LINKS.edge` and `LINKS.gemEdge`, which lit the button in
+   all five places at once because `stores()` is the only thing that decides.
+3. `README.md` badges and install links, and `docs/llms.txt` — static files that
+   could not be gated, which is why they had been left out.
+
+The logo was already the real one (`docs/site/assets/edge.svg`, Microsoft's 2019
 mark). It carries six gradients whose ids are single letters — `a` to `f` — which
 is precisely why `logos.js` references it through an `<img>` like Firefox's
 rather than inlining it like Chrome's: as its own document, those ids cannot
 reach anything else on the page. **Do not inline it.**
 
-Then re-run `python build.py` and check that the Edge popup has its review
-banner back, which is the cheapest proof that step 1 landed.
+**`promo_swaps` is Edge-only and marketing-only.** The listing exists in 42
+languages, not 43, because Partner Center does not offer Filipino — a fact about
+the *listing*, while the extension still ships 43 locales on Edge exactly as
+elsewhere. That is why the count is swapped through `promo_swaps` rather than
+`text_swaps`: a swap that reached `_locales` would make the product understate
+itself in its own UI. Bengali writes the number in Bengali digits, so it needs its
+own pair — and writing it that way is how nobody noticed the source text had been
+claiming 27 languages.

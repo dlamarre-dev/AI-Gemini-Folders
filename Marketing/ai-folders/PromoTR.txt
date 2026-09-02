@@ -28,6 +28,7 @@ YZ Klasörleri, Claude, ChatGPT ve Gemini gibi tüm büyük yapay zeka sohbet as
 🏠 YEREL LLM DESTEĞİ
 
 Yerel bir AI modeli (Ollama, LM Studio, Jan veya başka) mı kullanıyorsunuz? YZ Klasörleri'ı yerel URL'nizle yapılandırın — localhost ve LAN adreslerini destekler (192.168.x.x, özel ana bilgisayar adları). Hızlı kaydetme ve bağlam menüsü kaydetme yerel arayüzlerde de çalışır.
+
 ✨ İSTEM MODU
 
 📝 Kişisel İstem Kütüphanesi: Üst bilgideki geçiş düğmesine tek tıkla İstem Modu'na geçin. En iyi istemlerinizi başlık ve tam metinle kaydedin, arama ve sıralama (en yeni, en eski, A-Z) ile anında bulun.

@@ -28,6 +28,7 @@ Folder AI berintegrasi secara asli dengan semua pembantu sembang AI utama, seper
 🏠 SOKONGAN LLM TEMPATAN
 
 Menjalankan model AI tempatan (Ollama, LM Studio, Jan, atau lain-lain)? Konfigurasikan Folder AI dengan URL tempatan anda — menyokong localhost dan alamat LAN (192.168.x.x, nama hos tersuai). Simpan pantas dan simpan menu konteks juga berfungsi pada antara muka tempatan.
+
 ✨ MOD PROMPT
 
 📝 Perpustakaan prompt peribadi: Tukar ke Mod Prompt dengan satu klik pada suis di pengepala. Simpan prompt terbaik anda dengan tajuk dan teks, carinya serta-merta dengan carian dan pengisihan (terbaharu, terlama, A–Z).

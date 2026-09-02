@@ -28,6 +28,7 @@ AI-mappen integreert native met alle grote AI-chatassistenten, zoals Claude, Cha
 🏠 LOKALE LLM-ONDERSTEUNING
 
 Gebruikt u een lokaal AI-model (Ollama, LM Studio, Jan of een ander)? Configureer AI-mappen met uw lokale URL — ondersteunt localhost en LAN-adressen (192.168.x.x, aangepaste hostnamen). Snel opslaan en opslaan via contextmenu werken ook op lokale interfaces.
+
 ✨ PROMPTMODUS
 
 📝 Persoonlijke promptbibliotheek: Schakel over naar Promptmodus met één klik op de schakelaar in de koptekst. Sla uw beste prompts op met een titel en volledige tekst en vind ze direct terug met zoeken en sorteren (nieuwste, oudste, A-Z).

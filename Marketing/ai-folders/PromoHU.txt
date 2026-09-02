@@ -28,6 +28,7 @@ A MI mappák natívan integrálódik az összes nagyobb MI-csevegőasszisztensse
 🏠 HELYI LLM TÁMOGATÁS
 
 Helyi AI modellt futtat (Ollama, LM Studio, Jan vagy más)? Konfigurálja a(z) MI mappák-t a helyi URL-jével — támogatja a localhostot és a LAN-címeket (192.168.x.x, egyéni állomásneveket). A gyors mentés és a helyi menüs mentés is működik a helyi felületeken.
+
 ✨ ban — PROMPTÜZEMMÓD
 
 📝 Személyes promptkönyvtár: Váltson Promptüzemmódba egyetlen kattintással a fejlécben lévő kapcsolón. Mentse el legjobb promptjait cím és teljes szöveg megadásával, majd keresse meg őket azonnal kereséssel és rendezéssel (legújabb, legrégebbi, A–Z).

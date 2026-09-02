@@ -28,6 +28,7 @@ AI kaustad integreerub natiivselt kõigi peamiste AI-vestlusassistentidega, nagu
 🏠 KOHALIKU LLM TUGI
 
 Kas kasutate kohalikku AI-mudelit (Ollama, LM Studio, Jan või muu)? Seadistage AI kaustad oma kohaliku URL-iga — toetab localhosti ja LAN-aadresse (192.168.x.x, kohandatud hostinimed). Kiirsalvestamine ja kontekstimenüüst salvestamine töötavad ka kohalikes liidestes.
+
 ✨ S – PROMPTI REŽIIM
 
 📝 Isiklik promptide kogu: Lülitu Prompti režiimile, klõpsates päise lülitit. Salvesta oma parimad promptid pealkirja ja tekstiga, leia need koheselt otsingu ja sortimisega (uusimad, vanimad, A–Z).

@@ -28,6 +28,7 @@ Pastas IA integra-se nativamente com todos os principais assistentes de chat de 
 🏠 SUPORTE A LLM LOCAL
 
 Está usando um modelo de IA local (Ollama, LM Studio, Jan ou outro)? Configure o Pastas IA com sua URL local — suporta localhost e endereços LAN (192.168.x.x, hostnames personalizados). O salvamento rápido e pelo menu de contexto também funcionam em interfaces locais.
+
 ✨ MODO PROMPTS
 
 📝 Biblioteca pessoal de prompts: Mude para o Modo Prompt com um clique no botão de alternância no cabeçalho. Salve seus melhores prompts com um título e texto completo, e encontre-os instantaneamente com busca e ordenação (mais recentes, mais antigos, A-Z).

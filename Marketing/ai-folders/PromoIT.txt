@@ -28,6 +28,7 @@ Cartelle IA si integra in modo nativo con tutti i principali assistenti di chat 
 🏠 SUPPORTO LLM LOCALE
 
 Stai usando un modello AI locale (Ollama, LM Studio, Jan o altro)? Configura Cartelle IA con il tuo URL locale — supporta localhost e indirizzi LAN (192.168.x.x, hostname personalizzati). Il salvataggio rapido e dal menu contestuale funzionano anche nelle interfacce locali.
+
 ✨ MODALITÀ PROMPT
 
 📝 Libreria di prompt personale: Passa alla modalità Prompt con un solo clic sull'interruttore nell'intestazione. Salva i tuoi migliori prompt con un titolo e il testo completo, poi trovali subito con ricerca e ordinamento (più recenti, più vecchi, A-Z).
