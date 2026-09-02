@@ -28,6 +28,7 @@ AI složky se nativně integrují se všemi hlavními AI chatovacími asistenty,
 🏠 PODPORA LOKÁLNÍHO LLM
 
 Používáte lokální AI model (Ollama, LM Studio, Jan nebo jiný)? Nakonfigurujte AI složky s místní URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastní názvy hostitelů). Rychlé ukládání a ukládání přes kontextové menu fungují i na lokálních rozhraních.
+
 ✨ REŽIM VÝZEV
 
 📝 Osobní knihovna výzev: Přepněte do režimu výzev jedním kliknutím na přepínač v záhlaví. Ukládejte nejlepší výzvy s názvem a úplným textem a okamžitě je najděte díky vyhledávání a řazení (nejnovější, nejstarší, A-Z).

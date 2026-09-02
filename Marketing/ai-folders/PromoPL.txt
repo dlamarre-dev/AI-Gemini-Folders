@@ -28,6 +28,7 @@ Foldery AI integrują się natywnie ze wszystkimi głównymi asystentami czatu A
 🏠 WSPARCIE LOKALNEGO LLM
 
 Używasz lokalnego modelu AI (Ollama, LM Studio, Jan lub innego)? Skonfiguruj Foldery AI ze swoim lokalnym adresem URL — obsługuje localhost i adresy LAN (192.168.x.x, niestandardowe nazwy hostów). Szybkie zapisywanie i zapisywanie z menu kontekstowego działają również w lokalnych interfejsach.
+
 ✨ TRYB PROMPTÓW
 
 📝 Osobista biblioteka promptów: Przełącz się na tryb promptów jednym kliknięciem przełącznika w nagłówku. Zapisuj najlepsze prompty z tytułem i pełnym tekstem, a potem znajdź je błyskawicznie dzięki wyszukiwaniu i sortowaniu (najnowsze, najstarsze, A-Z).

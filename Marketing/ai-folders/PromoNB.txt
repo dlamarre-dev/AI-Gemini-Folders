@@ -28,6 +28,7 @@ AI-mapper integreres nativt med alle de store AI-chatassistentene, slik som Clau
 🏠 STØTTE FOR LOKAL LLM
 
 Kjører du en lokal AI-modell (Ollama, LM Studio, Jan eller annen)? Konfigurer AI-mapper med din lokale URL — støtter localhost og LAN-adresser (192.168.x.x, egendefinerte vertsnavn). Hurtiglagring og kontekstmenylagring fungerer også på lokale brukergrensesnitt.
+
 ✨ PROMPTMODUS
 
 📝 Personlig promptbibliotek: Bytt til Promptmodus med ett klikk på bryteren i overskriften. Lagre dine beste prompts med tittel og tekst, finn dem umiddelbart med søk og sortering (nyeste, eldste, A–Å).

@@ -15,12 +15,8 @@
     firefox: "https://addons.mozilla.org/firefox/addon/ai_folders/",
     gemChrome: "https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik",
     gemFirefox: "https://addons.mozilla.org/firefox/addon/gemini_folders/",
-    // An Edge listing has no public URL until it clears certification, so these
-    // stay empty and every button below simply omits Edge. Filling them in turns
-    // the whole site on at once — hero, nav, Gemini card, both footers — because
-    // stores() is the only thing that decides.
-    edge: "",
-    gemEdge: "",
+    edge: "https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan",
+    gemEdge: "https://microsoftedge.microsoft.com/addons/detail/dossiers-gemini-organise/ggippfdnnpodobohgekkjlfdgnkbccge",
     github: "https://github.com/dlamarre-dev/AI-Gemini-Folders"
   };
 

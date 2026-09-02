@@ -28,6 +28,7 @@ Dossiers IA s'intègre nativement avec tous les principaux assistants de chat IA
 🏠 SUPPORT LLM LOCAL
 
 Vous utilisez un modèle IA local (Ollama, LM Studio, Jan ou autre) ? Configurez Dossiers IA avec votre URL locale — prend en charge localhost et les adresses LAN (192.168.x.x, noms d'hôtes personnalisés). La sauvegarde rapide et via le menu contextuel fonctionnent aussi sur les interfaces locales.
+
 ✨ MODE PROMPTS
 
 📝 Bibliothèque de prompts personnelle : Passez en mode Prompt d'un simple clic sur le bouton de bascule dans l'en-tête. Sauvegardez vos meilleurs prompts avec un titre et un texte complet, retrouvez-les instantanément grâce à la recherche et au tri (plus récents, plus anciens, A-Z).

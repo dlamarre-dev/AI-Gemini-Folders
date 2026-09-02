@@ -28,6 +28,7 @@ Folda za AI huunganishwa kiasili na wasaidizi wakuu wote wa gumzo la AI, kama vi
 🏠 MSAADA WA LLM WA NDANI
 
 Unaendesha mfano wa AI wa ndani (Ollama, LM Studio, Jan, au mwingine)? Sanidi Folda za AI na URL yako ya ndani — inasaidia localhost na anwani za LAN (192.168.x.x, majina ya seva maalum). Kuhifadhi haraka na kuhifadhi kupitia menyu ya muktadha pia hufanya kazi kwenye UI za ndani.
+
 ✨ HALI YA KIDOKEZO
 
 📝 Maktaba ya Kidokezo ya Kibinafsi: Badilika kwenda Hali ya Kidokezo kwa kubofya mara moja kwenye kitufe cha kubadilisha kilichoko kwenye kichwa. Hifadhi vidokezo vyako bora pamoja na kichwa na maandishi kamili, kisha vipate mara moja kwa kutumia utafutaji na upangaji (mpya zaidi, kongwe zaidi, A-Z).

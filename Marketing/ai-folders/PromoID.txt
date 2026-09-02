@@ -28,6 +28,7 @@ Folder AI terintegrasi secara native dengan semua asisten obrolan AI utama, sepe
 🏠 DUKUNGAN LLM LOKAL
 
 Menjalankan model AI lokal (Ollama, LM Studio, Jan, atau lainnya)? Konfigurasikan Folder AI dengan URL lokal Anda — mendukung localhost dan alamat LAN (192.168.x.x, nama host khusus). Simpan cepat dan simpan melalui menu konteks juga berfungsi pada UI lokal.
+
 ✨ MODE PROMPT
 
 📝 Perpustakaan Prompt Pribadi: Beralih ke Mode Prompt dengan satu klik pada tombol sakelar di header. Simpan prompt terbaik Anda dengan judul dan teks lengkap, lalu temukan seketika dengan pencarian dan pengurutan (terbaru, terlama, A-Z).

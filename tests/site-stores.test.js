@@ -69,9 +69,22 @@ describe('app.js wiring', () => {
     expect(APP).not.toMatch(/href="\$\{LINKS\.(chrome|firefox|edge|gemChrome|gemFirefox|gemEdge)\}/);
   });
 
-  test('an unpublished store ships with an empty link', () => {
-    expect(APP).toMatch(/\n\s*edge: "",/);
-    expect(APP).toMatch(/\n\s*gemEdge: "",/);
+  // Every link is either a real store URL or empty — never a placeholder, never a
+  // guess at what the URL will be once a listing clears review. Written as a shape
+  // rather than as a list of which stores are live, so publishing one does not
+  // fail a test about something else. Edge went from empty to filled here on
+  // 31/08/2026, and this is what stayed true across that.
+  test('every store link is a real URL or nothing at all', () => {
+    const block = APP.match(/const LINKS = \{([\s\S]*?)\n  \};/)[1];
+    const links = [...block.matchAll(/^\s*(\w+): "([^"]*)",?\s*$/gm)];
+    expect(links.length).toBeGreaterThanOrEqual(7);
+    for (const [, key, url] of links) {
+      expect(url === '' || /^https:\/\/\S+$/.test(url)).toBe(true);
+      expect(url).not.toMatch(/__|example\.|TODO|localhost/);
+      if (key.toLowerCase().includes('edge') && url) {
+        expect(url).toMatch(/^https:\/\/microsoftedge\.microsoft\.com\/addons\/detail\//);
+      }
+    }
   });
 
   // Gradient ids collide when the same markup is inlined more than once, which

@@ -28,6 +28,7 @@ VI fascikle se izvorno integriše sa svim glavnim AI chat asistentima, kao što 
 🏠 PODRŠKA ZA LOKALNI LLM
 
 Koristite lokalni AI model (Ollama, LM Studio, Jan ili drugi)? Konfigurišite VI fascikle sa vašim lokalnim URL-om — podržava localhost i LAN adrese (192.168.x.x, prilagođena imena domaćina). Brzo čuvanje i čuvanje putem kontekstnog menija rade i na lokalnim interfejsima.
+
 ✨ MOD PROMPTOVA
 
 📝 Lična biblioteka promptova: Prebaci na Mod promptova jednim klikom na prekidač u zaglavlju. Sačuvaj najbolje promptove s naslovom i tekstom, pronađi ih odmah pretragom i sortiranjem (najnovije, najstarije, A–Ž).

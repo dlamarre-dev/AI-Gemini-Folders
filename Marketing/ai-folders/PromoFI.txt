@@ -28,6 +28,7 @@ AI-kansiot integroituu natiivisti kaikkiin suuriin tekoälychat-avustajiin, kute
 🏠 PAIKALLISEN LLM:N TUKI
 
 Käytätkö paikallista AI-mallia (Ollama, LM Studio, Jan tai muu)? Määritä AI-kansiot paikallisella URL-osoitteellasi — tukee localhostia ja LAN-osoitteita (192.168.x.x, mukautetut isäntänimet). Pikatallennus ja kontekstivalikosta tallennus toimivat myös paikallisissa käyttöliittymissä.
+
 ✨ PROMPTTILA
 
 📝 Henkilökohtainen promptikirjasto: Vaihda Prompttilaan napsauttamalla otsikon kytkintä. Tallenna parhaat promptisi otsikolla ja tekstillä, löydä ne välittömästi hakemalla ja lajittelemalla (uusimmat, vanhimmat, A–Ö).

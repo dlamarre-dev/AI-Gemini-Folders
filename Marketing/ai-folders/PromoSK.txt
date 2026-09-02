@@ -28,6 +28,7 @@ AI priečinky sa natívne integrujú so všetkými hlavnými AI chatovacími asi
 🏠 PODPORA LOKÁLNEHO LLM
 
 Používate lokálny model AI (Ollama, LM Studio, Jan alebo iný)? Nakonfigurujte AI priečinky s miestnou URL adresou — podporuje localhost a LAN adresy (192.168.x.x, vlastné názvy hostiteľov). Rýchle ukladanie a ukladanie cez kontextové menu fungujú aj na lokálnych rozhraniach.
+
 ✨ REŽIM VÝZIEV
 
 📝 Osobná knižnica výziev: Prepnite do režimu výziev jedným kliknutím na prepínač v hlavičke. Ukladajte najlepšie výzvy s názvom a úplným textom a okamžite ich nájdite vďaka vyhľadávaniu a triedeniu (najnovšie, najstaršie, A-Z).

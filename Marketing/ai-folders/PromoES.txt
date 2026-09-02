@@ -28,6 +28,7 @@ Carpetas IA se integra de forma nativa con todos los principales asistentes de c
 🏠 SOPORTE DE LLM LOCAL
 
 ¿Usas un modelo de IA local (Ollama, LM Studio, Jan u otro)? Configura Carpetas IA con tu URL local — compatible con localhost y direcciones LAN (192.168.x.x, nombres de host personalizados). El guardado rápido y el guardado por menú contextual también funcionan en interfaces locales.
+
 ✨ MODO PROMPTS
 
 📝 Biblioteca personal de prompts: Cambia al modo Prompt con un solo clic en el botón de alternancia del encabezado. Guarda tus mejores prompts con un título y texto completo, y encuéntralos al instante con búsqueda y ordenación (más recientes, más antiguos, A-Z).

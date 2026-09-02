@@ -36,10 +36,12 @@ EXTENSION_CONFIG = {
         # Partner Center only assigns at publish time. An empty review URL makes
         # build_target drop the banner rather than ship a dead link (see
         # strip_review_banner); filling it in brings the banner back by itself.
-        "review_url_edge":         "",
+        # Edge has no separate reviews page — they sit at the bottom of the
+        # listing — so the review link is the listing itself.
+        "review_url_edge":         "https://microsoftedge.microsoft.com/addons/detail/dossiers-gemini-organise/ggippfdnnpodobohgekkjlfdgnkbccge",
         "af_download_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf",
         "af_download_url_firefox": "https://addons.mozilla.org/firefox/addon/ai_folders/",
-        "af_download_url_edge":    "",
+        "af_download_url_edge":    "https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan",
     },
     "ai-folders": {
         "firefox_gecko_id":   "aifolders@dlamarre-dev.github.io",
@@ -49,7 +51,8 @@ EXTENSION_CONFIG = {
         "marketing_subdir":   "ai-folders",
         "review_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf/reviews",
         "review_url_firefox": "https://addons.mozilla.org/firefox/addon/ai_folders/reviews/",
-        "review_url_edge":    "",
+        # Same as above: the listing page, reviews being part of it.
+        "review_url_edge":    "https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan",
     },
 }
 
@@ -81,6 +84,9 @@ QUICK_SAVE_SPELLINGS = ["Ctrl+Shift+S", "Cmd+Shift+S", "Command+Shift+S",
 #   emoji / label     log lines only
 #   drop_files        which config key lists files to remove from the merged tree
 #   text_swaps        (old, new) pairs applied to _locales AND the promo texts
+#   promo_swaps       (old, new) pairs applied to the promo texts ONLY, for
+#                     claims that are true of the listing rather than of the
+#                     product
 #   collapse_mac      drop the now-redundant "(or X on Mac)" parenthetical
 #   patch_manifest    optional callable(manifest, dest, cfg)
 #
@@ -91,6 +97,7 @@ TARGETS = {
         "label": "Chrome",
         "drop_files": "firefox_only_files",
         "text_swaps": [],
+        "promo_swaps": [],
         "message_aliases": {},
         "description_max": None,
         "collapse_mac": False,
@@ -106,6 +113,14 @@ TARGETS = {
         # required." A brand swap is language-independent, exactly like Firefox's.
         # The quick-save shortcut is NOT swapped: Edge shares Chrome's commands API.
         "text_swaps": [("Chrome", "Microsoft Edge")],
+        # The listing is available in 42 languages, not 43: Partner Center
+        # does not offer Filipino, so that locale has no page on this store.
+        # A listing-only claim, which is why it is not a text_swap — the
+        # EXTENSION still ships 43 locales here, the same as everywhere, and
+        # a swap that reached the _locales would make the product understate
+        # itself in its own UI. Bengali writes the number in Bengali digits,
+        # which is how it went unnoticed that it claimed 27.
+        "promo_swaps": [("43", "42"), ("\u09ea\u09e9", "\u09ea\u09e8")],
         # Microsoft caps a store-listing description at 10,000 characters, and
         # 15 of the 86 promo texts are over it — French by 755. Discovered before
         # writing the listing driver rather than as a form error in the middle of
@@ -128,6 +143,7 @@ TARGETS = {
         "drop_files": None,
         "text_swaps": ([("Chrome", "Firefox")]
                        + [(sc, "Alt+Shift+S") for sc in QUICK_SAVE_SPELLINGS]),
+        "promo_swaps": [],
         "message_aliases": {},
         "description_max": None,
         "collapse_mac": True,
@@ -532,6 +548,10 @@ def build_marketing(ext_name, cfg, target_name, target):
 
             content, modified = apply_text_swaps(content, target,
                                                  collapse=target["collapse_mac"])
+            for old, new in target["promo_swaps"]:
+                if old in content:
+                    content = content.replace(old, new)
+                    modified = True
             if "__AF_STORE_URL__" in content:
                 if af_url:
                     content = content.replace("__AF_STORE_URL__", af_url)

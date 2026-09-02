@@ -28,6 +28,7 @@ Ang Mga AI Folder ay natively na nag-iintegrate sa lahat ng pangunahing AI chat 
 🏠 SUPORTA SA LOKAL NA LLM
 
 Nagpapatakbo ng lokal na AI model (Ollama, LM Studio, Jan, o iba pa)? I-configure ang Mga AI Folder gamit ang iyong lokal na URL — sinusuportahan ang localhost at mga LAN address (192.168.x.x, mga custom na hostname). Gumagana rin ang mabilis na pag-save at pag-save sa pamamagitan ng context menu sa mga lokal na UI.
+
 ✨ PROMPT MODE
 
 📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).

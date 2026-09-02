@@ -28,6 +28,7 @@ AI aplankai natūraliai integruojasi su visais pagrindiniais AI pokalbių asiste
 🏠 VIETINIO LLM PALAIKYMAS
 
 Ar naudojate vietinį AI modelį (Ollama, LM Studio, Jan ar kitą)? Sukonfigūruokite AI aplankai naudodami vietinį URL — palaiko localhost ir LAN adresus (192.168.x.x, pasirinktiniai prieglobos pavadinimai). Greitas išsaugojimas ir per kontekstinį meniu taip pat veikia vietinėse sąsajose.
+
 ✨ PROMPTŲ REŽIMAS
 
 📝 Asmeninė promptų biblioteka: Perjunk į Promptų režimą paspausdamas antraštės perjungiklį. Išsaugok geriausius promptus su pavadinimu ir tekstu, rask juos iš karto naudodamas paiešką ir rikiavimą (naujausi, seniausi, A–Ž).
