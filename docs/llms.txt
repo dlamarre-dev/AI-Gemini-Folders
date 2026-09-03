@@ -46,7 +46,7 @@ AI Folders solves the problem of losing track of conversations across multiple A
 
 - Chrome Web Store: https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf
 - Firefox Add-ons: https://addons.mozilla.org/firefox/addon/ai_folders/
-- Microsoft Edge Add-ons: https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan
+- Microsoft Edge Add-ons: https://microsoftedge.microsoft.com/addons/detail/ikjbhgikmlcghjnbhaemgfhlbeaiddan
 - Source code: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 ## Also available
@@ -55,7 +55,7 @@ AI Folders solves the problem of losing track of conversations across multiple A
 
 - Chrome: https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik
 - Firefox: https://addons.mozilla.org/firefox/addon/gemini_folders/
-- Microsoft Edge: https://microsoftedge.microsoft.com/addons/detail/dossiers-gemini-organise/ggippfdnnpodobohgekkjlfdgnkbccge
+- Microsoft Edge: https://microsoftedge.microsoft.com/addons/detail/ggippfdnnpodobohgekkjlfdgnkbccge
 
 ## Technical details
 

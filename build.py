@@ -38,10 +38,10 @@ EXTENSION_CONFIG = {
         # strip_review_banner); filling it in brings the banner back by itself.
         # Edge has no separate reviews page — they sit at the bottom of the
         # listing — so the review link is the listing itself.
-        "review_url_edge":         "https://microsoftedge.microsoft.com/addons/detail/dossiers-gemini-organise/ggippfdnnpodobohgekkjlfdgnkbccge",
+        "review_url_edge":         "https://microsoftedge.microsoft.com/addons/detail/ggippfdnnpodobohgekkjlfdgnkbccge",
         "af_download_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf",
         "af_download_url_firefox": "https://addons.mozilla.org/firefox/addon/ai_folders/",
-        "af_download_url_edge":    "https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan",
+        "af_download_url_edge":    "https://microsoftedge.microsoft.com/addons/detail/ikjbhgikmlcghjnbhaemgfhlbeaiddan",
     },
     "ai-folders": {
         "firefox_gecko_id":   "aifolders@dlamarre-dev.github.io",
@@ -52,7 +52,7 @@ EXTENSION_CONFIG = {
         "review_url_chrome":  "https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf/reviews",
         "review_url_firefox": "https://addons.mozilla.org/firefox/addon/ai_folders/reviews/",
         # Same as above: the listing page, reviews being part of it.
-        "review_url_edge":    "https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan",
+        "review_url_edge":    "https://microsoftedge.microsoft.com/addons/detail/ikjbhgikmlcghjnbhaemgfhlbeaiddan",
     },
 }
 
