@@ -12,7 +12,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 [![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-blue?logo=googlechrome)](https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf)
 [![Available on Firefox Add-ons](https://img.shields.io/badge/Firefox_Add--ons-Available-orange?logo=firefox)](https://addons.mozilla.org/firefox/addon/ai_folders/)
-[![Available on Microsoft Edge Add-ons](https://img.shields.io/badge/Edge_Add--ons-Available-0078D7?logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan)
+[![Available on Microsoft Edge Add-ons](https://img.shields.io/badge/Edge_Add--ons-Available-0078D7?logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/ikjbhgikmlcghjnbhaemgfhlbeaiddan)
 
 ### Supported platforms
 | Platform                       | Folders | Quick Save | Prompt Injection |
@@ -47,7 +47,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 [![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-blue?logo=googlechrome)](https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik)
 [![Available on Firefox Add-ons](https://img.shields.io/badge/Firefox_Add--ons-Available-orange?logo=firefox)](https://addons.mozilla.org/firefox/addon/gemini_folders/)
-[![Available on Microsoft Edge Add-ons](https://img.shields.io/badge/Edge_Add--ons-Available-0078D7?logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/dossiers-gemini-organise/ggippfdnnpodobohgekkjlfdgnkbccge)
+[![Available on Microsoft Edge Add-ons](https://img.shields.io/badge/Edge_Add--ons-Available-0078D7?logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/ggippfdnnpodobohgekkjlfdgnkbccge)
    
 ---
 
@@ -97,12 +97,12 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 **AI Folders:**
 👉 **[Install for Google Chrome](https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf)**
 👉 **[Install for Mozilla Firefox](https://addons.mozilla.org/firefox/addon/ai_folders/)**
-👉 **[Install for Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan)**
+👉 **[Install for Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/ikjbhgikmlcghjnbhaemgfhlbeaiddan)**
 
 **Gemini Folders:**
 👉 **[Install for Google Chrome](https://chromewebstore.google.com/detail/gemini-folders/jffchdehoapigpmifkmleglfimjiilik)**
 👉 **[Install for Mozilla Firefox](https://addons.mozilla.org/firefox/addon/gemini_folders/)**
-👉 **[Install for Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/dossiers-gemini-organise/ggippfdnnpodobohgekkjlfdgnkbccge)**
+👉 **[Install for Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/ggippfdnnpodobohgekkjlfdgnkbccge)**
 
 ### Option 2: Developer Mode (Manual Installation)
 

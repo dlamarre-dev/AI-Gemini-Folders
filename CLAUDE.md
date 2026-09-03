@@ -787,8 +787,8 @@ python amo/amo_publish.py --item <slug> --texts --images --apply
 
 Both cleared certification on 31/08/2026:
 
-- Gemini Folders — <https://microsoftedge.microsoft.com/addons/detail/dossiers-gemini-organise/ggippfdnnpodobohgekkjlfdgnkbccge>
-- AI Folders — <https://microsoftedge.microsoft.com/addons/detail/dossiers-ia-organisez-co/ikjbhgikmlcghjnbhaemgfhlbeaiddan>
+- Gemini Folders — <https://microsoftedge.microsoft.com/addons/detail/ggippfdnnpodobohgekkjlfdgnkbccge>
+- AI Folders — <https://microsoftedge.microsoft.com/addons/detail/ikjbhgikmlcghjnbhaemgfhlbeaiddan>
 
 Everything that had been built and left gated on those URLs turned on by pasting
 them in, which was the point of gating rather than branching:
