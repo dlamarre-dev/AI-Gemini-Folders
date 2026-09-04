@@ -29,15 +29,22 @@ release brings all three stores back to parity.
 
 ## Reporting a vulnerability
 
-**Open an issue:**
-<https://github.com/dlamarre-dev/AI-Gemini-Folders/issues>
+**Report it privately:**
+<https://github.com/dlamarre-dev/AI-Gemini-Folders/security/advisories/new>
+
+That form is GitHub's private vulnerability reporting. The report is visible only
+to you and to the maintainer until an advisory is published, so the details do not
+reach anyone who could use them before there is a fix. Use it for anything that
+could be exploited against users.
 
 Please include the extension and version, the browser and its version, and the
 steps to reproduce. A proof of concept helps more than a description of one.
 
-Issues are public, so if you believe a report would put users at risk before a fix
-exists, say so in the first line and keep the details out of it — a way to send
-them privately will be arranged from there.
+For everything that is **not** a vulnerability — a bug, a broken selector on a
+site, a feature — use the
+[issues](https://github.com/dlamarre-dev/AI-Gemini-Folders/issues) as usual. If you
+are unsure which of the two something is, the private form is the safe choice: a
+report can always be moved into the open, and an open one cannot be taken back.
 
 Expect a first reply within a few days. This is a solo project, not a company
 with an on-call rotation.
