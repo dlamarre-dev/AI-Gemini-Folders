@@ -153,10 +153,44 @@ This project uses a Python build pipeline to generate browser-specific versions 
 
 Both extensions are built with privacy in mind.
 
-* **Gemini Folders** only requests access to `gemini.google.com` and the context menu.
-* **AI Folders** requests access to the supported AI domains (`chatgpt.com`, `claude.ai`, `perplexity.ai`, `copilot.microsoft.com`, `chat.deepseek.com`, `grok.com`, `gemini.google.com`, `chat.mistral.ai`, `meta.ai`, `chat.qwen.ai`, `chat.z.ai`, `kimi.com`, `poe.com`, `duck.ai`, `duckduckgo.com`, `you.com`, `pi.ai`, `character.ai`, `wenxin.baidu.com`, `chat.baidu.com`) and the context menu — and nothing else.
+* **Gemini Folders** only requests access to `gemini.google.com`.
+* **AI Folders** requests access to the supported AI domains — and nothing else. The full host list, exactly as it stands in `manifest.json`:
+
+| Host permission | Service |
+|---|---|
+| `gemini.google.com` | Google Gemini |
+| `claude.ai` | Claude |
+| `chatgpt.com` | ChatGPT |
+| `copilot.microsoft.com` | Microsoft Copilot (consumer) |
+| `m365.cloud.microsoft` | Microsoft 365 Copilot (work / school account) |
+| `chat.deepseek.com` | DeepSeek |
+| `grok.com`, `*.grok.com` | Grok |
+| `perplexity.ai`, `*.perplexity.ai` | Perplexity |
+| `chat.z.ai` | Z.ai |
+| `kimi.com`, `*.kimi.com` | Kimi |
+| `chat.qwen.ai` | Qwen |
+| `meta.ai`, `*.meta.ai` | Meta AI |
+| `chat.mistral.ai` | Mistral (Vibe) |
+| `poe.com`, `*.poe.com` | Poe |
+| `duck.ai`, `*.duck.ai`, `duckduckgo.com` | Duck.ai |
+| `you.com`, `*.you.com` | You.com |
+| `pi.ai`, `*.pi.ai` | Pi |
+| `character.ai`, `*.character.ai` | Character.AI |
+| `wenxin.baidu.com`, `chat.baidu.com` | Baidu |
+
+  Two rows are one service on two hosts rather than extra reach. **Copilot:** a work
+  account's tenant-bound Microsoft 365 Copilot lives on `m365.cloud.microsoft`, and
+  without that host the extension did nothing at all for those users — same product, same
+  code path as the consumer domain. **Baidu:** the chat moved to `wenxin.baidu.com`, and
+  `chat.baidu.com` now redirects there — a redirect a manifest match pattern cannot
+  follow, so both are declared.
+* **API permissions — the same six in both extensions:** `activeTab`, `storage`,
+  `scripting`, `contextMenus`, `tabGroups`, `bookmarks`. There is deliberately **no
+  `tabs` permission**, which is what would add the "read your browsing history" warning:
+  tab reuse works off the host permissions above, so a tab the extension cannot read is
+  by construction never touched.
 * **Optional host permission (local LLM):** AI Folders declares a broad `optional_host_permissions` (`http://*/*`, `https://*/*`) because the local-LLM URL is user-defined and can't be known ahead of time. **Nothing is granted by default.** When you set a local LLM URL, the extension requests access to *only that single origin* via the browser's permission prompt, and revokes the previous origin if you change it. The broad declaration is the manifest pattern required to request a dynamic origin at runtime — it is not standing access to all sites.
-* The `bookmarks` permission is used strictly to manage the mobile sync folder when you enable that feature.
+* The `bookmarks` permission is used strictly to manage the mobile sync folder when you enable that feature (that tree is called *Favorites* on Microsoft Edge).
 * Tab content is read **only** when you explicitly save a conversation, solely to extract its title.
 * **What is stored, and where:** your folder structure, the titles and links of saved conversations, and your prompts are kept in your browser’s own sync (Chrome Sync on Chrome, Firefox Sync on Firefox) and synced across your signed-in devices. The extensions **never** store the *content* of a conversation — only its title and link. With mobile sync enabled, that structure is also mirrored into your browser bookmarks (the only data written outside the extension’s own storage). **No third-party servers, no analytics, no tracking.**
 **Verifiable guarantees:**
@@ -180,16 +214,16 @@ These follow from the extension reading each AI platform’s live page (no serve
 
 ## 🧪 Development & Contributing
 
-The two extensions share one codebase in `src/`, with a thin per-extension overlay in `extensions/<ai-folders|gemini-folders>/` (manifest, popup, background, `site-config.js`, `_locales/`). `python build.py` merges them into `dist/<name>/{chrome,firefox}`.
+The two extensions share one codebase in `src/`, with a thin per-extension overlay in `extensions/<ai-folders|gemini-folders>/` (manifest, popup, background, `site-config.js`, `_locales/`). `python build.py` merges them into `dist/<name>/{chrome,edge,firefox}`.
 
 ```bash
 npx jest            # run the test suite (~270 tests, jsdom)
-python build.py     # run tests, then build both extensions for Chrome + Firefox
+python build.py     # run tests, then build both extensions for Chrome, Edge and Firefox
 ```
 
 Site logos are pre-rasterized PNGs (`extensions/ai-folders/icons/`), generated by `node tools/generate-site-icons.js` (needs Chrome) from the vector sources in `assets/site-logos/` — which are also the marks used by the website.
 
-`main` is protected: changes go through a pull request that must pass three CI checks (`test`, plus CodeQL `Analyze (javascript-typescript)` and `Analyze (actions)`). Please branch, open a PR, and let the checks run rather than pushing to `main` directly.
+`main` is protected: changes go through a pull request that must pass five CI checks — `test`, `build` (packages both extensions for all three browsers and runs `tools/validate_build.py`), and CodeQL's `Analyze (javascript-typescript)`, `Analyze (actions)` and `Analyze (python)`. Please branch, open a PR, and let the checks run rather than pushing to `main` directly.
 
 > Adding a new UI string means adding the key to all 43 `_locales/*/messages.json` files of **both** extensions — reuse an existing key when you can.
 
