@@ -22,10 +22,10 @@ AI Folders solves the problem of losing track of conversations across multiple A
 
 ## Supported AI services
 
-- ChatGPT (chat.openai.com)
+- ChatGPT (chatgpt.com)
 - Claude (claude.ai)
 - Gemini (gemini.google.com)
-- Microsoft Copilot (copilot.microsoft.com)
+- Microsoft Copilot (copilot.microsoft.com, and m365.cloud.microsoft for work and school accounts)
 - DeepSeek (chat.deepseek.com)
 - Grok (grok.com)
 - Perplexity (perplexity.ai)
@@ -62,7 +62,7 @@ AI Folders solves the problem of losing track of conversations across multiple A
 - Built with vanilla JS and Chrome Extension Manifest V3
 - Storage: Chrome sync storage with LZ-String compression (chunked to stay under quota)
 - No external servers, no analytics, no account
-- Permissions: storage, contextMenus, scripting, tabs (used only for injection on AI sites)
+- Permissions: activeTab, storage, scripting, contextMenus, tabGroups, bookmarks. No `tabs` permission, so the extension never sees your browsing history
 - Content scripts are injected only on supported AI domains
 
 ## Privacy
