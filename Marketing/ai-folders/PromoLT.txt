@@ -2,7 +2,7 @@
 
 Tvarkykite visų mėgstamiausių AI įrankių pokalbius bendrose aplankuose, kurkite daugkartinio naudojimo raginimų biblioteką ir įterpkite šablonus tiesiogiai į bet kurį įvesties lauką — be kopijavimo ir įklijavimo.
 
-🌐 19 PALAIKOMOS DI PASLAUGOS
+🌐 18 PALAIKOMOS DI PASLAUGOS
 
 AI aplankai natūraliai integruojasi su visais pagrindiniais AI pokalbių asistentais, tokiais kaip Claude, ChatGPT ir Gemini, ir su vietiniais LLM, kuriuos paleidžiate patys. Pokalbiai iš skirtingų platformų gali būti tame pačiame aplanke. Kiekvienas pokalbis rodo savo paslaugos spalvą ir logotipą, todėl visada žinote, iš kur jis atsirado.
 

@@ -97,8 +97,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   // One button per SITES entry, alphabetical by key with 'local' pinned last.
   // Generated rather than hardcoded in popup.html so the registry stays the
   // single source of truth; the row wraps when the sites outgrow one line.
+  // Retired entries are filtered out here and not by the absence of a domain,
+  // because 'local' has no domain either and does get a button.
   const siteNewConvRow = document.getElementById('siteNewConvRow');
   Object.values(SITES)
+    .filter(site => !site.retired)
     .sort((a, b) => (a.key === 'local') - (b.key === 'local') || a.key.localeCompare(b.key))
     .forEach(site => {
     const siteKey = site.key;
@@ -223,6 +226,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   initSaveConversation({
     getSiteKey: (tab) => getSiteByUrl(tab?.url, localLlmUrl),
     unsupportedMessageKey: 'alertNotSupported',
+    // Supported but unsaveable (Duck.ai): one address for every chat, so there
+    // is no conversation to point at. Its own message, because "use a
+    // supported AI site" would be wrong on a site we do support.
+    canSave: canSaveSite,
+    noSaveMessageKey: 'alertNoConversationUrl',
     tagSite: true,
   });
 

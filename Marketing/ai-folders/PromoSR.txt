@@ -2,7 +2,7 @@
 
 Organizujte razgovore iz svih svojih omiljenih AI alata u deljene fascikle, izgradite biblioteku upita za višestruku upotrebu i ubacujte šablone direktno u bilo koje polje za unos — bez kopiranja i lepljenja.
 
-🌐 19 PODRŽANIH AI USLUGA
+🌐 18 PODRŽANIH AI USLUGA
 
 VI fascikle se izvorno integriše sa svim glavnim AI chat asistentima, kao što su Claude, ChatGPT i Gemini, kao i sa lokalnim LLM modelima koje sami pokrećete. Razgovori sa različitih platformi mogu da dele potpuno istu fasciklu. Svaki čet prikazuje boju i logotip svoje usluge, tako da uvek znate odakle dolazi.
 

@@ -1,4 +1,4 @@
-const { SITES, getSiteByUrl, extractAITitleLogic } = require('../extensions/ai-folders/site-config.js');
+const { SITES, getSiteByUrl, canSaveSite, extractAITitleLogic } = require('../extensions/ai-folders/site-config.js');
 
 // Site detection is core and brittle — it gates save, title extraction, and the
 // #-trigger. These lock down the URL → site-key mapping.
@@ -7,15 +7,28 @@ describe('getSiteByUrl', () => {
     ['https://chatgpt.com/c/abc', 'chatgpt'],
     ['https://claude.ai/chat/x', 'claude'],
     ['https://gemini.google.com/app', 'gemini'],
+    // Copilot answers at four addresses and each one had to be added to the
+    // manifest before it worked at all: the consumer host, the unified
+    // copilot.com a new conversation now opens at, the commercial
+    // m365.cloud.microsoft, and the copilot.cloud.microsoft it redirects to.
     ['https://copilot.microsoft.com/', 'copilot'],
+    ['https://copilot.com/chat', 'copilot'],
+    ['https://www.copilot.com/chat', 'copilot'],
+    ['https://m365.cloud.microsoft/chat', 'copilot'],
+    ['https://copilot.cloud.microsoft/chat', 'copilot'],
     ['https://chat.deepseek.com/', 'deepseek'],
     ['https://grok.com/', 'grok'],
     ['https://grok.com/chat/abc', 'grok'],
     ['https://perplexity.ai/', 'perplexity'],
     ['https://www.perplexity.ai/search', 'perplexity'],
     ['https://chat.z.ai/c/abc', 'zai'],
+    // Moonshot split Kimi: kimi.com serves China, kimi.ai the rest. Both must
+    // resolve to one key or a conversation saved before the split stops being
+    // recognized -- the Baidu lesson.
     ['https://www.kimi.com/', 'kimi'],
     ['https://kimi.com/chat/abc', 'kimi'],
+    ['https://kimi.ai/chat/abc', 'kimi'],
+    ['https://www.kimi.ai/', 'kimi'],
     ['https://chat.qwen.ai/c/abc', 'qwen'],
     ['https://meta.ai/', 'meta'],
     ['https://www.meta.ai/c/abc', 'meta'],
@@ -23,7 +36,6 @@ describe('getSiteByUrl', () => {
     ['https://poe.com/chat/abc', 'poe'],
     ['https://duckduckgo.com/?q=x&ia=chat', 'duckai'],
     ['https://duck.ai/', 'duckai'],
-    ['https://you.com/', 'you'],
     ['https://pi.ai/talk', 'pi'],
     ['https://character.ai/chat/abc', 'characterai'],
     ['https://chat.baidu.com/', 'baidu'],
@@ -74,7 +86,14 @@ describe('getSiteByUrl', () => {
 // A site the registry knows but the manifest cannot touch fails at runtime with
 // "Cannot access contents of url … must request permission to access this host"
 // — invisible to every other test. Baidu shipped in that state after it moved to
-// wenxin.baidu.com, so the three lists are checked against the registry here.
+// wenxin.baidu.com, so the lists are checked against the registry here.
+//
+// The three lists do NOT cover the same set, and that is the point:
+//   host_permissions + content_scripts  -> every live site (injection needs the
+//       first, the #-trigger the second), so a `noSave` site keeps both.
+//   SUPPORTED_URL_PATTERNS              -> only sites you can save on. That
+//       constant feeds nothing but the save menu's documentUrlPatterns, so
+//       Duck.ai's absence from it IS the feature, not a gap.
 describe('host permissions cover every registered domain', () => {
   const fs = require('fs');
   const path = require('path');
@@ -83,16 +102,31 @@ describe('host permissions cover every registered domain', () => {
   const backgroundSrc = fs.readFileSync(path.join(extDir, 'background.js'), 'utf8');
   const contentMatches = manifest.content_scripts[0].matches;
 
-  // The local LLM is deliberately absent: its origin is granted at runtime.
-  const domains = Object.values(SITES)
-    .flatMap(s => [s.domain, ...(s.altDomains ?? [])])
-    .filter(Boolean);
+  const hosts = (s) => [s.domain, ...(s.altDomains ?? [])].filter(Boolean);
+  // The local LLM is deliberately absent: its origin is granted at runtime. A
+  // retired site is absent for the opposite reason -- its permissions were
+  // removed on purpose, and this check would demand them back.
+  const live = Object.values(SITES).filter(s => !s.retired);
 
-  test.each(domains)('%s is reachable', (domain) => {
+  test.each(live.flatMap(hosts))('%s is reachable and carries the content script', (domain) => {
     const pattern = `*://${domain}/*`;
     expect(manifest.host_permissions).toContain(pattern);
     expect(contentMatches).toContain(pattern);
-    expect(backgroundSrc).toContain(pattern);
+  });
+
+  test.each(live.filter(s => !s.noSave).flatMap(hosts))('%s can be saved from', (domain) => {
+    expect(backgroundSrc).toContain(`*://${domain}/*`);
+  });
+
+  test('a noSave site is absent from the save menu patterns', () => {
+    const noSave = Object.values(SITES).filter(s => s.noSave && !s.retired);
+    // If this ever empties, the assertion below stops proving anything.
+    expect(noSave.map(s => s.key)).toEqual(['duckai']);
+    const patterns = backgroundSrc.slice(backgroundSrc.indexOf('SUPPORTED_URL_PATTERNS'),
+                                         backgroundSrc.indexOf('];'));
+    for (const domain of noSave.flatMap(hosts)) {
+      expect(patterns).not.toContain(`*://${domain}/*`);
+    }
   });
 });
 
@@ -104,6 +138,30 @@ describe('composer flags', () => {
     expect(SITES.kimi.noSuggestions).toBe(true);
     // Not forceClear: the destructive textContent wipe desyncs Lexical's model.
     expect(SITES.kimi.forceClear).toBeUndefined();
+  });
+
+  // Moonshot split Kimi across two domains. Which one is primary is a decision
+  // about this extension's audience -- 43 locales, very few of them in China --
+  // and not about which redirect happens to fire, so it is pinned here rather
+  // than left to be "corrected" by whoever next reads the redirect chain.
+  test('kimi.ai is the default, kimi.com still resolves', () => {
+    expect(SITES.kimi.domain).toBe('kimi.ai');
+    expect(SITES.kimi.newConvUrl).toBe('https://www.kimi.ai/');
+    expect(SITES.kimi.altDomains).toContain('kimi.com');
+    expect(getSiteByUrl('https://www.kimi.com/')).toBe('kimi');
+  });
+
+  test('copilot targets the Fluent composer and opts out of inline suggestions', () => {
+    // Confirmed live on m365.cloud.microsoft (09/2026). The five Bing-chat era
+    // selectors that used to sit here matched nothing at all, so only the
+    // positional fallback kept the popup's insert button working.
+    expect(SITES.copilot.editorSelectors[0]).toBe('#m365-chat-editor-target-element');
+    // An inline <span> composer: insertParagraph has no block to split, so the
+    // three-line suggestion list cannot render cleanly there.
+    expect(SITES.copilot.noSuggestions).toBe(true);
+    // Not forceClear: the destructive wipe would also change the popup path,
+    // which is the one that works there today.
+    expect(SITES.copilot.forceClear).toBeUndefined();
   });
 
   test('the chip-tokenizing composers still force a clear before injecting', () => {
@@ -163,6 +221,18 @@ describe('extractAITitleLogic', () => {
   test('perplexity: reads the question <h1>', () => {
     document.body.innerHTML = '<h1>What is the capital of France?</h1>';
     expect(extractAITitleLogic('perplexity', 'fallback')).toBe('What is the capital of France?');
+  });
+
+  // Each Copilot host serves its own generic tagline, and docTitle only cuts at
+  // " - " / " | " / " — " — so the colon form has to be ignored whole.
+  test('copilot: ignores the consumer tagline and returns the fallback', () => {
+    document.title = 'Microsoft Copilot: Your AI companion';
+    expect(extractAITitleLogic('copilot', 'New conversation')).toBe('New conversation');
+  });
+
+  test('copilot: ignores the work-chat tagline and returns the fallback', () => {
+    document.title = 'Copilot | AI chat for work';
+    expect(extractAITitleLogic('copilot', 'New conversation')).toBe('New conversation');
   });
 
   test('returns the fallback when no strategy yields a title', () => {
@@ -265,5 +335,119 @@ describe('extractAITitleLogic', () => {
 
   test('the fallback tab title is cleaned of its " - suffix" before being used', () => {
     expect(extractAITitleLogic('baidu', 'Ma vraie conversation - 百度文心助手')).toBe('Ma vraie conversation');
+  });
+});
+
+// A retired site is the one case where an entry must be half-alive: its colour
+// and logo still have to resolve, because conversations saved from it are keyed
+// by URL (CLAUDE.md §6) and cannot be migrated, while every forward-looking
+// path must treat the site as gone. Each half is asserted separately here
+// because each is served by a different call site.
+describe('retired sites (You.com, 09/2026)', () => {
+  test('the entry is still there, with the visuals saved conversations need', () => {
+    expect(SITES.you).toBeDefined();
+    expect(SITES.you.retired).toBe(true);
+    expect(SITES.you.color).toBe('#3B5BFF');
+    expect(SITES.you.logo).toBe('icons/you.png');
+  });
+
+  test('nothing new can be saved or injected: the URL no longer resolves', () => {
+    // getSiteByUrl is the single gate on both the save flow and the #-trigger,
+    // so this one expectation is what switches both off.
+    expect(getSiteByUrl('https://you.com/')).toBeNull();
+    expect(getSiteByUrl('https://you.com/chat')).toBeNull();
+    expect(getSiteByUrl('https://www.you.com/chat')).toBeNull();
+  });
+
+  test('it offers no new-conversation target and no editor to inject into', () => {
+    expect(SITES.you.newConvUrl).toBeUndefined();
+    expect(SITES.you.editorSelectors).toBeUndefined();
+  });
+
+  test('its host permissions are gone, not merely unused', () => {
+    const fs = require('fs');
+    const path = require('path');
+    const extDir = path.join(__dirname, '..', 'extensions', 'ai-folders');
+    const manifest = fs.readFileSync(path.join(extDir, 'manifest.json'), 'utf8');
+    const background = fs.readFileSync(path.join(extDir, 'background.js'), 'utf8');
+    expect(manifest).not.toContain('you.com');
+    expect(background).not.toContain('you.com');
+  });
+
+  test('the popup renders no button for it (and still does for local)', () => {
+    // popup.js filters on !retired, not on a missing domain: 'local' has no
+    // domain either and must keep its button.
+    const shown = Object.values(SITES).filter(s => !s.retired).map(s => s.key);
+    expect(shown).not.toContain('you');
+    expect(shown).toContain('local');
+  });
+
+  test('the welcome page leaves it out of the supported-sites row', () => {
+    // Mirrors supportedSites() in src/welcome.js.
+    const row = Object.values(SITES).filter(s => s && s.domain && s.logo && !s.retired);
+    expect(row.map(s => s.key)).not.toContain('you');
+  });
+
+  test('site-diagnostics skips it, having nothing to open', () => {
+    // Mirrors SITES_TO_TEST in tools/site-diagnostics/diagnostics.js.
+    const probed = Object.values(SITES).filter(s => s.domain && s.newConvUrl);
+    expect(probed.map(s => s.key)).not.toContain('you');
+  });
+});
+
+// Duck.ai stopped giving each conversation its own address (09/2026). That is a
+// narrower failure than a retirement: the site is alive, so injection and the
+// #-trigger must keep working, and only the save path goes. Each half is
+// asserted, because a flag that switched off too much would be invisible here.
+describe('unsaveable sites (Duck.ai, 09/2026)', () => {
+  test('canSaveSite refuses a noSave site and allows the rest', () => {
+    expect(SITES.duckai.noSave).toBe(true);
+    expect(canSaveSite('duckai')).toBe(false);
+    expect(canSaveSite('claude')).toBe(true);
+    expect(canSaveSite('local')).toBe(true);
+    expect(canSaveSite(null)).toBe(false);
+    expect(canSaveSite(undefined)).toBe(false);
+    expect(canSaveSite('nosuchsite')).toBe(true);   // unknown key: not a noSave site
+  });
+
+  test('the site itself stays fully supported: it still resolves and still injects', () => {
+    // Not retired -- the URL must keep resolving, or the #-trigger and the
+    // popup's insert button would stop working along with the save.
+    expect(SITES.duckai.retired).toBeUndefined();
+    expect(getSiteByUrl('https://duck.ai/')).toBe('duckai');
+    expect(getSiteByUrl('https://duckduckgo.com/?q=x&ia=chat')).toBe('duckai');
+    expect(SITES.duckai.editorSelectors.length).toBeGreaterThan(0);
+    expect(SITES.duckai.newConvUrl).toBe('https://duck.ai/');
+  });
+
+  test('its own message exists in all 43 locales, and names no site', () => {
+    const fs = require('fs');
+    const path = require('path');
+    const dir = path.join(__dirname, '..', 'extensions', 'ai-folders', '_locales');
+    const locales = fs.readdirSync(dir);
+    expect(locales).toHaveLength(43);
+    // Reusing alertNotSupported here would tell someone on a site the extension
+    // DOES support to go and use a supported site. Hence a key of its own.
+    const missing = locales.filter((l) => {
+      const m = JSON.parse(fs.readFileSync(path.join(dir, l, 'messages.json'), 'utf8'));
+      return !m.alertNoConversationUrl?.message;
+    });
+    expect(missing).toEqual([]);
+    // Generic on purpose: the next site to lose its per-chat URLs reuses it.
+    const named = locales.filter((l) => {
+      const m = JSON.parse(fs.readFileSync(path.join(dir, l, 'messages.json'), 'utf8'));
+      return /Duck\.ai|DuckDuckGo/i.test(m.alertNoConversationUrl.message);
+    });
+    expect(named).toEqual([]);
+  });
+
+  test('Gemini Folders does not carry the key it can never show', () => {
+    // Same reasoning as the whats-new Baidu card (CLAUDE.md §10b): Gemini has
+    // real per-conversation URLs, so the string would be dead weight in 43 files.
+    const fs = require('fs');
+    const path = require('path');
+    const en = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'extensions',
+      'gemini-folders', '_locales', 'en', 'messages.json'), 'utf8'));
+    expect(en.alertNoConversationUrl).toBeUndefined();
   });
 });

@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Percakapan Duck.ai baru"
   },
-  "newConv_you": {
-    "message": "Percakapan You.com baru"
-  },
   "newConv_pi": {
     "message": "Percakapan Pi baru"
   },
@@ -309,7 +306,10 @@
     "message": "Atur URL LLM lokal:"
   },
   "alertNotSupported": {
-    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, atau Character.AI)."
+    "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi, atau Character.AI)."
+  },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Situs ini tidak lagi memberikan alamat tersendiri untuk setiap percakapan, jadi tidak ada yang bisa disimpan."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemukan kotak teks di halaman ini. Coba klik editor terlebih dahulu, lalu gunakan tombol sisipkan."

@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Új Duck.ai-beszélgetés"
   },
-  "newConv_you": {
-    "message": "Új You.com-beszélgetés"
-  },
   "newConv_pi": {
     "message": "Új Pi-beszélgetés"
   },
@@ -309,7 +306,10 @@
     "message": "Helyi LLM URL beállítása:"
   },
   "alertNotSupported": {
-    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi vagy Character.AI)."
+    "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi vagy Character.AI)."
+  },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Ez az oldal már nem ad minden beszélgetésnek saját címet, így nincs mit elmenteni."
   },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."

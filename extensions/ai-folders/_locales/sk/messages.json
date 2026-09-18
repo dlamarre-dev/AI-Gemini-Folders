@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Nový rozhovor v Duck.ai"
   },
-  "newConv_you": {
-    "message": "Nový rozhovor v You.com"
-  },
   "newConv_pi": {
     "message": "Nový rozhovor v Pi"
   },
@@ -309,7 +306,10 @@
     "message": "Nastaviť URL lokálneho LLM:"
   },
   "alertNotSupported": {
-    "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi alebo Character.AI)."
+    "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi alebo Character.AI)."
+  },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Táto stránka už nedáva každej konverzácii vlastnú adresu, takže nie je čo uložiť."
   },
   "alertEditorNotFound": {
     "message": "Na tejto stránke sa nepodarilo nájsť textové pole. Najprv kliknite do editora a potom použite tlačidlo vložiť."

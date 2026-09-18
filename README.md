@@ -8,7 +8,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 ## 🤖 AI Folders *(New)*
 
-**AI Folders** is the multi-platform evolution: it works across **18 AI services** — ChatGPT, Claude, Perplexity, Copilot, DeepSeek, Grok, Gemini, Mistral, Meta AI, Qwen, Z.ai, Kimi, Poe, Duck.ai, You.com, Pi, Character.AI and Baidu — plus local LLMs, all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
+**AI Folders** is the multi-platform evolution: it works across **17 AI services** — ChatGPT, Claude, Perplexity, Copilot, DeepSeek, Grok, Gemini, Mistral, Meta AI, Qwen, Z.ai, Kimi, Poe, Duck.ai, Pi, Character.AI and Baidu — plus local LLMs, all from a single extension. Save any AI conversation with a right-click or keyboard shortcut, inject saved prompts directly into any supported AI, and keep everything organized across your devices.
 
 [![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-blue?logo=googlechrome)](https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf)
 [![Available on Firefox Add-ons](https://img.shields.io/badge/Firefox_Add--ons-Available-orange?logo=firefox)](https://addons.mozilla.org/firefox/addon/ai_folders/)
@@ -20,7 +20,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 | ChatGPT                        | ✅ | ✅ | ✅ |
 | Claude                         | ✅ | ✅ | ✅ |
 | Perplexity                     | ✅ | ✅ | ✅ *(exact-match trigger)* |
-| Microsoft Copilot              | ✅ | ✅ | ✅ |
+| Microsoft Copilot              | ✅ | ✅ | ✅ *(exact-match trigger)* |
 | DeepSeek                       | ✅ | ✅ | ✅ |
 | Grok                           | ✅ | ✅ | ✅ |
 | Google Gemini                  | ✅ | ✅ | ✅ |
@@ -30,14 +30,15 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 | Z.ai                           | ✅ | ✅ | ✅ |
 | Kimi                           | ✅ | ✅ | ✅ *(exact-match trigger)* |
 | Poe                            | ✅ | ✅ | ✅ |
-| Duck.ai                        | ✅ | ✅ | ✅ |
-| You.com                        | ✅ | ✅ | ✅ |
+| Duck.ai                        | ❌¹ | ❌¹ | ✅ |
 | Pi                             | ✅ | ✅ | ✅ |
 | Character.AI                   | ✅ | ✅ | ✅ |
 | Baidu Chat                     | ✅ | ✅ | ✅ *(exact-match trigger)* |
 | Local LLM *(configurable URL)* | ✅ | ✅ | ✅ *(Open WebUI & others)* |
 
 *(exact-match trigger)*: these composers turn `#word` into token chips or mangle multi-line suggestions, so the `#` trigger skips inline suggestions there — type the exact prompt name and press Space to inject.
+
+¹ **Duck.ai stopped giving each conversation its own address** (09/2026): every chat lives at the same URL, so there is no conversation for a folder entry to point at and saving is switched off there — the popup and the keyboard shortcut say why, and the right-click menu is not offered. Prompt injection and the `#` trigger are unaffected, and links saved before the change are left untouched.
 
 ---
 
@@ -161,27 +162,30 @@ Both extensions are built with privacy in mind.
 | `gemini.google.com` | Google Gemini |
 | `claude.ai` | Claude |
 | `chatgpt.com` | ChatGPT |
-| `copilot.microsoft.com` | Microsoft Copilot (consumer) |
-| `m365.cloud.microsoft` | Microsoft 365 Copilot (work / school account) |
+| `copilot.com`, `*.copilot.com` | Microsoft Copilot (unified app) |
+| `copilot.microsoft.com` | Microsoft Copilot (former consumer address) |
+| `copilot.cloud.microsoft`, `m365.cloud.microsoft` | Microsoft 365 Copilot (work / school account) |
 | `chat.deepseek.com` | DeepSeek |
 | `grok.com`, `*.grok.com` | Grok |
 | `perplexity.ai`, `*.perplexity.ai` | Perplexity |
 | `chat.z.ai` | Z.ai |
-| `kimi.com`, `*.kimi.com` | Kimi |
+| `kimi.ai`, `*.kimi.ai`, `kimi.com`, `*.kimi.com` | Kimi (international / China) |
 | `chat.qwen.ai` | Qwen |
 | `meta.ai`, `*.meta.ai` | Meta AI |
 | `chat.mistral.ai` | Mistral (Vibe) |
 | `poe.com`, `*.poe.com` | Poe |
 | `duck.ai`, `*.duck.ai`, `duckduckgo.com` | Duck.ai |
-| `you.com`, `*.you.com` | You.com |
 | `pi.ai`, `*.pi.ai` | Pi |
 | `character.ai`, `*.character.ai` | Character.AI |
 | `wenxin.baidu.com`, `chat.baidu.com` | Baidu |
 
-  Two rows are one service on two hosts rather than extra reach. **Copilot:** a work
-  account's tenant-bound Microsoft 365 Copilot lives on `m365.cloud.microsoft`, and
-  without that host the extension did nothing at all for those users — same product, same
-  code path as the consumer domain. **Baidu:** the chat moved to `wenxin.baidu.com`, and
+  Four of those rows are one service on several hosts rather than extra reach.
+  **Copilot:** Microsoft merged its consumer and commercial apps, so a new conversation
+  now opens at `copilot.com` whichever account you sign in with, while the two older
+  addresses keep serving and the commercial one is being redirected from
+  `m365.cloud.microsoft` to `copilot.cloud.microsoft`. All four are the same product and
+  the same code path; without them the extension does nothing at all on the address a
+  given user happens to land on. **Baidu:** the chat moved to `wenxin.baidu.com`, and
   `chat.baidu.com` now redirects there — a redirect a manifest match pattern cannot
   follow, so both are declared.
 * **API permissions — the same six in both extensions:** `activeTab`, `storage`,

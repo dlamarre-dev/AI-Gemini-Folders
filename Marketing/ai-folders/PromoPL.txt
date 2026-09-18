@@ -2,7 +2,7 @@
 
 Organizuj rozmowy ze wszystkich swoich ulubionych narzędzi AI w wspólnych folderach, buduj bibliotekę wielokrotnie używanych promptów i wstrzykuj szablony bezpośrednio do dowolnego pola tekstowego — bez kopiowania i wklejania.
 
-🌐 19 OBSŁUGIWANYCH USŁUG AI
+🌐 18 OBSŁUGIWANYCH USŁUG AI
 
 Foldery AI integrują się natywnie ze wszystkimi głównymi asystentami czatu AI, takimi jak Claude, ChatGPT i Gemini, oraz z lokalnymi modelami LLM, które uruchamiasz samodzielnie. Rozmowy z różnych platform mogą znajdować się w tym samym folderze. Każdy czat wyświetla kolor i logo swojej usługi, dzięki czemu zawsze wiesz, skąd pochodzi.
 

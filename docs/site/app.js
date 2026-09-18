@@ -42,7 +42,7 @@
     { n: "Meta AI", logo: "MetaAI" },
     { n: "Mistral", logo: "Mistral" }, { n: "Pi", logo: "Pi" },
     { n: "Poe", logo: "Poe" }, { n: "Qwen", logo: "Qwen" },
-    { n: "You.com", logo: "You" }, { n: "Z.ai", logo: "Zai" }
+    { n: "Z.ai", logo: "Zai" }
   ];
   const LOCAL_SVC = { logo: "Local", local: true };
 

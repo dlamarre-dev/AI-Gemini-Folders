@@ -2,7 +2,7 @@
 
 Organize conversas de todas as suas ferramentas de IA favoritas em pastas partilhadas, crie uma biblioteca de prompts reutilizáveis e injete modelos diretamente em qualquer campo de texto — sem precisar de copiar e colar.
 
-🌐 19 SERVIÇOS DE IA SUPORTADOS
+🌐 18 SERVIÇOS DE IA SUPORTADOS
 
 Pastas IA integra-se nativamente com todos os principais assistentes de chat de IA, como Claude, ChatGPT e Gemini, e com os LLMs locais que executa você mesmo. As conversas de plataformas diferentes podem partilhar a mesma pasta. Cada chat apresenta a cor e o logótipo do seu serviço de origem, para que saiba sempre de onde veio.
 

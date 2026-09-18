@@ -12,16 +12,33 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome, Edge **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.2**.
-- **AI Folders (AF)** — 18 web platforms (Gemini, Claude, ChatGPT, Copilot,
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.3**.
+- **AI Folders (AF)** — 17 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
-  Duck.ai, You.com, Pi, Character.AI) **+ a user-configured local LLM**.
-  Copilot covers two hosts: `copilot.microsoft.com` and, since 1.7.1,
-  `m365.cloud.microsoft` — where a work account's tenant-bound Microsoft 365
-  Copilot lives, so an organisation's users never touched the consumer domain and
-  the extension did nothing at all for them (issue #82). It is an `altDomains`
-  entry, not a second site: same product, same title strategy, same editor.
-  Current version **1.7.2**. The popup's per-site "new conversation" buttons
+  Duck.ai, Pi, Character.AI) **+ a user-configured local LLM**. You.com was
+  retired in 1.7.3 and survives as a visuals-only `retired` entry (§8).
+  Two more registry facts land in 1.7.3, both in §8: **Kimi is two domains**
+  (`kimi.ai` internationally — the default — and `kimi.com` for China, one
+  `altDomains` entry, so a conversation saved on either resolves to one key),
+  and **Duck.ai is
+  `noSave`** — it stopped giving each conversation its own address, so saving
+  is off there while injection and the `#` trigger keep working. `noSave` and
+  `retired` are deliberately different sizes of switch; don't merge them.
+  Copilot covers **four hosts**, all `altDomains` of one site rather than four
+  sites: same product, same title strategy, same editor — only the address
+  differs by account and by rollout stage. `copilot.microsoft.com` (the former
+  consumer address); `m365.cloud.microsoft`, added in 1.7.1, where a work
+  account's tenant-bound Microsoft 365 Copilot lived, so an organisation's users
+  never touched the consumer domain and the extension did nothing at all for them
+  (issue #82); and, since 1.7.3, `copilot.com` — the unified consumer/commercial
+  app a new conversation now opens at, whichever account you sign in with, so it
+  is also the site's primary `domain` and its `newConvUrl` — plus
+  `copilot.cloud.microsoft`, the commercial address Microsoft is redirecting
+  `m365.cloud.microsoft` to over 09-10/2026 (MC1462915). That last one is
+  declared **before** the redirect lands, which is the whole lesson of #82 and of
+  the Baidu move (§8): a manifest match pattern cannot follow a 302, so a host
+  added only once users complain is a host that was broken for a month.
+  Current version **1.7.3**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -123,6 +140,15 @@ build_images.py              Regenerates marketing screenshots (release-time onl
 ```bash
 npx jest                 # full suite
 ```
+`jest.config.js` caps the pool at `maxWorkers: '50%'` with a 512 MB
+`workerIdleMemoryLimit`. Every suite boots a jsdom, so the default worker count
+(cores - 1) scales the peak heap with the machine: on a 16-core box that is 15
+jsdom heaps at once and V8 starts refusing allocations. What you see then is
+**"A jest worker process was terminated by another process: signal=SIGTERM" with
+zero failing tests** — a suite that could not be run, which the build gate just
+below correctly refuses to build on. Don't reach for `--force` on that signature and
+don't raise the cap; `--runInBand` is the way to confirm the suite is actually
+green.
 
 **Build** (runs Jest first and **aborts** if it fails):
 ```bash
@@ -335,6 +361,21 @@ git checkout main && git pull --ff-only
   via `resolveTriggerTabId` — AF's active-tab fallback for Firefox's dynamically
   registered local-LLM script only fires when the active tab is the **same origin**
   that spoke, so a background tab can never drive an injection into another one.
+  **A composer's text is not what the user typed.** Some editors pad their
+  content with zero-width characters on every keystroke — Microsoft 365
+  Copilot's Fluent composer (`span#m365-chat-editor-target-element`) appends
+  U+200B U+200C — and `String.prototype.trim()` does **not** remove them: they
+  are `Cf` format characters, not whitespace. They therefore rode straight into
+  the lookup prefix, `findPromptsByPrefix` searched for a prompt literally named
+  `test\u200B\u200C`, nothing matched, and the trigger did **nothing at all**
+  while the popup's ▶ button — which never reads the field — kept working. That
+  asymmetry is the tell, and it is worth remembering: **"the popup works but `#`
+  does not" means the fault is in reading the field, never in the injection**,
+  because both paths call the same `injectPromptIntoEditor` on the same target.
+  `trimInvisible` (`prompt-trigger.js`) now strips that padding at the **edges
+  only**, together with whitespace: an emoji ZWJ sequence (U+200D) inside a
+  prompt name and a Persian/Hindi ZWNJ between letters are letter-level content,
+  and stripping them would rename the prompt the user is reaching for.
 - **Title extraction:** `extractTitleLogic` + per-site strategies in
   `site-config.js`, run via `executeScript`. Falls back to a heuristic (lowest
   sizeable text field) and logs `console.warn("[Folders extension] …")` when a
@@ -454,25 +495,136 @@ The P1–P5 improvement plan is essentially complete. What's left:
   content save; a diff (create/delete/move only what changed) would cut mobile-sync
   churn. Non-trivial (partial-state handling) — only worth it if users complain.
 - **Site watch list** (checked 15/08/2026 with `tools/site-diagnostics`):
-  - **You.com — kept, but untestable.** The consumer chat is closed to new
-    subscribers, so its selectors can no longer be validated live. You.com turned
-    its unlimited free plan into a 25-query Pro trial on **03/04/2026**
-    (support.you.com, "Changes to You.com's Free plan") and `you.com/pricing` now
-    lists **API plans only** — the consumer product is being wound down in
-    practice. **No end-of-support date has been announced anywhere public**
-    (checked the support KB, the pricing page, Wikipedia and the trade press), so
-    there is no date to schedule a removal against. Re-check ~02/2027, or sooner
-    if a user reports the site dead; removing it means the
-    `you` entry in `site-config.js`, its host permissions in `manifest.json` +
-    `background.js`, its icons, the README/`llms.txt`/`docs/site` service lists,
-    and the store text.
-  - **Baidu moved to `wenxin.baidu.com`** (08/2026). `chat.baidu.com` 302s there,
-    which the manifest could not follow — hence the `wenxin` host permission and
-    `altDomains: ['chat.baidu.com']`. A test now asserts every `SITES` domain and
-    altDomain has a host permission, a content-script match and a
-    `SUPPORTED_URL_PATTERNS` entry, so the next move fails in CI instead of in the
-    field. Baidu's `editorSelectors` and the sidebar title strategy still need a
-    live re-run on the new domain.
+  - **You.com — RETIRED 09/2026, and `retired: true` is the mechanism.** It was
+    tracked here for a year waiting for an end-of-support date that was never
+    announced: the unlimited free plan became a 25-query Pro trial on
+    **03/04/2026** (support.you.com, "Changes to You.com's Free plan"),
+    `you.com/pricing` went API-only, and the consumer chat was closed to new
+    subscribers, so its selectors could never be validated live again. Retiring
+    it on a judgement call beat waiting for an announcement that was not coming.
+    **A retirement is not a deletion**, because the data is keyed by URL (§6) and
+    someone's saved You.com conversations must keep working: the `you` entry
+    stays in `site-config.js` with its `color` and `logo` — `getChatSiteInfo`
+    reads it, so those folder rows keep their mark and their link still opens —
+    and loses `newConvUrl` and `editorSelectors`, which have no caller once the
+    flag is set. `retired: true` then switches off everything forward-looking,
+    and each consumer had to be told separately because each asks a different
+    question:
+    - `getSiteByUrl` skips retired entries — **one skip that stops both new
+      saves and prompt injection**, since both are gated on it. It is also what
+      drops the host from `window.isSupportedTabUrl`, so a You.com tab is no
+      longer a tab-reuse candidate.
+    - `popup.js` filters on `!site.retired` for the "new conversation" row —
+      **not** on the absence of a `domain`, because `local` has no domain either
+      and does get a button.
+    - `welcome.js` adds `&& !s.retired` to its existing `domain && logo` filter.
+    - `tools/site-diagnostics` needed nothing: it already filters on
+      `newConvUrl`, which is gone.
+    - the host permissions, the content-script match and the
+      `SUPPORTED_URL_PATTERNS` entry are removed. That is a permission
+      *reduction*, so it costs installed users no re-prompt — the opposite of
+      adding one (§1, Copilot).
+    - the registry test excludes retired entries from the
+      host-permission-coverage check, or it would demand back the permissions
+      this removed.
+    Also updated: `alertNotSupported` and the deleted `newConv_you` key in all
+    43 locales, the platform count and lists in the README / `docs/llms.txt` /
+    `docs/site/app.js` / `i18n-manual.js`. **The store text did need a change**,
+    contrary to what the §6 keyword-spam rule suggests: the promo texts name no
+    individual service, but all 43 AI Folders listings carry a
+    `🌐 <n> SUPPORTED AI SERVICES` heading, and **that count includes the local
+    LLM** — so it read 19 for 18 sites and now reads 18 for 17. Grepping for the
+    platform count is exactly how it gets missed. Bengali writes the number in
+    Bengali digits, and every file also contains `192.168.x.x`, so the edit has
+    to be scoped to the 🌐 line rather than done by substituting a number.
+    `tests/marketing-listings.test.js` now ties that heading to
+    `Object.values(SITES).filter(s => !s.retired).length`, which is the only
+    reason the next add or retirement cannot repeat this, and asserts Gemini
+    Folders carries no such heading at all. `icons/you.png` and
+    `docs/site/logos.js`'s `You` mark **stay**: the first still renders in the
+    popup, and the second is a keyed logo library, not a claim of support.
+    **One consequence to accept, not fix:** without the host permission,
+    `chrome.tabs.query` no longer populates `tab.url` for a You.com tab, so
+    `findTabShowingUrl` cannot see it and clicking a saved You.com
+    conversation always opens a new tab instead of focusing the one already
+    showing it. That is the same degradation §7 records for a local-LLM
+    conversation and for Firefox before permissions are granted — the link
+    still works, it just stops being deduplicated.
+  - **Baidu — re-checked 18/09/2026, KEEP for now, one open question decides it.**
+    What is verified: `wenxin.baidu.com` answers 200 and is canonical, and
+    **both** `chat.baidu.com` and `yiyan.baidu.com` 302 to it, so the two hosts
+    the manifest declares are still the right two (`yiyan` was never supported
+    and redirects, so it needs nothing). The product was renamed 文心一言 →
+    文心助手, which is why the generic-title ignore set keys on 百度文心助手.
+    Anonymous access still opens the chat page, and still mints URLs.
+    **The open question is whether those anonymous URLs survive.** In 08/2026
+    Baidu rebuilt conversation *history* with categories and batch delete — a
+    signed-in feature — which makes it likely that an anonymous conversation is
+    session-bound and its URL dies with the cookie. If so, Baidu is the Duck.ai
+    case (`noSave`) for anonymous users, not a retirement, because signed-in
+    users would still get real per-conversation URLs.
+    **The decisive test, which needs a browser and not a fetch:** start an
+    anonymous conversation, copy its URL, open it in a fresh profile (or after
+    clearing cookies for the domain). If the conversation is there, nothing
+    changes. If it is not, set `noSave` and keep everything else.
+    The account route is not the answer for most of our users: registering a
+    Baidu account from outside China is possible — the overseas form accepts
+    around 156 dialling codes — but SMS delivery and the platform's security
+    checks are unreliable, so it is a coin flip abroad and routine only inside
+    China. Since the extension ships in 43 languages including zh_CN and zh_TW,
+    **Chinese users with an account remain a real constituency**, which is the
+    argument for keeping the site rather than retiring it on our own difficulty
+    reading the UI. Still outstanding from the last check: `editorSelectors` and
+    the sidebar title strategy have never been re-run live on the new domain.
+  - **Duck.ai — `noSave` since 09/2026, and that flag is narrower than
+    `retired` on purpose.** It stopped giving each conversation its own address:
+    every chat lives at one URL. Since this extension stores by URL (§6), a
+    saved entry would point at the chat home and a second save would collide
+    with the first on the same key. But the site is perfectly alive, so the
+    composer is there — prompt injection, the `#` trigger and the
+    new-conversation button all stay, and only the save path goes. That is the
+    whole reason `noSave` exists instead of reusing `retired`, which would have
+    switched off three working features to fix one broken one.
+    `canSaveSite(siteKey)` (site-config.js) is the single predicate; it is asked
+    at the save entry points rather than inside `getSiteByUrl`, because
+    `getSiteByUrl` also gates injection. The three entry points each answer
+    differently:
+    - **popup Save button** — `initSaveConversation` takes optional
+      `canSave` + `noSaveMessageKey` opts (Gemini Folders passes neither), and
+      shows `alertNoConversationUrl` rather than `alertNotSupported`. Telling
+      someone on a site the extension *does* support to "use a supported AI
+      site" is how a non-bug becomes a bug report.
+    - **Ctrl+Shift+S quick-save** — a toast, not silence. An unsupported tab is
+      ignored quietly because the shortcut was not meant for it; here it fired
+      on a site the extension works on, so saying nothing reads as a failure.
+    - **right-click menu** — simply not offered: duck.ai's patterns leave
+      `SUPPORTED_URL_PATTERNS`, which feeds nothing but that menu's
+      `documentUrlPatterns`. The `onClicked` handler checks anyway, since a tab
+      can navigate between the menu opening and the click.
+    Host permissions and the content-script match **stay** — injection needs the
+    first, the `#` trigger the second — so the registry test had to be split:
+    those two lists cover every live site, `SUPPORTED_URL_PATTERNS` only the
+    saveable ones, and Duck.ai's absence from it is asserted as the feature it
+    is. `alertNoConversationUrl` lives in AI Folders' 43 locales **only** (§10b
+    precedent: Gemini has real per-conversation URLs and could never show it)
+    and is worded generically, naming no site, so the next site to lose its
+    per-chat URLs reuses it. **Links users already saved are left alone**: they
+    resolve to the chat home, which is not much use, but deleting someone's
+    folder contents for them would be worse.
+  - **Kimi is two domains since 09/2026.** Moonshot split it: `kimi.ai` serves
+    the international site (`html lang="en-US"`) and `kimi.com` the Chinese one
+    (`lang="zh-CN"`), with `kimi.moonshot.cn` folding into `kimi.com`. An
+    `altDomains` entry, because both must resolve to one key or a conversation
+    saved before the split stops being recognized — the Baidu lesson again.
+    **`kimi.ai` is the primary and the `newConvUrl`, and the reason is the
+    audience, not the redirect chain:** this extension ships in 43 locales with
+    very few users in China, so defaulting them to the Chinese site and relying
+    on a redirect would be wrong for the majority. An earlier pass had it the
+    other way round on the grounds that only the kimi.com → kimi.ai redirect was
+    confirmed to fire — true, but it answered the wrong question: which redirect
+    exists does not settle where users should be sent. A test pins the choice so
+    it is not "corrected" by the next person to read the redirect chain.
+    Both domains were manually verified for save and for the `#` trigger.
 - **(P5 — discuss with David first)** Stable IDs for folders/conversations instead
   of name/URL keys. Would simplify renames/pins and enable the differential sync
   above, but requires a data migration — outside the "same features" scope; don't
@@ -643,7 +795,7 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   `background.js` (not shared, §6). The page opens only when
   `reason === 'update'` **and** the manifest version equals that constant, so a
   minor release with nothing to explain simply leaves the constant alone —
-  4.6.2 / 1.7.2 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
+  4.6.3 / 1.7.3 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
   The test asserts the constant is **not ahead of** the manifest version, which is
   the direction that breaks: a constant ahead fires on the release *after* this
   one, carrying notes for a version already installed. It used to demand equality,

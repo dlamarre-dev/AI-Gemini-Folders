@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Нов разговор в Duck.ai"
   },
-  "newConv_you": {
-    "message": "Нов разговор в You.com"
-  },
   "newConv_pi": {
     "message": "Нов разговор в Pi"
   },
@@ -309,7 +306,10 @@
     "message": "Задайте URL на локален LLM:"
   },
   "alertNotSupported": {
-    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi или Character.AI)."
+    "message": "Моля, използвайте тази добавка на поддържан AI сайт (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi или Character.AI)."
+  },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Този сайт вече не дава на всеки разговор собствен адрес, така че няма какво да се запази."
   },
   "alertEditorNotFound": {
     "message": "Не може да се намери текстовото поле на тази страница. Опитайте да кликнете в редактора първо, след което използвайте бутона за вмъкване."

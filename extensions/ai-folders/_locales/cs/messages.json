@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Nová konverzace v Duck.ai"
   },
-  "newConv_you": {
-    "message": "Nová konverzace v You.com"
-  },
   "newConv_pi": {
     "message": "Nová konverzace v Pi"
   },
@@ -309,7 +306,10 @@
     "message": "Nastavit URL místního LLM:"
   },
   "alertNotSupported": {
-    "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi nebo Character.AI)."
+    "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi nebo Character.AI)."
+  },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Tento web už nedává každé konverzaci vlastní adresu, takže není co uložit."
   },
   "alertEditorNotFound": {
     "message": "Na této stránce nelze najít textové pole. Nejprve klikněte do editoru a poté použijte tlačítko Vložit."

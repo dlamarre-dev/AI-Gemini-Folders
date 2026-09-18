@@ -126,6 +126,20 @@ function initSaveConversation(opts) {
       isSaving = false;
       return;
     }
+    // A supported site can still be unsaveable: Duck.ai serves every chat at
+    // one address, so there is no conversation to point at. It needs its own
+    // message -- telling someone on a site the extension does support to "use
+    // a supported AI site" is how a non-bug becomes a bug report. Optional, so
+    // Gemini Folders (one site, real per-chat URLs) passes neither.
+    if (opts.canSave && !opts.canSave(siteKey)) {
+      await window.showCustomModal({
+        title: chrome.i18n.getMessage(opts.noSaveMessageKey)
+          || "This site no longer gives each conversation its own address, so there is nothing to save.",
+        type: 'alert'
+      });
+      isSaving = false;
+      return;
+    }
 
     const typedFolder = folderNameInput.value.trim();
     const finalChatTitle = chatTitleInput.value.trim() || chrome.i18n.getMessage("defaultTitle");

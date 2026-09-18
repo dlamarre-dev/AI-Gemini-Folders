@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Conversație nouă în Duck.ai"
   },
-  "newConv_you": {
-    "message": "Conversație nouă în You.com"
-  },
   "newConv_pi": {
     "message": "Conversație nouă în Pi"
   },
@@ -309,7 +306,10 @@
     "message": "Setați URL-ul LLM local:"
   },
   "alertNotSupported": {
-    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi sau Character.AI)."
+    "message": "Utilizați această extensie pe un site AI acceptat (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi sau Character.AI)."
+  },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Acest site nu mai atribuie fiecărei conversații o adresă proprie, deci nu este nimic de salvat."
   },
   "alertEditorNotFound": {
     "message": "Nu s-a găsit câmpul de text pe această pagină. Încercați să faceți clic mai întâi în editor, apoi folosiți butonul de inserare."

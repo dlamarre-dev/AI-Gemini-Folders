@@ -2,7 +2,7 @@
 
 Organizujte konverzace ze všech vašich oblíbených AI nástrojů do sdílených složek, vytvořte knihovnu znovu použitelných promptů a vkládejte šablony přímo do libovolného vstupního pole — bez kopírování a vkládání.
 
-🌐 19 PODPOROVANÝCH AI SLUŽEB
+🌐 18 PODPOROVANÝCH AI SLUŽEB
 
 AI složky se nativně integrují se všemi hlavními AI chatovacími asistenty, jako jsou Claude, ChatGPT a Gemini, a s lokálními LLM, které si spustíte sami. Konverzace z různých platforem mohou sdílet úplně stejnou složku. Každý chat zobrazuje barvu a logo své služby, takže vždy víte, odkud pochází.
 

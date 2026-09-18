@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Nov pogovor z Duck.ai"
   },
-  "newConv_you": {
-    "message": "Nov pogovor z You.com"
-  },
   "newConv_pi": {
     "message": "Nov pogovor z Pi"
   },
@@ -309,7 +306,10 @@
     "message": "Nastavi URL lokalnega LLM:"
   },
   "alertNotSupported": {
-    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi ali Character.AI)."
+    "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ali Character.AI)."
+  },
+  "alertNoConversationUrl": {
+    "message": "⚠️ To spletno mesto vsakemu pogovoru ne dodeli več svojega naslova, zato ni kaj shraniti."
   },
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."

@@ -2,7 +2,7 @@
 
 Organiser samtaler fra alle favoritt-AI-verktøyene dine i delte mapper, bygg et bibliotek av gjenbrukbare prompter, og injiser maler direkte i et hvilket som helst inndatafelt — uten kopiering og innliming.
 
-🌐 19 STØTTEDE AI-TJENESTER
+🌐 18 STØTTEDE AI-TJENESTER
 
 AI-mapper integreres nativt med alle de store AI-chatassistentene, slik som Claude, ChatGPT og Gemini, og med de lokale LLM-ene du kjører selv. Samtaler fra forskjellige plattformer kan dele nøyaktig samme mappe. Hver samtale viser fargen og logoen til sin egen tjeneste, slik at du alltid vet hvor den kommer fra.
 

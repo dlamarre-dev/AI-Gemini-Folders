@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Nova conversa no Duck.ai"
   },
-  "newConv_you": {
-    "message": "Nova conversa no You.com"
-  },
   "newConv_pi": {
     "message": "Nova conversa no Pi"
   },
@@ -309,7 +306,10 @@
     "message": "Definir URL do LLM local:"
   },
   "alertNotSupported": {
-    "message": "Use esta extensão em um site de IA compatível (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi ou Character.AI)."
+    "message": "Use esta extensão em um site de IA compatível (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ou Character.AI)."
+  },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Este site não dá mais um endereço próprio a cada conversa, então não há nada para salvar."
   },
   "alertEditorNotFound": {
     "message": "Não foi possível encontrar o campo de texto nesta página. Tente clicar no editor primeiro e use o botão de inserção."

@@ -2,7 +2,7 @@
 
 Atur percakapan dari semua alat AI favorit Anda dalam folder bersama, bangun perpustakaan prompt yang dapat digunakan kembali, dan suntikkan templat langsung ke kolom input mana pun — tanpa perlu menyalin dan menempel.
 
-🌐 19 LAYANAN AI YANG DIDUKUNG
+🌐 18 LAYANAN AI YANG DIDUKUNG
 
 Folder AI terintegrasi secara native dengan semua asisten obrolan AI utama, seperti Claude, ChatGPT, dan Gemini, serta LLM lokal yang Anda jalankan sendiri. Percakapan dari platform yang berbeda dapat berbagi folder yang sama persis. Setiap obrolan menampilkan warna dan logo layanannya, jadi Anda selalu tahu dari mana asalnya.
 

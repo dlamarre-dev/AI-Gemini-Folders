@@ -80,6 +80,42 @@ describe('classifyTriggerField', () => {
   test('injectable while our suggestion block is shown', () => {
     expect(classifyTriggerField('#Q&A\n== AI Folders ==\n#Q&A helper').injectable).toBe(true);
   });
+
+  // Zero-width padding. Microsoft 365 Copilot's Fluent composer appends
+  // U+200B U+200C on every keystroke, and String.prototype.trim() leaves them
+  // (they are Cf format characters, not whitespace). They rode into the lookup
+  // prefix, so nothing ever matched and the trigger silently did nothing --
+  // confirmed live on m365.cloud.microsoft, 09/2026.
+  test('zero-width padding does not reach the prefix (M365 Copilot)', () => {
+    const c = classifyTriggerField('#test\u200B\u200C');
+    expect(c.firstLine).toBe('#test');
+    expect(c.prefix).toBe('test');
+    expect(c.composingTrigger).toBe(true);
+    expect(c.injectable).toBe(true);
+  });
+
+  test('a field holding only zero-width padding is empty, not a trigger', () => {
+    const c = classifyTriggerField('\u200B\u200C');
+    expect(c.nonEmpty).toEqual([]);
+    expect(c.composingTrigger).toBe(false);
+    expect(c.prefix).toBeNull();
+  });
+
+  test('padding mixed with whitespace is trimmed whichever order it comes in', () => {
+    expect(classifyTriggerField('\uFEFF #review \u200B').prefix).toBe('review');
+    expect(classifyTriggerField('#review\u200B ').prefix).toBe('review');
+  });
+
+  // Trimmed at the edges only: a ZWJ inside a name joins an emoji sequence and a
+  // ZWNJ inside a Persian or Hindi word is a letter-level instruction. Stripping
+  // those would rename the prompt the user is trying to reach.
+  test('an interior ZWJ / ZWNJ is preserved', () => {
+    expect(classifyTriggerField('#dev\u200Dops').firstLine).toBe('#dev\u200Dops');
+    expect(classifyTriggerField('#dev\u200Dops').injectable).toBe(true);
+    expect(classifyTriggerField('#\u0645\u06CC\u200C\u062E\u0648\u0627\u0646\u0645').firstLine)
+      .toBe('#\u0645\u06CC\u200C\u062E\u0648\u0627\u0646\u0645');
+  });
+
 });
 
 describe('parseSuggestionNames', () => {

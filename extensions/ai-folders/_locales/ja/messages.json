@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "新しい Duck.ai の会話"
   },
-  "newConv_you": {
-    "message": "新しい You.com の会話"
-  },
   "newConv_pi": {
     "message": "新しい Pi の会話"
   },
@@ -309,7 +306,10 @@
     "message": "ローカル LLM の URL を設定:"
   },
   "alertNotSupported": {
-    "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Baidu、Z.ai、Kimi、Qwen、Meta AI、Mistral、Poe、Duck.ai、You.com、Pi、または Character.AI）でご使用ください。"
+    "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Baidu、Z.ai、Kimi、Qwen、Meta AI、Mistral、Poe、Duck.ai、Pi、または Character.AI）でご使用ください。"
+  },
+  "alertNoConversationUrl": {
+    "message": "⚠️ このサイトは各会話に個別のアドレスを付与しなくなったため、保存できるものがありません。"
   },
   "alertEditorNotFound": {
     "message": "このページでテキスト入力欄が見つかりませんでした。先にエディタをクリックしてから、挿入ボタンをご使用ください。"

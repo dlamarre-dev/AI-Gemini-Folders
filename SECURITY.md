@@ -18,8 +18,8 @@ numbers move:
 
 | | AI Folders | Gemini Folders | |
 |---|---|---|---|
-| Latest release here | 1.7.2 | 4.6.2 | ✅ supported |
-| Microsoft Edge Add-ons | 1.7.2 | 4.6.2 | ✅ supported |
+| Latest release here | 1.7.3 | 4.6.3 | ✅ supported |
+| Microsoft Edge Add-ons | 1.7.3 | 4.6.3 | ✅ supported |
 | Chrome Web Store | 1.7.0 | 4.6.0 | ✅ supported |
 | Firefox Add-ons (AMO) | 1.7.0 | 4.6.0 | ✅ supported |
 | Anything earlier | | | ❌ not supported |
