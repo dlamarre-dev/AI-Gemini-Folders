@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi או Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ אתר זה אינו מקצה עוד כתובת נפרדת לכל שיחה, ולכן אין מה לשמור."
+  },
   "alertEditorNotFound": {
     "message": "לא נמצא שדה הטקסט בדף זה. נסה ללחוץ תחילה בעורך ולאחר מכן השתמש בלחצן ההוספה."
   },

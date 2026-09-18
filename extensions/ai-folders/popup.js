@@ -226,6 +226,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   initSaveConversation({
     getSiteKey: (tab) => getSiteByUrl(tab?.url, localLlmUrl),
     unsupportedMessageKey: 'alertNotSupported',
+    // Supported but unsaveable (Duck.ai): one address for every chat, so there
+    // is no conversation to point at. Its own message, because "use a
+    // supported AI site" would be wrong on a site we do support.
+    canSave: canSaveSite,
+    noSaveMessageKey: 'alertNoConversationUrl',
     tagSite: true,
   });
 

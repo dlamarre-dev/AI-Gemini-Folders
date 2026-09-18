@@ -17,6 +17,12 @@ conversations into folders and provide a reusable prompt library:
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, Pi, Character.AI) **+ a user-configured local LLM**. You.com was
   retired in 1.7.3 and survives as a visuals-only `retired` entry (§8).
+  Two more registry facts land in 1.7.3, both in §8: **Kimi is two domains**
+  (`kimi.com` for China, `kimi.ai` internationally — one `altDomains` entry,
+  so a conversation saved on either resolves to one key), and **Duck.ai is
+  `noSave`** — it stopped giving each conversation its own address, so saving
+  is off there while injection and the `#` trigger keep working. `noSave` and
+  `retired` are deliberately different sizes of switch; don't merge them.
   Copilot covers **four hosts**, all `altDomains` of one site rather than four
   sites: same product, same title strategy, same editor — only the address
   differs by account and by rollout stage. `copilot.microsoft.com` (the former
@@ -543,13 +549,78 @@ The P1–P5 improvement plan is essentially complete. What's left:
     showing it. That is the same degradation §7 records for a local-LLM
     conversation and for Firefox before permissions are granted — the link
     still works, it just stops being deduplicated.
-  - **Baidu moved to `wenxin.baidu.com`** (08/2026). `chat.baidu.com` 302s there,
-    which the manifest could not follow — hence the `wenxin` host permission and
-    `altDomains: ['chat.baidu.com']`. A test now asserts every `SITES` domain and
-    altDomain has a host permission, a content-script match and a
-    `SUPPORTED_URL_PATTERNS` entry, so the next move fails in CI instead of in the
-    field. Baidu's `editorSelectors` and the sidebar title strategy still need a
-    live re-run on the new domain.
+  - **Baidu — re-checked 18/09/2026, KEEP for now, one open question decides it.**
+    What is verified: `wenxin.baidu.com` answers 200 and is canonical, and
+    **both** `chat.baidu.com` and `yiyan.baidu.com` 302 to it, so the two hosts
+    the manifest declares are still the right two (`yiyan` was never supported
+    and redirects, so it needs nothing). The product was renamed 文心一言 →
+    文心助手, which is why the generic-title ignore set keys on 百度文心助手.
+    Anonymous access still opens the chat page, and still mints URLs.
+    **The open question is whether those anonymous URLs survive.** In 08/2026
+    Baidu rebuilt conversation *history* with categories and batch delete — a
+    signed-in feature — which makes it likely that an anonymous conversation is
+    session-bound and its URL dies with the cookie. If so, Baidu is the Duck.ai
+    case (`noSave`) for anonymous users, not a retirement, because signed-in
+    users would still get real per-conversation URLs.
+    **The decisive test, which needs a browser and not a fetch:** start an
+    anonymous conversation, copy its URL, open it in a fresh profile (or after
+    clearing cookies for the domain). If the conversation is there, nothing
+    changes. If it is not, set `noSave` and keep everything else.
+    The account route is not the answer for most of our users: registering a
+    Baidu account from outside China is possible — the overseas form accepts
+    around 156 dialling codes — but SMS delivery and the platform's security
+    checks are unreliable, so it is a coin flip abroad and routine only inside
+    China. Since the extension ships in 43 languages including zh_CN and zh_TW,
+    **Chinese users with an account remain a real constituency**, which is the
+    argument for keeping the site rather than retiring it on our own difficulty
+    reading the UI. Still outstanding from the last check: `editorSelectors` and
+    the sidebar title strategy have never been re-run live on the new domain.
+  - **Duck.ai — `noSave` since 09/2026, and that flag is narrower than
+    `retired` on purpose.** It stopped giving each conversation its own address:
+    every chat lives at one URL. Since this extension stores by URL (§6), a
+    saved entry would point at the chat home and a second save would collide
+    with the first on the same key. But the site is perfectly alive, so the
+    composer is there — prompt injection, the `#` trigger and the
+    new-conversation button all stay, and only the save path goes. That is the
+    whole reason `noSave` exists instead of reusing `retired`, which would have
+    switched off three working features to fix one broken one.
+    `canSaveSite(siteKey)` (site-config.js) is the single predicate; it is asked
+    at the save entry points rather than inside `getSiteByUrl`, because
+    `getSiteByUrl` also gates injection. The three entry points each answer
+    differently:
+    - **popup Save button** — `initSaveConversation` takes optional
+      `canSave` + `noSaveMessageKey` opts (Gemini Folders passes neither), and
+      shows `alertNoConversationUrl` rather than `alertNotSupported`. Telling
+      someone on a site the extension *does* support to "use a supported AI
+      site" is how a non-bug becomes a bug report.
+    - **Ctrl+Shift+S quick-save** — a toast, not silence. An unsupported tab is
+      ignored quietly because the shortcut was not meant for it; here it fired
+      on a site the extension works on, so saying nothing reads as a failure.
+    - **right-click menu** — simply not offered: duck.ai's patterns leave
+      `SUPPORTED_URL_PATTERNS`, which feeds nothing but that menu's
+      `documentUrlPatterns`. The `onClicked` handler checks anyway, since a tab
+      can navigate between the menu opening and the click.
+    Host permissions and the content-script match **stay** — injection needs the
+    first, the `#` trigger the second — so the registry test had to be split:
+    those two lists cover every live site, `SUPPORTED_URL_PATTERNS` only the
+    saveable ones, and Duck.ai's absence from it is asserted as the feature it
+    is. `alertNoConversationUrl` lives in AI Folders' 43 locales **only** (§10b
+    precedent: Gemini has real per-conversation URLs and could never show it)
+    and is worded generically, naming no site, so the next site to lose its
+    per-chat URLs reuses it. **Links users already saved are left alone**: they
+    resolve to the chat home, which is not much use, but deleting someone's
+    folder contents for them would be worse.
+  - **Kimi is two domains since 09/2026.** Moonshot split it: `kimi.com` serves
+    the Chinese site (`html lang="zh-CN"`) and `kimi.ai` the international one
+    (`lang="en-US"`), with `kimi.moonshot.cn` folding into `kimi.com`. An
+    `altDomains` entry, because both must resolve to one key or a conversation
+    saved before the split stops being recognized — the Baidu lesson again.
+    `kimi.com` stays the primary and the `newConvUrl`: its redirect to `kimi.ai`
+    is the one confirmed to fire for an international user, while the reverse is
+    not, so pointing the button at `kimi.ai` would be a guess about what Chinese
+    users get. **Watch item:** flip the primary if that redirect ever goes away.
+    The Lexical composer selectors were not re-validated on `kimi.ai` — same app,
+    but that is an assumption, not a test.
 - **(P5 — discuss with David first)** Stable IDs for folders/conversations instead
   of name/URL keys. Would simplify renames/pins and enable the differential sync
   above, but requires a data migration — outside the "same features" scope; don't

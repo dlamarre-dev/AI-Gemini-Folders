@@ -30,13 +30,15 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 | Z.ai                           | ✅ | ✅ | ✅ |
 | Kimi                           | ✅ | ✅ | ✅ *(exact-match trigger)* |
 | Poe                            | ✅ | ✅ | ✅ |
-| Duck.ai                        | ✅ | ✅ | ✅ |
+| Duck.ai                        | ❌¹ | ❌¹ | ✅ |
 | Pi                             | ✅ | ✅ | ✅ |
 | Character.AI                   | ✅ | ✅ | ✅ |
 | Baidu Chat                     | ✅ | ✅ | ✅ *(exact-match trigger)* |
 | Local LLM *(configurable URL)* | ✅ | ✅ | ✅ *(Open WebUI & others)* |
 
 *(exact-match trigger)*: these composers turn `#word` into token chips or mangle multi-line suggestions, so the `#` trigger skips inline suggestions there — type the exact prompt name and press Space to inject.
+
+¹ **Duck.ai stopped giving each conversation its own address** (09/2026): every chat lives at the same URL, so there is no conversation for a folder entry to point at and saving is switched off there — the popup and the keyboard shortcut say why, and the right-click menu is not offered. Prompt injection and the `#` trigger are unaffected, and links saved before the change are left untouched.
 
 ---
 
@@ -167,7 +169,7 @@ Both extensions are built with privacy in mind.
 | `grok.com`, `*.grok.com` | Grok |
 | `perplexity.ai`, `*.perplexity.ai` | Perplexity |
 | `chat.z.ai` | Z.ai |
-| `kimi.com`, `*.kimi.com` | Kimi |
+| `kimi.com`, `*.kimi.com`, `kimi.ai`, `*.kimi.ai` | Kimi (China / international) |
 | `chat.qwen.ai` | Qwen |
 | `meta.ai`, `*.meta.ai` | Meta AI |
 | `chat.mistral.ai` | Mistral (Vibe) |

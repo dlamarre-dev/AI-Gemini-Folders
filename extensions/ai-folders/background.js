@@ -21,15 +21,18 @@ const SUPPORTED_URL_PATTERNS = [
   "*://chat.z.ai/*",
   "*://kimi.com/*",
   "*://*.kimi.com/*",
+  "*://kimi.ai/*",
+  "*://*.kimi.ai/*",
   "*://chat.qwen.ai/*",
   "*://meta.ai/*",
   "*://*.meta.ai/*",
   "*://chat.mistral.ai/*",
   "*://poe.com/*",
   "*://*.poe.com/*",
-  "*://duck.ai/*",
-  "*://*.duck.ai/*",
-  "*://duckduckgo.com/*",
+  // Duck.ai is absent on purpose: it is `noSave` (no per-conversation URL),
+  // and this constant feeds nothing but the save menu's documentUrlPatterns,
+  // so leaving it out is exactly how the menu stops being offered there. Its
+  // host permissions and content-script match stay -- injection needs them.
   "*://pi.ai/*",
   "*://*.pi.ai/*",
   "*://character.ai/*",
@@ -519,6 +522,10 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   try {
     const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
     const siteKey = getSiteByUrl(tab.url, localLlmUrl);
+    // The menu is not offered on a `noSave` site (its patterns are absent from
+    // SUPPORTED_URL_PATTERNS), but a tab can navigate between the menu opening
+    // and the click, so the handler checks too rather than trusting the filter.
+    if (siteKey && !canSaveSite(siteKey)) return;
     const targetFolder = info.menuItemId.slice('folder_'.length);
     const defaultTitle = chrome.i18n.getMessage("defaultTitle") || "New conversation";
     const siteColor = SITES[siteKey]?.color || "#1a73e8";
@@ -576,6 +583,18 @@ chrome.commands.onCommand.addListener(async (command) => {
     const { localLlmUrl } = await chrome.storage.sync.get(['localLlmUrl']);
     const siteKey = getSiteByUrl(tab?.url, localLlmUrl);
     if (!siteKey) return;
+    // Supported but unsaveable (Duck.ai: one address for every chat). Unlike an
+    // unsupported tab this gets a toast rather than silence -- the shortcut did
+    // fire on a site the extension works on, so saying nothing reads as a bug.
+    if (!canSaveSite(siteKey)) {
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        args: [chrome.i18n.getMessage("alertNoConversationUrl")
+          || "⚠️ This site has no per-conversation address — nothing to save.", "#d93025"],
+        func: showToast,
+      });
+      return;
+    }
 
     const targetFolder = chrome.i18n.getMessage("quickSaveFolder") || "⚡ Quick Saves";
     const defaultTitle = chrome.i18n.getMessage("defaultTitle") || "New conversation";

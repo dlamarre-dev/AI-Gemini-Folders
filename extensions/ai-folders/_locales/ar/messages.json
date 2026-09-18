@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "يُرجى استخدام هذه الإضافة على أحد المواقع المدعومة (Gemini أو Claude أو ChatGPT أو Copilot أو DeepSeek أو Grok أو Perplexity أو Baidu أو Z.ai أو Kimi أو Qwen أو Meta AI أو Mistral أو Poe أو Duck.ai أو Pi أو Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ لم يعد هذا الموقع يمنح كل محادثة عنوانًا خاصًا بها، لذا لا يوجد ما يمكن حفظه."
+  },
   "alertEditorNotFound": {
     "message": "تعذّر العثور على حقل النص في هذه الصفحة. حاول النقر داخل المحرر أولاً، ثم استخدم زر الإدراج."
   },

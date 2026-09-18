@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Baidu、Z.ai、Kimi、Qwen、Meta AI、Mistral、Poe、Duck.ai、Pi、または Character.AI）でご使用ください。"
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ このサイトは各会話に個別のアドレスを付与しなくなったため、保存できるものがありません。"
+  },
   "alertEditorNotFound": {
     "message": "このページでテキスト入力欄が見つかりませんでした。先にエディタをクリックしてから、挿入ボタンをご使用ください。"
   },

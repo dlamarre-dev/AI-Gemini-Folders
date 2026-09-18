@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi vagy Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Ez az oldal már nem ad minden beszélgetésnek saját címet, így nincs mit elmenteni."
+  },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."
   },

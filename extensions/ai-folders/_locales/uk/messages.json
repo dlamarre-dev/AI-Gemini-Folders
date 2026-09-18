@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi або Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Цей сайт більше не надає кожній розмові окрему адресу, тому зберігати нічого."
+  },
   "alertEditorNotFound": {
     "message": "Не вдалося знайти поле введення тексту на цій сторінці. Спочатку натисніть на редактор, а потім скористайтеся кнопкою вставки."
   },

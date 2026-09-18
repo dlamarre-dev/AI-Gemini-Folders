@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Sila gunakan sambungan ini pada tapak AI yang disokong (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi atau Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Laman ini tidak lagi memberikan alamat tersendiri kepada setiap perbualan, jadi tiada apa untuk disimpan."
+  },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemui medan teks pada halaman ini. Cuba klik pada editor terlebih dahulu, kemudian gunakan butang sisip."
   },

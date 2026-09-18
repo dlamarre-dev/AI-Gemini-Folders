@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi, বা Character.AI)।"
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ এই সাইটটি আর প্রতিটি কথোপকথনকে নিজস্ব ঠিকানা দেয় না, তাই সংরক্ষণ করার কিছু নেই।"
+  },
   "alertEditorNotFound": {
     "message": "এই পৃষ্ঠায় টেক্সট ইনপুট খুঁজে পাওয়া যায়নি। প্রথমে এডিটরে ক্লিক করুন, তারপর ইনসার্ট বাটন ব্যবহার করুন।"
   },

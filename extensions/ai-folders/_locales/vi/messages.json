@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi hoặc Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Trang này không còn cấp địa chỉ riêng cho mỗi cuộc trò chuyện, nên không có gì để lưu."
+  },
   "alertEditorNotFound": {
     "message": "Không tìm thấy ô nhập văn bản trên trang này. Hãy thử nhấp vào trình soạn thảo trước rồi sử dụng nút chèn."
   },

@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi arba Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Ši svetainė nebeteikia kiekvienam pokalbiui atskiro adreso, todėl nėra ko išsaugoti."
+  },
   "alertEditorNotFound": {
     "message": "Nepavyko rasti teksto įvesties šiame puslapyje. Pirmiausia spustelėkite redaktorių, tada naudokite įterpimo mygtuką."
   },

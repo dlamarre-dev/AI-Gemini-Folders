@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi või Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ See sait ei anna enam igale vestlusele oma aadressi, seega pole midagi salvestada."
+  },
   "alertEditorNotFound": {
     "message": "Selle lehe tekstivälja ei leitud. Proovige esmalt redaktorisse klõpsata ja seejärel kasutage lisamisnuppu."
   },

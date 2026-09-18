@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi vai Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Šī vietne vairs nepiešķir katrai sarunai savu adresi, tāpēc nav ko saglabāt."
+  },
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."
   },

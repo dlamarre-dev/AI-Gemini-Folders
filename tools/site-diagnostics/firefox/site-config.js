@@ -131,10 +131,23 @@ const SITES = {
   },
   kimi: {
     key: 'kimi',
+    // Moonshot split Kimi across two domains: kimi.com serves the Chinese site
+    // (html lang="zh-CN") and kimi.ai the international one (lang="en-US"),
+    // with kimi.moonshot.cn folding into kimi.com. Same product, so an
+    // altDomain rather than a second site -- and both must resolve to the same
+    // key, or a conversation saved before the split would stop being
+    // recognized, exactly as happened to Baidu (CLAUDE.md §8).
+    //
+    // kimi.com stays the primary and the newConvUrl because its redirect to
+    // kimi.ai is the one confirmed to fire for an international user; the
+    // reverse direction is not, so pointing the button at kimi.ai would be a
+    // guess about what Chinese users get. Flip it if Moonshot ever drops that
+    // redirect.
     domain: 'kimi.com',
+    altDomains: ['kimi.ai'],
     color: '#ffffff',
     newConvUrl: 'https://www.kimi.com/',
-    // Kimi (Moonshot AI); www.kimi.com — a Vue shell around a Lexical composer:
+    // A Vue shell around a Lexical composer:
     // div.chat-input-editor[contenteditable][role=textbox][data-lexical-editor]
     editorSelectors: [
       'div.chat-input-editor[contenteditable="true"]',
@@ -203,6 +216,27 @@ const SITES = {
     newConvUrl: 'https://duck.ai/',
     // Duck.ai (duckduckgo.com AI chat); selectors validated live 2026-07
     editorSelectors: ['textarea[name="user-prompt"]', 'form textarea', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
+    // NOT SAVEABLE since 09/2026: Duck.ai stopped giving each conversation its
+    // own address. Every chat lives at the same URL, so a saved entry would be
+    // a link to "wherever that tab happens to be" -- and worse, two saves would
+    // collide on one URL, which is the key this extension stores by (§6).
+    //
+    // `noSave` is deliberately narrower than `retired` (You.com): the site is
+    // perfectly alive, so the composer is still there and prompt injection, the
+    // "#" trigger and the new-conversation button all stay. Only the save path
+    // goes -- through `canSaveSite`, at the three entry points that each ask the
+    // question differently: the popup's Save button, the Ctrl+Shift+S
+    // quick-save, and the right-click menu, which simply stops being offered
+    // because duck.ai's patterns leave SUPPORTED_URL_PATTERNS (that constant
+    // feeds nothing but `documentUrlPatterns`).
+    //
+    // Host permissions and the content-script match STAY: injection needs the
+    // first and the "#" trigger needs the second.
+    //
+    // Links users already saved are left alone. They resolve to the chat home
+    // rather than to their conversation, which is not much use, but deleting
+    // someone's folder contents on their behalf would be worse.
+    noSave: true,
     logo: 'icons/duckai.png',
   },
   // RETIRED 09/2026 — visuals only, no longer a supported site.
@@ -315,6 +349,20 @@ function getSiteByUrl(url, localUrl) {
     if (site.altDomains?.some(d => hostname === d || hostname.endsWith('.' + d))) return key;
   }
   return null;
+}
+
+// Can a conversation on this site be saved at all?
+//
+// False only for a site that stopped giving each conversation its own address
+// (`noSave`, Duck.ai since 09/2026). The distinction matters because this
+// extension stores by URL (CLAUDE.md §6): with one address for every chat, a
+// saved entry points at the chat home and a second save collides with the
+// first. Everything else on such a site keeps working -- it is alive, so the
+// composer is there and prompt injection stays -- which is why this is a
+// separate predicate and not `retired`, and why it is asked at the save entry
+// points rather than inside getSiteByUrl.
+function canSaveSite(siteKey) {
+  return !!siteKey && !SITES[siteKey]?.noSave;
 }
 
 // Hook for folders.js — returns {key, color, logo, logoLight} for a saved chat, or null.
@@ -545,5 +593,5 @@ function extractAITitleLogic(siteKey, defaultFallback) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { SITES, getSiteByUrl, extractAITitleLogic };
+  module.exports = { SITES, getSiteByUrl, canSaveSite, extractAITitleLogic };
 }

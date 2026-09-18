@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ili Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Ovaj sajt više ne daje svakom razgovoru sopstvenu adresu, pa nema šta da se sačuva."
+  },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Prvo kliknite u uređivač, a zatim koristite dugme za ubacivanje."
   },

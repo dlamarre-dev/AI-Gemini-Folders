@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Tafadhali tumia kiendelezi hiki kwenye tovuti ya AI inayotumika (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi, au Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Tovuti hii haitoi tena anwani yake kwa kila mazungumzo, kwa hivyo hakuna kitu cha kuhifadhi."
+  },
   "alertEditorNotFound": {
     "message": "Haiwezekani kupata sehemu ya kuandika katika ukurasa huu. Jaribu kubonyeza kwenye kihariri kwanza, kisha utumie kitufe cha ingiza."
   },

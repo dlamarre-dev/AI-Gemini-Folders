@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi tai Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Tämä sivusto ei enää anna jokaiselle keskustelulle omaa osoitetta, joten mitään ei ole tallennettavaa."
+  },
   "alertEditorNotFound": {
     "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."
   },

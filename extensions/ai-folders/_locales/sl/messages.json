@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ali Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ To spletno mesto vsakemu pogovoru ne dodeli več svojega naslova, zato ni kaj shraniti."
+  },
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."
   },

@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Brug denne udvidelse på et understøttet AI-websted (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi eller Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Dette websted giver ikke længere hver samtale sin egen adresse, så der er intet at gemme."
+  },
   "alertEditorNotFound": {
     "message": "Kunne ikke finde tekstfeltet på denne side. Prøv at klikke i editoren først, og brug derefter indsætknappen."
   },

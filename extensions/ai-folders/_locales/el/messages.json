@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Χρησιμοποιήστε αυτήν την επέκταση σε υποστηριζόμενο AI ιστότοπο (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ή Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Αυτός ο ιστότοπος δεν δίνει πλέον σε κάθε συνομιλία τη δική της διεύθυνση, οπότε δεν υπάρχει κάτι να αποθηκευτεί."
+  },
   "alertEditorNotFound": {
     "message": "Δεν ήταν δυνατή η εύρεση του πεδίου κειμένου σε αυτή τη σελίδα. Κάντε κλικ στον επεξεργαστή πρώτα και μετά χρησιμοποιήστε το κουμπί εισαγωγής."
   },

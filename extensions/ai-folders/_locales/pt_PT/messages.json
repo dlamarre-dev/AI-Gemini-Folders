@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Utilize esta extensão num site de IA suportado (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ou Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Este site já não dá um endereço próprio a cada conversa, pelo que não há nada para guardar."
+  },
   "alertEditorNotFound": {
     "message": "Não foi possível encontrar o campo de texto nesta página. Tente clicar no editor primeiro e utilize o botão de inserção."
   },

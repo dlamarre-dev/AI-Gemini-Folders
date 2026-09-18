@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Utilitzeu aquesta extensió en un lloc d'IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi o Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Aquest lloc ja no assigna una adreça pròpia a cada conversa, així que no hi ha res per desar."
+  },
   "alertEditorNotFound": {
     "message": "No s'ha pogut trobar el camp de text en aquesta pàgina. Proveu de fer clic a l'editor primer i després useu el botó d'inserció."
   },

@@ -1,4 +1,4 @@
-const { SITES, getSiteByUrl, extractAITitleLogic } = require('../extensions/ai-folders/site-config.js');
+const { SITES, getSiteByUrl, canSaveSite, extractAITitleLogic } = require('../extensions/ai-folders/site-config.js');
 
 // Site detection is core and brittle — it gates save, title extraction, and the
 // #-trigger. These lock down the URL → site-key mapping.
@@ -22,8 +22,13 @@ describe('getSiteByUrl', () => {
     ['https://perplexity.ai/', 'perplexity'],
     ['https://www.perplexity.ai/search', 'perplexity'],
     ['https://chat.z.ai/c/abc', 'zai'],
+    // Moonshot split Kimi: kimi.com serves China, kimi.ai the rest. Both must
+    // resolve to one key or a conversation saved before the split stops being
+    // recognized -- the Baidu lesson.
     ['https://www.kimi.com/', 'kimi'],
     ['https://kimi.com/chat/abc', 'kimi'],
+    ['https://kimi.ai/chat/abc', 'kimi'],
+    ['https://www.kimi.ai/', 'kimi'],
     ['https://chat.qwen.ai/c/abc', 'qwen'],
     ['https://meta.ai/', 'meta'],
     ['https://www.meta.ai/c/abc', 'meta'],
@@ -81,7 +86,14 @@ describe('getSiteByUrl', () => {
 // A site the registry knows but the manifest cannot touch fails at runtime with
 // "Cannot access contents of url … must request permission to access this host"
 // — invisible to every other test. Baidu shipped in that state after it moved to
-// wenxin.baidu.com, so the three lists are checked against the registry here.
+// wenxin.baidu.com, so the lists are checked against the registry here.
+//
+// The three lists do NOT cover the same set, and that is the point:
+//   host_permissions + content_scripts  -> every live site (injection needs the
+//       first, the #-trigger the second), so a `noSave` site keeps both.
+//   SUPPORTED_URL_PATTERNS              -> only sites you can save on. That
+//       constant feeds nothing but the save menu's documentUrlPatterns, so
+//       Duck.ai's absence from it IS the feature, not a gap.
 describe('host permissions cover every registered domain', () => {
   const fs = require('fs');
   const path = require('path');
@@ -90,19 +102,31 @@ describe('host permissions cover every registered domain', () => {
   const backgroundSrc = fs.readFileSync(path.join(extDir, 'background.js'), 'utf8');
   const contentMatches = manifest.content_scripts[0].matches;
 
+  const hosts = (s) => [s.domain, ...(s.altDomains ?? [])].filter(Boolean);
   // The local LLM is deliberately absent: its origin is granted at runtime. A
   // retired site is absent for the opposite reason -- its permissions were
   // removed on purpose, and this check would demand them back.
-  const domains = Object.values(SITES)
-    .filter(s => !s.retired)
-    .flatMap(s => [s.domain, ...(s.altDomains ?? [])])
-    .filter(Boolean);
+  const live = Object.values(SITES).filter(s => !s.retired);
 
-  test.each(domains)('%s is reachable', (domain) => {
+  test.each(live.flatMap(hosts))('%s is reachable and carries the content script', (domain) => {
     const pattern = `*://${domain}/*`;
     expect(manifest.host_permissions).toContain(pattern);
     expect(contentMatches).toContain(pattern);
-    expect(backgroundSrc).toContain(pattern);
+  });
+
+  test.each(live.filter(s => !s.noSave).flatMap(hosts))('%s can be saved from', (domain) => {
+    expect(backgroundSrc).toContain(`*://${domain}/*`);
+  });
+
+  test('a noSave site is absent from the save menu patterns', () => {
+    const noSave = Object.values(SITES).filter(s => s.noSave && !s.retired);
+    // If this ever empties, the assertion below stops proving anything.
+    expect(noSave.map(s => s.key)).toEqual(['duckai']);
+    const patterns = backgroundSrc.slice(backgroundSrc.indexOf('SUPPORTED_URL_PATTERNS'),
+                                         backgroundSrc.indexOf('];'));
+    for (const domain of noSave.flatMap(hosts)) {
+      expect(patterns).not.toContain(`*://${domain}/*`);
+    }
   });
 });
 
@@ -357,5 +381,62 @@ describe('retired sites (You.com, 09/2026)', () => {
     // Mirrors SITES_TO_TEST in tools/site-diagnostics/diagnostics.js.
     const probed = Object.values(SITES).filter(s => s.domain && s.newConvUrl);
     expect(probed.map(s => s.key)).not.toContain('you');
+  });
+});
+
+// Duck.ai stopped giving each conversation its own address (09/2026). That is a
+// narrower failure than a retirement: the site is alive, so injection and the
+// #-trigger must keep working, and only the save path goes. Each half is
+// asserted, because a flag that switched off too much would be invisible here.
+describe('unsaveable sites (Duck.ai, 09/2026)', () => {
+  test('canSaveSite refuses a noSave site and allows the rest', () => {
+    expect(SITES.duckai.noSave).toBe(true);
+    expect(canSaveSite('duckai')).toBe(false);
+    expect(canSaveSite('claude')).toBe(true);
+    expect(canSaveSite('local')).toBe(true);
+    expect(canSaveSite(null)).toBe(false);
+    expect(canSaveSite(undefined)).toBe(false);
+    expect(canSaveSite('nosuchsite')).toBe(true);   // unknown key: not a noSave site
+  });
+
+  test('the site itself stays fully supported: it still resolves and still injects', () => {
+    // Not retired -- the URL must keep resolving, or the #-trigger and the
+    // popup's insert button would stop working along with the save.
+    expect(SITES.duckai.retired).toBeUndefined();
+    expect(getSiteByUrl('https://duck.ai/')).toBe('duckai');
+    expect(getSiteByUrl('https://duckduckgo.com/?q=x&ia=chat')).toBe('duckai');
+    expect(SITES.duckai.editorSelectors.length).toBeGreaterThan(0);
+    expect(SITES.duckai.newConvUrl).toBe('https://duck.ai/');
+  });
+
+  test('its own message exists in all 43 locales, and names no site', () => {
+    const fs = require('fs');
+    const path = require('path');
+    const dir = path.join(__dirname, '..', 'extensions', 'ai-folders', '_locales');
+    const locales = fs.readdirSync(dir);
+    expect(locales).toHaveLength(43);
+    // Reusing alertNotSupported here would tell someone on a site the extension
+    // DOES support to go and use a supported site. Hence a key of its own.
+    const missing = locales.filter((l) => {
+      const m = JSON.parse(fs.readFileSync(path.join(dir, l, 'messages.json'), 'utf8'));
+      return !m.alertNoConversationUrl?.message;
+    });
+    expect(missing).toEqual([]);
+    // Generic on purpose: the next site to lose its per-chat URLs reuses it.
+    const named = locales.filter((l) => {
+      const m = JSON.parse(fs.readFileSync(path.join(dir, l, 'messages.json'), 'utf8'));
+      return /Duck\.ai|DuckDuckGo/i.test(m.alertNoConversationUrl.message);
+    });
+    expect(named).toEqual([]);
+  });
+
+  test('Gemini Folders does not carry the key it can never show', () => {
+    // Same reasoning as the whats-new Baidu card (CLAUDE.md §10b): Gemini has
+    // real per-conversation URLs, so the string would be dead weight in 43 files.
+    const fs = require('fs');
+    const path = require('path');
+    const en = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'extensions',
+      'gemini-folders', '_locales', 'en', 'messages.json'), 'utf8'));
+    expect(en.alertNoConversationUrl).toBeUndefined();
   });
 });

@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Baidu、Z.ai、Kimi、Qwen、Meta AI、Mistral、Poe、Duck.ai、Pi 或 Character.AI）。"
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ 此網站不再為每個對話提供獨立網址，因此沒有可儲存的內容。"
+  },
   "alertEditorNotFound": {
     "message": "無法在此頁面找到文字輸入框。請先點擊編輯器，再使用插入按鈕。"
   },

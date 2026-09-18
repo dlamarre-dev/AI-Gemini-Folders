@@ -308,6 +308,9 @@
   "alertNotSupported": {
     "message": "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi veya Character.AI)."
   },
+  "alertNoConversationUrl": {
+    "message": "⚠️ Bu site artık her sohbete kendi adresini vermiyor, bu yüzden kaydedilecek bir şey yok."
+  },
   "alertEditorNotFound": {
     "message": "Bu sayfada metin giriş alanı bulunamadı. Önce düzenleyiciye tıklamayı deneyin, ardından ekle düğmesini kullanın."
   },
