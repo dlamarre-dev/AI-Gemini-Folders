@@ -169,7 +169,7 @@ Both extensions are built with privacy in mind.
 | `grok.com`, `*.grok.com` | Grok |
 | `perplexity.ai`, `*.perplexity.ai` | Perplexity |
 | `chat.z.ai` | Z.ai |
-| `kimi.com`, `*.kimi.com`, `kimi.ai`, `*.kimi.ai` | Kimi (China / international) |
+| `kimi.ai`, `*.kimi.ai`, `kimi.com`, `*.kimi.com` | Kimi (international / China) |
 | `chat.qwen.ai` | Qwen |
 | `meta.ai`, `*.meta.ai` | Meta AI |
 | `chat.mistral.ai` | Mistral (Vibe) |

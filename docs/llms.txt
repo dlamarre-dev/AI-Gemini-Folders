@@ -34,7 +34,7 @@ AI Folders solves the problem of losing track of conversations across multiple A
 - Meta AI (meta.ai)
 - Qwen (chat.qwen.ai)
 - Z.ai (chat.z.ai)
-- Kimi (kimi.com for China, kimi.ai internationally)
+- Kimi (kimi.ai internationally, kimi.com for China)
 - Poe (poe.com)
 - Duck.ai (duck.ai / duckduckgo.com) — prompt injection only; it no longer gives each conversation its own address, so conversations cannot be saved
 - Pi (pi.ai)

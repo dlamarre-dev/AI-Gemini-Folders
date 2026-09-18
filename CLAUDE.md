@@ -18,8 +18,9 @@ conversations into folders and provide a reusable prompt library:
   Duck.ai, Pi, Character.AI) **+ a user-configured local LLM**. You.com was
   retired in 1.7.3 and survives as a visuals-only `retired` entry (§8).
   Two more registry facts land in 1.7.3, both in §8: **Kimi is two domains**
-  (`kimi.com` for China, `kimi.ai` internationally — one `altDomains` entry,
-  so a conversation saved on either resolves to one key), and **Duck.ai is
+  (`kimi.ai` internationally — the default — and `kimi.com` for China, one
+  `altDomains` entry, so a conversation saved on either resolves to one key),
+  and **Duck.ai is
   `noSave`** — it stopped giving each conversation its own address, so saving
   is off there while injection and the `#` trigger keep working. `noSave` and
   `retired` are deliberately different sizes of switch; don't merge them.
@@ -610,17 +611,20 @@ The P1–P5 improvement plan is essentially complete. What's left:
     per-chat URLs reuses it. **Links users already saved are left alone**: they
     resolve to the chat home, which is not much use, but deleting someone's
     folder contents for them would be worse.
-  - **Kimi is two domains since 09/2026.** Moonshot split it: `kimi.com` serves
-    the Chinese site (`html lang="zh-CN"`) and `kimi.ai` the international one
-    (`lang="en-US"`), with `kimi.moonshot.cn` folding into `kimi.com`. An
+  - **Kimi is two domains since 09/2026.** Moonshot split it: `kimi.ai` serves
+    the international site (`html lang="en-US"`) and `kimi.com` the Chinese one
+    (`lang="zh-CN"`), with `kimi.moonshot.cn` folding into `kimi.com`. An
     `altDomains` entry, because both must resolve to one key or a conversation
     saved before the split stops being recognized — the Baidu lesson again.
-    `kimi.com` stays the primary and the `newConvUrl`: its redirect to `kimi.ai`
-    is the one confirmed to fire for an international user, while the reverse is
-    not, so pointing the button at `kimi.ai` would be a guess about what Chinese
-    users get. **Watch item:** flip the primary if that redirect ever goes away.
-    The Lexical composer selectors were not re-validated on `kimi.ai` — same app,
-    but that is an assumption, not a test.
+    **`kimi.ai` is the primary and the `newConvUrl`, and the reason is the
+    audience, not the redirect chain:** this extension ships in 43 locales with
+    very few users in China, so defaulting them to the Chinese site and relying
+    on a redirect would be wrong for the majority. An earlier pass had it the
+    other way round on the grounds that only the kimi.com → kimi.ai redirect was
+    confirmed to fire — true, but it answered the wrong question: which redirect
+    exists does not settle where users should be sent. A test pins the choice so
+    it is not "corrected" by the next person to read the redirect chain.
+    Both domains were manually verified for save and for the `#` trigger.
 - **(P5 — discuss with David first)** Stable IDs for folders/conversations instead
   of name/URL keys. Would simplify renames/pins and enable the differential sync
   above, but requires a data migration — outside the "same features" scope; don't

@@ -131,24 +131,25 @@ const SITES = {
   },
   kimi: {
     key: 'kimi',
-    // Moonshot split Kimi across two domains: kimi.com serves the Chinese site
-    // (html lang="zh-CN") and kimi.ai the international one (lang="en-US"),
+    // Moonshot split Kimi across two domains: kimi.ai serves the international
+    // site (html lang="en-US") and kimi.com the Chinese one (lang="zh-CN"),
     // with kimi.moonshot.cn folding into kimi.com. Same product, so an
     // altDomain rather than a second site -- and both must resolve to the same
     // key, or a conversation saved before the split would stop being
     // recognized, exactly as happened to Baidu (CLAUDE.md §8).
     //
-    // kimi.com stays the primary and the newConvUrl because its redirect to
-    // kimi.ai is the one confirmed to fire for an international user; the
-    // reverse direction is not, so pointing the button at kimi.ai would be a
-    // guess about what Chinese users get. Flip it if Moonshot ever drops that
-    // redirect.
-    domain: 'kimi.com',
-    altDomains: ['kimi.ai'],
+    // kimi.ai is the primary and the newConvUrl because that is where this
+    // extension's users are: 43 locales, very few of them in China. Sending
+    // them to the Chinese site and relying on a redirect would be the wrong
+    // default for the majority, and kimi.com stays matched either way, so
+    // anyone who lands there keeps saving and injecting normally.
+    domain: 'kimi.ai',
+    altDomains: ['kimi.com'],
     color: '#ffffff',
-    newConvUrl: 'https://www.kimi.com/',
+    newConvUrl: 'https://www.kimi.ai/',
     // A Vue shell around a Lexical composer:
     // div.chat-input-editor[contenteditable][role=textbox][data-lexical-editor]
+    // Validated live on both domains (09/2026).
     editorSelectors: [
       'div.chat-input-editor[contenteditable="true"]',
       'div[data-lexical-editor="true"][contenteditable="true"]',

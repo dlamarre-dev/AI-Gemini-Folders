@@ -140,6 +140,17 @@ describe('composer flags', () => {
     expect(SITES.kimi.forceClear).toBeUndefined();
   });
 
+  // Moonshot split Kimi across two domains. Which one is primary is a decision
+  // about this extension's audience -- 43 locales, very few of them in China --
+  // and not about which redirect happens to fire, so it is pinned here rather
+  // than left to be "corrected" by whoever next reads the redirect chain.
+  test('kimi.ai is the default, kimi.com still resolves', () => {
+    expect(SITES.kimi.domain).toBe('kimi.ai');
+    expect(SITES.kimi.newConvUrl).toBe('https://www.kimi.ai/');
+    expect(SITES.kimi.altDomains).toContain('kimi.com');
+    expect(getSiteByUrl('https://www.kimi.com/')).toBe('kimi');
+  });
+
   test('copilot targets the Fluent composer and opts out of inline suggestions', () => {
     // Confirmed live on m365.cloud.microsoft (09/2026). The five Bing-chat era
     // selectors that used to sit here matched nothing at all, so only the
