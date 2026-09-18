@@ -2,7 +2,7 @@
 
 Organizați conversații din toate instrumentele dvs. AI preferate în dosare partajate, construiți o bibliotecă de prompturi reutilizabile și injectați șabloane direct în orice câmp de introducere — fără a fi nevoie să copiați și să lipiți.
 
-🌐 19 SERVICII IA ACCEPTATE
+🌐 18 SERVICII IA ACCEPTATE
 
 Dosare IA se integrează nativ cu toți principalii asistenți de chat IA, cum ar fi Claude, ChatGPT și Gemini, precum și cu LLM-urile locale pe care le rulați chiar dumneavoastră. Conversațiile de pe platforme diferite pot împărtăși exact același dosar. Fiecare conversație afișează culoarea și sigla serviciului său, astfel încât să știți întotdeauna de unde provine.
 

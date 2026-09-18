@@ -2,7 +2,7 @@
 
 Organizirajte pogovore iz vseh svojih najljubših AI-orodij v skupne mape, zgradite knjižnico promptov za večkratno uporabo in vstavljajte predloge neposredno v katero koli vnosno polje — brez kopiranja in lepljenja.
 
-🌐 19 PODPRTIH STORITEV UI
+🌐 18 PODPRTIH STORITEV UI
 
 Mape AI se izvorno povezujejo z vsemi glavnimi klepetalnimi pomočniki UI, kot so Claude, ChatGPT in Gemini, ter z lokalnimi modeli LLM, ki jih poganjate sami. Pogovori z različnih platform si lahko delijo popolnoma isto mapo. Vsak klepet prikazuje barvo in logotip svoje storitve, tako da vedno veste, od kod prihaja.
 

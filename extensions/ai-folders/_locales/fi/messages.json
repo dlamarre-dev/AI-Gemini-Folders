@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Uusi Duck.ai-keskustelu"
   },
-  "newConv_you": {
-    "message": "Uusi You.com-keskustelu"
-  },
   "newConv_pi": {
     "message": "Uusi Pi-keskustelu"
   },
@@ -309,7 +306,7 @@
     "message": "Aseta paikallisen LLM:n URL:"
   },
   "alertNotSupported": {
-    "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi tai Character.AI)."
+    "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi tai Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."

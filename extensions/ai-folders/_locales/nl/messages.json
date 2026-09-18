@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Nieuw Duck.ai-gesprek"
   },
-  "newConv_you": {
-    "message": "Nieuw You.com-gesprek"
-  },
   "newConv_pi": {
     "message": "Nieuw Pi-gesprek"
   },
@@ -309,7 +306,7 @@
     "message": "Lokale LLM-URL instellen:"
   },
   "alertNotSupported": {
-    "message": "Gebruik deze extensie op een ondersteunde AI-site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi of Character.AI)."
+    "message": "Gebruik deze extensie op een ondersteunde AI-site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi of Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Kan het tekstinvoerveld op deze pagina niet vinden. Probeer eerst in de editor te klikken en gebruik dan de invoegknop."

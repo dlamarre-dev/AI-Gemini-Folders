@@ -2,7 +2,7 @@
 
 Organiseer gesprekken van al uw favoriete AI-tools in gedeelde mappen, bouw een herbruikbare promptbibliotheek en injecteer sjablonen rechtstreeks in elk invoerveld — zonder kopiëren en plakken.
 
-🌐 19 ONDERSTEUNDE AI-DIENSTEN
+🌐 18 ONDERSTEUNDE AI-DIENSTEN
 
 AI-mappen integreert native met alle grote AI-chatassistenten, zoals Claude, ChatGPT en Gemini, en met de lokale LLM's die u zelf draait. Gesprekken van verschillende platforms kunnen exact dezelfde map delen. Elke chat toont de kleur en het logo van zijn eigen dienst, zodat u altijd weet waar het vandaan komt.
 

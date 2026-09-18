@@ -19,6 +19,26 @@
   const LABEL_RE = /^==\s.+\s==$/;
   let _suggTimer = null;
 
+  // Some composers pad their content with zero-width characters on every
+  // keystroke. Microsoft 365 Copilot's Fluent editor
+  // (span#m365-chat-editor-target-element) appends U+200B U+200C, so typing
+  // "#test" reads back as "#test\u200B\u200C" -- and String.prototype.trim()
+  // does NOT remove those: they are Cf (format) characters, not whitespace.
+  // Left in, they rode all the way into the lookup prefix, so
+  // findPromptsByPrefix went looking for a prompt named "test\u200B\u200C",
+  // matched nothing, the Space passed through, and the trigger did nothing at
+  // all -- while the popup's insert button, which never reads the field, kept
+  // working. They broke composingTrigger too (its charset rejects them), so no
+  // suggestions were ever requested either. Both halves of "# does nothing".
+  //
+  // Trimmed at the EDGES only, together with whitespace, so the padding goes
+  // while an emoji ZWJ sequence (U+200D) inside a prompt name and a
+  // Persian/Hindi ZWNJ between letters are both left intact.
+  const INVISIBLE_EDGE = /^[\s\u200B\u200C\u200D\u2060\uFEFF]+|[\s\u200B\u200C\u200D\u2060\uFEFF]+$/g;
+  function trimInvisible(s) {
+    return String(s ?? '').replace(INVISIBLE_EDGE, '');
+  }
+
   // Re-inserts a space after e.preventDefault() when no prompt matched.
   function insertSpace(el) {
     if (el.isContentEditable) {
@@ -50,7 +70,7 @@
   //   needsClear:       the '#' is gone but our injected suggestion block remains.
   //   prefix:           query suffix after '#' to send, or null when clearing.
   function classifyTriggerField(rawText) {
-    const nonEmpty = String(rawText ?? '').split('\n').map(l => l.trim()).filter(Boolean);
+    const nonEmpty = String(rawText ?? '').split('\n').map(trimInvisible).filter(Boolean);
     const firstLine = nonEmpty[0] ?? '';
     const labelIdx = nonEmpty.findIndex(l => LABEL_RE.test(l));
     // In scope = the field is just the #line, or our suggestion block (label on
@@ -72,7 +92,7 @@
 
   // Parses the visible suggestion names out of the editor text, or null if none. Pure.
   function parseSuggestionNames(rawText) {
-    const nonEmpty = String(rawText ?? '').split('\n').map(l => l.trim()).filter(Boolean);
+    const nonEmpty = String(rawText ?? '').split('\n').map(trimInvisible).filter(Boolean);
     // The suggestion line is the one right below our "== label ==" line. Locating
     // it by the label (not by a charset regex) lets names contain punctuation
     // ("Done!", "Q&A") — otherwise Arrow cycling broke for such prompts. The
@@ -83,7 +103,7 @@
       : ((nonEmpty.length >= 2 && SUGG_LINE_RE.test(nonEmpty[1]) ? nonEmpty[1] : null) ??
          (nonEmpty.length >= 3 && SUGG_LINE_RE.test(nonEmpty[2]) ? nonEmpty[2] : null));
     if (!suggLine) return null;
-    return suggLine.split(/\s{2,}/).map(s => s.replace(/^#/, '').trim()).filter(Boolean);
+    return suggLine.split(/\s{2,}/).map(s => trimInvisible(s.replace(/^#/, ''))).filter(Boolean);
   }
 
   // Returns the suggestion names currently visible in the editor, or null if none.
@@ -275,7 +295,7 @@
   // dispatching real synthetic events and asserting nothing happens.
   if (typeof module !== 'undefined') {
     module.exports = {
-      classifyTriggerField, parseSuggestionNames, SUGG_LINE_RE, LABEL_RE,
+      classifyTriggerField, parseSuggestionNames, trimInvisible, SUGG_LINE_RE, LABEL_RE,
       onSpaceKeydown, onSpaceKeyup, onArrowKeydown, onTypingKeyup,
     };
   }

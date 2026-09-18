@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "নতুন Duck.ai কথোপকথন"
   },
-  "newConv_you": {
-    "message": "নতুন You.com কথোপকথন"
-  },
   "newConv_pi": {
     "message": "নতুন Pi কথোপকথন"
   },
@@ -309,7 +306,7 @@
     "message": "স্থানীয় LLM URL সেট করুন:"
   },
   "alertNotSupported": {
-    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi, বা Character.AI)।"
+    "message": "অনুগ্রহ করে একটি সমর্থিত AI সাইটে এই এক্সটেনশন ব্যবহার করুন (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi, বা Character.AI)।"
   },
   "alertEditorNotFound": {
     "message": "এই পৃষ্ঠায় টেক্সট ইনপুট খুঁজে পাওয়া যায়নি। প্রথমে এডিটরে ক্লিক করুন, তারপর ইনসার্ট বাটন ব্যবহার করুন।"

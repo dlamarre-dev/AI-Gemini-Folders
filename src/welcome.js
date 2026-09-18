@@ -75,10 +75,13 @@ function applyI18n() {
 // AI Folders ships a SITES registry in site-config.js; Gemini Folders has none
 // because it supports exactly one site. Entries without a domain (the
 // user-configured local LLM) are not sites you can go and open, so they are left
-// out of a row that says "open a conversation on one of these".
+// out of a row that says "open a conversation on one of these". A retired entry
+// (You.com) is left out for the stronger reason that it is no longer supported
+// at all -- it survives in the registry only to colour conversations already
+// saved from it.
 function supportedSites() {
   if (typeof SITES !== 'undefined' && SITES) {
-    return Object.values(SITES).filter(s => s && s.domain && s.logo);
+    return Object.values(SITES).filter(s => s && s.domain && s.logo && !s.retired);
   }
   return [{ key: 'gemini', logo: 'icons/gemini.png' }];
 }

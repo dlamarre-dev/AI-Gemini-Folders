@@ -2,7 +2,7 @@
 
 Organizza conversazioni da tutti i tuoi strumenti AI preferiti in cartelle condivise, crea una libreria di prompt riutilizzabili e inietta modelli direttamente in qualsiasi campo di input — senza bisogno di copiare e incollare.
 
-🌐 19 SERVIZI AI SUPPORTATI
+🌐 18 SERVIZI AI SUPPORTATI
 
 Cartelle IA si integra in modo nativo con tutti i principali assistenti di chat IA, come Claude, ChatGPT e Gemini, e con i LLM locali che esegui tu stesso. Le conversazioni di piattaforme diverse possono condividere la stessa cartella. Ogni chat mostra il colore e il logo del suo servizio di origine, così sai sempre da dove proviene.
 

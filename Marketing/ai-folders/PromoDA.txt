@@ -2,7 +2,7 @@
 
 Organiser samtaler fra alle dine foretrukne AI-værktøjer i delte mapper, opbyg et bibliotek af genbrugbare prompter, og injicér skabeloner direkte i ethvert inputfelt — uden at kopiere og indsætte.
 
-🌐 19 UNDERSTØTTEDE AI-TJENESTER
+🌐 18 UNDERSTØTTEDE AI-TJENESTER
 
 AI-mapper integreres indbygget med alle de store AI-chatassistenter, såsom Claude, ChatGPT og Gemini, og med de lokale LLM'er, du selv kører. Samtaler fra forskellige platforme kan dele præcis den samme mappe. Hver chat viser farven og logoet for sin egen tjeneste, så du altid ved, hvor den kommer fra.
 

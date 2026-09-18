@@ -2,7 +2,7 @@
 
 Organisieren Sie Gespräche aller Ihrer bevorzugten KI-Tools in gemeinsamen Ordnern, erstellen Sie eine Bibliothek wiederverwendbarer Prompts und injizieren Sie Vorlagen direkt in jedes Eingabefeld — ganz ohne Kopieren und Einfügen.
 
-🌐 19 UNTERSTÜTZTE KI-DIENSTE
+🌐 18 UNTERSTÜTZTE KI-DIENSTE
 
 KI-Ordner integriert sich nativ mit allen großen KI-Chat-Assistenten wie Claude, ChatGPT und Gemini sowie mit den lokalen LLMs, die Sie selbst betreiben. Gespräche von verschiedenen Plattformen können denselben Ordner teilen. Jeder Chat zeigt die Farbe und das Logo seines Dienstes an, sodass Sie immer wissen, woher er stammt.
 

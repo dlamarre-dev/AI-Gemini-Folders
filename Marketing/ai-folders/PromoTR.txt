@@ -2,7 +2,7 @@
 
 Tüm favori AI araçlarınızdan gelen sohbetleri paylaşılan klasörlerde düzenleyin, yeniden kullanılabilir bir prompt kütüphanesi oluşturun ve şablonları herhangi bir giriş alanına doğrudan enjekte edin — kopyala yapıştır gerekmez.
 
-🌐 DESTEKLENEN 19 YZ HİZMETİ
+🌐 DESTEKLENEN 18 YZ HİZMETİ
 
 YZ Klasörleri, Claude, ChatGPT ve Gemini gibi tüm büyük yapay zeka sohbet asistanlarıyla ve kendi çalıştırdığınız yerel LLM'lerle yerel olarak entegre olur. Farklı platformlardan gelen sohbetler tamamen aynı klasörü paylaşabilir. Her sohbet, kendi hizmetinin rengini ve logosunu gösterir, böylece nereden geldiğini her zaman bilirsiniz.
 

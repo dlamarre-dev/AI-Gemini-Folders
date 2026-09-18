@@ -2,7 +2,7 @@
 
 Järjestä kaikista suosikki-AI-työkaluistasi käydyt keskustelut jaetuiksi kansioiksi, rakenna uudelleenkäytettävien kehotteiden kirjasto ja lisää mallit suoraan mihin tahansa syöttökenttään — ilman kopiointia ja liittämistä.
 
-🌐 19 TUETTUA TEKOÄLYPALVELUA
+🌐 18 TUETTUA TEKOÄLYPALVELUA
 
 AI-kansiot integroituu natiivisti kaikkiin suuriin tekoälychat-avustajiin, kuten Claude, ChatGPT ja Gemini, sekä itse käyttämiisi paikallisiin LLM-malleihin. Eri alustojen keskustelut voivat jakaa täsmälleen saman kansion. Jokainen keskustelu näyttää oman palvelunsa värin ja logon, joten tiedät aina, mistä se on peräisin.
 

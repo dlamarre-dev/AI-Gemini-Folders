@@ -2,7 +2,7 @@
 
 Organizujte konverzácie zo všetkých vašich obľúbených AI nástrojov do zdieľaných priečinkov, vytvorte knižnicu opakovane použiteľných promptov a vkladajte šablóny priamo do ľubovoľného vstupného poľa — bez kopírovania a vkladania.
 
-🌐 19 PODPOROVANÝCH AI SLUŽIEB
+🌐 18 PODPOROVANÝCH AI SLUŽIEB
 
 AI priečinky sa natívne integrujú so všetkými hlavnými AI chatovacími asistentmi, ako sú Claude, ChatGPT a Gemini, a s lokálnymi LLM, ktoré si spustíte sami. Konverzácie z rôznych platforiem môžu zdieľať úplne ten istý priečinok. Každý chat zobrazuje farbu a logo svojej služby, takže vždy viete, odkiaľ pochádza.
 

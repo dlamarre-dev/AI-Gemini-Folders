@@ -11,7 +11,8 @@ It exists only to be run occasionally by a maintainer.
 ## What it checks
 
 For each site in the `SITES` registry (its `site-config.js` copy is refreshed
-from AI Folders' on every `python build.py` run — 17 web platforms) it opens
+from AI Folders' on every `python build.py` run — 17 web platforms; a
+`retired` entry has no `newConvUrl` and is skipped) it opens
 the landing page in a background tab, waits for the SPA to hydrate, probes the
 DOM with the **production** `editorSelectors`, then closes the tab. Per site:
 

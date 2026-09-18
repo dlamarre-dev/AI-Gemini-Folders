@@ -1,6 +1,9 @@
 // site-config.js — AI Folders site registry
 // Provides:
-//   SITES              — metadata for all supported sites (18 web platforms + local)
+//   SITES              — metadata for all supported sites (17 web platforms + local),
+//                        plus any `retired: true` entry, which is visuals-only:
+//                        kept so conversations saved from it keep their colour
+//                        and logo, matched by nothing. See You.com below.
 //   getSiteByUrl(url)  — returns site key or null
 //   getChatSiteInfo    — hook for folders.js (window global)
 //   extractAITitleLogic — injected into page via executeScript
@@ -41,17 +44,48 @@ const SITES = {
   },
   copilot: {
     key: 'copilot',
-    domain: 'copilot.microsoft.com',
-    // Microsoft 365 Copilot — the tenant-bound chat an organisation's users are
-    // sent to — lives on its own host, so a work account never touches the
-    // consumer domain and the extension did nothing at all there (issue #82).
-    // An alt rather than a second site: same product, same title strategy, same
-    // editor; only the address differs by which account you signed in with.
-    altDomains: ['m365.cloud.microsoft'],
+    // Copilot is one product behind four addresses, and every one of them is a
+    // live host today, so all four are declared rather than guessed at:
+    //   copilot.com             — the unified app, where a new conversation now
+    //                             opens (personal *or* work account, since the
+    //                             consumer/commercial merge). The canonical one.
+    //   copilot.microsoft.com   — the former consumer address, still serving.
+    //   copilot.cloud.microsoft — the commercial address m365.cloud.microsoft is
+    //                             being redirected to (Microsoft MC1462915,
+    //                             09-10/2026). Declared before the redirect
+    //                             lands so it cannot break the way m365 did.
+    //   m365.cloud.microsoft    — the tenant-bound Microsoft 365 Copilot a work
+    //                             account was sent to; without it the extension
+    //                             did nothing at all for those users (issue #82).
+    // Alts rather than separate sites: same product, same title strategy, same
+    // editor; only the address differs by account and by rollout stage.
+    domain: 'copilot.com',
+    altDomains: ['copilot.microsoft.com', 'copilot.cloud.microsoft', 'm365.cloud.microsoft'],
     color: '#0078d4',
-    newConvUrl: 'https://copilot.microsoft.com/',
-    // Copilot uses a textarea inside a shadow-DOM web component; selectors need live validation
-    editorSelectors: ['textarea#userInput', 'cib-text-input textarea', '#searchbox', 'textarea[name="q"]', 'textarea'],
+    newConvUrl: 'https://copilot.com/chat',
+    // Confirmed live on m365.cloud.microsoft (09/2026): the composer is an
+    // inline `<span id="m365-chat-editor-target-element" contenteditable>` with
+    // Fluent's `fai-EditorInput__input` class. None of the five Bing-chat era
+    // selectors this list used to carry matched anything -- the positional
+    // fallback was doing all the work, which is why only a console warning ever
+    // said so. `#searchbox` and `textarea[name="q"]` are gone rather than kept
+    // as long shots: on the unified app they would sooner match a sidebar search
+    // field than the composer, and a wrong match is worse than no match, since
+    // the fallback finds the right element anyway.
+    editorSelectors: [
+      '#m365-chat-editor-target-element',
+      '.fai-EditorInput__input',
+      'span[contenteditable="true"][role="textbox"]',
+      'div[contenteditable="true"][role="textbox"]',
+      'textarea#userInput',
+      '[contenteditable="true"]',
+    ],
+    // No inline suggestion block. The composer is an inline `<span>`, so the
+    // `insertParagraph` the suggestion writer uses to build its three lines has
+    // no block to split -- it cannot render that list cleanly. Injection on an
+    // exact or single match still goes through unchanged, and that is the path
+    // the trigger actually needs.
+    noSuggestions: true,
     logo: 'icons/copilot.png',
   },
   deepseek: {
@@ -171,13 +205,32 @@ const SITES = {
     editorSelectors: ['textarea[name="user-prompt"]', 'form textarea', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
     logo: 'icons/duckai.png',
   },
+  // RETIRED 09/2026 — visuals only, no longer a supported site.
+  //
+  // You.com wound its consumer chat down: the unlimited free plan became a
+  // 25-query Pro trial (03/04/2026) and you.com/pricing now lists API plans
+  // only, so the selectors below could never be validated live again and the
+  // product was being discontinued in practice (CLAUDE.md §8 tracked it for a
+  // year waiting for an end-of-support date that was never announced).
+  //
+  // The entry stays because `getChatSiteInfo` reads it: anyone who saved a
+  // You.com conversation keeps its colour and its logo in the folder list, and
+  // the link itself still opens. What `retired` switches off is everything
+  // forward-looking — `getSiteByUrl` stops matching the host (so nothing new
+  // can be saved and no prompt can be injected), `popup.js` renders no
+  // "new conversation" button, and `welcome.js` leaves it out of the site row.
+  // `newConvUrl` and `editorSelectors` are gone rather than left dormant: with
+  // no caller they would only look like support that exists. Their absence also
+  // drops the site from tools/site-diagnostics, which filters on `newConvUrl`.
+  //
+  // Host permissions, the content-script match and the SUPPORTED_URL_PATTERNS
+  // entry are removed too — that is a permission *reduction*, so it costs
+  // installed users no re-prompt.
   you: {
     key: 'you',
     domain: 'you.com',
+    retired: true,
     color: '#3B5BFF',
-    newConvUrl: 'https://you.com/chat',
-    // You.com chat composer; selectors need live validation
-    editorSelectors: ['#search-input-textarea', 'textarea[data-testid="youchat-input"]', 'textarea[placeholder]', 'textarea', '[contenteditable="true"]'],
     logo: 'icons/you.png',
   },
   pi: {
@@ -254,6 +307,10 @@ function getSiteByUrl(url, localUrl) {
     return null;
   }
   for (const [key, site] of Object.entries(SITES)) {
+    // A retired site keeps its entry for its colour and logo only, so it must
+    // never resolve from a URL again: this single skip is what stops a new save
+    // and a prompt injection at once, both being gated on this function.
+    if (site.retired) continue;
     if (site.domain && (hostname === site.domain || hostname.endsWith('.' + site.domain))) return key;
     if (site.altDomains?.some(d => hostname === d || hostname.endsWith('.' + d))) return key;
   }
@@ -351,7 +408,12 @@ function extractAITitleLogic(siteKey, defaultFallback) {
   } else if (siteKey === 'copilot') {
     strategies = [
       activeSidebarLink,
-      () => docTitle(new Set(['microsoft copilot', 'copilot', ''])),
+      // Observed generic tab titles across the four hosts: "Microsoft Copilot:
+      // Your AI companion" (consumer) and "Copilot | AI chat for work"
+      // (commercial). docTitle only cuts at " - " / " | " / " — ", so the colon
+      // form has to be listed whole or it becomes a folder entry's title.
+      () => docTitle(new Set(['microsoft copilot', 'microsoft copilot: your ai companion',
+                              'microsoft 365 copilot', 'copilot chat', 'copilot', ''])),
       () => firstMsg('[data-content="user-message"], .user-message, cib-message[type="user"]'),
     ];
   } else if (siteKey === 'deepseek') {
@@ -452,7 +514,6 @@ function extractAITitleLogic(siteKey, defaultFallback) {
       poe: ['poe', 'new chat'],
       duckai: ['duckduckgo ai chat', 'duckduckgo', 'ai chat', 'duck.ai'],
       kimi: ['kimi', 'kimi chat', 'moonshot', 'new chat'],
-      you: ['you.com', 'you', 'new chat'],
       characterai: ['character.ai', 'characterai', 'c.ai', 'new chat'],
     }[siteKey];
     if (genericIgnores) {

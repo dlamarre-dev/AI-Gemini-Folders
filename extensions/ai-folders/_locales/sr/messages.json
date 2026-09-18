@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Novi razgovor na Duck.ai"
   },
-  "newConv_you": {
-    "message": "Novi razgovor na You.com"
-  },
   "newConv_pi": {
     "message": "Novi razgovor na Pi"
   },
@@ -309,7 +306,7 @@
     "message": "Podesite URL lokalnog LLM-a:"
   },
   "alertNotSupported": {
-    "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi ili Character.AI)."
+    "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ili Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Prvo kliknite u uređivač, a zatim koristite dugme za ubacivanje."

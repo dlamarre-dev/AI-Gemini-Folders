@@ -293,9 +293,6 @@
   "newConv_duckai": {
     "message": "Нова розмова в Duck.ai"
   },
-  "newConv_you": {
-    "message": "Нова розмова в You.com"
-  },
   "newConv_pi": {
     "message": "Нова розмова в Pi"
   },
@@ -309,7 +306,7 @@
     "message": "Вкажіть URL локальної LLM:"
   },
   "alertNotSupported": {
-    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, You.com, Pi або Character.AI)."
+    "message": "Будь ласка, використовуйте цей розширювач на підтримуваному AI-сайті (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi або Character.AI)."
   },
   "alertEditorNotFound": {
     "message": "Не вдалося знайти поле введення тексту на цій сторінці. Спочатку натисніть на редактор, а потім скористайтеся кнопкою вставки."
