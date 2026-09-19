@@ -125,3 +125,45 @@ describe('nav buttons are on every page that has them', () => {
     expect(tag).toMatch(/\shidden\b/);
   });
 });
+
+// The site states a service count in 43 languages, and the store listings state
+// it again. Both are numbers in copy that nothing recomputed, and both drifted
+// the same way when You.com was retired: the promo texts were caught, this one
+// shipped a stale "19" to aifolders.xyz. The count includes the local LLM, so
+// grepping for the platform count misses it — which is exactly how it survived
+// the first pass. Tie it to the registry here, as marketing-listings.test.js
+// does for the store copy, and neither surface can drift alone again.
+describe('the site states the real number of services', () => {
+  const { SITES } = require('../extensions/ai-folders/site-config.js');
+  // Retired entries survive for their colour and logo only and are not services
+  // the site may count; the local LLM is one, and is counted (SERVICES + LOCAL_SVC).
+  const live = Object.values(SITES).filter((s) => !s.retired);
+  const expected = live.length;
+
+  // Bengali may write the number in Bengali digits, as the promo texts do.
+  const toAscii = (s) => s.replace(/[\u09e6-\u09ef]/g,
+    (d) => String(d.charCodeAt(0) - 0x09e6));
+
+  test('every localized heading counts the registry, not a literal', () => {
+    const wrong = LANGS.map((lang) => {
+      const title = MANUAL[lang] && MANUAL[lang].servicesTitle;
+      if (!title) return [lang, 'no servicesTitle'];
+      const n = toAscii(title).match(/\d+/);
+      if (!n) return [lang, `no number in ${JSON.stringify(title)}`];
+      return Number(n[0]) === expected ? null : [lang, `says ${n[0]}, expected ${expected}`];
+    }).filter(Boolean);
+    expect(wrong).toEqual([]);
+  });
+
+  test('and the service cards it renders are that same set, minus the local one', () => {
+    // SERVICES in app.js is the list of named services; LOCAL_SVC is appended
+    // separately, which is why the card count is expected - 1.
+    const block = APP.slice(APP.indexOf('const SERVICES = ['), APP.indexOf('const LOCAL_SVC'));
+    const cards = block.match(/\{ n: "/g) || [];
+    expect(cards).toHaveLength(expected - 1);
+    // A retired service must not still have a card.
+    for (const s of Object.values(SITES).filter((x) => x.retired)) {
+      expect(block).not.toContain(`logo: "${s.key.charAt(0).toUpperCase()}${s.key.slice(1)}"`);
+    }
+  });
+});
