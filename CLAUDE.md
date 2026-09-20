@@ -550,32 +550,29 @@ The P1–P5 improvement plan is essentially complete. What's left:
     showing it. That is the same degradation §7 records for a local-LLM
     conversation and for Firefox before permissions are granted — the link
     still works, it just stops being deduplicated.
-  - **Baidu — re-checked 18/09/2026, KEEP for now, one open question decides it.**
-    What is verified: `wenxin.baidu.com` answers 200 and is canonical, and
-    **both** `chat.baidu.com` and `yiyan.baidu.com` 302 to it, so the two hosts
-    the manifest declares are still the right two (`yiyan` was never supported
-    and redirects, so it needs nothing). The product was renamed 文心一言 →
+  - **Baidu — re-checked 18/09/2026, tested 20/09/2026, KEPT as a full site.**
+    Verified: `wenxin.baidu.com` answers 200 and is canonical, and **both**
+    `chat.baidu.com` and `yiyan.baidu.com` 302 to it, so the two hosts the
+    manifest declares are still the right two (`yiyan` was never supported and
+    redirects, so it needs nothing). The product was renamed 文心一言 →
     文心助手, which is why the generic-title ignore set keys on 百度文心助手.
-    Anonymous access still opens the chat page, and still mints URLs.
-    **The open question is whether those anonymous URLs survive.** In 08/2026
-    Baidu rebuilt conversation *history* with categories and batch delete — a
-    signed-in feature — which makes it likely that an anonymous conversation is
-    session-bound and its URL dies with the cookie. If so, Baidu is the Duck.ai
-    case (`noSave`) for anonymous users, not a retirement, because signed-in
-    users would still get real per-conversation URLs.
-    **The decisive test, which needs a browser and not a fetch:** start an
-    anonymous conversation, copy its URL, open it in a fresh profile (or after
-    clearing cookies for the domain). If the conversation is there, nothing
-    changes. If it is not, set `noSave` and keep everything else.
-    The account route is not the answer for most of our users: registering a
-    Baidu account from outside China is possible — the overseas form accepts
-    around 156 dialling codes — but SMS delivery and the platform's security
-    checks are unreliable, so it is a coin flip abroad and routine only inside
-    China. Since the extension ships in 43 languages including zh_CN and zh_TW,
-    **Chinese users with an account remain a real constituency**, which is the
-    argument for keeping the site rather than retiring it on our own difficulty
-    reading the UI. Still outstanding from the last check: `editorSelectors` and
-    the sidebar title strategy have never been re-run live on the new domain.
+    The open question was whether an **anonymous** conversation URL survives,
+    since Baidu rebuilt conversation history as a signed-in feature in 08/2026 —
+    if those URLs died with the cookie, Baidu would have been the Duck.ai case
+    (`noSave`) rather than a retirement, because signed-in users still get real
+    per-conversation URLs. **It was tested and the URL holds**, so nothing
+    changes: Baidu stays a full site, saveable like any other. That was one
+    manual check rather than a matrix, so treat it as "no reason to act" and not
+    as a guarantee — re-run it if a user reports a saved Baidu link going dead.
+    Context worth keeping for the next re-evaluation: registering a Baidu account
+    from outside China is possible — the overseas form accepts around 156
+    dialling codes — but SMS delivery and the platform's security checks are
+    unreliable, so it is a coin flip abroad and routine only inside China. Since
+    the extension ships in 43 languages including zh_CN and zh_TW, **Chinese
+    users with an account remain a real constituency**, which is the argument
+    against retiring the site over our own difficulty reading the UI. Still
+    outstanding: `editorSelectors` and the sidebar title strategy have never been
+    re-run live on the new domain.
   - **Duck.ai — `noSave` since 09/2026, and that flag is narrower than
     `retired` on purpose.** It stopped giving each conversation its own address:
     every chat lives at one URL. Since this extension stores by URL (§6), a
