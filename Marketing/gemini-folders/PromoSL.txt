@@ -60,6 +60,6 @@ Preglej kodo ali prispevaj: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 NA VOLJO TUDI: Mape AI — NADGRADNJA ZA VEČ PLATFORM
 
-Vas zanimajo Mape Gemini, a uporabljate tudi ChatGPT, Claude, Copilot, Grok, Perplexity ali lokalni LLM? Mape AI so naravni naslednji korak: ena razširitev za organizacijo pogovorov v vseh vaših AI orodjih, z enakim sistemom map, knjižnico pozivov in vstavljanjem z enim klikom, ki so na voljo v Mape Gemini.
+Vas zanimajo Mape Gemini, a uporabljate tudi druge sisteme AI, kot so ChatGPT, Claude ali lokalni LLM? Mape AI so naravni naslednji korak: ena razširitev za organizacijo pogovorov v vseh vaših AI orodjih, z enakim sistemom map, knjižnico pozivov in vstavljanjem z enim klikom, ki so na voljo v Mape Gemini.
 
 👉 Namesti Mape AI: __AF_STORE_URL__

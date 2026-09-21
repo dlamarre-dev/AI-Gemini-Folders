@@ -60,6 +60,6 @@ Sirvi koodi või panusta: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 SAADAVAL KA: AI kaustad — MITMIKPLATVORMI UUENDUS
 
-Huvitab teid Gemini Kaustad, kuid kasutate ka ChatGPT-d, Claudi, Copiloti, Groki, Perplexityt või kohalikku LLM-i? AI kaustad on loomulik järgmine samm: üks laiendus vestluste korraldamiseks kõigis oma AI-tööriistades, sama kaustasüsteemi, käskluste raamatukogu ja ühe klõpsuga sisestamisega, mis on saadaval Gemini Kaustad-s.
+Huvitab teid Gemini Kaustad, kuid kasutate ka teisi AI-süsteeme, nagu ChatGPT, Claude või kohalik LLM? AI kaustad on loomulik järgmine samm: üks laiendus vestluste korraldamiseks kõigis oma AI-tööriistades, sama kaustasüsteemi, käskluste raamatukogu ja ühe klõpsuga sisestamisega, mis on saadaval Gemini Kaustad-s.
 
 👉 Installi AI kaustad: __AF_STORE_URL__

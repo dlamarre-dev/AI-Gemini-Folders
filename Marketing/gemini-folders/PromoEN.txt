@@ -61,6 +61,6 @@ Browse the code or contribute: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 ALSO AVAILABLE: AI Folders — THE MULTI-PLATFORM UPGRADE
 
-Interested in Gemini Folders but also use ChatGPT, Claude, Copilot, Grok, Perplexity or a local LLM? AI Folders is the natural next step: one extension to organize conversations across all your AI tools, with the same folder system, prompt library, and one-click injection available in Gemini Folders.
+Interested in Gemini Folders but also use other AI systems such as ChatGPT, Claude or a local LLM? AI Folders is the natural next step: one extension to organize conversations across all your AI tools, with the same folder system, prompt library, and one-click injection available in Gemini Folders.
 
 👉 Install AI Folders: __AF_STORE_URL__

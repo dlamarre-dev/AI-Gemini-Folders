@@ -60,6 +60,6 @@ Naršykite kodą arba prisidėkite: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 🤖 TAIP PAT GALIMA: AI aplankai — KELIŲ PLATFORMŲ ATNAUJINIMAS
 
-Domitės Gemini Aplankai, bet naudojate ir ChatGPT, Claude, Copilot, Grok, Perplexity ar vietinį LLM? AI aplankai yra natūralus kitas žingsnis: vienas plėtinys pokalbiams organizuoti visuose jūsų AI įrankiuose, su tokia pačia aplankų sistema, raginimų biblioteka ir vieno paspaudimo įterpimu, prieinamu Gemini Aplankai.
+Domitės Gemini Aplankai, bet naudojate ir kitas AI sistemas, tokias kaip ChatGPT, Claude ar vietinį LLM? AI aplankai yra natūralus kitas žingsnis: vienas plėtinys pokalbiams organizuoti visuose jūsų AI įrankiuose, su tokia pačia aplankų sistema, raginimų biblioteka ir vieno paspaudimo įterpimu, prieinamu Gemini Aplankai.
 
 👉 Įdiekite AI aplankus: __AF_STORE_URL__

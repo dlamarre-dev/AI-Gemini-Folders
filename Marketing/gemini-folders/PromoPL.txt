@@ -61,6 +61,6 @@ Przeglądaj kod lub współtwórz: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 🤖 DOSTĘPNE RÓWNIEŻ: Foldery AI — ULEPSZENIE WIELOPLATFORMOWE
 
-Zainteresowany Foldery Gemini, ale używasz też ChatGPT, Claude, Copilot, Grok, Perplexity lub lokalnego LLM? Foldery AI to naturalny następny krok: jedno rozszerzenie do organizowania rozmów na wszystkich narzędziach AI, z tym samym systemem folderów, biblioteką podpowiedzi i wstawianiem jednym kliknięciem dostępnym w Foldery Gemini.
+Zainteresowany Foldery Gemini, ale używasz też innych systemów AI, takich jak ChatGPT, Claude lub lokalny LLM? Foldery AI to naturalny następny krok: jedno rozszerzenie do organizowania rozmów na wszystkich narzędziach AI, z tym samym systemem folderów, biblioteką podpowiedzi i wstawianiem jednym kliknięciem dostępnym w Foldery Gemini.
 
 👉 Zainstaluj Foldery AI: __AF_STORE_URL__

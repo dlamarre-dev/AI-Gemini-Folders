@@ -61,6 +61,6 @@ Răsfoiți codul sau contribuiți: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 🤖 DE ASEMENEA DISPONIBIL: Dosare IA — ACTUALIZAREA MULTIPLATAFORMĂ
 
-Interesat de Foldere Gemini, dar folosiți și ChatGPT, Claude, Copilot, Grok, Perplexity sau un LLM local? Dosare IA este pasul natural următor: o singură extensie pentru organizarea conversațiilor în toate instrumentele dvs. AI, cu același sistem de dosare, bibliotecă de prompturi și injecție cu un singur clic disponibile în Foldere Gemini.
+Interesat de Foldere Gemini, dar folosiți și alte sisteme AI precum ChatGPT, Claude sau un LLM local? Dosare IA este pasul natural următor: o singură extensie pentru organizarea conversațiilor în toate instrumentele dvs. AI, cu același sistem de dosare, bibliotecă de prompturi și injecție cu un singur clic disponibile în Foldere Gemini.
 
 👉 Instalează Dosare IA: __AF_STORE_URL__

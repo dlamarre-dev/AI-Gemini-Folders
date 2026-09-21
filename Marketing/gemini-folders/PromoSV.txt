@@ -61,6 +61,6 @@ Bläddra i koden eller bidra: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 FINNS OCKSÅ: AI-mappar — MULTI-PLATTFORMS UPPGRADERINGEN
 
-Intresserad av Gemini-mappar men använder du också ChatGPT, Claude, Copilot, Grok, Perplexity eller en lokal LLM? AI-mappar är det naturliga nästa steget: ett tillägg för att organisera konversationer i alla dina AI-verktyg, med samma mappsystem, promptbibliotek och infogning med ett klick tillgängliga i Gemini-mappar.
+Intresserad av Gemini-mappar men använder du också andra AI-system som ChatGPT, Claude eller en lokal LLM? AI-mappar är det naturliga nästa steget: ett tillägg för att organisera konversationer i alla dina AI-verktyg, med samma mappsystem, promptbibliotek och infogning med ett klick tillgängliga i Gemini-mappar.
 
 👉 Installera AI-mappar: __AF_STORE_URL__

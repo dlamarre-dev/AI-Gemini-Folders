@@ -61,6 +61,6 @@ Koda göz atın veya katkıda bulunun: https://github.com/dlamarre-dev/AI-Gemini
 
 🤖 AYRICA MEVCUT: YZ Klasörleri — ÇOKLU PLATFORM YÜKSELTMESİ
 
-Gemini Klasörleri ilginizi çekiyor ama ChatGPT, Claude, Copilot, Grok, Perplexity veya yerel bir LLM de kullanıyor musunuz? YZ Klasörleri doğal bir sonraki adımdır: tüm AI araçlarınızdaki konuşmaları düzenlemek için tek bir uzantı; Gemini Klasörleri'nde bulunan aynı klasör sistemi, prompt kütüphanesi ve tek tıkla enjeksiyonuyla.
+Gemini Klasörleri ilginizi çekiyor ama ChatGPT, Claude veya yerel bir LLM gibi başka yapay zekâ sistemleri de kullanıyor musunuz? YZ Klasörleri doğal bir sonraki adımdır: tüm AI araçlarınızdaki konuşmaları düzenlemek için tek bir uzantı; Gemini Klasörleri'nde bulunan aynı klasör sistemi, prompt kütüphanesi ve tek tıkla enjeksiyonuyla.
 
 👉 YZ Klasörleri'ni yükle: __AF_STORE_URL__

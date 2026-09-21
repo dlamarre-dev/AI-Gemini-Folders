@@ -61,6 +61,6 @@ Angalia msimbo au changia: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 PIA INAPATIKANA: Folda za AI — UBORESHAJI WA MAJUKWAA MENGI
 
-Unavutiwa na Folda za Gemini lakini pia unatumia ChatGPT, Claude, Copilot, Grok, Perplexity au LLM ya ndani? Folda za AI ni hatua ya asili inayofuata: kiendelezi kimoja cha kupanga mazungumzo katika zana zako zote za AI, na mfumo sawa wa folda, maktaba ya maagizo na uingizaji wa kubonyeza mara moja unaopatikana katika Folda za Gemini.
+Unavutiwa na Folda za Gemini lakini pia unatumia mifumo mingine ya AI kama ChatGPT, Claude au LLM ya ndani? Folda za AI ni hatua ya asili inayofuata: kiendelezi kimoja cha kupanga mazungumzo katika zana zako zote za AI, na mfumo sawa wa folda, maktaba ya maagizo na uingizaji wa kubonyeza mara moja unaopatikana katika Folda za Gemini.
 
 👉 Sakinisha Folda za AI: __AF_STORE_URL__

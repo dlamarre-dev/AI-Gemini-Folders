@@ -61,6 +61,6 @@ Xem code hoặc đóng góp: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 CŨNG CÓ SẴN: Thư mục AI — BẢN NÂNG CẤP ĐA NỀN TẢNG
 
-Quan tâm đến Thư mục Gemini nhưng cũng dùng ChatGPT, Claude, Copilot, Grok, Perplexity hoặc LLM cục bộ? Thư mục AI là bước tiến tự nhiên tiếp theo: một tiện ích mở rộng để tổ chức các cuộc trò chuyện trên tất cả các công cụ AI, với hệ thống thư mục, thư viện gợi ý và chèn một cú nhấp chuột tương tự có trong Thư mục Gemini.
+Quan tâm đến Thư mục Gemini nhưng cũng dùng các hệ thống AI khác như ChatGPT, Claude hoặc LLM cục bộ? Thư mục AI là bước tiến tự nhiên tiếp theo: một tiện ích mở rộng để tổ chức các cuộc trò chuyện trên tất cả các công cụ AI, với hệ thống thư mục, thư viện gợi ý và chèn một cú nhấp chuột tương tự có trong Thư mục Gemini.
 
 👉 Cài đặt Thư mục AI: __AF_STORE_URL__

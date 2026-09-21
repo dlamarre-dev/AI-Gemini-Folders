@@ -61,6 +61,6 @@ Explorar o código ou contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 🤖 TAMBÉM DISPONÍVEL: Pastas IA — A EVOLUÇÃO MULTIPLATAFORMA
 
-Interessado em Pastas Gemini mas também utiliza ChatGPT, Claude, Copilot, Grok, Perplexity ou um LLM local? Pastas IA é o passo seguinte natural: uma única extensão para organizar conversas em todas as suas ferramentas de IA, com o mesmo sistema de pastas, biblioteca de prompts e injeção com um clique disponíveis em Pastas Gemini.
+Interessado em Pastas Gemini mas também utiliza outros sistemas de IA como ChatGPT, Claude ou um LLM local? Pastas IA é o passo seguinte natural: uma única extensão para organizar conversas em todas as suas ferramentas de IA, com o mesmo sistema de pastas, biblioteca de prompts e injeção com um clique disponíveis em Pastas Gemini.
 
 👉 Instalar Pastas IA: __AF_STORE_URL__

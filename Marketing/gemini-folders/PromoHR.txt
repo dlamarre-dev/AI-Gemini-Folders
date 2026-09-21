@@ -60,6 +60,6 @@ Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 DOSTUPNO I: UI mape — NADOGRADNJA ZA VIŠE PLATFORMI
 
-Zanima te Gemini Mape, ali koristiš i ChatGPT, Claude, Copilot, Grok, Perplexity ili lokalni LLM? UI mape su prirodni sljedeći korak: jedan dodatak za organiziranje razgovora u svim tvojim AI alatima, s istim sustavom mapa, bibliotekom upita i injektiranjem jednim klikom dostupnim u Gemini Mape.
+Zanima te Gemini Mape, ali koristiš i druge AI sustave poput ChatGPT-a, Claudea ili lokalnog LLM-a? UI mape su prirodni sljedeći korak: jedan dodatak za organiziranje razgovora u svim tvojim AI alatima, s istim sustavom mapa, bibliotekom upita i injektiranjem jednim klikom dostupnim u Gemini Mape.
 
 👉 Instaliraj UI mape: __AF_STORE_URL__

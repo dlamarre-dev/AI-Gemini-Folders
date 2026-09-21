@@ -61,6 +61,6 @@ Parcourir le code ou contribuer : https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 🤖 ÉGALEMENT DISPONIBLE : Dossiers IA — L'ÉVOLUTION MULTI-PLATEFORME
 
-Intéressé par Dossiers Gemini mais vous utilisez aussi ChatGPT, Claude, Copilot, Grok, Perplexity ou un LLM local ? Dossiers IA est l'étape suivante naturelle : une seule extension pour organiser vos conversations sur tous vos outils IA, avec le même système de dossiers, la bibliothèque de prompts et l'injection en un clic disponibles dans Dossiers Gemini.
+Intéressé par Dossiers Gemini mais vous utilisez aussi d'autres systèmes d'IA comme ChatGPT, Claude ou un LLM local ? Dossiers IA est l'étape suivante naturelle : une seule extension pour organiser vos conversations sur tous vos outils IA, avec le même système de dossiers, la bibliothèque de prompts et l'injection en un clic disponibles dans Dossiers Gemini.
 
 👉 Installer Dossiers IA: __AF_STORE_URL__

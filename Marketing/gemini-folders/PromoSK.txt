@@ -61,6 +61,6 @@ Prezrite kód alebo prispejte: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 DOSTUPNÉ AJ: AI priečinky — MULTIPLATFORMOVÁ AKTUALIZÁCIA
 
-Zaujímajú vás Priečinky Gemini, ale používate aj ChatGPT, Claude, Copilot, Grok, Perplexity alebo lokálny LLM? AI priečinky sú prirodzeným ďalším krokom: jedno rozšírenie na organizovanie konverzácií vo všetkých vašich AI nástrojoch, s rovnakým systémom priečinkov, knižnicou výziev a vkladaním jedným kliknutím dostupným v Priečinky Gemini.
+Zaujímajú vás Priečinky Gemini, ale používate aj iné AI systémy ako ChatGPT, Claude alebo lokálny LLM? AI priečinky sú prirodzeným ďalším krokom: jedno rozšírenie na organizovanie konverzácií vo všetkých vašich AI nástrojoch, s rovnakým systémom priečinkov, knižnicou výziev a vkladaním jedným kliknutím dostupným v Priečinky Gemini.
 
 👉 Nainštalovať AI priečinky: __AF_STORE_URL__

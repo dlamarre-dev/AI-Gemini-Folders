@@ -61,6 +61,6 @@ I-browse ang code o mag-contribute: https://github.com/dlamarre-dev/AI-Gemini-Fo
 
 🤖 AVAILABLE DIN: Mga AI Folder — ANG MULTI-PLATFORM NA UPGRADE
 
-Interesado sa Mga Folder ng Gemini pero gumagamit din ng ChatGPT, Claude, Copilot, Grok, Perplexity o isang lokal na LLM? Mga AI Folder ang natural na susunod na hakbang: isang extension para sa pag-organisa ng mga pag-uusap sa lahat ng iyong AI tools, na may parehong sistema ng folder, library ng prompt, at one-click injection na makukuha sa Mga Folder ng Gemini.
+Interesado sa Mga Folder ng Gemini pero gumagamit din ng ibang AI system tulad ng ChatGPT, Claude o isang lokal na LLM? Mga AI Folder ang natural na susunod na hakbang: isang extension para sa pag-organisa ng mga pag-uusap sa lahat ng iyong AI tools, na may parehong sistema ng folder, library ng prompt, at one-click injection na makukuha sa Mga Folder ng Gemini.
 
 👉 I-install ang Mga AI Folder: __AF_STORE_URL__
