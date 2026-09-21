@@ -61,6 +61,6 @@ Jelajahi kode atau berkontribusi: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 🤖 JUGA TERSEDIA: Folder AI — UPGRADE MULTI-PLATFORM
 
-Tertarik dengan Folder Gemini tapi juga menggunakan ChatGPT, Claude, Copilot, Grok, Perplexity, atau LLM lokal? Folder AI adalah langkah alami berikutnya: satu ekstensi untuk mengorganisir percakapan di semua alat AI Anda, dengan sistem folder, pustaka prompt, dan injeksi satu klik yang sama tersedia di Folder Gemini.
+Tertarik dengan Folder Gemini tapi juga menggunakan sistem AI lain seperti ChatGPT, Claude, atau LLM lokal? Folder AI adalah langkah alami berikutnya: satu ekstensi untuk mengorganisir percakapan di semua alat AI Anda, dengan sistem folder, pustaka prompt, dan injeksi satu klik yang sama tersedia di Folder Gemini.
 
 👉 Pasang Folder AI: __AF_STORE_URL__

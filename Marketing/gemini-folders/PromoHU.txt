@@ -61,6 +61,6 @@ Böngésszen a kódban vagy járuljon hozzá: https://github.com/dlamarre-dev/AI
 
 🤖 SZINTÉN ELÉRHETŐ: MI mappák — A TÖBBPLATFORMOS FRISSÍTÉS
 
-Érdekli a Gemini-mappák, de ChatGPT-t, Claude-ot, Copilotot, Grokot, Perplexityt vagy helyi LLM-et is használ? A MI mappák a természetes következő lépés: egyetlen bővítmény az összes AI-eszközön folytatott beszélgetések rendszerezéséhez, a Gemini-mappák alkalmazásban is elérhető mappás rendszerrel, prompt-könyvtárral és egyetlen kattintásos beillesztéssel.
+Érdekli a Gemini-mappák, de más AI-rendszereket is használ, például a ChatGPT-t, a Claude-ot vagy egy helyi LLM-et? A MI mappák a természetes következő lépés: egyetlen bővítmény az összes AI-eszközön folytatott beszélgetések rendszerezéséhez, a Gemini-mappák alkalmazásban is elérhető mappás rendszerrel, prompt-könyvtárral és egyetlen kattintásos beillesztéssel.
 
 👉 Telepítse a MI mappák alkalmazást: __AF_STORE_URL__

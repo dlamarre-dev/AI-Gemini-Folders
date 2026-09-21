@@ -61,6 +61,6 @@ Gemini 文件夹成为您真正的 Gemini 控制中心：将对话整理到文�
 
 🤖 同系列产品：AI 文件夹 — 多平台升级版
 
-对 Gemini 文件夹感兴趣，但也在使用 ChatGPT、Claude、Copilot、Grok、Perplexity 或本地 LLM？AI 文件夹是自然的下一步：用一个扩展程序整理所有 AI 工具的对话，拥有与 Gemini 文件夹相同的文件夹系统、提示词库和一键注入功能。
+对 Gemini 文件夹感兴趣，但也在使用 ChatGPT、Claude 或本地 LLM 等其他 AI 系统？AI 文件夹是自然的下一步：用一个扩展程序整理所有 AI 工具的对话，拥有与 Gemini 文件夹相同的文件夹系统、提示词库和一键注入功能。
 
 👉 安装 AI 文件夹: __AF_STORE_URL__

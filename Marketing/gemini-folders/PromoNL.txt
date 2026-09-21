@@ -61,6 +61,6 @@ Bekijk de code of draag bij: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 OOK BESCHIKBAAR: AI-mappen — DE MULTI-PLATFORM UPGRADE
 
-Geïnteresseerd in Gemini-mappen maar gebruik je ook ChatGPT, Claude, Copilot, Grok, Perplexity of een lokaal LLM? AI-mappen is de logische volgende stap: één extensie om gesprekken te organiseren in al je AI-tools, met hetzelfde mappensysteem, de promptbibliotheek en de invoeg-met-één-klik die beschikbaar zijn in Gemini-mappen.
+Geïnteresseerd in Gemini-mappen maar gebruik je ook andere AI-systemen zoals ChatGPT, Claude of een lokaal LLM? AI-mappen is de logische volgende stap: één extensie om gesprekken te organiseren in al je AI-tools, met hetzelfde mappensysteem, de promptbibliotheek en de invoeg-met-één-klik die beschikbaar zijn in Gemini-mappen.
 
 👉 AI-mappen installeren: __AF_STORE_URL__

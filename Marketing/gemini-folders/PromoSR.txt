@@ -60,6 +60,6 @@ Pregledaj kod ili doprinesi: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 TAKOĐE DOSTUPNO: VI fascikle — NADOGRADNJA ZA VIŠE PLATFORMI
 
-Zainteresovani za Gemini Folderi, ali koristite i ChatGPT, Claude, Copilot, Grok, Perplexity ili lokalni LLM? VI fascikle su prirodni sledeći korak: jedno proširenje za organizovanje razgovora na svim vašim AI alatima, sa istim sistemom fascikli, bibliotekom upita i ubacivanjem jednim klikom dostupnim u Gemini Folderi.
+Zainteresovani za Gemini Folderi, ali koristite i druge AI sisteme poput ChatGPT-a, Claudea ili lokalnog LLM-a? VI fascikle su prirodni sledeći korak: jedno proširenje za organizovanje razgovora na svim vašim AI alatima, sa istim sistemom fascikli, bibliotekom upita i ubacivanjem jednim klikom dostupnim u Gemini Folderi.
 
 👉 Instaliraj VI fascikle: __AF_STORE_URL__

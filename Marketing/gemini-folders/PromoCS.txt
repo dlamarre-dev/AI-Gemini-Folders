@@ -61,6 +61,6 @@ Prohlédněte kód nebo přispějte: https://github.com/dlamarre-dev/AI-Gemini-F
 
 🤖 TAKÉ K DISPOZICI: AI složky — MULTIPLATFORMNÍ UPGRADE
 
-Zajímají vás Složky Gemini, ale také používáte ChatGPT, Claude, Copilot, Grok, Perplexity nebo lokální LLM? AI složky jsou přirozeným dalším krokem: jedno rozšíření pro organizaci konverzací napříč všemi vašimi AI nástroji, se stejným systémem složek, knihovnou promptů a injekcí jedním kliknutím, dostupnými ve Složky Gemini.
+Zajímají vás Složky Gemini, ale také používáte další AI systémy jako ChatGPT, Claude nebo lokální LLM? AI složky jsou přirozeným dalším krokem: jedno rozšíření pro organizaci konverzací napříč všemi vašimi AI nástroji, se stejným systémem složek, knihovnou promptů a injekcí jedním kliknutím, dostupnými ve Složky Gemini.
 
 👉 Nainstalovat AI složky: __AF_STORE_URL__

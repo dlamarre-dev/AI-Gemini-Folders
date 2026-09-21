@@ -61,6 +61,6 @@ Gemini 資料夾成為您真正的 Gemini 駕駛艙：將對話整理到資料�
 
 🤖 同系列產品：AI 資料夾 — 多平台升級版
 
-對 Gemini 資料夾感興趣，但也在使用 ChatGPT、Claude、Copilot、Grok、Perplexity 或本地 LLM？AI 資料夾是自然的下一步：用一個擴充功能整理所有 AI 工具的對話，擁有與 Gemini 資料夾相同的資料夾系統、提示詞庫和一鍵注入功能。
+對 Gemini 資料夾感興趣，但也在使用 ChatGPT、Claude 或本地 LLM 等其他 AI 系統？AI 資料夾是自然的下一步：用一個擴充功能整理所有 AI 工具的對話，擁有與 Gemini 資料夾相同的資料夾系統、提示詞庫和一鍵注入功能。
 
 👉 安裝 AI 資料夾: __AF_STORE_URL__

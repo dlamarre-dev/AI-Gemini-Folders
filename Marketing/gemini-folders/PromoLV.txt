@@ -60,6 +60,6 @@ Pārlūkojiet kodu vai piedalieties: https://github.com/dlamarre-dev/AI-Gemini-F
 
 🤖 PIEEJAMS ARĪ: AI mapes — VAIRĀKU PLATFORMU JAUNINĀJUMS
 
-Interesē Gemini Mapes, bet izmantojat arī ChatGPT, Claude, Copilot, Grok, Perplexity vai vietējo LLM? AI mapes ir dabiskais nākamais solis: viens paplašinājums sarunu organizēšanai visos jūsu AI rīkos, ar tādu pašu mapju sistēmu, uzvedņu bibliotēku un viena klikšķa ievietošanu, kas pieejams Gemini Mapes.
+Interesē Gemini Mapes, bet izmantojat arī citas AI sistēmas, piemēram, ChatGPT, Claude vai vietējo LLM? AI mapes ir dabiskais nākamais solis: viens paplašinājums sarunu organizēšanai visos jūsu AI rīkos, ar tādu pašu mapju sistēmu, uzvedņu bibliotēku un viena klikšķa ievietošanu, kas pieejams Gemini Mapes.
 
 👉 Instalēt AI mapes: __AF_STORE_URL__

@@ -61,6 +61,6 @@ Explorar el código o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Fold
 
 🤖 TAMBIÉN DISPONIBLE: Carpetas IA — LA ACTUALIZACIÓN MULTIPLATAFORMA
 
-¿Te interesa Carpetas Gemini pero también usas ChatGPT, Claude, Copilot, Grok, Perplexity o un LLM local? Carpetas IA es el paso natural siguiente: una única extensión para organizar conversaciones en todas tus herramientas de IA, con el mismo sistema de carpetas, biblioteca de prompts e inyección con un clic disponibles en Carpetas Gemini.
+¿Te interesa Carpetas Gemini pero también usas otros sistemas de IA como ChatGPT, Claude o un LLM local? Carpetas IA es el paso natural siguiente: una única extensión para organizar conversaciones en todas tus herramientas de IA, con el mismo sistema de carpetas, biblioteca de prompts e inyección con un clic disponibles en Carpetas Gemini.
 
 👉 Instalar Carpetas IA: __AF_STORE_URL__

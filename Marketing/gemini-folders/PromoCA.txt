@@ -59,6 +59,6 @@ Explorar el codi o contribuir: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 TAMBÉ DISPONIBLE: Carpetes IA — L'ACTUALITZACIÓ MULTIPLATAFORMA
 
-Interessat en Carpetes Gemini però també fas servir ChatGPT, Claude, Copilot, Grok, Perplexity o un LLM local? Carpetes IA és el pas natural següent: una única extensió per organitzar converses a través de totes les teves eines d'IA, amb el mateix sistema de carpetes, la biblioteca de prompts i la injecció amb un clic disponibles a Carpetes Gemini.
+Interessat en Carpetes Gemini però també fas servir altres sistemes d'IA com ChatGPT, Claude o un LLM local? Carpetes IA és el pas natural següent: una única extensió per organitzar converses a través de totes les teves eines d'IA, amb el mateix sistema de carpetes, la biblioteca de prompts i la injecció amb un clic disponibles a Carpetes Gemini.
 
 👉 Instal·lar Carpetes IA: __AF_STORE_URL__

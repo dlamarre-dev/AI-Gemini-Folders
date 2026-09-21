@@ -61,6 +61,6 @@ Code einsehen oder beitragen: https://github.com/dlamarre-dev/AI-Gemini-Folders
 
 🤖 AUCH VERFÜGBAR: KI-Ordner — DAS MULTI-PLATTFORM-UPGRADE
 
-Interessiert an Gemini-Ordner, aber nutzen Sie auch ChatGPT, Claude, Copilot, Grok, Perplexity oder ein lokales LLM? KI-Ordner ist der natürliche nächste Schritt: eine einzige Erweiterung zum Organisieren von Gesprächen über alle Ihre KI-Werkzeuge, mit demselben Ordnersystem, der Prompt-Bibliothek und der Ein-Klick-Injektion, die in Gemini-Ordner verfügbar sind.
+Interessiert an Gemini-Ordner, aber nutzen Sie auch andere KI-Systeme wie ChatGPT, Claude oder ein lokales LLM? KI-Ordner ist der natürliche nächste Schritt: eine einzige Erweiterung zum Organisieren von Gesprächen über alle Ihre KI-Werkzeuge, mit demselben Ordnersystem, der Prompt-Bibliothek und der Ein-Klick-Injektion, die in Gemini-Ordner verfügbar sind.
 
 👉 KI-Ordner installieren: __AF_STORE_URL__

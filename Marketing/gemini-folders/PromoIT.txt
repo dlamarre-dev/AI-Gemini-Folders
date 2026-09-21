@@ -61,6 +61,6 @@ Sfogliare il codice o contribuire: https://github.com/dlamarre-dev/AI-Gemini-Fol
 
 🤖 DISPONIBILE ANCHE: Cartelle IA — L'AGGIORNAMENTO MULTIPIATTAFORMA
 
-Interessato a Cartelle Gemini ma usi anche ChatGPT, Claude, Copilot, Grok, Perplexity o un LLM locale? Cartelle IA è il passo naturale successivo: un'unica estensione per organizzare le conversazioni su tutti i tuoi strumenti AI, con lo stesso sistema di cartelle, la libreria di prompt e l'iniezione con un clic disponibili in Cartelle Gemini.
+Interessato a Cartelle Gemini ma usi anche altri sistemi di IA come ChatGPT, Claude o un LLM locale? Cartelle IA è il passo naturale successivo: un'unica estensione per organizzare le conversazioni su tutti i tuoi strumenti AI, con lo stesso sistema di cartelle, la libreria di prompt e l'iniezione con un clic disponibili in Cartelle Gemini.
 
 👉 Installa Cartelle IA: __AF_STORE_URL__
