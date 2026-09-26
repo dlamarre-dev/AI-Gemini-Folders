@@ -302,12 +302,19 @@ git checkout main && git pull --ff-only
     extensions button appears (e.g. Downloads), the popup shifts, and from then
     on a 1–2 px transparent vertical strip sits at its right edge until the
     browser is restarted;
-  - **a window dragged to a second monitor with a different scale factor** shows
-    a **second scrollbar** in the popup, gone again on the main monitor. This one
-    is a new symptom, not just a new trigger, so it may count as the "separate
-    reason" above — but only with a measured repro (`devicePixelRatio`,
-    `innerWidth`/`innerHeight` and `documentElement` scroll vs client sizes, read
-    on both monitors), never by trying overflow variants blind.
+  - **a window on a shorter second monitor** showed a **second scrollbar** in the
+    popup. That one was *not* a rounding artifact and is fixed. Measured on both
+    screens (same `devicePixelRatio`, 1.5): Chrome caps a popup at the room
+    below the toolbar, which was 503 px there, while `body`'s fixed
+    `max-height: 576px` made the document 600 px. Chrome widened the window by
+    a scrollbar (`innerWidth` 430 vs `clientWidth` 424) and `html`'s
+    `overflow-y: hidden` cut off the bottom. `fitPopupToWindow`
+    (`popup-core.js`) lowers `body`'s cap to the window Chrome actually gave,
+    in JS because a `vh`-based cap can keep a popup collapsed while Chrome is
+    still sizing it. It touches neither `overflow-y` nor `scrollbar-gutter`.
+    The lesson for this family: measure first (`devicePixelRatio`,
+    `innerWidth`/`innerHeight`, `documentElement` scroll vs client sizes) —
+    the diagnosis without numbers had blamed the scale factor.
 - **Data is keyed by folder name and conversation URL** (no stable IDs). Renames,
   pins and migrations are awkward by design (see TODO §8). Because those keys are
   user-typed names on ordinary objects, **every existence check must go through

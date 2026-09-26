@@ -475,3 +475,48 @@ describe('export button', () => {
       ['folderParents', 'folders', 'pinnedFolders', 'promptSortPref', 'prompts', 'sortPref']);
   });
 });
+
+// ---------------------------------------------------------------------------
+// fitPopupToWindow
+// ---------------------------------------------------------------------------
+
+// Chrome caps the popup at the room below the toolbar. Measured on a shorter
+// monitor: window 503px high for a 600px document, so Chrome added a scrollbar
+// beside body's own and the bottom of the list was out of reach.
+describe('fitPopupToWindow', () => {
+  function layout({ windowHeight, documentHeight }) {
+    Object.defineProperty(window, 'innerHeight', { value: windowHeight, configurable: true });
+    Object.defineProperty(document.documentElement, 'scrollHeight', { value: documentHeight, configurable: true });
+    document.body.style.padding = '8px 16px 16px 16px';
+    document.body.style.maxHeight = '';
+  }
+
+  test('a window shorter than the document shrinks body to fit it', () => {
+    layout({ windowHeight: 503, documentHeight: 600 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('479px'); // 503 − 24px padding
+  });
+
+  test('the full 600px window leaves popup.css in charge', () => {
+    layout({ windowHeight: 600, documentHeight: 600 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('');
+  });
+
+  test('back on a taller screen, the cap is lifted again', () => {
+    layout({ windowHeight: 503, documentHeight: 600 });
+    window.fitPopupToWindow();
+    layout({ windowHeight: 600, documentHeight: 600 });
+    document.body.style.maxHeight = '479px';
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('');
+  });
+
+  // While Chrome is still sizing the popup the window can be tiny. Capping from
+  // that size would keep the popup collapsed for good.
+  test('a transient tiny window is ignored', () => {
+    layout({ windowHeight: 40, documentHeight: 600 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('');
+  });
+});

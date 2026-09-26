@@ -227,6 +227,36 @@ function initSaveConversation(opts) {
 }
 window.initSaveConversation = initSaveConversation;
 
+// popup.css caps body at 576px: Chrome's 600px popup maximum minus body's
+// 24px of vertical padding. But Chrome also caps the popup at the room left
+// between the toolbar and the bottom of the screen. On a shorter monitor that
+// is less than 600px (measured: 503), so the 600px document overflowed the
+// window. Chrome then widened the popup by a scrollbar (430px instead of 424),
+// which showed as a second scrollbar next to body's own, and html's
+// overflow-y: hidden left the bottom of the list unreachable.
+// Shrink body to the window it actually got instead. Done in JS rather than
+// with calc(100vh - 24px): in a popup, vh is the window's current size, which
+// starts tiny while Chrome is still sizing it to the content, so a vh-based
+// cap could keep the popup collapsed. The same trap applies here, hence:
+// - measure with popup.css's own cap restored, so a cap set from a transient
+//   size is undone on the next check (Chrome grows the window again, which
+//   fires another resize, which measures again);
+// - wait for 'load' before the first check;
+// - never act below POPUP_MIN_CAPPED_HEIGHT, which no real screen caps a popup to.
+const POPUP_MIN_CAPPED_HEIGHT = 300;
+function fitPopupToWindow() {
+  const body = document.body;
+  if (!body) return;
+  body.style.maxHeight = '';
+  const style = getComputedStyle(body);
+  const padding = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
+  const height = window.innerHeight;
+  if (height < POPUP_MIN_CAPPED_HEIGHT) return;
+  if (document.documentElement.scrollHeight > height) {
+    body.style.maxHeight = Math.floor(height - padding) + 'px';
+  }
+}
+
 function initPopupCommon(config) {
   const exportFilename = (config && config.exportFilename) || 'folders_backup.json';
 
@@ -422,6 +452,11 @@ function initPopupCommon(config) {
     }
   });
 
+  // --- Keep the popup inside the height Chrome actually gave it ---
+  if (document.readyState === 'complete') requestAnimationFrame(fitPopupToWindow);
+  else window.addEventListener('load', () => requestAnimationFrame(fitPopupToWindow), { once: true });
+  window.addEventListener('resize', fitPopupToWindow);
+
   // --- Initial folder render + search ---
   if (window.displayFolders) window.displayFolders();
   // Debounce: each render re-reads + decompresses all storage and rebuilds the
@@ -511,3 +546,4 @@ function initPopupCommon(config) {
   });
 }
 window.initPopupCommon = initPopupCommon;
+window.fitPopupToWindow = fitPopupToWindow;
