@@ -118,8 +118,8 @@ describe('move (clicking a destination folder)', () => {
     expect(lastSavedFolders().Dst).toHaveLength(1);
   });
 
-  // chatObj is a snapshot taken when the box was ticked; the pencil still works
-  // in bulk mode, so a rename made since must survive the move.
+  // chatObj is a snapshot taken when the box was ticked; a rename made since
+  // (on another device, through sync) must survive the move.
   test('moves the entry as stored now, not the snapshot taken at selection', () => {
     setStorage({
       Src: [{ title: 'renamed since', url: 'https://x/a' }],

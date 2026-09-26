@@ -135,13 +135,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (siteKey === 'local') {
       let pressTimer = null;
-      btn.addEventListener('mousedown', () => {
+      // Primary button only. A right-click also fires mousedown/mouseup (button
+      // 2): the mousedown armed the long-press timer, the contextmenu handler
+      // below opened the URL box, then the mouseup found the timer pending,
+      // took it for a short click and opened the local LLM in a new tab, which
+      // closed the popup and the box with it.
+      btn.addEventListener('mousedown', (e) => {
+        if (e.button !== 0) return;
         pressTimer = setTimeout(() => {
           pressTimer = null;
           openLocalUrlModal();
         }, DELAY.AUTOSAVE);
       });
-      btn.addEventListener('mouseup', () => {
+      btn.addEventListener('mouseup', (e) => {
+        if (e.button !== 0) return;
         if (pressTimer !== null) {
           clearTimeout(pressTimer);
           pressTimer = null;

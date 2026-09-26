@@ -297,6 +297,17 @@ git checkout main && git pull --ff-only
   fixable in CSS**. Disappears at 100% scaling. Accepted as-is. **Never** retry
   scrollbar/overflow CSS variants for it; don't touch `overflow-y` /
   `scrollbar-gutter` in `popup.css` without a separate reason.
+  Two more Chrome-only triggers were observed on 26/09/2026, same family:
+  - **the popup being repositioned** — when a toolbar icon to the right of the
+    extensions button appears (e.g. Downloads), the popup shifts, and from then
+    on a 1–2 px transparent vertical strip sits at its right edge until the
+    browser is restarted;
+  - **a window dragged to a second monitor with a different scale factor** shows
+    a **second scrollbar** in the popup, gone again on the main monitor. This one
+    is a new symptom, not just a new trigger, so it may count as the "separate
+    reason" above — but only with a measured repro (`devicePixelRatio`,
+    `innerWidth`/`innerHeight` and `documentElement` scroll vs client sizes, read
+    on both monitors), never by trying overflow variants blind.
 - **Data is keyed by folder name and conversation URL** (no stable IDs). Renames,
   pins and migrations are awkward by design (see TODO §8). Because those keys are
   user-typed names on ordinary objects, **every existence check must go through

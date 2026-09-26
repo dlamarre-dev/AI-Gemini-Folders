@@ -62,8 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // an own property, but if it were removed meanwhile the lookup would
         // fall back to the inherited function and .filter would throw.
         // Move the entry as it is stored NOW, not item.chatObj: that snapshot was
-        // taken when the box was ticked, so a rename made since (the pencil still
-        // works in bulk mode) was undone by the move. The snapshot is only the
+        // taken when the box was ticked, so a rename made since was undone by the
+        // move. The popup hides the action buttons in bulk mode, so that rename
+        // comes from another device through sync. The snapshot is only the
         // fallback for an entry that has vanished from its folder meanwhile.
         let stored = null;
         if (hasEntry(folders, item.folder)) {
