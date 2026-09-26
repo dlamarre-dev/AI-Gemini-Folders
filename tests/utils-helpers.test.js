@@ -182,6 +182,8 @@ describe('syncToBookmarksTree', () => {
       order.push('create:' + (obj.url ? `chat(${obj.title})` : `folder(${obj.title})`));
       cb && cb({ id: 'node' + seq++, ...obj });
     });
+    // The rebuild re-checks the setting before creating the master folder.
+    chrome.storage.sync.get = jest.fn((_keys, cb) => cb({ syncBookmarksEnabled: true }));
   });
 
   test('clears stale master trees before rebuilding, in sorted order', async () => {
@@ -295,14 +297,41 @@ describe('syncToBookmarksTree', () => {
     }
   });
 
-  test('a re-entrant call while a sync is in flight is ignored', async () => {
-    const folders = { A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] };
-    const first = syncToBookmarksTree(folders, [], 'dateDesc'); // holds the lock
-    await syncToBookmarksTree(folders, [], 'dateDesc'); // should bail out immediately
+  // A request arriving mid-rebuild used to be dropped, so a save made while the
+  // popup's opening rebuild ran was never mirrored. It is queued now: the two
+  // calls never overlap, and the second one's (fresher) data is what ends up
+  // in the tree.
+  test('a call made while a sync is in flight is queued and re-run afterwards', async () => {
+    const first = syncToBookmarksTree({ A: [{ title: 'old', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    await syncToBookmarksTree({ A: [{ title: 'new', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
     await first;
-    // Only one master folder was created despite two calls.
-    const masters = chrome.bookmarks.create.mock.calls
-      .filter((c) => c[0].title === 'masterFolderName');
-    expect(masters).toHaveLength(1);
+    await new Promise((r) => setTimeout(r, 200)); // the queued rebuild
+    expect(order.filter((o) => o === 'create:folder(masterFolderName)')).toHaveLength(2);
+    // The queued run starts only after the first has created everything.
+    expect(order.indexOf('create:chat(old)')).toBeLessThan(order.lastIndexOf('create:folder(masterFolderName)'));
+    expect(order[order.length - 1]).toBe('create:chat(new)');
   });
+
+  test('switching the feature off mid-rebuild creates no master folder', async () => {
+    chrome.storage.sync.get = jest.fn((_keys, cb) => cb({ syncBookmarksEnabled: false }));
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(order).toEqual(['remove:stale']);
+  });
+
+  // The popup and the service worker each hold their own lock, so both can
+  // build at once. Each keeps the same winner (lowest id) and removes the rest.
+  test('a second master folder left by a concurrent builder is removed', async () => {
+    let searches = 0;
+    chrome.bookmarks.search = jest.fn((_q, cb) => {
+      searches++;
+      // 1st search: pre-build cleanup finds nothing. 2nd: ours (node0) + another.
+      cb(searches === 1 ? [] : [
+        { id: 'node0', title: 'masterFolderName' },
+        { id: 'node9', title: 'masterFolderName' },
+      ]);
+    });
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(chrome.bookmarks.removeTree.mock.calls.map((c) => c[0])).toEqual(['node9']);
+  });
+
 });

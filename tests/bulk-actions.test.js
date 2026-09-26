@@ -117,6 +117,25 @@ describe('move (clicking a destination folder)', () => {
 
     expect(lastSavedFolders().Dst).toHaveLength(1);
   });
+
+  // chatObj is a snapshot taken when the box was ticked; the pencil still works
+  // in bulk mode, so a rename made since must survive the move.
+  test('moves the entry as stored now, not the snapshot taken at selection', () => {
+    setStorage({
+      Src: [{ title: 'renamed since', url: 'https://x/a' }],
+      Dst: [],
+    });
+    window.selectedChats = [
+      { folder: 'Src', url: 'https://x/a', chatObj: { title: 'old title', url: 'https://x/a' } },
+    ];
+
+    window.updateBulkActionBar();
+    [...document.querySelectorAll('#bulkMoveList li')]
+      .find((li) => li.textContent.includes('Dst'))
+      .click();
+
+    expect(lastSavedFolders().Dst).toEqual([{ title: 'renamed since', url: 'https://x/a' }]);
+  });
 });
 
 describe('sub-folders in the move list', () => {

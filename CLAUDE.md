@@ -329,7 +329,12 @@ git checkout main && git pull --ff-only
   (as the code did until 2026-08) loses data on a failed write: the shrink case
   deletes the tail chunks, the set fails, the surviving pointer references keys
   that are gone, `assembleChunks` returns garbage, and `loadData` silently falls
-  back to `{}` — every folder appears empty. **Do not "fix" this with generation-
+  back to `{}` — every folder appears empty. `runCleanup` also **re-reads
+  `fdcN`/`pdcN` before removing numbered chunks** and skips a range whose pointer
+  no longer holds the value this save left: another writer (popup + service
+  worker, or another device) may have committed a larger set in between, and
+  deleting "our" stale range would then eat its live chunks. Skipping costs only
+  an invisible stale chunk. **Do not "fix" this with generation-
   prefixed chunks:** two generations coexisting doubles peak usage against a
   *shared* 100 KB ceiling, so anyone above ~50 % would stop being able to save at
   all — a worse regression than the bug, for a guarantee the single set already
@@ -337,7 +342,16 @@ git checkout main && git pull --ff-only
   *and* local failures, `mergeImportData` rejects, and both `background.js` use
   `saveDataAsync`/`saveOrReportError` so a failed quick-save shows
   `storageFullError` instead of "✅ Saved!" (a service worker has no `window`, so
-  the modal fallback never fires there). UI open-state (`openFolders`/`openPrompts`) lives
+  the modal fallback never fires there).
+  **`syncPromptsEnabled` is itself a sync key**, so turning it on elsewhere
+  flips it here while this device's library is still in `storage.local`:
+  `loadData` merges that local copy into the synced set (`mergePromptEntry`:
+  synced entry wins, a clash arrives as `(Imported)`, `(Imported 2)`…) until a
+  prompt save has carried it into sync and removed it. `usageStats.saves` counts
+  **conversation saves only**: callers opt in with `saveData(..., { countSave:
+  true })` (popup Save, both context menus, both quick-saves), and both counters
+  go through `bumpUsageStat`, which serializes the read-modify-write.
+  UI open-state (`openFolders`/`openPrompts`) lives
   in `storage.local` — device-local, to avoid burning the sync write quota.
   `finishSave(..., affectsBookmarks)` only rebuilds the bookmark mirror when
   folders/pins/sort actually change. Default sort is `dateDesc` (newest-first) for
@@ -846,6 +860,11 @@ Reading cautions:
   conversation that was already in the folder still wrote and still incremented
   the counter, so older `s` values are inflated by re-saves. The number is now
   right, but **do not compare averages across that boundary**.
+  **A second break comes with the release after 4.6.3 / 1.7.3:** until then every
+  folders/prompts write counted (deletes, renames, moves, prompt autosaves, the
+  prompt-sync toggle); from then on only an actual conversation save does, so
+  `s` drops again. The review banner's `saves >= 15` threshold is reached later
+  for the same reason.
 - Once `s` (§9) has data, the decisive question becomes readable: among those who
   leave with `saves > 0` (they did use it), what share ask for `wanted-in-page-ui`?
   That number — not today's n=4 — decides whether the in-page UI is worth building

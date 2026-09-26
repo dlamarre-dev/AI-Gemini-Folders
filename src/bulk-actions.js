@@ -61,14 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // hasEntry, not truthiness: a folder legitimately named "toString" is
         // an own property, but if it were removed meanwhile the lookup would
         // fall back to the inherited function and .filter would throw.
+        // Move the entry as it is stored NOW, not item.chatObj: that snapshot was
+        // taken when the box was ticked, so a rename made since (the pencil still
+        // works in bulk mode) was undone by the move. The snapshot is only the
+        // fallback for an entry that has vanished from its folder meanwhile.
+        let stored = null;
         if (hasEntry(folders, item.folder)) {
+          stored = folders[item.folder].find(c => c.url === item.url) || null;
           folders[item.folder] = folders[item.folder].filter(c => c.url !== item.url);
         }
         const cleanTargetUrl = normalizeUrl(item.url);
         const isDuplicate = folders[targetFolder].some(
           chat => normalizeUrl(chat.url) === cleanTargetUrl
         );
-        if (!isDuplicate) folders[targetFolder].push(item.chatObj);
+        if (!isDuplicate) folders[targetFolder].push(stored || item.chatObj);
       });
 
       if (!openFolders.includes(targetFolder)) openFolders.push(targetFolder);
