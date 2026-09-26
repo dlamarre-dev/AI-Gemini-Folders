@@ -322,12 +322,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btnReviewLater').textContent = chrome.i18n.getMessage("reviewLaterBtn") || "Maybe later";
     document.getElementById('btnReviewNo').textContent = chrome.i18n.getMessage("reviewNoBtn") || "No thanks";
 
-    chrome.storage.local.get(['usageStats', 'reviewState'], (data) => {
-      let stats = data.usageStats || { saves: 0, opens: 0 };
+    // The open count goes through bumpUsageStat (utils.js), which queues it
+    // behind any save counted in this page, so neither increment is lost.
+    chrome.storage.local.get(['reviewState'], (data) => bumpUsageStat('opens', (stats) => {
       let reviewState = data.reviewState || { status: 'pending', nextPromptDate: 0 };
-
-      stats.opens += 1;
-      chrome.storage.local.set({ usageStats: stats });
 
       if (reviewState.status === 'rated' || reviewState.status === 'dismissed') return;
 
@@ -358,6 +356,6 @@ document.addEventListener('DOMContentLoaded', () => {
         markRatingInteraction();
         reviewBanner.style.display = 'none';
       });
-    });
+    }));
   }
 });

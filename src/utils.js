@@ -24,6 +24,12 @@ const DATA_KEYS = ['folders', 'foldersDataCompressed', 'prompts', 'promptsDataCo
 // device-local by design — open/closed state no longer follows across devices.
 const LOCAL_UI_KEYS = ['openFolders', 'openPrompts'];
 
+// How long the synced prompt library outlives the switch-off of prompt sync
+// (the "prompts handoff", see loadData / saveData). Long enough for a device
+// used weekly or monthly to pick it up; short enough that the copy does not sit
+// in the shared 100 KB sync quota for good.
+const PROMPTS_HANDOFF_TTL = 30 * 24 * 60 * 60 * 1000;
+
 // ---------------------------------------------------------------------------
 // Storage chunk helpers
 // ---------------------------------------------------------------------------
@@ -348,6 +354,28 @@ function buildContextMenuModel(folders, folderParents, opts = {}) {
   return items;
 }
 
+// Decode a stored prompts payload (compressed string or legacy plain object).
+// Returns null when there is nothing stored, and {} when the payload is corrupt
+// (the previous behaviour: fall back to an empty library rather than throw).
+function decodePrompts(raw) {
+  if (!raw) return null;
+  if (typeof raw !== 'string') return raw;
+  try {
+    const decompressed = LZString.decompressFromUTF16(raw);
+    if (decompressed === null) throw new Error("LZString returned null.");
+    return JSON.parse(decompressed);
+  } catch (error) {
+    console.error("🚨 Prompts decompression error:", error);
+    return {};
+  }
+}
+
+// The handoff (promptsHandoffAt) that the last loadData in this page merged into
+// the prompts it returned. saveData marks a handoff adopted only when it is this
+// one: a handoff that arrived between the load and the save was never merged,
+// and marking it adopted would drop it for good.
+let mergedPromptsHandoff = null;
+
 function loadData(defaults, callback) {
   chrome.storage.sync.get(null, (syncResult) => {
     chrome.storage.local.get(null, (localResult) => {
@@ -390,22 +418,55 @@ function loadData(defaults, callback) {
 
         // 2. Prompts — chunked sync (pdcN + pdc0..N), legacy sync key, or local
         const syncPromptsEnabled = syncResult.syncPromptsEnabled === true;
-        const rawPromptsData = syncPromptsEnabled
-          ? (assembleChunks(syncResult, 'pdc') ?? syncResult.promptsDataCompressed ?? syncResult.prompts ?? null)
-          : (localResult.promptsDataCompressed ?? localResult.prompts ?? null);
-
-        if (rawPromptsData) {
-          if (typeof rawPromptsData === 'string') {
-            try {
-              const decompressed = LZString.decompressFromUTF16(rawPromptsData);
-              if (decompressed === null) throw new Error("LZString returned null.");
-              finalData.prompts = JSON.parse(decompressed);
-            } catch (error) {
-              console.error("🚨 Prompts decompression error:", error);
-              finalData.prompts = defaults.prompts || {};
+        const localPrompts = decodePrompts(localResult.promptsDataCompressed ?? localResult.prompts ?? null);
+        if (syncPromptsEnabled) {
+          const syncPrompts = decodePrompts(assembleChunks(syncResult, 'pdc')
+            ?? syncResult.promptsDataCompressed ?? syncResult.prompts ?? null);
+          if (syncPrompts) finalData.prompts = syncPrompts;
+          // syncPromptsEnabled is itself a SYNC key: switching it on on one device
+          // switches it on here too, while this device's library still sits in
+          // storage.local. Reading only sync hid that library, and the next prompt
+          // save (sync branch of saveData) then deleted the local copy for good.
+          // Fold it in instead — the synced entry wins, a clash with different text
+          // arrives suffixed. saveData removes the local copy only after a sync
+          // write carrying these merged prompts has landed, so until then every
+          // load re-merges, which mergePromptEntry makes idempotent.
+          if (localPrompts && (syncPrompts || Object.keys(localPrompts).length > 0)) {
+            const merged = Object.assign({}, syncPrompts || {});
+            for (const [title, data] of Object.entries(localPrompts)) {
+              if (typeof title !== 'string' || isUnsafeKey(title)) continue;
+              const normalized = normalizePromptData(data);
+              if (normalized) mergePromptEntry(merged, title, normalized);
             }
-          } else {
-            finalData.prompts = rawPromptsData;
+            finalData.prompts = merged;
+          }
+        } else {
+          if (localPrompts) finalData.prompts = localPrompts;
+          // Prompts handoff. Switching prompt sync OFF on one device switches it
+          // off everywhere (same sync key), and every other device then reads its
+          // own storage.local — which its last synced save deleted, so its
+          // library looked empty. The switch-off therefore leaves the synced copy
+          // in place for a while (promptsHandoffAt), and a device that has not
+          // taken it in yet (promptsHandoffAdopted, device-local) merges it here.
+          // The handoff is the most recent shared state, so it wins; whatever this
+          // device still held locally arrives suffixed on a clash. Once a prompt
+          // save has written the merged set locally, saveData marks the handoff
+          // adopted and it is never merged again, so a prompt deleted afterwards
+          // stays deleted.
+          const handoffAt = syncResult.promptsHandoffAt;
+          if (handoffAt && localResult.promptsHandoffAdopted !== handoffAt
+              && Date.now() - handoffAt < PROMPTS_HANDOFF_TTL) {
+            const handoff = decodePrompts(assembleChunks(syncResult, 'pdc'));
+            if (handoff) {
+              const merged = Object.assign({}, handoff);
+              for (const [title, data] of Object.entries(localPrompts || {})) {
+                if (typeof title !== 'string' || isUnsafeKey(title)) continue;
+                const normalized = normalizePromptData(data);
+                if (normalized) mergePromptEntry(merged, title, normalized);
+              }
+              finalData.prompts = merged;
+              mergedPromptsHandoff = handoffAt;
+            }
           }
         }
       }
@@ -414,9 +475,22 @@ function loadData(defaults, callback) {
   });
 }
 
-function saveData(dataToSave, callback) {
+// opts.countSave: true only for an actual conversation save (the popup's Save
+// button, the right-click menu and the quick-save shortcut). See finishSave.
+// True for "sync storage is full" (Chrome: QUOTA_BYTES / QUOTA_BYTES_PER_ITEM;
+// Firefox words it differently but says "quota"), false for the write-RATE
+// limits, which Chrome also reports as a quota ("... MAX_WRITE_OPERATIONS_PER_
+// MINUTE quota"). A rate limit is gone a minute later; freeing space for it
+// would destroy the prompts handoff for nothing, and the retry would hit the
+// same limit anyway.
+function isStorageFullError(message) {
+  return /quota/i.test(message) && !/MAX_WRITE_OPERATIONS|MAX_SUSTAINED_WRITE/i.test(message);
+}
+
+function saveData(dataToSave, callback, opts = {}) {
   // Also fetch current chunk counts so we can clean up stale chunks from previous larger saves.
-  chrome.storage.sync.get(['syncPromptsEnabled', 'fdcN', 'pdcN'], (syncState) => {
+  chrome.storage.sync.get(['syncPromptsEnabled', 'fdcN', 'pdcN', 'promptsHandoffAt'], (syncState) => {
+    chrome.storage.local.get(['promptsHandoffAdopted'], (localState) => {
     const isPromptsSyncEnabled = dataToSave.syncPromptsEnabled !== undefined
       ? dataToSave.syncPromptsEnabled
       : syncState.syncPromptsEnabled;
@@ -427,6 +501,19 @@ function saveData(dataToSave, callback) {
     // Keys superseded by this save. NOTHING here is deleted until every write has
     // been confirmed — see runCleanup below.
     const localToRemove = [];
+    // Numbered chunks (fdc3, pdc0 ...) and the pdcN pointer are only stale
+    // relative to the pointer this save saw or wrote; runCleanup re-checks it.
+    // Anything else in syncToRemove (legacy single keys) is unconditional.
+    const chunkGuards = [];
+    // The prompts handoff this save leaves in sync, if any. It is a courtesy
+    // copy: when it is what stands between this save and the quota, it goes.
+    let handoffKeys = null;
+    const pdcKeys = (n, withPointer) => {
+      const keys = [];
+      for (let i = 0; i < (n || 0); i++) keys.push('pdc' + i);
+      if (withPointer) keys.push('pdcN');
+      return keys;
+    };
 
     // Pass through non-data keys (sortPref, pinnedFolders, etc.) to sync as-is,
     // except the device-local UI-state keys which go to storage.local.
@@ -439,10 +526,12 @@ function saveData(dataToSave, callback) {
       }
     }
 
-    // Only an actual content write (a conversation or prompt) counts toward the
-    // usage stats that drive the review prompt — not UI-state writes like
-    // open/closed folders, sort preference, or sync toggles.
-    const isContentSave = !!(dataToSave.folders || dataToSave.prompts);
+    // usageStats.saves is "conversations saved": the 's' the uninstall survey
+    // reports (§9) and the review banner's threshold. It used to be inferred
+    // from the payload (any folders/prompts write), so deleting, renaming or
+    // moving a chat, every prompt autosave and the prompt-sync toggle all
+    // counted. Only the callers that save a conversation say so now.
+    const countSave = opts.countSave === true;
 
     // The bookmark mirror only reflects folders, pins and sort order. Skip the
     // (expensive, full-tree) rebuild for pure UI-state writes like open/closed
@@ -461,7 +550,9 @@ function saveData(dataToSave, callback) {
       const compressed = LZString.compressToUTF16(JSON.stringify(dataToSave.folders));
       Object.assign(syncToSet, makeChunks(compressed, 'fdc'));
       const newN = syncToSet.fdcN;
-      for (let i = newN; i < (syncState.fdcN || 0); i++) syncToRemove.push('fdc' + i);
+      const stale = [];
+      for (let i = newN; i < (syncState.fdcN || 0); i++) stale.push('fdc' + i);
+      chunkGuards.push({ pointer: 'fdcN', expected: newN, keys: stale });
       syncToRemove.push('foldersDataCompressed', 'folders');
     }
 
@@ -474,16 +565,54 @@ function saveData(dataToSave, callback) {
       if (isPromptsSyncEnabled) {
         Object.assign(syncToSet, makeChunks(compressed, 'pdc'));
         const newN = syncToSet.pdcN;
-        for (let i = newN; i < (syncState.pdcN || 0); i++) syncToRemove.push('pdc' + i);
+        const stale = [];
+        for (let i = newN; i < (syncState.pdcN || 0); i++) stale.push('pdc' + i);
+        chunkGuards.push({ pointer: 'pdcN', expected: newN, keys: stale });
         syncToRemove.push('promptsDataCompressed'); // remove legacy sync key
         // The local copy is the only remaining backup until sync confirms.
         localToRemove.push('promptsDataCompressed');
+        // The pdc chunks are live again, so any handoff is over.
+        if (syncState.promptsHandoffAt !== undefined) syncToRemove.push('promptsHandoffAt');
       } else {
         localToSet.promptsDataCompressed = compressed;
-        const oldSyncPdcN = syncState.pdcN || 0;
-        for (let i = 0; i < oldSyncPdcN; i++) syncToRemove.push('pdc' + i);
-        syncToRemove.push('pdcN', 'promptsDataCompressed');
+        syncToRemove.push('promptsDataCompressed');
+
+        const switchingOff = dataToSave.syncPromptsEnabled === false
+          && syncState.syncPromptsEnabled === true && syncState.pdcN !== undefined;
+        const handoffLive = syncState.promptsHandoffAt !== undefined
+          && Date.now() - syncState.promptsHandoffAt < PROMPTS_HANDOFF_TTL;
+
+        if (switchingOff) {
+          // Leave the synced library where it is, as the handoff the other
+          // devices pick up (loadData). This device has just written it locally.
+          const handoffAt = Date.now();
+          syncToSet.promptsHandoffAt = handoffAt;
+          localToSet.promptsHandoffAdopted = handoffAt;
+          handoffKeys = pdcKeys(syncState.pdcN, true);
+        } else if (handoffLive) {
+          // Still inside the window: keep it for devices not opened yet. This
+          // save carries the handoff only if loadData merged it in this page.
+          if (localState.promptsHandoffAdopted !== syncState.promptsHandoffAt
+              && mergedPromptsHandoff === syncState.promptsHandoffAt) {
+            localToSet.promptsHandoffAdopted = syncState.promptsHandoffAt;
+          }
+          handoffKeys = pdcKeys(syncState.pdcN, true);
+        } else {
+          // No handoff, or an expired one: the chunks are simply stale now.
+          chunkGuards.push({
+            pointer: 'pdcN',
+            expected: syncState.pdcN,
+            keys: pdcKeys(syncState.pdcN, syncState.pdcN !== undefined),
+          });
+          if (syncState.promptsHandoffAt !== undefined) syncToRemove.push('promptsHandoffAt');
+        }
       }
+    }
+    // Any save can hit the quota, not only a prompt save: a conversation save on
+    // a nearly full sync storage must be able to free the handoff as well.
+    if (!handoffKeys && !isPromptsSyncEnabled && !dataToSave.prompts
+        && syncState.promptsHandoffAt !== undefined) {
+      handoffKeys = pdcKeys(syncState.pdcN, true);
     }
 
     // Delete the superseded keys only once the replacement has actually landed.
@@ -499,9 +628,31 @@ function saveData(dataToSave, callback) {
     //
     // Safe to fire-and-forget once we are here: a failed cleanup only leaves a
     // stale chunk behind, and assembleChunks reads 0..N-1, so it is never seen.
+    //
+    // Which chunks are stale was computed from the pointer read at the START of
+    // this save. Another writer (the popup and the service worker at once, or
+    // another device through sync) can commit a larger set in between; deleting
+    // "our" stale range then removes chunks the live pointer still counts, and
+    // every folder reads as {}. So re-read the pointers first and drop a range
+    // whose pointer no longer holds the value this save left: a later writer
+    // owns those keys now. The cost of skipping is only a stale chunk, which is
+    // invisible for the reason above. (Generation-prefixed chunks would close
+    // the remaining get→remove window too, but double peak usage against the
+    // shared 100 KB quota — §7 of CLAUDE.md.)
     const runCleanup = () => {
-      if (syncToRemove.length > 0) chrome.storage.sync.remove(syncToRemove);
       if (localToRemove.length > 0) chrome.storage.local.remove(localToRemove);
+      const guarded = chunkGuards.filter(g => g.keys.length > 0);
+      if (guarded.length === 0) {
+        if (syncToRemove.length > 0) chrome.storage.sync.remove(syncToRemove);
+        return;
+      }
+      chrome.storage.sync.get(guarded.map(g => g.pointer), (current) => {
+        const keys = syncToRemove.slice();
+        for (const g of guarded) {
+          if ((current || {})[g.pointer] === g.expected) keys.push(...g.keys);
+        }
+        if (keys.length > 0) chrome.storage.sync.remove(keys);
+      });
     };
 
     const doSyncSave = () => {
@@ -509,20 +660,35 @@ function saveData(dataToSave, callback) {
       // a folder) — skip the sync.set so it no longer counts against the quota.
       if (Object.keys(syncToSet).length === 0) {
         runCleanup();
-        finishSave(callback, null, isContentSave, affectsBookmarks);
+        finishSave(callback, null, countSave, affectsBookmarks);
         return;
       }
       // The new chunks AND their fdcN/pdcN pointer go out in this one set, whose
       // quota check Chrome evaluates as a unit — so this call is the commit point.
-      chrome.storage.sync.set(syncToSet, () => {
+      const commit = (mayDropHandoff) => chrome.storage.sync.set(syncToSet, () => {
         if (chrome.runtime.lastError) {
+          const message = chrome.runtime.lastError.message || 'Storage error';
+          // A full sync storage may be exactly why prompt sync was switched off.
+          // The handoff must never be the reason a save fails: drop it, retry once.
+          if (mayDropHandoff && handoffKeys && isStorageFullError(message)) {
+            const drop = handoffKeys.concat('promptsHandoffAt');
+            delete syncToSet.promptsHandoffAt;
+            handoffKeys = null;
+            chrome.storage.sync.remove(drop, () => {
+              if (Object.keys(syncToSet).length > 0) { commit(false); return; }
+              runCleanup();
+              finishSave(callback, null, countSave, affectsBookmarks);
+            });
+            return;
+          }
           // Nothing was deleted, so the previous state is still intact and readable.
-          if (callback) callback(chrome.runtime.lastError.message || 'Storage error');
+          if (callback) callback(message);
           return;
         }
         runCleanup();
-        finishSave(callback, null, isContentSave, affectsBookmarks);
+        finishSave(callback, null, countSave, affectsBookmarks);
       });
+      commit(true);
     };
 
     if (Object.keys(localToSet).length > 0) {
@@ -544,6 +710,7 @@ function saveData(dataToSave, callback) {
     } else {
       doSyncSave();
     }
+    });
   });
 }
 
@@ -553,49 +720,78 @@ function saveData(dataToSave, callback) {
 // quick-save still showed "✅ Saved!". There is no window in a service worker
 // either, so utils.js's modal fallback never fires there: the write failed
 // completely silently. Use this instead of hand-rolling the wrapper.
-function saveDataAsync(dataToSave) {
+function saveDataAsync(dataToSave, opts = {}) {
   return new Promise((resolve, reject) => {
-    saveData(dataToSave, (err) => (err ? reject(new Error(err)) : resolve()));
+    saveData(dataToSave, (err) => (err ? reject(new Error(err)) : resolve()), opts);
   });
 }
 
+// Increment one usageStats counter ('opens' or 'saves') and hand the updated
+// stats to `callback`. Both counters live in one object, so two independent
+// read-modify-writes (the popup's open count in ui.js and a save landing just
+// after) could each write back a copy missing the other's increment. Queuing
+// them on one chain makes every bump in this context see the previous one.
+// Different contexts (popup vs service worker) still share no chain, but they
+// rarely bump within the same few milliseconds.
+let usageStatsChain = Promise.resolve();
+function bumpUsageStat(field, callback) {
+  usageStatsChain = usageStatsChain.then(() => new Promise((resolve) => {
+    chrome.storage.local.get(['usageStats'], (data) => {
+      const stats = Object.assign({ saves: 0, opens: 0 }, (data && data.usageStats) || {});
+      stats[field] = (stats[field] || 0) + 1;
+      chrome.storage.local.set({ usageStats: stats }, () => {
+        if (callback) callback(stats);
+        resolve();
+      });
+    });
+  })).catch(() => {});
+  return usageStatsChain;
+}
+
 // err is null on success or an error message string on failure.
-// countSave: when true (default), increment the saved-content counter that gates
-// the review prompt. Callers pass false for pure UI-state writes so toggling a
-// folder open or changing the sort order doesn't inflate the count.
+// countSave: when true (default), increment usageStats.saves ("conversations
+// saved"). saveData passes it only when its caller asked (opts.countSave).
 // affectsBookmarks: when true (default), re-mirror folders to bookmarks if the
 // mobile-sync feature is on. Callers pass false for UI-state writes that don't
 // change the bookmark tree (open/closed state) to avoid a full rebuild.
 // Callers that don't pass the extra params continue to work unchanged.
 function finishSave(callback, err = null, countSave = true, affectsBookmarks = true) {
-  if (affectsBookmarks) {
-    chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref', 'folderParents'], (syncData) => {
-      if (syncData.syncBookmarksEnabled) {
-        loadData({ folders: {} }, (data) => {
-          syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateDesc',
-            syncData.folderParents || {});
-        });
-      }
-    });
-  }
+  if (affectsBookmarks) resyncBookmarksFromStorage();
 
-  if (countSave) {
-    chrome.storage.local.get(['usageStats'], (data) => {
-      let stats = data.usageStats || { saves: 0, opens: 0 };
-      stats.saves += 1;
-      chrome.storage.local.set({ usageStats: stats });
-    });
-  }
+  if (countSave) bumpUsageStat('saves');
 
   if (callback) callback(err);
 }
 
 // --- BOOKMARKS SYNCHRONIZATION (MOBILE) ---
 let isSyncingToBookmarks = false;
+// Arguments of a request that arrived while a rebuild was running. Only the
+// latest is kept: each caller loads fresh data, so it supersedes the others.
+let pendingBookmarkSync = null;
 
-async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateDesc', folderParents = {}) {
-  // 1. Stop if a sync is ongoing
+const isBookmarkSyncEnabled = () => new Promise(r =>
+  chrome.storage.sync.get(['syncBookmarksEnabled'], (d) => r(!!(d && d.syncBookmarksEnabled))));
+
+// Rebuild the mirror from what is in storage now, if the feature is on.
+// opts.followUp marks the one extra rebuild step 6 below may ask for.
+function resyncBookmarksFromStorage(opts = {}) {
+  chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref', 'folderParents'], (syncData) => {
+    if (!syncData || !syncData.syncBookmarksEnabled) return;
+    loadData({ folders: {} }, (data) => {
+      syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateDesc',
+        syncData.folderParents || {}, opts);
+    });
+  });
+}
+
+async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateDesc', folderParents = {}, opts = {}) {
+  let resolvedDuplicates = false;
+  // 1. A rebuild is already running: queue this one instead of dropping it.
+  //    Dropping it meant a save made while the popup's opening rebuild ran was
+  //    never mirrored — the tree stayed stale until the next save. Same
+  //    coalescing as updateContextMenu in background.js.
   if (isSyncingToBookmarks) {
+    pendingBookmarkSync = [folders, pinnedFolders, sortPref, folderParents];
     return;
   }
 
@@ -617,7 +813,10 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
     // Brief delay to let bookmark removals propagate before rebuilding the tree
     await new Promise(r => setTimeout(r, BOOKMARK_PROPAGATION_DELAY));
 
-    // 4. Master folder creation
+    // 4. Master folder creation — unless the feature was switched off while the
+    //    removals ran. The toggle's own cleanup has already happened by then, so
+    //    a folder created here would never be removed.
+    if (!(await isBookmarkSyncEnabled())) return;
     const masterNode = await new Promise(r => chrome.bookmarks.create({ title: MASTER_FOLDER_NAME }, r));
 
     // 5. Folder and bookmark creation loop (sorted).
@@ -666,10 +865,52 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
         await createFolderNode(folderNode.id, child, subIndex++);
       }
     }
+
+    // 6. Settle on exactly one master folder. The popup and the service worker
+    //    each have their own isSyncingToBookmarks, so both can rebuild at once
+    //    and leave two trees. Each builder keeps the same deterministic winner
+    //    and removes the rest, so they cannot remove each other's and end with
+    //    none. The winner is the LARGEST tree (lowest id breaks a tie), not
+    //    simply the lowest id: the popup's rebuild dies whenever the popup
+    //    closes, leaving a partial tree, and that must never beat a complete
+    //    one. A switch-off during the build removes ours too.
+    const enabled = await isBookmarkSyncEnabled();
+    const masters = (await new Promise(r => chrome.bookmarks.search({ title: MASTER_FOLDER_NAME }, r)) || [])
+      .filter(n => !n.url && n.title === MASTER_FOLDER_NAME);
+    let keep = null;
+    if (enabled && masters.length === 1) {
+      keep = masters[0].id;
+    } else if (enabled && masters.length > 1) {
+      const countNodes = (node) => 1 + (node.children || []).reduce((sum, c) => sum + countNodes(c), 0);
+      const sized = [];
+      for (const node of masters) {
+        const tree = await new Promise(r => chrome.bookmarks.getSubTree(node.id, r));
+        sized.push({ id: node.id, size: tree && tree[0] ? countNodes(tree[0]) : 0 });
+      }
+      sized.sort((a, b) => b.size - a.size
+        || String(a.id).localeCompare(String(b.id), undefined, { numeric: true }));
+      keep = sized[0].id;
+      resolvedDuplicates = true;
+    }
+    for (const node of masters) {
+      if (node.id !== keep) await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
+    }
   } catch (error) {
     console.error("Critical error during sync :", error);
   } finally {
     isSyncingToBookmarks = false;
+    if (pendingBookmarkSync) {
+      const [nextFolders, nextPinned, nextSort, folderParents] = pendingBookmarkSync;
+      pendingBookmarkSync = null;
+      syncToBookmarksTree(nextFolders, nextPinned, nextSort, folderParents);
+    } else if (resolvedDuplicates && !opts.followUp) {
+      // The tree kept above is the largest, which is not necessarily the one
+      // built from the newest data: a delete in the popup builds a SMALLER tree
+      // than a quick-save that started a moment earlier from older data. Rebuild
+      // once from storage so the mirror ends up current. Only once: a follow-up
+      // never asks for another, so two builders cannot keep re-triggering.
+      resyncBookmarksFromStorage({ followUp: true });
+    }
   }
 }
 
@@ -706,6 +947,25 @@ function hasEntry(container, name) {
 // through hasEntry, so this is now a list of exactly one.
 function isUnsafeKey(k) {
   return k === '__proto__';
+}
+
+// Add a prompt to `target` without ever overwriting one: the existing entry
+// wins, and an incoming prompt whose text differs arrives as "<title> (Imported)",
+// then "(Imported 2)", ... — the first free name. The suffix used to be fixed,
+// so a second conflicting import silently replaced an earlier "(Imported)"
+// prompt the user may since have edited. A candidate already holding the same
+// text means this prompt is already here, which makes re-importing the same
+// backup (or re-merging the same local library, see loadData) a no-op.
+function mergePromptEntry(target, title, normalized) {
+  const textOf = (v) => (typeof v === 'string' ? v : v && v.text);
+  const sameText = (name) => textOf(target[name]) === normalized.text;
+  if (!hasEntry(target, title)) { target[title] = normalized; return title; }
+  if (sameText(title)) return title;
+  for (let n = 1; ; n++) {
+    const candidate = `${title} (Imported${n === 1 ? '' : ' ' + n})`;
+    if (!hasEntry(target, candidate)) { target[candidate] = normalized; return candidate; }
+    if (sameText(candidate)) return candidate;
+  }
 }
 
 function isSafeUrl(url) {
@@ -838,14 +1098,7 @@ function mergeImportData(importedData) {
         // hasEntry, not truthiness: currentPrompts['toString'] is inherited and
         // truthy, so importing a prompt by that name looked like a collision and
         // arrived renamed to "toString (Imported)" with nothing to collide with.
-        if (!hasEntry(currentPrompts, promptTitle)) {
-          currentPrompts[promptTitle] = normalized;
-        } else {
-          // Title conflict: keep the existing prompt and suffix-import the incoming one to avoid silent data loss
-          if (currentPrompts[promptTitle].text !== normalized.text) {
-             currentPrompts[promptTitle + " (Imported)"] = normalized;
-          }
-        }
+        mergePromptEntry(currentPrompts, promptTitle, normalized);
       }
 
       // 4. Merge the nesting, AFTER the folders so both ends can be checked
@@ -1278,6 +1531,10 @@ if (typeof module !== 'undefined') {
     loadData,
     saveData,
     finishSave,
+    bumpUsageStat,
+    isStorageFullError,
+    mergePromptEntry,
+    decodePrompts,
     syncToBookmarksTree,
     extractTitleLogic,
     isSafeUrl,

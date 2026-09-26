@@ -593,6 +593,25 @@ function extractAITitleLogic(siteKey, defaultFallback) {
   return fb || 'New conversation';
 }
 
+// Turns what the user typed into the local-LLM box into a usable http(s) URL,
+// or null. People type the address the way a browser bar accepts it —
+// "localhost:3000", "192.168.1.5:8080" — and neither survives `new URL`: the
+// first parses as scheme "localhost:" with origin "null" (so the permission
+// request asked for "null/*"), the second throws. Both used to fail silently.
+function normalizeLocalLlmUrl(input) {
+  const trimmed = (input || '').trim();
+  if (!trimmed) return null;
+  // A real scheme is followed by "//"; "localhost:3000" has none.
+  const withScheme = /^[a-z][a-z\d+.-]*:\/\//i.test(trimmed) ? trimmed : 'http://' + trimmed;
+  try {
+    const url = new URL(withScheme);
+    if (!/^https?:$/.test(url.protocol) || !url.hostname) return null;
+    return withScheme;
+  } catch (_) {
+    return null;
+  }
+}
+
 if (typeof module !== 'undefined') {
-  module.exports = { SITES, getSiteByUrl, canSaveSite, extractAITitleLogic };
+  module.exports = { SITES, getSiteByUrl, canSaveSite, extractAITitleLogic, normalizeLocalLlmUrl };
 }

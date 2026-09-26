@@ -221,11 +221,51 @@ function initSaveConversation(opts) {
         // Expand the parent too, or a conversation saved into a sub-folder
         // lands inside a collapsed folder and looks lost.
         if (window.displayFolders) window.displayFolders(folderOpenPath(folders, folderParents, folderName));
-      });
+      }, { countSave: true });
     });
   });
 }
 window.initSaveConversation = initSaveConversation;
+
+// popup.css caps body at 576px: Chrome's 600px popup maximum minus body's
+// 24px of vertical padding. But Chrome also caps the popup at the room left
+// between the toolbar and the bottom of the screen. On a shorter monitor that
+// is less than 600px (measured: 503), so the 600px document overflowed the
+// window. Chrome then widened the popup by a scrollbar (430px instead of 424),
+// which showed as a second scrollbar next to body's own, and html's
+// overflow-y: hidden left the bottom of the list unreachable.
+// Shrink body to the window it actually got instead. Done in JS rather than
+// with calc(100vh - 24px): in a popup, vh is the window's current size, which
+// starts tiny while Chrome is still sizing it to the content, so a vh-based
+// cap could keep the popup collapsed. Windows under POPUP_MIN_CAPPED_HEIGHT,
+// which no real screen caps a popup to, are ignored for the same reason.
+//
+// Never lift the cap just to measure. A first version restored popup.css's cap
+// on every resize: the document went back to 600px, overflowed, Chrome widened
+// the window for a scrollbar, which fired resize, which capped again, Chrome
+// narrowed it, resize... The popup shook for seconds and settled on the wide
+// width. So the cap only moves one way per cause: DOWN when the document
+// overflows the window, UP only when the window grew without any overflow. A
+// resize that changes nothing but the width touches neither, which is what
+// ends the loop.
+const POPUP_BODY_MAX_HEIGHT = 576; // popup.css
+const POPUP_MIN_CAPPED_HEIGHT = 300;
+function fitPopupToWindow() {
+  const body = document.body;
+  if (!body) return;
+  const height = window.innerHeight;
+  if (height < POPUP_MIN_CAPPED_HEIGHT) return;
+  const style = getComputedStyle(body);
+  const padding = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
+  const fits = Math.floor(height - padding);
+  const current = parseFloat(body.style.maxHeight) || POPUP_BODY_MAX_HEIGHT;
+
+  if (document.documentElement.scrollHeight > height) {
+    if (fits < current) body.style.maxHeight = fits + 'px';
+  } else if (body.style.maxHeight && fits > current) {
+    body.style.maxHeight = fits >= POPUP_BODY_MAX_HEIGHT ? '' : fits + 'px';
+  }
+}
 
 function initPopupCommon(config) {
   const exportFilename = (config && config.exportFilename) || 'folders_backup.json';
@@ -422,6 +462,11 @@ function initPopupCommon(config) {
     }
   });
 
+  // --- Keep the popup inside the height Chrome actually gave it ---
+  if (document.readyState === 'complete') requestAnimationFrame(fitPopupToWindow);
+  else window.addEventListener('load', () => requestAnimationFrame(fitPopupToWindow), { once: true });
+  window.addEventListener('resize', fitPopupToWindow);
+
   // --- Initial folder render + search ---
   if (window.displayFolders) window.displayFolders();
   // Debounce: each render re-reads + decompresses all storage and rebuilds the
@@ -438,9 +483,20 @@ function initPopupCommon(config) {
   // --- Export ---
   const exportBtn = document.getElementById('exportBtn');
   exportBtn.addEventListener('click', async () => {
-    // folderParents is listed only so a user with no sub-folders still exports a
-    // predictable {} — loadData already copies whatever is in storage.
-    loadData({ folders: {}, pinnedFolders: [], prompts: {}, folderParents: {} }, async (data) => {
+    // loadData copies every stored key, so writing `data` out as-is exported the
+    // raw fdc*/pdc* chunks (the whole library a second time, compressed) and
+    // device state such as localLlmUrl, usageStats, installedAt and reuseTabId.
+    // A backup carries the user's content and its two sort preferences only —
+    // exactly what mergeImportData and the sort menus read back.
+    loadData({ folders: {}, pinnedFolders: [], prompts: {}, folderParents: {} }, async (stored) => {
+      const data = {
+        folders: stored.folders,
+        pinnedFolders: stored.pinnedFolders,
+        prompts: stored.prompts,
+        folderParents: stored.folderParents,
+      };
+      if (stored.sortPref !== undefined) data.sortPref = stored.sortPref;
+      if (stored.promptSortPref !== undefined) data.promptSortPref = stored.promptSortPref;
       if (Object.keys(data.folders).length === 0 && Object.keys(data.prompts).length === 0) {
         await window.showCustomModal({
           title: chrome.i18n.getMessage("alertEmptyExport") || "Your folders and prompts are empty, nothing to export!",
@@ -500,3 +556,4 @@ function initPopupCommon(config) {
   });
 }
 window.initPopupCommon = initPopupCommon;
+window.fitPopupToWindow = fitPopupToWindow;

@@ -415,3 +415,124 @@ describe('new folder button', () => {
       expect(global.saveData).not.toHaveBeenCalled();
     });
 });
+
+// ---------------------------------------------------------------------------
+// Export
+// ---------------------------------------------------------------------------
+
+// loadData copies every stored key, and the backup used to be that object as-is:
+// the raw fdc*/pdc* chunks (the whole library again, compressed) plus device
+// state like localLlmUrl, usageStats, installedAt and reuseTabId.
+describe('export button', () => {
+  const IDS = [
+    'newFolderBtn', 'searchInput', 'sortToggleBtn', 'sortMenu', 'modeFolderBtn',
+    'modePromptBtn', 'folderModeContainer', 'promptModeContainer', 'promptSearchInput',
+    'toggleAddPanelBtn', 'addConversationPanel', 'exportBtn', 'importBtn', 'importFile',
+    'syncBookmarksToggle', 'syncBookmarksLabel', 'syncPromptsLabel', 'githubLink', 'kofiBtn',
+  ];
+
+  test('writes the user content and sort preferences only', async () => {
+    document.body.innerHTML = IDS.map((id) => `<div id="${id}"></div>`).join('');
+    const stored = {
+      folders: { Dev: [{ title: 't', url: 'https://a/1', timestamp: 1 }] },
+      pinnedFolders: ['Dev'],
+      prompts: { P: { text: 'x' } },
+      folderParents: {},
+      sortPref: 'alphaAsc',
+      promptSortPref: 'dateDesc',
+      fdcN: 1, fdc0: 'C:{...}', pdcN: 1, pdc0: 'C:{...}',
+      localLlmUrl: 'http://localhost:3000',
+      usageStats: { saves: 3, opens: 9 },
+      installedAt: '2026-01-01',
+      reuseTabId: 42,
+      syncBookmarksEnabled: true,
+    };
+    global.loadData = jest.fn((defaults, cb) => cb({ ...defaults, ...JSON.parse(JSON.stringify(stored)) }));
+    global.saveData = jest.fn((data, cb) => cb && cb());
+    global.window.displayFolders = jest.fn();
+    global.window.displayPrompts = jest.fn();
+    global.window.showCustomModal = jest.fn(() => Promise.resolve(true));
+    chrome.storage.sync.get = jest.fn((_keys, cb) => cb && cb({}));
+    chrome.storage.sync.set = jest.fn((_v, cb) => cb && cb());
+
+    let written = null;
+    const RealBlob = global.Blob;
+    global.Blob = class { constructor(parts) { written = parts.join(''); } };
+    global.URL.createObjectURL = jest.fn(() => 'blob:x');
+    global.URL.revokeObjectURL = jest.fn();
+    // The download link: jsdom would try to navigate to it.
+    const clickSpy = jest.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+    try {
+      window.initPopupCommon({ exportFilename: 'backup.json' });
+      document.getElementById('exportBtn').click();
+      await flush();
+    } finally {
+      global.Blob = RealBlob;
+      clickSpy.mockRestore();
+    }
+
+    expect(Object.keys(JSON.parse(written)).sort()).toEqual(
+      ['folderParents', 'folders', 'pinnedFolders', 'promptSortPref', 'prompts', 'sortPref']);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// fitPopupToWindow
+// ---------------------------------------------------------------------------
+
+// Chrome caps the popup at the room below the toolbar. Measured on a shorter
+// monitor: window 503px high for a 600px document, so Chrome added a scrollbar
+// beside body's own and the bottom of the list was out of reach.
+describe('fitPopupToWindow', () => {
+  beforeEach(() => {
+    document.body.style.padding = '8px 16px 16px 16px';
+    document.body.style.maxHeight = '';
+  });
+  function layout({ windowHeight, documentHeight }) {
+    Object.defineProperty(window, 'innerHeight', { value: windowHeight, configurable: true });
+    Object.defineProperty(document.documentElement, 'scrollHeight', { value: documentHeight, configurable: true });
+  }
+
+  test('a window shorter than the document shrinks body to fit it', () => {
+    layout({ windowHeight: 503, documentHeight: 600 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('479px'); // 503 − 24px padding
+  });
+
+  test('the full 600px window leaves popup.css in charge', () => {
+    layout({ windowHeight: 600, documentHeight: 600 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('');
+  });
+
+  // The first version lifted the cap to measure on every resize, and the popup
+  // shook between two widths. Once fitted, a resize that changes only the width
+  // (Chrome dropping the scrollbar allowance) must change nothing.
+  test('once fitted, a width-only resize leaves the cap alone', () => {
+    layout({ windowHeight: 503, documentHeight: 600 });
+    window.fitPopupToWindow();
+    layout({ windowHeight: 503, documentHeight: 503 });
+    const writes = [];
+    for (let i = 0; i < 5; i++) { window.fitPopupToWindow(); writes.push(document.body.style.maxHeight); }
+    expect(writes).toEqual(Array(5).fill('479px'));
+  });
+
+  test('a window that grows without overflow lifts the cap, up to popup.css', () => {
+    layout({ windowHeight: 503, documentHeight: 600 });
+    window.fitPopupToWindow();
+    layout({ windowHeight: 550, documentHeight: 503 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('526px');
+    layout({ windowHeight: 600, documentHeight: 550 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('');
+  });
+
+  // While Chrome is still sizing the popup the window can be tiny. Capping from
+  // that size would keep the popup collapsed for good.
+  test('a transient tiny window is ignored', () => {
+    layout({ windowHeight: 40, documentHeight: 600 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('');
+  });
+});

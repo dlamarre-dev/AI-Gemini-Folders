@@ -92,6 +92,35 @@ describe('deleteChat', () => {
 });
 
 // ---------------------------------------------------------------------------
+// A folder deleted or renamed elsewhere while the popup was open
+// ---------------------------------------------------------------------------
+
+describe('acting on a conversation whose folder has gone', () => {
+  // folders[name] is then undefined and .findIndex threw inside the storage
+  // callback: the action silently did nothing and the list never refreshed.
+  test('deleteChat and moveChat re-render instead of throwing', () => {
+    setupStorage({ Other: [] });
+    expect(() => deleteChat('Gone', 'https://gemini.google.com/app/aaa')).not.toThrow();
+    expect(() => moveChat('Gone', 'Other', 'https://gemini.google.com/app/aaa')).not.toThrow();
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+
+  test('renameChat re-renders instead of throwing', async () => {
+    setupStorage({ Other: [] });
+    window.showCustomModal = jest.fn().mockResolvedValue('New title');
+    await expect(renameChat('Gone', 'https://gemini.google.com/app/aaa', 'Old')).resolves.toBeUndefined();
+    expect(global.saveData).not.toHaveBeenCalled();
+  });
+
+  // An own property named like an Object.prototype member is a real folder.
+  test('a folder called "toString" still works', () => {
+    setupStorage({ toString: makeFolder(['Chat', 'aaa']) });
+    deleteChat('toString', 'https://gemini.google.com/app/aaa');
+    expect(savedFolders().toString).toHaveLength(0);
+  });
+});
+
+// ---------------------------------------------------------------------------
 // moveChat
 // ---------------------------------------------------------------------------
 

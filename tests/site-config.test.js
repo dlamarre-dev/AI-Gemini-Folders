@@ -1,4 +1,4 @@
-const { SITES, getSiteByUrl, canSaveSite, extractAITitleLogic } = require('../extensions/ai-folders/site-config.js');
+const { SITES, getSiteByUrl, canSaveSite, extractAITitleLogic, normalizeLocalLlmUrl } = require('../extensions/ai-folders/site-config.js');
 
 // Site detection is core and brittle — it gates save, title extraction, and the
 // #-trigger. These lock down the URL → site-key mapping.
@@ -450,4 +450,30 @@ describe('unsaveable sites (Duck.ai, 09/2026)', () => {
       'gemini-folders', '_locales', 'en', 'messages.json'), 'utf8'));
     expect(en.alertNoConversationUrl).toBeUndefined();
   });
+});
+
+// ---------------------------------------------------------------------------
+// normalizeLocalLlmUrl — what the user types into the local-LLM box
+// ---------------------------------------------------------------------------
+
+describe('normalizeLocalLlmUrl', () => {
+  // The two most common ways to type the address: "localhost:3000" parsed as
+  // scheme "localhost:" (origin "null"), and an IP with a port threw.
+  test.each([
+    ['localhost:3000', 'http://localhost:3000'],
+    ['192.168.1.5:8080', 'http://192.168.1.5:8080'],
+    ['  localhost:11434/chat  ', 'http://localhost:11434/chat'],
+    ['my-box.lan', 'http://my-box.lan'],
+    ['http://localhost:3000', 'http://localhost:3000'],
+    ['https://llm.example.com/ui', 'https://llm.example.com/ui'],
+    ['HTTP://LOCALHOST:3000', 'HTTP://LOCALHOST:3000'],
+  ])('%s → %s', (typed, expected) => {
+    expect(normalizeLocalLlmUrl(typed)).toBe(expected);
+    expect(new URL(normalizeLocalLlmUrl(typed)).origin).not.toBe('null');
+  });
+
+  test.each(['', '   ', 'ftp://host/x', 'file:///etc/passwd', 'javascript://alert(1)', 'http://', 'not a url'])(
+    'rejects %p', (typed) => {
+      expect(normalizeLocalLlmUrl(typed)).toBeNull();
+    });
 });

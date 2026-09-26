@@ -187,9 +187,9 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 // failure toast rather than "✅ Saved!". The old `new Promise(r => saveData(d, r))`
 // resolved *with* the error and dropped it; there is no window in a service
 // worker either, so utils.js's modal fallback never fires here.
-async function saveOrReportError(dataToSave) {
+async function saveOrReportError(dataToSave, opts) {
   try {
-    await saveDataAsync(dataToSave);
+    await saveDataAsync(dataToSave, opts);
     return null;
   } catch (err) {
     console.error("Save failed:", err);
@@ -245,7 +245,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
           timestamp: Date.now()
         });
 
-        const saveError = await saveOrReportError({ folders: folders });
+        const saveError = await saveOrReportError({ folders: folders }, { countSave: true });
 
         await chrome.scripting.executeScript({
           target: { tabId: tab.id },
@@ -452,7 +452,7 @@ chrome.commands.onCommand.addListener(async (command) => {
           timestamp: Date.now()
         });
 
-        const saveError = await saveOrReportError({ folders: folders });
+        const saveError = await saveOrReportError({ folders: folders }, { countSave: true });
 
         await chrome.scripting.executeScript({
           target: { tabId: tab.id },
