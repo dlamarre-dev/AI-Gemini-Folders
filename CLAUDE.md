@@ -358,6 +358,16 @@ git checkout main && git pull --ff-only
   handoff ends on expiry, on switching sync back on, or at once if a sync write
   hits the quota (dropped and the write retried) — a full storage may be why the
   user switched sync off, so the courtesy copy must never cost them a save.
+  Only a storage-full error drops it (`isStorageFullError`): Chrome words its
+  write-*rate* limits as quotas too, and those clear within a minute.
+  **Known limit, accepted:** both merges are unions, so a device's lingering
+  local copy can undo a deletion made elsewhere. If C still holds prompt S
+  locally when B deletes S from sync, C's next open merges S back and C's next
+  prompt save re-publishes it. C cannot tell "deleted on B" from "only ever on
+  C" — prompts carry no per-item history, the name-keyed design again (§6).
+  The window is short (until C's first prompt save after the switch), and
+  writing on load to shrink it would break the "a read must not write" rule
+  used elsewhere. Stable IDs with tombstones (§8) are the real fix.
   `usageStats.saves` counts
   **conversation saves only**: callers opt in with `saveData(..., { countSave:
   true })` (popup Save, both context menus, both quick-saves), and both counters

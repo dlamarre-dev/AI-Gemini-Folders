@@ -10,6 +10,7 @@ const {
   sortChats,
   normalizePromptData,
   syncToBookmarksTree,
+  isStorageFullError,
   modifierKeyLabel,
 } = require('../src/utils');
 
@@ -166,6 +167,21 @@ describe('normalizePromptData', () => {
 // ---------------------------------------------------------------------------
 // syncToBookmarksTree
 // ---------------------------------------------------------------------------
+
+describe('isStorageFullError', () => {
+  test.each([
+    ['QUOTA_BYTES quota exceeded', true],
+    ['QUOTA_BYTES_PER_ITEM quota exceeded', true],
+    ['QuotaExceededError: storage.sync API call exceeded its quota limitations.', true],
+    // Rate limits are reported as quotas too, but are gone a minute later.
+    ['This request exceeds the MAX_WRITE_OPERATIONS_PER_MINUTE quota.', false],
+    ['This request exceeds the MAX_WRITE_OPERATIONS_PER_HOUR quota.', false],
+    ['MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE quota exceeded', false],
+    ['Some other storage error', false],
+  ])('%s → %s', (message, expected) => {
+    expect(isStorageFullError(message)).toBe(expected);
+  });
+});
 
 describe('syncToBookmarksTree', () => {
   let order;
@@ -338,6 +354,30 @@ describe('syncToBookmarksTree', () => {
     twoMasters({ node0: 2, node9: 2 });
     await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
     expect(chrome.bookmarks.removeTree.mock.calls.map((c) => c[0])).toEqual(['node9']);
+  });
+
+  // The largest tree is not necessarily the newest: a delete builds a smaller
+  // tree than a quick-save that started earlier from older data. So resolving
+  // duplicates asks for one rebuild from storage — and a follow-up never asks
+  // for another, or two builders could keep re-triggering each other.
+  const askedForResync = () => chrome.storage.sync.get.mock.calls
+    .some((c) => Array.isArray(c[0]) && c[0].includes('pinnedFolders'));
+
+  test('resolving duplicates queues one rebuild from fresh storage', async () => {
+    twoMasters({ node0: 2, node9: 2 });
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(askedForResync()).toBe(true);
+  });
+
+  test('a follow-up rebuild does not queue another', async () => {
+    twoMasters({ node0: 2, node9: 2 });
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc', {}, { followUp: true });
+    expect(askedForResync()).toBe(false);
+  });
+
+  test('a normal rebuild with a single tree queues nothing', async () => {
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(askedForResync()).toBe(false);
   });
 
   // The popup's rebuild dies whenever the popup closes. A partial tree with the

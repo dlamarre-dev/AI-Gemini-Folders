@@ -477,6 +477,16 @@ function loadData(defaults, callback) {
 
 // opts.countSave: true only for an actual conversation save (the popup's Save
 // button, the right-click menu and the quick-save shortcut). See finishSave.
+// True for "sync storage is full" (Chrome: QUOTA_BYTES / QUOTA_BYTES_PER_ITEM;
+// Firefox words it differently but says "quota"), false for the write-RATE
+// limits, which Chrome also reports as a quota ("... MAX_WRITE_OPERATIONS_PER_
+// MINUTE quota"). A rate limit is gone a minute later; freeing space for it
+// would destroy the prompts handoff for nothing, and the retry would hit the
+// same limit anyway.
+function isStorageFullError(message) {
+  return /quota/i.test(message) && !/MAX_WRITE_OPERATIONS|MAX_SUSTAINED_WRITE/i.test(message);
+}
+
 function saveData(dataToSave, callback, opts = {}) {
   // Also fetch current chunk counts so we can clean up stale chunks from previous larger saves.
   chrome.storage.sync.get(['syncPromptsEnabled', 'fdcN', 'pdcN', 'promptsHandoffAt'], (syncState) => {
@@ -660,7 +670,7 @@ function saveData(dataToSave, callback, opts = {}) {
           const message = chrome.runtime.lastError.message || 'Storage error';
           // A full sync storage may be exactly why prompt sync was switched off.
           // The handoff must never be the reason a save fails: drop it, retry once.
-          if (mayDropHandoff && handoffKeys && /quota/i.test(message)) {
+          if (mayDropHandoff && handoffKeys && isStorageFullError(message)) {
             const drop = handoffKeys.concat('promptsHandoffAt');
             delete syncToSet.promptsHandoffAt;
             handoffKeys = null;
@@ -746,16 +756,7 @@ function bumpUsageStat(field, callback) {
 // change the bookmark tree (open/closed state) to avoid a full rebuild.
 // Callers that don't pass the extra params continue to work unchanged.
 function finishSave(callback, err = null, countSave = true, affectsBookmarks = true) {
-  if (affectsBookmarks) {
-    chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref', 'folderParents'], (syncData) => {
-      if (syncData.syncBookmarksEnabled) {
-        loadData({ folders: {} }, (data) => {
-          syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateDesc',
-            syncData.folderParents || {});
-        });
-      }
-    });
-  }
+  if (affectsBookmarks) resyncBookmarksFromStorage();
 
   if (countSave) bumpUsageStat('saves');
 
@@ -771,7 +772,20 @@ let pendingBookmarkSync = null;
 const isBookmarkSyncEnabled = () => new Promise(r =>
   chrome.storage.sync.get(['syncBookmarksEnabled'], (d) => r(!!(d && d.syncBookmarksEnabled))));
 
-async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateDesc', folderParents = {}) {
+// Rebuild the mirror from what is in storage now, if the feature is on.
+// opts.followUp marks the one extra rebuild step 6 below may ask for.
+function resyncBookmarksFromStorage(opts = {}) {
+  chrome.storage.sync.get(['syncBookmarksEnabled', 'pinnedFolders', 'sortPref', 'folderParents'], (syncData) => {
+    if (!syncData || !syncData.syncBookmarksEnabled) return;
+    loadData({ folders: {} }, (data) => {
+      syncToBookmarksTree(data.folders, syncData.pinnedFolders || [], syncData.sortPref || 'dateDesc',
+        syncData.folderParents || {}, opts);
+    });
+  });
+}
+
+async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateDesc', folderParents = {}, opts = {}) {
+  let resolvedDuplicates = false;
   // 1. A rebuild is already running: queue this one instead of dropping it.
   //    Dropping it meant a save made while the popup's opening rebuild ran was
   //    never mirrored — the tree stayed stale until the next save. Same
@@ -876,6 +890,7 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
       sized.sort((a, b) => b.size - a.size
         || String(a.id).localeCompare(String(b.id), undefined, { numeric: true }));
       keep = sized[0].id;
+      resolvedDuplicates = true;
     }
     for (const node of masters) {
       if (node.id !== keep) await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
@@ -888,6 +903,13 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
       const [nextFolders, nextPinned, nextSort, folderParents] = pendingBookmarkSync;
       pendingBookmarkSync = null;
       syncToBookmarksTree(nextFolders, nextPinned, nextSort, folderParents);
+    } else if (resolvedDuplicates && !opts.followUp) {
+      // The tree kept above is the largest, which is not necessarily the one
+      // built from the newest data: a delete in the popup builds a SMALLER tree
+      // than a quick-save that started a moment earlier from older data. Rebuild
+      // once from storage so the mirror ends up current. Only once: a follow-up
+      // never asks for another, so two builders cannot keep re-triggering.
+      resyncBookmarksFromStorage({ followUp: true });
     }
   }
 }
@@ -1510,6 +1532,7 @@ if (typeof module !== 'undefined') {
     saveData,
     finishSave,
     bumpUsageStat,
+    isStorageFullError,
     mergePromptEntry,
     decodePrompts,
     syncToBookmarksTree,

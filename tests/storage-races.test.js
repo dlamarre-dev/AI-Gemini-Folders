@@ -115,6 +115,25 @@ describe('prompt sync switched on elsewhere', () => {
     expect(prompts).toEqual({ Shared: { text: 'edited on B' }, Mine: { text: 'only on B' } });
   });
 
+  // Very old installs keep prompts under a plain local 'prompts' key. It is
+  // merged like the compressed copy, so it has to go with the same save, or a
+  // deleted prompt would come back from it on every load.
+  test('the legacy local prompts key is removed by the save too', async () => {
+    useStorage({
+      syncData: { syncPromptsEnabled: true, ...makeChunks(compressed({ Shared: { text: 'from A' } }), 'pdc') },
+      localData: { prompts: { Old: { text: 'legacy' } } },
+    });
+
+    const data = await load();
+    expect(data.prompts.Old.text).toBe('legacy');
+    delete data.prompts.Old;
+    await save({ prompts: data.prompts });
+    await settle();
+
+    expect(local.data.prompts).toBeUndefined();
+    expect((await load()).prompts).toEqual({ Shared: { text: 'from A' } });
+  });
+
   test('re-merging on every load until then adds nothing twice', async () => {
     useStorage({
       syncData: { syncPromptsEnabled: true, ...makeChunks(compressed({ Email: { text: 'A' }, 'Email (Imported)': { text: 'B' } }), 'pdc') },
@@ -405,6 +424,27 @@ describe('prompt sync switched off elsewhere', () => {
     expect(sync.data.pdcN).toBeUndefined();
     expect(sync.data.promptsHandoffAt).toBeUndefined();
     expect(sync.data.fdcN).toBe(1);
+  });
+
+  // Chrome reports its write-RATE limits as quotas too. That limit is gone a
+  // minute later; dropping the handoff for it would cost the devices that have
+  // not picked it up yet their whole library.
+  test('a write-rate error does not drop the handoff', async () => {
+    useStorage({
+      syncData: { syncPromptsEnabled: false, promptsHandoffAt: Date.now(), ...makeChunks(compressed(synced), 'pdc') },
+      localData: { promptsHandoffAdopted: 1 },
+    });
+    sync.set.mockImplementation((obj, cb) => {
+      chrome.runtime.lastError = { message: 'This request exceeds the MAX_WRITE_OPERATIONS_PER_MINUTE quota.' };
+      cb();
+      chrome.runtime.lastError = null;
+    });
+
+    expect(await save({ folders: { Dev: [] } })).toMatch(/MAX_WRITE_OPERATIONS_PER_MINUTE/);
+    await settle();
+
+    expect(sync.data.pdcN).toBeDefined();
+    expect(sync.data.promptsHandoffAt).toBeDefined();
   });
 
   test('a quota failure with no handoff to drop is still reported', async () => {
