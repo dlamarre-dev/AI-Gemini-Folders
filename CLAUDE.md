@@ -347,7 +347,18 @@ git checkout main && git pull --ff-only
   flips it here while this device's library is still in `storage.local`:
   `loadData` merges that local copy into the synced set (`mergePromptEntry`:
   synced entry wins, a clash arrives as `(Imported)`, `(Imported 2)`…) until a
-  prompt save has carried it into sync and removed it. `usageStats.saves` counts
+  prompt save has carried it into sync and removed it. **Switching it off** is
+  the mirror case — every other device would read a `storage.local` its last
+  synced save had emptied — so the switch-off leaves the `pdc` chunks in sync as
+  a **handoff** (`promptsHandoffAt`, sync) for `PROMPTS_HANDOFF_TTL` (30 days).
+  A device merges it into its local library (handoff wins, local clash
+  suffixed) until a prompt save marks it taken (`promptsHandoffAdopted`, local),
+  and only when that save's data really came from the merging load
+  (`mergedPromptsHandoff`); after that a deleted prompt stays deleted. The
+  handoff ends on expiry, on switching sync back on, or at once if a sync write
+  hits the quota (dropped and the write retried) — a full storage may be why the
+  user switched sync off, so the courtesy copy must never cost them a save.
+  `usageStats.saves` counts
   **conversation saves only**: callers opt in with `saveData(..., { countSave:
   true })` (popup Save, both context menus, both quick-saves), and both counters
   go through `bumpUsageStat`, which serializes the read-modify-write.

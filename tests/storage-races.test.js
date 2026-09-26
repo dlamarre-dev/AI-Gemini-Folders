@@ -166,25 +166,28 @@ describe('chunk cleanup with a concurrent writer', () => {
     for (let i = 1; i < largeChunks.fdcN; i++) expect(sync.data['fdc' + i]).toBeUndefined();
   });
 
-  test('switching prompt sync off keeps pdc chunks another device re-created', async () => {
-    const promptChunks = makeChunks(compressed({ P: { text: 'x'.repeat(6000) } }), 'pdc');
-    useStorage({ syncData: { syncPromptsEnabled: true, ...promptChunks } });
+  test('clearing leftover pdc chunks spares a set another device re-created', async () => {
+    // Prompt sync is off and no handoff is live, so the chunks are stale and a
+    // local prompt save clears them — unless another device has meanwhile
+    // written a new set, which now owns those keys.
+    const leftover = makeChunks(compressed({ P: { text: 'x'.repeat(6000) } }), 'pdc');
+    useStorage({ syncData: { syncPromptsEnabled: false, ...leftover } });
 
-    const realSet = sync.set.getMockImplementation();
-    sync.set.mockImplementation((obj, cb) => realSet(obj, () => {
-      // Another device writes a set of a different size meanwhile.
-      if (obj.syncPromptsEnabled === false) {
+    const realLocalSet = local.set.getMockImplementation();
+    local.set.mockImplementation((obj, cb) => realLocalSet(obj, () => {
+      if (obj.promptsDataCompressed) {
         Object.assign(sync.data, makeChunks(compressed({ Q: { text: 'y'.repeat(9000) } }), 'pdc'));
       }
       if (cb) cb();
     }));
 
-    await save({ prompts: { P: { text: 'x' } }, syncPromptsEnabled: false });
+    await save({ prompts: { P: { text: 'x' } } });
     await settle();
 
-    expect(sync.data.pdcN).toBeGreaterThan(promptChunks.pdcN);
+    expect(sync.data.pdcN).toBeGreaterThan(leftover.pdcN);
     for (let i = 0; i < sync.data.pdcN; i++) expect(sync.data['pdc' + i]).toBeDefined();
   });
+
 });
 
 // ---------------------------------------------------------------------------
@@ -255,5 +258,163 @@ describe('importing a clashing prompt twice', () => {
 
     const { prompts } = await load();
     expect(Object.keys(prompts).sort()).toEqual(['Email', 'Email (Imported)']);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Prompt sync switched OFF by another device (the prompts handoff)
+// ---------------------------------------------------------------------------
+
+describe('prompt sync switched off elsewhere', () => {
+  const DAY = 24 * 60 * 60 * 1000;
+  const synced = { Shared: { text: 'synced' }, Other: { text: 'also synced' } };
+
+  // Both devices have had sync on: the library lives in pdc, and neither holds a
+  // local copy any more (their last synced save removed it).
+  function bothDevicesSynced() {
+    useStorage({ syncData: { syncPromptsEnabled: true, ...makeChunks(compressed(synced), 'pdc') } });
+  }
+
+  // Device A switches it off, exactly as the toggle in prompts.js does.
+  async function deviceASwitchesOff() {
+    const data = await load();
+    expect(await save({ prompts: data.prompts, syncPromptsEnabled: false })).toBeNull();
+    await settle();
+  }
+
+  // Device B shares sync with A but has its own storage.local.
+  function becomeDeviceB(localData = {}) {
+    local = makeArea(localData);
+    chrome.storage.local.get = local.get;
+    chrome.storage.local.set = local.set;
+    chrome.storage.local.remove = local.remove;
+  }
+
+  test('the switch-off leaves the synced library behind as a handoff', async () => {
+    bothDevicesSynced();
+    await deviceASwitchesOff();
+
+    expect(sync.data.syncPromptsEnabled).toBe(false);
+    expect(sync.data.promptsHandoffAt).toEqual(expect.any(Number));
+    expect(sync.data.pdcN).toBeDefined();
+    // A has its own local copy now, and counts as having taken the handoff in.
+    expect(local.data.promptsDataCompressed).toBeDefined();
+    expect(local.data.promptsHandoffAdopted).toBe(sync.data.promptsHandoffAt);
+  });
+
+  test('another device still sees the library instead of an empty list', async () => {
+    bothDevicesSynced();
+    await deviceASwitchesOff();
+    becomeDeviceB();
+
+    const { prompts } = await load();
+
+    expect(prompts).toEqual(synced);
+  });
+
+  test('a stale local copy on that device is merged, the handoff winning a clash', async () => {
+    bothDevicesSynced();
+    await deviceASwitchesOff();
+    becomeDeviceB({ promptsDataCompressed: compressed({ Shared: { text: 'old local' }, Mine: { text: 'b' } }) });
+
+    const { prompts } = await load();
+
+    expect(prompts.Shared.text).toBe('synced');
+    expect(prompts['Shared (Imported)'].text).toBe('old local');
+    expect(prompts.Mine.text).toBe('b');
+  });
+
+  test('once taken in, a prompt that device deletes stays deleted', async () => {
+    bothDevicesSynced();
+    await deviceASwitchesOff();
+    becomeDeviceB();
+
+    const data = await load();
+    delete data.prompts.Other;
+    await save({ prompts: data.prompts });
+    await settle();
+
+    expect(local.data.promptsHandoffAdopted).toBe(sync.data.promptsHandoffAt);
+    const { prompts } = await load();
+    expect(prompts).toEqual({ Shared: { text: 'synced' } });
+    // ...and the handoff is still there for a third device.
+    expect(sync.data.pdcN).toBeDefined();
+  });
+
+  test('a handoff that arrived after the load is not marked adopted by the save', async () => {
+    useStorage({ syncData: { syncPromptsEnabled: false } });
+    const data = await load(); // nothing to merge yet
+    sync.data.promptsHandoffAt = Date.now() + 1; // a handoff this page never merged
+    Object.assign(sync.data, makeChunks(compressed(synced), 'pdc'));
+
+    await save({ prompts: { ...data.prompts, New: { text: 'n' } } });
+    await settle();
+
+    expect(local.data.promptsHandoffAdopted).toBeUndefined();
+    const { prompts } = await load();
+    expect(prompts).toEqual({ ...synced, New: { text: 'n' } });
+  });
+
+  test('an expired handoff is ignored and cleared by the next save', async () => {
+    useStorage({
+      syncData: { syncPromptsEnabled: false, promptsHandoffAt: Date.now() - 31 * DAY, ...makeChunks(compressed(synced), 'pdc') },
+      localData: { promptsDataCompressed: compressed({ Mine: { text: 'b' } }) },
+    });
+
+    expect((await load()).prompts).toEqual({ Mine: { text: 'b' } });
+    await save({ prompts: { Mine: { text: 'b2' } } });
+    await settle();
+
+    expect(sync.data.promptsHandoffAt).toBeUndefined();
+    expect(sync.data.pdcN).toBeUndefined();
+    expect(sync.data.pdc0).toBeUndefined();
+  });
+
+  test('switching sync back on ends the handoff', async () => {
+    bothDevicesSynced();
+    await deviceASwitchesOff();
+
+    const data = await load();
+    await save({ prompts: data.prompts, syncPromptsEnabled: true });
+    await settle();
+
+    expect(sync.data.promptsHandoffAt).toBeUndefined();
+    expect((await load()).prompts).toEqual(synced);
+  });
+
+  // A full sync storage may be why sync was switched off in the first place.
+  test('the handoff is dropped rather than let a save fail on quota', async () => {
+    useStorage({
+      syncData: { syncPromptsEnabled: false, promptsHandoffAt: Date.now(), ...makeChunks(compressed(synced), 'pdc') },
+      localData: { promptsHandoffAdopted: 1 },
+    });
+    const realSet = sync.set.getMockImplementation();
+    sync.set.mockImplementation((obj, cb) => {
+      if (sync.data.pdcN !== undefined) {
+        chrome.runtime.lastError = { message: 'QUOTA_BYTES quota exceeded' };
+        cb();
+        chrome.runtime.lastError = null;
+        return;
+      }
+      realSet(obj, cb);
+    });
+
+    expect(await save({ folders: { Dev: [] } })).toBeNull();
+    await settle();
+
+    expect(sync.data.pdcN).toBeUndefined();
+    expect(sync.data.promptsHandoffAt).toBeUndefined();
+    expect(sync.data.fdcN).toBe(1);
+  });
+
+  test('a quota failure with no handoff to drop is still reported', async () => {
+    useStorage();
+    sync.set.mockImplementation((obj, cb) => {
+      chrome.runtime.lastError = { message: 'QUOTA_BYTES quota exceeded' };
+      cb();
+      chrome.runtime.lastError = null;
+    });
+
+    expect(await save({ folders: { Dev: [] } })).toBe('QUOTA_BYTES quota exceeded');
   });
 });

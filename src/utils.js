@@ -24,6 +24,12 @@ const DATA_KEYS = ['folders', 'foldersDataCompressed', 'prompts', 'promptsDataCo
 // device-local by design — open/closed state no longer follows across devices.
 const LOCAL_UI_KEYS = ['openFolders', 'openPrompts'];
 
+// How long the synced prompt library outlives the switch-off of prompt sync
+// (the "prompts handoff", see loadData / saveData). Long enough for a device
+// used weekly or monthly to pick it up; short enough that the copy does not sit
+// in the shared 100 KB sync quota for good.
+const PROMPTS_HANDOFF_TTL = 30 * 24 * 60 * 60 * 1000;
+
 // ---------------------------------------------------------------------------
 // Storage chunk helpers
 // ---------------------------------------------------------------------------
@@ -364,6 +370,12 @@ function decodePrompts(raw) {
   }
 }
 
+// The handoff (promptsHandoffAt) that the last loadData in this page merged into
+// the prompts it returned. saveData marks a handoff adopted only when it is this
+// one: a handoff that arrived between the load and the save was never merged,
+// and marking it adopted would drop it for good.
+let mergedPromptsHandoff = null;
+
 function loadData(defaults, callback) {
   chrome.storage.sync.get(null, (syncResult) => {
     chrome.storage.local.get(null, (localResult) => {
@@ -428,8 +440,34 @@ function loadData(defaults, callback) {
             }
             finalData.prompts = merged;
           }
-        } else if (localPrompts) {
-          finalData.prompts = localPrompts;
+        } else {
+          if (localPrompts) finalData.prompts = localPrompts;
+          // Prompts handoff. Switching prompt sync OFF on one device switches it
+          // off everywhere (same sync key), and every other device then reads its
+          // own storage.local — which its last synced save deleted, so its
+          // library looked empty. The switch-off therefore leaves the synced copy
+          // in place for a while (promptsHandoffAt), and a device that has not
+          // taken it in yet (promptsHandoffAdopted, device-local) merges it here.
+          // The handoff is the most recent shared state, so it wins; whatever this
+          // device still held locally arrives suffixed on a clash. Once a prompt
+          // save has written the merged set locally, saveData marks the handoff
+          // adopted and it is never merged again, so a prompt deleted afterwards
+          // stays deleted.
+          const handoffAt = syncResult.promptsHandoffAt;
+          if (handoffAt && localResult.promptsHandoffAdopted !== handoffAt
+              && Date.now() - handoffAt < PROMPTS_HANDOFF_TTL) {
+            const handoff = decodePrompts(assembleChunks(syncResult, 'pdc'));
+            if (handoff) {
+              const merged = Object.assign({}, handoff);
+              for (const [title, data] of Object.entries(localPrompts || {})) {
+                if (typeof title !== 'string' || isUnsafeKey(title)) continue;
+                const normalized = normalizePromptData(data);
+                if (normalized) mergePromptEntry(merged, title, normalized);
+              }
+              finalData.prompts = merged;
+              mergedPromptsHandoff = handoffAt;
+            }
+          }
         }
       }
       callback(finalData);
@@ -441,7 +479,8 @@ function loadData(defaults, callback) {
 // button, the right-click menu and the quick-save shortcut). See finishSave.
 function saveData(dataToSave, callback, opts = {}) {
   // Also fetch current chunk counts so we can clean up stale chunks from previous larger saves.
-  chrome.storage.sync.get(['syncPromptsEnabled', 'fdcN', 'pdcN'], (syncState) => {
+  chrome.storage.sync.get(['syncPromptsEnabled', 'fdcN', 'pdcN', 'promptsHandoffAt'], (syncState) => {
+    chrome.storage.local.get(['promptsHandoffAdopted'], (localState) => {
     const isPromptsSyncEnabled = dataToSave.syncPromptsEnabled !== undefined
       ? dataToSave.syncPromptsEnabled
       : syncState.syncPromptsEnabled;
@@ -456,6 +495,15 @@ function saveData(dataToSave, callback, opts = {}) {
     // relative to the pointer this save saw or wrote; runCleanup re-checks it.
     // Anything else in syncToRemove (legacy single keys) is unconditional.
     const chunkGuards = [];
+    // The prompts handoff this save leaves in sync, if any. It is a courtesy
+    // copy: when it is what stands between this save and the quota, it goes.
+    let handoffKeys = null;
+    const pdcKeys = (n, withPointer) => {
+      const keys = [];
+      for (let i = 0; i < (n || 0); i++) keys.push('pdc' + i);
+      if (withPointer) keys.push('pdcN');
+      return keys;
+    };
 
     // Pass through non-data keys (sortPref, pinnedFolders, etc.) to sync as-is,
     // except the device-local UI-state keys which go to storage.local.
@@ -513,15 +561,48 @@ function saveData(dataToSave, callback, opts = {}) {
         syncToRemove.push('promptsDataCompressed'); // remove legacy sync key
         // The local copy is the only remaining backup until sync confirms.
         localToRemove.push('promptsDataCompressed');
+        // The pdc chunks are live again, so any handoff is over.
+        if (syncState.promptsHandoffAt !== undefined) syncToRemove.push('promptsHandoffAt');
       } else {
         localToSet.promptsDataCompressed = compressed;
-        const oldSyncPdcN = syncState.pdcN || 0;
-        const stale = [];
-        for (let i = 0; i < oldSyncPdcN; i++) stale.push('pdc' + i);
-        if (syncState.pdcN !== undefined) stale.push('pdcN');
-        chunkGuards.push({ pointer: 'pdcN', expected: syncState.pdcN, keys: stale });
         syncToRemove.push('promptsDataCompressed');
+
+        const switchingOff = dataToSave.syncPromptsEnabled === false
+          && syncState.syncPromptsEnabled === true && syncState.pdcN !== undefined;
+        const handoffLive = syncState.promptsHandoffAt !== undefined
+          && Date.now() - syncState.promptsHandoffAt < PROMPTS_HANDOFF_TTL;
+
+        if (switchingOff) {
+          // Leave the synced library where it is, as the handoff the other
+          // devices pick up (loadData). This device has just written it locally.
+          const handoffAt = Date.now();
+          syncToSet.promptsHandoffAt = handoffAt;
+          localToSet.promptsHandoffAdopted = handoffAt;
+          handoffKeys = pdcKeys(syncState.pdcN, true);
+        } else if (handoffLive) {
+          // Still inside the window: keep it for devices not opened yet. This
+          // save carries the handoff only if loadData merged it in this page.
+          if (localState.promptsHandoffAdopted !== syncState.promptsHandoffAt
+              && mergedPromptsHandoff === syncState.promptsHandoffAt) {
+            localToSet.promptsHandoffAdopted = syncState.promptsHandoffAt;
+          }
+          handoffKeys = pdcKeys(syncState.pdcN, true);
+        } else {
+          // No handoff, or an expired one: the chunks are simply stale now.
+          chunkGuards.push({
+            pointer: 'pdcN',
+            expected: syncState.pdcN,
+            keys: pdcKeys(syncState.pdcN, syncState.pdcN !== undefined),
+          });
+          if (syncState.promptsHandoffAt !== undefined) syncToRemove.push('promptsHandoffAt');
+        }
       }
+    }
+    // Any save can hit the quota, not only a prompt save: a conversation save on
+    // a nearly full sync storage must be able to free the handoff as well.
+    if (!handoffKeys && !isPromptsSyncEnabled && !dataToSave.prompts
+        && syncState.promptsHandoffAt !== undefined) {
+      handoffKeys = pdcKeys(syncState.pdcN, true);
     }
 
     // Delete the superseded keys only once the replacement has actually landed.
@@ -574,15 +655,30 @@ function saveData(dataToSave, callback, opts = {}) {
       }
       // The new chunks AND their fdcN/pdcN pointer go out in this one set, whose
       // quota check Chrome evaluates as a unit — so this call is the commit point.
-      chrome.storage.sync.set(syncToSet, () => {
+      const commit = (mayDropHandoff) => chrome.storage.sync.set(syncToSet, () => {
         if (chrome.runtime.lastError) {
+          const message = chrome.runtime.lastError.message || 'Storage error';
+          // A full sync storage may be exactly why prompt sync was switched off.
+          // The handoff must never be the reason a save fails: drop it, retry once.
+          if (mayDropHandoff && handoffKeys && /quota/i.test(message)) {
+            const drop = handoffKeys.concat('promptsHandoffAt');
+            delete syncToSet.promptsHandoffAt;
+            handoffKeys = null;
+            chrome.storage.sync.remove(drop, () => {
+              if (Object.keys(syncToSet).length > 0) { commit(false); return; }
+              runCleanup();
+              finishSave(callback, null, countSave, affectsBookmarks);
+            });
+            return;
+          }
           // Nothing was deleted, so the previous state is still intact and readable.
-          if (callback) callback(chrome.runtime.lastError.message || 'Storage error');
+          if (callback) callback(message);
           return;
         }
         runCleanup();
         finishSave(callback, null, countSave, affectsBookmarks);
       });
+      commit(true);
     };
 
     if (Object.keys(localToSet).length > 0) {
@@ -604,6 +700,7 @@ function saveData(dataToSave, callback, opts = {}) {
     } else {
       doSyncSave();
     }
+    });
   });
 }
 
