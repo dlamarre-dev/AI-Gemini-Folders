@@ -484,11 +484,13 @@ describe('export button', () => {
 // monitor: window 503px high for a 600px document, so Chrome added a scrollbar
 // beside body's own and the bottom of the list was out of reach.
 describe('fitPopupToWindow', () => {
+  beforeEach(() => {
+    document.body.style.padding = '8px 16px 16px 16px';
+    document.body.style.maxHeight = '';
+  });
   function layout({ windowHeight, documentHeight }) {
     Object.defineProperty(window, 'innerHeight', { value: windowHeight, configurable: true });
     Object.defineProperty(document.documentElement, 'scrollHeight', { value: documentHeight, configurable: true });
-    document.body.style.padding = '8px 16px 16px 16px';
-    document.body.style.maxHeight = '';
   }
 
   test('a window shorter than the document shrinks body to fit it', () => {
@@ -503,11 +505,25 @@ describe('fitPopupToWindow', () => {
     expect(document.body.style.maxHeight).toBe('');
   });
 
-  test('back on a taller screen, the cap is lifted again', () => {
+  // The first version lifted the cap to measure on every resize, and the popup
+  // shook between two widths. Once fitted, a resize that changes only the width
+  // (Chrome dropping the scrollbar allowance) must change nothing.
+  test('once fitted, a width-only resize leaves the cap alone', () => {
     layout({ windowHeight: 503, documentHeight: 600 });
     window.fitPopupToWindow();
-    layout({ windowHeight: 600, documentHeight: 600 });
-    document.body.style.maxHeight = '479px';
+    layout({ windowHeight: 503, documentHeight: 503 });
+    const writes = [];
+    for (let i = 0; i < 5; i++) { window.fitPopupToWindow(); writes.push(document.body.style.maxHeight); }
+    expect(writes).toEqual(Array(5).fill('479px'));
+  });
+
+  test('a window that grows without overflow lifts the cap, up to popup.css', () => {
+    layout({ windowHeight: 503, documentHeight: 600 });
+    window.fitPopupToWindow();
+    layout({ windowHeight: 550, documentHeight: 503 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('526px');
+    layout({ windowHeight: 600, documentHeight: 550 });
     window.fitPopupToWindow();
     expect(document.body.style.maxHeight).toBe('');
   });

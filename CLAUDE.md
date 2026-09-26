@@ -312,6 +312,11 @@ git checkout main && git pull --ff-only
     (`popup-core.js`) lowers `body`'s cap to the window Chrome actually gave,
     in JS because a `vh`-based cap can keep a popup collapsed while Chrome is
     still sizing it. It touches neither `overflow-y` nor `scrollbar-gutter`.
+    **It must never lift the cap just to measure**: a first version did, on
+    every `resize`, and the popup shook for seconds (overflow → Chrome widens
+    for a scrollbar → resize → cap → Chrome narrows → resize → …), settling on
+    the wide width. The cap only goes down on overflow and up on a taller
+    window without overflow, so a width-only resize changes nothing.
     The lesson for this family: measure first (`devicePixelRatio`,
     `innerWidth`/`innerHeight`, `documentElement` scroll vs client sizes) —
     the diagnosis without numbers had blamed the scale factor.

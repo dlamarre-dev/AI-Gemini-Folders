@@ -237,23 +237,33 @@ window.initSaveConversation = initSaveConversation;
 // Shrink body to the window it actually got instead. Done in JS rather than
 // with calc(100vh - 24px): in a popup, vh is the window's current size, which
 // starts tiny while Chrome is still sizing it to the content, so a vh-based
-// cap could keep the popup collapsed. The same trap applies here, hence:
-// - measure with popup.css's own cap restored, so a cap set from a transient
-//   size is undone on the next check (Chrome grows the window again, which
-//   fires another resize, which measures again);
-// - wait for 'load' before the first check;
-// - never act below POPUP_MIN_CAPPED_HEIGHT, which no real screen caps a popup to.
+// cap could keep the popup collapsed. Windows under POPUP_MIN_CAPPED_HEIGHT,
+// which no real screen caps a popup to, are ignored for the same reason.
+//
+// Never lift the cap just to measure. A first version restored popup.css's cap
+// on every resize: the document went back to 600px, overflowed, Chrome widened
+// the window for a scrollbar, which fired resize, which capped again, Chrome
+// narrowed it, resize... The popup shook for seconds and settled on the wide
+// width. So the cap only moves one way per cause: DOWN when the document
+// overflows the window, UP only when the window grew without any overflow. A
+// resize that changes nothing but the width touches neither, which is what
+// ends the loop.
+const POPUP_BODY_MAX_HEIGHT = 576; // popup.css
 const POPUP_MIN_CAPPED_HEIGHT = 300;
 function fitPopupToWindow() {
   const body = document.body;
   if (!body) return;
-  body.style.maxHeight = '';
-  const style = getComputedStyle(body);
-  const padding = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
   const height = window.innerHeight;
   if (height < POPUP_MIN_CAPPED_HEIGHT) return;
+  const style = getComputedStyle(body);
+  const padding = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
+  const fits = Math.floor(height - padding);
+  const current = parseFloat(body.style.maxHeight) || POPUP_BODY_MAX_HEIGHT;
+
   if (document.documentElement.scrollHeight > height) {
-    body.style.maxHeight = Math.floor(height - padding) + 'px';
+    if (fits < current) body.style.maxHeight = fits + 'px';
+  } else if (body.style.maxHeight && fits > current) {
+    body.style.maxHeight = fits >= POPUP_BODY_MAX_HEIGHT ? '' : fits + 'px';
   }
 }
 
