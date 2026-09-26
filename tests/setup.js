@@ -27,6 +27,7 @@ global.chrome = {
     search:     jest.fn(),
     create:     jest.fn(),
     removeTree: jest.fn(),
+    getSubTree: jest.fn(),
   },
   tabs: {
     create: jest.fn(),

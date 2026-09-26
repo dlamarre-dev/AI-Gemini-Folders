@@ -320,7 +320,7 @@ describe('syncToBookmarksTree', () => {
 
   // The popup and the service worker each hold their own lock, so both can
   // build at once. Each keeps the same winner (lowest id) and removes the rest.
-  test('a second master folder left by a concurrent builder is removed', async () => {
+  function twoMasters(sizes) {
     let searches = 0;
     chrome.bookmarks.search = jest.fn((_q, cb) => {
       searches++;
@@ -330,8 +330,23 @@ describe('syncToBookmarksTree', () => {
         { id: 'node9', title: 'masterFolderName' },
       ]);
     });
+    const tree = (n) => ({ children: Array.from({ length: n }, () => ({})) });
+    chrome.bookmarks.getSubTree = jest.fn((id, cb) => cb([tree(sizes[id])]));
+  }
+
+  test('a second, equally complete master folder is removed (lowest id wins the tie)', async () => {
+    twoMasters({ node0: 2, node9: 2 });
     await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
     expect(chrome.bookmarks.removeTree.mock.calls.map((c) => c[0])).toEqual(['node9']);
   });
+
+  // The popup's rebuild dies whenever the popup closes. A partial tree with the
+  // lower id must not win over the complete one.
+  test('a partial tree left by a killed builder loses to the complete one', async () => {
+    twoMasters({ node0: 1, node9: 5 });
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(chrome.bookmarks.removeTree.mock.calls.map((c) => c[0])).toEqual(['node0']);
+  });
+
 
 });

@@ -855,14 +855,28 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
     // 6. Settle on exactly one master folder. The popup and the service worker
     //    each have their own isSyncingToBookmarks, so both can rebuild at once
     //    and leave two trees. Each builder keeps the same deterministic winner
-    //    (lowest id) and removes the rest, so they cannot remove each other's
-    //    and end with none. A switch-off during the build removes ours too.
+    //    and removes the rest, so they cannot remove each other's and end with
+    //    none. The winner is the LARGEST tree (lowest id breaks a tie), not
+    //    simply the lowest id: the popup's rebuild dies whenever the popup
+    //    closes, leaving a partial tree, and that must never beat a complete
+    //    one. A switch-off during the build removes ours too.
     const enabled = await isBookmarkSyncEnabled();
     const masters = (await new Promise(r => chrome.bookmarks.search({ title: MASTER_FOLDER_NAME }, r)) || [])
       .filter(n => !n.url && n.title === MASTER_FOLDER_NAME);
-    const keep = enabled
-      ? masters.map(n => n.id).sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true }))[0]
-      : null;
+    let keep = null;
+    if (enabled && masters.length === 1) {
+      keep = masters[0].id;
+    } else if (enabled && masters.length > 1) {
+      const countNodes = (node) => 1 + (node.children || []).reduce((sum, c) => sum + countNodes(c), 0);
+      const sized = [];
+      for (const node of masters) {
+        const tree = await new Promise(r => chrome.bookmarks.getSubTree(node.id, r));
+        sized.push({ id: node.id, size: tree && tree[0] ? countNodes(tree[0]) : 0 });
+      }
+      sized.sort((a, b) => b.size - a.size
+        || String(a.id).localeCompare(String(b.id), undefined, { numeric: true }));
+      keep = sized[0].id;
+    }
     for (const node of masters) {
       if (node.id !== keep) await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
     }
