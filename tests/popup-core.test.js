@@ -415,3 +415,63 @@ describe('new folder button', () => {
       expect(global.saveData).not.toHaveBeenCalled();
     });
 });
+
+// ---------------------------------------------------------------------------
+// Export
+// ---------------------------------------------------------------------------
+
+// loadData copies every stored key, and the backup used to be that object as-is:
+// the raw fdc*/pdc* chunks (the whole library again, compressed) plus device
+// state like localLlmUrl, usageStats, installedAt and reuseTabId.
+describe('export button', () => {
+  const IDS = [
+    'newFolderBtn', 'searchInput', 'sortToggleBtn', 'sortMenu', 'modeFolderBtn',
+    'modePromptBtn', 'folderModeContainer', 'promptModeContainer', 'promptSearchInput',
+    'toggleAddPanelBtn', 'addConversationPanel', 'exportBtn', 'importBtn', 'importFile',
+    'syncBookmarksToggle', 'syncBookmarksLabel', 'syncPromptsLabel', 'githubLink', 'kofiBtn',
+  ];
+
+  test('writes the user content and sort preferences only', async () => {
+    document.body.innerHTML = IDS.map((id) => `<div id="${id}"></div>`).join('');
+    const stored = {
+      folders: { Dev: [{ title: 't', url: 'https://a/1', timestamp: 1 }] },
+      pinnedFolders: ['Dev'],
+      prompts: { P: { text: 'x' } },
+      folderParents: {},
+      sortPref: 'alphaAsc',
+      promptSortPref: 'dateDesc',
+      fdcN: 1, fdc0: 'C:{...}', pdcN: 1, pdc0: 'C:{...}',
+      localLlmUrl: 'http://localhost:3000',
+      usageStats: { saves: 3, opens: 9 },
+      installedAt: '2026-01-01',
+      reuseTabId: 42,
+      syncBookmarksEnabled: true,
+    };
+    global.loadData = jest.fn((defaults, cb) => cb({ ...defaults, ...JSON.parse(JSON.stringify(stored)) }));
+    global.saveData = jest.fn((data, cb) => cb && cb());
+    global.window.displayFolders = jest.fn();
+    global.window.displayPrompts = jest.fn();
+    global.window.showCustomModal = jest.fn(() => Promise.resolve(true));
+    chrome.storage.sync.get = jest.fn((_keys, cb) => cb && cb({}));
+    chrome.storage.sync.set = jest.fn((_v, cb) => cb && cb());
+
+    let written = null;
+    const RealBlob = global.Blob;
+    global.Blob = class { constructor(parts) { written = parts.join(''); } };
+    global.URL.createObjectURL = jest.fn(() => 'blob:x');
+    global.URL.revokeObjectURL = jest.fn();
+    // The download link: jsdom would try to navigate to it.
+    const clickSpy = jest.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+    try {
+      window.initPopupCommon({ exportFilename: 'backup.json' });
+      document.getElementById('exportBtn').click();
+      await flush();
+    } finally {
+      global.Blob = RealBlob;
+      clickSpy.mockRestore();
+    }
+
+    expect(Object.keys(JSON.parse(written)).sort()).toEqual(
+      ['folderParents', 'folders', 'pinnedFolders', 'promptSortPref', 'prompts', 'sortPref']);
+  });
+});

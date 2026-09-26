@@ -558,6 +558,12 @@ function buildFolderElement(folderName, ctx, isChild) {
   return folderDiv;
 }
 
+// Re-render with the current search term, keeping whatever is open.
+function refreshFolderList() {
+  const searchInput = document.getElementById('searchInput');
+  displayFolders(collectOpenFolders(), searchInput ? searchInput.value.toLowerCase() : "");
+}
+
 async function renameChat(folderName, chatUrl, currentTitle) {
   const newTitle = await window.showCustomModal({
     title: chrome.i18n.getMessage("promptRename") || "New conversation name:",
@@ -567,6 +573,11 @@ async function renameChat(folderName, chatUrl, currentTitle) {
   if (newTitle !== null && newTitle.trim() !== "") {
     loadData({ folders: {} }, (data) => {
       let folders = data.folders;
+      // The folder may have been deleted or renamed on another device (or by the
+      // service worker) while the popup was open: folders[name] is then missing
+      // and .findIndex threw inside the storage callback, so the action silently
+      // did nothing. Re-render instead, which shows the folder is gone.
+      if (!hasEntry(folders, folderName)) { refreshFolderList(); return; }
       // Find the real index in the database via URL
       const realIndex = folders[folderName].findIndex(c => c.url === chatUrl);
       if (realIndex !== -1) {
@@ -584,6 +595,7 @@ async function renameChat(folderName, chatUrl, currentTitle) {
 function deleteChat(folderName, chatUrl) {
   loadData({ folders: {} }, (data) => {
     let folders = data.folders;
+    if (!hasEntry(folders, folderName)) { refreshFolderList(); return; } // see renameChat
     const realIndex = folders[folderName].findIndex(c => c.url === chatUrl);
     if (realIndex !== -1) {
       folders[folderName].splice(realIndex, 1);
@@ -599,6 +611,7 @@ function deleteChat(folderName, chatUrl) {
 function moveChat(sourceFolder, targetFolder, chatUrl) {
   loadData({ folders: {}, openFolders: [], folderParents: {} }, (data) => {
     let folders = data.folders;
+    if (!hasEntry(folders, sourceFolder)) { refreshFolderList(); return; } // see renameChat
 
     const realIndex = folders[sourceFolder].findIndex(c => c.url === chatUrl);
     if (realIndex === -1) return;

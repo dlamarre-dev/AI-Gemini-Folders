@@ -488,9 +488,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 // failure toast rather than "✅ Saved!". The old `new Promise(r => saveData(d, r))`
 // resolved *with* the error and dropped it; there is no window in a service
 // worker either, so utils.js's modal fallback never fires here.
-async function saveOrReportError(dataToSave) {
+async function saveOrReportError(dataToSave, opts) {
   try {
-    await saveDataAsync(dataToSave);
+    await saveDataAsync(dataToSave, opts);
     return null;
   } catch (err) {
     console.error("Save failed:", err);
@@ -554,7 +554,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
       const chatEntry = { title: finalTitle, url: tab.url, timestamp: Date.now() };
       if (siteKey) chatEntry.site = siteKey;
       folders[targetFolder].push(chatEntry);
-      const saveError = await saveOrReportError({ folders });
+      const saveError = await saveOrReportError({ folders }, { countSave: true });
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
         args: saveError
@@ -625,7 +625,7 @@ chrome.commands.onCommand.addListener(async (command) => {
       const chatEntry = { title: finalTitle, url: tab.url, timestamp: Date.now() };
       if (siteKey) chatEntry.site = siteKey;
       folders[targetFolder].push(chatEntry);
-      const saveError = await saveOrReportError({ folders });
+      const saveError = await saveOrReportError({ folders }, { countSave: true });
 
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },

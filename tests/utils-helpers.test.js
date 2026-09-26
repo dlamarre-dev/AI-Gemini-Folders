@@ -10,6 +10,7 @@ const {
   sortChats,
   normalizePromptData,
   syncToBookmarksTree,
+  isStorageFullError,
   modifierKeyLabel,
 } = require('../src/utils');
 
@@ -167,6 +168,21 @@ describe('normalizePromptData', () => {
 // syncToBookmarksTree
 // ---------------------------------------------------------------------------
 
+describe('isStorageFullError', () => {
+  test.each([
+    ['QUOTA_BYTES quota exceeded', true],
+    ['QUOTA_BYTES_PER_ITEM quota exceeded', true],
+    ['QuotaExceededError: storage.sync API call exceeded its quota limitations.', true],
+    // Rate limits are reported as quotas too, but are gone a minute later.
+    ['This request exceeds the MAX_WRITE_OPERATIONS_PER_MINUTE quota.', false],
+    ['This request exceeds the MAX_WRITE_OPERATIONS_PER_HOUR quota.', false],
+    ['MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE quota exceeded', false],
+    ['Some other storage error', false],
+  ])('%s → %s', (message, expected) => {
+    expect(isStorageFullError(message)).toBe(expected);
+  });
+});
+
 describe('syncToBookmarksTree', () => {
   let order;
 
@@ -182,6 +198,8 @@ describe('syncToBookmarksTree', () => {
       order.push('create:' + (obj.url ? `chat(${obj.title})` : `folder(${obj.title})`));
       cb && cb({ id: 'node' + seq++, ...obj });
     });
+    // The rebuild re-checks the setting before creating the master folder.
+    chrome.storage.sync.get = jest.fn((_keys, cb) => cb({ syncBookmarksEnabled: true }));
   });
 
   test('clears stale master trees before rebuilding, in sorted order', async () => {
@@ -295,14 +313,80 @@ describe('syncToBookmarksTree', () => {
     }
   });
 
-  test('a re-entrant call while a sync is in flight is ignored', async () => {
-    const folders = { A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] };
-    const first = syncToBookmarksTree(folders, [], 'dateDesc'); // holds the lock
-    await syncToBookmarksTree(folders, [], 'dateDesc'); // should bail out immediately
+  // A request arriving mid-rebuild used to be dropped, so a save made while the
+  // popup's opening rebuild ran was never mirrored. It is queued now: the two
+  // calls never overlap, and the second one's (fresher) data is what ends up
+  // in the tree.
+  test('a call made while a sync is in flight is queued and re-run afterwards', async () => {
+    const first = syncToBookmarksTree({ A: [{ title: 'old', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    await syncToBookmarksTree({ A: [{ title: 'new', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
     await first;
-    // Only one master folder was created despite two calls.
-    const masters = chrome.bookmarks.create.mock.calls
-      .filter((c) => c[0].title === 'masterFolderName');
-    expect(masters).toHaveLength(1);
+    await new Promise((r) => setTimeout(r, 200)); // the queued rebuild
+    expect(order.filter((o) => o === 'create:folder(masterFolderName)')).toHaveLength(2);
+    // The queued run starts only after the first has created everything.
+    expect(order.indexOf('create:chat(old)')).toBeLessThan(order.lastIndexOf('create:folder(masterFolderName)'));
+    expect(order[order.length - 1]).toBe('create:chat(new)');
   });
+
+  test('switching the feature off mid-rebuild creates no master folder', async () => {
+    chrome.storage.sync.get = jest.fn((_keys, cb) => cb({ syncBookmarksEnabled: false }));
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(order).toEqual(['remove:stale']);
+  });
+
+  // The popup and the service worker each hold their own lock, so both can
+  // build at once. Each keeps the same winner (lowest id) and removes the rest.
+  function twoMasters(sizes) {
+    let searches = 0;
+    chrome.bookmarks.search = jest.fn((_q, cb) => {
+      searches++;
+      // 1st search: pre-build cleanup finds nothing. 2nd: ours (node0) + another.
+      cb(searches === 1 ? [] : [
+        { id: 'node0', title: 'masterFolderName' },
+        { id: 'node9', title: 'masterFolderName' },
+      ]);
+    });
+    const tree = (n) => ({ children: Array.from({ length: n }, () => ({})) });
+    chrome.bookmarks.getSubTree = jest.fn((id, cb) => cb([tree(sizes[id])]));
+  }
+
+  test('a second, equally complete master folder is removed (lowest id wins the tie)', async () => {
+    twoMasters({ node0: 2, node9: 2 });
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(chrome.bookmarks.removeTree.mock.calls.map((c) => c[0])).toEqual(['node9']);
+  });
+
+  // The largest tree is not necessarily the newest: a delete builds a smaller
+  // tree than a quick-save that started earlier from older data. So resolving
+  // duplicates asks for one rebuild from storage — and a follow-up never asks
+  // for another, or two builders could keep re-triggering each other.
+  const askedForResync = () => chrome.storage.sync.get.mock.calls
+    .some((c) => Array.isArray(c[0]) && c[0].includes('pinnedFolders'));
+
+  test('resolving duplicates queues one rebuild from fresh storage', async () => {
+    twoMasters({ node0: 2, node9: 2 });
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(askedForResync()).toBe(true);
+  });
+
+  test('a follow-up rebuild does not queue another', async () => {
+    twoMasters({ node0: 2, node9: 2 });
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc', {}, { followUp: true });
+    expect(askedForResync()).toBe(false);
+  });
+
+  test('a normal rebuild with a single tree queues nothing', async () => {
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(askedForResync()).toBe(false);
+  });
+
+  // The popup's rebuild dies whenever the popup closes. A partial tree with the
+  // lower id must not win over the complete one.
+  test('a partial tree left by a killed builder loses to the complete one', async () => {
+    twoMasters({ node0: 1, node9: 5 });
+    await syncToBookmarksTree({ A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] }, [], 'dateDesc');
+    expect(chrome.bookmarks.removeTree.mock.calls.map((c) => c[0])).toEqual(['node0']);
+  });
+
+
 });

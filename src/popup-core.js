@@ -221,7 +221,7 @@ function initSaveConversation(opts) {
         // Expand the parent too, or a conversation saved into a sub-folder
         // lands inside a collapsed folder and looks lost.
         if (window.displayFolders) window.displayFolders(folderOpenPath(folders, folderParents, folderName));
-      });
+      }, { countSave: true });
     });
   });
 }
@@ -438,9 +438,20 @@ function initPopupCommon(config) {
   // --- Export ---
   const exportBtn = document.getElementById('exportBtn');
   exportBtn.addEventListener('click', async () => {
-    // folderParents is listed only so a user with no sub-folders still exports a
-    // predictable {} — loadData already copies whatever is in storage.
-    loadData({ folders: {}, pinnedFolders: [], prompts: {}, folderParents: {} }, async (data) => {
+    // loadData copies every stored key, so writing `data` out as-is exported the
+    // raw fdc*/pdc* chunks (the whole library a second time, compressed) and
+    // device state such as localLlmUrl, usageStats, installedAt and reuseTabId.
+    // A backup carries the user's content and its two sort preferences only —
+    // exactly what mergeImportData and the sort menus read back.
+    loadData({ folders: {}, pinnedFolders: [], prompts: {}, folderParents: {} }, async (stored) => {
+      const data = {
+        folders: stored.folders,
+        pinnedFolders: stored.pinnedFolders,
+        prompts: stored.prompts,
+        folderParents: stored.folderParents,
+      };
+      if (stored.sortPref !== undefined) data.sortPref = stored.sortPref;
+      if (stored.promptSortPref !== undefined) data.promptSortPref = stored.promptSortPref;
       if (Object.keys(data.folders).length === 0 && Object.keys(data.prompts).length === 0) {
         await window.showCustomModal({
           title: chrome.i18n.getMessage("alertEmptyExport") || "Your folders and prompts are empty, nothing to export!",

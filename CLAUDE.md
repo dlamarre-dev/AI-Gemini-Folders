@@ -12,7 +12,7 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome, Edge **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.3**.
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.4**.
 - **AI Folders (AF)** — 17 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, Pi, Character.AI) **+ a user-configured local LLM**. You.com was
@@ -38,7 +38,7 @@ conversations into folders and provide a reusable prompt library:
   declared **before** the redirect lands, which is the whole lesson of #82 and of
   the Baidu move (§8): a manifest match pattern cannot follow a 302, so a host
   added only once users complain is a host that was broken for a month.
-  Current version **1.7.3**. The popup's per-site "new conversation" buttons
+  Current version **1.7.4**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -329,7 +329,12 @@ git checkout main && git pull --ff-only
   (as the code did until 2026-08) loses data on a failed write: the shrink case
   deletes the tail chunks, the set fails, the surviving pointer references keys
   that are gone, `assembleChunks` returns garbage, and `loadData` silently falls
-  back to `{}` — every folder appears empty. **Do not "fix" this with generation-
+  back to `{}` — every folder appears empty. `runCleanup` also **re-reads
+  `fdcN`/`pdcN` before removing numbered chunks** and skips a range whose pointer
+  no longer holds the value this save left: another writer (popup + service
+  worker, or another device) may have committed a larger set in between, and
+  deleting "our" stale range would then eat its live chunks. Skipping costs only
+  an invisible stale chunk. **Do not "fix" this with generation-
   prefixed chunks:** two generations coexisting doubles peak usage against a
   *shared* 100 KB ceiling, so anyone above ~50 % would stop being able to save at
   all — a worse regression than the bug, for a guarantee the single set already
@@ -337,7 +342,37 @@ git checkout main && git pull --ff-only
   *and* local failures, `mergeImportData` rejects, and both `background.js` use
   `saveDataAsync`/`saveOrReportError` so a failed quick-save shows
   `storageFullError` instead of "✅ Saved!" (a service worker has no `window`, so
-  the modal fallback never fires there). UI open-state (`openFolders`/`openPrompts`) lives
+  the modal fallback never fires there).
+  **`syncPromptsEnabled` is itself a sync key**, so turning it on elsewhere
+  flips it here while this device's library is still in `storage.local`:
+  `loadData` merges that local copy into the synced set (`mergePromptEntry`:
+  synced entry wins, a clash arrives as `(Imported)`, `(Imported 2)`…) until a
+  prompt save has carried it into sync and removed it. **Switching it off** is
+  the mirror case — every other device would read a `storage.local` its last
+  synced save had emptied — so the switch-off leaves the `pdc` chunks in sync as
+  a **handoff** (`promptsHandoffAt`, sync) for `PROMPTS_HANDOFF_TTL` (30 days).
+  A device merges it into its local library (handoff wins, local clash
+  suffixed) until a prompt save marks it taken (`promptsHandoffAdopted`, local),
+  and only when that save's data really came from the merging load
+  (`mergedPromptsHandoff`); after that a deleted prompt stays deleted. The
+  handoff ends on expiry, on switching sync back on, or at once if a sync write
+  hits the quota (dropped and the write retried) — a full storage may be why the
+  user switched sync off, so the courtesy copy must never cost them a save.
+  Only a storage-full error drops it (`isStorageFullError`): Chrome words its
+  write-*rate* limits as quotas too, and those clear within a minute.
+  **Known limit, accepted:** both merges are unions, so a device's lingering
+  local copy can undo a deletion made elsewhere. If C still holds prompt S
+  locally when B deletes S from sync, C's next open merges S back and C's next
+  prompt save re-publishes it. C cannot tell "deleted on B" from "only ever on
+  C" — prompts carry no per-item history, the name-keyed design again (§6).
+  The window is short (until C's first prompt save after the switch), and
+  writing on load to shrink it would break the "a read must not write" rule
+  used elsewhere. Stable IDs with tombstones (§8) are the real fix.
+  `usageStats.saves` counts
+  **conversation saves only**: callers opt in with `saveData(..., { countSave:
+  true })` (popup Save, both context menus, both quick-saves), and both counters
+  go through `bumpUsageStat`, which serializes the read-modify-write.
+  UI open-state (`openFolders`/`openPrompts`) lives
   in `storage.local` — device-local, to avoid burning the sync write quota.
   `finishSave(..., affectsBookmarks)` only rebuilds the bookmark mirror when
   folders/pins/sort actually change. Default sort is `dateDesc` (newest-first) for
@@ -792,7 +827,7 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   `background.js` (not shared, §6). The page opens only when
   `reason === 'update'` **and** the manifest version equals that constant, so a
   minor release with nothing to explain simply leaves the constant alone —
-  4.6.3 / 1.7.3 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
+  4.6.3 / 1.7.3 and 4.6.4 / 1.7.4 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
   The test asserts the constant is **not ahead of** the manifest version, which is
   the direction that breaks: a constant ahead fires on the release *after* this
   one, carrying notes for a version already installed. It used to demand equality,
@@ -846,6 +881,11 @@ Reading cautions:
   conversation that was already in the folder still wrote and still incremented
   the counter, so older `s` values are inflated by re-saves. The number is now
   right, but **do not compare averages across that boundary**.
+  **A second break comes with 4.6.4 / 1.7.4:** until then every
+  folders/prompts write counted (deletes, renames, moves, prompt autosaves, the
+  prompt-sync toggle); from then on only an actual conversation save does, so
+  `s` drops again. The review banner's `saves >= 15` threshold is reached later
+  for the same reason.
 - Once `s` (§9) has data, the decisive question becomes readable: among those who
   leave with `saves > 0` (they did use it), what share ask for `wanted-in-page-ui`?
   That number — not today's n=4 — decides whether the in-page UI is worth building

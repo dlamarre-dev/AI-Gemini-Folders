@@ -22,9 +22,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   // --- Per-site new-conversation buttons ---
   let localLlmUrl = '';
 
-  chrome.storage.sync.get(['localLlmUrl'], (data) => {
-    localLlmUrl = data.localLlmUrl || '';
-    updateLocalBtn();
+  // Awaited before the active tab is classified below: that check read
+  // localLlmUrl after an unrelated await, and when the tab query won the race a
+  // local-LLM tab was not recognized — no title prefill, and no fallback
+  // injection of prompt-trigger.js on Firefox.
+  const localLlmUrlLoaded = new Promise((resolve) => {
+    chrome.storage.sync.get(['localLlmUrl'], (data) => {
+      localLlmUrl = data.localLlmUrl || '';
+      updateLocalBtn();
+      resolve();
+    });
   });
 
   // Which tabs openConversation (src/folders.js) may navigate on a Ctrl/Cmd-click.
@@ -38,16 +45,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (btn) btn.classList.toggle('local-configured', !!localLlmUrl);
   }
 
-  async function openLocalUrlModal() {
+  async function openLocalUrlModal(retryValue) {
     const url = await window.showCustomModal({
       title: chrome.i18n.getMessage("setLocalUrl") || "Set local LLM URL:",
       type: 'prompt',
-      defaultValue: localLlmUrl,
+      defaultValue: retryValue !== undefined ? retryValue : localLlmUrl,
       placeholder: "http://localhost:3000"
     });
     if (url === null) return;
 
-    const trimmed = url.trim();
+    const typed = url.trim();
+    // "localhost:3000" gains its missing http://; anything that still is not an
+    // http(s) address reopens the box with the input kept, instead of closing
+    // as if it had been accepted.
+    const trimmed = typed ? normalizeLocalLlmUrl(typed) : '';
+    if (trimmed === null) return openLocalUrlModal(typed);
 
     // User cleared the URL — revoke permission and clear storage
     if (!trimmed) {
@@ -60,8 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    let origin;
-    try { origin = new URL(trimmed).origin + '/*'; } catch (_) { return; }
+    const origin = new URL(trimmed).origin + '/*';
 
     // Same origin as before — just update stored value, no permission change needed
     try {
@@ -192,6 +203,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Smart title pre-filling based on active tab
   let [currentTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  await localLlmUrlLoaded;
   const currentSiteKey = getSiteByUrl(currentTab?.url, localLlmUrl);
 
   if (currentTab && currentSiteKey) {
