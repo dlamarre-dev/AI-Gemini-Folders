@@ -338,10 +338,17 @@ function buildFolderElement(folderName, ctx, isChild) {
   // so the disclosure state is applied at the end of this function. The
   // toggle below reads the final value, since it only runs on a user action.
   let hasExpandable = false;
+  // The conversations of a closed folder are built on its first opening
+  // (fillContent, below), not at render: building every .chat-item of every
+  // collapsed folder was most of the popup's opening time on a large library,
+  // for rows nobody was looking at. Sub-folder cards are still built at once —
+  // a header each, and they stay real drop targets and keep their own state.
+  let fillContent = null;
 
   const toggleFolder = () => {
     folderNameInput.value = folderDisplayPath(folders, folderParents, folderName);
     const isCurrentlyOpen = folderContent.style.display === 'block';
+    if (!isCurrentlyOpen && fillContent) { fillContent(); fillContent = null; }
     folderContent.style.display = isCurrentlyOpen ? 'none' : 'block';
     if (hasExpandable) {
       folderDiv.classList.toggle('is-open', !isCurrentlyOpen);
@@ -403,144 +410,159 @@ function buildFolderElement(folderName, ctx, isChild) {
   // ----------------------------------------------------------------
 
   let appendedChatsCount = 0;
+  let appendedChildCount = 0;
 
-  chats.forEach((chat, index) => {
-    if (searchTerm && !chat.title.toLowerCase().includes(searchTerm) && !folderMatches) return;
+  // Rows go to a fragment that is put in FRONT of the sub-folders, so a late
+  // fill lands where an immediate one would have.
+  const buildChats = () => {
+    const rows = document.createDocumentFragment();
+    chats.forEach((chat, index) => {
+      if (searchTerm && !chat.title.toLowerCase().includes(searchTerm) && !folderMatches) return;
 
-    appendedChatsCount++;
-    const chatItem = document.createElement('div');
-    chatItem.className = 'chat-item';
+      appendedChatsCount++;
+      const chatItem = document.createElement('div');
+      chatItem.className = 'chat-item';
 
-    //Multiple selection
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.className = 'chat-checkbox';
-    checkbox.dataset.folder = folderName;
-    checkbox.dataset.url = chat.url;
-    // Restore checked state after a re-render
-    if (window.selectedChats && window.selectedChats.some(c => c.url === chat.url)) checkbox.checked = true;
+      //Multiple selection
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.className = 'chat-checkbox';
+      checkbox.dataset.folder = folderName;
+      checkbox.dataset.url = chat.url;
+      // Restore checked state after a re-render
+      if (window.selectedChats && window.selectedChats.some(c => c.url === chat.url)) checkbox.checked = true;
 
-    checkbox.addEventListener('change', (e) => {
-      if (e.target.checked) {
-        if (window.selectedChats) window.selectedChats.push({ folder: folderName, url: chat.url, chatObj: chat });
-      } else {
-        if (window.selectedChats) window.selectedChats = window.selectedChats.filter(c => c.url !== chat.url);
+      checkbox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          if (window.selectedChats) window.selectedChats.push({ folder: folderName, url: chat.url, chatObj: chat });
+        } else {
+          if (window.selectedChats) window.selectedChats = window.selectedChats.filter(c => c.url !== chat.url);
+        }
+        if (window.updateBulkActionBar) window.updateBulkActionBar();
+      });
+
+      chatItem.appendChild(checkbox);
+
+      // Make the element draggable
+      chatItem.setAttribute('draggable', 'true');
+
+      chatItem.addEventListener('dragstart', (e) => {
+        if (document.body.classList.contains('bulk-active')) {
+          e.preventDefault();
+          return;
+        }
+        chatItem.classList.add('dragging');
+        document.body.classList.add('is-dragging');
+        folderDiv.classList.add('is-source-folder');
+        dragState = { kind: 'chat', folder: folderName };
+        const dataToTransfer = JSON.stringify({ kind: 'chat', sourceFolder: folderName, chatUrl: chat.url });
+        e.dataTransfer.setData('text/plain', dataToTransfer);
+        e.dataTransfer.effectAllowed = 'move';
+      });
+
+      chatItem.addEventListener('dragend', () => {
+        chatItem.classList.remove('dragging');
+        document.body.classList.remove('is-dragging');
+        folderDiv.classList.remove('is-source-folder');
+        dragState = { kind: null, folder: null };
+      });
+
+      // Allow extensions to decorate chat items with site-specific colors and logos.
+      // AI Folders defines window.getChatSiteInfo; Gemini Folders leaves it undefined.
+      const siteInfo = window.getChatSiteInfo?.(chat);
+      if (siteInfo) {
+        chatItem.style.setProperty('--site-color', siteInfo.color);
+        chatItem.classList.add(`site-${siteInfo.key}`);
+        if (siteInfo.logo) {
+          const logo = document.createElement('span');
+          logo.className = 'chat-site-logo';
+          // Pre-rasterized PNG logos; theme-dependent ones ship a -light variant.
+          const logoImg = document.createElement('img');
+          logoImg.alt = '';
+          logoImg.src = (siteInfo.logoLight && window.matchMedia('(prefers-color-scheme: light)').matches)
+            ? siteInfo.logoLight : siteInfo.logo;
+          logo.appendChild(logoImg);
+          chatItem.appendChild(logo);
+        }
       }
-      if (window.updateBulkActionBar) window.updateBulkActionBar();
-    });
 
-    chatItem.appendChild(checkbox);
+      const link = document.createElement('a');
+      link.className = 'chat-link';
+      link.href = isSafeUrl(chat.url) ? chat.url : 'about:blank';
+      link.target = '_blank';
+      // The title stays on the first line (it is what makes a truncated title
+      // readable); the second advertises the modifier-click gesture, which no
+      // one would find otherwise. This tooltip is the whole discoverability
+      // budget for it — there is deliberately no setting and no visible control.
+      // {k} is filled with the key this platform actually has, so the user reads
+      // "Cmd" on a Mac and "Ctrl" on Windows/Linux instead of having to pick.
+      const modKey = currentModifierKeyLabel();
+      link.title = chat.title + '\n' + (chrome.i18n.getMessage("chatLinkReuseHint")
+        || "{k}-click: reuse the last tab").replace('{k}', modKey);
+      link.textContent = chat.title;
 
-    // Make the element draggable
-    chatItem.setAttribute('draggable', 'true');
-
-    chatItem.addEventListener('dragstart', (e) => {
-      if (document.body.classList.contains('bulk-active')) {
+      // Plain click: reuse the tab already showing this conversation instead of
+      // spawning a duplicate. Ctrl/Cmd-click: reuse the last tab we opened.
+      // Middle-click (auxclick, never listened to) and Shift-click stay 100%
+      // native — that is the escape hatch, so keeping the href/target="_blank"
+      // above intact is load-bearing, not decorative.
+      link.addEventListener('click', (e) => {
+        if (e.button !== 0 || e.shiftKey || e.altKey) return;
+        if (link.href === 'about:blank') return;   // URL rejected by isSafeUrl
         e.preventDefault();
-        return;
-      }
-      chatItem.classList.add('dragging');
-      document.body.classList.add('is-dragging');
-      folderDiv.classList.add('is-source-folder');
-      dragState = { kind: 'chat', folder: folderName };
-      const dataToTransfer = JSON.stringify({ kind: 'chat', sourceFolder: folderName, chatUrl: chat.url });
-      e.dataTransfer.setData('text/plain', dataToTransfer);
-      e.dataTransfer.effectAllowed = 'move';
+        openConversation(chat.url, { reuse: e.ctrlKey || e.metaKey });
+      });
+
+      link.setAttribute('draggable', 'false');
+
+      // Container for conversation buttons
+      const chatActionsDiv = document.createElement('div');
+      chatActionsDiv.className = 'chat-actions';
+
+      const editBtn = document.createElement('button');
+      editBtn.className = 'action-btn edit-btn';
+      editBtn.textContent = '✏️';
+      editBtn.title = chrome.i18n.getMessage("btnRename");
+      editBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        renameChat(folderName, chat.url, chat.title);
+      });
+
+      const delBtn = document.createElement('button');
+      delBtn.className = 'action-btn delete-btn';
+      delBtn.textContent = '🗑️';
+      delBtn.title = chrome.i18n.getMessage("btnDelete");
+      delBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        deleteChat(folderName, chat.url);
+      });
+
+      chatActionsDiv.appendChild(editBtn);
+      chatActionsDiv.appendChild(delBtn);
+
+      chatItem.appendChild(link);
+      chatItem.appendChild(chatActionsDiv);
+      rows.appendChild(chatItem);
     });
-
-    chatItem.addEventListener('dragend', () => {
-      chatItem.classList.remove('dragging');
-      document.body.classList.remove('is-dragging');
-      folderDiv.classList.remove('is-source-folder');
-      dragState = { kind: null, folder: null };
-    });
-
-    // Allow extensions to decorate chat items with site-specific colors and logos.
-    // AI Folders defines window.getChatSiteInfo; Gemini Folders leaves it undefined.
-    const siteInfo = window.getChatSiteInfo?.(chat);
-    if (siteInfo) {
-      chatItem.style.setProperty('--site-color', siteInfo.color);
-      chatItem.classList.add(`site-${siteInfo.key}`);
-      if (siteInfo.logo) {
-        const logo = document.createElement('span');
-        logo.className = 'chat-site-logo';
-        // Pre-rasterized PNG logos; theme-dependent ones ship a -light variant.
-        const logoImg = document.createElement('img');
-        logoImg.alt = '';
-        logoImg.src = (siteInfo.logoLight && window.matchMedia('(prefers-color-scheme: light)').matches)
-          ? siteInfo.logoLight : siteInfo.logo;
-        logo.appendChild(logoImg);
-        chatItem.appendChild(logo);
-      }
-    }
-
-    const link = document.createElement('a');
-    link.className = 'chat-link';
-    link.href = isSafeUrl(chat.url) ? chat.url : 'about:blank';
-    link.target = '_blank';
-    // The title stays on the first line (it is what makes a truncated title
-    // readable); the second advertises the modifier-click gesture, which no
-    // one would find otherwise. This tooltip is the whole discoverability
-    // budget for it — there is deliberately no setting and no visible control.
-    // {k} is filled with the key this platform actually has, so the user reads
-    // "Cmd" on a Mac and "Ctrl" on Windows/Linux instead of having to pick.
-    const modKey = currentModifierKeyLabel();
-    link.title = chat.title + '\n' + (chrome.i18n.getMessage("chatLinkReuseHint")
-      || "{k}-click: reuse the last tab").replace('{k}', modKey);
-    link.textContent = chat.title;
-
-    // Plain click: reuse the tab already showing this conversation instead of
-    // spawning a duplicate. Ctrl/Cmd-click: reuse the last tab we opened.
-    // Middle-click (auxclick, never listened to) and Shift-click stay 100%
-    // native — that is the escape hatch, so keeping the href/target="_blank"
-    // above intact is load-bearing, not decorative.
-    link.addEventListener('click', (e) => {
-      if (e.button !== 0 || e.shiftKey || e.altKey) return;
-      if (link.href === 'about:blank') return;   // URL rejected by isSafeUrl
-      e.preventDefault();
-      openConversation(chat.url, { reuse: e.ctrlKey || e.metaKey });
-    });
-
-    link.setAttribute('draggable', 'false');
-
-    // Container for conversation buttons
-    const chatActionsDiv = document.createElement('div');
-    chatActionsDiv.className = 'chat-actions';
-
-    const editBtn = document.createElement('button');
-    editBtn.className = 'action-btn edit-btn';
-    editBtn.textContent = '✏️';
-    editBtn.title = chrome.i18n.getMessage("btnRename");
-    editBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      renameChat(folderName, chat.url, chat.title);
-    });
-
-    const delBtn = document.createElement('button');
-    delBtn.className = 'action-btn delete-btn';
-    delBtn.textContent = '🗑️';
-    delBtn.title = chrome.i18n.getMessage("btnDelete");
-    delBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      deleteChat(folderName, chat.url);
-    });
-
-    chatActionsDiv.appendChild(editBtn);
-    chatActionsDiv.appendChild(delBtn);
-
-    chatItem.appendChild(link);
-    chatItem.appendChild(chatActionsDiv);
-    folderContent.appendChild(chatItem);
-  });
+    folderContent.prepend(rows);
+  };
 
   // Sub-folders come after the conversations, indented inside the parent.
-  let appendedChildCount = 0;
   childNames.forEach((childName) => {
     const childDiv = buildFolderElement(childName, ctx, true);
     if (!childDiv) return;   // filtered out by the search term
     appendedChildCount++;
     folderContent.appendChild(childDiv);
   });
+
+  if (isFolderOpen) {
+    buildChats();
+  } else {
+    // Closed means no search term (a search opens every folder it shows), so
+    // no conversation is filtered and the count is known without building.
+    fillContent = buildChats;
+    appendedChatsCount = chats.length;
+  }
 
   // Chevron and content area are decided from the SAME counts, so a folder
   // can never advertise something to expand that was filtered away.
