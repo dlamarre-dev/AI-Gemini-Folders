@@ -13,17 +13,21 @@ deliberate steps to keep.
 The three stores are not always on the same version, because each reviews
 independently and a release reaches them at its own pace.
 
-A snapshot, accurate on **28/09/2026** — the rule above is what holds, and the
+A snapshot, accurate on **09/10/2026** — the rule above is what holds, and the
 numbers move:
 
 | | AI Folders | Gemini Folders | |
 |---|---|---|---|
-| Latest release here | 1.7.4 | 4.6.4 | ✅ supported |
+| Latest release here | 1.7.5 | 4.6.5 | ✅ supported |
 | Chrome Web Store | 1.7.4 | 4.6.4 | ✅ supported |
 | Firefox Add-ons (AMO) | 1.7.4 | 4.6.4 | ✅ supported |
 | Microsoft Edge Add-ons | 1.7.4 | 4.6.4 | ✅ supported |
 | Anything earlier | | | ❌ not supported |
 
+1.7.5 / 4.6.5 is released here and on its way through store review. Until a
+store serves it, that store's 1.7.4 / 4.6.4 stays supported as well, by the
+rule above; once all three are at parity, 1.7.5 and 4.6.5 become the only
+supported versions.
 
 ## Reporting a vulnerability
 
