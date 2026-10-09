@@ -41,7 +41,9 @@ function wireGlobalDragHandlers() {
   });
 }
 
-function displayFolders(openFoldersArg = [], searchTerm = "") {
+// onRendered (optional) runs once the list is in the DOM — the popup uses it to
+// hold back work its first frame does not need (see afterFirstRender, ui.js).
+function displayFolders(openFoldersArg = [], searchTerm = "", onRendered) {
   const folderList = document.getElementById('folderList');
   const noResultsDiv = document.getElementById('noResults');
   const folderNameInput = document.getElementById('folderName');
@@ -110,6 +112,7 @@ function displayFolders(openFoldersArg = [], searchTerm = "") {
       empty.append(icon, msg);
       folderList.appendChild(empty);
     }
+    if (onRendered) onRendered();
   });
 }
 

@@ -390,3 +390,85 @@ describe('syncToBookmarksTree', () => {
 
 
 });
+
+// ---------------------------------------------------------------------------
+// Bookmark mirror stamp + resyncBookmarksIfStale
+// ---------------------------------------------------------------------------
+
+// Opening the popup used to rebuild the whole mirror every time. It now does so
+// only when the stamp written by the last complete rebuild no longer matches,
+// or when the tree is missing or duplicated.
+describe('bookmark mirror stamp', () => {
+  const { bookmarkMirrorStamp, resyncBookmarksIfStale } = require('../src/utils');
+  const folders = { A: [{ title: 'c', url: 'https://a/y', timestamp: 1 }] };
+  const flush = () => new Promise((r) => setTimeout(r, 0));
+  let local;
+  let masters;
+
+  beforeEach(() => {
+    local = {};
+    masters = [];
+    let seq = 0;
+    chrome.storage.sync.get = jest.fn((_keys, cb) => cb({ syncBookmarksEnabled: true, fdcN: 1, fdc0: `C:${JSON.stringify(folders)}` }));
+    chrome.storage.local.get = jest.fn((keys, cb) => cb(keys === null ? {} : { ...local }));
+    chrome.storage.local.set = jest.fn((v, cb) => { Object.assign(local, v); cb && cb(); });
+    chrome.storage.local.remove = jest.fn((k, cb) => { delete local[k]; cb && cb(); });
+    chrome.bookmarks.search = jest.fn((_q, cb) => cb(masters.slice()));
+    chrome.bookmarks.removeTree = jest.fn((id, cb) => { masters = masters.filter((m) => m.id !== id); cb && cb(); });
+    chrome.bookmarks.create = jest.fn((obj, cb) => {
+      const node = { id: 'n' + seq++, ...obj };
+      if (!obj.parentId) masters.push(node);
+      cb && cb(node);
+    });
+  });
+
+  test('changes with the data and is stable for equal data', () => {
+    const s = bookmarkMirrorStamp(folders, [], 'dateDesc', {});
+    expect(bookmarkMirrorStamp(JSON.parse(JSON.stringify(folders)), [], 'dateDesc', {})).toBe(s);
+    expect(bookmarkMirrorStamp(folders, ['A'], 'dateDesc', {})).not.toBe(s);
+    expect(bookmarkMirrorStamp(folders, [], 'alphaAsc', {})).not.toBe(s);
+  });
+
+  test('a complete rebuild writes the stamp of what it built', async () => {
+    await syncToBookmarksTree(folders, [], 'dateDesc', {});
+    expect(local.bookmarkMirrorStamp).toBe(bookmarkMirrorStamp(folders, [], 'dateDesc', {}));
+  });
+
+  test('a rebuild removes the stamp before it starts', async () => {
+    local.bookmarkMirrorStamp = 'old';
+    const run = syncToBookmarksTree(folders, [], 'dateDesc', {});
+    expect(chrome.storage.local.remove).toHaveBeenCalledWith('bookmarkMirrorStamp');
+    await run;
+  });
+
+  test('an up-to-date mirror is left alone', async () => {
+    local.bookmarkMirrorStamp = bookmarkMirrorStamp(folders, [], 'dateDesc', {});
+    masters = [{ id: 'm', title: 'masterFolderName' }];
+    resyncBookmarksIfStale();
+    await flush(); await flush();
+    expect(chrome.bookmarks.create).not.toHaveBeenCalled();
+    expect(chrome.bookmarks.removeTree).not.toHaveBeenCalled();
+  });
+
+  test('a stale stamp triggers a rebuild', async () => {
+    local.bookmarkMirrorStamp = 'stale';
+    masters = [{ id: 'm', title: 'masterFolderName' }];
+    resyncBookmarksIfStale();
+    await flush(); await flush(); await new Promise((r) => setTimeout(r, 80));
+    expect(chrome.bookmarks.create).toHaveBeenCalled();
+  });
+
+  test('a matching stamp still rebuilds a mirror removed by hand', async () => {
+    local.bookmarkMirrorStamp = bookmarkMirrorStamp(folders, [], 'dateDesc', {});
+    resyncBookmarksIfStale();
+    await flush(); await flush(); await new Promise((r) => setTimeout(r, 80));
+    expect(chrome.bookmarks.create).toHaveBeenCalled();
+  });
+
+  test('nothing happens when mobile sync is off', async () => {
+    chrome.storage.sync.get = jest.fn((_keys, cb) => cb({ syncBookmarksEnabled: false }));
+    resyncBookmarksIfStale();
+    await flush();
+    expect(chrome.bookmarks.search).not.toHaveBeenCalled();
+  });
+});

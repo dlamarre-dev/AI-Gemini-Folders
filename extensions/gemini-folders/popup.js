@@ -209,7 +209,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const ONE_DAY  = 24 * 60 * 60 * 1000;
     const FIVE_DAYS = 5 * ONE_DAY;
 
-    chrome.storage.local.get(['usageStats', 'afPromoState', 'afPromoRatingDate'], (data) => {
+    // Not needed for the first frame (afterFirstRender, ui.js); queued after the
+    // review banner's own check, which ui.js registers first.
+    const runPromoCheck = window.afterFirstRender || ((fn) => fn());
+    runPromoCheck(() => chrome.storage.local.get(['usageStats', 'afPromoState', 'afPromoRatingDate'], (data) => {
       const stats      = data.usageStats    || { opens: 0 };
       const state      = data.afPromoState  || { status: 'pending', nextPromptDate: 0 };
       const ratingDate = data.afPromoRatingDate || 0;
@@ -228,7 +231,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (state.status === 'later' && Date.now() < state.nextPromptDate) return;
 
       afPromoBanner.style.display = 'block';
-    });
+    }));
 
     document.getElementById('btnAfPromoDownload').addEventListener('click', () => {
       chrome.storage.local.set({ afPromoState: { status: 'dismissed' } });

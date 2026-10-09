@@ -328,3 +328,23 @@ describe('makeMenuAccessible — audit follow-ups', () => {
     expect(items[0].hasAttribute('aria-checked')).toBe(false);
   });
 });
+
+// ---------------------------------------------------------------------------
+// afterFirstRender
+// ---------------------------------------------------------------------------
+
+// Non-critical popup work (storage bar, review banner, bookmark check) waits
+// for the first list to be in the DOM instead of competing with it.
+describe('afterFirstRender', () => {
+  test('holds work until the first render is reported, then runs it', async () => {
+    const fn = jest.fn();
+    window.afterFirstRender(fn);
+    await new Promise((r) => setTimeout(r, 0));
+    expect(fn).not.toHaveBeenCalled();
+
+    window.markPopupRendered();
+    await new Promise((r) => setTimeout(r, 0));
+    await new Promise((r) => setTimeout(r, 0));
+    expect(fn).toHaveBeenCalledTimes(1);
+  });
+});

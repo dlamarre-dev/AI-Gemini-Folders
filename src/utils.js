@@ -354,14 +354,32 @@ function buildContextMenuModel(folders, folderParents, opts = {}) {
   return items;
 }
 
+// LZString decompression is pure JS and by far the slowest step of loadData,
+// which the popup runs several times while it opens and again on every search
+// keystroke, almost always on the same stored bytes. Remember the last payload
+// decoded per slot and its JSON text: an identical payload skips straight to
+// JSON.parse, which still builds a fresh object per call, so callers that mutate
+// what loadData hands them cannot affect each other. Keyed by the payload itself,
+// so there is nothing to invalidate — a new save simply misses.
+const decompressMemo = new Map();
+function decompressCached(slot, raw) {
+  const hit = decompressMemo.get(slot);
+  if (hit && hit.raw === raw) return hit.text;
+  const text = LZString.decompressFromUTF16(raw);
+  if (text !== null) decompressMemo.set(slot, { raw, text });
+  return text;
+}
+
 // Decode a stored prompts payload (compressed string or legacy plain object).
 // Returns null when there is nothing stored, and {} when the payload is corrupt
 // (the previous behaviour: fall back to an empty library rather than throw).
-function decodePrompts(raw) {
+// slot names the memo entry (decompressCached): local, synced and handoff
+// copies are read in the same load, and one shared entry would thrash.
+function decodePrompts(raw, slot = 'prompts') {
   if (!raw) return null;
   if (typeof raw !== 'string') return raw;
   try {
-    const decompressed = LZString.decompressFromUTF16(raw);
+    const decompressed = decompressCached(slot, raw);
     if (decompressed === null) throw new Error("LZString returned null.");
     return JSON.parse(decompressed);
   } catch (error) {
@@ -404,7 +422,7 @@ function loadData(defaults, callback) {
         if (rawFoldersData) {
           if (typeof rawFoldersData === 'string') {
             try {
-              const decompressed = LZString.decompressFromUTF16(rawFoldersData);
+              const decompressed = decompressCached('folders', rawFoldersData);
               if (decompressed === null) throw new Error("LZString returned null.");
               finalData.folders = JSON.parse(decompressed);
             } catch (error) {
@@ -418,10 +436,10 @@ function loadData(defaults, callback) {
 
         // 2. Prompts — chunked sync (pdcN + pdc0..N), legacy sync key, or local
         const syncPromptsEnabled = syncResult.syncPromptsEnabled === true;
-        const localPrompts = decodePrompts(localResult.promptsDataCompressed ?? localResult.prompts ?? null);
+        const localPrompts = decodePrompts(localResult.promptsDataCompressed ?? localResult.prompts ?? null, 'localPrompts');
         if (syncPromptsEnabled) {
           const syncPrompts = decodePrompts(assembleChunks(syncResult, 'pdc')
-            ?? syncResult.promptsDataCompressed ?? syncResult.prompts ?? null);
+            ?? syncResult.promptsDataCompressed ?? syncResult.prompts ?? null, 'syncPrompts');
           if (syncPrompts) finalData.prompts = syncPrompts;
           // syncPromptsEnabled is itself a SYNC key: switching it on on one device
           // switches it on here too, while this device's library still sits in
@@ -456,7 +474,7 @@ function loadData(defaults, callback) {
           const handoffAt = syncResult.promptsHandoffAt;
           if (handoffAt && localResult.promptsHandoffAdopted !== handoffAt
               && Date.now() - handoffAt < PROMPTS_HANDOFF_TTL) {
-            const handoff = decodePrompts(assembleChunks(syncResult, 'pdc'));
+            const handoff = decodePrompts(assembleChunks(syncResult, 'pdc'), 'syncPrompts');
             if (handoff) {
               const merged = Object.assign({}, handoff);
               for (const [title, data] of Object.entries(localPrompts || {})) {
@@ -784,6 +802,42 @@ function resyncBookmarksFromStorage(opts = {}) {
   });
 }
 
+// A short fingerprint of everything the bookmark mirror is built from. Written
+// to storage.local (bookmarkMirrorStamp) once a rebuild has completed, removed
+// when one starts, so a rebuild cut short — the popup closing mid-way — never
+// leaves a stamp that vouches for a partial tree.
+function bookmarkMirrorStamp(folders, pinnedFolders = [], sortPref = 'dateDesc', folderParents = {}) {
+  const text = JSON.stringify([folders, pinnedFolders, sortPref, folderParents]);
+  let h = 5381;
+  for (let i = 0; i < text.length; i++) h = ((h << 5) + h + text.charCodeAt(i)) | 0;
+  return `${text.length}:${(h >>> 0).toString(36)}`;
+}
+
+// The popup used to rebuild the whole mirror on every open — delete the tree,
+// then one sequential bookmarks.create per folder and per conversation — which
+// on a large library kept the browser busy for seconds and slowed the very
+// popup it ran in. Every save already rebuilds it (finishSave), so the open
+// only has to catch what arrived some other way: a change synced from another
+// device, or a mirror removed or duplicated by hand. The stamp says whether the
+// data changed; one search says whether exactly one tree is there.
+function resyncBookmarksIfStale() {
+  chrome.storage.sync.get(['syncBookmarksEnabled'], (syncData) => {
+    if (!syncData || !syncData.syncBookmarksEnabled) return;
+    loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc', folderParents: {} }, (data) => {
+      const rebuild = () => syncToBookmarksTree(data.folders, data.pinnedFolders, data.sortPref, data.folderParents);
+      const stamp = bookmarkMirrorStamp(data.folders, data.pinnedFolders, data.sortPref, data.folderParents);
+      chrome.storage.local.get(['bookmarkMirrorStamp'], (local) => {
+        if (!local || local.bookmarkMirrorStamp !== stamp) return rebuild();
+        const masterName = chrome.i18n.getMessage("masterFolderName") || "Gemini Folders (Sync)";
+        chrome.bookmarks.search({ title: masterName }, (results) => {
+          const masters = (results || []).filter(n => !n.url && n.title === masterName);
+          if (masters.length !== 1) rebuild();
+        });
+      });
+    });
+  });
+}
+
 async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'dateDesc', folderParents = {}, opts = {}) {
   let resolvedDuplicates = false;
   // 1. A rebuild is already running: queue this one instead of dropping it.
@@ -796,6 +850,7 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
   }
 
   isSyncingToBookmarks = true;
+  chrome.storage.local.remove('bookmarkMirrorStamp');
 
   try {
     const MASTER_FOLDER_NAME = chrome.i18n.getMessage("masterFolderName") || "Gemini Folders (Sync)";
@@ -894,6 +949,11 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
     }
     for (const node of masters) {
       if (node.id !== keep) await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
+    }
+    // Not after resolving duplicates: the tree kept is the largest, not
+    // necessarily this one, and the follow-up rebuild below writes the stamp.
+    if (keep !== null && !resolvedDuplicates) {
+      chrome.storage.local.set({ bookmarkMirrorStamp: bookmarkMirrorStamp(folders, pinnedFolders, sortPref, folderParents) });
     }
   } catch (error) {
     console.error("Critical error during sync :", error);
@@ -1536,6 +1596,8 @@ if (typeof module !== 'undefined') {
     mergePromptEntry,
     decodePrompts,
     syncToBookmarksTree,
+    bookmarkMirrorStamp,
+    resyncBookmarksIfStale,
     extractTitleLogic,
     isSafeUrl,
     modifierKeyLabel,

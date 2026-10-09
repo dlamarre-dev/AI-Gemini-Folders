@@ -794,3 +794,43 @@ describe('mergeImportData', () => {
     expect(prompts['My Prompt (Imported)'].text).toBe('Different text');
   });
 });
+
+// ---------------------------------------------------------------------------
+// loadData decompression memo
+// ---------------------------------------------------------------------------
+
+// The popup runs loadData several times while it opens and on every search
+// keystroke, nearly always on the same bytes. LZString is the slow part, so an
+// unchanged payload must skip it — while still handing out a fresh object.
+describe('loadData decompression memo', () => {
+  function mockStorage(sync) {
+    chrome.storage.sync.get.mockImplementation((_, cb) => cb(sync));
+    chrome.storage.local.get.mockImplementation((_, cb) => cb({}));
+  }
+  const load = () => new Promise((r) => loadData({ folders: {} }, r));
+
+  test('an unchanged payload is decompressed once, and each caller gets its own object', async () => {
+    const folders = { Memo: [{ title: 'a', url: 'https://a/memo', timestamp: 1 }] };
+    mockStorage({ fdcN: 1, fdc0: `C:${JSON.stringify(folders)}` });
+    LZString.decompressFromUTF16.mockClear();
+
+    const first = await load();
+    first.folders.Memo.push({ title: 'mutated', url: 'https://a/x', timestamp: 2 });
+    const second = await load();
+
+    expect(LZString.decompressFromUTF16).toHaveBeenCalledTimes(1);
+    expect(second.folders).toEqual(folders);
+    expect(second.folders).not.toBe(first.folders);
+  });
+
+  test('a changed payload is decompressed again', async () => {
+    mockStorage({ fdcN: 1, fdc0: 'C:{"One":[]}' });
+    await load();
+    mockStorage({ fdcN: 1, fdc0: 'C:{"Two":[]}' });
+    LZString.decompressFromUTF16.mockClear();
+
+    const data = await load();
+    expect(LZString.decompressFromUTF16).toHaveBeenCalledTimes(1);
+    expect(data.folders).toEqual({ Two: [] });
+  });
+});

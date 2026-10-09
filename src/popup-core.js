@@ -279,8 +279,17 @@ function initPopupCommon(config) {
   const syncBookmarksLabel = document.getElementById('syncBookmarksLabel');
   const syncPromptsLabel = document.getElementById('syncPromptsLabel');
   let currentMode = 'folder';
+  // The folder list is built on the first visit to Folder mode, not at open: a
+  // popup that reopens in Prompt mode used to build the whole folder list, then
+  // the prompt list on top of it, before either was usable.
+  let foldersRendered = false;
+  const renderFolders = (onRendered) => {
+    foldersRendered = true;
+    if (window.displayFolders) window.displayFolders([], '', onRendered);
+    else if (onRendered) onRendered();
+  };
 
-  function setMode(mode) {
+  function setMode(mode, onRendered) {
     currentMode = mode;
     const isPrompt = mode === 'prompt';
     folderModeContainer.style.display = isPrompt ? 'none' : 'block';
@@ -290,20 +299,30 @@ function initPopupCommon(config) {
     modeTogglePill.classList.toggle('is-prompt', isPrompt);
     modeFolderBtn.classList.toggle('mode-toggle-btn--active', !isPrompt);
     modePromptBtn.classList.toggle('mode-toggle-btn--active', isPrompt);
-    if (isPrompt) displayPrompts();
+    if (isPrompt) displayPrompts(onRendered);
+    else if (!foldersRendered) renderFolders(onRendered);
+    else if (onRendered) onRendered();
     chrome.storage.local.set({ lastMode: mode });
   }
 
+  // --- First render: only the mode the popup reopens in ---
+  // Everything afterFirstRender (ui.js) queued is released once that list is in
+  // the DOM.
+  const firstRendered = () => { if (window.markPopupRendered) window.markPopupRendered(); };
   chrome.storage.local.get(['lastMode'], (data) => {
-    if (data.lastMode === 'prompt') {
+    if (data && data.lastMode === 'prompt') {
       const toggleEls = [modeTogglePill, modeFolderBtn, modePromptBtn];
       toggleEls.forEach(el => el.style.transition = 'none');
-      setMode('prompt');
+      setMode('prompt', firstRendered);
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           toggleEls.forEach(el => el.style.transition = '');
         });
       });
+    } else if (!foldersRendered) {
+      renderFolders(firstRendered);
+    } else {
+      firstRendered();
     }
   });
 
@@ -426,11 +445,14 @@ function initPopupCommon(config) {
   document.addEventListener('click', () => {
     sortMenu.classList.remove('show');
   });
-  loadData({ sortPref: 'dateDesc' }, (data) => {
-    const activeItem = document.querySelector(`#sortMenu .dropdown-item[data-value="${data.sortPref}"]`);
+  // A plain sync key (saveData passes it through as-is), so read just that key:
+  // a full loadData here decompressed the whole library for one word.
+  chrome.storage.sync.get(['sortPref'], (data) => {
+    const sortPref = (data && data.sortPref) || 'dateDesc';
+    const activeItem = document.querySelector(`#sortMenu .dropdown-item[data-value="${sortPref}"]`);
     if (activeItem) activeItem.classList.add('active');
     // Mark the toggle when a non-default order is active (dateDesc is the default).
-    sortToggleBtn.classList.toggle('has-custom-sort', data.sortPref !== 'dateDesc');
+    sortToggleBtn.classList.toggle('has-custom-sort', sortPref !== 'dateDesc');
   });
   sortItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -451,24 +473,20 @@ function initPopupCommon(config) {
     });
   });
 
-  // Re-sync bookmarks on init if the feature is enabled (runs once, not per sort item).
-  chrome.storage.sync.get(['syncBookmarksEnabled'], (syncData) => {
-    if (syncData.syncBookmarksEnabled) {
-      loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc', folderParents: {} }, (fullData) => {
-        if (typeof syncToBookmarksTree === 'function') {
-          syncToBookmarksTree(fullData.folders, fullData.pinnedFolders, fullData.sortPref, fullData.folderParents);
-        }
-      });
-    }
-  });
+  // Catch the bookmark mirror up with changes made elsewhere (another device, a
+  // hand-deleted tree) — only when it is actually behind, and after the first
+  // render. See resyncBookmarksIfStale (utils.js) for why this no longer
+  // rebuilds the whole tree on every open.
+  if (typeof resyncBookmarksIfStale === 'function') {
+    (window.afterFirstRender || ((fn) => fn()))(resyncBookmarksIfStale);
+  }
 
   // --- Keep the popup inside the height Chrome actually gave it ---
   if (document.readyState === 'complete') requestAnimationFrame(fitPopupToWindow);
   else window.addEventListener('load', () => requestAnimationFrame(fitPopupToWindow), { once: true });
   window.addEventListener('resize', fitPopupToWindow);
 
-  // --- Initial folder render + search ---
-  if (window.displayFolders) window.displayFolders();
+  // --- Search (the initial render is driven by lastMode, above) ---
   // Debounce: each render re-reads + decompresses all storage and rebuilds the
   // list, so coalesce fast typing into one render.
   let searchDebounce;

@@ -297,7 +297,9 @@ function buildPromptItem(title, p, openPrompts) {
   return item;
 }
 
-function displayPrompts() {
+// onRendered (optional) runs once the list is in the DOM — the popup uses it to
+// hold back work its first frame does not need (see afterFirstRender, ui.js).
+function displayPrompts(onRendered) {
   const promptListDiv = document.getElementById('promptList');
   if (!promptListDiv) return;
   const searchQuery = (document.getElementById('promptSearchInput')?.value || '').toLowerCase().trim();
@@ -332,6 +334,7 @@ function displayPrompts() {
           : (chrome.i18n.getMessage("promptNoSavedYet") || 'No prompts saved yet.'),
       });
       promptListDiv.replaceChildren(emptyMsg);
+      if (onRendered) onRendered();
       return;
     }
     let hasPinned = false, transitionDone = false;
@@ -344,6 +347,7 @@ function displayPrompts() {
       }
       promptListDiv.appendChild(buildPromptItem(title, p, openPrompts));
     });
+    if (onRendered) onRendered();
   }));
 }
 window.displayPrompts = displayPrompts;
@@ -472,11 +476,14 @@ function initPromptsUI() {
       () => promptSortMenu.querySelectorAll('.dropdown-item'), { radio: true });
   }
 
-  loadData({ promptSortPref: 'dateDesc' }, (data) => {
-    const activeItem = document.querySelector(`#promptSortMenu .dropdown-item[data-value="${data.promptSortPref}"]`);
+  // A plain sync key (saveData passes it through as-is), so read just that key:
+  // a full loadData here decompressed the whole library for one word.
+  chrome.storage.sync.get(['promptSortPref'], (data) => {
+    const promptSortPref = (data && data.promptSortPref) || 'dateDesc';
+    const activeItem = document.querySelector(`#promptSortMenu .dropdown-item[data-value="${promptSortPref}"]`);
     if (activeItem) activeItem.classList.add('active');
     // Mark the toggle when a non-default order is active (dateDesc is the default).
-    promptSortToggleBtn.classList.toggle('has-custom-sort', data.promptSortPref !== 'dateDesc');
+    promptSortToggleBtn.classList.toggle('has-custom-sort', promptSortPref !== 'dateDesc');
   });
 
   document.querySelectorAll('#promptSortMenu .dropdown-item').forEach(item => {

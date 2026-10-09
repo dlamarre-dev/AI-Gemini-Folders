@@ -12,7 +12,7 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome, Edge **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.4**.
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.5**.
 - **AI Folders (AF)** — 17 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, Pi, Character.AI) **+ a user-configured local LLM**. You.com was
@@ -38,7 +38,7 @@ conversations into folders and provide a reusable prompt library:
   declared **before** the redirect lands, which is the whole lesson of #82 and of
   the Baidu move (§8): a manifest match pattern cannot follow a 302, so a host
   added only once users complain is a host that was broken for a month.
-  Current version **1.7.4**. The popup's per-site "new conversation" buttons
+  Current version **1.7.5**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -398,7 +398,21 @@ git checkout main && git pull --ff-only
   UI open-state (`openFolders`/`openPrompts`) lives
   in `storage.local` — device-local, to avoid burning the sync write quota.
   `finishSave(..., affectsBookmarks)` only rebuilds the bookmark mirror when
-  folders/pins/sort actually change. Default sort is `dateDesc` (newest-first) for
+  folders/pins/sort actually change.
+  **Opening the popup does not rebuild the mirror.** It used to, every time —
+  one sequential `bookmarks.create` per folder and conversation — which kept the
+  browser busy for seconds on a large library. `resyncBookmarksIfStale` rebuilds
+  only when `bookmarkMirrorStamp` (storage.local, written at the end of a complete
+  rebuild and removed at its start, so a rebuild cut short by the popup closing
+  never vouches for a partial tree) no longer matches the data, or when there is
+  not exactly one master folder.
+  **Popup first render:** only the list of the mode it reopens in is built
+  (`lastMode`); the other waits for its first visit. Non-critical work — storage
+  bar, review banner + `opens` counter, AF promo, the mirror check — goes through
+  `afterFirstRender` (`src/ui.js`), released by `markPopupRendered` once that list
+  is in the DOM. `loadData` memoizes LZString per slot keyed by the payload
+  itself (`decompressCached`), so the repeated loads at open and per search
+  keystroke skip decompression while still returning fresh objects. Default sort is `dateDesc` (newest-first) for
   both folders and prompts.
 - **Prompt trigger:** `prompt-trigger.js` runs as a content script (isolated world)
   and only *detects* `#name`; the actual injection is delegated to `background.js`
@@ -850,7 +864,7 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   `background.js` (not shared, §6). The page opens only when
   `reason === 'update'` **and** the manifest version equals that constant, so a
   minor release with nothing to explain simply leaves the constant alone —
-  4.6.3 / 1.7.3 and 4.6.4 / 1.7.4 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
+  4.6.3 / 1.7.3, 4.6.4 / 1.7.4 and 4.6.5 / 1.7.5 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
   The test asserts the constant is **not ahead of** the manifest version, which is
   the direction that breaks: a constant ahead fires on the release *after* this
   one, carrying notes for a version already installed. It used to demand equality,
