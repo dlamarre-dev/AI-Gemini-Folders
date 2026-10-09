@@ -536,3 +536,76 @@ describe('fitPopupToWindow', () => {
     expect(document.body.style.maxHeight).toBe('');
   });
 });
+
+// ---------------------------------------------------------------------------
+// First render
+// ---------------------------------------------------------------------------
+
+// The popup builds only the list of the mode it reopens in, then releases the
+// work it held back (afterFirstRender, ui.js) — and no longer rebuilds the
+// bookmark mirror on its own at open.
+describe('initPopupCommon first render', () => {
+  const IDS = [
+    'newFolderBtn', 'searchInput', 'sortToggleBtn', 'sortMenu', 'modeFolderBtn',
+    'modePromptBtn', 'folderModeContainer', 'promptModeContainer', 'promptSearchInput',
+    'toggleAddPanelBtn', 'addConversationPanel', 'exportBtn', 'importBtn', 'importFile',
+    'syncBookmarksToggle', 'syncBookmarksLabel', 'syncPromptsLabel', 'githubLink', 'kofiBtn',
+  ];
+
+  function boot(lastMode) {
+    document.body.innerHTML = IDS.map((id) => `<div id="${id}"></div>`).join('')
+      + '<div class="mode-toggle-pill"></div>';
+    global.loadData = jest.fn((defaults, cb) => cb({ ...defaults }));
+    global.saveData = jest.fn((data, cb) => cb && cb());
+    global.resyncBookmarksIfStale = jest.fn();
+    global.displayPrompts = jest.fn((cb) => cb && cb());
+    window.displayFolders = jest.fn((_open, _term, cb) => cb && cb());
+    window.markPopupRendered = jest.fn();
+    window.afterFirstRender = jest.fn();
+    chrome.storage.local.get = jest.fn((_k, cb) => cb(lastMode ? { lastMode } : {}));
+    chrome.storage.sync.get = jest.fn((_k, cb) => cb({ syncBookmarksEnabled: true }));
+    window.initPopupCommon({ exportFilename: 'b.json' });
+  }
+  afterEach(() => {
+    delete global.resyncBookmarksIfStale;
+    delete global.displayPrompts;
+    delete window.afterFirstRender;
+    delete window.markPopupRendered;
+  });
+
+  test('Folder mode renders the folders only, then reports the first render', () => {
+    boot('folder');
+    expect(window.displayFolders).toHaveBeenCalledTimes(1);
+    expect(global.displayPrompts).not.toHaveBeenCalled();
+    expect(window.markPopupRendered).toHaveBeenCalledTimes(1);
+  });
+
+  test('Prompt mode renders the prompts only; the folders wait for Folder mode', () => {
+    boot('prompt');
+    expect(global.displayPrompts).toHaveBeenCalledTimes(1);
+    expect(window.displayFolders).not.toHaveBeenCalled();
+    expect(window.markPopupRendered).toHaveBeenCalledTimes(1);
+
+    document.getElementById('modeFolderBtn').click();
+    expect(window.displayFolders).toHaveBeenCalledTimes(1);
+    document.getElementById('modePromptBtn').click();
+    document.getElementById('modeFolderBtn').click();
+    expect(window.displayFolders).toHaveBeenCalledTimes(1);
+  });
+
+  test('the bookmark mirror is only checked, and only after the first render', () => {
+    boot('folder');
+    expect(global.resyncBookmarksIfStale).not.toHaveBeenCalled();
+    expect(window.afterFirstRender).toHaveBeenCalledWith(global.resyncBookmarksIfStale);
+    expect(chrome.bookmarks.create).not.toHaveBeenCalled();
+  });
+
+  test('the sort menu reads sortPref alone, without a full loadData', () => {
+    chrome.storage.sync.get = jest.fn((_k, cb) => cb({ sortPref: 'alphaAsc' }));
+    document.body.innerHTML = '';
+    boot('folder');
+    const sortReads = chrome.storage.sync.get.mock.calls.filter((c) => Array.isArray(c[0]) && c[0].includes('sortPref'));
+    expect(sortReads).toHaveLength(1);
+    expect(global.loadData).not.toHaveBeenCalled();
+  });
+});

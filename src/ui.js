@@ -300,8 +300,31 @@ function makeMenuAccessible(toggleBtn, menu, getItems, options) {
   });
 }
 
+// Work the popup needs, but not for its first frame: the storage bar, the review
+// banner and its open counter, the bookmark-mirror check. They used to start
+// alongside the first render and compete with it for the storage IPC and the
+// main thread. They now wait until popup-core.js reports that the visible list
+// is in the DOM (markPopupRendered), then for an idle moment. The fallback
+// timer keeps them from waiting for ever if that report never comes.
+const FIRST_RENDER_FALLBACK_MS = 1500;
+let markPopupRendered;
+const popupRendered = new Promise((resolve) => {
+  markPopupRendered = resolve;
+  setTimeout(resolve, FIRST_RENDER_FALLBACK_MS);
+});
+function afterFirstRender(fn) {
+  popupRendered.then(() => {
+    // Firefox has no requestIdleCallback in every context; a macrotask still
+    // lets the frame that showed the list paint first.
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(() => fn(), { timeout: 500 });
+    else setTimeout(fn, 0);
+  });
+}
+
 window.showCustomModal = showCustomModal;
 window.updateStorageBar = updateStorageBar;
+window.afterFirstRender = afterFirstRender;
+window.markPopupRendered = () => markPopupRendered();
 window.makeMenuAccessible = makeMenuAccessible;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -310,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
     storageTooltip.title = chrome.i18n.getMessage("storageCalc") || "Calcul...";
   }
 
-  updateStorageBar();
+  afterFirstRender(updateStorageBar);
 
   // --- REVIEW BANNER ---
   const reviewBanner = document.getElementById('reviewBanner');
@@ -324,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // The open count goes through bumpUsageStat (utils.js), which queues it
     // behind any save counted in this page, so neither increment is lost.
-    chrome.storage.local.get(['reviewState'], (data) => bumpUsageStat('opens', (stats) => {
+    afterFirstRender(() => chrome.storage.local.get(['reviewState'], (data) => bumpUsageStat('opens', (stats) => {
       let reviewState = data.reviewState || { status: 'pending', nextPromptDate: 0 };
 
       if (reviewState.status === 'rated' || reviewState.status === 'dismissed') return;
@@ -356,6 +379,6 @@ document.addEventListener('DOMContentLoaded', () => {
         markRatingInteraction();
         reviewBanner.style.display = 'none';
       });
-    }));
+    })));
   }
 });

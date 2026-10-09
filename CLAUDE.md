@@ -398,7 +398,21 @@ git checkout main && git pull --ff-only
   UI open-state (`openFolders`/`openPrompts`) lives
   in `storage.local` — device-local, to avoid burning the sync write quota.
   `finishSave(..., affectsBookmarks)` only rebuilds the bookmark mirror when
-  folders/pins/sort actually change. Default sort is `dateDesc` (newest-first) for
+  folders/pins/sort actually change.
+  **Opening the popup does not rebuild the mirror.** It used to, every time —
+  one sequential `bookmarks.create` per folder and conversation — which kept the
+  browser busy for seconds on a large library. `resyncBookmarksIfStale` rebuilds
+  only when `bookmarkMirrorStamp` (storage.local, written at the end of a complete
+  rebuild and removed at its start, so a rebuild cut short by the popup closing
+  never vouches for a partial tree) no longer matches the data, or when there is
+  not exactly one master folder.
+  **Popup first render:** only the list of the mode it reopens in is built
+  (`lastMode`); the other waits for its first visit. Non-critical work — storage
+  bar, review banner + `opens` counter, AF promo, the mirror check — goes through
+  `afterFirstRender` (`src/ui.js`), released by `markPopupRendered` once that list
+  is in the DOM. `loadData` memoizes LZString per slot keyed by the payload
+  itself (`decompressCached`), so the repeated loads at open and per search
+  keystroke skip decompression while still returning fresh objects. Default sort is `dateDesc` (newest-first) for
   both folders and prompts.
 - **Prompt trigger:** `prompt-trigger.js` runs as a content script (isolated world)
   and only *detects* `#name`; the actual injection is delegated to `background.js`
