@@ -1289,3 +1289,61 @@ describe('chat link click', () => {
     expect(chrome.tabs.create).not.toHaveBeenCalled();
   });
 });
+
+// ---------------------------------------------------------------------------
+// Lazy conversation rows
+// ---------------------------------------------------------------------------
+
+// A closed folder's conversations are built on its first opening, not at
+// render — but it must look and behave exactly as if they were there.
+describe('conversation rows of a closed folder', () => {
+  const card = (name) => document.querySelector(`.folder[data-folder-name="${name}"]`);
+  const rows = (name) => card(name).querySelectorAll(':scope > .folder-content > .chat-item');
+
+  test('are not built while closed, yet the folder still shows it can expand', () => {
+    setupStorage({ Work: makeFolder(['a', '1'], ['b', '2']) });
+    displayFolders();
+    expect(rows('Work')).toHaveLength(0);
+    expect(card('Work').querySelector('.folder-chevron')).not.toBeNull();
+    expect(card('Work').querySelector('.folder-header').getAttribute('aria-expanded')).toBe('false');
+  });
+
+  test('are built on first opening, once', () => {
+    setupStorage({ Work: makeFolder(['a', '1'], ['b', '2']) });
+    displayFolders();
+    const header = card('Work').querySelector('.folder-header');
+    header.click();
+    expect(rows('Work')).toHaveLength(2);
+    expect(header.getAttribute('aria-expanded')).toBe('true');
+    header.click();
+    header.click();
+    expect(rows('Work')).toHaveLength(2);
+  });
+
+  test('land before the sub-folders, as an immediate build would place them', () => {
+    setupStorage({ Work: makeFolder(['a', '1']), Child: makeFolder(['c', '3']) }, [], [], { Child: 'Work' });
+    displayFolders();
+    expect(card('Child')).not.toBeNull();   // sub-folder cards are built at once
+    card('Work').querySelector('.folder-header').click();
+    const content = card('Work').querySelector(':scope > .folder-content');
+    expect(content.firstElementChild.classList.contains('chat-item')).toBe(true);
+    expect(content.lastElementChild.dataset.folderName).toBe('Child');
+  });
+
+  test('are built at render for an open folder and for a search', () => {
+    setupStorage({ Work: makeFolder(['alpha', '1']) }, [], ['Work']);
+    displayFolders();
+    expect(rows('Work')).toHaveLength(1);
+
+    setupStorage({ Work: makeFolder(['alpha', '1']) });
+    displayFolders([], 'alpha');
+    expect(rows('Work')).toHaveLength(1);
+  });
+
+  test('an empty closed folder offers nothing to expand', () => {
+    setupStorage({ Empty: [] });
+    displayFolders();
+    expect(card('Empty').querySelector('.folder-chevron')).toBeNull();
+    expect(card('Empty').querySelector('.folder-content')).toBeNull();
+  });
+});

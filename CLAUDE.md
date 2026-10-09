@@ -412,7 +412,14 @@ git checkout main && git pull --ff-only
   `afterFirstRender` (`src/ui.js`), released by `markPopupRendered` once that list
   is in the DOM. `loadData` memoizes LZString per slot keyed by the payload
   itself (`decompressCached`), so the repeated loads at open and per search
-  keystroke skip decompression while still returning fresh objects. Default sort is `dateDesc` (newest-first) for
+  keystroke skip decompression while still returning fresh objects.
+  **A closed folder's conversation rows are built on its first opening**
+  (`fillContent` in `buildFolderElement`, `src/folders.js`), into a fragment
+  prepended before the sub-folders. Sub-folder cards are still built at once —
+  they are drop targets and carry their own state. The chevron count of a closed
+  folder comes from the data, which is exact because a closed folder implies no
+  search term. Anything new that needs a `.chat-item` of a closed folder must open
+  it (or call the fill) first. Default sort is `dateDesc` (newest-first) for
   both folders and prompts.
 - **Prompt trigger:** `prompt-trigger.js` runs as a content script (isolated world)
   and only *detects* `#name`; the actual injection is delegated to `background.js`
