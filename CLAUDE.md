@@ -419,7 +419,8 @@ git checkout main && git pull --ff-only
   they are drop targets and carry their own state. The chevron count of a closed
   folder comes from the data, which is exact because a closed folder implies no
   search term. Anything new that needs a `.chat-item` of a closed folder must open
-  it (or call the fill) first. Default sort is `dateDesc` (newest-first) for
+  it (or call the fill) first.
+  Default sort is `dateDesc` (newest-first) for
   both folders and prompts.
 - **Prompt trigger:** `prompt-trigger.js` runs as a content script (isolated world)
   and only *detects* `#name`; the actual injection is delegated to `background.js`
