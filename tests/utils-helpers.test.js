@@ -429,9 +429,33 @@ describe('bookmark mirror stamp', () => {
     expect(bookmarkMirrorStamp(folders, [], 'alphaAsc', {})).not.toBe(s);
   });
 
-  test('a complete rebuild writes the stamp of what it built', async () => {
+  const current = (masterId) => ({ data: bookmarkMirrorStamp(folders, [], 'dateDesc', {}), masterId });
+
+  test('a complete rebuild writes the stamp of what it built, tied to its tree', async () => {
     await syncToBookmarksTree(folders, [], 'dateDesc', {});
-    expect(local.bookmarkMirrorStamp).toBe(bookmarkMirrorStamp(folders, [], 'dateDesc', {}));
+    expect(local.bookmarkMirrorStamp).toEqual(current(masters[0].id));
+  });
+
+  test('no stamp when a bookmark could not be created', async () => {
+    const create = chrome.bookmarks.create;
+    chrome.bookmarks.create = jest.fn((obj, cb) => (obj.url ? cb(undefined) : create(obj, cb)));
+    await syncToBookmarksTree(folders, [], 'dateDesc', {});
+    expect(local.bookmarkMirrorStamp).toBeUndefined();
+  });
+
+  // Another builder (the service worker, or a popup that then closed) left the
+  // only tree: it may be partial, so this build must not vouch for it.
+  test("no stamp when the one tree left is another builder's", async () => {
+    const search = chrome.bookmarks.search;
+    let calls = 0;
+    chrome.bookmarks.search = jest.fn((q, cb) => {
+      calls++;
+      // Step 6: our tree was removed meanwhile, someone else's is there.
+      if (calls === 2) return cb([{ id: 'other', title: 'masterFolderName' }]);
+      return search(q, cb);
+    });
+    await syncToBookmarksTree(folders, [], 'dateDesc', {});
+    expect(local.bookmarkMirrorStamp).toBeUndefined();
   });
 
   test('a rebuild removes the stamp before it starts', async () => {
@@ -442,7 +466,7 @@ describe('bookmark mirror stamp', () => {
   });
 
   test('an up-to-date mirror is left alone', async () => {
-    local.bookmarkMirrorStamp = bookmarkMirrorStamp(folders, [], 'dateDesc', {});
+    local.bookmarkMirrorStamp = current('m');
     masters = [{ id: 'm', title: 'masterFolderName' }];
     resyncBookmarksIfStale();
     await flush(); await flush();
@@ -458,8 +482,34 @@ describe('bookmark mirror stamp', () => {
     expect(chrome.bookmarks.create).toHaveBeenCalled();
   });
 
-  test('a matching stamp still rebuilds a mirror removed by hand', async () => {
+  // Chrome syncs the bookmark tree itself: another device's rebuild arrives as
+  // a folder with a different id, possibly built from older data.
+  test('a matching stamp still rebuilds a tree replaced by another device', async () => {
+    local.bookmarkMirrorStamp = current('m');
+    masters = [{ id: 'from-other-device', title: 'masterFolderName' }];
+    resyncBookmarksIfStale();
+    await flush(); await flush(); await new Promise((r) => setTimeout(r, 80));
+    expect(chrome.bookmarks.create).toHaveBeenCalled();
+  });
+
+  test('a stamp in the 1.7.5 / 4.6.5 format (a bare string) is treated as stale', async () => {
     local.bookmarkMirrorStamp = bookmarkMirrorStamp(folders, [], 'dateDesc', {});
+    masters = [{ id: 'm', title: 'masterFolderName' }];
+    resyncBookmarksIfStale();
+    await flush(); await flush(); await new Promise((r) => setTimeout(r, 80));
+    expect(chrome.bookmarks.create).toHaveBeenCalled();
+  });
+
+  test('no check while a rebuild is already running in this page', async () => {
+    const running = syncToBookmarksTree(folders, [], 'dateDesc', {});
+    chrome.storage.sync.get.mockClear();
+    resyncBookmarksIfStale();
+    expect(chrome.storage.sync.get.mock.calls.some((c) => c[0].includes('syncBookmarksEnabled') && c[0].length === 1)).toBe(false);
+    await running;
+  });
+
+  test('a matching stamp still rebuilds a mirror removed by hand', async () => {
+    local.bookmarkMirrorStamp = current('m');
     resyncBookmarksIfStale();
     await flush(); await flush(); await new Promise((r) => setTimeout(r, 80));
     expect(chrome.bookmarks.create).toHaveBeenCalled();

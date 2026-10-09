@@ -802,10 +802,25 @@ function resyncBookmarksFromStorage(opts = {}) {
   });
 }
 
-// A short fingerprint of everything the bookmark mirror is built from. Written
-// to storage.local (bookmarkMirrorStamp) once a rebuild has completed, removed
-// when one starts, so a rebuild cut short — the popup closing mid-way — never
-// leaves a stamp that vouches for a partial tree.
+// The mirror's top-level bookmark folder. One definition for the builder, the
+// open-time check and the switch-off cleanup: if they disagreed on the name or
+// the match, the check would rebuild on every open or miss a duplicate.
+function masterFolderName() {
+  return chrome.i18n.getMessage("masterFolderName") || "Gemini Folders (Sync)";
+}
+function findMasterFolders() {
+  const name = masterFolderName();
+  return new Promise(r => chrome.bookmarks.search({ title: name }, r))
+    .then(results => (results || []).filter(n => !n.url && n.title === name));
+}
+
+// A short fingerprint of everything the bookmark mirror is built from. Stored in
+// storage.local as bookmarkMirrorStamp = { data, masterId } once a rebuild has
+// completed, removed when one starts, so a rebuild cut short — the popup
+// closing mid-way — never leaves a stamp that vouches for a partial tree.
+// masterId ties the stamp to the tree THIS device built. The stamp is local but
+// the tree is not: Chrome syncs bookmarks, so another device's rebuild replaces
+// it, and the replacement arrives here as a folder with a different id.
 function bookmarkMirrorStamp(folders, pinnedFolders = [], sortPref = 'dateDesc', folderParents = {}) {
   const text = JSON.stringify([folders, pinnedFolders, sortPref, folderParents]);
   let h = 5381;
@@ -818,21 +833,26 @@ function bookmarkMirrorStamp(folders, pinnedFolders = [], sortPref = 'dateDesc',
 // on a large library kept the browser busy for seconds and slowed the very
 // popup it ran in. Every save already rebuilds it (finishSave), so the open
 // only has to catch what arrived some other way: a change synced from another
-// device, or a mirror removed or duplicated by hand. The stamp says whether the
-// data changed; one search says whether exactly one tree is there.
+// device, a mirror removed, duplicated or replaced (by another device's
+// rebuild). The stamp says whether the data changed; one search says whether
+// the one tree there is still the one it describes.
+// What it does NOT catch: a bookmark edited by hand inside the tree. The next
+// save repairs that, which is the price of not rebuilding on every open.
 function resyncBookmarksIfStale() {
+  // A rebuild running in this page will leave the mirror current, and it has
+  // already removed the stamp, so checking now would only queue a second one.
+  if (isSyncingToBookmarks) return;
   chrome.storage.sync.get(['syncBookmarksEnabled'], (syncData) => {
     if (!syncData || !syncData.syncBookmarksEnabled) return;
     loadData({ folders: {}, pinnedFolders: [], sortPref: 'dateDesc', folderParents: {} }, (data) => {
-      const rebuild = () => syncToBookmarksTree(data.folders, data.pinnedFolders, data.sortPref, data.folderParents);
       const stamp = bookmarkMirrorStamp(data.folders, data.pinnedFolders, data.sortPref, data.folderParents);
-      chrome.storage.local.get(['bookmarkMirrorStamp'], (local) => {
-        if (!local || local.bookmarkMirrorStamp !== stamp) return rebuild();
-        const masterName = chrome.i18n.getMessage("masterFolderName") || "Gemini Folders (Sync)";
-        chrome.bookmarks.search({ title: masterName }, (results) => {
-          const masters = (results || []).filter(n => !n.url && n.title === masterName);
-          if (masters.length !== 1) rebuild();
-        });
+      chrome.storage.local.get(['bookmarkMirrorStamp'], async (local) => {
+        const stored = local && local.bookmarkMirrorStamp;
+        const masters = await findMasterFolders();
+        const current = stored && stored.data === stamp
+          && masters.length === 1 && masters[0].id === stored.masterId;
+        if (current || isSyncingToBookmarks) return;
+        syncToBookmarksTree(data.folders, data.pinnedFolders, data.sortPref, data.folderParents);
       });
     });
   });
@@ -852,17 +872,20 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
   isSyncingToBookmarks = true;
   chrome.storage.local.remove('bookmarkMirrorStamp');
 
+  // A bookmark that failed to be created (its callback gets no node) leaves the
+  // tree incomplete; such a build must not stamp the mirror as current.
+  let createFailed = false;
+  const createBookmark = (props) => new Promise(r => chrome.bookmarks.create(props, (node) => {
+    if (!node) createFailed = true;
+    r(node);
+  }));
+
   try {
-    const MASTER_FOLDER_NAME = chrome.i18n.getMessage("masterFolderName") || "Gemini Folders (Sync)";
+    const MASTER_FOLDER_NAME = masterFolderName();
 
-    // 2. Look for all folders
-    const results = await new Promise(r => chrome.bookmarks.search({ title: MASTER_FOLDER_NAME }, r));
-
-    // 3. Remove all existing master trees to eliminate stale duplicates
-    for (const node of results) {
-      if (!node.url && node.title === MASTER_FOLDER_NAME) {
-        await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
-      }
+    // 2-3. Remove all existing master trees to eliminate stale duplicates
+    for (const node of await findMasterFolders()) {
+      await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
     }
 
     // Brief delay to let bookmark removals propagate before rebuilding the tree
@@ -872,7 +895,7 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
     //    removals ran. The toggle's own cleanup has already happened by then, so
     //    a folder created here would never be removed.
     if (!(await isBookmarkSyncEnabled())) return;
-    const masterNode = await new Promise(r => chrome.bookmarks.create({ title: MASTER_FOLDER_NAME }, r));
+    const masterNode = await createBookmark({ title: MASTER_FOLDER_NAME });
 
     // 5. Folder and bookmark creation loop (sorted).
     //
@@ -886,11 +909,11 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
         ? `${match[1]} ${folderName.slice(match[0].length)}`
         : folderName;
 
-      const folderNode = await new Promise(r => chrome.bookmarks.create({
+      const folderNode = await createBookmark({
         parentId,
         title: displayFolderName,
         index
-      }, r));
+      });
 
       const chats = sortChats(folders[folderName] || [], sortPref);
       let childIndex = 0;
@@ -898,12 +921,12 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
         // Defence-in-depth: never mirror an unsafe URL into the bookmark tree,
         // even if legacy/corrupt storage carries one (import already gates on this).
         if (!isSafeUrl(chat.url)) continue;
-        await new Promise(r => chrome.bookmarks.create({
+        await createBookmark({
           parentId: folderNode.id,
           title: chat.title,
           url: chat.url,
           index: childIndex++
-        }, r));
+        });
       }
       return { folderNode, nextIndex: childIndex };
     };
@@ -930,8 +953,7 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
     //    closes, leaving a partial tree, and that must never beat a complete
     //    one. A switch-off during the build removes ours too.
     const enabled = await isBookmarkSyncEnabled();
-    const masters = (await new Promise(r => chrome.bookmarks.search({ title: MASTER_FOLDER_NAME }, r)) || [])
-      .filter(n => !n.url && n.title === MASTER_FOLDER_NAME);
+    const masters = await findMasterFolders();
     let keep = null;
     if (enabled && masters.length === 1) {
       keep = masters[0].id;
@@ -950,10 +972,15 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
     for (const node of masters) {
       if (node.id !== keep) await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
     }
-    // Not after resolving duplicates: the tree kept is the largest, not
-    // necessarily this one, and the follow-up rebuild below writes the stamp.
-    if (keep !== null && !resolvedDuplicates) {
-      chrome.storage.local.set({ bookmarkMirrorStamp: bookmarkMirrorStamp(folders, pinnedFolders, sortPref, folderParents) });
+    // Only for the tree this build created, complete. Not after resolving
+    // duplicates (the tree kept is the largest, not necessarily this one, and
+    // the follow-up rebuild below writes the stamp), and not when the one tree
+    // left is another builder's — it may be a partial one whose popup closed.
+    if (keep !== null && masterNode && keep === masterNode.id && !resolvedDuplicates && !createFailed) {
+      chrome.storage.local.set({ bookmarkMirrorStamp: {
+        data: bookmarkMirrorStamp(folders, pinnedFolders, sortPref, folderParents),
+        masterId: masterNode.id,
+      } });
     }
   } catch (error) {
     console.error("Critical error during sync :", error);
@@ -1598,6 +1625,8 @@ if (typeof module !== 'undefined') {
     syncToBookmarksTree,
     bookmarkMirrorStamp,
     resyncBookmarksIfStale,
+    masterFolderName,
+    findMasterFolders,
     extractTitleLogic,
     isSafeUrl,
     modifierKeyLabel,

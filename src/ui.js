@@ -347,7 +347,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // The open count goes through bumpUsageStat (utils.js), which queues it
     // behind any save counted in this page, so neither increment is lost.
-    afterFirstRender(() => chrome.storage.local.get(['reviewState'], (data) => bumpUsageStat('opens', (stats) => {
+    // It is counted at once — a popup closed before its first render is still
+    // an open, and 'o' feeds the uninstall survey (§9, §11) — while only the
+    // banner itself waits for afterFirstRender.
+    chrome.storage.local.get(['reviewState'], (data) => bumpUsageStat('opens', (stats) => afterFirstRender(() => {
       let reviewState = data.reviewState || { status: 'pending', nextPromptDate: 0 };
 
       if (reviewState.status === 'rated' || reviewState.status === 'dismissed') return;

@@ -348,3 +348,23 @@ describe('afterFirstRender', () => {
     expect(fn).toHaveBeenCalledTimes(1);
   });
 });
+
+// 'o' (usageStats.opens) feeds the uninstall survey (§9, §11): a popup closed
+// before its first render is still an open, so the count must not wait for it.
+describe('opens counter', () => {
+  test('is bumped at once; only the review banner waits for the first render', () => {
+    document.body.innerHTML = `
+      <div id="reviewBanner" style="display:none"></div>
+      <span id="reviewTitleTxt"></span><span id="reviewMessageTxt"></span>
+      <button id="btnReviewRate"></button><button id="btnReviewLater"></button><button id="btnReviewNo"></button>`;
+    chrome.storage.local.get = jest.fn((_k, cb) => cb({}));
+    chrome.storage.sync.getBytesInUse = jest.fn();
+    global.bumpUsageStat = jest.fn();
+    try {
+      document.dispatchEvent(new Event('DOMContentLoaded'));
+      expect(global.bumpUsageStat).toHaveBeenCalledWith('opens', expect.any(Function));
+    } finally {
+      delete global.bumpUsageStat;
+    }
+  });
+});

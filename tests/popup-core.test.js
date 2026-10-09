@@ -562,6 +562,7 @@ describe('initPopupCommon first render', () => {
     window.displayFolders = jest.fn((_open, _term, cb) => cb && cb());
     window.markPopupRendered = jest.fn();
     window.afterFirstRender = jest.fn();
+    delete window.foldersRendered;
     chrome.storage.local.get = jest.fn((_k, cb) => cb(lastMode ? { lastMode } : {}));
     chrome.storage.sync.get = jest.fn((_k, cb) => cb({ syncBookmarksEnabled: true }));
     window.initPopupCommon({ exportFilename: 'b.json' });
@@ -591,6 +592,16 @@ describe('initPopupCommon first render', () => {
     document.getElementById('modePromptBtn').click();
     document.getElementById('modeFolderBtn').click();
     expect(window.displayFolders).toHaveBeenCalledTimes(1);
+  });
+
+  // An import or a save made while Prompt mode shows renders the folders
+  // already (displayFolders sets window.foldersRendered); the first visit to
+  // Folder mode must not build them a second time.
+  test('a render made by another path while in Prompt mode counts', () => {
+    boot('prompt');
+    window.foldersRendered = true;   // what the real displayFolders sets
+    document.getElementById('modeFolderBtn').click();
+    expect(window.displayFolders).not.toHaveBeenCalled();
   });
 
   test('the bookmark mirror is only checked, and only after the first render', () => {

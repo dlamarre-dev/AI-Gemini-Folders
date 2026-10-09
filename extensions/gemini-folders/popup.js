@@ -209,8 +209,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const ONE_DAY  = 24 * 60 * 60 * 1000;
     const FIVE_DAYS = 5 * ONE_DAY;
 
-    // Not needed for the first frame (afterFirstRender, ui.js); queued after the
-    // review banner's own check, which ui.js registers first.
+    // Not needed for the first frame (afterFirstRender, ui.js). It reads
+    // usageStats on its own, so it may see the opens count from before this
+    // open's increment — one open late on the threshold, harmless.
     const runPromoCheck = window.afterFirstRender || ((fn) => fn());
     runPromoCheck(() => chrome.storage.local.get(['usageStats', 'afPromoState', 'afPromoRatingDate'], (data) => {
       const stats      = data.usageStats    || { opens: 0 };
