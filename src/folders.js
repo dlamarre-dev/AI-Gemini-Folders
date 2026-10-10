@@ -44,6 +44,10 @@ function wireGlobalDragHandlers() {
 // onRendered (optional) runs once the list is in the DOM — the popup uses it to
 // hold back work its first frame does not need (see afterFirstRender, ui.js).
 function displayFolders(openFoldersArg = [], searchTerm = "", onRendered) {
+  // Read by popup-core.js, which builds the list on the first visit to Folder
+  // mode: any render counts, including one made while Prompt mode was showing
+  // (an import, a save), or that visit would build it a second time.
+  window.foldersRendered = true;
   const folderList = document.getElementById('folderList');
   const noResultsDiv = document.getElementById('noResults');
   const folderNameInput = document.getElementById('folderName');

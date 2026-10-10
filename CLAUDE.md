@@ -402,15 +402,21 @@ git checkout main && git pull --ff-only
   **Opening the popup does not rebuild the mirror.** It used to, every time —
   one sequential `bookmarks.create` per folder and conversation — which kept the
   browser busy for seconds on a large library. `resyncBookmarksIfStale` rebuilds
-  only when `bookmarkMirrorStamp` (storage.local, written at the end of a complete
-  rebuild and removed at its start, so a rebuild cut short by the popup closing
-  never vouches for a partial tree) no longer matches the data, or when there is
-  not exactly one master folder.
+  only when `bookmarkMirrorStamp` (storage.local, `{ data, masterId }`, written at
+  the end of a complete rebuild and removed at its start, so a rebuild cut short
+  by the popup closing never vouches for a partial tree) no longer matches the
+  data, or when the one master folder is not the one it names. `masterId` is what
+  catches another device's rebuild: Chrome syncs the bookmark tree, so it arrives
+  here as a folder with a new id. No stamp is written when a `bookmarks.create`
+  failed or when the tree left is another builder's. Accepted limit: a bookmark
+  edited by hand *inside* the tree is repaired by the next save, not the next
+  open. Name and matching live in `masterFolderName` / `findMasterFolders` only.
   **Popup first render:** only the list of the mode it reopens in is built
   (`lastMode`); the other waits for its first visit. Non-critical work — storage
-  bar, review banner + `opens` counter, AF promo, the mirror check — goes through
+  bar, review banner, AF promo, the mirror check — goes through
   `afterFirstRender` (`src/ui.js`), released by `markPopupRendered` once that list
-  is in the DOM. `loadData` memoizes LZString per slot keyed by the payload
+  is in the DOM. The `opens` counter is **not** deferred: a popup closed before
+  its first render is still an open, and `o` feeds §9/§11. `loadData` memoizes LZString per slot keyed by the payload
   itself (`decompressCached`), so the repeated loads at open and per search
   keystroke skip decompression while still returning fresh objects.
   **A closed folder's conversation rows are built on its first opening**

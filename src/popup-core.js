@@ -282,9 +282,10 @@ function initPopupCommon(config) {
   // The folder list is built on the first visit to Folder mode, not at open: a
   // popup that reopens in Prompt mode used to build the whole folder list, then
   // the prompt list on top of it, before either was usable.
-  let foldersRendered = false;
+  // window.foldersRendered is set by displayFolders itself, so a render made
+  // by any other path while Prompt mode was showing counts too.
   const renderFolders = (onRendered) => {
-    foldersRendered = true;
+    window.foldersRendered = true;
     if (window.displayFolders) window.displayFolders([], '', onRendered);
     else if (onRendered) onRendered();
   };
@@ -300,7 +301,7 @@ function initPopupCommon(config) {
     modeFolderBtn.classList.toggle('mode-toggle-btn--active', !isPrompt);
     modePromptBtn.classList.toggle('mode-toggle-btn--active', isPrompt);
     if (isPrompt) displayPrompts(onRendered);
-    else if (!foldersRendered) renderFolders(onRendered);
+    else if (!window.foldersRendered) renderFolders(onRendered);
     else if (onRendered) onRendered();
     chrome.storage.local.set({ lastMode: mode });
   }
@@ -319,7 +320,7 @@ function initPopupCommon(config) {
           toggleEls.forEach(el => el.style.transition = '');
         });
       });
-    } else if (!foldersRendered) {
+    } else if (!window.foldersRendered) {
       renderFolders(firstRendered);
     } else {
       firstRendered();
@@ -400,14 +401,11 @@ function initPopupCommon(config) {
           }
         });
       } else {
-        // Fallback must match the name used by syncToBookmarksTree() in utils.js
-        // so the untoggle finds and removes the same master bookmark folder.
-        const masterFolderName = chrome.i18n.getMessage("masterFolderName") || "Gemini Folders (Sync)";
-        chrome.bookmarks.search({ title: masterFolderName }, async (results) => {
-          for (const node of results) {
-            if (!node.url && node.title === masterFolderName) {
-              await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
-            }
+        // findMasterFolders (utils.js) is the builder's own lookup, so the
+        // untoggle finds and removes the same master bookmark folder.
+        findMasterFolders().then(async (masters) => {
+          for (const node of masters) {
+            await new Promise(r => chrome.bookmarks.removeTree(node.id, r));
           }
         });
       }
