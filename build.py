@@ -637,6 +637,35 @@ def sync_diagnostics_config():
     if os.path.isfile(src) and os.path.isdir(dst_dir):
         shutil.copy2(src, os.path.join(dst_dir, "site-config.js"))
         print("[sync] tools/site-diagnostics/site-config.js refreshed")
+    sync_diagnostics_host_permissions()
+
+
+# The diagnostics tool opens every supported site and scripts it, so it needs
+# exactly AI Folders' host permissions. Copied, never hand-maintained: a host
+# added to AF (kimi.ai, copilot.cloud.microsoft…) and forgotten here leaves the
+# tool unable to script that site, which reads as a broken site, not a broken tool.
+DIAGNOSTICS_MANIFESTS = ("manifest.json", "manifestFF.json")
+
+
+def sync_diagnostics_host_permissions():
+    src = manifest_path("ai-folders")
+    dst_dir = os.path.join("tools", "site-diagnostics")
+    if not (os.path.isfile(src) and os.path.isdir(dst_dir)):
+        return
+    with open(src, "r", encoding="utf-8") as f:
+        hosts = json.load(f).get("host_permissions", [])
+    for name in DIAGNOSTICS_MANIFESTS:
+        path = os.path.join(dst_dir, name)
+        if not os.path.isfile(path):
+            continue
+        with open(path, "r", encoding="utf-8") as f:
+            manifest = json.load(f)
+        if manifest.get("host_permissions") == hosts:
+            continue  # write only on drift, so a clean tree stays clean
+        manifest["host_permissions"] = list(hosts)
+        with open(path, "w", encoding="utf-8", newline="\n") as f:
+            f.write(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
+        print(f"[sync] tools/site-diagnostics/{name} host_permissions aligned with AI Folders")
 
 
 

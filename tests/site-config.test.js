@@ -151,6 +151,17 @@ describe('composer flags', () => {
     expect(getSiteByUrl('https://www.kimi.com/')).toBe('kimi');
   });
 
+  test('chatgpt targets its composer by data-composer-markdown, not the dropped id', () => {
+    // 11/2026: #prompt-textarea vanished from the signed-in composer and only
+    // the positional fallback kept injection working (site-diagnostics flagged it).
+    expect(SITES.chatgpt.editorSelectors[0]).toBe('div[contenteditable="true"][data-composer-markdown]');
+    // A bare .ProseMirror could hit a canvas editor; any ProseMirror net must be form-scoped.
+    for (const sel of SITES.chatgpt.editorSelectors.filter(s => s.includes('ProseMirror'))) {
+      expect(sel.startsWith('form ')).toBe(true);
+    }
+    expect(SITES.chatgpt.editorSelectors).toContain('#prompt-textarea');
+  });
+
   test('copilot targets the Fluent composer and opts out of inline suggestions', () => {
     // Confirmed live on m365.cloud.microsoft (09/2026). The five Bing-chat era
     // selectors that used to sit here matched nothing at all, so only the

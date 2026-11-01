@@ -37,8 +37,17 @@ const SITES = {
     domain: 'chatgpt.com',
     color: '#ffffff',
     newConvUrl: 'https://chatgpt.com/',
-    // #prompt-textarea is a contenteditable div (confirmed 2024-2025)
-    editorSelectors: ['#prompt-textarea', 'div[contenteditable="true"][data-id="root"]'],
+    // 11/2026: the ProseMirror composer lost id="prompt-textarea" and now carries
+    // data-composer-markdown (confirmed live, signed in), which is ChatGPT's own
+    // marker rather than a styling class. The form-scoped ProseMirror is the next
+    // net: it excludes a canvas editor, which lives outside the composer form.
+    // #prompt-textarea stays last for accounts the rollout has not reached yet.
+    editorSelectors: [
+      'div[contenteditable="true"][data-composer-markdown]',
+      'form div.ProseMirror[contenteditable="true"]',
+      '#prompt-textarea',
+      'div[contenteditable="true"][data-id="root"]',
+    ],
     logo: 'icons/chatgpt.png',
     logoLight: 'icons/chatgpt-light.png',
   },

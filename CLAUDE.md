@@ -38,7 +38,7 @@ conversations into folders and provide a reusable prompt library:
   declared **before** the redirect lands, which is the whole lesson of #82 and of
   the Baidu move (§8): a manifest match pattern cannot follow a 302, so a host
   added only once users complain is a host that was broken for a month.
-  Current version **1.7.5**. The popup's per-site "new conversation" buttons
+  Current version **1.7.6**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -121,7 +121,9 @@ docs/                        Static GitHub Pages site (aifolders.xyz)
   site/uninstall.js  uninstall-i18n.js  uninstall-forms.js
 
 tools/                       Maintainer tooling — NOT shipped in the extensions
-  site-diagnostics/          Detects when a site's editor/title selectors break
+  site-diagnostics/          Detects when a site's editor/title selectors break.
+                             build.py refreshes its site-config.js and the
+                             host_permissions of both its manifests from AF's
   stats-collector/           CWS stats reader (native messaging). Maintainer-only.
   (The store-listing publisher moved to its own repo — see §12.)
 
@@ -878,7 +880,7 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   `background.js` (not shared, §6). The page opens only when
   `reason === 'update'` **and** the manifest version equals that constant, so a
   minor release with nothing to explain simply leaves the constant alone —
-  4.6.3 / 1.7.3, 4.6.4 / 1.7.4 and 4.6.5 / 1.7.5 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
+  4.6.3 / 1.7.3, 4.6.4 / 1.7.4, 4.6.5 / 1.7.5 and 1.7.6 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
   The test asserts the constant is **not ahead of** the manifest version, which is
   the direction that breaks: a constant ahead fires on the release *after* this
   one, carrying notes for a version already installed. It used to demand equality,
