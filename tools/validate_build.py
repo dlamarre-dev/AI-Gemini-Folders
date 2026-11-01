@@ -193,7 +193,7 @@ def check_zip(ext, version):
 
 
 # Mirrors FIREFOX_QUICK_SAVE_KEY in build.py. The retired spellings are shortcuts
-# Firefox claims for itself (screenshots; bookmark this page), which beat an
+# Firefox claims for itself (screenshots; History), which beat an
 # extension's suggested key — naming them in Firefox copy would promise a key
 # that does nothing.
 FIREFOX_QUICK_SAVE_KEY = "Alt+Shift+Q"
