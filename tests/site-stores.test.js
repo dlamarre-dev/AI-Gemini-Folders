@@ -92,7 +92,7 @@ describe('app.js wiring', () => {
   // (a-f, single letters), so inlining it would be the worst case of that bug —
   // as a separate document behind <img>, they cannot reach anything.
   test('the Edge mark is referenced as a file, like Firefox', () => {
-    expect(LOGOS_SRC).toMatch(/edge:\s*`<img src="site\/assets\/edge\.svg"/);
+    expect(LOGOS_SRC).toMatch(/edge:\s*`<img src="\/site\/assets\/edge\.svg"/);
     expect(fs.existsSync(path.join(ROOT, 'docs/site/assets/edge.svg'))).toBe(true);
   });
 });
@@ -117,12 +117,15 @@ describe('nav buttons are on every page that has them', () => {
     expect(html).toContain('id="navCtaEdgeLink"');
   });
 
-  // Ships hidden: app.js reveals it only once LINKS.edge is set, so a page
-  // cannot leak a dead button before the listing is certified.
-  test.each(pages.map(([f]) => f))('%s ships the Edge button hidden', (file) => {
+  // The nav is now pre-rendered from the STORES table (tools/build-site.js), so
+  // a store button is on a page exactly when its listing link is set: an
+  // uncertified listing still cannot leave a dead button in the header.
+  test.each(pages.map(([f]) => f))('%s offers the Edge button exactly when LINKS.edge is set', (file) => {
     const html = pages.find(([f]) => f === file)[1];
-    const tag = html.match(/<a[^>]*id="navCtaEdgeLink"[^>]*>/)[0];
-    expect(tag).toMatch(/\shidden\b/);
+    const edgeUrl = APP.match(/^\s*edge: "([^"]*)"/m)[1];
+    const tag = html.match(/<a[^>]*id="navCtaEdgeLink"[^>]*>/);
+    if (edgeUrl) expect(tag[0]).toContain(`href="${edgeUrl}"`);
+    else expect(tag).toBeNull();
   });
 });
 

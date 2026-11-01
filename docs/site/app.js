@@ -2,13 +2,32 @@
    AI Folders — promo site application
    ============================================================ */
 (function () {
-  const M = window.AF_MANUAL, D = window.AF_I18N, NAMES = window.AF_LANGS,
-        RTL = window.AF_RTL, SFONT = window.AF_SCRIPT_FONT, LOGOS = window.AF_LOGOS,
+  // The pages are pre-rendered, so a browser only loads i18n-manual.js (language
+  // names, RTL list) and this file. The full data sets (i18n-data, logos,
+  // privacy-i18n) are loaded by tools/build-site.js, and the fallbacks below keep
+  // this file working without them.
+  const HAS_DATA = !!window.AF_I18N;
+  const M = window.AF_MANUAL, D = window.AF_I18N || {}, NAMES = window.AF_LANGS,
+        RTL = window.AF_RTL, SFONT = window.AF_SCRIPT_FONT, LOGOS = window.AF_LOGOS || { services: {} },
         AF_PRIVACY = window.AF_PRIVACY || {};
 
   const LANG_ORDER = ["en","fr","es","de","it","pt_BR","pt_PT","nl","pl","ru","uk",
     "cs","sk","sl","hr","sr","bg","ro","hu","el","tr","sv","da","nb","fi","et","lv","lt","ca",
     "ar","he","ja","ko","zh_CN","zh_TW","hi","bn","th","vi","id","ms","tl","sw"];
+
+  // ---- one URL per language ----
+  // English lives at the root (and is the x-default); every other language has
+  // its own directory, so a search engine can index all 43 instead of the one
+  // its crawler's navigator.language happens to pick. tools/build-site.js
+  // pre-renders every page from the builders below; this file then only wires
+  // the behaviour. Paths are lower-case BCP 47 (pt-br, zh-cn) because URLs are
+  // case-sensitive on GitHub Pages and people type them.
+  const SITE_ORIGIN = "https://aifolders.xyz";
+  const pathCode = (lang) => lang.toLowerCase().replace("_", "-");
+  // The site renders Serbian in Latin script (cyrToLat below), so it says so.
+  const hreflang = (lang) => lang === "sr" ? "sr-Latn" : lang.replace("_", "-");
+  const homeUrl = (lang) => lang === "en" ? "/" : `/${pathCode(lang)}/`;
+  const privacyUrl = (lang) => lang === "en" ? "/privacy.html" : `/${pathCode(lang)}/privacy.html`;
 
   const LINKS = {
     chrome: "https://chromewebstore.google.com/detail/ai-folders/kjmgfajofolnfeaahchpmkpecfimcppf",
@@ -138,7 +157,7 @@
   if (NAMES.sr) NAMES.sr = cyrToLat(NAMES.sr);
   // localized product screenshot (folder-mode / prompt-mode / mobile-sync)
   // every one of the 43 languages has its own captured screenshot in shots/
-  function shot(lang, name) { return `site/assets/shots/${name}_${lang}.png`; }
+  function shot(lang, name) { return `/site/assets/shots/${name}_${lang}.png`; }
 
   // ---- builders ----
   function heroChips(lang) {
@@ -213,7 +232,7 @@
 
   function build(lang) {
     const langCloud = LANG_ORDER.map(l =>
-      `<span class="${l === lang ? "cur" : ""}" data-setlang="${l}">${esc(NAMES[l])}</span>`).join("");
+      `<a class="${l === lang ? "cur" : ""}" href="${homeUrl(l)}" hreflang="${hreflang(l)}" lang="${hreflang(l)}" data-setlang="${l}"${l === lang ? ' aria-current="page"' : ""}>${esc(NAMES[l])}</a>`).join("");
 
     const privacyBody = dpath(lang, "body.privacyBody");
     const localBody = dpath(lang, "body.localBody");
@@ -222,13 +241,8 @@
     return `
     <div class="container">
       <div class="hero-lang-row">
-        <a class="kofi-icon-btn" href="https://ko-fi.com/aifolders" target="_blank" rel="noopener" title="${esc(man(lang,'kofiTooltip'))}"><img src="site/assets/kofi.svg" alt="Ko-fi"></a>
-        <div class="lang" id="langWrap">
-          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
-            <span class="globe">🌐</span><span id="langLabel">${esc(NAMES[lang])}</span><span class="chev">▾</span>
-          </button>
-          <div class="lang-menu" id="langMenu" role="menu"></div>
-        </div>
+        <a class="kofi-icon-btn" href="https://ko-fi.com/aifolders" target="_blank" rel="noopener" title="${esc(man(lang,'kofiTooltip'))}"><img src="/site/assets/kofi.svg" alt="Ko-fi"></a>
+        ${langSwitcher(lang, homeUrl)}
       </div>
     </div>
 
@@ -266,8 +280,8 @@
         </div>
         <div class="svc-strip reveal d2" style="margin-top:34px">${servicesStrip(lang, true)}</div>
         <div class="shots">
-          <div class="shot reveal d1"><div class="shot-glow"></div><img src="${shot(lang,"folder-mode")}" alt="Folder mode" loading="lazy" width="1280" height="800"><span class="cap">${esc(dpath(lang,"ui.folderModeTitle"))}</span></div>
-          <div class="shot reveal d2"><div class="shot-glow"></div><img src="${shot(lang,"prompt-mode")}" alt="Prompt mode" loading="lazy" width="1280" height="800"><span class="cap">${esc(dpath(lang,"ui.promptModeTitle"))}</span></div>
+          <div class="shot reveal d1"><div class="shot-glow"></div><img src="${shot(lang,"folder-mode")}" alt="${esc(appName(lang) + " — " + dpath(lang,"ui.folderModeTitle"))}" loading="lazy" width="1280" height="800"><span class="cap">${esc(dpath(lang,"ui.folderModeTitle"))}</span></div>
+          <div class="shot reveal d2"><div class="shot-glow"></div><img src="${shot(lang,"prompt-mode")}" alt="${esc(appName(lang) + " — " + dpath(lang,"ui.promptModeTitle"))}" loading="lazy" width="1280" height="800"><span class="cap">${esc(dpath(lang,"ui.promptModeTitle"))}</span></div>
         </div>
       </div>
     </section>
@@ -299,7 +313,7 @@
         </div>
         <div class="split-media reveal d2">
           <div class="mglow"></div>
-          <img src="${shot(lang,"prompt-mode")}" alt="Prompt mode" loading="lazy" width="1280" height="800">
+          <img src="${shot(lang,"prompt-mode")}" alt="${esc(appName(lang) + " — " + dpath(lang,"ui.promptModeTitle"))}" loading="lazy" width="1280" height="800">
         </div>
       </div>
       <div class="container" style="margin-top:18px">
@@ -331,7 +345,7 @@
         </div>
         <div class="split-media reveal d1">
           <div class="mglow"></div>
-          <img src="${shot(lang,"mobile-sync")}" alt="Mobile sync" loading="lazy" width="1280" height="800">
+          <img src="${shot(lang,"mobile-sync")}" alt="${esc(appName(lang) + " — " + dpath(lang,"feat.mobileSync.t"))}" loading="lazy" width="1280" height="800">
         </div>
       </div>
     </section>
@@ -403,7 +417,7 @@
         </div>
         <div class="hero-kofi reveal d4">
           <a class="kofi-full-btn" href="https://ko-fi.com/aifolders" target="_blank" rel="noopener">
-            <img src="site/assets/kofi.svg" alt="Ko-fi"><span>${esc(man(lang,'kofiTooltip'))}</span>
+            <img src="/site/assets/kofi.svg" alt="Ko-fi"><span>${esc(man(lang,'kofiTooltip'))}</span>
           </a>
         </div>
       </div>
@@ -412,11 +426,11 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-inner">
-        <div class="brand"><span class="mark">${FOLDER_SVG}</span>${esc(appName(lang))}</div>
+        <a class="brand" href="${homeUrl(lang)}"><span class="mark">${FOLDER_SVG}</span>${esc(appName(lang))}</a>
         <div class="footer-links">
           ${stores().map(s => `<a href="${LINKS[s.key]}" target="_blank" rel="noopener">${s.label}</a>`).join("")}
           <a href="${LINKS.github}" target="_blank" rel="noopener">GitHub</a>
-          <a href="/privacy.html">${esc(priv_link(lang))}</a>
+          <a href="${privacyUrl(lang)}">${esc(priv_link(lang))}</a>
         </div>
       </div>
     </footer>`;
@@ -430,13 +444,8 @@
     return `
     <div class="container">
       <div class="hero-lang-row">
-        <a class="kofi-icon-btn" href="https://ko-fi.com/aifolders" target="_blank" rel="noopener" title="${esc(man(lang,'kofiTooltip'))}"><img src="site/assets/kofi.svg" alt="Ko-fi"></a>
-        <div class="lang" id="langWrap">
-          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
-            <span class="globe">🌐</span><span id="langLabel">${esc(NAMES[lang])}</span><span class="chev">▾</span>
-          </button>
-          <div class="lang-menu" id="langMenu" role="menu"></div>
-        </div>
+        <a class="kofi-icon-btn" href="https://ko-fi.com/aifolders" target="_blank" rel="noopener" title="${esc(man(lang,'kofiTooltip'))}"><img src="/site/assets/kofi.svg" alt="Ko-fi"></a>
+        ${langSwitcher(lang, privacyUrl)}
       </div>
     </div>
 
@@ -477,11 +486,11 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-inner">
-        <div class="brand"><span class="mark">${FOLDER_SVG}</span>${esc(appName(lang))}</div>
+        <a class="brand" href="${homeUrl(lang)}"><span class="mark">${FOLDER_SVG}</span>${esc(appName(lang))}</a>
         <div class="footer-links">
           ${stores().map(s => `<a href="${LINKS[s.key]}" target="_blank" rel="noopener">${s.label}</a>`).join("")}
           <a href="${LINKS.github}" target="_blank" rel="noopener">GitHub</a>
-          <a href="/privacy.html" aria-current="page">${esc(priv_link(lang))}</a>
+          <a href="${privacyUrl(lang)}" aria-current="page">${esc(priv_link(lang))}</a>
         </div>
       </div>
     </footer>`;
@@ -548,107 +557,56 @@
     trigIv = setInterval(frame, 110);
   }
 
-  function applyLangMeta(lang) {
-    const html = document.documentElement;
-    html.setAttribute("lang", lang.replace("_", "-"));
-    html.setAttribute("dir", RTL.includes(lang) ? "rtl" : "ltr");
-    const sf = SFONT[lang] || "'Schibsted Grotesk'";
-    document.body.style.setProperty("--font-script", sf);
+  // ---- language switcher + header (pre-rendered, then wired) ----
+  // Every option is a real link to that language's version of the current page:
+  // crawlers follow it, and a visitor changing language simply navigates.
+  function langSwitcher(lang, urlFor) {
+    const opts = LANG_ORDER.map(l =>
+      `<a class="lang-opt${l === lang ? " active" : ""}" href="${urlFor(l)}" hreflang="${hreflang(l)}" lang="${hreflang(l)}" data-lang="${l}"${l === lang ? ' aria-current="page"' : ""}><span>${esc(NAMES[l])}</span><span class="code">${l.replace("_","-")}</span></a>`).join("");
+    return `<div class="lang" id="langWrap">
+          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu">
+            <span class="globe" aria-hidden="true">🌐</span><span id="langLabel">${esc(NAMES[lang])}</span><span class="chev" aria-hidden="true">▾</span>
+          </button>
+          <nav class="lang-menu" id="langMenu" aria-label="Language">${opts}</nav>
+        </div>`;
   }
 
-  function getScrollAnchor() {
-    const navH = (document.getElementById("nav") || {}).offsetHeight || 68;
-    const viewTop = window.scrollY + navH;
-    let best = null;
-    document.querySelectorAll("section[data-screen-label]").forEach(s => {
-      if (s.offsetTop <= viewTop) best = { label: s.getAttribute("data-screen-label"), offset: viewTop - s.offsetTop };
-    });
-    return best;
-  }
-  function restoreScrollAnchor(anchor) {
-    if (!anchor) { window.scrollTo(0, 0); return; }
-    const navH = (document.getElementById("nav") || {}).offsetHeight || 68;
-    const target = document.querySelector(`section[data-screen-label="${anchor.label}"]`);
-    if (target) window.scrollTo(0, target.offsetTop + anchor.offset - navH);
-  }
-
-  function render(lang, animate) {
-    if (!NAMES[lang]) lang = "en";
-    const isPrivacy = window.location.pathname.includes('privacy');
-    const anchor = animate ? null : getScrollAnchor();
-    applyLangMeta(lang);
-    document.getElementById("app").innerHTML = isPrivacy ? buildPrivacy(lang) : build(lang);
-    if (!animate) restoreScrollAnchor(anchor);
-    buildMenu();
-    document.getElementById("langBtn").addEventListener("click", toggleMenu);
-    // nav bits — real logos + localized labels
-    const chromeBtn = document.getElementById("navCtaLink");
-    if (chromeBtn) chromeBtn.innerHTML = `<span class="ic">${LOGOS.chrome}</span>${esc(man(lang, "ctaChrome"))}`;
-    const foxBtn = document.getElementById("navCtaFoxLink");
-    if (foxBtn) foxBtn.innerHTML = `<span class="ic">${LOGOS.firefox}</span>${esc(man(lang, "ctaFirefox"))}`;
-    // The Edge nav button ships hidden and only appears once LINKS.edge is set,
-    // so an uncertified listing never leaves a dead button in the header.
-    const edgeBtn = document.getElementById("navCtaEdgeLink");
-    if (edgeBtn) {
-      if (LINKS.edge) {
-        edgeBtn.href = LINKS.edge;
-        edgeBtn.hidden = false;
-        edgeBtn.innerHTML = `<span class="ic">${LOGOS.edge}</span>${esc(man(lang, "ctaEdge"))}`;
-      } else {
-        edgeBtn.hidden = true;
-      }
-    }
-    document.getElementById("langLabel").textContent = NAMES[lang];
-    const brand = document.getElementById("brandName");
-    if (brand) brand.textContent = appName(lang);
-    // localized document title
-    if (isPrivacy) {
-      document.title = (AF_PRIVACY[lang] || AF_PRIVACY.en).pageTitle;
-    } else {
-      document.title = appName(lang) + " — " + man(lang, "heroTitle");
-    }
-    updateMenuActive(lang);
-    // reveal
-    if (animate) { requestAnimationFrame(revealCheck); }
-    else { document.querySelectorAll(".reveal").forEach(el => el.classList.add("in")); }
-    // dynamic lang-cloud clicks
-    document.querySelectorAll("[data-setlang]").forEach(el =>
-      el.addEventListener("click", () => {
-        const l = el.getAttribute("data-setlang");
-        if (LANG_ORDER.includes(l)) setLang(l, false);
-      }));
-    if (!isPrivacy) runTriggerAnim();
+  // The header nav. Rendered from STORES like every other store row, so a store
+  // cannot be offered on one page and forgotten on another. The primary (first)
+  // store sits last, at the inline end, as it always has.
+  const NAV_IDS = { chrome: "navCtaLink", firefox: "navCtaFoxLink", edge: "navCtaEdgeLink" };
+  function headerHTML(lang) {
+    const list = stores();
+    const btns = list.slice(1).concat(list.slice(0, 1)).map(s => {
+      const primary = s === list[0];
+      return `<a class="btn btn-sm ${primary ? "btn-primary" : "btn-ghost"}" id="${NAV_IDS[s.key]}" href="${LINKS[s.key]}" target="_blank" rel="noopener"><span class="ic">${LOGOS[s.logo]}</span>${esc(man(lang, s.cta))}</a>`;
+    }).join("\n      ");
+    return `<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="${homeUrl(lang)}"><span class="mark"><img src="/site/assets/icon.svg" alt="" width="32" height="32"></span><span id="brandName">${esc(appName(lang))}</span></a>
+    <div class="nav-right">
+      ${btns}
+    </div>
+  </div>
+</header>`;
   }
 
-  let current = "en";
-  function setLang(lang, animate) {
-    if (!NAMES[lang]) lang = "en";
-    current = lang;
-    try { localStorage.setItem("af_lang", lang); } catch (e) {}
-    render(lang, !!animate);
-    closeMenu();
+  // ---- behaviour ----
+  function openMenu() {
+    document.getElementById("langWrap").classList.add("open");
+    document.getElementById("langBtn").setAttribute("aria-expanded", "true");
   }
+  function closeMenu() {
+    const w = document.getElementById("langWrap"); if (!w) return;
+    w.classList.remove("open");
+    const b = document.getElementById("langBtn"); if (b) b.setAttribute("aria-expanded", "false");
+  }
+  function toggleMenu(e) {
+    e.stopPropagation();
+    if (document.getElementById("langWrap").classList.contains("open")) closeMenu(); else openMenu();
+  }
+  function rememberLang(l) { try { localStorage.setItem("af_lang", l); } catch (e) {} }
 
-  // ---- nav language menu ----
-  function buildMenu() {
-    const menu = document.getElementById("langMenu");
-    menu.innerHTML = LANG_ORDER.map(l =>
-      `<button class="lang-opt" data-lang="${l}"><span>${esc(NAMES[l])}</span><span class="code">${l.replace("_","-")}</span></button>`).join("");
-    menu.querySelectorAll(".lang-opt").forEach(b =>
-      b.addEventListener("click", () => {
-        const l = b.getAttribute("data-lang");
-        if (LANG_ORDER.includes(l)) setLang(l, false);
-      }));
-  }
-  function updateMenuActive(lang) {
-    document.querySelectorAll("#langMenu .lang-opt").forEach(b =>
-      b.classList.toggle("active", b.getAttribute("data-lang") === lang));
-  }
-  function openMenu() { document.getElementById("langWrap").classList.add("open"); }
-  function closeMenu() { document.getElementById("langWrap").classList.remove("open"); }
-  function toggleMenu(e) { e.stopPropagation(); document.getElementById("langWrap").classList.toggle("open"); }
-
-  // ---- init ----
   function makeStars() {
     const c = document.getElementById("stars"); if (!c) return;
     let s = 7, html = "";
@@ -660,31 +618,71 @@
     c.innerHTML = html;
   }
 
+  function guess() {
+    const n = (navigator.language || "en").toLowerCase();
+    const map = { "pt-br":"pt_BR","pt":"pt_PT","zh-cn":"zh_CN","zh":"zh_CN","zh-tw":"zh_TW","zh-hk":"zh_TW","nb":"nb","no":"nb","nn":"nb","fil":"tl" };
+    if (map[n]) return map[n];
+    const base = n.split("-")[0];
+    if (map[base]) return map[base];
+    return NAMES[base] ? base : "en";
+  }
+
+  // Only the English pages at the root redirect, and only a visitor whose saved
+  // choice or browser language is something else. A language URL is always
+  // honoured as is: someone arriving on /fr/ from a search result asked for it.
+  // Crawlers carry no saved choice and an en-US navigator, so they are never
+  // redirected, which is what Google asks of locale-adaptive pages.
+  function redirectFromRoot(pageLang, isPrivacy) {
+    if (pageLang !== "en") return false;
+    let pref = null;
+    try { pref = localStorage.getItem("af_lang"); } catch (e) {}
+    if (!pref) pref = guess();
+    if (!NAMES[pref] || pref === "en") return false;
+    location.replace((isPrivacy ? privacyUrl(pref) : homeUrl(pref)) + location.hash);
+    return true;
+  }
+
   function init() {
+    const pageLang = document.documentElement.getAttribute("data-lang") || "en";
+    const isPrivacy = document.documentElement.getAttribute("data-page") === "privacy";
+    if (redirectFromRoot(pageLang, isPrivacy)) return;
+
+    // A page served without its pre-rendered body still works: build it here
+    // from the same functions.
+    const app = document.getElementById("app");
+    if (app && !app.firstElementChild && HAS_DATA) app.innerHTML = isPrivacy ? buildPrivacy(pageLang) : build(pageLang);
+
     makeStars();
+    document.getElementById("langBtn").addEventListener("click", toggleMenu);
     document.addEventListener("click", (e) => {
       const wrap = document.getElementById("langWrap");
       if (wrap && !wrap.contains(e.target)) closeMenu();
     });
-    // nav scroll state
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+    // Picking a language is a navigation; remembering it is what stops the
+    // root from sending the visitor back to their browser language afterwards.
+    document.querySelectorAll("[data-lang],[data-setlang]").forEach(el =>
+      el.addEventListener("click", () => rememberLang(el.getAttribute("data-lang") || el.getAttribute("data-setlang"))));
+
     const nav = document.getElementById("nav");
     const onScroll = () => { nav.classList.toggle("scrolled", window.scrollY > 12); revealCheck(); };
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", revealCheck, { passive: true });
     onScroll();
-
-    let saved = "en";
-    try { saved = localStorage.getItem("af_lang") || guess(); } catch (e) {}
-    setLang(saved, true);
-  }
-  function guess() {
-    const n = (navigator.language || "en").toLowerCase();
-    const map = { "pt-br":"pt_BR","pt":"pt_PT","zh-cn":"zh_CN","zh":"zh_CN","zh-tw":"zh_TW","nb":"nb","no":"nb" };
-    if (map[n]) return map[n];
-    const base = n.split("-")[0];
-    return NAMES[base] ? base : "en";
+    requestAnimationFrame(revealCheck);
+    if (!isPrivacy) runTriggerAnim();
   }
 
+  // Exposed for tools/build-site.js, which runs this file in a sandbox without a
+  // DOM and writes every page from these builders.
+  window.AF_SITE = {
+    LANG_ORDER, LINKS, SITE_ORIGIN, NAMES, RTL, SFONT,
+    build, buildPrivacy, headerHTML, appName, man, dpath, esc, stores,
+    pathCode, hreflang, homeUrl, privacyUrl,
+    privacy: (lang) => AF_PRIVACY[lang] || AF_PRIVACY.en,
+  };
+
+  if (typeof document === "undefined" || window.AF_SITE_PRERENDER) return;
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
