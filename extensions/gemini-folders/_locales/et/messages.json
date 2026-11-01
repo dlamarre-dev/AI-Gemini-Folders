@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Mis on uut"
   },
-  "whatsNewNestedTitle": {
-    "message": "Kaustad kaustade sees"
+  "whatsNewPanelTitle": {
+    "message": "Nüüd külgpaneelil"
   },
-  "whatsNewNestedBody": {
-    "message": "Lohista üks kaust teise peale, et see sinna paigutada. Ava ülemkaust vahekaardirühmana ja kogu selle sisu avaneb koos sellega."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Vähem vahekaarte"
-  },
-  "whatsNewReuseBody": {
-    "message": "Salvestatud vestlusel klõpsamine viib vahekaardile, kus see juba avatud on. {k}+klõps kasutab uuesti viimast laienduse avatud vahekaarti, lisamata uut."
+  "whatsNewPanelBody": {
+    "message": "Kinnita laiendus brauseri külgpaneelile: see jääb vahekaartide vahetamisel avatuks ning kaustad ja viibad on alati käepärast. Ava see hüpikakna ülaosas oleva uue nupuga."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klõps: kasuta viimast vahekaarti"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "See nimi on reserveeritud – palun valige teine."
+  },
+  "openSidePanel": {
+    "message": "Ava külgpaneelil"
   }
 }

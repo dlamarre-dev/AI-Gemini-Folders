@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Co je nového"
   },
-  "whatsNewNestedTitle": {
-    "message": "Složky ve složkách"
+  "whatsNewPanelTitle": {
+    "message": "Nově v bočním panelu"
   },
-  "whatsNewNestedBody": {
-    "message": "Přetáhněte složku na jinou a vnořte ji dovnitř. Otevřete nadřazenou složku jako skupinu panelů a otevře se s ní vše, co obsahuje."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Méně panelů"
-  },
-  "whatsNewReuseBody": {
-    "message": "Kliknutí na uloženou konverzaci přepne na panel, který ji už zobrazuje. {k}+kliknutí znovu použije poslední panel otevřený rozšířením, místo aby přidalo další."
+  "whatsNewPanelBody": {
+    "message": "Ukotvěte rozšíření v bočním panelu prohlížeče: zůstane otevřené i při přepínání karet a složky i prompty máte vždy po ruce. Otevřete ho novým tlačítkem v horní části vyskakovacího okna."
   },
   "chatLinkReuseHint": {
     "message": "{k} + kliknutí: použít poslední kartu"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Tento název je vyhrazený – zvolte prosím jiný."
+  },
+  "openSidePanel": {
+    "message": "Otevřít v bočním panelu"
   }
 }

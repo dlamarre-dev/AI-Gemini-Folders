@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Có gì mới"
   },
-  "whatsNewNestedTitle": {
-    "message": "Thư mục trong thư mục"
+  "whatsNewPanelTitle": {
+    "message": "Giờ đã có trong bảng điều khiển bên"
   },
-  "whatsNewNestedBody": {
-    "message": "Kéo một thư mục lên thư mục khác để đặt vào bên trong. Mở thư mục cha dưới dạng nhóm thẻ và mọi thứ bên trong cũng mở theo."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Ít thẻ hơn"
-  },
-  "whatsNewReuseBody": {
-    "message": "Nhấp vào một cuộc trò chuyện đã lưu sẽ chuyển sang thẻ đang mở nó. {k}+nhấp sẽ dùng lại thẻ mà tiện ích mở gần nhất thay vì thêm thẻ mới."
+  "whatsNewPanelBody": {
+    "message": "Ghim tiện ích vào bảng điều khiển bên của trình duyệt: tiện ích vẫn mở khi bạn chuyển thẻ, giúp thư mục và prompt luôn sẵn trong tầm tay. Mở bằng nút mới ở đầu cửa sổ bật lên."
   },
   "chatLinkReuseHint": {
     "message": "{k} + nhấp: dùng lại thẻ cuối cùng"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Tên này đã được dành riêng — vui lòng chọn tên khác."
+  },
+  "openSidePanel": {
+    "message": "Mở trong bảng điều khiển bên"
   }
 }

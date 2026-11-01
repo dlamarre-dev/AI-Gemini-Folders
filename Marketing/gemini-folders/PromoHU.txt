@@ -6,6 +6,7 @@ A Gemini-mappák valódi Gemini-kokpitjévé válik: rendszerezze a beszélgeté
 🌟 MAPPAÜZEMMÓD
 
 ⌨️ Azonnali panel-gyorsbillentyű: Nyissa meg a panelt azonnal bármely lapról a Ctrl+Shift+1 (vagy Mac-en Cmd+Shift+1) kombinációval.
+🪟 Mostantól az oldalpanelen: Rögzítsd a bővítményt a böngésző oldalpaneljén: nyitva marad, miközben lapot váltasz, a mappáid és promptjaid pedig mindig kéznél vannak. Nyisd meg az előugró ablak tetején lévő új gombbal.
 ⚡ Gyorsmentés (Jobb kattintás és billentyűparancsok): Mentse az aktuális beszélgetést egyszerű jobb kattintással, vagy használja a billentyűparancsot (Ctrl+Shift+S vagy Mac-en Cmd+Shift+S), hogy azonnal a „⚡ Gyorsmentések" közé küldje — vizuális figyelmeztetéssel, ha már mentve van!
 ☑️ Többes kijelölés (Tömeges műveletek): Jelöljön ki több beszélgetést jelölőnégyzetekkel, hogy egyetlen kattintással mozgassa vagy törölje őket.
 📑 Lapcsoportok integrációja: Nyissa meg az egész mappát egyetlen kattintással natív, színkódolt Chrome-lapcsoportként.

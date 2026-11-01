@@ -20,6 +20,8 @@ async function mountPopup({ localLlmUrl = '' } = {}) {
     initSaveConversation: jest.fn(),
     extractAITitleLogic: jest.fn(),
     injectPromptIntoEditor: jest.fn(),
+    createTitlePrefill: jest.fn(() => jest.fn()),
+    watchActiveTab: jest.fn(),
   });
   window.matchMedia = jest.fn(() => ({ matches: false }));
   window.showCustomModal = jest.fn(() => Promise.resolve(null));

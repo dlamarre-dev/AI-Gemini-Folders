@@ -347,23 +347,11 @@
   "whatsNewHeading": {
     "message": "Hva er nytt"
   },
-  "whatsNewNestedTitle": {
-    "message": "Mapper i mapper"
+  "whatsNewPanelTitle": {
+    "message": "Nå i sidepanelet"
   },
-  "whatsNewNestedBody": {
-    "message": "Dra en mappe oppå en annen for å legge den inni. Åpne foreldermappen som en fanegruppe, og alt innholdet åpnes med den."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Færre faner"
-  },
-  "whatsNewReuseBody": {
-    "message": "Klikk på en lagret samtale bytter til fanen som allerede viser den. {k}+klikk gjenbruker den siste fanen utvidelsen åpnet, i stedet for å legge til en ny."
-  },
-  "whatsNewBaiduTitle": {
-    "message": "Baidu Chat virker fortsatt"
-  },
-  "whatsNewBaiduBody": {
-    "message": "Baidu har flyttet chatten sin til en ny adresse. Lagring og innsetting av prompter fungerer der igjen."
+  "whatsNewPanelBody": {
+    "message": "Fest utvidelsen i nettleserens sidepanel: den holder seg åpen mens du bytter fane, med mappene og promptene dine alltid for hånden. Åpne den med den nye knappen øverst i popup-vinduet."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klikk: gjenbruk den siste fanen"
@@ -373,5 +361,8 @@
   },
   "reservedNameError": {
     "message": "Dette navnet er reservert – velg et annet."
+  },
+  "openSidePanel": {
+    "message": "Åpne i sidepanelet"
   }
 }

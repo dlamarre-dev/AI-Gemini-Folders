@@ -9,6 +9,7 @@ AI priečinky sa natívne integrujú so všetkými hlavnými AI chatovacími asi
 🌟 REŽIM PRIEČINKOV
 
 ⌨️ Okamžitá klávesová skratka panela: Otvorte panel okamžite z ľubovoľnej záložky pomocou Ctrl+Shift+1 (alebo Cmd+Shift+1 na Macu).
+🪟 Novinka: bočný panel: Ukotvite rozšírenie v bočnom paneli prehliadača: zostane otvorené aj pri prepínaní kariet a priečinky aj prompty máte vždy poruke. Otvorte ho novým tlačidlom v hornej časti vyskakovacieho okna.
 ⚡ Rýchle uloženie (Pravý klik a Skratky): Uložte konverzáciu jednoduchým pravým kliknutím alebo klávesovými skratkami (Ctrl+Shift+S alebo Cmd+Shift+S na Mac) a okamžite ju odošlite do „⚡ Rýchlych uložení" — s vizuálnym upozornením, ak je už uložená!
 ☑️ Viacnásobný výber (Hromadné akcie): Pomocou zaškrtávacích políčok vyberte viaceré konverzácie a presuňte alebo odstráňte ich jedným kliknutím.
 📑 Integrácia skupín kariet: Otvorte celý priečinok jedným kliknutím ako natívnu farebnú skupinu kariet Chrome.

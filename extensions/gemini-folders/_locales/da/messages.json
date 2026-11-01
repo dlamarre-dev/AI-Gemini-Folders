@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Nyheder"
   },
-  "whatsNewNestedTitle": {
-    "message": "Mapper i mapper"
+  "whatsNewPanelTitle": {
+    "message": "Nu i sidepanelet"
   },
-  "whatsNewNestedBody": {
-    "message": "Træk en mappe over på en anden for at lægge den ind i den. Åbn overmappen som en fanegruppe, og alt indholdet åbnes med den."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Færre faner"
-  },
-  "whatsNewReuseBody": {
-    "message": "Et klik på en gemt samtale skifter til den fane, der allerede viser den. {k}+klik genbruger den seneste fane, udvidelsen har åbnet, i stedet for at tilføje en ny."
+  "whatsNewPanelBody": {
+    "message": "Fastgør udvidelsen i browserens sidepanel: den forbliver åben, mens du skifter faneblad, med dine mapper og prompts altid lige ved hånden. Åbn den med den nye knap øverst i pop op-vinduet."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: genbrug den seneste fane"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Dette navn er reserveret – vælg et andet."
+  },
+  "openSidePanel": {
+    "message": "Åbn i sidepanelet"
   }
 }

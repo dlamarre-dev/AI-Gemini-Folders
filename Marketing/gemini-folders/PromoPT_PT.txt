@@ -6,6 +6,7 @@ Pastas Gemini torna-se o seu verdadeiro cockpit do Gemini: organize as suas conv
 🌟 MODO PASTAS
 
 ⌨️ Atalho instantâneo do painel: Abra o painel instantaneamente a partir de qualquer separador com Ctrl+Shift+1 (ou Cmd+Shift+1 no Mac).
+🪟 Agora no painel lateral: Fixe a extensão no painel lateral do browser: fica aberta enquanto muda de separador, com as suas pastas e prompts sempre à mão. Abra-a com o novo botão no topo da janela.
 ⚡ Guardar Rapidamente (Clique Direito e Atalhos): Guarde a conversa com um simples clique direito, ou use o atalho de teclado (Ctrl+Shift+S ou Cmd+Shift+S no Mac) para a enviar instantaneamente para "⚡ Guardados Rápidos" — com alerta visual se já estiver guardada!
 ☑️ Seleção Múltipla (Ações em lote): Selecione várias conversas com caixas de verificação para as mover ou eliminar com um clique.
 📑 Integração com Grupos de Separadores: Abra uma pasta inteira com um clique como um Grupo de Separadores nativo e com código de cores do Chrome.

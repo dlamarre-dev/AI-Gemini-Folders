@@ -163,6 +163,8 @@ img { max-width: 100%; display: block; }
 }
 .glyph-accent { background: rgba(138, 109, 240, 0.16); border-color: rgba(138, 109, 240, 0.42); }
 .glyph-accent svg { fill: var(--violet-2); }
+/* whats-new.html's side-panel glyph is an outline, like the popup button it shows. */
+.glyph-accent svg.ico-panel { fill: none; stroke: var(--violet-2); stroke-width: 2; stroke-linejoin: round; }
 .glyph-sep { color: var(--faint); flex: none; }
 .glyph-sep svg { width: 16px; height: 16px; display: block; }
 

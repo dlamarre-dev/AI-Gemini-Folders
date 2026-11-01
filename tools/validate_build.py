@@ -36,6 +36,9 @@ CROSS_PROMO_HEADING = "🤖"
 failures = []
 
 
+CHROMIUM_ONLY_PERMISSIONS = ("sidePanel",)  # mirrors build.py
+
+
 def fail(msg):
     failures.append(msg)
 
@@ -61,7 +64,11 @@ def check_manifest(ext, browser):
     # Permission drift is the one manifest change that re-prompts every installed
     # user, so it must never happen as a side effect of a build change.
     for key in ("permissions", "optional_permissions", "host_permissions"):
-        if sorted(built.get(key) or []) != sorted(source.get(key) or []):
+        expected = source.get(key) or []
+        if browser == "firefox" and key == "permissions":
+            # The one sanctioned difference: Firefox has no sidePanel API.
+            expected = [p for p in expected if p not in CHROMIUM_ONLY_PERMISSIONS]
+        if sorted(built.get(key) or []) != sorted(expected):
             fail(f"{ext}/{browser}: {key} drifted from the source manifest")
 
     if "tabs" in (built.get("permissions") or []):
@@ -71,6 +78,13 @@ def check_manifest(ext, browser):
         gecko = (built.get("browser_specific_settings") or {}).get("gecko") or {}
         if not gecko.get("id"):
             fail(f"{ext}/firefox: browser_specific_settings.gecko.id missing")
+        if "side_panel" in built or "sidePanel" in (built.get("permissions") or []):
+            fail(f"{ext}/firefox: Chromium side panel entries left in the manifest")
+        sidebar = built.get("sidebar_action") or {}
+        if not sidebar.get("default_panel") or sidebar.get("open_at_install") is not False:
+            fail(f"{ext}/firefox: sidebar_action missing, or would open at install")
+    elif (built.get("side_panel") or {}).get("default_path") != "popup.html?panel=1":
+        fail(f"{ext}/{browser}: side_panel.default_path is not the popup in panel mode")
 
     return built
 
@@ -178,6 +192,33 @@ def check_zip(ext, version):
             fail(f"{os.path.basename(name)}: no _locales")
 
 
+# Mirrors FIREFOX_QUICK_SAVE_KEY in build.py. The retired spellings are shortcuts
+# Firefox claims for itself (screenshots; bookmark this page), which beat an
+# extension's suggested key — naming them in Firefox copy would promise a key
+# that does nothing.
+FIREFOX_QUICK_SAVE_KEY = "Alt+Shift+Q"
+FIREFOX_RETIRED_KEYS = ("Ctrl+Shift+S", "Alt+Shift+S")
+
+
+def check_firefox_shortcut(ext):
+    built = load_json(os.path.join(DIST, ext, "firefox", "manifest.json"))
+    keys = ((built.get("commands") or {}).get("quick-save") or {}).get("suggested_key") or {}
+    for platform, key in keys.items():
+        if key != FIREFOX_QUICK_SAVE_KEY:
+            fail(f"{ext}/firefox: quick-save is {key} on {platform}, expected {FIREFOX_QUICK_SAVE_KEY}")
+    for root in (os.path.join(DIST, ext, "firefox", "_locales"), os.path.join(DIST, ext, "marketing_firefox")):
+        for dirpath, _, files in os.walk(root):
+            for name in files:
+                if not name.endswith((".json", ".txt")):
+                    continue
+                path = os.path.join(dirpath, name)
+                with open(path, encoding="utf-8") as f:
+                    text = f.read()
+                for old in FIREFOX_RETIRED_KEYS:
+                    if old in text:
+                        fail(f"{ext}/firefox: {os.path.relpath(path, DIST)} still names {old}")
+
+
 def main():
     if not os.path.isdir(DIST):
         print("❌ dist/ not found — run `python build.py` first.")
@@ -192,6 +233,7 @@ def main():
             check_locales(ext, browser)
             check_placeholders(ext, browser)
             check_marketing_placeholders(ext, browser)
+        check_firefox_shortcut(ext)
         if version:
             check_zip(ext, version)
 

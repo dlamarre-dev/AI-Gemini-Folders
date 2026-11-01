@@ -9,6 +9,7 @@ Pastas IA integra-se nativamente com todos os principais assistentes de chat de 
 🌟 MODO PASTAS
 
 ⌨️ Atalho instantâneo do painel: Abra o painel instantaneamente de qualquer aba com Ctrl+Shift+1 (ou Cmd+Shift+1 no Mac).
+🪟 Agora no painel lateral: Fixe a extensão no painel lateral do navegador: ela continua aberta enquanto você troca de aba, com suas pastas e prompts sempre à mão. Abra-a pelo novo botão no topo do pop-up.
 ⚡ Salvar Rapidamente (Clique Direito e Atalhos): Salve a conversa com um simples clique direito, ou use o atalho de teclado (Ctrl+Shift+S ou Cmd+Shift+S no Mac) para enviá-la instantaneamente para "⚡ Salvamentos Rápidos" — com alerta visual se já estiver salva!
 ☑️ Seleção Múltipla (Ações em lote): Selecione várias conversas com caixas de seleção para movê-las ou excluí-las com um clique.
 📑 Integração com Grupos de Abas: Abra uma pasta inteira com um clique como um Grupo de Abas nativo e colorido do Chrome.

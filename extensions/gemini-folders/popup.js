@@ -159,20 +159,36 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
 
-  // Smart title pre-filling
-  let [currentTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  // Smart title pre-filling. In the side panel it runs again whenever the
+  // active tab changes (watchActiveTab, popup-core.js), so Save never pairs one
+  // tab's URL with another tab's title.
+  const defaultTitle = () => chrome.i18n.getMessage("defaultTitle") || "New conversation";
+  const prefillTitle = window.createTitlePrefill(chatTitleInput, async () => {
+    const [currentTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    let onGemini = false;
+    try { onGemini = !!currentTab && new URL(currentTab.url).hostname === "gemini.google.com"; } catch (e) {}
+    if (!onGemini) return '';
+    try {
+      const results = await chrome.scripting.executeScript({
+        target: { tabId: currentTab.id },
+        args: [null],
+        func: extractGeminiTitleLogic
+      });
+      return results?.[0]?.result || defaultTitle();
+    } catch (e) {
+      return defaultTitle();
+    }
+  });
+  prefillTitle(false);
+  window.watchActiveTab(() => prefillTitle(true));
 
-  if (currentTab && currentTab.url && new URL(currentTab.url).hostname === "gemini.google.com") {
-    chrome.scripting.executeScript({
-      target: { tabId: currentTab.id },
-      args: [null],
-      func: extractGeminiTitleLogic
-    }, (injectionResults) => {
-      if (injectionResults && injectionResults[0] && injectionResults[0].result) {
-        chatTitleInput.value = injectionResults[0].result;
-      } else {
-        chatTitleInput.value = chrome.i18n.getMessage("defaultTitle") || "New conversation";
-      }
+  // The panel outlives the popup's one read of the Gem link at open.
+  if (window.isPanelMode && window.isPanelMode()) {
+    chrome.storage.onChanged.addListener((changes, area) => {
+      if (area !== 'sync' || (!changes.gemLink && !changes.useGemEnabled)) return;
+      if (changes.gemLink) currentGemLink = changes.gemLink.newValue || '';
+      if (changes.useGemEnabled) useGemEnabled = !!changes.useGemEnabled.newValue;
+      updateGemBtn();
     });
   }
 

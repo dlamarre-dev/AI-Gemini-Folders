@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "新功能"
   },
-  "whatsNewNestedTitle": {
-    "message": "文件夹套文件夹"
+  "whatsNewPanelTitle": {
+    "message": "现已支持侧边栏"
   },
-  "whatsNewNestedBody": {
-    "message": "将一个文件夹拖到另一个上即可放入其中。以标签组方式打开父文件夹，其中的一切也会随之打开。"
-  },
-  "whatsNewReuseTitle": {
-    "message": "更少标签页"
-  },
-  "whatsNewReuseBody": {
-    "message": "点击已保存的会话会切换到已显示它的标签页。{k}+点击则复用扩展上次打开的标签页，而不是再开一个。"
+  "whatsNewPanelBody": {
+    "message": "将扩展固定在浏览器的侧边栏中：切换标签页时它保持打开，文件夹和提示词随时可用。点击弹出窗口顶部的新按钮即可打开。"
   },
   "chatLinkReuseHint": {
     "message": "{k} + 点击：复用上一个标签页"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "该名称为保留名称，请另选一个。"
+  },
+  "openSidePanel": {
+    "message": "在侧边栏中打开"
   }
 }

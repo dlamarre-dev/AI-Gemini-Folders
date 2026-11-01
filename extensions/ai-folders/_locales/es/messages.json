@@ -347,23 +347,11 @@
   "whatsNewHeading": {
     "message": "Novedades"
   },
-  "whatsNewNestedTitle": {
-    "message": "Carpetas dentro de carpetas"
+  "whatsNewPanelTitle": {
+    "message": "Ahora en el panel lateral"
   },
-  "whatsNewNestedBody": {
-    "message": "Arrastra una carpeta sobre otra para meterla dentro. Abre la carpeta principal como grupo de pestañas y se abrirá todo lo que contiene."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Menos pestañas"
-  },
-  "whatsNewReuseBody": {
-    "message": "Al hacer clic en una conversación guardada, se cambia a la pestaña que ya la muestra. {k}+clic reutiliza la última pestaña que abrió la extensión en lugar de añadir otra."
-  },
-  "whatsNewBaiduTitle": {
-    "message": "Baidu Chat sigue funcionando"
-  },
-  "whatsNewBaiduBody": {
-    "message": "Baidu ha movido su chat a una nueva dirección. Allí vuelven a funcionar guardar e insertar prompts."
+  "whatsNewPanelBody": {
+    "message": "Ancla la extensión en el panel lateral del navegador: permanece abierta mientras cambias de pestaña, con tus carpetas y prompts siempre a mano. Ábrela con el nuevo botón en la parte superior de la ventana emergente."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilizar la última pestaña"
@@ -373,5 +361,8 @@
   },
   "reservedNameError": {
     "message": "Ese nombre está reservado: elige otro."
+  },
+  "openSidePanel": {
+    "message": "Abrir en el panel lateral"
   }
 }

@@ -347,23 +347,11 @@
   "whatsNewHeading": {
     "message": "Novidades"
   },
-  "whatsNewNestedTitle": {
-    "message": "Pastas dentro de pastas"
+  "whatsNewPanelTitle": {
+    "message": "Agora no painel lateral"
   },
-  "whatsNewNestedBody": {
-    "message": "Arraste uma pasta sobre outra para colocá-la dentro. Abra a pasta principal como grupo de guias e tudo o que ela contém abre junto."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Menos abas"
-  },
-  "whatsNewReuseBody": {
-    "message": "Clicar em uma conversa salva alterna para a aba que já a exibe. {k}+clique reutiliza a última aba que a extensão abriu em vez de adicionar outra."
-  },
-  "whatsNewBaiduTitle": {
-    "message": "O Baidu Chat continua funcionando"
-  },
-  "whatsNewBaiduBody": {
-    "message": "O Baidu mudou seu chat de endereço. Salvar e inserir prompts voltou a funcionar lá."
+  "whatsNewPanelBody": {
+    "message": "Fixe a extensão no painel lateral do navegador: ela continua aberta enquanto você troca de aba, com suas pastas e prompts sempre à mão. Abra-a pelo novo botão no topo do pop-up."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clique: reutilizar a última aba"
@@ -373,5 +361,8 @@
   },
   "reservedNameError": {
     "message": "Esse nome é reservado — escolha outro."
+  },
+  "openSidePanel": {
+    "message": "Abrir no painel lateral"
   }
 }

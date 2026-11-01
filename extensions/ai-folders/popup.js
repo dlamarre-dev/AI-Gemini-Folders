@@ -208,15 +208,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
 
-  // Smart title pre-filling based on active tab
-  let [currentTab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  await localLlmUrlLoaded;
-  const currentSiteKey = getSiteByUrl(currentTab?.url, localLlmUrl);
-
-  if (currentTab && currentSiteKey) {
+  // Smart title pre-filling based on the active tab. In the side panel it runs
+  // again whenever the active tab changes (watchActiveTab, popup-core.js), so
+  // Save never pairs one tab's URL with another tab's title.
+  const defaultTitle = () => chrome.i18n.getMessage("defaultTitle") || "New conversation";
+  const prefillTitle = window.createTitlePrefill(chatTitleInput, async () => {
+    const [currentTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    await localLlmUrlLoaded;
+    const currentSiteKey = getSiteByUrl(currentTab?.url, localLlmUrl);
+    if (!currentTab || !currentSiteKey) return '';
     if (currentSiteKey === 'local') {
-      // No script injection for local LLM — use the browser tab title directly
-      chatTitleInput.value = currentTab.title || chrome.i18n.getMessage("defaultTitle") || "New conversation";
       // Ensure prompt-trigger is active in the local LLM tab. Dynamic registerContentScripts
       // is unreliable in Firefox, so we inject on popup open as a guaranteed fallback.
       // window.__promptTriggerActive guards against double execution.
@@ -224,19 +225,31 @@ document.addEventListener('DOMContentLoaded', async () => {
         target: { tabId: currentTab.id },
         files: ['lz-string.min.js', 'prompt-trigger.js'],
       }).catch(() => {});
-    } else {
-      chrome.scripting.executeScript({
+      // No script injection for the title — use the browser tab title directly
+      return currentTab.title || defaultTitle();
+    }
+    try {
+      const results = await chrome.scripting.executeScript({
         target: { tabId: currentTab.id },
         args: [currentSiteKey, null],
         func: extractAITitleLogic
-      }, (injectionResults) => {
-        if (injectionResults?.[0]?.result) {
-          chatTitleInput.value = injectionResults[0].result;
-        } else {
-          chatTitleInput.value = chrome.i18n.getMessage("defaultTitle") || "New conversation";
-        }
       });
+      return results?.[0]?.result || defaultTitle();
+    } catch (e) {
+      return defaultTitle();
     }
+  });
+  prefillTitle(false);
+  window.watchActiveTab(() => prefillTitle(true));
+
+  // The panel outlives the popup's one read of localLlmUrl at open.
+  if (window.isPanelMode && window.isPanelMode()) {
+    chrome.storage.onChanged.addListener((changes, area) => {
+      if (area === 'sync' && changes.localLlmUrl) {
+        localLlmUrl = changes.localLlmUrl.newValue || '';
+        updateLocalBtn();
+      }
+    });
   }
 
 

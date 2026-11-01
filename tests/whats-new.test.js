@@ -1,41 +1,28 @@
 // The what's-new page (src/whats-new.html + whats-new.js) opens itself on update,
-// so the same rules as the welcome page apply: it must localize in all 43 locales,
-// name the modifier key this platform actually has, and touch neither the network
-// nor storage — a tab the user did not ask for that phoned home would be
-// indefensible. The Baidu card is the one thing that differs between the two
-// products, and it is decided by the site registry rather than a flag.
+// so the same rules as the welcome page apply: it must localize in all 43 locales
+// and touch neither the network nor storage — a tab the user did not ask for that
+// phoned home would be indefensible. 1.8.0 / 4.7.0 carry one card, the side panel
+// (#106), worded product-neutrally so both extensions ship the same strings.
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const HTML = fs.readFileSync(path.join(ROOT, 'src/whats-new.html'), 'utf8');
 
-const SHARED_KEYS = [
-  'whatsNewHeading', 'whatsNewNestedTitle', 'whatsNewNestedBody',
-  'whatsNewReuseTitle', 'whatsNewReuseBody',
+const SHARED_KEYS = ['whatsNewHeading', 'whatsNewPanelTitle', 'whatsNewPanelBody'];
+// The 1.7.0 / 4.6.0 cards. Their strings must not linger in 86 files.
+const RETIRED_KEYS = [
+  'whatsNewNestedTitle', 'whatsNewNestedBody', 'whatsNewReuseTitle', 'whatsNewReuseBody',
+  'whatsNewBaiduTitle', 'whatsNewBaiduBody',
 ];
-const BAIDU_KEYS = ['whatsNewBaiduTitle', 'whatsNewBaiduBody'];
 
-const AF_SITES = { baidu: { key: 'baidu', domain: 'wenxin.baidu.com', logo: 'icons/baidu.png' } };
-
-const REAL_PLATFORM = navigator.platform;
-function setPlatform(value) {
-  Object.defineProperty(navigator, 'platform', { value, configurable: true });
-  // userAgentData is the signal the helper prefers; keep it out of the way.
-  Object.defineProperty(navigator, 'userAgentData', { value: undefined, configurable: true });
-}
-
-function load({ lang = 'en', missingI18n = false, sites, messages, platform = 'Win32', version = '1.7.0' } = {}) {
+function load({ lang = 'en', missingI18n = false, messages, version = '1.8.0' } = {}) {
   jest.resetModules();
-  setPlatform(platform);
   chrome.i18n.getUILanguage = jest.fn(() => lang);
   chrome.i18n.getMessage = missingI18n
     ? jest.fn(() => '')          // a locale file that failed to load
     : jest.fn((key) => (messages && key in messages ? messages[key] : key));
   chrome.runtime.getManifest = jest.fn(() => ({ version }));
-  if (sites) global.SITES = sites; else delete global.SITES;
-  // whats-new.html loads utils.js with a <script> tag, which innerHTML never runs.
-  global.currentModifierKeyLabel = require('../src/utils').currentModifierKeyLabel;
   document.documentElement.removeAttribute('lang');
   document.body.removeAttribute('dir');
   document.body.innerHTML = HTML.replace(/[\s\S]*<body>/, '').replace(/<\/body>[\s\S]*/, '');
@@ -51,19 +38,12 @@ function load({ lang = 'en', missingI18n = false, sites, messages, platform = 'W
   onReady();
 }
 
-afterEach(() => {
-  delete global.SITES;
-  delete global.currentModifierKeyLabel;
-  setPlatform(REAL_PLATFORM);
-});
-
 const txt = (id) => document.getElementById(id).textContent;
 
 describe('what\'s-new page rendering', () => {
   test('every slot gets its localized string', () => {
-    load({ sites: AF_SITES });
-    for (const id of ['nTitle', 'nHeading', 'nNestedTitle', 'nNestedBody',
-      'nReuseTitle', 'nBaiduTitle', 'nBaiduBody', 'nCta']) {
+    load();
+    for (const id of ['nTitle', 'nHeading', 'nPanelTitle', 'nPanelBody', 'nCta']) {
       expect(txt(id)).toBeTruthy();
     }
     // Reused keys, so the page adds no string for the product name or the button.
@@ -72,71 +52,29 @@ describe('what\'s-new page rendering', () => {
   });
 
   test('the version chip comes from the manifest, never from a translation', () => {
-    load({ version: '4.6.0' });
-    expect(txt('nVersion')).toBe('v4.6.0');
+    load({ version: '4.7.0' });
+    expect(txt('nVersion')).toBe('v4.7.0');
   });
 
-  test('the modifier key is the one this platform actually has', () => {
-    const body = { whatsNewReuseBody: '{k}-click reuses the last tab.', keyCtrl: 'Strg' };
-    load({ platform: 'MacIntel', messages: body });
-    expect(txt('nReuseBody')).toBe('Cmd-click reuses the last tab.');
-    expect(txt('nModKey')).toBe('Cmd');
-
-    load({ platform: 'Win32', messages: body });
-    // The control key's own name is localized — German keyboards say Strg.
-    expect(txt('nReuseBody')).toBe('Strg-click reuses the last tab.');
-    expect(txt('nModKey')).toBe('Strg');
-  });
-
-  test('the placeholder never survives into the rendered text', () => {
+  test('one card: the side panel', () => {
     load();
-    expect(txt('nReuseBody')).not.toContain('{k}');
-  });
-
-  test('the Baidu card is dropped when the product has no such site', () => {
-    load();   // no registry — Gemini Folders
-    expect(document.getElementById('nBaiduCard')).toBeNull();
-    expect(document.querySelectorAll('.step')).toHaveLength(2);
-  });
-
-  test('the Baidu card is kept, with its logo, when the registry has it', () => {
-    load({ sites: AF_SITES });
-    expect(document.getElementById('nBaiduCard')).not.toBeNull();
-    expect(document.querySelectorAll('.step')).toHaveLength(3);
-    const img = document.querySelector('#nBaiduLogo img');
-    expect(img.getAttribute('src')).toBe('icons/baidu.png');
-    expect(img.getAttribute('alt')).toBe('');
-    // The mark right-aligns like the welcome page's site row, which only happens
-    // when .site-row sits on the .step-art element itself — the flex container.
-    const row = document.getElementById('nBaiduLogo');
-    expect(row.classList.contains('step-art')).toBe(true);
-    expect(row.classList.contains('site-row')).toBe(true);
-    expect(row.querySelector('.site-row')).toBeNull();
-  });
-
-  test('a registry without Baidu also drops the card', () => {
-    // Gemini Folders has no registry at all, but a future AF-like build could ship
-    // one without that site; the card follows the data either way.
-    load({ sites: { claude: { key: 'claude', domain: 'claude.ai', logo: 'icons/claude.png' } } });
-    expect(document.getElementById('nBaiduCard')).toBeNull();
+    expect(document.querySelectorAll('.step')).toHaveLength(1);
+    expect(document.getElementById('nPanelTitle')).not.toBeNull();
   });
 
   test('the cards are features, not numbered steps', () => {
     load();
     // .cards switches the counter markers off; without it the list would read
-    // "1. 2." like the install steps, which these are not.
+    // "1." like the install steps, which these are not.
     expect(document.querySelector('.steps').classList.contains('cards')).toBe(true);
   });
 
   test('a locale that fails to load still renders readable English, never blanks', () => {
-    load({ missingI18n: true, sites: AF_SITES });
+    load({ missingI18n: true });
     expect(txt('nHeading')).toBe("What's new");
-    expect(txt('nNestedBody')).toContain('Drag a folder');
-    expect(txt('nBaiduTitle')).toBeTruthy();
+    expect(txt('nPanelTitle')).toBe('Now in the side panel');
+    expect(txt('nPanelBody')).toContain('side panel');
     expect(txt('nCta')).toBe('Got it');
-    // The fallback still gets the placeholder filled in.
-    expect(txt('nReuseBody')).toContain('Ctrl');
-    expect(txt('nReuseBody')).not.toContain('{k}');
   });
 
   test('an RTL locale flips the body direction', () => {
@@ -191,29 +129,11 @@ describe('what\'s-new strings ship in every locale', () => {
     });
   }
 
-  test('every locale keeps the {k} placeholder and hardcodes no key name', () => {
+  test('the 1.7.0 cards left no strings behind', () => {
     for (const ext of ['ai-folders', 'gemini-folders']) {
       for (const locale of localesOf(ext)) {
-        const body = read(ext, locale).whatsNewReuseBody.message;
-        expect(body).toContain('{k}');
-        // Naming a key outright would be wrong on half the machines.
-        expect(body).not.toMatch(/\bCmd\b/);
-        expect(body).not.toMatch(/\bCtrl\b/);
-      }
-    }
-  });
-
-  test('the Baidu strings ship in AI Folders only — Gemini Folders never shows them', () => {
-    for (const locale of localesOf('ai-folders')) {
-      const messages = read('ai-folders', locale);
-      for (const key of BAIDU_KEYS) {
-        expect(messages[key] && messages[key].message.trim()).toBeTruthy();
-      }
-    }
-    for (const locale of localesOf('gemini-folders')) {
-      const messages = read('gemini-folders', locale);
-      for (const key of BAIDU_KEYS) {
-        expect(messages[key]).toBeUndefined();
+        const messages = read(ext, locale);
+        for (const key of RETIRED_KEYS) expect(messages[key]).toBeUndefined();
       }
     }
   });
@@ -222,8 +142,9 @@ describe('what\'s-new strings ship in every locale', () => {
     for (const locale of localesOf('ai-folders')) {
       const af = read('ai-folders', locale);
       const gf = read('gemini-folders', locale);
-      for (const key of SHARED_KEYS) {
-        expect(af[key].message).toBe(gf[key].message);
+      for (const key of [...SHARED_KEYS, 'openSidePanel']) {
+        expect(af[key] && af[key].message.trim()).toBeTruthy();
+        expect(gf[key].message).toBe(af[key].message);
       }
     }
   });

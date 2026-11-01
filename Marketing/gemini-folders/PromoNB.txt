@@ -6,6 +6,7 @@ Gemini Mapper blir din sanne Gemini-cockpit: organiser samtaler i mapper, bygg e
 🌟 MAPPEMODUS
 
 ⌨️ Øyeblikkelig panelsnarvei: Åpne panelet øyeblikkelig fra hvilken som helst fane med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
+🪟 Nå i sidepanelet: Fest utvidelsen i nettleserens sidepanel: den holder seg åpen mens du bytter fane, med mappene og promptene dine alltid for hånden. Åpne den med den nye knappen øverst i popup-vinduet.
 ⚡ Hurtiglagring (Høyreklikk og snarveier): Lagre gjeldende samtale med et enkelt høyreklikk, eller bruk hurtigtasten (Ctrl+Shift+S eller Cmd+Shift+S på Mac) for å sende den til «⚡ Hurtiglagring» – med en visuell varsling hvis den allerede er lagret!
 ☑️ Flervalg (Bulkhandlinger): Velg flere samtaler med avmerkingsbokser for å flytte eller slette dem med ett klikk.
 📑 Fanegruppeintegrasjon: Åpne en hel mappe med ett klikk som en innebygd, fargekodet Chrome-fanegruppe.

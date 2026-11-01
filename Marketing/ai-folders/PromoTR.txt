@@ -9,6 +9,7 @@ YZ Klasörleri, Claude, ChatGPT ve Gemini gibi tüm büyük yapay zeka sohbet as
 🌟 KLASÖR MODU
 
 ⌨️ Anlık panel kısayolu: Herhangi bir sekmeden Ctrl+Shift+1 (veya Mac'te Cmd+Shift+1) ile paneli anında açın.
+🪟 Artık yan panelde: Uzantıyı tarayıcının yan paneline sabitleyin: sekme değiştirirken açık kalır, klasörleriniz ve istemleriniz her zaman elinizin altında olur. Açılır pencerenin üstündeki yeni düğmeyle açın.
 ⚡ Hızlı Kayıt (Sağ Tık & Kısayollar): Basit bir sağ tıklamayla mevcut konuşmayı kaydedin veya klavye kısayolunu (Ctrl+Shift+S ya da Mac'te Cmd+Shift+S) kullanarak anında "⚡ Hızlı Kayıtlar"a gönderin — zaten kaydedilmişse görsel uyarıyla!
 ☑️ Çoklu Seçim (Toplu İşlemler): Birden fazla konuşmayı onay kutularıyla seçin, tek tıkla taşıyın veya silin.
 📑 Sekme Grupları Entegrasyonu: Tüm bir klasörü tek tıklamayla yerel, renk kodlu Chrome Sekme Grubu olarak açın.

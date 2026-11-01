@@ -9,6 +9,7 @@ Foldery AI integrują się natywnie ze wszystkimi głównymi asystentami czatu A
 🌟 TRYB FOLDERÓW
 
 ⌨️ Natychmiastowy skrót do panelu: Otwórz panel natychmiast z dowolnej karty za pomocą Ctrl+Shift+1 (lub Cmd+Shift+1 na Macu).
+🪟 Teraz w panelu bocznym: Zadokuj rozszerzenie w panelu bocznym przeglądarki: pozostaje otwarte, gdy przełączasz karty, a foldery i prompty są zawsze pod ręką. Otwórz je nowym przyciskiem u góry okienka.
 ⚡ Szybkie Zapisywanie (Prawy przycisk i Skróty): Zapisz rozmowę prawym przyciskiem myszy lub skrótem klawiszowym (Ctrl+Shift+S lub Cmd+Shift+S na Mac), aby natychmiast wysłać ją do „⚡ Szybkich Zapisów" — z wizualnym alertem, jeśli już jest zapisana!
 ☑️ Wielokrotny Wybór (Akcje zbiorcze): Zaznacz kilka rozmów za pomocą pól wyboru, aby przenieść je lub usunąć jednym kliknięciem.
 📑 Integracja z Grupami kart: Otwórz cały folder jednym kliknięciem jako natywną, kolorową Grupę kart Chrome.

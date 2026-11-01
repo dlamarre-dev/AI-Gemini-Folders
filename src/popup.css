@@ -215,6 +215,19 @@
       body[dir="rtl"] { padding-left: 13px; padding-right: 19px; }
     }
 
+    /* --- Side panel (#106): popup.html?panel=1, see isPanelMode (ui.js) ---
+       A panel is as wide as the user drags it and as tall as the window, so
+       none of the popup sizing above applies: body is fluid, the document
+       scrolls. Scoped to html.panel, the popup rules above are untouched
+       (their overflow / scrollbar-gutter settings are fragile, §6). */
+    html.panel { overflow-y: auto; }
+    html.panel body {
+      width: auto;
+      min-width: 280px;
+      max-height: none;
+      overflow-y: visible;
+    }
+
     h3 {
       margin-top: 0;
       color: var(--text-color);

@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Apa yang baru"
   },
-  "whatsNewNestedTitle": {
-    "message": "Folder di dalam folder"
+  "whatsNewPanelTitle": {
+    "message": "Kini di panel samping"
   },
-  "whatsNewNestedBody": {
-    "message": "Seret satu folder ke folder lain untuk menempatkannya di dalamnya. Buka folder induk sebagai grup tab dan semua isinya ikut terbuka."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Lebih sedikit tab"
-  },
-  "whatsNewReuseBody": {
-    "message": "Mengklik percakapan tersimpan akan beralih ke tab yang sudah menampilkannya. {k}+klik menggunakan kembali tab terakhir yang dibuka ekstensi, bukan menambah tab baru."
+  "whatsNewPanelBody": {
+    "message": "Sematkan ekstensi di panel samping browser: tetap terbuka saat Anda berpindah tab, dengan folder dan prompt selalu siap digunakan. Buka dengan tombol baru di bagian atas popup."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: gunakan kembali tab terakhir"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Nama itu dicadangkan — silakan pilih yang lain."
+  },
+  "openSidePanel": {
+    "message": "Buka di panel samping"
   }
 }

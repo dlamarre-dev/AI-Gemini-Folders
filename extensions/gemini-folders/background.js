@@ -144,7 +144,7 @@ function openWelcomeTab(reason) {
 // The seen-marker is not redundant with the version check: reloading an unpacked
 // extension also fires onInstalled with reason 'update', which would reopen the tab
 // on every dev cycle, and a reinstall over the same version would too.
-const WHATS_NEW_VERSION = '4.6.0';
+const WHATS_NEW_VERSION = '4.7.0';
 
 async function openWhatsNewTab(reason) {
   if (reason !== 'update') return;

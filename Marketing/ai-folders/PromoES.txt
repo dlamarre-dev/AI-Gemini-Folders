@@ -9,6 +9,7 @@ Carpetas IA se integra de forma nativa con todos los principales asistentes de c
 🌟 MODO CARPETAS
 
 ⌨️ Atajo de teclado instantáneo: Abre el panel al instante desde cualquier pestaña con Ctrl+Shift+1 (o Cmd+Shift+1 en Mac).
+🪟 Ahora en el panel lateral: Ancla la extensión en el panel lateral del navegador: permanece abierta mientras cambias de pestaña, con tus carpetas y prompts siempre a mano. Ábrela con el nuevo botón en la parte superior de la ventana emergente.
 ⚡ Guardado Rápido (Clic derecho y Atajos): Guarda la conversación con un simple clic derecho, o usa el atajo de teclado (Ctrl+Shift+S o Cmd+Shift+S en Mac) para enviarla al instante a "⚡ Guardados Rápidos" — ¡con alerta visual si ya está guardada!
 ☑️ Selección Múltiple (Acciones en lote): Selecciona varias conversaciones con casillas de verificación para moverlas o eliminarlas de un solo clic.
 📑 Integración con Grupos de Pestañas: Abre toda una carpeta de un clic en un Grupo de Pestañas nativo y con código de colores de Chrome.

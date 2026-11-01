@@ -1,5 +1,16 @@
 // ui.js
 
+// ---- Side panel mode (#106) ----
+// The same popup.html is also the browser's side panel (Chrome/Edge side_panel,
+// Firefox sidebar_action), opened as popup.html?panel=1. A panel stays open
+// across tab switches, so the few behaviours that assumed a short-lived popup
+// ask this: fixed size, closing after a click, data read once at open.
+function isPanelMode() {
+  try { return new URLSearchParams(window.location.search).has('panel'); } catch (e) { return false; }
+}
+window.isPanelMode = isPanelMode;
+if (isPanelMode() && document.documentElement) document.documentElement.classList.add('panel');
+
 function updateStorageBar() {
   chrome.storage.sync.getBytesInUse(null, (bytesInUse) => {
     if (chrome.runtime.lastError) {

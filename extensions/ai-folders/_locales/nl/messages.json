@@ -347,23 +347,11 @@
   "whatsNewHeading": {
     "message": "Wat is er nieuw"
   },
-  "whatsNewNestedTitle": {
-    "message": "Mappen in mappen"
+  "whatsNewPanelTitle": {
+    "message": "Nu in het zijpaneel"
   },
-  "whatsNewNestedBody": {
-    "message": "Sleep een map op een andere om hem erin te plaatsen. Open de bovenliggende map als tabbladgroep en alles erin gaat mee open."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Minder tabbladen"
-  },
-  "whatsNewReuseBody": {
-    "message": "Klikken op een opgeslagen gesprek schakelt naar het tabblad dat het al toont. {k}+klik hergebruikt het laatste tabblad dat deze extensie opende in plaats van er een toe te voegen."
-  },
-  "whatsNewBaiduTitle": {
-    "message": "Baidu Chat werkt nog"
-  },
-  "whatsNewBaiduBody": {
-    "message": "Baidu heeft zijn chat naar een nieuw adres verplaatst. Opslaan en het invoegen van prompts werken daar weer."
+  "whatsNewPanelBody": {
+    "message": "Zet de extensie vast in het zijpaneel van je browser: ze blijft open terwijl je van tabblad wisselt, met je mappen en prompts altijd bij de hand. Open het met de nieuwe knop bovenaan de pop-up."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: laatste tabblad hergebruiken"
@@ -373,5 +361,8 @@
   },
   "reservedNameError": {
     "message": "Deze naam is gereserveerd — kies een andere."
+  },
+  "openSidePanel": {
+    "message": "Openen in zijpaneel"
   }
 }

@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "새로운 기능"
   },
-  "whatsNewNestedTitle": {
-    "message": "폴더 안의 폴더"
+  "whatsNewPanelTitle": {
+    "message": "이제 사이드 패널에서"
   },
-  "whatsNewNestedBody": {
-    "message": "폴더를 다른 폴더 위로 끌어다 놓으면 그 안에 들어갑니다. 상위 폴더를 탭 그룹으로 열면 안에 있는 것까지 함께 열립니다."
-  },
-  "whatsNewReuseTitle": {
-    "message": "탭 줄이기"
-  },
-  "whatsNewReuseBody": {
-    "message": "저장한 대화를 클릭하면 이미 그 대화를 표시하고 있는 탭으로 이동합니다. {k}+클릭은 새 탭을 추가하지 않고 확장 프로그램이 마지막으로 연 탭을 다시 사용합니다."
+  "whatsNewPanelBody": {
+    "message": "확장 프로그램을 브라우저의 사이드 패널에 고정하세요. 탭을 전환해도 열린 상태로 유지되어 폴더와 프롬프트를 언제든 바로 쓸 수 있습니다. 팝업 상단의 새 버튼으로 여세요."
   },
   "chatLinkReuseHint": {
     "message": "{k} + 클릭: 마지막 탭 재사용"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "이 이름은 예약되어 있습니다. 다른 이름을 선택하세요."
+  },
+  "openSidePanel": {
+    "message": "사이드 패널에서 열기"
   }
 }

@@ -251,6 +251,9 @@ window.initSaveConversation = initSaveConversation;
 const POPUP_BODY_MAX_HEIGHT = 576; // popup.css
 const POPUP_MIN_CAPPED_HEIGHT = 300;
 function fitPopupToWindow() {
+  // A side panel is as tall as the browser window and scrolls the document
+  // (html.panel in popup.css): there is no popup cap to fit.
+  if (inPanel()) return;
   const body = document.body;
   if (!body) return;
   const height = window.innerHeight;
@@ -265,6 +268,130 @@ function fitPopupToWindow() {
   } else if (body.style.maxHeight && fits > current) {
     body.style.maxHeight = fits >= POPUP_BODY_MAX_HEIGHT ? '' : fits + 'px';
   }
+}
+
+// isPanelMode lives in ui.js; tests may load this file without it.
+const inPanel = () => !!(window.isPanelMode && window.isPanelMode());
+
+// ---- Side panel (#106) ----
+// A popup lives for seconds; a side panel for hours, while quick-saves, the
+// context menu, other windows and other devices write to the same library. So
+// the panel re-renders when the library changes in storage — but never under
+// the user's hands: not while a modal is open, a field in a list has focus, a
+// bulk selection is in progress, or a prompt edit is still being written. The
+// change is then kept and applied at the next click or focus change.
+const LIBRARY_KEYS = new Set([
+  'folders', 'foldersDataCompressed', 'folderParents', 'pinnedFolders', 'sortPref',
+  'prompts', 'promptsDataCompressed', 'promptSortPref', 'syncPromptsEnabled',
+]);
+// openFolders / openPrompts are deliberately absent: the panel writes them
+// itself on every chevron click, and re-rendering on them would be a loop.
+function touchesLibrary(changes) {
+  return Object.keys(changes || {}).some(k => LIBRARY_KEYS.has(k) || /^[fp]dc(\d+|N)$/.test(k));
+}
+
+function panelIsBusy() {
+  const modal = document.getElementById('customModal');
+  if (modal && modal.style.display && modal.style.display !== 'none') return true;
+  const el = document.activeElement;
+  if (el && el.closest && el.closest('#folderList, #promptList')
+      && (el.matches('input, textarea, select') || el.isContentEditable)) return true;
+  if (window.selectedChats && window.selectedChats.length > 0) return true;
+  if (window.hasPendingPromptEdit && window.hasPendingPromptEdit()) return true;
+  return false;
+}
+
+function createLibraryRefresher({ render, isBusy = panelIsBusy, delay = 250 }) {
+  let timer = null;
+  let pending = false;
+  const run = () => {
+    timer = null;
+    if (isBusy()) { pending = true; return; }
+    pending = false;
+    render();
+  };
+  const schedule = () => { clearTimeout(timer); timer = setTimeout(run, delay); };
+  return {
+    onChanged(changes) { if (touchesLibrary(changes)) schedule(); },
+    // Called on interaction: applies a change that arrived while busy.
+    retry() { if (pending && !timer) schedule(); },
+  };
+}
+
+// A panel outlives the tab it was opened on. Calls onChange (debounced) when
+// the active tab of the panel's window changes or navigates, so the title
+// prefill follows the conversation actually on screen. No-op in a popup, which
+// closes long before any of this can happen. tab.url / tab.title only reach us
+// for hosts we have permission on — exactly the tabs a title can be read from.
+function watchActiveTab(onChange) {
+  if (!inPanel() || !chrome.tabs || !chrome.tabs.onActivated) return;
+  let windowId = null;
+  if (chrome.windows && chrome.windows.getCurrent) {
+    Promise.resolve(chrome.windows.getCurrent()).then(w => { windowId = w ? w.id : null; }).catch(() => {});
+  }
+  let timer = null;
+  const fire = () => { clearTimeout(timer); timer = setTimeout(onChange, 300); };
+  chrome.tabs.onActivated.addListener((info) => {
+    if (windowId == null || info.windowId === windowId) fire();
+  });
+  if (chrome.tabs.onUpdated) {
+    chrome.tabs.onUpdated.addListener((tabId, change, tab) => {
+      if (!tab || !tab.active || (windowId != null && tab.windowId !== windowId)) return;
+      if (change.url || change.title || change.status === 'complete') fire();
+    });
+  }
+}
+
+// Title prefill that a tab change may redo, but never over what the user typed
+// for the current tab: typing marks the field, a tab change clears the mark.
+function createTitlePrefill(input, compute) {
+  let userTyped = false;
+  input.addEventListener('input', () => { userTyped = true; });
+  const run = async (fromTabChange) => {
+    if (fromTabChange) userTyped = false;
+    if (userTyped) return;
+    let value;
+    try { value = await compute(); } catch (e) { value = undefined; }
+    if (userTyped || value === undefined) return;
+    input.value = value;
+  };
+  return run;
+}
+
+// The "open in side panel" button: Chrome/Edge 116+ (sidePanel.open) and
+// Firefox (sidebarAction.open). Both demand the click's user gesture, so the
+// window id is resolved beforehand and the call is made synchronously.
+function sidePanelOpener() {
+  const ns = (typeof browser !== 'undefined' && browser) || chrome;
+  if (ns.sidebarAction && typeof ns.sidebarAction.open === 'function') {
+    return () => ns.sidebarAction.open();
+  }
+  if (chrome.sidePanel && typeof chrome.sidePanel.open === 'function') {
+    let windowId = null;
+    if (chrome.windows && chrome.windows.getCurrent) {
+      Promise.resolve(chrome.windows.getCurrent()).then(w => { windowId = w && w.id; }).catch(() => {});
+    }
+    return () => chrome.sidePanel.open(windowId != null ? { windowId } : {});
+  }
+  return null;
+}
+
+function initSidePanelButton() {
+  const btn = document.getElementById('openSidePanelBtn');
+  if (!btn) return;
+  const open = inPanel() ? null : sidePanelOpener();
+  if (!open) { btn.style.display = 'none'; return; }
+  const label = chrome.i18n.getMessage('openSidePanel') || 'Open in side panel';
+  btn.title = label;
+  btn.setAttribute('aria-label', label);
+  btn.style.display = 'flex';
+  btn.addEventListener('mouseenter', () => { btn.style.opacity = '1'; });
+  btn.addEventListener('mouseleave', () => { btn.style.opacity = '0.65'; });
+  btn.addEventListener('click', () => {
+    let opened;
+    try { opened = open(); } catch (e) { console.warn('[Folders extension] side panel:', e); return; }
+    Promise.resolve(opened).then(() => window.close(), (e) => console.warn('[Folders extension] side panel:', e));
+  });
 }
 
 function initPopupCommon(config) {
@@ -326,6 +453,27 @@ function initPopupCommon(config) {
       firstRendered();
     }
   });
+
+  // --- Side panel: live refresh of the library (see createLibraryRefresher) ---
+  if (inPanel()) {
+    const refresher = createLibraryRefresher({
+      render: () => {
+        if (currentMode === 'prompt') {
+          displayPrompts();
+          // The hidden folder list is rebuilt on its next visit instead.
+          window.foldersRendered = false;
+        } else if (window.displayFolders) {
+          const term = (document.getElementById('searchInput')?.value || '').toLowerCase();
+          window.displayFolders(null, term);
+        }
+      },
+    });
+    chrome.storage.onChanged.addListener((changes) => refresher.onChanged(changes));
+    document.addEventListener('focusout', () => setTimeout(refresher.retry, 0));
+    document.addEventListener('click', () => setTimeout(refresher.retry, 0), true);
+    document.addEventListener('keyup', (e) => { if (e.key === 'Escape') setTimeout(refresher.retry, 0); });
+  }
+  initSidePanelButton();
 
   modeFolderBtn.addEventListener('click', () => { if (currentMode !== 'folder') setMode('folder'); });
   modePromptBtn.addEventListener('click', () => { if (currentMode !== 'prompt') setMode('prompt'); });
@@ -572,4 +720,10 @@ function initPopupCommon(config) {
   });
 }
 window.initPopupCommon = initPopupCommon;
+window.touchesLibrary = touchesLibrary;
+window.createLibraryRefresher = createLibraryRefresher;
+window.panelIsBusy = panelIsBusy;
+window.watchActiveTab = watchActiveTab;
+window.createTitlePrefill = createTitlePrefill;
+window.initSidePanelButton = initSidePanelButton;
 window.fitPopupToWindow = fitPopupToWindow;

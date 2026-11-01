@@ -9,6 +9,7 @@ AI-kansiot integroituu natiivisti kaikkiin suuriin tekoälychat-avustajiin, kute
 🌟 KANSIOTILA
 
 ⌨️ Välitön pikanäppäin: Avaa paneeli välittömästi mistä tahansa välilehdestä painamalla Ctrl+Shift+1 (tai Cmd+Shift+1 Macissa).
+🪟 Nyt sivupaneelissa: Kiinnitä laajennus selaimen sivupaneeliin: se pysyy auki, kun vaihdat välilehteä, ja kansiot ja kehotteet ovat aina käden ulottuvilla. Avaa se ponnahdusikkunan yläreunan uudella painikkeella.
 ⚡ Pikatallennus (Hiiren oikea painike ja pikakuvakkeet): Tallenna nykyinen keskustelu yksinkertaisella hiiren oikealla painikkeella tai käytä pikanäppäintä (Ctrl+Shift+S tai Cmd+Shift+S Macissa) lähettääksesi sen «⚡ Pikatallennus» -kansioon – visuaalisella ilmoituksella, jos se on jo tallennettu!
 ☑️ Monivalinta (Joukotoiminnot): Valitse useita keskusteluja valintaruutujen avulla siirtääksesi tai poistaaksesi ne yhdellä napsautuksella.
 📑 Välilehtiryhmäintegraatio: Avaa kokonainen kansio yhdellä napsautuksella natiivin, värikoodatun Chrome-välilehtiryhmänä.
