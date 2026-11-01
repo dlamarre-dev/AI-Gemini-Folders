@@ -1000,7 +1000,7 @@ id, the AMO API secret, and `assets.root`, the path to this checkout.
   live. **Adding a locale means adding it to `store-publisher.config.json` too.**
 - **The templates read `dist/`, not `Marketing/`.** `python build.py` is a hard
   prerequisite of a publish run, not merely a build step: `dist/` is what carries
-  the Firefox wording patches (`Chrome`→`Firefox`, `Ctrl+Shift+S`→`Alt+Shift+S`)
+  the Firefox wording patches (`Chrome`→`Firefox`, `Ctrl+Shift+S`→`Alt+Shift+Q`, see `FIREFOX_QUICK_SAVE_KEY`)
   and the `__AF_STORE_URL__` substitution. `build_images.py` regenerates the
   screenshots it reads.
 - **`{LANG}` and the `fileCode` on `zh_CN`** are what make `PromoCN.txt`

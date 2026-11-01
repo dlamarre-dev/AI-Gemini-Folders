@@ -76,6 +76,14 @@ BUILD_ONLY_MESSAGES = ["syncFavoritesTooltip"]
 QUICK_SAVE_SPELLINGS = ["Ctrl+Shift+S", "Cmd+Shift+S", "Command+Shift+S",
                         "⌘+Shift+S", "Strg+Shift+S"]
 
+# Quick-save on Firefox. Ctrl+Shift+S is Firefox's screenshot shortcut, and
+# Alt+Shift+S, used until 1.8.0 / 4.7.0, was taken over by Firefox itself (it
+# bookmarks the page; reported 11/2026). A browser shortcut always wins over an
+# extension's suggested key, so ours silently stopped firing. This one constant
+# feeds the manifest, the _locales and the store texts, and
+# tools/validate_build.py checks that no retired spelling survives in dist/.
+FIREFOX_QUICK_SAVE_KEY = "Alt+Shift+Q"
+
 # --- BUILD TARGETS ---
 # One entry per store target. Everything that differs between the builds lives
 # here as data, so build_target() is a single code path: adding a fourth store
@@ -142,7 +150,7 @@ TARGETS = {
         # popup, so the standalone import page is its only route (src/popup-core.js).
         "drop_files": None,
         "text_swaps": ([("Chrome", "Firefox")]
-                       + [(sc, "Alt+Shift+S") for sc in QUICK_SAVE_SPELLINGS]),
+                       + [(sc, FIREFOX_QUICK_SAVE_KEY) for sc in QUICK_SAVE_SPELLINGS]),
         "promo_swaps": [],
         "message_aliases": {},
         "description_max": None,
@@ -381,12 +389,13 @@ def apply_text_swaps(text, target, collapse=False):
             text = text.replace(old, new)
             changed = True
     if collapse:
-        # On Firefox, Mac and PC share the shortcut, so any "(or Alt+Shift+S on
+        # On Firefox, Mac and PC share the shortcut, so any "(or Alt+Shift+Q on
         # Mac)" parenthetical is now redundant. Two shapes, depending on whether
         # the first shortcut sits inside or outside the parens.
+        k = re.escape(FIREFOX_QUICK_SAVE_KEY)
         for pattern, repl in (
-            (r'(Alt\+Shift\+S)\s*[\(（][^)）]*Alt\+Shift\+S[^)）]*[\)）]', r'\1'),
-            (r'[\(（]Alt\+Shift\+S[^)）]*Alt\+Shift\+S[^)）]*[\)）]', r'(Alt+Shift+S)'),
+            (rf'({k})\s*[\(（][^)）]*{k}[^)）]*[\)）]', r'\1'),
+            (rf'[\(（]{k}[^)）]*{k}[^)）]*[\)）]', f'({FIREFOX_QUICK_SAVE_KEY})'),
         ):
             new_text = re.sub(pattern, repl, text)
             if new_text != text:
@@ -433,14 +442,14 @@ def patch_manifest_firefox(manifest, dest, cfg):
             "open_at_install": False,
         }
 
-    # Only patch the quick-save shortcut (Ctrl+Shift+S → Alt+Shift+S).
+    # Only patch the quick-save shortcut (Ctrl+Shift+S → FIREFOX_QUICK_SAVE_KEY).
     # Other commands (e.g. _execute_action) keep their original keys.
     if "commands" in manifest and "quick-save" in manifest["commands"]:
         qs = manifest["commands"]["quick-save"]
         if "suggested_key" in qs:
             for platform in ["default", "windows", "chromeos", "linux", "mac"]:
                 if platform in qs["suggested_key"]:
-                    qs["suggested_key"][platform] = "Alt+Shift+S"
+                    qs["suggested_key"][platform] = FIREFOX_QUICK_SAVE_KEY
 
 
 MANIFEST_PATCHERS = {"firefox": patch_manifest_firefox}

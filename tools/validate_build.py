@@ -192,6 +192,33 @@ def check_zip(ext, version):
             fail(f"{os.path.basename(name)}: no _locales")
 
 
+# Mirrors FIREFOX_QUICK_SAVE_KEY in build.py. The retired spellings are shortcuts
+# Firefox claims for itself (screenshots; bookmark this page), which beat an
+# extension's suggested key — naming them in Firefox copy would promise a key
+# that does nothing.
+FIREFOX_QUICK_SAVE_KEY = "Alt+Shift+Q"
+FIREFOX_RETIRED_KEYS = ("Ctrl+Shift+S", "Alt+Shift+S")
+
+
+def check_firefox_shortcut(ext):
+    built = load_json(os.path.join(DIST, ext, "firefox", "manifest.json"))
+    keys = ((built.get("commands") or {}).get("quick-save") or {}).get("suggested_key") or {}
+    for platform, key in keys.items():
+        if key != FIREFOX_QUICK_SAVE_KEY:
+            fail(f"{ext}/firefox: quick-save is {key} on {platform}, expected {FIREFOX_QUICK_SAVE_KEY}")
+    for root in (os.path.join(DIST, ext, "firefox", "_locales"), os.path.join(DIST, ext, "marketing_firefox")):
+        for dirpath, _, files in os.walk(root):
+            for name in files:
+                if not name.endswith((".json", ".txt")):
+                    continue
+                path = os.path.join(dirpath, name)
+                with open(path, encoding="utf-8") as f:
+                    text = f.read()
+                for old in FIREFOX_RETIRED_KEYS:
+                    if old in text:
+                        fail(f"{ext}/firefox: {os.path.relpath(path, DIST)} still names {old}")
+
+
 def main():
     if not os.path.isdir(DIST):
         print("❌ dist/ not found — run `python build.py` first.")
@@ -206,6 +233,7 @@ def main():
             check_locales(ext, browser)
             check_placeholders(ext, browser)
             check_marketing_placeholders(ext, browser)
+        check_firefox_shortcut(ext)
         if version:
             check_zip(ext, version)
 
