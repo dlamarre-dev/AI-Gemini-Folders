@@ -78,7 +78,7 @@ QUICK_SAVE_SPELLINGS = ["Ctrl+Shift+S", "Cmd+Shift+S", "Command+Shift+S",
 
 # Quick-save on Firefox. Ctrl+Shift+S is Firefox's screenshot shortcut, and
 # Alt+Shift+S, used until 1.8.0 / 4.7.0, was taken over by Firefox itself (it
-# opens the History sidebar; reported 11/2026). A browser shortcut always wins over an
+# opens History; reported 11/2026). A browser shortcut always wins over an
 # extension's suggested key, so ours silently stopped firing. This one constant
 # feeds the manifest, the _locales and the store texts, and
 # tools/validate_build.py checks that no retired spelling survives in dist/.
