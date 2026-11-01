@@ -5,8 +5,7 @@
   // The pages are pre-rendered, so a browser only loads i18n-manual.js (language
   // names, RTL list) and this file. The full data sets (i18n-data, logos,
   // privacy-i18n) are loaded by tools/build-site.js, and the fallbacks below keep
-  // this file working without them.
-  const HAS_DATA = !!window.AF_I18N;
+  // this file loading without them.
   const M = window.AF_MANUAL, D = window.AF_I18N || {}, NAMES = window.AF_LANGS,
         RTL = window.AF_RTL, SFONT = window.AF_SCRIPT_FONT, LOGOS = window.AF_LOGOS || { services: {} },
         AF_PRIVACY = window.AF_PRIVACY || {};
@@ -637,8 +636,10 @@
     let pref = null;
     try { pref = localStorage.getItem("af_lang"); } catch (e) {}
     if (!pref) pref = guess();
-    if (!NAMES[pref] || pref === "en") return false;
-    location.replace((isPrivacy ? privacyUrl(pref) : homeUrl(pref)) + location.hash);
+    // Only a code from our own list ever reaches the URL: af_lang is storage
+    // anyone on this origin can write, and NAMES would also answer "constructor".
+    if (!LANG_ORDER.includes(pref) || pref === "en") return false;
+    location.replace(isPrivacy ? privacyUrl(pref) : homeUrl(pref));
     return true;
   }
 
@@ -646,11 +647,6 @@
     const pageLang = document.documentElement.getAttribute("data-lang") || "en";
     const isPrivacy = document.documentElement.getAttribute("data-page") === "privacy";
     if (redirectFromRoot(pageLang, isPrivacy)) return;
-
-    // A page served without its pre-rendered body still works: build it here
-    // from the same functions.
-    const app = document.getElementById("app");
-    if (app && !app.firstElementChild && HAS_DATA) app.innerHTML = isPrivacy ? buildPrivacy(pageLang) : build(pageLang);
 
     makeStars();
     document.getElementById("langBtn").addEventListener("click", toggleMenu);
