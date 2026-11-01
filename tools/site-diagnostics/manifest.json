@@ -3,7 +3,10 @@
   "name": "AI/Gemini Folders — Selector Diagnostics",
   "version": "1.0",
   "description": "Maintainer tool: opens each supported AI site and checks whether its editor selectors still match, flagging when only the positional fallback works.",
-  "permissions": ["tabs", "scripting"],
+  "permissions": [
+    "tabs",
+    "scripting"
+  ],
   "host_permissions": [
     "*://gemini.google.com/*",
     "*://claude.ai/*",
@@ -21,6 +24,8 @@
     "*://chat.z.ai/*",
     "*://kimi.com/*",
     "*://*.kimi.com/*",
+    "*://kimi.ai/*",
+    "*://*.kimi.ai/*",
     "*://chat.qwen.ai/*",
     "*://meta.ai/*",
     "*://*.meta.ai/*",
