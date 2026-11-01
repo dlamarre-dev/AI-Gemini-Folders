@@ -112,15 +112,18 @@ Marketing/
    extension ships 16/48/128, none close enough to upscale.)
 
 docs/                        Static GitHub Pages site (aifolders.xyz)
-  privacy.html               Renders from site/privacy-i18n.js via site/app.js
+  index.html, privacy.html   GENERATED, English (x-default). Never edit by hand
+  <lang>/index.html, …       GENERATED, one dir per other language (fr, pt-br…)
+  sitemap.xml                GENERATED (86 URLs)
   site/privacy-i18n.js       Privacy policy text, 43 languages (window.AF_PRIVACY)
-  site/app.js  styles.css    Page renderer + styles
+  site/app.js  styles.css    Page builders (run by tools/build-site.js) + runtime behaviour, styles
   site/i18n-data.js  i18n-manual.js  logos.js
   uninstall-ai-folders.html  Uninstall feedback survey, one page per extension
   uninstall-gemini-folders.html   (noindex; see §9)
   site/uninstall.js  uninstall-i18n.js  uninstall-forms.js
 
 tools/                       Maintainer tooling — NOT shipped in the extensions
+  build-site.js              Pre-renders the site (`npm run site`), see §13
   site-diagnostics/          Detects when a site's editor/title selectors break.
                              build.py refreshes its site-config.js and the
                              host_permissions of both its manifests from AF's
@@ -1060,3 +1063,34 @@ elsewhere. That is why the count is swapped through `promo_swaps` rather than
 itself in its own UI. Bengali writes the number in Bengali digits, so it needs its
 own pair — and writing it that way is how nobody noticed the source text had been
 claiming 27 languages.
+
+---
+
+## 13. The website is pre-rendered (SEO)
+
+`docs/site/app.js` holds the page builders; `tools/build-site.js` runs them in a
+`vm` sandbox and writes **one home page and one privacy page per language** —
+`/` and `/privacy.html` in English (also the `x-default`), `/<code>/` and
+`/<code>/privacy.html` for the 42 others (lower-case BCP 47: `pt-br`, `zh-cn`) —
+plus `sitemap.xml`. Each page carries its full text in the HTML, its own title,
+description, canonical, 44 `hreflang` alternates, localized Open Graph image and
+JSON-LD. It used to ship an empty `<main id="app">` filled from
+`navigator.language`, so crawlers saw English at best and 42 languages had no URL.
+
+- **After editing `app.js`, an i18n file or the generator: `npm run site` and
+  commit `docs/`.** `tests/site-pages.test.js` fails on any stale page — that is
+  what stops the live site from silently keeping old text.
+- In the browser, `app.js` only wires behaviour (menu, reveal, trigger demo).
+  Pages load `i18n-manual.js` + `app.js` only; `i18n-data.js`, `logos.js` and
+  `privacy-i18n.js` (~550 KB) are generator inputs. Fonts are requested per
+  script, not all eleven Noto families on every page.
+- **Changing language is a navigation** (real `<a href>` links, which is also how
+  crawlers find the language pages). The choice goes to `localStorage.af_lang`.
+  Only the English root pages redirect, and only a visitor whose saved choice or
+  browser language differs; a language URL is always honoured. Crawlers have
+  neither, so they are never redirected — keep it that way.
+- Asset paths are root-relative (`/site/...`) because pages live one directory
+  down. The uninstall pages still use relative paths and stay at the root.
+- The `/privacy.html` and `/` URLs are referenced by the stores and the
+  extensions: they must stay English and stay where they are.
+
