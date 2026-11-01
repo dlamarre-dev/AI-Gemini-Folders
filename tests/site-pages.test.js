@@ -9,6 +9,7 @@
 // catches it. Fix: `node tools/build-site.js`, then commit docs/.
 const fs = require('fs');
 const path = require('path');
+const { JSDOM } = require('jsdom');
 const { renderAll, stale, normalize } = require('../tools/build-site.js');
 
 const ROOT = path.join(__dirname, '..');
@@ -55,9 +56,11 @@ describe.each(htmlPages)('%s', (rel) => {
   });
 
   test('carries its text in the HTML, not only after JavaScript runs', () => {
-    const main = html.slice(html.indexOf('<main id="app">'), html.indexOf('</main>'));
-    expect(main).toMatch(/<h1[ >]/);
-    expect(main.replace(/<[^>]+>/g, '').trim().length).toBeGreaterThan(500);
+    // Parsed, not regex-stripped: a real parser is what a crawler uses, and a
+    // tag-stripping regex is the shape CodeQL rightly flags as a sanitizer.
+    const main = new JSDOM(html).window.document.getElementById('app');
+    expect(main.querySelector('h1')).not.toBeNull();
+    expect(main.textContent.trim().length).toBeGreaterThan(500);
   });
 
   test('has a title and a description of search-snippet size', () => {
