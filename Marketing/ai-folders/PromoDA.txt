@@ -9,6 +9,7 @@ AI-mapper integreres indbygget med alle de store AI-chatassistenter, såsom Clau
 🌟 MAPPEVISNING
 
 ⌨️ Øjeblikkelig panelogenvej: Åbn panelet øjeblikkeligt fra enhver fane med Ctrl+Shift+1 (eller Cmd+Shift+1 på Mac).
+🪟 Nu i sidepanelet: Fastgør udvidelsen i browserens sidepanel: den forbliver åben, mens du skifter faneblad, med dine mapper og prompts altid lige ved hånden. Åbn den med den nye knap øverst i pop op-vinduet.
 ⚡ Hurtiggem (Højreklik og genveje): Gem den aktuelle samtale med et simpelt højreklik, eller brug tastaturgenvejen (Ctrl+Shift+S eller Cmd+Shift+S på Mac) til at sende den til «⚡ Hurtiggem» – med en visuel advarsel, hvis den allerede er gemt!
 ☑️ Flervalg (Massehandlinger): Vælg flere samtaler med afkrydsningsfelter for at flytte eller slette dem med ét klik.
 📑 Fanegruppeintegration: Åbn en hel mappe med ét klik som en indbygget, farvekodet Chrome-fanegruppe.

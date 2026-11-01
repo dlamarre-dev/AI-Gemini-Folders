@@ -6,6 +6,7 @@ Gemini-mappen wordt uw echte Gemini-cockpit: organiseer gesprekken in mappen, bo
 🌟 MAPPENMODUS
 
 ⌨️ Directe paneelsneltoets: Open het paneel direct vanuit elk tabblad met Ctrl+Shift+1 (of Cmd+Shift+1 op Mac).
+🪟 Nu in het zijpaneel: Zet de extensie vast in het zijpaneel van je browser: ze blijft open terwijl je van tabblad wisselt, met je mappen en prompts altijd bij de hand. Open het met de nieuwe knop bovenaan de pop-up.
 ⚡ Snel opslaan (rechtsklikken & sneltoetsen): Sla het huidige gesprek op met een eenvoudig rechtsklikken, of gebruik de sneltoets (Ctrl+Shift+S of Cmd+Shift+S op Mac) om het direct naar "⚡ Snelle opslag" te sturen — met een visuele melding als het al is opgeslagen!
 ☑️ Meerdere selecteren (bulkacties): Selecteer meerdere gesprekken via selectievakjes om ze met één klik te verplaatsen of verwijderen.
 📑 Tabgroepintegratie: Open een volledige map met één klik als een native, kleurgecodeerde Chrome-tabgroep.

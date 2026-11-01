@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Kaj je novega"
   },
-  "whatsNewNestedTitle": {
-    "message": "Mape v mapah"
+  "whatsNewPanelTitle": {
+    "message": "Zdaj v stranski plošči"
   },
-  "whatsNewNestedBody": {
-    "message": "Povlecite mapo na drugo, da jo postavite vanjo. Odprite nadrejeno mapo kot skupino zavihkov in odprlo se bo vse, kar vsebuje."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Manj zavihkov"
-  },
-  "whatsNewReuseBody": {
-    "message": "Klik na shranjen pogovor preklopi na zavihek, ki ga že prikazuje. {k}+klik znova uporabi zadnji zavihek, ki ga je odprla razširitev, namesto da bi dodal novega."
+  "whatsNewPanelBody": {
+    "message": "Zasidrajte razširitev v stransko ploščo brskalnika: ostane odprta, ko preklapljate med zavihki, mape in pozivi pa so vedno pri roki. Odprite jo z novim gumbom na vrhu pojavnega okna."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: znova uporabi zadnji zavihek"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "To ime je rezervirano — izberite drugo."
+  },
+  "openSidePanel": {
+    "message": "Odpri v stranski plošči"
   }
 }

@@ -6,6 +6,7 @@ Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga mazungumzo katika
 🌟 HALI YA FOLDA
 
 ⌨️ Mkato wa haraka wa jopo: Fungua jopo mara moja kutoka kichupo chochote na Ctrl+Shift+1 (au Cmd+Shift+1 kwenye Mac).
+🪟 Sasa kwenye paneli ya pembeni: Bandika kiendelezi kwenye paneli ya pembeni ya kivinjari: kinabaki wazi unapobadilisha vichupo, na folda na maagizo yako yanapatikana kila wakati. Kifungue kwa kitufe kipya kilicho juu ya dirisha ibukizi.
 ⚡ Hifadhi ya Haraka (Kubofya Kulia & Njia za Mkato): Hifadhi mazungumzo ya sasa kwa kubofya kulia rahisi, au tumia njia ya mkato ya kibodi (Ctrl+Shift+S au Cmd+Shift+S kwenye Mac) kutuma mara moja kwenye "⚡ Hifadhi ya Haraka" — pamoja na arifa ya kuona ikiwa tayari imehifadhiwa!
 ☑️ Kuchagua Vingi (Vitendo vya Wingi): Chagua mazungumzo mengi kwa kutumia masanduku ya kuchagua ili kuyahamisha au kuyafuta kwa kubofya mara moja.
 📑 Ujumuishaji wa Kikundi cha Vichupo: Fungua folda nzima kwa kubofya mara moja kama Kikundi cha Vichupo cha Chrome chenye rangi.

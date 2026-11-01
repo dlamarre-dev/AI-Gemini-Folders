@@ -347,23 +347,11 @@
   "whatsNewHeading": {
     "message": "Yenilikler"
   },
-  "whatsNewNestedTitle": {
-    "message": "Klasör içinde klasör"
+  "whatsNewPanelTitle": {
+    "message": "Artık yan panelde"
   },
-  "whatsNewNestedBody": {
-    "message": "Bir klasörü diğerinin üzerine sürükleyerek içine yerleştirin. Üst klasörü sekme grubu olarak açtığınızda içindeki her şey de birlikte açılır."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Daha az sekme"
-  },
-  "whatsNewReuseBody": {
-    "message": "Kaydedilmiş bir sohbete tıklamak, onu zaten gösteren sekmeye geçer. {k}+tıklama, yeni bir sekme eklemek yerine uzantının en son açtığı sekmeyi yeniden kullanır."
-  },
-  "whatsNewBaiduTitle": {
-    "message": "Baidu Chat çalışmaya devam ediyor"
-  },
-  "whatsNewBaiduBody": {
-    "message": "Baidu sohbetini yeni bir adrese taşıdı. Kaydetme ve istem ekleme orada yeniden çalışıyor."
+  "whatsNewPanelBody": {
+    "message": "Uzantıyı tarayıcının yan paneline sabitleyin: sekme değiştirirken açık kalır, klasörleriniz ve istemleriniz her zaman elinizin altında olur. Açılır pencerenin üstündeki yeni düğmeyle açın."
   },
   "chatLinkReuseHint": {
     "message": "{k} + tıklama: son sekmeyi yeniden kullan"
@@ -373,5 +361,8 @@
   },
   "reservedNameError": {
     "message": "Bu ad ayrılmıştır — lütfen başka bir ad seçin."
+  },
+  "openSidePanel": {
+    "message": "Yan panelde aç"
   }
 }

@@ -347,23 +347,11 @@
   "whatsNewHeading": {
     "message": "Novetats"
   },
-  "whatsNewNestedTitle": {
-    "message": "Carpetes dins de carpetes"
+  "whatsNewPanelTitle": {
+    "message": "Ara al plafó lateral"
   },
-  "whatsNewNestedBody": {
-    "message": "Arrossegueu una carpeta sobre una altra per posar-la a dins. Obriu la carpeta principal com a grup de pestanyes i s'obrirà tot el que conté."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Menys pestanyes"
-  },
-  "whatsNewReuseBody": {
-    "message": "En clicar una conversa desada, es passa a la pestanya que ja la mostra. {k}+clic reutilitza l'última pestanya que ha obert l'extensió en lloc d'afegir-ne una altra."
-  },
-  "whatsNewBaiduTitle": {
-    "message": "Baidu Chat continua funcionant"
-  },
-  "whatsNewBaiduBody": {
-    "message": "Baidu ha mogut el seu xat a una adreça nova. Allà tornen a funcionar el desament i la inserció de prompts."
+  "whatsNewPanelBody": {
+    "message": "Fixa l'extensió al plafó lateral del navegador: es queda oberta mentre canvies de pestanya, amb les carpetes i els prompts sempre a mà. Obre-la amb el nou botó de la part superior de la finestra emergent."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilitza la darrera pestanya"
@@ -373,5 +361,8 @@
   },
   "reservedNameError": {
     "message": "Aquest nom està reservat: tria’n un altre."
+  },
+  "openSidePanel": {
+    "message": "Obre al plafó lateral"
   }
 }

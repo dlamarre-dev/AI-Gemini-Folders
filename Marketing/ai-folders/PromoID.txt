@@ -9,6 +9,7 @@ Folder AI terintegrasi secara native dengan semua asisten obrolan AI utama, sepe
 🌟 MODE FOLDER
 
 ⌨️ Pintasan panel instan: Buka panel secara instan dari tab mana pun dengan Ctrl+Shift+1 (atau Cmd+Shift+1 di Mac).
+🪟 Kini di panel samping: Sematkan ekstensi di panel samping browser: tetap terbuka saat Anda berpindah tab, dengan folder dan prompt selalu siap digunakan. Buka dengan tombol baru di bagian atas popup.
 ⚡ Simpan Cepat (Klik Kanan & Pintasan): Simpan percakapan saat ini dengan klik kanan sederhana, atau gunakan pintasan keyboard (Ctrl+Shift+S atau Cmd+Shift+S di Mac) untuk langsung mengirimkannya ke "⚡ Simpanan Cepat" — dengan peringatan visual jika sudah tersimpan!
 ☑️ Pilihan Ganda (Tindakan Massal): Pilih beberapa percakapan menggunakan kotak centang untuk memindahkan atau menghapusnya dalam satu klik.
 📑 Integrasi Grup Tab: Buka seluruh folder dalam satu klik sebagai Grup Tab Chrome asli dengan kode warna.

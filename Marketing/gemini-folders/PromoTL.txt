@@ -6,6 +6,7 @@ Ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockpit: ayusin ang m
 🌟 FOLDER MODE
 
 ⌨️ Instant na panel shortcut: Buksan ang panel agad mula sa anumang tab gamit ang Ctrl+Shift+1 (o Cmd+Shift+1 sa Mac).
+🪟 Nasa side panel na: I-dock ang extension sa side panel ng iyong browser: nananatili itong bukas habang nagpapalit ka ng tab, kaya laging abot-kamay ang iyong mga folder at prompt. Buksan ito gamit ang bagong button sa itaas ng popup.
 ⚡ Mabilis na Pag-save (Right-Click at Shortcuts): I-save ang kasalukuyang pag-uusap sa pamamagitan ng simpleng right-click, o gamitin ang keyboard shortcut (Ctrl+Shift+S o Cmd+Shift+S sa Mac) para agad itong ipadala sa "⚡ Mabilis na Pag-save" — na may visual na alerto kung nai-save na ito!
 ☑️ Multi-Select (Bulk Actions): Pumili ng maraming pag-uusap gamit ang mga checkbox para ilipat o tanggalin ang mga ito sa isang click.
 📑 Tab Groups Integration: Buksan ang isang buong folder sa isang click bilang isang native, color-coded na Chrome Tab Group.

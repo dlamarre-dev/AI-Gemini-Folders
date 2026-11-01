@@ -6,6 +6,7 @@ Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgovore u foldere,
 🌟 MOD FOLDERA
 
 ⌨️ Trenutna prečica za panel: Otvori panel odmah s bilo koje kartice pomoću Ctrl+Shift+1 (ili Cmd+Shift+1 na Mac-u).
+🪟 Sada u bočnoj tabli: Zakačite proširenje u bočnu tablu pregledača: ostaje otvoreno dok menjate kartice, a fascikle i promptovi su vam uvek pri ruci. Otvorite ga novim dugmetom na vrhu iskačućeg prozora.
 ⚡ Brzo čuvanje (Desni klik i prečice): Sačuvaj trenutni razgovor jednostavnim desnim klikom ili koristi prečicu na tastaturi (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo čuvanje» – s vizuelnim upozorenjem ako je već sačuvan!
 ☑️ Višestruki odabir (Masovne radnje): Odaberi više razgovora s potvrdnim okvirima za premještanje ili brisanje jednim klikom.
 📑 Integracija grupa kartica: Otvori cijeli folder jednim klikom kao nativnu, šifriranu bojom grupu kartica Chrome.

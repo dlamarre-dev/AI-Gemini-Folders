@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "新着情報"
   },
-  "whatsNewNestedTitle": {
-    "message": "フォルダの中のフォルダ"
+  "whatsNewPanelTitle": {
+    "message": "サイドパネルに対応しました"
   },
-  "whatsNewNestedBody": {
-    "message": "フォルダを別のフォルダにドラッグすると、その中に入ります。親フォルダをタブグループで開けば、中身もまとめて開きます。"
-  },
-  "whatsNewReuseTitle": {
-    "message": "タブを増やさない"
-  },
-  "whatsNewReuseBody": {
-    "message": "保存した会話をクリックすると、すでに表示しているタブに切り替わります。{k}+クリックなら、新しいタブを増やさずに拡張機能が最後に開いたタブを再利用します。"
+  "whatsNewPanelBody": {
+    "message": "拡張機能をブラウザのサイドパネルに固定できます。タブを切り替えても開いたままなので、フォルダとプロンプトをいつでもすぐに使えます。ポップアップ上部の新しいボタンから開いてください。"
   },
   "chatLinkReuseHint": {
     "message": "{k} + クリック: 最後のタブを再利用"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "この名前は予約されています。別の名前を選んでください。"
+  },
+  "openSidePanel": {
+    "message": "サイドパネルで開く"
   }
 }

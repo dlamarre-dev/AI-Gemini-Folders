@@ -9,6 +9,7 @@ Dossiers IA s'intègre nativement avec tous les principaux assistants de chat IA
 🌟 MODE DOSSIERS
 
 ⌨️ Raccourci instantané : Ouvrez le panneau à tout moment depuis n'importe quel onglet avec Ctrl+Shift+1 (ou Cmd+Shift+1 sur Mac).
+🪟 Maintenant dans le panneau latéral : Ancrez l'extension dans le panneau latéral du navigateur : elle reste ouverte quand vous changez d'onglet, avec vos dossiers et vos prompts toujours à portée de main. Ouvrez-la avec le nouveau bouton en haut de la fenêtre.
 ⚡ Sauvegarde Rapide (Clic Droit & Raccourcis) : Sauvegardez la conversation via un simple clic droit, ou utilisez le raccourci clavier (Ctrl+Shift+S ou Cmd+Shift+S sur Mac) pour l'envoyer instantanément dans "⚡ Sauvegardes Rapides" — avec une alerte visuelle si elle est déjà sauvegardée !
 ☑️ Sélection Multiple (Bulk Actions) : Sélectionnez plusieurs conversations avec des cases à cocher pour les déplacer ou les supprimer en un seul clic.
 📑 Groupes d'onglets (Tab Groups) : Ouvrez tout un dossier en un clic dans un groupe d'onglets Chrome natif et coloré.

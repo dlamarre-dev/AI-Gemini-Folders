@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Ce este nou"
   },
-  "whatsNewNestedTitle": {
-    "message": "Dosare în dosare"
+  "whatsNewPanelTitle": {
+    "message": "Acum în panoul lateral"
   },
-  "whatsNewNestedBody": {
-    "message": "Trageți un dosar peste altul pentru a-l plasa în interior. Deschideți dosarul principal ca grup de file și se deschide tot ce conține."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Mai puține file"
-  },
-  "whatsNewReuseBody": {
-    "message": "Un clic pe o conversație salvată comută la fila care o afișează deja. {k}+clic reutilizează ultima filă deschisă de extensie, în loc să adauge alta."
+  "whatsNewPanelBody": {
+    "message": "Fixează extensia în panoul lateral al browserului: rămâne deschisă când schimbi filele, cu dosarele și prompturile mereu la îndemână. Deschide-o cu noul buton din partea de sus a ferestrei pop-up."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilizează ultima filă"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Acest nume este rezervat — alegeți altul."
+  },
+  "openSidePanel": {
+    "message": "Deschide în panoul lateral"
   }
 }

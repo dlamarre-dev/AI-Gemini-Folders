@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Mitä uutta"
   },
-  "whatsNewNestedTitle": {
-    "message": "Kansioita kansioiden sisällä"
+  "whatsNewPanelTitle": {
+    "message": "Nyt sivupaneelissa"
   },
-  "whatsNewNestedBody": {
-    "message": "Vedä kansio toisen päälle sijoittaaksesi sen sen sisään. Avaa yläkansio välilehtiryhmänä, niin kaikki sen sisältö avautuu mukana."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Vähemmän välilehtiä"
-  },
-  "whatsNewReuseBody": {
-    "message": "Tallennetun keskustelun napsauttaminen siirtyy välilehteen, jossa se on jo avoinna. {k}+napsautus käyttää uudelleen laajennuksen viimeksi avaamaa välilehteä sen sijaan, että avaisi uuden."
+  "whatsNewPanelBody": {
+    "message": "Kiinnitä laajennus selaimen sivupaneeliin: se pysyy auki, kun vaihdat välilehteä, ja kansiot ja kehotteet ovat aina käden ulottuvilla. Avaa se ponnahdusikkunan yläreunan uudella painikkeella."
   },
   "chatLinkReuseHint": {
     "message": "{k} + napsautus: käytä viimeistä välilehteä uudelleen"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Tämä nimi on varattu – valitse toinen."
+  },
+  "openSidePanel": {
+    "message": "Avaa sivupaneelissa"
   }
 }

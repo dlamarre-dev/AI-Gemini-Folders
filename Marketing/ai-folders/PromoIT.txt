@@ -9,6 +9,7 @@ Cartelle IA si integra in modo nativo con tutti i principali assistenti di chat 
 🌟 MODALITÀ CARTELLE
 
 ⌨️ Scorciatoia istantanea: Apri il pannello all'istante da qualsiasi scheda con Ctrl+Shift+1 (o Cmd+Shift+1 su Mac).
+🪟 Ora nel pannello laterale: Aggancia l'estensione al pannello laterale del browser: resta aperta mentre cambi scheda, con cartelle e prompt sempre a portata di mano. Aprila con il nuovo pulsante in alto nel popup.
 ⚡ Salvataggio Rapido (Clic Destro e Scorciatoie): Salva la conversazione con un semplice clic destro, o usa la scorciatoia da tastiera (Ctrl+Shift+S o Cmd+Shift+S su Mac) per inviarla istantaneamente a "⚡ Salvataggi Rapidi" — con un avviso visivo se è già salvata!
 ☑️ Selezione Multipla (Azioni in blocco): Seleziona più conversazioni con le caselle di controllo per spostarle o eliminarle in un clic.
 📑 Integrazione Gruppi di schede: Apri un'intera cartella con un clic in un Gruppo di schede nativo di Chrome, con codice colore.

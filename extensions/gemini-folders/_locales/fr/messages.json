@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Quoi de neuf"
   },
-  "whatsNewNestedTitle": {
-    "message": "Des dossiers dans les dossiers"
+  "whatsNewPanelTitle": {
+    "message": "Maintenant dans le panneau latéral"
   },
-  "whatsNewNestedBody": {
-    "message": "Glissez un dossier sur un autre pour le placer à l'intérieur. Ouvrez le dossier parent en groupe d'onglets et tout ce qu'il contient s'ouvre avec lui."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Moins d'onglets"
-  },
-  "whatsNewReuseBody": {
-    "message": "Cliquer sur une conversation enregistrée bascule vers l'onglet qui l'affiche déjà. {k}+clic réutilise le dernier onglet ouvert par l'extension au lieu d'en ajouter un autre."
+  "whatsNewPanelBody": {
+    "message": "Ancrez l'extension dans le panneau latéral du navigateur : elle reste ouverte quand vous changez d'onglet, avec vos dossiers et vos prompts toujours à portée de main. Ouvrez-la avec le nouveau bouton en haut de la fenêtre."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic : réutiliser le dernier onglet"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Ce nom est réservé — veuillez en choisir un autre."
+  },
+  "openSidePanel": {
+    "message": "Ouvrir dans le panneau latéral"
   }
 }

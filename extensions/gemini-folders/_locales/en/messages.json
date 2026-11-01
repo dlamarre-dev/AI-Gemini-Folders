@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "What's new"
   },
-  "whatsNewNestedTitle": {
-    "message": "Folders inside folders"
+  "whatsNewPanelTitle": {
+    "message": "Now in the side panel"
   },
-  "whatsNewNestedBody": {
-    "message": "Drag a folder onto another one to place it inside. Open the parent as a tab group and everything it contains opens with it."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Fewer tabs"
-  },
-  "whatsNewReuseBody": {
-    "message": "Clicking a saved conversation switches to the tab already showing it. {k}-click reuses the last tab this extension opened instead of adding another."
+  "whatsNewPanelBody": {
+    "message": "Dock the extension in your browser's side panel: it stays open while you switch tabs, with your folders and prompts always at hand. Open it with the new button at the top of the popup."
   },
   "chatLinkReuseHint": {
     "message": "{k}-click: reuse the last tab"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "That name is reserved — please choose another."
+  },
+  "openSidePanel": {
+    "message": "Open in side panel"
   }
 }

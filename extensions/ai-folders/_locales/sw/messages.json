@@ -347,23 +347,11 @@
   "whatsNewHeading": {
     "message": "Yaliyo mapya"
   },
-  "whatsNewNestedTitle": {
-    "message": "Folda ndani ya folda"
+  "whatsNewPanelTitle": {
+    "message": "Sasa kwenye paneli ya pembeni"
   },
-  "whatsNewNestedBody": {
-    "message": "Buruta folda moja juu ya nyingine ili kuiweka ndani yake. Fungua folda mama kama kikundi cha vichupo na kila kilichomo hufunguka pamoja nayo."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Vichupo vichache"
-  },
-  "whatsNewReuseBody": {
-    "message": "Kubofya mazungumzo yaliyohifadhiwa hukupeleka kwenye kichupo kinachoyaonyesha tayari. {k}+kubofya hutumia tena kichupo cha mwisho kilichofunguliwa na kiendelezi badala ya kuongeza kingine."
-  },
-  "whatsNewBaiduTitle": {
-    "message": "Baidu Chat bado inafanya kazi"
-  },
-  "whatsNewBaiduBody": {
-    "message": "Baidu ilihamisha gumzo lake kwenye anwani mpya. Kuhifadhi na kuingiza vidokezo hufanya kazi tena huko."
+  "whatsNewPanelBody": {
+    "message": "Bandika kiendelezi kwenye paneli ya pembeni ya kivinjari: kinabaki wazi unapobadilisha vichupo, na folda na maagizo yako yanapatikana kila wakati. Kifungue kwa kitufe kipya kilicho juu ya dirisha ibukizi."
   },
   "chatLinkReuseHint": {
     "message": "{k} + bofya: tumia tena kichupo cha mwisho"
@@ -373,5 +361,8 @@
   },
   "reservedNameError": {
     "message": "Jina hilo limehifadhiwa — tafadhali chagua jingine."
+  },
+  "openSidePanel": {
+    "message": "Fungua kwenye paneli ya pembeni"
   }
 }

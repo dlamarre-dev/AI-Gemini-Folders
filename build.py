@@ -394,6 +394,11 @@ def apply_text_swaps(text, target, collapse=False):
     return text, changed
 
 
+# Permissions Firefox does not know. Dropped from its manifest only; the
+# validator (tools/validate_build.py) allows exactly this difference.
+CHROMIUM_ONLY_PERMISSIONS = ("sidePanel",)
+
+
 def patch_manifest_firefox(manifest, dest, cfg):
     manifest["browser_specific_settings"] = {
         "gecko": {
@@ -411,6 +416,22 @@ def patch_manifest_firefox(manifest, dest, cfg):
             m = re.search(r"importScripts\(([^)]*)\)", f.read())
         imports = [x.strip().strip("'\"") for x in m.group(1).split(",") if x.strip()] if m else []
         manifest["background"]["scripts"] = imports + [sw]
+
+    # Side panel: Chrome and Edge read side_panel + the sidePanel permission;
+    # Firefox has its own sidebar_action and warns on both unknown entries. Same
+    # page either way (popup.html?panel=1, see isPanelMode in ui.js).
+    # open_at_install defaults to true in Firefox, which would open the sidebar
+    # on top of the welcome tab at install — one surprise too many (§10).
+    side_panel = manifest.pop("side_panel", None)
+    if "permissions" in manifest:
+        manifest["permissions"] = [p for p in manifest["permissions"] if p not in CHROMIUM_ONLY_PERMISSIONS]
+    if side_panel:
+        manifest["sidebar_action"] = {
+            "default_panel": side_panel["default_path"],
+            "default_title": manifest.get("action", {}).get("default_title", "__MSG_appTitle__"),
+            "default_icon": manifest.get("action", {}).get("default_icon") or manifest.get("icons"),
+            "open_at_install": False,
+        }
 
     # Only patch the quick-save shortcut (Ctrl+Shift+S → Alt+Shift+S).
     # Other commands (e.g. _execute_action) keep their original keys.

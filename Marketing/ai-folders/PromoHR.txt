@@ -9,6 +9,7 @@ UI mape integrira se izvorno sa svim glavnim AI chat asistentima, kao što su Cl
 🌟 NAČIN MAPA
 
 ⌨️ Trenutna tipkovnička prečica: Otvori ploču odmah s bilo kojeg kartice pomoću Ctrl+Shift+1 (ili Cmd+Shift+1 na Macu).
+🪟 Sada na bočnoj ploči: Usidrite proširenje na bočnu ploču preglednika: ostaje otvoreno dok mijenjate kartice, a mape i upiti uvijek su vam pri ruci. Otvorite ga novim gumbom na vrhu skočnog prozora.
 ⚡ Brzo spremi (Desni klik i prečaci): Spremi trenutni razgovor jednostavnim desnim klikom ili koristi prečac na tipkovnici (Ctrl+Shift+S ili Cmd+Shift+S na Macu) da ga pošalješ u «⚡ Brzo spremi» – s vizualnim upozorenjem ako je već spremljeno!
 ☑️ Višestruki odabir (Masovne radnje): Odaberi više razgovora s potvrdnim okvirima za premještanje ili brisanje jednim klikom.
 📑 Integracija grupa kartica: Otvori cijelu mapu jednim klikom kao izvornu, bojama kodiranu grupu kartica Chrome.

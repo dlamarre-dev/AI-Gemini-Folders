@@ -9,6 +9,7 @@ AI kaustad integreerub natiivselt kõigi peamiste AI-vestlusassistentidega, nagu
 🌟 KAUSTADE REŽIIM
 
 ⌨️ Hetkelise paneeli otsetee: Avage paneel koheselt mis tahes vahekaardilt, kasutades Ctrl+Shift+1 (või Cmd+Shift+1 Macis).
+🪟 Nüüd külgpaneelil: Kinnita laiendus brauseri külgpaneelile: see jääb vahekaartide vahetamisel avatuks ning kaustad ja viibad on alati käepärast. Ava see hüpikakna ülaosas oleva uue nupuga.
 ⚡ Kiirsalvestus (Paremklõps ja otseteed): Salvesta praegune vestlus lihtsa paremklõpsuga või kasuta klaviatuuri otseteed (Ctrl+Shift+S või Cmd+Shift+S Macis), et saata see «⚡ Kiirsalvestus» kausta – visuaalse teavitusega, kui see on juba salvestatud!
 ☑️ Mitmikvalik (Hulktegevused): Vali mitu vestlust märkeruutude abil, et liigutada või kustutada need ühe klikiga.
 📑 Vahekaardi grupi integratsioon: Ava terve kaust ühe klikiga natiivsena, värvikodeeritud Chrome'i vahekaardi grupina.

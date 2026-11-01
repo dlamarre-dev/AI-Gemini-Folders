@@ -1005,8 +1005,9 @@ async function openConversation(url, { reuse = false } = {}) {
     try { await chrome.tabs.create({ url }); } catch (e) { /* nothing left to try */ }
   }
   // After the awaits, never before: tearing down the popup page can drop
-  // in-flight extension API calls.
-  window.close();
+  // in-flight extension API calls. A side panel stays: keeping it open while
+  // the user moves between conversations is the whole point of it (#106).
+  if (!(window.isPanelMode && window.isPanelMode())) window.close();
 }
 
 // storage.local, not sync: a tab id means nothing on another machine, and this

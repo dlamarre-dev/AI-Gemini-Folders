@@ -12,7 +12,7 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome, Edge **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.6.5**.
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.7.0**.
 - **AI Folders (AF)** — 17 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, Pi, Character.AI) **+ a user-configured local LLM**. You.com was
@@ -38,7 +38,7 @@ conversations into folders and provide a reusable prompt library:
   declared **before** the redirect lands, which is the whole lesson of #82 and of
   the Baidu move (§8): a manifest match pattern cannot follow a 302, so a host
   added only once users complain is a host that was broken for a month.
-  Current version **1.7.6**. The popup's per-site "new conversation" buttons
+  Current version **1.8.0**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -545,6 +545,35 @@ git checkout main && git pull --ff-only
   permission is requested **scoped to the entered origin only** (the broad
   `optional_host_permissions http(s)://*/*` is just the manifest pattern needed to
   request a dynamic origin at runtime — nothing is granted by default).
+- **Side panel (#106).** The same `popup.html` is also the browser's side panel:
+  `side_panel.default_path` on Chrome/Edge (+ the `sidePanel` permission, which
+  carries no install warning) and, via `patch_manifest_firefox`, a
+  `sidebar_action` on Firefox with **`open_at_install: false`** (Firefox's default
+  would open the sidebar on top of the welcome tab). Both point at
+  `popup.html?panel=1`; `isPanelMode()` (`src/ui.js`) reads that and adds
+  `html.panel`. Everything that assumed a short-lived popup asks it, and nothing
+  else changes:
+  - sizing: `html.panel` makes body fluid and lets the document scroll;
+    `fitPopupToWindow` returns at once. The popup rules are untouched (§6).
+  - `openConversation` does not `window.close()` in a panel.
+  - the title prefill reruns on `tabs.onActivated` / `onUpdated` of the panel's
+    window (`watchActiveTab`), but never over a title the user typed
+    (`createTitlePrefill`) — otherwise Save would pair the active tab's URL with
+    the title of the tab the panel was opened on.
+  - the lists re-render on `storage.onChanged` for library keys only
+    (`touchesLibrary` — never `openFolders`/`openPrompts`, which the panel writes
+    itself on every chevron click), debounced, and **never under the user**:
+    `panelIsBusy` holds the render while a modal is open, a field inside a list
+    has focus, a bulk selection exists or a prompt edit is unwritten, and the
+    next click / focus change applies it.
+  - the popup's header button (`openSidePanelBtn`) calls `sidePanel.open` or
+    `sidebarAction.open` synchronously (both need the user gesture), so the
+    window id is resolved at load. Hidden inside the panel and where neither API
+    exists. The validator allows exactly one manifest difference for this:
+    `sidePanel` absent on Firefox.
+  - an installed web app (PWA) window has no toolbar, so neither popup nor panel
+    exists there; the `#` trigger still works since content scripts run.
+  - a panel load counts as one `opens` (§9/§11), like a popup open.
 - **Opening a saved conversation** (`openConversation` / `pickReusableTab`,
   folders.js): a plain click activates the tab already showing that URL instead of
   spawning a duplicate; **Ctrl/Cmd-click reuses the last tab the extension opened**
@@ -883,7 +912,8 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   `background.js` (not shared, §6). The page opens only when
   `reason === 'update'` **and** the manifest version equals that constant, so a
   minor release with nothing to explain simply leaves the constant alone —
-  4.6.3 / 1.7.3, 4.6.4 / 1.7.4, 4.6.5 / 1.7.5 and 1.7.6 are exactly that, and their constants stay at 4.6.0 / 1.7.0.
+  4.6.3 / 1.7.3, 4.6.4 / 1.7.4, 4.6.5 / 1.7.5 and 1.7.6 were exactly that. 4.7.0 / 1.8.0
+  (the side panel) moved both constants to the release itself.
   The test asserts the constant is **not ahead of** the manifest version, which is
   the direction that breaks: a constant ahead fires on the release *after* this
   one, carrying notes for a version already installed. It used to demand equality,
@@ -896,14 +926,12 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   would reopen the tab on every dev cycle, and so would reinstalling over the same
   version. This is the one deliberate difference from the welcome page, which needs
   no flag because a fresh install happens once.
-- **The Baidu card is AI Folders only, decided by the site registry** (`SITES.baidu`),
-  not by a per-product flag — the same data-driven detection `welcome.js` uses to
-  fall back to Gemini alone. Its two strings therefore live in **AF's `_locales`
-  only**: a string Gemini Folders can never show would be dead weight in 43 files.
-- **`{k}` in `whatsNewReuseBody`** is filled by `currentModifierKeyLabel()`, which
-  moved from `folders.js` to `utils.js` for this page (folders.js re-exports it, so
-  its tests are unchanged). Never hardcode `Cmd` or `Ctrl` into a translation — a
-  test rejects both words in all 43 × 2.
+- **One card per release, and the old cards go.** 4.7.0 / 1.8.0 show a single
+  side-panel card (`whatsNewPanelTitle` / `whatsNewPanelBody`, product-neutral and
+  byte-identical in AF and GF). The 1.7.0 cards (sub-folders, tab reuse, Baidu)
+  were removed with their six keys in all 86 locale files rather than left as dead
+  strings; a test asserts they stay gone. Their markup and the data-driven Baidu
+  card are in git history if a per-product card is ever needed again.
 - **The cards are features, not steps**: `.cards` switches off `welcome.css`'s
   counter markers. Numbering them would read as instructions to follow.
 

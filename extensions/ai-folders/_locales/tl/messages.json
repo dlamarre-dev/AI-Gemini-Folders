@@ -347,23 +347,11 @@
   "whatsNewHeading": {
     "message": "Ano ang bago"
   },
-  "whatsNewNestedTitle": {
-    "message": "Mga folder sa loob ng folder"
+  "whatsNewPanelTitle": {
+    "message": "Nasa side panel na"
   },
-  "whatsNewNestedBody": {
-    "message": "I-drag ang isang folder papunta sa isa pa para ilagay ito sa loob. Buksan ang parent folder bilang tab group at bubukas din ang lahat ng nasa loob nito."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Mas kaunting tab"
-  },
-  "whatsNewReuseBody": {
-    "message": "Ang pag-click sa naka-save na usapan ay lumilipat sa tab na nagpapakita na nito. Ang {k}+click ay muling gumagamit ng huling tab na binuksan ng extension kaysa magdagdag ng bago."
-  },
-  "whatsNewBaiduTitle": {
-    "message": "Gumagana pa rin ang Baidu Chat"
-  },
-  "whatsNewBaiduBody": {
-    "message": "Inilipat ng Baidu ang chat nito sa bagong address. Gumagana na muli doon ang pag-save at pagpasok ng prompt."
+  "whatsNewPanelBody": {
+    "message": "I-dock ang extension sa side panel ng iyong browser: nananatili itong bukas habang nagpapalit ka ng tab, kaya laging abot-kamay ang iyong mga folder at prompt. Buksan ito gamit ang bagong button sa itaas ng popup."
   },
   "chatLinkReuseHint": {
     "message": "{k} + click: gamitin muli ang huling tab"
@@ -373,5 +361,8 @@
   },
   "reservedNameError": {
     "message": "Nakalaan ang pangalang iyan — pumili ng iba."
+  },
+  "openSidePanel": {
+    "message": "Buksan sa side panel"
   }
 }

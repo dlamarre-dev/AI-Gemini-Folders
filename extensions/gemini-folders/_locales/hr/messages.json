@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Što je novo"
   },
-  "whatsNewNestedTitle": {
-    "message": "Mape unutar mapa"
+  "whatsNewPanelTitle": {
+    "message": "Sada na bočnoj ploči"
   },
-  "whatsNewNestedBody": {
-    "message": "Povucite mapu na drugu kako biste je smjestili unutra. Otvorite nadređenu mapu kao grupu kartica i otvorit će se sve što sadrži."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Manje kartica"
-  },
-  "whatsNewReuseBody": {
-    "message": "Klik na spremljeni razgovor prebacuje na karticu koja ga već prikazuje. {k}+klik ponovno koristi posljednju karticu koju je proširenje otvorilo umjesto da doda novu."
+  "whatsNewPanelBody": {
+    "message": "Usidrite proširenje na bočnu ploču preglednika: ostaje otvoreno dok mijenjate kartice, a mape i upiti uvijek su vam pri ruci. Otvorite ga novim gumbom na vrhu skočnog prozora."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: ponovno koristi posljednju karticu"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Taj je naziv rezerviran — odaberite drugi."
+  },
+  "openSidePanel": {
+    "message": "Otvori na bočnoj ploči"
   }
 }

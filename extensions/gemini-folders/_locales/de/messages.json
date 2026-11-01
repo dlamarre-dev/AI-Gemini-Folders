@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Was ist neu"
   },
-  "whatsNewNestedTitle": {
-    "message": "Ordner in Ordnern"
+  "whatsNewPanelTitle": {
+    "message": "Jetzt im Seitenbereich"
   },
-  "whatsNewNestedBody": {
-    "message": "Ziehen Sie einen Ordner auf einen anderen, um ihn darin abzulegen. Öffnen Sie den übergeordneten Ordner als Tab-Gruppe und alles darin öffnet sich mit."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Weniger Tabs"
-  },
-  "whatsNewReuseBody": {
-    "message": "Ein Klick auf eine gespeicherte Unterhaltung wechselt zum Tab, der sie schon zeigt. {k}+Klick verwendet den letzten von der Erweiterung geöffneten Tab erneut, statt einen weiteren hinzuzufügen."
+  "whatsNewPanelBody": {
+    "message": "Docken Sie die Erweiterung im Seitenbereich Ihres Browsers an: Sie bleibt geöffnet, während Sie die Tabs wechseln, und Ihre Ordner und Prompts sind immer griffbereit. Öffnen Sie sie über die neue Schaltfläche oben im Pop-up."
   },
   "chatLinkReuseHint": {
     "message": "{k} + Klick: letzten Tab wiederverwenden"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Dieser Name ist reserviert – bitte wählen Sie einen anderen."
+  },
+  "openSidePanel": {
+    "message": "Im Seitenbereich öffnen"
   }
 }

@@ -6,6 +6,7 @@ Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sarunas mapēs, ve
 🌟 MAPJU REŽĪMS
 
 ⌨️ Tūlītēja paneļa īsinājumtaustiņš: Atveriet paneli uzreiz no jebkuras cilnes ar Ctrl+Shift+1 (vai Cmd+Shift+1 uz Mac).
+🪟 Tagad sānu panelī: Piestipriniet paplašinājumu pārlūka sānu panelī: tas paliek atvērts, kamēr pārslēdzat cilnes, un mapes un uzvednes vienmēr ir pa rokai. Atveriet to ar jauno pogu uznirstošā loga augšdaļā.
 ⚡ Ātrā saglabāšana (Labais klikšķis un saīsnes): Saglabā pašreizējo sarunu ar vienkāršu labo klikšķi vai izmanto tastatūras saīsni (Ctrl+Shift+S vai Cmd+Shift+S Mac datorā), lai to nosūtītu uz «⚡ Ātrā saglabāšana» – ar vizuālu brīdinājumu, ja tā jau ir saglabāta!
 ☑️ Vairāku elementu atlase (Masveida darbības): Atlasi vairākas sarunas, izmantojot izvēles rūtiņas, lai tās pārvietotu vai dzēstu ar vienu klikšķi.
 📑 Cilņu grupas integrācija: Atver visu mapi ar vienu klikšķi kā vietējo, krāsaino Chrome cilņu grupu.

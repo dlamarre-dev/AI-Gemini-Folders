@@ -351,6 +351,9 @@ function displayPrompts(onRendered) {
   }));
 }
 window.displayPrompts = displayPrompts;
+// Read by the side panel's live refresh (popup-core.js), which must not rebuild
+// the list under an edit that has not been written yet.
+window.hasPendingPromptEdit = () => !!_pendingEdit || _commitsInFlight > 0;
 
 // Wires up all the prompt-mode controls. Call once from popup.js on DOMContentLoaded.
 function initPromptsUI() {

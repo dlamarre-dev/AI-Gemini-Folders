@@ -311,17 +311,11 @@
   "whatsNewHeading": {
     "message": "Co nowego"
   },
-  "whatsNewNestedTitle": {
-    "message": "Foldery w folderach"
+  "whatsNewPanelTitle": {
+    "message": "Teraz w panelu bocznym"
   },
-  "whatsNewNestedBody": {
-    "message": "Przeciągnij folder na inny, aby umieścić go w środku. Otwórz folder nadrzędny jako grupę kart, a otworzy się wszystko, co zawiera."
-  },
-  "whatsNewReuseTitle": {
-    "message": "Mniej kart"
-  },
-  "whatsNewReuseBody": {
-    "message": "Kliknięcie zapisanej rozmowy przenosi do karty, która już ją pokazuje. {k}+kliknięcie ponownie używa ostatniej karty otwartej przez rozszerzenie, zamiast dodawać nową."
+  "whatsNewPanelBody": {
+    "message": "Zadokuj rozszerzenie w panelu bocznym przeglądarki: pozostaje otwarte, gdy przełączasz karty, a foldery i prompty są zawsze pod ręką. Otwórz je nowym przyciskiem u góry okienka."
   },
   "chatLinkReuseHint": {
     "message": "{k} + kliknięcie: użyj ponownie ostatniej karty"
@@ -331,5 +325,8 @@
   },
   "reservedNameError": {
     "message": "Ta nazwa jest zarezerwowana — wybierz inną."
+  },
+  "openSidePanel": {
+    "message": "Otwórz w panelu bocznym"
   }
 }

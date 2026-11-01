@@ -6,6 +6,7 @@ Folder Gemini menjadi cockpit Gemini sebenar anda: susun perbualan dalam folder,
 🌟 MOD FOLDER
 
 ⌨️ Pintasan panel segera: Buka panel secara serta-merta dari mana-mana tab dengan Ctrl+Shift+1 (atau Cmd+Shift+1 di Mac).
+🪟 Kini dalam panel sisi: Sematkan sambungan dalam panel sisi pelayar: ia kekal terbuka semasa anda bertukar tab, dengan folder dan prompt sentiasa dekat di tangan. Bukanya dengan butang baharu di bahagian atas tetingkap timbul.
 ⚡ Simpan Pantas (Klik kanan & pintasan): Simpan perbualan semasa dengan klik kanan mudah, atau gunakan pintasan papan kekunci (Ctrl+Shift+S atau Cmd+Shift+S pada Mac) untuk menghantarnya ke «⚡ Simpan Pantas» – dengan amaran visual jika sudah disimpan!
 ☑️ Pilihan berbilang (Tindakan pukal): Pilih berbilang perbualan menggunakan kotak semak untuk memindah atau memadamnya dengan satu klik.
 📑 Integrasi kumpulan tab: Buka keseluruhan folder dengan satu klik sebagai kumpulan tab Chrome asli.
