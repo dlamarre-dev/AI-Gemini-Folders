@@ -19,9 +19,9 @@ numbers move:
 | | AI Folders | Gemini Folders | |
 |---|---|---|---|
 | Latest release here | 1.7.6 | 4.6.5 | ✅ supported |
-| Chrome Web Store | 1.7.4 | 4.6.4 | ✅ supported |
-| Firefox Add-ons (AMO) | 1.7.4 | 4.6.4 | ✅ supported |
-| Microsoft Edge Add-ons | 1.7.4 | 4.6.4 | ✅ supported |
+| Chrome Web Store | 1.7.6 | 4.6.5 | ✅ supported |
+| Firefox Add-ons (AMO) | 1.7.6 | 4.6.5 | ✅ supported |
+| Microsoft Edge Add-ons | 1.7.6 | 4.6.5 | ✅ supported |
 | Anything earlier | | | ❌ not supported |
 
 1.7.6 / 4.6.5 is released here and on its way through store review (Gemini
