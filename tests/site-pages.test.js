@@ -106,3 +106,30 @@ test.each(['uninstall-ai-folders.html', 'uninstall-gemini-folders.html', 'stats/
   '%s is noindex', (rel) => {
     expect(fs.readFileSync(path.join(DOCS, rel), 'utf8')).toMatch(/<meta name="robots" content="noindex/);
   });
+
+describe('visit counting (GoatCounter)', () => {
+  const tag = /<script data-goatcounter="https:\/\/aifolders\.goatcounter\.com\/count" async src="https:\/\/gc\.zgo\.at\/count\.v4\.js"\n  integrity="sha384-[A-Za-z0-9+/=]+" crossorigin="anonymous"><\/script>/;
+
+  test.each(htmlPages)('%s counts the visit, and its CSP lets the counter through', (rel) => {
+    const html = pages[rel];
+    expect(html).toMatch(tag);
+    const csp = attr(html, /<meta http-equiv="Content-Security-Policy" content="([^"]+)">/);
+    expect(csp).toMatch(/script-src [^;]*https:\/\/gc\.zgo\.at/);
+    expect(csp).toMatch(/connect-src [^;]*https:\/\/aifolders\.goatcounter\.com/);
+    expect(csp).toMatch(/img-src [^;]*https:\/\/aifolders\.goatcounter\.com/);
+  });
+
+  test('the uninstall pages never count: they must send nothing on load (CLAUDE.md §9)', () => {
+    for (const f of ['uninstall-ai-folders.html', 'uninstall-gemini-folders.html']) {
+      expect(fs.readFileSync(path.join(DOCS, f), 'utf8')).not.toMatch(/goatcounter|gc\.zgo\.at/i);
+    }
+  });
+
+  test('the privacy policy discloses it in every language, and no longer denies analytics', () => {
+    const src = fs.readFileSync(path.join(DOCS, 'site', 'privacy-i18n.js'), 'utf8');
+    const bodies = [...src.matchAll(/s1NoTrackBody: "([^"]*)"/g)].map((m) => m[1]);
+    expect(bodies).toHaveLength(43);
+    for (const b of bodies) expect(b).toContain('GoatCounter');
+    expect(src).not.toMatch(/no audience analytics/);
+  });
+});

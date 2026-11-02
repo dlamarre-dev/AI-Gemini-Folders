@@ -67,7 +67,7 @@ AI Folders solves the problem of losing track of conversations across multiple A
 
 ## Privacy
 
-No tracking, no telemetry, no third-party servers. The website stores only a language preference in localStorage. Extension data is stored via browser sync. Full policy: https://aifolders.xyz/privacy.html
+The extensions have no tracking, no telemetry and no third-party servers. The website stores only a language preference in localStorage and counts visits anonymously with GoatCounter (no cookies, no personal data, IP addresses not stored). Extension data is stored via browser sync. Full policy: https://aifolders.xyz/privacy.html
 
 ## Developer
 

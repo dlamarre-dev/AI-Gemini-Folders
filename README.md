@@ -58,6 +58,7 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 
 * 📱 **Mobile Sync (Bookmarks Bridge):** Access your conversations on the go! Toggle mobile sync to create a smart, one-way synced folder in your browser bookmarks — Favorites, on Edge — mirroring your layout and **custom sort order** on your phone.
 * ⌨️ **Panel Shortcut:** Open the extension panel instantly from any tab with `Ctrl+Shift+1` on PC / `Cmd+Shift+1` on Mac (every supported browser).
+* 🪟 **Side Panel:** Dock the extension in the browser's side panel so it stays open while you switch tabs — your folders and prompts always at hand, refreshed live as you save. Open it with the sidebar button at the top of the popup, or right-click the toolbar icon → **Open side panel** (Chrome, Edge). On Firefox it opens in the sidebar. Which side it docks on is a browser setting.
 * ⚡ **Quick Save (Context Menu & Shortcuts):** Save the current conversation to any folder via right-click, or use the global keyboard shortcut (`Ctrl+Shift+S` on Chrome and Edge, `Alt+Shift+Q` on Firefox) to send it instantly to a “⚡ Quick Saves” folder. Visual toast alerts confirm saves and flag duplicates.
 * 🛡️ **Bulletproof Database & Smart Deduplication:** Secure fallback architecture guards against corruption. Smart URL normalization prevents false duplicates even when AI platforms change their URL parameters.
 * ☑️ **Bulk Actions (Multi-Select):** Select multiple conversations at once via checkboxes to move or delete them in batches.
@@ -134,7 +135,7 @@ This project uses a Python build pipeline to generate browser-specific versions 
 ### Folder Mode
 1. Open a conversation on any supported AI platform.
 2. **Quick save:** `Ctrl+Shift+S` (Chrome, Edge) / `Alt+Shift+Q` (Firefox) to save to Quick Saves, or right-click → hover over the save menu.
-3. **Via the extension:** Click the toolbar icon or press `Ctrl+Shift+1` (`Cmd+Shift+1` on Mac) to open the panel. The title is auto-detected. Expand the add panel (➕), select or create a folder, and hit **Save**.
+3. **Via the extension:** Click the toolbar icon or press `Ctrl+Shift+1` (`Cmd+Shift+1` on Mac) to open the panel — or keep it docked in the side panel, where the title follows the active tab. The title is auto-detected. Expand the add panel (➕), select or create a folder, and hit **Save**.
 4. **Mobile sync:** Click `📱` in the footer to mirror your folders in browser bookmarks.
 5. **Reopen a conversation:** Click it to switch to the tab already showing it. `Ctrl+click` (`Cmd+click` on Mac) reuses the last tab instead of opening a new one; middle-click still opens a background tab.
 6. **Sub-folders:** Drag a folder onto another to nest it (one level). Type `Parent/Child` in the folder box, or pick the sub-folder from the right-click menu, to save straight into it. Drag it anywhere outside a folder — or press ⤴ — to bring it back to the top level.
