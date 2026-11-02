@@ -1119,6 +1119,12 @@ JSON-LD. It used to ship an empty `<main id="app">` filled from
   neither, so they are never redirected — keep it that way.
 - Asset paths are root-relative (`/site/...`) because pages live one directory
   down. The uninstall pages still use relative paths and stay at the root.
+- **Visit counts: GoatCounter** (`aifolders.goatcounter.com`), added by the generator to every
+  generated page with a pinned SRI hash on the versioned `count.v4.js`, and allowed in the CSP
+  (`script-src`, `connect-src`, `img-src`). The privacy policy's `s1NoTrack*` says so in all
+  43 languages; it used to deny any analytics, so **anything the site starts collecting must be
+  added there too**. The uninstall pages are hand-written and **never** get the tag (§9: nothing
+  on load); a test guards both halves. The extensions themselves still collect nothing.
 - The `/privacy.html` and `/` URLs are referenced by the stores and the
   extensions: they must stay English and stay where they are.
 
