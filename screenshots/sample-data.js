@@ -1788,7 +1788,7 @@ module.exports = {
     promptLabel:      '📝 Λειτουργία prompt',
     folderScreenTitle: 'Διατηρήστε τις συνομιλίες σας οργανωμένες',
     promptScreenTitle: 'Τα καλύτερα prompt σας, πάντα πρόχειρα',
-    mobileScreenTitle: 'Πρόσβαση στις συνομιλίες Gemini από το τηλέφωνο',
+    mobileScreenTitle: 'Οι συνομιλίες Gemini στο κινητό σας',
     contextMenuScreenTitle: 'Αποθηκεύστε μια συνομιλία με ένα δεξί κλικ',
     ctxMenuSaveLabel: 'Αποθήκευση στο Gemini Φάκελοι',
     ctxBack:    'Πίσω',
