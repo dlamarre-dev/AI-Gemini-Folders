@@ -126,7 +126,10 @@
     "message": "Aplankas tokiu pavadinimu jau egzistuoja."
   },
   "errorNestTooDeep": {
-    "message": "Šiame aplanke jau yra poaplankių. Palaikomas tik vienas įdėjimo lygis."
+    "message": "Poaplankiai gali būti iki {n} lygių gylio."
+  },
+  "errorNestCycle": {
+    "message": "Aplanko negalima perkelti į vieną iš jo paties poaplankių."
   },
   "storageCalc": {
     "message": "Skaičiuojama vieta..."
@@ -311,11 +314,11 @@
   "whatsNewHeading": {
     "message": "Kas nauja"
   },
-  "whatsNewPanelTitle": {
-    "message": "Dabar šoniniame skydelyje"
+  "whatsNewNestTitle": {
+    "message": "Poaplankiai keliuose lygiuose"
   },
-  "whatsNewPanelBody": {
-    "message": "Prisekite plėtinį naršyklės šoniniame skydelyje: jis lieka atidarytas, kai perjungiate skirtukus, o aplankai ir raginimai visada po ranka. Atidarykite jį nauju mygtuku iškylančiojo lango viršuje."
+  "whatsNewNestBody": {
+    "message": "Aplankus dabar galima įdėti iki 4 lygių. Nuvilkite aplanką ant kito arba prieš įrašydami spustelėkite aplanką, kad įrašytumėte tiesiai į jį."
   },
   "chatLinkReuseHint": {
     "message": "{k} + spustelėjimas: naudoti paskutinį skirtuką"

@@ -123,7 +123,10 @@
     "message": "Đã tồn tại thư mục với tên này."
   },
   "errorNestTooDeep": {
-    "message": "Thư mục này đã chứa thư mục con. Chỉ hỗ trợ một cấp lồng nhau."
+    "message": "Thư mục con có thể lồng sâu tối đa {n} cấp."
+  },
+  "errorNestCycle": {
+    "message": "Không thể di chuyển một thư mục vào bên trong thư mục con của chính nó."
   },
   "storageCalc": {
     "message": "Đang tính dung lượng..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "Có gì mới"
   },
-  "whatsNewPanelTitle": {
-    "message": "Giờ đã có trong bảng điều khiển bên"
+  "whatsNewNestTitle": {
+    "message": "Thư mục con nhiều cấp"
   },
-  "whatsNewPanelBody": {
-    "message": "Ghim tiện ích vào bảng điều khiển bên của trình duyệt: tiện ích vẫn mở khi bạn chuyển thẻ, giúp thư mục và prompt luôn sẵn trong tầm tay. Mở bằng nút mới ở đầu cửa sổ bật lên."
+  "whatsNewNestBody": {
+    "message": "Giờ đây thư mục có thể lồng nhau tối đa 4 cấp. Kéo một thư mục thả vào thư mục khác, hoặc nhấp vào một thư mục trước khi lưu để lưu thẳng vào đó."
   },
   "chatLinkReuseHint": {
     "message": "{k} + nhấp: dùng lại thẻ cuối cùng"

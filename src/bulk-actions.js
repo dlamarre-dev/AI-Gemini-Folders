@@ -79,10 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (!openFolders.includes(targetFolder)) openFolders.push(targetFolder);
-      // …and the parent, or conversations moved into a sub-folder land inside a
-      // collapsed folder and look lost.
-      const targetParent = getFolderParent(folders, data.folderParents || {}, targetFolder);
-      if (targetParent && !openFolders.includes(targetParent)) openFolders.push(targetParent);
+      // …and every folder above it, or conversations moved into a sub-folder
+      // land inside a collapsed folder and look lost.
+      for (const name of folderOpenPath(folders, data.folderParents || {}, targetFolder)) {
+        if (!openFolders.includes(name)) openFolders.push(name);
+      }
 
       saveData({ folders: folders, openFolders: openFolders }, () => {
         window.selectedChats = [];
@@ -111,17 +112,20 @@ document.addEventListener('DOMContentLoaded', () => {
       loadData({ folders: {}, folderParents: {} }, (data) => {
         const folderParents = data.folderParents || {};
 
-        const addItem = (folder, isChild) => {
+        const addItem = (folder, depth) => {
           const match = folder.match(EMOJI_PREFIX_REGEX);
           const icon = match ? match[1] : '📁';
           const displayName = match ? folder.slice(match[0].length) : folder;
 
           const li = document.createElement('li');
-          // Sub-folders are shown under their parent and marked, but the list
-          // stays FLAT: makeMenuAccessible drives roving focus off
+          // Sub-folders are shown under their parent, indented by level, but the
+          // list stays FLAT: makeMenuAccessible drives roving focus off
           // querySelectorAll('li'), so a nested <ul> would break the keyboard.
-          li.textContent = isChild ? `↳ ${icon} ${displayName}` : `${icon} ${displayName}`;
-          if (isChild) li.classList.add('is-child');
+          li.textContent = depth > 1 ? `↳ ${icon} ${displayName}` : `${icon} ${displayName}`;
+          if (depth > 1) {
+            li.classList.add('is-child');
+            li.style.paddingInlineStart = `${12 * (depth - 1) + 12}px`;
+          }
           // Focusable and announced: these were click-only <li>, so the folder
           // list was unreachable without a mouse.
           li.setAttribute('role', 'menuitem');
@@ -130,11 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
           bulkMoveList.appendChild(li);
         };
 
-        getRootFolderNames(data.folders, folderParents).sort().forEach(root => {
-          addItem(root, false);
-          getChildFolders(data.folders, folderParents, root).sort()
-            .forEach(child => addItem(child, true));
-        });
+        // Depth-first, so each folder sits right under its parent. Bounded:
+        // getFolderParent never places anything below MAX_FOLDER_DEPTH.
+        const addTree = (folder, depth) => {
+          addItem(folder, depth);
+          getChildFolders(data.folders, folderParents, folder).sort()
+            .forEach(child => addTree(child, depth + 1));
+        };
+        getRootFolderNames(data.folders, folderParents).sort().forEach(root => addTree(root, 1));
       });
     } else {
       bulkActionBar.style.display = 'none';

@@ -126,7 +126,10 @@
     "message": "May folder na na may pangalang ito."
   },
   "errorNestTooDeep": {
-    "message": "May mga subfolder na ang folder na ito. Isang antas lang ng pagpapaloob ang suportado."
+    "message": "Puwedeng umabot sa {n} antas ang lalim ng mga subfolder."
+  },
+  "errorNestCycle": {
+    "message": "Hindi maililipat ang isang folder sa loob ng sarili nitong subfolder."
   },
   "storageCalc": {
     "message": "Kinakalkula ang espasyo..."
@@ -311,11 +314,11 @@
   "whatsNewHeading": {
     "message": "Ano ang bago"
   },
-  "whatsNewPanelTitle": {
-    "message": "Nasa side panel na"
+  "whatsNewNestTitle": {
+    "message": "Mga subfolder sa maraming antas"
   },
-  "whatsNewPanelBody": {
-    "message": "I-dock ang extension sa side panel ng iyong browser: nananatili itong bukas habang nagpapalit ka ng tab, kaya laging abot-kamay ang iyong mga folder at prompt. Buksan ito gamit ang bagong button sa itaas ng popup."
+  "whatsNewNestBody": {
+    "message": "Puwede na ngayong ipaloob ang mga folder nang hanggang 4 na antas. I-drag ang isang folder papunta sa iba, o i-click ang isang folder bago mag-save para direktang mag-save doon."
   },
   "chatLinkReuseHint": {
     "message": "{k} + click: gamitin muli ang huling tab"

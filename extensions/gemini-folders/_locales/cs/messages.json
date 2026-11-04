@@ -126,7 +126,10 @@
     "message": "Složka s tímto názvem již existuje."
   },
   "errorNestTooDeep": {
-    "message": "Tato složka již obsahuje podsložky. Podporována je pouze jedna úroveň vnoření."
+    "message": "Podsložky mohou mít až {n} úrovně vnoření."
+  },
+  "errorNestCycle": {
+    "message": "Složku nelze přesunout do žádné z jejích vlastních podsložek."
   },
   "storageCalc": {
     "message": "Výpočet místa..."
@@ -311,11 +314,11 @@
   "whatsNewHeading": {
     "message": "Co je nového"
   },
-  "whatsNewPanelTitle": {
-    "message": "Nově v bočním panelu"
+  "whatsNewNestTitle": {
+    "message": "Podsložky na více úrovních"
   },
-  "whatsNewPanelBody": {
-    "message": "Ukotvěte rozšíření v bočním panelu prohlížeče: zůstane otevřené i při přepínání karet a složky i prompty máte vždy po ruce. Otevřete ho novým tlačítkem v horní části vyskakovacího okna."
+  "whatsNewNestBody": {
+    "message": "Složky lze nyní vnořovat až do 4 úrovní. Přetáhněte složku na jinou, nebo před uložením klikněte na složku a uložte přímo do ní."
   },
   "chatLinkReuseHint": {
     "message": "{k} + kliknutí: použít poslední kartu"

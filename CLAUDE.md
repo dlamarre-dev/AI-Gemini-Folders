@@ -12,7 +12,7 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome, Edge **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.7.0**.
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.8.0**.
 - **AI Folders (AF)** — 17 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, Pi, Character.AI) **+ a user-configured local LLM**. You.com was
@@ -38,7 +38,7 @@ conversations into folders and provide a reusable prompt library:
   declared **before** the redirect lands, which is the whole lesson of #82 and of
   the Baidu move (§8): a manifest match pattern cannot follow a 302, so a host
   added only once users complain is a host that was broken for a month.
-  Current version **1.8.0**. The popup's per-site "new conversation" buttons
+  Current version **1.9.0**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -501,7 +501,8 @@ git checkout main && git pull --ff-only
   save it back over the edit. Callers with nothing pending still get a synchronous
   callback, so re-renders are unaffected. Tests must use genuinely async storage
   mocks to see this; the synchronous ones hide every ordering bug.
-- **Sub-folders (one level):** nesting lives in a **sibling sync key**,
+- **Sub-folders (up to `MAX_FOLDER_DEPTH` = 4 levels, top level included; one
+  level until 1.9.0 / 4.8.0, #117):** nesting lives in a **sibling sync key**,
   `folderParents: { child: parent }`, never on the folder itself — `folders[name]`
   is a bare array and every consumer relies on `Array.isArray` holding, so moving
   it into an object would need the migration this codebase has no mechanism for.
@@ -512,10 +513,30 @@ git checkout main && git pull --ff-only
   Child *order* is never stored — it is derived by `sortFolderNames`, same as at
   root. **All the invariants live in `getFolderParent` / `canNestFolder` /
   `pruneFolderParents` (`src/utils.js`)**; nothing else should re-derive them.
-  Depth is capped at one twice over: by `canNestFolder` on write, and by
-  `buildFolderElement(name, ctx, isChild)` on read, where a child is built with
-  `isChild = true` and never asks for children of its own — there is no recursion
-  to bound. An **orphan** (parent deleted on another device) reads as a root
+  Going from one level to four needed **no migration**: the same map already
+  described a tree, only the code assumed depth 1. Depth is capped twice over:
+  by `canNestFolder` on write (`depth(parent) + height(child's subtree)` must
+  fit, and a drop into one's own descendant is a `cycle`), and on read by
+  `getFolderParent`, which walks the chain **iteratively, with a seen-set and
+  at most `MAX_FOLDER_DEPTH` steps**: a cycle, or a chain deeper than this
+  version allows (a future version with a higher cap), sends the folder to the
+  top level in one piece rather than looping or half-rendering.
+  `buildFolderElement(name, ctx, depth)` stops asking for children at the cap,
+  so the render recursion is bounded by construction; `folderSubtreeNames`,
+  `flattenFolderChats`, `folderSearchState`, `buildContextMenuModel` and the
+  bookmark mirror all walk the whole subtree. ⤴ moves a folder **one level up**
+  (`liftFolder`); a drop outside every folder still sends it to the top level.
+  Typing several `/` is optional: clicking a folder's header fills the box with
+  its full path (`folderDisplayPath`), and a typed path may start at any
+  existing folder (`Clients/New` creates New inside Clients wherever Clients
+  is). The import nests entries **top-down** (by depth in the backup), or a
+  level the cap must refuse would be attached first and block a valid one.
+  **Cross-version caveat, accepted:** a device still on 1.8.0 / 4.7.0 reads a
+  folder below level 2 as a root folder (harmless), but its
+  `pruneFolderParents` **deletes** those entries the next time it writes
+  `folderParents` (delete, rename, nest, save-to-path, import — not a plain
+  save). Structure only, never conversations, and only before that device
+  auto-updates. An **orphan** (parent deleted on another device) reads as a root
   folder without being deleted: a read must not write, and the parent may come
   back on the next sync; `pruneFolderParents` cleans up on the write side.
   **Nesting never touches `pinnedFolders`** — that is what makes a pin dormant
@@ -913,7 +934,8 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   `reason === 'update'` **and** the manifest version equals that constant, so a
   minor release with nothing to explain simply leaves the constant alone —
   4.6.3 / 1.7.3, 4.6.4 / 1.7.4, 4.6.5 / 1.7.5 and 1.7.6 were exactly that. 4.7.0 / 1.8.0
-  (the side panel) moved both constants to the release itself.
+  (the side panel) and 4.8.0 / 1.9.0 (sub-folders four levels deep) moved both
+  constants to the release itself.
   The test asserts the constant is **not ahead of** the manifest version, which is
   the direction that breaks: a constant ahead fires on the release *after* this
   one, carrying notes for a version already installed. It used to demand equality,
@@ -926,11 +948,12 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   would reopen the tab on every dev cycle, and so would reinstalling over the same
   version. This is the one deliberate difference from the welcome page, which needs
   no flag because a fresh install happens once.
-- **One card per release, and the old cards go.** 4.7.0 / 1.8.0 show a single
-  side-panel card (`whatsNewPanelTitle` / `whatsNewPanelBody`, product-neutral and
-  byte-identical in AF and GF). The 1.7.0 cards (sub-folders, tab reuse, Baidu)
-  were removed with their six keys in all 86 locale files rather than left as dead
-  strings; a test asserts they stay gone. Their markup and the data-driven Baidu
+- **One card per release, and the old cards go.** 4.8.0 / 1.9.0 show a single
+  card, sub-folders several levels deep (`whatsNewNestTitle` / `whatsNewNestBody`,
+  product-neutral and byte-identical in AF and GF). It replaced 4.7.0 / 1.8.0's
+  side-panel card, whose two keys left all 86 locale files, as the 1.7.0 cards
+  (sub-folders, tab reuse, Baidu) and their six keys had before; a test asserts
+  they all stay gone. Their markup and the data-driven Baidu
   card are in git history if a per-product card is ever needed again.
 - **The cards are features, not steps**: `.cards` switches off `welcome.css`'s
   counter markers. Numbering them would read as instructions to follow.

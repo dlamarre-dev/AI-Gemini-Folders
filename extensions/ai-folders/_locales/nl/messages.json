@@ -123,7 +123,10 @@
     "message": "Er bestaat al een map met deze naam."
   },
   "errorNestTooDeep": {
-    "message": "Deze map bevat al submappen. Er wordt maar één niveau ondersteund."
+    "message": "Submappen kunnen tot {n} niveaus diep gaan."
+  },
+  "errorNestCycle": {
+    "message": "Een map kan niet in een van zijn eigen submappen worden geplaatst."
   },
   "storageCalc": {
     "message": "Ruimte berekenen..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "Wat is er nieuw"
   },
-  "whatsNewPanelTitle": {
-    "message": "Nu in het zijpaneel"
+  "whatsNewNestTitle": {
+    "message": "Submappen op meerdere niveaus"
   },
-  "whatsNewPanelBody": {
-    "message": "Zet de extensie vast in het zijpaneel van je browser: ze blijft open terwijl je van tabblad wisselt, met je mappen en prompts altijd bij de hand. Open het met de nieuwe knop bovenaan de pop-up."
+  "whatsNewNestBody": {
+    "message": "Mappen kunnen nu tot 4 niveaus diep worden genest. Sleep een map op een andere, of klik op een map voordat u opslaat om er direct in op te slaan."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: laatste tabblad hergebruiken"

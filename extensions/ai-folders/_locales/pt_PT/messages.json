@@ -123,7 +123,10 @@
     "message": "Já existe uma pasta com este nome."
   },
   "errorNestTooDeep": {
-    "message": "Esta pasta já contém subpastas. Só é suportado um nível de aninhamento."
+    "message": "As subpastas podem ter até {n} níveis de profundidade."
+  },
+  "errorNestCycle": {
+    "message": "Uma pasta não pode ser movida para dentro de uma das suas próprias subpastas."
   },
   "storageCalc": {
     "message": "A calcular espaço..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "Novidades"
   },
-  "whatsNewPanelTitle": {
-    "message": "Agora no painel lateral"
+  "whatsNewNestTitle": {
+    "message": "Subpastas em vários níveis"
   },
-  "whatsNewPanelBody": {
-    "message": "Fixe a extensão no painel lateral do browser: fica aberta enquanto muda de separador, com as suas pastas e prompts sempre à mão. Abra-a com o novo botão no topo da janela."
+  "whatsNewNestBody": {
+    "message": "Agora as pastas podem ser encaixadas até 4 níveis. Arraste uma pasta para outra, ou clique numa pasta antes de guardar para guardar diretamente nela."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clique: reutilizar o último separador"

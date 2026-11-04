@@ -123,7 +123,10 @@
     "message": "Folder dengan nama ini sudah wujud."
   },
   "errorNestTooDeep": {
-    "message": "Folder ini sudah mengandungi subfolder. Hanya satu aras sarang disokong."
+    "message": "Subfolder boleh bersarang sehingga {n} aras."
+  },
+  "errorNestCycle": {
+    "message": "Folder tidak boleh dialihkan ke dalam salah satu subfoldernya sendiri."
   },
   "storageCalc": {
     "message": "Mengira ruang..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "Apa yang baharu"
   },
-  "whatsNewPanelTitle": {
-    "message": "Kini dalam panel sisi"
+  "whatsNewNestTitle": {
+    "message": "Subfolder berbilang aras"
   },
-  "whatsNewPanelBody": {
-    "message": "Sematkan sambungan dalam panel sisi pelayar: ia kekal terbuka semasa anda bertukar tab, dengan folder dan prompt sentiasa dekat di tangan. Bukanya dengan butang baharu di bahagian atas tetingkap timbul."
+  "whatsNewNestBody": {
+    "message": "Folder kini boleh bersarang sehingga 4 aras. Seret folder ke folder lain, atau klik folder sebelum menyimpan untuk menyimpan terus ke dalamnya."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: guna semula tab terakhir"

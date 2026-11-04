@@ -43,7 +43,7 @@ beforeEach(() => {
   global.normalizeUrl = jest.fn((u) => u.split('?')[0].split('#')[0]);
   global.EMOJI_PREFIX_REGEX = EMOJI_PREFIX_REGEX;
   const utils = require('../src/utils');
-  for (const name of ['getRootFolderNames', 'getChildFolders', 'getFolderParent']) {
+  for (const name of ['getRootFolderNames', 'getChildFolders', 'getFolderParent', 'getFolderAncestors', 'folderOpenPath']) {
     global[name] = utils[name];
   }
   global.window.displayFolders = jest.fn();
@@ -151,6 +151,32 @@ describe('sub-folders in the move list', () => {
     // Flat: makeMenuAccessible drives roving focus off querySelectorAll('li').
     expect(document.querySelectorAll('#bulkMoveList ul')).toHaveLength(0);
     expect(items.every((li) => li.getAttribute('role') === 'menuitem')).toBe(true);
+  });
+
+  test('deeper levels follow their parent depth-first, indented one step per level', () => {
+    setStorage({ A: [], B: [], C: [], D: [], Z: [] }, { B: 'A', C: 'B', D: 'C' });
+    window.selectedChats = [{ folder: 'Z', url: 'https://a/1', chatObj: {} }];
+
+    window.updateBulkActionBar();
+
+    const items = [...document.querySelectorAll('#bulkMoveList li')];
+    expect(items.map((li) => li.textContent)).toEqual(
+      ['📁 A', '↳ 📁 B', '↳ 📁 C', '↳ 📁 D', '📁 Z']);
+    expect(items.map((li) => li.style.paddingInlineStart)).toEqual(['', '24px', '36px', '48px', '']);
+  });
+
+  test('moving into a deep sub-folder expands every level above it', async () => {
+    setStorage({ A: [], B: [], C: [], Z: [{ title: 'c', url: 'https://a/1' }] }, { B: 'A', C: 'B' });
+    window.selectedChats = [{ folder: 'Z', url: 'https://a/1', chatObj: { title: 'c', url: 'https://a/1' } }];
+    window.updateBulkActionBar();
+
+    [...document.querySelectorAll('#bulkMoveList li')]
+      .find((li) => li.textContent.includes(' C')).click();
+    await flush();
+
+    const saved = global.saveData.mock.calls[global.saveData.mock.calls.length - 1][0];
+    expect(saved.folders.C).toHaveLength(1);
+    expect(saved.openFolders).toEqual(expect.arrayContaining(['A', 'B', 'C']));
   });
 
   test('moving into a sub-folder expands its parent too', async () => {

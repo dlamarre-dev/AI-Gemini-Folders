@@ -84,7 +84,7 @@ function displayFolders(openFoldersArg = [], searchTerm = "", onRendered) {
     let transitionDone = false;
 
     rootFolderNames.forEach((folderName) => {
-      const folderDiv = buildFolderElement(folderName, ctx, false);
+      const folderDiv = buildFolderElement(folderName, ctx, 1);
       if (!folderDiv) return;   // filtered out by the search term
       hasResults = true;
 
@@ -120,13 +120,14 @@ function displayFolders(openFoldersArg = [], searchTerm = "", onRendered) {
   });
 }
 
-// Builds one folder card — header, conversations, and (for a root folder) its
-// sub-folders — or returns null when the current search term filters it out.
+// Builds one folder card — header, conversations, then its sub-folders — or
+// returns null when the current search term filters it out.
 //
-// isChild caps the nesting at one level by construction: a child is built with
-// isChild=true and never asks for children of its own, so there is no recursion
-// to bound and no depth counter to forget.
-function buildFolderElement(folderName, ctx, isChild) {
+// `depth` is 1 for a top-level folder. The recursion is bounded by construction:
+// a card at MAX_FOLDER_DEPTH never asks for children, and getFolderParent never
+// places a folder deeper than that anyway, so nothing can be lost by the cut.
+function buildFolderElement(folderName, ctx, depth = 1) {
+  const isChild = depth > 1;
   const { folders, folderParents, pinnedFolders, sortPref, searchTerm,
     savedOpenFolders, openFolders, folderNameInput, searchInput } = ctx;
 
@@ -139,11 +140,16 @@ function buildFolderElement(folderName, ctx, isChild) {
   const folderMatches = searchState.showAllChats;
 
   const chats = sortChats(folders[folderName], sortPref);
-  const childNames = isChild ? [] : sortedChildFolders(folders, folderParents, folderName, sortPref);
+  const childNames = depth < MAX_FOLDER_DEPTH
+    ? sortedChildFolders(folders, folderParents, folderName, sortPref) : [];
+  // Everything a delete takes with it, at every level below — what the
+  // confirmation has to count.
+  const descendantCount = childNames.length
+    ? getDescendantNames(folders, folderParents, folderName).length : 0;
   const isPinned = pinnedFolders.includes(folderName);
 
   const folderDiv = document.createElement('div');
-  folderDiv.className = isChild ? 'folder folder--child' : 'folder';
+  folderDiv.className = isChild ? `folder folder--child folder--depth-${depth}` : 'folder';
   // Store the raw folder name (with any emoji prefix) so open/closed state can
   // be re-collected from the DOM without relying on the displayed name, which
   // strips the emoji prefix and would never match the stored key.
@@ -230,7 +236,8 @@ function buildFolderElement(folderName, ctx, isChild) {
   if (isChild) {
     // A sub-folder has no pin (see canNestFolder / sortedChildFolders — the
     // pin stays stored and comes back at the top level), so the slot carries
-    // the way back out instead. The drag gesture is not discoverable and is
+    // the way back out instead: one level up, which is what "out of its
+    // folder" means at any depth. The drag gesture is not discoverable and is
     // unusable from the keyboard; this is.
     const unnestBtn = document.createElement('button');
     unnestBtn.className = 'action-btn unnest-btn';
@@ -238,7 +245,7 @@ function buildFolderElement(folderName, ctx, isChild) {
     unnestBtn.title = chrome.i18n.getMessage("btnUnnestFolder") || "Move out of its folder";
     unnestBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      unnestFolder(folderName);
+      liftFolder(folderName);
     });
     actionsDiv.appendChild(unnestBtn);
   } else {
@@ -258,8 +265,8 @@ function buildFolderElement(folderName, ctx, isChild) {
     openGroupBtn.className = 'action-btn open-group-btn';
     openGroupBtn.textContent = '📑';
     openGroupBtn.title = chrome.i18n.getMessage("btnOpenGroup") || "Open in Tab Group";
-    // A root folder opens its whole subtree; a sub-folder opens only itself.
-    const groupChats = isChild ? chats : flattenFolderChats(folders, folderParents, folderName, sortPref);
+    // A folder opens its whole subtree, at any level.
+    const groupChats = flattenFolderChats(folders, folderParents, folderName, sortPref);
     openGroupBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       openFolderInTabGroup(folderName, groupChats);
@@ -286,11 +293,11 @@ function buildFolderElement(folderName, ctx, isChild) {
     // Deleting a folder takes its sub-folders with it, so an "empty" parent
     // must confirm too — otherwise one click silently removes named folders
     // the user cannot see from the header.
-    if (childNames.length > 0) {
+    if (descendantCount > 0) {
       const isSure = await window.showCustomModal({
         title: (chrome.i18n.getMessage("confirmDeleteFolderSub")
           || "This folder, its {count} sub-folder(s) and all their conversations will be deleted. Are you sure?")
-          .replace("{count}", childNames.length),
+          .replace("{count}", descendantCount),
         type: 'confirm'
       });
       if (!isSure) return;
@@ -553,7 +560,7 @@ function buildFolderElement(folderName, ctx, isChild) {
 
   // Sub-folders come after the conversations, indented inside the parent.
   childNames.forEach((childName) => {
-    const childDiv = buildFolderElement(childName, ctx, true);
+    const childDiv = buildFolderElement(childName, ctx, depth + 1);
     if (!childDiv) return;   // filtered out by the search term
     appendedChildCount++;
     folderContent.appendChild(childDiv);
@@ -665,10 +672,11 @@ function moveChat(sourceFolder, targetFolder, chatUrl) {
     if (!openFolders.includes(targetFolder)) {
       openFolders.push(targetFolder);
     }
-    // …and its parent, or a conversation moved into a sub-folder lands inside a
-    // collapsed folder and looks lost.
-    const targetParent = getFolderParent(folders, data.folderParents || {}, targetFolder);
-    if (targetParent && !openFolders.includes(targetParent)) openFolders.push(targetParent);
+    // …and every folder above it, or a conversation moved into a sub-folder
+    // lands inside a collapsed folder and looks lost.
+    for (const name of folderOpenPath(folders, data.folderParents || {}, targetFolder)) {
+      if (!openFolders.includes(name)) openFolders.push(name);
+    }
 
     saveData({ folders: folders, openFolders: openFolders }, (err) => {
       if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
@@ -714,9 +722,11 @@ function nestFolder(childName, parentName) {
       // 'self' and 'already' are no-ops the user did not really ask for; only a
       // refusal that needs explaining gets a modal.
       if (verdict.reason === 'depth') {
+        window.showCustomModal({ title: nestTooDeepMessage(), type: 'alert' });
+      } else if (verdict.reason === 'cycle') {
         window.showCustomModal({
-          title: chrome.i18n.getMessage("errorNestTooDeep")
-            || "This folder already contains sub-folders. Only one level of nesting is supported.",
+          title: chrome.i18n.getMessage("errorNestCycle")
+            || "A folder cannot be moved inside one of its own sub-folders.",
           type: 'alert'
         });
       }
@@ -724,8 +734,11 @@ function nestFolder(childName, parentName) {
     }
 
     const openFolders = collectOpenFolders();
-    // The parent must be open, or the folder the user just dragged disappears.
-    if (!openFolders.includes(parentName)) openFolders.push(parentName);
+    // The new parent and everything above it must be open, or the folder the
+    // user just dragged disappears.
+    for (const name of folderOpenPath(folders, parents, parentName)) {
+      if (!openFolders.includes(name)) openFolders.push(name);
+    }
 
     saveData({
       folderParents: pruneFolderParents(folders, withFolderParent(parents, childName, parentName)),
@@ -738,17 +751,42 @@ function nestFolder(childName, parentName) {
   });
 }
 
-// Back to the top level. A pin that was set before the folder was nested becomes
-// live again here, because nothing ever removed it.
+// The refusal for a level too many. The number is filled in from the constant,
+// never written into 43 translations that would then all have to change with it.
+function nestTooDeepMessage() {
+  return (chrome.i18n.getMessage("errorNestTooDeep")
+    || "Sub-folders can go up to {n} levels deep.").replace('{n}', MAX_FOLDER_DEPTH);
+}
+
+// Back to the top level (a drop outside every folder). A pin that was set before
+// the folder was nested becomes live again here, because nothing ever removed it.
 function unnestFolder(childName) {
+  moveFolderUnder(childName, () => null);
+}
+
+// One level up: under the grandparent, or the top level when there is none.
+// That is the ⤴ button. Always valid — a subtree that fitted lower fits higher.
+function liftFolder(childName) {
+  moveFolderUnder(childName, (folders, parents, parent) => getFolderParent(folders, parents, parent));
+}
+
+function moveFolderUnder(childName, pickTarget) {
   loadData({ folders: {}, folderParents: {} }, (data) => {
     const folders = data.folders;
     const parents = data.folderParents || {};
-    if (getFolderParent(folders, parents, childName) === null) return;
+    const parent = getFolderParent(folders, parents, childName);
+    if (parent === null) return;
+    const target = pickTarget(folders, parents, parent);
 
     const openFolders = collectOpenFolders();
+    const nextParents = pruneFolderParents(folders, withFolderParent(parents, childName, target));
+    if (target !== null) {
+      for (const name of folderOpenPath(folders, nextParents, target)) {
+        if (!openFolders.includes(name)) openFolders.push(name);
+      }
+    }
     saveData({
-      folderParents: pruneFolderParents(folders, withFolderParent(parents, childName, null)),
+      folderParents: nextParents,
       openFolders,
     }, (err) => {
       if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
@@ -1029,7 +1067,8 @@ if (typeof module !== 'undefined') {
   if (typeof sortChats === 'undefined') global.sortChats = _u.sortChats;
   if (typeof EMOJI_PREFIX_REGEX === 'undefined') global.EMOJI_PREFIX_REGEX = _u.EMOJI_PREFIX_REGEX;
   // Folder-nesting helpers, same reason: globals in the browser, module-scoped here.
-  for (const name of ['getFolderParent', 'getChildFolders', 'getRootFolderNames',
+  for (const name of ['MAX_FOLDER_DEPTH', 'getFolderParent', 'getFolderAncestors', 'getDescendantNames',
+    'getChildFolders', 'getRootFolderNames',
     'folderSubtreeNames', 'sortedChildFolders', 'sortedRootFolders', 'flattenFolderChats',
     'canNestFolder', 'withFolderParent', 'pruneFolderParents', 'folderDisplayPath',
     'folderOpenPath', 'folderSearchState',
@@ -1044,6 +1083,7 @@ if (typeof module !== 'undefined') {
     moveChat,
     nestFolder,
     unnestFolder,
+    liftFolder,
     collectOpenFolders,
     togglePin,
     renameFolder,

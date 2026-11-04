@@ -821,25 +821,48 @@ describe('nesting by drag & drop', () => {
     expect(document.body.classList.contains('is-dragging-subfolder')).toBe(true);
   });
 
-  test('a folder that already has sub-folders is refused, with an explanation', () => {
+  test('a folder with sub-folders can be nested, and onto a sub-folder too', () => {
     setupStorage({ Work: [], Clients: [], Personal: [] }, [], [], { Clients: 'Work' });
     displayFolders();
 
     dropOn(folderEl('Personal'), { kind: 'folder', sourceFolder: 'Work' });
+    expect(lastSave().folderParents).toEqual({ Clients: 'Work', Work: 'Personal' });
+
+    dropOn(folderEl('Clients'), { kind: 'folder', sourceFolder: 'Personal' });
+    expect(lastSave().folderParents).toEqual({ Clients: 'Work', Personal: 'Clients' });
+    // Every level above the new parent opens, or the dropped folder vanishes.
+    expect(lastSave().openFolders).toEqual(expect.arrayContaining(['Work', 'Clients']));
+  });
+
+  test('a fifth level is refused, naming the limit', () => {
+    const realGetMessage = chrome.i18n.getMessage;
+    chrome.i18n.getMessage = jest.fn((key) =>
+      key === 'errorNestTooDeep' ? 'Up to {n} levels.' : key);
+    try {
+      setupStorage({ A: [], B: [], C: [], D: [], E: [] }, [], [], { B: 'A', C: 'B', D: 'C' });
+      displayFolders();
+
+      dropOn(folderEl('D'), { kind: 'folder', sourceFolder: 'E' });
+
+      expect(global.saveData).not.toHaveBeenCalled();
+      expect(global.window.showCustomModal).toHaveBeenCalledWith(
+        expect.objectContaining({ type: 'alert', title: 'Up to 4 levels.' })
+      );
+    } finally {
+      chrome.i18n.getMessage = realGetMessage;
+    }
+  });
+
+  test('a folder dropped into its own sub-folder is refused as a cycle', () => {
+    setupStorage({ Work: [], Clients: [] }, [], ['Work'], { Clients: 'Work' });
+    displayFolders();
+
+    dropOn(folderEl('Clients'), { kind: 'folder', sourceFolder: 'Work' });
 
     expect(global.saveData).not.toHaveBeenCalled();
     expect(global.window.showCustomModal).toHaveBeenCalledWith(
-      expect.objectContaining({ type: 'alert', title: 'errorNestTooDeep' })
+      expect.objectContaining({ type: 'alert', title: 'errorNestCycle' })
     );
-  });
-
-  test('dropping onto a sub-folder is refused (one level only)', () => {
-    setupStorage({ Work: [], Clients: [], Personal: [] }, [], [], { Clients: 'Work' });
-    displayFolders();
-
-    dropOn(folderEl('Clients'), { kind: 'folder', sourceFolder: 'Personal' });
-
-    expect(global.saveData).not.toHaveBeenCalled();
   });
 
   test('a conversation dropped on a SUB-folder still moves', () => {
@@ -941,6 +964,26 @@ describe('nesting by drag & drop', () => {
     folderEl('Clients').querySelector('.unnest-btn').click();
 
     expect(lastSave().folderParents).toEqual({});
+  });
+
+  test('deeper down, ⤴ moves one level up, not all the way out', () => {
+    setupStorage({ A: [], B: [], C: [] }, [], ['A', 'B'], { B: 'A', C: 'B' });
+    displayFolders();
+
+    folderEl('C').querySelector('.unnest-btn').click();
+
+    expect(lastSave().folderParents).toEqual({ B: 'A', C: 'A' });
+    expect(lastSave().openFolders).toContain('A');
+  });
+
+  test('a drop outside every folder still sends a deep folder to the top level', () => {
+    setupStorage({ A: [], B: [], C: [] }, [], ['A', 'B'], { B: 'A', C: 'B' });
+    displayFolders();
+    dragStartOn(folderEl('C').querySelector('.folder-header'));
+
+    dropOn(document.getElementById('folderList'), { kind: 'folder', sourceFolder: 'C' });
+
+    expect(lastSave().folderParents).toEqual({ B: 'A' });
   });
 });
 
@@ -1070,13 +1113,13 @@ describe('tab group with sub-folders', () => {
 describe('sub-folder strings ship in every locale', () => {
   const fs = require('fs');
   const path = require('path');
-  const NEW_KEYS = ['btnUnnestFolder', 'confirmDeleteFolderSub', 'errorNestTooDeep'];
+  const NEW_KEYS = ['btnUnnestFolder', 'confirmDeleteFolderSub', 'errorNestTooDeep', 'errorNestCycle'];
 
   for (const ext of ['ai-folders', 'gemini-folders']) {
     const dir = path.join(__dirname, '..', 'extensions', ext, '_locales');
     const locales = fs.readdirSync(dir);
 
-    test(`${ext} has all three keys in its 43 locales, none empty`, () => {
+    test(`${ext} has all four keys in its 43 locales, none empty`, () => {
       expect(locales).toHaveLength(43);
       for (const locale of locales) {
         const messages = JSON.parse(fs.readFileSync(path.join(dir, locale, 'messages.json'), 'utf8'));
@@ -1086,6 +1129,9 @@ describe('sub-folder strings ship in every locale', () => {
         // The count is substituted in JS: a translation that drops the token
         // would silently print the sentence without the number.
         expect(messages.confirmDeleteFolderSub.message).toContain('{count}');
+        // Same for the depth limit, which comes from MAX_FOLDER_DEPTH — and no
+        // translation may still promise the old single level by hardcoding it.
+        expect(messages.errorNestTooDeep.message).toContain('{n}');
       }
     });
   }
@@ -1345,5 +1391,58 @@ describe('conversation rows of a closed folder', () => {
     displayFolders();
     expect(card('Empty').querySelector('.folder-chevron')).toBeNull();
     expect(card('Empty').querySelector('.folder-content')).toBeNull();
+  });
+});
+
+describe('several levels of sub-folders (#117)', () => {
+  const DEEP = { A: makeFolder(['a1', 'aaa']), B: [], C: [], D: makeFolder(['d1', 'ddd']) };
+  const CHAIN = { B: 'A', C: 'B', D: 'C' };
+
+  test('four levels render, each inside the one above, marked with its depth', () => {
+    setupStorage(DEEP, [], ['A', 'B', 'C'], CHAIN);
+    displayFolders();
+
+    expect([...document.querySelectorAll('#folderList > .folder')].map(f => f.dataset.folderName)).toEqual(['A']);
+    expect(folderEl('D').parentElement.closest('.folder').dataset.folderName).toBe('C');
+    expect(folderEl('C').parentElement.closest('.folder').dataset.folderName).toBe('B');
+    expect(folderEl('D').classList.contains('folder--depth-4')).toBe(true);
+    expect(folderEl('B').classList.contains('folder--depth-2')).toBe(true);
+  });
+
+  test('a chain deeper than four (another version) shows its cut-off part at the top level', () => {
+    setupStorage({ ...DEEP, E: [] }, [], [], { ...CHAIN, E: 'D' });
+    displayFolders();
+
+    expect(folderEl('E').parentElement.id).toBe('folderList');
+  });
+
+  test('deleting a folder counts and removes every level below it', async () => {
+    const realGetMessage = chrome.i18n.getMessage;
+    chrome.i18n.getMessage = jest.fn((key) =>
+      key === 'confirmDeleteFolderSub' ? 'Delete {count}?' : key);
+    try {
+      global.window.showCustomModal.mockResolvedValue(true);
+      setupStorage({ ...DEEP, Other: [] }, [], [], CHAIN);
+      displayFolders();
+
+      folderEl('A').querySelector('.delete-btn').click();
+      await flushMicrotasks();
+
+      expect(global.window.showCustomModal).toHaveBeenCalledWith(
+        expect.objectContaining({ title: 'Delete 3?' }));
+      expect(Object.keys(lastSave().folders)).toEqual(['Other']);
+      expect(lastSave().folderParents).toEqual({});
+    } finally {
+      chrome.i18n.getMessage = realGetMessage;
+    }
+  });
+
+  test('clicking a deep folder fills the box with its whole path', () => {
+    setupStorage(DEEP, [], ['A', 'B', 'C'], CHAIN);
+    displayFolders();
+
+    folderEl('D').querySelector('.folder-header').click();
+
+    expect(document.getElementById('folderName').value).toBe('A/B/C/D');
   });
 });

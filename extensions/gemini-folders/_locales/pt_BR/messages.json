@@ -126,7 +126,10 @@
     "message": "Já existe uma pasta com este nome."
   },
   "errorNestTooDeep": {
-    "message": "Esta pasta já contém subpastas. Só há suporte para um nível de aninhamento."
+    "message": "As subpastas podem ter até {n} níveis de profundidade."
+  },
+  "errorNestCycle": {
+    "message": "Uma pasta não pode ser movida para dentro de uma de suas próprias subpastas."
   },
   "storageCalc": {
     "message": "Calculando espaço..."
@@ -311,11 +314,11 @@
   "whatsNewHeading": {
     "message": "Novidades"
   },
-  "whatsNewPanelTitle": {
-    "message": "Agora no painel lateral"
+  "whatsNewNestTitle": {
+    "message": "Subpastas em vários níveis"
   },
-  "whatsNewPanelBody": {
-    "message": "Fixe a extensão no painel lateral do navegador: ela continua aberta enquanto você troca de aba, com suas pastas e prompts sempre à mão. Abra-a pelo novo botão no topo do pop-up."
+  "whatsNewNestBody": {
+    "message": "Agora as pastas se aninham em até 4 níveis. Arraste uma pasta sobre outra, ou clique em uma pasta antes de salvar para salvar diretamente nela."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clique: reutilizar a última aba"

@@ -126,7 +126,10 @@
     "message": "この名前のフォルダはすでに存在します。"
   },
   "errorNestTooDeep": {
-    "message": "このフォルダにはすでにサブフォルダがあります。入れ子は 1 階層までです。"
+    "message": "サブフォルダは {n} 階層まで作成できます。"
+  },
+  "errorNestCycle": {
+    "message": "フォルダを自分のサブフォルダの中に移動することはできません。"
   },
   "storageCalc": {
     "message": "容量を計算中..."
@@ -311,11 +314,11 @@
   "whatsNewHeading": {
     "message": "新着情報"
   },
-  "whatsNewPanelTitle": {
-    "message": "サイドパネルに対応しました"
+  "whatsNewNestTitle": {
+    "message": "サブフォルダを複数の階層に"
   },
-  "whatsNewPanelBody": {
-    "message": "拡張機能をブラウザのサイドパネルに固定できます。タブを切り替えても開いたままなので、フォルダとプロンプトをいつでもすぐに使えます。ポップアップ上部の新しいボタンから開いてください。"
+  "whatsNewNestBody": {
+    "message": "フォルダを 4 階層まで入れ子にできるようになりました。フォルダを別のフォルダにドラッグするか、保存前にフォルダをクリックすると、そこへ直接保存できます。"
   },
   "chatLinkReuseHint": {
     "message": "{k} + クリック: 最後のタブを再利用"

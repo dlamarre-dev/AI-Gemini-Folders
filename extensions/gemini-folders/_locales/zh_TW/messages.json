@@ -126,7 +126,10 @@
     "message": "已存在相同名稱的資料夾。"
   },
   "errorNestTooDeep": {
-    "message": "此資料夾已包含子資料夾。僅支援一層巢狀結構。"
+    "message": "子資料夾最多可巢狀 {n} 層。"
+  },
+  "errorNestCycle": {
+    "message": "無法將資料夾移入它自己的子資料夾中。"
   },
   "storageCalc": {
     "message": "計算空間中..."
@@ -311,11 +314,11 @@
   "whatsNewHeading": {
     "message": "新功能"
   },
-  "whatsNewPanelTitle": {
-    "message": "現已支援側邊面板"
+  "whatsNewNestTitle": {
+    "message": "多層子資料夾"
   },
-  "whatsNewPanelBody": {
-    "message": "將擴充功能固定在瀏覽器的側邊面板中：切換分頁時它會保持開啟，資料夾和提示詞隨時可用。點選彈出視窗頂端的新按鈕即可開啟。"
+  "whatsNewNestBody": {
+    "message": "資料夾現在最多可巢狀 4 層。將一個資料夾拖曳到另一個資料夾上，或在儲存前點選某個資料夾即可直接儲存到其中。"
   },
   "chatLinkReuseHint": {
     "message": "{k} + 點擊：重複使用上一個分頁"

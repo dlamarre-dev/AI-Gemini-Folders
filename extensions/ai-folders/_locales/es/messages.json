@@ -123,7 +123,10 @@
     "message": "Ya existe una carpeta con este nombre."
   },
   "errorNestTooDeep": {
-    "message": "Esta carpeta ya contiene subcarpetas. Solo se admite un nivel de anidación."
+    "message": "Las subcarpetas pueden tener hasta {n} niveles de profundidad."
+  },
+  "errorNestCycle": {
+    "message": "Una carpeta no se puede mover dentro de una de sus propias subcarpetas."
   },
   "storageCalc": {
     "message": "Calculando espacio..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "Novedades"
   },
-  "whatsNewPanelTitle": {
-    "message": "Ahora en el panel lateral"
+  "whatsNewNestTitle": {
+    "message": "Subcarpetas de varios niveles"
   },
-  "whatsNewPanelBody": {
-    "message": "Ancla la extensión en el panel lateral del navegador: permanece abierta mientras cambias de pestaña, con tus carpetas y prompts siempre a mano. Ábrela con el nuevo botón en la parte superior de la ventana emergente."
+  "whatsNewNestBody": {
+    "message": "Las carpetas ahora se anidan hasta 4 niveles. Arrastra una carpeta sobre otra, o haz clic en una carpeta antes de guardar para guardar directamente en ella."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilizar la última pestaña"

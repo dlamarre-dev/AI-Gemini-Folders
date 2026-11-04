@@ -123,7 +123,10 @@
     "message": "Mapa s ovim nazivom već postoji."
   },
   "errorNestTooDeep": {
-    "message": "Ova mapa već sadrži podmape. Podržana je samo jedna razina ugniježđivanja."
+    "message": "Podmape mogu ići do {n} razine dubine."
+  },
+  "errorNestCycle": {
+    "message": "Mapa se ne može premjestiti u neku od vlastitih podmapa."
   },
   "storageCalc": {
     "message": "Izračunavanje prostora..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "Što je novo"
   },
-  "whatsNewPanelTitle": {
-    "message": "Sada na bočnoj ploči"
+  "whatsNewNestTitle": {
+    "message": "Podmape na više razina"
   },
-  "whatsNewPanelBody": {
-    "message": "Usidrite proširenje na bočnu ploču preglednika: ostaje otvoreno dok mijenjate kartice, a mape i upiti uvijek su vam pri ruci. Otvorite ga novim gumbom na vrhu skočnog prozora."
+  "whatsNewNestBody": {
+    "message": "Mape se sada mogu ugnijezditi do 4 razine. Povucite mapu na drugu ili kliknite mapu prije spremanja da biste spremili izravno u nju."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: ponovno koristi posljednju karticu"

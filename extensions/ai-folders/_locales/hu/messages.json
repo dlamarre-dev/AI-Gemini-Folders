@@ -123,7 +123,10 @@
     "message": "Már létezik ilyen nevű mappa."
   },
   "errorNestTooDeep": {
-    "message": "Ez a mappa már tartalmaz almappákat. Csak egy szintű beágyazás támogatott."
+    "message": "Az almappák legfeljebb {n} szint mélységig ágyazhatók egymásba."
+  },
+  "errorNestCycle": {
+    "message": "Egy mappa nem helyezhető át a saját almappáinak egyikébe."
   },
   "storageCalc": {
     "message": "Tárhely kiszámítása..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "Újdonságok"
   },
-  "whatsNewPanelTitle": {
-    "message": "Mostantól az oldalpanelen"
+  "whatsNewNestTitle": {
+    "message": "Almappák több szinten"
   },
-  "whatsNewPanelBody": {
-    "message": "Rögzítsd a bővítményt a böngésző oldalpaneljén: nyitva marad, miközben lapot váltasz, a mappáid és promptjaid pedig mindig kéznél vannak. Nyisd meg az előugró ablak tetején lévő új gombbal."
+  "whatsNewNestBody": {
+    "message": "A mappák mostantól legfeljebb 4 szintig ágyazhatók egymásba. Húzzon egy mappát egy másikra, vagy mentés előtt kattintson egy mappára, hogy közvetlenül abba mentsen."
   },
   "chatLinkReuseHint": {
     "message": "{k} + kattintás: az utolsó lap újrahasználata"

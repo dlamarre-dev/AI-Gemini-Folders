@@ -123,7 +123,10 @@
     "message": "Folda yenye jina hili tayari ipo."
   },
   "errorNestTooDeep": {
-    "message": "Folda hii tayari ina folda ndogo. Kiwango kimoja tu cha kupachika kinatumika."
+    "message": "Folda ndogo zinaweza kufika hadi viwango {n} vya kina."
+  },
+  "errorNestCycle": {
+    "message": "Folda haiwezi kuhamishwa ndani ya mojawapo ya folda zake ndogo."
   },
   "storageCalc": {
     "message": "Inahesabu nafasi..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "Yaliyo mapya"
   },
-  "whatsNewPanelTitle": {
-    "message": "Sasa kwenye paneli ya pembeni"
+  "whatsNewNestTitle": {
+    "message": "Folda ndogo za viwango kadhaa"
   },
-  "whatsNewPanelBody": {
-    "message": "Bandika kiendelezi kwenye paneli ya pembeni ya kivinjari: kinabaki wazi unapobadilisha vichupo, na folda na maagizo yako yanapatikana kila wakati. Kifungue kwa kitufe kipya kilicho juu ya dirisha ibukizi."
+  "whatsNewNestBody": {
+    "message": "Sasa folda zinaweza kupachikwa hadi viwango 4. Buruta folda juu ya nyingine, au bofya folda kabla ya kuhifadhi ili kuhifadhi moja kwa moja ndani yake."
   },
   "chatLinkReuseHint": {
     "message": "{k} + bofya: tumia tena kichupo cha mwisho"

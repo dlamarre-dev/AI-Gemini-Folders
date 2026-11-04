@@ -145,8 +145,8 @@ function initSaveConversation(opts) {
     const finalChatTitle = chatTitleInput.value.trim() || chrome.i18n.getMessage("defaultTitle");
     const chatUrl = tab.url;
 
-    const flashStatus = (messageKey, fallback, ms = 4000) => {
-      statusDiv.textContent = chrome.i18n.getMessage(messageKey) || fallback;
+    const flashStatus = (messageKey, fallback, ms = 4000, fill = (text) => text) => {
+      statusDiv.textContent = fill(chrome.i18n.getMessage(messageKey) || fallback);
       statusDiv.style.color = 'red';
       statusDiv.style.display = "block";
       setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, ms);
@@ -165,25 +165,29 @@ function initSaveConversation(opts) {
       let folders = data.folders;
       let folderParents = data.folderParents || {};
 
-      // "Parent/Child" in the box saves into that sub-folder, creating what is
-      // missing. An exact existing folder name always wins over the path
+      // "A/B/C" in the box saves into that sub-folder, creating every level that
+      // is missing. An exact existing folder name always wins over the path
       // reading, so a folder literally named "a/b" keeps working.
       const resolved = resolveFolderPath(folders, folderParents, typedFolder);
       if (resolved.error) {
-        flashStatus(resolved.error === 'nestTooDeep' ? "errorNestTooDeep" : "errorFolderExists",
-          resolved.error === 'nestTooDeep'
-            ? 'This folder already contains sub-folders. Only one level of nesting is supported.'
-            : 'A folder with this name already exists.');
+        if (resolved.error === 'nestTooDeep') {
+          flashStatus("errorNestTooDeep", 'Sub-folders can go up to {n} levels deep.', undefined,
+            (text) => text.replace('{n}', MAX_FOLDER_DEPTH));
+        } else {
+          flashStatus("errorFolderExists", 'A folder with this name already exists.');
+        }
         isSaving = false;
         return;
       }
 
       const folderName = resolved.name || chrome.i18n.getMessage("defaultFolder");
-      if (resolved.parent && !hasEntry(folders, resolved.parent)) folders[resolved.parent] = [];
-      if (!hasEntry(folders, folderName)) folders[folderName] = [];
-      if (resolved.parent) {
-        folderParents = withFolderParent(folderParents, folderName, resolved.parent);
-      }
+      // Every level of the path, top first: create what is missing and link
+      // each one to the level above it.
+      const chain = [...(resolved.chain || []), folderName];
+      chain.forEach((name, i) => {
+        if (!hasEntry(folders, name)) folders[name] = [];
+        if (i > 0) folderParents = withFolderParent(folderParents, name, chain[i - 1]);
+      });
 
       const cleanTargetUrl = normalizeUrl(chatUrl);
       const isDuplicate = folders[folderName].some(chat => normalizeUrl(chat.url) === cleanTargetUrl);
@@ -201,10 +205,12 @@ function initSaveConversation(opts) {
       if (opts.tagSite) chatEntry.site = siteKey;
       folders[folderName].push(chatEntry);
 
-      // The nesting only rides along when this save actually created one; a
+      // The nesting only rides along when this save actually created a level; a
       // plain save must not rewrite folderParents.
       const payload = { folders };
-      if (resolved.parent) payload.folderParents = pruneFolderParents(folders, folderParents);
+      if (chain.length > 1 && resolved.created.length > 0) {
+        payload.folderParents = pruneFolderParents(folders, folderParents);
+      }
 
       saveData(payload, (err) => {
         isSaving = false;

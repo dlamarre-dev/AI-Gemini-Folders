@@ -123,7 +123,10 @@
     "message": "이 이름의 폴더가 이미 존재합니다."
   },
   "errorNestTooDeep": {
-    "message": "이 폴더에는 이미 하위 폴더가 있습니다. 한 단계 중첩만 지원됩니다."
+    "message": "하위 폴더는 최대 {n}단계까지 만들 수 있습니다."
+  },
+  "errorNestCycle": {
+    "message": "폴더를 자신의 하위 폴더 안으로 옮길 수 없습니다."
   },
   "storageCalc": {
     "message": "공간 계산 중..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "새로운 기능"
   },
-  "whatsNewPanelTitle": {
-    "message": "이제 사이드 패널에서"
+  "whatsNewNestTitle": {
+    "message": "여러 단계의 하위 폴더"
   },
-  "whatsNewPanelBody": {
-    "message": "확장 프로그램을 브라우저의 사이드 패널에 고정하세요. 탭을 전환해도 열린 상태로 유지되어 폴더와 프롬프트를 언제든 바로 쓸 수 있습니다. 팝업 상단의 새 버튼으로 여세요."
+  "whatsNewNestBody": {
+    "message": "이제 폴더를 최대 4단계까지 중첩할 수 있습니다. 폴더를 다른 폴더로 끌어다 놓거나, 저장하기 전에 폴더를 클릭하면 그 폴더에 바로 저장됩니다."
   },
   "chatLinkReuseHint": {
     "message": "{k} + 클릭: 마지막 탭 재사용"

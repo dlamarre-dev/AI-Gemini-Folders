@@ -278,6 +278,33 @@ describe('syncToBookmarksTree', () => {
     expect(clients.index).toBe(1);
   });
 
+  test('mirrors every level, each bookmark folder inside the one above', async () => {
+    const folders = {
+      A: [{ title: 'a1', url: 'https://a/a1', timestamp: 1 }],
+      B: [], C: [],
+      D: [{ title: 'd1', url: 'https://a/d1', timestamp: 2 }],
+    };
+
+    await syncToBookmarksTree(folders, [], 'dateDesc', { B: 'A', C: 'B', D: 'C' });
+
+    expect(order).toEqual([
+      'remove:stale',
+      'create:folder(masterFolderName)',
+      'create:folder(A)',
+      'create:chat(a1)',
+      'create:folder(B)',
+      'create:folder(C)',
+      'create:folder(D)',
+      'create:chat(d1)',
+    ]);
+    const creates = chrome.bookmarks.create.mock.calls.map((c) => c[0]);
+    const parentOf = (title) => creates.find((o) => o.title === title).parentId;
+    // master=node0, A=node1, a1=node2, B=node3, C=node4.
+    expect(parentOf('B')).toBe('node1');
+    expect(parentOf('C')).toBe('node3');
+    expect(parentOf('D')).toBe('node4');
+  });
+
   test('an orphaned nesting entry mirrors at the top level rather than vanishing', async () => {
     const folders = { Solo: [{ title: 's', url: 'https://a/s', timestamp: 1 }] };
 

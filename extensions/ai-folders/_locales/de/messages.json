@@ -123,7 +123,10 @@
     "message": "Ein Ordner mit diesem Namen existiert bereits."
   },
   "errorNestTooDeep": {
-    "message": "Dieser Ordner enthält bereits Unterordner. Es wird nur eine Verschachtelungsebene unterstützt."
+    "message": "Unterordner können bis zu {n} Ebenen tief verschachtelt werden."
+  },
+  "errorNestCycle": {
+    "message": "Ein Ordner kann nicht in einen seiner eigenen Unterordner verschoben werden."
   },
   "storageCalc": {
     "message": "Speicher wird berechnet..."
@@ -347,11 +350,11 @@
   "whatsNewHeading": {
     "message": "Was ist neu"
   },
-  "whatsNewPanelTitle": {
-    "message": "Jetzt im Seitenbereich"
+  "whatsNewNestTitle": {
+    "message": "Unterordner über mehrere Ebenen"
   },
-  "whatsNewPanelBody": {
-    "message": "Docken Sie die Erweiterung im Seitenbereich Ihres Browsers an: Sie bleibt geöffnet, während Sie die Tabs wechseln, und Ihre Ordner und Prompts sind immer griffbereit. Öffnen Sie sie über die neue Schaltfläche oben im Pop-up."
+  "whatsNewNestBody": {
+    "message": "Ordner lassen sich jetzt bis zu 4 Ebenen tief verschachteln. Ziehen Sie einen Ordner auf einen anderen, oder klicken Sie vor dem Speichern auf einen Ordner, um direkt darin zu speichern."
   },
   "chatLinkReuseHint": {
     "message": "{k} + Klick: letzten Tab wiederverwenden"
