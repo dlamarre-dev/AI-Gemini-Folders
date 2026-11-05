@@ -560,6 +560,15 @@ git checkout main && git pull --ff-only
   outside a folder card, since cards stop propagation. Indentation is a
   `margin-inline-start` on the nested card — never padding, which would have to
   out-`!important` the fragile compact block (§8).
+  **Drop feedback is an `outline` (negative offset) over the 1 px border, never
+  a thicker border**: a border that grows on hover resizes the card under the
+  pointer and shifts everything below it, a jitter that nesting multiplies.
+  **Row actions (with a mouse) appear only once the pointer rests on a row**
+  (`@media (hover: hover)` in popup.css: a delayed fade-in on `:hover`, an
+  immediate fade-out, `visibility` following so an invisible button cannot be
+  clicked), never during a drag, and at once on keyboard focus — matched with
+  `:focus-visible`, not `:focus-within`, or a clicked button would keep its
+  row lit. Touch screens keep the always-dimmed version.
 - **Security posture:** folder/conversation titles render via `textContent` (no
   XSS); `link.href` is gated by `isSafeUrl` (falls back to `about:blank`); import
   is validated (`isSafeUrl` + shape checks + chunked writes); the local-LLM
@@ -584,6 +593,12 @@ git checkout main && git pull --ff-only
     over the list); below the list's 96 px floor the document scrolls as
     before. That is why `setMode` shows a container with `display = ''`,
     never `'block'` — an inline value would override the panel layout.
+    The list's scrollbar sits in the body's right padding (negative
+    `margin-inline-end`): Firefox draws an overlay bar that no gutter can
+    reserve, so the list gives the width back as padding there; Chromium
+    reserves its 10 px thin bar with a stable gutter. Since Chrome 121 the
+    inherited standard `scrollbar-width`/`scrollbar-color` override the
+    `::-webkit-scrollbar` rules, so don't size anything off those 6 px.
   - `openConversation` does not `window.close()` in a panel.
   - the title prefill reruns on `tabs.onActivated` / `onUpdated` of the panel's
     window (`watchActiveTab`), but never over a title the user typed
