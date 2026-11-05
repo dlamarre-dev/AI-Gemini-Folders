@@ -123,7 +123,10 @@
     "message": "En mapp med det här namnet finns redan."
   },
   "errorNestTooDeep": {
-    "message": "Den här mappen innehåller redan undermappar. Endast en nivå stöds."
+    "message": "Undermappar kan gå upp till {n} nivåer djupt."
+  },
+  "errorNestCycle": {
+    "message": "En mapp kan inte flyttas in i en av sina egna undermappar."
   },
   "storageCalc": {
     "message": "Beräknar utrymme..."
@@ -347,11 +350,23 @@
   "whatsNewHeading": {
     "message": "Nyheter"
   },
-  "whatsNewPanelTitle": {
-    "message": "Nu i sidopanelen"
+  "whatsNewNestTitle": {
+    "message": "Undermappar i flera nivåer"
   },
-  "whatsNewPanelBody": {
-    "message": "Docka tillägget i webbläsarens sidopanel: det förblir öppet när du byter flik, med dina mappar och prompter alltid till hands. Öppna det med den nya knappen högst upp i popupfönstret."
+  "whatsNewNestBody": {
+    "message": "Mappar kan nu kapslas upp till 4 nivåer. Dra en mapp till en annan, eller klicka på en mapp innan du sparar för att spara direkt i den."
+  },
+  "whatsNewScrollTitle": {
+    "message": "En stabilare sidopanel"
+  },
+  "whatsNewScrollBody": {
+    "message": "I sidopanelen stannar sökningen och knapparna för att lägga till högst upp och sidfoten längst ned: bara dina mappar och prompter rullar."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Ett lättare utseende"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikonerna bredvid mappar, konversationer och prompter visas nu när pekaren vilar på dem och tonas bort när den lämnar."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klick: återanvänd den senaste fliken"

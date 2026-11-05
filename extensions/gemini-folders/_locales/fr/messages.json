@@ -126,7 +126,10 @@
     "message": "Un dossier avec ce nom existe déjà."
   },
   "errorNestTooDeep": {
-    "message": "Ce dossier contient déjà des sous-dossiers. Un seul niveau d'imbrication est pris en charge."
+    "message": "Les sous-dossiers peuvent aller jusqu'à {n} niveaux de profondeur."
+  },
+  "errorNestCycle": {
+    "message": "Un dossier ne peut pas être déplacé dans l'un de ses propres sous-dossiers."
   },
   "storageCalc": {
     "message": "Calcul de l'espace..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "Quoi de neuf"
   },
-  "whatsNewPanelTitle": {
-    "message": "Maintenant dans le panneau latéral"
+  "whatsNewNestTitle": {
+    "message": "Des sous-dossiers sur plusieurs niveaux"
   },
-  "whatsNewPanelBody": {
-    "message": "Ancrez l'extension dans le panneau latéral du navigateur : elle reste ouverte quand vous changez d'onglet, avec vos dossiers et vos prompts toujours à portée de main. Ouvrez-la avec le nouveau bouton en haut de la fenêtre."
+  "whatsNewNestBody": {
+    "message": "Les dossiers s'imbriquent maintenant jusqu'à 4 niveaux. Glissez un dossier sur un autre, ou cliquez sur un dossier avant d'enregistrer pour y enregistrer directement."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Un panneau latéral plus stable"
+  },
+  "whatsNewScrollBody": {
+    "message": "Dans le panneau latéral, la recherche et les boutons d'ajout restent en haut et le pied de page en bas : seuls vos dossiers et vos prompts défilent."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Une interface plus légère"
+  },
+  "whatsNewHoverBody": {
+    "message": "Les icônes à côté des dossiers, des conversations et des prompts apparaissent maintenant quand le pointeur s'y attarde, et s'effacent quand il s'éloigne."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic : réutiliser le dernier onglet"

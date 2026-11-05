@@ -126,7 +126,10 @@
     "message": "Un folder cu acest nume există deja."
   },
   "errorNestTooDeep": {
-    "message": "Acest dosar conține deja subdosare. Este acceptat un singur nivel de imbricare."
+    "message": "Subdosarele pot avea până la {n} niveluri de adâncime."
+  },
+  "errorNestCycle": {
+    "message": "Un dosar nu poate fi mutat într-unul dintre propriile subdosare."
   },
   "storageCalc": {
     "message": "Calculare spațiu..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "Ce este nou"
   },
-  "whatsNewPanelTitle": {
-    "message": "Acum în panoul lateral"
+  "whatsNewNestTitle": {
+    "message": "Subdosare pe mai multe niveluri"
   },
-  "whatsNewPanelBody": {
-    "message": "Fixează extensia în panoul lateral al browserului: rămâne deschisă când schimbi filele, cu dosarele și prompturile mereu la îndemână. Deschide-o cu noul buton din partea de sus a ferestrei pop-up."
+  "whatsNewNestBody": {
+    "message": "Dosarele pot fi acum imbricate pe până la 4 niveluri. Trage un dosar peste altul sau dă clic pe un dosar înainte de salvare pentru a salva direct în el."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Un panou lateral mai stabil"
+  },
+  "whatsNewScrollBody": {
+    "message": "În panoul lateral, căutarea și butoanele de adăugare rămân sus, iar subsolul jos: doar dosarele și prompturile se derulează."
+  },
+  "whatsNewHoverTitle": {
+    "message": "O interfață mai aerisită"
+  },
+  "whatsNewHoverBody": {
+    "message": "Pictogramele de lângă dosare, conversații și prompturi apar acum când cursorul zăbovește pe ele și dispar când acesta se îndepărtează."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilizează ultima filă"

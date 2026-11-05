@@ -52,7 +52,7 @@
       }
       .chat-item:hover { background: rgba(255,255,255,0.07); }
       .folder.drag-over {
-        border-color: rgba(138,180,248,0.5);
+        outline-color: rgba(138,180,248,0.5);
         background: rgba(138,180,248,0.08);
       }
 
@@ -226,6 +226,67 @@
       min-width: 280px;
       max-height: none;
       overflow-y: visible;
+      /* #119: only the folder / prompt list scrolls. Everything from the title
+         down to the add buttons stays at the top, and the footer follows the
+         list until the window is full, then stays at the bottom. A column as
+         tall as the window, in which the list is the only thing that shrinks. */
+      height: 100vh;
+      box-sizing: border-box;
+      /* The body has no scrollbar here, so the 19/13 split that centres the
+         popup around its own gutter (below) would only shift everything. */
+      padding-left: 16px;
+      padding-right: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+    html.panel body > *,
+    html.panel #folderModeContainer > *,
+    html.panel #promptModeContainer > * { flex-shrink: 0; }
+    /* The mode's own rows join the body's column, so the list is the one item
+       that shrinks: a container shrinking in its place would let the footer
+       ride over the list on a short window. Hidden by an inline display: none,
+       which wins over this; setMode clears it (never 'block') to show one. */
+    html.panel #folderModeContainer,
+    html.panel #promptModeContainer { display: contents; }
+    /* The floor keeps a few rows on a very short window: past it the document
+       scrolls as before rather than the list vanishing. */
+    html.panel #folderList,
+    html.panel #promptList {
+      flex: 0 1 auto;
+      min-height: 96px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      /* The bar lives in the body's right padding, so the rows stay as wide as
+         the buttons above them and the bar never covers them. Firefox draws
+         an OVERLAY scrollbar (Windows 11 default) that takes no gutter, so a
+         gutter cannot carry it there: the list reaches into the padding and
+         gives the same width back as its own padding, which the overlay then
+         covers instead of the rows. */
+      margin-inline-end: -10px;
+      padding-inline-end: 10px;
+      /* Air below the last card: flush against the edge, its 1px bottom border
+         fell outside once Chrome rounded the final scroll position. */
+      padding-bottom: 6px;
+    }
+    /* Chromium: a classic bar that takes layout space, reserved by a stable
+       gutter that goes into the padding instead. Since Chrome 121 the standard
+       scrollbar-width / scrollbar-color (inherited from body) win over the
+       ::-webkit-scrollbar rules, so the bar is Chrome's thin one, 10px. */
+    @supports selector(::-webkit-scrollbar) {
+      html.panel #folderList,
+      html.panel #promptList {
+        scrollbar-gutter: stable;
+        padding-inline-end: 0;
+      }
+    }
+    html.panel #folderList:empty,
+    html.panel #promptList:empty { min-height: 0; }
+    /* Outside the scroller now, so no sticky bleed into the body padding. */
+    html.panel #bulkActionBar {
+      position: static;
+      margin: 8px 0 0;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
     }
 
     h3 {
@@ -506,27 +567,81 @@
 
     /* Row/header actions rest quietly and come forward on hover or keyboard
        focus, to cut visual noise. Skipped during bulk-select (kept dimmed by the
-       bulk rule below). A pinned pin stays prominent as a state indicator. */
-    body:not(.bulk-active) .chat-item .chat-actions .action-btn,
-    body:not(.bulk-active) .folder-header .action-btn,
-    body:not(.bulk-active) .prompt-header .action-btn {
-      opacity: 0.45;
-      transition: opacity 0.15s ease;
-    }
-    body:not(.bulk-active) .chat-item:hover .chat-actions .action-btn,
-    body:not(.bulk-active) .chat-item:focus-within .chat-actions .action-btn,
-    body:not(.bulk-active) .folder-header:hover .action-btn,
-    body:not(.bulk-active) .folder-header:focus-within .action-btn,
-    body:not(.bulk-active) .prompt-header:hover .action-btn,
-    body:not(.bulk-active) .prompt-header:focus-within .action-btn,
-    body:not(.bulk-active) .folder-header .pin-btn.is-pinned,
-    body:not(.bulk-active) .prompt-header .pin-btn.is-pinned {
-      opacity: 1;
+       bulk rule below). A pinned pin stays prominent as a state indicator.
+       This is the touch-screen version; with a mouse, see (hover: hover) below. */
+    @media not all and (hover: hover) {
+      body:not(.bulk-active) .chat-item .chat-actions .action-btn,
+      body:not(.bulk-active) .folder-header .action-btn,
+      body:not(.bulk-active) .prompt-header .action-btn {
+        opacity: 0.45;
+        transition: opacity 0.15s ease;
+      }
+      body:not(.bulk-active) .chat-item:hover .chat-actions .action-btn,
+      body:not(.bulk-active) .chat-item:focus-within .chat-actions .action-btn,
+      body:not(.bulk-active) .folder-header:hover .action-btn,
+      body:not(.bulk-active) .folder-header:focus-within .action-btn,
+      body:not(.bulk-active) .prompt-header:hover .action-btn,
+      body:not(.bulk-active) .prompt-header:focus-within .action-btn,
+      body:not(.bulk-active) .folder-header .pin-btn.is-pinned,
+      body:not(.bulk-active) .prompt-header .pin-btn.is-pinned {
+        opacity: 1;
+      }
     }
 
-    /* --- Drag & Drop and Pins --- */
-    .chat-item.dragging { opacity: 0.4; background-color: var(--folder-hover); border: 1px dashed var(--accent-color); }
-    .folder.drag-over { border: 2px dashed var(--accent-color); background-color: rgba(26, 115, 232, 0.05); }
+    /* With a mouse, the actions are not shown at all until the pointer RESTS
+       on a row: they fade in after a short delay, so sweeping across the list
+       lights nothing up, and fade out at once when it leaves. The delay lives on
+       the hover state (the transition of the state being entered applies); the
+       fade-out on the resting one. `visibility` follows the opacity so a click
+       on a still-invisible button cannot hit it. KEYBOARD focus shows them with
+       no delay — :focus-visible, not :focus-within, or the button a click just
+       focused would keep its row lit after the mouse left. Tabbing onto the row
+       lights it first, so the next Tab still reaches the (now visible)
+       buttons. The pin of a pinned item hides like the rest: pinned items
+       already sit first, above their divider. Touch screens (no hover) keep
+       the rule above. */
+    @media (hover: hover) {
+      body:not(.bulk-active) .chat-item .chat-actions .action-btn,
+      body:not(.bulk-active) .folder-header .action-btn,
+      body:not(.bulk-active) .prompt-header .action-btn {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.15s ease, visibility 0s linear 0.15s;
+      }
+      body:not(.bulk-active) .chat-item:hover .chat-actions .action-btn,
+      body:not(.bulk-active) .folder-header:hover .action-btn,
+      body:not(.bulk-active) .prompt-header:hover .action-btn {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.2s ease 0.35s, visibility 0s linear 0.35s;
+      }
+      body:not(.bulk-active) .chat-item:has(:focus-visible) .chat-actions .action-btn,
+      body:not(.bulk-active) .folder-header:focus-visible .action-btn,
+      body:not(.bulk-active) .folder-header:has(:focus-visible) .action-btn,
+      body:not(.bulk-active) .prompt-header:focus-visible .action-btn,
+      body:not(.bulk-active) .prompt-header:has(:focus-visible) .action-btn {
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+      }
+      /* Not while dragging: the row under the pointer, and the dragged one,
+         which keeps :hover for the whole drag, stay bare. */
+      /* :hover in the selector only to outrank the hover rule above. */
+      body.is-dragging:not(.bulk-active) :is(.chat-item, .folder-header, .prompt-header):hover .action-btn,
+      body.is-dragging-folder:not(.bulk-active) :is(.chat-item, .folder-header, .prompt-header):hover .action-btn {
+        opacity: 0;
+        visibility: hidden;
+        transition: none;
+      }
+    }
+
+    /* --- Drag & Drop and Pins ---
+       Drop feedback is drawn with an OUTLINE over the existing 1px border, never
+       a thicker border: a border that grows by 1px on each side resizes the card
+       as the pointer crosses it, and every card below shifts — a visible jitter,
+       worse with nested folders (a card and its parents all react at once). */
+    .chat-item.dragging { opacity: 0.4; background-color: var(--folder-hover); outline: 1px dashed var(--accent-color); outline-offset: -1px; }
+    .folder.drag-over { outline: 2px dashed var(--accent-color); outline-offset: -2px; background-color: rgba(26, 115, 232, 0.05); }
 
     .pin-divider { border-top: 2px dotted var(--border-color); margin: 16px 0; background: transparent; height: 0; }
     .pin-btn.is-pinned { opacity: 1; } /* Removed rotation to keep the frame straight */
@@ -1062,7 +1177,7 @@
     }
 
     .folder.dragging-folder { opacity: 0.4; }
-    .folder.drag-invalid { border: 2px dashed var(--delete-color); background-color: rgba(217, 48, 37, 0.05); }
+    .folder.drag-invalid { outline: 2px dashed var(--delete-color); outline-offset: -2px; background-color: rgba(217, 48, 37, 0.05); }
 
     /* The way back to the top level is the whole popup: while a sub-folder is
        dragged, everything outside a folder card is a valid drop — above the

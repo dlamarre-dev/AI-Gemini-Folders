@@ -123,7 +123,10 @@
     "message": "Bu isimde bir klasör zaten mevcut."
   },
   "errorNestTooDeep": {
-    "message": "Bu klasör zaten alt klasörler içeriyor. Yalnızca tek düzey iç içe yerleştirme desteklenir."
+    "message": "Alt klasörler en fazla {n} düzey derinliğe kadar inebilir."
+  },
+  "errorNestCycle": {
+    "message": "Bir klasör kendi alt klasörlerinden birinin içine taşınamaz."
   },
   "storageCalc": {
     "message": "Alan hesaplanıyor..."
@@ -347,11 +350,23 @@
   "whatsNewHeading": {
     "message": "Yenilikler"
   },
-  "whatsNewPanelTitle": {
-    "message": "Artık yan panelde"
+  "whatsNewNestTitle": {
+    "message": "Birden çok düzeyde alt klasörler"
   },
-  "whatsNewPanelBody": {
-    "message": "Uzantıyı tarayıcının yan paneline sabitleyin: sekme değiştirirken açık kalır, klasörleriniz ve istemleriniz her zaman elinizin altında olur. Açılır pencerenin üstündeki yeni düğmeyle açın."
+  "whatsNewNestBody": {
+    "message": "Klasörler artık 4 düzeye kadar iç içe yerleştirilebilir. Bir klasörü başka birinin üzerine sürükleyin veya doğrudan içine kaydetmek için kaydetmeden önce bir klasöre tıklayın."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Daha sabit bir yan panel"
+  },
+  "whatsNewScrollBody": {
+    "message": "Yan panelde arama ve ekleme düğmeleri üstte, alt bilgi ise altta kalır: yalnızca klasörleriniz ve istemleriniz kayar."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Daha sade bir görünüm"
+  },
+  "whatsNewHoverBody": {
+    "message": "Klasörlerin, konuşmaların ve istemlerin yanındaki simgeler artık işaretçi üzerlerinde durduğunda belirir ve uzaklaştığında kaybolur."
   },
   "chatLinkReuseHint": {
     "message": "{k} + tıklama: son sekmeyi yeniden kullan"

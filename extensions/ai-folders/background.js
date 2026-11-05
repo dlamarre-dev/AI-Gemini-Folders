@@ -231,7 +231,7 @@ function openWelcomeTab(reason) {
 // The seen-marker is not redundant with the version check: reloading an unpacked
 // extension also fires onInstalled with reason 'update', which would reopen the tab
 // on every dev cycle, and a reinstall over the same version would too.
-const WHATS_NEW_VERSION = '1.8.0';
+const WHATS_NEW_VERSION = '1.9.0';
 
 async function openWhatsNewTab(reason) {
   if (reason !== 'update') return;
@@ -280,7 +280,7 @@ chrome.permissions.onAdded.addListener(async (permissions) => {
   } catch (_) {}
 });
 chrome.storage.onChanged.addListener((changes, namespace) => {
-  // folderParents belongs here: nesting a folder rewrites the second level of
+  // folderParents belongs here: nesting a folder rewrites the submenus of
   // this menu while writing no `folders` at all, so the menu would otherwise
   // stay stale until the next conversation was saved.
   if (namespace === 'sync' && (changes.folders || changes.foldersDataCompressed

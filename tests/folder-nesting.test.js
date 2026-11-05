@@ -1,10 +1,15 @@
 // Folder nesting is stored in a side map (`folderParents`), so the invariants —
-// one level, no orphans, no cycles — live entirely in these pure helpers rather
+// at most MAX_FOLDER_DEPTH levels, no orphans, no cycles — live entirely in these pure helpers rather
 // than in the renderer. This suite is where they are pinned down; the DOM tests
 // only check that displayFolders asks the right questions.
 
 const {
+  MAX_FOLDER_DEPTH,
   getFolderParent,
+  getFolderAncestors,
+  getFolderDepth,
+  getDescendantNames,
+  getSubtreeHeight,
   getChildFolders,
   getRootFolderNames,
   folderSubtreeNames,
@@ -44,11 +49,31 @@ describe('getFolderParent', () => {
     expect(getFolderParent({ Clients: [] }, { Clients: 'Work' }, 'Clients')).toBeNull();
   });
 
-  test('a grandchild is refused rather than rendered at a third level', () => {
+  test('a grandchild is honoured: nesting goes several levels deep', () => {
     const folders = { A: [], B: [], C: [] };
-    // C → B → A would be depth 2.
-    expect(getFolderParent(folders, { B: 'A', C: 'B' }, 'C')).toBeNull();
+    expect(getFolderParent(folders, { B: 'A', C: 'B' }, 'C')).toBe('B');
     expect(getFolderParent(folders, { B: 'A', C: 'B' }, 'B')).toBe('A');
+  });
+
+  test('a chain deeper than this version allows reads as a root folder, in one piece', () => {
+    // E → D → C → B → A is five levels: written by a future version, perhaps.
+    const folders = { A: [], B: [], C: [], D: [], E: [] };
+    const parents = { B: 'A', C: 'B', D: 'C', E: 'D' };
+    expect(getFolderParent(folders, parents, 'D')).toBe('C');
+    expect(getFolderParent(folders, parents, 'E')).toBeNull();
+  });
+
+  test('a longer cycle terminates and every member reads as a root folder', () => {
+    const folders = { A: [], B: [], C: [] };
+    const parents = { A: 'C', B: 'A', C: 'B' };
+    for (const n of ['A', 'B', 'C']) expect(getFolderParent(folders, parents, n)).toBeNull();
+    expect(getRootFolderNames(folders, parents).sort()).toEqual(['A', 'B', 'C']);
+  });
+
+  test('a child below a broken chain drops to the top level with it', () => {
+    // A ↔ B is a cycle; C hangs off it and must not render under a ghost.
+    const folders = { A: [], B: [], C: [] };
+    expect(getFolderParent(folders, { A: 'B', B: 'A', C: 'A' }, 'C')).toBeNull();
   });
 
   test('a two-folder cycle sends both back to the top level instead of looping', () => {
@@ -123,10 +148,14 @@ describe('canNestFolder', () => {
     expect(canNestFolder(folders, parents, 'Personal', 'Work')).toEqual({ ok: true });
   });
 
+  test('accepts a sub-folder as the target, and a folder that has children', () => {
+    expect(canNestFolder(folders, parents, 'Personal', 'Clients')).toEqual({ ok: true });
+    expect(canNestFolder(folders, parents, 'Parent', 'Work')).toEqual({ ok: true });
+  });
+
   test.each([
     ['itself', 'Work', 'Work', 'self'],
-    ['a sub-folder as the target', 'Personal', 'Clients', 'depth'],
-    ['a folder that already has children', 'Parent', 'Work', 'depth'],
+    ['its own sub-folder (a cycle)', 'Work', 'Clients', 'cycle'],
     ['its current parent', 'Clients', 'Work', 'already'],
     ['a folder that does not exist', 'Ghost', 'Work', 'missing'],
     ['a reserved name', '__proto__', 'Work', 'missing'],
@@ -143,16 +172,19 @@ describe('withFolderParent / pruneFolderParents', () => {
     expect(before).toEqual({ Clients: 'Work' });
   });
 
-  test('drops orphans, self-references, depth-2 entries and vanished children', () => {
-    const folders = { A: [], B: [], C: [], Solo: [] };
+  test('drops orphans, self-references, cycles, over-deep entries and vanished children', () => {
+    const folders = { A: [], B: [], C: [], D: [], E: [], Solo: [], X: [], Y: [] };
     const pruned = pruneFolderParents(folders, {
       B: 'A',          // valid
-      C: 'B',          // depth 2
+      C: 'B',          // valid, level 3
+      D: 'C',          // valid, level 4
+      E: 'D',          // level 5: deeper than allowed
       Solo: 'Gone',    // orphan: parent no longer exists
       A: 'A',          // self-reference
+      X: 'Y', Y: 'X',  // cycle
       Deleted: 'A',    // the child itself is gone
     });
-    expect(pruned).toEqual({ B: 'A' });
+    expect(pruned).toEqual({ B: 'A', C: 'B', D: 'C' });
   });
 });
 
@@ -170,7 +202,7 @@ describe('display path', () => {
   test('a display path round-trips through resolveFolderPath', () => {
     const path = folderDisplayPath(TREE.folders, TREE.parents, 'Clients');
     expect(resolveFolderPath(TREE.folders, TREE.parents, path))
-      .toEqual({ name: 'Clients', parent: 'Work', created: [], error: null });
+      .toEqual({ name: 'Clients', parent: 'Work', chain: ['Work'], created: [], error: null });
   });
 });
 
@@ -179,31 +211,32 @@ describe('resolveFolderPath', () => {
     // The one that matters: a folder literally named "a/b" predates nesting.
     const folders = { 'a/b': [], a: [], b: [] };
     expect(resolveFolderPath(folders, {}, 'a/b'))
-      .toEqual({ name: 'a/b', parent: null, created: [], error: null });
+      .toEqual({ name: 'a/b', parent: null, chain: [], created: [], error: null });
   });
 
   test('a plain name targets a top-level folder', () => {
     expect(resolveFolderPath(TREE.folders, TREE.parents, 'Work'))
-      .toEqual({ name: 'Work', parent: null, created: [], error: null });
+      .toEqual({ name: 'Work', parent: null, chain: [], created: [], error: null });
   });
 
   test('a new plain name is created at the top level', () => {
     expect(resolveFolderPath(TREE.folders, TREE.parents, 'Ideas'))
-      .toEqual({ name: 'Ideas', parent: null, created: ['Ideas'], error: null });
+      .toEqual({ name: 'Ideas', parent: null, chain: [], created: ['Ideas'], error: null });
   });
 
   test('an unknown pair creates both halves, nested', () => {
     expect(resolveFolderPath(TREE.folders, TREE.parents, 'Studies/Math'))
-      .toEqual({ name: 'Math', parent: 'Studies', created: ['Studies', 'Math'], error: null });
+      .toEqual({ name: 'Math', parent: 'Studies', chain: ['Studies'], created: ['Studies', 'Math'], error: null });
   });
 
   test('an existing parent only creates the child', () => {
     expect(resolveFolderPath(TREE.folders, TREE.parents, 'Work/Invoices'))
-      .toEqual({ name: 'Invoices', parent: 'Work', created: ['Invoices'], error: null });
+      .toEqual({ name: 'Invoices', parent: 'Work', chain: ['Work'], created: ['Invoices'], error: null });
   });
 
-  test('refuses to nest under a folder that is itself nested', () => {
-    expect(resolveFolderPath(TREE.folders, TREE.parents, 'Clients/Deep').error).toBe('nestTooDeep');
+  test('a path may start at a nested folder: what is above it comes along', () => {
+    expect(resolveFolderPath(TREE.folders, TREE.parents, 'Clients/Deep'))
+      .toEqual({ name: 'Deep', parent: 'Clients', chain: ['Work', 'Clients'], created: ['Deep'], error: null });
   });
 
   test('refuses to silently re-parent a folder that already exists elsewhere', () => {
@@ -293,5 +326,123 @@ describe('buildContextMenuModel', () => {
   test('a custom emoji prefix is kept as the menu icon', () => {
     const items = buildContextMenuModel({ '🚀 Launch': [] }, {}, { rootId: 'root' });
     expect(items[0].title).toBe('🚀 Launch');
+  });
+});
+
+// ── Several levels (#117) ────────────────────────────────────────────────────
+// Root → L2 → L3 → L4 is the deepest tree allowed; Side is an unrelated root.
+describe('several levels deep', () => {
+  const DEEP = {
+    folders: {
+      Root: [chat('r', 1)], L2: [chat('l2', 2)], L3: [chat('l3', 3)], L4: [chat('l4', 9)],
+      Side: [chat('s', 5)], Pair: [], PairKid: [],
+    },
+    parents: { L2: 'Root', L3: 'L2', L4: 'L3', PairKid: 'Pair' },
+  };
+  const { folders, parents } = DEEP;
+
+  test('the cap is four levels, the top level included', () => {
+    expect(MAX_FOLDER_DEPTH).toBe(4);
+  });
+
+  test('depth, ancestors, descendants and height follow the chain', () => {
+    expect(getFolderDepth(folders, parents, 'Root')).toBe(1);
+    expect(getFolderDepth(folders, parents, 'L4')).toBe(4);
+    expect(getFolderAncestors(folders, parents, 'L4')).toEqual(['Root', 'L2', 'L3']);
+    expect(getDescendantNames(folders, parents, 'Root')).toEqual(['L2', 'L3', 'L4']);
+    expect(getSubtreeHeight(folders, parents, 'Root')).toBe(4);
+    expect(getSubtreeHeight(folders, parents, 'L4')).toBe(1);
+  });
+
+  test('a delete takes every level below the folder', () => {
+    expect(folderSubtreeNames(folders, parents, 'L2')).toEqual(['L2', 'L3', 'L4']);
+  });
+
+  test('levels 2, 3 and 4 accept a folder; a fifth level is refused', () => {
+    expect(canNestFolder(folders, parents, 'Side', 'Root')).toEqual({ ok: true });
+    expect(canNestFolder(folders, parents, 'Side', 'L2')).toEqual({ ok: true });
+    expect(canNestFolder(folders, parents, 'Side', 'L3')).toEqual({ ok: true });
+    expect(canNestFolder(folders, parents, 'Side', 'L4')).toEqual({ ok: false, reason: 'depth' });
+  });
+
+  test('a folder brings its subtree: its height has to fit under the target', () => {
+    // Pair has a child, so it needs two levels: fine under L2, too deep under L3.
+    expect(canNestFolder(folders, parents, 'Pair', 'L2')).toEqual({ ok: true });
+    expect(canNestFolder(folders, parents, 'Pair', 'L3')).toEqual({ ok: false, reason: 'depth' });
+  });
+
+  test('a folder cannot go into any of its own descendants', () => {
+    expect(canNestFolder(folders, parents, 'Root', 'L4')).toEqual({ ok: false, reason: 'cycle' });
+    expect(canNestFolder(folders, parents, 'L2', 'L3')).toEqual({ ok: false, reason: 'cycle' });
+  });
+
+  test('ordering and the tab group see the whole subtree, at every level', () => {
+    expect(flattenFolderChats(folders, parents, 'Root', 'dateDesc').map(c => c.title))
+      .toEqual(['r', 'l2', 'l3', 'l4']);
+    // Root's own chat is the oldest, but L4, three levels down, holds the newest.
+    expect(sortedRootFolders(folders, parents, [], 'dateDesc')[0]).toBe('Root');
+  });
+
+  test('a sub-folder is ranked on its subtree too', () => {
+    const f = { P: [], Old: [chat('o', 1)], Busy: [chat('b', 2)], Deep: [chat('d', 99)] };
+    const p = { Old: 'P', Busy: 'P', Deep: 'Old' };
+    expect(sortedChildFolders(f, p, 'P', 'dateDesc')).toEqual(['Old', 'Busy']);
+  });
+
+  test('display and open paths carry the whole chain and round-trip', () => {
+    expect(folderDisplayPath(folders, parents, 'L4')).toBe('Root/L2/L3/L4');
+    expect(folderOpenPath(folders, parents, 'L4')).toEqual(['Root', 'L2', 'L3', 'L4']);
+    expect(resolveFolderPath(folders, parents, 'Root/L2/L3/L4'))
+      .toEqual({ name: 'L4', parent: 'L3', chain: ['Root', 'L2', 'L3'], created: [], error: null });
+  });
+
+  test('a search match four levels down surfaces all three folders above it', () => {
+    for (const n of ['Root', 'L2', 'L3']) {
+      expect(folderSearchState(folders, parents, n, 'l4')).toEqual({ show: true, showAllChats: false });
+    }
+    expect(folderSearchState(folders, parents, 'L4', 'l4').show).toBe(true);
+    // A matching top-level name reveals everything below it, at every level.
+    expect(folderSearchState(folders, parents, 'L4', 'root')).toEqual({ show: true, showAllChats: true });
+  });
+
+  test('the right-click menu follows the tree, with "save here" in every submenu', () => {
+    const items = buildContextMenuModel(folders, parents, { rootId: 'root', saveHereTitle: 'here' });
+    const byId = Object.fromEntries(items.map(i => [i.id, i]));
+    expect(byId.sub_Root.parentId).toBe('root');
+    expect(byId.sub_L2.parentId).toBe('sub_Root');
+    expect(byId.sub_L3.parentId).toBe('sub_L2');
+    expect(byId.folder_L4.parentId).toBe('sub_L3');
+    expect(byId.folder_L3).toEqual({ id: 'folder_L3', parentId: 'sub_L3', title: 'here' });
+    expect(items.filter(i => i.id === 'folder_L4')).toHaveLength(1);
+  });
+});
+
+describe('resolveFolderPath, several levels', () => {
+  const folders = { Work: [], Clients: [], 'a/b': [] };
+  const parents = { Clients: 'Work' };
+
+  test('creates every missing level of a path', () => {
+    expect(resolveFolderPath(folders, parents, 'Work/Clients/Acme/2026'))
+      .toEqual({ name: '2026', parent: 'Acme', chain: ['Work', 'Clients', 'Acme'], created: ['Acme', '2026'], error: null });
+    expect(resolveFolderPath({}, {}, 'A/B/C').created).toEqual(['A', 'B', 'C']);
+  });
+
+  test('a fifth level is refused, including through what sits above the start', () => {
+    expect(resolveFolderPath({}, {}, 'A/B/C/D/E').error).toBe('nestTooDeep');
+    expect(resolveFolderPath(folders, parents, 'Clients/X/Y/Z').error).toBe('nestTooDeep');
+    expect(resolveFolderPath(folders, parents, 'Clients/X/Y').error).toBeNull();
+  });
+
+  test('a segment that exists elsewhere in the tree is refused, not re-parented', () => {
+    expect(resolveFolderPath(folders, parents, 'Work/New/Clients').error).toBe('exists');
+  });
+
+  test('a repeated name inside one path is refused', () => {
+    expect(resolveFolderPath({}, {}, 'A/B/A').error).toBe('exists');
+  });
+
+  test('an existing name containing a slash is read as one level', () => {
+    expect(resolveFolderPath(folders, parents, 'a/b/c'))
+      .toEqual({ name: 'c', parent: 'a/b', chain: ['a/b'], created: ['c'], error: null });
   });
 });

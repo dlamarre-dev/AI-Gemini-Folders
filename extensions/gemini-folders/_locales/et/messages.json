@@ -126,7 +126,10 @@
     "message": "Selle nimega kaust on juba olemas."
   },
   "errorNestTooDeep": {
-    "message": "See kaust sisaldab juba alamkaustu. Toetatud on ainult üks pesastustase."
+    "message": "Alamkaustad võivad ulatuda kuni {n} taseme sügavusele."
+  },
+  "errorNestCycle": {
+    "message": "Kausta ei saa teisaldada mõnda tema enda alamkausta."
   },
   "storageCalc": {
     "message": "Arvutan ruumi..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "Mis on uut"
   },
-  "whatsNewPanelTitle": {
-    "message": "Nüüd külgpaneelil"
+  "whatsNewNestTitle": {
+    "message": "Alamkaustad mitmel tasemel"
   },
-  "whatsNewPanelBody": {
-    "message": "Kinnita laiendus brauseri külgpaneelile: see jääb vahekaartide vahetamisel avatuks ning kaustad ja viibad on alati käepärast. Ava see hüpikakna ülaosas oleva uue nupuga."
+  "whatsNewNestBody": {
+    "message": "Kaustu saab nüüd pesastada kuni 4 tasemeni. Lohistage kaust teise peale või klõpsake enne salvestamist kaustal, et salvestada otse sinna."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Stabiilsem külgpaneel"
+  },
+  "whatsNewScrollBody": {
+    "message": "Külgpaneelil jäävad otsing ja lisamisnupud üles ning jalus alla: kerivad ainult kaustad ja promptid."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Kergem välimus"
+  },
+  "whatsNewHoverBody": {
+    "message": "Kaustade, vestluste ja promptide kõrval olevad ikoonid ilmuvad nüüd, kui kursor nende kohal peatub, ja hääbuvad, kui see eemaldub."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klõps: kasuta viimast vahekaarti"

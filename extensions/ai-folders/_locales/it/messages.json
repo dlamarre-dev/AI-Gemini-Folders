@@ -123,7 +123,10 @@
     "message": "Esiste già una cartella con questo nome."
   },
   "errorNestTooDeep": {
-    "message": "Questa cartella contiene già sottocartelle. È supportato un solo livello di annidamento."
+    "message": "Le sottocartelle possono arrivare fino a {n} livelli di profondità."
+  },
+  "errorNestCycle": {
+    "message": "Una cartella non può essere spostata in una delle sue sottocartelle."
   },
   "storageCalc": {
     "message": "Calcolo spazio..."
@@ -347,11 +350,23 @@
   "whatsNewHeading": {
     "message": "Novità"
   },
-  "whatsNewPanelTitle": {
-    "message": "Ora nel pannello laterale"
+  "whatsNewNestTitle": {
+    "message": "Sottocartelle su più livelli"
   },
-  "whatsNewPanelBody": {
-    "message": "Aggancia l'estensione al pannello laterale del browser: resta aperta mentre cambi scheda, con cartelle e prompt sempre a portata di mano. Aprila con il nuovo pulsante in alto nel popup."
+  "whatsNewNestBody": {
+    "message": "Ora le cartelle si annidano fino a 4 livelli. Trascina una cartella su un'altra, oppure fai clic su una cartella prima di salvare per salvarci direttamente."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Un pannello laterale più stabile"
+  },
+  "whatsNewScrollBody": {
+    "message": "Nel pannello laterale, la ricerca e i pulsanti per aggiungere restano in alto e il piè di pagina in basso: scorrono solo le tue cartelle e i tuoi prompt."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Un'interfaccia più leggera"
+  },
+  "whatsNewHoverBody": {
+    "message": "Le icone accanto a cartelle, conversazioni e prompt ora compaiono quando il puntatore si sofferma su di esse e svaniscono quando si allontana."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: riutilizza l'ultima scheda"

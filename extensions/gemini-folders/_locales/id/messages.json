@@ -126,7 +126,10 @@
     "message": "Folder dengan nama ini sudah ada."
   },
   "errorNestTooDeep": {
-    "message": "Folder ini sudah berisi subfolder. Hanya satu tingkat penyarangan yang didukung."
+    "message": "Subfolder dapat bertingkat hingga {n} level."
+  },
+  "errorNestCycle": {
+    "message": "Folder tidak dapat dipindahkan ke dalam salah satu subfoldernya sendiri."
   },
   "storageCalc": {
     "message": "Menghitung ruang..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "Apa yang baru"
   },
-  "whatsNewPanelTitle": {
-    "message": "Kini di panel samping"
+  "whatsNewNestTitle": {
+    "message": "Subfolder bertingkat"
   },
-  "whatsNewPanelBody": {
-    "message": "Sematkan ekstensi di panel samping browser: tetap terbuka saat Anda berpindah tab, dengan folder dan prompt selalu siap digunakan. Buka dengan tombol baru di bagian atas popup."
+  "whatsNewNestBody": {
+    "message": "Folder kini dapat bertingkat hingga 4 level. Seret folder ke folder lain, atau klik folder sebelum menyimpan untuk menyimpan langsung ke dalamnya."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Panel samping yang lebih stabil"
+  },
+  "whatsNewScrollBody": {
+    "message": "Di panel samping, pencarian dan tombol tambah tetap di atas dan footer di bawah: hanya folder dan prompt Anda yang bergulir."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Tampilan yang lebih ringan"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikon di samping folder, percakapan, dan prompt kini muncul saat penunjuk berhenti di atasnya, dan memudar saat penunjuk menjauh."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: gunakan kembali tab terakhir"

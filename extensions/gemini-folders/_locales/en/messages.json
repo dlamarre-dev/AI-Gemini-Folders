@@ -126,7 +126,10 @@
     "message": "A folder with this name already exists."
   },
   "errorNestTooDeep": {
-    "message": "This folder already contains sub-folders. Only one level of nesting is supported."
+    "message": "Sub-folders can go up to {n} levels deep."
+  },
+  "errorNestCycle": {
+    "message": "A folder cannot be moved inside one of its own sub-folders."
   },
   "storageCalc": {
     "message": "Calculating space..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "What's new"
   },
-  "whatsNewPanelTitle": {
-    "message": "Now in the side panel"
+  "whatsNewNestTitle": {
+    "message": "Sub-folders, several levels deep"
   },
-  "whatsNewPanelBody": {
-    "message": "Dock the extension in your browser's side panel: it stays open while you switch tabs, with your folders and prompts always at hand. Open it with the new button at the top of the popup."
+  "whatsNewNestBody": {
+    "message": "Folders now nest up to 4 levels deep. Drag a folder onto another, or click a folder before saving to save straight into it."
+  },
+  "whatsNewScrollTitle": {
+    "message": "A steadier side panel"
+  },
+  "whatsNewScrollBody": {
+    "message": "In the side panel, search and the add buttons stay at the top and the footer at the bottom: only your folders and prompts scroll."
+  },
+  "whatsNewHoverTitle": {
+    "message": "A lighter look"
+  },
+  "whatsNewHoverBody": {
+    "message": "The icons beside folders, conversations and prompts now appear when your pointer rests on them, and fade away when it leaves."
   },
   "chatLinkReuseHint": {
     "message": "{k}-click: reuse the last tab"

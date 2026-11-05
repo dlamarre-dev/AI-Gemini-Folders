@@ -126,7 +126,10 @@
     "message": "Samanniminen kansio on jo olemassa."
   },
   "errorNestTooDeep": {
-    "message": "Tässä kansiossa on jo alikansioita. Vain yksi sisäkkäisyystaso on tuettu."
+    "message": "Alikansioita voi olla enintään {n} tasoa syvällä."
+  },
+  "errorNestCycle": {
+    "message": "Kansiota ei voi siirtää sen omaan alikansioon."
   },
   "storageCalc": {
     "message": "Lasketaan tilaa..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "Mitä uutta"
   },
-  "whatsNewPanelTitle": {
-    "message": "Nyt sivupaneelissa"
+  "whatsNewNestTitle": {
+    "message": "Alikansioita useammalla tasolla"
   },
-  "whatsNewPanelBody": {
-    "message": "Kiinnitä laajennus selaimen sivupaneeliin: se pysyy auki, kun vaihdat välilehteä, ja kansiot ja kehotteet ovat aina käden ulottuvilla. Avaa se ponnahdusikkunan yläreunan uudella painikkeella."
+  "whatsNewNestBody": {
+    "message": "Kansioita voi nyt sijoittaa sisäkkäin enintään 4 tasoon. Vedä kansio toisen päälle tai napsauta kansiota ennen tallennusta tallentaaksesi suoraan siihen."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Vakaampi sivupaneeli"
+  },
+  "whatsNewScrollBody": {
+    "message": "Sivupaneelissa haku ja lisäyspainikkeet pysyvät ylhäällä ja alatunniste alhaalla: vain kansiot ja promptit vierivät."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Kevyempi ulkoasu"
+  },
+  "whatsNewHoverBody": {
+    "message": "Kansioiden, keskustelujen ja promptien vieressä olevat kuvakkeet tulevat nyt näkyviin, kun osoitin viipyy niiden päällä, ja häipyvät, kun se siirtyy pois."
   },
   "chatLinkReuseHint": {
     "message": "{k} + napsautus: käytä viimeistä välilehteä uudelleen"

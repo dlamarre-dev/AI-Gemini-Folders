@@ -126,7 +126,10 @@
     "message": "Priečinok s týmto názvom už existuje."
   },
   "errorNestTooDeep": {
-    "message": "Tento priečinok už obsahuje podpriečinky. Podporovaná je len jedna úroveň vnorenia."
+    "message": "Podpriečinky môžu mať až {n} úrovne vnorenia."
+  },
+  "errorNestCycle": {
+    "message": "Priečinok nemožno presunúť do žiadneho z jeho vlastných podpriečinkov."
   },
   "storageCalc": {
     "message": "Výpočet miesta..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "Čo je nové"
   },
-  "whatsNewPanelTitle": {
-    "message": "Novinka: bočný panel"
+  "whatsNewNestTitle": {
+    "message": "Podpriečinky na viacerých úrovniach"
   },
-  "whatsNewPanelBody": {
-    "message": "Ukotvite rozšírenie v bočnom paneli prehliadača: zostane otvorené aj pri prepínaní kariet a priečinky aj prompty máte vždy poruke. Otvorte ho novým tlačidlom v hornej časti vyskakovacieho okna."
+  "whatsNewNestBody": {
+    "message": "Priečinky je teraz možné vnárať až do 4 úrovní. Presuňte priečinok na iný alebo pred uložením kliknite na priečinok a uložte priamo doň."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Stabilnejší bočný panel"
+  },
+  "whatsNewScrollBody": {
+    "message": "V bočnom paneli zostáva vyhľadávanie a tlačidlá na pridanie hore a päta dole: posúvajú sa len priečinky a prompty."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Odľahčený vzhľad"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikony vedľa priečinkov, konverzácií a promptov sa teraz zobrazia, keď sa nad nimi ukazovateľ zastaví, a zmiznú, keď z nich odíde."
   },
   "chatLinkReuseHint": {
     "message": "{k} + kliknutie: použiť poslednú kartu"

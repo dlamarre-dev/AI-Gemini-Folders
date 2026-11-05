@@ -123,7 +123,10 @@
     "message": "Já existe uma pasta com este nome."
   },
   "errorNestTooDeep": {
-    "message": "Esta pasta já contém subpastas. Só é suportado um nível de aninhamento."
+    "message": "As subpastas podem ter até {n} níveis de profundidade."
+  },
+  "errorNestCycle": {
+    "message": "Uma pasta não pode ser movida para dentro de uma das suas próprias subpastas."
   },
   "storageCalc": {
     "message": "A calcular espaço..."
@@ -347,11 +350,23 @@
   "whatsNewHeading": {
     "message": "Novidades"
   },
-  "whatsNewPanelTitle": {
-    "message": "Agora no painel lateral"
+  "whatsNewNestTitle": {
+    "message": "Subpastas em vários níveis"
   },
-  "whatsNewPanelBody": {
-    "message": "Fixe a extensão no painel lateral do browser: fica aberta enquanto muda de separador, com as suas pastas e prompts sempre à mão. Abra-a com o novo botão no topo da janela."
+  "whatsNewNestBody": {
+    "message": "Agora as pastas podem ser encaixadas até 4 níveis. Arraste uma pasta para outra, ou clique numa pasta antes de guardar para guardar diretamente nela."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Um painel lateral mais estável"
+  },
+  "whatsNewScrollBody": {
+    "message": "No painel lateral, a pesquisa e os botões de adicionar ficam no topo e o rodapé em baixo: só as suas pastas e os seus prompts deslocam."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Uma interface mais leve"
+  },
+  "whatsNewHoverBody": {
+    "message": "Os ícones ao lado de pastas, conversas e prompts aparecem agora quando o ponteiro se detém sobre eles e desvanecem quando se afasta."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clique: reutilizar o último separador"

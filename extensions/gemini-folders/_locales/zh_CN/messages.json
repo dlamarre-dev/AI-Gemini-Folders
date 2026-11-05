@@ -126,7 +126,10 @@
     "message": "该名称的文件夹已存在。"
   },
   "errorNestTooDeep": {
-    "message": "此文件夹已包含子文件夹。仅支持一级嵌套。"
+    "message": "子文件夹最多可嵌套 {n} 层。"
+  },
+  "errorNestCycle": {
+    "message": "不能将文件夹移入它自己的子文件夹中。"
   },
   "storageCalc": {
     "message": "计算空间中..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "新功能"
   },
-  "whatsNewPanelTitle": {
-    "message": "现已支持侧边栏"
+  "whatsNewNestTitle": {
+    "message": "多层子文件夹"
   },
-  "whatsNewPanelBody": {
-    "message": "将扩展固定在浏览器的侧边栏中：切换标签页时它保持打开，文件夹和提示词随时可用。点击弹出窗口顶部的新按钮即可打开。"
+  "whatsNewNestBody": {
+    "message": "文件夹现在最多可嵌套 4 层。将一个文件夹拖到另一个文件夹上，或在保存前点击某个文件夹即可直接保存到其中。"
+  },
+  "whatsNewScrollTitle": {
+    "message": "更稳定的侧边栏"
+  },
+  "whatsNewScrollBody": {
+    "message": "在侧边栏中，搜索框和添加按钮固定在顶部，页脚固定在底部：只有文件夹和提示词会滚动。"
+  },
+  "whatsNewHoverTitle": {
+    "message": "更清爽的界面"
+  },
+  "whatsNewHoverBody": {
+    "message": "文件夹、对话和提示词旁的图标现在会在指针停留时显示，移开后渐渐隐去。"
   },
   "chatLinkReuseHint": {
     "message": "{k} + 点击：复用上一个标签页"

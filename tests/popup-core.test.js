@@ -137,7 +137,7 @@ describe('initSaveConversation', () => {
     global.saveData = jest.fn((data, cb) => { savedFolders = data.folders; savedParents = data.folderParents; cb && cb(); });
     // Nesting helpers are globals from utils.js in the browser.
     const utils = require('../src/utils');
-    for (const name of ['resolveFolderPath', 'withFolderParent', 'pruneFolderParents', 'folderOpenPath', 'getFolderParent']) {
+    for (const name of ['resolveFolderPath', 'withFolderParent', 'pruneFolderParents', 'folderOpenPath', 'getFolderParent', 'getFolderAncestors', 'MAX_FOLDER_DEPTH']) {
       global[name] = utils[name];
     }
   });
@@ -208,18 +208,39 @@ describe('initSaveConversation', () => {
     expect(savedParents).toBeUndefined();   // a plain save must not rewrite the nesting
   });
 
-  test('refuses a second level instead of creating one', async () => {
+  test('creates every missing level of a deeper path', async () => {
     chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
     global.loadData = jest.fn((defaults, cb) =>
       cb({ folders: { Work: [], Clients: [] }, folderParents: { Clients: 'Work' } }));
     wire(() => 'claude');
 
-    document.getElementById('folderName').value = 'Clients/Deeper';
+    document.getElementById('folderName').value = 'Clients/Acme/2026';
     document.getElementById('saveBtn').click();
     await flush();
 
-    expect(global.saveData).not.toHaveBeenCalled();
-    expect(document.getElementById('status').textContent).toBe('errorNestTooDeep');
+    const saved = global.saveData.mock.calls[0][0];
+    expect(saved.folderParents).toEqual({ Clients: 'Work', Acme: 'Clients', '2026': 'Acme' });
+    expect(saved.folders['2026']).toHaveLength(1);
+    expect(window.displayFolders).toHaveBeenCalledWith(['Work', 'Clients', 'Acme', '2026']);
+  });
+
+  test('refuses a fifth level, naming the limit', async () => {
+    chrome.tabs.query = jest.fn().mockResolvedValue([{ url: 'https://claude.ai/chat/1' }]);
+    global.loadData = jest.fn((defaults, cb) =>
+      cb({ folders: { Work: [], Clients: [] }, folderParents: { Clients: 'Work' } }));
+    const realGetMessage = chrome.i18n.getMessage;
+    chrome.i18n.getMessage = jest.fn((key) => key === 'errorNestTooDeep' ? 'Max {n}' : key);
+    try {
+      wire(() => 'claude');
+      document.getElementById('folderName').value = 'Clients/X/Y/Z';
+      document.getElementById('saveBtn').click();
+      await flush();
+
+      expect(global.saveData).not.toHaveBeenCalled();
+      expect(document.getElementById('status').textContent).toBe('Max 4');
+    } finally {
+      chrome.i18n.getMessage = realGetMessage;
+    }
   });
 
   test('alerts and does not save on an unsupported site', async () => {
@@ -592,6 +613,18 @@ describe('initPopupCommon first render', () => {
     document.getElementById('modePromptBtn').click();
     document.getElementById('modeFolderBtn').click();
     expect(window.displayFolders).toHaveBeenCalledTimes(1);
+  });
+
+  // The side panel lays the shown container out from popup.css (#119); an
+  // inline 'block' would override that, so showing one only clears 'none'.
+  test('switching modes hides with an inline none and shows with no inline display', () => {
+    boot('folder');
+    const folder = document.getElementById('folderModeContainer');
+    const prompt = document.getElementById('promptModeContainer');
+    document.getElementById('modePromptBtn').click();
+    expect([folder.style.display, prompt.style.display]).toEqual(['none', '']);
+    document.getElementById('modeFolderBtn').click();
+    expect([folder.style.display, prompt.style.display]).toEqual(['', 'none']);
   });
 
   // An import or a save made while Prompt mode shows renders the folders

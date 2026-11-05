@@ -126,7 +126,10 @@
     "message": "Folder s ovim nazivom već postoji."
   },
   "errorNestTooDeep": {
-    "message": "Ova fascikla već sadrži podfascikle. Podržan je samo jedan nivo ugnežđivanja."
+    "message": "Podfascikle mogu ići do {n} nivoa dubine."
+  },
+  "errorNestCycle": {
+    "message": "Fascikla ne može da se premesti u neku od sopstvenih podfascikli."
   },
   "storageCalc": {
     "message": "Izračunavanje prostora..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "Šta je novo"
   },
-  "whatsNewPanelTitle": {
-    "message": "Sada u bočnoj tabli"
+  "whatsNewNestTitle": {
+    "message": "Podfascikle na više nivoa"
   },
-  "whatsNewPanelBody": {
-    "message": "Zakačite proširenje u bočnu tablu pregledača: ostaje otvoreno dok menjate kartice, a fascikle i promptovi su vam uvek pri ruci. Otvorite ga novim dugmetom na vrhu iskačućeg prozora."
+  "whatsNewNestBody": {
+    "message": "Fascikle sada mogu da se ugnežđuju do 4 nivoa. Prevucite fasciklu na drugu ili kliknite na fasciklu pre čuvanja da biste sačuvali direktno u nju."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Stabilnija bočna tabla"
+  },
+  "whatsNewScrollBody": {
+    "message": "U bočnoj tabli pretraga i dugmad za dodavanje ostaju na vrhu, a podnožje na dnu: pomeraju se samo fascikle i promptovi."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Lakši izgled"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikone pored fascikli, razgovora i promptova sada se pojavljuju kada se pokazivač zadrži na njima i nestaju kada se udalji."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: ponovo koristi poslednju karticu"

@@ -602,13 +602,19 @@ describe('mergeImportData', () => {
     expect(savedParents()).toEqual({});
   });
 
-  test('refuses a backup that would create a second level or a cycle', async () => {
+  test('imports a deep chain in any order, and refuses a fifth level or a cycle', async () => {
     const chat = (u) => [{ title: 'c', url: `https://gemini.google.com/app/${u}`, timestamp: 1 }];
     await mergeImportData({
-      folders: { A: chat('a'), B: chat('b'), C: chat('c'), D: chat('d') },
-      folderParents: { B: 'A', C: 'B', D: 'D' },
+      folders: { A: chat('a'), B: chat('b'), C: chat('c'), D: chat('d'), E: chat('e'), S: chat('s'), X: chat('x'), Y: chat('y') },
+      // Children listed before their parents on purpose; E would be level 5.
+      folderParents: { E: 'D', D: 'C', C: 'B', B: 'A', S: 'S', X: 'Y', Y: 'X' },
     });
-    expect(savedParents()).toEqual({ B: 'A' });
+    const parents = savedParents();
+    expect(parents).toMatchObject({ B: 'A', C: 'B', D: 'C' });
+    expect(parents.E).toBeUndefined();
+    expect(parents.S).toBeUndefined();
+    // One half of the X/Y pair may land; never both.
+    expect(parents.X && parents.Y).toBeFalsy();
   });
 
   test('a local placement wins over the backup', async () => {

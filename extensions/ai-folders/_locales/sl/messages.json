@@ -123,7 +123,10 @@
     "message": "Mapa s tem imenom že obstaja."
   },
   "errorNestTooDeep": {
-    "message": "Ta mapa že vsebuje podmape. Podprta je samo ena raven gnezdenja."
+    "message": "Podmape so lahko globoke do {n} ravni."
+  },
+  "errorNestCycle": {
+    "message": "Mape ni mogoče premakniti v eno od njenih lastnih podmap."
   },
   "storageCalc": {
     "message": "Izračunavanje prostora..."
@@ -347,11 +350,23 @@
   "whatsNewHeading": {
     "message": "Kaj je novega"
   },
-  "whatsNewPanelTitle": {
-    "message": "Zdaj v stranski plošči"
+  "whatsNewNestTitle": {
+    "message": "Podmape na več ravneh"
   },
-  "whatsNewPanelBody": {
-    "message": "Zasidrajte razširitev v stransko ploščo brskalnika: ostane odprta, ko preklapljate med zavihki, mape in pozivi pa so vedno pri roki. Odprite jo z novim gumbom na vrhu pojavnega okna."
+  "whatsNewNestBody": {
+    "message": "Mape je zdaj mogoče gnezditi do 4 ravni. Povlecite mapo na drugo ali pred shranjevanjem kliknite mapo, da shranite neposredno vanjo."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Stabilnejša stranska plošča"
+  },
+  "whatsNewScrollBody": {
+    "message": "V stranski plošči iskanje in gumbi za dodajanje ostanejo zgoraj, noga pa spodaj: pomikajo se le mape in pozivi."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Lažji videz"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikone ob mapah, pogovorih in pozivih se zdaj prikažejo, ko se kazalec ustavi na njih, in zbledijo, ko se odmakne."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klik: znova uporabi zadnji zavihek"

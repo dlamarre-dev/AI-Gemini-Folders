@@ -11,17 +11,26 @@
 const TEXT = {
   nTitle: 'appTitle',            // reused: no new key for the product name
   nHeading: 'whatsNewHeading',
-  nPanelTitle: 'whatsNewPanelTitle',
-  nPanelBody: 'whatsNewPanelBody',
+  nNestTitle: 'whatsNewNestTitle',
+  nNestBody: 'whatsNewNestBody',
+  nScrollTitle: 'whatsNewScrollTitle',
+  nScrollBody: 'whatsNewScrollBody',
+  nHoverTitle: 'whatsNewHoverTitle',
+  nHoverBody: 'whatsNewHoverBody',
   nCta: 'welcomeCta',            // reused: the same "Got it" button
 };
 
 const FALLBACK = {
   whatsNewHeading: "What's new",
-  whatsNewPanelTitle: 'Now in the side panel',
-  whatsNewPanelBody: "Dock the extension in your browser's side panel: it stays open while "
-    + 'you switch tabs, with your folders and prompts always at hand. Open it with the new '
-    + 'button at the top of the popup.',
+  whatsNewNestTitle: 'Sub-folders, several levels deep',
+  whatsNewNestBody: 'Folders now nest up to 4 levels deep. Drag a folder onto another, '
+    + 'or click a folder before saving to save straight into it.',
+  whatsNewScrollTitle: 'A steadier side panel',
+  whatsNewScrollBody: 'In the side panel, search and the add buttons stay at the top and the '
+    + 'footer at the bottom: only your folders and prompts scroll.',
+  whatsNewHoverTitle: 'A lighter look',
+  whatsNewHoverBody: 'The icons beside folders, conversations and prompts now appear when your '
+    + 'pointer rests on them, and fade away when it leaves.',
   welcomeCta: 'Got it',
 };
 

@@ -123,7 +123,10 @@
     "message": "Ja existeix una carpeta amb aquest nom."
   },
   "errorNestTooDeep": {
-    "message": "Aquesta carpeta ja conté subcarpetes. Només s'admet un nivell d'imbricació."
+    "message": "Les subcarpetes poden arribar fins a {n} nivells de profunditat."
+  },
+  "errorNestCycle": {
+    "message": "Una carpeta no es pot moure dins d'una de les seves pròpies subcarpetes."
   },
   "storageCalc": {
     "message": "Calculant espai..."
@@ -347,11 +350,23 @@
   "whatsNewHeading": {
     "message": "Novetats"
   },
-  "whatsNewPanelTitle": {
-    "message": "Ara al plafó lateral"
+  "whatsNewNestTitle": {
+    "message": "Subcarpetes de diversos nivells"
   },
-  "whatsNewPanelBody": {
-    "message": "Fixa l'extensió al plafó lateral del navegador: es queda oberta mentre canvies de pestanya, amb les carpetes i els prompts sempre a mà. Obre-la amb el nou botó de la part superior de la finestra emergent."
+  "whatsNewNestBody": {
+    "message": "Ara les carpetes es poden imbricar fins a 4 nivells. Arrossegueu una carpeta sobre una altra, o feu clic en una carpeta abans de desar per desar-hi directament."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Un plafó lateral més estable"
+  },
+  "whatsNewScrollBody": {
+    "message": "Al plafó lateral, la cerca i els botons per afegir es queden a dalt i el peu a baix: només es desplacen les carpetes i els prompts."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Una interfície més lleugera"
+  },
+  "whatsNewHoverBody": {
+    "message": "Les icones al costat de les carpetes, les converses i els prompts ara apareixen quan el punter s'hi atura i s'esvaeixen quan se n'allunya."
   },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilitza la darrera pestanya"

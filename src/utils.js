@@ -91,7 +91,7 @@ function sortChats(chats, sortPref) {
 }
 
 // ---------------------------------------------------------------------------
-// Folder nesting — ONE level (root → sub-folder), stored in `folderParents`
+// Folder nesting — up to MAX_FOLDER_DEPTH levels, stored in `folderParents`
 // ---------------------------------------------------------------------------
 //
 // `folderParents` is a plain sync key, sibling of `pinnedFolders`:
@@ -104,34 +104,71 @@ function sortChats(chats, sortPref) {
 // pinnedFolders, so old installs and old backups need no conversion.
 //
 // Child→parent rather than parent→children: a parent→children map can express
-// "this folder has two parents", a child→parent map cannot.
+// "this folder has two parents", a child→parent map cannot. The same map held a
+// one-level tree until 1.9.0 / 4.8.0; going deeper needed no migration at all.
 //
 // Nesting never touches `pinnedFolders`. A pinned folder dragged into another
 // keeps its pin dormant (the pin button is not rendered on a sub-folder, and
 // children are sorted with no pin list) and gets it back the moment it returns
 // to the top level. That is a requirement, and it holds by doing nothing.
 
-// Does this folder carry a usable parent entry? Non-recursive on purpose: with a
-// corrupt a→b/b→a pair, recursion would never terminate. Here both folders
-// simply read as nested-under-something and getFolderParent sends both back to
-// the root level, which is visible and repairable by the user.
+// Levels in total, the top level included: root + 3 levels of sub-folders. The
+// popup is 392px wide and each level indents 12px, and the right-click menu
+// becomes one submenu per level — four is where both stay usable. Every walk
+// below is bounded by this, so a corrupt or foreign map can never loop.
+const MAX_FOLDER_DEPTH = 4;
+
+// Does this folder carry a usable parent entry? Says nothing about the parent's
+// own placement — getFolderParent walks the rest.
 function hasParentEntry(folders, folderParents, name) {
   if (!folderParents || !hasEntry(folderParents, name)) return false;
   const parent = folderParents[name];
   return typeof parent === 'string' && parent !== name && hasEntry(folders, parent);
 }
 
+// The raw chain above `name`, nearest parent first, or null when it cannot be
+// honoured: a CYCLE (a→b, b→a — only a corrupt map or a cross-device race makes
+// one) or a chain DEEPER than this version allows (written by a future version
+// with a higher cap). Both cases send the folder back to the top level, which is
+// visible and repairable by the user, rather than looping or rendering a level
+// the UI was not built for. Iterative and capped, never recursive.
+function rawAncestors(folders, folderParents, name) {
+  const chain = [];
+  const seen = new Set([name]);
+  let current = name;
+  while (hasParentEntry(folders, folderParents, current)) {
+    const parent = folderParents[current];
+    if (seen.has(parent)) return null;
+    if (chain.length + 1 >= MAX_FOLDER_DEPTH) return null;
+    seen.add(parent);
+    chain.push(parent);
+    current = parent;
+  }
+  return chain;
+}
+
 // The folder's parent, or null when it is (or must be treated as) a root folder.
 // Returns null for an ORPHAN — a recorded parent that no longer exists — without
 // deleting anything: a read must not write, and the parent may come back from
 // another device on the next sync, which should restore the nesting.
+//
+// A folder is only nested if its WHOLE chain holds: if the parent itself cannot
+// be placed (cycle, over-deep), neither can the child, so a broken chain drops
+// to the top level in one piece instead of half-rendering.
 function getFolderParent(folders, folderParents, name) {
-  if (!hasParentEntry(folders, folderParents, name)) return null;
-  const parent = folderParents[name];
-  // The parent is itself nested: honouring this would be depth 2. Drop the
-  // grandchild to the top level rather than silently rendering a third level.
-  if (hasParentEntry(folders, folderParents, parent)) return null;
-  return parent;
+  const chain = rawAncestors(folders, folderParents, name);
+  return chain && chain.length > 0 ? chain[0] : null;
+}
+
+// Ancestors from the top level down, `name` excluded. [] for a root folder.
+function getFolderAncestors(folders, folderParents, name) {
+  const chain = rawAncestors(folders, folderParents, name);
+  return chain ? chain.reverse() : [];
+}
+
+// 1 for a root folder, MAX_FOLDER_DEPTH at the deepest level.
+function getFolderDepth(folders, folderParents, name) {
+  return getFolderAncestors(folders, folderParents, name).length + 1;
 }
 
 function getChildFolders(folders, folderParents, name) {
@@ -144,9 +181,37 @@ function getRootFolderNames(folders, folderParents) {
   return Object.keys(folders).filter(n => getFolderParent(folders, folderParents, n) === null);
 }
 
-// The folder plus its children — what a delete must remove, in one list.
+// Every folder below `name`, parents before their children. Bounded twice: by
+// getFolderParent (no cycle survives it) and by the depth cap.
+function getDescendantNames(folders, folderParents, name) {
+  const out = [];
+  let level = [name];
+  for (let d = 1; d < MAX_FOLDER_DEPTH && level.length > 0; d++) {
+    const next = [];
+    for (const n of level) next.push(...getChildFolders(folders, folderParents, n));
+    out.push(...next);
+    level = next;
+  }
+  return out;
+}
+
+// 1 for a folder with no sub-folders, 2 when it has children, and so on.
+function getSubtreeHeight(folders, folderParents, name) {
+  let height = 1;
+  let level = [name];
+  while (height < MAX_FOLDER_DEPTH) {
+    const next = [];
+    for (const n of level) next.push(...getChildFolders(folders, folderParents, n));
+    if (next.length === 0) break;
+    height++;
+    level = next;
+  }
+  return height;
+}
+
+// The folder plus every folder below it — what a delete must remove, in one list.
 function folderSubtreeNames(folders, folderParents, name) {
-  return [name, ...getChildFolders(folders, folderParents, name)];
+  return [name, ...getDescendantNames(folders, folderParents, name)];
 }
 
 // A shallow { name: chats } view of a subset, so the existing sortFolderNames can
@@ -157,22 +222,29 @@ function pickFolders(folders, names) {
   return subset;
 }
 
-// Children in display order. The pin list is deliberately NOT passed: a dormant
-// pin on a nested folder must not reorder its siblings.
-function sortedChildFolders(folders, folderParents, name, sortPref) {
-  return sortFolderNames(pickFolders(folders, getChildFolders(folders, folderParents, name)), [], sortPref);
-}
-
-// Every conversation under a folder: its own first, then each child's, each set
-// sorted by the current preference. Used by the tab-group button and by the root
-// sort below.
+// Every conversation under a folder: its own first, then each child's subtree,
+// in display order, each folder's set sorted by the current preference. Used by
+// the tab-group button and by the sorts below.
 function flattenFolderChats(folders, folderParents, name, sortPref) {
   const own = Array.isArray(folders[name]) ? sortChats(folders[name], sortPref) : [];
   const out = [...own];
   for (const child of sortedChildFolders(folders, folderParents, name, sortPref)) {
-    if (Array.isArray(folders[child])) out.push(...sortChats(folders[child], sortPref));
+    out.push(...flattenFolderChats(folders, folderParents, child, sortPref));
   }
   return out;
+}
+
+// Children in display order, each ranked on its WHOLE subtree (like the roots),
+// so a sub-folder whose only recent activity is deeper down still sorts as
+// recent. The pin list is deliberately NOT passed: a dormant pin on a nested
+// folder must not reorder its siblings. Recursion ends at the depth cap, because
+// a folder at the last level has no children by getFolderParent's construction.
+function sortedChildFolders(folders, folderParents, name, sortPref) {
+  const view = {};
+  for (const child of getChildFolders(folders, folderParents, name)) {
+    view[child] = flattenFolderChats(folders, folderParents, child, sortPref);
+  }
+  return sortFolderNames(view, [], sortPref);
 }
 
 // Root folders in display order. Each root is ranked on its WHOLE subtree, so a
@@ -187,17 +259,20 @@ function sortedRootFolders(folders, folderParents, pinnedFolders, sortPref) {
 }
 
 // May `child` be dropped into `parent`? Returns { ok: true } or a reason the
-// caller turns into a message: 'missing' | 'self' | 'depth' | 'already'.
+// caller turns into a message: 'missing' | 'self' | 'cycle' | 'depth' | 'already'.
 function canNestFolder(folders, folderParents, child, parent) {
   if (typeof child !== 'string' || typeof parent !== 'string') return { ok: false, reason: 'missing' };
   if (child === parent) return { ok: false, reason: 'self' };
   if (isUnsafeKey(child) || isUnsafeKey(parent)) return { ok: false, reason: 'missing' };
   if (!hasEntry(folders, child) || !hasEntry(folders, parent)) return { ok: false, reason: 'missing' };
-  // Only one level: the target must be a root folder, and the dragged folder
-  // must not already be a parent itself.
-  if (getFolderParent(folders, folderParents, parent) !== null) return { ok: false, reason: 'depth' };
-  if (getChildFolders(folders, folderParents, child).length > 0) return { ok: false, reason: 'depth' };
   if (getFolderParent(folders, folderParents, child) === parent) return { ok: false, reason: 'already' };
+  // Into one of its own descendants: the map would hold a cycle.
+  if (getFolderAncestors(folders, folderParents, parent).includes(child)) return { ok: false, reason: 'cycle' };
+  // The dragged folder brings its whole subtree along, so it is the subtree's
+  // height that has to fit under the target, not just the folder.
+  if (getFolderDepth(folders, folderParents, parent) + getSubtreeHeight(folders, folderParents, child) > MAX_FOLDER_DEPTH) {
+    return { ok: false, reason: 'depth' };
+  }
   return { ok: true };
 }
 
@@ -211,9 +286,10 @@ function withFolderParent(folderParents, child, parent) {
   return next;
 }
 
-// Self-healing copy: drops orphans, self-references and depth-2 entries. Run it
-// before every save that carries folderParents, so a parent deleted on another
-// device cannot leave the map growing forever.
+// Self-healing copy: keeps exactly the entries getFolderParent honours, so
+// orphans, self-references, cycles and over-deep chains go. Run it before every
+// save that carries folderParents, so a parent deleted on another device cannot
+// leave the map growing forever.
 function pruneFolderParents(folders, folderParents) {
   const next = {};
   for (const child of Object.keys(folderParents || {})) {
@@ -224,79 +300,105 @@ function pruneFolderParents(folders, folderParents) {
   return next;
 }
 
-// "Parent/Child" for the folder-name box, or just the name at the top level.
-// Raw names on both sides (emoji prefixes included) so the value round-trips
-// through resolveFolderPath — the input already carries the raw name today.
+// "A/B/C" for the folder-name box, or just the name at the top level. Raw names
+// (emoji prefixes included) so the value round-trips through resolveFolderPath.
+// This is also why typing a deep path is optional: clicking a folder's header
+// fills the box with exactly this.
 function folderDisplayPath(folders, folderParents, name) {
-  const parent = getFolderParent(folders, folderParents, name);
-  return parent ? `${parent}/${name}` : name;
+  return [...getFolderAncestors(folders, folderParents, name), name].join('/');
 }
 
 // Which folders must be expanded for `name` to be visible after a re-render.
 function folderOpenPath(folders, folderParents, name) {
-  const parent = getFolderParent(folders, folderParents, name);
-  return parent ? [parent, name] : [name];
+  return [...getFolderAncestors(folders, folderParents, name), name];
 }
 
 // What the folder-name box means. Returns
-//   { name, parent, created: string[], error: null | 'nestTooDeep' | 'exists' }
+//   { name, parent, chain, created: string[], error: null | 'nestTooDeep' | 'exists' }
 // with name === null when the caller should fall back to its own default.
+// `chain` is every folder above `name`, top level first; `parent` is its last.
 //
 // Rule 1 is load-bearing: an existing folder literally named "a/b" must keep
-// working, so an exact match always beats the path interpretation. Every cut
-// point is tried, not just the first, so a name containing a slash on either
-// side still resolves.
+// working, so an exact match always beats the path interpretation. Past that,
+// the text is read left to right, and at each step the LONGEST existing folder
+// that fits (its name may itself contain a slash) wins over a shorter cut — the
+// multi-level form of "every cut point is tried".
 function resolveFolderPath(folders, folderParents, typed) {
   const value = (typed || '').trim();
-  const empty = { name: null, parent: null, created: [], error: null };
+  const empty = { name: null, parent: null, chain: [], created: [], error: null };
   if (!value) return empty;
 
   if (hasEntry(folders, value)) {
-    return { name: value, parent: getFolderParent(folders, folderParents, value), created: [], error: null };
+    const chain = getFolderAncestors(folders, folderParents, value);
+    return { name: value, parent: chain.length ? chain[chain.length - 1] : null, chain, created: [], error: null };
+  }
+  if (!value.includes('/')) {
+    return { name: value, parent: null, chain: [], created: [value], error: null };
   }
 
+  // Slash positions, so a segment can be any run between two of them.
   const cuts = [];
-  for (let i = value.indexOf('/'); i !== -1; i = value.indexOf('/', i + 1)) {
-    const left = value.slice(0, i).trim();
-    const right = value.slice(i + 1).trim();
-    if (!left || !right || isUnsafeKey(left) || isUnsafeKey(right)) continue;
-    cuts.push({ left, right });
+  for (let i = value.indexOf('/'); i !== -1; i = value.indexOf('/', i + 1)) cuts.push(i);
+  const ends = [...cuts, value.length];
+
+  const segments = [];
+  let start = 0;
+  let parent = null;
+  let creating = false;   // once a segment is new, everything after it is new too
+  while (start < value.length) {
+    let picked = null;
+    if (!creating) {
+      // Longest existing folder starting here that sits under `parent`. The
+      // FIRST segment may be any existing folder, wherever it is: "Notes/Ideas"
+      // then means "a new Ideas inside Notes" even when Notes is itself nested,
+      // so a deep save never needs the whole path typed out.
+      for (let k = ends.length - 1; k >= 0; k--) {
+        if (ends[k] <= start) continue;
+        const candidate = value.slice(start, ends[k]).trim();
+        if (candidate && !isUnsafeKey(candidate) && hasEntry(folders, candidate)
+            && (segments.length === 0 || getFolderParent(folders, folderParents, candidate) === parent)) {
+          picked = { name: candidate, end: ends[k] };
+          break;
+        }
+      }
+    }
+    if (!picked) {
+      const end = ends.find(e => e > start);
+      const name = value.slice(start, end).trim();
+      // "a//b", a leading or trailing slash: not a path the user meant.
+      if (!name || isUnsafeKey(name)) {
+        return { name: value, parent: null, chain: [], created: [value], error: null };
+      }
+      // The name is taken somewhere else in the tree — refuse rather than
+      // silently re-parenting a folder the user did not drag.
+      if (hasEntry(folders, name)) return { ...empty, error: 'exists' };
+      creating = true;
+      picked = { name, end };
+    }
+    segments.push(picked.name);
+    parent = picked.name;
+    start = picked.end + 1;
   }
 
-  // An existing pair wins over creating anything.
-  for (const { left, right } of cuts) {
-    if (hasEntry(folders, left) && hasEntry(folders, right)
-        && getFolderParent(folders, folderParents, right) === left) {
-      return { name: right, parent: left, created: [], error: null };
-    }
-  }
+  // Whatever sits above the first segment comes along with it.
+  const above = getFolderAncestors(folders, folderParents, segments[0]);
+  if (above.length + segments.length > MAX_FOLDER_DEPTH) return { ...empty, error: 'nestTooDeep' };
+  if (new Set([...above, ...segments]).size !== above.length + segments.length) return { ...empty, error: 'exists' };
 
-  if (cuts.length > 0) {
-    const { left, right } = cuts[0];
-    if (getFolderParent(folders, folderParents, left) !== null) {
-      return { name: null, parent: null, created: [], error: 'nestTooDeep' };
-    }
-    // The child name is taken somewhere else — refuse rather than silently
-    // re-parenting a folder the user did not drag.
-    if (hasEntry(folders, right)) {
-      return { name: null, parent: null, created: [], error: 'exists' };
-    }
-    const created = [];
-    if (!hasEntry(folders, left)) created.push(left);
-    created.push(right);
-    return { name: right, parent: left, created, error: null };
-  }
-
-  return { name: value, parent: null, created: hasEntry(folders, value) ? [] : [value], error: null };
+  const name = segments[segments.length - 1];
+  const chain = [...above, ...segments.slice(0, -1)];
+  const created = segments.filter(n => !hasEntry(folders, n));
+  return { name, parent: chain.length ? chain[chain.length - 1] : null, chain, created, error: null };
 }
 
 // What a search term makes visible for one folder — computed without the DOM so
 // it can be unit-tested. `show` false means the folder is filtered out entirely;
-// `showAllChats` means the folder itself matched, so all of its conversations
-// stay visible (the pre-existing behaviour for a name match).
+// `showAllChats` means the folder itself (or one above it) matched, so all of its
+// conversations stay visible (the pre-existing behaviour for a name match).
 //
-// A root must also surface when only a CHILD matches: the parent is filtered
-// first, so without that clause a matching sub-folder would be unreachable.
+// A folder must also surface when only something BELOW it matches: the parent is
+// filtered first, so without that clause a matching sub-folder would be
+// unreachable — at any depth.
 function folderSearchState(folders, folderParents, name, term) {
   const needle = (term || '').toLowerCase();
   if (!needle) return { show: true, showAllChats: true };
@@ -305,29 +407,27 @@ function folderSearchState(folders, folderParents, name, term) {
   const chatMatches = (n) => Array.isArray(folders[n])
     && folders[n].some(c => (c.title || '').toLowerCase().includes(needle));
 
-  const parent = getFolderParent(folders, folderParents, name);
+  const viaAncestor = getFolderAncestors(folders, folderParents, name).some(nameMatches);
   const self = nameMatches(name);
-
-  if (parent) {
-    const viaParent = nameMatches(parent);
-    return { show: viaParent || self || chatMatches(name), showAllChats: viaParent || self };
-  }
-
-  const viaChild = getChildFolders(folders, folderParents, name)
-    .some(child => nameMatches(child) || chatMatches(child));
-  return { show: self || chatMatches(name) || viaChild, showAllChats: self };
+  const viaDescendant = getDescendantNames(folders, folderParents, name)
+    .some(n => nameMatches(n) || chatMatches(n));
+  return {
+    show: viaAncestor || self || chatMatches(name) || viaDescendant,
+    showAllChats: viaAncestor || self,
+  };
 }
 
-// The two-level context menu, as data. Both background.js build their menu from
-// this so the two copies (deliberately unshared, CLAUDE.md §6) cannot drift, and
-// so the shape is unit-testable — there is no test suite for background.js.
+// The right-click menu, as data. Both background.js build their menu from this
+// so the two copies (deliberately unshared, CLAUDE.md §6) cannot drift, and so
+// the shape is unit-testable — there is no test suite for background.js.
 //
-// A contextMenus item that has children is not clickable itself, hence the
-// explicit "save here" entry under a parent. Ids stay `folder_<name>` at BOTH
-// levels: folder names are unique keys of one flat object, so the id already
-// identifies the target unambiguously and survives a service-worker restart.
-// Only the submenu containers take a `sub_` prefix, which the click handler
-// never accepts as a save target.
+// It follows the tree: a folder with sub-folders becomes a submenu. A
+// contextMenus item that has children is not clickable itself, hence the
+// explicit "save here" entry at the top of each submenu. Ids stay
+// `folder_<name>` at EVERY level: folder names are unique keys of one flat
+// object, so the id already identifies the target unambiguously and survives a
+// service-worker restart. Only the submenu containers take a `sub_` prefix,
+// which the click handler never accepts as a save target.
 function buildContextMenuModel(folders, folderParents, opts = {}) {
   const rootId = opts.rootId;
   const saveHereTitle = opts.saveHereTitle || '';
@@ -337,20 +437,19 @@ function buildContextMenuModel(folders, folderParents, opts = {}) {
   };
 
   const items = [];
-  for (const root of getRootFolderNames(folders, folderParents).sort()) {
-    const children = getChildFolders(folders, folderParents, root).sort();
+  const add = (name, parentId) => {
+    const children = getChildFolders(folders, folderParents, name).sort();
     if (children.length === 0) {
-      items.push({ id: `folder_${root}`, parentId: rootId, title: label(root) });
-      continue;
+      items.push({ id: `folder_${name}`, parentId, title: label(name) });
+      return;
     }
-    const subId = `sub_${root}`;
-    items.push({ id: subId, parentId: rootId, title: label(root) });
-    items.push({ id: `folder_${root}`, parentId: subId, title: saveHereTitle });
-    items.push({ id: `sep_${root}`, parentId: subId, type: 'separator' });
-    for (const child of children) {
-      items.push({ id: `folder_${child}`, parentId: subId, title: label(child) });
-    }
-  }
+    const subId = `sub_${name}`;
+    items.push({ id: subId, parentId, title: label(name) });
+    items.push({ id: `folder_${name}`, parentId: subId, title: saveHereTitle });
+    items.push({ id: `sep_${name}`, parentId: subId, type: 'separator' });
+    for (const child of children) add(child, subId);
+  };
+  for (const root of getRootFolderNames(folders, folderParents).sort()) add(root, rootId);
   return items;
 }
 
@@ -931,17 +1030,20 @@ async function syncToBookmarksTree(folders, pinnedFolders = [], sortPref = 'date
       return { folderNode, nextIndex: childIndex };
     };
 
-    const finalOrder = sortedRootFolders(folders, folderParents, pinnedFolders, sortPref);
-    for (let i = 0; i < finalOrder.length; i++) {
-      const folderName = finalOrder[i];
-      const { folderNode, nextIndex } = await createFolderNode(masterNode.id, folderName, i);
-
-      // Sub-folders continue the parent's index sequence, so they land after its
-      // conversations rather than being interleaved with them.
+    // Sub-folders continue the parent's index sequence, so they land after its
+    // conversations rather than being interleaved with them — at every level.
+    // The recursion is bounded: sortedChildFolders of a folder at the last
+    // level is empty by getFolderParent's construction.
+    const createSubtree = async (parentNodeId, folderName, index) => {
+      const { folderNode, nextIndex } = await createFolderNode(parentNodeId, folderName, index);
       let subIndex = nextIndex;
       for (const child of sortedChildFolders(folders, folderParents, folderName, sortPref)) {
-        await createFolderNode(folderNode.id, child, subIndex++);
+        await createSubtree(folderNode.id, child, subIndex++);
       }
+    };
+    const finalOrder = sortedRootFolders(folders, folderParents, pinnedFolders, sortPref);
+    for (let i = 0; i < finalOrder.length; i++) {
+      await createSubtree(masterNode.id, finalOrder[i], i);
     }
 
     // 6. Settle on exactly one master folder. The popup and the service worker
@@ -1189,10 +1291,25 @@ function mergeImportData(importedData) {
       }
 
       // 4. Merge the nesting, AFTER the folders so both ends can be checked
-      //    against the merged result. An entry is taken only when it is safe on
+      //    against the merged result. Top-down, by each entry's depth in the
+      //    backup: attached bottom-up, a level the cap must refuse would be
+      //    accepted first (its pieces still short) and then block a valid level
+      //    above it — the wrong one would go. An entry is taken only when it is safe on
       //    its own terms; a folder that already has a local placement keeps it,
       //    the same "existing entry wins" policy the prompt merge uses.
-      for (const [child, parent] of Object.entries(parentsToImport)) {
+      const importDepth = (name) => {
+        let depth = 0;
+        const seen = new Set([name]);
+        for (let n = name; hasEntry(parentsToImport, n) && depth <= MAX_FOLDER_DEPTH; depth++) {
+          n = parentsToImport[n];
+          if (typeof n !== 'string' || seen.has(n)) break;
+          seen.add(n);
+        }
+        return depth;
+      };
+      const parentEntries = Object.entries(parentsToImport)
+        .sort(([a], [b]) => importDepth(a) - importDepth(b));
+      for (const [child, parent] of parentEntries) {
         if (typeof child !== 'string' || typeof parent !== 'string') continue;
         if (hasEntry(currentParents, child)) continue;
         if (!canNestFolder(currentFolders, currentParents, child, parent).ok) continue;
@@ -1599,7 +1716,12 @@ if (typeof module !== 'undefined') {
     makeChunks,
     sortFolderNames,
     sortChats,
+    MAX_FOLDER_DEPTH,
     getFolderParent,
+    getFolderAncestors,
+    getFolderDepth,
+    getDescendantNames,
+    getSubtreeHeight,
     getChildFolders,
     getRootFolderNames,
     folderSubtreeNames,

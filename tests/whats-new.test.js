@@ -1,22 +1,29 @@
 // The what's-new page (src/whats-new.html + whats-new.js) opens itself on update,
 // so the same rules as the welcome page apply: it must localize in all 43 locales
 // and touch neither the network nor storage — a tab the user did not ask for that
-// phoned home would be indefensible. 1.8.0 / 4.7.0 carry one card, the side panel
-// (#106), worded product-neutrally so both extensions ship the same strings.
+// phoned home would be indefensible. 1.9.0 / 4.8.0 carry three cards — sub-folders
+// several levels deep (#117), the side panel's fixed controls (#119) and the
+// hover-revealed row actions — worded product-neutrally so both extensions ship
+// the same strings.
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const HTML = fs.readFileSync(path.join(ROOT, 'src/whats-new.html'), 'utf8');
 
-const SHARED_KEYS = ['whatsNewHeading', 'whatsNewPanelTitle', 'whatsNewPanelBody'];
-// The 1.7.0 / 4.6.0 cards. Their strings must not linger in 86 files.
+const SHARED_KEYS = [
+  'whatsNewHeading', 'whatsNewNestTitle', 'whatsNewNestBody', 'whatsNewScrollTitle',
+  'whatsNewScrollBody', 'whatsNewHoverTitle', 'whatsNewHoverBody',
+];
+const CARD_IDS = ['nNestTitle', 'nNestBody', 'nScrollTitle', 'nScrollBody', 'nHoverTitle', 'nHoverBody'];
+// Earlier releases' cards (1.7.0 / 4.6.0, then the 1.8.0 / 4.7.0 side panel).
+// Their strings must not linger in 86 files.
 const RETIRED_KEYS = [
   'whatsNewNestedTitle', 'whatsNewNestedBody', 'whatsNewReuseTitle', 'whatsNewReuseBody',
-  'whatsNewBaiduTitle', 'whatsNewBaiduBody',
+  'whatsNewBaiduTitle', 'whatsNewBaiduBody', 'whatsNewPanelTitle', 'whatsNewPanelBody',
 ];
 
-function load({ lang = 'en', missingI18n = false, messages, version = '1.8.0' } = {}) {
+function load({ lang = 'en', missingI18n = false, messages, version = '1.9.0' } = {}) {
   jest.resetModules();
   chrome.i18n.getUILanguage = jest.fn(() => lang);
   chrome.i18n.getMessage = missingI18n
@@ -43,7 +50,7 @@ const txt = (id) => document.getElementById(id).textContent;
 describe('what\'s-new page rendering', () => {
   test('every slot gets its localized string', () => {
     load();
-    for (const id of ['nTitle', 'nHeading', 'nPanelTitle', 'nPanelBody', 'nCta']) {
+    for (const id of ['nTitle', 'nHeading', ...CARD_IDS, 'nCta']) {
       expect(txt(id)).toBeTruthy();
     }
     // Reused keys, so the page adds no string for the product name or the button.
@@ -52,14 +59,14 @@ describe('what\'s-new page rendering', () => {
   });
 
   test('the version chip comes from the manifest, never from a translation', () => {
-    load({ version: '4.7.0' });
-    expect(txt('nVersion')).toBe('v4.7.0');
+    load({ version: '4.8.0' });
+    expect(txt('nVersion')).toBe('v4.8.0');
   });
 
-  test('one card: the side panel', () => {
+  test('three cards: nested sub-folders, the steadier panel, the lighter look', () => {
     load();
-    expect(document.querySelectorAll('.step')).toHaveLength(1);
-    expect(document.getElementById('nPanelTitle')).not.toBeNull();
+    expect(document.querySelectorAll('.step')).toHaveLength(3);
+    for (const id of CARD_IDS) expect(document.getElementById(id)).not.toBeNull();
   });
 
   test('the cards are features, not numbered steps', () => {
@@ -72,8 +79,10 @@ describe('what\'s-new page rendering', () => {
   test('a locale that fails to load still renders readable English, never blanks', () => {
     load({ missingI18n: true });
     expect(txt('nHeading')).toBe("What's new");
-    expect(txt('nPanelTitle')).toBe('Now in the side panel');
-    expect(txt('nPanelBody')).toContain('side panel');
+    expect(txt('nNestTitle')).toBe('Sub-folders, several levels deep');
+    expect(txt('nNestBody')).toContain('4 levels');
+    expect(txt('nScrollTitle')).toBe('A steadier side panel');
+    expect(txt('nHoverBody')).toContain('pointer rests');
     expect(txt('nCta')).toBe('Got it');
   });
 
@@ -129,7 +138,7 @@ describe('what\'s-new strings ship in every locale', () => {
     });
   }
 
-  test('the 1.7.0 cards left no strings behind', () => {
+  test('the earlier cards left no strings behind', () => {
     for (const ext of ['ai-folders', 'gemini-folders']) {
       for (const locale of localesOf(ext)) {
         const messages = read(ext, locale);

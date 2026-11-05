@@ -123,7 +123,10 @@
     "message": "Mape ar šādu nosaukumu jau pastāv."
   },
   "errorNestTooDeep": {
-    "message": "Šajā mapē jau ir apakšmapes. Tiek atbalstīts tikai viens ligzdošanas līmenis."
+    "message": "Apakšmapes var būt līdz {n} līmeņu dziļumam."
+  },
+  "errorNestCycle": {
+    "message": "Mapi nevar pārvietot uz kādu no tās pašas apakšmapēm."
   },
   "storageCalc": {
     "message": "Aprēķina vietu..."
@@ -347,11 +350,23 @@
   "whatsNewHeading": {
     "message": "Kas jauns"
   },
-  "whatsNewPanelTitle": {
-    "message": "Tagad sānu panelī"
+  "whatsNewNestTitle": {
+    "message": "Apakšmapes vairākos līmeņos"
   },
-  "whatsNewPanelBody": {
-    "message": "Piestipriniet paplašinājumu pārlūka sānu panelī: tas paliek atvērts, kamēr pārslēdzat cilnes, un mapes un uzvednes vienmēr ir pa rokai. Atveriet to ar jauno pogu uznirstošā loga augšdaļā."
+  "whatsNewNestBody": {
+    "message": "Mapes tagad var ligzdot līdz 4 līmeņiem. Velciet mapi uz citu vai pirms saglabāšanas noklikšķiniet uz mapes, lai saglabātu tieši tajā."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Stabilāks sānu panelis"
+  },
+  "whatsNewScrollBody": {
+    "message": "Sānu panelī meklēšana un pievienošanas pogas paliek augšā, bet kājene apakšā: ritinās tikai mapes un uzvednes."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Vieglāks izskats"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikonas blakus mapēm, sarunām un uzvednēm tagad parādās, kad rādītājs uz tām aizkavējas, un izgaist, kad tas attālinās."
   },
   "chatLinkReuseHint": {
     "message": "{k} + klikšķis: izmantot pēdējo cilni"

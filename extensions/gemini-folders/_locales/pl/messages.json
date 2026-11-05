@@ -126,7 +126,10 @@
     "message": "Folder o tej nazwie już istnieje."
   },
   "errorNestTooDeep": {
-    "message": "Ten folder zawiera już podfoldery. Obsługiwany jest tylko jeden poziom zagnieżdżenia."
+    "message": "Podfoldery mogą mieć do {n} poziomów zagnieżdżenia."
+  },
+  "errorNestCycle": {
+    "message": "Folderu nie można przenieść do jednego z jego własnych podfolderów."
   },
   "storageCalc": {
     "message": "Obliczanie miejsca..."
@@ -311,11 +314,23 @@
   "whatsNewHeading": {
     "message": "Co nowego"
   },
-  "whatsNewPanelTitle": {
-    "message": "Teraz w panelu bocznym"
+  "whatsNewNestTitle": {
+    "message": "Podfoldery na kilku poziomach"
   },
-  "whatsNewPanelBody": {
-    "message": "Zadokuj rozszerzenie w panelu bocznym przeglądarki: pozostaje otwarte, gdy przełączasz karty, a foldery i prompty są zawsze pod ręką. Otwórz je nowym przyciskiem u góry okienka."
+  "whatsNewNestBody": {
+    "message": "Foldery można teraz zagnieżdżać do 4 poziomów. Przeciągnij folder na inny albo kliknij folder przed zapisaniem, aby zapisać bezpośrednio w nim."
+  },
+  "whatsNewScrollTitle": {
+    "message": "Stabilniejszy panel boczny"
+  },
+  "whatsNewScrollBody": {
+    "message": "W panelu bocznym wyszukiwarka i przyciski dodawania zostają na górze, a stopka na dole: przewijają się tylko foldery i prompty."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Lżejszy wygląd"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikony obok folderów, konwersacji i promptów pojawiają się teraz, gdy wskaźnik zatrzyma się nad nimi, i znikają, gdy się oddali."
   },
   "chatLinkReuseHint": {
     "message": "{k} + kliknięcie: użyj ponownie ostatniej karty"
