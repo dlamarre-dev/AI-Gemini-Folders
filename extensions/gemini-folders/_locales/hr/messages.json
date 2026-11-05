@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "Mape se sada mogu ugnijezditi do 4 razine. Povucite mapu na drugu ili kliknite mapu prije spremanja da biste spremili izravno u nju."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabilnija bočna ploča"
+  },
+  "whatsNewScrollBody": {
+    "message": "Na bočnoj ploči pretraživanje i gumbi za dodavanje ostaju na vrhu, a podnožje na dnu: pomiču se samo mape i upiti."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Lakši izgled"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikone pokraj mapa, razgovora i upita sada se pojavljuju kad se pokazivač zadrži na njima i nestaju kad se udalji."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: ponovno koristi posljednju karticu"
   },

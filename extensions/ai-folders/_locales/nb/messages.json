@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Mapper kan nå nestes opptil 4 nivåer. Dra en mappe over på en annen, eller klikk på en mappe før du lagrer for å lagre rett i den."
   },
+  "whatsNewScrollTitle": {
+    "message": "Et roligere sidepanel"
+  },
+  "whatsNewScrollBody": {
+    "message": "I sidepanelet blir søket og knappene for å legge til værende øverst og bunnlinjen nederst: bare mappene og promptene dine ruller."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Et lettere uttrykk"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikonene ved siden av mapper, samtaler og prompter vises nå når pekeren hviler på dem, og tones ut når den beveger seg bort."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klikk: gjenbruk den siste fanen"
   },

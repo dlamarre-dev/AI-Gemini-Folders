@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "Folder kini dapat bertingkat hingga 4 level. Seret folder ke folder lain, atau klik folder sebelum menyimpan untuk menyimpan langsung ke dalamnya."
   },
+  "whatsNewScrollTitle": {
+    "message": "Panel samping yang lebih stabil"
+  },
+  "whatsNewScrollBody": {
+    "message": "Di panel samping, pencarian dan tombol tambah tetap di atas dan footer di bawah: hanya folder dan prompt Anda yang bergulir."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Tampilan yang lebih ringan"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikon di samping folder, percakapan, dan prompt kini muncul saat penunjuk berhenti di atasnya, dan memudar saat penunjuk menjauh."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: gunakan kembali tab terakhir"
   },

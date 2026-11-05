@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Mappar kan nu kapslas upp till 4 nivåer. Dra en mapp till en annan, eller klicka på en mapp innan du sparar för att spara direkt i den."
   },
+  "whatsNewScrollTitle": {
+    "message": "En stabilare sidopanel"
+  },
+  "whatsNewScrollBody": {
+    "message": "I sidopanelen stannar sökningen och knapparna för att lägga till högst upp och sidfoten längst ned: bara dina mappar och prompter rullar."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Ett lättare utseende"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikonerna bredvid mappar, konversationer och prompter visas nu när pekaren vilar på dem och tonas bort när den lämnar."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klick: återanvänd den senaste fliken"
   },

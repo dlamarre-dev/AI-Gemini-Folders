@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Kansioita voi nyt sijoittaa sisäkkäin enintään 4 tasoon. Vedä kansio toisen päälle tai napsauta kansiota ennen tallennusta tallentaaksesi suoraan siihen."
   },
+  "whatsNewScrollTitle": {
+    "message": "Vakaampi sivupaneeli"
+  },
+  "whatsNewScrollBody": {
+    "message": "Sivupaneelissa haku ja lisäyspainikkeet pysyvät ylhäällä ja alatunniste alhaalla: vain kansiot ja promptit vierivät."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Kevyempi ulkoasu"
+  },
+  "whatsNewHoverBody": {
+    "message": "Kansioiden, keskustelujen ja promptien vieressä olevat kuvakkeet tulevat nyt näkyviin, kun osoitin viipyy niiden päällä, ja häipyvät, kun se siirtyy pois."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + napsautus: käytä viimeistä välilehteä uudelleen"
   },

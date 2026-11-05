@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "Fascikle sada mogu da se ugnežđuju do 4 nivoa. Prevucite fasciklu na drugu ili kliknite na fasciklu pre čuvanja da biste sačuvali direktno u nju."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabilnija bočna tabla"
+  },
+  "whatsNewScrollBody": {
+    "message": "U bočnoj tabli pretraga i dugmad za dodavanje ostaju na vrhu, a podnožje na dnu: pomeraju se samo fascikle i promptovi."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Lakši izgled"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikone pored fascikli, razgovora i promptova sada se pojavljuju kada se pokazivač zadrži na njima i nestaju kada se udalji."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: ponovo koristi poslednju karticu"
   },

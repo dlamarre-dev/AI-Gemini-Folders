@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Mappen kunnen nu tot 4 niveaus diep worden genest. Sleep een map op een andere, of klik op een map voordat u opslaat om er direct in op te slaan."
   },
+  "whatsNewScrollTitle": {
+    "message": "Een rustiger zijpaneel"
+  },
+  "whatsNewScrollBody": {
+    "message": "In het zijpaneel blijven het zoekveld en de knoppen om toe te voegen bovenaan en de voettekst onderaan: alleen uw mappen en prompts scrollen."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Een lichtere weergave"
+  },
+  "whatsNewHoverBody": {
+    "message": "De pictogrammen naast mappen, gesprekken en prompts verschijnen nu wanneer de aanwijzer erop blijft rusten, en vervagen zodra hij weggaat."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: laatste tabblad hergebruiken"
   },

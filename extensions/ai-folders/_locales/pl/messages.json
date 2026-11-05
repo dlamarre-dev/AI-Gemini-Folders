@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Foldery można teraz zagnieżdżać do 4 poziomów. Przeciągnij folder na inny albo kliknij folder przed zapisaniem, aby zapisać bezpośrednio w nim."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabilniejszy panel boczny"
+  },
+  "whatsNewScrollBody": {
+    "message": "W panelu bocznym wyszukiwarka i przyciski dodawania zostają na górze, a stopka na dole: przewijają się tylko foldery i prompty."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Lżejszy wygląd"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikony obok folderów, konwersacji i promptów pojawiają się teraz, gdy wskaźnik zatrzyma się nad nimi, i znikają, gdy się oddali."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + kliknięcie: użyj ponownie ostatniej karty"
   },

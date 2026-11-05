@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Agora as pastas se aninham em até 4 níveis. Arraste uma pasta sobre outra, ou clique em uma pasta antes de salvar para salvar diretamente nela."
   },
+  "whatsNewScrollTitle": {
+    "message": "Um painel lateral mais estável"
+  },
+  "whatsNewScrollBody": {
+    "message": "No painel lateral, a pesquisa e os botões de adicionar ficam no topo e o rodapé embaixo: só as suas pastas e os seus prompts rolam."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Uma interface mais leve"
+  },
+  "whatsNewHoverBody": {
+    "message": "Os ícones ao lado de pastas, conversas e prompts agora aparecem quando o ponteiro para sobre eles e somem quando ele se afasta."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clique: reutilizar a última aba"
   },

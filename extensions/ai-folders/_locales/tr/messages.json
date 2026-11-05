@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Klasörler artık 4 düzeye kadar iç içe yerleştirilebilir. Bir klasörü başka birinin üzerine sürükleyin veya doğrudan içine kaydetmek için kaydetmeden önce bir klasöre tıklayın."
   },
+  "whatsNewScrollTitle": {
+    "message": "Daha sabit bir yan panel"
+  },
+  "whatsNewScrollBody": {
+    "message": "Yan panelde arama ve ekleme düğmeleri üstte, alt bilgi ise altta kalır: yalnızca klasörleriniz ve istemleriniz kayar."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Daha sade bir görünüm"
+  },
+  "whatsNewHoverBody": {
+    "message": "Klasörlerin, konuşmaların ve istemlerin yanındaki simgeler artık işaretçi üzerlerinde durduğunda belirir ve uzaklaştığında kaybolur."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + tıklama: son sekmeyi yeniden kullan"
   },

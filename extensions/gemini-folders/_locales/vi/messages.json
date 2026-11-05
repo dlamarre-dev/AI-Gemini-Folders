@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "Giờ đây thư mục có thể lồng nhau tối đa 4 cấp. Kéo một thư mục thả vào thư mục khác, hoặc nhấp vào một thư mục trước khi lưu để lưu thẳng vào đó."
   },
+  "whatsNewScrollTitle": {
+    "message": "Bảng điều khiển bên ổn định hơn"
+  },
+  "whatsNewScrollBody": {
+    "message": "Trong bảng điều khiển bên, ô tìm kiếm và các nút thêm luôn ở trên cùng, chân trang ở dưới cùng: chỉ thư mục và prompt của bạn cuộn."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Giao diện nhẹ nhàng hơn"
+  },
+  "whatsNewHoverBody": {
+    "message": "Các biểu tượng bên cạnh thư mục, cuộc trò chuyện và prompt giờ chỉ hiện khi con trỏ dừng lại trên đó và mờ dần khi con trỏ rời đi."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + nhấp: dùng lại thẻ cuối cùng"
   },

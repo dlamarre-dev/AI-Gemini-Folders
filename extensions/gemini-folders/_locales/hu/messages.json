@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "A mappák mostantól legfeljebb 4 szintig ágyazhatók egymásba. Húzzon egy mappát egy másikra, vagy mentés előtt kattintson egy mappára, hogy közvetlenül abba mentsen."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabilabb oldalpanel"
+  },
+  "whatsNewScrollBody": {
+    "message": "Az oldalpanelen a keresés és a hozzáadás gombjai felül, a lábléc pedig alul marad: csak a mappák és a promptok görgethetők."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Letisztultabb megjelenés"
+  },
+  "whatsNewHoverBody": {
+    "message": "A mappák, beszélgetések és promptok melletti ikonok mostantól akkor jelennek meg, amikor a mutató elidőzik rajtuk, és elhalványulnak, amikor eltávolodik."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + kattintás: az utolsó lap újrahasználata"
   },

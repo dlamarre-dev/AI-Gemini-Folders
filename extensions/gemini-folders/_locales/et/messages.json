@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "Kaustu saab nüüd pesastada kuni 4 tasemeni. Lohistage kaust teise peale või klõpsake enne salvestamist kaustal, et salvestada otse sinna."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabiilsem külgpaneel"
+  },
+  "whatsNewScrollBody": {
+    "message": "Külgpaneelil jäävad otsing ja lisamisnupud üles ning jalus alla: kerivad ainult kaustad ja promptid."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Kergem välimus"
+  },
+  "whatsNewHoverBody": {
+    "message": "Kaustade, vestluste ja promptide kõrval olevad ikoonid ilmuvad nüüd, kui kursor nende kohal peatub, ja hääbuvad, kui see eemaldub."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klõps: kasuta viimast vahekaarti"
   },

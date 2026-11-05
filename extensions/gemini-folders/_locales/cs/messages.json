@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "Složky lze nyní vnořovat až do 4 úrovní. Přetáhněte složku na jinou, nebo před uložením klikněte na složku a uložte přímo do ní."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabilnější boční panel"
+  },
+  "whatsNewScrollBody": {
+    "message": "V bočním panelu zůstává vyhledávání a tlačítka pro přidání nahoře a zápatí dole: posouvají se jen složky a prompty."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Odlehčený vzhled"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikony vedle složek, konverzací a promptů se nyní zobrazí, když se nad nimi ukazatel zastaví, a zmizí, když z nich odjede."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + kliknutí: použít poslední kartu"
   },

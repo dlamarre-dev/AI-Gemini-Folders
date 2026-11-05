@@ -13,6 +13,10 @@ const TEXT = {
   nHeading: 'whatsNewHeading',
   nNestTitle: 'whatsNewNestTitle',
   nNestBody: 'whatsNewNestBody',
+  nScrollTitle: 'whatsNewScrollTitle',
+  nScrollBody: 'whatsNewScrollBody',
+  nHoverTitle: 'whatsNewHoverTitle',
+  nHoverBody: 'whatsNewHoverBody',
   nCta: 'welcomeCta',            // reused: the same "Got it" button
 };
 
@@ -21,6 +25,12 @@ const FALLBACK = {
   whatsNewNestTitle: 'Sub-folders, several levels deep',
   whatsNewNestBody: 'Folders now nest up to 4 levels deep. Drag a folder onto another, '
     + 'or click a folder before saving to save straight into it.',
+  whatsNewScrollTitle: 'A steadier side panel',
+  whatsNewScrollBody: 'In the side panel, search and the add buttons stay at the top and the '
+    + 'footer at the bottom: only your folders and prompts scroll.',
+  whatsNewHoverTitle: 'A lighter look',
+  whatsNewHoverBody: 'The icons beside folders, conversations and prompts now appear when your '
+    + 'pointer rests on them, and fade away when it leaves.',
   welcomeCta: 'Got it',
 };
 

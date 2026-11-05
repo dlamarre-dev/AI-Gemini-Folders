@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "Mape je zdaj mogoče gnezditi do 4 ravni. Povlecite mapo na drugo ali pred shranjevanjem kliknite mapo, da shranite neposredno vanjo."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabilnejša stranska plošča"
+  },
+  "whatsNewScrollBody": {
+    "message": "V stranski plošči iskanje in gumbi za dodajanje ostanejo zgoraj, noga pa spodaj: pomikajo se le mape in pozivi."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Lažji videz"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikone ob mapah, pogovorih in pozivih se zdaj prikažejo, ko se kazalec ustavi na njih, in zbledijo, ko se odmakne."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: znova uporabi zadnji zavihek"
   },

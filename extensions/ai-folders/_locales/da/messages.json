@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Mapper kan nu indlejres op til 4 niveauer. Træk en mappe over på en anden, eller klik på en mappe, før du gemmer, for at gemme direkte i den."
   },
+  "whatsNewScrollTitle": {
+    "message": "Et roligere sidepanel"
+  },
+  "whatsNewScrollBody": {
+    "message": "I sidepanelet bliver søgningen og knapperne til at tilføje øverst og bundlinjen nederst: kun dine mapper og prompts ruller."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Et lettere udtryk"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikonerne ved siden af mapper, samtaler og prompts vises nu, når markøren hviler på dem, og toner ud, når den bevæger sig væk."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klik: genbrug den seneste fane"
   },

@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Les dossiers s'imbriquent maintenant jusqu'à 4 niveaux. Glissez un dossier sur un autre, ou cliquez sur un dossier avant d'enregistrer pour y enregistrer directement."
   },
+  "whatsNewScrollTitle": {
+    "message": "Un panneau latéral plus stable"
+  },
+  "whatsNewScrollBody": {
+    "message": "Dans le panneau latéral, la recherche et les boutons d'ajout restent en haut et le pied de page en bas : seuls vos dossiers et vos prompts défilent."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Une interface plus légère"
+  },
+  "whatsNewHoverBody": {
+    "message": "Les icônes à côté des dossiers, des conversations et des prompts apparaissent maintenant quand le pointeur s'y attarde, et s'effacent quand il s'éloigne."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clic : réutiliser le dernier onglet"
   },

@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Priečinky je teraz možné vnárať až do 4 úrovní. Presuňte priečinok na iný alebo pred uložením kliknite na priečinok a uložte priamo doň."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabilnejší bočný panel"
+  },
+  "whatsNewScrollBody": {
+    "message": "V bočnom paneli zostáva vyhľadávanie a tlačidlá na pridanie hore a päta dole: posúvajú sa len priečinky a prompty."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Odľahčený vzhľad"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikony vedľa priečinkov, konverzácií a promptov sa teraz zobrazia, keď sa nad nimi ukazovateľ zastaví, a zmiznú, keď z nich odíde."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + kliknutie: použiť poslednú kartu"
   },

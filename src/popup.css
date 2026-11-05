@@ -264,6 +264,9 @@
          covers instead of the rows. */
       margin-inline-end: -10px;
       padding-inline-end: 10px;
+      /* Air below the last card: flush against the edge, its 1px bottom border
+         fell outside once Chrome rounded the final scroll position. */
+      padding-bottom: 6px;
     }
     /* Chromium: a classic bar that takes layout space, reserved by a stable
        gutter that goes into the padding instead. Since Chrome 121 the standard
@@ -594,7 +597,9 @@
        no delay — :focus-visible, not :focus-within, or the button a click just
        focused would keep its row lit after the mouse left. Tabbing onto the row
        lights it first, so the next Tab still reaches the (now visible)
-       buttons. Touch screens (no hover) keep the rule above. */
+       buttons. The pin of a pinned item hides like the rest: pinned items
+       already sit first, above their divider. Touch screens (no hover) keep
+       the rule above. */
     @media (hover: hover) {
       body:not(.bulk-active) .chat-item .chat-actions .action-btn,
       body:not(.bulk-active) .folder-header .action-btn,
@@ -614,9 +619,7 @@
       body:not(.bulk-active) .folder-header:focus-visible .action-btn,
       body:not(.bulk-active) .folder-header:has(:focus-visible) .action-btn,
       body:not(.bulk-active) .prompt-header:focus-visible .action-btn,
-      body:not(.bulk-active) .prompt-header:has(:focus-visible) .action-btn,
-      body:not(.bulk-active) .folder-header .pin-btn.is-pinned,
-      body:not(.bulk-active) .prompt-header .pin-btn.is-pinned {
+      body:not(.bulk-active) .prompt-header:has(:focus-visible) .action-btn {
         opacity: 1;
         visibility: visible;
         transition: none;
@@ -624,8 +627,8 @@
       /* Not while dragging: the row under the pointer, and the dragged one,
          which keeps :hover for the whole drag, stay bare. */
       /* :hover in the selector only to outrank the hover rule above. */
-      body.is-dragging:not(.bulk-active) :is(.chat-item, .folder-header, .prompt-header):hover .action-btn:not(.is-pinned),
-      body.is-dragging-folder:not(.bulk-active) :is(.chat-item, .folder-header, .prompt-header):hover .action-btn:not(.is-pinned) {
+      body.is-dragging:not(.bulk-active) :is(.chat-item, .folder-header, .prompt-header):hover .action-btn,
+      body.is-dragging-folder:not(.bulk-active) :is(.chat-item, .folder-header, .prompt-header):hover .action-btn {
         opacity: 0;
         visibility: hidden;
         transition: none;

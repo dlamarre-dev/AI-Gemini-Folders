@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Mapes tagad var ligzdot līdz 4 līmeņiem. Velciet mapi uz citu vai pirms saglabāšanas noklikšķiniet uz mapes, lai saglabātu tieši tajā."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabilāks sānu panelis"
+  },
+  "whatsNewScrollBody": {
+    "message": "Sānu panelī meklēšana un pievienošanas pogas paliek augšā, bet kājene apakšā: ritinās tikai mapes un uzvednes."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Vieglāks izskats"
+  },
+  "whatsNewHoverBody": {
+    "message": "Ikonas blakus mapēm, sarunām un uzvednēm tagad parādās, kad rādītājs uz tām aizkavējas, un izgaist, kad tas attālinās."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + klikšķis: izmantot pēdējo cilni"
   },

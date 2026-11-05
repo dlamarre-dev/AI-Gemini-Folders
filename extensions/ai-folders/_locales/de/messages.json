@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Ordner lassen sich jetzt bis zu 4 Ebenen tief verschachteln. Ziehen Sie einen Ordner auf einen anderen, oder klicken Sie vor dem Speichern auf einen Ordner, um direkt darin zu speichern."
   },
+  "whatsNewScrollTitle": {
+    "message": "Ein ruhigerer Seitenbereich"
+  },
+  "whatsNewScrollBody": {
+    "message": "Im Seitenbereich bleiben die Suche und die Schaltflächen zum Hinzufügen oben und die Fußzeile unten: Nur Ihre Ordner und Prompts scrollen."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Eine aufgeräumtere Oberfläche"
+  },
+  "whatsNewHoverBody": {
+    "message": "Die Symbole neben Ordnern, Unterhaltungen und Prompts erscheinen jetzt, wenn Ihr Mauszeiger darauf verweilt, und blenden sich aus, sobald er sich entfernt."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + Klick: letzten Tab wiederverwenden"
   },

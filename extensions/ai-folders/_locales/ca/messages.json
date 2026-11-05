@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Ara les carpetes es poden imbricar fins a 4 nivells. Arrossegueu una carpeta sobre una altra, o feu clic en una carpeta abans de desar per desar-hi directament."
   },
+  "whatsNewScrollTitle": {
+    "message": "Un plafó lateral més estable"
+  },
+  "whatsNewScrollBody": {
+    "message": "Al plafó lateral, la cerca i els botons per afegir es queden a dalt i el peu a baix: només es desplacen les carpetes i els prompts."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Una interfície més lleugera"
+  },
+  "whatsNewHoverBody": {
+    "message": "Les icones al costat de les carpetes, les converses i els prompts ara apareixen quan el punter s'hi atura i s'esvaeixen quan se n'allunya."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clic: reutilitza la darrera pestanya"
   },

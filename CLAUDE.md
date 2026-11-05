@@ -568,7 +568,8 @@ git checkout main && git pull --ff-only
   immediate fade-out, `visibility` following so an invisible button cannot be
   clicked), never during a drag, and at once on keyboard focus — matched with
   `:focus-visible`, not `:focus-within`, or a clicked button would keep its
-  row lit. Touch screens keep the always-dimmed version.
+  row lit. A pinned pin hides too (pinned items already sort first). Touch
+  screens keep the always-dimmed version.
 - **Security posture:** folder/conversation titles render via `textContent` (no
   XSS); `link.href` is gated by `isSafeUrl` (falls back to `about:blank`); import
   is validated (`isSafeUrl` + shape checks + chunked writes); the local-LLM
@@ -971,10 +972,12 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   would reopen the tab on every dev cycle, and so would reinstalling over the same
   version. This is the one deliberate difference from the welcome page, which needs
   no flag because a fresh install happens once.
-- **One card per release, and the old cards go.** 4.8.0 / 1.9.0 show a single
-  card, sub-folders several levels deep (`whatsNewNestTitle` / `whatsNewNestBody`,
-  product-neutral and byte-identical in AF and GF). It replaced 4.7.0 / 1.8.0's
-  side-panel card, whose two keys left all 86 locale files, as the 1.7.0 cards
+- **One release's cards at a time, and the old cards go.** 4.8.0 / 1.9.0 show
+  three: sub-folders several levels deep (`whatsNewNest*`), the side panel's
+  fixed controls (`whatsNewScroll*`, #119) and the hover-revealed row actions
+  (`whatsNewHover*`), all product-neutral and byte-identical in AF and GF. They
+  replaced 4.7.0 / 1.8.0's side-panel card, whose two keys left all 86 locale
+  files, as the 1.7.0 cards
   (sub-folders, tab reuse, Baidu) and their six keys had before; a test asserts
   they all stay gone. Their markup and the data-driven Baidu
   card are in git history if a per-product card is ever needed again.

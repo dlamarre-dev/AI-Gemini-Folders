@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "이제 폴더를 최대 4단계까지 중첩할 수 있습니다. 폴더를 다른 폴더로 끌어다 놓거나, 저장하기 전에 폴더를 클릭하면 그 폴더에 바로 저장됩니다."
   },
+  "whatsNewScrollTitle": {
+    "message": "더 안정적인 사이드 패널"
+  },
+  "whatsNewScrollBody": {
+    "message": "사이드 패널에서 검색과 추가 버튼은 위에, 하단 영역은 아래에 고정되고 폴더와 프롬프트만 스크롤됩니다."
+  },
+  "whatsNewHoverTitle": {
+    "message": "더 가벼워진 화면"
+  },
+  "whatsNewHoverBody": {
+    "message": "폴더, 대화, 프롬프트 옆의 아이콘이 이제 포인터가 잠시 머물면 나타나고, 벗어나면 사라집니다."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + 클릭: 마지막 탭 재사용"
   },

@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Sasa folda zinaweza kupachikwa hadi viwango 4. Buruta folda juu ya nyingine, au bofya folda kabla ya kuhifadhi ili kuhifadhi moja kwa moja ndani yake."
   },
+  "whatsNewScrollTitle": {
+    "message": "Paneli ya pembeni iliyo thabiti zaidi"
+  },
+  "whatsNewScrollBody": {
+    "message": "Kwenye paneli ya pembeni, utafutaji na vitufe vya kuongeza vinabaki juu na sehemu ya chini inabaki chini: folda na vidokezo vyako pekee ndivyo vinavyosogea."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Mwonekano mwepesi zaidi"
+  },
+  "whatsNewHoverBody": {
+    "message": "Aikoni zilizo kando ya folda, mazungumzo na vidokezo sasa zinaonekana kielekezi kinaposimama juu yake, na hufifia kinapoondoka."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + bofya: tumia tena kichupo cha mwisho"
   },

@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "Ora le cartelle si annidano fino a 4 livelli. Trascina una cartella su un'altra, oppure fai clic su una cartella prima di salvare per salvarci direttamente."
   },
+  "whatsNewScrollTitle": {
+    "message": "Un pannello laterale più stabile"
+  },
+  "whatsNewScrollBody": {
+    "message": "Nel pannello laterale, la ricerca e i pulsanti per aggiungere restano in alto e il piè di pagina in basso: scorrono solo le tue cartelle e i tuoi prompt."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Un'interfaccia più leggera"
+  },
+  "whatsNewHoverBody": {
+    "message": "Le icone accanto a cartelle, conversazioni e prompt ora compaiono quando il puntatore si sofferma su di esse e svaniscono quando si allontana."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clic: riutilizza l'ultima scheda"
   },

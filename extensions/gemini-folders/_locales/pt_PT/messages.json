@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "Agora as pastas podem ser encaixadas até 4 níveis. Arraste uma pasta para outra, ou clique numa pasta antes de guardar para guardar diretamente nela."
   },
+  "whatsNewScrollTitle": {
+    "message": "Um painel lateral mais estável"
+  },
+  "whatsNewScrollBody": {
+    "message": "No painel lateral, a pesquisa e os botões de adicionar ficam no topo e o rodapé em baixo: só as suas pastas e os seus prompts deslocam."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Uma interface mais leve"
+  },
+  "whatsNewHoverBody": {
+    "message": "Os ícones ao lado de pastas, conversas e prompts aparecem agora quando o ponteiro se detém sobre eles e desvanecem quando se afasta."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + clique: reutilizar o último separador"
   },

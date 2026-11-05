@@ -320,6 +320,18 @@
   "whatsNewNestBody": {
     "message": "資料夾現在最多可巢狀 4 層。將一個資料夾拖曳到另一個資料夾上，或在儲存前點選某個資料夾即可直接儲存到其中。"
   },
+  "whatsNewScrollTitle": {
+    "message": "更穩定的側邊面板"
+  },
+  "whatsNewScrollBody": {
+    "message": "在側邊面板中，搜尋欄和新增按鈕固定在頂端，頁尾固定在底部：只有資料夾和提示詞會捲動。"
+  },
+  "whatsNewHoverTitle": {
+    "message": "更清爽的介面"
+  },
+  "whatsNewHoverBody": {
+    "message": "資料夾、對話和提示詞旁的圖示現在會在指標停留時顯示，移開後逐漸隱去。"
+  },
   "chatLinkReuseHint": {
     "message": "{k} + 點擊：重複使用上一個分頁"
   },

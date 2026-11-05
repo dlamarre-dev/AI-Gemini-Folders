@@ -356,6 +356,18 @@
   "whatsNewNestBody": {
     "message": "Aplankus dabar galima įdėti iki 4 lygių. Nuvilkite aplanką ant kito arba prieš įrašydami spustelėkite aplanką, kad įrašytumėte tiesiai į jį."
   },
+  "whatsNewScrollTitle": {
+    "message": "Stabilesnis šoninis skydelis"
+  },
+  "whatsNewScrollBody": {
+    "message": "Šoniniame skydelyje paieška ir pridėjimo mygtukai lieka viršuje, o poraštė – apačioje: slenka tik aplankai ir promptai."
+  },
+  "whatsNewHoverTitle": {
+    "message": "Lengvesnė išvaizda"
+  },
+  "whatsNewHoverBody": {
+    "message": "Piktogramos šalia aplankų, pokalbių ir promptų dabar atsiranda, kai žymeklis ties jais stabteli, ir išnyksta, kai jis nutolsta."
+  },
   "chatLinkReuseHint": {
     "message": "{k} + spustelėjimas: naudoti paskutinį skirtuką"
   },

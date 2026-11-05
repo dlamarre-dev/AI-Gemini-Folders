@@ -1,8 +1,9 @@
 // The what's-new page (src/whats-new.html + whats-new.js) opens itself on update,
 // so the same rules as the welcome page apply: it must localize in all 43 locales
 // and touch neither the network nor storage — a tab the user did not ask for that
-// phoned home would be indefensible. 1.9.0 / 4.8.0 carry one card, sub-folders
-// several levels deep (#117), worded product-neutrally so both extensions ship
+// phoned home would be indefensible. 1.9.0 / 4.8.0 carry three cards — sub-folders
+// several levels deep (#117), the side panel's fixed controls (#119) and the
+// hover-revealed row actions — worded product-neutrally so both extensions ship
 // the same strings.
 const fs = require('fs');
 const path = require('path');
@@ -10,7 +11,11 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const HTML = fs.readFileSync(path.join(ROOT, 'src/whats-new.html'), 'utf8');
 
-const SHARED_KEYS = ['whatsNewHeading', 'whatsNewNestTitle', 'whatsNewNestBody'];
+const SHARED_KEYS = [
+  'whatsNewHeading', 'whatsNewNestTitle', 'whatsNewNestBody', 'whatsNewScrollTitle',
+  'whatsNewScrollBody', 'whatsNewHoverTitle', 'whatsNewHoverBody',
+];
+const CARD_IDS = ['nNestTitle', 'nNestBody', 'nScrollTitle', 'nScrollBody', 'nHoverTitle', 'nHoverBody'];
 // Earlier releases' cards (1.7.0 / 4.6.0, then the 1.8.0 / 4.7.0 side panel).
 // Their strings must not linger in 86 files.
 const RETIRED_KEYS = [
@@ -45,7 +50,7 @@ const txt = (id) => document.getElementById(id).textContent;
 describe('what\'s-new page rendering', () => {
   test('every slot gets its localized string', () => {
     load();
-    for (const id of ['nTitle', 'nHeading', 'nNestTitle', 'nNestBody', 'nCta']) {
+    for (const id of ['nTitle', 'nHeading', ...CARD_IDS, 'nCta']) {
       expect(txt(id)).toBeTruthy();
     }
     // Reused keys, so the page adds no string for the product name or the button.
@@ -58,10 +63,10 @@ describe('what\'s-new page rendering', () => {
     expect(txt('nVersion')).toBe('v4.8.0');
   });
 
-  test('one card: sub-folders several levels deep', () => {
+  test('three cards: nested sub-folders, the steadier panel, the lighter look', () => {
     load();
-    expect(document.querySelectorAll('.step')).toHaveLength(1);
-    expect(document.getElementById('nNestTitle')).not.toBeNull();
+    expect(document.querySelectorAll('.step')).toHaveLength(3);
+    for (const id of CARD_IDS) expect(document.getElementById(id)).not.toBeNull();
   });
 
   test('the cards are features, not numbered steps', () => {
@@ -76,6 +81,8 @@ describe('what\'s-new page rendering', () => {
     expect(txt('nHeading')).toBe("What's new");
     expect(txt('nNestTitle')).toBe('Sub-folders, several levels deep');
     expect(txt('nNestBody')).toContain('4 levels');
+    expect(txt('nScrollTitle')).toBe('A steadier side panel');
+    expect(txt('nHoverBody')).toContain('pointer rests');
     expect(txt('nCta')).toBe('Got it');
   });
 
