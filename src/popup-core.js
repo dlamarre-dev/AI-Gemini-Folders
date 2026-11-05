@@ -426,8 +426,11 @@ function initPopupCommon(config) {
   function setMode(mode, onRendered) {
     currentMode = mode;
     const isPrompt = mode === 'prompt';
-    folderModeContainer.style.display = isPrompt ? 'none' : 'block';
-    promptModeContainer.style.display = isPrompt ? 'block' : 'none';
+    // '' rather than 'block' when shown: the side panel lays the visible
+    // container out as a flex column (html.panel in popup.css), and an inline
+    // display would override it. The popup gets a div's default, block.
+    folderModeContainer.style.display = isPrompt ? 'none' : '';
+    promptModeContainer.style.display = isPrompt ? '' : 'none';
     if (syncBookmarksLabel) syncBookmarksLabel.style.display = isPrompt ? 'none' : 'flex';
     if (syncPromptsLabel) syncPromptsLabel.style.display = isPrompt ? 'flex' : 'none';
     modeTogglePill.classList.toggle('is-prompt', isPrompt);

@@ -574,8 +574,16 @@ git checkout main && git pull --ff-only
   `popup.html?panel=1`; `isPanelMode()` (`src/ui.js`) reads that and adds
   `html.panel`. Everything that assumed a short-lived popup asks it, and nothing
   else changes:
-  - sizing: `html.panel` makes body fluid and lets the document scroll;
-    `fitPopupToWindow` returns at once. The popup rules are untouched (§6).
+  - sizing: `html.panel` makes body fluid; `fitPopupToWindow` returns at once.
+    The popup rules are untouched (§6). Since 1.9.0 / 4.8.0 (#119) the body is
+    a window-tall flex column in which **only `#folderList` / `#promptList`
+    scroll**: everything from the title to the add buttons stays at the top,
+    and the footer follows the list until the window is full, then stays at
+    the bottom. The mode containers are `display: contents` there, so the list
+    is the one item that shrinks (a shrinking container let the footer ride
+    over the list); below the list's 96 px floor the document scrolls as
+    before. That is why `setMode` shows a container with `display = ''`,
+    never `'block'` — an inline value would override the panel layout.
   - `openConversation` does not `window.close()` in a panel.
   - the title prefill reruns on `tabs.onActivated` / `onUpdated` of the panel's
     window (`watchActiveTab`), but never over a title the user typed

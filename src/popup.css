@@ -226,6 +226,49 @@
       min-width: 280px;
       max-height: none;
       overflow-y: visible;
+      /* #119: only the folder / prompt list scrolls. Everything from the title
+         down to the add buttons stays at the top, and the footer follows the
+         list until the window is full, then stays at the bottom. A column as
+         tall as the window, in which the list is the only thing that shrinks. */
+      height: 100vh;
+      box-sizing: border-box;
+      /* The body has no scrollbar here, so the 19/13 split that centres the
+         popup around its own gutter (below) would only shift everything. */
+      padding-left: 16px;
+      padding-right: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+    html.panel body > *,
+    html.panel #folderModeContainer > *,
+    html.panel #promptModeContainer > * { flex-shrink: 0; }
+    /* The mode's own rows join the body's column, so the list is the one item
+       that shrinks: a container shrinking in its place would let the footer
+       ride over the list on a short window. Hidden by an inline display: none,
+       which wins over this; setMode clears it (never 'block') to show one. */
+    html.panel #folderModeContainer,
+    html.panel #promptModeContainer { display: contents; }
+    /* The floor keeps a few rows on a very short window: past it the document
+       scrolls as before rather than the list vanishing. */
+    html.panel #folderList,
+    html.panel #promptList {
+      flex: 0 1 auto;
+      min-height: 96px;
+      overflow-y: auto;
+      scrollbar-gutter: stable;
+      scrollbar-width: thin;
+      /* The 6px gutter goes into the body padding, so the rows stay as wide as
+         the buttons above them. */
+      margin-inline-end: -6px;
+    }
+    html.panel #folderList:empty,
+    html.panel #promptList:empty { min-height: 0; }
+    /* Outside the scroller now, so no sticky bleed into the body padding. */
+    html.panel #bulkActionBar {
+      position: static;
+      margin: 8px 0 0;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
     }
 
     h3 {

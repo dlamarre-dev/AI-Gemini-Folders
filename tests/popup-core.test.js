@@ -615,6 +615,18 @@ describe('initPopupCommon first render', () => {
     expect(window.displayFolders).toHaveBeenCalledTimes(1);
   });
 
+  // The side panel lays the shown container out from popup.css (#119); an
+  // inline 'block' would override that, so showing one only clears 'none'.
+  test('switching modes hides with an inline none and shows with no inline display', () => {
+    boot('folder');
+    const folder = document.getElementById('folderModeContainer');
+    const prompt = document.getElementById('promptModeContainer');
+    document.getElementById('modePromptBtn').click();
+    expect([folder.style.display, prompt.style.display]).toEqual(['none', '']);
+    document.getElementById('modeFolderBtn').click();
+    expect([folder.style.display, prompt.style.display]).toEqual(['', 'none']);
+  });
+
   // An import or a save made while Prompt mode shows renders the folders
   // already (displayFolders sets window.foldersRendered); the first visit to
   // Folder mode must not build them a second time.
