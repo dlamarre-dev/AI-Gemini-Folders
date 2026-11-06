@@ -23,7 +23,7 @@ Output per locale (mode=both):
   Marketing/<extension>/screenshots/Promo_2_<locale>.png  — folder mode close-up (light)
   Marketing/<extension>/screenshots/Promo_3_<locale>.png  — prompt mode close-up (light)
   Marketing/<extension>/screenshots/Promo_4_<locale>.png  — mobile sync mockup (dark)
-  Marketing/<extension>/screenshots/Promo_5_<locale>.png  — context menu (dark)
+  Marketing/<extension>/screenshots/Promo_5_<locale>.png  — context menu + side panel (dark)
 
 Images 2 and 3 show the light theme so the listing advertises both appearances.
 The website has no light theme, so it takes its two close-ups from the dark
