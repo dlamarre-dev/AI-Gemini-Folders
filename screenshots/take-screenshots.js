@@ -13,7 +13,7 @@
  *   Promo_2_<locale>.png  — Folder mode, centered close-up              [light]
  *   Promo_3_<locale>.png  — Prompt mode, centered close-up              [light]
  *   Promo_4_<locale>.png  — Mobile sync: popup + phone bookmarks mockup [dark]
- *   Promo_5_<locale>.png  — Context menu: right-click → folder submenu  [dark]
+ *   Promo_5_<locale>.png  — Context menu + extension in the side panel  [dark]
  *
  * Images 2 and 3 are captured in light mode on purpose: the extension follows the
  * system theme, and a listing of five dark screenshots never says so. The website
@@ -207,7 +207,9 @@ async function injectSampleData(page, localeData) {
   const { folders, pinnedFolders, prompts, folderParents = {} } = localeData;
   await page.evaluate(({ folders, pinnedFolders, prompts, folderParents }) => {
     return Promise.all([
-      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, folderParents, sortPref: 'dateDesc' }, r)),
+      // syncBookmarksEnabled is a sync key: the mobile-sync shot turns it on, and a
+      // later capture in the same profile (the side panel) must not inherit it.
+      new Promise(r => chrome.storage.sync.set({ folders, pinnedFolders, folderParents, sortPref: 'dateDesc', syncBookmarksEnabled: false }, r)),
       new Promise(r => chrome.storage.local.set({
         prompts, promptSortPref: 'dateDesc', syncBookmarksEnabled: false,
         // A marketing shot must show the product, never a banner asking the user for
@@ -303,6 +305,66 @@ async function screenshotFolderMode(page, extId, localeData, outPath) {
 
   await page.screenshot({ path: outPath, fullPage: false });
   console.log(`  ✅ Folder: ${path.basename(outPath)}`);
+}
+
+// Geometry of image 5's browser window, shared by the side-panel capture (which
+// must be exactly the size of the panel drawn there) and its composition.
+const CTX_CANVAS_W  = 1280;
+const CTX_CANVAS_H  = 800;
+const CTX_TITLE_H   = 100;
+const CTX_WIN_X     = 30;
+const CTX_WIN_Y     = CTX_TITLE_H + 2;
+const CTX_WIN_W     = CTX_CANVAS_W - 2 * CTX_WIN_X;
+const CTX_WIN_H     = CTX_CANVAS_H - CTX_WIN_Y - 6;
+const CTX_TAB_BAR_H = 36;
+const CTX_ADDR_H    = 40;
+const SIDE_PANEL_W        = 396;   // Chrome's default side panel is ~320–400 px
+const SIDE_PANEL_HEADER_H = 36;    // Chrome's own header strip: name + close
+// Chrome draws the extension's page as a rounded card inset in the toolbar-coloured
+// frame, under that header — the capture is the card, not the whole panel.
+const SIDE_PANEL_INSET    = 8;
+const SIDE_PANEL_RADIUS   = 12;
+const SIDE_PANEL_CARD_W   = SIDE_PANEL_W - 2 * SIDE_PANEL_INSET;
+const SIDE_PANEL_BODY_H   = CTX_WIN_H - CTX_TAB_BAR_H - CTX_ADDR_H - SIDE_PANEL_HEADER_H - SIDE_PANEL_INSET;
+
+// The folder view as it renders in the browser's side panel (popup.html?panel=1),
+// at the exact size image 5 draws the panel. Same folders open as image 1, so the
+// two images show the same library — one as a popup, one beside the page.
+async function screenshotSidePanel(page, extId, localeData, outPath) {
+  await page.setViewportSize({ width: SIDE_PANEL_CARD_W, height: SIDE_PANEL_BODY_H });
+  await page.goto(`chrome-extension://${extId}/popup.html?panel=1`);
+  await waitForRender(page);
+  await injectSampleData(page, localeData);
+  await page.evaluate(() => new Promise(r =>
+    chrome.storage.local.set({ lastMode: 'folder', openFolders: [] }, r)));
+  await page.reload();
+  await waitForRender(page);
+  await page.waitForSelector('.folder-header', { timeout: 8000 });
+
+  const roots = page.locator('#folderList > .folder');
+  await roots.nth(0).locator(':scope > .folder-header').click();
+  await page.waitForTimeout(200);
+  const child = roots.nth(0).locator('.folder--child > .folder-header');
+  if (await child.count() > 0) {
+    await child.first().click();
+    await page.waitForTimeout(200);
+  }
+  if (await roots.count() > 1) {
+    await roots.nth(1).locator(':scope > .folder-header').click();
+    await page.waitForTimeout(300);
+  }
+  // Pointer away from every row, so no hover-revealed action is caught mid-fade.
+  await page.mouse.move(SIDE_PANEL_CARD_W / 2, 2);
+  await page.evaluate(() => {
+    const s = document.createElement('style');
+    s.textContent = '#sortToggleBtn::after, #promptSortToggleBtn::after { display: none !important; }';
+    document.head.appendChild(s);
+  });
+  await page.waitForTimeout(400);
+
+  await page.screenshot({ path: outPath, fullPage: false });
+  await page.setViewportSize({ width: POPUP_WIDTH, height: 700 });
+  console.log(`  ✅ Side panel: ${path.basename(outPath)}`);
 }
 
 // Like screenshotFolderMode but with syncBookmarksEnabled:true and returns the
@@ -1020,10 +1082,24 @@ async function compositeMobileSync(page, folderPath, checkboxBox, localeData, is
 
 // ─── Context Menu Composition ─────────────────────────────────────────────────
 
-async function compositeContextMenu(page, localeData, isRTL, outPath) {
-  const CANVAS_W = 1280;
-  const CANVAS_H = 800;
-  const TITLE_H  = 100;
+async function compositeContextMenu(page, localeData, isRTL, outPath, panelPath = null, localeId = 'en') {
+  const CANVAS_W = CTX_CANVAS_W;
+  const CANVAS_H = CTX_CANVAS_H;
+  const TITLE_H  = CTX_TITLE_H;
+
+  // The extension's side panel, docked on the page's trailing edge (Chrome mirrors
+  // it to the left in a right-to-left UI). Absent → the page takes the full width.
+  const panelB64 = panelPath && fs.existsSync(panelPath)
+    ? fs.readFileSync(panelPath).toString('base64') : null;
+  const SP_W = panelB64 ? SIDE_PANEL_W : 0;
+  // Chrome titles the panel with the extension's full manifest name (extName,
+  // "AI Folders: organize conversations & prompts"), not the short appTitle.
+  let spName = EXTENSION === 'ai-folders' ? 'AI Folders' : 'Gemini Folders';
+  try {
+    const msgs = JSON.parse(fs.readFileSync(path.resolve(__dirname,
+      `../dist/${EXTENSION}/chrome/_locales/${localeId}/messages.json`), 'utf8'));
+    if (msgs.extName && msgs.extName.message) spName = msgs.extName.message;
+  } catch (_) {}
 
   // Root folders only: in the real menu a sub-folder is one level deeper, inside
   // its parent's submenu, so listing it flat here would misdraw the feature.
@@ -1051,24 +1127,28 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   const SUB_H      = SUB_PAD_V * 2 + SUB_ITEM_H * folderNames.length;
 
   // Browser window panel — no separate win-bar; tabs ARE the top edge
-  const PANEL_W  = CANVAS_W - 60;
-  const PANEL_H  = CANVAS_H - TITLE_H - 40;
-  const PANEL_X  = 30;
-  const PANEL_Y  = TITLE_H + 20;
+  const PANEL_W  = CTX_WIN_W;
+  const PANEL_H  = CTX_WIN_H;
+  const PANEL_X  = CTX_WIN_X;
+  const PANEL_Y  = CTX_WIN_Y;
 
-  const TAB_BAR_H  = 40;   // tab row (contains Windows controls on right)
-  const ADDR_BAR_H = 44;   // address bar
+  const TAB_BAR_H  = CTX_TAB_BAR_H;   // tab row (contains Windows controls on right)
+  const ADDR_BAR_H = CTX_ADDR_H;      // address bar
   const CHROME_H   = TAB_BAR_H + ADDR_BAR_H;
 
-  // Gemini sidebar width (matches the screenshot ~260px)
-  const SIDEBAR_W = 260;
+  // Site sidebar width (matches the screenshot ~260px); narrower when the side
+  // panel takes its share of the window, so the chat keeps room for the menu.
+  const SIDEBAR_W = SP_W ? 220 : 260;
+  const PAGE_W    = PANEL_W - SP_W;
 
-  // Context menu position — centre of the main chat area
+  // Context menu position — in the main chat area, further toward the sidebar when
+  // the side panel is open, so menu + submenu stay clear of the panel.
+  const CTX_FRAC    = SP_W ? 0.12 : 0.38;
   const CONTENT_TOP = PANEL_Y + CHROME_H;
   const CONTENT_H   = PANEL_H - CHROME_H;
   const CTX_X = isRTL
-    ? PANEL_X + Math.round((PANEL_W - SIDEBAR_W - CTX_W) * 0.38)
-    : PANEL_X + SIDEBAR_W + Math.round((PANEL_W - SIDEBAR_W - CTX_W) * 0.38);
+    ? PANEL_X + SP_W + Math.round((PAGE_W - SIDEBAR_W - CTX_W) * (SP_W ? 1 - CTX_FRAC : CTX_FRAC))
+    : PANEL_X + SIDEBAR_W + Math.round((PAGE_W - SIDEBAR_W - CTX_W) * CTX_FRAC);
   const CTX_Y = CONTENT_TOP + Math.round((CONTENT_H - CTX_H) / 2) + 30;
 
   // Highlighted item (ctxMenuSave) is the last
@@ -1153,7 +1233,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   .tab-spacer { flex: 1; }
   .tab {
     height: 32px; min-width: 180px; max-width: 220px;
-    background: #1e1f20;
+    background: #35363a;
     border-radius: 8px 8px 0 0;
     display: flex; align-items: center;
     padding: 0 10px; gap: 7px;
@@ -1183,7 +1263,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   /* Address bar */
   .addr-bar {
     height: ${ADDR_BAR_H}px; flex-shrink: 0;
-    background: #1e1f20;
+    background: #35363a;
     display: flex; align-items: center;
     padding: 0 12px; gap: 8px;
   }
@@ -1194,7 +1274,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   }
   .nav-btn.disabled { opacity: 0.3; }
   .addr-pill {
-    flex: 1; height: 32px; background: #303134;
+    flex: 1; height: 32px; background: #202124;
     border-radius: 16px;
     display: flex; align-items: center; padding: 0 14px; gap: 8px;
     font-size: 13px; color: #e8eaed;
@@ -1342,6 +1422,39 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
     padding: 10px 0 4px; margin-left: 0;
   }
 
+  /* Page + docked side panel; flex mirrors the panel to the left in RTL */
+  .page-row { flex: 1; display: flex; min-height: 0; }
+  .page-row > .gemini-page { flex: 1; min-width: 0; }
+  /* With the side panel open, Chrome insets the page as a rounded card in the
+     same toolbar-coloured frame as the panel. */
+  ${SP_W ? `.page-row { background: #35363a; }
+  .page-row > .gemini-page {
+    margin-inline-start: ${SIDE_PANEL_INSET}px; margin-bottom: ${SIDE_PANEL_INSET}px;
+    border-radius: ${SIDE_PANEL_RADIUS}px;
+  }` : ''}
+  .side-panel {
+    width: ${SP_W}px; flex-shrink: 0;
+    display: flex; flex-direction: column;
+    background: #35363a;
+  }
+  .sp-header {
+    height: ${SIDE_PANEL_HEADER_H}px; flex-shrink: 0;
+    display: flex; align-items: center; gap: 8px;
+    padding: ${isRTL ? '0 14px 0 8px' : '0 8px 0 14px'};
+    font-size: 13px; font-weight: 500; color: #e8eaed;
+  }
+  .sp-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sp-btn {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sp-card {
+    margin: 0 ${SIDE_PANEL_INSET}px ${SIDE_PANEL_INSET}px;
+    border-radius: ${SIDE_PANEL_RADIUS}px; overflow: hidden;
+    background: #202124;
+  }
+  .sp-card > img { display: block; width: ${SIDE_PANEL_CARD_W}px; height: ${SIDE_PANEL_BODY_H}px; }
+
   /* Dim overlay */
   .gemini-dim {
     position: absolute; inset: 0;
@@ -1446,6 +1559,7 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
       </div>
     </div>
 
+    <div class="page-row">
     ${isAF ? `
     <!-- ChatGPT page (AI Folders) -->
     <div class="gemini-page" style="background:#212121;">
@@ -1542,6 +1656,18 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
       </div>
       <div class="gemini-dim"></div>
     </div>`}
+    ${panelB64 ? `
+    <!-- The extension's side panel, docked beside the page -->
+    <div class="side-panel">
+      <div class="sp-header">
+        ${iconImg}
+        <span class="sp-name">${spName}</span>
+        <span class="sp-btn"><!-- Unpin: the panel is pinned, so Chrome offers the crossed-out pin --><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c7c5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v6l-2 4h10l-2-4V4"/><line x1="12" y1="14" x2="12" y2="21"/><line x1="8" y1="4" x2="16" y2="4"/><line x1="4" y1="3" x2="20" y2="21" stroke="#35363a" stroke-width="4.5"/><line x1="4" y1="3" x2="20" y2="21"/></svg></span>
+        <span class="sp-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
+      </div>
+      <div class="sp-card"><img src="data:image/png;base64,${panelB64}"></div>
+    </div>` : ''}
+    </div>
   </div>
 
   <!-- Context menu — dark mode -->
@@ -1568,6 +1694,15 @@ async function compositeContextMenu(page, localeData, isRTL, outPath) {
   await page.setContent(html, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(200);
   await page.setViewportSize({ width: CANVAS_W, height: CANVAS_H });
+  // The panel header carries the full extension name, which runs long in several
+  // languages: shrink it until it fits rather than cut it with an ellipsis.
+  await page.evaluate(() => {
+    const el = document.querySelector('.sp-name');
+    if (!el) return;
+    for (let size = 13; el.scrollWidth > el.clientWidth && size > 9; size -= 0.25) {
+      el.style.fontSize = `${size - 0.25}px`;
+    }
+  });
   await page.screenshot({ path: outPath, fullPage: false });
   console.log(`  ✅ Composed: ${path.basename(outPath)}`);
 }
@@ -1691,9 +1826,12 @@ async function run() {
           await compositeMobileSync(composePage, mobileSyncPath, checkboxBox, localeData, isRTL,
             path.join(OUT_DIR, `Promo_4_${locale.id}.png`));
           try { fs.unlinkSync(mobileSyncPath); } catch (_) {}
-          // Image 5: context menu
+          // Image 5: context menu, with the extension open in the side panel
+          const sidePanelPath = path.join(OUT_DIR, `_raw_side_panel_${locale.id}.png`);
+          await screenshotSidePanel(page, extId, localeData, sidePanelPath);
           await compositeContextMenu(composePage, localeData, isRTL,
-            path.join(OUT_DIR, `Promo_5_${locale.id}.png`));
+            path.join(OUT_DIR, `Promo_5_${locale.id}.png`), sidePanelPath, locale.id);
+          try { fs.unlinkSync(sidePanelPath); } catch (_) {}
           try { fs.unlinkSync(folderPath); } catch (_) {}
           try { fs.unlinkSync(promptPath); } catch (_) {}
         }
