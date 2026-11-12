@@ -9,10 +9,10 @@
     "message": "VI fascikle"
   },
   "searchPlaceholder": {
-    "message": "🔍 Pretraži razgovor..."
+    "message": "Pretraži razgovor..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Pretraži prompt..."
+    "message": "Pretraži prompt..."
   },
   "folderPlaceholder": {
     "message": "Naziv foldera (npr. Kodni projekti)"
@@ -27,22 +27,22 @@
     "message": "Razgovor sačuvan!"
   },
   "noResults": {
-    "message": "Nema rezultata 🕵️"
+    "message": "Nema rezultata"
   },
   "noResultsHint": {
-    "message": "Pretraga obuhvata samo razgovore koje ste već sačuvali — prvo sačuvajte jedan pomoću ➕."
+    "message": "Pretraga obuhvata samo razgovore koje ste već sačuvali — prvo sačuvajte jedan pomoću +."
   },
   "emptyFoldersHint": {
-    "message": "Još nema fascikli — otvorite razgovor na podržanom sajtu veštačke inteligencije i sačuvajte ga pomoću ➕ ili menija desnog klika."
+    "message": "Još nema fascikli — otvorite razgovor na podržanom sajtu veštačke inteligencije i sačuvajte ga pomoću + ili menija desnog klika."
   },
   "sortTooltip": {
     "message": "Sortiraj"
   },
   "exportBtn": {
-    "message": "💾 Izvoz"
+    "message": "Izvoz"
   },
   "importBtn": {
-    "message": "📂 Uvoz"
+    "message": "Uvoz"
   },
   "defaultFolder": {
     "message": "Opšte"
@@ -69,7 +69,7 @@
     "message": "Obriši"
   },
   "btnNewFolder": {
-    "message": "➕ Folder"
+    "message": "+ Folder"
   },
   "promptNewFolder": {
     "message": "Novi folder:"
@@ -141,7 +141,7 @@
     "message": "⚡ Brzo čuvanje"
   },
   "toastSaved": {
-    "message": "✅ Sačuvano u VI fascikle!"
+    "message": "Sačuvano u VI fascikle!"
   },
   "btnOpenGroup": {
     "message": "Otvori u grupi kartica"
@@ -177,7 +177,7 @@
     "message": "Kreira sinhronizovani folder u Chrome favoritima za pristup razgovorima s telefona."
   },
   "reviewTitle": {
-    "message": "⭐ Da li vam se sviđa VI fascikle?"
+    "message": "Da li vam se sviđa VI fascikle?"
   },
   "reviewMessage": {
     "message": "Vaša podrška ogromno pomaže ovom projektu otvorenog koda!"
@@ -201,7 +201,7 @@
     "message": "Savet: Počni s emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Već sačuvano!"
+    "message": "Već sačuvano!"
   },
   "folderModeTitle": {
     "message": "Mod foldera"
@@ -249,7 +249,7 @@
     "message": "Ubaci u razgovor"
   },
   "storageFullError": {
-    "message": "⚠️ Memorija je puna — nije sačuvano."
+    "message": "Memorija je puna — nije sačuvano."
   },
   "newConv_gemini": {
     "message": "Novi razgovor na Gemini"
@@ -312,7 +312,7 @@
     "message": "Koristite ovo proširenje na podržanom VI sajtu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ili Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Ovaj sajt više ne daje svakom razgovoru sopstvenu adresu, pa nema šta da se sačuva."
+    "message": "Ovaj sajt više ne daje svakom razgovoru sopstvenu adresu, pa nema šta da se sačuva."
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Prvo kliknite u uređivač, a zatim koristite dugme za ubacivanje."

@@ -9,10 +9,10 @@
     "message": "Gemini-mappar"
   },
   "searchPlaceholder": {
-    "message": "🔍 Sök en konversation..."
+    "message": "Sök en konversation..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Sök en prompt..."
+    "message": "Sök en prompt..."
   },
   "folderPlaceholder": {
     "message": "Mappnamn (t.ex. Kodprojekt)"
@@ -27,22 +27,22 @@
     "message": "Konversation sparad!"
   },
   "noResults": {
-    "message": "Inga resultat 🕵️"
+    "message": "Inga resultat"
   },
   "noResultsHint": {
-    "message": "Sökningen omfattar bara konversationer du redan har sparat – spara en med ➕ först."
+    "message": "Sökningen omfattar bara konversationer du redan har sparat – spara en med + först."
   },
   "emptyFoldersHint": {
-    "message": "Inga mappar än – öppna en Gemini-konversation och spara den med ➕ eller högerklicksmenyn."
+    "message": "Inga mappar än – öppna en Gemini-konversation och spara den med + eller högerklicksmenyn."
   },
   "sortTooltip": {
     "message": "Sortera"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Använd det här tillägget på en Gemini-sida."
@@ -72,7 +72,7 @@
     "message": "Ta bort"
   },
   "btnNewFolder": {
-    "message": "➕ Mapp"
+    "message": "+ Mapp"
   },
   "promptNewFolder": {
     "message": "Ny mapp:"
@@ -144,7 +144,7 @@
     "message": "⚡ Snabbspar"
   },
   "toastSaved": {
-    "message": "✅ Sparad i Gemini-mappar!"
+    "message": "Sparad i Gemini-mappar!"
   },
   "btnOpenGroup": {
     "message": "Öppna i flikgrupp"
@@ -180,7 +180,7 @@
     "message": "Skapar en synkroniserad mapp i dina Chrome-favoriter för åtkomst till konversationer på telefonen."
   },
   "reviewTitle": {
-    "message": "⭐ Gillar du Gemini-mappar?"
+    "message": "Gillar du Gemini-mappar?"
   },
   "reviewMessage": {
     "message": "Ditt stöd hjälper det här öppen källkod-projektet enormt!"
@@ -204,7 +204,7 @@
     "message": "Tips: Börja med emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Redan sparad!"
+    "message": "Redan sparad!"
   },
   "folderModeTitle": {
     "message": "Mappläge"
@@ -270,7 +270,7 @@
     "message": "Fäst"
   },
   "storageFullError": {
-    "message": "⚠️ Lagringsutrymmet är fullt — inte sparat."
+    "message": "Lagringsutrymmet är fullt — inte sparat."
   },
   "afPromoTitle": {
     "message": "Upptäck AI-mappar"

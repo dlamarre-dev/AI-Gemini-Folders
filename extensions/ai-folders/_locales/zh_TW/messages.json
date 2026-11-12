@@ -9,10 +9,10 @@
     "message": "AI 資料夾"
   },
   "searchPlaceholder": {
-    "message": "🔍 搜尋對話..."
+    "message": "搜尋對話..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 搜尋提示詞..."
+    "message": "搜尋提示詞..."
   },
   "folderPlaceholder": {
     "message": "資料夾名稱（例如：程式碼專案）"
@@ -27,22 +27,22 @@
     "message": "對話已儲存！"
   },
   "noResults": {
-    "message": "找不到結果 🕵️"
+    "message": "找不到結果"
   },
   "noResultsHint": {
-    "message": "搜尋僅涵蓋已儲存的對話 — 請先用 ➕ 儲存一個對話。"
+    "message": "搜尋僅涵蓋已儲存的對話 — 請先用 + 儲存一個對話。"
   },
   "emptyFoldersHint": {
-    "message": "還沒有資料夾 — 在支援的 AI 網站上開啟一個對話，然後用 ➕ 或右鍵選單儲存它。"
+    "message": "還沒有資料夾 — 在支援的 AI 網站上開啟一個對話，然後用 + 或右鍵選單儲存它。"
   },
   "sortTooltip": {
     "message": "排序"
   },
   "exportBtn": {
-    "message": "💾 匯出"
+    "message": "匯出"
   },
   "importBtn": {
-    "message": "📂 匯入"
+    "message": "匯入"
   },
   "defaultFolder": {
     "message": "一般"
@@ -69,7 +69,7 @@
     "message": "刪除"
   },
   "btnNewFolder": {
-    "message": "➕ 資料夾"
+    "message": "+ 資料夾"
   },
   "promptNewFolder": {
     "message": "新資料夾："
@@ -141,7 +141,7 @@
     "message": "⚡ 快速儲存"
   },
   "toastSaved": {
-    "message": "✅ 已儲存到 AI 資料夾！"
+    "message": "已儲存到 AI 資料夾！"
   },
   "btnOpenGroup": {
     "message": "在分頁群組中開啟"
@@ -177,7 +177,7 @@
     "message": "在您的 Chrome 我的最愛中建立同步資料夾，以便在手機上存取您的對話。"
   },
   "reviewTitle": {
-    "message": "⭐ 您喜歡 AI 資料夾嗎？"
+    "message": "您喜歡 AI 資料夾嗎？"
   },
   "reviewMessage": {
     "message": "您的支持對這個開源專案非常有幫助！"
@@ -201,7 +201,7 @@
     "message": "提示：以表情符號開頭（Win+. / ⌘⌃Space）"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ 已儲存過！"
+    "message": "已儲存過！"
   },
   "folderModeTitle": {
     "message": "資料夾模式"
@@ -249,7 +249,7 @@
     "message": "插入到對話"
   },
   "storageFullError": {
-    "message": "⚠️ 儲存空間已滿 — 未儲存。"
+    "message": "儲存空間已滿 — 未儲存。"
   },
   "newConv_gemini": {
     "message": "新增 Gemini 對話"
@@ -312,7 +312,7 @@
     "message": "請在支援的 AI 網站上使用此擴充功能（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Baidu、Z.ai、Kimi、Qwen、Meta AI、Mistral、Poe、Duck.ai、Pi 或 Character.AI）。"
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ 此網站不再為每個對話提供獨立網址，因此沒有可儲存的內容。"
+    "message": "此網站不再為每個對話提供獨立網址，因此沒有可儲存的內容。"
   },
   "alertEditorNotFound": {
     "message": "無法在此頁面找到文字輸入框。請先點擊編輯器，再使用插入按鈕。"

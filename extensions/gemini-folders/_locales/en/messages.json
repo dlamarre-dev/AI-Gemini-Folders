@@ -9,10 +9,10 @@
     "message": "Gemini Folders"
   },
   "searchPlaceholder": {
-    "message": "🔍 Search a conversation..."
+    "message": "Search a conversation..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Search a prompt..."
+    "message": "Search a prompt..."
   },
   "folderPlaceholder": {
     "message": "Folder name (e.g. Code Projects)"
@@ -27,22 +27,22 @@
     "message": "Conversation saved!"
   },
   "noResults": {
-    "message": "No results found 🕵️"
+    "message": "No results found"
   },
   "noResultsHint": {
-    "message": "Search only covers conversations you already saved — save one with ➕ first."
+    "message": "Search only covers conversations you already saved — save one with + first."
   },
   "emptyFoldersHint": {
-    "message": "No folders yet — open a Gemini conversation and save it with ➕ or the right-click menu."
+    "message": "No folders yet — open a Gemini conversation and save it with + or the right-click menu."
   },
   "sortTooltip": {
     "message": "Sort"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Please use this extension on a Gemini page."
@@ -72,7 +72,7 @@
     "message": "Delete"
   },
   "btnNewFolder": {
-    "message": "➕ Folder"
+    "message": "+ Folder"
   },
   "promptNewFolder": {
     "message": "New folder:"
@@ -144,7 +144,7 @@
     "message": "⚡ Quick Saves"
   },
   "toastSaved": {
-    "message": "✅ Saved to Gemini Folders!"
+    "message": "Saved to Gemini Folders!"
   },
   "btnOpenGroup": {
     "message": "Open in Tab Group"
@@ -180,7 +180,7 @@
     "message": "Creates a synced folder in your Chrome favorites to access your conversations on your phone."
   },
   "reviewTitle": {
-    "message": "⭐ Are you enjoying Gemini Folders?"
+    "message": "Are you enjoying Gemini Folders?"
   },
   "reviewMessage": {
     "message": "Your support helps this open-source project immensely!"
@@ -204,7 +204,7 @@
     "message": "Tip: Start with emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Already saved!"
+    "message": "Already saved!"
   },
   "folderModeTitle": {
     "message": "Folder Mode"
@@ -270,7 +270,7 @@
     "message": "Pin"
   },
   "storageFullError": {
-    "message": "⚠️ Storage full — not saved."
+    "message": "Storage full — not saved."
   },
   "afPromoTitle": {
     "message": "Discover AI Folders"

@@ -9,10 +9,10 @@
     "message": "AI-mappar"
   },
   "searchPlaceholder": {
-    "message": "🔍 Sök en konversation..."
+    "message": "Sök en konversation..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Sök en prompt..."
+    "message": "Sök en prompt..."
   },
   "folderPlaceholder": {
     "message": "Mappnamn (t.ex. Kodprojekt)"
@@ -27,22 +27,22 @@
     "message": "Konversation sparad!"
   },
   "noResults": {
-    "message": "Inga resultat 🕵️"
+    "message": "Inga resultat"
   },
   "noResultsHint": {
-    "message": "Sökningen omfattar bara konversationer du redan har sparat – spara en med ➕ först."
+    "message": "Sökningen omfattar bara konversationer du redan har sparat – spara en med + först."
   },
   "emptyFoldersHint": {
-    "message": "Inga mappar än – öppna en konversation på en webbplats med stöd för AI och spara den med ➕ eller högerklicksmenyn."
+    "message": "Inga mappar än – öppna en konversation på en webbplats med stöd för AI och spara den med + eller högerklicksmenyn."
   },
   "sortTooltip": {
     "message": "Sortera"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "defaultFolder": {
     "message": "Allmänt"
@@ -69,7 +69,7 @@
     "message": "Ta bort"
   },
   "btnNewFolder": {
-    "message": "➕ Mapp"
+    "message": "+ Mapp"
   },
   "promptNewFolder": {
     "message": "Ny mapp:"
@@ -141,7 +141,7 @@
     "message": "⚡ Snabbspar"
   },
   "toastSaved": {
-    "message": "✅ Sparad i AI-mappar!"
+    "message": "Sparad i AI-mappar!"
   },
   "btnOpenGroup": {
     "message": "Öppna i flikgrupp"
@@ -177,7 +177,7 @@
     "message": "Skapar en synkroniserad mapp i dina Chrome-favoriter för åtkomst till konversationer på telefonen."
   },
   "reviewTitle": {
-    "message": "⭐ Gillar du AI-mappar?"
+    "message": "Gillar du AI-mappar?"
   },
   "reviewMessage": {
     "message": "Ditt stöd hjälper det här öppen källkod-projektet enormt!"
@@ -201,7 +201,7 @@
     "message": "Tips: Börja med emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Redan sparad!"
+    "message": "Redan sparad!"
   },
   "folderModeTitle": {
     "message": "Mappläge"
@@ -249,7 +249,7 @@
     "message": "Infoga i chatten"
   },
   "storageFullError": {
-    "message": "⚠️ Lagringsutrymmet är fullt — inte sparat."
+    "message": "Lagringsutrymmet är fullt — inte sparat."
   },
   "newConv_gemini": {
     "message": "Ny Gemini-konversation"
@@ -312,7 +312,7 @@
     "message": "Använd den här utökningen på en AI-webbplats som stöds (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi eller Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Den här webbplatsen ger inte längre varje konversation en egen adress, så det finns inget att spara."
+    "message": "Den här webbplatsen ger inte längre varje konversation en egen adress, så det finns inget att spara."
   },
   "alertEditorNotFound": {
     "message": "Det gick inte att hitta textfältet på den här sidan. Försök att klicka i redigeraren först och använd sedan infogaknappen."

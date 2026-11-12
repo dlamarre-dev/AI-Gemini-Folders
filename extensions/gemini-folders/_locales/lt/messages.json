@@ -9,10 +9,10 @@
     "message": "Gemini Aplankai"
   },
   "searchPlaceholder": {
-    "message": "🔍 Ieškoti pokalbio..."
+    "message": "Ieškoti pokalbio..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Ieškoti prompto..."
+    "message": "Ieškoti prompto..."
   },
   "folderPlaceholder": {
     "message": "Aplanko pavadinimas (pvz. Kodo projektai)"
@@ -27,22 +27,22 @@
     "message": "Pokalbis išsaugotas!"
   },
   "noResults": {
-    "message": "Rezultatų nerasta 🕵️"
+    "message": "Rezultatų nerasta"
   },
   "noResultsHint": {
-    "message": "Paieška apima tik jau išsaugotus pokalbius — pirmiausia išsaugokite vieną su ➕."
+    "message": "Paieška apima tik jau išsaugotus pokalbius — pirmiausia išsaugokite vieną su +."
   },
   "emptyFoldersHint": {
-    "message": "Aplankų dar nėra — atidarykite Gemini pokalbį ir išsaugokite jį su ➕ arba dešiniojo pelės mygtuko meniu."
+    "message": "Aplankų dar nėra — atidarykite Gemini pokalbį ir išsaugokite jį su + arba dešiniojo pelės mygtuko meniu."
   },
   "sortTooltip": {
     "message": "Rikiuoti"
   },
   "exportBtn": {
-    "message": "💾 Eksportas"
+    "message": "Eksportas"
   },
   "importBtn": {
-    "message": "📂 Importas"
+    "message": "Importas"
   },
   "alertNotGemini": {
     "message": "Naudok šį plėtinį Gemini puslapyje."
@@ -72,7 +72,7 @@
     "message": "Ištrinti"
   },
   "btnNewFolder": {
-    "message": "➕ Aplankas"
+    "message": "+ Aplankas"
   },
   "promptNewFolder": {
     "message": "Naujas aplankas:"
@@ -144,7 +144,7 @@
     "message": "⚡ Greitas išsaugojimas"
   },
   "toastSaved": {
-    "message": "✅ Išsaugota Gemini Aplankuose!"
+    "message": "Išsaugota Gemini Aplankuose!"
   },
   "btnOpenGroup": {
     "message": "Atidaryti skirtukų grupėje"
@@ -180,7 +180,7 @@
     "message": "Sukuria sinchronizuotą aplanką Chrome parankiniuose, kad galėtum pasiekti pokalbius iš telefono."
   },
   "reviewTitle": {
-    "message": "⭐ Ar tau patinka Gemini Aplankai?"
+    "message": "Ar tau patinka Gemini Aplankai?"
   },
   "reviewMessage": {
     "message": "Tavo palaikymas labai padeda šiam atvirojo kodo projektui!"
@@ -204,7 +204,7 @@
     "message": "Patarimas: pradėk emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Jau išsaugota!"
+    "message": "Jau išsaugota!"
   },
   "folderModeTitle": {
     "message": "Aplankų režimas"
@@ -270,7 +270,7 @@
     "message": "Prisegti"
   },
   "storageFullError": {
-    "message": "⚠️ Saugykla pilna — neišsaugota."
+    "message": "Saugykla pilna — neišsaugota."
   },
   "afPromoTitle": {
     "message": "Atraskite AI aplankus"

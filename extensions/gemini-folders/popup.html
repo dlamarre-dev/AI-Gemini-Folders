@@ -17,15 +17,15 @@
       </a>
       <div id="modeToggle" class="mode-toggle">
         <div class="mode-toggle-pill"></div>
-        <button id="modeFolderBtn" class="mode-toggle-btn mode-toggle-btn--active">📁</button>
-        <button id="modePromptBtn" class="mode-toggle-btn">📝</button>
+        <button id="modeFolderBtn" class="mode-toggle-btn mode-toggle-btn--active" data-ic="folder" data-ic-size="15"></button>
+        <button id="modePromptBtn" class="mode-toggle-btn" data-ic="prompt" data-ic-size="15"></button>
       </div>
     </div>
   </h3>
 
   <div id="reviewBanner" style="display: none; background-color: var(--hover-bg); padding: 12px; margin: 10px 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
     <p style="margin: 0 0 10px 0; font-size: 13px; color: var(--text-color);">
-      <b id="reviewTitleTxt">⭐ Are you enjoying Gemini Folders?</b><br>
+      <b id="reviewTitleTxt">Are you enjoying Gemini Folders?</b><br>
       <span id="reviewMessageTxt">Your support helps this open-source project immensely!</span>
     </p>
     <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
@@ -51,7 +51,7 @@
   </div>
 
   <div id="folderModeContainer">
-  <div style="display: flex; gap: 8px; margin-bottom: 10px; position: relative; align-items: center;"> <input type="search" id="searchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;"><div class="dropdown-container" style="height: 32px;"> <button id="sortToggleBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">⇅</button> <div id="sortMenu" class="custom-dropdown">
+  <div style="display: flex; gap: 8px; margin-bottom: 10px; position: relative; align-items: center;"> <input type="search" id="searchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;"><div class="dropdown-container" style="height: 32px;"> <button id="sortToggleBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;" data-ic="sort" data-ic-size="18"></button> <div id="sortMenu" class="custom-dropdown">
         <div class="dropdown-item" data-value="dateDesc" id="sortNewest"></div>
         <div class="dropdown-item" data-value="dateAsc" id="sortOldest"></div>
         <div class="dropdown-item" data-value="alphaAsc" id="sortAlpha"></div>
@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <div style="display: flex; gap: 8px; margin-bottom: 10px;"> <button id="toggleAddPanelBtn" class="main-btn" style="margin: 0; padding: 0 10px; height: 32px; font-size: 13px; flex-grow: 1;"></button> <button id="newFolderBtn" class="secondary-btn" style="margin: 0; padding: 0 8px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; white-space: nowrap;">+ 📁</button> </div>
+  <div style="display: flex; gap: 8px; margin-bottom: 10px;"> <button id="toggleAddPanelBtn" class="main-btn" style="margin: 0; padding: 0 10px; height: 32px; font-size: 13px; flex-grow: 1;"></button> <button id="newFolderBtn" class="secondary-btn" style="margin: 0; padding: 0 8px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; white-space: nowrap;" data-ic="folderAdd" data-ic-size="18"></button> </div>
 
   <div id="addConversationPanel" style="display: none; background: var(--folder-bg); padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); margin-bottom: 10px;">
     <input type="text" id="folderName" style="margin-bottom: 8px;">
@@ -78,8 +78,8 @@
         <button type="button" id="bulkMoveTrigger" class="custom-dropdown-trigger"></button>
         <ul id="bulkMoveList" class="custom-dropdown-list" hidden></ul>
       </div>
-      <button id="bulkDeleteBtn" style="background: var(--delete-color); color: white; border: none; padding: 4px 8px; border-radius: 6px; cursor: pointer;">🗑️</button>
-      <button id="bulkCancelBtn" class="secondary-btn" style="padding: 4px 8px; height: 28px;">✕</button>
+      <button id="bulkDeleteBtn" style="background: var(--delete-color); color: white; border: none; padding: 4px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; height: 28px;" data-ic="trash" data-ic-size="16"></button>
+      <button id="bulkCancelBtn" class="secondary-btn" style="padding: 4px 8px; height: 28px; display: flex; align-items: center;" data-ic="close" data-ic-size="16"></button>
     </div>
     </div>
   </div>
@@ -89,7 +89,7 @@
     <div style="display: flex; gap: 8px; margin-bottom: 10px; position: relative; align-items: center;">
       <input type="search" id="promptSearchInput" style="margin-bottom: 0; flex-grow: 1; height: 32px;">
       <div class="dropdown-container" style="height: 32px;">
-        <button id="promptSortToggleBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">⇅</button>
+        <button id="promptSortToggleBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;" data-ic="sort" data-ic-size="18"></button>
         <div id="promptSortMenu" class="custom-dropdown">
           <div class="dropdown-item" data-value="dateDesc" id="promptSortNewest"></div>
           <div class="dropdown-item" data-value="dateAsc" id="promptSortOldest"></div>
@@ -99,8 +99,8 @@
     </div>
     <div style="display: flex; gap: 8px; margin-bottom: 10px; align-items: center;">
       <button id="toggleAddPromptPanelBtn" class="main-btn" style="margin: 0; padding: 0 10px; height: 32px; font-size: 13px; flex-grow: 1;"></button>
-      <button id="newGeminiConvBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">💬</button>
-      <button id="gemBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">💎</button>
+      <button id="newGeminiConvBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;" data-ic="chat" data-ic-size="16"></button>
+      <button id="gemBtn" class="secondary-btn" style="margin: 0; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;" data-ic="gem" data-ic-size="16"></button>
     </div>
 
     <div id="addPromptPanel" style="display: none; background: var(--folder-bg); padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); margin-bottom: 10px;">
@@ -120,11 +120,11 @@
   <div class="footer-actions" style="align-items: center;">
     <label id="syncBookmarksLabel" style="display: flex; align-items: center; gap: 4px; cursor: pointer; margin: 0;" title="Mobile sync">
       <input type="checkbox" id="syncBookmarksToggle" class="switch-toggle" style="margin: 0; cursor: pointer;">
-      <span style="font-size: 14px;">📱</span>
+      <span class="footer-icon" data-ic="phone" data-ic-size="16"></span>
     </label>
     <label id="syncPromptsLabel" style="display: none; align-items: center; gap: 4px; cursor: pointer; margin: 0;">
       <input type="checkbox" id="syncPromptsToggle" class="switch-toggle" style="margin: 0; cursor: pointer;">
-      <span style="font-size: 14px;">☁️</span>
+      <span class="footer-icon" data-ic="cloud" data-ic-size="16"></span>
     </label>
     <button id="exportBtn" class="secondary-btn"></button>
 
@@ -147,6 +147,7 @@
   <script src="lz-string.min.js"></script>
   <script src="utils.js"></script>
   <script src="site-config.js"></script>
+  <script src="icons.js"></script>
   <script src="ui.js"></script>
   <script src="folders.js"></script>
   <script src="bulk-actions.js"></script>

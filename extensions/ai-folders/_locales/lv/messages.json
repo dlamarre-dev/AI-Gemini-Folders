@@ -9,10 +9,10 @@
     "message": "AI mapes"
   },
   "searchPlaceholder": {
-    "message": "🔍 Meklēt sarunu..."
+    "message": "Meklēt sarunu..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Meklēt uzvedni..."
+    "message": "Meklēt uzvedni..."
   },
   "folderPlaceholder": {
     "message": "Mapes nosaukums (piem. Koda projekti)"
@@ -27,22 +27,22 @@
     "message": "Saruna saglabāta!"
   },
   "noResults": {
-    "message": "Rezultātu nav 🕵️"
+    "message": "Rezultātu nav"
   },
   "noResultsHint": {
-    "message": "Meklēšana ietver tikai jau saglabātās sarunas — vispirms saglabājiet vienu ar ➕."
+    "message": "Meklēšana ietver tikai jau saglabātās sarunas — vispirms saglabājiet vienu ar +."
   },
   "emptyFoldersHint": {
-    "message": "Vēl nav mapju — atveriet sarunu atbalstītā MI vietnē un saglabājiet to ar ➕ vai ar labā klikšķa izvēlni."
+    "message": "Vēl nav mapju — atveriet sarunu atbalstītā MI vietnē un saglabājiet to ar + vai ar labā klikšķa izvēlni."
   },
   "sortTooltip": {
     "message": "Kārtot"
   },
   "exportBtn": {
-    "message": "💾 Eksports"
+    "message": "Eksports"
   },
   "importBtn": {
-    "message": "📂 Imports"
+    "message": "Imports"
   },
   "defaultFolder": {
     "message": "Vispārīgi"
@@ -69,7 +69,7 @@
     "message": "Dzēst"
   },
   "btnNewFolder": {
-    "message": "➕ Mape"
+    "message": "+ Mape"
   },
   "promptNewFolder": {
     "message": "Jauna mape:"
@@ -141,7 +141,7 @@
     "message": "⚡ Ātrā saglabāšana"
   },
   "toastSaved": {
-    "message": "✅ Saglabāts Gemini Mapēs!"
+    "message": "Saglabāts Gemini Mapēs!"
   },
   "btnOpenGroup": {
     "message": "Atvērt cilņu grupā"
@@ -177,7 +177,7 @@
     "message": "Izveido sinhronizētu mapi Chrome izlasē, lai piekļūtu sarunām no tālruņa."
   },
   "reviewTitle": {
-    "message": "⭐ Vai tev patīk AI mapes?"
+    "message": "Vai tev patīk AI mapes?"
   },
   "reviewMessage": {
     "message": "Tavs atbalsts ārkārtīgi palīdz šim atvērtā koda projektam!"
@@ -201,7 +201,7 @@
     "message": "Padoms: sāc ar emodzi (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Jau saglabāts!"
+    "message": "Jau saglabāts!"
   },
   "folderModeTitle": {
     "message": "Mapju režīms"
@@ -249,7 +249,7 @@
     "message": "Ievietot tērzēšanā"
   },
   "storageFullError": {
-    "message": "⚠️ Krātuve ir pilna — nav saglabāts."
+    "message": "Krātuve ir pilna — nav saglabāts."
   },
   "newConv_gemini": {
     "message": "Jauna Gemini saruna"
@@ -312,7 +312,7 @@
     "message": "Lūdzu, izmantojiet šo paplašinājumu atbalstītā AI vietnē (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi vai Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Šī vietne vairs nepiešķir katrai sarunai savu adresi, tāpēc nav ko saglabāt."
+    "message": "Šī vietne vairs nepiešķir katrai sarunai savu adresi, tāpēc nav ko saglabāt."
   },
   "alertEditorNotFound": {
     "message": "Šajā lapā nevar atrast teksta ievades lauku. Mēģiniet vispirms noklikšķināt redaktorā un pēc tam izmantojiet ievietošanas pogu."

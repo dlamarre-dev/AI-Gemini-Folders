@@ -9,10 +9,10 @@
     "message": "AI フォルダ"
   },
   "searchPlaceholder": {
-    "message": "🔍 会話を検索..."
+    "message": "会話を検索..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 プロンプトを検索..."
+    "message": "プロンプトを検索..."
   },
   "folderPlaceholder": {
     "message": "フォルダ名 (例: プロジェクト)"
@@ -27,22 +27,22 @@
     "message": "会話を保存しました！"
   },
   "noResults": {
-    "message": "結果が見つかりません 🕵️"
+    "message": "結果が見つかりません"
   },
   "noResultsHint": {
-    "message": "検索は保存済みの会話のみが対象です — まず ➕ で会話を保存してください。"
+    "message": "検索は保存済みの会話のみが対象です — まず + で会話を保存してください。"
   },
   "emptyFoldersHint": {
-    "message": "フォルダーがまだありません — 対応している AI サイトで会話を開き、➕ または右クリックメニューで保存してください。"
+    "message": "フォルダーがまだありません — 対応している AI サイトで会話を開き、+ または右クリックメニューで保存してください。"
   },
   "sortTooltip": {
     "message": "並べ替え"
   },
   "exportBtn": {
-    "message": "💾 エクスポート"
+    "message": "エクスポート"
   },
   "importBtn": {
-    "message": "📂 インポート"
+    "message": "インポート"
   },
   "defaultFolder": {
     "message": "一般"
@@ -69,7 +69,7 @@
     "message": "削除"
   },
   "btnNewFolder": {
-    "message": "➕ フォルダ"
+    "message": "+ フォルダ"
   },
   "promptNewFolder": {
     "message": "新しいフォルダ："
@@ -141,7 +141,7 @@
     "message": "⚡ クイック保存"
   },
   "toastSaved": {
-    "message": "✅ AI フォルダに保存しました！"
+    "message": "AI フォルダに保存しました！"
   },
   "btnOpenGroup": {
     "message": "タブグループで開く"
@@ -177,7 +177,7 @@
     "message": "Chromeのお気に入りに同期されたフォルダを作成し、スマートフォンから会話にアクセスできるようにします。"
   },
   "reviewTitle": {
-    "message": "⭐ AI フォルダ をお楽しみですか？"
+    "message": "AI フォルダ をお楽しみですか？"
   },
   "reviewMessage": {
     "message": "皆様のサポートがこのオープンソースプロジェクトの大きな力になります！"
@@ -201,7 +201,7 @@
     "message": "ヒント：絵文字で開始（Win+. / ⌘⌃スペース）"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ 保存済みです！"
+    "message": "保存済みです！"
   },
   "folderModeTitle": {
     "message": "フォルダモード"
@@ -249,7 +249,7 @@
     "message": "チャットに挿入"
   },
   "storageFullError": {
-    "message": "⚠️ ストレージがいっぱいです — 保存されませんでした。"
+    "message": "ストレージがいっぱいです — 保存されませんでした。"
   },
   "newConv_gemini": {
     "message": "新しい Gemini の会話"
@@ -312,7 +312,7 @@
     "message": "対応している AI サイト（Gemini、Claude、ChatGPT、Copilot、DeepSeek、Grok、Perplexity、Baidu、Z.ai、Kimi、Qwen、Meta AI、Mistral、Poe、Duck.ai、Pi、または Character.AI）でご使用ください。"
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ このサイトは各会話に個別のアドレスを付与しなくなったため、保存できるものがありません。"
+    "message": "このサイトは各会話に個別のアドレスを付与しなくなったため、保存できるものがありません。"
   },
   "alertEditorNotFound": {
     "message": "このページでテキスト入力欄が見つかりませんでした。先にエディタをクリックしてから、挿入ボタンをご使用ください。"

@@ -9,10 +9,10 @@
     "message": "Gemini Mape"
   },
   "searchPlaceholder": {
-    "message": "🔍 Pretraži razgovor..."
+    "message": "Pretraži razgovor..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Pretraži upit..."
+    "message": "Pretraži upit..."
   },
   "folderPlaceholder": {
     "message": "Naziv mape (npr. Kodni projekti)"
@@ -27,22 +27,22 @@
     "message": "Razgovor je spremljen!"
   },
   "noResults": {
-    "message": "Nema rezultata 🕵️"
+    "message": "Nema rezultata"
   },
   "noResultsHint": {
-    "message": "Pretraživanje obuhvaća samo razgovore koje ste već spremili — najprije spremite jedan pomoću ➕."
+    "message": "Pretraživanje obuhvaća samo razgovore koje ste već spremili — najprije spremite jedan pomoću +."
   },
   "emptyFoldersHint": {
-    "message": "Još nema mapa — otvorite Gemini razgovor i spremite ga pomoću ➕ ili izbornika desnog klika."
+    "message": "Još nema mapa — otvorite Gemini razgovor i spremite ga pomoću + ili izbornika desnog klika."
   },
   "sortTooltip": {
     "message": "Razvrstaj"
   },
   "exportBtn": {
-    "message": "💾 Izvoz"
+    "message": "Izvoz"
   },
   "importBtn": {
-    "message": "📂 Uvoz"
+    "message": "Uvoz"
   },
   "alertNotGemini": {
     "message": "Koristi ovaj dodatak na stranici Gemini."
@@ -72,7 +72,7 @@
     "message": "Izbriši"
   },
   "btnNewFolder": {
-    "message": "➕ Mapa"
+    "message": "+ Mapa"
   },
   "promptNewFolder": {
     "message": "Nova mapa:"
@@ -144,7 +144,7 @@
     "message": "⚡ Brzo spremi"
   },
   "toastSaved": {
-    "message": "✅ Spremljeno u Gemini Mape!"
+    "message": "Spremljeno u Gemini Mape!"
   },
   "btnOpenGroup": {
     "message": "Otvori u grupi kartica"
@@ -180,7 +180,7 @@
     "message": "Stvara sinkroniziranu mapu u Chrome favoritima za pristup razgovorima s telefona."
   },
   "reviewTitle": {
-    "message": "⭐ Sviđa ti se Gemini Mape?"
+    "message": "Sviđa ti se Gemini Mape?"
   },
   "reviewMessage": {
     "message": "Tvoja podrška ogromno pomaže ovom projektu otvorenog koda!"
@@ -204,7 +204,7 @@
     "message": "Savjet: Počni s emojijem (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Već spremljeno!"
+    "message": "Već spremljeno!"
   },
   "folderModeTitle": {
     "message": "Način mapa"
@@ -270,7 +270,7 @@
     "message": "Prikvači"
   },
   "storageFullError": {
-    "message": "⚠️ Pohrana je puna — nije spremljeno."
+    "message": "Pohrana je puna — nije spremljeno."
   },
   "afPromoTitle": {
     "message": "Otkrijte UI mape"

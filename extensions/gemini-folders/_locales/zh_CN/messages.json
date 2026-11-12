@@ -9,10 +9,10 @@
     "message": "Gemini 文件夹"
   },
   "searchPlaceholder": {
-    "message": "🔍 搜索对话..."
+    "message": "搜索对话..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 搜索提示词..."
+    "message": "搜索提示词..."
   },
   "folderPlaceholder": {
     "message": "文件夹名称 (例如: 代码项目)"
@@ -27,22 +27,22 @@
     "message": "对话已保存！"
   },
   "noResults": {
-    "message": "未找到结果 🕵️"
+    "message": "未找到结果"
   },
   "noResultsHint": {
-    "message": "搜索仅涵盖已保存的对话 — 请先用 ➕ 保存一个对话。"
+    "message": "搜索仅涵盖已保存的对话 — 请先用 + 保存一个对话。"
   },
   "emptyFoldersHint": {
-    "message": "还没有文件夹 — 打开一个 Gemini 对话，然后用 ➕ 或右键菜单保存它。"
+    "message": "还没有文件夹 — 打开一个 Gemini 对话，然后用 + 或右键菜单保存它。"
   },
   "sortTooltip": {
     "message": "排序"
   },
   "exportBtn": {
-    "message": "💾 导出"
+    "message": "导出"
   },
   "importBtn": {
-    "message": "📂 导入"
+    "message": "导入"
   },
   "alertNotGemini": {
     "message": "请在 Gemini 页面上使用此扩展。"
@@ -72,7 +72,7 @@
     "message": "删除"
   },
   "btnNewFolder": {
-    "message": "➕ 文件夹"
+    "message": "+ 文件夹"
   },
   "promptNewFolder": {
     "message": "新文件夹:"
@@ -144,7 +144,7 @@
     "message": "⚡ 快速保存"
   },
   "toastSaved": {
-    "message": "✅ 已保存到 Gemini 文件夹！"
+    "message": "已保存到 Gemini 文件夹！"
   },
   "btnOpenGroup": {
     "message": "在标签组中打开"
@@ -180,7 +180,7 @@
     "message": "在 Chrome 收藏夹中创建一个同步的文件夹，以便在手机上访问您的对话。"
   },
   "reviewTitle": {
-    "message": "⭐ 您喜欢 Gemini 文件夹吗？"
+    "message": "您喜欢 Gemini 文件夹吗？"
   },
   "reviewMessage": {
     "message": "您的支持对这个开源项目有巨大的帮助！"
@@ -204,7 +204,7 @@
     "message": "提示词：以表情符号开头 (Win+. / ⌘⌃空格键)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ 已保存！"
+    "message": "已保存！"
   },
   "folderModeTitle": {
     "message": "文件夹模式"
@@ -270,7 +270,7 @@
     "message": "置顶"
   },
   "storageFullError": {
-    "message": "⚠️ 存储已满 — 未保存。"
+    "message": "存储已满 — 未保存。"
   },
   "afPromoTitle": {
     "message": "发现 AI 文件夹"

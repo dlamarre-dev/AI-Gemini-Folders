@@ -9,10 +9,10 @@
     "message": "Foldery AI"
   },
   "searchPlaceholder": {
-    "message": "🔍 Szukaj konwersacji..."
+    "message": "Szukaj konwersacji..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Szukaj promptu..."
+    "message": "Szukaj promptu..."
   },
   "folderPlaceholder": {
     "message": "Nazwa folderu (np. Projekty Kod)"
@@ -27,22 +27,22 @@
     "message": "Konwersacja zapisana!"
   },
   "noResults": {
-    "message": "Brak wyników 🕵️"
+    "message": "Brak wyników"
   },
   "noResultsHint": {
-    "message": "Wyszukiwanie obejmuje tylko rozmowy, które już zapisałeś — najpierw zapisz jedną za pomocą ➕."
+    "message": "Wyszukiwanie obejmuje tylko rozmowy, które już zapisałeś — najpierw zapisz jedną za pomocą +."
   },
   "emptyFoldersHint": {
-    "message": "Brak folderów — otwórz rozmowę na obsługiwanej stronie AI i zapisz ją za pomocą ➕ lub menu prawego przycisku myszy."
+    "message": "Brak folderów — otwórz rozmowę na obsługiwanej stronie AI i zapisz ją za pomocą + lub menu prawego przycisku myszy."
   },
   "sortTooltip": {
     "message": "Sortuj"
   },
   "exportBtn": {
-    "message": "💾 Eksport"
+    "message": "Eksport"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "defaultFolder": {
     "message": "Ogólne"
@@ -69,7 +69,7 @@
     "message": "Usuń"
   },
   "btnNewFolder": {
-    "message": "➕ Folder"
+    "message": "+ Folder"
   },
   "promptNewFolder": {
     "message": "Nowy folder:"
@@ -141,7 +141,7 @@
     "message": "⚡ Szybki zapis"
   },
   "toastSaved": {
-    "message": "✅ Zapisano w Folderach Gemini!"
+    "message": "Zapisano w Folderach Gemini!"
   },
   "btnOpenGroup": {
     "message": "Otwórz w grupie kart"
@@ -177,7 +177,7 @@
     "message": "Tworzy zsynchronizowany folder w ulubionych Chrome, aby uzyskać dostęp do konwersacji na telefonie."
   },
   "reviewTitle": {
-    "message": "⭐ Podobają Ci się Foldery AI?"
+    "message": "Podobają Ci się Foldery AI?"
   },
   "reviewMessage": {
     "message": "Twoje wsparcie ogromnie pomaga temu projektowi open source!"
@@ -201,7 +201,7 @@
     "message": "Wskazówka: Zacznij od emoji (Win+. / ⌘⌃Spacja)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Już zapisane!"
+    "message": "Już zapisane!"
   },
   "folderModeTitle": {
     "message": "Tryb folderów"
@@ -249,7 +249,7 @@
     "message": "Wstaw do czatu"
   },
   "storageFullError": {
-    "message": "⚠️ Pamięć pełna — nie zapisano."
+    "message": "Pamięć pełna — nie zapisano."
   },
   "newConv_gemini": {
     "message": "Nowa rozmowa w Gemini"
@@ -312,7 +312,7 @@
     "message": "Używaj tego rozszerzenia na obsługiwanej stronie AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi lub Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Ta witryna nie nadaje już każdej rozmowie własnego adresu, więc nie ma czego zapisać."
+    "message": "Ta witryna nie nadaje już każdej rozmowie własnego adresu, więc nie ma czego zapisać."
   },
   "alertEditorNotFound": {
     "message": "Nie można znaleźć pola tekstowego na tej stronie. Spróbuj najpierw kliknąć w edytor, a następnie użyj przycisku wstawiania."

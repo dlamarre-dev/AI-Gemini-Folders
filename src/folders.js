@@ -107,13 +107,13 @@ function displayFolders(openFoldersArg = [], searchTerm = "", onRendered) {
     if (!searchTerm && Object.keys(folders).length === 0) {
       const empty = document.createElement('div');
       empty.className = 'empty-state';
-      const icon = document.createElement('div');
-      icon.className = 'empty-state-icon';
-      icon.textContent = '📁';
+      const emptyIcon = document.createElement('div');
+      emptyIcon.className = 'empty-state-icon';
+      emptyIcon.appendChild(icon('folderEmpty', 32));
       const msg = document.createElement('div');
       msg.textContent = chrome.i18n.getMessage('emptyFoldersHint')
-        || 'No folders yet — open a conversation on a supported AI site and save it with ➕ or the right-click menu.';
-      empty.append(icon, msg);
+        || 'No folders yet — open a conversation on a supported AI site and save it with + or the right-click menu.';
+      empty.append(emptyIcon, msg);
       folderList.appendChild(empty);
     }
     if (onRendered) onRendered();
@@ -211,7 +211,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
   const leftPart = document.createElement('div');
   leftPart.style.display = 'flex';
 
-  // --- Different folder icon if empty (📁) or full (🗂️) ---
+  // --- Folder icon: outline when empty, solid when it holds something ---
   const match = folderName.match(EMOJI_PREFIX_REGEX);
   const customIcon = match ? match[1] : null;
   const displayName = match ? folderName.replace(EMOJI_PREFIX_REGEX, '') : folderName;
@@ -219,13 +219,13 @@ function buildFolderElement(folderName, ctx, depth = 1) {
   // A folder holding only sub-folders is not empty: it has something to
   // expand, something to open as a tab group, and it keeps the full icon.
   const isEmpty = chats.length === 0 && childNames.length === 0;
-  // If there is a custom emoji we use it, otherwise default.
-  const folderIcon = customIcon ? customIcon : (isEmpty ? '📁' : '🗂️');
-
   leftPart.textContent = '';
   const iconSpan = document.createElement('span');
   iconSpan.className = 'folder-icon';
-  iconSpan.textContent = folderIcon;
+  // An emoji the user put in front of the name is theirs and is shown as
+  // typed; only the default is one of our glyphs.
+  if (customIcon) iconSpan.textContent = customIcon;
+  else iconSpan.appendChild(icon(isEmpty ? 'folderEmpty' : 'folder', 16));
   const nameDiv = document.createElement('div');
   nameDiv.className = 'folder-name';
   nameDiv.textContent = displayName;
@@ -241,7 +241,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
     // unusable from the keyboard; this is.
     const unnestBtn = document.createElement('button');
     unnestBtn.className = 'action-btn unnest-btn';
-    unnestBtn.textContent = '⤴';
+    setIcon(unnestBtn, 'levelUp');
     unnestBtn.title = chrome.i18n.getMessage("btnUnnestFolder") || "Move out of its folder";
     unnestBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -251,7 +251,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
   } else {
     const pinBtn = document.createElement('button');
     pinBtn.className = `action-btn pin-btn ${isPinned ? 'is-pinned' : ''}`;
-    pinBtn.textContent = isPinned ? '📌' : '📍';
+    setIcon(pinBtn, isPinned ? 'pinFilled' : 'pin');
     pinBtn.title = chrome.i18n.getMessage(isPinned ? "btnUnpin" : "btnPin");
     pinBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -263,7 +263,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
   if (!isEmpty) {
     const openGroupBtn = document.createElement('button');
     openGroupBtn.className = 'action-btn open-group-btn';
-    openGroupBtn.textContent = '📑';
+    setIcon(openGroupBtn, 'tabs');
     openGroupBtn.title = chrome.i18n.getMessage("btnOpenGroup") || "Open in Tab Group";
     // A folder opens its whole subtree, at any level.
     const groupChats = flattenFolderChats(folders, folderParents, folderName, sortPref);
@@ -276,7 +276,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
 
   const editFolderBtn = document.createElement('button');
   editFolderBtn.className = 'action-btn edit-btn';
-  editFolderBtn.textContent = '✏️';
+  setIcon(editFolderBtn, 'edit');
   editFolderBtn.title = chrome.i18n.getMessage("btnRenameFolder");
   editFolderBtn.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -286,7 +286,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
 
   const delFolderBtn = document.createElement('button');
   delFolderBtn.className = 'action-btn delete-btn';
-  delFolderBtn.textContent = '🗑️';
+  setIcon(delFolderBtn, 'trash');
   delFolderBtn.title = chrome.i18n.getMessage("btnDeleteFolder");
   delFolderBtn.addEventListener('click', async (e) => {
     e.stopPropagation();
@@ -318,7 +318,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
         pinnedFolders: updatedPinned,
         folderParents: pruneFolderParents(data.folders, parents),
       }, (err) => {
-        if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); displayFolders(); return; }
+        if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || 'Storage full — not saved.', type: 'alert', icon: 'warning' }); displayFolders(); return; }
         displayFolders(null, searchInput ? searchInput.value.toLowerCase() : "");
       });
     });
@@ -532,7 +532,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
 
       const editBtn = document.createElement('button');
       editBtn.className = 'action-btn edit-btn';
-      editBtn.textContent = '✏️';
+      setIcon(editBtn, 'edit');
       editBtn.title = chrome.i18n.getMessage("btnRename");
       editBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -541,7 +541,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
 
       const delBtn = document.createElement('button');
       delBtn.className = 'action-btn delete-btn';
-      delBtn.textContent = '🗑️';
+      setIcon(delBtn, 'trash');
       delBtn.title = chrome.i18n.getMessage("btnDelete");
       delBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -581,9 +581,7 @@ function buildFolderElement(folderName, ctx, depth = 1) {
   if (hasExpandable) {
     const chevron = document.createElement('span');
     chevron.className = 'folder-chevron';
-    chevron.appendChild(new DOMParser().parseFromString(
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 6l6 6-6 6z"/></svg>',
-      'image/svg+xml').documentElement);
+    chevron.appendChild(icon('chevron'));
     leftPart.prepend(chevron);
     folderDiv.classList.toggle('is-open', isFolderOpen);
     folderHeader.setAttribute('aria-expanded', String(isFolderOpen));
@@ -619,7 +617,7 @@ async function renameChat(folderName, chatUrl, currentTitle) {
       if (realIndex !== -1) {
         folders[folderName][realIndex].title = newTitle.trim();
         saveData({ folders: folders }, (err) => {
-          if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
+          if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || 'Storage full — not saved.', type: 'alert', icon: 'warning' }); return; }
           const searchInput = document.getElementById('searchInput');
           displayFolders(folderName, searchInput ? searchInput.value.toLowerCase() : "");
         });
@@ -636,7 +634,7 @@ function deleteChat(folderName, chatUrl) {
     if (realIndex !== -1) {
       folders[folderName].splice(realIndex, 1);
       saveData({ folders: folders }, (err) => {
-        if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
+        if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || 'Storage full — not saved.', type: 'alert', icon: 'warning' }); return; }
         const searchInput = document.getElementById('searchInput');
         displayFolders(folderName, searchInput ? searchInput.value.toLowerCase() : "");
       });
@@ -679,7 +677,7 @@ function moveChat(sourceFolder, targetFolder, chatUrl) {
     }
 
     saveData({ folders: folders, openFolders: openFolders }, (err) => {
-      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
+      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || 'Storage full — not saved.', type: 'alert', icon: 'warning' }); return; }
       const searchInput = document.getElementById('searchInput');
       displayFolders(openFolders, searchInput ? searchInput.value.toLowerCase() : "");
     });
@@ -744,7 +742,7 @@ function nestFolder(childName, parentName) {
       folderParents: pruneFolderParents(folders, withFolderParent(parents, childName, parentName)),
       openFolders,
     }, (err) => {
-      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
+      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || 'Storage full — not saved.', type: 'alert', icon: 'warning' }); return; }
       const searchInput = document.getElementById('searchInput');
       displayFolders(openFolders, searchInput ? searchInput.value.toLowerCase() : "");
     });
@@ -765,7 +763,7 @@ function unnestFolder(childName) {
 }
 
 // One level up: under the grandparent, or the top level when there is none.
-// That is the ⤴ button. Always valid — a subtree that fitted lower fits higher.
+// That is the level-up button. Always valid — a subtree that fitted lower fits higher.
 function liftFolder(childName) {
   moveFolderUnder(childName, (folders, parents, parent) => getFolderParent(folders, parents, parent));
 }
@@ -789,7 +787,7 @@ function moveFolderUnder(childName, pickTarget) {
       folderParents: nextParents,
       openFolders,
     }, (err) => {
-      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
+      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || 'Storage full — not saved.', type: 'alert', icon: 'warning' }); return; }
       const searchInput = document.getElementById('searchInput');
       displayFolders(openFolders, searchInput ? searchInput.value.toLowerCase() : "");
     });
@@ -882,7 +880,7 @@ async function renameFolder(oldName) {
     }
 
     saveData({ folders: folders, pinnedFolders: pinned, folderParents: pruneFolderParents(folders, parents) }, (err) => {
-      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); displayFolders(); return; }
+      if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || 'Storage full — not saved.', type: 'alert', icon: 'warning' }); displayFolders(); return; }
       const searchInput = document.getElementById('searchInput');
       displayFolders(trimmedNewName, searchInput ? searchInput.value.toLowerCase() : "");
     });

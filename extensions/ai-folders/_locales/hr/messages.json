@@ -9,10 +9,10 @@
     "message": "UI mape"
   },
   "searchPlaceholder": {
-    "message": "🔍 Pretraži razgovor..."
+    "message": "Pretraži razgovor..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Pretraži upit..."
+    "message": "Pretraži upit..."
   },
   "folderPlaceholder": {
     "message": "Naziv mape (npr. Kodni projekti)"
@@ -27,22 +27,22 @@
     "message": "Razgovor je spremljen!"
   },
   "noResults": {
-    "message": "Nema rezultata 🕵️"
+    "message": "Nema rezultata"
   },
   "noResultsHint": {
-    "message": "Pretraživanje obuhvaća samo razgovore koje ste već spremili — najprije spremite jedan pomoću ➕."
+    "message": "Pretraživanje obuhvaća samo razgovore koje ste već spremili — najprije spremite jedan pomoću +."
   },
   "emptyFoldersHint": {
-    "message": "Još nema mapa — otvorite razgovor na podržanom AI web-mjestu i spremite ga pomoću ➕ ili izbornika desnog klika."
+    "message": "Još nema mapa — otvorite razgovor na podržanom AI web-mjestu i spremite ga pomoću + ili izbornika desnog klika."
   },
   "sortTooltip": {
     "message": "Razvrstaj"
   },
   "exportBtn": {
-    "message": "💾 Izvoz"
+    "message": "Izvoz"
   },
   "importBtn": {
-    "message": "📂 Uvoz"
+    "message": "Uvoz"
   },
   "defaultFolder": {
     "message": "Opće"
@@ -69,7 +69,7 @@
     "message": "Izbriši"
   },
   "btnNewFolder": {
-    "message": "➕ Mapa"
+    "message": "+ Mapa"
   },
   "promptNewFolder": {
     "message": "Nova mapa:"
@@ -141,7 +141,7 @@
     "message": "⚡ Brzo spremi"
   },
   "toastSaved": {
-    "message": "✅ Spremljeno u UI mape!"
+    "message": "Spremljeno u UI mape!"
   },
   "btnOpenGroup": {
     "message": "Otvori u grupi kartica"
@@ -177,7 +177,7 @@
     "message": "Stvara sinkroniziranu mapu u Chrome favoritima za pristup razgovorima s telefona."
   },
   "reviewTitle": {
-    "message": "⭐ Sviđa ti se UI mape?"
+    "message": "Sviđa ti se UI mape?"
   },
   "reviewMessage": {
     "message": "Tvoja podrška ogromno pomaže ovom projektu otvorenog koda!"
@@ -201,7 +201,7 @@
     "message": "Savjet: Počni s emojijem (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Već spremljeno!"
+    "message": "Već spremljeno!"
   },
   "folderModeTitle": {
     "message": "Način mapa"
@@ -249,7 +249,7 @@
     "message": "Umetni u chat"
   },
   "storageFullError": {
-    "message": "⚠️ Pohrana je puna — nije spremljeno."
+    "message": "Pohrana je puna — nije spremljeno."
   },
   "newConv_gemini": {
     "message": "Novi razgovor na Gemini"
@@ -312,7 +312,7 @@
     "message": "Koristite ovo proširenje na podržanoj AI stranici (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ili Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Ova stranica više ne daje svakom razgovoru vlastitu adresu, pa nema što spremiti."
+    "message": "Ova stranica više ne daje svakom razgovoru vlastitu adresu, pa nema što spremiti."
   },
   "alertEditorNotFound": {
     "message": "Nije moguće pronaći polje za unos teksta na ovoj stranici. Pokušajte kliknuti u uređivač, a zatim koristite gumb za umetanje."

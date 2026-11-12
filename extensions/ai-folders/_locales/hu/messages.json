@@ -9,10 +9,10 @@
     "message": "MI mappák"
   },
   "searchPlaceholder": {
-    "message": "🔍 Beszélgetés keresése..."
+    "message": "Beszélgetés keresése..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Prompt keresése..."
+    "message": "Prompt keresése..."
   },
   "folderPlaceholder": {
     "message": "Mappa neve (pl. Kódprojektek)"
@@ -27,22 +27,22 @@
     "message": "Beszélgetés mentve!"
   },
   "noResults": {
-    "message": "Nincs találat 🕵️"
+    "message": "Nincs találat"
   },
   "noResultsHint": {
-    "message": "A keresés csak a már elmentett beszélgetésekre terjed ki – ments el egyet a ➕ gombbal."
+    "message": "A keresés csak a már elmentett beszélgetésekre terjed ki – ments el egyet a + gombbal."
   },
   "emptyFoldersHint": {
-    "message": "Még nincsenek mappák – nyiss meg egy beszélgetést egy támogatott MI-oldalon, és mentsd el a ➕ gombbal vagy a jobb gombos menüvel."
+    "message": "Még nincsenek mappák – nyiss meg egy beszélgetést egy támogatott MI-oldalon, és mentsd el a + gombbal vagy a jobb gombos menüvel."
   },
   "sortTooltip": {
     "message": "Rendezés"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "defaultFolder": {
     "message": "Általános"
@@ -69,7 +69,7 @@
     "message": "Törlés"
   },
   "btnNewFolder": {
-    "message": "➕ Mappa"
+    "message": "+ Mappa"
   },
   "promptNewFolder": {
     "message": "Új mappa:"
@@ -141,7 +141,7 @@
     "message": "⚡ Gyorsmentések"
   },
   "toastSaved": {
-    "message": "✅ Mentve a MI-mappákba!"
+    "message": "Mentve a MI-mappákba!"
   },
   "btnOpenGroup": {
     "message": "Megnyitás lapcsoportban"
@@ -177,7 +177,7 @@
     "message": "Szinkronizált mappát hoz létre a Chrome-kedvencekben, hogy telefonján is elérhesse a beszélgetéseit."
   },
   "reviewTitle": {
-    "message": "⭐ Tetszik a MI mappák?"
+    "message": "Tetszik a MI mappák?"
   },
   "reviewMessage": {
     "message": "Támogatása nagymértékben segíti ezt a nyílt forráskódú projektet!"
@@ -201,7 +201,7 @@
     "message": "Tipp: Kezdje emojival (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Már mentve!"
+    "message": "Már mentve!"
   },
   "folderModeTitle": {
     "message": "Mappaüzemmód"
@@ -249,7 +249,7 @@
     "message": "Beillesztés a chatbe"
   },
   "storageFullError": {
-    "message": "⚠️ A tároló tele van — nem mentve."
+    "message": "A tároló tele van — nem mentve."
   },
   "newConv_gemini": {
     "message": "Új Gemini-beszélgetés"
@@ -312,7 +312,7 @@
     "message": "Ezt a bővítményt egy támogatott MI-webhelyen használja (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi vagy Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Ez az oldal már nem ad minden beszélgetésnek saját címet, így nincs mit elmenteni."
+    "message": "Ez az oldal már nem ad minden beszélgetésnek saját címet, így nincs mit elmenteni."
   },
   "alertEditorNotFound": {
     "message": "Nem található a szövegbeviteli mező ezen az oldalon. Próbáljon először a szerkesztőre kattintani, majd használja a beillesztés gombot."

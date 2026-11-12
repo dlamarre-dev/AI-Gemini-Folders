@@ -9,10 +9,10 @@
     "message": "Gemini ফোল্ডার"
   },
   "searchPlaceholder": {
-    "message": "🔍 কথোপকথন খুঁজুন..."
+    "message": "কথোপকথন খুঁজুন..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 প্রম্পট খুঁজুন..."
+    "message": "প্রম্পট খুঁজুন..."
   },
   "folderPlaceholder": {
     "message": "ফোল্ডারের নাম (যেমন: কোড প্রজেক্ট)"
@@ -27,22 +27,22 @@
     "message": "কথোপকথন সংরক্ষিত হয়েছে!"
   },
   "noResults": {
-    "message": "কোনো ফলাফল পাওয়া যায়নি 🕵️"
+    "message": "কোনো ফলাফল পাওয়া যায়নি"
   },
   "noResultsHint": {
-    "message": "সার্চ কেবল আপনার সংরক্ষণ করা কথোপকথনেই কাজ করে — আগে ➕ দিয়ে একটি সংরক্ষণ করুন।"
+    "message": "সার্চ কেবল আপনার সংরক্ষণ করা কথোপকথনেই কাজ করে — আগে + দিয়ে একটি সংরক্ষণ করুন।"
   },
   "emptyFoldersHint": {
-    "message": "এখনও কোনো ফোল্ডার নেই — একটি Gemini কথোপকথন খুলুন এবং ➕ বা ডান-ক্লিক মেনু দিয়ে সেটি সংরক্ষণ করুন।"
+    "message": "এখনও কোনো ফোল্ডার নেই — একটি Gemini কথোপকথন খুলুন এবং + বা ডান-ক্লিক মেনু দিয়ে সেটি সংরক্ষণ করুন।"
   },
   "sortTooltip": {
     "message": "সাজান"
   },
   "exportBtn": {
-    "message": "💾 রপ্তানি"
+    "message": "রপ্তানি"
   },
   "importBtn": {
-    "message": "📂 আমদানি"
+    "message": "আমদানি"
   },
   "alertNotGemini": {
     "message": "অনুগ্রহ করে একটি Gemini পৃষ্ঠায় এই এক্সটেনশন ব্যবহার করুন।"
@@ -72,7 +72,7 @@
     "message": "মুছুন"
   },
   "btnNewFolder": {
-    "message": "➕ ফোল্ডার"
+    "message": "+ ফোল্ডার"
   },
   "promptNewFolder": {
     "message": "নতুন ফোল্ডার:"
@@ -144,7 +144,7 @@
     "message": "⚡ দ্রুত সংরক্ষণ"
   },
   "toastSaved": {
-    "message": "✅ Gemini ফোল্ডার-এ সংরক্ষিত হয়েছে!"
+    "message": "Gemini ফোল্ডার-এ সংরক্ষিত হয়েছে!"
   },
   "btnOpenGroup": {
     "message": "ট্যাব গ্রুপে খুলুন"
@@ -180,7 +180,7 @@
     "message": "আপনার ফোনে কথোপকথন অ্যাক্সেস করতে Chrome পছন্দসইতে একটি সিঙ্ক ফোল্ডার তৈরি করে।"
   },
   "reviewTitle": {
-    "message": "⭐ আপনি কি Gemini ফোল্ডার উপভোগ করছেন?"
+    "message": "আপনি কি Gemini ফোল্ডার উপভোগ করছেন?"
   },
   "reviewMessage": {
     "message": "আপনার সমর্থন এই ওপেন-সোর্স প্রকল্পকে অনেক সাহায্য করে!"
@@ -204,7 +204,7 @@
     "message": "টিপ: ইমোজি দিয়ে শুরু করুন (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ ইতিমধ্যে সংরক্ষিত!"
+    "message": "ইতিমধ্যে সংরক্ষিত!"
   },
   "folderModeTitle": {
     "message": "ফোল্ডার মোড"
@@ -270,7 +270,7 @@
     "message": "পিন করুন"
   },
   "storageFullError": {
-    "message": "⚠️ স্টোরেজ পূর্ণ — সংরক্ষণ হয়নি।"
+    "message": "স্টোরেজ পূর্ণ — সংরক্ষণ হয়নি।"
   },
   "afPromoTitle": {
     "message": "AI ফোল্ডার আবিষ্কার করুন"

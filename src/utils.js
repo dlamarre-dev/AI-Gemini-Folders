@@ -834,7 +834,7 @@ function saveData(dataToSave, callback, opts = {}) {
 // Promise wrapper around saveData that REJECTS on a storage failure. Both
 // background.js used `new Promise(resolve => saveData(data, resolve))`, which
 // resolves *with* the error string and then discards it — so a quota-failed
-// quick-save still showed "✅ Saved!". There is no window in a service worker
+// quick-save still showed "Saved!". There is no window in a service worker
 // either, so utils.js's modal fallback never fires there: the write failed
 // completely silently. Use this instead of hand-rolling the wrapper.
 function saveDataAsync(dataToSave, opts = {}) {

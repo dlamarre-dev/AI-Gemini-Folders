@@ -114,14 +114,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const addItem = (folder, depth) => {
           const match = folder.match(EMOJI_PREFIX_REGEX);
-          const icon = match ? match[1] : '📁';
+          const customIcon = match ? match[1] : null;
           const displayName = match ? folder.slice(match[0].length) : folder;
 
           const li = document.createElement('li');
           // Sub-folders are shown under their parent, indented by level, but the
           // list stays FLAT: makeMenuAccessible drives roving focus off
           // querySelectorAll('li'), so a nested <ul> would break the keyboard.
-          li.textContent = depth > 1 ? `↳ ${icon} ${displayName}` : `${icon} ${displayName}`;
+          // "↳ " for a sub-folder, then the icon — the user's own emoji as
+          // text, or our folder glyph by default — then the name.
+          li.classList.add('icon-text');
+          li.replaceChildren(
+            ...(depth > 1 ? [document.createTextNode('↳ ')] : []),
+            customIcon ? document.createTextNode(customIcon + ' ') : icon('folder'),
+            document.createTextNode(displayName));
           if (depth > 1) {
             li.classList.add('is-child');
             li.style.paddingInlineStart = `${12 * (depth - 1) + 12}px`;

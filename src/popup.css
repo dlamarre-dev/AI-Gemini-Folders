@@ -8,6 +8,8 @@
       --accent-color: #1a73e8; /* Google Blue */
       --accent-hover: #1557b0;
       --delete-color: #d93025;
+      --ok-color: #1e8e3e;
+      --warn-color: #e37400;
       --input-bg: #ffffff;
       --muted-text: #5f6368;
       --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
@@ -25,6 +27,8 @@
         --accent-color: #8ab4f8;
         --accent-hover: #aecbf9;
         --delete-color: #f28b82;
+        --ok-color: #81c995;
+        --warn-color: #fdd663;
         --input-bg: rgba(255,255,255,0.05);
         --muted-text: rgba(255,255,255,0.62); /* ≥4.5:1 on the dark bg (WCAG AA) */
         --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
@@ -383,7 +387,22 @@
        and toggles .has-text. Works the same on Chromium and Firefox. Drawn with a
        mask so the glyph follows the theme color. */
     .search-wrap { position: relative; display: flex; flex: 1 1 auto; min-width: 0; }
-    .search-wrap > input[type="search"] { flex: 1 1 auto; padding-right: 28px; }
+    .search-wrap > input[type="search"] { flex: 1 1 auto; padding-right: 28px; padding-left: 30px; }
+    /* The magnifier that used to be an emoji inside each translated
+       placeholder. Same mask technique as the clear button below. */
+    .search-wrap::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 9px;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      background-color: var(--muted-text);
+      pointer-events: none;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E") center / contain no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
     .search-clear {
       position: absolute;
       top: 50%;
@@ -409,6 +428,21 @@
               mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z'/%3E%3C/svg%3E") center / contain no-repeat;
     }
     .search-clear:hover::before { background-color: var(--text-color); }
+
+    /* --- Icons (src/icons.js) ---
+       Monochrome glyphs filled with currentColor: they take the colour of the
+       control they sit in, in both themes. */
+    .icon { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+    /* A glyph followed by a label: sits on the text's optical baseline. */
+    .icon-text > .icon { vertical-align: -2px; margin-inline-end: 5px; }
+    /* The two status glyphs carry their own colour, whatever the text's. */
+    .icon[data-icon="checkCircle"] { color: var(--ok-color); }
+    .icon[data-icon="warning"] { color: var(--warn-color); }
+    .modal-content h3.icon-text > .icon { vertical-align: -3px; margin-inline-end: 6px; }
+    .mode-toggle-btn { display: flex; align-items: center; }
+    .footer-icon { display: flex; align-items: center; opacity: 0.7; }
+    .folder-icon .icon { opacity: 0.7; }
+    .empty-state-icon .icon { display: block; margin: 0 auto; }
 
     /* --- Buttons --- */
     button { font-family: inherit; cursor: pointer; transition: all 0.2s ease; }
@@ -644,7 +678,8 @@
     .folder.drag-over { outline: 2px dashed var(--accent-color); outline-offset: -2px; background-color: rgba(26, 115, 232, 0.05); }
 
     .pin-divider { border-top: 2px dotted var(--border-color); margin: 16px 0; background: transparent; height: 0; }
-    .pin-btn.is-pinned { opacity: 1; } /* Removed rotation to keep the frame straight */
+    /* Pinned is the solid pin in the accent colour; unpinned the outline. */
+    .pin-btn.is-pinned { opacity: 1; color: var(--accent-color); }
     body.is-dragging .folder * {
       pointer-events: none;
     }
@@ -1103,8 +1138,12 @@
       left: 0;
     }
     body[dir="rtl"] .search-wrap > input[type="search"] {
-      padding-right: 10px;
+      padding-right: 30px;
       padding-left: 28px;
+    }
+    body[dir="rtl"] .search-wrap::before {
+      left: auto;
+      right: 9px;
     }
     body[dir="rtl"] .search-clear {
       right: auto;
@@ -1120,7 +1159,8 @@
     body[dir="rtl"] .prompt-header {
       padding: 6px 12px 6px 6px;
     }
-    body[dir="rtl"] .prompt-insert-btn {
+    body[dir="rtl"] .prompt-insert-btn,
+    body[dir="rtl"] .unnest-btn {
       transform: scaleX(-1);
     }
     /* Switches mirror too: knob rests on the right, slides LEFT when checked. */

@@ -9,10 +9,10 @@
     "message": "AI-kansiot"
   },
   "searchPlaceholder": {
-    "message": "🔍 Hae keskustelua..."
+    "message": "Hae keskustelua..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Hae promptia..."
+    "message": "Hae promptia..."
   },
   "folderPlaceholder": {
     "message": "Kansion nimi (esim. Koodiprojektit)"
@@ -27,22 +27,22 @@
     "message": "Keskustelu tallennettu!"
   },
   "noResults": {
-    "message": "Ei tuloksia 🕵️"
+    "message": "Ei tuloksia"
   },
   "noResultsHint": {
-    "message": "Haku kattaa vain jo tallennetut keskustelut – tallenna ensin yksi painikkeella ➕."
+    "message": "Haku kattaa vain jo tallennetut keskustelut – tallenna ensin yksi painikkeella +."
   },
   "emptyFoldersHint": {
-    "message": "Ei vielä kansioita – avaa keskustelu tuetussa tekoälypalvelussa ja tallenna se painikkeella ➕ tai hiiren oikean painikkeen valikosta."
+    "message": "Ei vielä kansioita – avaa keskustelu tuetussa tekoälypalvelussa ja tallenna se painikkeella + tai hiiren oikean painikkeen valikosta."
   },
   "sortTooltip": {
     "message": "Lajittele"
   },
   "exportBtn": {
-    "message": "💾 Vie"
+    "message": "Vie"
   },
   "importBtn": {
-    "message": "📂 Tuo"
+    "message": "Tuo"
   },
   "defaultFolder": {
     "message": "Yleinen"
@@ -69,7 +69,7 @@
     "message": "Poista"
   },
   "btnNewFolder": {
-    "message": "➕ Kansio"
+    "message": "+ Kansio"
   },
   "promptNewFolder": {
     "message": "Uusi kansio:"
@@ -141,7 +141,7 @@
     "message": "⚡ Pikatallennus"
   },
   "toastSaved": {
-    "message": "✅ Tallennettu AI-kansioihin!"
+    "message": "Tallennettu AI-kansioihin!"
   },
   "btnOpenGroup": {
     "message": "Avaa välilehtiryhmässä"
@@ -177,7 +177,7 @@
     "message": "Luo synkronoitu kansio Chrome-suosikkeihin, jotta voit käyttää keskusteluja puhelimellasi."
   },
   "reviewTitle": {
-    "message": "⭐ Pidätkö Gemini-kansioista?"
+    "message": "Pidätkö Gemini-kansioista?"
   },
   "reviewMessage": {
     "message": "Tukesi auttaa tätä avoimen lähdekoodin projektia valtavasti!"
@@ -201,7 +201,7 @@
     "message": "Vihje: Aloita emojilla (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Jo tallennettu!"
+    "message": "Jo tallennettu!"
   },
   "folderModeTitle": {
     "message": "Kansiotila"
@@ -249,7 +249,7 @@
     "message": "Lisää chattiin"
   },
   "storageFullError": {
-    "message": "⚠️ Tallennustila täynnä — ei tallennettu."
+    "message": "Tallennustila täynnä — ei tallennettu."
   },
   "newConv_gemini": {
     "message": "Uusi Gemini-keskustelu"
@@ -312,7 +312,7 @@
     "message": "Käytä tätä laajennusta tuetulla tekoälysivustolla (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi tai Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Tämä sivusto ei enää anna jokaiselle keskustelulle omaa osoitetta, joten mitään ei ole tallennettavaa."
+    "message": "Tämä sivusto ei enää anna jokaiselle keskustelulle omaa osoitetta, joten mitään ei ole tallennettavaa."
   },
   "alertEditorNotFound": {
     "message": "Tekstikenttää ei löydy tältä sivulta. Napsauta ensin editoria ja käytä sitten lisää-painiketta."

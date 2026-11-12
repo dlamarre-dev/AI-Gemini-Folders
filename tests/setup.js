@@ -57,6 +57,10 @@ global.chrome = {
   },
 };
 
+// The interface glyphs (src/icons.js) are globals in the popup, loaded by a
+// <script> tag before everything that draws a button.
+Object.assign(global, require('../src/icons'));
+
 // Transparent LZString mock: compress prepends 'C:', decompress strips it.
 // Passing anything that doesn't start with 'C:' simulates a corrupt payload (returns null).
 global.LZString = {

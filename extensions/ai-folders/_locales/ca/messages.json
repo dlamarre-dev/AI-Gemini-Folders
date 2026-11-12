@@ -9,10 +9,10 @@
     "message": "Carpetes IA"
   },
   "searchPlaceholder": {
-    "message": "🔍 Cerca una conversa..."
+    "message": "Cerca una conversa..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Cerca un prompt..."
+    "message": "Cerca un prompt..."
   },
   "folderPlaceholder": {
     "message": "Nom de la carpeta (p. ex. Projectes de codi)"
@@ -27,22 +27,22 @@
     "message": "Conversa desada!"
   },
   "noResults": {
-    "message": "Cap resultat 🕵️"
+    "message": "Cap resultat"
   },
   "noResultsHint": {
-    "message": "La cerca només inclou les converses que ja has desat — desa'n una amb ➕ primer."
+    "message": "La cerca només inclou les converses que ja has desat — desa'n una amb + primer."
   },
   "emptyFoldersHint": {
-    "message": "Encara no hi ha carpetes — obre una conversa en un lloc d'IA compatible i desa-la amb ➕ o el menú del clic dret."
+    "message": "Encara no hi ha carpetes — obre una conversa en un lloc d'IA compatible i desa-la amb + o el menú del clic dret."
   },
   "sortTooltip": {
     "message": "Ordena"
   },
   "exportBtn": {
-    "message": "💾 Exportar"
+    "message": "Exportar"
   },
   "importBtn": {
-    "message": "📂 Importar"
+    "message": "Importar"
   },
   "defaultFolder": {
     "message": "General"
@@ -69,7 +69,7 @@
     "message": "Elimina"
   },
   "btnNewFolder": {
-    "message": "➕ Carpeta"
+    "message": "+ Carpeta"
   },
   "promptNewFolder": {
     "message": "Nova carpeta:"
@@ -141,7 +141,7 @@
     "message": "⚡ Desat ràpid"
   },
   "toastSaved": {
-    "message": "✅ Desat a Carpetes IA!"
+    "message": "Desat a Carpetes IA!"
   },
   "btnOpenGroup": {
     "message": "Obre en grup de pestanyes"
@@ -177,7 +177,7 @@
     "message": "Crea una carpeta sincronitzada als preferits de Chrome per accedir a les converses al telèfon."
   },
   "reviewTitle": {
-    "message": "⭐ T'agrada Gemini Carpetes?"
+    "message": "T'agrada Gemini Carpetes?"
   },
   "reviewMessage": {
     "message": "El teu suport ajuda enormement aquest projecte de codi obert!"
@@ -201,7 +201,7 @@
     "message": "Consell: comença amb un emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Ja desat!"
+    "message": "Ja desat!"
   },
   "folderModeTitle": {
     "message": "Mode carpetes"
@@ -249,7 +249,7 @@
     "message": "Insereix al xat"
   },
   "storageFullError": {
-    "message": "⚠️ Emmagatzematge ple — no s'ha desat."
+    "message": "Emmagatzematge ple — no s'ha desat."
   },
   "newConv_gemini": {
     "message": "Nova conversa a Gemini"
@@ -312,7 +312,7 @@
     "message": "Utilitzeu aquesta extensió en un lloc d'IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi o Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Aquest lloc ja no assigna una adreça pròpia a cada conversa, així que no hi ha res per desar."
+    "message": "Aquest lloc ja no assigna una adreça pròpia a cada conversa, així que no hi ha res per desar."
   },
   "alertEditorNotFound": {
     "message": "No s'ha pogut trobar el camp de text en aquesta pàgina. Proveu de fer clic a l'editor primer i després useu el botó d'inserció."

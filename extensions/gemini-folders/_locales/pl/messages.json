@@ -9,10 +9,10 @@
     "message": "Foldery Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Szukaj konwersacji..."
+    "message": "Szukaj konwersacji..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Szukaj promptu..."
+    "message": "Szukaj promptu..."
   },
   "folderPlaceholder": {
     "message": "Nazwa folderu (np. Projekty Kod)"
@@ -27,22 +27,22 @@
     "message": "Konwersacja zapisana!"
   },
   "noResults": {
-    "message": "Brak wyników 🕵️"
+    "message": "Brak wyników"
   },
   "noResultsHint": {
-    "message": "Wyszukiwanie obejmuje tylko rozmowy, które już zapisałeś — najpierw zapisz jedną za pomocą ➕."
+    "message": "Wyszukiwanie obejmuje tylko rozmowy, które już zapisałeś — najpierw zapisz jedną za pomocą +."
   },
   "emptyFoldersHint": {
-    "message": "Brak folderów — otwórz rozmowę w Gemini i zapisz ją za pomocą ➕ lub menu prawego przycisku myszy."
+    "message": "Brak folderów — otwórz rozmowę w Gemini i zapisz ją za pomocą + lub menu prawego przycisku myszy."
   },
   "sortTooltip": {
     "message": "Sortuj"
   },
   "exportBtn": {
-    "message": "💾 Eksport"
+    "message": "Eksport"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Użyj tego rozszerzenia na stronie Gemini."
@@ -72,7 +72,7 @@
     "message": "Usuń"
   },
   "btnNewFolder": {
-    "message": "➕ Folder"
+    "message": "+ Folder"
   },
   "promptNewFolder": {
     "message": "Nowy folder:"
@@ -144,7 +144,7 @@
     "message": "⚡ Szybki zapis"
   },
   "toastSaved": {
-    "message": "✅ Zapisano w Folderach Gemini!"
+    "message": "Zapisano w Folderach Gemini!"
   },
   "btnOpenGroup": {
     "message": "Otwórz w grupie kart"
@@ -180,7 +180,7 @@
     "message": "Tworzy zsynchronizowany folder w ulubionych Chrome, aby uzyskać dostęp do konwersacji na telefonie."
   },
   "reviewTitle": {
-    "message": "⭐ Podobają Ci się Foldery Gemini?"
+    "message": "Podobają Ci się Foldery Gemini?"
   },
   "reviewMessage": {
     "message": "Twoje wsparcie ogromnie pomaga temu projektowi open source!"
@@ -204,7 +204,7 @@
     "message": "Wskazówka: Zacznij od emoji (Win+. / ⌘⌃Spacja)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Już zapisane!"
+    "message": "Już zapisane!"
   },
   "folderModeTitle": {
     "message": "Tryb folderów"
@@ -270,7 +270,7 @@
     "message": "Przypnij"
   },
   "storageFullError": {
-    "message": "⚠️ Pamięć pełna — nie zapisano."
+    "message": "Pamięć pełna — nie zapisano."
   },
   "afPromoTitle": {
     "message": "Odkryj Foldery AI"

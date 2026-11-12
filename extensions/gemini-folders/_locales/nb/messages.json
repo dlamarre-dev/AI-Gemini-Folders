@@ -9,10 +9,10 @@
     "message": "Gemini Mapper"
   },
   "searchPlaceholder": {
-    "message": "🔍 Søk etter en samtale..."
+    "message": "Søk etter en samtale..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Søk etter en prompt..."
+    "message": "Søk etter en prompt..."
   },
   "folderPlaceholder": {
     "message": "Mappenavn (f.eks. Kodeprosjekter)"
@@ -27,22 +27,22 @@
     "message": "Samtale lagret!"
   },
   "noResults": {
-    "message": "Ingen resultater 🕵️"
+    "message": "Ingen resultater"
   },
   "noResultsHint": {
-    "message": "Søket dekker bare samtaler du allerede har lagret – lagre en med ➕ først."
+    "message": "Søket dekker bare samtaler du allerede har lagret – lagre en med + først."
   },
   "emptyFoldersHint": {
-    "message": "Ingen mapper ennå – åpne en Gemini-samtale og lagre den med ➕ eller høyreklikkmenyen."
+    "message": "Ingen mapper ennå – åpne en Gemini-samtale og lagre den med + eller høyreklikkmenyen."
   },
   "sortTooltip": {
     "message": "Sorter"
   },
   "exportBtn": {
-    "message": "💾 Eksport"
+    "message": "Eksport"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Bruk dette tillegget på en Gemini-side."
@@ -72,7 +72,7 @@
     "message": "Slett"
   },
   "btnNewFolder": {
-    "message": "➕ Mappe"
+    "message": "+ Mappe"
   },
   "promptNewFolder": {
     "message": "Ny mappe:"
@@ -144,7 +144,7 @@
     "message": "⚡ Hurtiglagring"
   },
   "toastSaved": {
-    "message": "✅ Lagret i Gemini Mapper!"
+    "message": "Lagret i Gemini Mapper!"
   },
   "btnOpenGroup": {
     "message": "Åpne i fanegruppe"
@@ -180,7 +180,7 @@
     "message": "Oppretter en synkronisert mappe i Chrome-favorittene dine for tilgang til samtaler på telefonen."
   },
   "reviewTitle": {
-    "message": "⭐ Liker du Gemini Mapper?"
+    "message": "Liker du Gemini Mapper?"
   },
   "reviewMessage": {
     "message": "Din støtte hjelper dette åpen kildekode-prosjektet enormt!"
@@ -204,7 +204,7 @@
     "message": "Tips: Start med emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Allerede lagret!"
+    "message": "Allerede lagret!"
   },
   "folderModeTitle": {
     "message": "Mappemodus"
@@ -270,7 +270,7 @@
     "message": "Fest"
   },
   "storageFullError": {
-    "message": "⚠️ Lageret er fullt — ikke lagret."
+    "message": "Lageret er fullt — ikke lagret."
   },
   "afPromoTitle": {
     "message": "Oppdag AI-mapper"

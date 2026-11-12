@@ -9,10 +9,10 @@
     "message": "Gemini Mapes"
   },
   "searchPlaceholder": {
-    "message": "🔍 Meklēt sarunu..."
+    "message": "Meklēt sarunu..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Meklēt uzvedni..."
+    "message": "Meklēt uzvedni..."
   },
   "folderPlaceholder": {
     "message": "Mapes nosaukums (piem. Koda projekti)"
@@ -27,22 +27,22 @@
     "message": "Saruna saglabāta!"
   },
   "noResults": {
-    "message": "Rezultātu nav 🕵️"
+    "message": "Rezultātu nav"
   },
   "noResultsHint": {
-    "message": "Meklēšana ietver tikai jau saglabātās sarunas — vispirms saglabājiet vienu ar ➕."
+    "message": "Meklēšana ietver tikai jau saglabātās sarunas — vispirms saglabājiet vienu ar +."
   },
   "emptyFoldersHint": {
-    "message": "Vēl nav mapju — atveriet Gemini sarunu un saglabājiet to ar ➕ vai ar labā klikšķa izvēlni."
+    "message": "Vēl nav mapju — atveriet Gemini sarunu un saglabājiet to ar + vai ar labā klikšķa izvēlni."
   },
   "sortTooltip": {
     "message": "Kārtot"
   },
   "exportBtn": {
-    "message": "💾 Eksports"
+    "message": "Eksports"
   },
   "importBtn": {
-    "message": "📂 Imports"
+    "message": "Imports"
   },
   "alertNotGemini": {
     "message": "Izmanto šo paplašinājumu Gemini lapā."
@@ -72,7 +72,7 @@
     "message": "Dzēst"
   },
   "btnNewFolder": {
-    "message": "➕ Mape"
+    "message": "+ Mape"
   },
   "promptNewFolder": {
     "message": "Jauna mape:"
@@ -144,7 +144,7 @@
     "message": "⚡ Ātrā saglabāšana"
   },
   "toastSaved": {
-    "message": "✅ Saglabāts Gemini Mapēs!"
+    "message": "Saglabāts Gemini Mapēs!"
   },
   "btnOpenGroup": {
     "message": "Atvērt cilņu grupā"
@@ -180,7 +180,7 @@
     "message": "Izveido sinhronizētu mapi Chrome izlasē, lai piekļūtu sarunām no tālruņa."
   },
   "reviewTitle": {
-    "message": "⭐ Vai tev patīk Gemini Mapes?"
+    "message": "Vai tev patīk Gemini Mapes?"
   },
   "reviewMessage": {
     "message": "Tavs atbalsts ārkārtīgi palīdz šim atvērtā koda projektam!"
@@ -204,7 +204,7 @@
     "message": "Padoms: sāc ar emodzi (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Jau saglabāts!"
+    "message": "Jau saglabāts!"
   },
   "folderModeTitle": {
     "message": "Mapju režīms"
@@ -270,7 +270,7 @@
     "message": "Piespraust"
   },
   "storageFullError": {
-    "message": "⚠️ Krātuve ir pilna — nav saglabāts."
+    "message": "Krātuve ir pilna — nav saglabāts."
   },
   "afPromoTitle": {
     "message": "Atklājiet AI mapes"

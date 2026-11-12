@@ -549,6 +549,16 @@ describe('fitPopupToWindow', () => {
     expect(document.body.style.maxHeight).toBe('');
   });
 
+  // Measured at 150% scale: a search shortened the list to 308.67px of
+  // document in a 308px window. That rounding pixel capped body at the
+  // search-result height, and the popup could not grow back when the search
+  // was cleared.
+  test('a one-pixel rounding overflow on a content-sized popup is not a cap', () => {
+    layout({ windowHeight: 308, documentHeight: 309 });
+    window.fitPopupToWindow();
+    expect(document.body.style.maxHeight).toBe('');
+  });
+
   // While Chrome is still sizing the popup the window can be tiny. Capping from
   // that size would keep the popup collapsed for good.
   test('a transient tiny window is ignored', () => {

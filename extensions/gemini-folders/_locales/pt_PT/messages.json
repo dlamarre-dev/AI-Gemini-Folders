@@ -9,10 +9,10 @@
     "message": "Pastas Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Pesquisar uma conversa..."
+    "message": "Pesquisar uma conversa..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Pesquisar um prompt..."
+    "message": "Pesquisar um prompt..."
   },
   "folderPlaceholder": {
     "message": "Nome da pasta (ex: Projetos Código)"
@@ -27,22 +27,22 @@
     "message": "Conversa guardada!"
   },
   "noResults": {
-    "message": "Nenhum resultado encontrado 🕵️"
+    "message": "Nenhum resultado encontrado"
   },
   "noResultsHint": {
-    "message": "A pesquisa abrange apenas as conversas que já guardou — guarde uma com ➕ primeiro."
+    "message": "A pesquisa abrange apenas as conversas que já guardou — guarde uma com + primeiro."
   },
   "emptyFoldersHint": {
-    "message": "Ainda sem pastas — abra uma conversa do Gemini e guarde-a com ➕ ou pelo menu do botão direito."
+    "message": "Ainda sem pastas — abra uma conversa do Gemini e guarde-a com + ou pelo menu do botão direito."
   },
   "sortTooltip": {
     "message": "Ordenar"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Por favor, utilize esta extensão numa página Gemini."
@@ -72,7 +72,7 @@
     "message": "Eliminar"
   },
   "btnNewFolder": {
-    "message": "➕ Pasta"
+    "message": "+ Pasta"
   },
   "promptNewFolder": {
     "message": "Nova pasta:"
@@ -144,7 +144,7 @@
     "message": "⚡ Guardados Rápidos"
   },
   "toastSaved": {
-    "message": "✅ Guardado nas Pastas Gemini!"
+    "message": "Guardado nas Pastas Gemini!"
   },
   "btnOpenGroup": {
     "message": "Abrir num grupo de separadores"
@@ -180,7 +180,7 @@
     "message": "Cria uma pasta sincronizada nos favoritos do Chrome para aceder às suas conversas no telemóvel."
   },
   "reviewTitle": {
-    "message": "⭐ Está a gostar das Pastas Gemini?"
+    "message": "Está a gostar das Pastas Gemini?"
   },
   "reviewMessage": {
     "message": "O seu apoio ajuda imenso este projeto de código aberto!"
@@ -204,7 +204,7 @@
     "message": "Dica: Inicie com um emoji (Win+. / ⌘⌃Espaço)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Já guardado!"
+    "message": "Já guardado!"
   },
   "folderModeTitle": {
     "message": "Modo pastas"
@@ -270,7 +270,7 @@
     "message": "Fixar"
   },
   "storageFullError": {
-    "message": "⚠️ Armazenamento cheio — não guardado."
+    "message": "Armazenamento cheio — não guardado."
   },
   "afPromoTitle": {
     "message": "Conheça Pastas IA"

@@ -9,10 +9,10 @@
     "message": "Folder AI"
   },
   "searchPlaceholder": {
-    "message": "🔍 Cari percakapan..."
+    "message": "Cari percakapan..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Cari prompt..."
+    "message": "Cari prompt..."
   },
   "folderPlaceholder": {
     "message": "Nama folder (mis. Proyek Kode)"
@@ -27,22 +27,22 @@
     "message": "Percakapan tersimpan!"
   },
   "noResults": {
-    "message": "Tidak ada hasil 🕵️"
+    "message": "Tidak ada hasil"
   },
   "noResultsHint": {
-    "message": "Pencarian hanya mencakup percakapan yang sudah Anda simpan — simpan satu dengan ➕ dulu."
+    "message": "Pencarian hanya mencakup percakapan yang sudah Anda simpan — simpan satu dengan + dulu."
   },
   "emptyFoldersHint": {
-    "message": "Belum ada folder — buka percakapan di situs AI yang didukung dan simpan dengan ➕ atau menu klik kanan."
+    "message": "Belum ada folder — buka percakapan di situs AI yang didukung dan simpan dengan + atau menu klik kanan."
   },
   "sortTooltip": {
     "message": "Urutkan"
   },
   "exportBtn": {
-    "message": "💾 Ekspor"
+    "message": "Ekspor"
   },
   "importBtn": {
-    "message": "📂 Impor"
+    "message": "Impor"
   },
   "defaultFolder": {
     "message": "Umum"
@@ -69,7 +69,7 @@
     "message": "Hapus"
   },
   "btnNewFolder": {
-    "message": "➕ Folder"
+    "message": "+ Folder"
   },
   "promptNewFolder": {
     "message": "Folder baru:"
@@ -141,7 +141,7 @@
     "message": "⚡ Simpanan Cepat"
   },
   "toastSaved": {
-    "message": "✅ Tersimpan ke Folder AI!"
+    "message": "Tersimpan ke Folder AI!"
   },
   "btnOpenGroup": {
     "message": "Buka di Grup Tab"
@@ -177,7 +177,7 @@
     "message": "Membuat folder tersinkronisasi di favorit Chrome Anda untuk mengakses percakapan di ponsel."
   },
   "reviewTitle": {
-    "message": "⭐ Apakah Anda menyukai Folder AI?"
+    "message": "Apakah Anda menyukai Folder AI?"
   },
   "reviewMessage": {
     "message": "Dukungan Anda sangat membantu proyek open source ini!"
@@ -201,7 +201,7 @@
     "message": "Tips: Mulai dengan emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Sudah tersimpan!"
+    "message": "Sudah tersimpan!"
   },
   "folderModeTitle": {
     "message": "Mode Folder"
@@ -249,7 +249,7 @@
     "message": "Sisipkan ke obrolan"
   },
   "storageFullError": {
-    "message": "⚠️ Penyimpanan penuh — tidak disimpan."
+    "message": "Penyimpanan penuh — tidak disimpan."
   },
   "newConv_gemini": {
     "message": "Percakapan Gemini baru"
@@ -312,7 +312,7 @@
     "message": "Gunakan ekstensi ini di situs AI yang didukung (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi, atau Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Situs ini tidak lagi memberikan alamat tersendiri untuk setiap percakapan, jadi tidak ada yang bisa disimpan."
+    "message": "Situs ini tidak lagi memberikan alamat tersendiri untuk setiap percakapan, jadi tidak ada yang bisa disimpan."
   },
   "alertEditorNotFound": {
     "message": "Tidak dapat menemukan kotak teks di halaman ini. Coba klik editor terlebih dahulu, lalu gunakan tombol sisipkan."

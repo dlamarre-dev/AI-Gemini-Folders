@@ -9,10 +9,10 @@
     "message": "Thư mục Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Tìm kiếm cuộc trò chuyện..."
+    "message": "Tìm kiếm cuộc trò chuyện..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Tìm kiếm prompt..."
+    "message": "Tìm kiếm prompt..."
   },
   "folderPlaceholder": {
     "message": "Tên thư mục (vd: Dự án code)"
@@ -27,22 +27,22 @@
     "message": "Đã lưu cuộc trò chuyện!"
   },
   "noResults": {
-    "message": "Không tìm thấy kết quả 🕵️"
+    "message": "Không tìm thấy kết quả"
   },
   "noResultsHint": {
-    "message": "Tìm kiếm chỉ áp dụng cho các cuộc trò chuyện bạn đã lưu — hãy lưu một cuộc bằng ➕ trước."
+    "message": "Tìm kiếm chỉ áp dụng cho các cuộc trò chuyện bạn đã lưu — hãy lưu một cuộc bằng + trước."
   },
   "emptyFoldersHint": {
-    "message": "Chưa có thư mục nào — mở một cuộc trò chuyện Gemini và lưu bằng ➕ hoặc menu chuột phải."
+    "message": "Chưa có thư mục nào — mở một cuộc trò chuyện Gemini và lưu bằng + hoặc menu chuột phải."
   },
   "sortTooltip": {
     "message": "Sắp xếp"
   },
   "exportBtn": {
-    "message": "💾 Xuất"
+    "message": "Xuất"
   },
   "importBtn": {
-    "message": "📂 Nhập"
+    "message": "Nhập"
   },
   "alertNotGemini": {
     "message": "Vui lòng sử dụng tiện ích này trên trang Gemini."
@@ -72,7 +72,7 @@
     "message": "Xóa"
   },
   "btnNewFolder": {
-    "message": "➕ Thư mục"
+    "message": "+ Thư mục"
   },
   "promptNewFolder": {
     "message": "Thư mục mới:"
@@ -144,7 +144,7 @@
     "message": "⚡ Lưu nhanh"
   },
   "toastSaved": {
-    "message": "✅ Đã lưu vào Thư mục Gemini!"
+    "message": "Đã lưu vào Thư mục Gemini!"
   },
   "btnOpenGroup": {
     "message": "Mở trong Nhóm tab"
@@ -180,7 +180,7 @@
     "message": "Tạo thư mục đồng bộ trong mục yêu thích Chrome để truy cập cuộc trò chuyện trên điện thoại."
   },
   "reviewTitle": {
-    "message": "⭐ Bạn có thích Thư mục Gemini không?"
+    "message": "Bạn có thích Thư mục Gemini không?"
   },
   "reviewMessage": {
     "message": "Sự ủng hộ của bạn giúp ích rất nhiều cho dự án mã nguồn mở này!"
@@ -204,7 +204,7 @@
     "message": "Mẹo: Bắt đầu bằng emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Đã lưu trước đó!"
+    "message": "Đã lưu trước đó!"
   },
   "folderModeTitle": {
     "message": "Chế độ thư mục"
@@ -270,7 +270,7 @@
     "message": "Ghim"
   },
   "storageFullError": {
-    "message": "⚠️ Bộ nhớ đầy — chưa được lưu."
+    "message": "Bộ nhớ đầy — chưa được lưu."
   },
   "afPromoTitle": {
     "message": "Khám phá Thư mục AI"

@@ -9,10 +9,10 @@
     "message": "Gemini-Ordner"
   },
   "searchPlaceholder": {
-    "message": "🔍 Unterhaltung suchen..."
+    "message": "Unterhaltung suchen..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Prompt suchen..."
+    "message": "Prompt suchen..."
   },
   "folderPlaceholder": {
     "message": "Ordnername (z.B. Code-Projekte)"
@@ -27,22 +27,22 @@
     "message": "Unterhaltung gespeichert!"
   },
   "noResults": {
-    "message": "Keine Ergebnisse gefunden 🕵️"
+    "message": "Keine Ergebnisse gefunden"
   },
   "noResultsHint": {
-    "message": "Die Suche umfasst nur Unterhaltungen, die du schon gespeichert hast – speichere zuerst eine mit ➕."
+    "message": "Die Suche umfasst nur Unterhaltungen, die du schon gespeichert hast – speichere zuerst eine mit +."
   },
   "emptyFoldersHint": {
-    "message": "Noch keine Ordner – öffne eine Gemini-Unterhaltung und speichere sie mit ➕ oder über das Rechtsklick-Menü."
+    "message": "Noch keine Ordner – öffne eine Gemini-Unterhaltung und speichere sie mit + oder über das Rechtsklick-Menü."
   },
   "sortTooltip": {
     "message": "Sortieren"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Bitte verwende diese Erweiterung auf einer Gemini-Seite."
@@ -72,7 +72,7 @@
     "message": "Löschen"
   },
   "btnNewFolder": {
-    "message": "➕ Ordner"
+    "message": "+ Ordner"
   },
   "promptNewFolder": {
     "message": "Neuer Ordner:"
@@ -144,7 +144,7 @@
     "message": "⚡ Schnellspeicherungen"
   },
   "toastSaved": {
-    "message": "✅ In Gemini-Ordner gespeichert!"
+    "message": "In Gemini-Ordner gespeichert!"
   },
   "btnOpenGroup": {
     "message": "In Tab-Gruppe öffnen"
@@ -180,7 +180,7 @@
     "message": "Erstellt einen synchronisierten Ordner in Ihren Chrome-Favoriten, um auf Ihrem Telefon auf Ihre Unterhaltungen zuzugreifen."
   },
   "reviewTitle": {
-    "message": "⭐ Gefällt Ihnen Gemini-Ordner?"
+    "message": "Gefällt Ihnen Gemini-Ordner?"
   },
   "reviewMessage": {
     "message": "Ihre Unterstützung hilft diesem Open-Source-Projekt enorm!"
@@ -204,7 +204,7 @@
     "message": "Tipp: Emoji zuerst (Win+. / ⌘⌃Leertaste)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Bereits gespeichert!"
+    "message": "Bereits gespeichert!"
   },
   "folderModeTitle": {
     "message": "Ordnermodus"
@@ -270,7 +270,7 @@
     "message": "Anheften"
   },
   "storageFullError": {
-    "message": "⚠️ Speicher voll — nicht gespeichert."
+    "message": "Speicher voll — nicht gespeichert."
   },
   "afPromoTitle": {
     "message": "KI-Ordner entdecken"

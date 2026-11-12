@@ -29,7 +29,7 @@ function applyCommonI18n() {
   document.getElementById('folderName').placeholder = chrome.i18n.getMessage("folderPlaceholder");
   document.getElementById('chatTitle').placeholder = chrome.i18n.getMessage("chatPlaceholder");
   document.getElementById('saveBtn').textContent = chrome.i18n.getMessage("saveBtn");
-  document.getElementById('status').textContent = chrome.i18n.getMessage("statusSaved");
+  setIconLabel(document.getElementById('status'), 'checkCircle', chrome.i18n.getMessage("statusSaved"));
   // Two lines: the headline, plus a hint that search only covers what was already
   // saved. Users kept searching here for conversations from the site's own sidebar
   // and concluded the extension was broken (uninstall survey, 2026-08).
@@ -37,25 +37,27 @@ function applyCommonI18n() {
   const noResultsHint = Object.assign(document.createElement('div'), {
     className: 'nr-hint',
     textContent: chrome.i18n.getMessage("noResultsHint")
-      || "Search only covers conversations you already saved — save one with ➕ first.",
+      || "Search only covers conversations you already saved — save one with + first.",
   });
   noResultsEl.replaceChildren(
     document.createTextNode(chrome.i18n.getMessage("noResults")),
     noResultsHint,
   );
-  document.getElementById('exportBtn').textContent = chrome.i18n.getMessage("exportBtn");
-  document.getElementById('importBtn').textContent = chrome.i18n.getMessage("importBtn");
-  document.getElementById('toggleAddPanelBtn').textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");
+  setIconLabel(document.getElementById('exportBtn'), 'download', chrome.i18n.getMessage("exportBtn"));
+  setIconLabel(document.getElementById('importBtn'), 'upload', chrome.i18n.getMessage("importBtn"));
+  setIconLabel(document.getElementById('toggleAddPanelBtn'), 'add', chrome.i18n.getMessage("btnToggleAdd"));
+  // Icon-only controls declared in popup.html (data-ic="…").
+  hydrateIcons(document);
   document.getElementById('sortNewest').textContent = chrome.i18n.getMessage("sortNewest");
   document.getElementById('sortOldest').textContent = chrome.i18n.getMessage("sortOldest");
   document.getElementById('sortAlpha').textContent = chrome.i18n.getMessage("sortAlpha");
-  document.getElementById('promptSearchInput').placeholder = chrome.i18n.getMessage("promptSearchPlaceholder") || "🔍 Search a prompt...";
+  document.getElementById('promptSearchInput').placeholder = chrome.i18n.getMessage("promptSearchPlaceholder") || "Search a prompt...";
   document.getElementById('promptSortNewest').textContent = chrome.i18n.getMessage("sortNewest");
   document.getElementById('promptSortOldest').textContent = chrome.i18n.getMessage("sortOldest");
   document.getElementById('promptSortAlpha').textContent = chrome.i18n.getMessage("sortAlpha");
   document.getElementById('modeFolderBtn').title = chrome.i18n.getMessage("folderModeTitle") || "Folder Mode";
   document.getElementById('modePromptBtn').title = chrome.i18n.getMessage("promptModeTitle") || "Prompt Mode";
-  document.getElementById('toggleAddPromptPanelBtn').textContent = "➕ " + (chrome.i18n.getMessage("promptAddBtn") || "Add Prompt");
+  setIconLabel(document.getElementById('toggleAddPromptPanelBtn'), 'add', chrome.i18n.getMessage("promptAddBtn") || "Add Prompt");
   document.getElementById('savePromptBtn').textContent = chrome.i18n.getMessage("saveBtn") || "Save";
   document.getElementById('promptTitle').placeholder = chrome.i18n.getMessage("promptTitlePlaceholder") || "Prompt Title";
   document.getElementById('promptText').placeholder = chrome.i18n.getMessage("promptTextPlaceholder") || "Write your prompt here...";
@@ -135,7 +137,8 @@ function initSaveConversation(opts) {
       await window.showCustomModal({
         title: chrome.i18n.getMessage(opts.noSaveMessageKey)
           || "This site no longer gives each conversation its own address, so there is nothing to save.",
-        type: 'alert'
+        type: 'alert',
+        icon: 'warning'
       });
       isSaving = false;
       return;
@@ -146,10 +149,10 @@ function initSaveConversation(opts) {
     const chatUrl = tab.url;
 
     const flashStatus = (messageKey, fallback, ms = 4000, fill = (text) => text) => {
-      statusDiv.textContent = fill(chrome.i18n.getMessage(messageKey) || fallback);
+      setIconLabel(statusDiv, 'warning', fill(chrome.i18n.getMessage(messageKey) || fallback));
       statusDiv.style.color = 'red';
       statusDiv.style.display = "block";
-      setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; statusDiv.textContent = chrome.i18n.getMessage("statusSaved"); }, ms);
+      setTimeout(() => { statusDiv.style.display = "none"; statusDiv.style.color = ''; setIconLabel(statusDiv, 'checkCircle', chrome.i18n.getMessage("statusSaved")); }, ms);
     };
 
     // folders["__proto__"] is Object.prototype — truthy, so the guard below would
@@ -197,7 +200,7 @@ function initSaveConversation(opts) {
         // anti-churn baselines read — and rebuilt the whole bookmark tree for
         // nothing. The background quick-save handlers already skip the write here.
         isSaving = false;
-        flashStatus("toastAlreadySaved", '⚠️ Already saved!', 2000);
+        flashStatus("toastAlreadySaved", 'Already saved!', 2000);
         return;
       }
 
@@ -215,12 +218,12 @@ function initSaveConversation(opts) {
       saveData(payload, (err) => {
         isSaving = false;
         if (err) {
-          flashStatus("storageFullError", '⚠️ Storage full — not saved.');
+          flashStatus("storageFullError", 'Storage full — not saved.');
           return;
         }
         folderNameInput.value = "";
         addConversationPanel.style.display = 'none';
-        toggleAddPanelBtn.textContent = "➕ " + chrome.i18n.getMessage("btnToggleAdd");
+        setIconLabel(toggleAddPanelBtn, 'add', chrome.i18n.getMessage("btnToggleAdd"));
         searchInput.value = "";
         statusDiv.style.display = "block";
         setTimeout(() => { statusDiv.style.display = "none"; }, 2000);
@@ -254,8 +257,19 @@ window.initSaveConversation = initSaveConversation;
 // overflows the window, UP only when the window grew without any overflow. A
 // resize that changes nothing but the width touches neither, which is what
 // ends the loop.
+//
+// "Overflows" means by more than a pixel. At a fractional display scale
+// (measured at 150%) a popup sized to its content can be 308.67px of document
+// in a 308px window: scrollHeight rounds up to 309, innerHeight is 308, and
+// that one rounding pixel used to read as "Chrome capped this window". It
+// happened whenever a search shortened the list: the cap dropped to the
+// search-result height (284px), and since a capped body scrolls inside itself
+// the document never grew again — clearing the search left a 308px popup
+// until it was closed and reopened. A window Chrome really capped is short by
+// tens of pixels (503 for 600), never by one.
 const POPUP_BODY_MAX_HEIGHT = 576; // popup.css
 const POPUP_MIN_CAPPED_HEIGHT = 300;
+const POPUP_ROUNDING_SLACK = 1;
 function fitPopupToWindow() {
   // A side panel is as tall as the browser window and scrolls the document
   // (html.panel in popup.css): there is no popup cap to fit.
@@ -269,7 +283,7 @@ function fitPopupToWindow() {
   const fits = Math.floor(height - padding);
   const current = parseFloat(body.style.maxHeight) || POPUP_BODY_MAX_HEIGHT;
 
-  if (document.documentElement.scrollHeight > height) {
+  if (document.documentElement.scrollHeight > height + POPUP_ROUNDING_SLACK) {
     if (fits < current) body.style.maxHeight = fits + 'px';
   } else if (body.style.maxHeight && fits > current) {
     body.style.maxHeight = fits >= POPUP_BODY_MAX_HEIGHT ? '' : fits + 'px';
@@ -493,9 +507,8 @@ function initPopupCommon(config) {
   toggleAddPanelBtn.addEventListener('click', () => {
     const isHidden = addConversationPanel.style.display === 'none';
     addConversationPanel.style.display = isHidden ? 'block' : 'none';
-    toggleAddPanelBtn.textContent = isHidden
-      ? "➖ " + chrome.i18n.getMessage("btnCancel")
-      : "➕ " + chrome.i18n.getMessage("btnToggleAdd");
+    if (isHidden) setIconLabel(toggleAddPanelBtn, 'remove', chrome.i18n.getMessage("btnCancel"));
+    else setIconLabel(toggleAddPanelBtn, 'add', chrome.i18n.getMessage("btnToggleAdd"));
   });
 
   // --- New folder ---
@@ -530,7 +543,7 @@ function initPopupCommon(config) {
         }
         data.folders[name.trim()] = [];
         saveData({ folders: data.folders }, (err) => {
-          if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || '⚠️ Storage full — not saved.', type: 'alert' }); return; }
+          if (err) { window.showCustomModal({ title: chrome.i18n.getMessage("storageFullError") || 'Storage full — not saved.', type: 'alert', icon: 'warning' }); return; }
           if (window.displayFolders) window.displayFolders();
         });
       });
@@ -711,7 +724,8 @@ function initPopupCommon(config) {
         await mergeImportData(importedData);
         await window.showCustomModal({
           title: chrome.i18n.getMessage("alertImportSuccess") || "Import successful! Your folders and prompts have been merged successfully.",
-          type: 'alert'
+          type: 'alert',
+          icon: 'checkCircle'
         });
         importFile.value = "";
         if (window.displayFolders) window.displayFolders();

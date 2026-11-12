@@ -9,10 +9,10 @@
     "message": "مجلدات Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 بحث في المحادثات..."
+    "message": "بحث في المحادثات..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 بحث في المطالبات..."
+    "message": "بحث في المطالبات..."
   },
   "folderPlaceholder": {
     "message": "اسم المجلد (مثال: مشاريع الكود)"
@@ -27,22 +27,22 @@
     "message": "تم حفظ المحادثة!"
   },
   "noResults": {
-    "message": "لا توجد نتائج 🕵️"
+    "message": "لا توجد نتائج"
   },
   "noResultsHint": {
-    "message": "البحث يشمل المحادثات التي حفظتها فقط — احفظ محادثة باستخدام ➕ أولاً."
+    "message": "البحث يشمل المحادثات التي حفظتها فقط — احفظ محادثة باستخدام + أولاً."
   },
   "emptyFoldersHint": {
-    "message": "لا توجد مجلدات بعد — افتح محادثة Gemini واحفظها باستخدام ➕ أو قائمة النقر بزر الفأرة الأيمن."
+    "message": "لا توجد مجلدات بعد — افتح محادثة Gemini واحفظها باستخدام + أو قائمة النقر بزر الفأرة الأيمن."
   },
   "sortTooltip": {
     "message": "فرز"
   },
   "exportBtn": {
-    "message": "💾 تصدير"
+    "message": "تصدير"
   },
   "importBtn": {
-    "message": "📂 استيراد"
+    "message": "استيراد"
   },
   "alertNotGemini": {
     "message": "يرجى استخدام هذه الإضافة على صفحة Gemini."
@@ -72,7 +72,7 @@
     "message": "حذف"
   },
   "btnNewFolder": {
-    "message": "➕ مجلد"
+    "message": "+ مجلد"
   },
   "promptNewFolder": {
     "message": "مجلد جديد:"
@@ -144,7 +144,7 @@
     "message": "⚡ الحفظ السريع"
   },
   "toastSaved": {
-    "message": "✅ تم الحفظ في مجلدات Gemini!"
+    "message": "تم الحفظ في مجلدات Gemini!"
   },
   "btnOpenGroup": {
     "message": "فتح في مجموعة علامات تبويب"
@@ -180,7 +180,7 @@
     "message": "ينشئ مجلداً متزامناً في المفضلة لديك في Chrome للوصول إلى محادثاتك من هاتفك."
   },
   "reviewTitle": {
-    "message": "⭐ هل تستمتع بمجلدات Gemini؟"
+    "message": "هل تستمتع بمجلدات Gemini؟"
   },
   "reviewMessage": {
     "message": "دعمك يساعد هذا المشروع مفتوح المصدر كثيراً!"
@@ -204,7 +204,7 @@
     "message": "نصيحة: ابدأ بـ إيموجي (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ تم الحفظ مسبقاً!"
+    "message": "تم الحفظ مسبقاً!"
   },
   "folderModeTitle": {
     "message": "وضع المجلدات"
@@ -270,7 +270,7 @@
     "message": "تثبيت"
   },
   "storageFullError": {
-    "message": "⚠️ التخزين ممتلئ — لم يتم الحفظ."
+    "message": "التخزين ممتلئ — لم يتم الحفظ."
   },
   "afPromoTitle": {
     "message": "اكتشف مجلدات AI"

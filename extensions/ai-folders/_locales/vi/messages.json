@@ -9,10 +9,10 @@
     "message": "Thư mục AI"
   },
   "searchPlaceholder": {
-    "message": "🔍 Tìm kiếm cuộc trò chuyện..."
+    "message": "Tìm kiếm cuộc trò chuyện..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Tìm kiếm prompt..."
+    "message": "Tìm kiếm prompt..."
   },
   "folderPlaceholder": {
     "message": "Tên thư mục (vd: Dự án code)"
@@ -27,22 +27,22 @@
     "message": "Đã lưu cuộc trò chuyện!"
   },
   "noResults": {
-    "message": "Không tìm thấy kết quả 🕵️"
+    "message": "Không tìm thấy kết quả"
   },
   "noResultsHint": {
-    "message": "Tìm kiếm chỉ áp dụng cho các cuộc trò chuyện bạn đã lưu — hãy lưu một cuộc bằng ➕ trước."
+    "message": "Tìm kiếm chỉ áp dụng cho các cuộc trò chuyện bạn đã lưu — hãy lưu một cuộc bằng + trước."
   },
   "emptyFoldersHint": {
-    "message": "Chưa có thư mục nào — mở một cuộc trò chuyện trên trang AI được hỗ trợ và lưu bằng ➕ hoặc menu chuột phải."
+    "message": "Chưa có thư mục nào — mở một cuộc trò chuyện trên trang AI được hỗ trợ và lưu bằng + hoặc menu chuột phải."
   },
   "sortTooltip": {
     "message": "Sắp xếp"
   },
   "exportBtn": {
-    "message": "💾 Xuất"
+    "message": "Xuất"
   },
   "importBtn": {
-    "message": "📂 Nhập"
+    "message": "Nhập"
   },
   "defaultFolder": {
     "message": "Chung"
@@ -69,7 +69,7 @@
     "message": "Xóa"
   },
   "btnNewFolder": {
-    "message": "➕ Thư mục"
+    "message": "+ Thư mục"
   },
   "promptNewFolder": {
     "message": "Thư mục mới:"
@@ -141,7 +141,7 @@
     "message": "⚡ Lưu nhanh"
   },
   "toastSaved": {
-    "message": "✅ Đã lưu vào Thư mục AI!"
+    "message": "Đã lưu vào Thư mục AI!"
   },
   "btnOpenGroup": {
     "message": "Mở trong Nhóm tab"
@@ -177,7 +177,7 @@
     "message": "Tạo thư mục đồng bộ trong mục yêu thích Chrome để truy cập cuộc trò chuyện trên điện thoại."
   },
   "reviewTitle": {
-    "message": "⭐ Bạn có thích Thư mục AI không?"
+    "message": "Bạn có thích Thư mục AI không?"
   },
   "reviewMessage": {
     "message": "Sự ủng hộ của bạn giúp ích rất nhiều cho dự án mã nguồn mở này!"
@@ -201,7 +201,7 @@
     "message": "Mẹo: Bắt đầu bằng emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Đã lưu trước đó!"
+    "message": "Đã lưu trước đó!"
   },
   "folderModeTitle": {
     "message": "Chế độ thư mục"
@@ -249,7 +249,7 @@
     "message": "Chèn vào cuộc trò chuyện"
   },
   "storageFullError": {
-    "message": "⚠️ Bộ nhớ đầy — chưa được lưu."
+    "message": "Bộ nhớ đầy — chưa được lưu."
   },
   "newConv_gemini": {
     "message": "Cuộc trò chuyện Gemini mới"
@@ -312,7 +312,7 @@
     "message": "Vui lòng sử dụng tiện ích này trên trang web AI được hỗ trợ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi hoặc Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Trang này không còn cấp địa chỉ riêng cho mỗi cuộc trò chuyện, nên không có gì để lưu."
+    "message": "Trang này không còn cấp địa chỉ riêng cho mỗi cuộc trò chuyện, nên không có gì để lưu."
   },
   "alertEditorNotFound": {
     "message": "Không tìm thấy ô nhập văn bản trên trang này. Hãy thử nhấp vào trình soạn thảo trước rồi sử dụng nút chèn."
