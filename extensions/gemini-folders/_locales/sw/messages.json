@@ -9,10 +9,10 @@
     "message": "Folda za Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Tafuta mazungumzo..."
+    "message": "Tafuta mazungumzo..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Tafuta kidokezo..."
+    "message": "Tafuta kidokezo..."
   },
   "folderPlaceholder": {
     "message": "Jina la folda (mfano: Miradi ya Msimbo)"
@@ -27,22 +27,22 @@
     "message": "Mazungumzo yamehifadhiwa!"
   },
   "noResults": {
-    "message": "Hakuna matokeo 🕵️"
+    "message": "Hakuna matokeo"
   },
   "noResultsHint": {
-    "message": "Utafutaji unahusu mazungumzo uliyohifadhi tu — hifadhi mazungumzo kwa ➕ kwanza."
+    "message": "Utafutaji unahusu mazungumzo uliyohifadhi tu — hifadhi mazungumzo kwa + kwanza."
   },
   "emptyFoldersHint": {
-    "message": "Bado hakuna folda — fungua mazungumzo ya Gemini na uyahifadhi kwa ➕ au menyu ya kubofya kulia."
+    "message": "Bado hakuna folda — fungua mazungumzo ya Gemini na uyahifadhi kwa + au menyu ya kubofya kulia."
   },
   "sortTooltip": {
     "message": "Panga"
   },
   "exportBtn": {
-    "message": "💾 Hamisha"
+    "message": "Hamisha"
   },
   "importBtn": {
-    "message": "📂 Ingiza"
+    "message": "Ingiza"
   },
   "alertNotGemini": {
     "message": "Tafadhali tumia kiendelezi hiki kwenye ukurasa wa Gemini."
@@ -72,7 +72,7 @@
     "message": "Futa"
   },
   "btnNewFolder": {
-    "message": "➕ Folda"
+    "message": "+ Folda"
   },
   "promptNewFolder": {
     "message": "Folda mpya:"
@@ -144,7 +144,7 @@
     "message": "⚡ Hifadhi ya Haraka"
   },
   "toastSaved": {
-    "message": "✅ Imehifadhiwa kwenye Folda za Gemini!"
+    "message": "Imehifadhiwa kwenye Folda za Gemini!"
   },
   "btnOpenGroup": {
     "message": "Fungua katika Kikundi cha Vichupo"
@@ -180,7 +180,7 @@
     "message": "Inaunda folda iliyosawazishwa katika vipendwa vya Chrome ili ufikie mazungumzo yako kwenye simu yako."
   },
   "reviewTitle": {
-    "message": "⭐ Je, unafurahia Folda za Gemini?"
+    "message": "Je, unafurahia Folda za Gemini?"
   },
   "reviewMessage": {
     "message": "Msaada wako unasaidia sana mradi huu wa chanzo wazi!"
@@ -204,7 +204,7 @@
     "message": "Kidokezo: Anza na emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Tayari imehifadhiwa!"
+    "message": "Tayari imehifadhiwa!"
   },
   "folderModeTitle": {
     "message": "Hali ya Folda"
@@ -270,7 +270,7 @@
     "message": "Bandika"
   },
   "storageFullError": {
-    "message": "⚠️ Hifadhi imejaa — haijahifadhiwa."
+    "message": "Hifadhi imejaa — haijahifadhiwa."
   },
   "afPromoTitle": {
     "message": "Gundua Folda za AI"

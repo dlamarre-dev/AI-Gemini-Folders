@@ -9,10 +9,10 @@
     "message": "Dossiers Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Rechercher une conversation..."
+    "message": "Rechercher une conversation..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Rechercher un prompt..."
+    "message": "Rechercher un prompt..."
   },
   "folderPlaceholder": {
     "message": "Nom du dossier (ex: Projets Code)"
@@ -27,22 +27,22 @@
     "message": "Conversation sauvegardée !"
   },
   "noResults": {
-    "message": "Aucun résultat trouvé 🕵️"
+    "message": "Aucun résultat trouvé"
   },
   "noResultsHint": {
-    "message": "La recherche ne couvre que les conversations déjà enregistrées — enregistrez-en une avec ➕ d'abord."
+    "message": "La recherche ne couvre que les conversations déjà enregistrées — enregistrez-en une avec + d'abord."
   },
   "emptyFoldersHint": {
-    "message": "Aucun dossier pour l'instant — ouvrez une conversation Gemini et enregistrez-la avec ➕ ou le menu clic droit."
+    "message": "Aucun dossier pour l'instant — ouvrez une conversation Gemini et enregistrez-la avec + ou le menu clic droit."
   },
   "sortTooltip": {
     "message": "Trier"
   },
   "exportBtn": {
-    "message": "💾 Exporter"
+    "message": "Exporter"
   },
   "importBtn": {
-    "message": "📂 Importer"
+    "message": "Importer"
   },
   "alertNotGemini": {
     "message": "Veuillez utiliser cette extension sur une page Gemini."
@@ -72,7 +72,7 @@
     "message": "Supprimer"
   },
   "btnNewFolder": {
-    "message": "➕ Dossier"
+    "message": "+ Dossier"
   },
   "promptNewFolder": {
     "message": "Nouveau dossier :"
@@ -144,7 +144,7 @@
     "message": "⚡ Sauvegardes Rapides"
   },
   "toastSaved": {
-    "message": "✅ Sauvegardé dans Dossiers Gemini !"
+    "message": "Sauvegardé dans Dossiers Gemini !"
   },
   "btnOpenGroup": {
     "message": "Ouvrir dans un groupe d'onglets"
@@ -180,7 +180,7 @@
     "message": "Crée un dossier synchronisé dans vos favoris Chrome pour accéder à vos conversations sur votre téléphone."
   },
   "reviewTitle": {
-    "message": "⭐ Aimez-vous Dossiers Gemini ?"
+    "message": "Aimez-vous Dossiers Gemini ?"
   },
   "reviewMessage": {
     "message": "Votre soutien aide énormément ce projet open source !"
@@ -204,7 +204,7 @@
     "message": "Astuce : Émoji au début (Win+. / ⌘⌃Espace)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Déjà sauvegardé !"
+    "message": "Déjà sauvegardé !"
   },
   "folderModeTitle": {
     "message": "Mode Dossiers"
@@ -270,7 +270,7 @@
     "message": "Épingler"
   },
   "storageFullError": {
-    "message": "⚠️ Stockage plein — non sauvegardé."
+    "message": "Stockage plein — non sauvegardé."
   },
   "afPromoTitle": {
     "message": "Découvrez Dossiers IA"

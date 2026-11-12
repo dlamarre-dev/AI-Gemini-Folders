@@ -113,7 +113,7 @@ function pickExtensionsGlyph() {
 function buildAddButton() {
   const btn = document.getElementById('wAddBtn');
   // Matches how the popup composes the same label (popup-core.js).
-  if (btn) btn.textContent = '➕ ' + msg('btnToggleAdd');
+  if (btn) setIconLabel(btn, 'add', msg('btnToggleAdd'));
 }
 
 document.addEventListener('DOMContentLoaded', () => {

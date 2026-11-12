@@ -9,10 +9,10 @@
     "message": "Carpetas Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Buscar una conversación..."
+    "message": "Buscar una conversación..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Buscar un prompt..."
+    "message": "Buscar un prompt..."
   },
   "folderPlaceholder": {
     "message": "Nombre de la carpeta (ej: Proyectos)"
@@ -27,22 +27,22 @@
     "message": "¡Conversación guardada!"
   },
   "noResults": {
-    "message": "No se encontraron resultados 🕵️"
+    "message": "No se encontraron resultados"
   },
   "noResultsHint": {
-    "message": "La búsqueda solo incluye las conversaciones que ya has guardado: guarda una con ➕ primero."
+    "message": "La búsqueda solo incluye las conversaciones que ya has guardado: guarda una con + primero."
   },
   "emptyFoldersHint": {
-    "message": "Aún no hay carpetas: abre una conversación de Gemini y guárdala con ➕ o el menú del clic derecho."
+    "message": "Aún no hay carpetas: abre una conversación de Gemini y guárdala con + o el menú del clic derecho."
   },
   "sortTooltip": {
     "message": "Ordenar"
   },
   "exportBtn": {
-    "message": "💾 Exportar"
+    "message": "Exportar"
   },
   "importBtn": {
-    "message": "📂 Importar"
+    "message": "Importar"
   },
   "alertNotGemini": {
     "message": "Utiliza esta extensión en una página de Gemini."
@@ -72,7 +72,7 @@
     "message": "Eliminar"
   },
   "btnNewFolder": {
-    "message": "➕ Carpeta"
+    "message": "+ Carpeta"
   },
   "promptNewFolder": {
     "message": "Nueva carpeta:"
@@ -144,7 +144,7 @@
     "message": "⚡ Guardados Rápidos"
   },
   "toastSaved": {
-    "message": "✅ ¡Guardado en Carpetas Gemini!"
+    "message": "¡Guardado en Carpetas Gemini!"
   },
   "btnOpenGroup": {
     "message": "Abrir en grupo de pestañas"
@@ -180,7 +180,7 @@
     "message": "Crea una carpeta sincronizada en tus favoritos de Chrome para acceder a tus conversaciones en tu teléfono."
   },
   "reviewTitle": {
-    "message": "⭐ ¿Te gusta Carpetas Gemini?"
+    "message": "¿Te gusta Carpetas Gemini?"
   },
   "reviewMessage": {
     "message": "¡Tu apoyo ayuda enormemente a este proyecto de código abierto!"
@@ -204,7 +204,7 @@
     "message": "Tip: Inicia con emoji (Win+. / ⌘⌃Espacio)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ ¡Ya guardado!"
+    "message": "¡Ya guardado!"
   },
   "folderModeTitle": {
     "message": "Modo carpetas"
@@ -270,7 +270,7 @@
     "message": "Fijar"
   },
   "storageFullError": {
-    "message": "⚠️ Almacenamiento lleno — no guardado."
+    "message": "Almacenamiento lleno — no guardado."
   },
   "afPromoTitle": {
     "message": "Descubre Carpetas IA"

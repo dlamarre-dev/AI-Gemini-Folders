@@ -9,10 +9,10 @@
     "message": "תיקיות Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 חיפוש שיחה..."
+    "message": "חיפוש שיחה..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 חיפוש פרומפט..."
+    "message": "חיפוש פרומפט..."
   },
   "folderPlaceholder": {
     "message": "שם תיקייה (למשל, פרויקטי קוד)"
@@ -27,22 +27,22 @@
     "message": "השיחה נשמרה!"
   },
   "noResults": {
-    "message": "לא נמצאו תוצאות 🕵️"
+    "message": "לא נמצאו תוצאות"
   },
   "noResultsHint": {
-    "message": "החיפוש מכסה רק שיחות שכבר שמרתם — שמרו קודם שיחה באמצעות ➕."
+    "message": "החיפוש מכסה רק שיחות שכבר שמרתם — שמרו קודם שיחה באמצעות +."
   },
   "emptyFoldersHint": {
-    "message": "אין עדיין תיקיות — פתחו שיחת Gemini ושמרו אותה באמצעות ➕ או תפריט הקליק הימני."
+    "message": "אין עדיין תיקיות — פתחו שיחת Gemini ושמרו אותה באמצעות + או תפריט הקליק הימני."
   },
   "sortTooltip": {
     "message": "מיון"
   },
   "exportBtn": {
-    "message": "💾 ייצוא"
+    "message": "ייצוא"
   },
   "importBtn": {
-    "message": "📂 ייבוא"
+    "message": "ייבוא"
   },
   "alertNotGemini": {
     "message": "השתמש בתוסף זה בדף Gemini."
@@ -72,7 +72,7 @@
     "message": "מחק"
   },
   "btnNewFolder": {
-    "message": "➕ תיקייה"
+    "message": "+ תיקייה"
   },
   "promptNewFolder": {
     "message": "תיקייה חדשה:"
@@ -144,7 +144,7 @@
     "message": "⚡ שמירה מהירה"
   },
   "toastSaved": {
-    "message": "✅ נשמר בתיקיות Gemini!"
+    "message": "נשמר בתיקיות Gemini!"
   },
   "btnOpenGroup": {
     "message": "פתח בקבוצת כרטיסיות"
@@ -180,7 +180,7 @@
     "message": "יוצר תיקייה מסונכרנת במועדפים של Chrome לגישה לשיחות מהטלפון."
   },
   "reviewTitle": {
-    "message": "⭐ נהנה מ-Gemini תיקיות?"
+    "message": "נהנה מ-Gemini תיקיות?"
   },
   "reviewMessage": {
     "message": "התמיכה שלך עוזרת לפרויקט הקוד הפתוח הזה מאוד!"
@@ -204,7 +204,7 @@
     "message": "טיפ: התחל עם אמוג'י (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ כבר נשמר!"
+    "message": "כבר נשמר!"
   },
   "folderModeTitle": {
     "message": "מצב תיקיות"
@@ -270,7 +270,7 @@
     "message": "נעץ"
   },
   "storageFullError": {
-    "message": "⚠️ האחסון מלא — לא נשמר."
+    "message": "האחסון מלא — לא נשמר."
   },
   "afPromoTitle": {
     "message": "גלה את תיקיות AI"

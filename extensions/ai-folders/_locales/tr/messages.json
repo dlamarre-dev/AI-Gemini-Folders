@@ -9,10 +9,10 @@
     "message": "YZ Klasörleri"
   },
   "searchPlaceholder": {
-    "message": "🔍 Konuşma ara..."
+    "message": "Konuşma ara..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 İstem ara..."
+    "message": "İstem ara..."
   },
   "folderPlaceholder": {
     "message": "Klasör adı (ör. Kod Projeleri)"
@@ -27,22 +27,22 @@
     "message": "Konuşma kaydedildi!"
   },
   "noResults": {
-    "message": "Sonuç bulunamadı 🕵️"
+    "message": "Sonuç bulunamadı"
   },
   "noResultsHint": {
-    "message": "Arama yalnızca kaydettiğiniz sohbetleri kapsar — önce ➕ ile bir sohbet kaydedin."
+    "message": "Arama yalnızca kaydettiğiniz sohbetleri kapsar — önce + ile bir sohbet kaydedin."
   },
   "emptyFoldersHint": {
-    "message": "Henüz klasör yok — desteklenen bir yapay zekâ sitesinde bir sohbet açın ve ➕ ile veya sağ tık menüsüyle kaydedin."
+    "message": "Henüz klasör yok — desteklenen bir yapay zekâ sitesinde bir sohbet açın ve + ile veya sağ tık menüsüyle kaydedin."
   },
   "sortTooltip": {
     "message": "Sırala"
   },
   "exportBtn": {
-    "message": "💾 Dışa Aktar"
+    "message": "Dışa Aktar"
   },
   "importBtn": {
-    "message": "📂 İçe Aktar"
+    "message": "İçe Aktar"
   },
   "defaultFolder": {
     "message": "Genel"
@@ -69,7 +69,7 @@
     "message": "Sil"
   },
   "btnNewFolder": {
-    "message": "➕ Klasör"
+    "message": "+ Klasör"
   },
   "promptNewFolder": {
     "message": "Yeni klasör:"
@@ -141,7 +141,7 @@
     "message": "⚡ Hızlı Kayıtlar"
   },
   "toastSaved": {
-    "message": "✅ YZ Klasörleri'ne kaydedildi!"
+    "message": "YZ Klasörleri'ne kaydedildi!"
   },
   "btnOpenGroup": {
     "message": "Sekme Grubunda Aç"
@@ -177,7 +177,7 @@
     "message": "Telefonunuzdan konuşmalarınıza erişmek için Chrome sık kullanılanlarınızda senkronize edilmiş bir klasör oluşturur."
   },
   "reviewTitle": {
-    "message": "⭐ YZ Klasörleri'ni beğeniyor musunuz?"
+    "message": "YZ Klasörleri'ni beğeniyor musunuz?"
   },
   "reviewMessage": {
     "message": "Desteğiniz bu açık kaynaklı projeye çok yardımcı oluyor!"
@@ -201,7 +201,7 @@
     "message": "İpucu: Emoji ile başla (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Zaten kaydedildi!"
+    "message": "Zaten kaydedildi!"
   },
   "folderModeTitle": {
     "message": "Klasör Modu"
@@ -249,7 +249,7 @@
     "message": "Sohbete ekle"
   },
   "storageFullError": {
-    "message": "⚠️ Depolama alanı dolu — kaydedilmedi."
+    "message": "Depolama alanı dolu — kaydedilmedi."
   },
   "newConv_gemini": {
     "message": "Yeni Gemini sohbeti"
@@ -312,7 +312,7 @@
     "message": "Lütfen bu eklentiyi desteklenen bir AI sitesinde kullanın (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi veya Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Bu site artık her sohbete kendi adresini vermiyor, bu yüzden kaydedilecek bir şey yok."
+    "message": "Bu site artık her sohbete kendi adresini vermiyor, bu yüzden kaydedilecek bir şey yok."
   },
   "alertEditorNotFound": {
     "message": "Bu sayfada metin giriş alanı bulunamadı. Önce düzenleyiciye tıklamayı deneyin, ardından ekle düğmesini kullanın."

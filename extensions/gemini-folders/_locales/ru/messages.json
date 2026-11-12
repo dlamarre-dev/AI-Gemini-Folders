@@ -9,10 +9,10 @@
     "message": "Папки Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Поиск беседы..."
+    "message": "Поиск беседы..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Поиск промпта..."
+    "message": "Поиск промпта..."
   },
   "folderPlaceholder": {
     "message": "Имя папки (например: Проекты Код)"
@@ -27,22 +27,22 @@
     "message": "Беседа сохранена!"
   },
   "noResults": {
-    "message": "Ничего не найдено 🕵️"
+    "message": "Ничего не найдено"
   },
   "noResultsHint": {
-    "message": "Поиск охватывает только уже сохранённые беседы — сначала сохраните одну с помощью ➕."
+    "message": "Поиск охватывает только уже сохранённые беседы — сначала сохраните одну с помощью +."
   },
   "emptyFoldersHint": {
-    "message": "Папок пока нет — откройте беседу в Gemini и сохраните её с помощью ➕ или меню правого клика."
+    "message": "Папок пока нет — откройте беседу в Gemini и сохраните её с помощью + или меню правого клика."
   },
   "sortTooltip": {
     "message": "Сортировка"
   },
   "exportBtn": {
-    "message": "💾 Экспорт"
+    "message": "Экспорт"
   },
   "importBtn": {
-    "message": "📂 Импорт"
+    "message": "Импорт"
   },
   "alertNotGemini": {
     "message": "Пожалуйста, используйте это расширение на странице Gemini."
@@ -72,7 +72,7 @@
     "message": "Удалить"
   },
   "btnNewFolder": {
-    "message": "➕ Папка"
+    "message": "+ Папка"
   },
   "promptNewFolder": {
     "message": "Новая папка:"
@@ -144,7 +144,7 @@
     "message": "⚡ Быстрые сохранения"
   },
   "toastSaved": {
-    "message": "✅ Сохранено в Папки Gemini!"
+    "message": "Сохранено в Папки Gemini!"
   },
   "btnOpenGroup": {
     "message": "Открыть в группе вкладок"
@@ -180,7 +180,7 @@
     "message": "Создает синхронизированную папку в избранном Chrome для доступа к беседам на телефоне."
   },
   "reviewTitle": {
-    "message": "⭐ Вам нравятся Папки Gemini?"
+    "message": "Вам нравятся Папки Gemini?"
   },
   "reviewMessage": {
     "message": "Ваша поддержка очень помогает этому проекту с открытым исходным кодом!"
@@ -204,7 +204,7 @@
     "message": "Подсказка: Начните с эмодзи (Win+. / ⌘⌃Пробел)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Уже сохранено!"
+    "message": "Уже сохранено!"
   },
   "folderModeTitle": {
     "message": "Режим папок"
@@ -270,7 +270,7 @@
     "message": "Закрепить"
   },
   "storageFullError": {
-    "message": "⚠️ Хранилище заполнено — не сохранено."
+    "message": "Хранилище заполнено — не сохранено."
   },
   "afPromoTitle": {
     "message": "Откройте ИИ-папки"

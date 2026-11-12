@@ -59,7 +59,7 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   }
 });
 
-function showCustomModal({ title, message = '', type = 'confirm', defaultValue = '', placeholder = '' }) {
+function showCustomModal({ title, message = '', type = 'confirm', defaultValue = '', placeholder = '', icon: iconName }) {
   return new Promise((resolve) => {
     const modal = document.getElementById('customModal');
     const titleEl = document.getElementById('modalTitle');
@@ -68,7 +68,13 @@ function showCustomModal({ title, message = '', type = 'confirm', defaultValue =
     const btnCancel = document.getElementById('modalBtnCancel');
     const btnConfirm = document.getElementById('modalBtnConfirm');
 
-    titleEl.textContent = title;
+    // A status glyph in front of the title; the title itself stays plain text,
+    // so it still names the dialog. An alert is an error unless it says
+    // otherwise (`icon: 'checkCircle'` for good news, `icon: ''` for none) —
+    // defaulting here is what stops a new error alert from shipping bare.
+    if (iconName === undefined) iconName = type === 'alert' ? 'warning' : '';
+    if (iconName) setIconLabel(titleEl, iconName, title, 18);
+    else titleEl.textContent = title;
 
     if (message) {
       msgEl.textContent = message;
@@ -349,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- REVIEW BANNER ---
   const reviewBanner = document.getElementById('reviewBanner');
   if (reviewBanner) {
-    document.getElementById('reviewTitleTxt').textContent = chrome.i18n.getMessage("reviewTitle");
+    setIconLabel(document.getElementById('reviewTitleTxt'), 'star', chrome.i18n.getMessage("reviewTitle"));
     document.getElementById('reviewMessageTxt').textContent = chrome.i18n.getMessage("reviewMessage") || "Your support helps this open-source project immensely!";
     const btnReviewRate = document.getElementById('btnReviewRate');
     btnReviewRate.textContent = chrome.i18n.getMessage("reviewRateBtn") || "Rate 5 stars";

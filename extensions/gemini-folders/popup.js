@@ -1,5 +1,5 @@
 // popup.js — Gemini Folders
-// parseSVG/autoResize and the whole prompt-library UI live in the shared
+// autoResize and the whole prompt-library UI live in the shared
 // src/prompts.js (loaded before this file); popup.js wires the rest.
 
 document.addEventListener('DOMContentLoaded', async () => {

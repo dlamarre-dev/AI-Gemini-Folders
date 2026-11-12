@@ -9,10 +9,10 @@
     "message": "โฟลเดอร์ Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 ค้นหาการสนทนา..."
+    "message": "ค้นหาการสนทนา..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 ค้นหาพรอมต์..."
+    "message": "ค้นหาพรอมต์..."
   },
   "folderPlaceholder": {
     "message": "ชื่อโฟลเดอร์ (เช่น โปรเจกต์โค้ด)"
@@ -27,22 +27,22 @@
     "message": "บันทึกการสนทนาแล้ว!"
   },
   "noResults": {
-    "message": "ไม่พบผลลัพธ์ 🕵️"
+    "message": "ไม่พบผลลัพธ์"
   },
   "noResultsHint": {
-    "message": "การค้นหาครอบคลุมเฉพาะการสนทนาที่คุณบันทึกไว้แล้ว — บันทึกด้วย ➕ ก่อน"
+    "message": "การค้นหาครอบคลุมเฉพาะการสนทนาที่คุณบันทึกไว้แล้ว — บันทึกด้วย + ก่อน"
   },
   "emptyFoldersHint": {
-    "message": "ยังไม่มีโฟลเดอร์ — เปิดการสนทนา Gemini แล้วบันทึกด้วย ➕ หรือเมนูคลิกขวา"
+    "message": "ยังไม่มีโฟลเดอร์ — เปิดการสนทนา Gemini แล้วบันทึกด้วย + หรือเมนูคลิกขวา"
   },
   "sortTooltip": {
     "message": "จัดเรียง"
   },
   "exportBtn": {
-    "message": "💾 ส่งออก"
+    "message": "ส่งออก"
   },
   "importBtn": {
-    "message": "📂 นำเข้า"
+    "message": "นำเข้า"
   },
   "alertNotGemini": {
     "message": "โปรดใช้ส่วนขยายนี้บนหน้า Gemini"
@@ -72,7 +72,7 @@
     "message": "ลบ"
   },
   "btnNewFolder": {
-    "message": "➕ โฟลเดอร์"
+    "message": "+ โฟลเดอร์"
   },
   "promptNewFolder": {
     "message": "โฟลเดอร์ใหม่:"
@@ -144,7 +144,7 @@
     "message": "⚡ บันทึกด่วน"
   },
   "toastSaved": {
-    "message": "✅ บันทึกไปยังโฟลเดอร์ Gemini แล้ว!"
+    "message": "บันทึกไปยังโฟลเดอร์ Gemini แล้ว!"
   },
   "btnOpenGroup": {
     "message": "เปิดในกลุ่มแท็บ"
@@ -180,7 +180,7 @@
     "message": "สร้างโฟลเดอร์ที่ซิงค์ในรายการโปรด Chrome เพื่อเข้าถึงการสนทนาบนโทรศัพท์ของคุณ"
   },
   "reviewTitle": {
-    "message": "⭐ คุณชอบโฟลเดอร์ Gemini หรือไม่?"
+    "message": "คุณชอบโฟลเดอร์ Gemini หรือไม่?"
   },
   "reviewMessage": {
     "message": "การสนับสนุนของคุณช่วยโปรเจกต์โอเพ่นซอร์สนี้เป็นอย่างมาก!"
@@ -204,7 +204,7 @@
     "message": "เคล็ดลับ: เริ่มด้วยอีโมจิ (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ บันทึกแล้ว!"
+    "message": "บันทึกแล้ว!"
   },
   "folderModeTitle": {
     "message": "โหมดโฟลเดอร์"
@@ -270,7 +270,7 @@
     "message": "ปักหมุด"
   },
   "storageFullError": {
-    "message": "⚠️ พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก"
+    "message": "พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก"
   },
   "afPromoTitle": {
     "message": "ค้นพบ โฟลเดอร์ AI"

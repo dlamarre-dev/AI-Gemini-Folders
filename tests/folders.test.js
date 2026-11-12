@@ -727,7 +727,7 @@ describe('sub-folder rendering', () => {
     expect(parent.querySelector('.folder-chevron')).not.toBeNull();
     expect(parent.querySelector(':scope > .folder-content')).not.toBeNull();
     // …and it is not drawn as an empty folder.
-    expect(parent.querySelector('.folder-icon').textContent).toBe('🗂️');
+    expect(parent.querySelector('.folder-icon [data-icon]').dataset.icon).toBe('folder');
   });
 
   test('an empty folder with no children still has nothing to expand', () => {

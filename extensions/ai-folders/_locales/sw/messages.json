@@ -9,10 +9,10 @@
     "message": "Folda za AI"
   },
   "searchPlaceholder": {
-    "message": "🔍 Tafuta mazungumzo..."
+    "message": "Tafuta mazungumzo..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Tafuta kidokezo..."
+    "message": "Tafuta kidokezo..."
   },
   "folderPlaceholder": {
     "message": "Jina la folda (mfano: Miradi ya Msimbo)"
@@ -27,22 +27,22 @@
     "message": "Mazungumzo yamehifadhiwa!"
   },
   "noResults": {
-    "message": "Hakuna matokeo 🕵️"
+    "message": "Hakuna matokeo"
   },
   "noResultsHint": {
-    "message": "Utafutaji unahusu mazungumzo uliyohifadhi tu — hifadhi mazungumzo kwa ➕ kwanza."
+    "message": "Utafutaji unahusu mazungumzo uliyohifadhi tu — hifadhi mazungumzo kwa + kwanza."
   },
   "emptyFoldersHint": {
-    "message": "Bado hakuna folda — fungua mazungumzo kwenye tovuti ya AI inayotumika na uyahifadhi kwa ➕ au menyu ya kubofya kulia."
+    "message": "Bado hakuna folda — fungua mazungumzo kwenye tovuti ya AI inayotumika na uyahifadhi kwa + au menyu ya kubofya kulia."
   },
   "sortTooltip": {
     "message": "Panga"
   },
   "exportBtn": {
-    "message": "💾 Hamisha"
+    "message": "Hamisha"
   },
   "importBtn": {
-    "message": "📂 Ingiza"
+    "message": "Ingiza"
   },
   "defaultFolder": {
     "message": "Jumla"
@@ -69,7 +69,7 @@
     "message": "Futa"
   },
   "btnNewFolder": {
-    "message": "➕ Folda"
+    "message": "+ Folda"
   },
   "promptNewFolder": {
     "message": "Folda mpya:"
@@ -141,7 +141,7 @@
     "message": "⚡ Hifadhi ya Haraka"
   },
   "toastSaved": {
-    "message": "✅ Imehifadhiwa kwenye Folda za AI!"
+    "message": "Imehifadhiwa kwenye Folda za AI!"
   },
   "btnOpenGroup": {
     "message": "Fungua katika Kikundi cha Vichupo"
@@ -177,7 +177,7 @@
     "message": "Inaunda folda iliyosawazishwa katika vipendwa vya Chrome ili ufikie mazungumzo yako kwenye simu yako."
   },
   "reviewTitle": {
-    "message": "⭐ Je, unafurahia Folda za AI?"
+    "message": "Je, unafurahia Folda za AI?"
   },
   "reviewMessage": {
     "message": "Msaada wako unasaidia sana mradi huu wa chanzo wazi!"
@@ -201,7 +201,7 @@
     "message": "Kidokezo: Anza na emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Tayari imehifadhiwa!"
+    "message": "Tayari imehifadhiwa!"
   },
   "folderModeTitle": {
     "message": "Hali ya Folda"
@@ -249,7 +249,7 @@
     "message": "Ingiza kwenye gumzo"
   },
   "storageFullError": {
-    "message": "⚠️ Hifadhi imejaa — haijahifadhiwa."
+    "message": "Hifadhi imejaa — haijahifadhiwa."
   },
   "newConv_gemini": {
     "message": "Mazungumzo mapya ya Gemini"
@@ -312,7 +312,7 @@
     "message": "Tafadhali tumia kiendelezi hiki kwenye tovuti ya AI inayotumika (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi, au Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Tovuti hii haitoi tena anwani yake kwa kila mazungumzo, kwa hivyo hakuna kitu cha kuhifadhi."
+    "message": "Tovuti hii haitoi tena anwani yake kwa kila mazungumzo, kwa hivyo hakuna kitu cha kuhifadhi."
   },
   "alertEditorNotFound": {
     "message": "Haiwezekani kupata sehemu ya kuandika katika ukurasa huu. Jaribu kubonyeza kwenye kihariri kwanza, kisha utumie kitufe cha ingiza."

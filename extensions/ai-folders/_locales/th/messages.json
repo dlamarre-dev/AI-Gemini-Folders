@@ -9,10 +9,10 @@
     "message": "โฟลเดอร์ AI"
   },
   "searchPlaceholder": {
-    "message": "🔍 ค้นหาการสนทนา..."
+    "message": "ค้นหาการสนทนา..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 ค้นหาพรอมต์..."
+    "message": "ค้นหาพรอมต์..."
   },
   "folderPlaceholder": {
     "message": "ชื่อโฟลเดอร์ (เช่น โปรเจกต์โค้ด)"
@@ -27,22 +27,22 @@
     "message": "บันทึกการสนทนาแล้ว!"
   },
   "noResults": {
-    "message": "ไม่พบผลลัพธ์ 🕵️"
+    "message": "ไม่พบผลลัพธ์"
   },
   "noResultsHint": {
-    "message": "การค้นหาครอบคลุมเฉพาะการสนทนาที่คุณบันทึกไว้แล้ว — บันทึกด้วย ➕ ก่อน"
+    "message": "การค้นหาครอบคลุมเฉพาะการสนทนาที่คุณบันทึกไว้แล้ว — บันทึกด้วย + ก่อน"
   },
   "emptyFoldersHint": {
-    "message": "ยังไม่มีโฟลเดอร์ — เปิดการสนทนาบนเว็บไซต์ AI ที่รองรับ แล้วบันทึกด้วย ➕ หรือเมนูคลิกขวา"
+    "message": "ยังไม่มีโฟลเดอร์ — เปิดการสนทนาบนเว็บไซต์ AI ที่รองรับ แล้วบันทึกด้วย + หรือเมนูคลิกขวา"
   },
   "sortTooltip": {
     "message": "จัดเรียง"
   },
   "exportBtn": {
-    "message": "💾 ส่งออก"
+    "message": "ส่งออก"
   },
   "importBtn": {
-    "message": "📂 นำเข้า"
+    "message": "นำเข้า"
   },
   "defaultFolder": {
     "message": "ทั่วไป"
@@ -69,7 +69,7 @@
     "message": "ลบ"
   },
   "btnNewFolder": {
-    "message": "➕ โฟลเดอร์"
+    "message": "+ โฟลเดอร์"
   },
   "promptNewFolder": {
     "message": "โฟลเดอร์ใหม่:"
@@ -141,7 +141,7 @@
     "message": "⚡ บันทึกด่วน"
   },
   "toastSaved": {
-    "message": "✅ บันทึกไปยังโฟลเดอร์ AI แล้ว!"
+    "message": "บันทึกไปยังโฟลเดอร์ AI แล้ว!"
   },
   "btnOpenGroup": {
     "message": "เปิดในกลุ่มแท็บ"
@@ -177,7 +177,7 @@
     "message": "สร้างโฟลเดอร์ที่ซิงค์ในรายการโปรด Chrome เพื่อเข้าถึงการสนทนาบนโทรศัพท์ของคุณ"
   },
   "reviewTitle": {
-    "message": "⭐ คุณชอบโฟลเดอร์ AI หรือไม่?"
+    "message": "คุณชอบโฟลเดอร์ AI หรือไม่?"
   },
   "reviewMessage": {
     "message": "การสนับสนุนของคุณช่วยโปรเจกต์โอเพ่นซอร์สนี้เป็นอย่างมาก!"
@@ -201,7 +201,7 @@
     "message": "เคล็ดลับ: เริ่มด้วยอีโมจิ (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ บันทึกแล้ว!"
+    "message": "บันทึกแล้ว!"
   },
   "folderModeTitle": {
     "message": "โหมดโฟลเดอร์"
@@ -249,7 +249,7 @@
     "message": "แทรกในแชท"
   },
   "storageFullError": {
-    "message": "⚠️ พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก"
+    "message": "พื้นที่จัดเก็บเต็ม — ไม่ได้บันทึก"
   },
   "newConv_gemini": {
     "message": "บทสนทนา Gemini ใหม่"
@@ -312,7 +312,7 @@
     "message": "กรุณาใช้ส่วนขยายนี้บนเว็บไซต์ AI ที่รองรับ (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi หรือ Character.AI)"
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ เว็บไซต์นี้ไม่ได้ให้ที่อยู่แยกของแต่ละการสนทนาอีกแล้ว จึงไม่มีอะไรให้บันทึก"
+    "message": "เว็บไซต์นี้ไม่ได้ให้ที่อยู่แยกของแต่ละการสนทนาอีกแล้ว จึงไม่มีอะไรให้บันทึก"
   },
   "alertEditorNotFound": {
     "message": "ไม่พบช่องป้อนข้อความในหน้านี้ ลองคลิกที่ตัวแก้ไขก่อน แล้วจึงใช้ปุ่มแทรก"

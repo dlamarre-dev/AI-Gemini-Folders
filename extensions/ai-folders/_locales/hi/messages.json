@@ -9,10 +9,10 @@
     "message": "AI फ़ोल्डर"
   },
   "searchPlaceholder": {
-    "message": "🔍 बातचीत खोजें..."
+    "message": "बातचीत खोजें..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 प्रॉम्प्ट खोजें..."
+    "message": "प्रॉम्प्ट खोजें..."
   },
   "folderPlaceholder": {
     "message": "फ़ोल्डर का नाम (उदा: कोड प्रोजेक्ट्स)"
@@ -27,22 +27,22 @@
     "message": "बातचीत सहेजी गई!"
   },
   "noResults": {
-    "message": "कोई परिणाम नहीं मिला 🕵️"
+    "message": "कोई परिणाम नहीं मिला"
   },
   "noResultsHint": {
-    "message": "खोज केवल उन बातचीत में काम करती है जिन्हें आपने सहेजा है — पहले ➕ से एक सहेजें।"
+    "message": "खोज केवल उन बातचीत में काम करती है जिन्हें आपने सहेजा है — पहले + से एक सहेजें।"
   },
   "emptyFoldersHint": {
-    "message": "अभी तक कोई फ़ोल्डर नहीं — किसी समर्थित AI साइट पर बातचीत खोलें और उसे ➕ या राइट-क्लिक मेनू से सहेजें।"
+    "message": "अभी तक कोई फ़ोल्डर नहीं — किसी समर्थित AI साइट पर बातचीत खोलें और उसे + या राइट-क्लिक मेनू से सहेजें।"
   },
   "sortTooltip": {
     "message": "क्रमबद्ध करें"
   },
   "exportBtn": {
-    "message": "💾 निर्यात"
+    "message": "निर्यात"
   },
   "importBtn": {
-    "message": "📂 आयात"
+    "message": "आयात"
   },
   "defaultFolder": {
     "message": "सामान्य"
@@ -69,7 +69,7 @@
     "message": "हटाएं"
   },
   "btnNewFolder": {
-    "message": "➕ फ़ोल्डर"
+    "message": "+ फ़ोल्डर"
   },
   "promptNewFolder": {
     "message": "नया फ़ोल्डर:"
@@ -141,7 +141,7 @@
     "message": "⚡ त्वरित सहेजें"
   },
   "toastSaved": {
-    "message": "✅ AI फ़ोल्डर में सहेजा गया!"
+    "message": "AI फ़ोल्डर में सहेजा गया!"
   },
   "btnOpenGroup": {
     "message": "टैब समूह में खोलें"
@@ -177,7 +177,7 @@
     "message": "अपने फ़ोन पर अपनी बातचीत तक पहुँचने के लिए Chrome पसंदीदा में एक समन्वयित फ़ोल्डर बनाता है।"
   },
   "reviewTitle": {
-    "message": "⭐ क्या आपको AI फ़ोल्डर पसंद है?"
+    "message": "क्या आपको AI फ़ोल्डर पसंद है?"
   },
   "reviewMessage": {
     "message": "आपका समर्थन इस ओपन-सोर्स प्रोजेक्ट को बहुत मदद करता है!"
@@ -201,7 +201,7 @@
     "message": "टिप: इमोजी से शुरू करें (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ पहले से सहेजा गया!"
+    "message": "पहले से सहेजा गया!"
   },
   "folderModeTitle": {
     "message": "फ़ोल्डर मोड"
@@ -249,7 +249,7 @@
     "message": "चैट में डालें"
   },
   "storageFullError": {
-    "message": "⚠️ संग्रहण भरा हुआ है — सहेजा नहीं गया।"
+    "message": "संग्रहण भरा हुआ है — सहेजा नहीं गया।"
   },
   "newConv_gemini": {
     "message": "नई Gemini बातचीत"
@@ -312,7 +312,7 @@
     "message": "कृपया इस एक्सटेंशन को किसी समर्थित AI साइट पर उपयोग करें (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi या Character.AI)।"
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ यह साइट अब हर बातचीत को उसका अलग पता नहीं देती, इसलिए सहेजने के लिए कुछ नहीं है।"
+    "message": "यह साइट अब हर बातचीत को उसका अलग पता नहीं देती, इसलिए सहेजने के लिए कुछ नहीं है।"
   },
   "alertEditorNotFound": {
     "message": "इस पृष्ठ पर टेक्स्ट इनपुट नहीं मिला। पहले एडिटर में क्लिक करें, फिर इन्सर्ट बटन का उपयोग करें।"

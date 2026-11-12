@@ -9,10 +9,10 @@
     "message": "Mga Folder ng Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Maghanap ng pag-uusap..."
+    "message": "Maghanap ng pag-uusap..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Maghanap ng prompt..."
+    "message": "Maghanap ng prompt..."
   },
   "folderPlaceholder": {
     "message": "Pangalan ng folder (hal. Mga Proyekto sa Code)"
@@ -27,22 +27,22 @@
     "message": "Nai-save ang pag-uusap!"
   },
   "noResults": {
-    "message": "Walang nahanap na resulta 🕵️"
+    "message": "Walang nahanap na resulta"
   },
   "noResultsHint": {
-    "message": "Ang paghahanap ay sa mga naka-save na usapan lang — mag-save muna ng isa gamit ang ➕."
+    "message": "Ang paghahanap ay sa mga naka-save na usapan lang — mag-save muna ng isa gamit ang +."
   },
   "emptyFoldersHint": {
-    "message": "Wala pang folder — magbukas ng usapan sa Gemini at i-save ito gamit ang ➕ o ang right-click menu."
+    "message": "Wala pang folder — magbukas ng usapan sa Gemini at i-save ito gamit ang + o ang right-click menu."
   },
   "sortTooltip": {
     "message": "Ayusin"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Gamitin ang extension na ito sa isang pahina ng Gemini."
@@ -72,7 +72,7 @@
     "message": "Tanggalin"
   },
   "btnNewFolder": {
-    "message": "➕ Folder"
+    "message": "+ Folder"
   },
   "promptNewFolder": {
     "message": "Bagong folder:"
@@ -144,7 +144,7 @@
     "message": "⚡ Mabilis na Pag-save"
   },
   "toastSaved": {
-    "message": "✅ Nai-save sa Mga Folder ng Gemini!"
+    "message": "Nai-save sa Mga Folder ng Gemini!"
   },
   "btnOpenGroup": {
     "message": "Buksan sa Tab Group"
@@ -180,7 +180,7 @@
     "message": "Gumagawa ng naka-sync na folder sa iyong mga paborito sa Chrome para ma-access ang iyong mga pag-uusap sa iyong telepono."
   },
   "reviewTitle": {
-    "message": "⭐ Nag-eenjoy ka ba sa Mga Folder ng Gemini?"
+    "message": "Nag-eenjoy ka ba sa Mga Folder ng Gemini?"
   },
   "reviewMessage": {
     "message": "Ang iyong suporta ay nakakatulong nang malaki sa open-source na proyektong ito!"
@@ -204,7 +204,7 @@
     "message": "Tip: Magsimula sa emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Nai-save na!"
+    "message": "Nai-save na!"
   },
   "folderModeTitle": {
     "message": "Folder Mode"
@@ -270,7 +270,7 @@
     "message": "I-pin"
   },
   "storageFullError": {
-    "message": "⚠️ Puno na ang storage — hindi na-save."
+    "message": "Puno na ang storage — hindi na-save."
   },
   "afPromoTitle": {
     "message": "Tuklasin ang Mga AI Folder"

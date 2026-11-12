@@ -9,10 +9,10 @@
     "message": "Cartelle Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Cerca una conversazione..."
+    "message": "Cerca una conversazione..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Cerca un prompt..."
+    "message": "Cerca un prompt..."
   },
   "folderPlaceholder": {
     "message": "Nome cartella (es: Progetti Codice)"
@@ -27,22 +27,22 @@
     "message": "Conversazione salvata!"
   },
   "noResults": {
-    "message": "Nessun risultato trovato 🕵️"
+    "message": "Nessun risultato trovato"
   },
   "noResultsHint": {
-    "message": "La ricerca copre solo le conversazioni che hai già salvato: salvane una con ➕ prima."
+    "message": "La ricerca copre solo le conversazioni che hai già salvato: salvane una con + prima."
   },
   "emptyFoldersHint": {
-    "message": "Ancora nessuna cartella: apri una conversazione di Gemini e salvala con ➕ o dal menu del tasto destro."
+    "message": "Ancora nessuna cartella: apri una conversazione di Gemini e salvala con + o dal menu del tasto destro."
   },
   "sortTooltip": {
     "message": "Ordina"
   },
   "exportBtn": {
-    "message": "💾 Esporta"
+    "message": "Esporta"
   },
   "importBtn": {
-    "message": "📂 Importa"
+    "message": "Importa"
   },
   "alertNotGemini": {
     "message": "Usa questa estensione su una pagina Gemini."
@@ -72,7 +72,7 @@
     "message": "Elimina"
   },
   "btnNewFolder": {
-    "message": "➕ Cartella"
+    "message": "+ Cartella"
   },
   "promptNewFolder": {
     "message": "Nuova cartella:"
@@ -144,7 +144,7 @@
     "message": "⚡ Salvataggi Rapidi"
   },
   "toastSaved": {
-    "message": "✅ Salvato in Cartelle Gemini!"
+    "message": "Salvato in Cartelle Gemini!"
   },
   "btnOpenGroup": {
     "message": "Apri in un gruppo di schede"
@@ -180,7 +180,7 @@
     "message": "Crea una cartella sincronizzata nei preferiti di Chrome per accedere alle conversazioni dal telefono."
   },
   "reviewTitle": {
-    "message": "⭐ Ti piace Cartelle Gemini?"
+    "message": "Ti piace Cartelle Gemini?"
   },
   "reviewMessage": {
     "message": "Il tuo supporto aiuta enormemente questo progetto open source!"
@@ -204,7 +204,7 @@
     "message": "Suggerimento: inizia con un'emoji (Win+. / ⌘⌃Spazio)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Già salvato!"
+    "message": "Già salvato!"
   },
   "folderModeTitle": {
     "message": "Modalità cartelle"
@@ -270,7 +270,7 @@
     "message": "Fissa"
   },
   "storageFullError": {
-    "message": "⚠️ Archiviazione piena — non salvato."
+    "message": "Archiviazione piena — non salvato."
   },
   "afPromoTitle": {
     "message": "Scopri Cartelle IA"

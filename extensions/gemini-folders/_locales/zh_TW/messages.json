@@ -9,10 +9,10 @@
     "message": "Gemini 資料夾"
   },
   "searchPlaceholder": {
-    "message": "🔍 搜尋對話..."
+    "message": "搜尋對話..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 搜尋提示詞..."
+    "message": "搜尋提示詞..."
   },
   "folderPlaceholder": {
     "message": "資料夾名稱（例如：程式碼專案）"
@@ -27,22 +27,22 @@
     "message": "對話已儲存！"
   },
   "noResults": {
-    "message": "找不到結果 🕵️"
+    "message": "找不到結果"
   },
   "noResultsHint": {
-    "message": "搜尋僅涵蓋已儲存的對話 — 請先用 ➕ 儲存一個對話。"
+    "message": "搜尋僅涵蓋已儲存的對話 — 請先用 + 儲存一個對話。"
   },
   "emptyFoldersHint": {
-    "message": "還沒有資料夾 — 開啟一個 Gemini 對話，然後用 ➕ 或右鍵選單儲存它。"
+    "message": "還沒有資料夾 — 開啟一個 Gemini 對話，然後用 + 或右鍵選單儲存它。"
   },
   "sortTooltip": {
     "message": "排序"
   },
   "exportBtn": {
-    "message": "💾 匯出"
+    "message": "匯出"
   },
   "importBtn": {
-    "message": "📂 匯入"
+    "message": "匯入"
   },
   "alertNotGemini": {
     "message": "請在 Gemini 頁面上使用此擴充功能。"
@@ -72,7 +72,7 @@
     "message": "刪除"
   },
   "btnNewFolder": {
-    "message": "➕ 資料夾"
+    "message": "+ 資料夾"
   },
   "promptNewFolder": {
     "message": "新資料夾："
@@ -144,7 +144,7 @@
     "message": "⚡ 快速儲存"
   },
   "toastSaved": {
-    "message": "✅ 已儲存到 Gemini 資料夾！"
+    "message": "已儲存到 Gemini 資料夾！"
   },
   "btnOpenGroup": {
     "message": "在分頁群組中開啟"
@@ -180,7 +180,7 @@
     "message": "在您的 Chrome 我的最愛中建立同步資料夾，以便在手機上存取您的對話。"
   },
   "reviewTitle": {
-    "message": "⭐ 您喜歡 Gemini 資料夾嗎？"
+    "message": "您喜歡 Gemini 資料夾嗎？"
   },
   "reviewMessage": {
     "message": "您的支持對這個開源專案非常有幫助！"
@@ -204,7 +204,7 @@
     "message": "提示：以表情符號開頭（Win+. / ⌘⌃Space）"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ 已儲存過！"
+    "message": "已儲存過！"
   },
   "folderModeTitle": {
     "message": "資料夾模式"
@@ -270,7 +270,7 @@
     "message": "釘選"
   },
   "storageFullError": {
-    "message": "⚠️ 儲存空間已滿 — 未儲存。"
+    "message": "儲存空間已滿 — 未儲存。"
   },
   "afPromoTitle": {
     "message": "探索 AI 資料夾"

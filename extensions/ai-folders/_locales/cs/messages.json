@@ -9,10 +9,10 @@
     "message": "AI složky"
   },
   "searchPlaceholder": {
-    "message": "🔍 Hledat konverzaci..."
+    "message": "Hledat konverzaci..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Hledat prompt..."
+    "message": "Hledat prompt..."
   },
   "folderPlaceholder": {
     "message": "Název složky (např. Projekty Kód)"
@@ -27,22 +27,22 @@
     "message": "Konverzace uložena!"
   },
   "noResults": {
-    "message": "Nebyly nalezeny žádné výsledky 🕵️"
+    "message": "Nebyly nalezeny žádné výsledky"
   },
   "noResultsHint": {
-    "message": "Hledání zahrnuje jen konverzace, které jste už uložili — nejprve jednu uložte pomocí ➕."
+    "message": "Hledání zahrnuje jen konverzace, které jste už uložili — nejprve jednu uložte pomocí +."
   },
   "emptyFoldersHint": {
-    "message": "Zatím žádné složky — otevřete konverzaci na podporovaném webu s AI a uložte ji pomocí ➕ nebo nabídky pravého tlačítka."
+    "message": "Zatím žádné složky — otevřete konverzaci na podporovaném webu s AI a uložte ji pomocí + nebo nabídky pravého tlačítka."
   },
   "sortTooltip": {
     "message": "Seřadit"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "defaultFolder": {
     "message": "Obecné"
@@ -69,7 +69,7 @@
     "message": "Smazat"
   },
   "btnNewFolder": {
-    "message": "➕ Složka"
+    "message": "+ Složka"
   },
   "promptNewFolder": {
     "message": "Nová složka:"
@@ -141,7 +141,7 @@
     "message": "⚡ Rychlé uložení"
   },
   "toastSaved": {
-    "message": "✅ Uloženo do Složek Gemini!"
+    "message": "Uloženo do Složek Gemini!"
   },
   "btnOpenGroup": {
     "message": "Otevřít ve skupině karet"
@@ -177,7 +177,7 @@
     "message": "Vytvoří synchronizovanou složku v oblíbených položkách Chrome pro přístup ke konverzacím v telefonu."
   },
   "reviewTitle": {
-    "message": "⭐ Líbí se vám AI složky?"
+    "message": "Líbí se vám AI složky?"
   },
   "reviewMessage": {
     "message": "Vaše podpora tomuto open source projektu nesmírně pomáhá!"
@@ -201,7 +201,7 @@
     "message": "Tip: Začněte s emoji (Win+. / ⌘⌃Mezerník)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Již uloženo!"
+    "message": "Již uloženo!"
   },
   "folderModeTitle": {
     "message": "Režim složek"
@@ -249,7 +249,7 @@
     "message": "Vložit do chatu"
   },
   "storageFullError": {
-    "message": "⚠️ Úložiště je plné — neuloženo."
+    "message": "Úložiště je plné — neuloženo."
   },
   "newConv_gemini": {
     "message": "Nová konverzace v Gemini"
@@ -312,7 +312,7 @@
     "message": "Používejte toto rozšíření na podporovaném AI webu (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi nebo Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Tento web už nedává každé konverzaci vlastní adresu, takže není co uložit."
+    "message": "Tento web už nedává každé konverzaci vlastní adresu, takže není co uložit."
   },
   "alertEditorNotFound": {
     "message": "Na této stránce nelze najít textové pole. Nejprve klikněte do editoru a poté použijte tlačítko Vložit."

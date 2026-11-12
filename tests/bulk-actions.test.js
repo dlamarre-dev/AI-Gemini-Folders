@@ -66,7 +66,7 @@ describe('updateBulkActionBar', () => {
 
     const items = [...document.querySelectorAll('#bulkMoveList li')].map((li) => li.textContent);
     expect(items).toContain('💻 Code'); // emoji prefix used as the icon
-    expect(items).toContain('📁 Work'); // default icon for a plain name
+    expect(items).toContain('Work'); // plain name: our folder glyph, no emoji in the text
   });
 
   test('hides the bar when nothing is selected', () => {
@@ -146,7 +146,7 @@ describe('sub-folders in the move list', () => {
     window.updateBulkActionBar();
 
     const items = [...document.querySelectorAll('#bulkMoveList li')];
-    expect(items.map((li) => li.textContent)).toEqual(['📁 Personal', '📁 Work', '↳ 📁 Clients']);
+    expect(items.map((li) => li.textContent)).toEqual(['Personal', 'Work', '↳ Clients']);
     expect(items[2].classList.contains('is-child')).toBe(true);
     // Flat: makeMenuAccessible drives roving focus off querySelectorAll('li').
     expect(document.querySelectorAll('#bulkMoveList ul')).toHaveLength(0);
@@ -161,7 +161,7 @@ describe('sub-folders in the move list', () => {
 
     const items = [...document.querySelectorAll('#bulkMoveList li')];
     expect(items.map((li) => li.textContent)).toEqual(
-      ['📁 A', '↳ 📁 B', '↳ 📁 C', '↳ 📁 D', '📁 Z']);
+      ['A', '↳ B', '↳ C', '↳ D', 'Z']);
     expect(items.map((li) => li.style.paddingInlineStart)).toEqual(['', '24px', '36px', '48px', '']);
   });
 

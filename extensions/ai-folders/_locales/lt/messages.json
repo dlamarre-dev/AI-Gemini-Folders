@@ -9,10 +9,10 @@
     "message": "AI aplankai"
   },
   "searchPlaceholder": {
-    "message": "🔍 Ieškoti pokalbio..."
+    "message": "Ieškoti pokalbio..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Ieškoti prompto..."
+    "message": "Ieškoti prompto..."
   },
   "folderPlaceholder": {
     "message": "Aplanko pavadinimas (pvz. Kodo projektai)"
@@ -27,22 +27,22 @@
     "message": "Pokalbis išsaugotas!"
   },
   "noResults": {
-    "message": "Rezultatų nerasta 🕵️"
+    "message": "Rezultatų nerasta"
   },
   "noResultsHint": {
-    "message": "Paieška apima tik jau išsaugotus pokalbius — pirmiausia išsaugokite vieną su ➕."
+    "message": "Paieška apima tik jau išsaugotus pokalbius — pirmiausia išsaugokite vieną su +."
   },
   "emptyFoldersHint": {
-    "message": "Aplankų dar nėra — atidarykite pokalbį palaikomoje DI svetainėje ir išsaugokite jį su ➕ arba dešiniojo pelės mygtuko meniu."
+    "message": "Aplankų dar nėra — atidarykite pokalbį palaikomoje DI svetainėje ir išsaugokite jį su + arba dešiniojo pelės mygtuko meniu."
   },
   "sortTooltip": {
     "message": "Rikiuoti"
   },
   "exportBtn": {
-    "message": "💾 Eksportas"
+    "message": "Eksportas"
   },
   "importBtn": {
-    "message": "📂 Importas"
+    "message": "Importas"
   },
   "defaultFolder": {
     "message": "Bendra"
@@ -69,7 +69,7 @@
     "message": "Ištrinti"
   },
   "btnNewFolder": {
-    "message": "➕ Aplankas"
+    "message": "+ Aplankas"
   },
   "promptNewFolder": {
     "message": "Naujas aplankas:"
@@ -141,7 +141,7 @@
     "message": "⚡ Greitas išsaugojimas"
   },
   "toastSaved": {
-    "message": "✅ Išsaugota Gemini Aplankuose!"
+    "message": "Išsaugota Gemini Aplankuose!"
   },
   "btnOpenGroup": {
     "message": "Atidaryti skirtukų grupėje"
@@ -177,7 +177,7 @@
     "message": "Sukuria sinchronizuotą aplanką Chrome parankiniuose, kad galėtum pasiekti pokalbius iš telefono."
   },
   "reviewTitle": {
-    "message": "⭐ Ar tau patinka AI aplankai?"
+    "message": "Ar tau patinka AI aplankai?"
   },
   "reviewMessage": {
     "message": "Tavo palaikymas labai padeda šiam atvirojo kodo projektui!"
@@ -201,7 +201,7 @@
     "message": "Patarimas: pradėk emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Jau išsaugota!"
+    "message": "Jau išsaugota!"
   },
   "folderModeTitle": {
     "message": "Aplankų režimas"
@@ -249,7 +249,7 @@
     "message": "Įterpti į pokalbį"
   },
   "storageFullError": {
-    "message": "⚠️ Saugykla pilna — neišsaugota."
+    "message": "Saugykla pilna — neišsaugota."
   },
   "newConv_gemini": {
     "message": "Naujas Gemini pokalbis"
@@ -312,7 +312,7 @@
     "message": "Naudokite šį plėtinį palaikomoje AI svetainėje (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi arba Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Ši svetainė nebeteikia kiekvienam pokalbiui atskiro adreso, todėl nėra ko išsaugoti."
+    "message": "Ši svetainė nebeteikia kiekvienam pokalbiui atskiro adreso, todėl nėra ko išsaugoti."
   },
   "alertEditorNotFound": {
     "message": "Nepavyko rasti teksto įvesties šiame puslapyje. Pirmiausia spustelėkite redaktorių, tada naudokite įterpimo mygtuką."

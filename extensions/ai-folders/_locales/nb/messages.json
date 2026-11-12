@@ -9,10 +9,10 @@
     "message": "AI-mapper"
   },
   "searchPlaceholder": {
-    "message": "🔍 Søk etter en samtale..."
+    "message": "Søk etter en samtale..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Søk etter en prompt..."
+    "message": "Søk etter en prompt..."
   },
   "folderPlaceholder": {
     "message": "Mappenavn (f.eks. Kodeprosjekter)"
@@ -27,22 +27,22 @@
     "message": "Samtale lagret!"
   },
   "noResults": {
-    "message": "Ingen resultater 🕵️"
+    "message": "Ingen resultater"
   },
   "noResultsHint": {
-    "message": "Søket dekker bare samtaler du allerede har lagret – lagre en med ➕ først."
+    "message": "Søket dekker bare samtaler du allerede har lagret – lagre en med + først."
   },
   "emptyFoldersHint": {
-    "message": "Ingen mapper ennå – åpne en samtale på et støttet KI-nettsted og lagre den med ➕ eller høyreklikkmenyen."
+    "message": "Ingen mapper ennå – åpne en samtale på et støttet KI-nettsted og lagre den med + eller høyreklikkmenyen."
   },
   "sortTooltip": {
     "message": "Sorter"
   },
   "exportBtn": {
-    "message": "💾 Eksport"
+    "message": "Eksport"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "defaultFolder": {
     "message": "Generelt"
@@ -69,7 +69,7 @@
     "message": "Slett"
   },
   "btnNewFolder": {
-    "message": "➕ Mappe"
+    "message": "+ Mappe"
   },
   "promptNewFolder": {
     "message": "Ny mappe:"
@@ -141,7 +141,7 @@
     "message": "⚡ Hurtiglagring"
   },
   "toastSaved": {
-    "message": "✅ Lagret i AI-mapper!"
+    "message": "Lagret i AI-mapper!"
   },
   "btnOpenGroup": {
     "message": "Åpne i fanegruppe"
@@ -177,7 +177,7 @@
     "message": "Oppretter en synkronisert mappe i Chrome-favorittene dine for tilgang til samtaler på telefonen."
   },
   "reviewTitle": {
-    "message": "⭐ Liker du AI-mapper?"
+    "message": "Liker du AI-mapper?"
   },
   "reviewMessage": {
     "message": "Din støtte hjelper dette åpen kildekode-prosjektet enormt!"
@@ -201,7 +201,7 @@
     "message": "Tips: Start med emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Allerede lagret!"
+    "message": "Allerede lagret!"
   },
   "folderModeTitle": {
     "message": "Mappemodus"
@@ -249,7 +249,7 @@
     "message": "Sett inn i chat"
   },
   "storageFullError": {
-    "message": "⚠️ Lageret er fullt — ikke lagret."
+    "message": "Lageret er fullt — ikke lagret."
   },
   "newConv_gemini": {
     "message": "Ny Gemini-samtale"
@@ -312,7 +312,7 @@
     "message": "Bruk denne utvidelsen på et støttet AI-nettsted (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi eller Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Dette nettstedet gir ikke lenger hver samtale sin egen adresse, så det er ingenting å lagre."
+    "message": "Dette nettstedet gir ikke lenger hver samtale sin egen adresse, så det er ingenting å lagre."
   },
   "alertEditorNotFound": {
     "message": "Finner ikke tekstfeltet på denne siden. Prøv å klikke i editoren først, og bruk deretter sett inn-knappen."

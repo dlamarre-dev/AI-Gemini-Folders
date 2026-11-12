@@ -5,6 +5,8 @@
     --btn-bg: #0b57d0;
     --btn-text: #ffffff;
     --btn-hover: #0842a0;
+    --ok-color: #1e8e3e;
+    --warn-color: #e37400;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +17,8 @@
         --btn-bg: #a8c7fa;
         --btn-text: #051e49;
         --btn-hover: #d3e3fd;
+        --ok-color: #81c995;
+        --warn-color: #fdd663;
     }
 }
 
@@ -72,3 +76,10 @@ button:hover {
     font-size: 14px;
     min-height: 20px;
 }
+
+/* Glyphs from icons.js — this page does not load popup.css, so the few rules
+   it needs are repeated here. Same colours as the popup's status glyphs. */
+.icon { display: inline-block; flex-shrink: 0; }
+.icon-text > .icon { vertical-align: -3px; margin-inline-end: 6px; }
+.icon[data-icon="checkCircle"] { color: var(--ok-color); }
+.icon[data-icon="warning"] { color: var(--warn-color); }

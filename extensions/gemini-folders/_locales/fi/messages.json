@@ -9,10 +9,10 @@
     "message": "Gemini-kansiot"
   },
   "searchPlaceholder": {
-    "message": "🔍 Hae keskustelua..."
+    "message": "Hae keskustelua..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Hae promptia..."
+    "message": "Hae promptia..."
   },
   "folderPlaceholder": {
     "message": "Kansion nimi (esim. Koodiprojektit)"
@@ -27,22 +27,22 @@
     "message": "Keskustelu tallennettu!"
   },
   "noResults": {
-    "message": "Ei tuloksia 🕵️"
+    "message": "Ei tuloksia"
   },
   "noResultsHint": {
-    "message": "Haku kattaa vain jo tallennetut keskustelut – tallenna ensin yksi painikkeella ➕."
+    "message": "Haku kattaa vain jo tallennetut keskustelut – tallenna ensin yksi painikkeella +."
   },
   "emptyFoldersHint": {
-    "message": "Ei vielä kansioita – avaa Gemini-keskustelu ja tallenna se painikkeella ➕ tai hiiren oikean painikkeen valikosta."
+    "message": "Ei vielä kansioita – avaa Gemini-keskustelu ja tallenna se painikkeella + tai hiiren oikean painikkeen valikosta."
   },
   "sortTooltip": {
     "message": "Lajittele"
   },
   "exportBtn": {
-    "message": "💾 Vie"
+    "message": "Vie"
   },
   "importBtn": {
-    "message": "📂 Tuo"
+    "message": "Tuo"
   },
   "alertNotGemini": {
     "message": "Käytä tätä laajennusta Gemini-sivulla."
@@ -72,7 +72,7 @@
     "message": "Poista"
   },
   "btnNewFolder": {
-    "message": "➕ Kansio"
+    "message": "+ Kansio"
   },
   "promptNewFolder": {
     "message": "Uusi kansio:"
@@ -144,7 +144,7 @@
     "message": "⚡ Pikatallennus"
   },
   "toastSaved": {
-    "message": "✅ Tallennettu Gemini-kansioihin!"
+    "message": "Tallennettu Gemini-kansioihin!"
   },
   "btnOpenGroup": {
     "message": "Avaa välilehtiryhmässä"
@@ -180,7 +180,7 @@
     "message": "Luo synkronoitu kansio Chrome-suosikkeihin, jotta voit käyttää keskusteluja puhelimellasi."
   },
   "reviewTitle": {
-    "message": "⭐ Pidätkö Gemini-kansioista?"
+    "message": "Pidätkö Gemini-kansioista?"
   },
   "reviewMessage": {
     "message": "Tukesi auttaa tätä avoimen lähdekoodin projektia valtavasti!"
@@ -204,7 +204,7 @@
     "message": "Vihje: Aloita emojilla (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Jo tallennettu!"
+    "message": "Jo tallennettu!"
   },
   "folderModeTitle": {
     "message": "Kansiotila"
@@ -270,7 +270,7 @@
     "message": "Kiinnitä"
   },
   "storageFullError": {
-    "message": "⚠️ Tallennustila täynnä — ei tallennettu."
+    "message": "Tallennustila täynnä — ei tallennettu."
   },
   "afPromoTitle": {
     "message": "Tutustu AI-kansioihin"

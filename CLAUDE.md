@@ -12,7 +12,7 @@ the codebase. Keep it accurate: update it when procedures or constraints change.
 Two Manifest V3 browser extensions (Chrome, Edge **and** Firefox) that organize AI
 conversations into folders and provide a reusable prompt library:
 
-- **Gemini Folders (GF)** — Google Gemini only. Current version **4.8.0**.
+- **Gemini Folders (GF)** — Google Gemini only. Current version **4.8.1**.
 - **AI Folders (AF)** — 17 web platforms (Gemini, Claude, ChatGPT, Copilot,
   DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe,
   Duck.ai, Pi, Character.AI) **+ a user-configured local LLM**. You.com was
@@ -38,7 +38,7 @@ conversations into folders and provide a reusable prompt library:
   declared **before** the redirect lands, which is the whole lesson of #82 and of
   the Baidu move (§8): a manifest match pattern cannot follow a 302, so a host
   added only once users complain is a host that was broken for a month.
-  Current version **1.9.0**. The popup's per-site "new conversation" buttons
+  Current version **1.9.1**. The popup's per-site "new conversation" buttons
   are generated from the `SITES` registry (site-config.js) into wrapping
   grid rows — adding a site does not touch popup.html.
   **Site logos**: the extension ships pre-rasterized PNGs
@@ -76,6 +76,7 @@ src/                         Shared code (copied into every build)
   popup-core.js              Shared popup wiring: i18n pass (applyCommonI18n),
                              clearable search, save-conversation flow, mode toggle,
                              sort menu, mobile-sync toggle, import/export
+  icons.js                   The one registry of interface glyphs (see §7, Icons)
   ui.js                      showCustomModal (Enter/Escape/backdrop), storage bar,
                              review banner
   bulk-actions.js            Multi-select bar (move/delete)
@@ -322,6 +323,15 @@ git checkout main && git pull --ff-only
     for a scrollbar → resize → cap → Chrome narrows → resize → …), settling on
     the wide width. The cap only goes down on overflow and up on a taller
     window without overflow, so a width-only resize changes nothing.
+    **"Overflow" means by more than one pixel** (`POPUP_ROUNDING_SLACK`). At a
+    fractional scale a popup sized to its content can hold 308.67 px of
+    document in a 308 px window; `scrollHeight` rounds to 309 and that pixel
+    read as a Chrome cap. It fired whenever a search shortened the list: body
+    was capped at the search-result height, a capped body scrolls inside
+    itself, so the document never grew again and the popup stayed small after
+    the search was cleared, until it was reopened. Measured at 150 % (stuck at
+    `max-height: 284px`); 100 % never showed it. A real cap is short by tens
+    of pixels, never by one.
     The lesson for this family: measure first (`devicePixelRatio`,
     `innerWidth`/`innerHeight`, `documentElement` scroll vs client sizes) —
     the diagnosis without numbers had blamed the scale factor.
@@ -471,6 +481,44 @@ git checkout main && git pull --ff-only
   `site-config.js`, run via `executeScript`. Falls back to a heuristic (lowest
   sizeable text field) and logs `console.warn("[Folders extension] …")` when a
   selector stops matching.
+- **Icons:** every interface glyph comes from `src/icons.js` — monochrome 24×24
+  paths filled with `currentColor` (`icon(name, size)`, `setIcon`,
+  `setIconLabel`), the style the prompt list's insert and copy buttons always
+  had. They replaced emoji, which the OS draws and which therefore differed in
+  shape, size and baseline from one platform to the next and ignored the theme.
+  **Do not add an emoji as an icon**, in code or in a translation
+  (`tests/icons.test.js` guards both). Static markup declares its glyph with
+  `data-ic="name"` (+ `data-ic-size`), filled by `hydrateIcons` from
+  `applyCommonI18n`, so path data is not pasted into the two `popup.html`.
+  State is carried by shape, not by a second picture: pin outline / solid pin,
+  folder outline (empty) / solid folder. Tests find a button by
+  `[data-icon="…"]`, never by its character. The search magnifier is a CSS mask
+  on `.search-wrap::before`, since an `<input>` cannot hold a child.
+  **Status messages** carry the only two coloured glyphs, `checkCircle`
+  (`--ok-color`) and `warning` (`--warn-color`), coloured in `popup.css` by
+  `data-icon` whatever the text colour around them. They replaced the `✅` / `⚠️`
+  that opened `toastSaved`, `toastAlreadySaved`, `storageFullError` and
+  `alertNoConversationUrl` in every locale: the popup's status lines get theirs
+  from `setIconLabel`, and **`showCustomModal` gives every `type: 'alert'` the
+  warning glyph by default** — an alert is an error unless it says otherwise
+  (`icon: 'checkCircle'` for the import success, `icon: ''` for none). The
+  default is the point: the first pass tagged only the storage-full alerts and
+  every other error ("not a Gemini page", "folder already exists"…) shipped
+  bare. `gem` is the one outline in the registry (`{ stroke: … }`, drawn as a
+  line rather than filled).
+  **The in-page toast is the exception to "one registry"**: `showToast` is a
+  function injected into the site's page, so it cannot load `icons.js` and each
+  `background.js` carries its own copy of those two paths (a test keeps them
+  equal to the registry). It takes a third argument, `"ok"` or `"warning"`,
+  builds the SVG node by node — Gemini enforces Trusted Types, so no
+  `innerHTML` — and draws it in the toast's **text** colour: the toast is
+  already the coloured surface (site colour, or red), and a green check would
+  vanish on a green one.
+  Three things stay emoji on purpose: an emoji **the user typed** in front of a
+  folder name (`EMOJI_PREFIX_REGEX` — their data); the right-click menu and the
+  bookmark mirror (`📁 name` in `utils.js` — browser surfaces that take text
+  only); and **`quickSaveFolder`** ("⚡ Quick Saves"), which is a storage key, so
+  cleaning it would split every user's quick-save folder in two.
 - **Keyboard access:** custom dropdowns go through `makeMenuAccessible`
   (`src/ui.js`) — the sort menus in `popup-core.js`/`prompts.js` and the
   bulk-move list in `bulk-actions.js`. It adds the WAI menu-button roles, roving
@@ -957,7 +1005,8 @@ and `welcomeCta` rather than adding keys, and shows the installed version from
   `background.js` (not shared, §6). The page opens only when
   `reason === 'update'` **and** the manifest version equals that constant, so a
   minor release with nothing to explain simply leaves the constant alone —
-  4.6.3 / 1.7.3, 4.6.4 / 1.7.4, 4.6.5 / 1.7.5 and 1.7.6 were exactly that. 4.7.0 / 1.8.0
+  4.6.3 / 1.7.3, 4.6.4 / 1.7.4, 4.6.5 / 1.7.5, 1.7.6 and 4.8.1 / 1.9.1
+  (the icon glyphs) were exactly that. 4.7.0 / 1.8.0
   (the side panel) and 4.8.0 / 1.9.0 (sub-folders four levels deep) moved both
   constants to the release itself.
   The test asserts the constant is **not ahead of** the manifest version, which is

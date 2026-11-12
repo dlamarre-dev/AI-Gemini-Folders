@@ -158,7 +158,8 @@ describe('welcome page rendering', () => {
 
   test('the add-conversation replica is labelled the way the popup labels it', () => {
     load();
-    expect(txt('wAddBtn')).toBe('➕ btnToggleAdd');
+    expect(txt('wAddBtn')).toBe('btnToggleAdd');
+    expect(document.querySelector('#wAddBtn > svg[data-icon="add"]')).not.toBeNull();
   });
 
   test('a locale that fails to load still renders readable English, never blanks', () => {

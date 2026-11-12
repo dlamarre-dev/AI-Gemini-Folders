@@ -9,10 +9,10 @@
     "message": "Gemini-mappák"
   },
   "searchPlaceholder": {
-    "message": "🔍 Beszélgetés keresése..."
+    "message": "Beszélgetés keresése..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Prompt keresése..."
+    "message": "Prompt keresése..."
   },
   "folderPlaceholder": {
     "message": "Mappa neve (pl. Kódprojektek)"
@@ -27,22 +27,22 @@
     "message": "Beszélgetés mentve!"
   },
   "noResults": {
-    "message": "Nincs találat 🕵️"
+    "message": "Nincs találat"
   },
   "noResultsHint": {
-    "message": "A keresés csak a már elmentett beszélgetésekre terjed ki – ments el egyet a ➕ gombbal."
+    "message": "A keresés csak a már elmentett beszélgetésekre terjed ki – ments el egyet a + gombbal."
   },
   "emptyFoldersHint": {
-    "message": "Még nincsenek mappák – nyiss meg egy Gemini-beszélgetést, és mentsd el a ➕ gombbal vagy a jobb gombos menüvel."
+    "message": "Még nincsenek mappák – nyiss meg egy Gemini-beszélgetést, és mentsd el a + gombbal vagy a jobb gombos menüvel."
   },
   "sortTooltip": {
     "message": "Rendezés"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Kérjük, használja ezt a bővítményt egy Gemini-oldalon."
@@ -72,7 +72,7 @@
     "message": "Törlés"
   },
   "btnNewFolder": {
-    "message": "➕ Mappa"
+    "message": "+ Mappa"
   },
   "promptNewFolder": {
     "message": "Új mappa:"
@@ -144,7 +144,7 @@
     "message": "⚡ Gyorsmentések"
   },
   "toastSaved": {
-    "message": "✅ Mentve a Gemini-mappákba!"
+    "message": "Mentve a Gemini-mappákba!"
   },
   "btnOpenGroup": {
     "message": "Megnyitás lapcsoportban"
@@ -180,7 +180,7 @@
     "message": "Szinkronizált mappát hoz létre a Chrome-kedvencekben, hogy telefonján is elérhesse a beszélgetéseit."
   },
   "reviewTitle": {
-    "message": "⭐ Tetszik a Gemini-mappák?"
+    "message": "Tetszik a Gemini-mappák?"
   },
   "reviewMessage": {
     "message": "Támogatása nagymértékben segíti ezt a nyílt forráskódú projektet!"
@@ -204,7 +204,7 @@
     "message": "Tipp: Kezdje emojival (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Már mentve!"
+    "message": "Már mentve!"
   },
   "folderModeTitle": {
     "message": "Mappaüzemmód"
@@ -270,7 +270,7 @@
     "message": "Rögzítés"
   },
   "storageFullError": {
-    "message": "⚠️ A tároló tele van — nem mentve."
+    "message": "A tároló tele van — nem mentve."
   },
   "afPromoTitle": {
     "message": "Fedezze fel a MI mappák alkalmazást"

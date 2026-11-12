@@ -9,10 +9,10 @@
     "message": "AI-mappen"
   },
   "searchPlaceholder": {
-    "message": "🔍 Zoek een gesprek..."
+    "message": "Zoek een gesprek..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Zoek een prompt..."
+    "message": "Zoek een prompt..."
   },
   "folderPlaceholder": {
     "message": "Mapnaam (bijv. Codeprojecten)"
@@ -27,22 +27,22 @@
     "message": "Gesprek opgeslagen!"
   },
   "noResults": {
-    "message": "Geen resultaten gevonden 🕵️"
+    "message": "Geen resultaten gevonden"
   },
   "noResultsHint": {
-    "message": "Zoeken werkt alleen in gesprekken die je al hebt opgeslagen — sla er eerst een op met ➕."
+    "message": "Zoeken werkt alleen in gesprekken die je al hebt opgeslagen — sla er eerst een op met +."
   },
   "emptyFoldersHint": {
-    "message": "Nog geen mappen — open een gesprek op een ondersteunde AI-site en sla het op met ➕ of het rechtermuisknopmenu."
+    "message": "Nog geen mappen — open een gesprek op een ondersteunde AI-site en sla het op met + of het rechtermuisknopmenu."
   },
   "sortTooltip": {
     "message": "Sorteren"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "defaultFolder": {
     "message": "Algemeen"
@@ -69,7 +69,7 @@
     "message": "Verwijderen"
   },
   "btnNewFolder": {
-    "message": "➕ Map"
+    "message": "+ Map"
   },
   "promptNewFolder": {
     "message": "Nieuwe map:"
@@ -141,7 +141,7 @@
     "message": "⚡ Snelle opslag"
   },
   "toastSaved": {
-    "message": "✅ Opgeslagen in AI-mappen!"
+    "message": "Opgeslagen in AI-mappen!"
   },
   "btnOpenGroup": {
     "message": "Openen in tabgroep"
@@ -177,7 +177,7 @@
     "message": "Maakt een gesynchroniseerde map aan in uw Chrome-favorieten voor toegang tot uw gesprekken op uw telefoon."
   },
   "reviewTitle": {
-    "message": "⭐ Bevalt AI-mappen u?"
+    "message": "Bevalt AI-mappen u?"
   },
   "reviewMessage": {
     "message": "Uw steun helpt dit open-sourceproject enorm!"
@@ -201,7 +201,7 @@
     "message": "Tip: Begin met een emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Al opgeslagen!"
+    "message": "Al opgeslagen!"
   },
   "folderModeTitle": {
     "message": "Mappenmodus"
@@ -249,7 +249,7 @@
     "message": "Invoegen in chat"
   },
   "storageFullError": {
-    "message": "⚠️ Opslag vol — niet opgeslagen."
+    "message": "Opslag vol — niet opgeslagen."
   },
   "newConv_gemini": {
     "message": "Nieuw Gemini-gesprek"
@@ -312,7 +312,7 @@
     "message": "Gebruik deze extensie op een ondersteunde AI-site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi of Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Deze site geeft elk gesprek geen eigen adres meer, dus er is niets om op te slaan."
+    "message": "Deze site geeft elk gesprek geen eigen adres meer, dus er is niets om op te slaan."
   },
   "alertEditorNotFound": {
     "message": "Kan het tekstinvoerveld op deze pagina niet vinden. Probeer eerst in de editor te klikken en gebruik dan de invoegknop."

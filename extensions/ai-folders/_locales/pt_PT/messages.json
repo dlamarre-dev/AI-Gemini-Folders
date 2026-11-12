@@ -9,10 +9,10 @@
     "message": "Pastas IA"
   },
   "searchPlaceholder": {
-    "message": "🔍 Pesquisar uma conversa..."
+    "message": "Pesquisar uma conversa..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Pesquisar um prompt..."
+    "message": "Pesquisar um prompt..."
   },
   "folderPlaceholder": {
     "message": "Nome da pasta (ex: Projetos Código)"
@@ -27,22 +27,22 @@
     "message": "Conversa guardada!"
   },
   "noResults": {
-    "message": "Nenhum resultado encontrado 🕵️"
+    "message": "Nenhum resultado encontrado"
   },
   "noResultsHint": {
-    "message": "A pesquisa abrange apenas as conversas que já guardou — guarde uma com ➕ primeiro."
+    "message": "A pesquisa abrange apenas as conversas que já guardou — guarde uma com + primeiro."
   },
   "emptyFoldersHint": {
-    "message": "Ainda sem pastas — abra uma conversa num site de IA compatível e guarde-a com ➕ ou pelo menu do botão direito."
+    "message": "Ainda sem pastas — abra uma conversa num site de IA compatível e guarde-a com + ou pelo menu do botão direito."
   },
   "sortTooltip": {
     "message": "Ordenar"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "defaultFolder": {
     "message": "Geral"
@@ -69,7 +69,7 @@
     "message": "Eliminar"
   },
   "btnNewFolder": {
-    "message": "➕ Pasta"
+    "message": "+ Pasta"
   },
   "promptNewFolder": {
     "message": "Nova pasta:"
@@ -141,7 +141,7 @@
     "message": "⚡ Guardados Rápidos"
   },
   "toastSaved": {
-    "message": "✅ Guardado nas Pastas IA!"
+    "message": "Guardado nas Pastas IA!"
   },
   "btnOpenGroup": {
     "message": "Abrir num grupo de separadores"
@@ -177,7 +177,7 @@
     "message": "Cria uma pasta sincronizada nos favoritos do Chrome para aceder às suas conversas no telemóvel."
   },
   "reviewTitle": {
-    "message": "⭐ Está a gostar das Pastas IA?"
+    "message": "Está a gostar das Pastas IA?"
   },
   "reviewMessage": {
     "message": "O seu apoio ajuda imenso este projeto de código aberto!"
@@ -201,7 +201,7 @@
     "message": "Dica: Inicie com um emoji (Win+. / ⌘⌃Espaço)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Já guardado!"
+    "message": "Já guardado!"
   },
   "folderModeTitle": {
     "message": "Modo pastas"
@@ -249,7 +249,7 @@
     "message": "Inserir no chat"
   },
   "storageFullError": {
-    "message": "⚠️ Armazenamento cheio — não guardado."
+    "message": "Armazenamento cheio — não guardado."
   },
   "newConv_gemini": {
     "message": "Nova conversa no Gemini"
@@ -312,7 +312,7 @@
     "message": "Utilize esta extensão num site de IA suportado (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ou Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Este site já não dá um endereço próprio a cada conversa, pelo que não há nada para guardar."
+    "message": "Este site já não dá um endereço próprio a cada conversa, pelo que não há nada para guardar."
   },
   "alertEditorNotFound": {
     "message": "Não foi possível encontrar o campo de texto nesta página. Tente clicar no editor primeiro e utilize o botão de inserção."

@@ -9,10 +9,10 @@
     "message": "AI kaustad"
   },
   "searchPlaceholder": {
-    "message": "🔍 Otsi vestlust..."
+    "message": "Otsi vestlust..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Otsi prompti..."
+    "message": "Otsi prompti..."
   },
   "folderPlaceholder": {
     "message": "Kausta nimi (nt Koodiprojektid)"
@@ -27,22 +27,22 @@
     "message": "Vestlus salvestatud!"
   },
   "noResults": {
-    "message": "Tulemusi ei leitud 🕵️"
+    "message": "Tulemusi ei leitud"
   },
   "noResultsHint": {
-    "message": "Otsing hõlmab ainult vestlusi, mille olete juba salvestanud — salvestage esmalt üks nupuga ➕."
+    "message": "Otsing hõlmab ainult vestlusi, mille olete juba salvestanud — salvestage esmalt üks nupuga +."
   },
   "emptyFoldersHint": {
-    "message": "Kaustu veel pole — ava vestlus toetatud tehisintellekti saidil ja salvesta see nupuga ➕ või paremklõpsu menüüst."
+    "message": "Kaustu veel pole — ava vestlus toetatud tehisintellekti saidil ja salvesta see nupuga + või paremklõpsu menüüst."
   },
   "sortTooltip": {
     "message": "Sordi"
   },
   "exportBtn": {
-    "message": "💾 Eksport"
+    "message": "Eksport"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "defaultFolder": {
     "message": "Üldine"
@@ -69,7 +69,7 @@
     "message": "Kustuta"
   },
   "btnNewFolder": {
-    "message": "➕ Kaust"
+    "message": "+ Kaust"
   },
   "promptNewFolder": {
     "message": "Uus kaust:"
@@ -141,7 +141,7 @@
     "message": "⚡ Kiirsalvestus"
   },
   "toastSaved": {
-    "message": "✅ Salvestatud AI kaustadesse!"
+    "message": "Salvestatud AI kaustadesse!"
   },
   "btnOpenGroup": {
     "message": "Ava vahekaardi grupis"
@@ -177,7 +177,7 @@
     "message": "Loob sünkroonitud kausta Chrome'i lemmikutesse telefonis vestlustele juurdepääsuks."
   },
   "reviewTitle": {
-    "message": "⭐ Kas sulle meeldib AI kaustad?"
+    "message": "Kas sulle meeldib AI kaustad?"
   },
   "reviewMessage": {
     "message": "Sinu toetus aitab seda avatud lähtekoodiga projekti tohutult!"
@@ -201,7 +201,7 @@
     "message": "Vihje: alusta emojiga (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Juba salvestatud!"
+    "message": "Juba salvestatud!"
   },
   "folderModeTitle": {
     "message": "Kaustade režiim"
@@ -249,7 +249,7 @@
     "message": "Lisa vestlusesse"
   },
   "storageFullError": {
-    "message": "⚠️ Salvestusruum täis — ei salvestatud."
+    "message": "Salvestusruum täis — ei salvestatud."
   },
   "newConv_gemini": {
     "message": "Uus Gemini vestlus"
@@ -312,7 +312,7 @@
     "message": "Kasutage seda laiendust toetatud AI-saidil (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi või Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ See sait ei anna enam igale vestlusele oma aadressi, seega pole midagi salvestada."
+    "message": "See sait ei anna enam igale vestlusele oma aadressi, seega pole midagi salvestada."
   },
   "alertEditorNotFound": {
     "message": "Selle lehe tekstivälja ei leitud. Proovige esmalt redaktorisse klõpsata ja seejärel kasutage lisamisnuppu."

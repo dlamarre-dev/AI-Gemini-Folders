@@ -9,10 +9,10 @@
     "message": "Carpetas IA"
   },
   "searchPlaceholder": {
-    "message": "🔍 Buscar una conversación..."
+    "message": "Buscar una conversación..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Buscar un prompt..."
+    "message": "Buscar un prompt..."
   },
   "folderPlaceholder": {
     "message": "Nombre de la carpeta (ej: Proyectos)"
@@ -27,22 +27,22 @@
     "message": "¡Conversación guardada!"
   },
   "noResults": {
-    "message": "No se encontraron resultados 🕵️"
+    "message": "No se encontraron resultados"
   },
   "noResultsHint": {
-    "message": "La búsqueda solo incluye las conversaciones que ya has guardado: guarda una con ➕ primero."
+    "message": "La búsqueda solo incluye las conversaciones que ya has guardado: guarda una con + primero."
   },
   "emptyFoldersHint": {
-    "message": "Aún no hay carpetas: abre una conversación en un sitio de IA compatible y guárdala con ➕ o el menú del clic derecho."
+    "message": "Aún no hay carpetas: abre una conversación en un sitio de IA compatible y guárdala con + o el menú del clic derecho."
   },
   "sortTooltip": {
     "message": "Ordenar"
   },
   "exportBtn": {
-    "message": "💾 Exportar"
+    "message": "Exportar"
   },
   "importBtn": {
-    "message": "📂 Importar"
+    "message": "Importar"
   },
   "defaultFolder": {
     "message": "General"
@@ -69,7 +69,7 @@
     "message": "Eliminar"
   },
   "btnNewFolder": {
-    "message": "➕ Carpeta"
+    "message": "+ Carpeta"
   },
   "promptNewFolder": {
     "message": "Nueva carpeta:"
@@ -141,7 +141,7 @@
     "message": "⚡ Guardados Rápidos"
   },
   "toastSaved": {
-    "message": "✅ ¡Guardado en Carpetas IA!"
+    "message": "¡Guardado en Carpetas IA!"
   },
   "btnOpenGroup": {
     "message": "Abrir en grupo de pestañas"
@@ -177,7 +177,7 @@
     "message": "Crea una carpeta sincronizada en tus favoritos de Chrome para acceder a tus conversaciones en tu teléfono."
   },
   "reviewTitle": {
-    "message": "⭐ ¿Te gusta Carpetas IA?"
+    "message": "¿Te gusta Carpetas IA?"
   },
   "reviewMessage": {
     "message": "¡Tu apoyo ayuda enormemente a este proyecto de código abierto!"
@@ -201,7 +201,7 @@
     "message": "Tip: Inicia con emoji (Win+. / ⌘⌃Espacio)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ ¡Ya guardado!"
+    "message": "¡Ya guardado!"
   },
   "folderModeTitle": {
     "message": "Modo carpetas"
@@ -249,7 +249,7 @@
     "message": "Insertar en el chat"
   },
   "storageFullError": {
-    "message": "⚠️ Almacenamiento lleno — no guardado."
+    "message": "Almacenamiento lleno — no guardado."
   },
   "newConv_gemini": {
     "message": "Nueva conversación en Gemini"
@@ -312,7 +312,7 @@
     "message": "Usa esta extensión en un sitio de IA compatible (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi o Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Este sitio ya no asigna una dirección propia a cada conversación, así que no hay nada que guardar."
+    "message": "Este sitio ya no asigna una dirección propia a cada conversación, así que no hay nada que guardar."
   },
   "alertEditorNotFound": {
     "message": "No se encontró el campo de texto en esta página. Intenta hacer clic en el editor primero y luego usa el botón de inserción."

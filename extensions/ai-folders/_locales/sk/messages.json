@@ -9,10 +9,10 @@
     "message": "AI priečinky"
   },
   "searchPlaceholder": {
-    "message": "🔍 Hľadať konverzáciu..."
+    "message": "Hľadať konverzáciu..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Hľadať prompt..."
+    "message": "Hľadať prompt..."
   },
   "folderPlaceholder": {
     "message": "Názov priečinka (napr. Projekty Kód)"
@@ -27,22 +27,22 @@
     "message": "Konverzácia uložená!"
   },
   "noResults": {
-    "message": "Nenašli sa žiadne výsledky 🕵️"
+    "message": "Nenašli sa žiadne výsledky"
   },
   "noResultsHint": {
-    "message": "Hľadanie zahŕňa len konverzácie, ktoré ste už uložili — najprv jednu uložte pomocou ➕."
+    "message": "Hľadanie zahŕňa len konverzácie, ktoré ste už uložili — najprv jednu uložte pomocou +."
   },
   "emptyFoldersHint": {
-    "message": "Zatiaľ žiadne priečinky — otvorte konverzáciu na podporovanej stránke s AI a uložte ju pomocou ➕ alebo ponuky po kliknutí pravým tlačidlom."
+    "message": "Zatiaľ žiadne priečinky — otvorte konverzáciu na podporovanej stránke s AI a uložte ju pomocou + alebo ponuky po kliknutí pravým tlačidlom."
   },
   "sortTooltip": {
     "message": "Zoradiť"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "defaultFolder": {
     "message": "Všeobecné"
@@ -69,7 +69,7 @@
     "message": "Vymazať"
   },
   "btnNewFolder": {
-    "message": "➕ Priečinok"
+    "message": "+ Priečinok"
   },
   "promptNewFolder": {
     "message": "Nový priečinok:"
@@ -141,7 +141,7 @@
     "message": "⚡ Rýchle uloženie"
   },
   "toastSaved": {
-    "message": "✅ Uložené do Priečinkov Gemini!"
+    "message": "Uložené do Priečinkov Gemini!"
   },
   "btnOpenGroup": {
     "message": "Otvoriť v skupine kariet"
@@ -177,7 +177,7 @@
     "message": "Vytvorí synchronizovaný priečinok v obľúbených položkách Chrome pre prístup ku konverzáciám v telefóne."
   },
   "reviewTitle": {
-    "message": "⭐ Páčia sa vám AI priečinky?"
+    "message": "Páčia sa vám AI priečinky?"
   },
   "reviewMessage": {
     "message": "Vaša podpora tomuto open source projektu nesmierne pomáha!"
@@ -201,7 +201,7 @@
     "message": "Tip: Začnite s emoji (Win+. / ⌘⌃Medzerník)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Už uložené!"
+    "message": "Už uložené!"
   },
   "folderModeTitle": {
     "message": "Režim priečinkov"
@@ -249,7 +249,7 @@
     "message": "Vložiť do chatu"
   },
   "storageFullError": {
-    "message": "⚠️ Úložisko je plné — neuložené."
+    "message": "Úložisko je plné — neuložené."
   },
   "newConv_gemini": {
     "message": "Nový rozhovor v Gemini"
@@ -312,7 +312,7 @@
     "message": "Používajte toto rozšírenie na podporovanej AI stránke (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi alebo Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ Táto stránka už nedáva každej konverzácii vlastnú adresu, takže nie je čo uložiť."
+    "message": "Táto stránka už nedáva každej konverzácii vlastnú adresu, takže nie je čo uložiť."
   },
   "alertEditorNotFound": {
     "message": "Na tejto stránke sa nepodarilo nájsť textové pole. Najprv kliknite do editora a potom použite tlačidlo vložiť."

@@ -9,10 +9,10 @@
     "message": "תיקיות AI"
   },
   "searchPlaceholder": {
-    "message": "🔍 חיפוש שיחה..."
+    "message": "חיפוש שיחה..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 חיפוש פרומפט..."
+    "message": "חיפוש פרומפט..."
   },
   "folderPlaceholder": {
     "message": "שם תיקייה (למשל, פרויקטי קוד)"
@@ -27,22 +27,22 @@
     "message": "השיחה נשמרה!"
   },
   "noResults": {
-    "message": "לא נמצאו תוצאות 🕵️"
+    "message": "לא נמצאו תוצאות"
   },
   "noResultsHint": {
-    "message": "החיפוש מכסה רק שיחות שכבר שמרתם — שמרו קודם שיחה באמצעות ➕."
+    "message": "החיפוש מכסה רק שיחות שכבר שמרתם — שמרו קודם שיחה באמצעות +."
   },
   "emptyFoldersHint": {
-    "message": "אין עדיין תיקיות — פתחו שיחה באתר בינה מלאכותית נתמך ושמרו אותה באמצעות ➕ או תפריט הקליק הימני."
+    "message": "אין עדיין תיקיות — פתחו שיחה באתר בינה מלאכותית נתמך ושמרו אותה באמצעות + או תפריט הקליק הימני."
   },
   "sortTooltip": {
     "message": "מיון"
   },
   "exportBtn": {
-    "message": "💾 ייצוא"
+    "message": "ייצוא"
   },
   "importBtn": {
-    "message": "📂 ייבוא"
+    "message": "ייבוא"
   },
   "defaultFolder": {
     "message": "כללי"
@@ -69,7 +69,7 @@
     "message": "מחק"
   },
   "btnNewFolder": {
-    "message": "➕ תיקייה"
+    "message": "+ תיקייה"
   },
   "promptNewFolder": {
     "message": "תיקייה חדשה:"
@@ -141,7 +141,7 @@
     "message": "⚡ שמירה מהירה"
   },
   "toastSaved": {
-    "message": "✅ נשמר בתיקיות AI!"
+    "message": "נשמר בתיקיות AI!"
   },
   "btnOpenGroup": {
     "message": "פתח בקבוצת כרטיסיות"
@@ -177,7 +177,7 @@
     "message": "יוצר תיקייה מסונכרנת במועדפים של Chrome לגישה לשיחות מהטלפון."
   },
   "reviewTitle": {
-    "message": "⭐ נהנה מ-Gemini תיקיות?"
+    "message": "נהנה מ-Gemini תיקיות?"
   },
   "reviewMessage": {
     "message": "התמיכה שלך עוזרת לפרויקט הקוד הפתוח הזה מאוד!"
@@ -201,7 +201,7 @@
     "message": "טיפ: התחל עם אמוג'י (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ כבר נשמר!"
+    "message": "כבר נשמר!"
   },
   "folderModeTitle": {
     "message": "מצב תיקיות"
@@ -249,7 +249,7 @@
     "message": "הכנס לשיחה"
   },
   "storageFullError": {
-    "message": "⚠️ האחסון מלא — לא נשמר."
+    "message": "האחסון מלא — לא נשמר."
   },
   "newConv_gemini": {
     "message": "שיחת Gemini חדשה"
@@ -312,7 +312,7 @@
     "message": "אנא השתמש בהרחבה זו באתר AI נתמך (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi או Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ אתר זה אינו מקצה עוד כתובת נפרדת לכל שיחה, ולכן אין מה לשמור."
+    "message": "אתר זה אינו מקצה עוד כתובת נפרדת לכל שיחה, ולכן אין מה לשמור."
   },
   "alertEditorNotFound": {
     "message": "לא נמצא שדה הטקסט בדף זה. נסה ללחוץ תחילה בעורך ולאחר מכן השתמש בלחצן ההוספה."

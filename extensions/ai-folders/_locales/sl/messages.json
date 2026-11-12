@@ -9,10 +9,10 @@
     "message": "Mape AI"
   },
   "searchPlaceholder": {
-    "message": "🔍 Išči pogovor..."
+    "message": "Išči pogovor..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Išči poziv..."
+    "message": "Išči poziv..."
   },
   "folderPlaceholder": {
     "message": "Ime mape (npr. Kodni projekti)"
@@ -27,22 +27,22 @@
     "message": "Pogovor shranjen!"
   },
   "noResults": {
-    "message": "Ni rezultatov 🕵️"
+    "message": "Ni rezultatov"
   },
   "noResultsHint": {
-    "message": "Iskanje zajema samo pogovore, ki ste jih že shranili — najprej shranite enega z ➕."
+    "message": "Iskanje zajema samo pogovore, ki ste jih že shranili — najprej shranite enega z +."
   },
   "emptyFoldersHint": {
-    "message": "Še ni map — odprite pogovor na podprtem spletnem mestu z UI in ga shranite z ➕ ali z menijem desnega klika."
+    "message": "Še ni map — odprite pogovor na podprtem spletnem mestu z UI in ga shranite z + ali z menijem desnega klika."
   },
   "sortTooltip": {
     "message": "Razvrsti"
   },
   "exportBtn": {
-    "message": "💾 Izvoz"
+    "message": "Izvoz"
   },
   "importBtn": {
-    "message": "📂 Uvoz"
+    "message": "Uvoz"
   },
   "defaultFolder": {
     "message": "Splošno"
@@ -69,7 +69,7 @@
     "message": "Izbriši"
   },
   "btnNewFolder": {
-    "message": "➕ Mapa"
+    "message": "+ Mapa"
   },
   "promptNewFolder": {
     "message": "Nova mapa:"
@@ -141,7 +141,7 @@
     "message": "⚡ Hitro shranjevanje"
   },
   "toastSaved": {
-    "message": "✅ Shranjeno v Mape AI!"
+    "message": "Shranjeno v Mape AI!"
   },
   "btnOpenGroup": {
     "message": "Odpri v skupini zavihkov"
@@ -177,7 +177,7 @@
     "message": "Ustvari sinhronizirano mapo v priljubljenih Chrome za dostop do pogovorov na telefonu."
   },
   "reviewTitle": {
-    "message": "⭐ Ali ti je všeč Mape AI?"
+    "message": "Ali ti je všeč Mape AI?"
   },
   "reviewMessage": {
     "message": "Tvoja podpora enormno pomaga temu odprtokodnemu projektu!"
@@ -201,7 +201,7 @@
     "message": "Nasvet: začni z emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Že shranjeno!"
+    "message": "Že shranjeno!"
   },
   "folderModeTitle": {
     "message": "Način map"
@@ -249,7 +249,7 @@
     "message": "Vstavi v klepet"
   },
   "storageFullError": {
-    "message": "⚠️ Prostor za shranjevanje je poln — ni shranjeno."
+    "message": "Prostor za shranjevanje je poln — ni shranjeno."
   },
   "newConv_gemini": {
     "message": "Nov pogovor z Gemini"
@@ -312,7 +312,7 @@
     "message": "Razširitev uporabite na podprtem spletnem mestu AI (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi ali Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ To spletno mesto vsakemu pogovoru ne dodeli več svojega naslova, zato ni kaj shraniti."
+    "message": "To spletno mesto vsakemu pogovoru ne dodeli več svojega naslova, zato ni kaj shraniti."
   },
   "alertEditorNotFound": {
     "message": "Polja za vnos besedila na tej strani ni mogoče najti. Najprej kliknite v urejevalnik in nato uporabite gumb za vstavljanje."

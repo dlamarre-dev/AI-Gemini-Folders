@@ -9,10 +9,10 @@
     "message": "Gemini-mappen"
   },
   "searchPlaceholder": {
-    "message": "🔍 Zoek een gesprek..."
+    "message": "Zoek een gesprek..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Zoek een prompt..."
+    "message": "Zoek een prompt..."
   },
   "folderPlaceholder": {
     "message": "Mapnaam (bijv. Codeprojecten)"
@@ -27,22 +27,22 @@
     "message": "Gesprek opgeslagen!"
   },
   "noResults": {
-    "message": "Geen resultaten gevonden 🕵️"
+    "message": "Geen resultaten gevonden"
   },
   "noResultsHint": {
-    "message": "Zoeken werkt alleen in gesprekken die je al hebt opgeslagen — sla er eerst een op met ➕."
+    "message": "Zoeken werkt alleen in gesprekken die je al hebt opgeslagen — sla er eerst een op met +."
   },
   "emptyFoldersHint": {
-    "message": "Nog geen mappen — open een Gemini-gesprek en sla het op met ➕ of het rechtermuisknopmenu."
+    "message": "Nog geen mappen — open een Gemini-gesprek en sla het op met + of het rechtermuisknopmenu."
   },
   "sortTooltip": {
     "message": "Sorteren"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Gebruik deze extensie op een Gemini-pagina."
@@ -72,7 +72,7 @@
     "message": "Verwijderen"
   },
   "btnNewFolder": {
-    "message": "➕ Map"
+    "message": "+ Map"
   },
   "promptNewFolder": {
     "message": "Nieuwe map:"
@@ -144,7 +144,7 @@
     "message": "⚡ Snelle opslag"
   },
   "toastSaved": {
-    "message": "✅ Opgeslagen in Gemini-mappen!"
+    "message": "Opgeslagen in Gemini-mappen!"
   },
   "btnOpenGroup": {
     "message": "Openen in tabgroep"
@@ -180,7 +180,7 @@
     "message": "Maakt een gesynchroniseerde map aan in uw Chrome-favorieten voor toegang tot uw gesprekken op uw telefoon."
   },
   "reviewTitle": {
-    "message": "⭐ Bevalt Gemini-mappen u?"
+    "message": "Bevalt Gemini-mappen u?"
   },
   "reviewMessage": {
     "message": "Uw steun helpt dit open-sourceproject enorm!"
@@ -204,7 +204,7 @@
     "message": "Tip: Begin met een emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Al opgeslagen!"
+    "message": "Al opgeslagen!"
   },
   "folderModeTitle": {
     "message": "Mappenmodus"
@@ -270,7 +270,7 @@
     "message": "Vastzetten"
   },
   "storageFullError": {
-    "message": "⚠️ Opslag vol — niet opgeslagen."
+    "message": "Opslag vol — niet opgeslagen."
   },
   "afPromoTitle": {
     "message": "Ontdek AI-mappen"

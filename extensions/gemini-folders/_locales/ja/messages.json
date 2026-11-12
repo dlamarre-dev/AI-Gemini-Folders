@@ -9,10 +9,10 @@
     "message": "Gemini フォルダ"
   },
   "searchPlaceholder": {
-    "message": "🔍 会話を検索..."
+    "message": "会話を検索..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 プロンプトを検索..."
+    "message": "プロンプトを検索..."
   },
   "folderPlaceholder": {
     "message": "フォルダ名 (例: プロジェクト)"
@@ -27,22 +27,22 @@
     "message": "会話を保存しました！"
   },
   "noResults": {
-    "message": "結果が見つかりません 🕵️"
+    "message": "結果が見つかりません"
   },
   "noResultsHint": {
-    "message": "検索は保存済みの会話のみが対象です — まず ➕ で会話を保存してください。"
+    "message": "検索は保存済みの会話のみが対象です — まず + で会話を保存してください。"
   },
   "emptyFoldersHint": {
-    "message": "フォルダーがまだありません — Gemini の会話を開き、➕ または右クリックメニューで保存してください。"
+    "message": "フォルダーがまだありません — Gemini の会話を開き、+ または右クリックメニューで保存してください。"
   },
   "sortTooltip": {
     "message": "並べ替え"
   },
   "exportBtn": {
-    "message": "💾 エクスポート"
+    "message": "エクスポート"
   },
   "importBtn": {
-    "message": "📂 インポート"
+    "message": "インポート"
   },
   "alertNotGemini": {
     "message": "この拡張機能は Gemini のページで使用してください。"
@@ -72,7 +72,7 @@
     "message": "削除"
   },
   "btnNewFolder": {
-    "message": "➕ フォルダ"
+    "message": "+ フォルダ"
   },
   "promptNewFolder": {
     "message": "新しいフォルダ："
@@ -144,7 +144,7 @@
     "message": "⚡ クイック保存"
   },
   "toastSaved": {
-    "message": "✅ Gemini フォルダに保存しました！"
+    "message": "Gemini フォルダに保存しました！"
   },
   "btnOpenGroup": {
     "message": "タブグループで開く"
@@ -180,7 +180,7 @@
     "message": "Chromeのお気に入りに同期されたフォルダを作成し、スマートフォンから会話にアクセスできるようにします。"
   },
   "reviewTitle": {
-    "message": "⭐ Gemini フォルダ をお楽しみですか？"
+    "message": "Gemini フォルダ をお楽しみですか？"
   },
   "reviewMessage": {
     "message": "皆様のサポートがこのオープンソースプロジェクトの大きな力になります！"
@@ -204,7 +204,7 @@
     "message": "ヒント：絵文字で開始（Win+. / ⌘⌃スペース）"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ 保存済みです！"
+    "message": "保存済みです！"
   },
   "folderModeTitle": {
     "message": "フォルダモード"
@@ -270,7 +270,7 @@
     "message": "固定"
   },
   "storageFullError": {
-    "message": "⚠️ ストレージがいっぱいです — 保存されませんでした。"
+    "message": "ストレージがいっぱいです — 保存されませんでした。"
   },
   "afPromoTitle": {
     "message": "AI フォルダを発見"

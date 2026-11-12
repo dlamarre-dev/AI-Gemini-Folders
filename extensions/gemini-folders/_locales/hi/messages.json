@@ -9,10 +9,10 @@
     "message": "Gemini फ़ोल्डर्स"
   },
   "searchPlaceholder": {
-    "message": "🔍 बातचीत खोजें..."
+    "message": "बातचीत खोजें..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 प्रॉम्प्ट खोजें..."
+    "message": "प्रॉम्प्ट खोजें..."
   },
   "folderPlaceholder": {
     "message": "फ़ोल्डर का नाम (उदा: कोड प्रोजेक्ट्स)"
@@ -27,22 +27,22 @@
     "message": "बातचीत सहेजी गई!"
   },
   "noResults": {
-    "message": "कोई परिणाम नहीं मिला 🕵️"
+    "message": "कोई परिणाम नहीं मिला"
   },
   "noResultsHint": {
-    "message": "खोज केवल उन बातचीत में काम करती है जिन्हें आपने सहेजा है — पहले ➕ से एक सहेजें।"
+    "message": "खोज केवल उन बातचीत में काम करती है जिन्हें आपने सहेजा है — पहले + से एक सहेजें।"
   },
   "emptyFoldersHint": {
-    "message": "अभी तक कोई फ़ोल्डर नहीं — Gemini बातचीत खोलें और उसे ➕ या राइट-क्लिक मेनू से सहेजें।"
+    "message": "अभी तक कोई फ़ोल्डर नहीं — Gemini बातचीत खोलें और उसे + या राइट-क्लिक मेनू से सहेजें।"
   },
   "sortTooltip": {
     "message": "क्रमबद्ध करें"
   },
   "exportBtn": {
-    "message": "💾 निर्यात"
+    "message": "निर्यात"
   },
   "importBtn": {
-    "message": "📂 आयात"
+    "message": "आयात"
   },
   "alertNotGemini": {
     "message": "कृपया इस एक्सटेंशन का उपयोग Gemini पेज पर करें।"
@@ -72,7 +72,7 @@
     "message": "हटाएं"
   },
   "btnNewFolder": {
-    "message": "➕ फ़ोल्डर"
+    "message": "+ फ़ोल्डर"
   },
   "promptNewFolder": {
     "message": "नया फ़ोल्डर:"
@@ -144,7 +144,7 @@
     "message": "⚡ त्वरित सहेजें"
   },
   "toastSaved": {
-    "message": "✅ Gemini फ़ोल्डर्स में सहेजा गया!"
+    "message": "Gemini फ़ोल्डर्स में सहेजा गया!"
   },
   "btnOpenGroup": {
     "message": "टैब समूह में खोलें"
@@ -180,7 +180,7 @@
     "message": "अपने फ़ोन पर अपनी बातचीत तक पहुँचने के लिए Chrome पसंदीदा में एक समन्वयित फ़ोल्डर बनाता है।"
   },
   "reviewTitle": {
-    "message": "⭐ क्या आपको Gemini फ़ोल्डर्स पसंद है?"
+    "message": "क्या आपको Gemini फ़ोल्डर्स पसंद है?"
   },
   "reviewMessage": {
     "message": "आपका समर्थन इस ओपन-सोर्स प्रोजेक्ट को बहुत मदद करता है!"
@@ -204,7 +204,7 @@
     "message": "टिप: इमोजी से शुरू करें (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ पहले से सहेजा गया!"
+    "message": "पहले से सहेजा गया!"
   },
   "folderModeTitle": {
     "message": "फ़ोल्डर मोड"
@@ -270,7 +270,7 @@
     "message": "पिन करें"
   },
   "storageFullError": {
-    "message": "⚠️ संग्रहण भरा हुआ है — सहेजा नहीं गया।"
+    "message": "संग्रहण भरा हुआ है — सहेजा नहीं गया।"
   },
   "afPromoTitle": {
     "message": "AI फ़ोल्डर खोजें"

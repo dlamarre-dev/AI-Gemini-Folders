@@ -9,10 +9,10 @@
     "message": "AI Folders"
   },
   "searchPlaceholder": {
-    "message": "🔍 Search a conversation..."
+    "message": "Search a conversation..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Search a prompt..."
+    "message": "Search a prompt..."
   },
   "folderPlaceholder": {
     "message": "Folder name (e.g. Code Projects)"
@@ -27,28 +27,28 @@
     "message": "Conversation saved!"
   },
   "noResults": {
-    "message": "No results found 🕵️"
+    "message": "No results found"
   },
   "noResultsHint": {
-    "message": "Search only covers conversations you already saved — save one with ➕ first."
+    "message": "Search only covers conversations you already saved — save one with + first."
   },
   "emptyFoldersHint": {
-    "message": "No folders yet — open a conversation on a supported AI site and save it with ➕ or the right-click menu."
+    "message": "No folders yet — open a conversation on a supported AI site and save it with + or the right-click menu."
   },
   "sortTooltip": {
     "message": "Sort"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotSupported": {
     "message": "Please use this extension on a supported AI site (Gemini, Claude, ChatGPT, Copilot, DeepSeek, Grok, Perplexity, Baidu, Z.ai, Kimi, Qwen, Meta AI, Mistral, Poe, Duck.ai, Pi, or Character.AI)."
   },
   "alertNoConversationUrl": {
-    "message": "⚠️ This site no longer gives each conversation its own address, so there is nothing to save."
+    "message": "This site no longer gives each conversation its own address, so there is nothing to save."
   },
   "defaultFolder": {
     "message": "General"
@@ -75,7 +75,7 @@
     "message": "Delete"
   },
   "btnNewFolder": {
-    "message": "➕ Folder"
+    "message": "+ Folder"
   },
   "promptNewFolder": {
     "message": "New folder:"
@@ -147,7 +147,7 @@
     "message": "⚡ Quick Saves"
   },
   "toastSaved": {
-    "message": "✅ Saved to AI Folders!"
+    "message": "Saved to AI Folders!"
   },
   "btnOpenGroup": {
     "message": "Open in Tab Group"
@@ -192,7 +192,7 @@
     "message": "Tip: Start with emoji (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Already saved!"
+    "message": "Already saved!"
   },
   "folderModeTitle": {
     "message": "Folder Mode"
@@ -300,7 +300,7 @@
     "message": "Couldn't find the text input on this page. Try clicking into the editor first, then use the insert button."
   },
   "reviewTitle": {
-    "message": "⭐ Are you enjoying AI Folders?"
+    "message": "Are you enjoying AI Folders?"
   },
   "reviewMessage": {
     "message": "Your support helps this open-source project immensely!"
@@ -315,7 +315,7 @@
     "message": "No thanks"
   },
   "storageFullError": {
-    "message": "⚠️ Storage full — not saved."
+    "message": "Storage full — not saved."
   },
   "kofiTooltip": {
     "message": "Support this extension by buying me a coffee!"

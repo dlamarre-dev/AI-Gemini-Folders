@@ -485,7 +485,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 // Saves and returns the error instead of throwing, so a failed write shows a
-// failure toast rather than "✅ Saved!". The old `new Promise(r => saveData(d, r))`
+// failure toast rather than "Saved!". The old `new Promise(r => saveData(d, r))`
 // resolved *with* the error and dropped it; there is no window in a service
 // worker either, so utils.js's modal fallback never fires here.
 async function saveOrReportError(dataToSave, opts) {
@@ -500,14 +500,32 @@ async function saveOrReportError(dataToSave, opts) {
 
 // --- TOAST ---
 
-const showToast = (msg, bgColor) => {
+const showToast = (msg, bgColor, kind) => {
   const r = parseInt(bgColor.slice(1,3), 16) || 0;
   const g = parseInt(bgColor.slice(3,5), 16) || 0;
   const b = parseInt(bgColor.slice(5,7), 16) || 0;
   const textColor = (0.299*r + 0.587*g + 0.114*b) / 255 > 0.6 ? '#000000' : '#ffffff';
+  // The status glyph the message used to open with as an emoji. This function
+  // runs in the site's page, so it cannot reach src/icons.js and carries its
+  // own copy of the two paths; built node by node — a page that enforces
+  // Trusted Types (Gemini does) rejects innerHTML. Drawn in the toast's text
+  // colour: the toast itself is the coloured surface, and the mark is cut out
+  // of the shape, so it shows the toast's colour through.
+  const glyph = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  glyph.setAttribute('viewBox', '0 0 24 24');
+  glyph.setAttribute('width', '18');
+  glyph.setAttribute('height', '18');
+  glyph.setAttribute('fill', textColor);
+  glyph.setAttribute('aria-hidden', 'true');
+  glyph.style.cssText = 'flex-shrink:0;';
+  const glyphPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  glyphPath.setAttribute('d', kind === 'warning'
+    ? 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'
+    : 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z');
+  glyph.appendChild(glyphPath);
   const toast = document.createElement('div');
-  toast.textContent = msg;
-  toast.style.cssText = `position:fixed; bottom:30px; right:30px; background:${bgColor}; color:${textColor}; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
+  toast.append(glyph, document.createTextNode(msg));
+  toast.style.cssText = `position:fixed; bottom:30px; right:30px; display:flex; align-items:center; gap:8px; background:${bgColor}; color:${textColor}; padding:12px 24px; border-radius:8px; z-index:99999; font-family:sans-serif; font-size:14px; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:opacity 0.5s ease-in-out;`;
   document.body.appendChild(toast);
   setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2500);
 };
@@ -558,14 +576,14 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
         args: saveError
-          ? [chrome.i18n.getMessage("storageFullError") || "⚠️ Storage full — not saved.", "#d93025"]
-          : [chrome.i18n.getMessage("toastSaved") || "✅ Saved!", siteColor],
+          ? [chrome.i18n.getMessage("storageFullError") || "Storage full — not saved.", "#d93025", "warning"]
+          : [chrome.i18n.getMessage("toastSaved") || "Saved!", siteColor, "ok"],
         func: showToast
       });
     } else {
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        args: [chrome.i18n.getMessage("toastAlreadySaved") || "⚠️ Already saved!", "#d93025"],
+        args: [chrome.i18n.getMessage("toastAlreadySaved") || "Already saved!", "#d93025", "warning"],
         func: showToast
       });
     }
@@ -590,7 +608,7 @@ chrome.commands.onCommand.addListener(async (command) => {
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
         args: [chrome.i18n.getMessage("alertNoConversationUrl")
-          || "⚠️ This site has no per-conversation address — nothing to save.", "#d93025"],
+          || "This site has no per-conversation address — nothing to save.", "#d93025", "warning"],
         func: showToast,
       });
       return;
@@ -598,7 +616,7 @@ chrome.commands.onCommand.addListener(async (command) => {
 
     const targetFolder = chrome.i18n.getMessage("quickSaveFolder") || "⚡ Quick Saves";
     const defaultTitle = chrome.i18n.getMessage("defaultTitle") || "New conversation";
-    const toastMsg = chrome.i18n.getMessage("toastSaved") || "✅ Saved!";
+    const toastMsg = chrome.i18n.getMessage("toastSaved") || "Saved!";
     const siteColor = SITES[siteKey]?.color || "#1a73e8";
 
     // For local LLM: use the browser tab title directly.
@@ -630,15 +648,15 @@ chrome.commands.onCommand.addListener(async (command) => {
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
         args: saveError
-          ? [chrome.i18n.getMessage("storageFullError") || "⚠️ Storage full — not saved.", "#d93025"]
-          : [toastMsg, siteColor],
+          ? [chrome.i18n.getMessage("storageFullError") || "Storage full — not saved.", "#d93025", "warning"]
+          : [toastMsg, siteColor, "ok"],
         func: showToast
       });
     } else {
-      const alreadySavedMsg = chrome.i18n.getMessage("toastAlreadySaved") || "⚠️ Already saved!";
+      const alreadySavedMsg = chrome.i18n.getMessage("toastAlreadySaved") || "Already saved!";
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        args: [alreadySavedMsg, "#d93025"],
+        args: [alreadySavedMsg, "#d93025", "warning"],
         func: showToast
       });
     }

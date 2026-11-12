@@ -207,9 +207,9 @@ describe('buildPromptItem — actions', () => {
     window.showCustomModal.mockResolvedValue('Renamed');
     setupStorage({ MyPrompt: { text: 't', timestamp: 1 } });
     render();
-    // The rename button is the ✏️ action (not pin/insert/copy/delete).
+    // The rename button is the pencil action (not pin/insert/copy/delete).
     [...firstItem().querySelectorAll('.action-btn')]
-      .find((b) => b.textContent === '✏️')
+      .find((b) => b.querySelector('[data-icon="edit"]'))
       .click();
     await flush();
     const saved = lastSavedPrompts();
@@ -228,7 +228,7 @@ describe('buildPromptItem — actions', () => {
     });
     render();
     [...firstItem().querySelectorAll('.action-btn')]
-      .find((b) => b.textContent === '✏️')
+      .find((b) => b.querySelector('[data-icon="edit"]'))
       .click();
     await flush();
     await flush();
@@ -285,7 +285,7 @@ describe('buildPromptItem — actions', () => {
     ta.value = 'edited then renamed';
     ta.dispatchEvent(new Event('input'));
     [...firstItem().querySelectorAll('.action-btn')]
-      .find((b) => b.textContent === '✏️')
+      .find((b) => b.querySelector('[data-icon="edit"]'))
       .click();
     await flush();
     await flush();

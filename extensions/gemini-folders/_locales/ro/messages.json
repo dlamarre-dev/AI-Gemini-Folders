@@ -9,10 +9,10 @@
     "message": "Foldere Gemini"
   },
   "searchPlaceholder": {
-    "message": "🔍 Căutați o conversație..."
+    "message": "Căutați o conversație..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Căutați un prompt..."
+    "message": "Căutați un prompt..."
   },
   "folderPlaceholder": {
     "message": "Nume folder (ex: Proiecte Cod)"
@@ -27,22 +27,22 @@
     "message": "Conversație salvată!"
   },
   "noResults": {
-    "message": "Niciun rezultat găsit 🕵️"
+    "message": "Niciun rezultat găsit"
   },
   "noResultsHint": {
-    "message": "Căutarea acoperă doar conversațiile pe care le-ai salvat deja — salvează una cu ➕ mai întâi."
+    "message": "Căutarea acoperă doar conversațiile pe care le-ai salvat deja — salvează una cu + mai întâi."
   },
   "emptyFoldersHint": {
-    "message": "Încă niciun folder — deschide o conversație Gemini și salveaz-o cu ➕ sau din meniul clic dreapta."
+    "message": "Încă niciun folder — deschide o conversație Gemini și salveaz-o cu + sau din meniul clic dreapta."
   },
   "sortTooltip": {
     "message": "Sortează"
   },
   "exportBtn": {
-    "message": "💾 Export"
+    "message": "Export"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Vă rugăm să utilizați această extensie pe o pagină Gemini."
@@ -72,7 +72,7 @@
     "message": "Șterge"
   },
   "btnNewFolder": {
-    "message": "➕ Folder"
+    "message": "+ Folder"
   },
   "promptNewFolder": {
     "message": "Folder nou:"
@@ -144,7 +144,7 @@
     "message": "⚡ Salvări Rapide"
   },
   "toastSaved": {
-    "message": "✅ Salvat în Foldere Gemini!"
+    "message": "Salvat în Foldere Gemini!"
   },
   "btnOpenGroup": {
     "message": "Deschide într-un grup de file"
@@ -180,7 +180,7 @@
     "message": "Creează un folder sincronizat în preferințele Chrome pentru a accesa conversațiile pe telefon."
   },
   "reviewTitle": {
-    "message": "⭐ Vă plac Folderele Gemini?"
+    "message": "Vă plac Folderele Gemini?"
   },
   "reviewMessage": {
     "message": "Sprijinul dvs. ajută enorm acest proiect open source!"
@@ -204,7 +204,7 @@
     "message": "Sfat: Începeți cu un emoji (Win+. / ⌘⌃Spațiu)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Deja salvat!"
+    "message": "Deja salvat!"
   },
   "folderModeTitle": {
     "message": "Mod foldere"
@@ -270,7 +270,7 @@
     "message": "Fixează"
   },
   "storageFullError": {
-    "message": "⚠️ Spațiu de stocare plin — nesalvat."
+    "message": "Spațiu de stocare plin — nesalvat."
   },
   "afPromoTitle": {
     "message": "Descoperă Dosare IA"

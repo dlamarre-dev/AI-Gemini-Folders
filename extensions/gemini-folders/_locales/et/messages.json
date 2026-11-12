@@ -9,10 +9,10 @@
     "message": "Gemini Kaustad"
   },
   "searchPlaceholder": {
-    "message": "🔍 Otsi vestlust..."
+    "message": "Otsi vestlust..."
   },
   "promptSearchPlaceholder": {
-    "message": "🔍 Otsi prompti..."
+    "message": "Otsi prompti..."
   },
   "folderPlaceholder": {
     "message": "Kausta nimi (nt Koodiprojektid)"
@@ -27,22 +27,22 @@
     "message": "Vestlus salvestatud!"
   },
   "noResults": {
-    "message": "Tulemusi ei leitud 🕵️"
+    "message": "Tulemusi ei leitud"
   },
   "noResultsHint": {
-    "message": "Otsing hõlmab ainult vestlusi, mille olete juba salvestanud — salvestage esmalt üks nupuga ➕."
+    "message": "Otsing hõlmab ainult vestlusi, mille olete juba salvestanud — salvestage esmalt üks nupuga +."
   },
   "emptyFoldersHint": {
-    "message": "Kaustu veel pole — ava Gemini vestlus ja salvesta see nupuga ➕ või paremklõpsu menüüst."
+    "message": "Kaustu veel pole — ava Gemini vestlus ja salvesta see nupuga + või paremklõpsu menüüst."
   },
   "sortTooltip": {
     "message": "Sordi"
   },
   "exportBtn": {
-    "message": "💾 Eksport"
+    "message": "Eksport"
   },
   "importBtn": {
-    "message": "📂 Import"
+    "message": "Import"
   },
   "alertNotGemini": {
     "message": "Kasuta seda laiendust Gemini lehel."
@@ -72,7 +72,7 @@
     "message": "Kustuta"
   },
   "btnNewFolder": {
-    "message": "➕ Kaust"
+    "message": "+ Kaust"
   },
   "promptNewFolder": {
     "message": "Uus kaust:"
@@ -144,7 +144,7 @@
     "message": "⚡ Kiirsalvestus"
   },
   "toastSaved": {
-    "message": "✅ Salvestatud Gemini Kaustadesse!"
+    "message": "Salvestatud Gemini Kaustadesse!"
   },
   "btnOpenGroup": {
     "message": "Ava vahekaardi grupis"
@@ -180,7 +180,7 @@
     "message": "Loob sünkroonitud kausta Chrome'i lemmikutesse telefonis vestlustele juurdepääsuks."
   },
   "reviewTitle": {
-    "message": "⭐ Kas sulle meeldib Gemini Kaustad?"
+    "message": "Kas sulle meeldib Gemini Kaustad?"
   },
   "reviewMessage": {
     "message": "Sinu toetus aitab seda avatud lähtekoodiga projekti tohutult!"
@@ -204,7 +204,7 @@
     "message": "Vihje: alusta emojiga (Win+. / ⌘⌃Space)"
   },
   "toastAlreadySaved": {
-    "message": "⚠️ Juba salvestatud!"
+    "message": "Juba salvestatud!"
   },
   "folderModeTitle": {
     "message": "Kaustade režiim"
@@ -270,7 +270,7 @@
     "message": "Kinnita"
   },
   "storageFullError": {
-    "message": "⚠️ Salvestusruum täis — ei salvestatud."
+    "message": "Salvestusruum täis — ei salvestatud."
   },
   "afPromoTitle": {
     "message": "Avasta AI kaustad"

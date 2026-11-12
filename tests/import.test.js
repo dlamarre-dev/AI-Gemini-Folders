@@ -49,6 +49,7 @@ test('a valid backup is merged and reported as success', async () => {
   expect(global.mergeImportData).toHaveBeenCalledWith({ folders: { Work: [] } });
   const status = document.getElementById('status-msg');
   expect(status.textContent).toContain('alertImportSuccess'); // i18n mock returns the key
+  expect(status.querySelector('svg').dataset.icon).toBe('checkCircle');
   expect(status.style.color).toBe('green');
   expect(document.getElementById('file-input').value).toBe('');
 });
@@ -60,6 +61,7 @@ test('invalid JSON is caught and reported as an error', async () => {
   expect(global.mergeImportData).not.toHaveBeenCalled();
   const status = document.getElementById('status-msg');
   expect(status.textContent).toContain('alertImportError');
+  expect(status.querySelector('svg').dataset.icon).toBe('warning');
   expect(status.style.color).toBe('red');
 });
 
