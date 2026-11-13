@@ -504,8 +504,8 @@ git checkout main && git pull --ff-only
   (`icon: 'checkCircle'` for the import success, `icon: ''` for none). The
   default is the point: the first pass tagged only the storage-full alerts and
   every other error ("not a Gemini page", "folder already exists"…) shipped
-  bare. `gem` is the one outline in the registry (`{ stroke: … }`, drawn as a
-  line rather than filled).
+  bare. Every glyph in the registry is filled; the one stroked outline, `gem`,
+  left with Gemini Folders' custom-Gem button when Google retired Gems.
   **The in-page toast is the exception to "one registry"**: `showToast` is a
   function injected into the site's page, so it cannot load `icons.js` and each
   `background.js` carries its own copy of those two paths (a test keeps them

@@ -27,7 +27,6 @@ Složky Gemini se stávají vaším skutečným kokpitem pro Gemini: organizujte
 📝 Osobní knihovna výzev: Přepněte do režimu výzev jedním kliknutím na přepínač v záhlaví. Ukládejte nejlepší výzvy s názvem a úplným textem a okamžitě je najděte díky vyhledávání a řazení (nejnovější, nejstarší, A-Z).
 ▶ Vložení jedním kliknutím: Konec kopírování a vkládání. Klikněte na tlačítko přehrávání (▶) u uložené výzvy a vloží se přímo do vstupního pole Gemini. Rozšíření zjistí, zda jste na stránce Gemini, a pokud ne, upozorní vás.
 ✏️ Úprava na místě: Klikněte na výzvu, rozbalte ji a přímo upravte text. Změny se automaticky uloží po krátkém okamžiku a pořadí řazení se odpovídajícím způsobem aktualizuje.
-💎 Vlastní odkaz Gem: Nastavte odkaz na váš oblíbený Gem a aktivujte ho kliknutím. Když je aktivní, tlačítko „Nová konverzace" otevře váš Gem místo výchozího chatu.
 ☁️ Synchronizace výzev: Aktivujte cloudovou synchronizaci pro knihovnu výzev nezávisle na složkách.
 📌 Připnuté výzvy: Připněte své nejdůležitější výzvy jedním kliknutím, aby zůstaly v horní části knihovny — oddělené od ostatních vizuálním oddělovačem.
 ⌨️ Spouštěč promptů s živými návrhy: Napište # do chatovacího pole Gemini a okamžitě uvidíte všechny své uložené prompty — filtrované v reálném čase při psaní. Pomocí ↓/↑ procházejte návrhy, stiskněte mezerník u jedinečné shody pro automatické doplnění nebo u přesné shody pro přímé vložení.
@@ -47,7 +46,6 @@ Režim výzev:
 Klikněte na 📝 na přepínači v pravém horním rohu rozšíření.
 Klikněte na ➕ Přidat výzvu, zadejte název a text, uložte.
 Chcete-li použít výzvu: rozbalte ji a klikněte na ▶ — vloží se přímo do Gemini, připravena k odeslání.
-Nakonfigurujte 💎, aby ukazoval na váš vlastní Gem.
 Připnout výzvu: klikněte na 📍 — přesune se na začátek seznamu a je vždy po ruce.
 Spouštěč promptu: Napište # a okamžitě uvidíte všechny své uložené prompty, nebo pokračujte v psaní pro filtrování v reálném čase. Stiskněte mezerník u jedinečné shody pro automatické doplnění nebo u přesné shody pro vložení.
 

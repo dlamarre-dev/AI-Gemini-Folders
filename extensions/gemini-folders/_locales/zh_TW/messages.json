@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "刪除"
   },
-  "promptSetGemLink": {
-    "message": "設定自訂 Gem 連結："
-  },
-  "promptInvalidGemLink": {
-    "message": "無效連結。必須以 https://gemini.google.com/ 開頭"
-  },
   "newConversationBtn": {
     "message": "新對話"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "在這裡輸入您的提示詞..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "啟用自訂 Gem"
-  },
-  "setGemBtnTooltip": {
-    "message": "設定自訂 Gem 連結"
   },
   "syncPromptsTooltip": {
     "message": "同步提示詞"

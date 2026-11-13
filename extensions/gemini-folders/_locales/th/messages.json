@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "ลบ"
   },
-  "promptSetGemLink": {
-    "message": "ตั้งค่าลิงก์ Gem ที่กำหนดเอง:"
-  },
-  "promptInvalidGemLink": {
-    "message": "ลิงก์ไม่ถูกต้อง ต้องเริ่มต้นด้วย https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "การสนทนาใหม่"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "เขียนพรอมต์ของคุณที่นี่..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "เปิดใช้งาน Gem ที่กำหนดเอง"
-  },
-  "setGemBtnTooltip": {
-    "message": "ตั้งค่าลิงก์ Gem ที่กำหนดเอง"
   },
   "syncPromptsTooltip": {
     "message": "ซิงค์พรอมต์"

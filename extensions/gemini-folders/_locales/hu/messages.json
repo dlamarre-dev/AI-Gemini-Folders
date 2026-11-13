@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Törlés"
   },
-  "promptSetGemLink": {
-    "message": "Egyéni Gem-hivatkozás beállítása:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Érvénytelen hivatkozás. A https://gemini.google.com/ címmel kell kezdődnie"
-  },
   "newConversationBtn": {
     "message": "Új beszélgetés"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Írja ide a promptot..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Egyéni Gem engedélyezése"
-  },
-  "setGemBtnTooltip": {
-    "message": "Egyéni Gem-hivatkozás beállítása"
   },
   "syncPromptsTooltip": {
     "message": "Promptok szinkronizálása"

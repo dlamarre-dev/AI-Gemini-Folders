@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "삭제"
   },
-  "promptSetGemLink": {
-    "message": "맞춤 Gem 링크 설정:"
-  },
-  "promptInvalidGemLink": {
-    "message": "잘못된 링크입니다. https://gemini.google.com/ 으로 시작해야 합니다."
-  },
   "newConversationBtn": {
     "message": "새 대화"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "여기에 프롬프트를 입력하세요..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "사용자 정의 Gem 사용"
-  },
-  "setGemBtnTooltip": {
-    "message": "사용자 정의 Gem 링크 설정"
   },
   "syncPromptsTooltip": {
     "message": "프롬프트 동기화"

@@ -27,7 +27,6 @@ Carpetes Gemini és el teu veritable cockpit de Gemini: organitza les converses 
 📝 Biblioteca de prompts personal: Canvia al Mode prompts amb un clic al commutador de la capçalera. Desa els teus millors prompts amb títol i text, i troba'ls al moment amb cerca i ordenació (més recents, més antics, A–Z).
 ▶ Injecció amb un sol clic: Fes clic al botó de reproducció (▶) en qualsevol prompt desat per inserir-lo directament al camp d'entrada de Gemini.
 ✏️ Edició en línia: Fes clic per expandir un prompt i edita el text directament. Els canvis es desen automàticament després d'una breu pausa.
-💎 Enllaç Gem personalitzat: Configura un enllaç al teu Gem favorit i activa'l/desactiva'l amb un clic.
 ☁️ Sincronització de prompts: Activa la sincronització al núvol per a la biblioteca de prompts independentment de les carpetes.
 📌 Prompts fixats: Fixa els prompts importants a la part superior de la biblioteca.
 ⌨️ Disparador de prompts amb suggeriments en viu: Escriu # al camp de xat de Gemini per veure a l'instant tots els teus prompts desats — filtrats en temps real mentre escrius. Usa ↓/↑ per navegar, prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar directament.
@@ -45,7 +44,6 @@ Mode prompts:
 Fes clic a 📝 al commutador a la part superior dreta de l'extensió.
 Fes clic a ➕ Afegeix un prompt, introdueix un títol i el teu text, i desa.
 Per utilitzar un prompt: expandeix-lo i fes clic a ▶ – s'injecta directament a Gemini.
-Configura 💎 per apuntar al teu Gem.
 Per fixar un prompt: fes clic a 📍 – es mou a la part superior de la llista.
 Disparador de prompts: Escriu # per veure a l'instant tots els teus prompts desats, o continua escrivint per filtrar en temps real. Prem Espai en una coincidència única per autocompletar, o en una coincidència exacta per injectar.
 

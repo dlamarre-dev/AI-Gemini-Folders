@@ -27,7 +27,6 @@ Gemini-kansiot on todellinen Gemini-ohjaamo: organisoi keskustelut kansioihin, r
 📝 Henkilökohtainen promptikirjasto: Vaihda Prompttilaan napsauttamalla otsikon kytkintä. Tallenna parhaat promptisi otsikolla ja tekstillä, löydä ne välittömästi hakemalla ja lajittelemalla (uusimmat, vanhimmat, A–Ö).
 ▶ Injektio yhdellä napsautuksella: Napsauta tallennetun promptin toistopainiketta (▶) injektoidaksesi sen suoraan Geminin syöttökenttään. Laajennus ilmoittaa, jos et ole Gemini-sivulla.
 ✏️ Inline-muokkaus: Napsauta laajentaaksesi promptin ja muokkaa tekstiä suoraan. Muutokset tallentuvat automaattisesti lyhyen tauon jälkeen.
-💎 Mukautettu Gem-linkki: Määritä linkki suosikki-Geemisi ja ota se käyttöön tai poista käytöstä yhdellä napsautuksella. Kun se on aktiivinen, «Uusi keskustelu» -painike avaa Geemisi oletuschattin sijaan.
 ☁️ Promptien synkronointi: Ota pilvisynkronointi käyttöön promptikirjastolle riippumatta kansioista.
 📌 Kiinnitetyt promptit: Kiinnitä tärkeät promptit kirjaston yläosaan, erotettuna visuaalisella erottimella.
 ⌨️ Kehoteliipaisin live-ehdotuksilla: Kirjoita # Geminin chat-kenttään nähdäksesi välittömästi kaikki tallennetut kehotteesi — suodatetaan reaaliajassa kirjoittaessasi. Käytä ↓/↑ selailuun, paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa suoraa lisäämistä varten.
@@ -47,7 +46,6 @@ Prompttila:
 Napsauta 📝 lisäosan oikeassa yläkulmassa olevaa kytkintä.
 Napsauta ➕ Lisää prompt, syötä otsikko ja teksti ja tallenna.
 Promptin käyttäminen: laajenna se ja napsauta ▶ – se injektoidaan suoraan Geminiin, valmiina lähetettäväksi.
-Määritä 💎 osoittamaan Geemiisi.
 Promptin kiinnittäminen: napsauta 📍 – se siirtyy listan yläosaan ja pysyy helposti saatavilla.
 Kehoteliipaisin: Kirjoita # nähdäksesi välittömästi kaikki tallennetut kehotteesi, tai jatka kirjoittamista suodattaaksesi reaaliajassa. Paina välilyöntiä ainutlaatuisessa osumassa automaattitäydennystä varten tai tarkassa osumassa lisäämistä varten.
 

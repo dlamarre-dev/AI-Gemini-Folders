@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Hapus"
   },
-  "promptSetGemLink": {
-    "message": "Atur tautan Gem khusus:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Tautan tidak valid. Harus dimulai dengan https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Percakapan Baru"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Tulis prompt Anda di sini..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Aktifkan Gem khusus"
-  },
-  "setGemBtnTooltip": {
-    "message": "Atur tautan Gem khusus"
   },
   "syncPromptsTooltip": {
     "message": "Sinkronkan prompt"

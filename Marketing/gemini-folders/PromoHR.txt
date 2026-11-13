@@ -27,7 +27,6 @@ Gemini Mape postaju tvoj pravi Gemini cockpit: organiziraj razgovore u mape, izg
 📝 Osobna knjižnica upita: Prebaci na Način upita jednim klikom na prekidač u zaglavlju. Spremi najbolje upite s naslovom i tekstom, pronađi ih odmah pretraživanjem i sortiranjem (najnovije, najstarije, A–Ž).
 ▶ Ubacivanje jednim klikom: Klikni gumb za reprodukciju (▶) na spremljenome upitu kako bi ga ubacio izravno u polje za unos Gemini.
 ✏️ Uređivanje na licu mjesta: Klikni za proširenje upita i uredi tekst izravno. Promjene se automatski spremaju nakon kratke pauze.
-💎 Prilagođena Gem veza: Konfiguriraj vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
 ☁️ Sinkronizacija upita: Aktiviraj sinkronizaciju u oblaku za knjižnicu upita neovisno o mapama.
 📌 Prikvačeni upiti: Prikvači važne upite na vrh knjižnice.
 ⌨️ Okidač upita s prijedlozima uživo: Upiši # u polje za chat Gemini da odmah vidiš sve svoje spremljene upite — filtrirane u stvarnom vremenu dok tipkaš. Koristi ↓/↑ za navigaciju, pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za izravno ubacivanje.
@@ -46,7 +45,6 @@ Način upita:
 Klikni 📝 na prekidaču gore desno u dodatku.
 Klikni ➕ Dodaj upit, unesi naslov i tekst i spremi.
 Za korištenje upita: proširi ga i klikni ▶ – ubacuje se izravno u Gemini.
-Konfiguriraj 💎 da ukazuje na tvoj Gem.
 Za prikvačivanje upita: klikni 📍 – premješta se na vrh popisa.
 Okidač upita: Upiši # da odmah vidiš sve svoje spremljene upite, ili nastavi tipkati za filtriranje u stvarnom vremenu. Pritisni razmak na jedinstvenoj podudarnosti za automatsko dovršavanje ili na točnoj podudarnosti za ubacivanje.
 

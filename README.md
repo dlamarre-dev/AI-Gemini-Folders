@@ -86,7 +86,6 @@ A family of lightweight, multilingual browser extensions to **organize your AI c
 * ▶ **One-Click Injection:** Hit the play button on any saved prompt to inject it directly into the active AI tab’s input field — works across all supported platforms in AI Folders.
 * ⌨️ **Prompt Trigger with Live Suggestions:** Type `#` in any AI chat field to instantly see all your saved prompts, filtered in real time as you type. The extension name appears as a label above the suggestions. Use **↓ / ↑** to cycle through suggestions, press **Space** on a unique match to autocomplete, or on an exact match to inject. Matching is case-insensitive and strips leading emojis. *(AI Folders: all supported sites including local LLMs; Gemini Folders: Gemini only.)*
 * ✏️ **Inline Editing:** Click a prompt to expand and edit it directly. Changes auto-save after a short pause.
-* 💎 **Custom Gem / AI Link:** Configure a custom URL (Gemini Gem or any AI) — right-click or long-press the 💎 button to set it, click to toggle it on/off for the “New Conversation” button. *(Gemini Folders only; AI Folders uses per-service shortcut buttons, with the same right-click / long-press gesture to configure the local LLM URL.)*
 * 📌 **Pin Important Prompts:** Pinned prompts stay at the top above a visual divider, independent of sort order.
 * ☁️ **Prompt Sync:** Enable cloud sync for your prompt library independently from folders.
 
@@ -146,7 +145,7 @@ This project uses a Python build pipeline to generate browser-specific versions 
 2. **Save a prompt:** Click **➕ Add Prompt**, enter a title and text, hit **Save**.
 3. **Quick inject via trigger:** Type `#` to instantly see all your saved prompts, or keep typing to filter in real time. Use **↓ / ↑** to cycle through suggestions. Press **Space** on a unique match to autocomplete (suggestion panel stays stable), or on an exact match to inject. *(Perplexity, Meta AI, Baidu: suggestions disabled, type the exact prompt name and press Space.)*
 4. **Use a prompt via panel:** Click any saved prompt to expand it, then hit **▶** to inject it into the active AI tab.
-5. **New conversation:** *(AI Folders)* Use the per-service shortcut buttons in Prompt Mode (right-click the local-LLM button to set its URL). *(Gemini Folders)* Right-click 💎 to configure a custom Gem URL, click it to toggle, then 💬 to open a new conversation.
+5. **New conversation:** *(AI Folders)* Use the per-service shortcut buttons in Prompt Mode (right-click the local-LLM button to set its URL). *(Gemini Folders)* Click 💬 to open a new Gemini conversation.
 6. Pin prompts with 📍, search and sort freely — all changes sync automatically.
 
 ---

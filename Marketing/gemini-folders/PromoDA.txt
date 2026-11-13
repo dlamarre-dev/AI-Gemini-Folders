@@ -27,7 +27,6 @@ Gemini Mapper bliver dit sande Gemini-cockpit: organiser samtaler i mapper, byg 
 📝 Personligt promptbibliotek: Skift til Promptvisning med ét klik på justeringsknappen i overskriften. Gem dine bedste prompts med titel og tekst, find dem øjeblikkeligt med søgning og sortering (nyeste, ældste, A–Å).
 ▶ Indsætning med ét klik: Klik på afspilningsknappen (▶) på en gemt prompt for at indsætte den direkte i Geminis inputfelt. Udvidelsen giver besked, hvis du ikke er på en Gemini-side.
 ✏️ Inline-redigering: Klik for at udvide en prompt og rediger teksten direkte. Ændringer gemmes automatisk efter en kort pause.
-💎 Tilpasset Gem-link: Konfigurer et link til din favoritgem og slå det til/fra med ét klik. Når det er aktivt, åbner knappen «Ny samtale» din Gem i stedet for standard-chatten.
 ☁️ Promptsynkronisering: Aktivér skysynkronisering for promptbiblioteket uafhængigt af mapper.
 📌 Fastgjorte prompts: Fastgør vigtige prompts øverst i biblioteket, adskilt fra resten med en visuel separator.
 ⌨️ Prompt-udløser med live-forslag: Skriv # i Geminis chatfelt for straks at se alle dine gemte prompter — filtreret i realtid mens du skriver. Brug ↓/↑ til at navigere, tryk mellemrum på et unikt match for at autofuldføre, eller på et eksakt match for at injicere direkte.
@@ -47,7 +46,6 @@ Promptvisning:
 Klik på 📝 på justeringsknappen øverst til højre i udvidelsen.
 Klik ➕ Tilføj prompt, indtast titel og tekst og gem.
 Brug af en prompt: udvid den og klik ▶ – den indsættes direkte i Gemini, klar til at sende.
-Konfigurer 💎 til at pege mod din Gem.
 Fastgørelse af en prompt: klik 📍 – den flyttes øverst på listen og er altid let at finde.
 Prompt-udløser: Skriv # for straks at se alle dine gemte prompter, eller fortsæt med at skrive for at filtrere i realtid. Tryk mellemrum på et unikt match for at autofuldføre, eller på et eksakt match for at injicere.
 

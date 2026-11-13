@@ -27,7 +27,6 @@ Gemini Folderi postaju tvoj pravi Gemini cockpit: organizuj razgovore u foldere,
 📝 Lična biblioteka promptova: Prebaci na Mod promptova jednim klikom na prekidač u zaglavlju. Sačuvaj najbolje promptove s naslovom i tekstom, pronađi ih odmah pretragom i sortiranjem (najnovije, najstarije, A–Ž).
 ▶ Ubacivanje jednim klikom: Klikni dugme za reprodukciju (▶) na sačuvanom promptu da ga ubaciš direktno u polje za unos Gemini.
 ✏️ Uređivanje na mestu: Klikni da proširiš prompt i uredi tekst direktno. Promene se automatski čuvaju nakon kratke pauze.
-💎 Prilagođena Gem veza: Konfiguriši vezu do omiljenog Gem-a i uključuj/isključuj je jednim klikom.
 ☁️ Sinhronizacija promptova: Aktiviraj sinhronizaciju u oblaku za biblioteku promptova nezavisno od foldera.
 📌 Zakačeni promptovi: Zakači važne promptove na vrh biblioteke.
 ⌨️ Okidač prompta sa sugestijama uživo: Ukucaj # u polje za chat Gemini da odmah vidiš sve sačuvane promptove — filtrirani u realnom vremenu dok kucaš. Koristi ↓/↑ za navigaciju, pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za direktno ubacivanje.
@@ -46,7 +45,6 @@ Mod promptova:
 Klikni 📝 na prekidaču gore desno u proširenju.
 Klikni ➕ Dodaj prompt, unesi naslov i tekst i sačuvaj.
 Za korišćenje prompta: proširi ga i klikni ▶ – ubacuje se direktno u Gemini.
-Konfiguriši 💎 da ukazuje na tvoj Gem.
 Za zakačivanje prompta: klikni 📍 – premješta se na vrh liste.
 Okidač prompta: Upiši # da odmah vidiš sve sačuvane promptove, ili nastavi da kucaš za filtriranje u realnom vremenu. Pritisni razmak pri jedinstvenom poklapanju za automatsko dovršavanje ili pri tačnom poklapanju za ubacivanje.
 

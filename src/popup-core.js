@@ -12,7 +12,7 @@
 
 // Applies the document language, RTL direction, and all the i18n text/title/
 // placeholder assignments that are identical in both extensions' popups.
-// Extension-specific labels (GF's gem button, new-conversation button, etc.)
+// Extension-specific labels (GF's new-conversation button, etc.)
 // stay in each popup.js. Call once at the start of DOMContentLoaded.
 function applyCommonI18n() {
   // Reflect the UI language on the root element for a11y / hyphenation.

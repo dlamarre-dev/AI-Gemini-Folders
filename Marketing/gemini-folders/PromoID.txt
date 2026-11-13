@@ -27,7 +27,6 @@ Folder Gemini menjadi kokpit Gemini Anda yang sesungguhnya: susun percakapan ke 
 📝 Perpustakaan Prompt Pribadi: Beralih ke Mode Prompt dengan satu klik pada tombol sakelar di header. Simpan prompt terbaik Anda dengan judul dan teks lengkap, lalu temukan seketika dengan pencarian dan pengurutan (terbaru, terlama, A-Z).
 ▶ Injeksi Satu Klik: Tidak perlu lagi salin-tempel. Klik tombol putar (▶) pada prompt mana pun untuk menyuntikkannya langsung ke kolom input Gemini. Ekstensi mendeteksi apakah Anda berada di halaman Gemini dan memberi tahu jika tidak.
 ✏️ Pengeditan di Tempat: Klik prompt untuk meluaskannya dan edit teks langsung. Perubahan otomatis tersimpan setelah jeda singkat dan urutan pengurutan diperbarui sesuai.
-💎 Tautan Gem Khusus: Konfigurasikan tautan ke Gem favorit Anda dan aktifkan/nonaktifkan dengan klik. Saat aktif, tombol "Percakapan Baru" membuka Gem Anda, bukan obrolan default.
 ☁️ Sinkronisasi Prompt: Aktifkan sinkronisasi cloud untuk perpustakaan prompt Anda secara independen dari folder Anda.
 📌 Prompt yang Disematkan: Sematkan prompt penting Anda dengan satu klik agar tetap di bagian atas perpustakaan, dipisahkan dari yang lain oleh pemisah visual.
 ⌨️ Pemicu Prompt dengan Saran Langsung: Ketik # di kolom chat Gemini untuk langsung melihat semua prompt tersimpan Anda — difilter secara real time saat Anda mengetik. Gunakan ↓/↑ untuk navigasi, tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan langsung.
@@ -48,7 +47,6 @@ Klik 📝 pada tombol sakelar di kanan atas ekstensi.
 Klik ➕ Tambah Prompt, masukkan judul dan teks Anda, lalu simpan.
 Untuk menggunakan prompt: luaskan dan klik ▶ — langsung disuntikkan ke Gemini, siap dikirim.
 Untuk menyematkan prompt: klik 📍 — naik ke bagian atas daftar dan tetap mudah dijangkau.
-Konfigurasikan 💎 untuk mengarah ke Gem kustom Anda.
 Pemicu Prompt: Ketik # untuk langsung melihat semua prompt tersimpan Anda, atau lanjutkan mengetik untuk memfilter secara real time. Tekan Spasi pada kecocokan unik untuk pelengkapan otomatis, atau pada kecocokan tepat untuk menyisipkan.
 
 🔒 PRIVASI & KEAMANAN

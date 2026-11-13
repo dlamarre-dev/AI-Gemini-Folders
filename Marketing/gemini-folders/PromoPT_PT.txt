@@ -27,7 +27,6 @@ Pastas Gemini torna-se o seu verdadeiro cockpit do Gemini: organize as suas conv
 📝 Biblioteca pessoal de prompts: Mude para o Modo Prompt com um clique no botão de alternância no cabeçalho. Guarde os seus melhores prompts com um título e texto completo, e encontre-os instantaneamente com pesquisa e ordenação (mais recentes, mais antigos, A-Z).
 ▶ Injeção com um clique: Acabou o copiar e colar. Clique no botão de reprodução (▶) em qualquer prompt guardado para o injetar diretamente no campo de texto do Gemini. A extensão deteta se está numa página do Gemini e avisa-o caso contrário.
 ✏️ Edição inline: Clique num prompt para o expandir e editar o texto diretamente. As alterações são guardadas automaticamente após uma breve pausa e a ordenação atualiza-se em conformidade.
-💎 Link Gem personalizado: Configure um link para o seu Gem favorito e ative-o com um clique. Quando ativo, o botão "Nova conversa" abre o seu Gem em vez do chat predefinido.
 ☁️ Sincronização de prompts: Ative a sincronização na nuvem para a sua biblioteca de prompts, de forma independente das suas pastas.
 📌 Prompts fixos: Fixe os seus prompts essenciais com um clique para os manter no topo da biblioteca, separados dos restantes por um divisor visual.
 ⌨️ Ativador de Prompt com Sugestões em Direto: Escreva # no campo de chat do Gemini para ver instantaneamente todos os seus prompts guardados — filtrados em tempo real enquanto escreve. Use ↓/↑ para navegar entre sugestões, prima Espaço numa correspondência única para preenchimento automático, ou numa correspondência exata para injetar diretamente.
@@ -47,7 +46,6 @@ Modo Prompts:
 Clique em 📝 no botão de alternância no canto superior direito da extensão.
 Clique em ➕ Adicionar Prompt, insira um título e o seu texto, e guarde.
 Para usar um prompt: expanda-o e clique em ▶ — é injetado diretamente no Gemini, pronto para enviar.
-Configure 💎 para apontar para o seu Gem personalizado.
 Para fixar um prompt: clique em 📍 — sobe para o topo da lista e fica sempre acessível.
 Ativador de Prompt: Escreva # para ver instantaneamente todos os seus prompts guardados, ou continue a escrever para filtrar em tempo real. Prima Espaço numa correspondência única para preenchimento automático, ou numa correspondência exata para injetar.
 

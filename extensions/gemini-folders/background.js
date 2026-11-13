@@ -157,9 +157,19 @@ async function openWhatsNewTab(reason) {
   } catch (_) { /* best-effort: a failed tab must not break the update */ }
 }
 
+// The custom Gem link button left with Google's retirement of Gems. Its two
+// storage.sync keys have no reader any more; drop them so they stop counting
+// against the shared sync quota. Removing absent keys is a no-op, so running
+// this on every update is harmless.
+function dropRetiredGemKeys(reason) {
+  if (reason !== 'update') return;
+  try { chrome.storage.sync.remove(['gemLink', 'useGemEnabled']); } catch (_) { /* best-effort */ }
+}
+
 // 2. Update the menu on startup and when folders change
 chrome.runtime.onInstalled.addListener(async (details) => {
   updateContextMenu();
+  dropRetiredGemKeys(details && details.reason);
   await recordInstallDate(details && details.reason);
   refreshUninstallUrl();
   openWelcomeTab(details && details.reason);

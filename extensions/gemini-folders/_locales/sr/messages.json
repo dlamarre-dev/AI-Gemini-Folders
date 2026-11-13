@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Obriši"
   },
-  "promptSetGemLink": {
-    "message": "Postavi prilagođenu Gem vezu:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Neispravna veza. Mora počinjati s https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Novi razgovor"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Napiši ovde svoj prompt..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Omogući prilagođeni Gem"
-  },
-  "setGemBtnTooltip": {
-    "message": "Postavi prilagođenu Gem vezu"
   },
   "syncPromptsTooltip": {
     "message": "Sinhronizuj promptove"

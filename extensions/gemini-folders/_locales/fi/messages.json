@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Poista"
   },
-  "promptSetGemLink": {
-    "message": "Aseta mukautettu Gem-linkki:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Virheellinen linkki. Sen on alettava https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Uusi keskustelu"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Kirjoita promptisi tähän..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Ota mukautettu Gem käyttöön"
-  },
-  "setGemBtnTooltip": {
-    "message": "Aseta mukautettu Gem-linkki"
   },
   "syncPromptsTooltip": {
     "message": "Synkronoi promptit"

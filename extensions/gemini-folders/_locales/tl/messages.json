@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Tanggalin"
   },
-  "promptSetGemLink": {
-    "message": "Itakda ang custom Gem link:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Hindi wastong link. Dapat magsimula sa https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Bagong Pag-uusap"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Isulat ang iyong prompt dito..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "I-enable ang custom Gem"
-  },
-  "setGemBtnTooltip": {
-    "message": "Itakda ang custom Gem link"
   },
   "syncPromptsTooltip": {
     "message": "I-sync ang mga prompt"

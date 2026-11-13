@@ -27,7 +27,6 @@ Gemini Mapper blir din sanne Gemini-cockpit: organiser samtaler i mapper, bygg e
 📝 Personlig promptbibliotek: Bytt til Promptmodus med ett klikk på bryteren i overskriften. Lagre dine beste prompts med tittel og tekst, finn dem umiddelbart med søk og sortering (nyeste, eldste, A–Å).
 ▶ Enklikksinnsetting: Klikk på avspillingsknappen (▶) på en lagret prompt for å sette den direkte inn i Geminis inndatafelt. Tillegget varsler deg hvis du ikke er på en Gemini-side.
 ✏️ Redigering på stedet: Klikk for å utvide en prompt og rediger teksten direkte. Endringer lagres automatisk etter en kort pause.
-💎 Tilpasset Gem-lenke: Konfigurer en lenke til din favoritt-Gem og slå den av/på med ett klikk. Når den er aktiv, åpner «Ny samtale»-knappen din Gem i stedet for standard chat.
 ☁️ Promptsynkronisering: Aktiver skysynkronisering for promptbiblioteket uavhengig av mappene.
 📌 Festede prompts: Fest viktige prompts øverst i biblioteket, atskilt fra resten med en visuell skillelinje.
 ⌨️ Promptutløser med direkteforslag: Skriv # i Geminis chatfelt for å umiddelbart se alle dine lagrede prompter — filtrert i sanntid mens du skriver. Bruk ↓/↑ for å navigere, trykk mellomrom på et unikt treff for autofullføring, eller på et eksakt treff for å injisere direkte.
@@ -47,7 +46,6 @@ Promptmodus:
 Klikk på 📝 på bryteren øverst til høyre i tillegget.
 Klikk ➕ Legg til prompt, skriv inn tittel og tekst, og lagre.
 For å bruke en prompt: utvid den og klikk ▶ – den settes direkte inn i Gemini, klar til å sende.
-Konfigurer 💎 for å peke til din Gem.
 For å feste en prompt: klikk 📍 – den flyttes øverst på listen og forblir lett tilgjengelig.
 Promptutløser: Skriv # for å umiddelbart se alle dine lagrede prompter, eller fortsett å skrive for å filtrere i sanntid. Trykk mellomrom på et unikt treff for autofullføring, eller på et eksakt treff for å injisere.
 

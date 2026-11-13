@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Futa"
   },
-  "promptSetGemLink": {
-    "message": "Weka kiungo maalum cha Gem:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Kiungo si sahihi. Lazima kianze na https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Mazungumzo Mapya"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Andika kidokezo chako hapa..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Wezesha Gem maalum"
-  },
-  "setGemBtnTooltip": {
-    "message": "Weka kiungo maalum cha Gem"
   },
   "syncPromptsTooltip": {
     "message": "Sawazisha vidokezo"

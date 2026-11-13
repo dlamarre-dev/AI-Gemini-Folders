@@ -27,7 +27,6 @@ Priečinky Gemini sa stávajú vaším skutočným kokpitom pre Gemini: organizu
 📝 Osobná knižnica výziev: Prepnite do režimu výziev jedným kliknutím na prepínač v hlavičke. Ukladajte najlepšie výzvy s názvom a úplným textom a okamžite ich nájdite vďaka vyhľadávaniu a triedeniu (najnovšie, najstaršie, A-Z).
 ▶ Vloženie jedným kliknutím: Koniec kopírovaním a vkladaním. Kliknite na tlačidlo prehrávania (▶) pri uloženej výzve a vloží sa priamo do vstupného poľa Gemini. Rozšírenie zistí, či ste na stránke Gemini, a ak nie, upozorní vás.
 ✏️ Úprava na mieste: Kliknite na výzvu, rozbaľte ju a priamo upravte text. Zmeny sa automaticky uložia po krátkom okamihu a poradie triedenia sa zodpovedajúco aktualizuje.
-💎 Vlastný odkaz Gem: Nastavte odkaz na váš obľúbený Gem a aktivujte ho kliknutím. Keď je aktívny, tlačidlo „Nová konverzácia" otvorí váš Gem namiesto predvoleného chatu.
 ☁️ Synchronizácia výziev: Aktivujte cloudovú synchronizáciu pre knižnicu výziev nezávisle od priečinkov.
 📌 Pripnuté výzvy: Pripnite svoje najdôležitejšie výzvy jedným kliknutím, aby zostali v hornej časti knižnice — oddelené od ostatných vizuálnym oddeľovačom.
 ⌨️ Spúšťač promptov so živými návrhmi: Napíšte # do chatovacieho poľa Gemini a okamžite uvidíte všetky svoje uložené prompty — filtrované v reálnom čase pri písaní. Pomocou ↓/↑ prechádzajte návrhy, stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre priame vloženie.
@@ -47,7 +46,6 @@ Režim výziev:
 Kliknite na 📝 na prepínači v pravom hornom rohu rozšírenia.
 Kliknite na ➕ Pridať výzvu, zadajte názov a text, uložte.
 Ak chcete použiť výzvu: rozbaľte ju a kliknite na ▶ — vloží sa priamo do Gemini, pripravená na odoslanie.
-Nakonfigurujte 💎, aby ukazoval na váš vlastný Gem.
 Pripnúť výzvu: kliknite na 📍 — presunie sa na začiatok zoznamu a je vždy po ruke.
 Spúšťač promptov: Napíšte # a okamžite uvidíte všetky svoje uložené prompty, alebo pokračujte v písaní pre filtrovanie v reálnom čase. Stlačte medzerník pri jedinečnej zhode pre automatické doplnenie alebo pri presnej zhode pre vloženie.
 

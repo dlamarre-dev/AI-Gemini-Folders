@@ -128,3 +128,29 @@ describe.each(['ai-folders', 'gemini-folders'])('%s: install vs update', (ext) =
     expect(openedPages()).toEqual([]);
   });
 });
+
+// The custom-Gem button left Gemini Folders with Google's retirement of Gems.
+// Its two storage.sync keys would otherwise sit in the shared 100 KB quota
+// forever, so an update drops them — and only an update: a fresh install has
+// none to drop.
+describe('gemini-folders: retired Gem keys', () => {
+  const GEM_KEYS = ['gemLink', 'useGemEnabled'];
+
+  test('an update removes them from storage.sync', async () => {
+    const onInstalled = loadBackground('gemini-folders');
+    chrome.storage.sync.remove = jest.fn();
+
+    await onInstalled({ reason: 'update' });
+
+    expect(chrome.storage.sync.remove).toHaveBeenCalledWith(GEM_KEYS);
+  });
+
+  test('a fresh install leaves storage.sync alone', async () => {
+    const onInstalled = loadBackground('gemini-folders');
+    chrome.storage.sync.remove = jest.fn();
+
+    await onInstalled({ reason: 'install' });
+
+    expect(chrome.storage.sync.remove).not.toHaveBeenCalledWith(GEM_KEYS);
+  });
+});

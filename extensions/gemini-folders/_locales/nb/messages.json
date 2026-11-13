@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Slett"
   },
-  "promptSetGemLink": {
-    "message": "Angi egendefinert Gem-lenke:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Ugyldig lenke. Den må starte med https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Ny samtale"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Skriv prompten din her..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Aktiver egendefinert Gem"
-  },
-  "setGemBtnTooltip": {
-    "message": "Angi egendefinert Gem-lenke"
   },
   "syncPromptsTooltip": {
     "message": "Synkroniser prompts"
