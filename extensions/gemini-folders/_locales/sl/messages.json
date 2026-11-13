@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Izbriši"
   },
-  "promptSetGemLink": {
-    "message": "Nastavi povezavo Gem po meri:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Neveljavna povezava. Začeti se mora z https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Nov pogovor"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Sem napiši svoj poziv..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Omogoči Gem po meri"
-  },
-  "setGemBtnTooltip": {
-    "message": "Nastavi povezavo Gem po meri"
   },
   "syncPromptsTooltip": {
     "message": "Sinhroniziraj pozive"

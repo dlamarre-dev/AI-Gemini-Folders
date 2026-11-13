@@ -27,7 +27,6 @@ Ang Mga Folder ng Gemini ay nagiging iyong tunay na Gemini cockpit: ayusin ang m
 📝 Personal na Prompt Library: Lumipat sa Prompt Mode sa isang click sa toggle sa header. I-save ang iyong mga pinakamahusay na prompt na may pamagat at buong teksto, pagkatapos ay hanapin ang mga ito agad gamit ang paghahanap at pag-sort (pinakabago, pinakamatanda, A-Z).
 ▶ One-Click Injection: Wala nang copy-paste. I-click ang play button (▶) sa anumang naka-save na prompt para i-inject ito nang direkta sa input field ng Gemini. Nde-detect ng extension kung nasa Gemini page ka at inaabisuhan ka kung wala.
 ✏️ Inline na Pag-edit: I-click ang isang prompt para palawakin ito at i-edit ang teksto nang direkta. Awtomatikong nase-save ang mga pagbabago pagkatapos ng maikling pause at ina-update ang sort order.
-💎 Custom Gem Link: Mag-configure ng link sa iyong paboritong Gem at i-toggle ito on/off sa isang click. Kapag aktibo, ang button na "Bagong Pag-uusap" ay nagbubukas ng iyong Gem sa halip na ang default na chat.
 ☁️ Prompt Sync: I-enable ang cloud sync para sa iyong prompt library nang hiwalay sa iyong mga folder.
 📌 Mga Naka-pin na Prompt: I-pin ang iyong mga mahahalagang prompt sa isang click para manatili ang mga ito sa tuktok ng iyong library, hiwalay sa iba sa pamamagitan ng visual na divider.
 ⌨️ Prompt Trigger na may Live Suggestions: I-type ang # sa chat field ng Gemini para agad makita ang lahat ng iyong naka-save na prompt — na-filter sa real time habang nagta-type. Gamitin ang ↓/↑ para mag-navigate, pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject nang direkta.
@@ -48,7 +47,6 @@ I-click ang 📝 sa toggle button sa kanang itaas ng extension.
 I-click ang ➕ Magdagdag ng Prompt, maglagay ng pamagat at teksto, at i-save.
 Para gamitin ang isang prompt: palawakin ito at i-click ang ▶ — direktang ini-inject sa Gemini, handa nang ipadala.
 Para i-pin ang isang prompt: i-click ang 📍 — lilipat ito sa tuktok ng listahan at mananatiling madaling ma-access.
-I-configure ang 💎 para ituro sa iyong custom na Gem.
 Prompt Trigger: I-type ang # para agad makita ang lahat ng iyong naka-save na prompt, o magpatuloy na mag-type para mag-filter sa real time. Pindutin ang Space sa natatanging tugma para mag-autocomplete, o sa eksaktong tugma para mag-inject.
 
 🔒 PRIVACY AT SEGURIDAD

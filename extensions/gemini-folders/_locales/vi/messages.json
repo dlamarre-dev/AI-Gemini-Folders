@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Xóa"
   },
-  "promptSetGemLink": {
-    "message": "Đặt liên kết Gem tùy chỉnh:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Liên kết không hợp lệ. Phải bắt đầu bằng https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Cuộc trò chuyện mới"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Viết prompt của bạn ở đây..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Bật Gem tùy chỉnh"
-  },
-  "setGemBtnTooltip": {
-    "message": "Đặt liên kết Gem tùy chỉnh"
   },
   "syncPromptsTooltip": {
     "message": "Đồng bộ prompt"

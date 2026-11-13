@@ -27,7 +27,6 @@ Gemini-mappen wordt uw echte Gemini-cockpit: organiseer gesprekken in mappen, bo
 📝 Persoonlijke promptbibliotheek: Schakel over naar Promptmodus met één klik op de schakelaar in de koptekst. Sla uw beste prompts op met een titel en volledige tekst en vind ze direct terug met zoeken en sorteren (nieuwste, oudste, A-Z).
 ▶ Invoegen met één klik: Geen kopiëren en plakken meer. Klik op de afspeelknop (▶) van een opgeslagen prompt om deze direct in het invoerveld van Gemini in te voegen. De extensie detecteert of u op een Gemini-pagina bent en waarschuwt u indien niet.
 ✏️ Inline bewerken: Klik op een prompt om deze uit te vouwen en de tekst direct te bewerken. Wijzigingen worden automatisch opgeslagen na een korte pauze en de sorteervolgorde wordt dienovereenkomstig bijgewerkt.
-💎 Aangepaste Gem-link: Stel een link in naar uw favoriete Gem en schakel deze in/uit met één klik. Wanneer actief, opent de knop "Nieuw gesprek" uw Gem in plaats van de standaard chat.
 ☁️ Promptsynchronisatie: Schakel cloudsynchronisatie in voor uw promptbibliotheek, onafhankelijk van uw mappen.
 📌 Vastgezette prompts: Zet essentiële prompts met één klik vast om ze bovenaan uw bibliotheek te houden, gescheiden van de rest door een visuele scheiding.
 ⌨️ Prompttrigger met live suggesties: Typ # in het chatveld van Gemini om onmiddellijk al uw opgeslagen prompts te zien — in realtime gefilterd terwijl u typt. Gebruik ↓/↑ om te navigeren, druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om direct in te voegen.
@@ -48,7 +47,6 @@ Klik op 📝 op de schakelaarknop rechtsboven in de extensie.
 Klik op ➕ Prompt toevoegen, voer een titel en uw tekst in en sla op.
 Een prompt gebruiken: vouw hem uit en klik op ▶ — wordt direct ingevoegd in Gemini, klaar om te verzenden.
 Een prompt vastzetten: klik op 📍 — hij verplaatst naar boven en blijft gemakkelijk bereikbaar.
-Stel 💎 in om naar uw aangepaste Gem te wijzen.
 Prompttrigger: Typ # om onmiddellijk al uw opgeslagen prompts te zien, of typ verder om in realtime te filteren. Druk op spatie bij een unieke match voor automatisch aanvullen, of bij een exacte match om in te voegen.
 
 🔒 PRIVACY EN BEVEILIGING

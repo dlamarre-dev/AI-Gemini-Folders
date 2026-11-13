@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "削除"
   },
-  "promptSetGemLink": {
-    "message": "カスタム Gem リンクを設定："
-  },
-  "promptInvalidGemLink": {
-    "message": "無効なリンクです。https://gemini.google.com/ で始まる必要があります。"
-  },
   "newConversationBtn": {
     "message": "新しい会話"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "プロンプトをここに入力..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "カスタム Gem を有効にする"
-  },
-  "setGemBtnTooltip": {
-    "message": "カスタム Gem リンクを設定"
   },
   "syncPromptsTooltip": {
     "message": "プロンプトを同期"

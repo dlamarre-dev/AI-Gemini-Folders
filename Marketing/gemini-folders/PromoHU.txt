@@ -27,7 +27,6 @@ A Gemini-mappák valódi Gemini-kokpitjévé válik: rendszerezze a beszélgeté
 📝 Személyes promptkönyvtár: Váltson Promptüzemmódba egyetlen kattintással a fejlécben lévő kapcsolón. Mentse el legjobb promptjait cím és teljes szöveg megadásával, majd keresse meg őket azonnal kereséssel és rendezéssel (legújabb, legrégebbi, A–Z).
 ▶ Egyetlen kattintásos beillesztés: Nincs több másolás-beillesztés. Kattintson a lejátszás gombra (▶) bármely mentett promptnál, hogy közvetlenül a Gemini beviteli mezőjébe illessze be. A bővítmény észleli, hogy Gemini-oldalon van-e, és értesíti, ha nem.
 ✏️ Helyszíni szerkesztés: Kattintson egy promptra a kibontáshoz és a szöveg közvetlen szerkesztéséhez. A módosítások rövid szünet után automatikusan mentődnek, a rendezési sorrend frissül.
-💎 Egyéni Gem-hivatkozás: Állítson be hivatkozást kedvenc Gemjéhez, és kapcsolja be/ki egyetlen kattintással. Aktiválva az „Új beszélgetés" gomb az alapértelmezett csevegés helyett a Gemjét nyitja meg.
 ☁️ Prompt-szinkronizálás: Engedélyezze a felhőszinkronizálást a promptkönyvtárhoz a mappáktól függetlenül.
 📌 Rögzített promptok: Rögzítse lényeges promptjait egy kattintással, hogy a könyvtár tetején maradjanak, vizuális elválasztóval elkülönítve a többitől.
 ⌨️ Prompt-aktiváló élő javaslatokkal: Gépelje be a # jelet a Gemini csevegőmezőjébe, hogy azonnal lássa az összes mentett promptját — valós időben szűrve gépelés közben. Használja a ↓/↑ billentyűket a navigáláshoz, majd nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a közvetlen beillesztéshez.
@@ -48,7 +47,6 @@ Kattintson a 📝 gombra a bővítmény jobb felső sarkában lévő kapcsolón.
 Kattintson a ➕ Prompt hozzáadása gombra, adjon meg egy nevet és szöveget, majd mentse el.
 Prompt használatához: bontsa ki, és kattintson a ▶ gombra — közvetlenül a Geminibe illeszti be, küldésre készen.
 Prompt rögzítéséhez: kattintson a 📍 gombra — a lista tetejére kerül, és könnyen elérhető marad.
-Konfigurálja a 💎 ikont, hogy az egyéni Gemjére mutasson.
 Prompt-aktiváló: Gépelje be a # jelet az összes mentett promptja azonnali megjelenítéséhez, vagy folytassa a gépelést a valós idejű szűréshez. Nyomja meg a szóközt egyedi egyezésnél az automatikus kiegészítéshez, vagy pontos egyezésnél a beillesztéshez.
 
 🔒 ADATVÉDELEM ÉS BIZTONSÁG

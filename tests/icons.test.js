@@ -24,13 +24,6 @@ describe('icon()', () => {
     expect(svg.querySelector('path').getAttribute('d')).toBe(ICON_PATHS.edit);
   });
 
-  test('the gem is an outline, empty inside', () => {
-    const svg = icon('gem');
-    expect(svg.getAttribute('fill')).toBe('none');
-    expect(svg.getAttribute('stroke')).toBe('currentColor');
-    expect(svg.querySelector('path').getAttribute('d')).toBe(ICON_PATHS.gem.stroke);
-  });
-
   test('an unknown name throws instead of rendering an empty button', () => {
     expect(() => icon('nope')).toThrow('Unknown icon');
   });

@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Dzēst"
   },
-  "promptSetGemLink": {
-    "message": "Iestatīt pielāgotu Gem saiti:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Nederīga saite. Tai jāsākas ar https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Jauna saruna"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Raksti savu uzvedni šeit..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Iespējot pielāgotu Gem"
-  },
-  "setGemBtnTooltip": {
-    "message": "Iestatīt pielāgotu Gem saiti"
   },
   "syncPromptsTooltip": {
     "message": "Sinhronizēt uzvednes"

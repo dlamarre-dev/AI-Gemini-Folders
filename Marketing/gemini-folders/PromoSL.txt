@@ -27,7 +27,6 @@ Mape Gemini postanejo tvoj pravi Gemini cockpit: organiziraj pogovore v mape, us
 📝 Osebna knjižnica pozivov: Preklopi na Način pozivov z enim klikom na stikalo v glavi. Shrani najboljše pozive z naslovom in besedilom, takoj jih najdi z iskanjem in razvrščanjem (najnovejše, najstarejše, A–Ž).
 ▶ Vstavljanje z enim klikom: Klikni gumb za predvajanje (▶) na katerem koli shranjenem pozivu, da ga vstaviš neposredno v vnosno polje Gemini.
 ✏️ Urejanje na mestu: Klikni za razširitev poziva in uredi besedilo neposredno. Spremembe se samodejno shranijo po kratkem premoru.
-💎 Prilagojena povezava Gem: Nastavi povezavo do priljubljenega Gema in jo vklopi/izklopi z enim klikom.
 ☁️ Sinhronizacija pozivov: Omogoči sinhronizacijo v oblaku za knjižnico pozivov neodvisno od map.
 📌 Pripeti pozivi: Pripni pomembne pozive na vrh knjižnice.
 ⌨️ Sprožilec pozivov z živimi predlogi: Vnesite # v polje za klepet Gemini, da takoj vidite vse shranjene pozive — filtrirane v realnem času med tipkanjem. Uporabite ↓/↑ za krmarjenje, pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za neposredno vstavljanje.
@@ -46,7 +45,6 @@ Način pozivov:
 Klikni 📝 na stikalu zgoraj desno v razširitvi.
 Klikni ➕ Dodaj poziv, vnesi naslov in besedilo ter shrani.
 Za uporabo poziva: razširi ga in klikni ▶ – vstavi se neposredno v Gemini.
-Nastavi 💎 za usmerjanje na tvoj Gem.
 Za pripenjanje poziva: klikni 📍 – premakne se na vrh seznama.
 Sprožilec pozivov: Vnesite #, da takoj vidite vse shranjene pozive, ali nadaljujte tipkanje za filtriranje v realnem času. Pritisnite preslednico na edinstvenem ujemanju za samodejno dopolnitev ali na natančnem ujemanju za vstavljanje.
 

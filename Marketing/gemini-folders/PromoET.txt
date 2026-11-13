@@ -27,7 +27,6 @@ Gemini Kaustadest saab sinu tõeline Gemini cockpit: korralda vestlused kaustade
 📝 Isiklik promptide kogu: Lülitu Prompti režiimile, klõpsates päise lülitit. Salvesta oma parimad promptid pealkirja ja tekstiga, leia need koheselt otsingu ja sortimisega (uusimad, vanimad, A–Z).
 ▶ Lisa ühe klikiga: Klõpsa salvestatud prompti esitamisnuppu (▶), et lisada see otse Gemini sisestusväljale.
 ✏️ Otsene redigeerimine: Klõpsa prompti laiendamiseks ja redigeeri teksti otse. Muudatused salvestatakse automaatselt lühikese pausi järel.
-💎 Kohandatud Gem-link: Seadista link oma lemmikhelmele ja lülita see ühe klikiga sisse/välja.
 ☁️ Promptide sünkroonimine: Luba pilvsünkroonimine promptide kogule sõltumatult kaustadest.
 📌 Kinnitatud promptid: Kinnita olulised promptid kogu ülaossa.
 ⌨️ Viipete käivitaja reaalajas soovitustega: Sisestage # Gemini vestlusväljale, et näha kohe kõiki oma salvestatud viipeid — reaalajas filtreeritud kirjutamise ajal. Kasutage ↓/↑ navigeerimiseks, vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral otseseks sisestamiseks.
@@ -46,7 +45,6 @@ Prompti režiim:
 Klõpsa 📝 laienduse paremas ülanurgas asuval lülitil.
 Klõpsa ➕ Lisa prompt, sisesta pealkiri ja tekst ning salvesta.
 Prompti kasutamiseks: laienda see ja klõpsa ▶ – see lisatakse otse Geminisse.
-Seadista 💎 osutama oma Helmele.
 Prompti kinnitamiseks: klõpsa 📍 – see liigub loendi ülaossa.
 Viipete käivitaja: Sisestage #, et näha kohe kõiki oma salvestatud viipeid, või jätkake kirjutamist reaalajas filtreerimiseks. Vajutage tühikut unikaalse vaste korral automaatseks täitmiseks või täpse vaste korral sisestamiseks.
 

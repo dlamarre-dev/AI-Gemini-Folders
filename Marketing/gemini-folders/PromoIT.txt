@@ -27,7 +27,6 @@ Cartelle Gemini diventa il tuo vero cockpit per Gemini: organizza le conversazio
 📝 Libreria di prompt personale: Passa alla modalità Prompt con un solo clic sull'interruttore nell'intestazione. Salva i tuoi migliori prompt con un titolo e il testo completo, poi trovali subito con ricerca e ordinamento (più recenti, più vecchi, A-Z).
 ▶ Iniezione con un clic: Niente più copia e incolla. Clicca il pulsante di riproduzione (▶) su qualsiasi prompt salvato per iniettarlo direttamente nel campo di input di Gemini. L'estensione rileva se sei su una pagina Gemini e ti avvisa se non lo sei.
 ✏️ Modifica in linea: Clicca un prompt per espanderlo e modifica il testo direttamente. Le modifiche si salvano automaticamente dopo una breve pausa e l'ordinamento si aggiorna di conseguenza.
-💎 Link Gem personalizzato: Configura un link al tuo Gem preferito e attivalo con un clic. Quando è attivo, il pulsante "Nuova conversazione" apre il tuo Gem invece della chat predefinita.
 ☁️ Sincronizzazione prompt: Attiva la sincronizzazione cloud per la tua libreria di prompt, indipendentemente dalle cartelle.
 📌 Prompt fissati: Fissa i tuoi prompt essenziali con un clic per tenerli in cima alla libreria, separati dagli altri da un divisore visivo.
 ⌨️ Attivatore di prompt con suggerimenti in tempo reale: Digita # nel campo chat di Gemini per vedere istantaneamente tutti i tuoi prompt salvati — filtrati in tempo reale mentre scrivi. Usa ↓/↑ per navigare tra i suggerimenti, premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare direttamente.
@@ -47,7 +46,6 @@ Modalità Prompt:
 Clicca 📝 sull'interruttore in alto a destra nell'estensione.
 Clicca ➕ Aggiungi Prompt, inserisci un titolo e il tuo testo, salva.
 Per usare un prompt: espandilo e clicca ▶ — viene iniettato direttamente in Gemini, pronto per l'invio.
-Configura 💎 per puntare al tuo Gem personalizzato.
 Per fissare un prompt: clicca su 📍 — si sposta in cima alla lista e resta sempre a portata di mano.
 Attivatore di prompt: Digita # per vedere istantaneamente tutti i tuoi prompt salvati, o continua a digitare per filtrare in tempo reale. Premi Spazio su una corrispondenza unica per il completamento automatico, o su una corrispondenza esatta per iniettare.
 

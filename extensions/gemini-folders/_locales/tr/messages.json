@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Sil"
   },
-  "promptSetGemLink": {
-    "message": "Özel Gem bağlantısı belirle:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Geçersiz bağlantı. https://gemini.google.com/ ile başlamalıdır"
-  },
   "newConversationBtn": {
     "message": "Yeni Konuşma"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "İsteminizi buraya yazın..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Özel Gem'i etkinleştir"
-  },
-  "setGemBtnTooltip": {
-    "message": "Özel Gem bağlantısı belirle"
   },
   "syncPromptsTooltip": {
     "message": "İstemleri senkronize et"

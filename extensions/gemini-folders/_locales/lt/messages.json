@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Ištrinti"
   },
-  "promptSetGemLink": {
-    "message": "Nustatyti tinkintą Gem nuorodą:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Neteisinga nuoroda. Ji turi prasidėti https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Naujas pokalbis"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Rašyk savo promptą čia..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Įgalinti tinkintą Gem"
-  },
-  "setGemBtnTooltip": {
-    "message": "Nustatyti tinkintą Gem nuorodą"
   },
   "syncPromptsTooltip": {
     "message": "Sinchronizuoti promptus"

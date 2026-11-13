@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "حذف"
   },
-  "promptSetGemLink": {
-    "message": "تعيين رابط Gem مخصص:"
-  },
-  "promptInvalidGemLink": {
-    "message": "رابط غير صالح. يجب أن يبدأ بـ https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "محادثة جديدة"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "اكتب مطالبتك هنا..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "تفعيل Gem المخصص"
-  },
-  "setGemBtnTooltip": {
-    "message": "تعيين رابط Gem مخصص"
   },
   "syncPromptsTooltip": {
     "message": "مزامنة المطالبات"

@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Smazat"
   },
-  "promptSetGemLink": {
-    "message": "Nastavit vlastní odkaz Gem:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Neplatný odkaz. Musí začínat https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Nová konverzace"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Napište svůj prompt zde..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Povolit vlastní Gem"
-  },
-  "setGemBtnTooltip": {
-    "message": "Nastavit vlastní odkaz Gem"
   },
   "syncPromptsTooltip": {
     "message": "Synchronizovat prompty"

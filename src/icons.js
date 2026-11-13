@@ -65,9 +65,6 @@ const ICON_PATHS = {
   cloud: 'M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z',
   star: 'M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z',
   chat: 'M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',
-  // The one outline in the set: a bare diamond, empty inside. `{ stroke }`
-  // draws the path as a line instead of filling it.
-  gem: { stroke: 'M6.5 4h11L22 9.5 12 20.5 2 9.5z' },
 };
 
 // Builds one glyph. `data-icon` names it, which is what the tests (and anything
@@ -80,18 +77,12 @@ function icon(name, size) {
   svg.setAttribute('viewBox', '0 0 24 24');
   svg.setAttribute('width', px);
   svg.setAttribute('height', px);
-  const outline = typeof d === 'object';
-  svg.setAttribute('fill', outline ? 'none' : 'currentColor');
-  if (outline) {
-    svg.setAttribute('stroke', 'currentColor');
-    svg.setAttribute('stroke-width', '2');
-    svg.setAttribute('stroke-linejoin', 'round');
-  }
+  svg.setAttribute('fill', 'currentColor');
   svg.setAttribute('aria-hidden', 'true');
   svg.setAttribute('class', 'icon');
   svg.setAttribute('data-icon', name);
   const path = document.createElementNS(SVG_NS, 'path');
-  path.setAttribute('d', outline ? d.stroke : d);
+  path.setAttribute('d', d);
   svg.appendChild(path);
   return svg;
 }

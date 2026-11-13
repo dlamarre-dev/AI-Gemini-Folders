@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Διαγραφή"
   },
-  "promptSetGemLink": {
-    "message": "Ορισμός προσαρμοσμένου συνδέσμου Gem:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Μη έγκυρος σύνδεσμος. Πρέπει να ξεκινά με https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Νέα συνομιλία"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Γράψτε το prompt σας εδώ..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Ενεργοποίηση προσαρμοσμένου Gem"
-  },
-  "setGemBtnTooltip": {
-    "message": "Ορισμός προσαρμοσμένου συνδέσμου Gem"
   },
   "syncPromptsTooltip": {
     "message": "Συγχρονισμός prompt"

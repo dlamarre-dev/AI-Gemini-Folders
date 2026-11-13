@@ -27,7 +27,6 @@ Folder Gemini menjadi cockpit Gemini sebenar anda: susun perbualan dalam folder,
 📝 Perpustakaan prompt peribadi: Tukar ke Mod Prompt dengan satu klik pada suis di pengepala. Simpan prompt terbaik anda dengan tajuk dan teks, carinya serta-merta dengan carian dan pengisihan (terbaharu, terlama, A–Z).
 ▶ Penyisipan satu klik: Klik butang main (▶) pada mana-mana prompt tersimpan untuk menyisipkannya terus ke medan input Gemini.
 ✏️ Penyuntingan terus: Klik untuk mengembangkan prompt dan sunting teks terus. Perubahan disimpan secara automatik selepas jeda singkat.
-💎 Pautan Gem tersuai: Konfigurasi pautan ke Gem kegemaran anda dan hidupkan/matikan dengan satu klik.
 ☁️ Penyegerakan prompt: Dayakan penyegerakan awan untuk perpustakaan prompt secara bebas daripada folder.
 📌 Prompt tersemat: Semat prompt penting di bahagian atas perpustakaan.
 ⌨️ Pencetus Prompt dengan Cadangan Langsung: Taip # dalam medan sembang Gemini untuk segera melihat semua prompt tersimpan anda — ditapis secara masa nyata semasa anda menaip. Gunakan ↓/↑ untuk navigasi, tekan Ruang pada padanan unik untuk melengkapkan secara automatik, atau pada padanan tepat untuk menyuntik terus.
@@ -46,7 +45,6 @@ Mod Prompt:
 Klik 📝 pada suis di bahagian kanan atas sambungan.
 Klik ➕ Tambah prompt, masukkan tajuk dan teks, dan simpan.
 Untuk menggunakan prompt: kembangkan dan klik ▶ – ia disisipkan terus ke Gemini.
-Konfigurasi 💎 untuk menghala ke Gem anda.
 Untuk menyemat prompt: klik 📍 – ia berpindah ke bahagian atas senarai.
 Pencetus Prompt: Taip # untuk segera melihat semua prompt tersimpan anda, atau terus menaip untuk menapis secara masa nyata. Tekan Ruang pada padanan unik untuk melengkapkan secara automatik, atau pada padanan tepat untuk menyuntik.
 

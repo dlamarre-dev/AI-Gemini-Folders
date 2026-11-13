@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "মুছুন"
   },
-  "promptSetGemLink": {
-    "message": "কাস্টম Gem লিঙ্ক সেট করুন:"
-  },
-  "promptInvalidGemLink": {
-    "message": "অবৈধ লিঙ্ক। https://gemini.google.com/ দিয়ে শুরু হতে হবে"
-  },
   "newConversationBtn": {
     "message": "নতুন কথোপকথন"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "এখানে আপনার প্রম্পট লিখুন..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "কাস্টম Gem সক্রিয় করুন"
-  },
-  "setGemBtnTooltip": {
-    "message": "কাস্টম Gem লিঙ্ক সেট করুন"
   },
   "syncPromptsTooltip": {
     "message": "প্রম্পট সিঙ্ক করুন"

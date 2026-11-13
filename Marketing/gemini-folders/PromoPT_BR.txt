@@ -27,7 +27,6 @@ Pastas Gemini se torna seu verdadeiro cockpit do Gemini: organize suas conversas
 📝 Biblioteca pessoal de prompts: Mude para o Modo Prompt com um clique no botão de alternância no cabeçalho. Salve seus melhores prompts com um título e texto completo, e encontre-os instantaneamente com busca e ordenação (mais recentes, mais antigos, A-Z).
 ▶ Injeção com um clique: Acabou o copiar e colar. Clique no botão de reprodução (▶) em qualquer prompt salvo para injetá-lo diretamente no campo de texto do Gemini. A extensão detecta se você está em uma página do Gemini e avisa caso contrário.
 ✏️ Edição inline: Clique em um prompt para expandi-lo e editar o texto diretamente. As alterações são salvas automaticamente após uma breve pausa e a ordenação é atualizada em seguida.
-💎 Link Gem personalizado: Configure um link para o seu Gem favorito e ative-o com um clique. Quando ativo, o botão "Nova conversa" abre seu Gem em vez do chat padrão.
 ☁️ Sincronização de prompts: Ative a sincronização na nuvem para sua biblioteca de prompts, de forma independente das suas pastas.
 📌 Prompts fixados: Fixe seus prompts essenciais com um clique para mantê-los no topo da biblioteca, separados dos demais por um divisor visual.
 ⌨️ Gatilho de Prompt com Sugestões ao Vivo: Digite # no campo de chat do Gemini para ver instantaneamente todos os seus prompts salvos — filtrados em tempo real enquanto você digita. Use ↓/↑ para navegar entre sugestões, pressione Espaço em uma correspondência única para autocompletar, ou em uma correspondência exata para injetar diretamente.
@@ -47,7 +46,6 @@ Modo Prompts:
 Clique em 📝 no botão de alternância no canto superior direito da extensão.
 Clique em ➕ Adicionar Prompt, insira um título e seu texto, e salve.
 Para usar um prompt: expanda-o e clique em ▶ — ele é injetado diretamente no Gemini, pronto para enviar.
-Configure 💎 para apontar para o seu Gem personalizado.
 Para fixar um prompt: clique em 📍 — ele sobe para o topo da lista e fica sempre ao alcance.
 Gatilho de Prompt: Digite # para ver instantaneamente todos os seus prompts salvos, ou continue digitando para filtrar em tempo real. Pressione Espaço em uma correspondência única para autocompletar, ou em uma correspondência exata para injetar.
 

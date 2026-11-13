@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "מחק"
   },
-  "promptSetGemLink": {
-    "message": "הגדר קישור Gem מותאם אישית:"
-  },
-  "promptInvalidGemLink": {
-    "message": "קישור לא תקין. הוא חייב להתחיל ב-https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "שיחה חדשה"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "כתוב את הפרומפט שלך כאן..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "הפעל Gem מותאם אישית"
-  },
-  "setGemBtnTooltip": {
-    "message": "הגדר קישור Gem מותאם אישית"
   },
   "syncPromptsTooltip": {
     "message": "סנכרן פרומפטים"

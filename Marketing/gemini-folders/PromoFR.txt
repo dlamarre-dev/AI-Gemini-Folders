@@ -27,7 +27,6 @@ Dossiers Gemini devient votre véritable cockpit Gemini : organisez vos conversa
 📝 Bibliothèque de prompts personnelle : Passez en mode Prompt d'un simple clic sur le bouton de bascule dans l'en-tête. Sauvegardez vos meilleurs prompts avec un titre et un texte complet, retrouvez-les instantanément grâce à la recherche et au tri (plus récents, plus anciens, A-Z).
 ▶ Injection en un clic : Plus besoin de copier-coller. Cliquez sur le bouton lecture (▶) de n'importe quel prompt pour l'injecter directement dans le champ de saisie de Gemini. L'extension détecte si vous êtes bien sur une page Gemini et vous avertit sinon.
 ✏️ Édition en place : Cliquez sur un prompt pour le déplier et modifiez son texte directement. Les changements se sauvegardent automatiquement et le tri se met à jour en conséquence.
-💎 Gem personnalisé : Configurez un lien vers votre Gem favori et activez-le d'un clic. Quand il est actif, le bouton "Nouvelle conversation" ouvre votre Gem plutôt que le chat par défaut.
 📌 Prompts épinglés : Épinglez vos prompts essentiels d'un clic pour les garder en tête de liste, séparés des autres par un délimiteur visuel. Le tri s'applique indépendamment dans chaque groupe.
 ☁️ Synchronisation des prompts : Activez la synchro cloud pour votre bibliothèque de prompts, indépendamment de vos dossiers.
 ⌨️ Déclenchement de prompt avec suggestions en direct : Tapez # dans le champ de saisie de Gemini pour voir instantanément tous vos prompts sauvegardés — filtrés en temps réel au fil de la frappe. Utilisez ↓/↑ pour naviguer entre les suggestions, appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter directement.
@@ -48,7 +47,6 @@ Cliquez sur 📝 dans le bouton de bascule en haut à droite de l'extension.
 Cliquez sur ➕ Ajouter un prompt, entrez un titre et votre texte, sauvegardez.
 Pour utiliser un prompt : dépliez-le et cliquez ▶ — il s'injecte directement dans Gemini, prêt à envoyer.
 Pour épingler un prompt : cliquez sur 📍 — il remonte en tête de liste et reste accessible d'un regard.
-Configurez 💎 pour pointer vers votre Gem personnalisé.
 Déclenchement de prompt : tapez # pour voir instantanément tous vos prompts sauvegardés, ou continuez à taper pour filtrer en temps réel. Appuyez sur Espace sur une correspondance unique pour l'autocomplétion, ou sur une correspondance exacte pour l'injecter.
 
 🔒 CONFIDENTIALITÉ & SÉCURITÉ

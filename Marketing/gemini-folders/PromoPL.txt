@@ -27,7 +27,6 @@ Foldery Gemini stają się Twoim prawdziwym centrum sterowania Gemini: organizuj
 📝 Osobista biblioteka promptów: Przełącz się na tryb promptów jednym kliknięciem przełącznika w nagłówku. Zapisuj najlepsze prompty z tytułem i pełnym tekstem, a potem znajdź je błyskawicznie dzięki wyszukiwaniu i sortowaniu (najnowsze, najstarsze, A-Z).
 ▶ Wstrzyknięcie jednym kliknięciem: Koniec z kopiowaniem i wklejaniem. Kliknij przycisk odtwarzania (▶) przy dowolnym zapisanym prompcie, aby wstrzyknąć go bezpośrednio w pole tekstowe Gemini. Rozszerzenie wykrywa, czy jesteś na stronie Gemini, i powiadamia Cię, jeśli nie.
 ✏️ Edycja w miejscu: Kliknij prompt, aby go rozwinąć i edytować tekst bezpośrednio. Zmiany zapisują się automatycznie po krótkiej chwili, a kolejność sortowania aktualizuje się odpowiednio.
-💎 Niestandardowy link Gem: Skonfiguruj link do swojego ulubionego Gem i aktywuj go kliknięciem. Gdy jest aktywny, przycisk „Nowa rozmowa" otwiera Twój Gem zamiast domyślnego czatu.
 ☁️ Synchronizacja promptów: Włącz synchronizację w chmurze dla swojej biblioteki promptów, niezależnie od folderów.
 📌 Przypięte podpowiedzi: Przypnij swoje najważniejsze podpowiedzi jednym kliknięciem, aby zawsze były na górze biblioteki — oddzielone od pozostałych wizualnym separatorem.
 ⌨️ Wyzwalacz promptów z sugestiami na żywo: Wpisz # w polu czatu Gemini, aby natychmiast zobaczyć wszystkie swoje zapisane prompty — filtrowane w czasie rzeczywistym podczas pisania. Użyj ↓/↑ do nawigacji między sugestiami, naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby bezpośrednio wstawić.
@@ -47,7 +46,6 @@ Tryb Promptów:
 Kliknij 📝 na przełączniku w prawym górnym rogu rozszerzenia.
 Kliknij ➕ Dodaj Prompt, wpisz tytuł i tekst, zapisz.
 Aby użyć promptu: rozwiń go i kliknij ▶ — zostaje wstrzyknięty bezpośrednio do Gemini, gotowy do wysłania.
-Skonfiguruj 💎, aby wskazywał Twój niestandardowy Gem.
 Aby przypiąć podpowiedź: kliknij 📍 — przenosi się na górę listy i jest zawsze pod ręką.
 Wyzwalacz promptu: Wpisz #, aby natychmiast zobaczyć wszystkie swoje zapisane prompty, lub pisz dalej, aby filtrować w czasie rzeczywistym. Naciśnij spację przy unikalnym dopasowaniu, aby autouzupełnić, lub przy dokładnym dopasowaniu, aby wstawić.
 

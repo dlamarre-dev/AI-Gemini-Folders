@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Изтрий"
   },
-  "promptSetGemLink": {
-    "message": "Задайте персонализирана връзка към Gem:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Невалидна връзка. Трябва да започва с https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Нов разговор"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Напишете промпта си тук..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Активирайте персонализиран Gem"
-  },
-  "setGemBtnTooltip": {
-    "message": "Задайте персонализирана връзка към Gem"
   },
   "syncPromptsTooltip": {
     "message": "Синхронизирайте промпти"

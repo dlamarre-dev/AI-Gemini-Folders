@@ -27,7 +27,6 @@ Gemini Mapes kļūst par tavu īsto Gemini cockpit: organizē sarunas mapēs, ve
 📝 Personīgā uzvedņu bibliotēka: Pārslēdzies uz Uzvedņu režīmu ar vienu klikšķi uz galvenes slēdža. Saglabā labākās uzvednes ar virsrakstu un tekstu, atrod tās uzreiz ar meklēšanu un kārtošanu (jaunākās, vecākās, A–Z).
 ▶ Ievietošana ar vienu klikšķi: Noklikšķini uz atskaņošanas pogas (▶) uz saglabātas uzvednes, lai to ievietotu tieši Gemini ievades laukā.
 ✏️ Tiešā rediģēšana: Noklikšķini, lai izvērstu uzvedni, un rediģē tekstu tieši. Izmaiņas tiek saglabātas automātiski pēc īsas pauzes.
-💎 Pielāgota Gem saite: Konfigurē saiti uz iecienīto Gem un ieslēdz/izslēdz to ar vienu klikšķi.
 ☁️ Uzvedņu sinhronizācija: Iespējo mākoņa sinhronizāciju uzvedņu bibliotēkai neatkarīgi no mapēm.
 📌 Piespraustas uzvednes: Piespreudz svarīgas uzvednes bibliotēkas augšdaļā.
 ⌨️ Uzvednes aktivizētājs ar tiešraides ieteikumiem: Ievadiet # Gemini tērzēšanas laukā, lai uzreiz redzētu visas saglabātās uzvednes — filtrētas reāllaikā, rakstot. Izmantojiet ↓/↑ navigācijai, nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā tiešai ievietošanai.
@@ -46,7 +45,6 @@ Uzvedņu režīms:
 Noklikšķini uz 📝 uz slēdža paplašinājuma augšējā labajā stūrī.
 Noklikšķini ➕ Pievienot uzvedni, ievadi virsrakstu un tekstu un saglabā.
 Uzvednes izmantošanai: izvērst to un noklikšķini ▶ – tā tiek ievietota tieši Gemini.
-Konfigurē 💎, lai norādītu uz savu Gem.
 Uzvednes piespraudīšanai: noklikšķini 📍 – tā tiek pārvietota saraksta augšgalā.
 Uzvednes aktivizētājs: Ievadiet #, lai uzreiz redzētu visas saglabātās uzvednes, vai turpiniet rakstīt filtrēšanai reāllaikā. Nospiediet atstarpi unikālas atbilstības gadījumā automātiskai pabeigšanai vai precīzas atbilstības gadījumā ievietošanai.
 

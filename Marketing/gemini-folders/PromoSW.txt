@@ -27,7 +27,6 @@ Folda za Gemini inakuwa cockpit yako ya kweli ya Gemini: panga mazungumzo katika
 📝 Maktaba ya Kidokezo ya Kibinafsi: Badilika kwenda Hali ya Kidokezo kwa kubofya mara moja kwenye kitufe cha kubadilisha kilichoko kwenye kichwa. Hifadhi vidokezo vyako bora pamoja na kichwa na maandishi kamili, kisha vipate mara moja kwa kutumia utafutaji na upangaji (mpya zaidi, kongwe zaidi, A-Z).
 ▶ Kuingiza kwa Kubofya Mara Moja: Hakuna tena kunakili na kubandika. Bofya kitufe cha kucheza (▶) kwenye kidokezo chochote kilichohifadhiwa ili kukiingiza moja kwa moja kwenye uwanja wa kuandika wa Gemini. Kiendelezi hugundua kama uko kwenye ukurasa wa Gemini na kukuarifu ikiwa la.
 ✏️ Kuhariri Mahali Pake: Bofya kidokezo ili kukipanua na kuhariri maandishi moja kwa moja. Mabadiliko huhifadhiwa kiotomatiki baada ya muda mfupi na mpangilio wa kusortia husasishwa ipasavyo.
-💎 Kiungo Maalum cha Gem: Sanidi kiungo kwenda Gem unayoipenda na kiwashe/kizime kwa kubofya. Kinapowashwa, kitufe cha "Mazungumzo Mapya" kinafungua Gem yako badala ya gumzo la kawaida.
 ☁️ Usawazishaji wa Kidokezo: Washa usawazishaji wa wingu kwa maktaba yako ya vidokezo bila kujali folda zako.
 📌 Vidokezo Vilivyobandikwa: Bandika vidokezo muhimu kwa kubofya mara moja ili viendelee juu ya maktaba yako, vikitengwa na vingine kwa kizigeu cha kuona.
 ⌨️ Kichocheo cha Kidokezo na Mapendekezo ya Moja kwa Moja: Andika # katika uwanja wa gumzo wa Gemini ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa — vikifiliwa kwa wakati halisi unapoendelea kuandika. Tumia ↓/↑ kuvinjari, kisha bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza moja kwa moja.
@@ -48,7 +47,6 @@ Bofya 📝 kwenye kitufe cha kubadilisha upande wa juu kulia wa kiendelezi.
 Bofya ➕ Ongeza Kidokezo, ingiza kichwa na maandishi yako, na hifadhi.
 Kutumia kidokezo: kipanua na ubofye ▶ — kinaingizwa moja kwa moja kwenye Gemini, tayari kutumwa.
 Kubandika kidokezo: bofya 📍 — kinahamia juu ya orodha na kinabaki rahisi kufikiwa.
-Sanidi 💎 ili kuelekeza kwenye Gem yako maalum.
 Kichocheo cha Kidokezo: Andika # ili kuona mara moja vidokezo vyako vyote vilivyohifadhiwa, au endelea kuandika ili kufilia kwa wakati halisi. Bonyeza Nafasi kwenye mechi ya kipekee kukamilisha kiotomatiki, au kwenye mechi sahihi kuingiza.
 
 🔒 FARAGHA NA USALAMA

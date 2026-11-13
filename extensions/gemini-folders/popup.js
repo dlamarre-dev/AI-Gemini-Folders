@@ -3,20 +3,11 @@
 // src/prompts.js (loaded before this file); popup.js wires the rest.
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const DELAY = {
-    FOCUS:    100,
-    SYNC:     500,
-    AUTOSAVE: 600,
-    ICON:    1500,
-    STATUS:  2000,
-    PROMO:   4000,
-  };
   // Shared language/RTL/i18n wiring (src/popup-core.js).
   applyCommonI18n();
 
   // GF-specific labels not covered by the shared wiring.
   document.getElementById('newGeminiConvBtn').title = chrome.i18n.getMessage("newConversationBtn") || "New Conversation";
-  document.getElementById('gemBtn').title = chrome.i18n.getMessage("setGemBtnTooltip") || "Set custom Gem link";
   document.getElementById('syncPromptsLabel').title = chrome.i18n.getMessage("syncPromptsTooltip") || "Sync prompts";
 
   const chatTitleInput = document.getElementById('chatTitle');
@@ -25,79 +16,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   initPopupCommon({ exportFilename: 'gemini_folders_backup.json' });
 
   const newGeminiConvBtn = document.getElementById('newGeminiConvBtn');
-  const gemBtn = document.getElementById('gemBtn');
-
-  let useGemEnabled = false;
-  let currentGemLink = '';
-  let gemPressTimer = null;
-
-  function updateGemBtn() {
-      gemBtn.classList.toggle('gem-btn--active', useGemEnabled && !!currentGemLink);
-  }
-
-  async function openGemModal() {
-      const link = await window.showCustomModal({
-          title: chrome.i18n.getMessage("promptSetGemLink") || "Set custom Gem link:",
-          type: 'prompt',
-          defaultValue: currentGemLink,
-          placeholder: "https://gemini.google.com/gem/..."
-      });
-      if (link !== null) {
-          const trimmedLink = link.trim();
-          if (trimmedLink !== "" && !trimmedLink.startsWith("https://gemini.google.com/")) {
-              await window.showCustomModal({
-                  title: chrome.i18n.getMessage("promptInvalidGemLink") || "Invalid link. It must start with https://gemini.google.com/",
-                  type: 'alert'
-              });
-              return;
-          }
-          currentGemLink = trimmedLink;
-          useGemEnabled = !!trimmedLink;
-          chrome.storage.sync.set({ gemLink: trimmedLink, useGemEnabled });
-          updateGemBtn();
-      }
-  }
-
-  chrome.storage.sync.get(['gemLink', 'useGemEnabled'], (data) => {
-    useGemEnabled = !!data.useGemEnabled;
-    currentGemLink = data.gemLink || '';
-    updateGemBtn();
-  });
-
-  gemBtn.addEventListener('mousedown', () => {
-      gemPressTimer = setTimeout(() => {
-          gemPressTimer = null;
-          openGemModal();
-      }, DELAY.AUTOSAVE);
-  });
-
-  gemBtn.addEventListener('mouseup', () => {
-      if (gemPressTimer !== null) {
-          clearTimeout(gemPressTimer);
-          gemPressTimer = null;
-          if (!currentGemLink) {
-              openGemModal();
-          } else {
-              useGemEnabled = !useGemEnabled;
-              chrome.storage.sync.set({ useGemEnabled });
-              updateGemBtn();
-          }
-      }
-  });
-
-  gemBtn.addEventListener('mouseleave', () => {
-      if (gemPressTimer !== null) {
-          clearTimeout(gemPressTimer);
-          gemPressTimer = null;
-      }
-  });
-
-  // Right-click is a second, more discoverable way to set the Gem link
-  // (the long-press is easy to miss).
-  gemBtn.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-      openGemModal();
-  });
 
   // --- Prompt Mode UI (shared: src/prompts.js) ---
   initPromptsUI();
@@ -151,11 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   newGeminiConvBtn.addEventListener('click', () => {
-      let url = 'https://gemini.google.com/app';
-      if (useGemEnabled && currentGemLink) {
-          url = currentGemLink;
-      }
-      chrome.tabs.create({ url: url });
+      chrome.tabs.create({ url: 'https://gemini.google.com/app' });
   });
 
 
@@ -181,16 +95,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   prefillTitle(false);
   window.watchActiveTab(() => prefillTitle(true));
-
-  // The panel outlives the popup's one read of the Gem link at open.
-  if (window.isPanelMode && window.isPanelMode()) {
-    chrome.storage.onChanged.addListener((changes, area) => {
-      if (area !== 'sync' || (!changes.gemLink && !changes.useGemEnabled)) return;
-      if (changes.gemLink) currentGemLink = changes.gemLink.newValue || '';
-      if (changes.useGemEnabled) useGemEnabled = !!changes.useGemEnabled.newValue;
-      updateGemBtn();
-    });
-  }
 
 
   // --- Save conversation (shared flow; GF only accepts gemini.google.com and

@@ -349,12 +349,6 @@
       color: #fff;
     }
 
-    .gem-btn--active {
-      background: var(--accent-color) !important;
-      border-color: var(--accent-color) !important;
-      color: white !important;
-    }
-
     /* --- Inputs & Selects --- */
     input, select {
       width: 100%;

@@ -233,12 +233,6 @@
   "promptDeleteTitle": {
     "message": "Șterge"
   },
-  "promptSetGemLink": {
-    "message": "Setați link Gem personalizat:"
-  },
-  "promptInvalidGemLink": {
-    "message": "Link invalid. Trebuie să înceapă cu https://gemini.google.com/"
-  },
   "newConversationBtn": {
     "message": "Conversație nouă"
   },
@@ -247,12 +241,6 @@
   },
   "promptTextPlaceholder": {
     "message": "Scrieți promptul dvs. aici..."
-  },
-  "enableCustomGemTooltip": {
-    "message": "Activați Gem personalizat"
-  },
-  "setGemBtnTooltip": {
-    "message": "Setați link-ul Gem personalizat"
   },
   "syncPromptsTooltip": {
     "message": "Sincronizați prompturile"

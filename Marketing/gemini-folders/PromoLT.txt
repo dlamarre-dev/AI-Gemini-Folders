@@ -27,7 +27,6 @@ Gemini Aplankai tampa tikru tavo Gemini cockpit: tvarkyk pokalbius aplankuose, k
 📝 Asmeninė promptų biblioteka: Perjunk į Promptų režimą paspausdamas antraštės perjungiklį. Išsaugok geriausius promptus su pavadinimu ir tekstu, rask juos iš karto naudodamas paiešką ir rikiavimą (naujausi, seniausi, A–Ž).
 ▶ Įterpimas vienu paspaudimu: Spustelėk paleidimo mygtuką (▶) ant išsaugoto prompto, kad jis būtų įterptas tiesiai į Gemini įvesties lauką.
 ✏️ Tiesioginis redagavimas: Spustelėk norėdamas išplėsti promptą ir redaguok tekstą tiesiogiai. Pakeitimai automatiškai išsaugomi po trumpos pauzės.
-💎 Tinkintas Gem nuoroda: Sukonfigūruok nuorodą į mėgstamą Gem ir įjunk/išjunk ją vienu paspaudimu.
 ☁️ Promptų sinchronizavimas: Įjunk debesijos sinchronizavimą promptų bibliotekai nepriklausomai nuo aplankų.
 📌 Prisegti promptai: Prisek svarbius promptus bibliotekos viršuje.
 ⌨️ Raginimų paleidiklis su tiesioginiais pasiūlymais: Įveskite # Gemini pokalbio lauke, kad iš karto pamatytumėte visus savo išsaugotus raginimus — filtruojamus realiuoju laiku rašant. Naudokite ↓/↑ naršymui, paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens tiesioginiam įterpimui.
@@ -46,7 +45,6 @@ Promptų režimas:
 Spustelėk 📝 ant perjungiklio plėtinio viršutiniame dešiniajame kampe.
 Spustelėk ➕ Pridėti promptą, įveskite pavadinimą ir tekstą, išsaugok.
 Norėdamas naudoti promptą: išplėsk jį ir spustelėk ▶ – jis įterpiamas tiesiai į Gemini.
-Sukonfigūruok 💎 norėdamas nukreipti į savo Gem.
 Norėdamas prisegti promptą: spustelėk 📍 – jis perkeliamas į sąrašo viršų.
 Raginimų paleidiklis: Įveskite #, kad iš karto pamatytumėte visus savo išsaugotus raginimus, arba toliau rašykite filtravimui realiuoju laiku. Paspauskite tarpą prie unikalaus atitikmens automatiniam pildymui arba prie tikslaus atitikmens įterpimui.
 
